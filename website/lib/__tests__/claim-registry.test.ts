@@ -67,12 +67,30 @@ interface ClaimsFile {
   routes?: RouteDefinition[];
 }
 
+interface AnchorIndexFile {
+  generatedAt: string;
+  anchors: { claimId: string; file: string; line: number }[];
+}
+
+/** Nodes that carry at least one claim — mirrors getNodeCoverage() in lib/claims. */
+function coveredNodeIds(graphFile: CausalGraphFile, claimsData: ClaimsFile): Set<string> {
+  const nodeIds = new Set(Object.keys(graphFile.nodes));
+  const covered = new Set<string>();
+  for (const claim of claimsData.claims) {
+    if (claim.target.type === "node" && claim.target.nodeId && nodeIds.has(claim.target.nodeId)) {
+      covered.add(claim.target.nodeId);
+    }
+  }
+  return covered;
+}
+
 function loadJSON<T>(filename: string): T {
   return JSON.parse(readFileSync(resolve(DATA_DIR, filename), "utf-8")) as T;
 }
 
 const graph = loadJSON<CausalGraphFile>("causal-graph.json");
 const claims = loadJSON<ClaimsFile>("claims.json");
+const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
 
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
@@ -195,6 +213,63 @@ describe("claims.json", () => {
     const validLevels = new Set(["L", "L*", "M", "C", "M|C", "E"]);
     for (const ea of claims.epistemic_assessments) {
       expect(validLevels.has(ea.level)).toBe(true);
+    }
+  });
+
+  it("every claim has an epistemic assessment", () => {
+    const assessed = new Set(claims.epistemic_assessments.map((ea) => ea.claimId));
+    for (const claim of claims.claims) {
+      expect(assessed.has(claim.id)).toBe(true);
+    }
+  });
+
+  it("claim dependencies reference existing claims", () => {
+    const claimIds = new Set(claims.claims.map((c) => c.id));
+    for (const claim of claims.claims) {
+      for (const dep of claim.depends_on) {
+        expect(claimIds.has(dep)).toBe(true);
+      }
+    }
+  });
+});
+
+describe("node coverage", () => {
+  const covered = coveredNodeIds(graph, claims);
+
+  it("covers at least 20 of the 35 graph nodes", () => {
+    expect(covered.size).toBeGreaterThanOrEqual(20);
+  });
+
+  it("covers every barrier node that has a claim target", () => {
+    // BARRIER_BBB and BARRIER_BTB are the barrier nodes with bounded evidence.
+    expect(covered.has("BARRIER_BBB")).toBe(true);
+    expect(covered.has("BARRIER_BTB")).toBe(true);
+  });
+
+  it("covered nodes all exist in the graph", () => {
+    for (const nodeId of covered) {
+      expect(graph.nodes[nodeId]).toBeDefined();
+    }
+  });
+});
+
+describe("anchor-index.json", () => {
+  const claimIds = new Set(claims.claims.map((c) => c.id));
+
+  it("every anchored claimId exists in claims.json", () => {
+    for (const anchor of anchorIndex.anchors) {
+      expect(
+        claimIds.has(anchor.claimId),
+        `${anchor.file}:${anchor.line} anchors unknown claim "${anchor.claimId}"`
+      ).toBe(true);
+    }
+  });
+
+  it("anchors point at source files, not at type or comment examples", () => {
+    expect(anchorIndex.anchors.length).toBeGreaterThan(0);
+    for (const anchor of anchorIndex.anchors) {
+      expect(anchor.file).not.toBe("lib/claims/types.ts");
+      expect(anchor.line).toBeGreaterThan(0);
     }
   });
 });

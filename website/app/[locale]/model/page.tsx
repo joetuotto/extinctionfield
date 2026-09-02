@@ -18,6 +18,7 @@ import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram"
 import { CitationLink } from "@/components/CitationLink";
 import { StudyCitation } from "@/components/StudyCitation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { ClaimRef } from "@/components/ClaimRef";
 
 const t = {
   en: {
@@ -150,6 +151,8 @@ const t = {
     archTitle: "Three-level architecture",
     archDesc:
       "BERM separates fertility decline into three distinct causal layers. Each level has its own dynamics, timescale, and evidence basis. The total fertility rate (TFR) for a country is the product of all three levels, not the sum -- each acts as a multiplier on the others.",
+    archPredictionSource:
+      "The locked country predictions on this site come from the v17 scalar model. The v2 FieldState specification (/model/fieldstate) is a measurement protocol: it defines which field quantities are recorded and how, and it produces no country forecasts.",
     level1Label: "Level 1",
     level1Title: "Biological capacity",
     level1Desc:
@@ -1068,6 +1071,8 @@ const t = {
     archTitle: "Kolmitasoinen arkkitehtuuri",
     archDesc:
       "BERM erottelee syntyvyyden laskun kolmeen erilliseen kausaalitasoon. Jokaisella tasolla on oma dynamiikkansa, aikaskaalansa ja näyttöpohjansa. Maan kokonaishedelmällisyysluku (TFR) on kaikkien kolmen tason tulo, ei summa -- kukin toimii kertoimena muille.",
+    archPredictionSource:
+      "Sivuston lukitut maakohtaiset ennusteet tulevat v17-skalaarimallista. FieldState-spesifikaatio v2 (/model/fieldstate) on mittausprotokolla: se määrittelee, mitkä kenttäsuureet kirjataan ja miten, eikä se tuota maakohtaisia ennusteita.",
     level1Label: "Taso 1",
     level1Title: "Biologinen kapasiteetti",
     level1Desc:
@@ -1962,6 +1967,7 @@ const t = {
     archTitle: "三層アーキテクチャ",
     archDesc:
       "BERMは出生率低下を三つの異なる因果層に分離する。各レベルはそれぞれ独自の動態、タイムスケール、エビデンス基盤を持つ。各国の合計特殊出生率(TFR)は三つのレベルの積であり、和ではない -- 各レベルは他のレベルに対する乗数として作用する。",
+    archPredictionSource: "",
     level1Label: "レベル1",
     level1Title: "生物学的容量",
     level1Desc:
@@ -2832,6 +2838,7 @@ const t = {
     archTitle: "Architecture a trois niveaux",
     archDesc:
       "BERM decompose le declin de la fecondite en trois couches causales distinctes. Chaque niveau possede sa propre dynamique, echelle temporelle et base de preuves. L'indice synthetique de fecondite (TFR) d'un pays est le produit des trois niveaux, pas leur somme -- chacun agit comme multiplicateur des autres.",
+    archPredictionSource: "",
     level1Label: "Niveau 1",
     level1Title: "Capacite biologique",
     level1Desc:
@@ -3702,6 +3709,7 @@ const t = {
     archTitle: "3단계 아키텍처",
     archDesc:
       "BERM은 출산율 감소를 세 가지 뚜렷한 인과 계층으로 분해합니다. 각 수준은 고유한 역학, 시간 척도 및 증거 기반을 가지고 있습니다. 한 국가의 합계출산율(TFR)은 세 수준의 곱이지 합이 아닙니다 -- 각각이 다른 것들의 승수로 작용합니다.",
+    archPredictionSource: "",
     level1Label: "수준 1",
     level1Title: "생물학적 역량",
     level1Desc:
@@ -4564,7 +4572,7 @@ export default async function ModelPage({
             <div className="mb-8">
               <h3 className="text-base font-semibold mb-3">{d.physBioChiTitle}</h3>
               <p className="text-sm text-foreground-muted mb-3 max-w-3xl leading-relaxed">
-                {d.physBioChiDesc}
+                <ClaimRef claimId="claim.proxy.lindgren-selection">{d.physBioChiDesc}</ClaimRef>
               </p>
               <Eq>{d.physBioChiFormula}</Eq>
               <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
@@ -4854,8 +4862,11 @@ export default async function ModelPage({
           {/* Three-level architecture */}
           <section id="architecture" className="mb-14">
             <h2 className="text-xl font-semibold mb-4">{d.archTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              <ClaimRef claimId="claim.tfr.multi-input-decomposition">{d.archDesc}</ClaimRef>
+            </p>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.archDesc}
+              {d.archPredictionSource}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -4865,7 +4876,7 @@ export default async function ModelPage({
                 </p>
                 <h3 className="text-base font-semibold mb-2">{d.level1Title}</h3>
                 <p className="text-sm text-foreground-muted leading-relaxed">
-                  {d.level1Desc}
+                  <ClaimRef claimId="claim.couple.fecundability-convergence">{d.level1Desc}</ClaimRef>
                 </p>
               </SectionCard>
 
@@ -5038,11 +5049,11 @@ export default async function ModelPage({
             <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mb-6">
               <article className="rounded-xl border border-card-border bg-card-bg p-5">
                 <h3 className="font-semibold text-sm mb-2">{d.fourRoutesGonadal}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.fourRoutesGonadalDesc}</p>
+                <p className="text-xs text-foreground-muted leading-relaxed"><ClaimRef claimId="claim.vgcc.ros-ca2-coupling">{d.fourRoutesGonadalDesc}</ClaimRef></p>
               </article>
               <article className="rounded-xl border border-card-border bg-card-bg p-5">
                 <h3 className="font-semibold text-sm mb-2">{d.fourRoutesCircadian}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.fourRoutesCircadianDesc}</p>
+                <p className="text-xs text-foreground-muted leading-relaxed"><ClaimRef claimId="claim.rpm.cry-magnetic-sensitivity">{d.fourRoutesCircadianDesc}</ClaimRef></p>
               </article>
               <article className="rounded-xl border-2 border-accent/40 bg-accent/5 p-5">
                 <h3 className="font-semibold text-sm mb-2">{d.fourRoutesPituitary}</h3>
@@ -5125,7 +5136,7 @@ export default async function ModelPage({
           {/* Lindgren chi coupling */}
           <CollapsibleSection id="chi-coupling" title={d.chiTitle} subtitle={d.chiSub}>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.chiDesc}
+              <ClaimRef claimId="claim.proxy.lindgren-selection">{d.chiDesc}</ClaimRef>
             </p>
             <Eq>
               &chi;(&#256;) = &#256; / &radic;(1 + &#256;&sup2;)

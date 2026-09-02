@@ -16,12 +16,19 @@
       },
       "kind": "mechanistic_step",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "A_VGCC_ROS" },
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
       "depends_on": [],
       "supersedes": [],
       "scope": {
-        "supports": ["VGCC activation is a primary transduction mechanism for RF and ELF fields"],
-        "does_not_support": ["VGCC activation is the only transduction mechanism"]
+        "supports": [
+          "VGCC activation is a primary transduction mechanism for RF and ELF fields"
+        ],
+        "does_not_support": [
+          "VGCC activation is the only transduction mechanism"
+        ]
       },
       "falsification_condition": "Selective VGCC blockade eliminates ROS increase in field-exposed cells across three independent labs"
     },
@@ -39,12 +46,19 @@
       },
       "kind": "mechanistic_step",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "B_RPM_CRY" },
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
       "depends_on": [],
       "supersedes": [],
       "scope": {
-        "supports": ["Radical-pair mechanism provides a quantum-coherent transduction pathway"],
-        "does_not_support": ["RPM is sufficient to explain all observed biological effects of magnetic fields"]
+        "supports": [
+          "Radical-pair mechanism provides a quantum-coherent transduction pathway"
+        ],
+        "does_not_support": [
+          "RPM is sufficient to explain all observed biological effects of magnetic fields"
+        ]
       },
       "falsification_condition": "CRY-knockout organisms show identical circadian and redox responses to magnetic field changes as wild-type"
     },
@@ -62,12 +76,21 @@
       },
       "kind": "mechanistic_step",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "MELATONIN_REDOX" },
-      "depends_on": ["claim.rpm.cry-magnetic-sensitivity"],
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [
+        "claim.rpm.cry-magnetic-sensitivity"
+      ],
       "supersedes": [],
       "scope": {
-        "supports": ["Melatonin pathway mediates circadian disruption effects on reproduction"],
-        "does_not_support": ["Melatonin is the sole mediator of field effects on fertility"]
+        "supports": [
+          "Melatonin pathway mediates circadian disruption effects on reproduction"
+        ],
+        "does_not_support": [
+          "Melatonin is the sole mediator of field effects on fertility"
+        ]
       },
       "falsification_condition": "Exogenous melatonin replacement fully restores reproductive function in field-exposed animals"
     },
@@ -85,12 +108,21 @@
       },
       "kind": "measurement",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "MALE_SPERM" },
-      "depends_on": ["claim.vgcc.ros-ca2-coupling"],
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [
+        "claim.vgcc.ros-ca2-coupling"
+      ],
       "supersedes": [],
       "scope": {
-        "supports": ["Multiple converging mechanisms reduce male fertility parameters"],
-        "does_not_support": ["Sperm decline alone explains the full fertility drop"]
+        "supports": [
+          "Multiple converging mechanisms reduce male fertility parameters"
+        ],
+        "does_not_support": [
+          "Sperm decline alone explains the full fertility drop"
+        ]
       },
       "falsification_condition": "Meta-analysis of semen parameter studies shows no dose-response relationship with any FieldState metric"
     },
@@ -108,12 +140,21 @@
       },
       "kind": "model_derived",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "COUPLE_FECUNDABILITY" },
-      "depends_on": ["claim.sperm.multi-parameter-decline"],
+      "target": {
+        "type": "node",
+        "nodeId": "COUPLE_FECUNDABILITY"
+      },
+      "depends_on": [
+        "claim.sperm.multi-parameter-decline"
+      ],
       "supersedes": [],
       "scope": {
-        "supports": ["The couple-level model integrates male and female components"],
-        "does_not_support": ["All fertility decline is biologically mediated — demand, tempo, and ART are separate inputs"]
+        "supports": [
+          "The couple-level model integrates male and female components"
+        ],
+        "does_not_support": [
+          "All fertility decline is biologically mediated — demand, tempo, and ART are separate inputs"
+        ]
       },
       "falsification_condition": "Prospective cohort with FieldState measurement shows no association between couple-level FieldState exposure and time-to-pregnancy after controlling for behavioral factors"
     },
@@ -131,12 +172,19 @@
       },
       "kind": "proxy_interpretation",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "FIELDSTATE_SELECTED_PROXY" },
+      "target": {
+        "type": "node",
+        "nodeId": "FIELDSTATE_SELECTED_PROXY"
+      },
       "depends_on": [],
       "supersedes": [],
       "scope": {
-        "supports": ["The proxy captures the dominant coupling mode between FieldState and biological systems"],
-        "does_not_support": ["The proxy captures all biologically relevant field characteristics"]
+        "supports": [
+          "The proxy captures the dominant coupling mode between FieldState and biological systems"
+        ],
+        "does_not_support": [
+          "The proxy captures all biologically relevant field characteristics"
+        ]
       },
       "falsification_condition": "An alternative proxy formulation consistently outperforms the Lindgren selection in predicting reproductive endpoints across ≥3 independent datasets"
     },
@@ -154,14 +202,691 @@
       },
       "kind": "model_derived",
       "lifecycle": "draft",
-      "target": { "type": "node", "nodeId": "TFR" },
-      "depends_on": ["claim.couple.fecundability-convergence"],
+      "target": {
+        "type": "node",
+        "nodeId": "TFR"
+      },
+      "depends_on": [
+        "claim.couple.fecundability-convergence"
+      ],
       "supersedes": [],
       "scope": {
-        "supports": ["Proper attribution requires separating biological from behavioral and medical inputs"],
-        "does_not_support": ["All TFR decline is FieldState-driven"]
+        "supports": [
+          "Proper attribution requires separating biological from behavioral and medical inputs"
+        ],
+        "does_not_support": [
+          "All TFR decline is FieldState-driven"
+        ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.vector.background-dependent-coupling",
+      "statement": {
+        "en": {
+          "text": "The biological response to an applied field depends on the vector state of the ambient background: relative angle, polarity and static background magnitude at the exposed tissue determine which field components couple, so exposure is recorded as a vector-and-background pair rather than a scalar intensity.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Biologinen vaste kentälle riippuu ympäröivän taustan vektoritilasta: suhteellinen kulma, polariteetti ja staattisen taustan suuruus altistuvassa kudoksessa määräävät, mitkä kenttäkomponentit kytkeytyvät, joten altistus kirjataan vektorin ja taustan parina eikä skalaarisena intensiteettinä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "FIELDSTATE_VECTOR"
+      },
+      "depends_on": [
+        "claim.proxy.lindgren-selection"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Exposure assessment must record background geometry alongside applied field magnitude"
+        ],
+        "does_not_support": [
+          "Any single vector configuration transfers to human organ-level dose"
+        ]
+      },
+      "falsification_condition": "Exposure–response for reproductive endpoints is reproduced by scalar intensity alone, with no residual dependence on background vector or orientation, in three independent laboratories."
+    },
+    {
+      "id": "claim.envelope.frequency-dependent-response",
+      "statement": {
+        "en": {
+          "text": "The modulation envelope of an exposure sets the biological response independently of carrier intensity: mitochondrial potential and ROS output vary with envelope frequency across the sub-hertz and ELF range.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Altistuksen modulaatioverhokäyrä määrää biologisen vasteen kantoaallon intensiteetistä riippumatta: mitokondrion potentiaali ja ROS-tuotto vaihtelevat verhokäyrän taajuuden mukaan alle hertsin ja ELF-alueella.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "FIELDSTATE_ENVELOPE"
+      },
+      "depends_on": [
+        "claim.proxy.lindgren-selection"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Envelope and beat structure are measured field-state features, not incidental signal properties"
+        ],
+        "does_not_support": [
+          "The envelope response measured in cell lines transfers to a reproductive endpoint"
+        ]
+      },
+      "falsification_condition": "Mitochondrial potential and ROS responses are flat across envelope frequency at matched field intensity in three independent cell systems."
+    },
+    {
+      "id": "claim.tribo.material-dependent-interface",
+      "statement": {
+        "en": {
+          "text": "The triboelectric material–skin interface is a measurable field-state variable: charge magnitude and decay time depend on textile material and antistatic treatment, and prolonged interface configurations carry organism-level consequences in human and arthropod systems.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Triboelektrinen materiaali–iho-rajapinta on mitattava kenttätilan muuttuja: varauksen suuruus ja purkautumisaika riippuvat tekstiilimateriaalista ja antistaattikäsittelystä, ja pitkäkestoiset rajapintakonfiguraatiot tuottavat eliötason seurauksia ihmisellä ja niveljalkaisilla.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "STATIC_TRIBO_INTERFACE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Material and treatment belong in the measured field state at the skin interface"
+        ],
+        "does_not_support": [
+          "Historical V/cm² readings convert into charge, V/m or an organ-level field"
+        ]
+      },
+      "falsification_condition": "Charge magnitude and relaxation time are identical across textile materials and antistatic treatments under controlled humidity, and prolonged interface changes produce no reproductive or behavioural difference."
+    },
+    {
+      "id": "claim.efield.polarity-dependent-response",
+      "statement": {
+        "en": {
+          "text": "Low-frequency electric fields act as a distinct exposure channel with polarity-specific effects: AC and positive DC treatments change organism behaviour where negative DC of the same magnitude does not, so waveform and polarity belong to the measured field state.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Matalataajuiset sähkökentät toimivat omana altistuskanavanaan polariteettikohtaisin vaikutuksin: AC- ja positiivinen DC-käsittely muuttavat eliön käyttäytymistä, kun samansuuruinen negatiivinen DC ei muuta, joten aaltomuoto ja polariteetti kuuluvat mitattuun kenttätilaan.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "AC/DC electric-field components are recorded separately from RF and magnetic channels"
+        ],
+        "does_not_support": [
+          "Pollinator and mite behaviour results transfer to human exposure or to RF hypotheses"
+        ]
+      },
+      "falsification_condition": "Behavioural responses are identical for AC, positive DC and negative DC treatments at matched field magnitude in paired field experiments."
+    },
+    {
+      "id": "claim.vmem.membrane-potential-growth-gate",
+      "statement": {
+        "en": {
+          "text": "Field exposure shifts membrane potential and the Ca²⁺/AMPK/mTOR growth signalling that reads it, and this bioelectric setpoint governs gonadal reserve rather than an acute output measure.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kenttäaltistus siirtää kalvopotentiaalia ja sitä lukevaa Ca²⁺/AMPK/mTOR-kasvusignalointia, ja tämä biosähköinen asetuspiste ohjaa sukurauhasten reserviä eikä akuuttia tuotosmittaria.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "VMEM_MTOR"
+      },
+      "depends_on": [
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A bioelectric setpoint mediates between field exposure and reserve-level reproductive state"
+        ],
+        "does_not_support": [
+          "A quantitative human mTOR-pathway dose-response"
+        ]
+      },
+      "falsification_condition": "Membrane-potential and mTOR-pathway readouts are unchanged across exposure conditions that alter follicular or spermatogonial reserve."
+    },
+    {
+      "id": "claim.development.exposure-window-memory",
+      "statement": {
+        "en": {
+          "text": "Exposure during gestational and early postnatal development sets a persistent reproductive state: offspring exposed in utero show altered follicle counts and ovarian morphology at maturity, so the developmental window carries exposure forward instead of resolving it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Altistus raskauden ja varhaisen syntymänjälkeisen kehityksen aikana asettaa pysyvän lisääntymistilan: kohdussa altistuneilla jälkeläisillä on kypsyysiässä muuttuneet follikkelimäärät ja munasarjan morfologia, joten kehitysikkuna kantaa altistuksen eteenpäin sen sijaan että se palautuisi.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BIOELECTRIC_DEVELOPMENT"
+      },
+      "depends_on": [
+        "claim.vmem.membrane-potential-growth-gate"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Exposure timing relative to development is a separate variable from exposure magnitude"
+        ],
+        "does_not_support": [
+          "A human developmental exposure-response or reserve-decline estimate"
+        ]
+      },
+      "falsification_condition": "Developmental exposure produces no difference in adult follicle counts or germline reserve relative to sham controls in three independent cohorts."
+    },
+    {
+      "id": "claim.hpg.circadian-steroidogenic-gate",
+      "statement": {
+        "en": {
+          "text": "The circadian and HPA state gates HPG steroidogenic output: exposure timed to different points of the daily cycle produces different melatonin and antioxidant rhythm outcomes, and clock disruption in steroidogenic cells removes progesterone support downstream.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Vuorokausirytmi- ja HPA-tila portittaa HPG-akselin steroidogeenisen tuoton: eri vuorokaudenaikoihin ajoitettu altistus tuottaa erilaiset melatoniini- ja antioksidanttirytmit, ja kellon häiriö steroidogeenisissä soluissa poistaa progesteronituen alavirrasta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HPA_HPG"
+      },
+      "depends_on": [
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Exposure timing is part of the dose for endocrine endpoints"
+        ],
+        "does_not_support": [
+          "A human conception-rate or birth-rate effect size"
+        ]
+      },
+      "falsification_condition": "Exposure timing across the daily cycle produces identical hormone and antioxidant rhythms, and clock-gene disruption in steroidogenic cells leaves progesterone support intact."
+    },
+    {
+      "id": "claim.bbb.redox-tight-junction",
+      "statement": {
+        "en": {
+          "text": "The blood-brain barrier is a redox-controlled state: oxidative load raises permeability and relocalizes occludin, and antioxidant treatment attenuates the change, so barrier integrity is a variable in the model rather than a fixed anatomical constant.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Veri-aivoeste on redox-säädelty tila: hapetuskuorma nostaa läpäisevyyttä ja siirtää okludiinin sijaintia, ja antioksidanttihoito vaimentaa muutoksen, joten esteen eheys on mallin muuttuja eikä kiinteä anatominen vakio.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BARRIER_BBB"
+      },
+      "depends_on": [
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Barrier permeability is modelled as a redox-dependent modulator"
+        ],
+        "does_not_support": [
+          "Direct EMF-to-BBB evidence — the upstream manipulation in the bounded record is not EMF"
+        ]
+      },
+      "falsification_condition": "Controlled oxidative load leaves blood-brain barrier permeability and tight-junction protein localization unchanged."
+    },
+    {
+      "id": "claim.btb.redox-junction-integrity",
+      "statement": {
+        "en": {
+          "text": "The blood-testis barrier is the redox-sensitive gate on spermatogenesis: oxidative load lowers junction proteins and degrades sperm endpoints, and localized RF exposure produces delayed sperm changes through a Spock3–MMP2 barrier axis.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Veri-kiveseste on spermatogeneesin redox-herkkä portti: hapetuskuorma vähentää liitosproteiineja ja heikentää siittiöiden päätepisteitä, ja paikallinen RF-altistus tuottaa viivästyneitä siittiömuutoksia Spock3–MMP2-esteakselin kautta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BARRIER_BTB"
+      },
+      "depends_on": [
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Barrier state mediates between redox load and sperm endpoints"
+        ],
+        "does_not_support": [
+          "Human transfer of the rat local-exposure protocol or a calibrated barrier coefficient"
+        ]
+      },
+      "falsification_condition": "Junction proteins and sperm endpoints are unchanged under controlled oxidative load and under localized RF exposure with a barrier-pathway rescue arm."
+    },
+    {
+      "id": "claim.germline.persistent-reserve-loss",
+      "statement": {
+        "en": {
+          "text": "Localized exposure reaches the Sertoli and germline reserve, not only the mature sperm population: reproductive changes appear on a delay consistent with damage to the reserve that supplies later spermatogenic cycles.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Paikallinen altistus tavoittaa Sertolin solujen ja itulinjan reservin eikä vain kypsää siittiöpopulaatiota: lisääntymismuutokset ilmenevät viiveellä, joka vastaa vauriota reservissä, joka syöttää myöhemmät spermatogeneesikierrot.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_GERMLINE_RESERVE"
+      },
+      "depends_on": [
+        "claim.btb.redox-junction-integrity"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Reserve-level damage is modelled separately from acute sperm-parameter change"
+        ],
+        "does_not_support": [
+          "A human recovery-time constant for the germline reserve"
+        ]
+      },
+      "falsification_condition": "Sperm parameters recover completely within one spermatogenic cycle after exposure ends, with no reserve-level deficit in the exposed animals."
+    },
+    {
+      "id": "claim.steroidogenesis.leydig-output-decline",
+      "statement": {
+        "en": {
+          "text": "Leydig steroidogenic output is an affected endpoint distinct from sperm production: exposure protocols change testosterone alongside redox and sperm measures, and pooled rodent evidence lists hormone endpoints as a recurring outcome class.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Leydigin solujen steroidogeeninen tuotto on siittiötuotannosta erillinen vaikuttunut päätepiste: altistusprotokollat muuttavat testosteronia redox- ja siittiömittausten ohella, ja koottu jyrsijänäyttö listaa hormonipäätepisteet toistuvana tulosluokkana.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_STEROIDOGENESIS"
+      },
+      "depends_on": [
+        "claim.hpg.circadian-steroidogenic-gate"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Steroidogenic output is tracked as its own endpoint in the male branch"
+        ],
+        "does_not_support": [
+          "A single biological coefficient from the pooled rodent literature"
+        ]
+      },
+      "falsification_condition": "Pooled exposure studies show no hormone-endpoint shift once dosimetry and thermal-control heterogeneity are accounted for."
+    },
+    {
+      "id": "claim.ovarian.developmental-reserve-loss",
+      "statement": {
+        "en": {
+          "text": "Ovarian reserve is set by exposure history rather than by concurrent exposure: prenatal and early postnatal protocols reduce primordial and secondary follicle counts and raise atresia measured at maturity.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Munasarjareservi määräytyy altistushistorian eikä samanaikaisen altistuksen mukaan: raskaudenaikaiset ja varhaiset syntymänjälkeiset protokollat vähentävät primordiaali- ja sekundaarifollikkelien määrää ja lisäävät atresiaa kypsyysiässä mitattuna.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "OVARIAN_RESERVE"
+      },
+      "depends_on": [
+        "claim.development.exposure-window-memory"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Reserve is a stock variable carrying earlier exposure, separate from acute ovulatory function"
+        ],
+        "does_not_support": [
+          "A human AMH/AFC reserve-decline calibration"
+        ]
+      },
+      "falsification_condition": "Follicle counts and atresia at maturity are independent of developmental exposure across three independent replications."
+    },
+    {
+      "id": "claim.oocyte.mitochondrial-redox-quality",
+      "statement": {
+        "en": {
+          "text": "Oocyte competence tracks mitochondrial redox state: melatonin and antioxidant manipulation change oxidative-damage markers and embryo-development measures, and exposure protocols that shift circadian redox also shift oocyte and follicular measures.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Munasolun kelpoisuus seuraa mitokondrion redox-tilaa: melatoniini- ja antioksidanttikäsittely muuttavat hapetusvauriomerkkejä ja alkionkehityksen mittareita, ja vuorokausirytmin redox-tilaa siirtävät altistusprotokollat siirtävät myös munasolu- ja follikkelimittareita.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "OOCYTE_REDOX"
+      },
+      "depends_on": [
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Oocyte quality is modelled as a redox-resilience state, not only as an age variable"
+        ],
+        "does_not_support": [
+          "A human IVF outcome prediction"
+        ]
+      },
+      "falsification_condition": "Oocyte redox markers and embryo-development measures are unchanged by melatonin and antioxidant manipulation and by circadian-disrupting exposure."
+    },
+    {
+      "id": "claim.ovulation.clock-gated-timing",
+      "statement": {
+        "en": {
+          "text": "Ovulatory and steroidogenic timing is clock-gated inside the ovary: disrupting the clock in ovarian steroidogenic cells alone impairs progesterone support, so the timing gate is local and not only hypothalamic.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Ovulaation ja steroidogeneesin ajoitus on kellon portittama munasarjan sisällä: pelkkien munasarjan steroidogeenisten solujen kellon häirintä heikentää progesteronitukea, joten ajoitusportti on paikallinen eikä vain hypotalaminen.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "OVULATION_CLOCK"
+      },
+      "depends_on": [
+        "claim.hpg.circadian-steroidogenic-gate"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A local ovarian clock is an independent timing input to fecundability"
+        ],
+        "does_not_support": [
+          "An EMF-to-clock-gene effect size — the bounded record uses genetic disruption"
+        ]
+      },
+      "falsification_condition": "Cell-specific ovarian clock disruption leaves ovulatory timing and luteal steroid output intact."
+    },
+    {
+      "id": "claim.implantation.luteal-support-dependency",
+      "statement": {
+        "en": {
+          "text": "Implantation depends on luteal and redox support generated upstream of the uterus: ovarian clock disruption impairs progesterone support and implantation, and oocyte redox manipulation changes embryo-development outcomes.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Implantaatio riippuu kohdun yläpuolella syntyvästä luteaali- ja redox-tuesta: munasarjakellon häiriö heikentää progesteronitukea ja implantaatiota, ja munasolun redox-käsittely muuttaa alkionkehityksen tuloksia.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "IMPLANTATION"
+      },
+      "depends_on": [
+        "claim.ovulation.clock-gated-timing",
+        "claim.oocyte.mitochondrial-redox-quality"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Conception-to-live-birth support is a separate model stage from conception itself"
+        ],
+        "does_not_support": [
+          "A population miscarriage or live-birth rate estimate"
+        ]
+      },
+      "falsification_condition": "Progesterone support and implantation rates are unchanged by ovarian clock disruption and by oocyte redox manipulation."
+    },
+    {
+      "id": "claim.ecology.field-mediated-encounter",
+      "statement": {
+        "en": {
+          "text": "Field state governs species encounter and dispersal before any fitness effect: arthropods cross air gaps to charged hosts, change floral landings under weak AC and DC fields, initiate ballooning in atmospheric fields, and shift synganglion neuropeptide transcripts under RF exposure.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kenttätila ohjaa lajien kohtaamista ja leviämistä ennen mitään kelpoisuusvaikutusta: niveljalkaiset ylittävät ilmarakoja varautuneisiin isäntiin, muuttavat kukkiin laskeutumista heikoissa AC- ja DC-kentissä, aloittavat lentolähdön ilmakehän kentissä ja muuttavat synganglionin neuropeptidilähettejä RF-altistuksessa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ECOLOGICAL_ENCOUNTER"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Encounter and dispersal are modelled as field-dependent steps in the ecological branch"
+        ],
+        "does_not_support": [
+          "A population-abundance, colony-fitness or selection estimate"
+        ]
+      },
+      "falsification_condition": "Attachment, landing, dispersal and synganglion transcript measures are independent of field configuration across the tested species."
+    },
+    {
+      "id": "claim.asfr.cohort-signature",
+      "statement": {
+        "en": {
+          "text": "Age-specific fertility carries a cohort signature: country-level ASFR series contrasted against technology-adoption timing show an age and cohort pattern consistent with the developmental-memory premise, measured as a descriptive contrast rather than an exposure-response.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Ikäkohtainen hedelmällisyys kantaa kohorttijäljen: maatason ASFR-sarjat teknologian käyttöönoton ajoitusta vasten verrattuina näyttävät ikä- ja kohorttikuvion, joka vastaa kehityksellisen muistin premissiä, mitattuna kuvailevana kontrastina eikä altistus-vastesuhteena.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ASFR"
+      },
+      "depends_on": [
+        "claim.couple.fecundability-convergence"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The age/cohort contrast is a testable predicted signature of the developmental premise"
+        ],
+        "does_not_support": [
+          "A causal EMF effect on ASFR — mobile subscriptions are a timing proxy, not a dose"
+        ]
+      },
+      "falsification_condition": "The age and cohort contrast disappears when adoption timing is replaced by a matched placebo series or when development, policy and tempo covariates are included."
+    },
+    {
+      "id": "claim.civilization.tfr-multiplicative-decomposition",
+      "statement": {
+        "en": {
+          "text": "TFR decline decomposes multiplicatively into sperm, oocyte, timing and motivation factors, so pronatalist policy that only addresses motivation cannot restore replacement: raising one factor while the others fall leaves the product below replacement level.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "TFR:n lasku hajoaa multiplikatiivisesti siittiö-, munasolu-, ajoitus- ja motivaatiotekijöihin, joten pelkkään motivaatioon kohdistuva pronatalistinen politiikka ei palauta uusiutumistasoa: yhden tekijän nostaminen muiden laskiessa jättää tulon uusiutumistason alle.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "TFR"
+      },
+      "depends_on": [
+        "claim.tfr.multi-input-decomposition"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Policy evaluation must state which factor in the product an instrument acts on"
+        ],
+        "does_not_support": [
+          "A quantitative share attributable to each factor"
+        ]
+      },
+      "falsification_condition": "A population with unchanged biological factors restores replacement-level TFR through motivation-directed policy alone."
+    },
+    {
+      "id": "claim.civilization.biocap-tfr-input",
+      "statement": {
+        "en": {
+          "text": "BioCap, the weighted eight-biomarker composite, is the biological input to TFR: it enters the fertility calculation as Level 1 capacity, and behavioural and cultural terms act on that capacity multiplicatively rather than replacing it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BioCap, painotettu kahdeksan biomarkkerin yhdistelmä, on TFR:n biologinen panos: se syötetään hedelmällisyyslaskentaan tason 1 kapasiteettina, ja käyttäytymis- ja kulttuuritermit vaikuttavat siihen multiplikatiivisesti eivätkä korvaa sitä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "TFR"
+      },
+      "depends_on": [
+        "claim.tfr.multi-input-decomposition"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The biomarker composite is the measurement interface between biology and the demographic model"
+        ],
+        "does_not_support": [
+          "The specific biomarker weights — those are diagnostic, not calibrated"
+        ]
+      },
+      "falsification_condition": "A country's TFR trajectory is reproduced by behavioural and cultural terms alone, with the eight-biomarker composite adding no explanatory value."
+    },
+    {
+      "id": "claim.civilization.pairing-multiplicative-decline",
+      "statement": {
+        "en": {
+          "text": "Pairing probability declines multiplicatively when male approach behaviour (testosterone) and female receptivity (oxytocin) both decline: couple formation is a product of the two, so a joint decline reduces pairing faster than either factor alone.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Parinmuodostuksen todennäköisyys laskee multiplikatiivisesti, kun sekä miehen lähestymiskäyttäytyminen (testosteroni) että naisen vastaanottavuus (oksitosiini) heikkenevät: parinmuodostus on näiden tulo, joten yhtäaikainen lasku vähentää parinmuodostusta nopeammin kuin kumpikaan tekijä yksin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "COUPLE_FECUNDABILITY"
+      },
+      "depends_on": [
+        "claim.couple.fecundability-convergence"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Couple formation is modelled before conception, as its own multiplicative stage"
+        ],
+        "does_not_support": [
+          "A measured partnering-rate effect size for either hormone"
+        ]
+      },
+      "falsification_condition": "Partnering rates track a single hormonal factor with no interaction term in cohorts where both factors decline."
+    },
+    {
+      "id": "claim.civilization.demand-capacity-separation",
+      "statement": {
+        "en": {
+          "text": "Family-formation demand and biological capacity are separately measurable inputs to age-specific fertility: demand-directed instruments move the demand term only, and their effect ceiling is set by the capacity term they cannot reach.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Perheenmuodostuksen kysyntä ja biologinen kapasiteetti ovat erikseen mitattavia ikäkohtaisen hedelmällisyyden panoksia: kysyntään kohdistuvat välineet liikuttavat vain kysyntätermiä, ja niiden vaikutuskaton asettaa kapasiteettitermi, johon ne eivät ylety.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "DEMAND_OPPORTUNITY"
+      },
+      "depends_on": [
+        "claim.tfr.multi-input-decomposition"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Demand and capacity are estimated separately before attributing an observed change"
+        ],
+        "does_not_support": [
+          "A claim that demand-directed policy has no effect"
+        ]
+      },
+      "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
     }
   ],
   "evidence_relations": [
@@ -174,7 +899,9 @@
       "studyDesign": "review_mechanistic",
       "applicability": "in_vitro_and_animal",
       "calibrationRole": "structural_only",
-      "limitations": ["Review, not primary data; aggregates heterogeneous exposure protocols"],
+      "limitations": [
+        "Review, not primary data; aggregates heterogeneous exposure protocols"
+      ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
       "curatorNote": null
@@ -188,7 +915,9 @@
       "studyDesign": "meta_analysis",
       "applicability": "human",
       "calibrationRole": "calibration",
-      "limitations": ["Heterogeneous exposure assessment across studies"],
+      "limitations": [
+        "Heterogeneous exposure assessment across studies"
+      ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
       "curatorNote": null
@@ -202,10 +931,972 @@
       "studyDesign": "experimental_animal",
       "applicability": "animal_model",
       "calibrationRole": "structural_only",
-      "limitations": ["Avian model; extrapolation to mammalian CRY requires caution"],
+      "limitations": [
+        "Avian model; extrapolation to mammalian CRY requires caution"
+      ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
       "curatorNote": null
+    },
+    {
+      "id": "er.vector.blackman1985_calcium_windows",
+      "referenceId": "blackman1985_calcium_windows",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "physics_signature",
+      "studyDesign": "Controlled in-vitro experiment",
+      "applicability": "Chick brain tissue",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "In-vitro avian tissue",
+        "Calcium-efflux endpoint",
+        "Historic protocol"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record BLACKMAN_1985_BACKGROUND_FREQUENCY; draft, needs author review. Record finding: Changing local geomagnetism shifted the ELF frequencies associated with calcium efflux."
+    },
+    {
+      "id": "er.vector.ritz2004",
+      "referenceId": "ritz2004",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "physics_signature",
+      "studyDesign": "Controlled animal orientation experiment",
+      "applicability": "European robins",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Avian navigation endpoint",
+        "No identified human receptor",
+        "No fertility endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record RITZ_2004_VECTOR_ANGLE; draft, needs author review. Record finding: Orientation disruption depended on the relative angle between RF and static background fields."
+    },
+    {
+      "id": "er.vector.usselman2016",
+      "referenceId": "usselman2016",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled cell experiment",
+      "applicability": "Human endothelial cells and a radical-pair chemistry system",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell culture and chemical model",
+        "Endothelial cells",
+        "Not a population dose"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record USSELMAN_2016_ORIENTATION_ROS; draft, needs author review. Record finding: Field orientation changed radical-pair ROS yield and endothelial bioenergetic readouts."
+    },
+    {
+      "id": "er.vector.majewska2025",
+      "referenceId": "majewska2025",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Protein–membrane experiment and molecular simulation",
+      "applicability": "European robin Cry4a and model lipid bilayers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Avian protein",
+        "Model membrane",
+        "No applied exposure or reproductive endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MAJEWSKA_2025_CRY4A_MEMBRANE; draft, needs author review. Record finding: Cry4a associated with lipid bilayers in an ordered manner controlled by membrane physical state."
+    },
+    {
+      "id": "er.vector.chae2019",
+      "referenceId": "chae2019",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "physics_signature",
+      "studyDesign": "Controlled human orientation experiment with wavelength and field-inversion controls",
+      "applicability": "Food-deprived human adults (20 men, 21 women)",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Small sample (n=41)",
+        "No RF applied — receptor substrate, not disruption",
+        "Orientation behaviour rather than a reproductive endpoint",
+        "Significant in men only; sex difference may track glucose or motivation",
+        "Not replicated",
+        "Oct 2019 correction (PLOS ONE 14(10): e0223635) is a misplaced table caption, no data change"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAE_2019_HUMAN_BLUE_LIGHT_ORIENTATION; draft, needs author review. Record finding: Food-associated orientation in starved men tracked the modulated field direction under light below 500 nm, and reversed when the vertical component was inverted; blindfolded, longer-wavelength, antiparallel-current and female groups showed no significant orientation."
+    },
+    {
+      "id": "er.vector.yu2019_btb",
+      "referenceId": "yu2019_btb",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled adult-rat local-exposure experiment with mechanistic rescue",
+      "applicability": "Adult rat testes",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Specific local smartphone protocol",
+        "No human exposure-response calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+    },
+    {
+      "id": "er.vector.baldini2025",
+      "referenceId": "baldini2025",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Human-sperm in-vitro laboratory comparison",
+      "applicability": "Semen samples from 102 healthy males in an IVF laboratory",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "In-vitro semen exposure",
+        "Single laboratory and short duration",
+        "Comparator design does not establish population exposure-response"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record BALDINI_2025_ART_LAB_SPERM; draft, needs author review. Record finding: Reported lower progressive motility in mobile-phone and Wi-Fi-repeater conditions than comparator conditions."
+    },
+    {
+      "id": "er.vector.calis2021",
+      "referenceId": "calis2021",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Prenatal controlled rat experiment",
+      "applicability": "Female rat offspring ovarian histology at postnatal day 42",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Protocol is not measured human FieldState",
+        "Histology rather than adult fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+    },
+    {
+      "id": "er.vector.yousefi2025",
+      "referenceId": "yousefi2025",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Maternal-exposure neonatal-rat experiment",
+      "applicability": "Neonatal Wistar-rat ovaries after maternal phone exposure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Maternal-device protocol",
+        "Neonatal endpoints need longitudinal human translation"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+    },
+    {
+      "id": "er.vector.iolchiev2019",
+      "referenceId": "iolchiev2019",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Observational time-series study",
+      "applicability": "Ten Holstein bulls and repeated semen samples",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Small animal sample",
+        "Observational design",
+        "Management and seasonality may confound"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record IOLCHIEV_2019_GEOMAGNETIC_BULL_SEMEN; draft, needs author review. Record finding: Reported higher geomagnetic-activity periods alongside changes in ejaculate volume, motility, morphology and DNA fragmentation."
+    },
+    {
+      "id": "er.vector.sofrankova2023",
+      "referenceId": "sofrankova2023",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled radiofrequency exposure and tick synganglion qRT-PCR experiment",
+      "applicability": "Adult male and female Ixodes ricinus under stated 900 MHz, 2 or 40 V/m exposure conditions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Adult laboratory tick system",
+        "Transcript rather than fitness endpoint",
+        "Exposure geometry and thermal control matter",
+        "No multigeneration outcome"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia."
+    },
+    {
+      "id": "er.envelope.zandieh2025",
+      "referenceId": "zandieh2025",
+      "claimId": "claim.envelope.frequency-dependent-response",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cell experiment with dynamical model",
+      "applicability": "Cancer cell lines",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cancer cell systems",
+        "Includes high millitesla fields",
+        "No reproductive endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions."
+    },
+    {
+      "id": "er.tribo.shafik1992",
+      "referenceId": "shafik1992",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "physics_signature",
+      "studyDesign": "Human textile-interface measurement study",
+      "applicability": "Twenty-one healthy men wearing polyester, blend or cotton underpants",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "V/cm² is not a standard potential, field or charge-density unit",
+        "Probe geometry/reference incompletely reported",
+        "No reproductive endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING; draft, needs author review. Record finding: Reported readings ranked 100% polyester above a 50:50 polyester/cotton blend; cotton had no detected reading in the stated setup."
+    },
+    {
+      "id": "er.tribo.shafik1992_sling",
+      "referenceId": "shafik1992_sling",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Human longitudinal textile-sling experiment",
+      "applicability": "Fourteen adult men wearing a polyester scrotal sling for 12 months",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Small historical study",
+        "Static and thermoregulatory components co-occurred",
+        "No calibrated Q, V/m, dE/dt or organ transfer"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_POLYESTER_SLING; draft, needs author review. Record finding: Reported reversible azoospermia, seminiferous-tubule changes and static-interface readings; the paper itself proposed electrostatic and thermoregulatory mechanisms."
+    },
+    {
+      "id": "er.tribo.dincmen2016",
+      "referenceId": "dincmen2016",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "physics_signature",
+      "studyDesign": "Controlled textile-material charge generation and dissipation experiment",
+      "applicability": "Untreated and antistatic-treated polyester and nylon fabrics",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Fabric material test",
+        "Specific treatment and climate conditions",
+        "No biological endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record DINCMEN_2016_PET_ANTISTATIC_DECAY; draft, needs author review. Record finding: Untreated polyester retained a large charge for over 2,000 seconds in the stated test; antistatic treatment reduced both magnitude and decay time."
+    },
+    {
+      "id": "er.tribo.england_2023_ticks",
+      "referenceId": "england_2023_ticks",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled arthropod electrostatic-attraction experiment with finite-element modelling",
+      "applicability": "Ixodes ricinus nymphs and host–vegetation geometries",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Ixodes ricinus nymph system",
+        "Attachment rather than population endpoint",
+        "Each host/habitat geometry needs measurement"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally."
+    },
+    {
+      "id": "er.tribo.colin1992_varroa_electrostatic",
+      "referenceId": "colin1992_varroa_electrostatic",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled ectoparasite behavior experiment",
+      "applicability": "Varroa jacobsoni as named in the original study (now generally treated as V. destructor in this Apis mellifera pest context) and honey-bee-range charged lures",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Historical taxonomic name retained with modern interpretation",
+        "Laboratory lure",
+        "Contact behavior is not fitness or resistance"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system."
+    },
+    {
+      "id": "er.tribo.garcia_robledo2025",
+      "referenceId": "garcia_robledo2025",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled mite behavior, sensory-ablation and electrostatic-transport experiment",
+      "applicability": "Tropical hummingbird flower mites and host-like electric-field configurations",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Tropical flower-mite guild",
+        "Laboratory host analogue",
+        "No multigeneration population outcome"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+    },
+    {
+      "id": "er.tribo.morley2018_spider_ballooning",
+      "referenceId": "morley2018_spider_ballooning",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled arthropod behavior and mechanosensory-hair experiment",
+      "applicability": "Ballooning spiders",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Spider behavior system",
+        "Atmospheric field rather than textile interface",
+        "Behavior is not a population-growth estimate"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments."
+    },
+    {
+      "id": "er.efield.mallinson2025_electric_pollution",
+      "referenceId": "mallinson2025_electric_pollution",
+      "claimId": "claim.efield.polarity-dependent-response",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Paired field experiment with anthropogenic AC/DC electric-field treatments",
+      "applicability": "Honeybee floral landing behavior in urban meadows",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Single species/context",
+        "Landing behavior endpoint",
+        "Do not merge AC/DC E-field with RF or magnetic-field hypotheses"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect."
+    },
+    {
+      "id": "er.efield.garcia_robledo2025",
+      "referenceId": "garcia_robledo2025",
+      "claimId": "claim.efield.polarity-dependent-response",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled mite behavior, sensory-ablation and electrostatic-transport experiment",
+      "applicability": "Tropical hummingbird flower mites and host-like electric-field configurations",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Tropical flower-mite guild",
+        "Laboratory host analogue",
+        "No multigeneration population outcome"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+    },
+    {
+      "id": "er.vmem.zandieh2025",
+      "referenceId": "zandieh2025",
+      "claimId": "claim.vmem.membrane-potential-growth-gate",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cell experiment with dynamical model",
+      "applicability": "Cancer cell lines",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cancer cell systems",
+        "Includes high millitesla fields",
+        "No reproductive endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions."
+    },
+    {
+      "id": "er.vmem.ahmadi2016",
+      "referenceId": "ahmadi2016",
+      "claimId": "claim.vmem.membrane-potential-growth-gate",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled developmental animal experiment",
+      "applicability": "Rat ovaries exposed during intrauterine and postnatal development",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Histological endpoints",
+        "No human AMH/AFC or fertility calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+    },
+    {
+      "id": "er.development.ahmadi2016",
+      "referenceId": "ahmadi2016",
+      "claimId": "claim.development.exposure-window-memory",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled developmental animal experiment",
+      "applicability": "Rat ovaries exposed during intrauterine and postnatal development",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Histological endpoints",
+        "No human AMH/AFC or fertility calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+    },
+    {
+      "id": "er.development.calis2021",
+      "referenceId": "calis2021",
+      "claimId": "claim.development.exposure-window-memory",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Prenatal controlled rat experiment",
+      "applicability": "Female rat offspring ovarian histology at postnatal day 42",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Protocol is not measured human FieldState",
+        "Histology rather than adult fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+    },
+    {
+      "id": "er.development.yousefi2025",
+      "referenceId": "yousefi2025",
+      "claimId": "claim.development.exposure-window-memory",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Maternal-exposure neonatal-rat experiment",
+      "applicability": "Neonatal Wistar-rat ovaries after maternal phone exposure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Maternal-device protocol",
+        "Neonatal endpoints need longitudinal human translation"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+    },
+    {
+      "id": "er.hpg.cao2015",
+      "referenceId": "cao2015",
+      "claimId": "claim.hpg.circadian-steroidogenic-gate",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled animal experiment",
+      "applicability": "Rats",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Single RF protocol",
+        "Hormone and antioxidant endpoints"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol."
+    },
+    {
+      "id": "er.hpg.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.hpg.circadian-steroidogenic-gate",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cell-specific genetic animal experiment",
+      "applicability": "Mouse ovarian steroidogenic cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Genetic mouse model",
+        "No EMF exposure",
+        "Implantation rather than population fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+    },
+    {
+      "id": "er.bbb.lochhead2010",
+      "referenceId": "lochhead2010",
+      "claimId": "claim.bbb.redox-tight-junction",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled animal barrier experiment",
+      "applicability": "Rat blood-brain barrier",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Non-EMF upstream manipulation",
+        "BBB rather than reproductive barrier",
+        "Animal model"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LOCHHEAD_2010_ROS_BBB; draft, needs author review. Record finding: Oxidative stress increased BBB permeability and altered occludin localization; antioxidant treatment attenuated the change."
+    },
+    {
+      "id": "er.btb.yu2019_btb",
+      "referenceId": "yu2019_btb",
+      "claimId": "claim.btb.redox-junction-integrity",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled adult-rat local-exposure experiment with mechanistic rescue",
+      "applicability": "Adult rat testes",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Specific local smartphone protocol",
+        "No human exposure-response calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+    },
+    {
+      "id": "er.btb.chakraborty2020",
+      "referenceId": "chakraborty2020",
+      "claimId": "claim.btb.redox-junction-integrity",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled animal mechanism experiment",
+      "applicability": "Rat testis and blood-testis barrier",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Non-EMF upstream manipulation",
+        "Animal model",
+        "No human fecundability mapping"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAKRABORTY_2020_OXIDATIVE_BTB; draft, needs author review. Record finding: Oxidative stress accompanied lower BTB junction proteins and adverse sperm endpoints in the model."
+    },
+    {
+      "id": "er.germline.yu2019_btb",
+      "referenceId": "yu2019_btb",
+      "claimId": "claim.germline.persistent-reserve-loss",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled adult-rat local-exposure experiment with mechanistic rescue",
+      "applicability": "Adult rat testes",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Specific local smartphone protocol",
+        "No human exposure-response calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+    },
+    {
+      "id": "er.steroidogenesis.meena2014",
+      "referenceId": "meena2014",
+      "claimId": "claim.steroidogenesis.leydig-output-decline",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled animal experiment with melatonin intervention",
+      "applicability": "Wistar rat testes and semen endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Protocol-specific intervention",
+        "No human fertility endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MEENA_2014_MELATONIN_RESCUE; draft, needs author review. Record finding: Reported redox, testosterone, sperm and DNA-fragmentation changes attenuated in the melatonin arm."
+    },
+    {
+      "id": "er.steroidogenesis.cordelli2024",
+      "referenceId": "cordelli2024",
+      "claimId": "claim.steroidogenesis.leydig-output-decline",
+      "relation": "contextualizes",
+      "directness": "systematic_review",
+      "studyDesign": "WHO-commissioned systematic review and meta-analysis",
+      "applicability": "Non-human mammals and human sperm in vitro",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Mostly non-human mammals and human sperm in vitro",
+        "Exposure relevance and thermal conditions vary",
+        "Pregnancy-rate analysis was later corrected and is sensitive to a high-SAR study"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CORDELLI_2024_MALE_FERTILITY_REVIEW; draft, needs author review. Record finding: Reported lower pregnancy rate (moderate certainty) and lower sperm count (low certainty), no litter-size effect (moderate certainty), and very-low certainty for several other pooled endpoints."
+    },
+    {
+      "id": "er.steroidogenesis.naderi2026",
+      "referenceId": "naderi2026",
+      "claimId": "claim.steroidogenesis.leydig-output-decline",
+      "relation": "contextualizes",
+      "directness": "systematic_review",
+      "studyDesign": "Systematic review of rodent experiments",
+      "applicability": "Rat and mouse spermatogenesis/sperm studies",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Rodent evidence only",
+        "Heterogeneous exposure/dosimetry reporting",
+        "No uniform causal interpretation or human TFR coefficient"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record NADERI_2026_RODENT_SYSTEMATIC_REVIEW; draft, needs author review. Record finding: Identified 88 eligible rodent studies across sperm, oxidative-stress, DNA, apoptosis, histopathology and hormone endpoints."
+    },
+    {
+      "id": "er.ovarian.ahmadi2016",
+      "referenceId": "ahmadi2016",
+      "claimId": "claim.ovarian.developmental-reserve-loss",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled developmental animal experiment",
+      "applicability": "Rat ovaries exposed during intrauterine and postnatal development",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Histological endpoints",
+        "No human AMH/AFC or fertility calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+    },
+    {
+      "id": "er.ovarian.calis2021",
+      "referenceId": "calis2021",
+      "claimId": "claim.ovarian.developmental-reserve-loss",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Prenatal controlled rat experiment",
+      "applicability": "Female rat offspring ovarian histology at postnatal day 42",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Protocol is not measured human FieldState",
+        "Histology rather than adult fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+    },
+    {
+      "id": "er.ovarian.yousefi2025",
+      "referenceId": "yousefi2025",
+      "claimId": "claim.ovarian.developmental-reserve-loss",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Maternal-exposure neonatal-rat experiment",
+      "applicability": "Neonatal Wistar-rat ovaries after maternal phone exposure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Maternal-device protocol",
+        "Neonatal endpoints need longitudinal human translation"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+    },
+    {
+      "id": "er.oocyte.cao2015",
+      "referenceId": "cao2015",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled animal experiment",
+      "applicability": "Rats",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Single RF protocol",
+        "Hormone and antioxidant endpoints"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol."
+    },
+    {
+      "id": "er.oocyte.ahmadi2016",
+      "referenceId": "ahmadi2016",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Controlled developmental animal experiment",
+      "applicability": "Rat ovaries exposed during intrauterine and postnatal development",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Histological endpoints",
+        "No human AMH/AFC or fertility calibration"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+    },
+    {
+      "id": "er.oocyte.he2016",
+      "referenceId": "he2016",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Mouse oocyte and IVF experiment",
+      "applicability": "Murine oocytes and embryo-development endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Mouse oocytes",
+        "Manipulation is not EMF",
+        "No population fertility endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures."
+    },
+    {
+      "id": "er.oocyte.calis2021",
+      "referenceId": "calis2021",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Prenatal controlled rat experiment",
+      "applicability": "Female rat offspring ovarian histology at postnatal day 42",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Protocol is not measured human FieldState",
+        "Histology rather than adult fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+    },
+    {
+      "id": "er.oocyte.yousefi2025",
+      "referenceId": "yousefi2025",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "relation": "supports",
+      "directness": "reproductive_endpoint",
+      "studyDesign": "Maternal-exposure neonatal-rat experiment",
+      "applicability": "Neonatal Wistar-rat ovaries after maternal phone exposure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Maternal-device protocol",
+        "Neonatal endpoints need longitudinal human translation"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+    },
+    {
+      "id": "er.ovulation.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.ovulation.clock-gated-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cell-specific genetic animal experiment",
+      "applicability": "Mouse ovarian steroidogenic cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Genetic mouse model",
+        "No EMF exposure",
+        "Implantation rather than population fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+    },
+    {
+      "id": "er.implantation.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.implantation.luteal-support-dependency",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cell-specific genetic animal experiment",
+      "applicability": "Mouse ovarian steroidogenic cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Genetic mouse model",
+        "No EMF exposure",
+        "Implantation rather than population fertility"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+    },
+    {
+      "id": "er.implantation.he2016",
+      "referenceId": "he2016",
+      "claimId": "claim.implantation.luteal-support-dependency",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Mouse oocyte and IVF experiment",
+      "applicability": "Murine oocytes and embryo-development endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Mouse oocytes",
+        "Manipulation is not EMF",
+        "No population fertility endpoint"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures."
+    },
+    {
+      "id": "er.ecology.england_2023_ticks",
+      "referenceId": "england_2023_ticks",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled arthropod electrostatic-attraction experiment with finite-element modelling",
+      "applicability": "Ixodes ricinus nymphs and host–vegetation geometries",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Ixodes ricinus nymph system",
+        "Attachment rather than population endpoint",
+        "Each host/habitat geometry needs measurement"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally."
+    },
+    {
+      "id": "er.ecology.colin1992_varroa_electrostatic",
+      "referenceId": "colin1992_varroa_electrostatic",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled ectoparasite behavior experiment",
+      "applicability": "Varroa jacobsoni as named in the original study (now generally treated as V. destructor in this Apis mellifera pest context) and honey-bee-range charged lures",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Historical taxonomic name retained with modern interpretation",
+        "Laboratory lure",
+        "Contact behavior is not fitness or resistance"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system."
+    },
+    {
+      "id": "er.ecology.mallinson2025_electric_pollution",
+      "referenceId": "mallinson2025_electric_pollution",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Paired field experiment with anthropogenic AC/DC electric-field treatments",
+      "applicability": "Honeybee floral landing behavior in urban meadows",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Single species/context",
+        "Landing behavior endpoint",
+        "Do not merge AC/DC E-field with RF or magnetic-field hypotheses"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect."
+    },
+    {
+      "id": "er.ecology.garcia_robledo2025",
+      "referenceId": "garcia_robledo2025",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled mite behavior, sensory-ablation and electrostatic-transport experiment",
+      "applicability": "Tropical hummingbird flower mites and host-like electric-field configurations",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Tropical flower-mite guild",
+        "Laboratory host analogue",
+        "No multigeneration population outcome"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+    },
+    {
+      "id": "er.ecology.sofrankova2023",
+      "referenceId": "sofrankova2023",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled radiofrequency exposure and tick synganglion qRT-PCR experiment",
+      "applicability": "Adult male and female Ixodes ricinus under stated 900 MHz, 2 or 40 V/m exposure conditions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Adult laboratory tick system",
+        "Transcript rather than fitness endpoint",
+        "Exposure geometry and thermal control matter",
+        "No multigeneration outcome"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia."
+    },
+    {
+      "id": "er.ecology.morley2018_spider_ballooning",
+      "referenceId": "morley2018_spider_ballooning",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Controlled arthropod behavior and mechanosensory-hair experiment",
+      "applicability": "Ballooning spiders",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Spider behavior system",
+        "Atmospheric field rather than textile interface",
+        "Behavior is not a population-growth estimate"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments."
+    },
+    {
+      "id": "er.asfr.nations2024",
+      "referenceId": "nations2024",
+      "claimId": "claim.asfr.cohort-signature",
+      "relation": "contextualizes",
+      "directness": "population_descriptive",
+      "studyDesign": "Versioned reproducible descriptive cohort-proxy analysis",
+      "applicability": "Country-level WPP ASFR and World Bank/ITU mobile-subscription series",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Ecological country-level analysis",
+        "Versioned scenario weights are not calibrated sensitivity estimates",
+        "Subscriptions are not an EMF dose",
+        "Development, policy, tempo and demand covary with adoption"
+      ],
+      "curatorId": "berm-claims-agent",
+      "curatedAt": "2026-09-02",
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy."
     }
   ],
   "epistemic_assessments": [
@@ -216,7 +1907,9 @@
       "level": "M",
       "compatibility": "current",
       "origin": "derived",
-      "basis": ["er.vgcc.pall2013"],
+      "basis": [
+        "er.vgcc.pall2013"
+      ],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
       "note": "Multiple in vitro confirmations; human in vivo dose-response not yet demonstrated"
@@ -228,7 +1921,9 @@
       "level": "M",
       "compatibility": "current",
       "origin": "derived",
-      "basis": ["er.cry.ritz2004"],
+      "basis": [
+        "er.cry.ritz2004"
+      ],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
       "note": "Strong mechanistic basis in avian systems; mammalian CRY1/2 radical-pair evidence growing"
@@ -252,7 +1947,9 @@
       "level": "E",
       "compatibility": "current",
       "origin": "derived",
-      "basis": ["er.sperm.adams2014"],
+      "basis": [
+        "er.sperm.adams2014"
+      ],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
       "note": "Repeated finding across meta-analyses; dose-response in animal models"
@@ -292,20 +1989,354 @@
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
       "note": "Demographic decomposition is methodological; the biological contribution share is the open question"
+    },
+    {
+      "id": "ea.vector.v1",
+      "claimId": "claim.vector.background-dependent-coupling",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.vector.blackman1985_calcium_windows",
+        "er.vector.ritz2004",
+        "er.vector.usselman2016",
+        "er.vector.majewska2025",
+        "er.vector.chae2019",
+        "er.vector.yu2019_btb",
+        "er.vector.baldini2025",
+        "er.vector.calis2021",
+        "er.vector.yousefi2025",
+        "er.vector.iolchiev2019",
+        "er.vector.sofrankova2023"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) BLACKMAN_1985_BACKGROUND_FREQUENCY, RITZ_2004_VECTOR_ANGLE, USSELMAN_2016_ORIENTATION_ROS, MAJEWSKA_2025_CRY4A_MEMBRANE, CHAE_2019_HUMAN_BLUE_LIGHT_ORIENTATION, YU_2020_LOCAL_4G_BTB, BALDINI_2025_ART_LAB_SPERM, CALIS_2021_PRENATAL_OVARIAN_RESERVE, YOUSEFI_2025_NEONATAL_OOGENESIS, IOLCHIEV_2019_GEOMAGNETIC_BULL_SEMEN, SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review."
+    },
+    {
+      "id": "ea.envelope.v1",
+      "claimId": "claim.envelope.frequency-dependent-response",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.envelope.zandieh2025"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) ZANDIEH_2025_MITO_RESONANCE; draft, needs author review."
+    },
+    {
+      "id": "ea.tribo.v1",
+      "claimId": "claim.tribo.material-dependent-interface",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.tribo.shafik1992",
+        "er.tribo.shafik1992_sling",
+        "er.tribo.dincmen2016",
+        "er.tribo.england_2023_ticks",
+        "er.tribo.colin1992_varroa_electrostatic",
+        "er.tribo.garcia_robledo2025",
+        "er.tribo.morley2018_spider_ballooning"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING, SHAFIK_1992_HUMAN_POLYESTER_SLING, DINCMEN_2016_PET_ANTISTATIC_DECAY, ENGLAND_2023_TICK_STATIC_ATTACHMENT, COLIN_1992_VARROA_ELECTRICAL_CHARGES, GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION, MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review."
+    },
+    {
+      "id": "ea.efield.v1",
+      "claimId": "claim.efield.polarity-dependent-response",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.efield.mallinson2025_electric_pollution",
+        "er.efield.garcia_robledo2025"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) MALLINSON_2025_HONEYBEE_EFIELD_FORAGING, GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review."
+    },
+    {
+      "id": "ea.vmem.v1",
+      "claimId": "claim.vmem.membrane-potential-growth-gate",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.vmem.zandieh2025",
+        "er.vmem.ahmadi2016"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) ZANDIEH_2025_MITO_RESONANCE, AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review."
+    },
+    {
+      "id": "ea.development.v1",
+      "claimId": "claim.development.exposure-window-memory",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.development.ahmadi2016",
+        "er.development.calis2021",
+        "er.development.yousefi2025"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) AHMADI_2016_OVARIAN_FOLLICLES, CALIS_2021_PRENATAL_OVARIAN_RESERVE, YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review."
+    },
+    {
+      "id": "ea.hpg.v1",
+      "claimId": "claim.hpg.circadian-steroidogenic-gate",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.hpg.cao2015",
+        "er.hpg.liu2014"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) CAO_2015_RF_CIRCADIAN_REDOX, LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review."
+    },
+    {
+      "id": "ea.bbb.v1",
+      "claimId": "claim.bbb.redox-tight-junction",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.bbb.lochhead2010"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) LOCHHEAD_2010_ROS_BBB; draft, needs author review."
+    },
+    {
+      "id": "ea.btb.v1",
+      "claimId": "claim.btb.redox-junction-integrity",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.btb.yu2019_btb",
+        "er.btb.chakraborty2020"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) YU_2020_LOCAL_4G_BTB, CHAKRABORTY_2020_OXIDATIVE_BTB; draft, needs author review."
+    },
+    {
+      "id": "ea.germline.v1",
+      "claimId": "claim.germline.persistent-reserve-loss",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.germline.yu2019_btb"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) YU_2020_LOCAL_4G_BTB; draft, needs author review."
+    },
+    {
+      "id": "ea.steroidogenesis.v1",
+      "claimId": "claim.steroidogenesis.leydig-output-decline",
+      "revision": 1,
+      "level": "E",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.steroidogenesis.meena2014",
+        "er.steroidogenesis.cordelli2024",
+        "er.steroidogenesis.naderi2026"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) MEENA_2014_MELATONIN_RESCUE, CORDELLI_2024_MALE_FERTILITY_REVIEW, NADERI_2026_RODENT_SYSTEMATIC_REVIEW; draft, needs author review."
+    },
+    {
+      "id": "ea.ovarian.v1",
+      "claimId": "claim.ovarian.developmental-reserve-loss",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.ovarian.ahmadi2016",
+        "er.ovarian.calis2021",
+        "er.ovarian.yousefi2025"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) AHMADI_2016_OVARIAN_FOLLICLES, CALIS_2021_PRENATAL_OVARIAN_RESERVE, YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review."
+    },
+    {
+      "id": "ea.oocyte.v1",
+      "claimId": "claim.oocyte.mitochondrial-redox-quality",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.oocyte.cao2015",
+        "er.oocyte.ahmadi2016",
+        "er.oocyte.he2016",
+        "er.oocyte.calis2021",
+        "er.oocyte.yousefi2025"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) CAO_2015_RF_CIRCADIAN_REDOX, AHMADI_2016_OVARIAN_FOLLICLES, HE_2016_OOCYTE_MELATONIN, CALIS_2021_PRENATAL_OVARIAN_RESERVE, YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review."
+    },
+    {
+      "id": "ea.ovulation.v1",
+      "claimId": "claim.ovulation.clock-gated-timing",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.ovulation.liu2014"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review."
+    },
+    {
+      "id": "ea.implantation.v1",
+      "claimId": "claim.implantation.luteal-support-dependency",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.implantation.liu2014",
+        "er.implantation.he2016"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) LIU_2014_OVARIAN_CLOCK_IMPLANTATION, HE_2016_OOCYTE_MELATONIN; draft, needs author review."
+    },
+    {
+      "id": "ea.ecology.v1",
+      "claimId": "claim.ecology.field-mediated-encounter",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.ecology.england_2023_ticks",
+        "er.ecology.colin1992_varroa_electrostatic",
+        "er.ecology.mallinson2025_electric_pollution",
+        "er.ecology.garcia_robledo2025",
+        "er.ecology.sofrankova2023",
+        "er.ecology.morley2018_spider_ballooning"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) ENGLAND_2023_TICK_STATIC_ATTACHMENT, COLIN_1992_VARROA_ELECTRICAL_CHARGES, MALLINSON_2025_HONEYBEE_EFIELD_FORAGING, GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION, SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE, MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review."
+    },
+    {
+      "id": "ea.asfr.v1",
+      "claimId": "claim.asfr.cohort-signature",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.asfr.nations2024"
+      ],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from bounded evidence record(s) WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review."
+    },
+    {
+      "id": "ea.civilization.tfr-multiplicative-decomposition.v1",
+      "claimId": "claim.civilization.tfr-multiplicative-decomposition",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.civilization.biocap-tfr-input.v1",
+      "claimId": "claim.civilization.biocap-tfr-input",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.civilization.pairing-multiplicative-decline.v1",
+      "claimId": "claim.civilization.pairing-multiplicative-decline",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.civilization.demand-capacity-separation.v1",
+      "claimId": "claim.civilization.demand-capacity-separation",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "berm-claims-agent",
+      "assessedAt": "2026-09-02",
+      "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
     }
   ],
   "routes": [
     {
       "id": "route.vgcc-sperm-fecundability",
-      "name": { "en": "VGCC → Sperm → Fecundability", "fi": "VGCC → Siittiöt → Hedelmällisyys" },
+      "name": {
+        "en": "VGCC → Sperm → Fecundability",
+        "fi": "VGCC → Siittiöt → Hedelmällisyys"
+      },
       "description": {
         "en": "Direct ROS-mediated damage pathway: FieldState activates VGCCs, elevating intracellular Ca²⁺, driving mitochondrial ROS production that directly damages sperm membranes, DNA integrity, and motility.",
         "fi": "Suora ROS-välitteinen vaurioreitti: FieldState aktivoi VGCC:t, nostaen solunsisäistä Ca²⁺:a, tuottaen mitokondriaaalista ROS:ia joka suoraan vaurioittaa siittiöiden kalvoja, DNA-eheyttä ja liikkuvuutta."
       },
       "targetClaim": "claim.couple.fecundability-convergence",
-      "routeClaims": ["claim.proxy.lindgren-selection", "claim.vgcc.ros-ca2-coupling", "claim.sperm.multi-parameter-decline"],
-      "routeEvidence": ["er.vgcc.pall2013", "er.sperm.adams2014"],
-      "sharedAssumptions": ["VGCC activation is a primary EMF transduction mechanism"],
+      "routeClaims": [
+        "claim.proxy.lindgren-selection",
+        "claim.vgcc.ros-ca2-coupling",
+        "claim.sperm.multi-parameter-decline"
+      ],
+      "routeEvidence": [
+        "er.vgcc.pall2013",
+        "er.sperm.adams2014"
+      ],
+      "sharedAssumptions": [
+        "VGCC activation is a primary EMF transduction mechanism"
+      ],
       "sharedDatasets": [],
       "independenceGroup": "direct-ros",
       "independenceVerified": true,
@@ -316,15 +2347,25 @@
     },
     {
       "id": "route.rpm-melatonin-clock",
-      "name": { "en": "RPM → Melatonin → Clock Disruption", "fi": "RPM → Melatoniini → Kellohäiriö" },
+      "name": {
+        "en": "RPM → Melatonin → Clock Disruption",
+        "fi": "RPM → Melatoniini → Kellohäiriö"
+      },
       "description": {
         "en": "Circadian disruption pathway: magnetic field vector modulates cryptochrome radical pairs, altering clock gene expression, suppressing pineal melatonin, disrupting HPG axis timing, and impairing ovulatory synchronization.",
         "fi": "Sirkadiaaninen häiriöreitti: magneettikentän vektori moduloi kryptokromin radikaalipareja, muuttaen kellogeenien ilmentymistä, supressoiden käpylisäkkeen melatoniinia, häiriten HPG-akselin ajoitusta ja heikentäen ovulaation synkronointia."
       },
       "targetClaim": "claim.couple.fecundability-convergence",
-      "routeClaims": ["claim.rpm.cry-magnetic-sensitivity", "claim.melatonin.circadian-redox-mediator"],
-      "routeEvidence": ["er.cry.ritz2004"],
-      "sharedAssumptions": ["Cryptochrome radical-pair mechanism is operative in mammals"],
+      "routeClaims": [
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "routeEvidence": [
+        "er.cry.ritz2004"
+      ],
+      "sharedAssumptions": [
+        "Cryptochrome radical-pair mechanism is operative in mammals"
+      ],
       "sharedDatasets": [],
       "independenceGroup": "circadian",
       "independenceVerified": true,
@@ -335,16 +2376,27 @@
     },
     {
       "id": "route.tfr-decomposition",
-      "name": { "en": "Biological → Demographic Decomposition", "fi": "Biologinen → Demografinen dekompositio" },
+      "name": {
+        "en": "Biological → Demographic Decomposition",
+        "fi": "Biologinen → Demografinen dekompositio"
+      },
       "description": {
         "en": "Top-down route: TFR decline is decomposed into biological (fecundability) and behavioral (demand/tempo/ART) components. The biological share is estimated by holding behavioral factors constant.",
         "fi": "Ylhäältä alas -reitti: TFR:n lasku puretaan biologisiin (hedelmällisyys) ja käyttäytymis- (kysyntä/tempo/ART) komponentteihin. Biologinen osuus arvioidaan pitämällä käyttäytymistekijät vakioina."
       },
       "targetClaim": "claim.tfr.multi-input-decomposition",
-      "routeClaims": ["claim.couple.fecundability-convergence", "claim.tfr.multi-input-decomposition"],
+      "routeClaims": [
+        "claim.couple.fecundability-convergence",
+        "claim.tfr.multi-input-decomposition"
+      ],
       "routeEvidence": [],
-      "sharedAssumptions": ["ASFR decomposition is valid", "Behavioral factors can be held approximately constant across comparison cohorts"],
-      "sharedDatasets": ["Nordic register data"],
+      "sharedAssumptions": [
+        "ASFR decomposition is valid",
+        "Behavioral factors can be held approximately constant across comparison cohorts"
+      ],
+      "sharedDatasets": [
+        "Nordic register data"
+      ],
       "independenceGroup": "demographic",
       "independenceVerified": false,
       "independenceNote": null,

@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { DerivedPrediction } from "@/components/DerivedPrediction";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { ClaimRef } from "@/components/ClaimRef";
 import { SpermJourneyVisualization } from "@/components/SpermJourneyVisualization";
 import { pickCopy } from "@/lib/i18n";
 
@@ -406,7 +407,7 @@ export default async function ReproductiveNavigationPage({ params }: { params: P
       {/* Section 1: Nine vulnerable steps */}
       <section className="mt-12">
         <h2 className="text-2xl font-semibold mb-3">{d.s1Title}</h2>
-        <p className="text-foreground-muted mb-8">{d.s1Lead}</p>
+        <p className="text-foreground-muted mb-8"><ClaimRef claimId="claim.sperm.multi-parameter-decline">{d.s1Lead}</ClaimRef></p>
 
         <SpermJourneyVisualization />
 

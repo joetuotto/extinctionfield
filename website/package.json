@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run references:index && npm run references:validate && npm run registry:validate && npm run typecheck && npm run lint:strict",
+    "prebuild": "npm run references:index && npm run references:validate && npm run registry:validate && node scripts/build-anchor-index.mjs && npm run typecheck && npm run lint:strict",
     "registry:validate": "node scripts/validate-registry.mjs",
     "typecheck": "tsc --noEmit",
     "lint:strict": "eslint --max-warnings=0",

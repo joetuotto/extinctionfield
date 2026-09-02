@@ -6,6 +6,7 @@ import { BermIcon } from "@/components/BermIcon";
 import { BehavioralSuppression } from "@/components/BehavioralSuppression";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { ClaimRef } from "@/components/ClaimRef";
 import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
@@ -895,7 +896,7 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
         <span id="melatonin" /><span id="ovarian" /><span id="fertility" />
         <h2 className="editorial-section-heading mb-3">{d.melatoninBridge.title}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
-          <p className="editorial-rail text-[0.95rem] text-foreground"><InlineReferenceText text={d.melatoninBridge.paragraphs[0]} locale={locale} /></p>
+          <p className="editorial-rail text-[0.95rem] text-foreground"><ClaimRef claimId="claim.melatonin.circadian-redox-mediator"><InlineReferenceText text={d.melatoninBridge.paragraphs[0]} locale={locale} /></ClaimRef></p>
           {d.melatoninBridge.paragraphs.slice(1).map((p, i) => <p key={i}><InlineReferenceText text={p} locale={locale} /></p>)}
         </div>
 

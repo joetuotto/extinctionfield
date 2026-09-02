@@ -1,10 +1,65 @@
 {
-  "generatedAt": "2026-09-01T08:04:57.602Z",
+  "generatedAt": "2026-09-02T17:35:32.863Z",
   "anchors": [
     {
-      "claimId": "claim.vgcc.geometric-coupling-role",
-      "file": "lib/claims/types.ts",
-      "line": 107
+      "claimId": "claim.civilization.biocap-tfr-input",
+      "file": "app/[locale]/civilization/patokratia/page.tsx",
+      "line": 559
+    },
+    {
+      "claimId": "claim.civilization.demand-capacity-separation",
+      "file": "app/[locale]/civilization/patopolis/page.tsx",
+      "line": 2779
+    },
+    {
+      "claimId": "claim.civilization.pairing-multiplicative-decline",
+      "file": "app/[locale]/civilization/patopolis/page.tsx",
+      "line": 2664
+    },
+    {
+      "claimId": "claim.civilization.tfr-multiplicative-decomposition",
+      "file": "app/[locale]/civilization/patopolis/page.tsx",
+      "line": 2705
+    },
+    {
+      "claimId": "claim.couple.fecundability-convergence",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 4879
+    },
+    {
+      "claimId": "claim.melatonin.circadian-redox-mediator",
+      "file": "app/[locale]/evidence/circadian/page.tsx",
+      "line": 899
+    },
+    {
+      "claimId": "claim.proxy.lindgren-selection",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 4575
+    },
+    {
+      "claimId": "claim.proxy.lindgren-selection",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5139
+    },
+    {
+      "claimId": "claim.rpm.cry-magnetic-sensitivity",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5056
+    },
+    {
+      "claimId": "claim.sperm.multi-parameter-decline",
+      "file": "app/[locale]/evidence/reproductive-navigation/page.tsx",
+      "line": 410
+    },
+    {
+      "claimId": "claim.tfr.multi-input-decomposition",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 4866
+    },
+    {
+      "claimId": "claim.vgcc.ros-ca2-coupling",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5052
     }
   ]
 }
