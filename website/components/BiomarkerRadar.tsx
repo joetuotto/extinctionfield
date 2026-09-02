@@ -69,7 +69,6 @@ export function BiomarkerRadar({ title, biomarkers }: Props) {
 
         {biomarkers.map((b, i) => {
           const angle = i * step;
-          const outer = polarToCart(angle, R + 4);
           const p = polarToCart(angle, R);
           const labelR = R + (b.symbol.length > 3 ? 24 : 20);
           const lp = polarToCart(angle, labelR);

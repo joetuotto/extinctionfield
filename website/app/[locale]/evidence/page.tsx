@@ -1021,7 +1021,7 @@ const COPY = {
     horm_neuro_title: "神経内分泌：都市-郊外コルチゾール乖離",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
-    sec_trends_title: "バイオマーカーの長期トレンド", sec_trends_intro: "", sec_trends: [] as any[],
+    sec_trends_title: "バイオマーカーの長期トレンド", sec_trends_intro: "", sec_trends: [] as never[],
   },
   fr: {
     title: "Registre des preuves",
@@ -1316,7 +1316,7 @@ const COPY = {
     horm_neuro_title: "Neuroendocrinien : divergence cortisol urbain-suburbain",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
-    sec_trends_title: "Tendances séculaires des biomarqueurs", sec_trends_intro: "", sec_trends: [] as any[],
+    sec_trends_title: "Tendances séculaires des biomarqueurs", sec_trends_intro: "", sec_trends: [] as never[],
   },
   ko: {
     title: "근거 등록부",
@@ -1612,7 +1612,7 @@ const COPY = {
     horm_neuro_title: "신경내분비: 도시-교외 코르티솔 차이",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
-    sec_trends_title: "바이오마커 장기 추세", sec_trends_intro: "", sec_trends: [] as any[],
+    sec_trends_title: "바이오마커 장기 추세", sec_trends_intro: "", sec_trends: [] as never[],
   },
 } as const;
 
@@ -3223,7 +3223,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           </div>
           <p className="text-foreground-muted leading-relaxed mb-6">{d.sec_trends_intro}</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {(d.sec_trends as any[]).map((b: any) => (
+            {d.sec_trends.map((b) => (
               <div key={b.symbol} className="rounded-lg border border-card-border bg-card-bg p-4 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-bold font-mono">{b.symbol}</span>

@@ -60,10 +60,6 @@ function yPos(v: number) {
 }
 
 export function BiocapTrajectory({ chartTitle, xLabel, yLabel, amishLabel, nowLabel, forecastLabel }: Props) {
-  const biocapPath = data
-    .map((d, i) => `${i === 0 ? "M" : "L"}${xPos(d.year).toFixed(1)},${yPos(d.biocap).toFixed(1)}`)
-    .join(" ");
-
   const nowIdx = data.findIndex((d) => d.year >= 2025);
   const historicalPath = data
     .slice(0, nowIdx + 1)
@@ -249,12 +245,12 @@ export function BiomarkerTrajectoryLines({ chartTitle, xLabel, yLabel, markers }
           const color = BIOMARKER_COLORS[key] || "#888";
           const path = data
             .map((d, i) => {
-              const val = (d as Record<string, number>)[key] ?? 1;
+              const val = (d as unknown as Record<string, number>)[key] ?? 1;
               return `${i === 0 ? "M" : "L"}${xPos(d.year).toFixed(1)},${yPos(val).toFixed(1)}`;
             })
             .join(" ");
           const lastD = data[data.length - 1];
-          const lastVal = (lastD as Record<string, number>)[key] ?? 1;
+          const lastVal = (lastD as unknown as Record<string, number>)[key] ?? 1;
           return (
             <g key={key}>
               <path d={path} fill="none" stroke={color} strokeWidth={1.5} />

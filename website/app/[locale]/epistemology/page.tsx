@@ -600,6 +600,10 @@ const COPY = {
     evolutionLabel: "進化論",
     beforeLabel: "従来",
     afterLabel: "現在",
+    zapffeTitle: "", zapffeLead: "", zapffeItems: [] as never[], zapffeConclusion: "",
+    paradigmTitle: "", paradigmLead: "", paradigmItems: [] as never[], paradigmConclusion: "",
+    contingencyTitle: "", contingencyLead: "", contingencyItems: [] as never[], contingencyConclusion: "",
+    predictionsTitle: "", predictionItems: [] as never[],
   },
 
   fr: {
@@ -773,6 +777,10 @@ const COPY = {
     evolutionLabel: "Évolution",
     beforeLabel: "Avant",
     afterLabel: "Après",
+    zapffeTitle: "", zapffeLead: "", zapffeItems: [] as never[], zapffeConclusion: "",
+    paradigmTitle: "", paradigmLead: "", paradigmItems: [] as never[], paradigmConclusion: "",
+    contingencyTitle: "", contingencyLead: "", contingencyItems: [] as never[], contingencyConclusion: "",
+    predictionsTitle: "", predictionItems: [] as never[],
   },
 
   ko: {
@@ -946,6 +954,10 @@ const COPY = {
     evolutionLabel: "진화론",
     beforeLabel: "이전",
     afterLabel: "이후",
+    zapffeTitle: "", zapffeLead: "", zapffeItems: [] as never[], zapffeConclusion: "",
+    paradigmTitle: "", paradigmLead: "", paradigmItems: [] as never[], paradigmConclusion: "",
+    contingencyTitle: "", contingencyLead: "", contingencyItems: [] as never[], contingencyConclusion: "",
+    predictionsTitle: "", predictionItems: [] as never[],
   },
 };
 
@@ -1250,7 +1262,7 @@ export default async function EpistemologyPage({
         <h2 className="text-2xl font-bold mb-3">{d.zapffeTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.zapffeLead}</p>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
-          {d.zapffeItems.map((z: any) => (
+          {d.zapffeItems.map((z) => (
             <div key={z.mechanism} className="rounded-lg border border-card-border bg-card-bg p-4">
               <div className="flex items-baseline gap-3 mb-2">
                 <span className="font-semibold text-sm">{z.mechanism}</span>
@@ -1272,7 +1284,7 @@ export default async function EpistemologyPage({
         <h2 className="text-2xl font-bold mb-3">{d.paradigmTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.paradigmLead}</p>
         <div className="space-y-4 mb-6">
-          {d.paradigmItems.map((p: any) => (
+          {d.paradigmItems.map((p) => (
             <div key={p.framework} className="rounded-lg border border-card-border bg-card-bg p-4">
               <h3 className="font-semibold text-sm mb-2">{p.framework}</h3>
               <p className="text-xs text-foreground-muted leading-relaxed mb-2">{p.blind}</p>
@@ -1294,7 +1306,7 @@ export default async function EpistemologyPage({
         <div className="overflow-x-auto mb-6">
           <table className="w-full text-sm border-collapse">
             <tbody>
-              {d.contingencyItems.map((c: any, i: number) => (
+              {d.contingencyItems.map((c, i) => (
                 <tr key={i} className="border-b border-card-border/50">
                   <td className="py-3 px-3 text-xs font-semibold align-top w-1/3">{c.claim}</td>
                   <td className="py-3 px-3 text-xs text-foreground-muted align-top">{c.model}</td>
