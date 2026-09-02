@@ -1,6 +1,6 @@
 # Deferred items from CODELLE_sentinellikandidaatit_v3.md
 
-Source: `docs/codelle/CODELLE_sentinellikandidaatit_v3.md`
+Source: `berm/docs/codelle/CODELLE_sentinellikandidaatit_v3.md`
 Date: 2026-08-31
 Phases 1-7: COMPLETED
 

@@ -59,7 +59,9 @@
 
 | Tiedosto | Tila |
 |----------|------|
-| 13 tiedostoa (2026-08-24/25) | Osa suoritettu (DONE), osa odottaa |
+| `docs/codelle/pending/`: 13 tiedostoa (2026-08-24/25) | Kaikki `_DONE` |
+| `website/docs/codelle/pending/`: 11 tiedostoa (2026-08-24…31) | 2026-09-02 auditointi: 3 merkitty `_DONE`, 3 ovat ulkoisia tutkimusehdotuksia ([DATA]), 2 [PROJEKTI]-lukittuja, 2 sisältävät vanhentuneen "Explore Body tab" -kohdan, 1 väärä valmis-väite ("4 kingdoms" -kortti poistettiin `3ccb521`) |
+| `berm/docs/codelle/pending/`: 1 tiedosto | `_DONE` (2026-09-02) |
 
 ---
 

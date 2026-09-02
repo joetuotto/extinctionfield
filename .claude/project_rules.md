@@ -41,8 +41,12 @@ Koodissa on viisi itsenäistä versiointijärjestelmää. Älä sekoita niitä:
 |---|---|---|
 | **v17** / v17.1 | Sivuston julkinen malli | BERM-mallin spesifikaatioversio |
 | **v18.0-asfr** | `export_asfr.py` | ASFR-kohorttien vientiversio |
-| **v19** / 0.19.0 | Python-paketti (`berm/__init__.py`) | Paketin julkaisuversio |
+| **v19** / 0.19.0 | Python-paketti (`berm/__init__.py`, ainoa lähde — `pyproject.toml` lukee sen dynaamisesti) | Paketin julkaisuversio |
+| **v19.1** | `model/page.tsx`, `mathematics/page.tsx`, `berm/validation/falsification_v19_1.py` | Diagnostinen kaava (54 maata) — ei ennustemalli; ennusteet ovat v17 |
+| **v20 / v21** | `model/page.tsx` (kerrostumakaava), `mathematics/page.tsx` (linja v17 → v19.1 → v20 → v21) | Kaavasukupolvet sivuston mallikuvauksessa |
 | **v2** | FieldState measurement spec | Mittausprotokollan versio (bounded records) |
 | **CSLI-1 / SLEEP-1** | `predictions.ts` | Testikohtaiset versiot (sentinel cascade, sleep) |
 
 Nämä eivät ole saman asian eri versioita. Ne seuraavat eri julkaisurytmejä.
+Sivustolla ei ole yhtä versiovakiota — "BERM v17" on kovakoodattu ~145 kertaa
+viidellä kielellä. Jos julkinen versio muuttuu, hae `grep -rn "BERM v17" app components lib`.
