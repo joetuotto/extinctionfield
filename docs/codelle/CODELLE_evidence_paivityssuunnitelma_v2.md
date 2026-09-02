@@ -4,6 +4,8 @@
 > **Tämä dokumentti:** koodiauditoinnin perusteella korjattu, täydennetty ja priorisoitu versio  
 > **Auditoitu koodi:** `evidence/page.tsx` (2 018 riviä, 219 KB), `lib/evidence.ts` (766 riviä), `lib/types.ts`, `lib/navigation.ts`, `lib/causalAtlasData.ts`, `lib/causalMapData.ts`, `components/EvidenceClassification.tsx`, `components/RetrodictionCards.tsx`, `components/BehavioralSuppression.tsx` + 14 muuta komponenttia
 
+> **TILA 2026-09-02: KORVATTU.** Suunnitelman 26 tehtävästä toteutui noin 4; evidence-sivu järjestettiin sen sijaan `SUB_PAGES`-alasivuarkkitehtuurilla (commit e0380b2 alkaen, 44 aihekohtaista alasivua). Dokumentti säilytetään historiallisena; älä toteuta sen avoimia kohtia sellaisenaan.
+
 ---
 
 ## 0. KOODIAUDITOINNIN YHTEENVETO — NYKYTILAN TODELLISUUS

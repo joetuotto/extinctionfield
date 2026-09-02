@@ -29,7 +29,15 @@ luokittelua, muuta se taulukossa, älä sivun tekstissä.
 
 - Älä muuta v17-mallin numeerisia laskuja tai Wolfram-notebookia
   dokumentaatiotyön yhteydessä.
-- Älä käytä termejä "todistaa" tai "vahvistaa" kumpaankaan suuntaan.
+- Älä käytä termejä "todistaa" tai "vahvistaa" kumpaankaan suuntaan, kun
+  kyse on BERM:n omasta evidenssiasemasta (evidence-, model- ja
+  predictions-sivut, mallin metadata). Sivilisaatio-osion tekstit noudattavat
+  tekijän 2026-08-31 tekemää toimituksellista linjaa: ei epistemisiä
+  varauksia sisältötekstiin; mallin tuottamat luvut merkitään
+  "Model-derived" -merkinnällä, ei varoituksilla.
+- Kieliversiot: en ja fi ylläpidetään; ja/fr/ko täydennetään myöhemmin
+  (`pickCopy` näyttää puuttuvat kohdat englanniksi, `TranslationNotice`
+  kertoo lukijalle). Älä lisää ja/fr/ko-käännöksiä yksittäin.
 - Älä poista dokumentoitua negatiivista havaintoa. Uudelleenluokittelu on
   sallittua vain perusteltuna ja taulukkoon kirjattuna.
 

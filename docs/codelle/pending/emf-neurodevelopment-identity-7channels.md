@@ -23,5 +23,5 @@
 - [x] Hippocampus → brain redirect (preserves old URLs)
 
 ### Not yet implemented (future work):
-- [ ] Explore Body tab update for brain
+- [ ] ~~Explore Body tab update for brain~~ — VANHENTUNUT (2026-09-02): Explore-näkymässä ei ole Body-välilehteä (`lib/navigation.ts` EXPLORE_TABS); elinnäkymät ovat `/modulome/brain`. Ei toimenpiteitä.
 - [ ] Evidence cards for individual channel findings

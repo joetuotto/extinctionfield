@@ -76,5 +76,5 @@ Tunnisteet: [KOODI], [PROJEKTI]
 
 ### Not yet implemented (future work):
 - [ ] Individual evidence sub-pages for each cascade disease
-- [ ] Explore Body tab visual update for ear + DRG markers
+- [ ] ~~Explore Body tab visual update for ear + DRG markers~~ — VANHENTUNUT (2026-09-02): Body-välilehteä ei ole; `/modulome/ear` ja `/modulome/pain` ovat olemassa. Ei toimenpiteitä.
 - [ ] modulome/ear and modulome/pain detail expansions with more references

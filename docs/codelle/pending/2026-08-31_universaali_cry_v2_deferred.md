@@ -18,6 +18,7 @@ Date: 2026-08-31
 
 ### Section 1.3
 - [x] Home page: "4 kingdoms" / "4계" ecosystem stat card added (all 5 locales, links to /evidence#plant-cry)
+  - HUOM (2026-09-02 auditointi): kortti lisättiin commitissa b59eaf7 mutta poistettiin etusivu-uudistuksessa 3ccb521 samana päivänä. Etusivulla ei ole 4 kingdoms -korttia; päätös palauttamisesta on tekijällä.
 
 ### [DATA] Datasets (2026-08-31)
 - [x] references_full.json: willis2022_mastreeplus (MASTREE+ database, GitHub, 73,828 observations)

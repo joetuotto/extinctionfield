@@ -28,6 +28,9 @@ Jokainen CODELLE-ohjeen askel merkitään tunnisteella:
 | `[KOODI]` | Tiedostojärjestelmämuutos (koodi, data, config) | Kaikki työkalut |
 | `[PROJEKTI]` | Claude-projektin tietokantamuutos (luku tai kirjoitus) | Vain Claude |
 | `[PROJEKTI→KOODI]` | Projektidokumentti tarvitaan syötteenä koodimuutokselle | Ks. 2.3 |
+| `[DATA]` | Ulkoinen aineisto tai tutkimus, jota repossa ei voi tuottaa (RCT, kohortti, maksullinen data) | Ei kukaan työkalu — kirjataan `docs/research/`-kansioon, ei pending-jonoon |
+
+`[DATA]`-tunniste lisätty 2026-09-02: tutkimusehdotukset (esim. `docs/research/convergence-data-proposals.md`) eivät ole odottavia koodiaskeleita, eivätkä ne kuulu `pending/`-jonoon.
 
 **Esimerkki toteutusjärjestyksessä:**
 
@@ -78,7 +81,13 @@ Yöaltistusreitin osioon lisätään viittaus ...
 
 - Työkalu PITÄÄ kirjoittaa tämä tiedosto — pelkkä "ohitan"-viesti ei riitä.
 - Claude tarkistaa `docs/codelle/pending/`-kansion jokaisen session alussa.
-- Suoritettuaan odottavan päivityksen Claude poistaa pending-tiedoston ja committaa poiston.
+- Suoritettuaan odottavan päivityksen Claude merkitsee tiedoston valmiiksi
+  nimeämällä sen `_DONE.md`-päätteiseksi (käytäntö vakiintui 2026-08-24;
+  poistamisen sijaan) ja committaa muutoksen. `_DONE`-tiedostot ovat
+  toteutuslokeja, eivät odottavia askeleita.
+- `docs/codelle/pending/` on ainoa jono. Aiemmat rinnakkaiset jonot
+  (`website/docs/codelle/pending/`, `berm/docs/codelle/pending/`) yhdistettiin
+  tänne 2026-09-02.
 
 ### 2.3 Kontekstisilta: `[PROJEKTI→KOODI]`-askeleet
 
