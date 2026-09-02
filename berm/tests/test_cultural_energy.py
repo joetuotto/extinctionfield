@@ -40,20 +40,27 @@ class TestComputeBiocap:
         markers = {k: 1.0 for k in REQUIRED_MARKERS}
         markers["CORT"] = 0.0
         bc = compute_biocap(markers)
-        expected = 0.20 + 0.20 + 0.15 + 0.15 + 0.10 + 0.0 + 0.05 + 0.05
+        expected = 1.0  # absolute weights sum to 1.0; CORT enters as (1 - CORT)
         assert abs(bc - expected) < 1e-10, f"Expected {expected}, got {bc}"
 
     def test_all_zero(self):
-        """All markers at 0.0 gives BioCap of 0.0."""
+        """All positive markers at 0.0 and CORT at 1.0 gives BioCap of 0.0."""
         markers = {k: 0.0 for k in REQUIRED_MARKERS}
+        markers["CORT"] = 1.0
         bc = compute_biocap(markers)
         assert bc == 0.0
 
+    def test_cort_floor_alone(self):
+        """All positive markers at 0.0 but CORT at 0.0 leaves only the cortisol term."""
+        markers = {k: 0.0 for k in REQUIRED_MARKERS}
+        bc = compute_biocap(markers)
+        assert abs(bc - abs(BIOMARKER_WEIGHTS["CORT"])) < 1e-10
+
     def test_all_one(self):
-        """All markers at 1.0 (including CORT) gives expected value."""
+        """All markers at 1.0 (including CORT) gives the positive-weight sum."""
         markers = {k: 1.0 for k in REQUIRED_MARKERS}
         bc = compute_biocap(markers)
-        expected = sum(BIOMARKER_WEIGHTS.values())
+        expected = sum(w for w in BIOMARKER_WEIGHTS.values() if w > 0)
         assert abs(bc - expected) < 1e-10
 
     def test_clamped_to_zero(self):
@@ -73,8 +80,9 @@ class TestComputeBiocap:
             pass
 
     def test_single_marker_contribution(self):
-        """Setting only T to 1.0 should give exactly T's weight."""
+        """Setting only T to 1.0 (CORT at its ceiling) should give exactly T's weight."""
         markers = {k: 0.0 for k in REQUIRED_MARKERS}
+        markers["CORT"] = 1.0
         markers["T"] = 1.0
         bc = compute_biocap(markers)
         assert abs(bc - 0.20) < 1e-10

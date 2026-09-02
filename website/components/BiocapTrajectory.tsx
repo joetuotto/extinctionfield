@@ -37,7 +37,11 @@ const BIOMARKER_COLORS: Record<string, string> = {
   BDNF: "#10b981",
   CORT: "#ec4899",
   D: "#06b6d4",
+  B2: "#84cc16",
 };
+
+/** Amish (0.05× EMF) BioCap at the reference year — computed by berm/export_cultural_energy.py. */
+const AMISH_BIOCAP: number = trajectoryData.environments.amish.biocap;
 
 interface Props {
   chartTitle: string;
@@ -143,17 +147,17 @@ export function BiocapTrajectory({ chartTitle, xLabel, yLabel, amishLabel, nowLa
 
         <line
           x1={PAD.left}
-          y1={yPos(0.98)}
+          y1={yPos(AMISH_BIOCAP)}
           x2={W - PAD.right}
-          y2={yPos(0.98)}
+          y2={yPos(AMISH_BIOCAP)}
           stroke="#22c55e"
           strokeWidth={1}
           strokeDasharray="6 3"
           opacity={0.7}
         />
         {amishLabel && (
-          <text x={W - PAD.right - 4} y={yPos(0.98) - 5} textAnchor="end" fill="#22c55e" fontSize={9} fontWeight={500}>
-            {amishLabel}
+          <text x={W - PAD.right - 4} y={yPos(AMISH_BIOCAP) - 5} textAnchor="end" fill="#22c55e" fontSize={9} fontWeight={500}>
+            {amishLabel} {AMISH_BIOCAP.toFixed(3)}
           </text>
         )}
 

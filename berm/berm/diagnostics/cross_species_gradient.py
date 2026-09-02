@@ -2,9 +2,10 @@
 
 Seven species/population groups arranged by estimated cumulative EMF
 exposure show a linear relationship between EMF burden and reproductive
-decline rate.  r = 0.909, p = 0.005.
+decline.  fit_gradient() on CROSS_SPECIES_GRADIENT: r = 0.842,
+r^2 = 0.710, p = 0.017 (n = 7).
 
-Decline = 0.105 * EMF_burden + 0.109
+Decline = 0.332 * EMF_burden + 0.122
 
 This is ecological correlation across species, not controlled experiment.
 Species differ in body size, lifespan, generation time, and physiology.

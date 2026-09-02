@@ -53,12 +53,13 @@ class TestSolarReconstruction:
 
 
 class TestChiMap:
-    def test_chi_latitude_equator_highest(self):
+    def test_chi_latitude_poles_highest(self):
         """Equatorial chi should be higher than polar chi."""
         from berm.civilization.chi_map import chi_latitude
 
-        assert chi_latitude(0.0) > chi_latitude(60.0)
-        assert chi_latitude(0.0) > chi_latitude(-60.0)
+        assert chi_latitude(60.0) > chi_latitude(0.0)
+        assert chi_latitude(-60.0) > chi_latitude(0.0)
+        assert chi_latitude(60.0) == chi_latitude(-60.0)
 
     def test_chi_latitude_range(self):
         from berm.civilization.chi_map import chi_latitude

@@ -1,16 +1,22 @@
 {
   "metadata": {
     "version": "1.0.0",
-    "generated": "2026-08-31",
+    "generated": "2026-09-02",
     "description": "Unified sentinel registry combining CSLI lag, reproductive decline rate, EMF sensitivity score, and axis classification",
-    "emf_gradient_r": 0.909,
+    "emf_gradient_r": 0.842,
     "emf_gradient_n": 7,
-    "emf_gradient_note": "Pearson r = 0.909 across 7 species with quantifiable sperm/reproductive decline rates vs EMF exposure score"
+    "emf_gradient_note": "Pearson r = 0.842 (r² = 0.7097, p = 0.0173) across 7 species/population groups: cumulative reproductive decline (%) vs estimated EMF burden (0–1); source berm.diagnostics.cross_species_gradient.fit_gradient()"
   },
   "species": [
     {
       "id": "honeybee",
-      "name": { "en": "Honeybee", "fi": "Mehiläinen", "ja": "ミツバチ", "fr": "Abeille", "ko": "꿀벌" },
+      "name": {
+        "en": "Honeybee",
+        "fi": "Mehiläinen",
+        "ja": "ミツバチ",
+        "fr": "Abeille",
+        "ko": "꿀벌"
+      },
       "axis": "land",
       "lag_years": 2,
       "decline_pct_per_year": null,
@@ -21,12 +27,20 @@
       "pathway": "B",
       "decline_onset": "~2006 CCD",
       "icon": "honeybee",
-      "references": ["cry_drosophila"],
+      "references": [
+        "cry_drosophila"
+      ],
       "negative_control": false
     },
     {
       "id": "dog",
-      "name": { "en": "Dog", "fi": "Koira", "ja": "犬", "fr": "Chien", "ko": "개" },
+      "name": {
+        "en": "Dog",
+        "fi": "Koira",
+        "ja": "犬",
+        "fr": "Chien",
+        "ko": "개"
+      },
       "axis": "land",
       "lag_years": 3,
       "decline_pct_per_year": 1.0,
@@ -37,12 +51,20 @@
       "pathway": "A",
       "decline_onset": "~1988–2014",
       "icon": "dog",
-      "references": ["lea2016"],
+      "references": [
+        "lea2016"
+      ],
       "negative_control": false
     },
     {
       "id": "horse_w",
-      "name": { "en": "Horse (Warmblood)", "fi": "Hevonen (lämminverinen)", "ja": "馬（温血種）", "fr": "Cheval (sang chaud)", "ko": "말 (온혈종)" },
+      "name": {
+        "en": "Horse (Warmblood)",
+        "fi": "Hevonen (lämminverinen)",
+        "ja": "馬（温血種）",
+        "fr": "Cheval (sang chaud)",
+        "ko": "말 (온혈종)"
+      },
       "axis": "land",
       "lag_years": null,
       "decline_pct_per_year": 0.75,
@@ -58,7 +80,13 @@
     },
     {
       "id": "horse_nw",
-      "name": { "en": "Horse (Non-Warmblood)", "fi": "Hevonen (kylmäverinen)", "ja": "馬（非温血種）", "fr": "Cheval (autre)", "ko": "말 (비온혈종)" },
+      "name": {
+        "en": "Horse (Non-Warmblood)",
+        "fi": "Hevonen (kylmäverinen)",
+        "ja": "馬（非温血種）",
+        "fr": "Cheval (autre)",
+        "ko": "말 (비온혈종)"
+      },
       "axis": "land",
       "lag_years": null,
       "decline_pct_per_year": 0.46,
@@ -74,10 +102,16 @@
     },
     {
       "id": "holstein",
-      "name": { "en": "Holstein dairy cow", "fi": "Holstein-lypsylehmä", "ja": "ホルスタイン乳牛", "fr": "Vache Holstein", "ko": "홀스타인 젖소" },
+      "name": {
+        "en": "Holstein dairy cow",
+        "fi": "Holstein-lypsylehmä",
+        "ja": "ホルスタイン乳牛",
+        "fr": "Vache Holstein",
+        "ko": "홀스타인 젖소"
+      },
       "axis": "land",
       "lag_years": null,
-      "decline_pct_per_year": 0.80,
+      "decline_pct_per_year": 0.8,
       "decline_note": "EMF biologically active (Rodriguez 2003) but breeding selection masks population signal",
       "emf_score": 7,
       "csli_sensitivity": null,
@@ -85,12 +119,21 @@
       "pathway": "A",
       "decline_onset": null,
       "icon": "cow",
-      "references": ["rodriguez2003", "burchard2002"],
+      "references": [
+        "rodriguez2003",
+        "burchard2002"
+      ],
       "negative_control": true
     },
     {
       "id": "human_sperm",
-      "name": { "en": "Human (sperm)", "fi": "Ihminen (siittiöt)", "ja": "ヒト（精子）", "fr": "Humain (sperme)", "ko": "인간 (정자)" },
+      "name": {
+        "en": "Human (sperm)",
+        "fi": "Ihminen (siittiöt)",
+        "ja": "ヒト（精子）",
+        "fr": "Humain (sperme)",
+        "ko": "인간 (정자)"
+      },
       "axis": "land",
       "lag_years": null,
       "decline_pct_per_year": 2.64,
@@ -106,10 +149,16 @@
     },
     {
       "id": "human_testosterone",
-      "name": { "en": "Human (testosterone)", "fi": "Ihminen (testosteroni)", "ja": "ヒト（テストステロン）", "fr": "Humain (testostérone)", "ko": "인간 (테스토스테론)" },
+      "name": {
+        "en": "Human (testosterone)",
+        "fi": "Ihminen (testosteroni)",
+        "ja": "ヒト（テストステロン）",
+        "fr": "Humain (testostérone)",
+        "ko": "인간 (테스토스테론)"
+      },
       "axis": "land",
       "lag_years": null,
-      "decline_pct_per_year": 1.20,
+      "decline_pct_per_year": 1.2,
       "decline_note": "Perheentupa 2013: −1.2%/year cohort-dependent decline Finland 1972–2002",
       "emf_score": 10,
       "csli_sensitivity": null,
@@ -117,12 +166,22 @@
       "pathway": "A+B",
       "decline_onset": "~1972–present",
       "icon": "human",
-      "references": ["perheentupa2013", "travison2007_v2", "santi2025"],
+      "references": [
+        "perheentupa2013",
+        "travison2007_v2",
+        "santi2025"
+      ],
       "negative_control": false
     },
     {
       "id": "human_tfr",
-      "name": { "en": "Human (TFR)", "fi": "Ihminen (TFR)", "ja": "ヒト（TFR）", "fr": "Humain (ISF)", "ko": "인간 (TFR)" },
+      "name": {
+        "en": "Human (TFR)",
+        "fi": "Ihminen (TFR)",
+        "ja": "ヒト（TFR）",
+        "fr": "Humain (ISF)",
+        "ko": "인간 (TFR)"
+      },
       "axis": "land",
       "lag_years": 5,
       "decline_pct_per_year": null,
@@ -138,7 +197,13 @@
     },
     {
       "id": "frog",
-      "name": { "en": "Frog", "fi": "Sammakko", "ja": "カエル", "fr": "Grenouille", "ko": "개구리" },
+      "name": {
+        "en": "Frog",
+        "fi": "Sammakko",
+        "ja": "カエル",
+        "fr": "Grenouille",
+        "ko": "개구리"
+      },
       "axis": "land_water",
       "lag_years": 6,
       "decline_pct_per_year": null,
@@ -154,7 +219,13 @@
     },
     {
       "id": "gray_whale",
-      "name": { "en": "Gray whale", "fi": "Harmaavalas", "ja": "コククジラ", "fr": "Baleine grise", "ko": "귀신고래" },
+      "name": {
+        "en": "Gray whale",
+        "fi": "Harmaavalas",
+        "ja": "コククジラ",
+        "fr": "Baleine grise",
+        "ko": "귀신고래"
+      },
       "axis": "water",
       "lag_years": null,
       "decline_pct_per_year": null,
@@ -166,12 +237,20 @@
       "pathway": "B",
       "decline_onset": null,
       "icon": "whale",
-      "references": ["granger2020"],
+      "references": [
+        "granger2020"
+      ],
       "negative_control": false
     },
     {
       "id": "elasmobranch",
-      "name": { "en": "Elasmobranch", "fi": "Rustokala", "ja": "板鰓類", "fr": "Élasmobranche", "ko": "판새류" },
+      "name": {
+        "en": "Elasmobranch",
+        "fi": "Rustokala",
+        "ja": "板鰓類",
+        "fr": "Élasmobranche",
+        "ko": "판새류"
+      },
       "axis": "water",
       "lag_years": null,
       "decline_pct_per_year": null,
@@ -183,12 +262,20 @@
       "pathway": "VGCC-analogous",
       "decline_onset": null,
       "icon": "shark",
-      "references": ["kalmijn1971"],
+      "references": [
+        "kalmijn1971"
+      ],
       "negative_control": false
     },
     {
       "id": "salmon",
-      "name": { "en": "Salmon", "fi": "Lohi", "ja": "サケ", "fr": "Saumon", "ko": "연어" },
+      "name": {
+        "en": "Salmon",
+        "fi": "Lohi",
+        "ja": "サケ",
+        "fr": "Saumon",
+        "ko": "연어"
+      },
       "axis": "water",
       "lag_years": null,
       "decline_pct_per_year": null,
@@ -200,40 +287,163 @@
       "pathway": "B+CatSper",
       "decline_onset": "~1990s–present",
       "icon": "fish",
-      "references": ["putman2014", "welch2021"],
+      "references": [
+        "putman2014",
+        "welch2021"
+      ],
       "negative_control": false
     }
   ],
   "emf_gradient": {
-    "description": "Species with quantifiable sperm/reproductive decline rates plotted against EMF exposure score",
-    "r_squared": 0.826,
-    "pearson_r": 0.909,
+    "description": "Seven species/population groups: cumulative reproductive decline (%) vs estimated cumulative EMF burden (0-1). Generated from berm.diagnostics.cross_species_gradient.CROSS_SPECIES_GRADIENT; statistics from fit_gradient().",
+    "r_squared": 0.7097,
+    "pearson_r": 0.842,
+    "p_value": 0.0173,
     "n": 7,
+    "slope": 0.3321,
+    "intercept": 0.1224,
+    "x": "emf_burden (0-1)",
+    "y": "reproductive_decline_pct",
     "data_points": [
-      { "species_id": "human_sperm", "emf_score": 10, "decline_pct_per_year": 2.64 },
-      { "species_id": "human_testosterone", "emf_score": 10, "decline_pct_per_year": 1.20 },
-      { "species_id": "dog", "emf_score": 9, "decline_pct_per_year": 1.00 },
-      { "species_id": "holstein", "emf_score": 7, "decline_pct_per_year": 0.80 },
-      { "species_id": "horse_w", "emf_score": 7, "decline_pct_per_year": 0.75 },
-      { "species_id": "horse_nw", "emf_score": 4, "decline_pct_per_year": 0.46 }
+      {
+        "name": "Wild insects (remote)",
+        "emf_burden": 0.05,
+        "reproductive_decline_pct": 12.0,
+        "source": "Hallmann et al. 2017 (PLoS ONE); Sánchez-Bayo & Wyckhuys 2019",
+        "note": "Flying insect biomass decline 76% over 27 years in protected areas"
+      },
+      {
+        "name": "Amphibians",
+        "emf_burden": 0.15,
+        "reproductive_decline_pct": 15.0,
+        "source": "Alroy 2015 (PNAS); IUCN Red List amphibian assessments",
+        "note": "Global amphibian decline; multiple stressors including habitat loss"
+      },
+      {
+        "name": "Wild birds (rural)",
+        "emf_burden": 0.25,
+        "reproductive_decline_pct": 30.0,
+        "source": "Rosenberg et al. 2019 (Science)",
+        "note": "North America lost 3 billion birds since 1970"
+      },
+      {
+        "name": "Thoroughbred horses",
+        "emf_burden": 0.4,
+        "reproductive_decline_pct": 20.0,
+        "source": "Allen & Wilsher 2021; Bosh et al. 2009",
+        "note": "Stabled animals with continuous electrical exposure"
+      },
+      {
+        "name": "Dairy cattle (intensive)",
+        "emf_burden": 0.5,
+        "reproductive_decline_pct": 35.0,
+        "source": "Lucy 2001 (J Dairy Sci); Walsh et al. 2011",
+        "note": "First-service conception rates declined from ~55% to ~35%"
+      },
+      {
+        "name": "Pet dogs/cats (urban)",
+        "emf_burden": 0.7,
+        "reproductive_decline_pct": 25.0,
+        "source": "Chu et al. 2024; veterinary reproductive survey data",
+        "note": "Indoor pets with high RF/ELF from household electronics"
+      },
+      {
+        "name": "Humans (developed)",
+        "emf_burden": 1.0,
+        "reproductive_decline_pct": 50.0,
+        "source": "UN WPP 2024; Levine et al. 2017 (sperm count meta-analysis)",
+        "note": "TFR halved from ~3.5 to ~1.6 in most developed nations since 1970"
+      }
     ],
-    "note": "Holstein is negative control (selection masks signal) but included in gradient calculation as the biological effect IS present even though population-level decline detection is confounded by breeding pressure"
+    "note": "Ecological correlation across species, not a controlled experiment. The earlier 6-row per-year decline-rate table (human sperm 2.64 %/yr … horse NW 0.46 %/yr, EMF score 0-10) gave r = 0.72 (n = 6) and is retained under decline_rate_table.",
+    "decline_rate_table": {
+      "x": "emf_score (0-10)",
+      "y": "decline_pct_per_year",
+      "pearson_r": 0.717,
+      "n": 6,
+      "data_points": [
+        {
+          "species_id": "human_sperm",
+          "emf_score": 10,
+          "decline_pct_per_year": 2.64
+        },
+        {
+          "species_id": "human_testosterone",
+          "emf_score": 10,
+          "decline_pct_per_year": 1.2
+        },
+        {
+          "species_id": "dog",
+          "emf_score": 9,
+          "decline_pct_per_year": 1.0
+        },
+        {
+          "species_id": "holstein",
+          "emf_score": 7,
+          "decline_pct_per_year": 0.8,
+          "negative_control": true
+        },
+        {
+          "species_id": "horse_w",
+          "emf_score": 7,
+          "decline_pct_per_year": 0.75
+        },
+        {
+          "species_id": "horse_nw",
+          "emf_score": 4,
+          "decline_pct_per_year": 0.46
+        }
+      ]
+    }
   },
   "axes": {
     "land": {
-      "label": { "en": "Land axis", "fi": "Maa-akseli", "ja": "陸上軸", "fr": "Axe terrestre", "ko": "육상 축" },
+      "label": {
+        "en": "Land axis",
+        "fi": "Maa-akseli",
+        "ja": "陸上軸",
+        "fr": "Axe terrestre",
+        "ko": "육상 축"
+      },
       "description": "Current sentinels: honeybee → dog → horse → human",
-      "species_ids": ["honeybee", "dog", "horse_w", "horse_nw", "holstein", "human_sperm", "human_testosterone", "human_tfr"]
+      "species_ids": [
+        "honeybee",
+        "dog",
+        "horse_w",
+        "horse_nw",
+        "holstein",
+        "human_sperm",
+        "human_testosterone",
+        "human_tfr"
+      ]
     },
     "water": {
-      "label": { "en": "Water axis", "fi": "Vesi-akseli", "ja": "水軸", "fr": "Axe aquatique", "ko": "수중 축" },
+      "label": {
+        "en": "Water axis",
+        "fi": "Vesi-akseli",
+        "ja": "水軸",
+        "fr": "Axe aquatique",
+        "ko": "수중 축"
+      },
       "description": "New aquatic sentinels: whale, elasmobranch, salmon",
-      "species_ids": ["gray_whale", "elasmobranch", "salmon"]
+      "species_ids": [
+        "gray_whale",
+        "elasmobranch",
+        "salmon"
+      ]
     },
     "land_water": {
-      "label": { "en": "Transitional", "fi": "Siirtymä", "ja": "遷移", "fr": "Transitoire", "ko": "전환" },
+      "label": {
+        "en": "Transitional",
+        "fi": "Siirtymä",
+        "ja": "遷移",
+        "fr": "Transitoire",
+        "ko": "전환"
+      },
       "description": "Species at land-water boundary",
-      "species_ids": ["frog"]
+      "species_ids": [
+        "frog"
+      ]
     }
   }
 }

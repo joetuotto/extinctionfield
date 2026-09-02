@@ -1,402 +1,792 @@
 {
+  "metadata": {
+    "generated": "2026-09-02",
+    "generatedBy": "berm/export_cultural_energy.py",
+    "source": "berm.civilization (biomarker_trajectories, cultural_energy, unwin_validation, sensitivity, political_biology, biocap, chi_map, migration_gradient)",
+    "version": "0.19.0",
+    "reference_year": 2025,
+    "biocap_definition": "BioCap = sum(w_i * m_i) over T, OXT, DA, MEL, BDNF, D, B2 + 0.10 * (1 - CORT); absolute weights sum to 1.0, range [0, 1], 1.0 = pre-industrial optimum",
+    "biocap_2025": 0.6137,
+    "phase_2025": "MANISTIC"
+  },
+  "weights": {
+    "T": 0.2,
+    "OXT": 0.2,
+    "DA": 0.15,
+    "MEL": 0.15,
+    "BDNF": 0.1,
+    "CORT": -0.1,
+    "D": 0.05,
+    "B2": 0.05
+  },
+  "phase_thresholds": [
+    {
+      "below": 0.55,
+      "phase": "ZOISTIC"
+    },
+    {
+      "below": 0.75,
+      "phase": "MANISTIC"
+    },
+    {
+      "below": 0.9,
+      "phase": "DEISTIC"
+    }
+  ],
   "trajectory": [
     {
       "year": 1900,
-      "biocap": 0.9750000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
+      "T": 0.9986,
+      "OXT": 0.9999,
       "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.8,
-      "CORT": 1.0,
-      "D": 1.0
+      "MEL": 0.988,
+      "BDNF": 0.9996,
+      "CORT": 0.0013,
+      "D": 0.997,
+      "B2": 0.9964,
+      "biocap": 0.9974,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1905,
-      "biocap": 0.9765000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
+      "T": 0.9982,
+      "OXT": 0.9999,
       "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.8150000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "MEL": 0.9854,
+      "BDNF": 0.9995,
+      "CORT": 0.0017,
+      "D": 0.9961,
+      "B2": 0.9956,
+      "biocap": 0.9968,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1910,
-      "biocap": 0.9780000000000002,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
+      "T": 0.9975,
+      "OXT": 0.9998,
       "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.8300000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "MEL": 0.9822,
+      "BDNF": 0.9993,
+      "CORT": 0.0023,
+      "D": 0.9951,
+      "B2": 0.9946,
+      "biocap": 0.996,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1915,
-      "biocap": 0.9795000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
+      "T": 0.9967,
+      "OXT": 0.9997,
       "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.8450000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "MEL": 0.9785,
+      "BDNF": 0.999,
+      "CORT": 0.0031,
+      "D": 0.9937,
+      "B2": 0.9934,
+      "biocap": 0.995,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1920,
-      "biocap": 0.9810000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
+      "T": 0.9955,
+      "OXT": 0.9996,
       "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.8600000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "MEL": 0.9739,
+      "BDNF": 0.9987,
+      "CORT": 0.0042,
+      "D": 0.9919,
+      "B2": 0.992,
+      "biocap": 0.9937,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1925,
-      "biocap": 0.9825000000000002,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.875,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.994,
+      "OXT": 0.9994,
+      "DA": 0.9999,
+      "MEL": 0.9685,
+      "BDNF": 0.9982,
+      "CORT": 0.0057,
+      "D": 0.9897,
+      "B2": 0.9903,
+      "biocap": 0.9922,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1930,
-      "biocap": 0.9840000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.89,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9919,
+      "OXT": 0.9992,
+      "DA": 0.9999,
+      "MEL": 0.962,
+      "BDNF": 0.9976,
+      "CORT": 0.0077,
+      "D": 0.9868,
+      "B2": 0.9883,
+      "biocap": 0.9902,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1935,
-      "biocap": 0.9855000000000002,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.905,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9891,
+      "OXT": 0.9988,
+      "DA": 0.9998,
+      "MEL": 0.9543,
+      "BDNF": 0.9967,
+      "CORT": 0.0103,
+      "D": 0.9832,
+      "B2": 0.9858,
+      "biocap": 0.9878,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1940,
-      "biocap": 0.9870000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.92,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9854,
+      "OXT": 0.9982,
+      "DA": 0.9998,
+      "MEL": 0.9451,
+      "BDNF": 0.9956,
+      "CORT": 0.0139,
+      "D": 0.9787,
+      "B2": 0.9828,
+      "biocap": 0.9847,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1945,
-      "biocap": 0.9885000000000002,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.935,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9804,
+      "OXT": 0.9973,
+      "DA": 0.9996,
+      "MEL": 0.9344,
+      "BDNF": 0.9941,
+      "CORT": 0.0186,
+      "D": 0.973,
+      "B2": 0.9793,
+      "biocap": 0.9808,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1950,
-      "biocap": 0.9900000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 1.0,
-      "BDNF": 0.9500000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9739,
+      "OXT": 0.9959,
+      "DA": 0.9993,
+      "MEL": 0.922,
+      "BDNF": 0.9921,
+      "CORT": 0.0249,
+      "D": 0.9659,
+      "B2": 0.975,
+      "biocap": 0.9759,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1955,
-      "biocap": 0.9877500000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.975,
-      "BDNF": 0.9650000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9654,
+      "OXT": 0.9939,
+      "DA": 0.9989,
+      "MEL": 0.9076,
+      "BDNF": 0.9894,
+      "CORT": 0.0332,
+      "D": 0.9571,
+      "B2": 0.9701,
+      "biocap": 0.9698,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1960,
-      "biocap": 0.9855,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.95,
-      "BDNF": 0.98,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.9543,
+      "OXT": 0.991,
+      "DA": 0.9982,
+      "MEL": 0.8912,
+      "BDNF": 0.9858,
+      "CORT": 0.0441,
+      "D": 0.9464,
+      "B2": 0.9642,
+      "biocap": 0.9622,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1965,
-      "biocap": 0.9832500000000002,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.925,
-      "BDNF": 0.9950000000000001,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.94,
+      "OXT": 0.9867,
+      "DA": 0.997,
+      "MEL": 0.8727,
+      "BDNF": 0.981,
+      "CORT": 0.0582,
+      "D": 0.9334,
+      "B2": 0.9574,
+      "biocap": 0.9526,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1970,
-      "biocap": 0.9800000000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.9,
-      "BDNF": 1.0,
-      "CORT": 1.0,
-      "D": 1.0
+      "T": 0.922,
+      "OXT": 0.9804,
+      "DA": 0.9951,
+      "MEL": 0.8521,
+      "BDNF": 0.9748,
+      "CORT": 0.0764,
+      "D": 0.9179,
+      "B2": 0.9496,
+      "biocap": 0.9408,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1975,
-      "biocap": 0.9752500000000001,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.875,
-      "BDNF": 1.0,
-      "CORT": 1.0,
-      "D": 0.98
+      "T": 0.8997,
+      "OXT": 0.9713,
+      "DA": 0.9919,
+      "MEL": 0.8295,
+      "BDNF": 0.9667,
+      "CORT": 0.0993,
+      "D": 0.8998,
+      "B2": 0.9407,
+      "biocap": 0.9262,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1980,
-      "biocap": 0.9705,
-      "phase": "RATIONALISTIC",
-      "T": 1.0,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.85,
-      "BDNF": 1.0,
-      "CORT": 1.0,
-      "D": 0.96
+      "T": 0.8727,
+      "OXT": 0.9584,
+      "DA": 0.9868,
+      "MEL": 0.8051,
+      "BDNF": 0.9564,
+      "CORT": 0.1277,
+      "D": 0.879,
+      "B2": 0.9306,
+      "biocap": 0.9084,
+      "phase": "RATIONALISTIC"
     },
     {
       "year": 1985,
-      "biocap": 0.9537500000000001,
-      "phase": "RATIONALISTIC",
-      "T": 0.94,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.825,
-      "BDNF": 1.0,
-      "CORT": 1.0,
-      "D": 0.94
+      "T": 0.841,
+      "OXT": 0.9404,
+      "DA": 0.9787,
+      "MEL": 0.7793,
+      "BDNF": 0.9433,
+      "CORT": 0.162,
+      "D": 0.8556,
+      "B2": 0.9193,
+      "biocap": 0.8868,
+      "phase": "DEISTIC"
     },
     {
       "year": 1990,
-      "biocap": 0.937,
-      "phase": "RATIONALISTIC",
-      "T": 0.88,
-      "OXT": 1.0,
-      "DA": 1.0,
-      "MEL": 0.8,
-      "BDNF": 1.0,
-      "CORT": 1.0,
-      "D": 0.92
+      "T": 0.8051,
+      "OXT": 0.916,
+      "DA": 0.9659,
+      "MEL": 0.7524,
+      "BDNF": 0.927,
+      "CORT": 0.2023,
+      "D": 0.8301,
+      "B2": 0.907,
+      "biocap": 0.8613,
+      "phase": "DEISTIC"
     },
     {
       "year": 1995,
-      "biocap": 0.9068683574879227,
-      "phase": "RATIONALISTIC",
-      "T": 0.8200000000000001,
-      "OXT": 0.95,
-      "DA": 1.0,
-      "MEL": 0.775,
-      "BDNF": 1.0,
-      "CORT": 0.9661835748792271,
-      "D": 0.9
+      "T": 0.7659,
+      "OXT": 0.8843,
+      "DA": 0.9464,
+      "MEL": 0.725,
+      "BDNF": 0.9074,
+      "CORT": 0.248,
+      "D": 0.803,
+      "B2": 0.8937,
+      "biocap": 0.8315,
+      "phase": "DEISTIC"
     },
     {
       "year": 2000,
-      "biocap": 0.8669579439252337,
-      "phase": "DEISTIC",
-      "T": 0.76,
-      "OXT": 0.9,
-      "DA": 0.96,
-      "MEL": 0.75,
-      "BDNF": 0.96,
-      "CORT": 0.9345794392523364,
-      "D": 0.88
+      "T": 0.725,
+      "OXT": 0.845,
+      "DA": 0.9179,
+      "MEL": 0.6976,
+      "BDNF": 0.8844,
+      "CORT": 0.2979,
+      "D": 0.775,
+      "B2": 0.8796,
+      "biocap": 0.7977,
+      "phase": "DEISTIC"
     },
     {
       "year": 2005,
-      "biocap": 0.8272477375565611,
-      "phase": "DEISTIC",
-      "T": 0.7,
-      "OXT": 0.85,
-      "DA": 0.92,
-      "MEL": 0.725,
-      "BDNF": 0.92,
-      "CORT": 0.9049773755656109,
-      "D": 0.86
+      "T": 0.6841,
+      "OXT": 0.7993,
+      "DA": 0.879,
+      "MEL": 0.6707,
+      "BDNF": 0.8583,
+      "CORT": 0.35,
+      "D": 0.747,
+      "B2": 0.865,
+      "biocap": 0.7606,
+      "phase": "DEISTIC"
     },
     {
       "year": 2010,
-      "biocap": 0.7877192982456142,
-      "phase": "DEISTIC",
-      "T": 0.64,
-      "OXT": 0.8,
-      "DA": 0.88,
-      "MEL": 0.7,
-      "BDNF": 0.88,
-      "CORT": 0.8771929824561403,
-      "D": 0.84
+      "T": 0.6449,
+      "OXT": 0.75,
+      "DA": 0.8301,
+      "MEL": 0.6449,
+      "BDNF": 0.8298,
+      "CORT": 0.4021,
+      "D": 0.7199,
+      "B2": 0.85,
+      "biocap": 0.7215,
+      "phase": "MANISTIC"
     },
     {
       "year": 2015,
-      "biocap": 0.7408563829787235,
-      "phase": "MANISTIC",
-      "T": 0.5800000000000001,
-      "OXT": 0.75,
-      "DA": 0.84,
-      "MEL": 0.625,
-      "BDNF": 0.84,
-      "CORT": 0.851063829787234,
-      "D": 0.8200000000000001
+      "T": 0.609,
+      "OXT": 0.7007,
+      "DA": 0.775,
+      "MEL": 0.6205,
+      "BDNF": 0.8,
+      "CORT": 0.452,
+      "D": 0.6944,
+      "B2": 0.835,
+      "biocap": 0.6825,
+      "phase": "MANISTIC"
     },
     {
       "year": 2020,
-      "biocap": 0.6941446280991735,
-      "phase": "MANISTIC",
-      "T": 0.52,
-      "OXT": 0.7,
-      "DA": 0.8,
-      "MEL": 0.5499999999999999,
-      "BDNF": 0.8,
-      "CORT": 0.8264462809917356,
-      "D": 0.8
+      "T": 0.5773,
+      "OXT": 0.655,
+      "DA": 0.7199,
+      "MEL": 0.5979,
+      "BDNF": 0.7702,
+      "CORT": 0.4977,
+      "D": 0.671,
+      "B2": 0.8204,
+      "biocap": 0.646,
+      "phase": "MANISTIC"
     },
     {
       "year": 2025,
-      "biocap": 0.6475712851405623,
-      "phase": "MANISTIC",
-      "T": 0.45999999999999996,
-      "OXT": 0.6499999999999999,
-      "DA": 0.76,
-      "MEL": 0.475,
-      "BDNF": 0.76,
-      "CORT": 0.8032128514056224,
-      "D": 0.78
+      "T": 0.5503,
+      "OXT": 0.6157,
+      "DA": 0.671,
+      "MEL": 0.5773,
+      "BDNF": 0.7417,
+      "CORT": 0.538,
+      "D": 0.6502,
+      "B2": 0.8063,
+      "biocap": 0.6137,
+      "phase": "MANISTIC"
     },
     {
       "year": 2030,
-      "biocap": 0.601125,
-      "phase": "MANISTIC",
-      "T": 0.4,
-      "OXT": 0.6,
-      "DA": 0.72,
-      "MEL": 0.39999999999999997,
-      "BDNF": 0.72,
-      "CORT": 0.78125,
-      "D": 0.76
+      "T": 0.528,
+      "OXT": 0.584,
+      "DA": 0.6321,
+      "MEL": 0.5588,
+      "BDNF": 0.7156,
+      "CORT": 0.5723,
+      "D": 0.6321,
+      "B2": 0.793,
+      "biocap": 0.5866,
+      "phase": "MANISTIC"
     },
     {
       "year": 2035,
-      "biocap": 0.554795627376426,
-      "phase": "MANISTIC",
-      "T": 0.33999999999999997,
-      "OXT": 0.55,
-      "DA": 0.6799999999999999,
-      "MEL": 0.32499999999999996,
-      "BDNF": 0.6799999999999999,
-      "CORT": 0.7604562737642586,
-      "D": 0.74
+      "T": 0.51,
+      "OXT": 0.5596,
+      "DA": 0.6036,
+      "MEL": 0.5424,
+      "BDNF": 0.6926,
+      "CORT": 0.6007,
+      "D": 0.6166,
+      "B2": 0.7807,
+      "biocap": 0.5649,
+      "phase": "MANISTIC"
     },
     {
       "year": 2040,
-      "biocap": 0.5085740740740741,
-      "phase": "ZOISTIC",
-      "T": 0.28,
-      "OXT": 0.5,
-      "DA": 0.64,
-      "MEL": 0.25,
-      "BDNF": 0.64,
-      "CORT": 0.7407407407407407,
-      "D": 0.72
+      "T": 0.4957,
+      "OXT": 0.5416,
+      "DA": 0.5841,
+      "MEL": 0.528,
+      "BDNF": 0.673,
+      "CORT": 0.6236,
+      "D": 0.6036,
+      "B2": 0.7694,
+      "biocap": 0.5479,
+      "phase": "ZOISTIC"
     },
     {
       "year": 2045,
-      "biocap": 0.4624521660649819,
-      "phase": "ZOISTIC",
-      "T": 0.21999999999999997,
-      "OXT": 0.44999999999999996,
-      "DA": 0.6,
-      "MEL": 0.17499999999999993,
-      "BDNF": 0.6,
-      "CORT": 0.7220216606498195,
-      "D": 0.7
+      "T": 0.4846,
+      "OXT": 0.5287,
+      "DA": 0.5713,
+      "MEL": 0.5156,
+      "BDNF": 0.6567,
+      "CORT": 0.6418,
+      "D": 0.5929,
+      "B2": 0.7593,
+      "biocap": 0.5348,
+      "phase": "ZOISTIC"
     },
     {
       "year": 2050,
-      "biocap": 0.4164225352112676,
-      "phase": "ZOISTIC",
-      "T": 0.16000000000000003,
-      "OXT": 0.4,
-      "DA": 0.56,
-      "MEL": 0.1,
-      "BDNF": 0.56,
-      "CORT": 0.7042253521126761,
-      "D": 0.6799999999999999
+      "T": 0.4761,
+      "OXT": 0.5196,
+      "DA": 0.5632,
+      "MEL": 0.5049,
+      "BDNF": 0.6436,
+      "CORT": 0.6559,
+      "D": 0.5841,
+      "B2": 0.7504,
+      "biocap": 0.5248,
+      "phase": "ZOISTIC"
     },
     {
       "year": 2055,
-      "biocap": 0.3817285223367697,
-      "phase": "ZOISTIC",
-      "T": 0.1,
-      "OXT": 0.35,
-      "DA": 0.52,
-      "MEL": 0.1,
-      "BDNF": 0.52,
-      "CORT": 0.6872852233676976,
-      "D": 0.6599999999999999
+      "T": 0.4696,
+      "OXT": 0.5133,
+      "DA": 0.5581,
+      "MEL": 0.4957,
+      "BDNF": 0.6333,
+      "CORT": 0.6668,
+      "D": 0.577,
+      "B2": 0.7426,
+      "biocap": 0.5173,
+      "phase": "ZOISTIC"
     },
     {
       "year": 2060,
-      "biocap": 0.35911409395973154,
-      "phase": "ZOISTIC",
-      "T": 0.1,
-      "OXT": 0.29999999999999993,
-      "DA": 0.48,
-      "MEL": 0.1,
-      "BDNF": 0.48,
-      "CORT": 0.6711409395973155,
-      "D": 0.64
+      "T": 0.4646,
+      "OXT": 0.509,
+      "DA": 0.5549,
+      "MEL": 0.488,
+      "BDNF": 0.6252,
+      "CORT": 0.6751,
+      "D": 0.5713,
+      "B2": 0.7358,
+      "biocap": 0.5115,
+      "phase": "ZOISTIC"
     }
   ],
+  "transitions": {
+    "detected": [
+      {
+        "year": 1983,
+        "from_phase": "RATIONALISTIC",
+        "to_phase": "DEISTIC",
+        "trigger_marker": "T",
+        "biocap": 0.8959
+      },
+      {
+        "year": 2007,
+        "from_phase": "DEISTIC",
+        "to_phase": "MANISTIC",
+        "trigger_marker": "OXT",
+        "biocap": 0.7451
+      },
+      {
+        "year": 2040,
+        "from_phase": "MANISTIC",
+        "to_phase": "ZOISTIC",
+        "trigger_marker": "OXT",
+        "biocap": 0.5479
+      }
+    ],
+    "predicted_next": null
+  },
+  "biomarkers_2025": {
+    "T": 0.5503,
+    "OXT": 0.6157,
+    "DA": 0.671,
+    "MEL": 0.5773,
+    "BDNF": 0.7417,
+    "CORT": 0.538,
+    "D": 0.6502,
+    "B2": 0.8063
+  },
+  "sensitivity": [
+    {
+      "marker": "T",
+      "weight": 0.2,
+      "baseline_value": 0.5503,
+      "restore_to": 1.0,
+      "recovery_pct": 23.28,
+      "delta_biocap": 0.0899
+    },
+    {
+      "marker": "OXT",
+      "weight": 0.2,
+      "baseline_value": 0.6157,
+      "restore_to": 1.0,
+      "recovery_pct": 19.89,
+      "delta_biocap": 0.0769
+    },
+    {
+      "marker": "MEL",
+      "weight": 0.15,
+      "baseline_value": 0.5773,
+      "restore_to": 1.0,
+      "recovery_pct": 16.41,
+      "delta_biocap": 0.0634
+    },
+    {
+      "marker": "CORT",
+      "weight": -0.1,
+      "baseline_value": 0.538,
+      "restore_to": 0.0,
+      "recovery_pct": 13.92,
+      "delta_biocap": 0.0538
+    },
+    {
+      "marker": "DA",
+      "weight": 0.15,
+      "baseline_value": 0.671,
+      "restore_to": 1.0,
+      "recovery_pct": 12.77,
+      "delta_biocap": 0.0493
+    },
+    {
+      "marker": "BDNF",
+      "weight": 0.1,
+      "baseline_value": 0.7417,
+      "restore_to": 1.0,
+      "recovery_pct": 6.68,
+      "delta_biocap": 0.0258
+    },
+    {
+      "marker": "D",
+      "weight": 0.05,
+      "baseline_value": 0.6502,
+      "restore_to": 1.0,
+      "recovery_pct": 4.53,
+      "delta_biocap": 0.0175
+    },
+    {
+      "marker": "B2",
+      "weight": 0.05,
+      "baseline_value": 0.8063,
+      "restore_to": 1.0,
+      "recovery_pct": 2.51,
+      "delta_biocap": 0.0097
+    }
+  ],
+  "environments": {
+    "amish": {
+      "label": "Amish / unelectrified",
+      "emf_factor": 0.05,
+      "biocap": 0.9548,
+      "markers": {
+        "T": 0.955,
+        "OXT": 0.9616,
+        "DA": 0.9671,
+        "MEL": 0.9662,
+        "BDNF": 0.9613,
+        "CORT": 0.0807,
+        "D": 0.965,
+        "B2": 0.9032
+      }
+    },
+    "rural": {
+      "label": "Rural",
+      "emf_factor": 0.4,
+      "biocap": 0.7312,
+      "markers": {
+        "T": 0.6852,
+        "OXT": 0.7118,
+        "DA": 0.7368,
+        "MEL": 0.7675,
+        "BDNF": 0.7805,
+        "CORT": 0.3497,
+        "D": 0.8251,
+        "B2": 0.8354
+      }
+    },
+    "suburban": {
+      "label": "Suburban",
+      "emf_factor": 1.0,
+      "biocap": 0.6137,
+      "markers": {
+        "T": 0.5503,
+        "OXT": 0.6157,
+        "DA": 0.671,
+        "MEL": 0.5773,
+        "BDNF": 0.7417,
+        "CORT": 0.538,
+        "D": 0.6502,
+        "B2": 0.8063
+      }
+    },
+    "urban_residential": {
+      "label": "Urban residential",
+      "emf_factor": 1.4,
+      "biocap": 0.536,
+      "markers": {
+        "T": 0.4604,
+        "OXT": 0.5581,
+        "DA": 0.6217,
+        "MEL": 0.4505,
+        "BDNF": 0.7159,
+        "CORT": 0.6725,
+        "D": 0.5453,
+        "B2": 0.7966
+      }
+    },
+    "urban_office": {
+      "label": "Urban office worker",
+      "emf_factor": 1.8,
+      "biocap": 0.4801,
+      "markers": {
+        "T": 0.393,
+        "OXT": 0.5197,
+        "DA": 0.5723,
+        "MEL": 0.366,
+        "BDNF": 0.6901,
+        "CORT": 0.7532,
+        "D": 0.4753,
+        "B2": 0.7869
+      }
+    }
+  },
+  "regions": {
+    "years": [
+      2000,
+      2025,
+      2060,
+      2080
+    ],
+    "rows": {
+      "Sub-Saharan Africa": {
+        "lat": 0.0,
+        "electrification_year": 1955,
+        "chi_latitude": 0.25,
+        "chi_total_2025": 0.3417,
+        "biocap": {
+          "2000": 0.9059,
+          "2025": 0.8938,
+          "2060": 0.8739,
+          "2080": 0.8619
+        },
+        "tfr_2020": 4.6
+      },
+      "Middle East": {
+        "lat": 30.0,
+        "electrification_year": 1935,
+        "chi_latitude": 0.424,
+        "chi_total_2025": 0.6695,
+        "biocap": {
+          "2000": 0.833,
+          "2025": 0.8081,
+          "2060": 0.769,
+          "2080": 0.7458
+        },
+        "tfr_2020": 2.8
+      },
+      "South Asia": {
+        "lat": 20.0,
+        "electrification_year": 1930,
+        "chi_latitude": 0.3283,
+        "chi_total_2025": 0.5259,
+        "biocap": {
+          "2000": 0.869,
+          "2025": 0.8494,
+          "2060": 0.8187,
+          "2080": 0.8005
+        },
+        "tfr_2020": 2.2
+      },
+      "Latin America": {
+        "lat": -15.0,
+        "electrification_year": 1925,
+        "chi_latitude": 0.2943,
+        "chi_total_2025": 0.5422,
+        "biocap": {
+          "2000": 0.8774,
+          "2025": 0.8569,
+          "2060": 0.8248,
+          "2080": 0.8059
+        },
+        "tfr_2020": 2.0
+      },
+      "East Asia": {
+        "lat": 35.0,
+        "electrification_year": 1920,
+        "chi_latitude": 0.4849,
+        "chi_total_2025": 0.8827,
+        "biocap": {
+          "2000": 0.7959,
+          "2025": 0.7624,
+          "2060": 0.7105,
+          "2080": 0.6797
+        },
+        "tfr_2020": 1.2
+      },
+      "Western Europe": {
+        "lat": 50.0,
+        "electrification_year": 1882,
+        "chi_latitude": 0.714,
+        "chi_total_2025": 1.1639,
+        "biocap": {
+          "2000": 0.6884,
+          "2025": 0.645,
+          "2060": 0.578,
+          "2080": 0.5383
+        },
+        "tfr_2020": 1.5
+      },
+      "USA": {
+        "lat": 38.0,
+        "electrification_year": 1882,
+        "chi_latitude": 0.5254,
+        "chi_total_2025": 1.0252,
+        "biocap": {
+          "2000": 0.7528,
+          "2025": 0.7139,
+          "2060": 0.654,
+          "2080": 0.6186
+        },
+        "tfr_2020": 1.7
+      },
+      "Japan": {
+        "lat": 36.0,
+        "electrification_year": 1887,
+        "chi_latitude": 0.4981,
+        "chi_total_2025": 1.0479,
+        "biocap": {
+          "2000": 0.7601,
+          "2025": 0.72,
+          "2060": 0.6584,
+          "2080": 0.622
+        },
+        "tfr_2020": 1.3
+      },
+      "South Korea": {
+        "lat": 37.0,
+        "electrification_year": 1910,
+        "chi_latitude": 0.5116,
+        "chi_total_2025": 1.0602,
+        "biocap": {
+          "2000": 0.7694,
+          "2025": 0.7286,
+          "2060": 0.6659,
+          "2080": 0.6287
+        },
+        "tfr_2020": 0.8
+      }
+    },
+    "ranking_2025_high_to_low": [
+      "Sub-Saharan Africa",
+      "Latin America",
+      "South Asia",
+      "Middle East",
+      "East Asia",
+      "South Korea",
+      "Japan",
+      "USA",
+      "Western Europe"
+    ],
+    "ssa_to_western_europe": {
+      "gradient_2025": 0.2488,
+      "gradient_2080": 0.3236,
+      "migration_pressure_2025": 0.3993
+    },
+    "gradient_sign": "positive = source has higher BioCap than destination"
+  },
   "biomarker_database": {
     "testosterone": {
       "symbol": "T",
@@ -406,7 +796,7 @@
       "annual_decline_pct": 1.2,
       "evidence_n": ">1M",
       "evidence_level": "E",
-      "berm_mechanism": "EMF \u2192 VGCC \u2192 Ca\u00b2\u207a \u2192 StAR\u2193 \u2192 P450scc\u2193 \u2192 T\u2193 AND EMF \u2192 SCN \u2192 GnRH\u2193 \u2192 LH\u2193 \u2192 T\u2193 (hypothalamic)",
+      "berm_mechanism": "EMF → VGCC → Ca²⁺ → StAR↓ → P450scc↓ → T↓ AND EMF → SCN → GnRH↓ → LH↓ → T↓ (hypothalamic)",
       "cultural_function": "Risk-taking, competition, assertiveness, physical vigor, spatial cognition, libido",
       "unwin_mapping": "Expansive energy (primary driver)",
       "weight_in_model": 0.2
@@ -420,14 +810,14 @@
       "evidence_n": "Inferred",
       "evidence_level": "M|C",
       "proxy_evidence": [
-        "Trust declining: Edelman Trust Barometer 2000\u21922025",
+        "Trust declining: Edelman Trust Barometer 2000→2025",
         "Social isolation: 15% men zero close friends (2021) vs 3% (1990)",
         "US Surgeon General 2023: loneliness epidemic declared",
         "Holt-Lunstad 2015: isolation mortality +26% (N=300K+)",
         "Marriage rates declining globally",
         "Volunteer participation declining"
       ],
-      "berm_mechanism": "EMF \u2192 VGCC \u2192 Ca\u00b2\u207a \u2192 hypothalamic OXT neurons \u2192 OXT release\u2193 AND gut-brain axis disruption \u2192 vagal OXT pathway\u2193",
+      "berm_mechanism": "EMF → VGCC → Ca²⁺ → hypothalamic OXT neurons → OXT release↓ AND gut-brain axis disruption → vagal OXT pathway↓",
       "cultural_function": "Social trust, group cohesion, cooperation, pair bonding, institutional loyalty, altruism",
       "unwin_mapping": "Cohesive energy (Turchin's asabiya)",
       "weight_in_model": 0.2
@@ -442,13 +832,13 @@
       "evidence_level": "M|C",
       "proxy_evidence": [
         "Addiction rates rising (opioid crisis, gaming, gambling)",
-        "ADHD prevalence 3% (1990) \u2192 10%+ (2020)",
+        "ADHD prevalence 3% (1990) → 10%+ (2020)",
         "Anhedonia prevalence rising",
         "Screen time: avg 7h/day (adults), dopamine reward cycling",
         "Deaths of despair: drug overdose +387% in some cohorts",
         "Failure to launch: 38% young men sexless (2018 vs 28% 2008)"
       ],
-      "berm_mechanism": "EMF \u2192 VGCC \u2192 Ca\u00b2\u207a \u2192 DA synthesis pathway \u2192 chronic low DA \u2192 compensatory high-stimulus seeking \u2192 D2R downregulation \u2192 anhedonia cycle",
+      "berm_mechanism": "EMF → VGCC → Ca²⁺ → DA synthesis pathway → chronic low DA → compensatory high-stimulus seeking → D2R downregulation → anhedonia cycle",
       "cultural_function": "Motivation, goal pursuit, delayed gratification, creativity, sustained effort, reward from achievement",
       "unwin_mapping": "Productive energy (creative drive)",
       "weight_in_model": 0.15
@@ -467,10 +857,10 @@
         "Sleep duration declining globally",
         "Blue light exposure increased 100x with LED adoption",
         "Calves in dark: EMF affects melatonin INDEPENDENTLY of light",
-        "Shift workers: melatonin\u2193 \u2192 cancer risk (IARC 2A)"
+        "Shift workers: melatonin↓ → cancer risk (IARC 2A)"
       ],
-      "berm_mechanism": "TWO independent pathways: (1) Blue light \u2192 melanopsin \u2192 SCN \u2192 mel\u2193 (fast, reversible) (2) EMF \u2192 CRY/VGCC \u2192 SCN oscillation \u2192 mel\u2193 (slow, partly irreversible) PLUS: PGC accumulation \u2192 permanent capacity loss",
-      "cultural_function": "Sleep quality \u2192 cognitive consolidation \u2192 creativity; immune regulation; antioxidant protection; circadian coherence",
+      "berm_mechanism": "TWO independent pathways: (1) Blue light → melanopsin → SCN → mel↓ (fast, reversible) (2) EMF → CRY/VGCC → SCN oscillation → mel↓ (slow, partly irreversible) PLUS: PGC accumulation → permanent capacity loss",
+      "cultural_function": "Sleep quality → cognitive consolidation → creativity; immune regulation; antioxidant protection; circadian coherence",
       "unwin_mapping": "Mental energy (regenerative substrate)",
       "weight_in_model": 0.15
     },
@@ -483,20 +873,20 @@
       "evidence_n": "Inferred",
       "evidence_level": "M|C",
       "proxy_evidence": [
-        "Negative Flynn effect: IQ -5 to -7 points/generation (1995\u2192)",
+        "Negative Flynn effect: IQ -5 to -7 points/generation (1995→)",
         "Abstract reasoning declining (Dworak 2023, N=394K)",
         "BDNF val66met polymorphism predicts cognitive decline",
-        "Exercise (BDNF\u2191) correlates with cognitive performance",
-        "Depression (BDNF\u2193) prevalence rising globally"
+        "Exercise (BDNF↑) correlates with cognitive performance",
+        "Depression (BDNF↓) prevalence rising globally"
       ],
-      "berm_mechanism": "EMF \u2192 VGCC \u2192 Ca\u00b2\u207a \u2192 CREB phosphorylation disrupted \u2192 BDNF transcription\u2193 \u2192 neuroplasticity\u2193 \u2192 abstract reasoning\u2193, learning rate\u2193",
+      "berm_mechanism": "EMF → VGCC → Ca²⁺ → CREB phosphorylation disrupted → BDNF transcription↓ → neuroplasticity↓ → abstract reasoning↓, learning rate↓",
       "cultural_function": "Abstract reasoning, learning, cognitive flexibility, creative synthesis, long-term planning, scientific thinking",
       "unwin_mapping": "Mental energy (cognitive substrate)",
       "weight_in_model": 0.1
     },
     "cortisol": {
       "symbol": "CORT",
-      "unit": "\u03bcg/dL (morning)",
+      "unit": "μg/dL (morning)",
       "baseline_1980": 12,
       "current_2025": 16,
       "annual_decline_pct": -0.7,
@@ -509,10 +899,11 @@
         "Burnout syndrome prevalence rising",
         "Chronic stress markers elevated in younger cohorts"
       ],
-      "berm_mechanism": "EMF \u2192 mel\u2193 \u2192 sleep\u2193 \u2192 HPA activation \u2192 cortisol\u2191 AND EMF \u2192 amygdala Ca\u00b2\u207a \u2192 threat sensitivity\u2191 \u2192 chronic HPA activation",
+      "berm_mechanism": "EMF → mel↓ → sleep↓ → HPA activation → cortisol↑ AND EMF → amygdala Ca²⁺ → threat sensitivity↑ → chronic HPA activation",
       "cultural_function": "INVERTED: high cortisol REDUCES cultural energy. Avoidance behavior, anxiety, short-term thinking, threat focus over opportunity focus, institutional paralysis",
       "unwin_mapping": "Energy DRAIN (Glubb's 'pessimism and frivolity')",
-      "weight_in_model": -0.1
+      "weight_in_model": -0.1,
+      "normalisation": "stored raw: 0 = pre-industrial floor, 1 = maximum observed; enters BioCap as |w| * (1 - CORT)"
     },
     "vitamin_d": {
       "symbol": "D",
@@ -525,11 +916,11 @@
       "proxy_evidence": [
         "47.9% global population <50 nmol/L (Front Nutr 2023, 7.9M)",
         "Indoor time increasing with urbanization + screen use",
-        "VDR \u2192 CACNA1C/1D mRNA\u2193 = natural Ca\u00b2\u207a blocker",
+        "VDR → CACNA1C/1D mRNA↓ = natural Ca²⁺ blocker",
         "D-deficiency amplifies EMF sensitivity (VK50)"
       ],
-      "berm_mechanism": "D-vitamin \u2192 VDR \u2192 VGCC expression\u2193 (natural protection). D\u2193 \u2192 VGCC expression\u2191 \u2192 EMF sensitivity AMPLIFIED. D\u2193 is BOTH consequence (indoor lifestyle) AND amplifier (makes EMF damage worse)",
-      "cultural_function": "Immune competence, Ca\u00b2\u207a homeostasis moderation, bone health \u2192 physical capacity, mood regulation",
+      "berm_mechanism": "D-vitamin → VDR → VGCC expression↓ (natural protection). D↓ → VGCC expression↑ → EMF sensitivity AMPLIFIED. D↓ is BOTH consequence (indoor lifestyle) AND amplifier (makes EMF damage worse)",
+      "cultural_function": "Immune competence, Ca²⁺ homeostasis moderation, bone health → physical capacity, mood regulation",
       "unwin_mapping": "Protective factor (moderates energy loss rate)",
       "weight_in_model": 0.05
     },
@@ -542,17 +933,17 @@
       "evidence_n": "Inferred",
       "evidence_level": "M|C",
       "proxy_evidence": [
-        "B2\u2192FAD\u2192CRY stability (Cell Reports 2017)",
-        "RFK knockdown \u2192 PEMF response\u2193 (PMC11817702 2025)",
-        "B2 400mg \u2192 migraine\u2193 59% vs 15% (RCT)",
+        "B2→FAD→CRY stability (Cell Reports 2017)",
+        "RFK knockdown → PEMF response↓ (PMC11817702 2025)",
+        "B2 400mg → migraine↓ 59% vs 15% (RCT)",
         "Processed food: B2 destroyed by light + heat",
         "Pregnancy B2 deficiency common"
       ],
-      "berm_mechanism": "B2\u2192FAD\u2192CRY protein stability \u2192 circadian clock integrity AND B2\u2192FAD\u2192mitochondrial complex I/II \u2192 cellular energy AND B2\u2192B6 activation\u2192melatonin synthesis",
+      "berm_mechanism": "B2→FAD→CRY protein stability → circadian clock integrity AND B2→FAD→mitochondrial complex I/II → cellular energy AND B2→B6 activation→melatonin synthesis",
       "cultural_function": "CRY-mediated circadian coherence, mitochondrial energy, neuroprotection (AD, PD, MS protection)",
       "unwin_mapping": "Protective factor (CRY pathway integrity)",
       "weight_in_model": 0.05
     }
   },
-  "model_note": "BioCap is diagnostic/conceptual, not calibrated. Weights and trajectories are illustrative. The model's value is in identifying WHICH biomarkers drive the decline and WHEN thresholds are crossed."
+  "model_note": "Trajectories are logistic fits to secular biomarker trends (biomarker_trajectories.TREND_DATA); the model's value is in identifying which biomarkers drive the decline and when the Unwin thresholds are crossed."
 }

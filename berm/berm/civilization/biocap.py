@@ -14,7 +14,8 @@ where:
     S(tau) = solar activity (normalized 0-1)
     U(tau) = urbanization proxy
     E(tau) = electrification proxy
-    chi(lam) = latitude-dependent susceptibility
+    chi(lam) = latitude-dependent susceptibility; when a region is given,
+               chi(lam, tau) = chi_latitude(lam) + chi_electrification(tau, region)
     alpha = recovery coefficient (~0.3)
     sigma(tau) = anthropogenic EM saturation
 """
@@ -26,7 +27,7 @@ import math
 import numpy as np
 
 from berm.civilization.solar_reconstruction import solar_activity
-from berm.civilization.chi_map import chi_latitude
+from berm.civilization.chi_map import chi_latitude, chi_total
 
 # Recovery coefficient: fraction of natural recovery realized per unit time
 ALPHA = 0.3
@@ -114,6 +115,7 @@ def biocap(
     lam: float,
     biocap0: float = 1.0,
     t_start: float = 1000.0,
+    region: str | None = None,
 ) -> float:
     """Compute BioCap at time t for latitude lambda.
 
@@ -130,6 +132,11 @@ def biocap(
         Initial biological capacity (default 1.0).
     t_start : float
         Integration start year (default 1000 CE).
+    region : str, optional
+        Macro-region name (key of chi_map.ELECTRIFICATION_YEARS). When
+        given, chi follows chi_total(lam, tau, region) year by year, so
+        the region's electrification history adds to the latitude
+        baseline. When omitted, only chi_latitude(lam) is used.
 
     Returns
     -------
@@ -139,12 +146,13 @@ def biocap(
     if t <= t_start:
         return biocap0
 
-    chi = chi_latitude(lam)
+    chi_base = chi_latitude(lam)
     years = np.arange(t_start, t, DT)
     degradation = 0.0
     recovery = 0.0
 
     for tau in years:
+        chi = chi_total(lam, tau, region) if region is not None else chi_base
         s = solar_activity(tau)
         u = urbanization_proxy(tau)
         e = electrification_proxy(tau)
@@ -173,6 +181,7 @@ def biocap_series(
     end: float = 2025.0,
     step: float = 10.0,
     biocap0: float = 1.0,
+    region: str | None = None,
 ) -> tuple[np.ndarray, np.ndarray]:
     """Generate a BioCap time series for a given latitude.
 
@@ -186,6 +195,8 @@ def biocap_series(
         Sample interval (years).
     biocap0 : float
         Initial biological capacity.
+    region : str, optional
+        Macro-region name; passed through to biocap().
 
     Returns
     -------
@@ -195,5 +206,7 @@ def biocap_series(
         BioCap at each year.
     """
     years = np.arange(start, end, step)
-    values = np.array([biocap(y, lam, biocap0, t_start=start) for y in years])
+    values = np.array([
+        biocap(y, lam, biocap0, t_start=start, region=region) for y in years
+    ])
     return years, values

@@ -1,9 +1,15 @@
 """Migration gradient model: BioCap contrast between regions.
 
 Predicts migration pressure as a function of the BioCap differential
-between source and destination regions. Regions with lower BioCap
-(higher stressor load) generate emigration toward higher-BioCap regions,
-modulated by economic pull and policy barriers.
+between source and destination regions. The biologically stronger
+population (higher BioCap, shorter cumulative electromagnetic exposure)
+expands into the weaker one -- the pattern of Germanic tribes into Rome,
+Arabs into Byzantium, and today Sub-Saharan Africa into Western Europe --
+modulated by demographic pressure (TFR above replacement).
+
+Regional BioCap is computed with biocap(year, lat, region=name), so each
+region's electrification history (chi_map.chi_electrification) adds to
+its latitude baseline.
 """
 
 from __future__ import annotations
@@ -64,9 +70,10 @@ def biocap_gradient(
 ) -> float:
     """Biological capacity contrast between two regions at a given year.
 
-    Positive values indicate the destination has higher BioCap than the
-    source (migration pull toward destination). Negative values indicate
-    the source has higher BioCap.
+    Positive values indicate the source has higher BioCap than the
+    destination (expansion/migration pressure from the biologically
+    stronger source into the weaker destination). Negative values
+    indicate the destination is the stronger population.
 
     Parameters
     ----------
@@ -80,7 +87,7 @@ def biocap_gradient(
     Returns
     -------
     float
-        BioCap(dest) - BioCap(source). Positive = pull toward dest.
+        BioCap(source) - BioCap(dest). Positive = pressure toward dest.
 
     Raises
     ------
@@ -90,10 +97,10 @@ def biocap_gradient(
     src = REGIONS[source_region]
     dst = REGIONS[dest_region]
 
-    src_biocap = biocap(year, src.lat)
-    dst_biocap = biocap(year, dst.lat)
+    src_biocap = biocap(year, src.lat, region=src.name)
+    dst_biocap = biocap(year, dst.lat, region=dst.name)
 
-    return dst_biocap - src_biocap
+    return src_biocap - dst_biocap
 
 
 def migration_pressure(
@@ -103,8 +110,9 @@ def migration_pressure(
 ) -> float:
     """Migration pressure index (0-1) from source to destination.
 
-    Combines BioCap gradient with TFR-driven population pressure.
-    Higher values indicate stronger migration drive.
+    Combines the BioCap gradient (source stronger than destination) with
+    TFR-driven population pressure. Higher values indicate stronger
+    migration drive from source into destination.
 
     Parameters
     ----------

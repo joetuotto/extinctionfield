@@ -1,6 +1,32 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import model from "@/public/data/berm_cultural_energy_model.json";
+
+/* ─── model data (berm/export_cultural_energy.py → regions) ─────────── */
+type RegionRow = {
+  lat: number;
+  electrification_year: number;
+  biocap: Record<string, number>;
+  tfr_2020: number;
+};
+const MODEL_REGIONS = model.regions.rows as Record<string, RegionRow>;
+const REF_YEAR = String(model.metadata.reference_year);
+
+function regionBiocap(...names: string[]): number {
+  const vals = names.map((n) => MODEL_REGIONS[n].biocap[REF_YEAR]);
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
+function regionTfr(...names: string[]): number {
+  const vals = names.map((n) => MODEL_REGIONS[n].tfr_2020);
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
+function electYear(...names: string[]): string {
+  const ys = names.map((n) => MODEL_REGIONS[n].electrification_year);
+  const lo = Math.min(...ys);
+  const hi = Math.max(...ys);
+  return lo === hi ? `${lo}` : `${lo}–${hi}`;
+}
 
 /* ─── layout ────────────────────────────────────────────────────────── */
 const W = 900;
@@ -31,13 +57,19 @@ interface Region {
   path: string;
 }
 
+/*
+ * BioCap, TFR and electrification year come from the model export
+ * (berm.civilization.biocap(year, lat, region) with chi_map.chi_total);
+ * only the map geometry is hand-drawn. Southeast Asia is not a model
+ * region and is therefore not shown.
+ */
 const REGIONS: Region[] = [
   {
     id: "sub-saharan-africa",
     name: "Sub-Saharan Africa",
-    biocap: 0.88,
-    tfr: 4.6,
-    electYear: "~1950-2000",
+    biocap: regionBiocap("Sub-Saharan Africa"),
+    tfr: regionTfr("Sub-Saharan Africa"),
+    electYear: electYear("Sub-Saharan Africa"),
     cx: 470,
     cy: 300,
     path: "M430,230 L440,220 L470,218 L510,225 L520,240 L525,280 L520,320 L510,350 L495,370 L475,375 L455,370 L440,350 L430,320 L425,280 Z",
@@ -45,19 +77,19 @@ const REGIONS: Region[] = [
   {
     id: "south-asia",
     name: "South Asia",
-    biocap: 0.72,
-    tfr: 2.3,
-    electYear: "~1930-1960",
+    biocap: regionBiocap("South Asia"),
+    tfr: regionTfr("South Asia"),
+    electYear: electYear("South Asia"),
     cx: 638,
     cy: 260,
     path: "M610,220 L625,210 L650,215 L668,225 L670,250 L665,275 L655,290 L638,298 L620,290 L612,270 L608,245 Z",
   },
   {
     id: "mena",
-    name: "Middle East / North Africa",
-    biocap: 0.65,
-    tfr: 2.7,
-    electYear: "~1940-1970",
+    name: "Middle East",
+    biocap: regionBiocap("Middle East"),
+    tfr: regionTfr("Middle East"),
+    electYear: electYear("Middle East"),
     cx: 530,
     cy: 210,
     path: "M420,175 L450,168 L490,165 L540,170 L580,180 L600,195 L605,210 L598,225 L570,228 L530,230 L490,228 L455,225 L430,218 L420,200 Z",
@@ -65,29 +97,19 @@ const REGIONS: Region[] = [
   {
     id: "latin-america",
     name: "Latin America",
-    biocap: 0.55,
-    tfr: 1.9,
-    electYear: "~1920-1960",
+    biocap: regionBiocap("Latin America"),
+    tfr: regionTfr("Latin America"),
+    electYear: electYear("Latin America"),
     cx: 258,
     cy: 320,
     path: "M230,215 L250,210 L270,215 L285,230 L290,260 L288,300 L280,340 L270,370 L258,395 L245,405 L235,398 L228,370 L225,340 L222,300 L225,260 L228,235 Z",
   },
   {
-    id: "southeast-asia",
-    name: "Southeast Asia",
-    biocap: 0.50,
-    tfr: 2.1,
-    electYear: "~1940-1970",
-    cx: 700,
-    cy: 290,
-    path: "M675,260 L690,255 L710,258 L728,268 L732,285 L728,305 L718,320 L700,325 L685,318 L678,300 L674,280 Z",
-  },
-  {
     id: "east-asia",
     name: "East Asia",
-    biocap: 0.46,
-    tfr: 1.1,
-    electYear: "~1920-1960",
+    biocap: regionBiocap("East Asia"),
+    tfr: regionTfr("East Asia"),
+    electYear: electYear("East Asia"),
     cx: 735,
     cy: 200,
     path: "M700,155 L720,148 L750,150 L772,162 L778,180 L775,200 L768,218 L750,228 L728,225 L712,215 L705,195 L700,175 Z",
@@ -95,9 +117,9 @@ const REGIONS: Region[] = [
   {
     id: "western-europe",
     name: "Western Europe",
-    biocap: 0.11,
-    tfr: 1.5,
-    electYear: "~1880-1920",
+    biocap: regionBiocap("Western Europe"),
+    tfr: regionTfr("Western Europe"),
+    electYear: electYear("Western Europe"),
     cx: 440,
     cy: 140,
     path: "M405,105 L420,100 L445,98 L468,102 L478,115 L480,135 L476,155 L465,168 L448,172 L430,170 L415,162 L408,145 L405,125 Z",
@@ -105,9 +127,9 @@ const REGIONS: Region[] = [
   {
     id: "united-states",
     name: "United States",
-    biocap: 0.08,
-    tfr: 1.6,
-    electYear: "~1880-1920",
+    biocap: regionBiocap("USA"),
+    tfr: regionTfr("USA"),
+    electYear: electYear("USA"),
     cx: 195,
     cy: 170,
     path: "M100,140 L130,132 L175,128 L225,130 L268,135 L290,145 L292,160 L285,178 L268,192 L240,198 L200,200 L160,196 L130,188 L110,175 L100,160 Z",
@@ -115,9 +137,9 @@ const REGIONS: Region[] = [
   {
     id: "japan-korea",
     name: "Japan / South Korea",
-    biocap: 0.07,
-    tfr: 0.95,
-    electYear: "~1890-1930",
+    biocap: regionBiocap("Japan", "South Korea"),
+    tfr: regionTfr("Japan", "South Korea"),
+    electYear: electYear("Japan", "South Korea"),
     cx: 790,
     cy: 175,
     path: "M778,148 L788,142 L800,143 L810,150 L813,162 L810,178 L805,192 L795,200 L785,198 L778,188 L775,172 L776,158 Z",
@@ -136,7 +158,6 @@ const FLOWS: Flow[] = [
   { from: "mena", to: "western-europe", label: "MENA → Europe" },
   { from: "latin-america", to: "united-states", label: "LatAm → US" },
   { from: "south-asia", to: "mena", label: "S.Asia → MENA" },
-  { from: "southeast-asia", to: "east-asia", label: "SE Asia → E.Asia" },
 ];
 
 const REGION_LABEL_OFFSETS: Record<string, { x: number; y: number }> = {

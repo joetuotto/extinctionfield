@@ -120,7 +120,7 @@
       {
         "environment": "amish",
         "emf_factor": 0.05,
-        "biocap": 0.855,
+        "biocap": 0.955,
         "ideology": "pragmatic_localism",
         "ideology_label": "Pragmatic localism (natural baseline)",
         "pathologization": 0.011
@@ -128,7 +128,7 @@
       {
         "environment": "rural",
         "emf_factor": 0.4,
-        "biocap": 0.631,
+        "biocap": 0.731,
         "ideology": "pragmatic_localism",
         "ideology_label": "Pragmatic localism (natural baseline)",
         "pathologization": 0.258
@@ -136,7 +136,7 @@
       {
         "environment": "suburban",
         "emf_factor": 1.0,
-        "biocap": 0.514,
+        "biocap": 0.614,
         "ideology": "green_abstraction",
         "ideology_label": "Green / ecological long-termism",
         "pathologization": 0.369
@@ -144,7 +144,7 @@
       {
         "environment": "urban_residential",
         "emf_factor": 1.4,
-        "biocap": 0.436,
+        "biocap": 0.536,
         "ideology": "progressive_egalitarianism",
         "ideology_label": "Progressive egalitarianism",
         "pathologization": 0.443
@@ -152,7 +152,7 @@
       {
         "environment": "urban_office",
         "emf_factor": 1.8,
-        "biocap": 0.38,
+        "biocap": 0.48,
         "ideology": "progressive_egalitarianism",
         "ideology_label": "Progressive egalitarianism",
         "pathologization": 0.495
@@ -171,31 +171,31 @@
       {
         "year": 1950,
         "ideology": "pragmatic_localism",
-        "biocap": 0.876,
+        "biocap": 0.976,
         "pathologization": 0.04
       },
       {
         "year": 1990,
         "ideology": "pragmatic_localism",
-        "biocap": 0.761,
+        "biocap": 0.861,
         "pathologization": 0.108
       },
       {
         "year": 2010,
         "ideology": "green_abstraction",
-        "biocap": 0.622,
+        "biocap": 0.722,
         "pathologization": 0.256
       },
       {
         "year": 2025,
         "ideology": "green_abstraction",
-        "biocap": 0.514,
+        "biocap": 0.614,
         "pathologization": 0.369
       },
       {
         "year": 2050,
         "ideology": "authoritarian_conservatism",
-        "biocap": 0.425,
+        "biocap": 0.525,
         "pathologization": 0.46
       }
     ]
@@ -682,7 +682,7 @@
         "time_preference_shift": 0.035,
         "genetic_burn_rate": 0.061,
         "shredder_efficiency": 0.06,
-        "biocap": 0.855,
+        "biocap": 0.955,
         "rk_index": 0.862
       },
       {
@@ -693,7 +693,7 @@
         "time_preference_shift": 0.243,
         "genetic_burn_rate": 0.355,
         "shredder_efficiency": 0.344,
-        "biocap": 0.631,
+        "biocap": 0.731,
         "rk_index": 0.601
       },
       {
@@ -704,7 +704,7 @@
         "time_preference_shift": 0.297,
         "genetic_burn_rate": 0.488,
         "shredder_efficiency": 0.461,
-        "biocap": 0.514,
+        "biocap": 0.614,
         "rk_index": 0.487
       },
       {
@@ -715,7 +715,7 @@
         "time_preference_shift": 0.336,
         "genetic_burn_rate": 0.569,
         "shredder_efficiency": 0.537,
-        "biocap": 0.436,
+        "biocap": 0.536,
         "rk_index": 0.417
       },
       {
@@ -726,7 +726,7 @@
         "time_preference_shift": 0.375,
         "genetic_burn_rate": 0.624,
         "shredder_efficiency": 0.592,
-        "biocap": 0.38,
+        "biocap": 0.48,
         "rk_index": 0.369
       }
     ],
@@ -798,5 +798,195 @@
       "B2": 13
     },
     "cort_amish_to_urban_office_ratio": 9.3
+  },
+  "signal_degradation": {
+    "precision": 3,
+    "rows": [
+      {
+        "environment": "amish",
+        "emf_factor": 0.05,
+        "morphological_signal": 0.946,
+        "dynamic_signal": 0.938,
+        "cryptic_signal": 0.944,
+        "total_signal_strength": 0.943,
+        "signal_degradation": 0.058,
+        "obesity_amplification": 0.002,
+        "signal_perception": 0.951,
+        "pair_signal_compound": 0.93
+      },
+      {
+        "environment": "rural",
+        "emf_factor": 0.4,
+        "morphological_signal": 0.715,
+        "dynamic_signal": 0.631,
+        "cryptic_signal": 0.677,
+        "total_signal_strength": 0.673,
+        "signal_degradation": 0.327,
+        "obesity_amplification": 0.091,
+        "signal_perception": 0.681,
+        "pair_signal_compound": 0.602
+      },
+      {
+        "environment": "suburban",
+        "emf_factor": 1.0,
+        "morphological_signal": 0.591,
+        "dynamic_signal": 0.507,
+        "cryptic_signal": 0.522,
+        "total_signal_strength": 0.539,
+        "signal_degradation": 0.461,
+        "obesity_amplification": 0.195,
+        "signal_perception": 0.584,
+        "pair_signal_compound": 0.468
+      },
+      {
+        "environment": "urban_residential",
+        "emf_factor": 1.4,
+        "morphological_signal": 0.513,
+        "dynamic_signal": 0.428,
+        "cryptic_signal": 0.426,
+        "total_signal_strength": 0.454,
+        "signal_degradation": 0.546,
+        "obesity_amplification": 0.288,
+        "signal_perception": 0.521,
+        "pair_signal_compound": 0.386
+      },
+      {
+        "environment": "urban_office",
+        "emf_factor": 1.8,
+        "morphological_signal": 0.464,
+        "dynamic_signal": 0.369,
+        "cryptic_signal": 0.364,
+        "total_signal_strength": 0.397,
+        "signal_degradation": 0.604,
+        "obesity_amplification": 0.366,
+        "signal_perception": 0.469,
+        "pair_signal_compound": 0.331
+      }
+    ]
+  },
+  "behavioral_sink": {
+    "precision": 3,
+    "rows": [
+      {
+        "environment": "amish",
+        "emf_factor": 0.05,
+        "normative_predation": 0.011,
+        "institutional_capture": 0.026,
+        "sterilization_contagion": 0.005,
+        "behavioral_sink": 0.013
+      },
+      {
+        "environment": "rural",
+        "emf_factor": 0.4,
+        "normative_predation": 0.113,
+        "institutional_capture": 0.098,
+        "sterilization_contagion": 0.071,
+        "behavioral_sink": 0.085
+      },
+      {
+        "environment": "suburban",
+        "emf_factor": 1.0,
+        "normative_predation": 0.197,
+        "institutional_capture": 0.161,
+        "sterilization_contagion": 0.129,
+        "behavioral_sink": 0.152
+      },
+      {
+        "environment": "urban_residential",
+        "emf_factor": 1.4,
+        "normative_predation": 0.264,
+        "institutional_capture": 0.232,
+        "sterilization_contagion": 0.179,
+        "behavioral_sink": 0.217
+      },
+      {
+        "environment": "urban_office",
+        "emf_factor": 1.8,
+        "normative_predation": 0.318,
+        "institutional_capture": 0.291,
+        "sterilization_contagion": 0.222,
+        "behavioral_sink": 0.271
+      }
+    ]
+  },
+  "transmission": {
+    "precision": 3,
+    "rows": [
+      {
+        "environment": "amish",
+        "emf_factor": 0.05,
+        "behavioral_immune": 0.934,
+        "destigmatization": 0.021,
+        "stigma_inversion": 0.0,
+        "net_immunity": 0.913,
+        "transmission_resistance": 0.923,
+        "recovery_sabotage": 0.017,
+        "dependency_transmission": 0.001,
+        "social_contagion": 0.002,
+        "empathy_weaponization": 0.002,
+        "active_infection_seeking": 0.0,
+        "transmission_composite": 0.003
+      },
+      {
+        "environment": "rural",
+        "emf_factor": 0.4,
+        "behavioral_immune": 0.591,
+        "destigmatization": 0.112,
+        "stigma_inversion": 0.0,
+        "net_immunity": 0.479,
+        "transmission_resistance": 0.501,
+        "recovery_sabotage": 0.132,
+        "dependency_transmission": 0.023,
+        "social_contagion": 0.056,
+        "empathy_weaponization": 0.045,
+        "active_infection_seeking": 0.049,
+        "transmission_composite": 0.065
+      },
+      {
+        "environment": "suburban",
+        "emf_factor": 1.0,
+        "behavioral_immune": 0.462,
+        "destigmatization": 0.188,
+        "stigma_inversion": 0.0,
+        "net_immunity": 0.274,
+        "transmission_resistance": 0.3,
+        "recovery_sabotage": 0.223,
+        "dependency_transmission": 0.07,
+        "social_contagion": 0.127,
+        "empathy_weaponization": 0.092,
+        "active_infection_seeking": 0.123,
+        "transmission_composite": 0.158
+      },
+      {
+        "environment": "urban_residential",
+        "emf_factor": 1.4,
+        "behavioral_immune": 0.386,
+        "destigmatization": 0.282,
+        "stigma_inversion": 0.0,
+        "net_immunity": 0.104,
+        "transmission_resistance": 0.151,
+        "recovery_sabotage": 0.299,
+        "dependency_transmission": 0.13,
+        "social_contagion": 0.199,
+        "empathy_weaponization": 0.134,
+        "active_infection_seeking": 0.197,
+        "transmission_composite": 0.266
+      },
+      {
+        "environment": "urban_office",
+        "emf_factor": 1.8,
+        "behavioral_immune": 0.332,
+        "destigmatization": 0.373,
+        "stigma_inversion": 0.13,
+        "net_immunity": -0.171,
+        "transmission_resistance": 0.03,
+        "recovery_sabotage": 0.364,
+        "dependency_transmission": 0.19,
+        "social_contagion": 0.267,
+        "empathy_weaponization": 0.17,
+        "active_infection_seeking": 0.265,
+        "transmission_composite": 0.377
+      }
+    ]
   }
 }

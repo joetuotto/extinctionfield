@@ -1,10 +1,14 @@
 """Chi susceptibility mapping: latitude and electrification dependence.
 
 chi(lambda) encodes how strongly a region's biological capacity responds
-to solar/electromagnetic perturbation. In the pre-electric era, tropical
-latitudes dominate (UV flux, vitamin D, melatonin amplitude). After
-electrification, mid-latitude industrialized regions acquire additional
-chi from anthropogenic EM fields.
+to solar/electromagnetic perturbation. The pre-electric baseline rises
+with latitude: populations adapted to high-latitude light regimes carry
+the highest biological chi (large seasonal melatonin amplitude,
+depigmentation, CRY/B2-dependent photoperiod sensing -- the "northern
+package"), tropical populations the lowest. After electrification,
+industrialized regions acquire additional chi from anthropogenic EM
+fields (chi_electrification), so the earliest- and most-electrified
+mid/high-latitude regions carry the highest total chi.
 """
 
 from __future__ import annotations
@@ -41,11 +45,12 @@ ELECTRIFICATION_CHI_PEAK: dict[str, float] = {
 
 
 def chi_latitude(lat: float) -> float:
-    """Latitude-dependent baseline chi (pre-electric natural susceptibility).
+    """Latitude-dependent baseline chi (pre-electric biological susceptibility).
 
-    Higher near the equator due to greater solar UV flux and stronger
-    circadian amplitude. Falls off with cos(lat) modulated by a tropical
-    enhancement term.
+    Rises with latitude ("northern package"): chi = 0.25 at the equator,
+    1.0 at |lat| >= 65 degrees, following (1 - cos(lat)) / (1 - cos(65))
+    in between. Representative values: 30 deg 0.42, 45 deg 0.63,
+    50 deg 0.71, 60 deg 0.90.
 
     Parameters
     ----------
@@ -57,12 +62,9 @@ def chi_latitude(lat: float) -> float:
     float
         Baseline chi in [0, 1].
     """
-    abs_lat = abs(lat)
-    # Cosine envelope: peaks at equator
-    cos_term = math.cos(math.radians(abs_lat))
-    # Tropical enhancement: Gaussian bump centered at equator
-    tropical = 0.3 * math.exp(-0.5 * (abs_lat / 25) ** 2)
-    return float(np.clip(cos_term * 0.7 + tropical, 0.0, 1.0))
+    abs_lat = min(abs(lat), 65.0)
+    frac = (1.0 - math.cos(math.radians(abs_lat))) / (1.0 - math.cos(math.radians(65.0)))
+    return float(np.clip(0.25 + 0.75 * frac, 0.0, 1.0))
 
 
 def chi_electrification(year: float, region: str) -> float:
