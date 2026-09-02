@@ -1,5 +1,7 @@
 # BERM: Lindgren-lähtöinen lähdekartta
 
+> **Arkistoitu versio 1.0.** Ajantasainen, uudelleen rakennettu ja laajennettu lähdekartta on [versio 2.0](./berm-lindgren-first-source-map-v2.md). Tätä tiedostoa ei pidä käyttää ensisijaisena lähdekarttana.
+
 **Versio:** 1.0  
 **Päiväys:** 1.9.2026  
 **Tarkoitus:** kartoittaa jo olemassa oleva tutkimus sen mukaan, mitä osaa Lindgrenin geometriasta alkavasta BERM-todistusketjusta se tosiasiallisesti tukee.
