@@ -22,6 +22,11 @@ import {
   Dna,
   Landmark,
   Scale,
+  Zap,
+  Building2,
+  Shield,
+  Globe,
+  UserX,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -151,6 +156,92 @@ export const NAV_ROUTES: NavRoute[] = [
     href: "/civilization",
     labels: { en: "Civilization", fi: "Sivilisaatio", ja: "文明", fr: "Civilisation", ko: "문명" },
     icon: Landmark,
+    children: [
+      {
+        href: "/civilization",
+        labels: { en: "Overview", fi: "Yleiskatsaus", ja: "概要", fr: "Vue d'ensemble", ko: "개요" },
+        icon: Landmark,
+        descs: {
+          en: "Six-stage reading path from mechanism to civilizational dynamics",
+          fi: "Kuusivaiheinen lukupolku mekanismista sivilisaatiodynamiikkaan",
+          ja: "メカニズムから文明動態への6段階の読書経路",
+          fr: "Parcours de lecture en six étapes, du mécanisme à la dynamique civilisationnelle",
+          ko: "메커니즘에서 문명 역학까지 6단계 독서 경로",
+        },
+      },
+      {
+        href: "/civilization/pathopege",
+        labels: { en: "Pathopege", fi: "Pathopege", ja: "パトペゲ", fr: "Pathopege", ko: "파토페게" },
+        icon: Zap,
+        descs: {
+          en: "pathos + pege — source of the disease",
+          fi: "pathos + pege — sairauden lähde",
+          ja: "pathos + pege — 病の源",
+          fr: "pathos + pege — source de la maladie",
+          ko: "pathos + pege — 질병의 근원",
+        },
+      },
+      {
+        href: "/civilization/patopolis",
+        labels: { en: "Patopolis", fi: "Patopolis", ja: "パトポリス", fr: "Patopolis", ko: "파토폴리스" },
+        icon: Building2,
+        descs: {
+          en: "pathos + polis — the pathological city",
+          fi: "pathos + polis — patologinen kaupunki",
+          ja: "pathos + polis — 病理的都市",
+          fr: "pathos + polis — la cité pathologique",
+          ko: "pathos + polis — 병리적 도시",
+        },
+      },
+      {
+        href: "/civilization/patokratia",
+        labels: { en: "Patokratia", fi: "Patokratia", ja: "パトクラティア", fr: "Patokratia", ko: "파토크라티아" },
+        icon: Shield,
+        descs: {
+          en: "pathos + kratos — pathological governance",
+          fi: "pathos + kratos — patologinen hallinto",
+          ja: "pathos + kratos — 病理的統治",
+          fr: "pathos + kratos — gouvernance pathologique",
+          ko: "pathos + kratos — 병리적 통치",
+        },
+      },
+      {
+        href: "/civilization/patopoliteia",
+        labels: { en: "Patopoliteia", fi: "Patopoliteia", ja: "パトポリテイア", fr: "Patopoliteia", ko: "파토폴리테이아" },
+        icon: Globe,
+        descs: {
+          en: "pathos + politeia — pathological civilization",
+          fi: "pathos + politeia — patologinen sivilisaatio",
+          ja: "pathos + politeia — 病理的文明",
+          fr: "pathos + politeia — civilisation pathologique",
+          ko: "pathos + politeia — 병리적 문명",
+        },
+      },
+      {
+        href: "/civilization/pathopolites",
+        labels: { en: "Pathopolites", fi: "Pathopolites", ja: "パトポリテース", fr: "Pathopolites", ko: "파토폴리테스" },
+        icon: UserX,
+        descs: {
+          en: "pathos + polites — the pathological citizen",
+          fi: "pathos + polites — patologinen kansalainen",
+          ja: "pathos + polites — 病理的市民",
+          fr: "pathos + polites — le citoyen pathologique",
+          ko: "pathos + polites — 병리적 시민",
+        },
+      },
+      {
+        href: "/civilization/patokinesis",
+        labels: { en: "Patokinesis", fi: "Patokinesis", ja: "パトキネシス", fr: "Patokinesis", ko: "파토키네시스" },
+        icon: Radio,
+        descs: {
+          en: "pathos + kinesis — the pathology that moves",
+          fi: "pathos + kinesis — patologia joka liikkuu",
+          ja: "pathos + kinesis — 移動する病理",
+          fr: "pathos + kinesis — la pathologie qui se déplace",
+          ko: "pathos + kinesis — 이동하는 병리",
+        },
+      },
+    ],
   },
   {
     href: "/evidence",
@@ -351,7 +442,7 @@ export const EXPLORE_TABS: ExploreTab[] = [
   { key: "global", labels: { en: "Global", fi: "Globaali", ja: "グローバル", fr: "Mondial", ko: "글로벌" }, icon: Globe2 },
   { key: "threshold", labels: { en: "T→TFR", fi: "T→TFR", ja: "T→TFR", fr: "T→TFR", ko: "T→TFR" }, icon: Activity },
   { key: "sentinel", labels: { en: "Sentinel", fi: "Indikaattorit", ja: "指標種", fr: "Sentinelles", ko: "감시종" }, icon: Leaf },
-  { key: "data", labels: { en: "Aineisto", fi: "Aineisto", ja: "データ", fr: "Données", ko: "데이터" }, icon: Database },
+  { key: "data", labels: { en: "Data", fi: "Aineisto", ja: "データ", fr: "Données", ko: "데이터" }, icon: Database },
   { key: "layers", labels: { en: "Layers", fi: "Kerrokset", ja: "レイヤー", fr: "Couches", ko: "레이어" }, icon: Layers },
   { key: "civilizations", labels: { en: "Civilizations", fi: "Sivilisaatiot", ja: "文明", fr: "Civilisations", ko: "문명" }, icon: Landmark },
   { key: "naturalEM", labels: { en: "Natural EM", fi: "Luonnollinen EM", ja: "自然EM", fr: "EM naturel", ko: "자연 EM" }, icon: Radio },

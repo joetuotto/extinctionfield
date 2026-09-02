@@ -1,70 +1,123 @@
+import { readdirSync } from "node:fs";
+import { join } from "node:path";
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
+import { ARTICLES } from "@/lib/articles";
 import { referenceRegistry } from "@/lib/referenceRegistry.server";
 import { referenceUrl } from "@/lib/references";
 
+// The route list is derived from the filesystem, so the sitemap must be
+// generated at build time (where app/[locale] exists), never at request time.
+export const dynamic = "force-static";
+
 const BASE_URL = "https://extinctionfield.com";
 
-const ROUTES = [
-  { path: "/", changeFrequency: "weekly" as const, priority: 1.0 },
-  { path: "/model", changeFrequency: "monthly" as const, priority: 0.9 },
-  { path: "/model/fieldstate", changeFrequency: "monthly" as const, priority: 0.8 },
-  { path: "/model/math", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/model/fieldstate/math", changeFrequency: "monthly" as const, priority: 0.6 },
-  { path: "/evidence", changeFrequency: "weekly" as const, priority: 0.9 },
-  { path: "/evidence/pharmacology", changeFrequency: "monthly" as const, priority: 0.8 },
-  { path: "/evidence/devices", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/lighting", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/cascades", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/bbb", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/circadian", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/epidemiology", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/magnetoreception", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/ecology", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/eyes", changeFrequency: "monthly" as const, priority: 0.6 },
-  { path: "/evidence/nutrition", changeFrequency: "monthly" as const, priority: 0.6 },
-  { path: "/evidence/evolution", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/populations", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/replication", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/evidence/technology", changeFrequency: "monthly" as const, priority: 0.8 },
-  { path: "/civilization", changeFrequency: "monthly" as const, priority: 0.9 },
-  { path: "/predictions", changeFrequency: "weekly" as const, priority: 0.8 },
-  { path: "/sentinel", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/objections", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/references", changeFrequency: "weekly" as const, priority: 0.6 },
-  { path: "/map", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/explore", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/explorer", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/data", changeFrequency: "weekly" as const, priority: 0.6 },
-  { path: "/modulome", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/mathematics", changeFrequency: "monthly" as const, priority: 0.7 },
-  { path: "/about", changeFrequency: "monthly" as const, priority: 0.5 },
-  { path: "/about/history", changeFrequency: "monthly" as const, priority: 0.4 },
-  { path: "/about/measurement", changeFrequency: "monthly" as const, priority: 0.4 },
-  { path: "/articles/bees", changeFrequency: "yearly" as const, priority: 0.5 },
-  { path: "/articles/spectrum", changeFrequency: "yearly" as const, priority: 0.5 },
-  { path: "/articles/implausibility", changeFrequency: "yearly" as const, priority: 0.5 },
-  { path: "/articles/dual-lock", changeFrequency: "yearly" as const, priority: 0.5 },
-];
+type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+
+interface RouteMeta {
+  changeFrequency: ChangeFrequency;
+  priority: number;
+}
+
+/**
+ * Explicit tuning for routes whose weight should not follow the depth default
+ * (see routeMeta): the home page, the section hubs, and frequently updated
+ * registries. Everything else is weighted by depth so section index pages
+ * always outrank their children.
+ */
+const ROUTE_META: Record<string, RouteMeta> = {
+  "/": { changeFrequency: "weekly", priority: 1.0 },
+  "/model": { changeFrequency: "monthly", priority: 0.9 },
+  "/model/fieldstate": { changeFrequency: "monthly", priority: 0.8 },
+  "/evidence": { changeFrequency: "weekly", priority: 0.9 },
+  "/evidence/pharmacology": { changeFrequency: "monthly", priority: 0.8 },
+  "/evidence/technology": { changeFrequency: "monthly", priority: 0.8 },
+  "/evidence/eyes": { changeFrequency: "monthly", priority: 0.6 },
+  "/evidence/nutrition": { changeFrequency: "monthly", priority: 0.6 },
+  "/civilization": { changeFrequency: "monthly", priority: 0.9 },
+  "/predictions": { changeFrequency: "weekly", priority: 0.8 },
+  "/articles": { changeFrequency: "weekly", priority: 0.8 },
+  "/references": { changeFrequency: "weekly", priority: 0.6 },
+  "/data": { changeFrequency: "weekly", priority: 0.6 },
+  "/about": { changeFrequency: "monthly", priority: 0.5 },
+};
+
+function routeMeta(route: string): RouteMeta {
+  const tuned = ROUTE_META[route];
+  if (tuned) return tuned;
+  const depth = route.split("/").length - 1;
+  const priority = route.startsWith("/about/") ? 0.4 : depth <= 1 ? 0.8 : depth === 2 ? 0.7 : 0.6;
+  return { changeFrequency: "monthly", priority };
+}
+
+const APP_LOCALE_DIR = join(process.cwd(), "app", "[locale]");
+const PAGE_FILES = new Set(["page.tsx", "page.ts", "page.jsx", "page.js", "page.mdx", "page.md"]);
+
+/**
+ * Walks app/[locale] and collects every static route that has a page file.
+ * Dynamic segments ([slug], [referenceId], [...rest]) are skipped here and
+ * enumerated explicitly in sitemap(); route groups "(name)" add no URL
+ * segment; private "_dir" and parallel "@slot" directories are ignored.
+ */
+function collectStaticRoutes(dir: string, route: string, out: Set<string>): void {
+  let entries;
+  try {
+    entries = readdirSync(dir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+  if (entries.some((entry) => entry.isFile() && PAGE_FILES.has(entry.name))) {
+    out.add(route || "/");
+  }
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const name = entry.name;
+    if (name.startsWith("[") || name.startsWith("_") || name.startsWith("@")) continue;
+    const isRouteGroup = name.startsWith("(") && name.endsWith(")");
+    collectStaticRoutes(join(dir, name), isRouteGroup ? route : `${route}/${name}`, out);
+  }
+}
+
+function staticRoutes(): string[] {
+  const out = new Set<string>();
+  collectStaticRoutes(APP_LOCALE_DIR, "", out);
+  return [...out].sort();
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
+  const now = new Date();
+  const routes = staticRoutes();
+  const registry = referenceRegistry();
+  const referencesGenerated = new Date(registry.metadata.generated);
 
   for (const locale of locales) {
-    for (const route of ROUTES) {
+    for (const route of routes) {
+      const meta = routeMeta(route);
       entries.push({
-        url: `${BASE_URL}/${locale}${route.path === "/" ? "" : route.path}`,
-        lastModified: new Date(),
-        changeFrequency: route.changeFrequency,
-        priority: route.priority,
+        url: `${BASE_URL}/${locale}${route === "/" ? "" : route}`,
+        lastModified: now,
+        changeFrequency: meta.changeFrequency,
+        priority: meta.priority,
       });
     }
 
-    for (const reference of referenceRegistry().references) {
+    // Dynamic segment: /articles/[slug]
+    for (const article of ARTICLES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/articles/${article.slug}`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.5,
+      });
+    }
+
+    // Dynamic segment: /references/[referenceId]
+    for (const reference of registry.references) {
       if (!reference.authors || !reference.title || reference.year <= 0 || !referenceUrl(reference)) continue;
       entries.push({
         url: `${BASE_URL}/${locale}/references/${reference.id}`,
-        lastModified: new Date(referenceRegistry().metadata.generated),
+        lastModified: referencesGenerated,
         changeFrequency: "yearly",
         priority: 0.4,
       });
