@@ -5,6 +5,8 @@
 **Tila:** kanoninen BERM-mallisopimus  
 **FieldState-raja:** FieldState on vain valinnainen mittaus-, havainto- ja estimointihaara. Alla olevat johdot kuuluvat BERM:lle.
 
+Tilariippuvaisen ja viiveellisen kudosytimen primäärilähderajat sekä eksplisiittinen yksilö→populaatio→instituutio-sulkeuma on määritelty jatkodokumentissa [berm-state-conditioned-multiscale-closure.md](berm-state-conditioned-multiscale-closure.md).
+
 ## 1. Mitä nyt voidaan johtaa
 
 ### 1.1 Lindgrenin metriikkahäiriö — [JOHDETTU]

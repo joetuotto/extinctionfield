@@ -4,6 +4,7 @@ import { BrainCircuit } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { MathBlock } from "@/components/MathBlock";
 import { PageHeader } from "@/components/PageHeader";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { pickCopy } from "@/lib/i18n";
@@ -37,7 +38,7 @@ const COPY = {
       "Delgado reported that stimulation of the rostral internal capsule repeatedly produced head and body turning. When asked about the movement, the subject gave situational explanations, including that she was looking for her slippers. Delgado explicitly left open whether stimulation first produced movement followed by justification, or an experience followed by movement. The observation therefore establishes dissociation between the external intervention and the subject's verbal account; it does not by itself decide the internal sequence ([[ref:delgado1969|Delgado 1969]]). [E]",
       "Split-brain research provides the more general interpreter result. Gazzaniga describes a left-hemisphere system that constructs explanations from the information available to it, including when the initiating information was delivered to the other hemisphere ([[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:gazzaniga2011|Gazzaniga 2011]]). Research on verbal reports independently concludes that people often report plausible causal accounts without direct access to the relevant mental processes ([[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). [E]",
       "The BERM bridge is compositional: endocrine and neural states can alter motivation, threat appraisal, social behaviour and effort; a survey item directly records the stated reason, not those upstream states. Consequently, a coherent answer can be sincere and causally incomplete. A survey cannot, by itself, distinguish a Level 2 biological-behavioural pathway from a Level 3 cultural preference. Joint longitudinal biomarkers, behaviour and reports are required. [L*]",
-      "The biological-to-behavioural part of this composition has independent component support. SHBG and albumin regulate free-testosterone availability at a given total concentration ([[ref:narinx2022_free_testosterone|Narinx et al. 2022]]); experimental activation of nucleus-accumbens D2-receptor neurons increased motivation ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha et al. 2016]]); and measured physiological threat sensitivity was associated with political attitudes in a small human study ([[ref:oxley2008_physiological_traits|Oxley et al. 2008]]). These findings establish plausible biological control points, not the complete EMF → narrative → aggregate-politics route. [M + E]",
+      "The biological-to-behavioural part of this composition has independent component support. SHBG and albumin regulate free-testosterone availability at a given total concentration ([[ref:narinx2022_free_testosterone|Narinx et al. 2022]]); experimental activation of nucleus-accumbens D2-receptor neurons increased motivation ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha et al. 2016]]); and testosterone administration changed political-preference expression only among weakly affiliated Democrats in one experiment ([[ref:alogaily2025_testosterone_politics|Alogaily et al. 2025]]). The original small threat-physiology association ([[ref:oxley2008_physiological_traits|Oxley et al. 2008]]) did not generalise in a preregistered replication programme ([[ref:bakker2020_physiology_politics_replication|Bakker et al. 2020]]). Together these results support state- and context-dependent control points, not a universal hormone-to-ideology direction or the complete EMF → narrative → aggregate-politics route. [M + E]",
     ],
     interpreterHeaders: ["Candidate latent state", "Behavioural consequence", "Available narrative", "Recorded survey category"],
     interpreterRows: [
@@ -177,7 +178,7 @@ const COPY = {
       "Delgado raportoi, että rostraalisen sisäkapselin stimulointi tuotti toistuvasti pään ja vartalon kääntymisen. Kun tutkittavalta kysyttiin liikkeestä, hän antoi tilanteeseen sopivia selityksiä, muun muassa etsivänsä tohveleitaan. Delgado jätti avoimeksi, tuottiko stimulaatio ensin liikkeen ja sitten oikeutuksen vai kokemuksen ja sen jälkeen liikkeen. Havainto osoittaa siten eron ulkoisen intervention ja sanallisen selonteon välillä, mutta ei yksin ratkaise sisäistä järjestystä ([[ref:delgado1969|Delgado 1969]]). [E]",
       "Split-brain-tutkimus antaa tulkki-ilmiölle yleisemmän perustan. Gazzaniga kuvaa vasemman hemisfäärin järjestelmän, joka muodostaa selityksiä käytettävissä olevasta informaatiosta myös silloin, kun toiminnan käynnistänyt informaatio annettiin toiselle hemisfäärille ([[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:gazzaniga2011|Gazzaniga 2011]]). Sanallisia raportteja koskeva tutkimus päätyy itsenäisesti siihen, että ihmiset tuottavat usein uskottavia kausaaliselityksiä ilman suoraa pääsyä asianomaisiin mentaalisiin prosesseihin ([[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). [E]",
       "BERM-silta on kompositionaalinen: endokriiniset ja neuraaliset tilat voivat muuttaa motivaatiota, uhka-arviointia, sosiaalista käyttäytymistä ja ponnistelua; kyselykohta mittaa suoraan ilmoitetun syyn, ei näitä edeltäviä tiloja. Koherentti vastaus voi siksi olla vilpitön ja kausaalisesti vajaa. Kysely ei yksin erota Tason 2 biologis-behavioraalista reittiä Tason 3 kulttuuripreferenssistä. Erottaminen vaatii pitkittäiset biomarkkerit, käyttäytymisen ja raportit. [L*]",
-      "Komposition biologis-behavioraalisella osalla on itsenäistä komponenttitukea. SHBG ja albumiini säätelevät vapaan testosteronin saatavuutta samalla kokonaispitoisuudella ([[ref:narinx2022_free_testosterone|Narinx ym. 2022]]); nucleus accumbensin D2-reseptorineuronien kokeellinen aktivointi lisäsi motivaatiota ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha ym. 2016]]); ja mitattu fysiologinen uhkaherkkyys liittyi poliittisiin asenteisiin pienessä ihmistutkimuksessa ([[ref:oxley2008_physiological_traits|Oxley ym. 2008]]). Löydökset osoittavat uskottavia biologisia säätöpisteitä, eivät koko EMF → narratiivi → aggregaattipolitiikka -reittiä. [M + E]",
+      "Komposition biologis-behavioraalisella osalla on itsenäistä komponenttitukea. SHBG ja albumiini säätelevät vapaan testosteronin saatavuutta samalla kokonaispitoisuudella ([[ref:narinx2022_free_testosterone|Narinx ym. 2022]]); nucleus accumbensin D2-reseptorineuronien kokeellinen aktivointi lisäsi motivaatiota ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha ym. 2016]]); ja testosteronin anto muutti poliittisen preferenssin ilmaisua yhdessä kokeessa vain heikosti puolueeseen sitoutuneilla demokraateilla ([[ref:alogaily2025_testosterone_politics|Alogaily ym. 2025]]). Alkuperäinen pieni uhkafysiologia-assosiaatio ([[ref:oxley2008_physiological_traits|Oxley ym. 2008]]) ei yleistynyt ennakkorekisteröidyssä replikaatio-ohjelmassa ([[ref:bakker2020_physiology_politics_replication|Bakker ym. 2020]]). Yhdessä tulokset tukevat tila- ja kontekstiriippuvaisia säätöpisteitä, eivät universaalia hormoni–ideologia-suuntaa eivätkä koko EMF → narratiivi → aggregaattipolitiikka -reittiä. [M + E]",
     ],
     interpreterHeaders: ["Latentin tilan kandidaatti", "Behavioraalinen seuraus", "Saavutettava narratiivi", "Kyselyyn kirjautuva luokka"],
     interpreterRows: [
@@ -357,6 +358,40 @@ export default async function CivilizationAboutPage({ params }: { params: Promis
             </table>
           </div>
           <p className="mt-4 max-w-4xl border-l-2 border-status-partial/60 pl-3 text-xs leading-relaxed text-foreground-muted">{d.tableNote}</p>
+          <div className="mt-6 max-w-4xl rounded-xl border border-blue-500/30 bg-blue-500/5 p-5">
+            <h3 className="font-semibold">
+              {pickCopy({
+                en: "BERM's forward aggregation operator",
+                fi: "BERM:n eteenpäin suuntautuva aggregaatio-operaattori",
+                ja: "BERMの前向き集約演算子",
+                fr: "Opérateur d’agrégation prospective de BERM",
+                ko: "BERM의 순방향 집계 연산자",
+              }, locale)}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+              <ClaimRef claimId="claim.cognition.state-dependent-behaviour">
+                {pickCopy({
+                  en: "The reduction first estimates an individual probability conditional on biological state z and social context x. It then integrates those probabilities over the measured population distribution; it never infers an individual's hormone state backwards from an election result.",
+                  fi: "Reduktio estimoi ensin biologisen tilan z ja sosiaalisen kontekstin x ehdollistaman yksilötodennäköisyyden. Sen jälkeen todennäköisyydet integroidaan mitatun populaatiojakauman yli; yksilön hormonitilaa ei päätellä taaksepäin vaalituloksesta.",
+                  ja: "還元はまず生物状態zと社会文脈xに条件づけた個人確率を推定し、それを測定された集団分布上で積分します。選挙結果から個人のホルモン状態を逆推論しません。",
+                  fr: "La réduction estime d’abord une probabilité individuelle conditionnée par l’état biologique z et le contexte social x, puis l’intègre sur la distribution mesurée. Elle n’infère jamais à rebours l’état hormonal individuel depuis un résultat électoral.",
+                  ko: "환원은 먼저 생물학적 상태 z와 사회적 맥락 x에 조건부인 개인 확률을 추정한 뒤 측정된 모집단 분포에 대해 적분합니다. 선거 결과에서 개인 호르몬 상태를 역추론하지 않습니다.",
+                }, locale)}
+              </ClaimRef>
+            </p>
+            <MathBlock tex="P_t(Y=p)=\int P(Y=p\mid z,x)f_t(z,x)\,dz\,dx" />
+            <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+              <ClaimRef claimId="claim.cognition.biological-behavioural-weighting">
+                {pickCopy({
+                  en: "Institutional memory is a separate open transition, I_{t+1}=ρI_t+(1−ρ)P_t. It states how a changed report distribution can persist after the initiating individual perturbation; ρ is not a fitted historical law.",
+                  fi: "Institutionaalinen muisti on erillinen avoin siirtymä I_{t+1}=ρI_t+(1−ρ)P_t. Se ilmaisee, miten muuttunut raporttijakauma voi säilyä yksilötason käynnistävää perturbaatiota pidempään; ρ ei ole sovitettu historiallinen laki.",
+                  ja: "制度的記憶は別の未解決遷移I_{t+1}=ρI_t+(1−ρ)P_tです。変化した報告分布が初期の個人摂動より長く持続し得ることを表しますが、ρは歴史的適合法則ではありません。",
+                  fr: "La mémoire institutionnelle est une transition ouverte distincte I_{t+1}=ρI_t+(1−ρ)P_t. Elle indique comment une distribution de rapports peut persister au-delà de la perturbation individuelle initiale; ρ n’est pas une loi historique ajustée.",
+                  ko: "제도 기억은 별도의 열린 전이 I_{t+1}=ρI_t+(1−ρ)P_t입니다. 변화된 보고 분포가 초기 개인 섭동보다 오래 지속될 수 있음을 나타내지만 ρ는 적합된 역사 법칙이 아닙니다.",
+                }, locale)}
+              </ClaimRef>
+            </p>
+          </div>
         </CollapsibleSection>
 
         <CollapsibleSection id="cognitive-immunology" title={d.immunityTitle} subtitle={d.immunitySub} defaultOpen>

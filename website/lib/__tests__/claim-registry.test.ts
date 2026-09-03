@@ -100,12 +100,12 @@ const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 43 nodes", () => {
-    expect(nodeIds.size).toBe(43);
+  it("has 44 nodes", () => {
+    expect(nodeIds.size).toBe(44);
   });
 
-  it("has 81 typed edges", () => {
-    expect(graph.edges.length).toBe(81);
+  it("has 82 typed edges", () => {
+    expect(graph.edges.length).toBe(82);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {

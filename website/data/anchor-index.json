@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T12:38:44.470Z",
+  "generatedAt": "2026-09-03T17:32:40.205Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -9,12 +9,12 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/mathematics/page.tsx",
-      "line": 2420
+      "line": 2453
     },
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5313
+      "line": 5345
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -29,12 +29,12 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/mathematics/page.tsx",
-      "line": 2444
+      "line": 2477
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5295
+      "line": 5327
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -52,14 +52,34 @@
       "line": 5238
     },
     {
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "file": "app/[locale]/evidence/response-conditions/page.tsx",
+      "line": 136
+    },
+    {
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "file": "app/[locale]/evidence/response-conditions/page.tsx",
+      "line": 139
+    },
+    {
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2127
+    },
+    {
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5269
+    },
+    {
       "claimId": "claim.civilization.asymmetric-evidence-threshold",
       "file": "app/[locale]/about/civilization/page.tsx",
-      "line": 367
+      "line": 402
     },
     {
       "claimId": "claim.civilization.biocap-tfr-input",
       "file": "app/[locale]/civilization/patokratia/page.tsx",
-      "line": 559
+      "line": 563
     },
     {
       "claimId": "claim.civilization.demand-capacity-separation",
@@ -69,7 +89,7 @@
     {
       "claimId": "claim.civilization.epistapege-observability-loss",
       "file": "app/[locale]/about/civilization/page.tsx",
-      "line": 437
+      "line": 472
     },
     {
       "claimId": "claim.civilization.pairing-multiplicative-decline",
@@ -84,12 +104,47 @@
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "file": "app/[locale]/about/civilization/page.tsx",
-      "line": 336
+      "line": 337
+    },
+    {
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 384
+    },
+    {
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2520
+    },
+    {
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5378
     },
     {
       "claimId": "claim.cognition.reported-reason-downstream",
       "file": "app/[locale]/about/civilization/page.tsx",
-      "line": 332
+      "line": 333
+    },
+    {
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 372
+    },
+    {
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "file": "app/[locale]/civilization/patokratia/page.tsx",
+      "line": 605
+    },
+    {
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2508
+    },
+    {
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5366
     },
     {
       "claimId": "claim.couple.fecundability-convergence",
@@ -99,17 +154,17 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/mathematics/page.tsx",
-      "line": 2121
+      "line": 2154
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5280
+      "line": 5312
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5263
+      "line": 5295
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",

@@ -11,7 +11,7 @@ from __future__ import annotations
 from copy import deepcopy
 
 
-PACKAGE_VERSION = "0.20.0"
+PACKAGE_VERSION = "0.21.0"
 MODEL_ID = "berm"
 MODEL_NAME = "Bio-Electromagnetic Reproductive Model"
 PUBLIC_MODEL_VERSION = "v17"
@@ -59,6 +59,28 @@ _ARCHITECTURE_MANIFEST = {
         "responseOperator": (
             "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response"
         ),
+        "stateConditionedResponse": (
+            "u_i(t) = integral K_i^{mu nu}(tau; S_i(t-tau)) "
+            "delta_g_mu_nu(t-tau) d tau"
+        ),
+        "responseStateArguments": [
+            "orientation",
+            "coherence",
+            "waveform",
+            "circadian_phase",
+            "metabolic_phase",
+            "developmental_window",
+            "receptor_or_agonist_state",
+            "redox_state",
+            "temperature_trajectory",
+            "organ_transfer",
+            "exposure_history",
+        ],
+        "responseEvidenceRole": (
+            "Component studies constrain arguments, null regions and lag families of the "
+            "open tissue kernel; they do not validate the Lindgren premise or calibrate "
+            "a human endpoint coefficient."
+        ),
         "geometricCoordinate": (
             "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, "
             "for an explicitly normalized positive-norm mode"
@@ -100,6 +122,16 @@ _ARCHITECTURE_MANIFEST = {
         }
     },
     "civilizationExtensions": {
+        "forwardAggregation": {
+            "id": "berm-forward-aggregation-v1",
+            "role": "individual_probability_to_population_distribution",
+            "operator": "P_t(Y=p) = integral P(Y=p | z,x) f_t(z,x) dz dx",
+            "reverseEcologicalInferenceAllowed": False,
+            "institutionalMemory": (
+                "I_(t+1) = retention I_t + (1-retention) P_t"
+            ),
+            "calibrationStatus": "open",
+        },
         "epistapege": {
             "id": EPISTAPEGE_EXTENSION_ID,
             "role": "qualitative_observability_hypothesis",

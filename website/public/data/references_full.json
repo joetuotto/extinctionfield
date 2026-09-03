@@ -2,11 +2,11 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1087,
-    "verified_count": 409,
+    "total_references": 1088,
+    "verified_count": 410,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 414,
+    "linked_count": 415,
     "unlinked_count": 673,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 38,
@@ -22264,7 +22264,7 @@
       ],
       "level": "E",
       "type": "journal",
-      "finding": "In Leydig cells, ClC-2 chloride channels facilitate membrane depolarization that activates voltage-gated calcium channels. Inhibition of T-type VGCC attenuated cAMP-induced steroidogenic gene expression and testosterone synthesis. ClC-2 knockdown in vivo diminished intratesticular testosterone levels. Completes the chain: EMF -> Schwan dVm -> T-type Cav3 -> Ca2+ -> StAR -> testosterone.",
+      "finding": "In Leydig cells, ClC-2 chloride channels facilitate membrane depolarization associated with voltage-gated calcium-channel activity. Inhibition of T-type VGCC attenuated cAMP-induced steroidogenic gene expression and testosterone synthesis, and ClC-2 knockdown in vivo diminished intratesticular testosterone. The study constrains the calcium-to-steroidogenesis component; it did not apply an electromagnetic exposure or complete BERM's geometry-to-tissue bridge.",
       "tags": [
         "t_type",
         "leydig",
@@ -31080,8 +31080,8 @@
       "title": "Testosterone administration induces a red shift in Democrats",
       "journal": "Brain and Behavior",
       "doi": "10.1002/brb3.70651",
-      "pmid": null,
-      "pmcid": null,
+      "pmid": "40619991",
+      "pmcid": "PMC12230349",
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [
@@ -31089,8 +31089,8 @@
         "E"
       ],
       "level": "E",
-      "type": "journal",
-      "finding": "RCT (n=136): testosterone administration reduced Democratic party affiliation by 12% and raised warmth toward Republican candidates by 45%. First direct causal evidence that testosterone shifts political preference.",
+      "type": "randomized_double_blind_placebo_controlled_experiment",
+      "finding": "In 136 healthy men, testosterone administration changed reported affiliation strength and candidate warmth only among weakly affiliated Democrats; no political-preference effect was observed among strongly affiliated Democrats or Republicans. This supports a hormone-state by affiliation-context interaction under that protocol, not a universal ideological direction.",
       "tags": [
         "testosterone",
         "rct",
@@ -31104,6 +31104,40 @@
       "link_source": "crossref_doi",
       "aliases": [],
       "link_checked_at": "2026-09-02"
+    },
+    {
+      "id": "bakker2020_physiology_politics_replication",
+      "authors": "Bakker BN, Schumacher G, Gothreau C, Arceneaux K",
+      "year": 2020,
+      "title": "Conservatives and liberals have similar physiological responses to threats",
+      "journal": "Nature Human Behaviour",
+      "doi": "10.1038/s41562-020-0823-z",
+      "pmid": null,
+      "pmcid": "PMC7306406",
+      "url": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "D",
+        "political physiology",
+        "replication"
+      ],
+      "level": "E",
+      "type": "preregistered_replication_program",
+      "finding": "A preregistered direct replication and conceptual replications did not support a general difference between conservatives and liberals in physiological responses to threat. The result challenges broad generalization of the original Oxley association while leaving other state-specific biological interventions as separate questions.",
+      "tags": [
+        "political_orientation",
+        "threat_response",
+        "psychophysiology",
+        "replication",
+        "null_result"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "publisher_doi_and_pmc",
+      "aliases": [],
+      "link_checked_at": "2026-09-03"
     },
     {
       "id": "bosch_neumann2012_oxytocin_maternal",

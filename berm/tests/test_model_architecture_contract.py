@@ -70,7 +70,7 @@ def test_python_and_website_share_the_exact_architecture_contract() -> None:
 def test_versions_have_distinct_namespaces_and_roles() -> None:
     manifest = architecture_manifest()
 
-    assert berm.__version__ == PACKAGE_VERSION == "0.20.0"
+    assert berm.__version__ == PACKAGE_VERSION == "0.21.0"
     assert PUBLIC_MODEL_VERSION == "v17"
     assert FIELDSTATE_SPEC_VERSION == "v2"
     assert manifest["routes"]["conditionalAsfr"]["id"] == CONDITIONAL_ASFR_ROUTE_ID
@@ -107,6 +107,19 @@ def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() 
     assert theory["l2BridgeStatus"] == L2_BRIDGE_STATUS == "conditional_formal_operator"
     assert theory["calibrationStatus"] == "open"
     assert "tissue response kernels" in theory["l2BridgeMeaning"]
+    assert "orientation" in theory["responseStateArguments"]
+    assert "coherence" in theory["responseStateArguments"]
+    assert "temperature_trajectory" in theory["responseStateArguments"]
+    assert "do not validate" in theory["responseEvidenceRole"]
+
+
+def test_civilization_aggregation_is_forward_only_and_explicitly_persistent() -> None:
+    aggregation = architecture_manifest()["civilizationExtensions"]["forwardAggregation"]
+
+    assert aggregation["role"] == "individual_probability_to_population_distribution"
+    assert aggregation["reverseEcologicalInferenceAllowed"] is False
+    assert "P(Y=p | z,x)" in aggregation["operator"]
+    assert "retention" in aggregation["institutionalMemory"]
 
 
 def test_python_and_website_causal_topology_match_exactly() -> None:

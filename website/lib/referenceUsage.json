@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-03",
-    "referencesWithUsages": 694,
-    "usageLocations": 1714
+    "referencesWithUsages": 695,
+    "usageLocations": 1744
   },
   "usage": {
     "delgado1969": [
@@ -129,6 +129,32 @@
         "source": "app/[locale]/civilization/patopolis/page.tsx"
       }
     ],
+    "alogaily2025_testosterone_politics": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/epistapege",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
     "oxley2008_physiological_traits": [
       {
         "path": "/about/civilization",
@@ -141,6 +167,32 @@
       {
         "path": "/civilization/patokratia",
         "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "bakker2020_physiology_politics_replication": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/epistapege",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "zapffe1933": [
@@ -1612,12 +1664,6 @@
         "path": "/civilization/pathopolites",
         "source": "app/[locale]/civilization/pathopolites/page.tsx"
       },
-      {
-        "path": "/civilization/patokratia",
-        "source": "app/[locale]/civilization/patokratia/page.tsx"
-      }
-    ],
-    "alogaily2025_testosterone_politics": [
       {
         "path": "/civilization/patokratia",
         "source": "app/[locale]/civilization/patokratia/page.tsx"
@@ -6769,8 +6815,20 @@
         "source": "app/[locale]/evidence/replication/page.tsx"
       },
       {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "blackman1990": [
@@ -6779,8 +6837,20 @@
         "source": "app/[locale]/evidence/replication/page.tsx"
       },
       {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "blackman1985": [
@@ -6889,18 +6959,54 @@
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "rosenspire2005_metabolic_phase": [
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "ubeda1983_pulse_shape": [
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "berman1990_multilab_embryo": [
@@ -6919,6 +7025,18 @@
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "kavaliers1986_calcium_morphine": [
@@ -6937,6 +7055,32 @@
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      }
+    ],
+    "mollerlokken2012_mri_hormones": [
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
       }
     ],
     "iversen2024_light_magnetic": [
@@ -7070,28 +7214,6 @@
       }
     ],
     "yu2023_zip9_rf_sertoli": [
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
-      }
-    ],
-    "mollerlokken2012_mri_hormones": [
       {
         "path": "/evidence/testosterone",
         "source": "app/[locale]/evidence/testosterone/page.tsx"

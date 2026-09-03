@@ -5255,6 +5255,38 @@ export default async function ModelPage({
                 </p>
               </div>
 
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-5">
+                <p className="text-sm font-semibold mb-2">
+                  {pickCopy({
+                    en: "The evidence-constrained kernel is state-conditioned and retarded",
+                    fi: "Evidenssin rajaama ydin on tilariippuvainen ja viiveellinen",
+                    ja: "証拠で制約されたカーネルは状態依存かつ遅延的",
+                    fr: "Le noyau contraint par les données dépend de l’état et du retard",
+                    ko: "증거로 제약된 커널은 상태 조건부이며 지연됨",
+                  }, locale_key)}
+                </p>
+                <p className="text-xs text-foreground-muted leading-relaxed">
+                  <ClaimRef claimId="claim.bridge.state-conditioned-kernel">
+                    {pickCopy({
+                      en: "BERM therefore retains orientation, coherence, waveform, endogenous phase, developmental window, receptor or agonist state, redox state, temperature trajectory, organ transfer and exposure history inside the tissue kernel. Existing studies constrain several of these arguments and protocol-specific null regions; organ transfer remains open, and the studies do not identify the Lindgren perturbation as their cause.",
+                      fi: "BERM säilyttää siksi kudosytimessä orientaation, koherenssin, aaltomuodon, endogeenisen vaiheen, kehitysikkunan, reseptori- tai agonistitilan, redox-tilan, lämpötilahistorian, elinsiirron ja altistushistorian. Olemassa olevat tutkimukset rajaavat useita näistä argumenteista ja protokollakohtaisia nolla-alueita; elinsiirto jää avoimeksi, eivätkä tutkimukset tunnista Lindgrenin häiriötä niiden aiheuttajaksi.",
+                      ja: "BERMは方向、コヒーレンス、波形、内因性位相、発達窓、受容体・作動薬状態、酸化還元状態、温度履歴、臓器伝達、曝露履歴を組織カーネルに保持します。既存研究はこれらの引数とプロトコル固有のゼロ領域を制約しますが、Lindgren摂動を原因として同定しません。",
+                      fr: "BERM conserve donc dans le noyau tissulaire l’orientation, la cohérence, la forme d’onde, la phase endogène, la fenêtre développementale, l’état récepteur ou agoniste, l’état redox, la trajectoire thermique, le transfert d’organe et l’historique d’exposition. Les études bornent ces arguments et des régions nulles propres au protocole sans identifier la perturbation de Lindgren comme cause.",
+                      ko: "BERM은 방향, 결맞음, 파형, 내인성 위상, 발달 창, 수용체·작용제 상태, 산화환원 상태, 온도 이력, 장기 전달 및 노출 이력을 조직 커널에 유지합니다. 기존 연구는 이러한 인수와 프로토콜별 영 반응 영역을 제약하지만 Lindgren 섭동을 원인으로 식별하지는 않습니다.",
+                    }, locale_key)}
+                  </ClaimRef>
+                </p>
+                <Eq>u<sub>i</sub>(t) = &int; K<sub>i</sub><sup>&mu;&nu;</sup>(&tau;; S<sub>i</sub>(t&minus;&tau;)) &delta;g<sub>&mu;&nu;</sub>(t&minus;&tau;) d&tau;</Eq>
+                <p className="mt-2 text-xs text-foreground-muted leading-relaxed">
+                  <StudyCitation referenceId="litovitz1991_coherence_time" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="rosenspire2005_metabolic_phase" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="ubeda1983_pulse_shape" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="blackman1990" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="blackman1991" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="lymangrover1983_acth_steroidogenesis" locale={locale_key} />
+                </p>
+              </div>
+
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-lg border border-border p-4">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-emerald-500 mb-2">[JOHDETTU]</p>
@@ -5324,6 +5356,42 @@ export default async function ModelPage({
                   <StudyCitation referenceId="yu2023_zip9_rf_sertoli" locale={locale_key} />{" · "}
                   <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale_key} />
                 </p>
+              </div>
+
+              <div className="rounded-lg border border-card-border bg-card-bg p-5">
+                <p className="text-sm font-semibold mb-2">
+                  {pickCopy({ en: "Explicit reduction from individual state to civilization", fi: "Eksplisiittinen reduktio yksilötilasta sivilisaatioon", ja: "個人状態から文明への明示的還元", fr: "Réduction explicite de l’état individuel à la civilisation", ko: "개인 상태에서 문명으로의 명시적 환원" }, locale_key)}
+                </p>
+                <p className="text-xs text-foreground-muted leading-relaxed">
+                  <ClaimRef claimId="claim.cognition.state-dependent-behaviour">
+                    {pickCopy({
+                      en: "BERM first models a state-by-context individual probability P(Yᵢ=p|zᵢ,xᵢ). It then aggregates forward over the measured population distribution. This permits subgroup-specific and null effects; it does not permit diagnosing an individual’s biology from an aggregate political outcome.",
+                      fi: "BERM mallintaa ensin tila × konteksti -riippuvaisen yksilötodennäköisyyden P(Yᵢ=p|zᵢ,xᵢ) ja aggregoi sen sitten eteenpäin mitatun populaatiojakauman yli. Tämä sallii ositekohtaiset ja nollavaikutukset mutta ei yksilön biologian diagnosointia poliittisesta agregaattituloksesta.",
+                      ja: "BERMはまず状態×文脈に依存する個人確率P(Yᵢ=p|zᵢ,xᵢ)をモデル化し、測定された集団分布上で前向きに集約します。下位群固有効果とゼロ効果を許しますが、集団政治結果から個人の生物学を診断することは許しません。",
+                      fr: "BERM modélise d’abord une probabilité individuelle état × contexte P(Yᵢ=p|zᵢ,xᵢ), puis l’agrège vers l’avant sur la distribution mesurée. Cela autorise des effets propres aux sous-groupes et des effets nuls, mais non le diagnostic biologique d’un individu à partir d’un résultat politique agrégé.",
+                      ko: "BERM은 먼저 상태×맥락 개인 확률 P(Yᵢ=p|zᵢ,xᵢ)을 모델링한 뒤 측정된 모집단 분포에 대해 순방향 집계합니다. 하위집단별 효과와 영 효과는 허용하지만 집계 정치 결과에서 개인의 생물학을 진단하지는 않습니다.",
+                    }, locale_key)}
+                  </ClaimRef>
+                </p>
+                <Eq>P<sub>t</sub>(Y=p) = &int; P(Y=p | z,x) f<sub>t</sub>(z,x) dz dx</Eq>
+                <p className="mt-2 text-xs text-foreground-muted leading-relaxed">
+                  <ClaimRef claimId="claim.cognition.biological-behavioural-weighting">
+                    {pickCopy({
+                      en: "Institutional persistence is a separate open memory parameter: Iₜ₊₁ = ρIₜ + (1−ρ)Pₜ. This supplies the explicit population-to-institution operator used by the Epistapege extension; ρ is not historically calibrated.",
+                      fi: "Institutionaalinen pysyvyys on erillinen avoin muistiparametri: Iₜ₊₁ = ρIₜ + (1−ρ)Pₜ. Tämä antaa Epistapege-laajennuksen käyttämän eksplisiittisen populaatio–instituutio-operaattorin; ρ:ta ei ole historiallisesti kalibroitu.",
+                      ja: "制度的持続性は別の未校正記憶パラメータです：Iₜ₊₁=ρIₜ+(1−ρ)Pₜ。これはEpistapege拡張の集団→制度演算子を明示しますが、ρは歴史的に校正されていません。",
+                      fr: "La persistance institutionnelle est un paramètre de mémoire ouvert distinct : Iₜ₊₁=ρIₜ+(1−ρ)Pₜ. Il explicite l’opérateur population→institution d’Epistapege; ρ n’est pas calibré historiquement.",
+                      ko: "제도적 지속성은 별도의 열린 기억 매개변수 Iₜ₊₁=ρIₜ+(1−ρ)Pₜ입니다. 이는 Epistapege의 모집단→제도 연산자를 명시하지만 ρ는 역사적으로 보정되지 않았습니다.",
+                    }, locale_key)}
+                  </ClaimRef>
+                </p>
+                <p className="mt-3 text-xs text-foreground-muted">
+                  <StudyCitation referenceId="alogaily2025_testosterone_politics" locale={locale_key} />{" · "}
+                  <StudyCitation referenceId="bakker2020_physiology_politics_replication" locale={locale_key} />
+                </p>
+                <Link href={`${prefix}/civilization/epistapege`} className="mt-3 inline-flex text-sm text-accent hover:underline">
+                  {pickCopy({ en: "Open the Epistapege derivation →", fi: "Avaa Epistapege-johto →", ja: "Epistapege導出を開く →", fr: "Ouvrir la dérivation Epistapege →", ko: "Epistapege 유도 열기 →" }, locale_key)}
+                </Link>
               </div>
 
               <Link href={`${prefix}/mathematics#chi`} className="text-sm text-accent hover:underline">

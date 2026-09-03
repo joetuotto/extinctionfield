@@ -222,7 +222,7 @@
         "OOCYTE_REDOX",
         "OVULATION_CLOCK",
         "IMPLANTATION",
-        "BIOBEHAVIORAL_WEIGHTING"
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
@@ -297,7 +297,7 @@
         "MALE_STEROIDOGENESIS",
         "OVULATION_CLOCK",
         "IMPLANTATION",
-        "BIOBEHAVIORAL_WEIGHTING"
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
@@ -519,7 +519,7 @@
       "children": [
         "MALE_SPERM",
         "BARRIER_BTB",
-        "BIOBEHAVIORAL_WEIGHTING"
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
@@ -771,14 +771,14 @@
         "heritable measured-field response"
       ]
     },
-    "BIOBEHAVIORAL_WEIGHTING": {
-      "id": "BIOBEHAVIORAL_WEIGHTING",
+    "INDIVIDUAL_BEHAVIORAL_RESPONSE": {
+      "id": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "label": {
-        "en": "Population distribution of biologically constrained behavioural weighting",
-        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
-        "ja": "生物学的に制約された行動重み付けの集団分布",
-        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
-        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포"
+        "en": "State-conditioned individual behavioural response probability",
+        "fi": "Tilariippuvainen yksilön käyttäytymisvasteen todennäköisyys",
+        "ja": "状態依存の個人行動反応確率",
+        "fr": "Probabilité individuelle de réponse comportementale conditionnée par l’état",
+        "ko": "상태 조건부 개인 행동 반응 확률"
       },
       "layer": "civilization",
       "parents": [
@@ -787,13 +787,38 @@
         "ANDROGEN_RECEPTOR_SIGNAL"
       ],
       "children": [
+        "BIOBEHAVIORAL_WEIGHTING"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "individual behavioural response",
+        "P(Y given z,x)",
+        "state-dependent preference expression"
+      ]
+    },
+    "BIOBEHAVIORAL_WEIGHTING": {
+      "id": "BIOBEHAVIORAL_WEIGHTING",
+      "label": {
+        "en": "Population mixture of state-conditioned behavioural probabilities",
+        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+        "ja": "生物学的に制約された行動重み付けの集団分布",
+        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
+        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포"
+      },
+      "layer": "civilization",
+      "parents": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      ],
+      "children": [
         "NARRATIVE_ATTRIBUTION"
       ],
       "calibration_status": "requires_matched_measurement",
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "biological behavioural weighting",
-        "latent motivation state"
+        "latent motivation state",
+        "forward individual-to-aggregate composition"
       ]
     },
     "NARRATIVE_ATTRIBUTION": {
@@ -1167,7 +1192,7 @@
     {
       "id": "e35",
       "from": "MELATONIN_REDOX",
-      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
@@ -1221,7 +1246,7 @@
     {
       "id": "e44",
       "from": "HPA_HPG",
-      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
@@ -1305,7 +1330,7 @@
     {
       "id": "e58",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
-      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
@@ -1406,42 +1431,48 @@
     },
     {
       "id": "e75",
+      "from": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e76",
       "from": "BIOBEHAVIORAL_WEIGHTING",
       "to": "NARRATIVE_ATTRIBUTION",
       "kind": "causal_model"
     },
     {
-      "id": "e76",
+      "id": "e77",
       "from": "NARRATIVE_ATTRIBUTION",
       "to": "EPISTAPEGE_OBSERVABILITY_LOSS",
       "kind": "causal_model"
     },
     {
-      "id": "e77",
+      "id": "e78",
       "from": "EPISTAPEGE_OBSERVABILITY_LOSS",
       "to": "INSTITUTIONAL_MODEL_REUSE",
       "kind": "causal_model"
     },
     {
-      "id": "e78",
+      "id": "e79",
       "from": "DEMAND_OPPORTUNITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e79",
+      "id": "e80",
       "from": "TEMPO",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e80",
+      "id": "e81",
       "from": "ART_LIVE_BIRTH_DELIVERY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e81",
+      "id": "e82",
       "from": "ASFR",
       "to": "TFR",
       "kind": "causal_model"
@@ -1574,6 +1605,7 @@
     "civilization": {
       "id": "civilization",
       "contains": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
         "BIOBEHAVIORAL_WEIGHTING",
         "NARRATIVE_ATTRIBUTION",
         "EPISTAPEGE_OBSERVABILITY_LOSS",

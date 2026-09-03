@@ -9,12 +9,12 @@ import { InlineReferenceText } from "@/components/InlineReferenceText";
 const COPY = {
   en: {
     pageTitle: "Patokratia",
-    pageSubtitle: "Political values are not chosen. They are computed from biomarker state. This page traces the biological substrates of political orientation, moral foundations, reproductive strategy, and collective action capacity across the EMF exposure gradient.",
-    heroLead: "Greek: pathos (suffering, disease) + kratos (rule, power). Governance by pathology. When the endocrine substrates that produce political values are systematically degraded by environmental factors, the political output of a population shifts not because people change their minds, but because the biological machinery that generates their opinions changes. The distance from pre-industrial baseline quantifies the displacement.",
+    pageSubtitle: "BERM's testable account of how biomarker state can shift the conditional distribution of political behaviour, moral weighting, reproductive strategy and collective-action capacity.",
+    heroLead: "Greek: pathos (suffering, disease) + kratos (rule, power). BERM models political output as a population mixture of state- and context-dependent individual probabilities. Biological state can alter preference expression without determining every individual or supplying one universal ideological direction. The displayed distance from a declared pre-industrial baseline is a model output, not a measured political biomarker law.",
     backLink: "\u2190 Back to Civilization",
 
     sPoliticalTitle: "Political Pathology",
-    sPoliticalDesc: "Political orientation is a phenotypic expression of biomarker state. The distance from pre-industrial endocrine baseline \u2014 the pathologization index \u2014 quantifies how far an ideology has been displaced by EMF-induced biomarker disruption. BioCap (biological capacity) is the weighted composite of eight biomarker levels normalized to the pre-industrial baseline, ranging from 1.0 (fully intact) to 0.0 (total degradation); it is defined in detail in Patopoliteia. The pathologization index is the root-mean-square distance between an environment\u2019s political-orientation profile and the pre-industrial (Amish) profile, both computed from those biomarker levels: 0 means no displacement, 1 maximal displacement.",
+    sPoliticalDesc: "BERM treats political orientation as a probabilistic phenotype jointly conditioned by biological state and social context. The pathologization index is a model-derived distance from a declared pre-industrial endocrine baseline; it is not a directly observed causal coefficient. BioCap is a weighted composite of eight modelled biomarker levels, and the displayed political profiles are conditional predictions requiring matched biomarker, context and behavioural data.",
     sPoliticalEnvTitle: "EMF Environment \u2192 Political Output (2025)",
     sPoliticalColEnv: "Environment", sPoliticalColEmf: "EMF", sPoliticalColBiocap: "BioCap", sPoliticalColIdeology: "Ideology", sPoliticalColPatholog: "Pathol.",
     sPoliticalEnvs: [
@@ -24,7 +24,7 @@ const COPY = {
       { env: "Urban", emf: "1.40\u00d7", biocap: "0.536", ideology: "Progressive Egalitarianism", patholog: "0.443" },
       { env: "Urban Office", emf: "1.80\u00d7", biocap: "0.480", ideology: "Progressive Egalitarianism", patholog: "0.495" },
     ],
-    sPoliticalPolarization: "Polarization index 0.237. The same genome, separated by postal code, produces different political output. This is not a conflict of values \u2014 it is a gradient of endocrine disruption.",
+    sPoliticalPolarization: "Polarization index 0.237 (modelled). BERM predicts that geographically patterned biological state can shift the population distribution even without genetic differences. The displayed value is a simulation output; separating the endocrine contribution from selection, culture and institutions requires matched data.",
     sPoliticalIdeologyTitle: "Ideology as Biological Strategy",
     sPoliticalIdeologies: [
       { name: "Pragmatic Localism", patholog: "0.011", desc: "Natural baseline. Strong local hierarchy, low paranoia, innovation within tradition. Not ideological \u2014 functional." },
@@ -36,7 +36,7 @@ const COPY = {
     ],
     sPoliticalTrajectoryTitle: "Suburban Trajectory: 1950\u20132050",
     sPoliticalColYear: "Year",
-    sPoliticalTrajectoryDesc: "Ideology shifts not because people change their minds, but because the endocrine substrate that produces their opinions changes.",
+    sPoliticalTrajectoryDesc: "Conditional BERM trajectory: a changing endocrine-state distribution contributes to changing political output together with prior attitudes and social context. The dates and profiles below are model outputs, not observations.",
     sPoliticalTrajectory: [
       { year: "1950", ideology: "Pragmatic Localism", biocap: "0.976", patholog: "0.040" },
       { year: "1990", ideology: "Pragmatic Localism", biocap: "0.861", patholog: "0.108" },
@@ -46,18 +46,19 @@ const COPY = {
     ],
     sPoliticalLitTitle: "Literature",
     sPoliticalLit: [
-      "[[ref:alogaily2025_testosterone_politics|Alogaily 2025 RCT]] (N=136): exogenous T shifts Democrats conservative. Direct causal evidence.",
+      "[[ref:alogaily2025_testosterone_politics|Alogaily 2025 experiment]] (N=136): exogenous T changed preference expression only among weakly affiliated Democrats; the other reported affiliation strata were null.",
       "Petersen 2013 (N=12k, 17 countries): T \u2192 rejection of wealth redistribution.",
       "[[ref:oxley2008_physiological_traits|Oxley 2008]] (N=46): heightened threat sensitivity \u2192 conservative attitudes.",
+      "[[ref:bakker2020_physiology_politics_replication|Bakker 2020]]: a preregistered direct replication and conceptual replications did not support a general liberal-conservative threat-physiology difference.",
       "[[ref:dedreu2011_ethnocentrism|De Dreu 2011]] (N=280): OXT increases in-group favoritism AND out-group derogation simultaneously.",
       "[[ref:settle2010_drd4_ideology|Settle 2010]] (N=2,574): DRD4-7R \u2192 political liberalism via novelty-seeking.",
       "[[ref:bratsberg2018|Bratsberg 2018]] (N=730k): Flynn effect reversal \u2014 IQ declining post-1975.",
       "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]] (meta N=8,538): dual-hormone hypothesis. Chronic CORT suppresses T-driven dominance.",
     ],
-    sPoliticalConclusion: "The model predicts urban-rural polarization is a gradient of endocrine disruption, not a conflict of values. No political dialogue resolves this \u2014 it requires environmental intervention.",
+    sPoliticalConclusion: "The model predicts that a measured endocrine-state gradient can contribute to urban-rural polarization after social context is controlled. The claim is rejected if biological states add no out-of-sample information or intervention response beyond prior attitudes and context.",
 
     sMoralTitle: "Moral Foundations (Haidt)",
-    sMoralDesc: "[[ref:haidt2012_righteous_mind|Jonathan Haidt's Moral Foundations Theory (2012)]] identified six innate psychological systems that generate moral intuitions across all cultures. Three are 'binding' foundations (Loyalty, Authority, Sanctity) — they bind individuals into cohesive groups, hierarchies, and shared sacred values. Three are 'individualizing' foundations (Care, Fairness, Liberty) — they protect individual rights and welfare regardless of group membership. [[ref:graham2009_moral_foundations|Graham, Haidt & Nosek (2009)]] showed liberals weight Care + Fairness while conservatives weight all six equally. The model maps each foundation to its biological substrate and predicts the liberal-conservative asymmetry as a direct consequence of differential biomarker degradation.",
+    sMoralDesc: "[[ref:haidt2012_righteous_mind|Moral Foundations Theory]] distinguishes binding and individualizing moral dimensions, and [[ref:graham2009_moral_foundations|Graham, Haidt & Nosek (2009)]] reported group-level weighting differences. BERM uses those dimensions as behavioural outcomes and proposes candidate hormonal and neural moderators. The substrate formulas and environment profiles below are falsifiable model parameterizations, not established one-to-one biological maps.",
     sMoralColEnv: "Environment", sMoralColBreadth: "Breadth", sMoralColBinding: "Binding", sMoralColIndiv: "Individualizing", sMoralColActive: "Active",
     sMoralEnvs: [
       { env: "Amish", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "All six", pattern: "Full moral palette \u2014 balanced binding and individualizing" },
@@ -74,25 +75,26 @@ const COPY = {
       { name: "Sanctity/Degradation", substrate: "T\u00d7OXT, BDNF\u00d7MEL", lit: "Inbar et al. 2009 (N=31k), [[ref:oxley2008_physiological_traits|Oxley 2008]]" },
       { name: "Liberty/Oppression", substrate: "DA, T, inv. CORT", lit: "[[ref:settle2010_drd4_ideology|Settle 2010]] (DRD4-7R)" },
     ],
-    sMoralConclusion: "The model predicts that moral foundation narrowing is not a value choice but an endocrine consequence. The liberal pattern (Care + Fairness only) is what remains when the biological substrates of Authority (T), Sanctity (T\u00d7OXT, BDNF\u00d7MEL), and Loyalty (OXT/T ratio) collapse. Conservatives do not have 'more' morality \u2014 they have more intact biomarker substrates.",
+    sMoralConclusion: "BERM proposes moral-foundation weighting as a state-by-context outcome and the table as a falsifiable parameterization. Current sources do not establish the exact biomarker-to-foundation coefficients or a universal liberal-conservative direction; matched longitudinal and intervention data are required.",
     sMoralColFoundation: "Foundation", sMoralColSubstrate: "Substrate", sMoralColLit: "Evidence",
 
     sCollapseTitle: "Collapse Hierarchy",
-    sCollapseDesc: "Foundations do not degrade uniformly. They collapse in a predictable order determined by the biological vulnerability of their substrates \u2014 not by cultural or ideological factors. Binding foundations are systematically more fragile because they depend on the most EMF-sensitive hormonal systems.",
+    sCollapseDesc: "BERM predicts non-uniform changes if the proposed substrate formulas and thresholds are valid. The ordering below follows those declared formulas; culture, selection and institutional context remain covariates rather than being mathematically excluded.",
     sCollapseColRank: "Rank", sCollapseColFoundation: "Foundation", sCollapseColType: "Formula", sCollapseColCollapse: "Collapses At", sCollapseColVuln: "Vulnerability",
     sCollapseOrder: [
       { rank: 1, foundation: "Sanctity", type: "Multiplicative", collapse: "Urban residential", binding: true, vuln: "cognitive(BDNF\u00d7MEL) \u00d7 enforcement(T\u00d7OXT). Degradation in EITHER component collapses the product. Four vulnerable systems multiplied \u2014 catastrophic sensitivity." },
-      { rank: 2, foundation: "Authority", type: "Single-substrate", collapse: "Urban residential", binding: true, vuln: "Depends on T \u2014 the second-most degraded marker in the EMF gradient (after melatonin) ([[ref:alogaily2025_testosterone_politics|Alogaily 2025 RCT]]). CORT elevation further suppresses via dual-hormone mechanism. Double hit." },
+      { rank: 2, foundation: "Authority", type: "Single-substrate", collapse: "Urban residential", binding: true, vuln: "BERM assigns T as a candidate moderator. [[ref:alogaily2025_testosterone_politics|Alogaily 2025]] supports a T \u00d7 affiliation interaction in one subgroup, not this exact moral-foundation mapping; the table remains a model prediction." },
       { rank: 3, foundation: "Loyalty", type: "Interaction", collapse: "Urban residential", binding: true, vuln: "Parochial OXT requires T co-activation for group defense. Without T, OXT produces conformity, not loyalty ([[ref:dedreu2011_ethnocentrism|De Dreu 2011]])." },
       { rank: 4, foundation: "Liberty", type: "Additive-suppressed", collapse: "Urban office", binding: false, vuln: "DA provides baseline autonomy. More resilient \u2014 dopaminergic neurons have greater redundancy than Leydig or pineal cells. But CORT(0.35) eventually overwhelms." },
       { rank: 5, foundation: "Care", type: "Additive-floor", collapse: "Urban office", binding: false, vuln: "OXT provides strong baseline. The 0.45 floor means BDNF loss narrows scope but doesn't eliminate care. Falls only at extreme degradation." },
       { rank: 6, foundation: "Fairness", type: "Triple-redundant", collapse: "Survives", binding: false, vuln: "Three independent inputs (DA 0.40, T 0.30, OXT 0.15). Any single system partially sustains it. DA is the most buffered neurotransmitter." },
     ],
-    sCollapseInsight: "The binding foundations \u2014 Loyalty, Authority, Sanctity \u2014 all depend on testosterone (Leydig cells) and multiplicative interactions between EMF-sensitive systems. The individualizing foundations \u2014 Care, Fairness, Liberty \u2014 depend on dopamine (VTA neurons, greater redundancy) and additive formulas where any single input can partially sustain the output. This is why the conservative moral palette degrades first: it is biologically expensive.",
+    sCollapseInsight: "Within the current BERM parameterization, binding-foundation outputs use testosterone and multiplicative interactions, whereas individualizing outputs use more additive or redundant terms. This produces earlier simulated decline in the former. Direct biomarker-to-foundation coefficients and their ordering remain to be estimated.",
     sCollapseFormulaKey: "Formula types: Multiplicative (A \u00d7 B) \u2014 output collapses if either input degrades; catastrophic sensitivity to any single-point failure. Single-substrate \u2014 depends primarily on one hormone; vulnerable but predictable. Interaction \u2014 requires co-activation of two systems (e.g. OXT needs T for parochial loyalty, not just bonding). Additive-suppressed \u2014 sum of inputs minus a suppressor term (CORT); declines gradually. Additive-floor \u2014 sum with a biological minimum that prevents total collapse. Triple-redundant \u2014 three independent inputs where any one partially sustains the output; most resilient.",
 
     sRKTitle: "r/K Reproductive Strategy",
-    sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) mapped five psychological traits to the r/K selection continuum: r-strategists (liberal psychology) display competition aversion, promiscuity, low parental investment, early sexuality, and no in-group loyalty. K-strategists (conservative psychology) display the opposite. The original theory attributes this to resource abundance cycles. The BERM model identifies the mechanism: urban EMF environments produce r-selected endocrine profiles through melatonin (pathway B) and calcium-channel (pathway A) biomarker degradation. This is environmental phenotypic mimicry of r-selection \u2014 not evolution. A genetically K-selected species expresses r-type behavioral outputs because its endocrine substrates are being suppressed.",
+    sRKDescCurrent: "This section treats r/K language as a heuristic behavioural composite rather than a demonstrated human political taxonomy. BERM asks whether melatonin-, HPG-, dopamine- and oxytocin-related state variables improve prediction of the component behaviours after social context is controlled. The formulas below specify that hypothesis; they do not establish that urban exposure causes a liberal or r-selected phenotype.",
+    sRKDesc: "This section treats r/K language as a heuristic behavioural composite rather than a demonstrated human political taxonomy. BERM asks whether melatonin-, HPG-, dopamine- and oxytocin-related state variables improve prediction of the component behaviours after social context is controlled. The formulas below specify that hypothesis; they do not establish that urban exposure causes a liberal or r-selected phenotype.",
     sRKScaleNote: "The r/K index ranges from 0.0 (fully r-selected phenotype: maximal reproductive quantity, minimal parental investment) to 1.0 (fully K-selected phenotype: maximal parental investment, selective mating, group loyalty). Each of the five sub-traits is computed from its substrate formula using the environment's biomarker values \u2014 e.g. Mating Strategy = OXT \u00d7 (0.5 + 0.5 \u00d7 T), where OXT and T are normalized to [0, 1] relative to the pre-industrial baseline. The composite r/K index is the mean of the five sub-scores.",
     sRKColEnv: "Environment", sRKColIndex: "r/K Index", sRKColClass: "Classification",
     sRKColComp: "Competition", sRKColMating: "Mating", sRKColParent: "Parenting", sRKColSexual: "Sexual Timing", sRKColLoyalty: "Group Loyalty",
@@ -209,27 +211,27 @@ const COPY = {
     sDistressConclusion: "The model does not predict that liberal positions are pathological because they are liberal. It predicts that the biological state which produces the liberal moral profile (binding foundations collapsed) also produces psychological distress \u2014 because humans evolved to operate with the full moral palette. The urban liberal is not morally wrong. They are morally incomplete, in exactly the way a person with reduced bone density is not making a lifestyle choice but experiencing a deficiency.",
 
     conclusionTitle: "Synthesis",
-    conclusionText: "Patokratia is not a political argument. It is a biological description. The endocrine substrates that produce political values, moral foundations, reproductive strategies, collective action capacity, and meaning frameworks are being systematically degraded along an EMF exposure gradient. The political is biological. The biological is electromagnetic. The correction requires restoring the substrate, not winning the argument.",
+    conclusionText: "Patokratia is BERM's biological reduction of political output: physical and biological states may alter individual behavioural probabilities; population distributions aggregate them; institutions retain part of the resulting output. The reduction is explicit, but its field-to-tissue, biomarker-to-politics and institutional-retention coefficients remain open. Restoring an upstream substrate is a model-predicted intervention only where those links are measured and replicated.",
 
     navBackCiv: "Back to Civilization",
     navPathopege: "Pathopege: The Source",
     navPatopolis: "Patopolis: The Pathological City",
     navPatopoliteia: "Patopoliteia: Pathological Civilization",
     navPatokinesis: "Patokinesis: The Pathology That Moves",
-    sWellingCalloutTitle: "Direct Causal Evidence: Testosterone → Political Preferences",
-    sWellingCalloutBody: "The causal link from testosterone to political preferences was established by RCT in 2025. Alogaily, Zak et al. (Brain and Behavior, n=136) administered synthetic testosterone or placebo. Weakly affiliated Democrats had 19% higher basal testosterone than strongly affiliated Democrats (p=0.015). Testosterone administration reduced party affiliation by 12% (p=0.01) and increased warmth toward Republican candidates by 45% (p<0.001). This is the first direct experimental evidence that testosterone causally shifts political preferences.",
+    sWellingCalloutTitle: "Direct subgroup evidence: testosterone × affiliation context",
+    sWellingCalloutBody: "Alogaily, Zak et al. (Brain and Behavior, n=136) administered synthetic testosterone or placebo. Weakly affiliated Democrats had 19% higher basal testosterone than strongly affiliated Democrats (p=0.015). In that weak-affiliation subgroup, testosterone reduced party-affiliation strength by about 12% and increased warmth toward Republican candidates by 45%. No political-preference effect was reported for strongly affiliated Democrats or Republicans. The experiment therefore supports a testosterone × affiliation-context effect, not a universal testosterone-to-ideology direction.",
     modelDerived: "Model-derived values from BioCap integral, not directly measured.",
     modelDerivedLink: "mathematical specification",
     translationPending: "Full translation pending.",
   },
   fi: {
     pageTitle: "Patokratia",
-    pageSubtitle: "Poliittiset arvot eiv\u00e4t ole valintoja. Ne lasketaan biomarkkeritilasta. T\u00e4m\u00e4 sivu j\u00e4ljitt\u00e4\u00e4 poliittisen orientaation, moraaliperustojen, lis\u00e4\u00e4ntymisstrategian ja kollektiivisen toimintakyvyn biologiset substraatit EMF-altistusgradientin yli.",
-    heroLead: "Kreikasta: pathos (k\u00e4rsimys, sairaus) + kratos (valta, hallinta). Patologian hallintoa. Kun poliittisia arvoja tuottavat endokriiniset substraatit rappeutuvat systemaattisesti ymp\u00e4rist\u00f6tekij\u00f6iden vaikutuksesta, v\u00e4est\u00f6n poliittinen tuotos siirtyy \u2014 ei siksi ett\u00e4 ihmiset muuttavat mielens\u00e4, vaan siksi ett\u00e4 biologinen koneisto, joka tuottaa heid\u00e4n mielipiteens\u00e4, muuttuu. Et\u00e4isyys esiteollisesta peruslinjasta kvantifioi siirtym\u00e4n.",
+    pageSubtitle: "BERM:n testattava kuvaus siit\u00e4, miten biomarkkeritila voi siirt\u00e4\u00e4 poliittisen k\u00e4ytt\u00e4ytymisen, moraalipainotusten, lis\u00e4\u00e4ntymisstrategian ja kollektiivisen toimintakyvyn ehdollista jakaumaa.",
+    heroLead: "Kreikasta: pathos (k\u00e4rsimys, sairaus) + kratos (valta, hallinta). BERM kuvaa poliittisen tuotoksen tila- ja kontekstiriippuvaisten yksil\u00f6todenn\u00e4k\u00f6isyyksien v\u00e4est\u00f6seoksena. Biologinen tila voi muuttaa preferenssien ilmaisua m\u00e4\u00e4r\u00e4\u00e4m\u00e4tt\u00e4 jokaista yksil\u00f6\u00e4 tai yht\u00e4 universaalia ideologista suuntaa. Esitetty et\u00e4isyys ilmoitetusta esiteollisesta peruslinjasta on mallituotos, ei mitattu poliittinen biomarkkerilaki.",
     backLink: "\u2190 Takaisin Sivilisaatioon",
 
     sPoliticalTitle: "Poliittinen patologia",
-    sPoliticalDesc: "Poliittinen orientaatio on biomarkkeritilan fenotyyppinen ilmentym\u00e4. Et\u00e4isyys esiteollisesta endokriinisest\u00e4 peruslinjasta \u2014 patologisaatioindeksi \u2014 kvantifioi, kuinka kauas ideologia on siirtynyt EMF-indusoidun biomarkkerih\u00e4iri\u00f6n seurauksena.",
+    sPoliticalDesc: "BERM k\u00e4sittelee poliittista orientaatiota biologisen tilan ja sosiaalisen kontekstin yhdess\u00e4 ehdollistamana todenn\u00e4k\u00f6isyysjakaumana. Patologisaatioindeksi on mallin tuottama et\u00e4isyys ilmoitetusta esiteollisesta endokriinisest\u00e4 peruslinjasta, ei suoraan havaittu kausaalikerroin. Taulukoiden profiilit vaativat varmistuksekseen yhteismitattua biomarkkeri-, konteksti- ja k\u00e4ytt\u00e4ytymisdataa.",
     sPoliticalEnvTitle: "EMF-ymp\u00e4rist\u00f6 \u2192 Poliittinen tuotos (2025)",
     sPoliticalColEnv: "Ymp\u00e4rist\u00f6", sPoliticalColEmf: "EMF", sPoliticalColBiocap: "BioCap", sPoliticalColIdeology: "Ideologia", sPoliticalColPatholog: "Patol.",
     sPoliticalEnvs: [
@@ -239,7 +241,7 @@ const COPY = {
       { env: "Kaupunki", emf: "1,40\u00d7", biocap: "0,536", ideology: "Progressiivinen egalitarismi", patholog: "0,443" },
       { env: "Kaupunki (toimisto)", emf: "1,80\u00d7", biocap: "0,480", ideology: "Progressiivinen egalitarismi", patholog: "0,495" },
     ],
-    sPoliticalPolarization: "Polarisaatioindeksi 0,237. Sama genomi, erotettuna postinumerolla, tuottaa eri poliittisen tuotoksen. T\u00e4m\u00e4 ei ole arvojen konflikti \u2014 se on endokriinisen h\u00e4iri\u00f6n gradientti.",
+    sPoliticalPolarization: "Polarisaatioindeksi 0,237 (mallinnettu). BERM ennustaa, ett\u00e4 maantieteellisesti jakautunut biologinen tila voi siirt\u00e4\u00e4 v\u00e4est\u00f6jakaumaa ilman geneettist\u00e4 eroa. Arvo on simulaatiotuotos; endokriinisen osuuden erottaminen valikoitumisesta, kulttuurista ja instituutioista vaatii yhteismitattua dataa.",
     sPoliticalIdeologyTitle: "Ideologia biologisena strategiana",
     sPoliticalIdeologies: [
       { name: "Pragmaattinen lokalismi", patholog: "0,011", desc: "Luonnollinen peruslinja. Vahva paikallinen hierarkia, matala paranoia, innovaatio tradition sis\u00e4ll\u00e4. Ei ideologinen \u2014 funktionaalinen." },
@@ -251,7 +253,7 @@ const COPY = {
     ],
     sPoliticalTrajectoryTitle: "Esikaupunkien trajektori: 1950\u20132050",
     sPoliticalColYear: "Vuosi",
-    sPoliticalTrajectoryDesc: "Ideologia vaihtuu ei siksi, ett\u00e4 ihmiset muuttavat mielens\u00e4, vaan siksi, ett\u00e4 endokriininen substraatti joka tuottaa heid\u00e4n mielipiteens\u00e4 muuttuu.",
+    sPoliticalTrajectoryDesc: "Ehdollinen BERM-trajektori: endokriinisen tilajakauman muutos vaikuttaa poliittiseen tuotokseen aiempien asenteiden ja sosiaalisen kontekstin rinnalla. Alla olevat ajankohdat ja profiilit ovat mallituotoksia, eiv\u00e4t havaintoja.",
     sPoliticalTrajectory: [
       { year: "1950", ideology: "Pragmaattinen lokalismi", biocap: "0,976", patholog: "0,040" },
       { year: "1990", ideology: "Pragmaattinen lokalismi", biocap: "0,861", patholog: "0,108" },
@@ -261,18 +263,19 @@ const COPY = {
     ],
     sPoliticalLitTitle: "Kirjallisuus",
     sPoliticalLit: [
-      "[[ref:alogaily2025_testosterone_politics|Alogaily 2025 RCT]] (N=136): eksogeeninen T siirt\u00e4\u00e4 demokraatteja konservatiivisemmaksi. Suora kausaalievidenssi.",
+      "[[ref:alogaily2025_testosterone_politics|Alogaily 2025 -koe]] (N=136): eksogeeninen T muutti preferenssin ilmaisua vain heikosti puolueeseen sitoutuneilla demokraateilla; muissa raportoiduissa affiliaatio-ositteissa tulos oli nolla.",
       "Petersen 2013 (N=12k, 17 maata): T \u2192 varallisuuden uudelleenjaon hylk\u00e4\u00e4minen.",
       "[[ref:oxley2008_physiological_traits|Oxley 2008]] (N=46): kohonnut uhkaherkkyys \u2192 konservatiiviset asenteet.",
+      "[[ref:bakker2020_physiology_politics_replication|Bakker 2020]]: ennakkorekister\u00f6ity suora replikaatio ja k\u00e4sitteelliset replikaatiot eiv\u00e4t tukeneet yleisp\u00e4tev\u00e4\u00e4 liberaali\u2013konservatiivi-eroa uhkafysiologiassa.",
       "[[ref:dedreu2011_ethnocentrism|De Dreu 2011]] (N=280): OXT lis\u00e4\u00e4 sis\u00e4ryhm\u00e4suosintaa JA ulkoryhm\u00e4n halveksuntaa samanaikaisesti.",
       "[[ref:settle2010_drd4_ideology|Settle 2010]] (N=2 574): DRD4-7R \u2192 poliittinen liberalismi uutuudenhaun kautta.",
       "[[ref:bratsberg2018|Bratsberg 2018]] (N=730k): Flynn-efektin k\u00e4\u00e4ntyminen \u2014 \u00c4O laskee vuodesta 1975.",
       "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]] (meta N=8 538): kaksoishormonihypoteesi. Krooninen CORT tukahduttaa T-k\u00e4ytt\u00f6isen dominanssin.",
     ],
-    sPoliticalConclusion: "Malli ennustaa, ett\u00e4 kaupunki\u2013maaseutu-polarisaatio on endokriinisen h\u00e4iri\u00f6n gradientti, ei arvojen konflikti. Mik\u00e4\u00e4n poliittinen dialogi ei ratkaise t\u00e4t\u00e4 \u2014 se vaatii ymp\u00e4rist\u00f6intervention.",
+    sPoliticalConclusion: "Malli ennustaa, ett\u00e4 mitattu endokriininen tilagradientti voi selitt\u00e4\u00e4 osan kaupunki\u2013maaseutu-polarisaatiosta, kun sosiaalinen konteksti vakioidaan. V\u00e4ite hyl\u00e4t\u00e4\u00e4n, jos biologiset tilat eiv\u00e4t lis\u00e4\u00e4 ennustetta tai interventiovastetta aiempien asenteiden ja kontekstin yli.",
 
     sMoralTitle: "Moraaliperusteet (Haidt)",
-    sMoralDesc: "[[ref:haidt2012_righteous_mind|Jonathan Haidt (2012)]] tunnisti kuusi moraaliperustaa. [[ref:graham2009_moral_foundations|Graham, Haidt & Nosek (2009)]] osoittivat, ett\u00e4 liberaalit painottavat Huolenpitoa + Reiluutta, kun taas konservatiivit painottavat kaikkia kuutta tasaisesti. Malli kuvaa kunkin perustan biologiseen substraattiin ja ennustaa liberaali\u2013konservatiivi-asymmetrian suorana seurauksena biomarkkereiden differentiaalisesta degradaatiosta.",
+    sMoralDesc: "[[ref:haidt2012_righteous_mind|Moraaliperustateoria]] erottaa sitovia ja yksil\u00f6llist\u00e4vi\u00e4 moraaliulottuvuuksia, ja [[ref:graham2009_moral_foundations|Graham, Haidt & Nosek (2009)]] raportoivat ryhm\u00e4tason painotuseroja. BERM k\u00e4ytt\u00e4\u00e4 n\u00e4it\u00e4 k\u00e4ytt\u00e4ytymistuloksina ja ehdottaa hormonaalisia sek\u00e4 hermostollisia moderaattoreita. Alla olevat substraattikaavat ja ymp\u00e4rist\u00f6profiilit ovat falsifioitavia malliparametrisointeja, eiv\u00e4t vahvistettuja yksi yhteen -karttoja.",
     sMoralColEnv: "Ymp\u00e4rist\u00f6", sMoralColBreadth: "Laajuus", sMoralColBinding: "Sitovat", sMoralColIndiv: "Yksil\u00f6lliset", sMoralColActive: "Aktiiviset",
     sMoralEnvs: [
       { env: "Amish", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "Kaikki kuusi", pattern: "T\u00e4ysi moraalinen paletti \u2014 tasapainoiset sitovat ja yksil\u00f6lliset" },
@@ -289,24 +292,25 @@ const COPY = {
       { name: "Pyhyys/Rappeutuminen", substrate: "T\u00d7OXT, BDNF\u00d7MEL", lit: "Inbar ym. 2009 (N=31k), [[ref:oxley2008_physiological_traits|Oxley 2008]]" },
       { name: "Vapaus/Sorto", substrate: "DA, T, inv. CORT", lit: "[[ref:settle2010_drd4_ideology|Settle 2010]] (DRD4-7R)" },
     ],
-    sMoralConclusion: "Malli ennustaa, ett\u00e4 moraaliperustojen kaventuminen ei ole arvovalinta vaan endokriininen seuraus. Liberaali malli (Huolenpito + Reiluus) on se, mik\u00e4 j\u00e4\u00e4 j\u00e4ljelle, kun Auktoriteetin (T), Pyhyyden (T\u00d7OXT, BDNF\u00d7MEL) ja Lojaalisuuden (OXT/T-suhde) biologiset substraatit romahtavat. Konservatiiveilla ei ole 'enemm\u00e4n' moraalia \u2014 heill\u00e4 on ehj\u00e4mm\u00e4t biomarkkerit.",
+    sMoralConclusion: "BERM ehdottaa moraaliperustojen painotusta tila\u00d7konteksti-tulokseksi ja taulukkoa falsifioitavaksi parametrisoinniksi. Nykyiset l\u00e4hteet eiv\u00e4t osoita tarkkoja biomarkkeri\u2013moraaliperusta-kertoimia tai universaalia liberaali\u2013konservatiivi-suuntaa; siihen tarvitaan yhteismitattua pitkitt\u00e4is- ja interventiodataa.",
     sMoralColFoundation: "Perusta", sMoralColSubstrate: "Substraatti", sMoralColLit: "Evidenssi",
 
     sCollapseTitle: "Romahtamishierarkia",
-    sCollapseDesc: "Perusteet eiv\u00e4t rappeudu tasaisesti. Ne romahtavat ennustettavassa j\u00e4rjestyksess\u00e4, jonka m\u00e4\u00e4r\u00e4\u00e4 kunkin perustan substraatin biologinen haavoittuvuus \u2014 ei kulttuuriset tai ideologiset tekij\u00e4t. Sitovat perusteet ovat systemaattisesti hauraampia, koska ne riippuvat EMF-herkimmist\u00e4 hormonaalisista j\u00e4rjestelmist\u00e4.",
+    sCollapseDesc: "BERM ennustaa ep\u00e4tasaisia muutoksia, jos ehdotetut substraattikaavat ja kynnykset pit\u00e4v\u00e4t. Alla oleva j\u00e4rjestys seuraa ilmoitettuja kaavoja; kulttuuri, valikoituminen ja institutionaalinen konteksti s\u00e4ilyv\u00e4t kovariaatteina eiv\u00e4tk\u00e4 ole matemaattisesti poissuljettuja.",
     sCollapseColRank: "Sija", sCollapseColFoundation: "Perusta", sCollapseColType: "Kaava", sCollapseColCollapse: "Romahtaa", sCollapseColVuln: "Haavoittuvuus",
     sCollapseOrder: [
       { rank: 1, foundation: "Pyhyys", type: "Multiplikatiivinen", collapse: "Kaupunki asuin.", binding: true, vuln: "kognitiivinen(BDNF\u00d7MEL) \u00d7 toimeenpano(T\u00d7OXT). Kumman tahansa komponentin rappeutuminen romahduttaa tulon. Nelj\u00e4 haavoittuvaa j\u00e4rjestelm\u00e4\u00e4 kerrottuna \u2014 katastrofaalinen herkkyys." },
-      { rank: 2, foundation: "Auktoriteetti", type: "Yksitt\u00e4inen substraatti", collapse: "Kaupunki asuin.", binding: true, vuln: "Riippuu T:st\u00e4 \u2014 gradientin toiseksi voimakkaimmin rappeutuva markkeri (melatoniinin j\u00e4lkeen) ([[ref:alogaily2025_testosterone_politics|Alogaily 2025 RCT]]). CORT-nousu vaimentaa edelleen kaksoishormonimekanismilla. Kaksoisosuma." },
+      { rank: 2, foundation: "Auktoriteetti", type: "Yksitt\u00e4inen substraatti", collapse: "Kaupunki asuin.", binding: true, vuln: "BERM k\u00e4ytt\u00e4\u00e4 T:t\u00e4 kandidaattimoderaattorina. [[ref:alogaily2025_testosterone_politics|Alogaily 2025]] tukee T \u00d7 puoluesitoutuminen -interaktiota yhdess\u00e4 ositteessa, ei t\u00e4t\u00e4 tarkkaa moraaliperustakytkent\u00e4\u00e4; taulukko on malliennuste." },
       { rank: 3, foundation: "Lojaalisuus", type: "Interaktio", collapse: "Kaupunki asuin.", binding: true, vuln: "Parokiaalinen OXT vaatii T:n yhteisaktivointia ryhm\u00e4puolustukseen. Ilman T:t\u00e4 OXT tuottaa mukautuvuutta, ei lojaalisuutta ([[ref:dedreu2011_ethnocentrism|De Dreu 2011]])." },
       { rank: 4, foundation: "Vapaus", type: "Additiivinen, vaimennettu", collapse: "Kaupunki toimisto", binding: false, vuln: "DA tarjoaa perusautonomian. Resilientimpi \u2014 dopaminergiset neuronit ovat redundantimpia kuin Leydigin tai k\u00e4pyrauhasen solut. Mutta CORT(0.35) voittaa lopulta." },
       { rank: 5, foundation: "Huolenpito", type: "Additiivinen, lattia", collapse: "Kaupunki toimisto", binding: false, vuln: "OXT tarjoaa vahvan perustan. 0.45-lattia tarkoittaa, ett\u00e4 BDNF-tappio kaventaa laajuutta muttei eliminoi huolenpitoa. Romahtaa vasta \u00e4\u00e4rimm\u00e4isess\u00e4 degradaatiossa." },
       { rank: 6, foundation: "Reiluus", type: "Kolminkertainen redundanssi", collapse: "Selviytyy", binding: false, vuln: "Kolme riippumatonta sy\u00f6tett\u00e4 (DA 0.40, T 0.30, OXT 0.15). Mik\u00e4 tahansa yksitt\u00e4inen j\u00e4rjestelm\u00e4 yll\u00e4pit\u00e4\u00e4 osittain. DA on puskuroiduin v\u00e4litt\u00e4j\u00e4aine." },
     ],
-    sCollapseInsight: "Sitovat perusteet \u2014 Lojaalisuus, Auktoriteetti, Pyhyys \u2014 kaikki riippuvat testosteronista (Leydigin solut) ja multiplikatiivisista interaktioista EMF-herkkien j\u00e4rjestelmien v\u00e4lill\u00e4. Yksil\u00f6lliset perusteet \u2014 Huolenpito, Reiluus, Vapaus \u2014 riippuvat dopamiinista (VTA-neuronit, suurempi redundanssi) ja additiivisista kaavoista, joissa mik\u00e4 tahansa yksitt\u00e4inen sy\u00f6te voi osittain yll\u00e4pit\u00e4\u00e4 tulosta. Siksi konservatiivinen moraalinen paletti rappeutuu ensin: se on biologisesti kallis.",
+    sCollapseInsight: "Nykyisess\u00e4 BERM-parametrisoinnissa sitovien perusteiden tuotokset sis\u00e4lt\u00e4v\u00e4t testosteronia ja multiplikatiivisia interaktioita, kun taas yksil\u00f6llist\u00e4v\u00e4t tuotokset k\u00e4ytt\u00e4v\u00e4t enemm\u00e4n additiivisia tai redundantteja termej\u00e4. T\u00e4m\u00e4 tuottaa ensin mainituille varhaisemman simuloidun laskun. Suorat biomarkkeri\u2013moraaliperusta-kertoimet ja niiden j\u00e4rjestys ovat viel\u00e4 estimoimatta.",
     sCollapseFormulaKey: "Kaavatyypit: Multiplikatiivinen (A \u00d7 B) \u2014 tuotos romahtaa, jos kumpi tahansa sy\u00f6te rappeutuu; katastrofaalinen herkkyys mille tahansa yksitt\u00e4isen pisteen vialle. Yksitt\u00e4inen substraatti \u2014 riippuu ensisijaisesti yhdest\u00e4 hormonista; haavoittuva mutta ennustettava. Interaktio \u2014 vaatii kahden j\u00e4rjestelm\u00e4n yhteisaktivoinnin (esim. OXT tarvitsee T:t\u00e4 parokiaaliseen lojaalisuuteen, ei pelkk\u00e4\u00e4n kiintymykseen). Additiivinen, vaimennettu \u2014 sy\u00f6tteiden summa miinus vaimennintermi (CORT); laskee v\u00e4hitellen. Additiivinen, lattia \u2014 summa, jolla on biologinen minimi, joka est\u00e4\u00e4 t\u00e4ydellisen romahduksen. Kolminkertainen redundanssi \u2014 kolme riippumatonta sy\u00f6tett\u00e4, joista mik\u00e4 tahansa yksin yll\u00e4pit\u00e4\u00e4 tuotosta osittain; kest\u00e4vin.",
 
     sRKTitle: "r/K-lis\u00e4\u00e4ntymisstrategia",
+    sRKDescCurrent: "T\u00e4ss\u00e4 osiossa r/K-kieli on k\u00e4ytt\u00e4ytymiskomposiitin heuristiikka, ei osoitettu ihmisen poliittinen taksonomia. BERM kysyy, parantavatko melatoniiniin, HPG-akseliin, dopamiiniin ja oksitosiiniin liittyv\u00e4t tilamuuttujat osak\u00e4ytt\u00e4ytymisten ennustetta sosiaalisen kontekstin vakioinnin j\u00e4lkeen. Alla olevat kaavat m\u00e4\u00e4rittelev\u00e4t hypoteesin; ne eiv\u00e4t osoita kaupunkiymp\u00e4rist\u00f6n aiheuttavan liberaalia tai r-valittua fenotyyppi\u00e4.",
     sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) kartoitti viisi psykologista piirrett\u00e4 r/K-valinnan jatkumolle: r-strategistit (liberaali psykologia) osoittavat kilpailun v\u00e4lttely\u00e4, promiskuiteettia, matalaa vanhemmuusinvestointia, varhaista seksuaalisuutta ja ryhm\u00e4lojaalisuuden puutetta. K-strategistit (konservatiivinen psykologia) osoittavat p\u00e4invastaista. Alkuper\u00e4inen teoria selit\u00e4\u00e4 t\u00e4m\u00e4n resurssien runsaussykleill\u00e4. BERM-malli tunnistaa mekanismin: kaupunkien EMF-ymp\u00e4rist\u00f6t tuottavat r-valittuja endokriinisi\u00e4 profiileja melatoniini- (polku B) ja kalsiumkanava- (polku A) biomarkkeridegradaation kautta. T\u00e4m\u00e4 on r-valinnan ymp\u00e4rist\u00f6llist\u00e4 fenotyypist\u00e4 mimikry\u00e4 \u2014 ei evoluutiota. Geneettisesti K-valittu laji ilment\u00e4\u00e4 r-tyyppisi\u00e4 k\u00e4ytt\u00e4ytymistuotoksia, koska sen endokriiniset substraatit ovat vaimentuneet.",
     sRKScaleNote: "r/K-indeksi vaihtelee v\u00e4lill\u00e4 0,0 (t\u00e4ysin r-valittu fenotyyppi: maksimaalinen lis\u00e4\u00e4ntymism\u00e4\u00e4r\u00e4, minimaalinen vanhempien panostus) ja 1,0 (t\u00e4ysin K-valittu fenotyyppi: maksimaalinen vanhempien panostus, valikoiva parinvalinta, ryhm\u00e4lojaalius). Kukin viidest\u00e4 osapiirteest\u00e4 lasketaan omasta substraattikaavastaan ymp\u00e4rist\u00f6n biomarkkeriarvoilla \u2014 esim. Paritusstrategia = OXT \u00d7 (0,5 + 0,5 \u00d7 T), miss\u00e4 OXT ja T on normalisoitu v\u00e4lille [0, 1] suhteessa esiteolliseen peruslinjaan. Yhdistetty r/K-indeksi on viiden osapisteen keskiarvo.",
     sRKColEnv: "Ymp\u00e4rist\u00f6", sRKColIndex: "r/K-indeksi", sRKColClass: "Luokitus",
@@ -424,15 +428,15 @@ const COPY = {
     sDistressConclusion: "Malli ei ennusta, ett\u00e4 liberaalit kannat ovat patologisia koska ne ovat liberaaleja. Se ennustaa, ett\u00e4 biologinen tila, joka tuottaa liberaalin moraaliprofiilin (sitovat perusteet romahtaneet), tuottaa my\u00f6s psykologista ahdistusta \u2014 koska ihmiset ovat kehittyneet toimimaan t\u00e4ydell\u00e4 moraalipaletilla. Kaupunkilaisliberaali ei ole moraalisesti v\u00e4\u00e4r\u00e4ss\u00e4. H\u00e4n on moraalisesti ep\u00e4t\u00e4ydellinen, t\u00e4sm\u00e4lleen samalla tavalla kuin henkil\u00f6, jolla on alentunut luuntiheys, ei tee el\u00e4m\u00e4ntapavalintaa vaan kokee puutostilan.",
 
     conclusionTitle: "Synteesi",
-    conclusionText: "Patokratia ei ole poliittinen argumentti. Se on biologinen kuvaus. Endokriiniset substraatit, jotka tuottavat poliittisia arvoja, moraaliperusteita, lis\u00e4\u00e4ntymisstrategioita, kollektiivisen toiminnan kapasiteettia ja merkityskehyksi\u00e4, rappeutuvat systemaattisesti EMF-altistusgradientin varrella. Poliittinen on biologista. Biologinen on s\u00e4hk\u00f6magneettista. Korjaus vaatii substraatin palauttamista, ei v\u00e4ittelyn voittamista.",
+    conclusionText: "Patokratia on BERM:n biologinen reduktio poliittisesta tuotoksesta: fysikaaliset ja biologiset tilat voivat muuttaa yksil\u00f6n k\u00e4ytt\u00e4ytymistodenn\u00e4k\u00f6isyyksi\u00e4, v\u00e4est\u00f6jakaumat aggregoivat ne ja instituutiot s\u00e4ilytt\u00e4v\u00e4t osan tuotoksesta. Reduktio on eksplisiittinen, mutta kentt\u00e4\u2013kudos-, biomarkkeri\u2013politiikka- ja institutionaalisen retention kertoimet ovat avoimia. Yl\u00e4virran substraatin palauttaminen on mallin ennustama interventio vain niiss\u00e4 yhteyksiss\u00e4, joissa ketju mitataan ja replikoidaan.",
 
     navBackCiv: "Takaisin Sivilisaatioon",
     navPathopege: "Pathopege: Sairauden lähde",
     navPatopolis: "Patopolis: Patologinen kaupunki",
     navPatopoliteia: "Patopoliteia: Patologinen sivilisaatio",
     navPatokinesis: "Patokinesis: Patologia joka liikkuu",
-    sWellingCalloutTitle: "Suora kausaalinen n\u00e4ytt\u00f6: testosteroni \u2192 poliittiset preferenssit",
-    sWellingCalloutBody: "Kausaaliyhteys testosteronista poliittisiin preferensseihin vahvistettiin RCT:ll\u00e4 vuonna 2025. Alogaily, Zak ym. (Brain and Behavior, n=136) antoivat synteettist\u00e4 testosteronia tai lumel\u00e4\u00e4kett\u00e4. Heikosti affilioituneilla demokraateilla oli 19 % korkeampi basaalitestosteroni kuin vahvasti affilioituneilla (p=0,015). Testosteronin anto v\u00e4hensi puolueaffilikaatiota 12 % (p=0,01) ja lis\u00e4si l\u00e4mp\u00f6\u00e4 republikaaniehdokkaita kohtaan 45 % (p<0,001). T\u00e4m\u00e4 on ensimm\u00e4inen suora kokeellinen n\u00e4ytt\u00f6 siit\u00e4, ett\u00e4 testosteroni kausaalisesti muuttaa poliittisia preferenssej\u00e4.",
+    sWellingCalloutTitle: "Suora ositen\u00e4ytt\u00f6: testosteroni \u00d7 affiliaatiokonteksti",
+    sWellingCalloutBody: "Alogaily, Zak ym. (Brain and Behavior, n=136) antoivat synteettist\u00e4 testosteronia tai lumel\u00e4\u00e4kett\u00e4. Heikosti affilioituneilla demokraateilla oli 19 % korkeampi basaalitestosteroni kuin vahvasti affilioituneilla (p=0,015). T\u00e4ss\u00e4 heikon sitoutumisen ositteessa testosteroni v\u00e4hensi puolueaffiliaation voimakkuutta noin 12 % ja lis\u00e4si l\u00e4mp\u00f6\u00e4 republikaaniehdokkaita kohtaan 45 %. Vahvasti affilioituneilla demokraateilla tai republikaaneilla ei raportoitu poliittisen preferenssin muutosta. Koe tukee siten testosteroni \u00d7 affiliaatiokonteksti -vaikutusta, ei universaalia testosteroni\u2013ideologia-suuntaa.",
     modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
     modelDerivedLink: "matemaattinen spesifikaatio",
     translationPending: "T\u00e4ysi k\u00e4\u00e4nn\u00f6s odottaa.",
@@ -597,7 +601,9 @@ export default async function PatokratiaPage({
         {d.sWellingCalloutBody && (
         <div className="rounded-xl border-2 border-green-500/40 bg-green-500/5 p-5 mb-8 max-w-4xl">
           <h4 className="text-sm font-bold text-green-400 mb-2">{d.sWellingCalloutTitle}</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed">{d.sWellingCalloutBody}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <ClaimRef claimId="claim.cognition.state-dependent-behaviour">{d.sWellingCalloutBody}</ClaimRef>
+          </p>
         </div>
         )}
 
@@ -824,7 +830,7 @@ export default async function PatokratiaPage({
         {(d as CopyType).sRKTitle && (
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-3">{(d as CopyType).sRKTitle}</h2>
-          <p className="text-sm text-foreground-muted mb-4">{(d as CopyType).sRKDesc}</p>
+          <p className="text-sm text-foreground-muted mb-4">{(d as CopyType).sRKDescCurrent || (d as CopyType).sRKDesc}</p>
           {(d as CopyType).sRKScaleNote && (
           <div className="mb-6 rounded-lg border border-muted bg-muted/30 p-4">
             <p className="text-xs text-muted-foreground leading-relaxed">{(d as CopyType).sRKScaleNote}</p>

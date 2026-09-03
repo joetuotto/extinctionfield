@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1087,
-    "linkedReferences": 414
+    "totalReferences": 1088,
+    "linkedReferences": 415
   },
   "references": {
     "5g_hpa_axis": {
@@ -10502,9 +10502,19 @@
       "year": 2025,
       "title": "Testosterone administration induces a red shift in Democrats",
       "journal": "Brain and Behavior",
-      "type": "journal",
+      "type": "randomized_double_blind_placebo_controlled_experiment",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1002/brb3.70651"
+    },
+    "bakker2020_physiology_politics_replication": {
+      "id": "bakker2020_physiology_politics_replication",
+      "authors": "Bakker BN, Schumacher G, Gothreau C, Arceneaux K",
+      "year": 2020,
+      "title": "Conservatives and liberals have similar physiological responses to threats",
+      "journal": "Nature Human Behaviour",
+      "type": "preregistered_replication_program",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41562-020-0823-z"
     },
     "bosch_neumann2012_oxytocin_maternal": {
       "id": "bosch_neumann2012_oxytocin_maternal",
@@ -11761,6 +11771,10 @@
     "doi:10.1016/j.biopsych.2016.06.009": "carre2017_exogenous_t_aggression",
     "doi:10.1073/pnas.2419630121": "mcconnell2025_roman_lead",
     "doi:10.1002/brb3.70651": "alogaily2025_testosterone_politics",
+    "pmcid:PMC12230349": "alogaily2025_testosterone_politics",
+    "pmid:40619991": "alogaily2025_testosterone_politics",
+    "doi:10.1038/s41562-020-0823-z": "bakker2020_physiology_politics_replication",
+    "pmcid:PMC7306406": "bakker2020_physiology_politics_replication",
     "doi:10.1016/j.yhbeh.2011.11.002": "bosch_neumann2012_oxytocin_maternal",
     "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding",
     "doi:10.1143/jpsj.12.570": "kubo1957_linear_response",

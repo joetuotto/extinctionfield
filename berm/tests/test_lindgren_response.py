@@ -3,6 +3,7 @@ import pytest
 
 from berm.physics.lindgren_response import (
     BiologicalResponseContext,
+    contract_retarded_response,
     contract_linear_response,
     geometric_chi,
     geometric_chi_squared,
@@ -61,6 +62,10 @@ def test_biological_response_context_requires_explicit_kernel_state() -> None:
         redox_state_id="measured_glutathione",
         genotype_id="stratified",
         exposure_history_id="seven_day_panel",
+        orientation_id="parallel_to_b0",
+        coherence_id="ten_second_blocks",
+        waveform_id="registered_pulse_train",
+        temperature_trajectory_id="stable_37c",
     )
     assert context.endpoint_id == "melatonin_phase"
     with pytest.raises(ValueError):
@@ -79,6 +84,34 @@ def test_response_becomes_scalar_only_after_explicit_contraction() -> None:
     assert contract_linear_response(kernel, perturbation) == pytest.approx(
         np.sum(kernel * perturbation)
     )
+
+
+def test_retarded_response_retains_auditable_lag_contributions() -> None:
+    perturbations = np.asarray(
+        [
+            metric_perturbation([1.0, 0.0], [0.0, 0.5]),
+            metric_perturbation([1.0, 0.0], [0.0, 0.25]),
+        ]
+    )
+    kernels = np.asarray(
+        [
+            [[2.0, 1.0], [1.0, -1.0]],
+            [[1.0, 0.5], [0.5, 0.0]],
+        ]
+    )
+    result = contract_retarded_response(kernels, perturbations, lag_weights=[1.0, 0.5])
+
+    expected = tuple(
+        float(weight * np.sum(kernel * perturbation))
+        for weight, kernel, perturbation in zip((1.0, 0.5), kernels, perturbations)
+    )
+    assert result.lag_contributions == pytest.approx(expected)
+    assert result.total == pytest.approx(sum(expected))
+
+
+def test_retarded_response_rejects_unaligned_history() -> None:
+    with pytest.raises(ValueError):
+        contract_retarded_response(np.ones((2, 2, 2)), np.ones((1, 2, 2)))
 
 
 def test_am_low_pass_coefficients_follow_exact_quadratic_identity() -> None:

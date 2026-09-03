@@ -368,4 +368,4 @@ class TestPackageImports:
 
     def test_version_matches_current_package(self):
         import berm
-        assert berm.__version__ == "0.20.0"
+        assert berm.__version__ == "0.21.0"

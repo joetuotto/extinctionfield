@@ -2113,6 +2113,39 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </div>
             </Derivation>
 
+            <div className="mt-5 rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+              <p className="text-sm font-semibold mb-2">
+                {pickCopy({
+                  en: "State-conditioned retarded form constrained by component studies",
+                  fi: "Komponenttitutkimusten rajaama tilariippuvainen viivemuoto",
+                  ja: "構成研究で制約された状態依存遅延形式",
+                  fr: "Forme retardée conditionnée par l’état et bornée par les études",
+                  ko: "구성 연구로 제약된 상태 조건부 지연 형식",
+                }, locale)}
+              </p>
+              <p className="text-xs text-foreground-muted leading-relaxed mb-3">
+                <ClaimRef claimId="claim.bridge.state-conditioned-kernel">
+                  {pickCopy({
+                    en: "BERM refines the formal observable into an organ-specific drive uᵢ(t). Sᵢ retains orientation, coherence, waveform, endogenous phase, developmental timing, receptor or agonist state, redox, temperature trajectory, organ transfer and exposure history. Primary component experiments constrain several of these arguments; organ transfer, the kernel coefficients and identification of δg as their cause remain open.",
+                    fi: "BERM tarkentaa formaalin havaittavan elinkohtaiseksi ajoksi uᵢ(t). Sᵢ säilyttää orientaation, koherenssin, aaltomuodon, endogeenisen vaiheen, kehitysajoituksen, reseptori- tai agonistitilan, redoxin, lämpötilahistorian, elinsiirron ja altistushistorian. Primaariset komponenttikokeet rajaavat useita näistä argumenteista; elinsiirto, ydinkertoimet ja δg:n tunnistaminen niiden aiheuttajaksi jäävät avoimiksi.",
+                    ja: "BERMは形式観測量を臓器固有駆動uᵢ(t)へ精緻化します。Sᵢは方向、コヒーレンス、波形、内因性位相、発達時期、受容体・作動薬状態、酸化還元、温度履歴、臓器伝達、曝露履歴を保持します。一次構成実験はこれらを制約しますが、カーネル係数とδgの原因同定は未解決です。",
+                    fr: "BERM précise l’observable formel en un pilotage propre à l’organe uᵢ(t). Sᵢ conserve orientation, cohérence, forme d’onde, phase endogène, fenêtre développementale, état récepteur ou agoniste, redox, trajectoire thermique, transfert d’organe et historique d’exposition. Les expériences primaires bornent ces arguments; les coefficients et l’identification de δg comme cause restent ouverts.",
+                    ko: "BERM은 형식적 관측량을 장기별 구동 uᵢ(t)로 구체화합니다. Sᵢ는 방향, 결맞음, 파형, 내인성 위상, 발달 시기, 수용체·작용제 상태, 산화환원, 온도 이력, 장기 전달 및 노출 이력을 유지합니다. 1차 구성 실험은 이 인수들을 제약하지만 커널 계수와 δg의 원인 식별은 열려 있습니다.",
+                  }, locale)}
+                </ClaimRef>
+              </p>
+              <MathBlock tex="u_i(t)=\int_0^\infty K_i^{\mu\nu}\!\left(\tau;\mathcal S_i(t-\tau)\right)\delta g_{\mu\nu}(t-\tau)\,d\tau+O(\delta g^2)" />
+              <p className="mt-3 text-xs text-foreground-muted leading-relaxed">
+                <StudyCitation referenceId="litovitz1991_coherence_time" locale={locale} />{" · "}
+                <StudyCitation referenceId="rosenspire2005_metabolic_phase" locale={locale} />{" · "}
+                <StudyCitation referenceId="ubeda1983_pulse_shape" locale={locale} />{" · "}
+                <StudyCitation referenceId="blackman1990" locale={locale} />{" · "}
+                <StudyCitation referenceId="blackman1991" locale={locale} />{" · "}
+                <StudyCitation referenceId="lymangrover1983_acth_steroidogenesis" locale={locale} />{" · "}
+                <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale} />
+              </p>
+            </div>
+
             <div className="mt-5 rounded-lg border border-card-border p-4">
               <p className="text-sm font-semibold mb-2">
                 {pickCopy({ en: "Quadratic RF demodulation is geometry, not yet biology", fi: "RF:n neliöllinen demodulaatio on geometriaa, ei vielä biologiaa", ja: "二次RF復調は幾何学であり、まだ生物学ではない", fr: "La démodulation RF quadratique est géométrique, pas encore biologique", ko: "이차 RF 복조는 기하학이며 아직 생물학이 아님" }, locale)}
@@ -2467,7 +2500,46 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <span className="text-foreground-muted text-sm mr-2">{"§5"}</span>
               {d.s5Title}
             </h2>
+            <div className="mb-6 rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+              <p className="text-sm font-semibold mb-2">
+                {pickCopy({ en: "Canonical individual → population → institution operator", fi: "Kanoninen yksilö → populaatio → instituutio -operaattori", ja: "標準的な個人→集団→制度演算子", fr: "Opérateur canonique individu → population → institution", ko: "정식 개인 → 모집단 → 제도 연산자" }, locale)}
+              </p>
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                <ClaimRef claimId="claim.cognition.state-dependent-behaviour">
+                  {pickCopy({
+                    en: "The current BERM closure models behaviour first as a state-by-context individual probability. It does not assign one deterministic political direction to a hormone.",
+                    fi: "Nykyinen BERM-sulkeuma mallintaa käyttäytymisen ensin tila × konteksti -riippuvaisena yksilötodennäköisyytenä. Se ei anna yhdelle hormonille yhtä determinististä poliittista suuntaa.",
+                    ja: "現在のBERM閉包は行動をまず状態×文脈の個人確率としてモデル化し、単一ホルモンに決定論的政治方向を割り当てません。",
+                    fr: "La fermeture BERM actuelle modélise d’abord le comportement comme une probabilité individuelle état × contexte; elle n’attribue pas une direction politique déterministe à une hormone.",
+                    ko: "현재 BERM 폐쇄는 행동을 먼저 상태×맥락 개인 확률로 모델링하며 한 호르몬에 결정론적 정치 방향을 부여하지 않습니다.",
+                  }, locale)}
+                </ClaimRef>
+              </p>
+              <MathBlock tex="P(Y_i=p\mid z_i,x_i),\qquad P_t(Y=p)=\int P(Y=p\mid z,x)f_t(z,x)\,dz\,dx" />
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                <ClaimRef claimId="claim.cognition.biological-behavioural-weighting">
+                  {pickCopy({
+                    en: "Institutional persistence is represented separately as I_{t+1}=ρI_t+(1−ρ)P_t. The coefficients of the individual response, population distribution and institutional retention remain open. Aggregate outcomes cannot be inverted into individual hormone diagnoses.",
+                    fi: "Institutionaalinen pysyvyys esitetään erikseen muodossa I_{t+1}=ρI_t+(1−ρ)P_t. Yksilövasteen, populaatiojakauman ja institutionaalisen retention kertoimet ovat avoimia. Agregaattitulosta ei voi kääntää yksilön hormonidiagnoosiksi.",
+                    ja: "制度的持続性はI_{t+1}=ρI_t+(1−ρ)P_tとして別に表します。個人反応、集団分布、制度保持の係数は未校正で、集団結果を個人ホルモン診断へ逆変換できません。",
+                    fr: "La persistance institutionnelle est séparée sous I_{t+1}=ρI_t+(1−ρ)P_t. Les coefficients individuels, populationnels et de rétention restent ouverts; le résultat agrégé ne peut être inversé en diagnostic hormonal individuel.",
+                    ko: "제도적 지속성은 I_{t+1}=ρI_t+(1−ρ)P_t로 별도 표현됩니다. 개인 반응, 모집단 분포, 제도 유지 계수는 열려 있으며 집계 결과를 개인 호르몬 진단으로 역산할 수 없습니다.",
+                  }, locale)}
+                </ClaimRef>
+              </p>
+              <p className="mt-3 text-xs text-foreground-muted">
+                <StudyCitation referenceId="alogaily2025_testosterone_politics" locale={locale} />{" · "}
+                <StudyCitation referenceId="bakker2020_physiology_politics_replication" locale={locale} />
+              </p>
+            </div>
             <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {pickCopy({
+                en: "Archived v17 scalar comparison implementation: ",
+                fi: "Arkistoitu v17-skaalaarivertailun toteutus: ",
+                ja: "アーカイブ済みv17スカラー比較実装：",
+                fr: "Implémentation scalaire comparative v17 archivée : ",
+                ko: "보관된 v17 스칼라 비교 구현: ",
+              }, locale)}
               {d.s5Intro}
             </p>
             <div className="text-center my-4">

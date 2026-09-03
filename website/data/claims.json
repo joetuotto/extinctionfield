@@ -240,6 +240,29 @@
       "falsification_condition": "A registered tissue observable cannot be represented by linear or higher-order causal response kernels under the stated matter-coupling premises."
     },
     {
+      "id": "claim.bridge.state-conditioned-kernel",
+      "statement": {
+        "en": { "text": "BERM represents the open tissue mapping as a retarded state-conditioned kernel u_i(t) = ∫K_i^{μν}(τ;S_i(t−τ))δg_{μν}(t−τ)dτ. Primary studies constrain orientation, coherence, waveform, biological phase, developmental window, receptor or agonist state, redox state, temperature trajectory and exposure history as candidate arguments rather than one scalar dose; organ transfer and the kernel coefficients remain open.", "sourceRevision": 1 },
+        "fi": { "text": "BERM esittää avoimen kudoskuvauksen viiveellisenä ja tilariippuvaisena ytimenä u_i(t) = ∫K_i^{μν}(τ;S_i(t−τ))δg_{μν}(t−τ)dτ. Primääritutkimukset rajaavat orientaation, koherenssin, aaltomuodon, biologisen vaiheen, kehitysikkunan, reseptori- tai agonistitilan, redox-tilan, lämpötilahistorian ja altistushistorian kandidaattiargumenteiksi yhden annosskalaarin sijaan; elinsiirto ja ydinkertoimet jäävät avoimiksi.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "BERM_L2_BRIDGE" },
+      "depends_on": ["claim.bridge.conditional-response-operator"],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A preregistered factorial kernel in which state and protocol variables can predict positive, null or negative endpoint responses",
+          "Explicit lag and null-region estimation instead of post-hoc exception handling"
+        ],
+        "does_not_support": [
+          "That the cited responses were caused by the Lindgren metric perturbation",
+          "A universal sign, threshold, tissue coefficient or human population effect"
+        ]
+      },
+      "falsification_condition": "Across preregistered matched protocols, orientation, coherence, waveform, biological phase, temperature trajectory and state interactions fail to improve out-of-sample endpoint prediction over a scalar exposure model."
+    },
+    {
       "id": "claim.androgen.binding-availability",
       "statement": {
         "en": { "text": "Total testosterone does not uniquely determine tissue androgen exposure: SHBG and albumin binding transform total concentration into a free or bioavailable fraction, while intratesticular concentration is a separate compartment. BERM therefore keeps production and availability as separate state variables.", "sourceRevision": 1 },
@@ -974,6 +997,38 @@
       "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
     },
     {
+      "id": "claim.cognition.state-dependent-behaviour",
+      "statement": {
+        "en": {
+          "text": "BERM proposes an individual response function P(Y_i=p|z_i,x_i) in which measured endocrine, receptor-use, circadian and neural state z_i interacts with social context x_i. A biological intervention can therefore change preference expression in one stratum while producing a null result in another without implying a universal ideological direction.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ehdottaa yksilövastefunktiota P(Y_i=p|z_i,x_i), jossa mitattu endokriininen, reseptorinkäyttöön liittyvä, vuorokausirytminen ja neuraalinen tila z_i vuorovaikuttaa sosiaalisen kontekstin x_i kanssa. Biologinen interventio voi siksi muuttaa preferenssin ilmaisua yhdessä ositteessa ja tuottaa nollatuloksen toisessa ilman universaalia ideologista suuntaa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE" },
+      "depends_on": [
+        "claim.androgen.receptor-use-capacity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Biological-state × social-context interaction tests on later behaviour",
+          "Subgroup-specific causal effects and genuine null strata"
+        ],
+        "does_not_support": [
+          "A universal mapping from testosterone or another biomarker to left-right ideology",
+          "Inferring an individual's biological state from a political choice"
+        ]
+      },
+      "falsification_condition": "Preregistered biological interventions and measured states repeatedly fail to alter any later behavioural probability or state-by-context interaction after baseline behaviour is controlled."
+    },
+    {
       "id": "claim.cognition.biological-behavioural-weighting",
       "statement": {
         "en": {
@@ -992,13 +1047,15 @@
         "nodeId": "BIOBEHAVIORAL_WEIGHTING"
       },
       "depends_on": [
+        "claim.cognition.state-dependent-behaviour",
         "claim.androgen.receptor-use-capacity",
         "claim.melatonin.circadian-redox-mediator"
       ],
       "supersedes": [],
       "scope": {
         "supports": [
-          "A distributional biology-to-behaviour transition can be tested with joint biomarkers and later behaviour"
+          "A distributional biology-to-behaviour transition can be tested with joint biomarkers and later behaviour",
+          "Forward aggregation P_t(Y=p) = ∫P(Y=p|z,x)f_t(z,x) dz dx without reverse ecological inference"
         ],
         "does_not_support": [
           "A deterministic diagnosis from political behaviour to an individual's hormone state",
@@ -1140,6 +1197,104 @@
       "curatorNote": "Supplies the response-kernel formalism, not the missing tissue-specific coefficient."
     },
     {
+      "id": "er.bridge.litovitz1991",
+      "referenceId": "litovitz1991_coherence_time",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "cell_experiment",
+      "applicability": "L929_cells_55_65_hz_protocol",
+      "calibrationRole": "structural_only",
+      "limitations": ["One cell model and endpoint", "Does not identify a Lindgren coupling or human threshold"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains temporal coherence as an argument of a candidate response kernel."
+    },
+    {
+      "id": "er.bridge.rosenspire2005",
+      "referenceId": "rosenspire2005_metabolic_phase",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "single_cell_experiment",
+      "applicability": "human_neutrophil_metabolic_oscillation",
+      "calibrationRole": "structural_only",
+      "limitations": ["Cellular redox endpoint", "No endocrine or population calibration"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains endogenous phase and response sign as kernel arguments."
+    },
+    {
+      "id": "er.bridge.ubeda1983",
+      "referenceId": "ubeda1983_pulse_shape",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "embryo_experiment",
+      "applicability": "chick_embryo_first_48_hours",
+      "calibrationRole": "structural_only",
+      "limitations": ["Developmental avian model", "Does not transfer a coefficient to adult human tissue"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains waveform, intensity window and developmental timing."
+    },
+    {
+      "id": "er.bridge.blackman1990",
+      "referenceId": "blackman1990",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "in_vitro_and_in_vivo_experiment",
+      "applicability": "brain_tissue_calcium_release_protocol",
+      "calibrationRole": "structural_only",
+      "limitations": ["Protocol-specific calcium endpoint", "Compatible with non-BERM mechanisms"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains AC/DC relative orientation rather than scalar field magnitude alone."
+    },
+    {
+      "id": "er.bridge.blackman1991",
+      "referenceId": "blackman1991",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "brain_tissue_experiment",
+      "applicability": "temperature_conditioned_calcium_release",
+      "calibrationRole": "structural_only",
+      "limitations": ["In-vitro brain tissue endpoint", "Requires independent replication under registered trajectories"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains temperature level and trajectory as response-state variables."
+    },
+    {
+      "id": "er.bridge.lymangrover1983",
+      "referenceId": "lymangrover1983_acth_steroidogenesis",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "adrenal_tissue_experiment",
+      "applicability": "rat_adrenal_ACTH_challenge",
+      "calibrationRole": "structural_only",
+      "limitations": ["High electric-field protocol", "Does not establish an environmental or reproductive coefficient"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains agonist state and intensity window in one endocrine tissue."
+    },
+    {
+      "id": "er.bridge.berman1990",
+      "referenceId": "berman1990_multilab_embryo",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "contextualizes",
+      "directness": "multilaboratory_component",
+      "studyDesign": "six_laboratory_replication",
+      "applicability": "chick_embryo_protocol",
+      "calibrationRole": "context_only",
+      "limitations": ["Laboratory interaction does not identify which omitted state variable caused heterogeneity"],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports modelling protocol and laboratory state explicitly rather than averaging it away."
+    },
+    {
       "id": "er.androgen.narinx2022",
       "referenceId": "narinx2022_free_testosterone",
       "claimId": "claim.androgen.binding-availability",
@@ -1198,8 +1353,8 @@
     {
       "id": "er.androgen.mollerlokken2012",
       "referenceId": "mollerlokken2012_mri_hormones",
-      "claimId": "claim.androgen.receptor-use-capacity",
-      "relation": "challenges",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "contextualizes",
       "directness": "human_hormone_endpoint",
       "studyDesign": "randomized_crossover_trial",
       "applicability": "healthy_adult_men_single_mri",
@@ -1207,7 +1362,7 @@
       "limitations": ["N=24", "Single acute MRI protocol", "Did not measure AR, ZIP9 or downstream tissue response"],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Direct counterevidence against a broad immediate serum-hormone response, not a receptor-capacity test."
+      "curatorNote": "Registers a human null region for one acute MRI protocol and measured serum endpoints; it is not a receptor-capacity test."
     },
     {
       "id": "er.vgcc.pall2013",
@@ -2290,6 +2445,41 @@
       "curatorNote": "Provides an empirical component for the evidence-threshold prediction, not validation of Epistapege; the source is registered but not yet author-verified."
     },
     {
+      "id": "er.cognition.alogaily2025",
+      "referenceId": "alogaily2025_testosterone_politics",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "supports",
+      "directness": "human_causal_intervention",
+      "studyDesign": "randomized_double_blind_placebo_controlled_experiment",
+      "applicability": "healthy_men_political_preference_expression",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "N=136 total and the reported political effect was limited to weakly affiliated Democrats",
+        "No effect in strongly affiliated Democrats or Republicans",
+        "Does not identify an EMF upstream cause or a population election coefficient"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Directly supports a hormone-state × affiliation-context effect on preference expression, not a universal ideological direction."
+    },
+    {
+      "id": "er.cognition.bakker2020",
+      "referenceId": "bakker2020_physiology_politics_replication",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "challenges",
+      "directness": "direct_replication_and_conceptual_replications",
+      "studyDesign": "preregistered_replication_program",
+      "applicability": "physiological_threat_response_and_political_orientation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Tests threat physiology rather than endocrine intervention",
+        "Does not rule out other biological state-by-context effects"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Rejects treating the original Oxley association as a general physiology-to-ideology law and narrows BERM to preregistered state- and endpoint-specific mappings."
+    },
+    {
       "id": "er.cognition.narinx2022",
       "referenceId": "narinx2022_free_testosterone",
       "claimId": "claim.cognition.biological-behavioural-weighting",
@@ -2310,7 +2500,7 @@
     {
       "id": "er.cognition.soares-cunha2016",
       "referenceId": "soares_cunha2016_d2_motivation",
-      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "claimId": "claim.cognition.state-dependent-behaviour",
       "relation": "supports",
       "directness": "mechanistic_intermediate",
       "studyDesign": "Optogenetic animal experiment",
@@ -2328,7 +2518,7 @@
     {
       "id": "er.cognition.oxley2008",
       "referenceId": "oxley2008_physiological_traits",
-      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "claimId": "claim.cognition.state-dependent-behaviour",
       "relation": "contextualizes",
       "directness": "downstream_association",
       "studyDesign": "Human psychophysiological association study",
@@ -2382,6 +2572,27 @@
       "note": "Formal operator derived conditionally; gauge choice, scale, tissue kernels and endpoint calibration are unresolved."
     },
     {
+      "id": "ea.bridge.state-conditioned.v1",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.bridge.litovitz1991",
+        "er.bridge.rosenspire2005",
+        "er.bridge.ubeda1983",
+        "er.bridge.blackman1990",
+        "er.bridge.blackman1991",
+        "er.bridge.lymangrover1983",
+        "er.bridge.berman1990",
+        "er.androgen.mollerlokken2012"
+      ],
+      "assessorId": "berm-kernel-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Component studies constrain kernel arguments, lag families and protocol-specific null regions. They do not identify delta-g as the cause or calibrate a human endpoint."
+    },
+    {
       "id": "ea.androgen.binding.v1",
       "claimId": "claim.androgen.binding-availability",
       "revision": 1,
@@ -2400,10 +2611,10 @@
       "level": "M",
       "compatibility": "current",
       "origin": "emergent",
-      "basis": ["er.androgen.degendt2004", "er.androgen.yu2023", "er.androgen.mollerlokken2012"],
+      "basis": ["er.androgen.degendt2004", "er.androgen.yu2023"],
       "assessorId": "berm-integration-2026-09-03",
       "assessedAt": "2026-09-03",
-      "note": "Link-by-link synthesis: receptor necessity is established in animal tissue, one RF model implicates ZIP9, and an acute human MRI trial is null for serum hormones. Human chronic receptor-level calibration remains open."
+      "note": "Link-by-link synthesis: receptor necessity is established in animal tissue and one RF model implicates ZIP9. Human chronic receptor-level calibration remains open."
     },
     {
       "id": "ea.vgcc.v1",
@@ -2818,20 +3029,33 @@
       "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
     },
     {
+      "id": "ea.cognition.state-dependent-behaviour.v1",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.cognition.alogaily2025",
+        "er.cognition.bakker2020",
+        "er.cognition.soares-cunha2016",
+        "er.cognition.oxley2008"
+      ],
+      "assessorId": "berm-kernel-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Alogaily supplies a subgroup-specific hormonal intervention result; Soares-Cunha supplies an experimental motivational control point. Bakker's preregistered replication program rejects a general threat-physiology ideology law, so the BERM mapping remains state-, context- and endpoint-specific."
+    },
+    {
       "id": "ea.cognition.biological-behavioural-weighting.v1",
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "revision": 1,
       "level": "L*",
       "compatibility": "current",
       "origin": "derived",
-      "basis": [
-        "er.cognition.narinx2022",
-        "er.cognition.soares-cunha2016",
-        "er.cognition.oxley2008"
-      ],
+      "basis": ["er.cognition.narinx2022"],
       "assessorId": "berm-integration-2026-09-03",
       "assessedAt": "2026-09-03",
-      "note": "The records support separate binding availability, an experimental motivational control point and a physiology-politics association. Their population-level composition and electromagnetic upstream route remain open."
+      "note": "The forward aggregation operator is a mathematical population mixture over individual state-by-context probabilities. Narinx constrains one latent endocrine-state component; the aggregate political coefficient and electromagnetic upstream route remain open."
     },
     {
       "id": "ea.cognition.reported-reason-downstream.v1",

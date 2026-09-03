@@ -54,12 +54,19 @@ NEW_LABELS = {
         "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
         "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력",
     },
+    "INDIVIDUAL_BEHAVIORAL_RESPONSE": {
+        "en": "State-conditioned individual behavioural response probability",
+        "fi": "Tilariippuvainen yksilön käyttäytymisvasteen todennäköisyys",
+        "ja": "状態依存の個人行動反応確率",
+        "fr": "Probabilité individuelle de réponse comportementale conditionnée par l’état",
+        "ko": "상태 조건부 개인 행동 반응 확률",
+    },
     "BIOBEHAVIORAL_WEIGHTING": {
-        "en": "Population distribution of biologically constrained behavioural weighting",
-        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
-        "ja": "生物学的に制約された行動重み付けの集団分布",
-        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
-        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포",
+        "en": "Population mixture of state-conditioned behavioural probabilities",
+        "fi": "Tilariippuvaisten käyttäytymistodennäköisyyksien populaatiosekoitus",
+        "ja": "状態依存の行動確率の集団混合",
+        "fr": "Mélange populationnel de probabilités comportementales conditionnées par l’état",
+        "ko": "상태 조건부 행동 확률의 모집단 혼합",
     },
     "NARRATIVE_ATTRIBUTION": {
         "en": "Accessible narrative attribution of a partly latent behavioural state",
@@ -186,6 +193,7 @@ def build_graph(existing: dict) -> dict:
     ui_groups["civilization"] = {
         "id": "civilization",
         "contains": [
+            "INDIVIDUAL_BEHAVIORAL_RESPONSE",
             "BIOBEHAVIORAL_WEIGHTING",
             "NARRATIVE_ATTRIBUTION",
             "EPISTAPEGE_OBSERVABILITY_LOSS",

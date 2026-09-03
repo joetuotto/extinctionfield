@@ -80,12 +80,15 @@ from berm.civilization.phase_transitions import (
     predict_next_transition,
 )
 from berm.civilization.epistapege import (
+    BehaviouralStratum,
     CIVILIZATION_READING_SEQUENCE,
     EPISTAPEGE_CANONICAL_ROUTE,
     EPISTAPEGE_CONCEPTUAL_SEQUENCE,
     EPISTAPEGE_STATUS,
     EPISTAPEGE_TRANSITIONS,
     ObservabilityTransition,
+    aggregate_behaviour_probability,
+    institutional_memory_update,
     validate_epistapege_contract,
 )
 from berm.civilization.political_biology import (

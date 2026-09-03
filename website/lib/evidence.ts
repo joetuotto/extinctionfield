@@ -808,9 +808,13 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "Time-indexed heritable trait distribution",
     fi: "Ajassa indeksoitu periytyvä piirrejakautuma",
   },
+  INDIVIDUAL_BEHAVIORAL_RESPONSE: {
+    en: "State- and context-conditioned individual behavioural response",
+    fi: "Tila- ja kontekstiehdollinen yksilön käyttäytymisvaste",
+  },
   BIOBEHAVIORAL_WEIGHTING: {
-    en: "Population distribution of biologically constrained behavioural weighting",
-    fi: "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+    en: "Population mixture of conditional behavioural probabilities",
+    fi: "Ehdollisten käyttäytymistodennäköisyyksien populaatioseos",
   },
   NARRATIVE_ATTRIBUTION: {
     en: "Accessible narrative attribution",

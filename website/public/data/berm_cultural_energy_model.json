@@ -3,7 +3,7 @@
     "generated": "2026-09-03",
     "generatedBy": "berm/export_cultural_energy.py",
     "source": "berm.civilization (biomarker_trajectories, cultural_energy, unwin_validation, sensitivity, political_biology, biocap, chi_map, migration_gradient)",
-    "version": "0.20.0",
+    "version": "0.21.0",
     "reference_year": 2025,
     "biocap_definition": "BioCap = sum(w_i * m_i) over T, OXT, DA, MEL, BDNF, D, B2 + 0.10 * (1 - CORT); absolute weights sum to 1.0, range [0, 1], 1.0 = pre-industrial optimum",
     "biocap_2025": 0.6137,
