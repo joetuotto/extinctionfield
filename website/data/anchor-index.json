@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T11:36:38.346Z",
+  "generatedAt": "2026-09-03T12:38:44.470Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -14,7 +14,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5310
+      "line": 5313
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -34,7 +34,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5292
+      "line": 5295
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -49,7 +49,12 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5235
+      "line": 5238
+    },
+    {
+      "claimId": "claim.civilization.asymmetric-evidence-threshold",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 367
     },
     {
       "claimId": "claim.civilization.biocap-tfr-input",
@@ -62,6 +67,11 @@
       "line": 2779
     },
     {
+      "claimId": "claim.civilization.epistapege-observability-loss",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 437
+    },
+    {
       "claimId": "claim.civilization.pairing-multiplicative-decline",
       "file": "app/[locale]/civilization/patopolis/page.tsx",
       "line": 2664
@@ -72,14 +82,19 @@
       "line": 2705
     },
     {
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 336
+    },
+    {
       "claimId": "claim.cognition.reported-reason-downstream",
       "file": "app/[locale]/about/civilization/page.tsx",
-      "line": 328
+      "line": 332
     },
     {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4938
+      "line": 4941
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
@@ -89,12 +104,12 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5277
+      "line": 5280
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5260
+      "line": 5263
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
@@ -109,12 +124,12 @@
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5204
+      "line": 5207
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5121
+      "line": 5124
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -124,12 +139,12 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4925
+      "line": 4928
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5117
+      "line": 5120
     }
   ]
 }

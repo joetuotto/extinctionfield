@@ -808,6 +808,22 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "Time-indexed heritable trait distribution",
     fi: "Ajassa indeksoitu periytyvä piirrejakautuma",
   },
+  BIOBEHAVIORAL_WEIGHTING: {
+    en: "Population distribution of biologically constrained behavioural weighting",
+    fi: "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+  },
+  NARRATIVE_ATTRIBUTION: {
+    en: "Accessible narrative attribution",
+    fi: "Saavutettava narratiiviattribuutio",
+  },
+  EPISTAPEGE_OBSERVABILITY_LOSS: {
+    en: "Epistapege observability loss",
+    fi: "Epistapegen havaittavuuden menetys",
+  },
+  INSTITUTIONAL_MODEL_REUSE: {
+    en: "Institutional reuse of downstream explanatory variables",
+    fi: "Alavirran selitysmuuttujien institutionaalinen uudelleenkäyttö",
+  },
   DEMAND_OPPORTUNITY: {
     en: "Family-formation demand and opportunity",
     fi: "Perheenmuodostuksen kysyntä ja mahdollisuus",

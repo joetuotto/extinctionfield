@@ -3048,7 +3048,7 @@
   {
     "id": "therabionic_ttype_tdp",
     "referenceId": "therabionic_ttype_tdp",
-    "citation": "Zimmerman et al. TheraBionic (FDA approved 2019): tumour-specific AM-RF-EMF at 27.12 MHz induces HCC differentiation via targeting Cav3.2 T-type calcium channels. British Journal of Cancer.",
+    "citation": "Jimenez et al. (2019): tumour-specific AM-RF-EMF at 27.12 MHz induces HCC differentiation via Cav3.2; FDA HDE approval followed in 2023 (H220001).",
     "year": 2019,
     "pathway": "A",
     "level": "E",
@@ -3065,7 +3065,7 @@
     ],
     "evidenceRole": "THERAPEUTIC_DEVICE_PARADOX",
     "status": "MIGRATION_CANDIDATE",
-    "translationScope": "FDA-approved device operating at non-thermal RF levels through T-type calcium channel Cav3.2. If non-thermal RF cannot affect biology (ICNIRP position), TheraBionic cannot work. Strongest single TDP in BERM's evidence base. Note: uses 27.12 MHz (not telecom frequency) and targets cancer cells — connection is analogical, not identical.",
+    "translationScope": "Protocol-specific component evidence for a 27.12 MHz amplitude-modulated Cav3.2 route in HCC. The 2023 HDE establishes probable benefit for a rare-disease device, not randomized effectiveness; environmental, reproductive and population transfer remains open.",
     "n": null
   },
   {

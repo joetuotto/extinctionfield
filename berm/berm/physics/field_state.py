@@ -208,6 +208,7 @@ class SourceCoupling:
 
     relative_phase_rad: float | None = None
     coherence: float | None = None
+    coherence_time_seconds: float | None = None
     coupling_id: str = "not_measured"
 
     def __post_init__(self) -> None:
@@ -220,6 +221,11 @@ class SourceCoupling:
             if not 0.0 <= coherence <= 1.0:
                 raise ValueError("coherence must be in [0, 1]")
             object.__setattr__(self, "coherence", coherence)
+        if self.coherence_time_seconds is not None:
+            duration = _nonnegative("coherence_time_seconds", self.coherence_time_seconds)
+            if duration == 0.0:
+                raise ValueError("coherence_time_seconds must be > 0")
+            object.__setattr__(self, "coherence_time_seconds", duration)
         if not isinstance(self.coupling_id, str) or not self.coupling_id.strip():
             raise ValueError("coupling_id must be a non-empty string")
         object.__setattr__(self, "coupling_id", self.coupling_id.strip())
@@ -434,7 +440,7 @@ def assess_field_state_completeness(
                 "organ_transfer",
                 "measured_envelope_or_beat_psd",
                 "circadian_context",
-                "phase_and_coherence",
+                "phase_coherence_and_time",
                 "measurement_provenance",
             ),
         )
@@ -457,9 +463,10 @@ def assess_field_state_completeness(
             or state.mixed_envelope_psd
         ),
         "circadian_context": state.circadian.state_id != "unspecified",
-        "phase_and_coherence": (
+        "phase_coherence_and_time": (
             state.source_coupling.relative_phase_rad is not None
             and state.source_coupling.coherence is not None
+            and state.source_coupling.coherence_time_seconds is not None
         ),
         "measurement_provenance": has_provenance,
     }

@@ -177,7 +177,7 @@ for (const id of nodeIds) {
 
 // ── 7. Layer validity ──────────────────────────────────
 console.log("7. Checking layer values...");
-const validLayers = new Set(["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography"]);
+const validLayers = new Set(["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography", "civilization"]);
 for (const [id, node] of Object.entries(graph.nodes)) {
   if (!validLayers.has(node.layer)) {
     error(`Node ${id}: invalid layer "${node.layer}"`);

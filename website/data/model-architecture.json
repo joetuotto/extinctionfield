@@ -54,5 +54,16 @@
       "publishesLockedForecasts": false,
       "canonicalRoute": "/measurement/fieldstate"
     }
+  },
+  "civilizationExtensions": {
+    "epistapege": {
+      "id": "berm-epistapege-v1",
+      "role": "qualitative_observability_hypothesis",
+      "status": "open_testable_extension",
+      "canonicalRoute": "/civilization/epistapege",
+      "publishesNumericPredictions": false,
+      "fieldStateRole": "optional_physical_measurement_input_only",
+      "evidenceBoundary": "Direct component findings constrain individual transitions; the complete biology-to-narrative-to-institution route is a composed BERM inference, not a Lindgren or FieldState result."
+    }
   }
 }

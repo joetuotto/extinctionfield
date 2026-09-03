@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1076,
-    "linkedReferences": 403
+    "totalReferences": 1087,
+    "linkedReferences": 414
   },
   "references": {
     "5g_hpa_axis": {
@@ -10756,6 +10756,116 @@
       "linkStatus": "registered",
       "externalUrl": null
     },
+    "litovitz1991_coherence_time": {
+      "id": "litovitz1991_coherence_time",
+      "authors": "Litovitz TA, Krause D, Mullins JM",
+      "year": 1991,
+      "title": "Effect of coherence time of the applied magnetic field on ornithine decarboxylase activity",
+      "journal": "Biochemical and Biophysical Research Communications",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/0006-291X(91)90970-I"
+    },
+    "rosenspire2005_metabolic_phase": {
+      "id": "rosenspire2005_metabolic_phase",
+      "authors": "Rosenspire AJ, Kindzelskii AL, Simon BJ, Petty HR",
+      "year": 2005,
+      "title": "Real-time control of neutrophil metabolism by very weak ultra-low frequency pulsed magnetic fields",
+      "journal": "Biophysical Journal",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1529/biophysj.104.056663"
+    },
+    "ubeda1983_pulse_shape": {
+      "id": "ubeda1983_pulse_shape",
+      "authors": "Ubeda A, Leal J, Trillo MA, Jimenez MA, Delgado JMR",
+      "year": 1983,
+      "title": "Pulse shape of magnetic fields influences chick embryogenesis",
+      "journal": "Journal of Anatomy",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1171845/"
+    },
+    "berman1990_multilab_embryo": {
+      "id": "berman1990_multilab_embryo",
+      "authors": "Berman E, Chacon L, House D, et al.",
+      "year": 1990,
+      "title": "Development of chicken embryos in a pulsed magnetic field",
+      "journal": "Bioelectromagnetics",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.2250110208"
+    },
+    "burch2000_personal_mf_melatonin": {
+      "id": "burch2000_personal_mf_melatonin",
+      "authors": "Burch JB, Reif JS, Noonan CW, Yost MG",
+      "year": 2000,
+      "title": "Melatonin metabolite levels in workers exposed to 60-Hz magnetic fields: work in substations and with 3-phase conductors",
+      "journal": "Journal of Occupational and Environmental Medicine",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1097/00043764-200002000-00006"
+    },
+    "lymangrover1983_acth_steroidogenesis": {
+      "id": "lymangrover1983_acth_steroidogenesis",
+      "authors": "Lymangrover JR, Keku E, Seto YJ",
+      "year": 1983,
+      "title": "60-Hz electric field alters the steroidogenic response of rat adrenal tissue, in vitro",
+      "journal": "Life Sciences",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/0024-3205(83)90300-4"
+    },
+    "kavaliers1986_calcium_morphine": {
+      "id": "kavaliers1986_calcium_morphine",
+      "authors": "Kavaliers M, Ossenkopp KP",
+      "year": 1986,
+      "title": "Magnetic field inhibition of morphine-induced analgesia and behavioral activity in mice: evidence for involvement of calcium ions",
+      "journal": "Brain Research",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/0006-8993(86)90252-0"
+    },
+    "liu2002_elf_lead": {
+      "id": "liu2002_elf_lead",
+      "authors": "Liu Y, Weng E, Zhang Y, Hong R",
+      "year": 2002,
+      "title": "Effects of extremely low frequency electromagnetic field and its combination with lead on the antioxidant system in mouse",
+      "journal": "Zhonghua Lao Dong Wei Sheng Zhi Ye Bing Za Zhi",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://pubmed.ncbi.nlm.nih.gov/14694649/"
+    },
+    "ghione2005_eeg_pain": {
+      "id": "ghione2005_eeg_pain",
+      "authors": "Ghione S, Del Seppia C, Mezzasalma L, Bonfiglio L",
+      "year": 2005,
+      "title": "Effects of 50 Hz electromagnetic fields on electroencephalographic alpha activity, dental pain threshold and cardiovascular parameters in humans",
+      "journal": "Neuroscience Letters",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.neulet.2005.02.072"
+    },
+    "iversen2024_light_magnetic": {
+      "id": "iversen2024_light_magnetic",
+      "authors": "Iversen JN, Fröhlich J, Tai YK, Franco-Obregón A",
+      "year": 2024,
+      "title": "Synergistic Cellular Responses Conferred by Concurrent Optical and Magnetic Stimulation Are Attenuated by Simultaneous Exposure to Streptomycin: An Antibiotic Dilemma",
+      "journal": "Bioengineering",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/bioengineering11070637"
+    },
+    "burd2026_engineered_radical_pair": {
+      "id": "burd2026_engineered_radical_pair",
+      "authors": "Burd SC, Bagheri N, Condon AF, et al.",
+      "year": 2026,
+      "title": "Magnetic resonance control of spin-correlated radical pair dynamics in vivo",
+      "journal": "Nature",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41586-026-10282-4"
+    },
     "kunda1990": {
       "id": "kunda1990",
       "authors": "Kunda Z",
@@ -11671,6 +11781,29 @@
     "doi:10.1093/brain/123.7.1293": "gazzaniga2000",
     "pmid:10869045": "gazzaniga2000",
     "doi:10.1037/0033-295x.84.3.231": "nisbett_wilson1977",
+    "doi:10.1016/0006-291x(91)90970-i": "litovitz1991_coherence_time",
+    "pmid:1872866": "litovitz1991_coherence_time",
+    "doi:10.1529/biophysj.104.056663": "rosenspire2005_metabolic_phase",
+    "pmcid:PMC1305481": "rosenspire2005_metabolic_phase",
+    "pmid:15749780": "rosenspire2005_metabolic_phase",
+    "pmcid:PMC1171845": "ubeda1983_pulse_shape",
+    "pmid:6654743": "ubeda1983_pulse_shape",
+    "doi:10.1002/bem.2250110208": "berman1990_multilab_embryo",
+    "pmid:2242052": "berman1990_multilab_embryo",
+    "doi:10.1097/00043764-200002000-00006": "burch2000_personal_mf_melatonin",
+    "pmid:10693073": "burch2000_personal_mf_melatonin",
+    "doi:10.1016/0024-3205(83)90300-4": "lymangrover1983_acth_steroidogenesis",
+    "pmid:6298545": "lymangrover1983_acth_steroidogenesis",
+    "doi:10.1016/0006-8993(86)90252-0": "kavaliers1986_calcium_morphine",
+    "pmid:3091191": "kavaliers1986_calcium_morphine",
+    "pmid:14694649": "liu2002_elf_lead",
+    "doi:10.1016/j.neulet.2005.02.072": "ghione2005_eeg_pain",
+    "pmid:15911132": "ghione2005_eeg_pain",
+    "doi:10.3390/bioengineering11070637": "iversen2024_light_magnetic",
+    "pmcid:PMC11274164": "iversen2024_light_magnetic",
+    "pmid:39061719": "iversen2024_light_magnetic",
+    "doi:10.1038/s41586-026-10282-4": "burd2026_engineered_radical_pair",
+    "pmid:41851455": "burd2026_engineered_radical_pair",
     "doi:10.1037/0033-2909.108.3.480": "kunda1990",
     "pmid:2270237": "kunda1990"
   }

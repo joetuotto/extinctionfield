@@ -79,6 +79,15 @@ from berm.civilization.phase_transitions import (
     identify_transitions,
     predict_next_transition,
 )
+from berm.civilization.epistapege import (
+    CIVILIZATION_READING_SEQUENCE,
+    EPISTAPEGE_CANONICAL_ROUTE,
+    EPISTAPEGE_CONCEPTUAL_SEQUENCE,
+    EPISTAPEGE_STATUS,
+    EPISTAPEGE_TRANSITIONS,
+    ObservabilityTransition,
+    validate_epistapege_contract,
+)
 from berm.civilization.political_biology import (
     BINDING_FOUNDATIONS,
     DIMENSION_FUNCTIONS,

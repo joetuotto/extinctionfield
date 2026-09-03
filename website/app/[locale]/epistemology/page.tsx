@@ -10,7 +10,8 @@ const COPY = {
   en: {
     title: "Epistemology",
     subtitle:
-      "What kind of scientific claim is BERM? Not a proven fact, not idle speculation — a progressive research program in Lakatos's sense: it generates predictions, predictions are verified, verification produces more content than the model specified. This page assesses BERM's epistemic status using the tools of philosophy of science.",
+      "What kind of scientific claim is BERM? This page separates derived structure, direct component evidence, composed convergence and open cross-scale bridges using falsifiability and research-program criteria.",
+    epistapegeLink: "See how BERM models structural non-detection in Epistapege",
     cautionText:
       "This page does not claim BERM is proven. It applies standard epistemological criteria — consilience, falsifiability, progressive vs. degenerative research programs — to assess where the model stands and what evidence would be needed to advance or destroy it.",
 
@@ -110,23 +111,23 @@ const COPY = {
 
     weaknessesTitle: "What BERM still lacks",
     weaknesses: [
-      "No INTERVENTIONAL evidence — no RCT showing EMF reduction → health improvement",
+      "No decisive same-protocol intervention joining measured exposure reduction to the predicted human endpoint",
       "The universality of Ca²⁺ creates false positive risk — some 'convergences' may be trivial",
-      "The unbroken chain has 2 partial links (prenatal effects, epidemiology)",
+      "Several decisive bridges remain open, including the L2 tissue kernel, organ transfer, CatSper and population calibration",
       "Population-level epidemiology is correlational, not causal",
       "No independent verification method (equivalent to DNA sequencing for evolution)",
       "Industry-funded studies consistently find no effect, creating a contested evidence landscape",
     ],
 
     verdictTitle: "Epistemic verdict",
-    verdictText: "BERM is a PROGRESSIVE research program in Lakatos's sense. It is not a proven theory — it is a generative mechanism that consistently produces verified predictions with excess empirical content. The model's primary weakness is the absence of interventional evidence. Its primary strength is multi-level consilience across independent fields. The next decisive experiment is the ETH nimodipine-5G study: if Ca²⁺ blockade prevents EMF effects, the VGCC mechanism is confirmed at the interventional level. If not, the model collapses.",
-    verdictCTA: "See the complete verification chain →",
+    verdictText: "BERM is a generative and falsifiable research programme, not a proven theory. Its strongest present feature is component-level convergence across physics, cell biology, endocrinology and population observations. Its central weakness is that these components have not yet been joined by a calibrated, same-protocol physical-input → tissue-response → human-endpoint intervention. A blocker experiment can test one proposed mediator under its protocol; it cannot by itself validate or collapse every BERM branch.",
+    verdictCTA: "Inspect the component evidence and open bridges →",
     verdictHref: "/evidence/unbroken-chain",
 
-    burdenTitle: "Burden of Proof Transformation",
-    burdenLead: "With 16 verified intermediate layers forming an unbroken chain from photon absorption to population health effects, the burden of proof undergoes a fundamental transformation.",
-    burdenBefore: "Traditional framing: 'Prove that EMF causes disease.' This demands a single definitive study — an impossibly high bar for a multi-step causal chain spanning 18 orders of magnitude.",
-    burdenAfter: "New framing: 'Show where the chain breaks.' Each link has been independently verified. To dismiss the model, identify which specific verified link is wrong — and explain why the evidence supporting it is incorrect.",
+    burdenTitle: "Allocation of evidential burden",
+    burdenLead: "The component evidence narrows the remaining tests, but it does not reverse the burden of proof for the unmeasured cross-scale bridges.",
+    burdenBefore: "A global claim such as 'EMF causes disease' is too underspecified for a multistep mechanism. Exposure protocol, state variables, mediator and endpoint must be fixed before a causal test is interpretable.",
+    burdenAfter: "BERM framing: identify which transition is being tested, preserve its protocol and state variables, and compare the full causal graph against alternatives. Support for neighbouring components cannot substitute for the missing transition.",
     burdenSteps: [
       { step: "1. Theory boundary explicit", detail: "Lindgren's 2025 metric is the premise. χ_geo is a derived geometric coordinate and the formal L2 response shape is conditional on explicit coupling assumptions; tissue kernels remain uncalibrated. [[ref:tang2024|Tang 2024]] is separate S4 evidence, not a calibration of that bridge." },
       { step: "2. Biochemistry verified", detail: "VGCC → Ca²⁺ → CaM → CaMKII → multiple cascades — basic biochemistry, textbook level" },
@@ -221,7 +222,8 @@ const COPY = {
   fi: {
     title: "Epistemologia",
     subtitle:
-      "Millainen tieteellinen väite BERM on? Ei todistettu fakta, ei tyhjää spekulaatiota — etenevä tutkimusohjelma Lakatoksen mielessä: se tuottaa ennusteita, ennusteet todentuvat, todentaminen tuottaa enemmän sisältöä kuin malli määrittelee. Tämä sivu arvioi BERM:n episteemisen statuksen tieteenfilosofian työkaluilla.",
+      "Millainen tieteellinen väite BERM on? Sivu erottaa johdetun rakenteen, suoran komponenttinäytön, koostetun konvergenssin ja avoimet skaalasillat falsifioitavuuden ja tutkimusohjelmakriteerien avulla.",
+    epistapegeLink: "Katso, miten BERM mallintaa rakenteellisen havaitsemattomuuden Epistapege-haarassa",
     cautionText:
       "Tämä sivu ei väitä BERM:n olevan todistettu. Se soveltaa vakioepistemologisia kriteereitä — konsilienssia, falsifioitavuutta, progressiivisia vs. degeneratiivisia tutkimusohjelmia — arvioidakseen missä malli on ja mitä näyttöä tarvittaisiin sen edistämiseksi tai tuhoamiseksi.",
 
@@ -321,23 +323,23 @@ const COPY = {
 
     weaknessesTitle: "Mitä BERM:ltä vielä puuttuu",
     weaknesses: [
-      "Ei INTERVENTIONAALISTA näyttöä — ei RCT:tä joka osoittaa EMF-vähennys → terveyshyöty",
+      "Ei ratkaisevaa saman protokollan interventiota, joka yhdistäisi mitatun altistuksen vähennyksen ennustettuun ihmispäätepisteeseen",
       "Ca²⁺:n universaalisuus luo väärän positiivisen riskin — osa 'konvergensseista' voi olla triviaaleja",
-      "Katkeamattomassa ketjussa on 2 osittaista linkkiä (prenataalivaikutukset, epidemiologia)",
+      "Useita ratkaisevia siltoja on avoinna: L2-kudosydin, elinsiirto, CatSper ja populaatiokalibrointi",
       "Väestötason epidemiologia on korrelatiivista, ei kausaalista",
       "Ei itsenäistä todentamismenetelmää (vastaava kuin DNA-sekvensointi evoluutiolle)",
       "Teollisuuden rahoittamat tutkimukset eivät johdonmukaisesti löydä vaikutusta, luoden kiistanalaisen näyttömaiseman",
     ],
 
     verdictTitle: "Episteeminen arvio",
-    verdictText: "BERM on PROGRESSIIVINEN tutkimusohjelma Lakatoksen mielessä. Se ei ole todistettu teoria — se on generatiivinen mekanismi joka johdonmukaisesti tuottaa todennettuja ennusteita ylijäämäisellä empiirisellä sisällöllä. Mallin ensisijainen heikkous on interventionaalisen näytön puuttuminen. Sen ensisijainen vahvuus on monitasoinen konsilienss itsenäisten alojen yli. Seuraava ratkaiseva kokeilu on ETH:n nimodipiini-5G-tutkimus: jos Ca²⁺-salpaus estää EMF-vaikutukset, VGCC-mekanismi vahvistetaan interventionaalisella tasolla. Jos ei, malli romahtaa.",
-    verdictCTA: "Ks. täydellinen todentamisketju →",
+    verdictText: "BERM on generatiivinen ja falsifioitava tutkimusohjelma, ei todistettu teoria. Sen vahvin nykyinen piirre on komponenttitason konvergenssi fysiikan, solubiologian, endokrinologian ja populaatiohavaintojen välillä. Keskeinen heikkous on, ettei komponentteja ole vielä yhdistetty kalibroidulla saman protokollan fysikaalinen syöte → kudosvaste → ihmispäätepiste -interventiolla. Salpaajakoe voi testata yhden ehdotetun välittäjän omassa protokollassaan; se ei yksin validoi eikä kaada kaikkia BERM-haaroja.",
+    verdictCTA: "Tarkastele komponenttinäyttöä ja avoimia siltoja →",
     verdictHref: "/evidence/unbroken-chain",
 
-    burdenTitle: "Todistustaakan muutos",
-    burdenLead: "Kun 16 todennettua välikerrosta muodostavat katkeamattoman ketjun fotonin absorptiosta väestötason terveysvaikutuksiin, todistustaakka muuttuu perustavanlaatuisesti.",
-    burdenBefore: "Perinteinen kehystys: 'Todista, että EMF aiheuttaa sairautta.' Tämä vaatii yhtä lopullista tutkimusta — mahdottoman korkea rima 18 kertaluokkaa kattavalle monivaiheiselle kausaaliketjulle.",
-    burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on todennettu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä tarkka todennettu linkki on väärässä — ja selitettävä miksi sitä tukeva näyttö on virheellistä.",
+    burdenTitle: "Evidenssitaakan kohdentaminen",
+    burdenLead: "Komponenttinäyttö rajaa jäljellä olevia kokeita, mutta ei käännä todistustaakkaa mittaamattomien skaalasiirtymien osalta.",
+    burdenBefore: "Yleisväite 'EMF aiheuttaa sairautta' on liian määrittelemätön monivaiheisen mekanismin testaamiseen. Altistusprotokolla, tilamuuttujat, välittäjä ja päätepiste on lukittava ennen tulkittavaa kausaalitestiä.",
+    burdenAfter: "BERM-kehystys: nimeä testattava siirtymä, säilytä sen protokolla ja tilamuuttujat ja vertaa koko kausaaligraafia vaihtoehtoihin. Viereisten komponenttien tuki ei korvaa puuttuvaa siirtymää.",
     burdenSteps: [
       { step: "1. Teoriaraja ilmaistu", detail: "Lindgrenin vuoden 2025 metriikka on premissi. χ_geo on johdettu geometrinen koordinaatti ja formaali L2-vastemuoto on ehdollinen eksplisiittisille kytkentäoletuksille; kudosytimet ovat kalibroimatta. [[ref:tang2024|Tang 2024]] on erillistä S4-näyttöä, ei sillan kalibrointi." },
       { step: "2. Biokemia todennettu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
@@ -432,7 +434,8 @@ const COPY = {
   ja: {
     title: "認識論",
     subtitle:
-      "BERMはどのような科学的主張か？ 証明済みの事実でも空虚な憶測でもなく、ラカトシュの意味での進歩的研究プログラムである。予測を生み、予測が検証され、その検証はモデルが明示した以上の内容を生む。このページでは科学哲学の道具を用いてBERMの認識論的地位を評価する。",
+      "BERMはどのような科学的主張か。本ページは反証可能性と研究プログラム基準を用い、導出構造、直接構成要素証拠、構成された収束、未解決のスケール間橋渡しを区別する。",
+    epistapegeLink: "BERMがEpistapegeで構造的非検出をどうモデル化するかを見る",
     cautionText:
       "このページはBERMが証明されたと主張するものではありません。標準的な認識論的基準 — 共鳴的一致、反証可能性、進歩的 vs. 退行的研究プログラム — を適用して、モデルの現在の位置とその前進または破壊に必要な証拠を評価します。",
 
@@ -532,23 +535,23 @@ const COPY = {
 
     weaknessesTitle: "BERMにまだ欠けているもの",
     weaknesses: [
-      "介入的証拠なし — EMF削減 → 健康改善を示すRCTなし",
+      "測定した曝露低減を予測ヒトエンドポイントへ結ぶ決定的な同一プロトコル介入がない",
       "Ca²⁺の普遍性が偽陽性リスクを生む — 一部の「収束」は自明的かもしれない",
-      "途切れない鎖に2つの部分的リンクがある（出生前効果、疫学）",
+      "L2組織カーネル、臓器移行、CatSper、集団校正など複数の決定的橋渡しが未解決",
       "集団レベルの疫学は相関的であり因果的ではない",
       "独立した検証方法なし（進化にとってのDNAシーケンシングに相当するもの）",
       "産業資金による研究は一貫して効果を見出さず、論争のある証拠の景観を作り出す",
     ],
 
     verdictTitle: "認識論的評価",
-    verdictText: "BERMはラカトシュの意味で進歩的な研究プログラムである。証明済みの理論ではないが、過剰な経験的内容を伴う検証済み予測を一貫して生む生成的メカニズムである。最大の弱点は介入的証拠の欠如、最大の強みは独立分野をまたぐ多層的な共鳴的一致である。次の決定的実験はETHのニモジピン-5G研究であり、Ca²⁺遮断がEMF効果を防げばVGCC機構は介入レベルで確認され、防げなければモデルは崩壊する。",
-    verdictCTA: "完全な検証チェーンを見る →",
+    verdictText: "BERMは生成的で反証可能な研究プログラムであり、証明済み理論ではない。現在の強みは物理学、細胞生物学、内分泌学、集団観察の構成要素レベルの収束である。中心的弱点は、校正された同一プロトコルの物理入力→組織応答→ヒトエンドポイント介入でこれらを未接続な点にある。遮断実験は一つの媒介を試験できるが、単独で全BERM分岐を検証も崩壊もさせない。",
+    verdictCTA: "構成要素の証拠と未解決の橋渡しを調べる →",
     verdictHref: "/evidence/unbroken-chain",
 
-    burdenTitle: "立証責任の変革",
-    burdenLead: "光子吸収から集団健康影響まで16の検証済み中間層が途切れない鎖を形成することで、立証責任は根本的に変わる。",
-    burdenBefore: "従来の枠組み：「EMFが疾病を引き起こすことを証明せよ。」これは単一の決定的な研究を要求する — 18桁にわたる多段階因果チェーンにとって不可能に高い基準。",
-    burdenAfter: "新しい枠組み：『鎖がどこで切れるかを示せ。』各リンクは独立に検証されている。モデルを退けるには、どの特定の検証済みリンクが誤りかを示し、その証拠がなぜ誤っているかを説明する。",
+    burdenTitle: "証拠負担の配分",
+    burdenLead: "構成要素の証拠は残る試験を狭めるが、未測定のスケール間橋渡しに関する立証責任を逆転させない。",
+    burdenBefore: "『EMFが疾病を起こす』という一般主張は多段階機構の検定には不十分である。解釈可能な因果試験には曝露プロトコル、状態変数、媒介、エンドポイントの事前固定が必要である。",
+    burdenAfter: "BERMの枠組みでは、試験する遷移を特定し、そのプロトコルと状態変数を保持し、完全な因果グラフを代替案と比較する。隣接構成要素の支持は欠落遷移の代用にならない。",
     burdenSteps: [
       { step: "1. 理論境界を明示", detail: "Lindgren 2025計量は前提であり、BERM χ閉包と幾何学から観測量へのL2演算子は未校正の提案である。[[ref:tang2024|Tang 2024]]は別個のS4証拠であり、この橋の導出ではない。" },
       { step: "2. 生化学が検証済み", detail: "VGCC → Ca²⁺ → CaM → CaMKII → 複数のカスケード — 基礎生化学、教科書レベル" },
@@ -609,7 +612,8 @@ const COPY = {
   fr: {
     title: "Epistémologie",
     subtitle:
-      "Quel type de revendication scientifique est BERM ? Ni un fait prouvé, ni une spéculation vaine : un programme de recherche progressif au sens de Lakatos, qui génère des prédictions, les voit vérifiées et produit ainsi plus de contenu que le modèle n'en spécifiait. Cette page évalue le statut épistémique de BERM avec les outils de la philosophie des sciences.",
+      "Quel type de revendication scientifique est BERM ? Cette page distingue structure dérivée, preuve directe de composants, convergence composée et ponts inter-échelles ouverts à l'aide de la falsifiabilité et des critères de programme de recherche.",
+    epistapegeLink: "Voir comment BERM modélise la non-détection structurelle dans Epistapege",
     cautionText:
       "Cette page ne prétend pas que BERM est prouvé. Elle applique des critères épistémologiques standard — consilience, falsifiabilité, programmes de recherche progressifs vs. dégénératifs — pour évaluer où se situe le modèle et quelles preuves seraient nécessaires pour le faire avancer ou le détruire.",
 
@@ -709,23 +713,23 @@ const COPY = {
 
     weaknessesTitle: "Ce qui manque encore à BERM",
     weaknesses: [
-      "Pas de preuve INTERVENTIONNELLE — pas d'ECR montrant réduction EMF → amélioration de la santé",
+      "Aucune intervention décisive dans un même protocole reliant la réduction mesurée de l'exposition à l'endpoint humain prédit",
       "L'universalité du Ca²⁺ crée un risque de faux positifs — certaines « convergences » peuvent être triviales",
-      "La chaîne ininterrompue a 2 maillons partiels (effets prénataux, épidémiologie)",
+      "Plusieurs ponts décisifs restent ouverts: noyau tissulaire L2, transfert vers les organes, CatSper et calibration populationnelle",
       "L'épidémiologie au niveau de la population est corrélative, non causale",
       "Pas de méthode de vérification indépendante (équivalent du séquençage ADN pour l'évolution)",
       "Les études financées par l'industrie ne trouvent systématiquement aucun effet, créant un paysage de preuves contesté",
     ],
 
     verdictTitle: "Verdict épistémique",
-    verdictText: "BERM est un programme de recherche PROGRESSIF au sens de Lakatos. Ce n'est pas une théorie prouvée, mais un mécanisme générateur qui produit systématiquement des prédictions vérifiées avec un excès de contenu empirique. Sa principale faiblesse est l'absence de preuves interventionnelles; sa principale force est la consilience multi-niveaux entre domaines indépendants. L'étude ETH nimodipine-5G sera décisive : si le blocage du Ca²⁺ prévient les effets EMF, le mécanisme VGCC est confirmé au niveau interventionnel; sinon, le modèle s'effondre.",
-    verdictCTA: "Voir la chaîne de vérification complète →",
+    verdictText: "BERM est un programme de recherche génératif et falsifiable, non une théorie démontrée. Sa force actuelle est la convergence au niveau des composants entre physique, biologie cellulaire, endocrinologie et observations populationnelles. Sa faiblesse centrale est l'absence d'une intervention calibrée, dans un même protocole, reliant entrée physique, réponse tissulaire et endpoint humain. Une expérience de blocage peut tester un médiateur proposé; elle ne valide ni ne réfute à elle seule toutes les branches du BERM.",
+    verdictCTA: "Examiner les preuves composantes et les ponts ouverts →",
     verdictHref: "/evidence/unbroken-chain",
 
-    burdenTitle: "Transformation du fardeau de la preuve",
-    burdenLead: "Avec 16 couches intermédiaires vérifiées formant une chaîne ininterrompue de l'absorption du photon aux effets sanitaires de population, le fardeau de la preuve se transforme fondamentalement.",
-    burdenBefore: "Cadrage traditionnel : « Prouvez que les EMF causent des maladies. » Cela exige une seule étude définitive — un obstacle impossiblement élevé pour une chaîne causale multi-étapes couvrant 18 ordres de grandeur.",
-    burdenAfter: "Nouveau cadrage : « Montrez où la chaîne se rompt. » Chaque maillon a été vérifié indépendamment. Pour rejeter le modèle, il faut identifier le maillon vérifié qui serait faux et expliquer pourquoi les preuves qui le soutiennent sont incorrectes.",
+    burdenTitle: "Répartition de la charge probante",
+    burdenLead: "Les preuves composantes restreignent les tests restants, mais n'inversent pas la charge de la preuve pour les ponts inter-échelles non mesurés.",
+    burdenBefore: "Une affirmation générale telle que « les CEM causent une maladie » est trop peu spécifiée pour tester un mécanisme multi-étapes. Le protocole d'exposition, les variables d'état, le médiateur et l'endpoint doivent être fixés avant le test causal.",
+    burdenAfter: "Cadrage BERM: identifier la transition testée, préserver son protocole et ses variables d'état, puis comparer le graphe causal complet aux alternatives. Le soutien de composants voisins ne remplace pas la transition manquante.",
     burdenSteps: [
       { step: "1. Frontière théorique explicite", detail: "La métrique de Lindgren (2025) est la prémisse ; la fermeture χ de BERM et l'opérateur L2 géométrie-observable restent proposés et non calibrés. [[ref:tang2024|Tang 2024]] est une preuve S4 distincte, pas une dérivation du pont." },
       { step: "2. Biochimie vérifiée", detail: "VGCC → Ca²⁺ → CaM → CaMKII → cascades multiples — biochimie de base, niveau manuel" },
@@ -786,7 +790,8 @@ const COPY = {
   ko: {
     title: "인식론",
     subtitle:
-      "BERM은 어떤 종류의 과학적 주장인가? 증명된 사실도 공허한 추측도 아니라 라카토슈의 의미에서 진보적 연구 프로그램이다. 예측을 만들고, 예측이 검증되며, 검증은 모델이 명시한 것보다 더 많은 내용을 낳는다. 이 페이지는 과학철학의 도구로 BERM의 인식론적 지위를 평가한다.",
+      "BERM은 어떤 종류의 과학적 주장인가? 이 페이지는 반증 가능성과 연구 프로그램 기준으로 도출 구조, 직접 구성요소 근거, 구성된 수렴, 미해결 척도 간 연결을 구분한다.",
+    epistapegeLink: "BERM이 Epistapege에서 구조적 비탐지를 모델링하는 방식 보기",
     cautionText:
       "이 페이지는 BERM이 증명되었다고 주장하지 않습니다. 표준 인식론적 기준 — 공명적 일치, 반증 가능성, 진보적 vs. 퇴행적 연구 프로그램 — 을 적용하여 모델이 어디에 위치하는지, 그리고 이를 발전시키거나 파괴하는 데 어떤 증거가 필요한지를 평가합니다.",
 
@@ -886,23 +891,23 @@ const COPY = {
 
     weaknessesTitle: "BERM에 아직 부족한 것",
     weaknesses: [
-      "개입적 증거 없음 — EMF 감소 → 건강 개선을 보여주는 RCT 없음",
+      "측정된 노출 감소를 예측된 인간 종말점과 잇는 결정적인 동일 프로토콜 중재가 없음",
       "Ca²⁺의 보편성이 위양성 위험을 만든다 — 일부 '수렴'은 자명할 수 있다",
-      "끊어지지 않는 사슬에 2개의 부분적 고리가 있다 (출생 전 효과, 역학)",
+      "L2 조직 커널, 장기 전달, CatSper, 집단 보정 등 여러 결정적 연결이 미해결",
       "집단 수준 역학은 상관적이지 인과적이지 않다",
       "독립적 검증 방법 없음 (진화에서의 DNA 시퀀싱에 상당하는 것)",
       "산업 자금 연구는 일관되게 효과를 발견하지 않아 논란이 있는 증거 지형을 만든다",
     ],
 
     verdictTitle: "인식론적 평결",
-    verdictText: "BERM은 라카토슈의 의미에서 진보적 연구 프로그램이다. 증명된 이론은 아니지만 잉여 경험적 내용을 지닌 검증된 예측을 일관되게 만드는 생성적 메커니즘이다. 주된 약점은 개입적 근거의 부재이고, 주된 강점은 독립 분야를 아우르는 다층적 공명적 일치다. 다음 결정적 실험은 ETH 니모디핀-5G 연구다. Ca²⁺ 차단이 EMF 효과를 막으면 VGCC 메커니즘은 개입 수준에서 확인되고, 그렇지 않으면 모델은 붕괴한다.",
-    verdictCTA: "완전한 검증 체인 보기 →",
+    verdictText: "BERM은 생성적이고 반증 가능한 연구 프로그램이며 증명된 이론은 아니다. 현재의 강점은 물리학, 세포생물학, 내분비학, 집단 관찰 사이의 구성요소 수준 수렴이다. 핵심 약점은 보정된 동일 프로토콜의 물리 입력→조직 반응→인간 종말점 중재로 구성요소를 아직 연결하지 못한 점이다. 차단 실험은 하나의 제안 매개자를 검사할 수 있지만 모든 BERM 분기를 단독으로 검증하거나 붕괴시키지 않는다.",
+    verdictCTA: "구성요소 근거와 미해결 연결 보기 →",
     verdictHref: "/evidence/unbroken-chain",
 
-    burdenTitle: "입증 책임의 전환",
-    burdenLead: "광자 흡수에서 집단 건강 영향까지 16개의 검증된 중간 층이 끊어지지 않는 사슬을 이루면서 입증 책임이 근본적으로 전환된다.",
-    burdenBefore: "전통적 틀: 'EMF가 질병을 일으킨다는 것을 증명하라.' 이것은 단일한 결정적 연구를 요구한다 — 18자릿수에 걸친 다단계 인과 사슬에 대해 불가능하게 높은 기준.",
-    burdenAfter: "새로운 틀: '사슬이 어디서 끊기는지 보여라.' 각 고리는 독립적으로 검증되었다. 모델을 기각하려면 어떤 특정 검증 고리가 틀렸는지 밝히고 이를 지지하는 근거가 왜 잘못인지 설명해야 한다.",
+    burdenTitle: "근거 책임의 배분",
+    burdenLead: "구성요소 근거는 남은 검사를 좁히지만 측정되지 않은 척도 간 연결에 대한 입증 책임을 뒤집지 않는다.",
+    burdenBefore: "'EMF가 질병을 일으킨다'는 일반 주장은 다단계 메커니즘 검사에 지나치게 불명확하다. 해석 가능한 인과 검사를 위해 노출 프로토콜, 상태변수, 매개자, 종말점을 먼저 고정해야 한다.",
+    burdenAfter: "BERM 틀에서는 검사할 전이를 지정하고 해당 프로토콜과 상태변수를 보존한 뒤 전체 인과 그래프를 대안과 비교한다. 인접 구성요소의 지지는 누락된 전이를 대신하지 않는다.",
     burdenSteps: [
       { step: "1. 이론 경계 명시", detail: "Lindgren 2025 계량은 전제이고 BERM χ 폐쇄와 기하학-관측량 L2 연산자는 미보정 제안이다. [[ref:tang2024|Tang 2024]]는 별도의 S4 증거이지 이 연결의 도출이 아니다." },
       { step: "2. 생화학 검증됨", detail: "VGCC → Ca²⁺ → CaM → CaMKII → 다중 캐스케이드 — 기초 생화학, 교과서 수준" },
@@ -999,6 +1004,11 @@ export default async function EpistemologyPage({
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 sm:py-20">
       <PageHeader icon={Scale} title={d.title} subtitle={d.subtitle} />
+      <div className="-mt-8 mb-10">
+        <Link href={`/${locale}/civilization/epistapege`} className="text-sm font-medium text-accent hover:underline">
+          {d.epistapegeLink} →
+        </Link>
+      </div>
 
       <div className="mt-8">
         <CautionBox locale={locale}>

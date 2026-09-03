@@ -28,6 +28,7 @@ import {
   Globe,
   UserX,
   Sun,
+  BrainCircuit,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -195,11 +196,11 @@ export const NAV_ROUTES: NavRoute[] = [
         labels: { en: "Overview", fi: "Yleiskatsaus", ja: "概要", fr: "Vue d'ensemble", ko: "개요" },
         icon: Landmark,
         descs: {
-          en: "Six-stage reading path from mechanism to civilizational dynamics",
-          fi: "Kuusivaiheinen lukupolku mekanismista sivilisaatiodynamiikkaan",
-          ja: "メカニズムから文明動態への6段階の読書経路",
-          fr: "Parcours de lecture en six étapes, du mécanisme à la dynamique civilisationnelle",
-          ko: "메커니즘에서 문명 역학까지 6단계 독서 경로",
+          en: "Seven-stage reading path including the Epistapege observability branch",
+          fi: "Seitsemänvaiheinen lukupolku, mukaan lukien Epistapegen havaittavuushaara",
+          ja: "エピスタペゲ観測可能性分岐を含む7段階の読書経路",
+          fr: "Parcours en sept étapes incluant la branche d’observabilité Epistapege",
+          ko: "에피스타페게 관측 가능성 분기를 포함한 7단계 읽기 경로",
         },
       },
       {
@@ -213,6 +214,19 @@ export const NAV_ROUTES: NavRoute[] = [
           fr: "pathos + pege — source de la maladie",
           ko: "pathos + pege — 질병의 근원",
         },
+      },
+      {
+        href: "/civilization/epistapege",
+        labels: { en: "Epistapege", fi: "Epistapege", ja: "エピスタペゲ", fr: "Epistapege", ko: "에피스타페게" },
+        icon: BrainCircuit,
+        descs: {
+          en: "episteme + pege — structural loss of causal observability",
+          fi: "episteme + pege — kausaalisen havaittavuuden rakenteellinen menetys",
+          ja: "episteme + pege — 因果的観測可能性の構造的喪失",
+          fr: "episteme + pege — perte structurelle d’observabilité causale",
+          ko: "episteme + pege — 인과 관측 가능성의 구조적 상실",
+        },
+        badge: "NEW",
       },
       {
         href: "/civilization/patopolis",
@@ -292,6 +306,19 @@ export const NAV_ROUTES: NavRoute[] = [
           fr: "Registre de preuves étude par étude",
           ko: "연구별 증거 레지스터",
         },
+      },
+      {
+        href: "/evidence/response-conditions",
+        labels: { en: "Response Conditions", fi: "Vaste-ehdot", ja: "応答条件", fr: "Conditions de réponse", ko: "반응 조건" },
+        icon: Activity,
+        descs: {
+          en: "Phase, coherence, timing, receptor state and channel interactions",
+          fi: "Vaihe, koherenssi, ajoitus, reseptoritila ja kanavavuorovaikutukset",
+          ja: "位相、コヒーレンス、タイミング、受容体状態、チャネル相互作用",
+          fr: "Phase, cohérence, temporalité, état du récepteur et interactions",
+          ko: "위상, 결맞음, 타이밍, 수용체 상태 및 채널 상호작용",
+        },
+        badge: "NEW",
       },
       {
         href: "/explore",

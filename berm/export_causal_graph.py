@@ -54,6 +54,34 @@ NEW_LABELS = {
         "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
         "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력",
     },
+    "BIOBEHAVIORAL_WEIGHTING": {
+        "en": "Population distribution of biologically constrained behavioural weighting",
+        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+        "ja": "生物学的に制約された行動重み付けの集団分布",
+        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
+        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포",
+    },
+    "NARRATIVE_ATTRIBUTION": {
+        "en": "Accessible narrative attribution of a partly latent behavioural state",
+        "fi": "Osittain latentin käyttäytymistilan saavutettava narratiiviattribuutio",
+        "ja": "部分的に潜在的な行動状態のアクセス可能な物語的帰属",
+        "fr": "Attribution narrative accessible d’un état comportemental partiellement latent",
+        "ko": "부분적으로 잠재된 행동 상태의 접근 가능한 서사적 귀인",
+    },
+    "EPISTAPEGE_OBSERVABILITY_LOSS": {
+        "en": "Epistapege: upstream biological state omitted from the explanatory data model",
+        "fi": "Epistapege: biologinen ylävirran tila puuttuu selittävästä datamallista",
+        "ja": "エピスタペゲ：説明データモデルから上流の生物学的状態が欠落",
+        "fr": "Epistapege : état biologique amont omis du modèle explicatif",
+        "ko": "에피스타페게: 설명 데이터 모델에서 상류 생물학적 상태 누락",
+    },
+    "INSTITUTIONAL_MODEL_REUSE": {
+        "en": "Institutional reuse of downstream reports as initiating explanatory variables",
+        "fi": "Alavirran raporttien institutionaalinen uudelleenkäyttö alkavina selitysmuuttujina",
+        "ja": "下流の報告を開始説明変数として制度的に再利用",
+        "fr": "Réutilisation institutionnelle des rapports aval comme variables explicatives initiales",
+        "ko": "하류 보고를 시작 설명 변수로 제도적으로 재사용",
+    },
 }
 
 
@@ -154,6 +182,16 @@ def build_graph(existing: dict) -> dict:
             "ANDROGEN_RECEPTOR_SIGNAL",
         ],
         "ui_level": 4,
+    }
+    ui_groups["civilization"] = {
+        "id": "civilization",
+        "contains": [
+            "BIOBEHAVIORAL_WEIGHTING",
+            "NARRATIVE_ATTRIBUTION",
+            "EPISTAPEGE_OBSERVABILITY_LOSS",
+            "INSTITUTIONAL_MODEL_REUSE",
+        ],
+        "ui_level": 5,
     }
 
     return {

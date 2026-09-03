@@ -43,8 +43,8 @@ const t = {
     physBioChiExplain: "The coordinate supplies no universal biological selection rule. CRY background, membrane voltage, barrier integrity and technology diffusion remain separate variables with separately testable response functions; the similarly shaped v17 proxy weight is retained only as a legacy comparison.",
     physBioSuperTitle: "Quadratic mixing before biology",
     physBioSuperDesc: "Electromagnetic fields still obey ordinary superposition. Because the Lindgren ansatz is quadratic in the potential, the induced metric drive contains exact background–perturbation cross terms and a self-term. This establishes mixing in model geometry, not a non-additive biological effect.",
-    physBioSuperFormula: "δg_μν = κ(Ā_μa_ν + a_μĀ_ν + a_μa_ν)",
-    physBioSuperExplain: "Amplitude modulation and two-tone inputs therefore generate exact low-frequency envelope or difference-frequency terms in a². Whether a tissue detects them, and whether its endpoint response is additive, depends on the uncalibrated response kernel. Combined-exposure studies ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]) motivate that experiment but do not calibrate the operator.",
+    physBioSuperFormula: "A=A₀+Σᵢaᵢ;  Δg=κ[Σᵢ(A₀⊗aᵢ+aᵢ⊗A₀)+Σᵢaᵢ⊗aᵢ+Σᵢ<ⱼ(aᵢ⊗aⱼ+aⱼ⊗aᵢ)]",
+    physBioSuperExplain: "With n channels, the exact expansion retains n(n−1)/2 pair terms. Amplitude modulation and two-tone inputs generate low-frequency envelope or difference-frequency terms in a². Their biological response may be positive, null or negative depending on phase, coherence duration, receptor/agonist state, redox state, developmental window and organ transfer. Combined-exposure studies constrain this experiment but do not calibrate the L2 kernel ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]).",
     physBioSuperLink: "See full superposition analysis →",
     physBioTissueTitle: "Tissue-specific resonance",
     physBioTissueDesc: "BERM imports tissue-specific ion-channel composition, membrane properties and candidate response windows to propose heterogeneous susceptibility. These belong in the tissue kernel Ξ_i and require calibration; they do not follow from χ_geo alone:",
@@ -763,7 +763,7 @@ const t = {
       { num: 15, title: "Chronic Pain", mechanism: "Cav3.2 is PRIMARY pain channel in DRG nociceptors. Upregulated in inflammatory/neuropathic pain. Female DRG neurons show more prominent Cav3.2 currents → sex difference.", level: "M|C", trend: "Chronic pain epidemic; hundreds of millions affected" },
       { num: 16, title: "Cardiac Arrhythmia (QT)", mechanism: "CACNA1C GoF → Cav1.2 window current ↑ → QT ↑. Timothy syndrome: extreme QT + autism from SAME mutation.", level: "E", trend: "Timothy: most die before age 3 without treatment" },
       { num: 17, title: "Neurodevelopment & Sexual Differentiation", mechanism: "7 causal channels × 3 developmental windows. Prenatal: Leydig Cav3 → T↓, aromatase, pituitary. Pubertal: PFC, melatonin, OT/AVP, insular cortex.", level: "L*", trend: "Gender clinic referrals: Sweden +19,700%; ASD-GD 6-26%" },
-      { num: 18, title: "TheraBionic: Proof of Mechanism", mechanism: "FDA-approved (2019) device for HCC. 27.12 MHz, AM at tumor-specific frequencies. SAR 100-1000× below phone. Mechanism: EMF → Cav3.2 → Ca²⁺ → HCC differentiation. CONFIRMS non-thermal EMF → VGCC.", level: "E", trend: "34% survival increase in advanced HCC" },
+      { num: 18, title: "TheraBionic: protocol-specific component evidence", mechanism: "FDA HDE approval (2023) for HCC. A specified 27.12 MHz AM protocol engaged Cav3.2-dependent Ca²⁺ signalling in HCC models. This constrains a carrier × envelope × channel × organ route; reproductive and environmental transfer remains open.", level: "M", trend: "14/41 stable disease beyond 6 months; non-randomized" },
       { num: 19, title: "Metabolic Syndrome / Obesity", mechanism: "SIX converging EMF → Ca²⁺ pathways: (1) hypothalamic appetite ↑ via ARC glia Ca²⁺ → AgRP/NPY, (2) BAT thermogenesis ↓ via CaMKII/CREB → UCP1 and SERCA2b/RyR2 disruption, (3) β-cell insulin dynamics ↓ via L-type VGCC, (4) thyroid axis → metabolic rate ↓ via Cav3 in thyrotrophs, (5) melatonin → metabolic circadian disruption, (6) adipocyte Ca²⁺ → lipogenesis ↑. CaMKII is the CONVERGENCE MOLECULE connecting all pathways. [[ref:klimentidis2010|Klimentidis]] paradox: 24 populations, 8 species ALL gaining weight (p = 1.2×10⁻⁷) including lab animals on controlled diets. Obesity is multifactorial — EMF is ONE contributing factor explaining the residual that diet/exercise/genetics cannot.", level: "M", trend: "Global obesity: 4% (1975) → 13% (2016) → 42% (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC Gene Family",
@@ -963,8 +963,8 @@ const t = {
     physBioChiExplain: "Koordinaatti ei anna universaalia biologista valintasääntöä. CRY-tausta, kalvojännite, esteen eheys ja teknologian leviäminen pysyvät erillisinä muuttujina, joilla on erikseen testattavat vastefunktiot; samanmuotoinen v17-proxypaino säilyy vain legacy-vertailuna.",
     physBioSuperTitle: "Neliöllinen sekoittuminen ennen biologiaa",
     physBioSuperDesc: "Sähkömagneettiset kentät noudattavat edelleen tavallista superpositioperiaatetta. Koska Lindgrenin ansatz on potentiaalin suhteen neliöllinen, metriikka-ajuri sisältää täsmälliset tausta–häiriö-ristitermit ja itseistermin. Tämä osoittaa sekoittumisen malligeometriassa, ei biologisen vaikutuksen ei-additiivisuutta.",
-    physBioSuperFormula: "δg_μν = κ(Ā_μa_ν + a_μĀ_ν + a_μa_ν)",
-    physBioSuperExplain: "Amplitudimodulaatio ja kaksitaajuussyöte synnyttävät siten a²:ssa täsmälliset matalataajuiset verhokäyrä- tai erotustaajuustermit. Kudosytimestä riippuu, havaitseeko kudos ne ja onko päätepistevaste additiivinen. Yhdistelmäaltistustutkimukset ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]) motivoivat testiä mutta eivät kalibroi operaattoria.",
+    physBioSuperFormula: "A=A₀+Σᵢaᵢ;  Δg=κ[Σᵢ(A₀⊗aᵢ+aᵢ⊗A₀)+Σᵢaᵢ⊗aᵢ+Σᵢ<ⱼ(aᵢ⊗aⱼ+aⱼ⊗aᵢ)]",
+    physBioSuperExplain: "n kanavan täsmällinen laajennus säilyttää n(n−1)/2 paritermiä. Amplitudimodulaatio ja kaksitaajuussyöte synnyttävät a²:ssa verhokäyrä- ja erotustaajuustermejä. Biologinen vaste voi olla positiivinen, nolla tai negatiivinen vaiheen, koherenssiajan, reseptori-/agonistitilan, redox-tilan, kehitysikkunan ja elinsiirron mukaan. Yhdistelmäaltistustutkimukset rajaavat kokeen mutta eivät kalibroi L2-ydintä ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]).",
     physBioSuperLink: "Katso täydellinen superpositioanalyysi →",
     physBioTissueTitle: "Kudostarkka resonanssi",
     physBioTissueDesc: "BERM tuo kudoskohtaisen ionikanavakoostumuksen, kalvo-ominaisuudet ja ehdotetut vasteikkunat biologisina tietoina ja ehdottaa niiden perusteella heterogeenista herkkyyttä. Ne kuuluvat kudosytimeen Ξ_i ja vaativat kalibroinnin; ne eivät seuraa yksin χ_geo:sta:",
@@ -1683,7 +1683,7 @@ const t = {
       { num: 15, title: "Krooninen kipu", mechanism: "Cav3.2 on PRIMAARINEN kipukanava DRG-nosiseptoreissa. Ylireguloitu tulehdus-/neuropaattisessa kivussa. Naisten DRG-neuronit osoittavat voimakkaammat Cav3.2-virrat → sukupuoliero.", level: "M|C", trend: "Kroonisen kivun epidemia; sadat miljoonat kärsivät" },
       { num: 16, title: "Sydämen rytmihäiriö (QT)", mechanism: "CACNA1C GoF → Cav1.2 ikkunavirta ↑ → QT ↑. Timothyn oireyhtymä: äärimmäinen QT + autismi SAMASTA mutaatiosta.", level: "E", trend: "Timothy: useimmat kuolevat ennen 3v ilman hoitoa" },
       { num: 17, title: "Neurokehitys ja sukupuolen erilaistuminen", mechanism: "7 kausaalikanavaa × 3 kehitysikkunaa. Prenataalinen: Leydig Cav3 → T↓, aromataasi, aivolisäke. Pubertaalinen: PFC, melatoniini, OT/AVP, insulaarinen korteksi.", level: "L*", trend: "Sukupuoliklinikkälähetteet: Ruotsi +19 700 %; ASD-GD 6-26 %" },
-      { num: 18, title: "TheraBionic: mekanismin todistus", mechanism: "FDA-hyväksytty (2019) laite HCC:lle. 27,12 MHz, AM tumoritarkoilla taajuuksilla. SAR 100-1000× alle puhelimen. Mekanismi: EMF → Cav3.2 → Ca²⁺ → HCC-differentaatio. VAHVISTAA ei-termisen EMF → VGCC.", level: "E", trend: "34 % selviytymislisäys pitkälle edenneessä HCC:ssä" },
+      { num: 18, title: "TheraBionic: protokollikohtainen komponenttinäyttö", mechanism: "FDA:n HDE-hyväksyntä (2023) HCC:lle. Määritelty 27,12 MHz:n AM-protokolla aktivoi Cav3.2-riippuvaista Ca²⁺-signalointia HCC-malleissa. Tämä rajaa kantoaalto × verhokäyrä × kanava × elin -reittiä; lisääntymis- ja ympäristösiirto on avoin.", level: "M", trend: "14/41: tauti vakaana yli 6 kuukautta; ei satunnaistettu" },
       { num: 19, title: "Metabolinen oireyhtymä / Lihavuus", mechanism: "KUUSI yhtyvää EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI, joka yhdistää kaikki reitit. [[ref:klimentidis2010|Klimentidisin]] paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä, joka selittää jäännöksen, johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC-geeniperhe",
@@ -2554,7 +2554,7 @@ const t = {
       { num: 15, title: "慢性疼痛", mechanism: "Cav3.2はDRG侵害受容器の主要疼痛チャネル。炎症性/神経障害性疼痛でアップレギュレート。雌のDRGニューロンはより顕著なCav3.2電流を示す → 性差。", level: "M|C", trend: "慢性疼痛の流行;数億人が罹患" },
       { num: 16, title: "心不整脈(QT)", mechanism: "CACNA1C GoF → Cav1.2ウィンドウ電流↑ → QT↑。Timothy症候群:同じ変異からの極端なQT + 自閉症。", level: "E", trend: "Timothy:治療なしでは3歳前に大多数が死亡" },
       { num: 17, title: "神経発達と性分化", mechanism: "7つの因果チャネル × 3つの発達ウィンドウ。出生前:ライディッヒCav3 → T↓、アロマターゼ、下垂体。思春期:PFC、メラトニン、OT/AVP、島皮質。", level: "L*", trend: "ジェンダークリニック紹介:スウェーデン+19,700%;ASD-GD 6-26%" },
-      { num: 18, title: "TheraBionic:メカニズムの証明", mechanism: "FDA承認(2019)のHCC用デバイス。27.12 MHz、腫瘍特異的周波数でAM。SARは携帯電話の100-1000倍以下。メカニズム:EMF → Cav3.2 → Ca²⁺ → HCC分化。非熱EMF → VGCCを確認。", level: "E", trend: "進行HCCで34%の生存率向上" },
+      { num: 18, title: "TheraBionic：プロトコル固有の構成要素証拠", mechanism: "FDA HDE承認は2023年。27.12 MHz AMのHCCプロトコルはCav3.2依存性Ca²⁺経路を制約するが、生殖・環境への移行は未解決。", level: "M", trend: "14/41で6か月超の病勢安定、非無作為化" },
       { num: 19, title: "メタボリックシンドローム / 肥満", mechanism: "6つの収束EMF → Ca²⁺経路:(1)ARCグリアCa²⁺ → AgRP/NPYによる視床下部食欲↑、(2)CaMKII/CREB → UCP1およびSERCA2b/RyR2撹乱によるBAT熱産生↓、(3)L型VGCCによるβ細胞インスリン動態↓、(4)サイロトロフのCav3による甲状腺軸 → 代謝率↓、(5)メラトニン → 代謝概日撹乱、(6)脂肪細胞Ca²⁺ → 脂肪生成↑。CaMKIIはすべての経路を結ぶ収束分子。[[ref:klimentidis2010|Klimentidis]]のパラドックス:管理された食事の実験動物を含む24集団、8種すべてが体重増加(p = 1.2×10⁻⁷)。肥満は多因子 -- EMFは食事/運動/遺伝学で説明できない残差を説明する一因。", level: "M", trend: "世界の肥満:4%(1975) → 13%(2016) → 42%(米国2024)" },
     ],
     vgccDiagramTitle: "VGCC遺伝子ファミリー",
@@ -3425,7 +3425,7 @@ const t = {
       { num: 15, title: "Douleur chronique", mechanism: "Cav3.2 est le canal de douleur PRIMAIRE dans les nocicepteurs DRG. Surregule dans la douleur inflammatoire/neuropathique. Les neurones DRG feminins montrent des courants Cav3.2 plus importants → difference de sexe.", level: "M|C", trend: "Epidemie de douleur chronique ; des centaines de millions affectes" },
       { num: 16, title: "Arythmie cardiaque (QT)", mechanism: "CACNA1C GoF → courant de fenetre Cav1.2 ↑ → QT ↑. Syndrome de Timothy : QT extreme + autisme de la MEME mutation.", level: "E", trend: "Timothy : la plupart meurent avant 3 ans sans traitement" },
       { num: 17, title: "Neurodeveloppement et differenciation sexuelle", mechanism: "7 canaux causaux × 3 fenetres de developpement. Prenatal : Leydig Cav3 → T↓, aromatase, hypophyse. Pubertaire : CPF, melatonine, OT/AVP, cortex insulaire.", level: "L*", trend: "Orientations vers les cliniques de genre : Suede +19 700 % ; ASD-GD 6-26 %" },
-      { num: 18, title: "TheraBionic : preuve de mecanisme", mechanism: "Dispositif approuve FDA (2019) pour le CHC. 27,12 MHz, AM a des frequences specifiques aux tumeurs. DAS 100-1000× inferieur au telephone. Mecanisme : EMF → Cav3.2 → Ca²⁺ → differenciation CHC. CONFIRME EMF non thermique → VGCC.", level: "E", trend: "34 % d'augmentation de survie dans le CHC avance" },
+      { num: 18, title: "TheraBionic : preuve composante propre au protocole", mechanism: "Autorisation FDA HDE en 2023. Le protocole CHC AM à 27,12 MHz contraint une voie Ca²⁺ dépendante de Cav3.2; le transfert reproductif et environnemental reste ouvert.", level: "M", trend: "14/41 stables au-delà de 6 mois; non randomisé" },
       { num: 19, title: "Syndrome metabolique / Obesite", mechanism: "SIX voies convergentes EMF → Ca²⁺ : (1) appetit hypothalamique ↑ via glie ARC Ca²⁺ → AgRP/NPY, (2) thermogenese BAT ↓ via CaMKII/CREB → UCP1 et perturbation SERCA2b/RyR2, (3) dynamique d'insuline des cellules β ↓ via VGCC type L, (4) axe thyroidien → taux metabolique ↓ via Cav3 dans les thyreotrophes, (5) melatonine → perturbation circadienne metabolique, (6) Ca²⁺ adipocytaire → lipogenese ↑. CaMKII est la MOLECULE DE CONVERGENCE connectant toutes les voies. Paradoxe de [[ref:klimentidis2010|Klimentidis]] : 24 populations, 8 especes TOUTES prenant du poids (p = 1,2×10⁻⁷) y compris les animaux de laboratoire avec regime controle. L'obesite est multifactorielle — l'EMF est UN facteur contribuant expliquant le residu que le regime/exercice/genetique ne peut expliquer.", level: "M", trend: "Obesite mondiale : 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
     ],
     vgccDiagramTitle: "Famille de genes VGCC",
@@ -4296,7 +4296,7 @@ const t = {
       { num: 15, title: "만성 통증", mechanism: "Cav3.2는 DRG 통각수용체의 일차 통증 채널. 염증/신경병성 통증에서 상향조절됨. 여성 DRG 뉴런은 더 큰 Cav3.2 전류를 보임 → 성별 차이.", level: "M|C", trend: "만성 통증 유행; 수억 명 영향" },
       { num: 16, title: "심장 부정맥 (QT)", mechanism: "CACNA1C GoF → Cav1.2 창 전류↑ → QT↑. Timothy 증후군: 같은 돌연변이에서 극단 QT + 자폐증.", level: "E", trend: "Timothy: 대부분 치료 없이 3세 전 사망" },
       { num: 17, title: "신경발달 및 성분화", mechanism: "7개 인과 채널 × 3개 발달 창. 산전: Leydig Cav3 → T↓, 아로마타제, 뇌하수체. 사춘기: PFC, 멜라토닌, OT/AVP, 도서피질.", level: "L*", trend: "성별클리닉 의뢰: 스웨덴 +19,700%; ASD-GD 6-26%" },
-      { num: 18, title: "TheraBionic: 메커니즘 증명", mechanism: "FDA 승인 기기(2019) HCC용. 27.12 MHz, 종양 특이 주파수로 AM. SAR 전화기보다 100-1000배 낮음. 메커니즘: EMF → Cav3.2 → Ca²⁺ → HCC 분화. 비열 EMF → VGCC 확인.", level: "E", trend: "진행성 HCC에서 생존율 34% 증가" },
+      { num: 18, title: "TheraBionic: 프로토콜별 구성요소 근거", mechanism: "FDA HDE 승인은 2023년. 27.12 MHz AM HCC 프로토콜은 Cav3.2 의존성 Ca²⁺ 경로를 제한하지만 생식·환경 전이는 미해결이다.", level: "M", trend: "14/41에서 6개월 이상 안정 질환; 비무작위" },
       { num: 19, title: "대사 증후군 / 비만", mechanism: "6가지 수렴 EMF → Ca²⁺ 경로: (1) ARC 글리아 Ca²⁺ → AgRP/NPY를 통한 시상하부 식욕↑, (2) CaMKII/CREB → UCP1 및 SERCA2b/RyR2 교란을 통한 BAT 열발생↓, (3) VGCC L형을 통한 β세포 인슐린 역학↓, (4) 갑상선자극호르몬 세포의 Cav3을 통한 갑상선축 → 대사율↓, (5) 멜라토닌 → 일주기 대사 교란, (6) 지방세포 Ca²⁺ → 지방합성↑. CaMKII가 모든 경로를 연결하는 수렴 분자. [[ref:klimentidis2010|Klimentidis]] 역설: 24개 인구, 8개 종이 모두 체중 증가(p = 1.2×10⁻⁷) 식단 통제된 실험동물 포함. 비만은 다인자성 — EMF는 식단/운동/유전학이 설명할 수 없는 잔차를 설명하는 하나의 기여 요인.", level: "M", trend: "전 세계 비만: 4% (1975) → 13% (2016) → 42% (미국 2024)" },
     ],
     vgccDiagramTitle: "VGCC 유전자 패밀리",
@@ -4629,6 +4629,9 @@ export default async function ModelPage({
               <Link href={`/${locale_key}/evidence/superposition`} className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
                 {d.physBioSuperLink}
               </Link>
+              <Link href={`/${locale_key}/evidence/response-conditions`} className="ml-5 text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                {locale_key === "fi" ? "Vaste-ehdot ja vuorovaikutusnäyttö" : "Response conditions and interaction evidence"}
+              </Link>
             </div>
 
             {/* Tissue-specific resonance */}
@@ -4817,7 +4820,7 @@ export default async function ModelPage({
             <p className="mt-5 max-w-4xl border-l-2 border-status-partial/60 pl-3 text-xs leading-relaxed text-foreground-muted">
               {epistapege.boundary}
             </p>
-            <Link href={`${prefix}/about/civilization#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+            <Link href={`${prefix}/civilization/epistapege#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
               {epistapege.link} →
             </Link>
           </CollapsibleSection>
@@ -4961,7 +4964,7 @@ export default async function ModelPage({
             </div>
             <div className="mt-5 max-w-4xl rounded-xl border border-card-border bg-card-bg p-5">
               <p className="text-sm leading-relaxed text-foreground-muted">{epistapege.architectureBridge}</p>
-              <Link href={`${prefix}/about/civilization#three-level-misclassification`} className="mt-3 inline-flex text-sm font-medium text-accent hover:underline">
+              <Link href={`${prefix}/civilization/epistapege#three-level-misclassification`} className="mt-3 inline-flex text-sm font-medium text-accent hover:underline">
                 {epistapege.architectureLink} →
               </Link>
             </div>

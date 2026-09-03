@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio } from "lucide-react";
+import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio, BrainCircuit } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
@@ -15,12 +15,17 @@ const COPY = {
       "This section derives that proposed propagation inside BERM and identifies the empirical links required to test it, from hormone–behaviour experiments to population-level distributions and civilizational outcomes.",
     readingGuide: "Reading path",
     readingGuideDesc:
-      "The argument builds in six stages. Each page is self-contained but the causal chain runs left to right.",
+      "The argument builds in seven stages. Each page is self-contained but the causal chain runs left to right.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source of the disease",
     pathopegeDesc:
       "The root mechanism: EMF disrupts cryptochrome/melatonin signalling and voltage-gated calcium channels, triggering sex-specific hormonal cascades. The Triple Lock in men. The cortisol-oxytocin-ovarian triad in women. The shared pathway, the diverging consequences.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — source of structural non-detection",
+    epistapegeDesc:
+      "The observability branch: a latent biological state shifts behavioural weighting, an accessible narrative is recorded in its place, and institutions reuse that downstream report as an initiating variable. Component evidence constrains the transitions; the complete route remains an open BERM composition.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — the pathological city",
@@ -66,12 +71,17 @@ const COPY = {
       "Tämä osio johtaa ehdotetun etenemisen BERM:n sisällä ja nimeää sen testaamiseen tarvittavat empiiriset lenkit hormonien ja käyttäytymisen kokeista populaatiojakaumiin ja sivilisaatiotuloksiin.",
     readingGuide: "Lukupolku",
     readingGuideDesc:
-      "Argumentti rakentuu kuudessa vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
+      "Argumentti rakentuu seitsemässä vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — sairauden lähde",
     pathopegeDesc:
       "Juurimekanismi: EMF häiritsee kryptokromi/melatoniinisignalointia ja jänniteohjattuja kalsiumkanavia ja käynnistää sukupuolispesifiset hormonaaliset kaskaadit. Kolmoislukon mekanismi miehillä. Kortisoli-oksitosiini-ovariaalitriade naisilla. Yhteinen reitti, eriävät seuraukset.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — rakenteellisen havaitsemattomuuden lähde",
+    epistapegeDesc:
+      "Havaittavuushaara: latentti biologinen tila siirtää käyttäytymisen painotusta, sen tilalle kirjataan saavutettava narratiivi ja instituutiot käyttävät tätä alavirran raporttia alkavana muuttujana. Komponenttinäyttö rajaa siirtymiä; koko reitti on avoin BERM-kompositio.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — patologinen kaupunki",
@@ -117,12 +127,17 @@ const COPY = {
       "本節はBERM内でその伝播を導出し、ホルモン–行動実験から集団分布と文明結果まで、検証に必要なリンクを示します。",
     readingGuide: "読書経路",
     readingGuideDesc:
-      "議論は6段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
+      "議論は7段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
 
     pathopege: "パトペゲ",
     pathopegeGreek: "pathos + pege — 病の源",
     pathopegeDesc:
       "根本メカニズム：EMFが電位依存性カルシウムチャネルを乱し、性特異的なホルモンカスケードを引き起こす。",
+
+    epistapege: "エピスタペゲ",
+    epistapegeGreek: "episteme + pege — 構造的非検出の源",
+    epistapegeDesc:
+      "潜在的な生物状態から行動の重み付け、アクセス可能な物語、制度的な説明変数の再利用へ進む観測可能性の枝。完全な経路は未検証のBERM構成である。",
 
     patopolis: "パトポリス",
     patopolisGreek: "pathos + polis — 病理的都市",
@@ -168,12 +183,17 @@ const COPY = {
       "Cette section dérive cette propagation proposée dans BERM et identifie les liens empiriques nécessaires pour la tester, des expériences hormone–comportement aux distributions populationnelles et aux résultats civilisationnels.",
     readingGuide: "Parcours de lecture",
     readingGuideDesc:
-      "L'argument se construit en six etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
+      "L'argument se construit en sept etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source de la maladie",
     pathopegeDesc:
       "Le mecanisme racine : les CEM perturbent les canaux calciques voltage-dependants, declenchant des cascades hormonales specifiques au sexe.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — source de non-détection structurelle",
+    epistapegeDesc:
+      "La branche d’observabilité reliant un état biologique latent, une pondération comportementale, un récit accessible et sa réutilisation institutionnelle. La route complète reste une composition BERM ouverte.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — la cite pathologique",
@@ -219,12 +239,17 @@ const COPY = {
       "이 절은 BERM 안에서 제안된 전파를 도출하고 호르몬–행동 실험부터 집단 분포와 문명 결과까지 검증에 필요한 연결을 제시합니다.",
     readingGuide: "독서 경로",
     readingGuideDesc:
-      "논증은 6단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
+      "논증은 7단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
 
     pathopege: "파토페게",
     pathopegeGreek: "pathos + pege — 질병의 근원",
     pathopegeDesc:
       "근본 메커니즘: EMF가 전압 의존성 칼슘 채널을 교란하여 성별 특이적 호르몬 캐스케이드를 유발합니다.",
+
+    epistapege: "에피스타페게",
+    epistapegeGreek: "episteme + pege — 구조적 비탐지의 원천",
+    epistapegeDesc:
+      "잠재 생물학적 상태에서 행동 가중치, 접근 가능한 서사, 제도적 설명 변수 재사용으로 이어지는 관측 가능성의 분기. 전체 경로는 열린 BERM 구성이다.",
 
     patopolis: "파토폴리스",
     patopolisGreek: "pathos + polis — 병리적 도시",
@@ -314,6 +339,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const PAGES = [
   { key: "pathopege", href: "pathopege", icon: Zap, color: "amber" },
+  { key: "epistapege", href: "epistapege", icon: BrainCircuit, color: "indigo" },
   { key: "patopolis", href: "patopolis", icon: Building2, color: "blue" },
   { key: "patokratia", href: "patokratia", icon: Shield, color: "red" },
   { key: "patopoliteia", href: "patopoliteia", icon: Globe, color: "purple" },
@@ -328,6 +354,7 @@ const COLORS: Record<string, { border: string; bg: string; text: string; icon: s
   purple: { border: "border-purple-500/30", bg: "bg-purple-500/5", text: "text-purple-500", icon: "text-purple-500" },
   rose: { border: "border-rose-500/30", bg: "bg-rose-500/5", text: "text-rose-500", icon: "text-rose-500" },
   teal: { border: "border-teal-500/30", bg: "bg-teal-500/5", text: "text-teal-500", icon: "text-teal-500" },
+  indigo: { border: "border-indigo-500/30", bg: "bg-indigo-500/5", text: "text-indigo-500", icon: "text-indigo-500" },
 };
 
 export default async function CivilizationPage({
@@ -393,7 +420,7 @@ export default async function CivilizationPage({
           <p className="mt-4 overflow-x-auto rounded-lg border border-card-border bg-background p-4 text-center font-mono-num text-xs font-semibold tracking-wide">
             {epistapege.sequence}
           </p>
-          <Link href={`/${locale}/about/civilization#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+          <Link href={`/${locale}/civilization/epistapege#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
             {epistapege.link} →
           </Link>
         </section>

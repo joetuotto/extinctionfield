@@ -23,6 +23,8 @@ CONDITIONAL_ASFR_ROUTE_ID = "berm-conditional-asfr-v1"
 FIELDSTATE_MODULE_ID = "fieldstate"
 FIELDSTATE_SPEC_VERSION = "v2"
 
+EPISTAPEGE_EXTENSION_ID = "berm-epistapege-v1"
+
 LINDGREN_FORMULATION = "2025-weyl-gme"
 L2_BRIDGE_STATUS = "conditional_formal_operator"
 
@@ -97,6 +99,21 @@ _ARCHITECTURE_MANIFEST = {
             "canonicalRoute": "/measurement/fieldstate",
         }
     },
+    "civilizationExtensions": {
+        "epistapege": {
+            "id": EPISTAPEGE_EXTENSION_ID,
+            "role": "qualitative_observability_hypothesis",
+            "status": "open_testable_extension",
+            "canonicalRoute": "/civilization/epistapege",
+            "publishesNumericPredictions": False,
+            "fieldStateRole": "optional_physical_measurement_input_only",
+            "evidenceBoundary": (
+                "Direct component findings constrain individual transitions; "
+                "the complete biology-to-narrative-to-institution route is a "
+                "composed BERM inference, not a Lindgren or FieldState result."
+            ),
+        }
+    },
 }
 
 
@@ -109,6 +126,7 @@ def architecture_manifest() -> dict:
 __all__ = [
     "CONDITIONAL_ASFR_ROUTE_ID",
     "DIAGNOSTIC_ROUTE_ID",
+    "EPISTAPEGE_EXTENSION_ID",
     "FIELDSTATE_MODULE_ID",
     "FIELDSTATE_SPEC_VERSION",
     "L2_BRIDGE_STATUS",

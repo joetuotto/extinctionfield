@@ -10,7 +10,7 @@ import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
-    title: "Narrative attribution in the BERM civilization model",
+    title: "Epistapege: structural non-detection in the BERM civilization model",
     subtitle:
       "A mechanistic account of how a latent biological state can be recorded as a cultural explanation, and how that classification can persist in aggregate analysis.",
     statusTitle: "Status of the derivation",
@@ -150,7 +150,7 @@ const COPY = {
       "The interpreter and limited-introspection findings are empirical [E]. Their use as a bridge from BERM Level 2 to reported fertility reasons is a composed, testable inference [L*]. Cognitive immunology, theory-level selection and Epistapege are likewise testable extensions [L*]. FieldState may supply physical measurements to a future test, but it does not derive or explain any of these biological or cognitive mechanisms.",
   },
   fi: {
-    title: "Narratiivinen attribuutio BERM:n sivilisaatiomallissa",
+    title: "Epistapege: rakenteellinen havaitsemattomuus BERM:n sivilisaatiomallissa",
     subtitle:
       "Mekanistinen kuvaus siitä, miten latentti biologinen tila voi rekisteröityä kulttuurisena selityksenä ja miten tämä luokittelu voi säilyä aggregaattianalyysissä.",
     statusTitle: "Johdon asema",
@@ -294,7 +294,11 @@ const COPY = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
-  return { title: `${d.title} – Extinction Field`, description: d.subtitle };
+  return {
+    title: `${d.title} – Extinction Field`,
+    description: d.subtitle,
+    alternates: { canonical: `/${locale}/civilization/epistapege` },
+  };
 }
 
 export default async function CivilizationAboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -328,6 +332,10 @@ export default async function CivilizationAboutPage({ params }: { params: Promis
                   <ClaimRef claimId="claim.cognition.reported-reason-downstream">
                     <InlineReferenceText text={paragraph} locale={locale} />
                   </ClaimRef>
+                ) : index === 3 ? (
+                  <ClaimRef claimId="claim.cognition.biological-behavioural-weighting">
+                    <InlineReferenceText text={paragraph} locale={locale} />
+                  </ClaimRef>
                 ) : (
                   <InlineReferenceText text={paragraph} locale={locale} />
                 )}
@@ -353,8 +361,16 @@ export default async function CivilizationAboutPage({ params }: { params: Promis
 
         <CollapsibleSection id="cognitive-immunology" title={d.immunityTitle} subtitle={d.immunitySub} defaultOpen>
           <div className="max-w-4xl space-y-4 text-sm leading-relaxed text-foreground-muted">
-            {d.immunityParagraphs.map((paragraph) => (
-              <p key={paragraph}><InlineReferenceText text={paragraph} locale={locale} /></p>
+            {d.immunityParagraphs.map((paragraph, index) => (
+              <p key={paragraph}>
+                {index === 1 ? (
+                  <ClaimRef claimId="claim.civilization.asymmetric-evidence-threshold">
+                    <InlineReferenceText text={paragraph} locale={locale} />
+                  </ClaimRef>
+                ) : (
+                  <InlineReferenceText text={paragraph} locale={locale} />
+                )}
+              </p>
             ))}
           </div>
           <div className="mt-7 grid gap-4 md:grid-cols-2">
@@ -417,7 +433,11 @@ export default async function CivilizationAboutPage({ params }: { params: Promis
               </article>
             ))}
           </div>
-          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.epistapegeDefinition}</p>
+          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-foreground-muted">
+            <ClaimRef claimId="claim.civilization.epistapege-observability-loss">
+              {d.epistapegeDefinition}
+            </ClaimRef>
+          </p>
           <p className="mt-5 overflow-x-auto rounded-xl border border-accent/30 bg-accent/5 p-5 text-center font-mono-num text-sm font-semibold tracking-wide">
             {d.sequence}
           </p>

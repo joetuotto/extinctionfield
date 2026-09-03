@@ -46,7 +46,7 @@
         },
         "layer": {
           "type": "string",
-          "enum": ["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography"]
+          "enum": ["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography", "civilization"]
         },
         "parents": { "type": "array", "items": { "type": "string" } },
         "children": { "type": "array", "items": { "type": "string" } },

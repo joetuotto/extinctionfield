@@ -221,7 +221,8 @@
         "MALE_SPERM",
         "OOCYTE_REDOX",
         "OVULATION_CLOCK",
-        "IMPLANTATION"
+        "IMPLANTATION",
+        "BIOBEHAVIORAL_WEIGHTING"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
@@ -295,7 +296,8 @@
       "children": [
         "MALE_STEROIDOGENESIS",
         "OVULATION_CLOCK",
-        "IMPLANTATION"
+        "IMPLANTATION",
+        "BIOBEHAVIORAL_WEIGHTING"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
@@ -516,7 +518,8 @@
       ],
       "children": [
         "MALE_SPERM",
-        "BARRIER_BTB"
+        "BARRIER_BTB",
+        "BIOBEHAVIORAL_WEIGHTING"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
@@ -766,6 +769,100 @@
       "legacy_aliases": [
         "evolutionary trait distribution",
         "heritable measured-field response"
+      ]
+    },
+    "BIOBEHAVIORAL_WEIGHTING": {
+      "id": "BIOBEHAVIORAL_WEIGHTING",
+      "label": {
+        "en": "Population distribution of biologically constrained behavioural weighting",
+        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+        "ja": "生物学的に制約された行動重み付けの集団分布",
+        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
+        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포"
+      },
+      "layer": "civilization",
+      "parents": [
+        "HPA_HPG",
+        "MELATONIN_REDOX",
+        "ANDROGEN_RECEPTOR_SIGNAL"
+      ],
+      "children": [
+        "NARRATIVE_ATTRIBUTION"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "biological behavioural weighting",
+        "latent motivation state"
+      ]
+    },
+    "NARRATIVE_ATTRIBUTION": {
+      "id": "NARRATIVE_ATTRIBUTION",
+      "label": {
+        "en": "Accessible narrative attribution of a partly latent behavioural state",
+        "fi": "Osittain latentin käyttäytymistilan saavutettava narratiiviattribuutio",
+        "ja": "部分的に潜在的な行動状態のアクセス可能な物語的帰属",
+        "fr": "Attribution narrative accessible d’un état comportemental partiellement latent",
+        "ko": "부분적으로 잠재된 행동 상태의 접근 가능한 서사적 귀인"
+      },
+      "layer": "civilization",
+      "parents": [
+        "BIOBEHAVIORAL_WEIGHTING"
+      ],
+      "children": [
+        "EPISTAPEGE_OBSERVABILITY_LOSS"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "interpreter",
+        "reported reason",
+        "causal attribution"
+      ]
+    },
+    "EPISTAPEGE_OBSERVABILITY_LOSS": {
+      "id": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "label": {
+        "en": "Epistapege: upstream biological state omitted from the explanatory data model",
+        "fi": "Epistapege: biologinen ylävirran tila puuttuu selittävästä datamallista",
+        "ja": "エピスタペゲ：説明データモデルから上流の生物学的状態が欠落",
+        "fr": "Epistapege : état biologique amont omis du modèle explicatif",
+        "ko": "에피스타페게: 설명 데이터 모델에서 상류 생물학적 상태 누락"
+      },
+      "layer": "civilization",
+      "parents": [
+        "NARRATIVE_ATTRIBUTION"
+      ],
+      "children": [
+        "INSTITUTIONAL_MODEL_REUSE"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "Epistapege",
+        "structural non-detection",
+        "observability loss"
+      ]
+    },
+    "INSTITUTIONAL_MODEL_REUSE": {
+      "id": "INSTITUTIONAL_MODEL_REUSE",
+      "label": {
+        "en": "Institutional reuse of downstream reports as initiating explanatory variables",
+        "fi": "Alavirran raporttien institutionaalinen uudelleenkäyttö alkavina selitysmuuttujina",
+        "ja": "下流の報告を開始説明変数として制度的に再利用",
+        "fr": "Réutilisation institutionnelle des rapports aval comme variables explicatives initiales",
+        "ko": "하류 보고를 시작 설명 변수로 제도적으로 재사용"
+      },
+      "layer": "civilization",
+      "parents": [
+        "EPISTAPEGE_OBSERVABILITY_LOSS"
+      ],
+      "children": [],
+      "calibration_status": "requires_external_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "theory reuse",
+        "institutional model selection"
       ]
     },
     "DEMAND_OPPORTUNITY": {
@@ -1069,246 +1166,282 @@
     },
     {
       "id": "e35",
-      "from": "VMEM_MTOR",
-      "to": "BIOELECTRIC_DEVELOPMENT",
+      "from": "MELATONIN_REDOX",
+      "to": "BIOBEHAVIORAL_WEIGHTING",
       "kind": "causal_model"
     },
     {
       "id": "e36",
       "from": "VMEM_MTOR",
-      "to": "OVARIAN_RESERVE",
+      "to": "BIOELECTRIC_DEVELOPMENT",
       "kind": "causal_model"
     },
     {
       "id": "e37",
       "from": "VMEM_MTOR",
-      "to": "MALE_GERMLINE_RESERVE",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e38",
-      "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "OVARIAN_RESERVE",
+      "from": "VMEM_MTOR",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e39",
       "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "MALE_GERMLINE_RESERVE",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e40",
-      "from": "HPA_HPG",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e41",
       "from": "HPA_HPG",
-      "to": "OVULATION_CLOCK",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e42",
       "from": "HPA_HPG",
-      "to": "IMPLANTATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e43",
-      "from": "MICROBIOME_OT",
-      "to": "HPA_HPG",
+      "from": "HPA_HPG",
+      "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
       "id": "e44",
-      "from": "MICROBIOME_OT",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "HPA_HPG",
+      "to": "BIOBEHAVIORAL_WEIGHTING",
       "kind": "causal_model"
     },
     {
       "id": "e45",
-      "from": "BARRIER_BBB",
+      "from": "MICROBIOME_OT",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e46",
+      "from": "MICROBIOME_OT",
+      "to": "MALE_STEROIDOGENESIS",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e47",
+      "from": "BARRIER_BBB",
+      "to": "HPA_HPG",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e48",
       "from": "BARRIER_BTB",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e47",
+      "id": "e49",
       "from": "BARRIER_BTB",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e48",
+      "id": "e50",
       "from": "BARRIER_PLACENTA",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e49",
+      "id": "e51",
       "from": "MALE_SPERM",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e50",
+      "id": "e52",
       "from": "MALE_GERMLINE_RESERVE",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e51",
+      "id": "e53",
       "from": "MALE_STEROIDOGENESIS",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e52",
+      "id": "e54",
       "from": "MALE_STEROIDOGENESIS",
       "to": "ANDROGEN_BINDING_AVAILABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e53",
+      "id": "e55",
       "from": "ANDROGEN_BINDING_AVAILABILITY",
       "to": "ANDROGEN_RECEPTOR_SIGNAL",
       "kind": "causal_model"
     },
     {
-      "id": "e54",
+      "id": "e56",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e55",
+      "id": "e57",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
       "to": "BARRIER_BTB",
       "kind": "causal_model"
     },
     {
-      "id": "e56",
+      "id": "e58",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e59",
       "from": "OVARIAN_RESERVE",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e57",
+      "id": "e60",
       "from": "OVARIAN_RESERVE",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
-      "id": "e58",
+      "id": "e61",
       "from": "OOCYTE_REDOX",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
-      "id": "e59",
+      "id": "e62",
       "from": "OOCYTE_REDOX",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e60",
+      "id": "e63",
       "from": "OVULATION_CLOCK",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e61",
+      "id": "e64",
       "from": "IMPLANTATION",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e62",
+      "id": "e65",
       "from": "COUPLE_FECUNDABILITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e63",
+      "id": "e66",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e64",
+      "id": "e67",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e65",
+      "id": "e68",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e66",
-      "from": "GPCR_ADENOSINE",
-      "to": "HPA_HPG",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e67",
-      "from": "GPCR_ADENOSINE",
-      "to": "MICROBIOME_OT",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e68",
-      "from": "VAGUS_ANTIINFLAMMATORY",
-      "to": "HPA_HPG",
-      "kind": "causal_model"
-    },
-    {
       "id": "e69",
-      "from": "VAGUS_ANTIINFLAMMATORY",
-      "to": "MICROBIOME_OT",
+      "from": "GPCR_ADENOSINE",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e70",
+      "from": "GPCR_ADENOSINE",
+      "to": "MICROBIOME_OT",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e71",
+      "from": "VAGUS_ANTIINFLAMMATORY",
+      "to": "HPA_HPG",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e72",
+      "from": "VAGUS_ANTIINFLAMMATORY",
+      "to": "MICROBIOME_OT",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e73",
       "from": "ECOLOGICAL_ENCOUNTER",
       "to": "ECOLOGICAL_SELECTION",
       "kind": "causal_model"
     },
     {
-      "id": "e71",
+      "id": "e74",
       "from": "ECOLOGICAL_SELECTION",
       "to": "ECOLOGICAL_TRAIT_STATE",
       "kind": "causal_model"
     },
     {
-      "id": "e72",
+      "id": "e75",
+      "from": "BIOBEHAVIORAL_WEIGHTING",
+      "to": "NARRATIVE_ATTRIBUTION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e76",
+      "from": "NARRATIVE_ATTRIBUTION",
+      "to": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e77",
+      "from": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "to": "INSTITUTIONAL_MODEL_REUSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e78",
       "from": "DEMAND_OPPORTUNITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e73",
+      "id": "e79",
       "from": "TEMPO",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e74",
+      "id": "e80",
       "from": "ART_LIVE_BIRTH_DELIVERY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e75",
+      "id": "e81",
       "from": "ASFR",
       "to": "TFR",
       "kind": "causal_model"
@@ -1437,6 +1570,16 @@
         "TFR"
       ],
       "ui_level": 7
+    },
+    "civilization": {
+      "id": "civilization",
+      "contains": [
+        "BIOBEHAVIORAL_WEIGHTING",
+        "NARRATIVE_ATTRIBUTION",
+        "EPISTAPEGE_OBSERVABILITY_LOSS",
+        "INSTITUTIONAL_MODEL_REUSE"
+      ],
+      "ui_level": 5
     }
   }
 }

@@ -974,6 +974,40 @@
       "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
     },
     {
+      "id": "claim.cognition.biological-behavioural-weighting",
+      "statement": {
+        "en": {
+          "text": "BERM proposes that measured endocrine, receptor-use, circadian and neural states can shift the population distribution of motivation, threat weighting, bonding and effort without every individual changing identically.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ehdottaa, että mitatut endokriiniset, reseptorinkäyttöön liittyvät, vuorokausirytmiset ja neuraaliset tilat voivat siirtää motivaation, uhkapainotuksen, kiintymyksen ja ponnistelun populaatiojakaumaa ilman, että jokainen yksilö muuttuu samoin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BIOBEHAVIORAL_WEIGHTING"
+      },
+      "depends_on": [
+        "claim.androgen.receptor-use-capacity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A distributional biology-to-behaviour transition can be tested with joint biomarkers and later behaviour"
+        ],
+        "does_not_support": [
+          "A deterministic diagnosis from political behaviour to an individual's hormone state",
+          "A claim that one hormone explains all political variation"
+        ]
+      },
+      "falsification_condition": "Preregistered biological states fail to improve out-of-sample prediction of later behavioural weighting after baseline behaviour and socioeconomic variables are controlled."
+    },
+    {
       "id": "claim.cognition.reported-reason-downstream",
       "statement": {
         "en": {
@@ -989,10 +1023,10 @@
       "lifecycle": "draft",
       "target": {
         "type": "node",
-        "nodeId": "DEMAND_OPPORTUNITY"
+        "nodeId": "NARRATIVE_ATTRIBUTION"
       },
       "depends_on": [
-        "claim.civilization.demand-capacity-separation"
+        "claim.cognition.biological-behavioural-weighting"
       ],
       "supersedes": [],
       "scope": {
@@ -1007,6 +1041,73 @@
         ]
       },
       "falsification_condition": "Preregistered biological states add no temporal or out-of-sample information about later behaviour or stated reasons beyond prior reports and socioeconomic variables, and the null result replicates independently."
+    },
+    {
+      "id": "claim.civilization.epistapege-observability-loss",
+      "statement": {
+        "en": {
+          "text": "Epistapege is BERM's proposed observability transition: when an upstream biological state is absent from the data model, a repeatedly measured downstream narrative can be precise as a report while remaining causally incomplete.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Epistapege on BERM:n ehdottama havaittavuussiirtymä: kun biologinen ylävirran tila puuttuu datamallista, toistuvasti mitattu alavirran narratiivi voi olla raporttina tarkka mutta kausaalisesti vajaa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "EPISTAPEGE_OBSERVABILITY_LOSS"
+      },
+      "depends_on": [
+        "claim.cognition.reported-reason-downstream"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Latent state and reported reason must be measured separately",
+          "Repeated self-report does not by itself establish causal priority"
+        ],
+        "does_not_support": [
+          "That cultural explanations are false",
+          "That the complete BERM civilization route is already observed"
+        ]
+      },
+      "falsification_condition": "Joint longitudinal measurement shows that the upstream biological state adds no temporal, predictive or intervention information beyond the reported reason."
+    },
+    {
+      "id": "claim.civilization.asymmetric-evidence-threshold",
+      "statement": {
+        "en": {
+          "text": "BERM predicts that otherwise matched explanations will face different evidential thresholds when one preserves conscious agency and the other assigns part of behaviour to a latent physiological antecedent.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ennustaa, että muuten samanlaiset selitykset kohtaavat eri evidenssikynnyksen, kun toinen säilyttää tietoisen toimijuuden ja toinen sijoittaa osan käyttäytymisestä latenttiin fysiologiseen edeltäjään.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INSTITUTIONAL_MODEL_REUSE"
+      },
+      "depends_on": [
+        "claim.civilization.epistapege-observability-loss"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A matched-framing experiment with reviewer confidence, sample-size demand and replication requirement as outcomes"
+        ],
+        "does_not_support": [
+          "A universal conspiracy or intentional suppression",
+          "That every institution applies the asymmetry"
+        ]
+      },
+      "falsification_condition": "Matched abstracts with identical methods and effect sizes receive equivalent evidential demands regardless of biological-versus-cultural causal framing."
     }
   ],
   "evidence_relations": [
@@ -2173,7 +2274,7 @@
     {
       "id": "er.cognition.kunda1990",
       "referenceId": "kunda1990",
-      "claimId": "claim.cognition.reported-reason-downstream",
+      "claimId": "claim.civilization.asymmetric-evidence-threshold",
       "relation": "contextualizes",
       "directness": "mechanistic_intermediate",
       "studyDesign": "Review of motivated-reasoning research",
@@ -2191,7 +2292,7 @@
     {
       "id": "er.cognition.narinx2022",
       "referenceId": "narinx2022_free_testosterone",
-      "claimId": "claim.cognition.reported-reason-downstream",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
       "relation": "contextualizes",
       "directness": "mechanistic_intermediate",
       "studyDesign": "Review of SHBG binding and free-testosterone physiology",
@@ -2209,7 +2310,7 @@
     {
       "id": "er.cognition.soares-cunha2016",
       "referenceId": "soares_cunha2016_d2_motivation",
-      "claimId": "claim.cognition.reported-reason-downstream",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
       "relation": "supports",
       "directness": "mechanistic_intermediate",
       "studyDesign": "Optogenetic animal experiment",
@@ -2227,7 +2328,7 @@
     {
       "id": "er.cognition.oxley2008",
       "referenceId": "oxley2008_physiological_traits",
-      "claimId": "claim.cognition.reported-reason-downstream",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
       "relation": "contextualizes",
       "directness": "downstream_association",
       "studyDesign": "Human psychophysiological association study",
@@ -2717,6 +2818,22 @@
       "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
     },
     {
+      "id": "ea.cognition.biological-behavioural-weighting.v1",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.narinx2022",
+        "er.cognition.soares-cunha2016",
+        "er.cognition.oxley2008"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The records support separate binding availability, an experimental motivational control point and a physiology-politics association. Their population-level composition and electromagnetic upstream route remain open."
+    },
+    {
       "id": "ea.cognition.reported-reason-downstream.v1",
       "claimId": "claim.cognition.reported-reason-downstream",
       "revision": 1,
@@ -2726,15 +2843,41 @@
       "basis": [
         "er.cognition.delgado1969",
         "er.cognition.gazzaniga2000",
-        "er.cognition.nisbett-wilson1977",
-        "er.cognition.kunda1990",
-        "er.cognition.narinx2022",
-        "er.cognition.soares-cunha2016",
-        "er.cognition.oxley2008"
+        "er.cognition.nisbett-wilson1977"
       ],
       "assessorId": "berm-integration-2026-09-03",
       "assessedAt": "2026-09-03",
       "note": "The cited literature supports limited causal access and motivated explanation as components. The fertility and institutional application is a BERM-derived testable candidate, not a direct finding of those sources."
+    },
+    {
+      "id": "ea.civilization.epistapege-observability-loss.v1",
+      "claimId": "claim.civilization.epistapege-observability-loss",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.delgado1969",
+        "er.cognition.gazzaniga2000",
+        "er.cognition.nisbett-wilson1977"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Limited causal access is directly supported as a component. Loss of observability across survey and institutional levels is a composed BERM inference requiring one joint longitudinal protocol."
+    },
+    {
+      "id": "ea.civilization.asymmetric-evidence-threshold.v1",
+      "claimId": "claim.civilization.asymmetric-evidence-threshold",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.kunda1990"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Motivated reasoning supplies a component mechanism. The predicted biological-versus-cultural evidence-threshold asymmetry needs a matched-framing experiment."
     }
   ],
   "routes": [

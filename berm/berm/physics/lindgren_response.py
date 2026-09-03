@@ -73,6 +73,111 @@ def metric_perturbation(
     )
 
 
+@dataclass(frozen=True)
+class MultichannelMetricExpansion:
+    """Exact named terms after ``A=A0+sum(a_i)`` in the Lindgren ansatz."""
+
+    background_channel: tuple[NDArray[np.float64], ...]
+    self_channel: tuple[NDArray[np.float64], ...]
+    pairwise_channel: tuple[tuple[int, int, NDArray[np.float64]], ...]
+    total: NDArray[np.float64]
+
+
+def multichannel_metric_perturbation(
+    background: ArrayLike,
+    channels: tuple[ArrayLike, ...] | list[ArrayLike],
+    *,
+    coupling_scale: float = 1.0,
+) -> MultichannelMetricExpansion:
+    """Expand all background, self and pairwise terms without weighting them.
+
+    For ``n`` external channels there are ``n(n-1)/2`` distinct pairwise
+    terms.  This algebra permits interactions; it does not set their biological
+    sign, magnitude or tissue relevance.
+    """
+
+    base = _finite_vector("background", background)
+    resolved = tuple(_finite_vector(f"channels[{i}]", value) for i, value in enumerate(channels))
+    if not resolved:
+        raise ValueError("channels must contain at least one vector")
+    if any(value.shape != base.shape for value in resolved):
+        raise ValueError("background and every channel must have the same shape")
+    kappa = _finite_scalar("coupling_scale", coupling_scale)
+    background_terms = tuple(
+        kappa * (np.outer(base, value) + np.outer(value, base)) for value in resolved
+    )
+    self_terms = tuple(kappa * np.outer(value, value) for value in resolved)
+    pair_terms = tuple(
+        (
+            i,
+            j,
+            kappa
+            * (
+                np.outer(resolved[i], resolved[j])
+                + np.outer(resolved[j], resolved[i])
+            ),
+        )
+        for i in range(len(resolved))
+        for j in range(i + 1, len(resolved))
+    )
+    total = sum((*background_terms, *self_terms), np.zeros((base.size, base.size)))
+    total = total + sum((term for _, _, term in pair_terms), np.zeros_like(total))
+    return MultichannelMetricExpansion(background_terms, self_terms, pair_terms, total)
+
+
+@dataclass(frozen=True)
+class BiologicalResponseContext:
+    """Caller-supplied state arguments of an endpoint-specific L2 kernel.
+
+    These are BERM response conditions, not FieldState coordinates.  Values
+    are deliberately identifiers rather than fitted coefficients.
+    """
+
+    endpoint_id: str
+    organ_transfer_id: str
+    circadian_phase_id: str
+    metabolic_phase_id: str
+    developmental_window_id: str
+    receptor_subtype_id: str
+    agonist_state_id: str
+    redox_state_id: str
+    genotype_id: str
+    exposure_history_id: str
+
+    def __post_init__(self) -> None:
+        for name, value in self.__dict__.items():
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"{name} must be a non-empty identifier")
+
+
+@dataclass(frozen=True)
+class InteractionContrasts:
+    """Additive and multiplicative contrasts for matched channel experiments."""
+
+    additive: float
+    multiplicative_log: float | None
+
+
+def interaction_contrasts(
+    baseline: float,
+    first: float,
+    second: float,
+    combined: float,
+) -> InteractionContrasts:
+    """Return contrasts without assuming synergy or antagonism in advance."""
+
+    y0 = _finite_scalar("baseline", baseline)
+    y1 = _finite_scalar("first", first)
+    y2 = _finite_scalar("second", second)
+    y12 = _finite_scalar("combined", combined)
+    additive = y12 - y1 - y2 + y0
+    if min(y0, y1, y2, y12) <= 0.0:
+        multiplicative = None
+    else:
+        multiplicative = math.log(y12) - math.log(y1) - math.log(y2) + math.log(y0)
+    return InteractionContrasts(additive, multiplicative)
+
+
 def geometric_chi(normalized_amplitude: float | ArrayLike) -> float | NDArray[np.float64]:
     """Bounded rank-one inverse-metric coordinate ``rho/sqrt(1+rho^2)``.
 
@@ -174,10 +279,15 @@ __all__ = [
     "CONDITIONAL_FORMAL_OPERATOR",
     "RESPONSE_OPERATOR_VERSION",
     "LowPassAMMetricComponents",
+    "BiologicalResponseContext",
+    "InteractionContrasts",
+    "MultichannelMetricExpansion",
     "contract_linear_response",
     "geometric_chi",
     "geometric_chi_squared",
     "low_pass_am_metric_components",
     "metric_perturbation",
+    "multichannel_metric_perturbation",
+    "interaction_contrasts",
     "two_tone_beat_metric_amplitude",
 ]

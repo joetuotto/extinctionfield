@@ -10,7 +10,6 @@ const TABS: Record<string, { href: string; label: string }[]> = {
     { href: "/about/objections", label: "Objections" },
     { href: "/about/replication", label: "Replication" },
     { href: "/about/history", label: "History" },
-    { href: "/about/civilization", label: "Civilization" },
     { href: "/about/measurement", label: "Measurement" },
   ],
   fi: [
@@ -18,7 +17,6 @@ const TABS: Record<string, { href: string; label: string }[]> = {
     { href: "/about/objections", label: "Vastaväitteet" },
     { href: "/about/replication", label: "Replikaatio" },
     { href: "/about/history", label: "Historia" },
-    { href: "/about/civilization", label: "Sivilisaatio" },
     { href: "/about/measurement", label: "Mittaus" },
   ],
   ja: [
@@ -26,7 +24,6 @@ const TABS: Record<string, { href: string; label: string }[]> = {
     { href: "/about/objections", label: "反論" },
     { href: "/about/replication", label: "再現性" },
     { href: "/about/history", label: "歴史" },
-    { href: "/about/civilization", label: "文明" },
     { href: "/about/measurement", label: "測定" },
   ],
   fr: [
@@ -34,7 +31,6 @@ const TABS: Record<string, { href: string; label: string }[]> = {
     { href: "/about/objections", label: "Objections" },
     { href: "/about/replication", label: "Réplication" },
     { href: "/about/history", label: "Histoire" },
-    { href: "/about/civilization", label: "Civilisation" },
     { href: "/about/measurement", label: "Mesure" },
   ],
   ko: [
@@ -42,7 +38,6 @@ const TABS: Record<string, { href: string; label: string }[]> = {
     { href: "/about/objections", label: "반론" },
     { href: "/about/replication", label: "재현" },
     { href: "/about/history", label: "역사" },
-    { href: "/about/civilization", label: "문명" },
     { href: "/about/measurement", label: "측정" },
   ],
 };

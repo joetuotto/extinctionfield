@@ -44,4 +44,14 @@ describe("BERM / FieldState architecture contract", () => {
     expect(MODEL_ARCHITECTURE.routes.prediction.fieldStateCalibrated).toBe(false);
     expect(MODEL_ARCHITECTURE.routes.conditionalAsfr.acceptsFieldStateObservations).toBe(false);
   });
+
+  it("keeps Epistapege as an open qualitative BERM extension", () => {
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.canonicalRoute).toBe(
+      "/civilization/epistapege",
+    );
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.status).toBe(
+      "open_testable_extension",
+    );
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.publishesNumericPredictions).toBe(false);
+  });
 });

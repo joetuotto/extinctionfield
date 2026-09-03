@@ -11,12 +11,12 @@ const COPY = {
     title: "The Reproductive Arc",
     subtitle: "From fertilization to first year of life, every critical reproductive stage depends on Ca²⁺ channels. CatSper channels guide sperm (VK17), Cav1.2 controls uterine contractions (VK44), nifedipine prevents preterm birth, pre-eclampsia involves Cav1.2+ROS dysregulation (VK48), and SIDS follows melatonin depletion in the neonate.",
     backLink: "← Back to Evidence",
-    cautionText: "This page presents Ca²⁺ channel involvement across reproductive stages. Each mechanism is individually established. The unified arc connecting EMF to reproductive outcomes across all stages is a BERM hypothesis.",
+    cautionText: "This page presents Ca²⁺-dependent components across reproductive stages. Their physiological roles have different evidence strengths; the field-to-channel bridges and the unified reproductive arc are BERM hypotheses.",
 
     arcTitle: "The arc",
-    arcLead: "Five stages from fertilization to the neonatal period — each Ca²⁺-dependent, each EMF-vulnerable.",
+    arcLead: "Five stages from fertilization to the neonatal period — each Ca²⁺-dependent and therefore a candidate endpoint, with direct field sensitivity still requiring stage-specific tests.",
     arcSteps: [
-      { step: "Stage 1: Fertilization", detail: "CatSper (Ca²⁺ channel) guides sperm to egg. EMF→CatSper activation→premature hyperactivation (VK17). Already verified: sperm motility↓ with RF." },
+      { step: "Stage 1: Fertilization", detail: "CatSper guides sperm functions required for fertilization. RF studies report sperm endpoints, but direct RF→human CatSper activation remains an explicit VK17 experiment rather than an established link." },
       { step: "Stage 2: Pregnancy hormones", detail: "P4:E2 ratio regulates Cav1.2 in uterus. P4↓ → Cav1.2↑ → uterine excitability↑. EMF could lower the P4 threshold for preterm contraction onset." },
       { step: "Stage 3: Preterm birth", detail: "Nifedipine (Ca²⁺ channel blocker) is FIRST-LINE tocolytic. If a Ca²⁺ blocker prevents preterm labor, Ca²⁺ overload is a cause. Cochrane evidence: nifedipine superior to beta-agonists." },
       { step: "Stage 4: Pre-eclampsia", detail: "ET-1→Cav1.2 activation in placenta. ROS + Ca²⁺ dysregulation → endothelial dysfunction → hypertension. Nifedipine also used for pre-eclampsia hypertension management." },
@@ -30,7 +30,7 @@ const COPY = {
       { use: "Pre-eclampsia hypertension", mechanism: "Blocks Cav1.2 in vascular smooth muscle → vasodilation → blood pressure reduction", note: "Used alongside magnesium sulfate (also a Ca²⁺ channel modulator) for severe pre-eclampsia" },
       { use: "Raynaud's nipple vasospasm", mechanism: "Blocks Cav1.2 in nipple vasculature → prevents vasospasm → enables continued breastfeeding", note: "Prescribed during lactation — Ca²⁺ channel blockade in yet another reproductive tissue" },
     ],
-    proofConclusion: "If the drug works by blocking Ca²⁺ channels, then Ca²⁺ channel over-activation is the problem. EMF provides a mechanism for that over-activation.",
+    proofConclusion: "Nifedipine efficacy establishes that Ca²⁺-channel activity can control these endpoints. Whether a specified environmental field shifts the relevant channel in the same tissue, direction and time window is the separate BERM test.",
 
     epidTitle: "Epidemiological convergence",
     epidLead: "Multiple reproductive outcomes are worsening simultaneously — consistent with a shared environmental cause acting on Ca²⁺ channels.",
@@ -49,12 +49,12 @@ const COPY = {
     title: "Lisääntymiskykyyn liittyvä kaari",
     subtitle: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen lisääntymisen vaihe on riippuvainen Ca²⁺-kanavista. CatSper-kanavat ohjaavat siittiöitä (VK17), Cav1.2 kontrolloi kohdun supistuksia (VK44), nifedipiini estää ennenaikaista synnytystä, pre-eklampsia sisältää Cav1.2+ROS-dysregulaation (VK48), ja kätkytkuolema seuraa melatoniinin ehtymistä vastasyntyneellä.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "Tämä sivu esittää Ca²⁺-kanavien osallisuuden lisääntymisen eri vaiheissa. Jokainen mekanismi on yksilöllisesti vakiintunut. Yhtenäinen kaari joka yhdistää EMF:n lisääntymistuloksiin kaikkien vaiheiden läpi on BERM-hypoteesi.",
+    cautionText: "Tämä sivu esittää Ca²⁺-riippuvaisia komponentteja lisääntymisen eri vaiheissa. Niiden fysiologisten roolien evidenssivahvuus vaihtelee; kentästä kanavaan johtavat sillat ja yhtenäinen lisääntymiskaari ovat BERM-hypoteeseja.",
 
     arcTitle: "Kaari",
-    arcLead: "Viisi vaihetta hedelmöityksestä neonataalikauteen — jokainen Ca²⁺-riippuvainen, jokainen EMF-haavoittuva.",
+    arcLead: "Viisi vaihetta hedelmöityksestä neonataalikauteen — jokainen Ca²⁺-riippuvainen kandidaattipäätepiste, jonka suora kenttäherkkyys on testattava vaihekohtaisesti.",
     arcSteps: [
-      { step: "Vaihe 1: Hedelmöitys", detail: "CatSper (Ca²⁺-kanava) ohjaa siittiön munasoluun. EMF→CatSper-aktivaatio→ennenaikainen hyperaktivaatio (VK17). Jo vahvistettu: siittiöiden liikkuvuus↓ RF-altistuksella." },
+      { step: "Vaihe 1: Hedelmöitys", detail: "CatSper ohjaa hedelmöityksessä tarvittavia siittiötoimintoja. RF-tutkimuksissa on raportoitu siittiöpäätepisteitä, mutta suora RF→ihmisen CatSper-aktivaatio on nimenomainen VK17-koe, ei vakiintunut linkki." },
       { step: "Vaihe 2: Raskaushormonit", detail: "P4:E2-suhde säätelee Cav1.2:ta kohdussa. P4↓ → Cav1.2↑ → kohdun ärtyvyys↑. EMF voisi laskea P4-kynnystä ennenaikaisen supistuksen alkamiselle." },
       { step: "Vaihe 3: Ennenaikainen synnytys", detail: "Nifedipiini (Ca²⁺-kanavasalpaaja) on ENSILINJAN tokolyyttinen lääke. Jos Ca²⁺-salpaaja estää ennenaikaista synnytystä, Ca²⁺-ylikuormitus on syy. Cochrane-näyttö: nifedipiini parempi kuin beta-agonistit." },
       { step: "Vaihe 4: Pre-eklampsia", detail: "ET-1→Cav1.2-aktivaatio istukassa. ROS + Ca²⁺-dysregulaatio → endoteelin toimintahäiriö → hypertensio. Nifedipiiniä käytetään myös pre-eklampsian verenpaineen hallintaan." },
@@ -68,7 +68,7 @@ const COPY = {
       { use: "Pre-eklampsian hypertensio", mechanism: "Salppaa Cav1.2:n verisuonten sileässä lihaksessa → vasodilataatio → verenpaineen lasku", note: "Käytetään magnesiumsulfaatin (myös Ca²⁺-kanavamodulaattori) kanssa vaikeassa pre-eklampsiassa" },
       { use: "Raynaud'n nännin vasospasmi", mechanism: "Salppaa Cav1.2:n nännin verisuonissa → estää vasospasmin → mahdollistaa imetyksen jatkumisen", note: "Määrätään imetyksen aikana — Ca²⁺-kanavasalpaus jälleen toisessa lisääntymiskudoksessa" },
     ],
-    proofConclusion: "Jos lääke toimii salpaamalla Ca²⁺-kanavia, niin Ca²⁺-kanavien yliaktivaatio on ongelma. EMF tarjoaa mekanismin tuolle yliaktivaatiolle.",
+    proofConclusion: "Nifedipiinin teho osoittaa, että Ca²⁺-kanava-aktiivisuus voi ohjata näitä päätepisteitä. Se, siirtääkö määritelty ympäristökenttä samaa kanavaa samassa kudoksessa, suunnassa ja aikaikkunassa, on erillinen BERM-testi.",
 
     epidTitle: "Epidemiologinen yhdentyminen",
     epidLead: "Useat lisääntymistulokset huononevat samanaikaisesti — johdonmukaista yhteisen ympäristösyyn kanssa joka vaikuttaa Ca²⁺-kanaviin.",
@@ -88,12 +88,12 @@ const COPY = {
     title: "生殖アーク",
     subtitle: "受精から生後1年まで、すべての重要な生殖段階はCa²⁺チャネルに依存する。CatSperチャネルが精子を誘導し（VK17）、Cav1.2が子宮収縮を制御し（VK44）、ニフェジピンが早産を予防し、妊娠高血圧腎症はCav1.2+ROSの調節異常を含み（VK48）、SIDSは新生児におけるメラトニン枯渇に続く。",
     backLink: "← エビデンスに戻る",
-    cautionText: "このページは生殖段階全体にわたるCa²⁺チャネルの関与を提示する。各メカニズムは個別に確立されている。EMFをすべての段階にわたる生殖転帰に結びつける統合的アークはBERM仮説である。",
+    cautionText: "このページは生殖段階のCa²⁺依存構成要素を示す。生理学的役割の証拠強度は異なり、場からチャネルへの橋渡しと統合的生殖アークはBERM仮説である。",
 
     arcTitle: "アーク",
-    arcLead: "受精から新生児期までの5段階――各段階がCa²⁺依存性であり、各段階がEMF脆弱性を持つ。",
+    arcLead: "受精から新生児期までの5段階――各段階はCa²⁺依存の候補エンドポイントであり、直接の場感受性には段階別試験が必要である。",
     arcSteps: [
-      { step: "段階1：受精", detail: "CatSper（Ca²⁺チャネル）が精子を卵子に誘導する。EMF→CatSper活性化→早期過活性化（VK17）。既に検証済み：RFによる精子運動性↓。" },
+      { step: "段階1：受精", detail: "CatSperは受精に必要な精子機能を制御する。RF研究は精子エンドポイントを報告するが、RF→ヒトCatSper活性化は確立リンクではなく明示的なVK17実験である。" },
       { step: "段階2：妊娠ホルモン", detail: "P4:E2比が子宮のCav1.2を制御する。P4↓ → Cav1.2↑ → 子宮興奮性↑。EMFが早産収縮開始のP4閾値を低下させる可能性がある。" },
       { step: "段階3：早産", detail: "ニフェジピン（Ca²⁺チャネル遮断薬）が第一選択子宮収縮抑制薬である。Ca²⁺遮断薬が早産を予防するならば、Ca²⁺過負荷が原因である。Cochraneエビデンス：ニフェジピンがβアゴニストより優れる。" },
       { step: "段階4：妊娠高血圧腎症", detail: "ET-1→胎盤におけるCav1.2活性化。ROS + Ca²⁺調節異常 → 内皮機能障害 → 高血圧。ニフェジピンは妊娠高血圧腎症の血圧管理にも使用される。" },
@@ -107,7 +107,7 @@ const COPY = {
       { use: "妊娠高血圧腎症の高血圧", mechanism: "血管平滑筋のCav1.2を遮断 → 血管拡張 → 血圧低下", note: "重症妊娠高血圧腎症では硫酸マグネシウム（これもCa²⁺チャネル調節薬）と併用" },
       { use: "レイノー乳頭血管攣縮", mechanism: "乳頭血管のCav1.2を遮断 → 血管攣縮を予防 → 授乳の継続を可能にする", note: "授乳中に処方される――さらに別の生殖組織におけるCa²⁺チャネル遮断" },
     ],
-    proofConclusion: "薬剤がCa²⁺チャネルを遮断することで作用するならば、Ca²⁺チャネルの過活性化が問題である。EMFがその過活性化のメカニズムを提供する。",
+    proofConclusion: "ニフェジピンの有効性はCa²⁺チャネル活性がこれらのエンドポイントを制御し得ることを示す。同じ組織・方向・時間窓で特定の環境場が該当チャネルを変化させるかは別のBERM試験である。",
 
     epidTitle: "疫学的収束",
     epidLead: "複数の生殖転帰が同時に悪化している――Ca²⁺チャネルに作用する共通の環境要因と整合する。",
@@ -127,12 +127,12 @@ const COPY = {
     title: "L'arc reproductif",
     subtitle: "De la fecondation a la premiere annee de vie, chaque etape reproductive critique depend des canaux Ca²⁺. Les canaux CatSper guident les spermatozoides (VK17), Cav1.2 controle les contractions uterines (VK44), la nifedipine previent l'accouchement premature, la pre-eclampsie implique une dysregulation Cav1.2+ROS (VK48), et le SMIN suit l'epuisement de la melatonine chez le nouveau-ne.",
     backLink: "← Retour aux preuves",
-    cautionText: "Cette page presente l'implication des canaux Ca²⁺ a travers les etapes reproductives. Chaque mecanisme est individuellement etabli. L'arc unifie reliant l'EMF aux issues reproductives a travers toutes les etapes est une hypothese BERM.",
+    cautionText: "Cette page présente des composants dépendants du Ca²⁺ aux différentes étapes reproductives. La force des preuves physiologiques varie; les ponts champ–canal et l'arc reproductif unifié sont des hypothèses BERM.",
 
     arcTitle: "L'arc",
-    arcLead: "Cinq etapes de la fecondation a la periode neonatale — chacune Ca²⁺-dependante, chacune vulnerable a l'EMF.",
+    arcLead: "Cinq étapes de la fécondation à la période néonatale — chacune est un endpoint candidat dépendant du Ca²⁺ dont la sensibilité directe au champ doit être testée séparément.",
     arcSteps: [
-      { step: "Etape 1 : Fecondation", detail: "CatSper (canal Ca²⁺) guide le spermatozoide vers l'ovule. EMF→activation CatSper→hyperactivation prematuree (VK17). Deja verifie : motilite des spermatozoides↓ avec les RF." },
+      { step: "Etape 1 : Fecondation", detail: "CatSper contrôle des fonctions spermatiques nécessaires à la fécondation. Les études RF rapportent des endpoints spermatiques, mais RF→CatSper humain reste une expérience VK17 explicite et non un lien établi." },
       { step: "Etape 2 : Hormones de grossesse", detail: "Le ratio P4:E2 regule Cav1.2 dans l'uterus. P4↓ → Cav1.2↑ → excitabilite uterine↑. L'EMF pourrait abaisser le seuil de P4 pour le declenchement des contractions prematurees." },
       { step: "Etape 3 : Accouchement premature", detail: "La nifedipine (bloqueur des canaux Ca²⁺) est le tocolytique de PREMIERE INTENTION. Si un bloqueur Ca²⁺ previent le travail premature, la surcharge en Ca²⁺ en est la cause. Preuve Cochrane : nifedipine superieure aux beta-agonistes." },
       { step: "Etape 4 : Pre-eclampsie", detail: "ET-1→activation de Cav1.2 dans le placenta. ROS + dysregulation Ca²⁺ → dysfonction endotheliale → hypertension. La nifedipine est aussi utilisee pour la gestion de l'hypertension de la pre-eclampsie." },
@@ -146,7 +146,7 @@ const COPY = {
       { use: "Hypertension de la pre-eclampsie", mechanism: "Bloque Cav1.2 dans le muscle lisse vasculaire → vasodilatation → reduction de la pression arterielle", note: "Utilise avec le sulfate de magnesium (aussi un modulateur des canaux Ca²⁺) pour la pre-eclampsie severe" },
       { use: "Vasospasme mamelonnaire de Raynaud", mechanism: "Bloque Cav1.2 dans la vascularisation mamelonnaire → previent le vasospasme → permet la poursuite de l'allaitement", note: "Prescrit pendant la lactation — blocage des canaux Ca²⁺ dans encore un autre tissu reproductif" },
     ],
-    proofConclusion: "Si le medicament fonctionne en bloquant les canaux Ca²⁺, alors la suractivation des canaux Ca²⁺ est le probleme. L'EMF fournit un mecanisme pour cette suractivation.",
+    proofConclusion: "L'efficacité de la nifédipine montre que l'activité des canaux Ca²⁺ peut contrôler ces endpoints. La question de savoir si un champ environnemental défini déplace le canal pertinent dans le même tissu, la même direction et la même fenêtre temporelle constitue un test BERM distinct.",
 
     epidTitle: "Convergence epidemiologique",
     epidLead: "De multiples issues reproductives se deteriorent simultanement — compatible avec une cause environnementale partagee agissant sur les canaux Ca²⁺.",
@@ -166,12 +166,12 @@ const COPY = {
     title: "생식 아크",
     subtitle: "수정에서 생후 1년까지, 모든 중요한 생식 단계는 Ca²⁺ 채널에 의존한다. CatSper 채널이 정자를 유도하고(VK17), Cav1.2가 자궁 수축을 조절하며(VK44), 니페디핀이 조산을 예방하고, 자간전증은 Cav1.2+ROS 조절 이상을 포함하며(VK48), SIDS는 신생아의 멜라토닌 고갈에 뒤따른다.",
     backLink: "← 증거로 돌아가기",
-    cautionText: "이 페이지는 생식 단계 전반에 걸친 Ca²⁺ 채널 관여를 제시한다. 각 메커니즘은 개별적으로 확립되어 있다. EMF를 모든 단계에 걸친 생식 결과에 연결하는 통합적 아크는 BERM 가설이다.",
+    cautionText: "이 페이지는 생식 단계의 Ca²⁺ 의존 구성요소를 제시한다. 생리학적 역할의 근거 강도는 서로 다르며 장-채널 연결과 통합 생식 아크는 BERM 가설이다.",
 
     arcTitle: "아크",
-    arcLead: "수정에서 신생아기까지 5단계 — 각각 Ca²⁺ 의존적이며, 각각 EMF에 취약하다.",
+    arcLead: "수정에서 신생아기까지 5단계 — 각각 Ca²⁺ 의존 후보 종말점이며 직접적인 장 감수성은 단계별 검사가 필요하다.",
     arcSteps: [
-      { step: "단계 1: 수정", detail: "CatSper(Ca²⁺ 채널)이 정자를 난자로 유도한다. EMF→CatSper 활성화→조기 과활성화(VK17). 이미 검증됨: RF에 의한 정자 운동성↓." },
+      { step: "단계 1: 수정", detail: "CatSper는 수정에 필요한 정자 기능을 조절한다. RF 연구는 정자 종말점을 보고하지만 RF→인간 CatSper 활성화는 확립된 연결이 아니라 명시적인 VK17 실험이다." },
       { step: "단계 2: 임신 호르몬", detail: "P4:E2 비율이 자궁의 Cav1.2를 조절한다. P4↓ → Cav1.2↑ → 자궁 흥분성↑. EMF가 조산 수축 개시의 P4 역치를 낮출 수 있다." },
       { step: "단계 3: 조산", detail: "니페디핀(Ca²⁺ 채널 차단제)이 1차 자궁수축억제제이다. Ca²⁺ 차단제가 조산을 예방한다면, Ca²⁺ 과부하가 원인이다. Cochrane 근거: 니페디핀이 베타 작용제보다 우수." },
       { step: "단계 4: 자간전증", detail: "ET-1→태반에서 Cav1.2 활성화. ROS + Ca²⁺ 조절 이상 → 내피 기능 장애 → 고혈압. 니페디핀은 자간전증의 혈압 관리에도 사용된다." },
@@ -185,7 +185,7 @@ const COPY = {
       { use: "자간전증 고혈압", mechanism: "혈관 평활근의 Cav1.2를 차단 → 혈관 확장 → 혈압 감소", note: "중증 자간전증에서 황산마그네슘(역시 Ca²⁺ 채널 조절제)과 함께 사용" },
       { use: "레이노 유두 혈관연축", mechanism: "유두 혈관의 Cav1.2를 차단 → 혈관연축 예방 → 모유수유 지속 가능", note: "수유 중 처방 — 또 다른 생식 조직에서의 Ca²⁺ 채널 차단" },
     ],
-    proofConclusion: "약물이 Ca²⁺ 채널을 차단함으로써 작용한다면, Ca²⁺ 채널의 과활성화가 문제이다. EMF가 그 과활성화의 메커니즘을 제공한다.",
+    proofConclusion: "니페디핀의 효능은 Ca²⁺ 채널 활성이 이러한 종말점을 조절할 수 있음을 보여준다. 특정 환경장이 같은 조직·방향·시간창에서 해당 채널을 변화시키는지는 별도의 BERM 검사다.",
 
     epidTitle: "역학적 수렴",
     epidLead: "여러 생식 결과가 동시에 악화되고 있다 — Ca²⁺ 채널에 작용하는 공유된 환경적 원인과 일치한다.",

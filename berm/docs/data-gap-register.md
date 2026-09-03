@@ -1,6 +1,6 @@
 # BERM: data-aukkorekisteri
 
-Versio: 2026-08-19
+Versio: 2026-09-03
 Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (mikä on rikki),
 [`data-integration-plan.md`](data-integration-plan.md) (missä järjestyksessä korjataan)
 
@@ -32,8 +32,8 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 - **Vartija:** `tests/test_wpp_asfr.py` (23 testiä), `tests/test_provenance.py::test_legacy_asfr_table_is_documented_as_diverging_from_the_acquired_source`
 - **Jäljelle jää:** ASFR-reitin siirto uuteen lähteeseen. Legacy-taulukko on koskemattomana paikallaan sääntöjen 5 ja 10 mukaisesti
 
-### G-2 · Henkilökohtaista altistusta ei ole mitattu missään
-- **Puuttuu:** ikä × sukupuoli × maa × vuosi -paneeli: päivittäiset käyttötunnit, kehon läheisyystunnit, puhelin makuuhuoneessa, yökäyttö, wearable-prevalenssi
+### G-2 · Monikanavaista henkilökohtaista FieldState–lisääntymispaneelia ei ole
+- **Puuttuu:** samaan henkilöön ja aikaan kohdistettu vektori-, polarisaatio-, vaihe-, koherenssiaika-, verhokäyrä- ja elinsiirtomittaus sekä lisääntymispäätepiste. Käyttötunnit, kehon läheisyys, yökäyttö ja wearable-prevalenssi ovat tämän proxysyötteitä, eivät fysikaalinen annos.
 - **Nykytila:** yksi globaali porrasfunktio (`exposure/personal.py:14`), ei ikää, ei sukupuolta, ei maata
 - **Estää:** koko `E_personal`- ja `E_night`-kanavan. Ilman tätä `E_developmental` on ikäpainotettu integraali vakiosta
 - **Ehdokaslähteet:** Eurobarometer / Eurostat ICT-kotitalouskyselyt (avoin, ikäryhmitelty); OFCOM Online Nation (avoin, UK); Pew Research mobile surveys (avoin, USA); kaupalliset paneelit (App Annie, Statista) — `ACCESS_REQUIRED`
@@ -89,15 +89,15 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 - **Estää:** `D_{a,c,t}`-kysyntätilan kokonaan. Nykymuodossa kulttuuri on jäännöstermi, ei mallinnettu suure
 - **Ehdokaslähteet:** DHS Program (avoin, rekisteröinti); UN World Contraceptive Use (avoin); Eurobarometer fertility intentions (avoin); OECD Family Database (avoin)
 
-### G-10 · ART on skalaarikorjaus, ei havaintokerros
+### G-10 · ART-ilmiö tunnetaan, mutta havaintokerrosta ei ole integroitu
 - **Puuttuu:** `art_outcomes_age_year` — sykli-, siirto-, syntymä- ja ikäjakaumat erikseen
 - **Nykytila:** `IVF_SHARES` × lineaarinen 0.5 pp/v -ekstrapolaatio, käytetään kertoimena `observed × (1 − ivf)`
 - **Estää:** tavoitearkkitehtuurin nelijaon `spontaani fecundability / ART-kysyntä / ART-tulos / ART-syntymät`
 - **Ehdokaslähteet:** CDC ART Surveillance (avoin, USA); ESHRE EIM-raportit (avoin PDF, poiminta vaaditaan); HFEA (avoin, UK)
 
-### G-11 · TTP ja raskauden menetys puuttuvat kokonaan
-- **Puuttuu:** `time_to_pregnancy`, `infertility_prevalence`, `miscarriage`, `stillbirth`
-- **Nykytila:** ei mitään
+### G-11 · TTP-, keskenmeno- ja kuolleena syntymisen dataa ei ole integroitu
+- **Puuttuu mallisyötteistä:** `time_to_pregnancy`, `infertility_prevalence`, `miscarriage`, `stillbirth`
+- **Nykytila:** ilmiöistä ja erillisistä kohorteista on kirjallisuutta, mutta repossa ei ole yhteiseen avain- ja provenienssisopimukseen muunnettua paneelia. Kyse on integraatioaukosta, ei väitteestä ettei tutkimustietoa olisi.
 - **Estää:** vaiheen 6 kolmesta valitusta välituloksesta kaksi. Ilman näitä `R_reproductive` ei kytkeydy yhteenkään mitattuun päätetapahtumaan
 - **Ehdokaslähteet:** WHO infertility prevalence -raportit (avoin); kansalliset syntymärekisterit; Euro-Peristat (avoin)
 
@@ -113,9 +113,9 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 | G-15 | 2G–5G-sukupolvet ovat käsin kirjoitettuja, ja haku on kuollutta koodia | `TECH_DIFFUSION` + `personal.py:81–91` | GSMA Intelligence (`ACCESS_REQUIRED`); tai poista kuollut koodi ja merkitse rehellisesti oletukseksi |
 | G-16 | Epävarmuusvälejä ei ole käytännössä millään syötteellä | koko `countries.py` | Sopimus vaatii ne `SCENARIO_PARAMETER`-riveiltä; laajenna kaikkiin |
 | G-17 | `berm/data/itu.py` ei toimi (Parquet ilman `pyarrow`) eikä sitä kutsuta | `itu.py:73` | Joko lisää `pyarrow` valinnaiseksi riippuvuudeksi tai vaihda CSV:hen |
-| G-18 | `urban_by_country_year.csv` (17 160 riviä) jäsennetty, ei luettu | `data/processed/` | Kytke `E_ambient`-reittiin tai poista jäsennys |
+| G-18 | Kaupungistumisilmiö tunnetaan, mutta `urban_by_country_year.csv` (17 160 riviä) ei ole kytketty malliin | `data/processed/` | Kytke eksplisiittiseen kysyntä-/altistusreittiin tai poista jäsennys; integraatioaukko, ei kirjallisuusaukko |
 | G-19 | Kaksi eri lajibiologiataulukkoa eri arvoilla | `csli/species_data.py:27` vs. `stats/csli.py:258` | Yksi lähde totuudelle |
-| G-20 | Mehiläisaineistosta puuttuvat ajallisesti kohdistetut biologiset kovariaatit | `coloss_winter_loss.json` | Varroa, patogeenit, torjunta-aineet, ravinto, sää, maankäyttö sekä mitattu RF. MUST-B:stä hallussa oleva 7 tarhapaikan ja 453 kasvipolygonin paikkakonteksti ei sisällä näitä vasteita tai ajallista biologista kovariaattipaneelia. |
+| G-20 | Mehiläisilmiö tunnetaan, mutta ajallisesti kohdistettu monisyypaneeli puuttuu | `coloss_winter_loss.json` | Varroa, patogeenit, torjunta-aineet, ravinto, sää, maankäyttö sekä mitattu RF. MUST-B:stä hallussa oleva 7 tarhapaikan ja 453 kasvipolygonin paikkakonteksti ei sisällä näitä vasteita tai ajallista biologista kovariaattipaneelia. |
 
 ---
 

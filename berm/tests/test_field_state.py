@@ -122,14 +122,22 @@ def test_coherent_cross_term_requires_explicit_phase_and_coherence():
     in_phase = evaluate_field_state(
         FieldState(
             **base,
-            source_coupling=SourceCoupling(relative_phase_rad=0.0, coherence=0.5),
+            source_coupling=SourceCoupling(
+                relative_phase_rad=0.0,
+                coherence=0.5,
+                coherence_time_seconds=10.0,
+            ),
         ),
         ReceptorState(organ="testis"),
     )
     anti_phase = evaluate_field_state(
         FieldState(
             **base,
-            source_coupling=SourceCoupling(relative_phase_rad=math.pi, coherence=0.5),
+            source_coupling=SourceCoupling(
+                relative_phase_rad=math.pi,
+                coherence=0.5,
+                coherence_time_seconds=10.0,
+            ),
         ),
         ReceptorState(organ="testis"),
     )
@@ -138,6 +146,13 @@ def test_coherent_cross_term_requires_explicit_phase_and_coherence():
     assert unknown.coherent_cross_term == 0.0
     assert in_phase.coherent_cross_term == pytest.approx(2.0)
     assert anti_phase.coherent_cross_term == pytest.approx(-2.0)
+
+
+def test_measurement_ready_state_requires_coherence_duration() -> None:
+    coupling = SourceCoupling(relative_phase_rad=0.0, coherence=0.8)
+    assert coupling.coherence_time_seconds is None
+    with pytest.raises(ValueError):
+        SourceCoupling(coherence_time_seconds=0.0)
 
 
 def test_measured_spectral_overlap_and_circadian_context_are_explicit():

@@ -1315,7 +1315,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic efficacy is abolished by co-administration of T-type Ca²⁺ channel blocker",
-        description: "Already confirmed by FDA label (contraindication with CCBs). Further test: specific T-type blocker (ethosuximide) should abolish TheraBionic's anti-HCC effect while L-type blocker (nifedipine) should have less effect.",
+        description: "The FDA label provides a protocol constraint through its calcium-channel-blocker contraindication; it is not a completed causal co-administration experiment. Prediction: a preregistered blocker experiment should show whether a T-type blocker abolishes the anti-HCC response more strongly than a matched L-type blocker.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -3148,7 +3148,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic-teho kumoutuu T-tyypin Ca²⁺-kanavasalpaajan samanaikaisella annolla",
-        description: "Jo vahvistettu FDA-merkinnällä (kontraindikaatio CCB:ien kanssa). Lisätesti: tarkka T-tyypin salpaaja (etosuksimidi) kumoaa TheraBionic:n anti-HCC-vaikutuksen, kun taas L-tyypin salpaajalla (nifedipiini) pitäisi olla vähemmän vaikutusta.",
+        description: "FDA-merkintä antaa protokollarajoitteen kalsiumkanavasalpaajien vasta-aiheen kautta; se ei ole valmis kausaalinen yhteisannostelukoe. Ennuste: esirekisteröidyn salpaajakokeen tulee osoittaa, kumoaako T-tyypin salpaaja anti-HCC-vasteen vahvemmin kuin sovitettu L-tyypin salpaaja.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -5161,7 +5161,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic efficacy is abolished by co-administration of T-type Ca²⁺ channel blocker",
-        description: "Already confirmed by FDA label (contraindication with CCBs). Further test: specific T-type blocker (ethosuximide) should abolish TheraBionic's anti-HCC effect while L-type blocker (nifedipine) should have less effect.",
+        description: "The FDA label provides a protocol constraint through its calcium-channel-blocker contraindication; it is not a completed causal co-administration experiment. Prediction: a preregistered blocker experiment should show whether a T-type blocker abolishes the anti-HCC response more strongly than a matched L-type blocker.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -6944,7 +6944,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic efficacy is abolished by co-administration of T-type Ca²⁺ channel blocker",
-        description: "Already confirmed by FDA label (contraindication with CCBs). Further test: specific T-type blocker (ethosuximide) should abolish TheraBionic's anti-HCC effect while L-type blocker (nifedipine) should have less effect.",
+        description: "The FDA label provides a protocol constraint through its calcium-channel-blocker contraindication; it is not a completed causal co-administration experiment. Prediction: a preregistered blocker experiment should show whether a T-type blocker abolishes the anti-HCC response more strongly than a matched L-type blocker.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -8727,7 +8727,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic efficacy is abolished by co-administration of T-type Ca²⁺ channel blocker",
-        description: "Already confirmed by FDA label (contraindication with CCBs). Further test: specific T-type blocker (ethosuximide) should abolish TheraBionic's anti-HCC effect while L-type blocker (nifedipine) should have less effect.",
+        description: "The FDA label provides a protocol constraint through its calcium-channel-blocker contraindication; it is not a completed causal co-administration experiment. Prediction: a preregistered blocker experiment should show whether a T-type blocker abolishes the anti-HCC response more strongly than a matched L-type blocker.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -9195,7 +9195,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           })}
         </div>
         <p className="mt-5 max-w-4xl border-l-2 border-status-partial/60 pl-3 text-xs leading-relaxed text-foreground-muted">{interpreterCopy.note}</p>
-        <Link href={`/${locale}/about/civilization`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+        <Link href={`/${locale}/civilization/epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
           {locale === "fi" ? "Lue mekanistinen johto" : "Read the mechanistic derivation"} →
         </Link>
       </section>

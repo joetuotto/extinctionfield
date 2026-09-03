@@ -91,6 +91,15 @@ def test_fieldstate_is_measurement_not_model_or_causal_root() -> None:
     assert fieldstate["canonicalRoute"] == "/measurement/fieldstate"
 
 
+def test_epistapege_is_a_qualitative_berm_extension_not_a_fieldstate_result() -> None:
+    extension = architecture_manifest()["civilizationExtensions"]["epistapege"]
+
+    assert extension["canonicalRoute"] == "/civilization/epistapege"
+    assert extension["status"] == "open_testable_extension"
+    assert extension["publishesNumericPredictions"] is False
+    assert extension["fieldStateRole"] == "optional_physical_measurement_input_only"
+
+
 def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() -> None:
     theory = architecture_manifest()["theory"]
 

@@ -72,6 +72,7 @@ def _fieldstate_observation(
         source_coupling=SourceCoupling(
             relative_phase_rad=0.25,
             coherence=0.8,
+            coherence_time_seconds=10.0,
             coupling_id="measured_phase_v1",
         ),
         provenance={

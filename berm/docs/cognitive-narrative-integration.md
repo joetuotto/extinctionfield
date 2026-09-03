@@ -137,7 +137,10 @@ measurements can support the extension.
 
 ## Implementation locations
 
-- Website derivation: `/about/civilization`
+- Canonical website derivation: `/civilization/epistapege`
+- Legacy compatibility location: `/about/civilization` (not the navigation owner)
+- Machine-readable model contract: `berm/civilization/epistapege.py`
+- Causal nodes: `BIOBEHAVIORAL_WEIGHTING -> NARRATIVE_ATTRIBUTION -> EPISTAPEGE_OBSERVABILITY_LOSS -> INSTITUTIONAL_MODEL_REUSE`
 - BERM model mapping: `/model#epistapege` and `/model#architecture`
 - Candidate tests: `/predictions#interpreter-predictions`
 - Evidence interpretation: `/evidence`
