@@ -1,4 +1,4 @@
-"""Machine-readable mechanism evidence for the FieldState ASFR route.
+"""Machine-readable mechanism evidence for BERM and FieldState measurements.
 
 ``data/registry/source_registry.csv`` remains the provenance registry for
 model input datasets.  This separate registry records biomedical and physics
@@ -6,6 +6,10 @@ studies used to justify *causal-node structure*.  A source-qualified record is
 active non-numeric evidence: it constrains the graph, direction, field-feature
 signature, life stage or memory family.  It never becomes an unexamined single
 prediction parameter merely by being listed here.
+
+FieldState records constrain the optional measurement interface.  They do not
+make FieldState an alias or causal root of BERM and do not close the open L2
+geometry-to-observable coupling operator.
 
 Each record names the exact causal node(s), study system, field class,
 directness and translation boundary.  This prevents, for example, an avian

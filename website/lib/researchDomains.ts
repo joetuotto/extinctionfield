@@ -14,7 +14,7 @@ export const RESEARCH_DOMAINS: Record<"en" | "fi" | "ja" | "fr" | "ko", readonly
     { n: "06", t: "Non-ionotropic VGCC", d: "Trus et al. 2024 (Hebrew U.): VGCC activates intracellular signaling via conformational change WITHOUT ion flux." },
     { n: "07", t: "Entomology", d: "Bee-EMF data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Bee piping, insect decline, RF absorption." },
     { n: "08", t: "Parasitology", d: "England 2023: ticks attracted to hosts electrostatically. Biological activity of static fields." },
-    { n: "09", t: "Geometric physics", d: "Lindgren metric: 87.5% of RPM Hamiltonian elements derivable from geometry. Predicts background and angle dependence." },
+    { n: "09", t: "Geometric physics", d: "Lindgren 2025 metric premise. The reported 87.5% algebraic correspondence with RPM is a structural comparison, not a derived coupling; BERM's background- and angle-dependent bridge remains a testable L2 proposal." },
     { n: "10", t: "Electroecology", d: "Bristol (Clarke, Robert, England, Mallinson): aerial electroreception, bee electric communication, anthropogenic fields −71% bee landings. Plant CRY: Ahmad 2020 — 7 MHz RF reduces Arabidopsis CRY1 response (RPM fingerprint in plants); Xu 2015 — geomagnetic field regulates flowering via CRY2; Bogdziewicz 2024 — masting synchrony across 2,000 km via summer solstice (CRY2 candidate synchronizer)." },
   ],
   fi: [
@@ -26,7 +26,7 @@ export const RESEARCH_DOMAINS: Record<"en" | "fi" | "ja" | "fr" | "ko", readonly
     { n: "06", t: "Ei-ionotrooppinen VGCC", d: "Trus ym. 2024 (Hebr. yliopisto): VGCC aktivoi solunsisäisiä signaalireittejä konformaatiomuutoksella ILMAN ionifluksia." },
     { n: "07", t: "Entomologia", d: "Mehiläis-EMF-data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Mehiläisten piping, hyönteiskato, RF-absorptio." },
     { n: "08", t: "Parasitologia", d: "England 2023: punkit vedetään isäntiin sähköstaattisesti. Staattisten kenttien biologinen aktiivisuus." },
-    { n: "09", t: "Geometrinen fysiikka", d: "Lindgren-metriikka: 87,5 % RPM-Hamiltoniaanin elementeistä johdettavissa geometriasta. Ennustaa tausta- ja kulmariippuvuuden." },
+    { n: "09", t: "Geometrinen fysiikka", d: "Lindgrenin vuoden 2025 metriikkapremissi. Raportoitu 87,5 %:n algebrallinen vastaavuus RPM:ään on rakennevertailu, ei johdettu kytkentä; BERM:n tausta- ja kulmariippuvainen silta on testattava L2-ehdotus." },
     { n: "10", t: "Sähköekologia", d: "Bristol (Clarke, Robert, England, Mallinson): ilman sähköreseptio, mehiläisten sähköinen viestintä, antropogeeniset kentät −71 % mehiläislaskeutumisia. Kasvi-CRY: Ahmad 2020 — 7 MHz RF vähentää Arabidopsiksen CRY1-responssia (RPM-sormenjälki kasveissa); Xu 2015 — geomagneettinen kenttä säätelee kukintaa CRY2:n kautta; Bogdziewicz 2024 — masting-synkronia 2 000 km kesäpäivänseisauksella (CRY2 ehdokassynkronoija)." },
   ],
   ja: [
@@ -38,7 +38,7 @@ export const RESEARCH_DOMAINS: Record<"en" | "fi" | "ja" | "fr" | "ko", readonly
     { n: "06", t: "非イオノトロピックVGCC", d: "Trus et al. 2024（ヘブライ大学）：VGCCがイオンフラックスなしで構造変化を通じて細胞内シグナリングを活性化。" },
     { n: "07", t: "昆虫学", d: "ミツバチ-EMFデータ：Favre & Johansson 2025、Hallmann 2017、Thielens 2018。ミツバチのパイピング、昆虫減少、RF吸収。" },
     { n: "08", t: "寄生虫学", d: "England 2023：ダニが宿主に静電的に引き寄せられる。静電場の生物学的活性。" },
-    { n: "09", t: "幾何物理学", d: "Lindgren計量：RPMハミルトニアン要素の87.5%が幾何学から導出可能。背景と角度依存性を予測。" },
+    { n: "09", t: "幾何物理学", d: "Lindgren 2025計量の前提。RPMとの87.5%代数対応は構造比較であり導出結合ではない。BERMの背景・角度依存ブリッジは検証すべきL2命題。" },
     { n: "10", t: "電気生態学", d: "Bristol（Clarke、Robert、England、Mallinson）：空中電気受容、ミツバチの電気コミュニケーション、人為的電場で着地−71%。植物CRY：Ahmad 2020 — 7 MHz RFがシロイヌナズナCRY1応答を減少（植物でのRPMフィンガープリント）；Xu 2015 — 地磁気場がCRY2を通じて開花を制御；Bogdziewicz 2024 — マスティング同期が夏至を介して2,000 km（CRY2が候補同期装置）。" },
   ],
   fr: [
@@ -50,7 +50,7 @@ export const RESEARCH_DOMAINS: Record<"en" | "fi" | "ja" | "fr" | "ko", readonly
     { n: "06", t: "VGCC non ionotropique", d: "Trus et al. 2024 (Univ. hébraïque) : VGCC active la signalisation intracellulaire par changement conformationnel SANS flux ionique." },
     { n: "07", t: "Entomologie", d: "Données abeilles-EMF : Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Piping des abeilles, déclin des insectes, absorption RF." },
     { n: "08", t: "Parasitologie", d: "England 2023 : tiques attirées vers les hôtes électrostatiquement. Activité biologique des champs statiques." },
-    { n: "09", t: "Physique géométrique", d: "Métrique de Lindgren : 87,5 % des éléments hamiltoniens RPM dérivables de la géométrie. Prédit la dépendance au fond et à l'angle." },
+    { n: "09", t: "Physique géométrique", d: "Prémisse métrique de Lindgren (2025). La correspondance algébrique de 87,5 % avec RPM est structurelle, non un couplage dérivé ; le pont BERM dépendant du fond et de l'angle reste une proposition L2 testable." },
     { n: "10", t: "Électroécologie", d: "Bristol (Clarke, Robert, England, Mallinson) : électroréception aérienne, communication électrique des abeilles, champs anthropiques −71 % atterrissages. CRY végétal : Ahmad 2020 — RF 7 MHz réduit la réponse CRY1 d'Arabidopsis (empreinte RPM végétale) ; Xu 2015 — champ géomagnétique régule la floraison via CRY2 ; Bogdziewicz 2024 — synchronie du masting sur 2 000 km via solstice (CRY2 candidat synchroniseur)." },
   ],
   ko: [
@@ -62,7 +62,7 @@ export const RESEARCH_DOMAINS: Record<"en" | "fi" | "ja" | "fr" | "ko", readonly
     { n: "06", t: "비이오노트로픽 VGCC", d: "Trus et al. 2024(히브리대): VGCC가 이온 플럭스 없이 구조 변화를 통해 세포내 신호전달 활성화." },
     { n: "07", t: "곤충학", d: "꿀벌-EMF 데이터: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. 꿀벌 파이핑, 곤충 감소, RF 흡수." },
     { n: "08", t: "기생충학", d: "England 2023: 진드기가 정전기적으로 숙주에 끌림. 정전장의 생물학적 활성." },
-    { n: "09", t: "기하물리학", d: "Lindgren 메트릭: RPM 해밀토니안 요소의 87.5%가 기하학에서 도출 가능. 배경 및 각도 의존성 예측." },
+    { n: "09", t: "기하물리학", d: "Lindgren 2025 계량 전제. RPM과의 87.5% 대수적 대응은 구조 비교이지 도출된 결합이 아니다. BERM의 배경·각도 의존 연결은 검증할 L2 제안이다." },
     { n: "10", t: "전기생태학", d: "Bristol(Clarke, Robert, England, Mallinson): 공중 전기수용, 꿀벌 전기 커뮤니케이션, 인위적 전장으로 착지 −71%. 식물 CRY: Ahmad 2020 — 7 MHz RF가 애기장대 CRY1 반응 감소(식물에서의 RPM 지문); Xu 2015 — 지자기장이 CRY2를 통해 개화 조절; Bogdziewicz 2024 — 마스팅 동기화가 하지를 통해 2,000 km(CRY2가 후보 동기화 장치)." },
   ],
 } as const;

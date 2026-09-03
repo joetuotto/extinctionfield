@@ -1,5 +1,5 @@
 import type { ChainNode } from "@/lib/types";
-import { EPISTEMIC_COLORS } from "@/lib/causalChainData";
+import { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import { StudyCitation } from "./StudyCitation";
 import { InlineReferenceText } from "./InlineReferenceText";
 import { EpistemicBadge } from "./EpistemicBadge";

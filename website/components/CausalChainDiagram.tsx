@@ -5,9 +5,7 @@ import type { ChainNode, EpistemicLevel } from "@/lib/types";
 import {
   getFieldStateCausalGraph,
 } from "@/lib/causalChainV2Data";
-import {
-  EPISTEMIC_COLORS,
-} from "@/lib/causalChainData";
+import { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import { DetailPanel } from "./DetailPanel";
 import { pickCopy } from "@/lib/i18n";
 
@@ -21,13 +19,14 @@ const COPY: Record<string, {
     ariaLabel: "BERM v17 causal diagram",
     clickHint: "→ click for details",
     levelTitles: {
-      1: "Field state",
-      2: "Biological intermediates",
-      3: "BTB and other barrier states",
-      4: "Reproductive states",
-      5: "Couple and demographic context",
-      6: "Age-specific fertility",
-      7: "Demographic endpoint",
+      1: "Optional measurements",
+      2: "Open L2 bridge",
+      3: "Biological intermediates",
+      4: "BTB and other barrier states",
+      5: "Reproductive states",
+      6: "Couple and demographic context",
+      7: "Age-specific fertility",
+      8: "Demographic endpoint",
     },
     legend: [
       ["E", "Observed endpoint"],
@@ -41,13 +40,14 @@ const COPY: Record<string, {
     ariaLabel: "BERM v17-kausaalikaavio",
     clickHint: "→ klikkaa tiedot",
     levelTitles: {
-      1: "Kenttätila",
-      2: "Biologiset välitilat",
-      3: "BTB ja muut estetilat",
-      4: "Lisääntymistilat",
-      5: "Pari- ja demografinen konteksti",
-      6: "Ikäkohtainen hedelmällisyys",
-      7: "Demografinen päätepiste",
+      1: "Valinnaiset mittaukset",
+      2: "Avoin L2-silta",
+      3: "Biologiset välitilat",
+      4: "BTB ja muut estetilat",
+      5: "Lisääntymistilat",
+      6: "Pari- ja demografinen konteksti",
+      7: "Ikäkohtainen hedelmällisyys",
+      8: "Demografinen päätepiste",
     },
     legend: [
       ["E", "Havaittu päätepiste"],
@@ -61,13 +61,14 @@ const COPY: Record<string, {
     ariaLabel: "BERM v17 因果図",
     clickHint: "→ クリックで詳細",
     levelTitles: {
-      1: "場の状態",
-      2: "生物学的中間体",
-      3: "BTBおよび他のバリア状態",
-      4: "生殖状態",
-      5: "カップルおよび人口統計的文脈",
-      6: "年齢別出生率",
-      7: "人口統計的エンドポイント",
+      1: "任意の測定",
+      2: "未解決のL2ブリッジ",
+      3: "生物学的中間体",
+      4: "BTBおよび他のバリア状態",
+      5: "生殖状態",
+      6: "カップルおよび人口統計的文脈",
+      7: "年齢別出生率",
+      8: "人口統計的エンドポイント",
     },
     legend: [
       ["E", "観察されたエンドポイント"],
@@ -81,13 +82,14 @@ const COPY: Record<string, {
     ariaLabel: "Diagramme causal BERM v17",
     clickHint: "→ cliquer pour détails",
     levelTitles: {
-      1: "État du champ",
-      2: "Intermédiaires biologiques",
-      3: "BTB et autres états de barrière",
-      4: "États reproductifs",
-      5: "Contexte du couple et démographique",
-      6: "Fécondité par âge",
-      7: "Point final démographique",
+      1: "Mesures facultatives",
+      2: "Pont L2 non résolu",
+      3: "Intermédiaires biologiques",
+      4: "BTB et autres états de barrière",
+      5: "États reproductifs",
+      6: "Contexte du couple et démographique",
+      7: "Fécondité par âge",
+      8: "Point final démographique",
     },
     legend: [
       ["E", "Point final observé"],
@@ -101,13 +103,14 @@ const COPY: Record<string, {
     ariaLabel: "BERM v17 인과 다이어그램",
     clickHint: "→ 클릭하여 상세 보기",
     levelTitles: {
-      1: "장 상태",
-      2: "생물학적 중간체",
-      3: "BTB 및 기타 장벽 상태",
-      4: "생식 상태",
-      5: "커플 및 인구통계적 맥락",
-      6: "연령별 출산율",
-      7: "인구통계적 종점",
+      1: "선택적 측정",
+      2: "미해결 L2 연결",
+      3: "생물학적 중간체",
+      4: "BTB 및 기타 장벽 상태",
+      5: "생식 상태",
+      6: "커플 및 인구통계적 맥락",
+      7: "연령별 출산율",
+      8: "인구통계적 종점",
     },
     legend: [
       ["E", "관찰된 종점"],

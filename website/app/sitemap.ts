@@ -28,7 +28,7 @@ interface RouteMeta {
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": { changeFrequency: "weekly", priority: 1.0 },
   "/model": { changeFrequency: "monthly", priority: 0.9 },
-  "/model/fieldstate": { changeFrequency: "monthly", priority: 0.8 },
+  "/measurement/fieldstate": { changeFrequency: "monthly", priority: 0.8 },
   "/evidence": { changeFrequency: "weekly", priority: 0.9 },
   "/evidence/pharmacology": { changeFrequency: "monthly", priority: 0.8 },
   "/evidence/technology": { changeFrequency: "monthly", priority: 0.8 },
@@ -81,6 +81,10 @@ function collectStaticRoutes(dir: string, route: string, out: Set<string>): void
 function staticRoutes(): string[] {
   const out = new Set<string>();
   collectStaticRoutes(APP_LOCALE_DIR, "", out);
+  // Historical URLs are handled by redirects and never emitted as canonical
+  // sitemap entries if a compatibility file is reintroduced later.
+  out.delete("/model/fieldstate");
+  out.delete("/model/fieldstate/math");
   return [...out].sort();
 }
 

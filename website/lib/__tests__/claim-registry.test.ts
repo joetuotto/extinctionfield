@@ -16,7 +16,12 @@ interface GraphNode {
 interface CausalGraphFile {
   version: string;
   nodes: Record<string, GraphNode>;
-  edges: { id: string; from: string; to: string }[];
+  edges: {
+    id: string;
+    from: string;
+    to: string;
+    kind: "inference_input" | "proposed_bridge" | "causal_model";
+  }[];
   ui_groups: Record<string, { id: string; contains: string[] }>;
 }
 
@@ -95,12 +100,12 @@ const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 35 nodes", () => {
-    expect(nodeIds.size).toBe(35);
+  it("has 36 nodes", () => {
+    expect(nodeIds.size).toBe(36);
   });
 
-  it("has 74 edges", () => {
-    expect(graph.edges.length).toBe(74);
+  it("has 69 typed edges", () => {
+    expect(graph.edges.length).toBe(69);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {
@@ -119,6 +124,26 @@ describe("causal-graph.json", () => {
     for (const edge of graph.edges) {
       expect(nodeIds.has(edge.from)).toBe(true);
       expect(nodeIds.has(edge.to)).toBe(true);
+    }
+  });
+
+  it("keeps measurements and the legacy proxy outside the causal root", () => {
+    const measurementInputs = new Set([
+      "TECHNOLOGY_TIMING_PROXY",
+      "FIELDSTATE_VECTOR",
+      "FIELDSTATE_ENVELOPE",
+      "STATIC_TRIBO_INTERFACE",
+      "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+    ]);
+
+    for (const edge of graph.edges) {
+      if (measurementInputs.has(edge.from)) {
+        expect(edge.to).toBe("BERM_L2_BRIDGE");
+        expect(edge.kind).toBe("inference_input");
+      }
+      if (edge.from === "BERM_L2_BRIDGE") {
+        expect(edge.kind).toBe("proposed_bridge");
+      }
     }
   });
 

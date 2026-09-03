@@ -1,7 +1,7 @@
 import type { ChainEdge, ChainNode } from "./types";
 
 /**
- * Canonical public causal map for the BERM v17 route.
+ * Public summary of BERM and its optional measurement interface.
  *
  * The legacy A–F lettering remains only through source-qualified compatibility
  * bindings. This map uses semantic node names so that BBB, BTB, melatonin,
@@ -12,12 +12,12 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   {
     id: "fieldstate",
     level: 1,
-    label: "FieldState",
+    label: "FieldState observations",
     sublabel: "B₀, vector, PSD, phase, time",
     epistemicLevel: "L*",
-    title: "Local, measurable field state",
+    title: "Optional local measurement module",
     mechanism:
-      "FieldState keeps background, ambient and personal field components, organ-local transfer, spectrum, phase, coherence and circadian context distinct. A mobile-subscription series or country average is only a technology-timing proxy, not organ dose.",
+      "FieldState keeps background, ambient and personal field components, organ-local transfer estimates, spectrum, phase, coherence and circadian context distinct. It is an optional observation and estimation module, not BERM itself or a biological cause. A mobile-subscription series or country average is only a technology-timing proxy, not organ dose.",
     quantitative:
       "A_selected,o = T_o A_ambient + χ(|T_o A_background|) T_o A_personal\nX_geom,o = 2(T_o A_background)·(T_o A_personal)",
     keyReferences: [
@@ -46,14 +46,28 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
       "In a preregistered experiment, the same local exposure produces an identical response regardless of measured B₀ vector, geometry, spectrum and circadian state when the registered receptor hypothesis predicts a difference.",
   },
   {
-    id: "mechanisms",
+    id: "l2-bridge",
     level: 2,
+    label: "Open L2 bridge",
+    sublabel: "geometry → observable coupling",
+    epistemicLevel: "L*",
+    title: "Coupling operator not yet derived",
+    mechanism:
+      "BERM has not yet derived an operator that maps Lindgren geometry or a FieldState observation to SHBG, androgen-receptor activity, receptor-proximal signalling or any other biological state. The downstream branches are conditional BERM propositions or imported biological mechanisms, not consequences derived from FieldState.",
+    quantitative: "K_L2 : measurement / geometry → biological observable  [OPEN]",
+    keyReferences: [],
+    falsificationCondition:
+      "A proposed L2 operator must be rejected or revised if preregistered matched exposure–endpoint data fail its directional, spectral, temporal or dose predictions.",
+  },
+  {
+    id: "mechanisms",
+    level: 3,
     label: "Biological intermediates",
     sublabel: "CRY · melatonin · Ca²⁺/ROS · Vmem/mTOR · HPA · microbiome/OT",
     epistemicLevel: "M",
     title: "Separate, testable mediator branches",
     mechanism:
-      "FieldState can enter separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
+      "BERM proposes separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. Until L2 is resolved, no FieldState observation is treated as having generated these states. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
     keyReferences: [
       {
         referenceId: "sherrard2018",
@@ -73,7 +87,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "btb",
-    level: 3,
+    level: 4,
     label: "Blood–testis barrier (BTB)",
     sublabel: "tight junction · spermatogenesis",
     epistemicLevel: "M",
@@ -99,7 +113,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "other-barriers",
-    level: 3,
+    level: 4,
     label: "Other barrier states",
     sublabel: "BBB · placenta · retina",
     epistemicLevel: "L*",
@@ -118,7 +132,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "male",
-    level: 4,
+    level: 5,
     label: "Male reproductive state",
     sublabel: "BTB · germline · steroidogenesis · sperm",
     epistemicLevel: "M",
@@ -158,7 +172,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "female",
-    level: 4,
+    level: 5,
     label: "Female reproductive state",
     sublabel: "reserve · oocyte redox · clock · implantation",
     epistemicLevel: "M",
@@ -198,7 +212,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "couple",
-    level: 5,
+    level: 6,
     label: "Couple capacity",
     sublabel: "male × female × shared home",
     epistemicLevel: "M",
@@ -211,7 +225,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "demographic-inputs",
-    level: 5,
+    level: 6,
     label: "Explicit demographic inputs",
     sublabel: "demand/opportunity · tempo · ART/live birth",
     epistemicLevel: "E",
@@ -222,7 +236,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "asfr",
-    level: 6,
+    level: 7,
     label: "ASFR",
     sublabel: "age · cohort · parity · year",
     epistemicLevel: "E",
@@ -243,7 +257,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   },
   {
     id: "tfr",
-    level: 7,
+    level: 8,
     label: "TFR",
     sublabel: "derived ASFR sum",
     epistemicLevel: "E",
@@ -256,7 +270,8 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
 ];
 
 export const BERM_CAUSAL_EDGES_V2: ChainEdge[] = [
-  { from: "fieldstate", to: "mechanisms", label: "measured input", epistemicLevel: "L*", priority: "primary" },
+  { from: "fieldstate", to: "l2-bridge", label: "measurement input", epistemicLevel: "L*", priority: "primary" },
+  { from: "l2-bridge", to: "mechanisms", label: "proposed coupling (open)", epistemicLevel: "L*", priority: "primary" },
   { from: "mechanisms", to: "btb", label: "redox / tight junction", epistemicLevel: "M" },
   { from: "mechanisms", to: "other-barriers", label: "organ-specific hypothesis", epistemicLevel: "L*" },
   { from: "mechanisms", to: "male", label: "redox / Ca²⁺ / HPA", epistemicLevel: "M", priority: "primary" },
@@ -274,20 +289,29 @@ type GraphLocale = "en" | "fi";
 /** Finnish text for the localised graph. Citations and equations are shared. */
 const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title" | "mechanism" | "falsificationCondition">> = {
   fieldstate: {
-    label: "FieldState",
+    label: "FieldState-havainnot",
     sublabel: "B₀, vektori, PSD, vaihe, aika",
-    title: "Paikallinen ja mitattava kenttätila",
+    title: "Valinnainen paikallinen mittausmoduuli",
     mechanism:
-      "FieldState erottaa tausta-, ambient- ja henkilökohtaiset kenttäkomponentit, elinkohtaisen siirron, spektrin, vaiheen, koherenssin ja vuorokausikontekstin. Mobiililiittymä tai maakeskiarvo voi toimia vain teknologian ajoitusproxyna, ei elinannoksena.",
+      "FieldState erottaa tausta-, ambient- ja henkilökohtaiset kenttäkomponentit, elinkohtaisen siirtoarvion, spektrin, vaiheen, koherenssin ja vuorokausikontekstin. Se on valinnainen havainto- ja estimointimoduuli, ei BERM tai biologinen syy. Mobiililiittymä tai maakeskiarvo voi toimia vain teknologian ajoitusproxyna, ei elinannoksena.",
     falsificationCondition:
       "Jos esirekisteröidyssä asetelmassa sama paikallinen altistus tuottaa identtisen vasteen riippumatta mitatusta B₀-vektorista, geometriasta, spektristä ja vuorokausitilasta silloin kun kyseinen reseptorihypoteesi ennustaa eron.",
+  },
+  "l2-bridge": {
+    label: "Avoin L2-silta",
+    sublabel: "geometria → havaittava suure",
+    title: "Kytkentäoperaattoria ei ole vielä johdettu",
+    mechanism:
+      "BERM ei ole vielä johtanut operaattoria, joka kuvaisi Lindgren-geometrian tai FieldState-havainnon SHBG:hen, androgeenireseptorin aktiivisuuteen, reseptoriläheiseen signalointiin tai muuhun biologiseen tilaan. Jatkohaarat ovat ehdollisia BERM-propositioita tai muualta tuotua biologiaa, eivät FieldStatesta johdettuja seurauksia.",
+    falsificationCondition:
+      "Ehdotettu L2-operaattori on hylättävä tai korjattava, jos esirekisteröity kohdistettu altistus–päätepistedata ei vastaa sen suunta-, spektri-, aika- tai annosennusteita.",
   },
   mechanisms: {
     label: "Biologiset välitilat",
     sublabel: "CRY · melatoniini · Ca²⁺/ROS · Vmem/mTOR · HPA · mikrobiomi/OT",
     title: "Erilliset välittäjähaarat",
     mechanism:
-      "FieldState voi kohdistua erillisiin, testattaviin välitiloihin: RPM/CRY–redox, melatoniini/redox, Ca²⁺/mitokondrio–ROS, Vmem/mTOR–kehitysmuisti, kello-/HPA–HPG sekä legacy-mikrobiomi/oksitosiini. Ne eivät ole yksi additiivinen vaikutus; RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
+      "BERM ehdottaa erillisiä, testattavia välitiloja: RPM/CRY–redox, melatoniini/redox, Ca²⁺/mitokondrio–ROS, Vmem/mTOR–kehitysmuisti, kello-/HPA–HPG sekä legacy-mikrobiomi/oksitosiini. Ennen L2-sillan ratkaisemista FieldState-havainnon ei katsota synnyttäneen näitä tiloja. Ne eivät ole yksi additiivinen vaikutus; RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
   },
   btb: {
     label: "Veri–kiveseste (BTB)",
@@ -348,7 +372,8 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
 };
 
 const FI_EDGE_LABELS: Record<string, string> = {
-  "fieldstate-mechanisms": "mitattu syöte",
+  "fieldstate-l2-bridge": "mittaussyöte",
+  "l2-bridge-mechanisms": "ehdotettu kytkentä (avoin)",
   "mechanisms-btb": "redox / tight junction",
   "mechanisms-other-barriers": "elinkohtainen hypoteesi",
   "mechanisms-male": "redox / Ca²⁺ / HPA",

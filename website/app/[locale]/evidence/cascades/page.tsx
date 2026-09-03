@@ -34,7 +34,7 @@ const COPY = {
     ihFinding4: "Li⁺ permeates VGSC, replaces Na⁺: ionic mechanism, not chemical",
     ihFinding5: "Ketamine: first RCT. NMDA is an ion channel, effect within hours",
     ihFinding6: "ECT triggers cortical spreading depolarization (CSD): total ionic reset",
-    ihEpistemic: "Epistemic level: lithium ionic mechanism [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] data). Psychedelic Ca²⁺/CACNA1C convergence [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT CSD mechanism [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Hierarchy prediction [M|C] (Lindgren).",
+    ihEpistemic: "Epistemic level: lithium ionic mechanism [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] data). Psychedelic Ca²⁺/CACNA1C convergence [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT CSD mechanism [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Hierarchy prediction [M|C] (BERM; L2 operator open).",
     // Section 2: Skin Battery
     sbHeading: "The Skin Battery — dermal bioelectric sensor system",
     sbP1: "Skin is not a passive barrier but an active bioelectric sensor network. The epidermis maintains a continuous transepithelial potential (TEP, 10–60 mV) via Na⁺/K⁺-ATPase — a literal battery that generates an electric field across the skin. When skin is wounded, TEP collapses and generates a lateral electric field (100–200 mV/mm) that guides keratinocyte and fibroblast electrotaxis. This electrical signal is the first healing signal — BEFORE biochemical signals.",
@@ -125,7 +125,7 @@ const COPY = {
     ihFinding4: "Li⁺ läpäisee VGSC:n, korvaa Na⁺:n: ionimekanismi, ei kemiallinen",
     ihFinding5: "Ketamiini: ensimmäinen RCT. NMDA on ionikanava, vaikutus tunneissa",
     ihFinding6: "ECT laukaisee leviävän depolarisaatioaallon (CSD): totaalinen ioninen nollaus",
-    ihEpistemic: "Episteeminen taso: litiumin ionimekanismi [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] data). Psykedeelien Ca²⁺/CACNA1C-yhdentyminen [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT:n CSD-mekanismi [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Hierarkiaennuste [M|C] (Lindgren).",
+    ihEpistemic: "Episteeminen taso: litiumin ionimekanismi [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] data). Psykedeelien Ca²⁺/CACNA1C-yhdentyminen [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT:n CSD-mekanismi [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Hierarkiaennuste [M|C] (BERM; L2-operaattori avoin).",
     // Section 2: Skin Battery
     sbHeading: "Ihoakku — ihon biosähköinen sensorijärjestelmä",
     sbP1: "Iho ei ole passiivinen suoja vaan aktiivinen biosähköinen sensoriverkko. Epidermis ylläpitää jatkuvaa transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla — kirjaimellinen paristo, joka tuottaa sähkökentän ihon läpi. Kun iho vaurioituu, TEP romahtaa ja tuottaa lateraalisen sähkökentän (100–200 mV/mm), joka ohjaa keratinosyyttien ja fibroblastien elektrotaksista. Tämä sähköinen signaali on ensimmäinen parantava signaali — ENNEN biokemiallisia signaaleja.",
@@ -216,7 +216,7 @@ const COPY = {
     ihFinding4: "Li⁺はVGSCを透過しNa⁺を置換：イオンメカニズムであり化学的ではない",
     ihFinding5: "ケタミン：初のRCT。NMDAはイオンチャネルであり、数時間で効果",
     ihFinding6: "ECTは皮質拡延性脱分極（CSD）を誘発：完全イオンリセット",
-    ihEpistemic: "認識論的レベル：リチウムのイオンメカニズム[E]（[[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]データ）。サイケデリクスのCa²⁺/CACNA1C収束[E]（[[ref:sousouri2025|Sousouri 2025]]）。ECTのCSDメカニズム[E]（[[ref:rosenthal2025_ect_csd|Rosenthal 2025]]）。階層予測[M|C]（Lindgren）。",
+    ihEpistemic: "認識論的レベル：リチウムのイオンメカニズム[E]（[[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]データ）。サイケデリクスのCa²⁺/CACNA1C収束[E]（[[ref:sousouri2025|Sousouri 2025]]）。ECTのCSDメカニズム[E]（[[ref:rosenthal2025_ect_csd|Rosenthal 2025]]）。階層予測[M|C]（BERM；L2演算子は未確定）。",
     // Section 2: Skin Battery
     sbHeading: "皮膚電池 — 真皮生体電気センサーシステム",
     sbP1: "皮膚は受動的なバリアではなく、能動的な生体電気センサーネットワークである。表皮はNa⁺/K⁺-ATPaseを介して連続的な経上皮電位（TEP、10–60 mV）を維持する — 皮膚を通じて電場を生成する文字通りのバッテリーである。皮膚が損傷すると、TEPが崩壊し、ケラチノサイトと線維芽細胞の電気走性を導く横方向電場（100–200 mV/mm）を生成する。この電気信号は最初の治癒信号であり — 生化学的信号の前に生じる。",
@@ -307,7 +307,7 @@ const COPY = {
     ihFinding4: "Li⁺ perméabilise le VGSC, remplace Na⁺ : mécanisme ionique, non chimique",
     ihFinding5: "Kétamine : premier ECR. Le NMDA est un canal ionique, effet en quelques heures",
     ihFinding6: "L'ECT déclenche une dépolarisation corticale envahissante (CSD) : réinitialisation ionique totale",
-    ihEpistemic: "Niveau épistémique : mécanisme ionique du lithium [E] (données [[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]). Convergence Ca²⁺/CACNA1C des psychédéliques [E] ([[ref:sousouri2025|Sousouri 2025]]). Mécanisme CSD de l'ECT [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Prédiction hiérarchique [M|C] (Lindgren).",
+    ihEpistemic: "Niveau épistémique : mécanisme ionique du lithium [E] (données [[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]). Convergence Ca²⁺/CACNA1C des psychédéliques [E] ([[ref:sousouri2025|Sousouri 2025]]). Mécanisme CSD de l'ECT [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Prédiction hiérarchique [M|C] (BERM ; opérateur L2 ouvert).",
     // Section 2: Skin Battery
     sbHeading: "La batterie cutanée — système sensoriel bioélectrique dermique",
     sbP1: "La peau n'est pas une barrière passive mais un réseau sensoriel bioélectrique actif. L'épiderme maintient un potentiel transépithélial continu (TEP, 10–60 mV) via Na⁺/K⁺-ATPase — littéralement une batterie qui génère un champ électrique à travers la peau. Lorsque la peau est blessée, le TEP s'effondre et génère un champ électrique latéral (100–200 mV/mm) qui guide l'électrotaxie des kératinocytes et des fibroblastes. Ce signal électrique est le premier signal de guérison — AVANT les signaux biochimiques.",
@@ -398,7 +398,7 @@ const COPY = {
     ihFinding4: "Li⁺는 VGSC를 투과하고 Na⁺를 대체: 이온 메커니즘, 화학적이지 않음",
     ihFinding5: "케타민: 최초의 RCT. NMDA는 이온 채널, 수시간 내 효과",
     ihFinding6: "ECT는 피질 확산성 탈분극(CSD)을 유발: 완전 이온 리셋",
-    ihEpistemic: "인식론적 수준: 리튬 이온 메커니즘 [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] 데이터). 환각제 Ca²⁺/CACNA1C 수렴 [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT CSD 메커니즘 [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). 계층 예측 [M|C] (Lindgren).",
+    ihEpistemic: "인식론적 수준: 리튬 이온 메커니즘 [E] ([[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]] 데이터). 환각제 Ca²⁺/CACNA1C 수렴 [E] ([[ref:sousouri2025|Sousouri 2025]]). ECT CSD 메커니즘 [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). 계층 예측 [M|C] (BERM; L2 연산자 미확정).",
     // Section 2: Skin Battery
     sbHeading: "피부 전지 — 진피 생체전기 센서 시스템",
     sbP1: "피부는 수동적 장벽이 아니라 능동적 생체전기 센서 네트워크이다. 표피는 Na⁺/K⁺-ATPase를 통해 지속적인 경상피 전위(TEP, 10–60 mV)를 유지한다 — 피부를 통해 전기장을 생성하는 문자 그대로의 배터리이다. 피부가 상처를 입으면 TEP가 붕괴되고 각질세포와 섬유아세포의 전기주성을 안내하는 횡방향 전기장(100–200 mV/mm)을 생성한다. 이 전기 신호는 첫 번째 치유 신호이다 — 생화학적 신호보다 앞선다.",

@@ -1,9 +1,11 @@
-"""Organ-, sex-, and couple-specific states for the FieldState ASFR route.
+"""Organ-, sex-, and couple-specific states for BERM outcome calculations.
 
-This is the biological middle layer of ``berm-v19``:
+These states belong to BERM's biological layer.  FieldState is only one
+possible upstream measurement specification and does not own this layer:
 
-    FieldState features -> organ R/P memory -> reproductive capacity
-    -> couple fecundability/live-birth support -> age-specific fertility.
+    Lindgren premise -> geometric consequence -> open BERM L2 bridge
+    -> organ R/P memory -> reproductive capacity -> couple fecundability
+    -> age-specific fertility.
 
 The module deliberately contains *no* conversion from a national technology
 proxy, an electric field, or a magnetic field into a reproductive decrement.

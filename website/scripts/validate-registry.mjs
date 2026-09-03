@@ -38,8 +38,9 @@ function loadJSON(filename) {
 
 const graph = loadJSON("causal-graph.json");
 const claims = loadJSON("claims.json");
+const architecture = loadJSON("model-architecture.json");
 
-if (!graph || !claims) {
+if (!graph || !claims || !architecture) {
   console.error("\nFATAL: Cannot load required data files.\n");
   process.exit(1);
 }
@@ -69,6 +70,9 @@ for (const edge of graph.edges) {
   }
   if (!nodeIds.has(edge.to)) {
     error(`Edge ${edge.id}: "to" node "${edge.to}" does not exist`);
+  }
+  if (!["inference_input", "proposed_bridge", "causal_model"].includes(edge.kind)) {
+    error(`Edge ${edge.id}: invalid kind "${edge.kind}"`);
   }
 }
 
@@ -364,6 +368,49 @@ if (routeArray.length > 0) {
   console.log(`   ${groups.size} independence group(s): ${[...groups.keys()].join(", ")}`);
 } else {
   console.log("18. No routes defined (skipping).");
+}
+
+// ── 19. BERM / FieldState architecture boundary ───────
+console.log("19. Checking BERM/FieldState architecture boundary...");
+const fieldStateModule = architecture.measurementModules?.fieldState;
+if (architecture.model?.id !== "berm") {
+  error("Architecture manifest must identify BERM as the model");
+}
+if (fieldStateModule?.role !== "measurement_observation_estimation") {
+  error("FieldState must be a measurement/observation/estimation module");
+}
+if (fieldStateModule?.isModelAlias !== false || fieldStateModule?.isCausalRoot !== false) {
+  error("FieldState must not be a model alias or causal root");
+}
+if (architecture.theory?.l2BridgeStatus !== "open") {
+  error("The geometry-to-observable L2 bridge must remain explicitly open");
+}
+if (architecture.routes?.prediction?.fieldStateCalibrated !== false) {
+  error("The published v17 prediction route must not be marked FieldState-calibrated");
+}
+if (architecture.routes?.conditionalAsfr?.acceptsFieldStateObservations !== false) {
+  error("The conditional ASFR calculator must not claim to accept FieldState observations");
+}
+
+const measurementInputs = new Set([
+  "TECHNOLOGY_TIMING_PROXY",
+  "FIELDSTATE_VECTOR",
+  "FIELDSTATE_ENVELOPE",
+  "STATIC_TRIBO_INTERFACE",
+  "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+]);
+if (!nodeIds.has("BERM_L2_BRIDGE")) {
+  error("Graph is missing the explicit BERM_L2_BRIDGE node");
+}
+for (const edge of graph.edges) {
+  if (measurementInputs.has(edge.from)) {
+    if (edge.to !== "BERM_L2_BRIDGE" || edge.kind !== "inference_input") {
+      error(`${edge.from} may enter BERM only through an inference_input edge to BERM_L2_BRIDGE`);
+    }
+  }
+  if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "proposed_bridge") {
+    error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled proposed_bridge`);
+  }
 }
 
 // ── Summary ───────────────────────────────────────────

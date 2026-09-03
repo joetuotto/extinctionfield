@@ -1,14 +1,24 @@
-"""BERM: BioElectromagnetic Reproductive Model — Python package v19 (0.19.x).
+"""BERM: Bio-Electromagnetic Reproductive Model Python package.
 
-Package version v19/0.19.x is the Python library release; the public model
-specification on the website is v17. ASFR exports use v18.0-asfr. These
-version numbers track independent release cadences, not different models.
+The 0.19.x number is an implementation-package release, not a BERM model
+version.  The public prediction specification remains v17.  FieldState v2 is
+an optional measurement/observation specification and is not a model alias,
+causal root, or forecast-producing route.
 
-v19 adds the three-channel model (ELF+IF+RF), therapeutic device paradox
-evidence, and COVID paradox resolution. Three-channel model is DIAGNOSTIC
-until calibrated; two-channel model remains active for TFR predictions.
+The three-channel implementation remains diagnostic until calibrated.  The
+v16/v17 scalar route is retained as an archived comparison for its locked
+predictions.
 """
-__version__ = "0.19.0"
+from berm.architecture import (
+    CONDITIONAL_ASFR_ROUTE_ID,
+    FIELDSTATE_SPEC_VERSION,
+    PACKAGE_VERSION,
+    PREDICTION_ROUTE_ID,
+    PUBLIC_MODEL_VERSION,
+    architecture_manifest,
+)
+
+__version__ = PACKAGE_VERSION
 
 from berm.model import predict_country_year
 from berm.tfr import predict_tfr
@@ -21,9 +31,14 @@ from berm.v16 import (
     v17_full_report,
 )
 from berm.model_fieldstate_asfr import (
-    MODEL_VERSION as FIELDSTATE_ASFR_MODEL_VERSION,
+    MODEL_VERSION as CONDITIONAL_ASFR_MODEL_VERSION,
+    project_wpp_conditional_asfr,
     project_wpp_fieldstate_asfr,
 )
+
+# Backward-compatible export.  The value is the conditional ASFR route ID,
+# never a BERM or FieldState specification version.
+FIELDSTATE_ASFR_MODEL_VERSION = CONDITIONAL_ASFR_MODEL_VERSION
 from berm.metadata import (
     MODEL_METADATA,
     REASONING_PROTOCOL_VERSION,
@@ -96,11 +111,18 @@ __all__ = [
     "calibrate_v16",
     "loocv_v16",
     "v17_full_report",
+    "CONDITIONAL_ASFR_MODEL_VERSION",
+    "CONDITIONAL_ASFR_ROUTE_ID",
+    "FIELDSTATE_SPEC_VERSION",
     "FIELDSTATE_ASFR_MODEL_VERSION",
+    "PREDICTION_ROUTE_ID",
+    "PUBLIC_MODEL_VERSION",
+    "architecture_manifest",
     "MODEL_METADATA",
     "REASONING_PROTOCOL_VERSION",
     "model_metadata",
     "project_wpp_fieldstate_asfr",
+    "project_wpp_conditional_asfr",
     "load_fieldstate_evidence",
     "load_legacy_evidence_migration",
     "legacy_evidence_summary",

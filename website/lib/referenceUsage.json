@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-02",
-    "referencesWithUsages": 674,
-    "usageLocations": 1722
+    "referencesWithUsages": 670,
+    "usageLocations": 1647
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -111,12 +111,12 @@
         "source": "lib/causalMapData.ts"
       },
       {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
       },
       {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
       },
       {
         "path": "/modulome/eye",
@@ -169,10 +169,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/model/math",
@@ -299,14 +295,6 @@
       {
         "path": "/evidence/unbroken-chain",
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/objections",
@@ -907,18 +895,6 @@
         "source": "lib/causalMapData.ts"
       },
       {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
         "path": "/sentinel",
         "source": "app/[locale]/sentinel/page.tsx"
       }
@@ -1005,14 +981,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/sentinel",
@@ -1191,10 +1159,6 @@
       {
         "path": "/model",
         "source": "lib/evolutionData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/predictions",
@@ -1381,10 +1345,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/predictions",
@@ -1747,7 +1707,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -1817,12 +1777,8 @@
         "source": "lib/causalMapData.ts"
       },
       {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
       }
     ],
     "cao2015": [
@@ -1839,7 +1795,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -1871,10 +1827,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/modulome/eye",
@@ -1929,7 +1881,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -1955,12 +1907,12 @@
         "source": "lib/causalMapData.ts"
       },
       {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
       },
       {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -1995,7 +1947,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2013,7 +1965,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2031,7 +1983,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2049,7 +2001,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2067,7 +2019,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2085,7 +2037,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2103,7 +2055,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2163,7 +2115,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       }
     ],
@@ -2199,7 +2151,7 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/model/fieldstate",
+        "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
       },
       {
@@ -2371,14 +2323,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "salford2003": [
@@ -2405,14 +2349,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "yakymenko2016": [
@@ -2479,14 +2415,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "natcomms2024rpm": [
@@ -2501,14 +2429,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "pnasnexus2026": [
@@ -2631,10 +2551,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/model/math",
@@ -2939,14 +2855,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "brown2016": [
@@ -3509,14 +3417,6 @@
         "source": "lib/legacyEvidence.json"
       },
       {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      },
-      {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       },
@@ -3551,14 +3451,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "hydro_quebec_1976": [
@@ -3573,14 +3465,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "sanchez_bayo2019": [
@@ -3757,14 +3641,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "panagopoulos2004": [
@@ -3895,10 +3771,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/model/math",
@@ -4113,14 +3985,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "lai_singh2004": [
@@ -4537,12 +4401,12 @@
         "source": "lib/causalMapData.ts"
       },
       {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
+        "path": "/measurement/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
-        "source": "lib/vgccGeneFamily.ts"
+        "path": "/model",
+        "source": "components/CaMKIIConvergenceDiagram.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -4585,11 +4449,11 @@
         "source": "lib/legacyEvidence.json"
       },
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
@@ -4619,11 +4483,11 @@
         "source": "lib/legacyEvidence.json"
       },
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
@@ -4693,11 +4557,11 @@
         "source": "lib/legacyEvidence.json"
       },
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
@@ -4815,14 +4679,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "leszczynski2002_hsp27_bbb": [
@@ -5159,11 +5015,11 @@
         "source": "app/[locale]/evidence/cascades/page.tsx"
       },
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
@@ -5271,10 +5127,6 @@
         "source": "app/[locale]/model/page.tsx"
       },
       {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      },
-      {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       }
@@ -5317,10 +5169,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "bartolke2025": [
@@ -5533,10 +5381,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "koivisto2000": [
@@ -5547,10 +5391,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "eliyahu2006": [
@@ -5561,10 +5401,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "luria2009": [
@@ -5575,10 +5411,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "meyer2026": [
@@ -5665,14 +5497,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "xu2014_cry_phosphorylation": [
@@ -5729,14 +5553,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "bogdziewicz2021_climate_masting": [
@@ -5813,14 +5629,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "li2002_miscarriage_mf": [
@@ -6225,14 +6033,6 @@
       {
         "path": "/evidence/iss-hypomagnetic",
         "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "frontiers2021_hmf_circadian": [
@@ -6257,14 +6057,6 @@
       {
         "path": "/evidence/iss-hypomagnetic",
         "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "bat_5g_prdm16": [
@@ -6691,14 +6483,6 @@
       {
         "path": "/evidence",
         "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "rodriguez2003": [
@@ -6953,14 +6737,6 @@
       {
         "path": "/evidence/space-weather-biology",
         "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "wever1970_shielded_vs_unshielded": [
@@ -6973,28 +6749,12 @@
       {
         "path": "/evidence/space-weather-biology",
         "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "kleimenova2007_pc1_mi": [
       {
         "path": "/evidence/space-weather-biology",
         "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "otsuka2001_hrv_subarctic": [
@@ -7007,14 +6767,6 @@
       {
         "path": "/evidence/space-weather-biology",
         "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "mccraty2018_hrv_global": [
@@ -7137,10 +6889,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       },
       {
         "path": "/model/math",
@@ -7597,14 +7345,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
       }
     ],
     "lllt_fda_2007_alopecia": [
@@ -7737,60 +7477,6 @@
       {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "rishabh2026": [
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      }
-    ],
-    "burch2002": [
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      }
-    ],
-    "sci-rep-2019-sperm-ros": [
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      }
-    ],
-    "lishko2011": [
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      }
-    ],
-    "granger2020": [
-      {
-        "path": "/model",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/model/fieldstate",
-        "source": "lib/causalChainData.ts"
-      },
-      {
-        "path": "/sentinel",
-        "source": "app/[locale]/sentinel/page.tsx"
       }
     ],
     "sakurai2008": [
@@ -7991,21 +7677,21 @@
     ],
     "timothy-syndrome-cacna1c-autism": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
     "aging-cell-2024-cav13-hearing": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
@@ -8015,41 +7701,41 @@
     ],
     "nejm-fhm-cacna1a": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
     "pnas-2005-cav31-sleep": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
     "fda-hde-h220001": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
     "cav32-chronic-pain-2021": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
@@ -8059,21 +7745,21 @@
     ],
     "pnas-2011-cav33-spindles": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
     "cacna1i-migraine-2022": [
       {
-        "path": "/model",
+        "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
-        "path": "/model/fieldstate/math",
+        "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
@@ -8194,6 +7880,12 @@
       }
     ],
     "calves_dark": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "granger2020": [
       {
         "path": "/sentinel",
         "source": "app/[locale]/sentinel/page.tsx"

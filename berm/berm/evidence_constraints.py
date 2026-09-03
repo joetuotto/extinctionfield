@@ -1,4 +1,4 @@
-"""Evidence-first priors and constraints for the FieldState route.
+"""Evidence-first priors and constraints for BERM's conditional routes.
 
 The FieldState evidence registry answers whether a study has a bounded,
 source-qualified placement in the causal graph.  This module makes the
@@ -267,7 +267,7 @@ class FieldStateMatchContext:
 # or component-specific response.  These are broad directional priors, never
 # a claim of one uniform response across all species, organs or field classes.
 _NODE_DIRECTION_DEFAULTS: Mapping[str, str] = {
-    "FIELDSTATE_SELECTED_PROXY": "TIMING_PROXY_CAN_SUPPORT_COHORT_PATTERN_ONLY",
+    "TECHNOLOGY_TIMING_PROXY": "TIMING_PROXY_CAN_SUPPORT_COHORT_PATTERN_ONLY",
     "FIELDSTATE_VECTOR": "VECTOR_GEOMETRY_OR_BACKGROUND_CAN_MODULATE_RESPONSE",
     "FIELDSTATE_ENVELOPE": "SPECTRAL_ENVELOPE_AND_CELL_STATE_CAN_MODULATE_RESPONSE",
     "STATIC_TRIBO_INTERFACE": "CHARGE_GEOMETRY_AND_RELAXATION_CAN_MODULATE_INTERFACE_STATE",

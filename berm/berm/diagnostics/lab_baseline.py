@@ -1,11 +1,12 @@
 """Laboratory baseline bias diagnostic.
 
 This module is DIAGNOSTIC ONLY — it does not affect TFR predictions.
-It quantifies how ambient EMF in laboratories contaminates control
-groups, biasing observed effect sizes toward null and predicting
-the biological replication crisis as a structural consequence of BERM.
+It evaluates a BERM scenario in which rising ambient laboratory backgrounds
+could compress exposed-versus-control contrasts.  It does not establish that
+laboratory controls are biologically exposed or explain the replication crisis.
 
-The core insight: if χ(Ā) governs biological sensitivity to EMF,
+The explicit conditional is: if BERM's proposed χ(Ā) closure describes a
+calibrated biological response,
 and laboratory EMF backgrounds have risen from ~0.1 V/m (1950s)
 to ~15 V/m (2020s), then control groups in biological experiments
 are not unexposed — they are chronically exposed at χ ≈ 1.0.
@@ -18,7 +19,7 @@ from typing import NamedTuple
 
 
 def chi(a: float) -> float:
-    """Lindgren selection rule: Ā / √(1 + Ā²)."""
+    """BERM's proposed chi closure; not a Lindgren-derived observable."""
     return a / math.sqrt(1 + a ** 2)
 
 

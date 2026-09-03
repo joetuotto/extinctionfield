@@ -1,7 +1,13 @@
-"""Age-specific ASFR/TFR projection for the FieldState biological route.
+"""Conditional age-specific ASFR/TFR scenario calculation.
 
-This is a new, parallel ``berm-v19`` route.  It does not modify the
-active v17 community-sigmoid model or the WPP/v16 data-driven route.
+This calculator is a BERM outcome component, not a FieldState model and not a
+new BERM version.  It does not accept a FieldState observation or infer an
+organ response.  Callers supply reference and target biological couple states
+that were estimated elsewhere.  The implementation therefore cannot publish
+a FieldState-calibrated country forecast.
+
+It does not modify the archived v17 community-sigmoid comparison model or the
+WPP/v16 data-driven route.
 
 The model preserves the demographic identity rather than fitting a direct
 country-level EMF-to-TFR curve:
@@ -15,7 +21,7 @@ country-level EMF-to-TFR curve:
 
     TFR = 5 * sum(ASFR) / 1000
 
-The FieldState chain provides only the biological couple-capacity ratio.  The
+The supplied biological states provide only the couple-capacity ratio.  The
 other terms remain explicit so delayed childbearing, family intentions,
 partnering, contraception, policy and ART are not silently recoded as biology.
 """
@@ -31,10 +37,16 @@ from berm.biology.reproductive_state import (
     STRUCTURAL_ONLY,
     CoupleReproductiveState,
 )
+from berm.architecture import CONDITIONAL_ASFR_ROUTE_ID
 from berm.data.wpp import AGE_GROUPS, asfr_to_tfr
 
 
-FIELDSTATE_ASFR_VERSION = "berm-v19"
+CONDITIONAL_ASFR_VERSION = CONDITIONAL_ASFR_ROUTE_ID
+
+# Compatibility name for callers created while the side branch was named
+# "FieldState-ASFR".  It is a route identifier, not a FieldState or BERM
+# version.  New code should use CONDITIONAL_ASFR_VERSION.
+FIELDSTATE_ASFR_VERSION = CONDITIONAL_ASFR_VERSION
 
 
 def _finite(name: str, value: float) -> float:
@@ -64,8 +76,8 @@ def _nonempty(name: str, value: str) -> str:
 
 
 @dataclass(frozen=True)
-class AgeSpecificFieldStateInput:
-    """One age group in a reference-to-target FieldState ASFR bridge.
+class AgeSpecificConditionalInput:
+    """One age group in a reference-to-target conditional ASFR calculation.
 
     The reference ASFR must come from a named observed product (normally UN
     WPP).  The target/reference states are paired biological capacity states,
@@ -169,14 +181,14 @@ class AgeSpecificFieldStateInput:
 
 
 @dataclass(frozen=True)
-class FieldStateASFRProjection:
-    """A serialisable ASFR/TFR result with term-by-term provenance."""
+class ConditionalASFRProjection:
+    """A serialisable conditional ASFR/TFR result with term provenance."""
 
     model_version: str
     geography_id: str
     year: int
     reference_year: int
-    groups: tuple[AgeSpecificFieldStateInput, ...]
+    groups: tuple[AgeSpecificConditionalInput, ...]
     input_provenance: Mapping[str, str] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -192,8 +204,8 @@ class FieldStateASFRProjection:
             raise ValueError(
                 f"groups must include exactly {len(AGE_GROUPS)} standard ASFR groups"
             )
-        if not all(isinstance(group, AgeSpecificFieldStateInput) for group in groups):
-            raise TypeError("groups must contain AgeSpecificFieldStateInput values")
+        if not all(isinstance(group, AgeSpecificConditionalInput) for group in groups):
+            raise TypeError("groups must contain AgeSpecificConditionalInput values")
         actual = tuple(group.age_group for group in groups)
         if actual != AGE_GROUPS:
             raise ValueError(
@@ -266,24 +278,25 @@ class FieldStateASFRProjection:
             ],
             "input_provenance": dict(self.input_provenance),
             "interpretation": (
-                "A FieldState biological-capacity bridge. It does not convert a national "
-                "technology proxy into organ dose, and it keeps demand/opportunity, tempo "
-                "and ART/live-birth delivery separate from biology."
+                "A conditional BERM ASFR calculation using externally supplied biological "
+                "states. It does not accept FieldState observations, infer organ dose, or "
+                "convert a national technology proxy into biology. Demand/opportunity, "
+                "tempo and ART/live-birth delivery remain separate."
             ),
         }
 
 
-def project_fieldstate_asfr(
+def project_conditional_asfr(
     *,
     geography_id: str,
     year: int,
     reference_year: int,
-    groups: Iterable[AgeSpecificFieldStateInput],
+    groups: Iterable[AgeSpecificConditionalInput],
     input_provenance: Mapping[str, str] | None = None,
-) -> FieldStateASFRProjection:
+) -> ConditionalASFRProjection:
     """Project standard 5-year ASFR groups, then derive TFR by identity."""
-    return FieldStateASFRProjection(
-        model_version=FIELDSTATE_ASFR_VERSION,
+    return ConditionalASFRProjection(
+        model_version=CONDITIONAL_ASFR_VERSION,
         geography_id=geography_id,
         year=year,
         reference_year=reference_year,
@@ -292,8 +305,24 @@ def project_fieldstate_asfr(
     )
 
 
+# Compatibility aliases retained for callers created while this outcome
+# component was incorrectly presented as a FieldState model.
+AgeSpecificFieldStateInput = AgeSpecificConditionalInput
+FieldStateASFRProjection = ConditionalASFRProjection
+
+
+def project_fieldstate_asfr(**kwargs) -> ConditionalASFRProjection:
+    """Deprecated alias for :func:`project_conditional_asfr`."""
+
+    return project_conditional_asfr(**kwargs)
+
+
 __all__ = [
+    "CONDITIONAL_ASFR_VERSION",
     "FIELDSTATE_ASFR_VERSION",
+    "AgeSpecificConditionalInput",
+    "ConditionalASFRProjection",
+    "project_conditional_asfr",
     "AgeSpecificFieldStateInput",
     "FieldStateASFRProjection",
     "project_fieldstate_asfr",

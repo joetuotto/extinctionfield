@@ -1,5 +1,8 @@
 import type { EpistemicLevel } from "@/lib/types";
-import { EPISTEMIC_COLORS, EPISTEMIC_LABELS } from "@/lib/causalChainData";
+import {
+  CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS,
+  CHAIN_EPISTEMIC_LABELS as EPISTEMIC_LABELS,
+} from "@/lib/epistemicConstants";
 
 export function EpistemicBadge({
   level,

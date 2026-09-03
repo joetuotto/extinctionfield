@@ -4,7 +4,7 @@ Versio: 2026-08-19
 Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10) ·
 [`data-gap-register.md`](data-gap-register.md) (G-3, G-5, G-6, G-7) ·
 [`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila) ·
-[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (FieldState → sentinelli → ihmisbiologia → ASFR/TFR -lukitus ja holdout)
+[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (BERM:n ehdollisen mittaus → avoin L2 → sentinelli → ihmisbiologia → ASFR/TFR -ketjun lukitus ja holdout)
 
 **Tämä dokumentti erottaa kaksi tehtävää, joita ei saa sekoittaa.**
 
@@ -14,8 +14,9 @@ Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10
 2. `berm/csli/`-moduulin kuusi F1–F6-kriteeriä ovat kapeampia,
    ennalta lukittuja **suoran sentinelli→ihmisendpoint-ketjun** testejä.
    Niistä nolla on vielä laskettu. Tämä ei poista ensimmäisen tason
-   evidenssiä eikä estä FieldState-pohjaisten lajienvälisten ennusteiden
-   muodostamista.
+   evidenssiä, mutta lajienvälisiä vaikutusennusteita ei saa nimetä
+   FieldState-johdetuiksi ennen kuin endpoint-kohtainen L2-kuvaus on määritelty,
+   kalibroitu ja validoitu.
 
 Saatavilla olevat ei-ihmisrivit, eläinlääketieteelliset benchmarkit,
 seminologiset aineistot, rekonstruoidut historialliset vertailusarjat ja

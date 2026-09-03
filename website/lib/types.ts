@@ -18,6 +18,12 @@ export interface LockedPrediction {
   ciLow: number;
   ciHigh: number;
   lockedDate: string;
+  /** Stable computational route, distinct from the display/output version. */
+  routeId: string;
+  /** What the route actually observes; never inferred from the route name. */
+  inputKind: string;
+  /** True only after a route has been calibrated against FieldState records. */
+  fieldStateCalibrated: boolean;
   modelVersion: string;
   gitSha: string;
   actual?: number;

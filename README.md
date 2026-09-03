@@ -1,17 +1,20 @@
 # Extinction Field / BERM
 
-BERM is a research model for testing whether a measured, local electromagnetic
-FieldState can contribute—through explicit biological and demographic
-intermediates—to age-specific fertility and total fertility rate (TFR).
+BERM (Bio-Electromagnetic Reproductive Model) is the repository's explanatory,
+derivational and prediction model.  It connects explicit physical propositions,
+biological mechanisms and demographic intermediates to age-specific fertility
+and total fertility rate (TFR).
 
 The project keeps its historical v16/v17 calculations intact as archived
-comparison routes. The canonical interpretation layer is
-`fieldstate-asfr-v2`: Lindgren-style field physics → organ-specific biological
-state → paired fecundability → ASFR → TFR. It does not convert national mobile
-subscriptions into a physical dose or a TFR coefficient.
+comparison routes.  FieldState v2 is a separate, optional measurement,
+observation and estimation module.  It specifies how local electromagnetic
+conditions may be recorded at BERM's input boundary; it is neither an alias for
+BERM nor the causal root of the model.  The geometry-to-observable coupling
+operator (the L2 bridge) remains open, so FieldState observations cannot be
+silently converted into biological states or a TFR coefficient.
 
-See [the FieldState–ASFR v2 integration guide](berm/docs/fieldstate-asfr-v2.md)
-for the causal graph, evidence boundaries and calibration plan.
+See [the historical FieldState–ASFR v2 integration guide](berm/docs/fieldstate-asfr-v2.md)
+for the measurement interface, evidence boundaries and calibration plan.
 
 See [the BERM–Eco biosähkömagnetiikan ja evolutiivisen lajittumisen
 research review](berm/docs/berm-eco-bioelectromagnetic-selection-review.md)
@@ -49,9 +52,10 @@ npm run dev
 ## Archived v17 predictions
 
 The following are historical v17.1 scalar-proxy scenario outputs. They remain
-available for transparent comparison, but are not FieldState–ASFR-v2 forecasts:
-the v2 route requires a matched local FieldState, biological endpoint,
-partner/couple and ASFR panel before it can publish calibrated country forecasts.
+available for transparent comparison. They are outputs of the
+`berm-v17-scalar-proxy` route, not FieldState-calibrated forecasts.  FieldState
+v2 publishes no forecasts; resolving the open L2 bridge would require matched
+local measurements and biological endpoints before any downstream calibration.
 
 | Country | Year | Metric | Central | 95% CI | Locked |
 |---------|------|--------|---------|--------|--------|

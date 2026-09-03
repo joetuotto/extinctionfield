@@ -40,11 +40,11 @@ const COPY: Record<
 > = {
   en: {
     modelKicker: "Causal reading guide",
-    modelTitle: "One FieldState; different biological transfer functions",
+    modelTitle: "BERM candidate mappings from one measured FieldState",
     modelLead:
-      "Read the model from left to right. The physical configuration is shared; sensing, transport and physiological transfer are species- and stage-specific. Solid steps summarize measured premises. The amber sequence is the explicitly testable ecological and evolutionary extension.",
+      "Read this BERM candidate chain from left to right. FieldState supplies the measurement record; sensing, transport and physiological transfer are species- and stage-specific candidate mappings across the open L2 bridge. Solid steps summarize measured premises. The amber sequence is the explicitly testable ecological and evolutionary extension.",
     observed: "Measured premise",
-    hypothesis: "Model-derived; test",
+    hypothesis: "BERM hypothesis; L2 operator open",
     steps: [
       {
         eyebrow: "01 · PHYSICAL INPUT",
@@ -108,11 +108,11 @@ const COPY: Record<
   },
   fi: {
     modelKicker: "Kausaalinen lukutapa",
-    modelTitle: "Yksi FieldState; erilaiset biologiset siirtofunktiot",
+    modelTitle: "BERM:n ehdokaskuvaukset yhdestä mitatusta FieldStatesta",
     modelLead:
-      "Lue malli vasemmalta oikealle. Fysikaalinen konfiguraatio on yhteinen, mutta aistiminen, kuljetus ja fysiologinen siirto ovat laji- ja elinvaihekohtaisia. Yhtenäiset vaiheet tiivistävät mitatut premissit. Meripihkanvärinen jatko on nimenomaisesti testattava ekologinen ja evolutiivinen laajennus.",
+      "Lue tämä BERM:n ehdokasketju vasemmalta oikealle. FieldState tuottaa mittaustietueen; aistiminen, kuljetus ja fysiologinen siirto ovat avoimen L2-sillan laji- ja elinvaihekohtaisia ehdokaskuvauksia. Yhtenäiset vaiheet tiivistävät mitatut premissit. Meripihkanvärinen jatko on nimenomaisesti testattava ekologinen ja evolutiivinen laajennus.",
     observed: "Mitattu premissi",
-    hypothesis: "Mallista johdettu; testattava",
+    hypothesis: "BERM-hypoteesi; L2-operaattori avoin",
     steps: [
       {
         eyebrow: "01 · FYSIKAALINEN SYÖTE",
@@ -176,11 +176,11 @@ const COPY: Record<
   },
   ja: {
     modelKicker: "因果的読み方ガイド",
-    modelTitle: "ひとつのFieldState、異なる生物学的伝達関数",
+    modelTitle: "測定FieldStateからのBERM候補写像",
     modelLead:
-      "モデルを左から右に読みます。物理的構成は共有されていますが、感知・輸送・生理学的伝達は種および発達段階ごとに異なります。実線のステップは測定された前提を要約しています。琥珀色のシーケンスは、明示的に検証可能な生態学的・進化的拡張です。",
+      "このBERM候補連鎖を左から右に読みます。FieldStateは測定記録を提供し、感知・輸送・生理学的伝達は、開いたL2橋を越える種・発達段階別の候補写像です。実線のステップは測定された前提を要約しています。琥珀色のシーケンスは、明示的に検証可能な生態学的・進化的拡張です。",
     observed: "測定された前提",
-    hypothesis: "モデルから導出; 検証可能",
+    hypothesis: "BERM仮説; L2演算子は未確定",
     steps: [
       {
         eyebrow: "01 · 物理的入力",
@@ -244,11 +244,11 @@ const COPY: Record<
   },
   fr: {
     modelKicker: "Guide de lecture causale",
-    modelTitle: "Un seul FieldState ; des fonctions de transfert biologique differentes",
+    modelTitle: "Mappings candidats BERM depuis un FieldState mesure",
     modelLead:
-      "Lire le modele de gauche a droite. La configuration physique est partagee ; la detection, le transport et le transfert physiologique sont specifiques a l'espece et au stade. Les etapes en trait plein resument les premisses mesurees. La sequence ambre est l'extension ecologique et evolutive explicitement testable.",
+      "Lire cette chaine candidate BERM de gauche a droite. FieldState fournit l'enregistrement de mesure ; la detection, le transport et le transfert physiologique sont des mappings candidats propres a l'espece et au stade a travers le pont L2 ouvert. Les etapes en trait plein resument les premisses mesurees. La sequence ambre est l'extension ecologique et evolutive explicitement testable.",
     observed: "Premisse mesuree",
-    hypothesis: "Derivee du modele ; testable",
+    hypothesis: "Hypothese BERM ; operateur L2 ouvert",
     steps: [
       {
         eyebrow: "01 · ENTREE PHYSIQUE",
@@ -312,11 +312,11 @@ const COPY: Record<
   },
   ko: {
     modelKicker: "인과적 읽기 가이드",
-    modelTitle: "하나의 FieldState, 서로 다른 생물학적 전달 함수",
+    modelTitle: "측정된 FieldState에서 시작하는 BERM 후보 매핑",
     modelLead:
-      "모델을 왼쪽에서 오른쪽으로 읽으십시오. 물리적 구성은 공유되지만, 감지, 수송 및 생리학적 전달은 종 및 발달 단계에 따라 다릅니다. 실선 단계는 측정된 전제를 요약합니다. 호박색 시퀀스는 명시적으로 검증 가능한 생태학적 및 진화적 확장입니다.",
+      "이 BERM 후보 연쇄를 왼쪽에서 오른쪽으로 읽으십시오. FieldState는 측정 기록을 제공하며, 감지·수송·생리학적 전달은 열린 L2 다리를 지나는 종·발달 단계별 후보 매핑입니다. 실선 단계는 측정된 전제를 요약합니다. 호박색 시퀀스는 명시적으로 검증 가능한 생태학적 및 진화적 확장입니다.",
     observed: "측정된 전제",
-    hypothesis: "모델에서 도출; 검증 가능",
+    hypothesis: "BERM 가설; L2 연산자 미확정",
     steps: [
       {
         eyebrow: "01 · 물리적 입력",

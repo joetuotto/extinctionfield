@@ -102,9 +102,9 @@ const COPY = {
     ],
 
     /* 05 Lindgren Analysis */
-    s5Title: "Lindgren Analysis",
+    s5Title: "BERM candidate susceptibility analysis — L2 open",
     s5p1:
-      "The eye satisfies all six Lindgren criteria for EMF sensitivity. The selection function χ_eye depends on three primary modulators:",
+      "BERM proposes six candidate criteria for ocular EMF sensitivity and a χ_eye closure with three moderators. These are testable biological propositions beyond the open L2 bridge, not criteria derived by Lindgren:",
     s5Criteria: [
       "Iris pigmentation — modulates photon flux to CRY (blue ≈ 100×, green ≈ 30×, brown ≈ 1×)",
       "FAD/B2 nutritional status — determines CRY protein stability and radical pair formation capacity",
@@ -265,9 +265,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren-analyysi",
+    s5Title: "BERM:n herkkyyden ehdokasanalyysi — L2 avoin",
     s5p1:
-      "Silmä täyttää kaikki kuusi Lindgrenin kriteeria EMF-herkkyydelle. Valintafunktio χ_eye riippuu kolmesta päämodulaattorista:",
+      "BERM ehdottaa kuutta silmän EMF-herkkyyden ehdokaskriteeriä ja kolmen moderaattorin χ_eye-sulkeumaa. Ne ovat avoimen L2-sillan jälkeisiä testattavia biologisia propositioita, eivät Lindgrenin johtamia kriteerejä:",
     s5Criteria: [
       "Iiriksen pigmentaatio — säätelee fotonivuota CRY:lle (sininen ≈ 100×, vihreä ≈ 30×, ruskea ≈ 1×)",
       "FAD/B2-ravitsemustila — määrää CRY-proteiinin stabiilisuuden ja radikaaliparin muodostuskyvyn",
@@ -426,9 +426,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren解析",
+    s5Title: "BERM感受性候補解析 — L2未解決",
     s5p1:
-      "眼はEMF感受性に関するLindgrenの6基準すべてを満たす。選択関数χ_eyeは3つの主要モジュレーターに依存する：",
+      "BERMは眼のEMF感受性について6つの候補基準と3つの修飾因子をもつχ_eye閉包を提案する。これは未解決L2橋より下流の検証命題であり、Lindgrenが導出した基準ではない：",
     s5Criteria: [
       "虹彩色素沈着 — CRYへの光子フラックスを変調（青≈100×、緑≈30×、茶≈1×）",
       "FAD/B2栄養状態 — CRYタンパク質の安定性とラジカルペア形成能力を決定",
@@ -587,9 +587,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Analyse Lindgren",
+    s5Title: "Analyse candidate de susceptibilité BERM — L2 ouvert",
     s5p1:
-      "L'oeil satisfait les six criteres de Lindgren pour la sensibilite aux CEM. La fonction de selection χ_eye depend de trois modulateurs primaires :",
+      "BERM propose six critères candidats de sensibilité oculaire aux CEM et une fermeture χ_eye à trois modérateurs. Ce sont des propositions testables en aval du pont L2 ouvert, non des critères dérivés par Lindgren :",
     s5Criteria: [
       "Pigmentation de l'iris — module le flux de photons vers CRY (bleu ≈ 100×, vert ≈ 30×, marron ≈ 1×)",
       "Statut nutritionnel FAD/B2 — determine la stabilite de la proteine CRY et la capacite de formation de paire de radicaux",
@@ -748,9 +748,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren 분석",
+    s5Title: "BERM 감수성 후보 분석 — L2 미해결",
     s5p1:
-      "눈은 EMF 감수성에 대한 Lindgren의 6가지 기준을 모두 충족한다. 선택 함수 χ_eye는 3가지 주요 조절인자에 의존한다:",
+      "BERM은 안구 EMF 감수성에 대해 6개 후보 기준과 3개 조절인자를 가진 χ_eye 폐쇄를 제안한다. 이는 열린 L2 연결 이후의 검증 명제이지 Lindgren이 도출한 기준이 아니다:",
     s5Criteria: [
       "홍채 색소침착 — CRY로의 광자 플럭스 조절(청색 ≈ 100×, 녹색 ≈ 30×, 갈색 ≈ 1×)",
       "FAD/B2 영양 상태 — CRY 단백질 안정성과 라디칼쌍 형성 능력 결정",

@@ -81,7 +81,7 @@ function routeForPage(file) {
     ["lib/causalMapData.ts", "/map"],
     ["lib/legacyEvidence.json", "/evidence"],
     ["lib/populationData.ts", "/evidence/populations"],
-    ["lib/vgccGeneFamily.ts", "/model/fieldstate/math"],
+    ["lib/vgccGeneFamily.ts", "/measurement/fieldstate/math"],
     ["lib/modulome/organDetailData.ts", "/modulome"],
   ]);
   return fixed.get(relative) ?? null;

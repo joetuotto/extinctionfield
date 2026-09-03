@@ -1,6 +1,10 @@
-"""Lindgren geometric electromagnetism: g_uv = eta_uv + A_u A_v
+"""Legacy exposure helpers motivated by the Lindgren geometric premise.
 
-Selection rule: chi(A_bar) = A_bar / sqrt(1 + A_bar^2)
+Lindgren 2025 supplies the ansatz ``g_uv = eta_uv + A_u A_v``.  BERM—not
+Lindgren—proposes the compatibility closure
+``chi(A_bar) = A_bar / sqrt(1 + A_bar^2)`` and the two-channel proxy below.
+Neither function closes the open L2 geometry-to-observable coupling.
+
 Two-channel model: total = ambient + chi(ambient) * personal
 
 Properties:
@@ -13,7 +17,7 @@ import numpy as np
 from numpy.typing import NDArray
 
 def chi(a_bar: float | NDArray) -> float | NDArray:
-    """Lindgren selection rule chi(A_bar) = A_bar / sqrt(1 + A_bar^2)."""
+    """Return BERM's legacy chi closure, not a Lindgren-derived observable."""
     a = np.asarray(a_bar)
     return a / np.sqrt(1 + a**2)
 

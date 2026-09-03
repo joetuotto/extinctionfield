@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "name": "berm",
+    "version": "0.19.0",
+    "role": "implementation_release"
+  },
+  "model": {
+    "id": "berm",
+    "name": "Bio-Electromagnetic Reproductive Model",
+    "publicVersion": "v17",
+    "role": "explanatory_derivational_prediction_model"
+  },
+  "theory": {
+    "formulation": "2025-weyl-gme",
+    "premise": "g_mu_nu = eta_mu_nu + A_mu A_nu",
+    "l2BridgeStatus": "open",
+    "l2BridgeMeaning": "The geometry-to-observable coupling operator has not been derived. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations, not Lindgren-derived results."
+  },
+  "routes": {
+    "prediction": {
+      "id": "berm-v17-scalar-proxy",
+      "modelVersion": "v17",
+      "role": "archived_comparison_prediction",
+      "inputKind": "national_technology_timing_proxy",
+      "fieldStateCalibrated": false
+    },
+    "diagnostic": {
+      "id": "berm-v19.1-three-channel-diagnostic",
+      "modelVersion": "v19.1",
+      "role": "cross_sectional_diagnostic",
+      "publishesLockedForecasts": false
+    },
+    "conditionalAsfr": {
+      "id": "berm-conditional-asfr-v1",
+      "role": "conditional_scenario_calculator",
+      "acceptsFieldStateObservations": false,
+      "requiresExternallySuppliedBiologicalStates": true,
+      "publishesLockedForecasts": false
+    }
+  },
+  "measurementModules": {
+    "fieldState": {
+      "id": "fieldstate",
+      "specVersion": "v2",
+      "role": "measurement_observation_estimation",
+      "isModelAlias": false,
+      "isCausalRoot": false,
+      "publishesLockedForecasts": false,
+      "canonicalRoute": "/measurement/fieldstate"
+    }
+  }
+}

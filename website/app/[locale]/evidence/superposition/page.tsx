@@ -9,12 +9,12 @@ import { pickCopy } from "@/lib/i18n";
 const COPY = {
   en: {
     title: "Superposition Violation",
-    subtitle: "172 studies demonstrate that combined EMF exposures produce effects not predicted by the sum of individual exposures — the defining signature of geometric non-linearity in the Lindgren model.",
+    subtitle: "The catalogue records 172 combined-exposure studies. BERM tests whether non-additive findings follow a shared background-dependent closure; they do not by themselves demonstrate Lindgren geometry or a biological coupling operator.",
     backLink: "← Back to Evidence",
     cautionText: "The superposition violation evidence comes primarily from ELF combination studies. Extension to RF combinations and to the geometric interpretation is BERM's synthesis (M-level), not established consensus.",
 
     s1Title: "The principle",
-    s1Lead: "In standard electromagnetism, fields obey superposition: the total field equals the vector sum of individual fields. In Lindgren's geometric model, where the EM field is part of the spacetime metric, biological response is fundamentally non-linear:",
+    s1Lead: "In standard electromagnetism, fields obey superposition. Lindgren's ansatz changes the geometric description, while BERM separately proposes a non-linear biological closure. The geometry-to-response L2 operator is open, so non-additive biological response is a hypothesis rather than a derived consequence:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "This means the biological effect of two simultaneous EMF sources cannot be predicted from their individual effects alone. The interaction term — the part that superposition misses — is often larger than either individual effect.",
 
@@ -39,7 +39,7 @@ const COPY = {
     s4Title: "Connection to χ(Ā)",
     s4Lead: "The superposition violation is mathematically related to the χ selection rule. When background field Ā is present, the perturbation δA acts on the existing geometry:",
     s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "The χ(Ā) factor means the response to δA depends on the background Ā. This is the χ coupling already documented on the model page — superposition violation is what χ coupling looks like in experimental data.",
+    s4Explain: "In BERM's proposed closure, χ(Ā) makes response depend on background Ā. Non-additivity is therefore a discriminating pattern to test, not proof that the closure or Lindgren geometry generated an experimental result.",
 
     s5Title: "Epistemological honesty",
     s5Points: [
@@ -55,12 +55,12 @@ const COPY = {
   },
   fi: {
     title: "Superpositiorikkomus",
-    subtitle: "172 tutkimusta osoittaa, että yhdistetyt EMF-altistukset tuottavat vaikutuksia, joita yksittäisten altistusten summa ei ennusta — geometrisen epälineaarisuuden tunnusmerkki Lindgrenin mallissa.",
+    subtitle: "Luettelo sisältää 172 yhdistelmäaltistustutkimusta. BERM testaa, noudattavatko ei-additiiviset löydökset yhteistä taustariippuvaista sulkeumaa; ne eivät itsessään osoita Lindgrenin geometriaa tai biologista kytkentäoperaattoria.",
     backLink: "← Takaisin näyttöön",
     cautionText: "Superpositiorikkomuksen näyttö tulee pääasiassa ELF-yhdistelmätutkimuksista. Laajennus RF-yhdistelmiin ja geometriseen tulkintaan on BERMin synteesi (M-taso), ei vakiintunut konsensus.",
 
     s1Title: "Periaate",
-    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota: kokonaiskenttä on yksittäisten kenttien vektorisumma. Lindgrenin geometrisessa mallissa, jossa EM-kenttä on osa aika-avaruuden metriikkaa, biologinen vaste on perustavanlaatuisesti epälineaarinen:",
+    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota. Lindgrenin ansatz muuttaa geometrista kuvausta, kun taas BERM ehdottaa erikseen epälineaarista biologista sulkeumaa. Geometriasta vasteeseen johtava L2-operaattori on avoin, joten ei-additiivinen biologinen vaste on hypoteesi eikä johdettu seuraus:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Tämä tarkoittaa, että kahden samanaikaisen EMF-lähteen biologista vaikutusta ei voida ennustaa pelkästään niiden yksittäisistä vaikutuksista. Vuorovaikutustermi — osa, jonka superpositio ohittaa — on usein suurempi kuin kumpikin yksittäinen vaikutus.",
 
@@ -85,7 +85,7 @@ const COPY = {
     s4Title: "Yhteys χ(Ā):hen",
     s4Lead: "Superpositiorikkomus on matemaattisesti yhteydessä χ-valintasääntöön. Kun taustakenttä Ā on läsnä, häiriö δA vaikuttaa olemassa olevaan geometriaan:",
     s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "χ(Ā)-tekijä tarkoittaa, että vaste δA:han riippuu taustasta Ā. Tämä on mallisivulla jo dokumentoitu χ-kytkentä — superpositiorikkomus on se, miltä χ-kytkentä näyttää kokeellisessa datassa.",
+    s4Explain: "BERM:n ehdotetussa sulkeumassa χ(Ā) tekee vasteesta taustariippuvaisen. Ei-additiivisuus on siksi erotteleva testikuvio, ei todiste siitä, että sulkeuma tai Lindgrenin geometria tuotti koetuloksen.",
 
     s5Title: "Epistemologinen rehellisyys",
     s5Points: [
@@ -101,12 +101,12 @@ const COPY = {
   },
   ja: {
     title: "重ね合わせの破れ",
-    subtitle: "172件の研究が、複合EMF曝露が個別曝露の合計では予測できない効果を生むことを実証 — リンドグレンモデルにおける幾何学的非線形性の決定的特徴。",
+    subtitle: "172件の複合曝露研究を収録する。BERMは非加算的所見が共通の背景依存閉包に従うかを検証するが、所見だけでLindgren幾何学や生物学的結合演算子が実証されるわけではない。",
     backLink: "← エビデンスに戻る",
     cautionText: "重ね合わせ破れの証拠は主にELF組み合わせ研究からのものです。RF組み合わせおよび幾何学的解釈への拡張はBERMの統合（Mレベル）であり、確立されたコンセンサスではありません。",
 
     s1Title: "原理",
-    s1Lead: "標準電磁気学では、場は重ね合わせに従います：全体の場は個別の場のベクトル和に等しい。リンドグレンの幾何学モデルでは、EM場が時空計量の一部であるため、生物学的応答は根本的に非線形です：",
+    s1Lead: "標準電磁気学では場は重ね合わせに従う。Lindgrenアンザッツは幾何学的記述を変える一方、BERMは別に非線形生物閉包を提案する。幾何学から応答へのL2演算子は未解決であり、非加算的生物応答は導出結果ではなく仮説である：",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "これは、2つの同時EMFソースの生物学的効果を個別の効果のみから予測できないことを意味します。相互作用項 — 重ね合わせが見逃す部分 — は、個別の効果よりも大きいことが多いです。",
 
@@ -131,7 +131,7 @@ const COPY = {
     s4Title: "χ(Ā)との接続",
     s4Lead: "重ね合わせ破れはχ選択則と数学的に関連しています。背景場Āが存在する場合、摂動δAは既存の幾何学に作用します：",
     s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "χ(Ā)因子はδAへの応答が背景Āに依存することを意味します。これはモデルページで既に文書化されたχカップリングです — 重ね合わせ破れはχカップリングが実験データにおいてどのように見えるかです。",
+    s4Explain: "BERMの提案閉包ではχ(Ā)が応答を背景依存にする。非加算性は識別パターンであり、閉包やLindgren幾何学が実験結果を生んだ証明ではない。",
 
     s5Title: "認識論的誠実さ",
     s5Points: [
@@ -147,12 +147,12 @@ const COPY = {
   },
   fr: {
     title: "Violation de la superposition",
-    subtitle: "172 études démontrent que les expositions EMF combinées produisent des effets non prédits par la somme des expositions individuelles — la signature définitive de la non-linéarité géométrique dans le modèle de Lindgren.",
+    subtitle: "Le catalogue recense 172 études d'expositions combinées. BERM teste si les résultats non additifs suivent une fermeture commune dépendante du fond ; ils ne démontrent pas à eux seuls la géométrie de Lindgren ni un opérateur biologique.",
     backLink: "← Retour aux Preuves",
     cautionText: "Les preuves de violation de superposition proviennent principalement d'études de combinaison ELF. L'extension aux combinaisons RF et à l'interprétation géométrique est la synthèse de BERM (niveau M), pas un consensus établi.",
 
     s1Title: "Le principe",
-    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition : le champ total est la somme vectorielle des champs individuels. Dans le modèle géométrique de Lindgren, où le champ EM fait partie de la métrique de l'espace-temps, la réponse biologique est fondamentalement non linéaire :",
+    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition. L'ansatz de Lindgren modifie la description géométrique, tandis que BERM propose séparément une fermeture biologique non linéaire. L'opérateur L2 géométrie-réponse reste ouvert : la non-additivité est une hypothèse, pas une conséquence dérivée :",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Cela signifie que l'effet biologique de deux sources EMF simultanées ne peut pas être prédit à partir de leurs effets individuels seuls. Le terme d'interaction — la partie que la superposition manque — est souvent plus grand que chaque effet individuel.",
 
@@ -177,7 +177,7 @@ const COPY = {
     s4Title: "Connexion avec χ(Ā)",
     s4Lead: "La violation de superposition est mathématiquement liée à la règle de sélection χ. Quand le champ de fond Ā est présent, la perturbation δA agit sur la géométrie existante :",
     s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "Le facteur χ(Ā) signifie que la réponse à δA dépend du fond Ā. C'est le couplage χ déjà documenté sur la page du modèle — la violation de superposition est ce à quoi le couplage χ ressemble dans les données expérimentales.",
+    s4Explain: "Dans la fermeture proposée par BERM, χ(Ā) rend la réponse dépendante du fond. La non-additivité est donc un motif discriminant à tester, pas la preuve que la fermeture ou la géométrie de Lindgren a produit le résultat.",
 
     s5Title: "Honnêteté épistémologique",
     s5Points: [
@@ -193,12 +193,12 @@ const COPY = {
   },
   ko: {
     title: "중첩 위반",
-    subtitle: "172건의 연구가 복합 EMF 노출이 개별 노출의 합으로 예측할 수 없는 효과를 생성함을 입증 — 린드그렌 모델에서 기하학적 비선형성의 결정적 특징.",
+    subtitle: "172건의 복합 노출 연구를 수록한다. BERM은 비가산 결과가 공통 배경 의존 폐쇄를 따르는지 검증하지만, 그 결과만으로 Lindgren 기하학이나 생물학적 결합 연산자가 입증되지는 않는다.",
     backLink: "← 증거로 돌아가기",
     cautionText: "중첩 위반 증거는 주로 ELF 조합 연구에서 비롯됩니다. RF 조합 및 기하학적 해석으로의 확장은 BERM의 종합(M 수준)이며, 확립된 합의가 아닙니다.",
 
     s1Title: "원리",
-    s1Lead: "표준 전자기학에서 장은 중첩을 따릅니다: 전체 장은 개별 장의 벡터 합과 같습니다. 린드그렌의 기하학적 모델에서 EM 장이 시공간 계량의 일부이므로, 생물학적 반응은 근본적으로 비선형입니다:",
+    s1Lead: "표준 전자기학에서 장은 중첩을 따른다. Lindgren 앤자츠는 기하학적 기술을 바꾸고 BERM은 별도로 비선형 생물학적 폐쇄를 제안한다. 기하학-반응 L2 연산자는 열려 있으므로 비가산 생물 반응은 도출 결과가 아니라 가설이다:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "이는 두 개의 동시 EMF 소스의 생물학적 효과를 개별 효과만으로 예측할 수 없음을 의미합니다. 상호 작용 항 — 중첩이 놓치는 부분 — 은 종종 어느 한 개별 효과보다 큽니다.",
 
@@ -223,7 +223,7 @@ const COPY = {
     s4Title: "χ(Ā)와의 연결",
     s4Lead: "중첩 위반은 χ 선택 규칙과 수학적으로 관련됩니다. 배경장 Ā가 존재할 때, 섭동 δA는 기존 기하학에 작용합니다:",
     s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "χ(Ā) 인자는 δA에 대한 반응이 배경 Ā에 의존함을 의미합니다. 이것은 모델 페이지에서 이미 문서화된 χ 결합입니다 — 중첩 위반은 χ 결합이 실험 데이터에서 어떻게 보이는지입니다.",
+    s4Explain: "BERM의 제안 폐쇄에서 χ(Ā)는 반응을 배경 의존적으로 만든다. 비가산성은 판별할 시험 패턴이지 폐쇄나 Lindgren 기하학이 결과를 만들었다는 증거가 아니다.",
 
     s5Title: "인식론적 정직",
     s5Points: [

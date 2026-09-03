@@ -161,7 +161,7 @@ const t: Record<string, Copy> = {
       {
         question: "Does Lindgren physics establish a human reproductive mechanism?",
         response: [
-          "Lindgren geometry provides the theoretical framework that generates BERM's testable predictions — background dependence, vector orientation, spectral structure and geometry sensitivity. These predictions distinguish BERM from models that treat EMF exposure as a scalar dose. 87.5% of the RPM Hamiltonian elements derive from the Lindgren metric ansatz, giving the CRY pathway a direct geometric foundation.",
+          "Lindgren's 2025 metric is BERM's theory premise. BERM then proposes background, orientation and spectral dependence as discriminating hypotheses. The reported 87.5% algebraic correspondence with RPM is a structural comparison, not a derived geometry-to-RPM operator, so it does not give the CRY pathway a direct geometric foundation.",
           "Each downstream biological link — from field geometry to chromophore response to organ-level endpoints — requires its own experimental validation. The relevant tests are discriminating physical and biological experiments: pre-specified angle, background or PSD dependence with calibrated fields and appropriate sham/thermal controls.",
         ],
         boundary: "The theoretical framework generates predictions; the predictions are tested empirically. Each link needs its own measured evidence.",
@@ -271,7 +271,7 @@ const t: Record<string, Copy> = {
           "In 1995, [[ref:lai1995_dna_breaks|Lai and Singh]] found DNA strand breaks from 2450 MHz radiation. Industry funded counter-studies and pressured their university. The mechanism was later identified: oxidative stress via VGCC-mediated calcium influx, confirmed by melatonin's protective effect.",
           "In 2026, [[ref:kim2026_cell_gene_switch|Kim et al.'s Cell paper]] was called 'incredibly implausible' by physicist [[ref:york2026_kim_commentary|Andrew York]]. The paper used CRISPR screening to identify Cyb5b as an EMF sensor and demonstrated reversible gene expression control in transgenic mice.",
           "The pattern is consistent: data is strong, mechanism is unknown, critics declare impossibility. Then the mechanism is found. The 'implausibility argument' is not science — it is an argument from ignorance.",
-          "The missing physics is now available. Lindgren's χ(Ā) shows that ion channel voltage sensors operate at quantum-limit sensitivity in the membrane's 10⁷ V/m field — just as photoreceptors detect single photons. The relevant question is not 'is the external field strong enough?' but 'is the biological sensor sensitive enough?' The answer, from 3 billion years of evolution, is yes.",
+          "BERM offers a testable physical proposal rather than a completed solution: χ(Ā) is a closure hypothesis motivated by the Lindgren 2025 metric premise. It does not yet derive how an external field couples to an ion channel or another biological observable. The photon-sensor analogy motivates sensitivity experiments but cannot substitute for the open L2 operator or its calibration.",
         ],
         boundary: "Lindgren's interpretation is theoretical and not yet independently validated. The empirical findings ([[ref:adey1976_calcium_window|Adey]], [[ref:lai1995_dna_breaks|Lai]], Pall, [[ref:sousouri2025|Sousouri]], [[ref:kim2026_cell_gene_switch|Kim]]) stand independently of the theoretical framework.",
       },
@@ -430,7 +430,7 @@ const t: Record<string, Copy> = {
       {
         question: "Osoittaako Lindgren-fysiikka ihmisen lisääntymismekanismin?",
         response: [
-          "Lindgrenin geometria tarjoaa teoreettisen viitekehyksen, joka tuottaa BERM:n testattavat ennusteet — taustariippuvuuden, vektoriorientaation, spektrirakenteen ja geometriaherkkyyden. Nämä ennusteet erottavat BERM:n malleista, jotka käsittelevät EMF-altistusta skalaariannoksena. 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista, mikä antaa CRY-reitille suoran geometrisen perustan.",
+          "Lindgrenin vuoden 2025 metriikka on BERM:n teoriapremissi. BERM ehdottaa sen jälkeen tausta-, orientaatio- ja spektririippuvuutta erotteleviksi hypoteeseiksi. Raportoitu 87,5 %:n algebrallinen vastaavuus RPM:ään on rakennevertailu, ei johdettu geometria–RPM-operaattori, joten se ei anna CRY-reitille suoraa geometrista perustaa.",
           "Jokainen alajuoksuinen biologinen lenkki — kentän geometriasta kromoforin vasteeseen ja elinkohtaisiin päätepisteisiin — vaatii oman kokeellisen validointinsa. Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä ja asianmukaisilla sham-/lämpökontrolleilla.",
         ],
         boundary: "Teoreettinen viitekehys tuottaa ennusteet; ennusteet testataan empiirisesti. Jokainen lenkki tarvitsee oman mitatun näyttönsä.",
@@ -540,7 +540,7 @@ const t: Record<string, Copy> = {
           "Vuonna 1995 [[ref:lai1995_dna_breaks|Lai ja Singh]] havaitsivat DNA-katkoksia 2450 MHz säteilystä. Teollisuus rahoitti vastatutkimuksia ja painosti heidän yliopistoaan. Mekanismi tunnistettiin myöhemmin: oksidatiivinen stressi VGCC-välitteisen kalsiumtulvan kautta, vahvistettu melatoniinin suojavaikutuksella.",
           "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym:n Cell-artikkelia]] kutsuttiin 'incredibly implausible' fyysikko [[ref:york2026_kim_commentary|Andrew Yorkin]] toimesta. Artikkeli käytti CRISPR-seulontaa Cyb5b:n tunnistamiseksi EMF-sensoriksi ja osoitti palautuvan geeniekspression kontrollin transgeenisissä hiirissä.",
           "Kaava on johdonmukainen: data on vahvaa, mekanismi on tuntematon, kriitikot julistavat mahdottomuuden. Sitten mekanismi löytyy. 'Epäuskottavuusargumentti' ei ole tiedettä — se on argumentti tietämättömyydestä.",
-          "Puuttuva fysiikka on nyt saatavilla. Lindgrenin χ(Ā) osoittaa, että ionikanavan jännitesensorit toimivat kvanttirajan herkkyydellä solukalvon 10⁷ V/m kentässä — aivan kuten fotoreseptorit havaitsevat yksittäisiä fotoneja. Relevantti kysymys ei ole 'onko ulkoinen kenttä tarpeeksi vahva?' vaan 'onko biologinen sensori tarpeeksi herkkä?' Vastaus 3 miljardin vuoden evoluutiosta on kyllä.",
+          "BERM tarjoaa testattavan fysikaalisen ehdotuksen, ei valmista ratkaisua: χ(Ā) on Lindgrenin vuoden 2025 metriikkapremissin motivoima sulkeumahypoteesi. Se ei vielä johda ulkoisen kentän kytkentää ionikanavaan tai muuhun biologiseen havaittavaan. Fotonisensorivertaus motivoi herkkyyskokeita, mutta ei korvaa avointa L2-operaattoria eikä sen kalibrointia.",
         ],
         boundary: "Lindgrenin tulkinta on teoreettinen eikä sitä ole vielä riippumattomasti validoitu. Empiiriset havainnot ([[ref:adey1976_calcium_window|Adey]], [[ref:lai1995_dna_breaks|Lai]], Pall, [[ref:sousouri2025|Sousouri]], [[ref:kim2026_cell_gene_switch|Kim]]) ovat olemassa riippumatta teoreettisesta kehyksestä.",
       },
@@ -699,7 +699,7 @@ const t: Record<string, Copy> = {
       {
         question: "Lindgren物理学はヒトの生殖メカニズムを確立するか？",
         response: [
-          "Lindgren幾何学はBERMのテスト可能な予測を生成する理論的フレームワークを提供する。RPMハミルトニアン要素の87.5%はLindgrenメトリックアンザッツから導出される。",
+          "Lindgren 2025計量はBERMの理論前提である。RPMとの87.5%代数対応は構造比較であり、導出済みの幾何学–RPM演算子ではないため、CRY経路に直接的な幾何学基盤を与えない。",
           "各下流の生物学的リンクはそれぞれ独自の実験的検証を必要とする。",
         ],
         boundary: "理論的フレームワークは予測を生成する；予測は経験的にテストされる。各リンクはそれぞれ独自の測定された証拠を必要とする。",
@@ -808,7 +808,7 @@ const t: Record<string, Copy> = {
           "1995年、[[ref:lai1995_dna_breaks|LaiとSingh]]は2450 MHz放射からDNA鎖切断を発見した。",
           "2026年、[[ref:kim2026_cell_gene_switch|Kim et al.のCell論文]]は物理学者[[ref:york2026_kim_commentary|Andrew York]]に「信じられないほど非現実的」と呼ばれた。",
           "パターンは一貫している：データは強力、メカニズムは未知、批評家は不可能性を宣言する。その後メカニズムが見つかる。",
-          "Lindgrenのχ(A)はイオンチャネルの電圧センサーが膜の10⁷ V/m場で量子限界の感度で作動することを示す。",
+          "BERMのχ(A)はLindgren 2025計量を動機とする検証可能な閉包仮説であり、外部場からイオンチャネルへの結合をまだ導出していない。光子センサーの類推は実験を動機づけるが、未解決のL2演算子や校正の代わりにはならない。",
         ],
         boundary: "Lindgrenの解釈は理論的であり、まだ独立的に検証されていない。経験的知見は理論的フレームワークとは独立に存在する。",
       },
@@ -967,7 +967,7 @@ const t: Record<string, Copy> = {
       {
         question: "La physique de Lindgren établit-elle un mécanisme reproductif humain ?",
         response: [
-          "La géométrie de Lindgren fournit le cadre théorique qui génère les prédictions testables de BERM. 87,5 % des éléments de l’hamiltonien RPM dérivent de l’ansatz métrique de Lindgren.",
+          "La métrique de Lindgren (2025) est la prémisse théorique de BERM. La correspondance algébrique de 87,5 % avec RPM est une comparaison structurelle, non un opérateur géométrie–RPM dérivé ; elle ne donne donc pas de fondement géométrique direct à la voie CRY.",
           "Chaque lien biologique en aval nécessite sa propre validation expérimentale.",
         ],
         boundary: "Le cadre théorique génère des prédictions ; les prédictions sont testées empiriquement.",
@@ -1076,7 +1076,7 @@ const t: Record<string, Copy> = {
           "En 1995, [[ref:lai1995_dna_breaks|Lai et Singh]] ont trouvé des cassures de brins d’ADN.",
           "En 2026, [[ref:kim2026_cell_gene_switch|l’article Cell de Kim et al.]] a été qualifié d’« incroyablement invraisemblable » par le physicien [[ref:york2026_kim_commentary|Andrew York]].",
           "Le schéma est cohérent : les données sont fortes, le mécanisme est inconnu, les critiques déclarent l’impossibilité. Puis le mécanisme est trouvé.",
-          "La physique de Lindgren montre que les capteurs de tension des canaux ioniques opèrent à la sensibilité quantique dans le champ de 10⁷ V/m de la membrane.",
+          "BERM propose une fermeture χ motivée par la métrique de Lindgren, mais elle ne démontre pas une sensibilité quantique des canaux ioniques. Cette analogie motive des expériences ; l'opérateur L2 et son calibrage restent ouverts.",
         ],
         boundary: "L’interprétation de Lindgren est théorique et pas encore validée indépendamment. Les résultats empiriques persistent indépendamment du cadre théorique.",
       },
@@ -1235,7 +1235,7 @@ const t: Record<string, Copy> = {
       {
         question: "Lindgren 물리학은 인간 생식 메커니즘을 확립하는가?",
         response: [
-          "Lindgren 기하학은 BERM의 검증 가능한 예측을 생성하는 이론적 프레임워크를 제공한다. RPM 해밀토니안 요소의 87.5%가 Lindgren 메트릭 안사츠에서 도출된다.",
+          "Lindgren 2025 계량은 BERM의 이론 전제다. RPM과의 87.5% 대수적 대응은 구조 비교이지 도출된 기하학–RPM 연산자가 아니므로 CRY 경로에 직접 기하학 기반을 주지 않는다.",
           "각 하류 생물학적 링크는 자체 실험적 검증이 필요하다.",
         ],
         boundary: "이론적 프레임워크는 예측을 생성한다; 예측은 경험적으로 테스트된다.",
@@ -1344,7 +1344,7 @@ const t: Record<string, Copy> = {
           "1995년, [[ref:lai1995_dna_breaks|Lai와 Singh]]은 2450 MHz 방사로부터 DNA 가닥 절단을 발견했다.",
           "2026년, [[ref:kim2026_cell_gene_switch|Kim et al.의 Cell 논문]]은 물리학자 [[ref:york2026_kim_commentary|Andrew York]]에 의해 '믿을 수 없을 정도로 비현실적'이라 불렸다.",
           "패턴은 일관적이다: 데이터는 강력하고, 메커니즘은 미지이며, 비평가들은 불가능성을 선언한다. 그 후 메커니즘이 발견된다.",
-          "Lindgren의 χ(A)는 이온 채널 전압 센서가 막의 10⁷ V/m 필드에서 양자 한계 감도로 작동함을 보여준다.",
+          "BERM의 χ(A)는 Lindgren 2025 계량에 의해 동기 부여된 검증 가능한 폐쇄 가설이며 외부장과 이온 채널의 결합을 아직 도출하지 않는다. 광자 센서 비유는 실험을 동기화하지만 열린 L2 연산자와 보정을 대신하지 못한다.",
         ],
         boundary: "Lindgren의 해석은 이론적이며 아직 독립적으로 검증되지 않았다.",
       },

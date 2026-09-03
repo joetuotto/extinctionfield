@@ -1,11 +1,12 @@
-"""Locked measured FieldState--biology panels for the BERM v2 route.
+"""Locked matched measurement--biology panels for a future BERM L2 route.
 
 This is the operational boundary between a measured local physical state and
 an observed biological endpoint.  It exists to prevent an attractive but
 invalid shortcut: joining a national technology proxy, a nearby probe, or a
 demographic series to biology and calling the result calibration.
 
-The contract follows the FieldState premises directly:
+The contract treats FieldState as an optional measurement record at BERM's
+open input boundary:
 
     documented local FieldState
         -> named organ / receptor transfer

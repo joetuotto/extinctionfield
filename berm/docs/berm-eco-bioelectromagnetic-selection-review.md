@@ -141,7 +141,7 @@ Kahden vuoden, sokkoutetussa 2.450 ja 5.805 GHz kokeessa Bombus-kukkakäynnit ol
 
 Sen arvo BERM–Eco-mallille on silti suuri: sama tarkasti kuvattu RF-asetelma voi erottaa sympatristen pölyttäjäryhmien vasteet. Tämä on juuri community-sorting-hypoteesin ennustama muoto. Se kannattaa replikoida useissa populaatioissa, kukkalajeissa, altistusgeometrioissa ja luonnollisilla käynti- sekä pesämenestysmittareilla.
 
-Täydentävässä kenttäkokeessa määritelty, pitkäkestoinen 2.4/5.8 GHz Wi-Fi-tyyppinen altistus heikensi tarhamehiläisten kotiinpaluuta, mutta ei muuttanut brood-kehitystä tai aikuisten kokonaiselinikää. Lyhyt altistus juuri ennen lentoa ei tuottanut vastaavaa ilmiötä. Tämä tuo malliin ajallisen muistikerroksen: FieldState voi vaikuttaa navigointi- ja forager-toimintoon ilman että sen ensimmäinen näkyvä päätepiste on yleinen kuolleisuus.
+Täydentävässä kenttäkokeessa määritelty, pitkäkestoinen 2.4/5.8 GHz Wi-Fi-tyyppinen altistus heikensi tarhamehiläisten kotiinpaluuta, mutta ei muuttanut brood-kehitystä tai aikuisten kokonaiselinikää. Lyhyt altistus juuri ennen lentoa ei tuottanut vastaavaa ilmiötä. BERM tulkitsee tämän ajallisen muistikerroksen ehdokkaaksi: kohdistettu FieldState-mittaus voisi olla tulevan L2-testin syöte, mutta mittaus ei itsessään johda navigointi- tai forager-vaikutusta.
 
 ### 5.3 Varroa, punkit ja kaksoisreitti mehiläisyhteisöissä
 
@@ -257,7 +257,7 @@ Jokaisella kohteella mitataan erikseen:
 - maadoitus, kasvi- ja rakennesubstraatit;
 - ravinto, kukkien määrä, isäntätiheys, petopaine ja habitatin hoito.
 
-Tämä ei ole vaihtoehtoisen selitysmallin omaksumista. Se on BERM:n FieldState-premissin toteutus: biologinen reitti voidaan tunnistaa vain, jos kenttä ja yhteiskonteksti mitataan samassa asetelmassa.
+Tämä ei ole vaihtoehtoisen selitysmallin omaksumista. Se toteuttaa BERM:n testiasetelman FieldState-mittausrajalla: ehdotettua biologista reittiä voidaan tunnistaa vain, jos fyysinen kenttä, yhteiskonteksti ja biologinen päätepiste mitataan samassa asetelmassa. L2-kytkentää ei oleteta valmiiksi.
 
 ### 9.2 Kolme ratkaisevaa koetyyppiä
 
@@ -294,7 +294,7 @@ BERM–Eco vahvistaa erityisesti mallin rakenteellisia premissejä:
 
 5. **Ekologia tarjoaa ulkoisia, nopeampia testausjärjestelmiä.** Hyönteisten, lintujen ja loisten käyttäytymis- sekä kohtaamisvasteet voivat toimia sentinelijärjestelminä ennen hitaampia ihmisväestön päätepisteitä.
 
-Se ei kuitenkaan lisää suoraa TFR-kerrointa. TFR-reitti tarvitsee edelleen FieldState-mittauksen, ihmisen organo- ja paritason välitilat sekä ASFR- ja demografisen mallinnuksen. BERM–Eco on ensisijaisesti mekanistinen ja ulkoinen validointikehys: jos malli väittää kenttätilan olevan biologisesti olennaista, luonnon järjestelmien tulisi osoittaa juuri sen kaltaisia spektri-, vektori-, geometria- ja lajikohtaisia allekirjoituksia. Kirjallisuus osoittaa, että niitä löytyy.
+Se ei kuitenkaan lisää suoraa TFR-kerrointa. BERM:n ehdollinen TFR-reitti tarvitsee ulkoisesti spesifioidut ihmisen organo- ja paritason välitilat sekä ASFR- ja demografisen mallinnuksen; mahdollinen FieldState-informoitu sovellus tarvitsisi lisäksi mittauksen ja avoimen L2-kytkentäoperaattorin. BERM–Eco on ensisijaisesti mekanistinen ja ulkoinen validointikehys: jos BERM-hypoteesi väittää kenttätilan olevan biologisesti olennaista, luonnon järjestelmien tulisi osoittaa juuri sen kaltaisia spektri-, vektori-, geometria- ja lajikohtaisia allekirjoituksia. Kirjallisuus osoittaa, että niitä löytyy.
 
 ## 11. Valikoitu lähdeaineisto
 

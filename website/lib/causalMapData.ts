@@ -94,12 +94,12 @@ export const NODES: CausalMapNode[] = [
     color: "#3B82F6", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "50/60 Hz alternating current and its harmonics perturb membrane potential. The field drops across the cell membrane (H(f) low-pass filtering).",
+        mechanism: "BERM treats membrane-potential perturbation by 50/60 Hz fields and harmonics as a candidate route. The relevant field-to-membrane transfer belongs to the open L2 coupling problem and must be calibrated for the system and exposure.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Electricity consumption per capita correlates with autoimmune diseases",
       },
       fi: {
-        mechanism: "50/60 Hz vaihtovirta ja sen harmoniset perturbovat kalvopotentiaalia. Kenttä putoaa solukalvon yli (H(f) alipäästösuodatus).",
+        mechanism: "BERM käsittelee 50/60 Hz:n kenttien ja harmonisten taajuuksien kalvopotentiaalimodulaatiota ehdokasreittinä. Kentästä kalvolle johtuva siirto kuuluu avoimeen L2-kytkentäongelmaan ja on kalibroitava järjestelmä- ja altistuskohtaisesti.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Sähkönkulutus/cap korreloi autoimmuunisairauksien kanssa",
       },
@@ -136,12 +136,12 @@ export const NODES: CausalMapNode[] = [
     color: "#EF4444", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "The RF field's magnetic component affects the spin state of cryptochrome's radical pair (RPM). Covariant Lindgren correction δH_L. Deprez et al. 2025: 5G spectral exposure in 4 European countries — beam-formed signals alter ambient/personal ratio in BERM's three-channel model.",
+        mechanism: "BERM treats the independently studied radical-pair/cryptochrome response as a candidate RF-sensitive route. No RPM or cryptochrome coupling has been derived from Lindgren geometry. Deprez et al. 2025 measured 5G spectra in four European countries; those observations can inform a future calibrated input layer.",
         fdaDevice: "PRF (510k, 27 MHz). Indirect: [[ref:lindecke2026|Lindecke 2026 Science]]",
         prediction: "Wi-Fi density correlates with circadian disruption",
       },
       fi: {
-        mechanism: "RF-kentän magneettikomponentti vaikuttaa kryptokromin radikaaliparin spin-tilaan (RPM). Kovariantti Lindgren-korjaus δH_L. Deprez ym. 2025: 5G-spektraalialtistus 4 Euroopan maassa — suunnattu keila muuttaa ambient/personal-suhdetta BERM:n kolmikanavamallissa.",
+        mechanism: "BERM käsittelee itsenäisesti tutkittua radikaalipari–kryptokromivastetta mahdollisena RF-herkkänä reittinä. RPM- tai kryptokromikytkentää ei ole johdettu Lindgrenin geometriasta. Deprez ym. 2025 mittasi 5G-spektrejä neljässä Euroopan maassa; havainnot voivat tukea tulevaa kalibroitua syötekerrosta.",
         fdaDevice: "PRF (510k, 27 MHz). Epäsuora: [[ref:lindecke2026|Lindecke 2026 Science]]",
         prediction: "Wi-Fi-tiheys korreloi sirkadiaanisten häiriöiden kanssa",
       },
@@ -175,15 +175,15 @@ export const NODES: CausalMapNode[] = [
   // ── LEVEL 1: Modulation layers (12) ──
   {
     id: "mod_geometry", level: 1,
-    label: { en: "1. Geometric foundation", fi: "1. Geometrinen perusta" },
-    sublabel: { en: "Lindgren χ(Ā) ≈ 1.0", fi: "Lindgren χ(Ā) ≈ 1.0" },
+    label: { en: "1. Open L2 coupling", fi: "1. Avoin L2-kytkentä" },
+    sublabel: { en: "Lindgren premise + BERM χ proposal", fi: "Lindgren-premissi + BERM:n χ-ehdotus" },
     color: "#8B5CF6", epistemicLevel: "L",
     detail: {
       en: {
-        mechanism: "Lindgren's metric g_μν = η_μν + A_μA_ν produces a susceptibility function χ(Ā) that is saturated (≈1.0) at the cell membrane resting potential of 7×10⁶ V/m.",
+        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + A_μA_ν is the theory premise. BERM separately proposes χ(Ā) as a candidate closure, but no operator from that geometry to a membrane, receptor or other biological observable has yet been derived. L2 remains open.",
       },
       fi: {
-        mechanism: "Lindgrenin metriikka g_μν = η_μν + A_μA_ν tuottaa susceptibiliteettifunktion χ(Ā) joka on saturoitunut (≈1.0) solukalvon lepopotentiaalissa 7×10⁶ V/m.",
+        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + A_μA_ν on teoriapremissi. BERM ehdottaa erikseen χ(Ā):ta sulkeumana, mutta geometriasta kalvoon, reseptoriin tai muuhun biologiseen havaittavaan johtavaa operaattoria ei ole vielä johdettu. L2 on avoin.",
       },
       bermPathway: "Geometric foundation",
       keyRefs: ["lindgren2025"],
@@ -395,9 +395,9 @@ export const NODES: CausalMapNode[] = [
     label: { en: "T-type Cav3 bifurcation", fi: "T-tyypin Cav3 bifurkaatio" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Cav3 T-type channels operate at a bifurcation point near resting potential. ~10% open at rest (window current). Schwan equation: external 1 V/m → 7.5–15 μV at membrane (37% of thermal noise). At personal levels (5 V/m): 184% of thermal noise. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]]). Resolves BERM's δVm problem." },
-      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat bifurkaatiopisteessä lepopotentiaalin lähellä. ~10 % auki levossa (ikkunavirta). Schwanin yhtälö: ulkoinen 1 V/m → 7,5–15 μV kalvolla (37 % termisestä kohinasta). Personal-tasolla (5 V/m): 184 % kohinasta. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]]). Ratkaisee BERM:n δVm-ongelman." },
-      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/model/fieldstate/math#s16",
+      en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM bridge. They do not yet derive or close the geometry-to-observable L2 coupling operator. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen siltamekanismin. Ne eivät vielä johda tai sulje geometriasta havaittavaan suureeseen johtavaa L2-kytkentäoperaattoria. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/measurement/fieldstate/math#s16",
     },
   },
   {
@@ -830,7 +830,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mod_ion" },
 
   // Modulation layers → mechanisms
-  { from: "mod_geometry", to: "mod_ion" },
+  { from: "mod_geometry", to: "mod_ion", label: "BERM coupling proposition; L2 open" },
   { from: "mod_ion", to: "mech_vgcc_ros" },
   { from: "mod_ion", to: "mech_ifo_linear" },
   { from: "mod_ion", to: "mech_gpcr" },
@@ -848,7 +848,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mech_vgcc_genotype" },
 
   // T-type bifurcation: Schwan → Cav3 → testosterone/sperm
-  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "Schwan: E_ext → δVm (ELF)" },
+  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "candidate transfer; L2 open" },
   { from: "mech_ttype_bifurcation", to: "tissue_testosterone", label: "Ca²⁺ → StAR → testosterone (Xiang 2025)" },
   { from: "mech_ttype_bifurcation", to: "tissue_sperm", label: "Ca²⁺ → spermatocyte dev (Ma 2026)" },
 

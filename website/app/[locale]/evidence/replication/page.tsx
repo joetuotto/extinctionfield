@@ -41,7 +41,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagnetic Field Intensity",
       blackman:
         "Blackman: Normal (49.4 µT) vs reduced (19.0 µT) produced different calcium efflux.",
-      chi: "χ(|Ā_DC|) — Lindgren's selection rule directly. Higher background → higher χ.",
+      chi: "χ(|Ā_DC|) — BERM closure proposed at the open L2 boundary; not derived by Lindgren. Higher background → higher χ is the hypothesis to test.",
       labImpact:
         "Near magnetic equator (~25 µT) weaker effects than Scandinavia (~50 µT).",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -95,7 +95,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagneettisen kentän voimakkuus",
       blackman:
         "Blackman: Normaali (49,4 µT) vs vähennetty (19,0 µT) tuotti erilaisen kalsiumeffluksin.",
-      chi: "χ(|Ā_DC|) — Lindgrenin valintaehto suoraan. Korkeampi tausta → korkeampi χ.",
+      chi: "χ(|Ā_DC|) — BERM:n sulkeumaehdotus avoimella L2-rajalla, ei Lindgrenin johtama. Korkeampi tausta → korkeampi χ on testattava hypoteesi.",
       labImpact:
         "Lähellä magneettista päiväntasaajaa (~25 µT) heikommat vaikutukset kuin Skandinaviassa (~50 µT).",
       ref: "Blackman ym., kokeet normaalissa ja vähennetyssä LGF:ssä",
@@ -149,7 +149,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "地磁気の強度",
       blackman:
         "Blackman: 通常（49.4 µT）対減衰（19.0 µT）で異なるカルシウム流出を生じた。",
-      chi: "χ(|Ā_DC|) — Lindgrenの選択則そのもの。高い背景 → 高いχ。",
+      chi: "χ(|Ā_DC|) — 未解決L2境界におけるBERM閉包命題であり、Lindgrenによる導出ではない。高い背景 → 高いχは検証仮説。",
       labImpact:
         "磁気赤道付近（~25 µT）ではスカンジナビア（~50 µT）より弱い効果。",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -203,7 +203,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Intensité du champ géomagnétique",
       blackman:
         "Blackman : Normal (49,4 µT) vs réduit (19,0 µT) ont produit un efflux de calcium différent.",
-      chi: "χ(|Ā_DC|) — la règle de sélection de Lindgren directement. Fond plus élevé → χ plus élevé.",
+      chi: "χ(|Ā_DC|) — fermeture BERM proposée à la frontière L2 ouverte, non dérivée par Lindgren. Fond plus élevé → χ plus élevé est l'hypothèse à tester.",
       labImpact:
         "Près de l'équateur magnétique (~25 µT), effets plus faibles qu'en Scandinavie (~50 µT).",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -257,7 +257,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "지자기장 강도",
       blackman:
         "Blackman: 정상(49.4 µT) 대 감소(19.0 µT)에서 다른 칼슘 유출을 생성했다.",
-      chi: "χ(|Ā_DC|) — Lindgren의 선택 규칙 그 자체. 높은 배경 → 높은 χ.",
+      chi: "χ(|Ā_DC|) — 열린 L2 경계의 BERM 폐쇄 제안이며 Lindgren의 도출이 아니다. 높은 배경 → 높은 χ는 검증할 가설이다.",
       labImpact:
         "자기 적도 부근(~25 µT)에서 스칸디나비아(~50 µT)보다 약한 효과.",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -342,7 +342,7 @@ const COPY = {
       "Why EMF Biology Seems Inconsistent — And Why It Isn’t",
     s1p1: "For fifty years, the central objection to non-thermal electromagnetic bioeffects has been inconsistency: ‘If the effect is real, why can’t laboratories reproduce it reliably?’",
     s1p2: "The answer was published between 1985 and 1991 by Carl Blackman at the US Environmental Protection Agency — but it was never synthesized into a unified framework. Blackman’s own experiments identified five variables that, when uncontrolled, produce apparently contradictory results from the SAME underlying phenomenon. When all five are controlled, the results are consistent.",
-    s1p3: "BERM’s contribution is to recognize that these five variables are all instances of the same mathematical structure: Lindgren’s selection rule χ(Ā), applied at different scales. Each variable modulates the ‘background’ against which the biological system responds to EMF perturbation. Change the background, change the response — not because the effect is unreliable, but because it is multidimensionally sensitive.",
+    s1p3: "BERM proposes that these five variables can be represented by a shared background-dependent structure χ(Ā). This is a model closure to test at different scales, not Lindgren’s derived selection rule. Each proposed mapping requires its own measured input, biological endpoint and L2 calibration.",
     /* Section 2 */
     s2Title: "The Five Confounds",
     s2BlackmanLabel: "Blackman finding",
@@ -357,7 +357,7 @@ const COPY = {
     s4Title: "How This Resolves the Apparent Contradiction",
     s4p1: "Lab A and Lab B are at different points in five-dimensional parameter space. When uncontrolled parameters differ, different results are EXPECTED, not anomalous. Blackman demonstrated this directly: the same researcher, with the same equipment, obtained enhancement, reduction, or null depending on temperature alone.",
     s4p2: "The replication crisis in EMF biology is not a crisis of the phenomenon — it is a crisis of experimental control. Once the five confounds are recognized and documented, apparent contradictions resolve into a consistent, multidimensional dose-response surface.",
-    s4p3: "Lindgren’s χ(Ā) provides that framework: every confound is a background field (thermal, optical, magnetic, developmental) that modulates sensitivity via the same mathematical function.",
+    s4p3: "BERM’s proposed χ(Ā) supplies a common test scaffold: thermal, optical, magnetic and developmental backgrounds may moderate response. The claim that one function applies across them is unverified and the relevant L2 operators remain open.",
     /* Section 5 */
     s5Title: "Seven Moderators That Predict Study Outcomes",
     s5Lead: "Analysis of 600+ published EMF bioeffect studies across five endpoints (melatonin, sperm, sleep EEG, DNA damage, oxidative stress) reveals that ‘contradictory evidence’ is an artifact of seven uncontrolled moderators. Three are statistically significant, two are directly proven by RCTs, and two are quantified by specific studies.",
@@ -398,7 +398,7 @@ const COPY = {
       "Miksi EMF-biologia vaikuttaa ristiriitaiselta — ja miksi se ei ole",
     s1p1: "Viisikymmentä vuotta keskeisin vastaargumentti ei-termisille sähkömagneettisille biovaikutuksille on ollut epäjohdonmukaisuus: ’Jos vaikutus on todellinen, miksi laboratoriot eivät pysty toistamaan sitä luotettavasti?’",
     s1p2: "Vastaus julkaistiin vuosina 1985–1991 Carl Blackmanin toimesta Yhdysvaltain ympäristönsuojeluvirastossa (EPA) — mutta sitä ei koskaan syntetisoitu yhtenäiseksi kehykseksi. Blackmanin omat kokeet tunnistivat viisi muuttujaa, jotka kontrolloimattomina tuottavat näennäisesti ristiriitaisia tuloksia SAMASTA taustailmiöstä. Kun kaikki viisi kontrolloidaan, tulokset ovat johdonmukaisia.",
-    s1p3: "BERM:n panos on tunnistaa, että nämä viisi muuttujaa ovat kaikki saman matemaattisen rakenteen ilmentymyä: Lindgrenin valintaehto χ(Ā), sovellettuna eri skaaloissa. Kukin muuttuja säätelee ’taustaa’, jota vasten biologinen järjestelmä reagoi EMF-häiriöön. Muuta taustaa, muuta vastetta — ei siksi että vaikutus olisi epäluotettava, vaan koska se on moniulotteisesti herkkä.",
+    s1p3: "BERM ehdottaa, että viisi muuttujaa voidaan esittää yhteisellä taustariippuvaisella rakenteella χ(Ā). Se on eri skaaloissa testattava mallisulkeuma, ei Lindgrenin johtama valintaehto. Jokainen ehdotettu kuvaus vaatii oman mitatun syötteen, biologisen päätepisteen ja L2-kalibroinnin.",
     /* Section 2 */
     s2Title: "Viisi sekoittavaa tekijää",
     s2BlackmanLabel: "Blackmanin löydös",
@@ -413,7 +413,7 @@ const COPY = {
     s4Title: "Miten tämä ratkaisee näennäisen ristiriidan",
     s4p1: "Laboratorio A ja laboratorio B ovat eri pisteissä viisiulotteisessa parametriavaruudessa. Kun kontrolloimattomat parametrit eroavat, erilaiset tulokset ovat ODOTETTUJA, eivät poikkeavia. Blackman osoitti tämän suoraan: sama tutkija, samat laitteet, sai vahvistuksen, vähenemisen tai nollatuloksen pelkästään lämpötilasta riippuen.",
     s4p2: "EMF-biologian replikaatiokriisi ei ole ilmiön kriisi — se on kokeellisen kontrollin kriisi. Kun viisi sekoittavaa tekijää tunnistetaan ja dokumentoidaan, näennäiset ristiriidat ratkeavat johdonmukaiseksi, moniulotteiseksi annos-vastepinnaksi.",
-    s4p3: "Lindgrenin χ(Ā) tarjoaa tuon kehyksen: jokainen sekoittava tekijä on taustakenttä (terminen, optinen, magneettinen, kehityksellinen), joka säätelee herkkyyttä saman matemaattisen funktion kautta.",
+    s4p3: "BERM:n ehdottama χ(Ā) antaa yhteisen testikehyksen: terminen, optinen, magneettinen ja kehityksellinen tausta voivat moderoida vastetta. Väite saman funktion soveltumisesta niihin kaikkiin on todentamatta ja L2-operaattorit ovat avoimia.",
     /* Section 5 */
     s5Title: "Seitsemän moderaattoria jotka ennustavat tutkimustuloksia",
     s5Lead: "Analyysi yli 600 julkaistusta EMF-bioefektitutkimuksesta viidellä endpointilla (melatoniini, siittiöt, uni-EEG, DNA-vaurio, oksidatiivinen stressi) paljastaa, että 'ristiriitainen näyttö' on seitsemän kontrolloimattoman moderaattorin artefakti. Kolme on tilastollisesti merkitseviä, kaksi on suoraan todistettu RCT-tasolla ja kaksi on kvantifioitu tarkoilla tutkimuksilla.",
@@ -453,7 +453,7 @@ const COPY = {
       "EMF生物学がなぜ一貫しないように見えるか — そしてなぜ一貫しているのか",
     s1p1: "50年間、非熱的電磁生体影響に対する中心的な反論は一貫性のなさであった：「効果が本物なら、なぜ研究室は確実に再現できないのか？」",
     s1p2: "その答えは1985年から1991年の間に、米国環境保護庁のCarl Blackmanによって公表されていた — しかし統一的な枠組みとして統合されることはなかった。Blackman自身の実験は、制御されない場合に同じ基礎現象から見かけ上矛盾する結果を生む5つの変数を特定した。5つすべてが制御されると、結果は一貫する。",
-    s1p3: "BERMの貢献は、これらの5つの変数がすべて同じ数学的構造の事例であることを認識したことである：Lindgrenの選択則χ(Ā)を異なるスケールで適用したもの。各変数は生物学的システムがEMF撹乱に応答する「背景」を変調する。背景を変えれば応答が変わる — 効果が信頼できないからではなく、多次元的に感受性が高いからである。",
+    s1p3: "BERMは5変数を共通の背景依存構造χ(Ā)で表せると提案する。これは異なる尺度で検証すべきモデル閉包であり、Lindgrenが導出した選択則ではない。各写像には固有の測定入力、生物学的エンドポイント、L2校正が必要である。",
     s2Title: "5つの交絡因子",
     s2BlackmanLabel: "Blackmanの発見",
     s2ChiLabel: "χの解釈",
@@ -465,7 +465,7 @@ const COPY = {
     s4Title: "見かけの矛盾がどのように解消されるか",
     s4p1: "研究室Aと研究室Bは5次元パラメータ空間の異なる点にいる。制御されていないパラメータが異なる場合、異なる結果は異常ではなく予想されるものである。Blackmanはこれを直接実証した：同じ研究者が、同じ機器で、温度だけによって増強、減少、またはヌルを得た。",
     s4p2: "EMF生物学の再現性危機は現象の危機ではない — それは実験的制御の危機である。5つの交絡因子が認識され文書化されると、見かけの矛盾は一貫した多次元的用量反応曲面に解消される。",
-    s4p3: "Lindgrenのχ(Ā)がその枠組みを提供する：すべての交絡因子は同じ数学的関数を通じて感受性を変調する背景場（熱的、光学的、磁気的、発達的）である。",
+    s4p3: "BERMが提案するχ(Ā)は共通の検証枠組みを与えるが、熱的・光学的・磁気的・発達的背景に同じ関数が適用できるという主張は未検証であり、L2演算子は未解決である。",
     s5Title: "研究成果を予測する7つのモデレーター",
     s5Lead: "5つのエンドポイント（メラトニン、精子、睡眠EEG、DNA損傷、酸化ストレス）にわたる600以上の公表されたEMF生体影響研究の分析は、「矛盾するエビデンス」が7つの制御されていないモデレーターのアーティファクトであることを明らかにする。3つは統計的に有意、2つはRCTレベルで直接証明され、2つは特定の研究によって定量化されている。",
     s5StatsCaption: "統計結果 — モデレーター×結果の関連のカイ二乗検定",
@@ -504,7 +504,7 @@ const COPY = {
       "Pourquoi la biologie EMF semble incohérente — et pourquoi elle ne l'est pas",
     s1p1: "Pendant cinquante ans, l'objection centrale aux bioeffets électromagnétiques non thermiques a été l'incohérence : « Si l'effet est réel, pourquoi les laboratoires ne peuvent-ils pas le reproduire de manière fiable ? »",
     s1p2: "La réponse a été publiée entre 1985 et 1991 par Carl Blackman à l'Agence américaine de protection de l'environnement (EPA) — mais elle n'a jamais été synthétisée en un cadre unifié. Les propres expériences de Blackman ont identifié cinq variables qui, lorsqu'elles ne sont pas contrôlées, produisent des résultats apparemment contradictoires à partir du MÊME phénomène sous-jacent. Lorsque les cinq sont contrôlées, les résultats sont cohérents.",
-    s1p3: "La contribution de BERM est de reconnaître que ces cinq variables sont toutes des instances de la même structure mathématique : la règle de sélection de Lindgren χ(Ā), appliquée à différentes échelles. Chaque variable module le « fond » contre lequel le système biologique répond à la perturbation EMF. Changez le fond, changez la réponse — non pas parce que l'effet est peu fiable, mais parce qu'il est multidimensionnellement sensible.",
+    s1p3: "BERM propose de représenter ces cinq variables par une structure commune dépendante du fond, χ(Ā). C'est une fermeture à tester à différentes échelles, non une règle de sélection dérivée par Lindgren. Chaque application exige son entrée mesurée, son endpoint biologique et son calibrage L2.",
     s2Title: "Les cinq facteurs de confusion",
     s2BlackmanLabel: "Découverte de Blackman",
     s2ChiLabel: "Interprétation χ",
@@ -516,7 +516,7 @@ const COPY = {
     s4Title: "Comment cela résout la contradiction apparente",
     s4p1: "Le laboratoire A et le laboratoire B sont à des points différents dans l'espace paramétrique à cinq dimensions. Quand les paramètres non contrôlés diffèrent, des résultats différents sont ATTENDUS, pas anomaux. Blackman l'a démontré directement : le même chercheur, avec le même équipement, a obtenu une augmentation, une réduction ou un résultat nul selon la température seule.",
     s4p2: "La crise de réplication en biologie EMF n'est pas une crise du phénomène — c'est une crise du contrôle expérimental. Une fois les cinq facteurs de confusion reconnus et documentés, les contradictions apparentes se résolvent en une surface dose-réponse multidimensionnelle cohérente.",
-    s4p3: "Le χ(Ā) de Lindgren fournit ce cadre : chaque facteur de confusion est un champ de fond (thermique, optique, magnétique, développemental) qui module la sensibilité via la même fonction mathématique.",
+    s4p3: "Le χ(Ā) proposé par BERM fournit un cadre de test commun, mais l'application d'une même fonction aux fonds thermique, optique, magnétique et développemental n'est pas vérifiée et les opérateurs L2 restent ouverts.",
     s5Title: "Sept modérateurs qui prédisent les résultats des études",
     s5Lead: "L'analyse de plus de 600 études publiées sur les bioeffets EMF à travers cinq endpoints (mélatonine, sperme, EEG du sommeil, dommages à l'ADN, stress oxydatif) révèle que les « preuves contradictoires » sont un artefact de sept modérateurs non contrôlés. Trois sont statistiquement significatifs, deux sont directement prouvés par des ECR, et deux sont quantifiés par des études spécifiques.",
     s5StatsCaption: "Résultats statistiques — tests du chi carré d'association modérateur × résultat",
@@ -555,7 +555,7 @@ const COPY = {
       "EMF 생물학이 왜 일관성 없어 보이는가 — 그리고 왜 그렇지 않은가",
     s1p1: "50년간 비열적 전자기 생체효과에 대한 핵심적 반론은 비일관성이었다: '효과가 실재한다면, 왜 실험실들은 신뢰할 수 있게 재현하지 못하는가?'",
     s1p2: "그 답은 1985년에서 1991년 사이에 미국 환경보호국의 Carl Blackman에 의해 발표되었으나 — 통합된 프레임워크로 합성된 적이 없었다. Blackman 자신의 실험은 통제되지 않을 때 동일한 기저 현상으로부터 겉보기에 모순되는 결과를 생산하는 다섯 가지 변수를 식별했다. 다섯 가지 모두가 통제되면 결과는 일관된다.",
-    s1p3: "BERM의 기여는 이 다섯 변수가 모두 동일한 수학적 구조의 사례임을 인식한 것이다: 서로 다른 규모에서 적용된 Lindgren의 선택 규칙 χ(Ā). 각 변수는 생물학적 시스템이 EMF 교란에 반응하는 '배경'을 조절한다. 배경을 바꾸면 반응이 바뀐다 — 효과가 신뢰할 수 없어서가 아니라 다차원적으로 민감하기 때문이다.",
+    s1p3: "BERM은 다섯 변수를 공통 배경 의존 구조 χ(Ā)로 표현할 수 있다고 제안한다. 이는 여러 규모에서 검증할 모델 폐쇄이지 Lindgren이 도출한 선택 규칙이 아니다. 각 매핑에는 고유한 측정 입력, 생물학적 종점, L2 보정이 필요하다.",
     s2Title: "다섯 가지 교란 요인",
     s2BlackmanLabel: "Blackman의 발견",
     s2ChiLabel: "χ 해석",
@@ -567,7 +567,7 @@ const COPY = {
     s4Title: "겉보기 모순이 어떻게 해소되는가",
     s4p1: "실험실 A와 실험실 B는 5차원 매개변수 공간의 다른 지점에 있다. 통제되지 않은 매개변수가 다를 때, 다른 결과는 이상이 아니라 예상되는 것이다. Blackman은 이를 직접 입증했다: 동일한 연구자가, 동일한 장비로, 온도만으로 증강, 감소, 또는 무효를 얻었다.",
     s4p2: "EMF 생물학의 재현성 위기는 현상의 위기가 아니다 — 실험적 통제의 위기이다. 다섯 교란 요인이 인식되고 문서화되면, 겉보기 모순은 일관된 다차원 용량-반응 곡면으로 해소된다.",
-    s4p3: "Lindgren의 χ(Ā)가 그 프레임워크를 제공한다: 모든 교란 요인은 동일한 수학적 함수를 통해 감수성을 조절하는 배경장(열적, 광학적, 자기적, 발달적)이다.",
+    s4p3: "BERM이 제안한 χ(Ā)는 공통 검증 틀을 제공하지만 열·광학·자기·발달 배경에 하나의 함수가 적용된다는 주장은 검증되지 않았고 L2 연산자는 열려 있다.",
     s5Title: "연구 결과를 예측하는 7가지 조절 인자",
     s5Lead: "5가지 종말점(멜라토닌, 정자, 수면 EEG, DNA 손상, 산화 스트레스)에 걸쳐 600건 이상의 발표된 EMF 생체효과 연구 분석은 '모순되는 근거'가 7가지 통제되지 않은 조절 인자의 인공산물임을 밝힌다. 3가지는 통계적으로 유의하고, 2가지는 RCT로 직접 입증되었으며, 2가지는 특정 연구에 의해 정량화되었다.",
     s5StatsCaption: "통계 결과 — 조절 인자 × 결과 연관의 카이제곱 검정",

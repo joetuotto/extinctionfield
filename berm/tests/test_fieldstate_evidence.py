@@ -104,8 +104,10 @@ def test_legacy_bibliography_is_available_without_becoming_active_evidence() -> 
     assert any(not record.canonical_nodes for record in records)
 
 
-def test_top_level_package_exposes_the_integrated_route_and_evidence_layers() -> None:
+def test_top_level_package_exposes_conditional_route_and_evidence_layers() -> None:
     import berm
 
-    assert berm.FIELDSTATE_ASFR_MODEL_VERSION == "berm-v19"
+    assert berm.CONDITIONAL_ASFR_MODEL_VERSION == "berm-conditional-asfr-v1"
+    assert berm.FIELDSTATE_ASFR_MODEL_VERSION == berm.CONDITIONAL_ASFR_MODEL_VERSION
+    assert berm.FIELDSTATE_SPEC_VERSION == "v2"
     assert berm.legacy_evidence_summary()["record_count"] == 134

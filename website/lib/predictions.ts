@@ -1,4 +1,5 @@
 import { LockedPrediction } from "./types";
+import { PREDICTION_ROUTE_ID } from "./modelArchitecture";
 
 /**
  * Localised metric and country names. `metricLabel` / `countryLabel` on each
@@ -111,8 +112,27 @@ const COHORT_CHANGE =
   "vulnerability-weighted cohort adjustment (fetal 5×, infant 4×, child 3×, " +
   "juvenile 2.5×, adolescent 2×) replaces linear ramp; LOOCV RMSE improved 1.17 → 1.15";
 
+const V17_PROXY_PROVENANCE = {
+  routeId: PREDICTION_ROUTE_ID,
+  inputKind: "national_technology_timing_proxy",
+  fieldStateCalibrated: false,
+} as const;
+
+const SENTINEL_PROVENANCE = {
+  routeId: "berm-sentinel-cascade-v1",
+  inputKind: "cross_species_timing_proxy",
+  fieldStateCalibrated: false,
+} as const;
+
+const SLEEP_EXPERIMENT_PROVENANCE = {
+  routeId: "berm-sleep-experiment-v1",
+  inputKind: "preregistered_experimental_contrast",
+  fieldStateCalibrated: false,
+} as const;
+
 export const LOCKED_PREDICTIONS: LockedPrediction[] = [
   {
+    ...V17_PROXY_PROVENANCE,
     id: "fi-2030-tfr",
     country: "Finland",
     countryLabel: "Finland",
@@ -148,6 +168,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "kr-2030-tfr",
     country: "SouthKorea",
     countryLabel: "South Korea",
@@ -183,6 +204,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "kr-2035-tfr",
     country: "SouthKorea",
     countryLabel: "South Korea",
@@ -218,6 +240,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "us-2030-tfr",
     country: "USA",
     countryLabel: "United States",
@@ -253,6 +276,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "jp-2030-tfr",
     country: "Japan",
     countryLabel: "Japan",
@@ -288,6 +312,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "br-2030-tfr",
     country: "Brazil",
     countryLabel: "Brazil",
@@ -323,6 +348,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "global-2040-tfr",
     country: "Global",
     countryLabel: "Global",
@@ -350,6 +376,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "global-2050-sperm",
     country: "Global",
     countryLabel: "Global",
@@ -377,6 +404,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "global-2040-sex-ratio",
     country: "Global",
     countryLabel: "Global",
@@ -404,6 +432,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...V17_PROXY_PROVENANCE,
     id: "kr-2040-feedback-tfr",
     country: "SouthKorea",
     countryLabel: "South Korea",
@@ -431,6 +460,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...SENTINEL_PROVENANCE,
     id: "csli-1-usa-tfr-acceleration",
     country: "USA",
     countryLabel: "United States",
@@ -459,6 +489,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     ],
   },
   {
+    ...SLEEP_EXPERIMENT_PROVENANCE,
     id: "sleep-1-faraday-vs-bluefilter",
     country: "Global",
     countryLabel: "Global",

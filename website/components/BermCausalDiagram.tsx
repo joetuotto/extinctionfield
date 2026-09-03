@@ -3,11 +3,11 @@
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import type { ChainNode, EpistemicLevel } from "@/lib/types";
 import {
-  NODES,
-  EDGES,
-  EPISTEMIC_COLORS,
-  getLevelTitle,
-} from "@/lib/causalChainData";
+  CANONICAL_CAUSAL_EDGES as EDGES,
+  CANONICAL_CAUSAL_NODES as NODES,
+  getCanonicalLevelTitle,
+} from "@/lib/causalGraphView";
+import { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import { DetailPanel } from "./DetailPanel";
 import { pickCopy } from "@/lib/i18n";
 
@@ -202,7 +202,7 @@ function computeLayout(
     const bandBottom = currentY + BAND_PAD_Y;
     bands.push({
       level: lvl,
-      title: getLevelTitle(lvl, locale),
+      title: getCanonicalLevelTitle(lvl, locale),
       top: bandTop,
       bottom: bandBottom,
       color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",

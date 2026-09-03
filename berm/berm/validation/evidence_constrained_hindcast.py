@@ -1,4 +1,4 @@
-"""Discovery-first evidence-constrained hindcast architecture for BERM v2.
+"""Discovery-first evidence-constrained hindcast architecture for BERM.
 
 This module makes the information already present in the BERM evidence base
 *active* before a perfect, direct human panel exists.  It keeps four distinct
@@ -13,10 +13,11 @@ uses of evidence separate:
    never select an upstream biological parameter or a lag.
 
 The result is deliberately not an EMF-to-TFR regression.  It is a compact
-specification for the Bayesian model that BERM's Lindgren/FieldState premises
-imply: a latent mobility-weighted local FieldState, species/organ transfer,
-reversible/persistent memory, endpoint likelihoods, and finally demographic
-posterior-predictive evaluation.
+specification for a conditional Bayesian BERM route: a separately measured or
+estimated mobility-weighted local field record can enter an explicitly open L2
+bridge, followed by candidate species/organ transfer, reversible/persistent
+memory, endpoint likelihoods, and demographic posterior-predictive evaluation.
+FieldState is the optional measurement module, not the model or a causal root.
 """
 
 from __future__ import annotations
@@ -683,15 +684,15 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
         structural_supports=(
             StructuralPathSupport(
                 "local_vector_to_male_endpoint",
-                ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "MALE_SPERM"),
+                ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "MALE_SPERM"),
                 ("BLACKMAN_1985_BACKGROUND_FREQUENCY", "USSELMAN_2016_ORIENTATION_ROS", "DE_IULIIS_2009_HUMAN_SPERM", "BALDINI_2025_ART_LAB_SPERM"),
-                "Local vector/geometry-sensitive FieldState is an active upstream explanation for a redox-linked male endpoint path.",
+                "Local vector/geometry-sensitive FieldState constrains a proposed redox-linked male endpoint path through the open L2 bridge.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX"),
                 ("Endpoint magnitude remains context- and assay-dependent.",),
             ),
             StructuralPathSupport(
                 "local_vector_to_btb_persistent_sperm",
-                ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "BARRIER_BTB", "MALE_GERMLINE_RESERVE", "MALE_SPERM"),
+                ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "BARRIER_BTB", "MALE_GERMLINE_RESERVE", "MALE_SPERM"),
                 ("YU_2020_LOCAL_4G_BTB", "CHAKRABORTY_2020_OXIDATIVE_BTB", "MEENA_2014_MELATONIN_RESCUE"),
                 "BTB and germline reserve keep a local barrier-to-sperm route active alongside acute sperm mechanisms.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX", "DEVELOPMENTAL_STAGE"),
@@ -699,15 +700,15 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
             ),
             StructuralPathSupport(
                 "fieldstate_to_female_developmental_reserve",
-                ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE"),
+                ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE"),
                 ("ZANDIEH_2025_MITO_RESONANCE", "AHMADI_2016_OVARIAN_FOLLICLES", "CALIS_2021_PRENATAL_OVARIAN_RESERVE", "YOUSEFI_2025_NEONATAL_OOGENESIS"),
-                "Female developmental reserve is an active FieldState-to-capacity route, distinct from the male sperm route.",
+                "Female developmental reserve is a candidate BERM biology-to-capacity route distinct from the male sperm route; any FieldState-to-biology operator remains open.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX", "DEVELOPMENTAL_STAGE"),
                 ("Developmental and adult endpoint scales remain separately parameterized.",),
             ),
             StructuralPathSupport(
                 "fieldstate_to_clock_and_ovulation",
-                ("FIELDSTATE_VECTOR", "B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK"),
+                ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK"),
                 ("RITZ_2004_VECTOR_ANGLE", "MAJEWSKA_2025_CRY4A_MEMBRANE", "CAO_2015_RF_CIRCADIAN_REDOX", "LIU_2014_OVARIAN_CLOCK_IMPLANTATION"),
                 "Vector, clock/redox and endocrine timing form a separate cyclic female susceptibility route.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX", "CIRCADIAN_PHASE"),
@@ -715,7 +716,7 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
             ),
             StructuralPathSupport(
                 "static_interface_to_ecological_encounter",
-                ("STATIC_TRIBO_INTERFACE", "ECOLOGICAL_ENCOUNTER"),
+                ("STATIC_TRIBO_INTERFACE", "BERM_L2_BRIDGE", "ECOLOGICAL_ENCOUNTER"),
                 ("ENGLAND_2023_TICK_STATIC_ATTACHMENT", "COLIN_1992_VARROA_ELECTRICAL_CHARGES", "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION", "MORLEY_2018_SPIDER_EFIELD_BALLOONING"),
                 "Species-specific electrostatic interfaces are active ecological susceptibility and encounter mechanisms.",
                 ("SPECIES_INTERFACE_AND_MOBILITY",),
@@ -724,35 +725,35 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
         ),
         directional_lag_priors=(
             DirectionalLagPrior(
-                "male_acute_sperm_direction", ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "MALE_SPERM"), "MALE_SPERM",
+                "male_acute_sperm_direction", ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "MALE_SPERM"), "MALE_SPERM",
                 ("DE_IULIIS_2009_HUMAN_SPERM", "BALDINI_2025_ART_LAB_SPERM"),
                 "BERM_DIRECTIONAL_PRIOR_WITH_PROTOCOL_TAILS", "ACUTE_TO_SHORT_TERM", "male_sperm_response",
                 "Increased endpoint-defined load admits a non-increasing acute sperm-quality response, with local geometry retained.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX"),
             ),
             DirectionalLagPrior(
-                "male_btb_memory_direction", ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "BARRIER_BTB", "MALE_GERMLINE_RESERVE", "MALE_SPERM"), "MALE_SPERM",
+                "male_btb_memory_direction", ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "BARRIER_BTB", "MALE_GERMLINE_RESERVE", "MALE_SPERM"), "MALE_SPERM",
                 ("YU_2020_LOCAL_4G_BTB", "CHAKRABORTY_2020_OXIDATIVE_BTB", "MEENA_2014_MELATONIN_RESCUE"),
                 "BERM_DIRECTIONAL_PRIOR_WITH_PROTOCOL_TAILS", "SPERMATOGENIC_TO_PERSISTENT", "male_btb_memory_response",
                 "The BTB/germline route constrains the model to a spermatogenic-to-persistent memory family rather than an instantaneous-only effect.",
                 ("ORGAN_AND_SEX", "DEVELOPMENTAL_STAGE", "LOCAL_VECTOR_GEOMETRY"),
             ),
             DirectionalLagPrior(
-                "female_reserve_memory_direction", ("FIELDSTATE_VECTOR", "A_VGCC_ROS", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE"), "OVARIAN_RESERVE",
+                "female_reserve_memory_direction", ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE"), "OVARIAN_RESERVE",
                 ("AHMADI_2016_OVARIAN_FOLLICLES", "CALIS_2021_PRENATAL_OVARIAN_RESERVE", "YOUSEFI_2025_NEONATAL_OOGENESIS"),
                 "BERM_DIRECTIONAL_PRIOR_WITH_PROTOCOL_TAILS", "DEVELOPMENTAL_MEMORY", "female_reserve_response",
                 "The female reserve route constrains the model to developmental-memory and non-increasing reserve-capacity response families.",
                 ("ORGAN_AND_SEX", "DEVELOPMENTAL_STAGE"),
             ),
             DirectionalLagPrior(
-                "female_clock_direction", ("FIELDSTATE_VECTOR", "B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK"), "OVULATION_CLOCK",
+                "female_clock_direction", ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK"), "OVULATION_CLOCK",
                 ("RITZ_2004_VECTOR_ANGLE", "CAO_2015_RF_CIRCADIAN_REDOX", "LIU_2014_OVARIAN_CLOCK_IMPLANTATION", "HE_2016_OOCYTE_MELATONIN"),
                 "BERM_DIRECTIONAL_PRIOR_WITH_PROTOCOL_TAILS", "CIRCADIAN_TO_CYCLE", "female_clock_response",
                 "Clock/redox evidence constrains cyclic timing and susceptibility before it constrains a population coefficient.",
                 ("CIRCADIAN_PHASE", "ORGAN_AND_SEX", "LOCAL_VECTOR_GEOMETRY"),
             ),
             DirectionalLagPrior(
-                "electroecological_species_direction", ("STATIC_TRIBO_INTERFACE", "ECOLOGICAL_ENCOUNTER"), "ECOLOGICAL_ENCOUNTER",
+                "electroecological_species_direction", ("STATIC_TRIBO_INTERFACE", "BERM_L2_BRIDGE", "ECOLOGICAL_ENCOUNTER"), "ECOLOGICAL_ENCOUNTER",
                 ("ENGLAND_2023_TICK_STATIC_ATTACHMENT", "COLIN_1992_VARROA_ELECTRICAL_CHARGES", "MALLINSON_2025_HONEYBEE_EFIELD_FORAGING", "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION"),
                 "FIELDSTATE_DEPENDENT_SPECIES_RESPONSE", "ECOLOGICAL_ENCOUNTER", "ecological_encounter_response",
                 "Electroecological evidence makes a species-, morphology- and mobility-dependent encounter response an active prediction target.",

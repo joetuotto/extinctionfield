@@ -1,4 +1,8 @@
-"""Pure FieldState -> organ-memory bridge for ``berm-v19``.
+"""Measurement-conditioned feature and organ-memory bookkeeping.
+
+This module belongs to the optional FieldState measurement branch.  It does
+not derive a geometry-to-biology operator: registered organ increments are
+external inputs to BERM and remain explicitly identified as such.
 
 This module is intentionally parallel to :mod:`berm.stats.temporal_core`.
 It consumes an externally supplied, local FieldState and retains the physical

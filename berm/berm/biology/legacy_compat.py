@@ -186,9 +186,9 @@ LEGACY_PATHWAY_BINDINGS: tuple[LegacyPathwayBinding, ...] = (
     ),
     # Independent legacy public entry points.
     LegacyPathwayBinding(
-        "berm.tfr.legacy", "two_channel_exposure", ("FIELDSTATE_SELECTED_PROXY",),
+        "berm.tfr.legacy", "two_channel_exposure", ("TECHNOLOGY_TIMING_PROXY",),
         LEGACY_DIAGNOSTIC,
-        "Scalar Lindgren timing proxy; it is not a physical local FieldState.",
+        "Legacy BERM timing proxy; it is not a Lindgren-derived observable or local FieldState.",
     ),
     LegacyPathwayBinding(
         "berm.tfr.legacy", "sperm_state", ("MALE_SPERM",), LEGACY_DIAGNOSTIC,
@@ -208,7 +208,7 @@ LEGACY_PATHWAY_BINDINGS: tuple[LegacyPathwayBinding, ...] = (
         "Locked legacy output; not a BERM v19 prediction.",
     ),
     LegacyPathwayBinding(
-        "berm.model.v17_community", "combined_emf", ("FIELDSTATE_SELECTED_PROXY",),
+        "berm.model.v17_community", "combined_emf", ("TECHNOLOGY_TIMING_PROXY",),
         LEGACY_DIAGNOSTIC,
         "National scalar technology timing proxy, not a local physical FieldState.",
     ),

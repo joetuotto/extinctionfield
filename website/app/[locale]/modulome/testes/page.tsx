@@ -93,9 +93,9 @@ const COPY = {
     ],
 
     /* 05 Lindgren Analysis */
-    s5Title: "Lindgren Analysis",
+    s5Title: "BERM candidate susceptibility analysis — L2 open",
     s5p1:
-      "The testes present a unique Lindgren analysis because the blood-testis barrier (BTB) creates a positive feedback vulnerability:",
+      "BERM proposes a testicular susceptibility analysis in which the blood-testis barrier (BTB) could create positive feedback. This is a conditional biological hypothesis beyond the open L2 bridge:",
     s5Criteria: [
       "chi_barrier (BTB) — uses same TJ proteins as BBB. EMF opens BTB → spermatogenic microenvironment exposed → more damage",
       "chi_channel — Cav3 in Leydig cells at bifurcation. Cav1+Cav3 dual requirement in spermatogonia doubles vulnerability surface",
@@ -242,9 +242,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren-analyysi",
+    s5Title: "BERM:n herkkyyden ehdokasanalyysi — L2 avoin",
     s5p1:
-      "Kivekset tarjoavat ainutlaatuisen Lindgren-analyysin koska veri-kiveseste (BTB) luo positiivisen takaisinkytkentähaavoittuvuuden:",
+      "BERM ehdottaa kivesten herkkyysanalyysia, jossa veri-kiveseste (BTB) voisi muodostaa positiivisen takaisinkytkennän. Tämä on avoimen L2-sillan jälkeinen ehdollinen biologinen hypoteesi:",
     s5Criteria: [
       "chi_barrier (BTB) — käyttää samoja TJ-proteiineja kuin BBB. EMF avaa BTB:n → spermatogeneettinen mikroympäristö altistuu → enemmän vahinkoa",
       "chi_channel — Cav3 Leydigin soluissa bifurkaatiossa. Cav1+Cav3-kaksoisvaatimus spermatogonioissa kaksinkertaistaa haavoittuvuuspinta-alan",
@@ -390,9 +390,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren解析",
+    s5Title: "BERM感受性候補解析 — L2未解決",
     s5p1:
-      "精巣は血液精巣関門 (BTB) が正のフィードバック脆弱性を生むため独自のLindgren解析を提示する：",
+      "BERMは血液精巣関門が正のフィードバックを生み得る精巣感受性を提案する。これは未解決L2橋より下流の条件付き生物仮説である：",
     s5Criteria: [
       "chi_barrier (BTB) — BBBと同じTJタンパク質を使用。EMFがBTBを開く → 精子形成微小環境が露出 → さらなる損傷",
       "chi_channel — 分岐点のライディッヒ細胞Cav3。精原細胞のCav1+Cav3二重要件が脆弱性表面を倍増",
@@ -536,9 +536,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Analyse de Lindgren",
+    s5Title: "Analyse candidate de susceptibilité BERM — L2 ouvert",
     s5p1:
-      "Les testicules presentent une analyse de Lindgren unique car la barriere hemato-testiculaire (BTB) cree une vulnerabilite par retroaction positive :",
+      "BERM propose une susceptibilité testiculaire où la barrière hémato-testiculaire pourrait créer une rétroaction positive. C'est une hypothèse biologique conditionnelle en aval du pont L2 ouvert :",
     s5Criteria: [
       "chi_barrier (BTB) — utilise les memes proteines TJ que la BHE. Les EMF ouvrent la BTB → microenvironnement spermatogenique expose → plus de dommages",
       "chi_channel — Cav3 dans les cellules de Leydig a la bifurcation. La double exigence Cav1+Cav3 dans les spermatogonies double la surface de vulnerabilite",
@@ -682,9 +682,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Lindgren 분석",
+    s5Title: "BERM 감수성 후보 분석 — L2 미해결",
     s5p1:
-      "고환은 혈액고환장벽 (BTB)이 양의 피드백 취약성을 생성하기 때문에 독특한 Lindgren 분석을 제시한다:",
+      "BERM은 혈액고환장벽이 양의 되먹임을 만들 수 있는 고환 감수성을 제안한다. 이는 열린 L2 연결 이후의 조건부 생물학 가설이다:",
     s5Criteria: [
       "chi_barrier (BTB) — BBB와 동일한 TJ 단백질 사용. EMF가 BTB를 열면 → 정자형성 미세환경 노출 → 더 많은 손상",
       "chi_channel — 분기점의 라이디히 세포 Cav3. 정원세포의 Cav1+Cav3 이중 요건이 취약성 표면을 두 배로",

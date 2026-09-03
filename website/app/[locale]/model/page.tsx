@@ -28,17 +28,17 @@ const t = {
     metaTitle: "Model Documentation - Extinction Field",
     metaDesc:
       "BERM model documentation: three-level architecture, causal pathways, equations, and recovery dynamics.",
-    specNote: "BERM operates at two levels of specification. The model (this page) is the causal theory — pathways, equations, and predictions derived from cumulative-exposure proxies. The FieldState measurement spec defines how to measure exposure directly, replacing the proxy with a bounded protocol. Current predictions use the proxy; FieldState validation is prospective.",
+    specNote: "BERM is the explanatory, derivational and prediction model. FieldState v2 is a separate optional measurement, observation and estimation module — not a model alias or causal root. The locked v17 outputs use a national technology-timing proxy and are not FieldState-calibrated. The geometry-to-observable L2 coupling operator remains open.",
 
     physBioTitle: "From Physics to Biology",
-    physBioSub: "How Lindgren's geometric electromagnetism predicts biological sensitivity to background fields",
-    physBioLead: "BERM's biological predictions are not ad hoc — they derive from a geometric model of electromagnetism (GME) in which the EM field is part of the spacetime metric, not an external perturbation on it. This section traces the chain from the metric ansatz to tissue-level sensitivity.",
+    physBioSub: "The Lindgren premise, derived geometry, and BERM's proposed biological bridge",
+    physBioLead: "The 2025 Lindgren ansatz is BERM's theoretical premise. Its geometric consequences and BERM's biological propositions are kept distinct: no geometry-to-SHBG, androgen-receptor, ion-channel or post-receptor coupling operator has yet been derived. This section shows the proposed bridge and its test points.",
     physBioGMETitle: "Lindgren Geometric Metric Extension",
     physBioGMEDesc: "In standard physics, the electromagnetic field is a separate entity that propagates through spacetime. In Lindgren's geometric model, the EM field is encoded directly in the metric tensor:",
     physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
-    physBioGMEExplain: "where η_μν is the flat Minkowski metric and A_μ is the electromagnetic four-potential. The key consequence: biological systems do not exist IN an electromagnetic field — they exist IN a spacetime whose geometry IS partly electromagnetic. There is no 'field-free' reference state; every organism has evolved within a specific electromagnetic geometry (the geomagnetic background), and perturbations to that geometry are perturbations to the biological operating environment itself.",
+    physBioGMEExplain: "where η_μν is the flat Minkowski metric and A_μ is the electromagnetic four-potential. Within the ansatz, A contributes to the metric. Extending that geometric result to a biological observable requires an additional L2 operator; background-field biology is therefore a BERM hypothesis to test, not an automatic consequence of the metric.",
     physBioChiTitle: "The χ(Ā) selection rule",
-    physBioChiDesc: "The metric extension implies a selection rule: biological sensitivity to EM perturbation depends on the background field Ā. When the background is absent, the perturbation has no geometric substrate to act through — χ → 0. When the background is present, the perturbation modifies existing geometric structure — χ → 1. This is not a free parameter; it is a structural consequence of the metric ansatz.",
+    physBioChiDesc: "BERM proposes χ(Ā) as a background-dependent closure at the open L2 boundary: χ → 0 in the chosen zero-background limit and χ → 1 as the background scale saturates. The functional form is a testable BERM assumption, not a biological response derived from the metric ansatz.",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
     physBioChiExplain: "This saturation curve appears at every biological scale: molecular (CRY requires geomagnetic background for radical pair chemistry), cellular (VGCC gating requires membrane potential as background), organ (BBB integrity modulates effective field penetration), population (electrification level modulates technology exposure). The same mathematical form, five instantiations — see χ at five scales below.",
     physBioSuperTitle: "Superposition violation",
@@ -47,7 +47,7 @@ const t = {
     physBioSuperExplain: "This resolves a central puzzle in EMF bioeffects research: why do multi-frequency exposures (real-world conditions) produce effects that single-frequency laboratory studies miss? A systematic review of 172 studies confirms that combined exposures produce effects qualitatively different from the sum of individual exposures ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). See the full superposition evidence analysis.",
     physBioSuperLink: "See full superposition analysis →",
     physBioTissueTitle: "Tissue-specific resonance",
-    physBioTissueDesc: "The geometric model predicts that different tissues have different susceptibilities to EM perturbation, determined by their ion channel composition, membrane properties, and resonant frequencies. This is not an assumption — it follows from the χ(Ā) selection rule applied to tissue-specific backgrounds:",
+    physBioTissueDesc: "BERM imports tissue-specific ion-channel composition, membrane properties and candidate response windows to propose heterogeneous susceptibility. These tissue rankings are biological hypotheses at or below the open L2 boundary; they do not follow from χ(Ā) alone:",
     physBioTissues: [
       { tissue: "Testes (Leydig cells)", channels: "Cav3.2 (T-type), high density", chi: "Very high", reason: "Window current at rest; StAR protein Ca²⁺-dependent" },
       { tissue: "Hypothalamus", channels: "Cav3.1, Cav3.3", chi: "Very high", reason: "Synaptic vesicle release via synaptotagmin 1" },
@@ -87,7 +87,7 @@ const t = {
 
     bioCivTitle: "From Biology to Civilization",
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
-    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain below states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
       { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
@@ -112,7 +112,7 @@ const t = {
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
-    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework’s logic, not a fitted equation with empirical coefficients.",
+    bioCivEpistemic: "This is BERM's reductionist causal hypothesis. Evidence supports some component mechanisms in specific systems, while the L2 entry operator and several cross-scale aggregation links remain open. Steps 5–10 are model consequences to test, not hormone assays inferred from political behaviour. The BioCap integral is a formal expression, not a fitted equation with validated coefficients.",
 
     biocapDecompTitle: "BioCap Decomposition",
     biocapDecompDesc: "BioCap decomposes into eight measurable biomarkers. Each biomarker has a weight reflecting its relative contribution to civilizational capacity. The decomposition enables both measurement and prediction.",
@@ -152,7 +152,7 @@ const t = {
     archDesc:
       "BERM separates fertility decline into three distinct causal layers. Each level has its own dynamics, timescale, and evidence basis. The total fertility rate (TFR) for a country is the product of all three levels, not the sum -- each acts as a multiplier on the others.",
     archPredictionSource:
-      "The locked country predictions on this site come from the v17 scalar model. The v2 FieldState specification (/model/fieldstate) is a measurement protocol: it defines which field quantities are recorded and how, and it produces no country forecasts.",
+      "The locked country predictions on this site come from the v17 scalar model. The FieldState v2 side branch (/measurement/fieldstate) is an optional measurement and estimation protocol: it defines which field quantities are recorded and how, and it produces no country forecasts.",
     level1Label: "Level 1",
     level1Title: "Biological capacity",
     level1Desc:
@@ -168,9 +168,9 @@ const t = {
 
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eleven levels, 41 nodes, 59 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-dependent magnetoreception in Drosophila ([[ref:yoshii2009|Yoshii 2009]]), CRY-dependent ROS modulation in human cells ([[ref:sherrard2018|Sherrard 2018]]), and — critically — functional blue-light-dependent magnetoreception in humans ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram shows BERM's registered causal hypotheses and evidence boundaries. FieldState observations and the legacy technology proxy enter only as inference inputs to the explicitly open L2 bridge. VGCC/ROS, RPM/CRY and other downstream branches are candidate biological realizations with link-specific evidence; none is currently derived from Lindgren geometry. Click a node to inspect its role, calibration status and references.",
     pathwayHierarchyNote:
-      "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies). The former δVm objection (δV_m ≈ 10⁻²¹ V from geometry alone) is now resolved by the T-type calcium channel bifurcation mechanism: the Schwan equation amplifies external fields to 7.5–15 μV at the membrane (37% of thermal noise at 1 V/m ambient; 184% at 5 V/m personal), and T-type (Cav3) channels operate at a bifurcation point where ~10% are open at rest (window current), making them responsive to these perturbations. Pathway D (HPA → testosterone) is now also derived via the same T-type mechanism: Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+      "Legacy pathway weights and community contrasts belong to model calibration, not to a theoretical ranking. The reported RPM algebraic correspondence, Schwan membrane estimate and Cav3/HPG literature constrain candidate bridges but do not close the geometry-to-observable operator. BERM therefore keeps RPM/CRY, VGCC/ROS and HPA/HPG as parallel, falsifiable propositions without declaring any one a geometric consequence.",
     rpmFrequencyNote:
       "CRY/RPM does not respond to the RF carrier frequency (900 MHz – 3.5 GHz). Its resonance ceiling is ~22.5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). The biologically active components for Pathway B are the geomagnetic background (B_DC) and ELF modulation envelopes of telecom signals (GSM 217 Hz, WiFi 10 Hz beacon). Effects of the RF carrier itself are mediated by Pathway A through the electric field component. The two pathways have complementary frequency domains.",
     vgccHierarchyTitle: "VGCC sensitivity hierarchy at resting potential",
@@ -181,7 +181,7 @@ const t = {
       "A critical finding for BERM's cumulative exposure model: CaMKII (calcium/calmodulin-dependent protein kinase II) phosphorylation shifts the Cav3.2 activation threshold to MORE NEGATIVE potentials (PMC9913649). This creates a positive feedback loop: EMF → Cav3.2 Ca²⁺ influx → CaMKII activation → Cav3.2 threshold shifts left → channel becomes MORE sensitive to EMF → more Ca²⁺ influx. This molecular mechanism explains why EMF effects are cumulative over time: each exposure episode makes the system more sensitive to subsequent exposures. The CaMKII feedback also explains why short-term studies may underestimate long-term effects — the sensitization develops over weeks to months of chronic exposure. Pharmacological prediction: CaMKII inhibitors (KN-93) should block the progressive sensitization without affecting acute EMF responses.",
 
     chiSub: "Saturation curve for ambient × personal exposure interaction",
-    chiTitle: "Lindgren chi coupling equation",
+    chiTitle: "BERM chi closure at the open L2 boundary",
     chiDesc:
       "The coupling between ambient EMF infrastructure and personal device exposure is not linear. The chi function describes a saturation curve: at low ambient levels, personal exposure adds little on top; at high ambient levels, personal exposure is already dominated by the environmental field.",
     chiExplain:
@@ -500,7 +500,7 @@ const t = {
 
     bdnfHormesisTitle: "BDNF hormesis: frequency determines direction",
     bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — same pathway, opposite outcomes",
-    bdnfHormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. This is frequency-dependent hormesis via the same VGCC pathway. TTFields validation: 200 kHz intermediate frequency increases NK cell cytotoxicity while 50 Hz ELF suppresses it. The Lindgren χ-parameter predicts these directional differences — different resonance conditions at different frequencies produce opposite biological outcomes.",
+    bdnfHormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. BERM treats these directionally different findings as motivation for a frequency-dependent hormesis hypothesis through candidate VGCC routes. The proposed χ closure does not derive those biological outcomes from Lindgren geometry; the L2 coupling and endpoint-specific response remain to be calibrated.",
 
     agingSpiralTitle: "Aging Spiral: Melatonin as Anti-Aging Molecule",
     agingSpiralSub: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → accelerated aging (depression = 7 years)",
@@ -646,10 +646,10 @@ const t = {
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
-    mathSub: "Complete derivation from Lindgren geometry to TFR prediction",
+    mathSub: "Derived geometry, open L2 bridge, and conditional BERM equations",
     mathTitle: "Mathematical Foundation",
     mathSubtitle:
-      'Complete derivation from Lindgren geometry to TFR prediction. Every equation is derivable from the previous one. Click "Full derivation" to see intermediate steps.',
+      'The mathematics separates the 2025 Lindgren ansatz and its geometric consequences from BERM\'s proposed biological and demographic closures. The geometry-to-observable L2 coupling operator remains open.',
 
     thresholdTitle: "Testosterone → TFR Threshold Model",
     thresholdSub: "Quantitative link from biological capacity decline to demographic collapse",
@@ -948,17 +948,17 @@ const t = {
     metaTitle: "Mallin dokumentaatio - Extinction Field",
     metaDesc:
       "BERM-mallin dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, yhtälöt ja palautumisdynamiikka.",
-    specNote: "BERM toimii kahdella spesifikaatiotasolla. Malli (tämä sivu) on kausaaliteoria — reitit, yhtälöt ja ennusteet, jotka johdetaan kumulatiivisesta altistusproxystä. FieldState-mittausspesifikaatio määrittelee, miten altistus mitataan suoraan, korvaten proxyn rajatulla protokollalla. Nykyiset ennusteet käyttävät proxya; FieldState-validointi on prospektiivinen.",
+    specNote: "BERM on selitys-, johtamis- ja ennustemalli. FieldState v2 on erillinen valinnainen mittaus-, havainto- ja estimointimoduuli — ei mallin alias eikä kausaalinen juuri. Lukitut v17-tulokset käyttävät kansallista teknologian ajoitusproxya eivätkä ole FieldState-kalibroituja. Geometriasta havaittavaan suureeseen johtava L2-kytkentäoperaattori on avoin.",
 
     physBioTitle: "Fysiikasta biologiaan",
-    physBioSub: "Miten Lindgrenin geometrinen sähkömagnetismi ennustaa biologista herkkyyttä taustakenttiin",
-    physBioLead: "BERMin biologiset ennusteet eivät ole ad hoc -oletuksia — ne johtuvat geometrisesta sähkömagnetismin mallista (GME), jossa EM-kenttä on osa aika-avaruuden metriikkaa, ei sen ulkopuolinen häiriö. Tämä osio jäljittää ketjun metrisen ansatzin ja kudostason herkkyyden välillä.",
+    physBioSub: "Lindgren-premissi, johdettu geometria ja BERM:n ehdottama biologinen silta",
+    physBioLead: "Vuoden 2025 Lindgren-ansatz on BERM:n teoreettinen premissi. Sen geometriset seuraukset pidetään erillään BERM:n biologisista propositioista: geometriasta SHBG:hen, androgeenireseptoriin, ionikanavaan tai reseptorin jälkeiseen signalointiin johtavaa operaattoria ei ole johdettu. Osio esittää ehdotetun sillan ja sen testipisteet.",
     physBioGMETitle: "Lindgrenin geometrinen metriikkalaajennus",
     physBioGMEDesc: "Standardifysiikassa sähkömagneettinen kenttä on erillinen entiteetti, joka etenee aika-avaruudessa. Lindgrenin geometrisessa mallissa EM-kenttä on koodattu suoraan metriikkatensoriin:",
     physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
-    physBioGMEExplain: "missä η_μν on tasainen Minkowskin metriikka ja A_μ sähkömagneettinen nelipotentiaali. Keskeinen seuraus: biologiset järjestelmät eivät ole sähkömagneettisessa kentässä — ne ovat aika-avaruudessa, jonka geometria ON osittain sähkömagneettinen. 'Kenttävapaata' referenssitilaa ei ole; jokainen eliö on kehittynyt tietyssä sähkömagneettisessa geometriassa (geomagneetinen tausta), ja häiriöt tuohon geometriaan ovat häiriöitä biologiseen toimintaympäristöön.",
+    physBioGMEExplain: "missä η_μν on tasainen Minkowskin metriikka ja A_μ sähkömagneettinen nelipotentiaali. Ansatzissa A osallistuu metriikkaan. Geometrisen tuloksen ulottaminen biologiseen havaittavaan vaatii erillisen L2-operaattorin; taustakenttäbiologia on siksi testattava BERM-hypoteesi, ei metriikan automaattinen seuraus.",
     physBioChiTitle: "χ(Ā)-valintasääntö",
-    physBioChiDesc: "Metriikkalaajennus implikoi valintasäännön: biologinen herkkyys EM-häiriölle riippuu taustakentästä Ā. Kun tausta puuttuu, häiriöllä ei ole geometrista substraattia — χ → 0. Kun tausta on läsnä, häiriö muuttaa olemassa olevaa geometriaa — χ → 1. Tämä ei ole vapaa parametri; se on metrisen ansatzin rakenteellinen seuraus.",
+    physBioChiDesc: "BERM ehdottaa χ(Ā):ta taustariippuvaiseksi sulkeumaksi avoimella L2-rajalla: valitussa nollataustarajassa χ → 0 ja taustamittakaavan kyllästyessä χ → 1. Funktion muoto on testattava BERM-oletus, ei metriikkansatzista johdettu biologinen vaste.",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
     physBioChiExplain: "Tämä saturaatiokäyrä esiintyy jokaisella biologisella skaalalla: molekulaarinen (CRY vaatii geomagneettisen taustan radikaaliparin kemialle), solujen (VGCC-porttaus vaatii kalvopotentiaalin taustaksi), elin (BBB-eheys säätelee efektiivistä kenttäläpäisyä), populaatio (sähköistysaste säätelee teknologia-altistusta). Sama matemaattinen muoto, viisi instanssia — katso χ viidellä skaalalla alla.",
     physBioSuperTitle: "Superpositiorikkomus",
@@ -967,7 +967,7 @@ const t = {
     physBioSuperExplain: "Tämä ratkaisee keskeisen pulman EMF-biovaikutustutkimuksessa: miksi monitaajuiset altistukset (tosielämän olosuhteet) tuottavat vaikutuksia, joita yksitaajuiset laboratoriotutkimukset eivät havaitse? 172 tutkimuksen systemaattinen katsaus vahvistaa, että yhdistetyt altistukset tuottavat vaikutuksia, jotka eroavat laadullisesti yksittäisten altistusten summasta ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]). Katso täydellinen superpositioanalyysi.",
     physBioSuperLink: "Katso täydellinen superpositioanalyysi →",
     physBioTissueTitle: "Kudostarkka resonanssi",
-    physBioTissueDesc: "Geometrinen malli ennustaa, että eri kudoksilla on erilainen herkkyys EM-häiriöille, ionikanavakoostumuksen, kalvo-ominaisuuksien ja resonanssitaajuuksien perusteella. Tämä ei ole oletus — se seuraa χ(Ā)-valintasäännöstä kudosspesifisiin taustoihin sovellettuna:",
+    physBioTissueDesc: "BERM tuo kudoskohtaisen ionikanavakoostumuksen, kalvo-ominaisuudet ja ehdotetut vasteikkunat biologisina tietoina ja ehdottaa niiden perusteella heterogeenista herkkyyttä. Kudosjärjestys on avoimella L2-rajalla tai sen alapuolella oleva hypoteesi eikä seuraa yksin χ(Ā):sta:",
     physBioTissues: [
       { tissue: "Kivekset (Leydigin solut)", channels: "Cav3.2 (T-tyyppi), korkea tiheys", chi: "Erittäin korkea", reason: "Ikkunavirta levossa; StAR-proteiini Ca²⁺-riippuvainen" },
       { tissue: "Hypotalamus", channels: "Cav3.1, Cav3.3", chi: "Erittäin korkea", reason: "Synaptisten vesikkelien vapautus synaptotagmiini 1:n kautta" },
@@ -1007,7 +1007,7 @@ const t = {
 
     bioCivTitle: "Biologiasta sivilisaatioon",
     bioCivSub: "10-vaiheinen kausaaliketju molekyylitason EMF-vaikutuksista sivilisaation seurauksiin",
-    bioCivLead: "BERMin kausaalilogiikka ei pysähdy hormonitasoihin tai siittiöiden lukumääriin. Sama häiriö, joka avaa kalsiumkanavan Leydigin solussa, etenee ylöspäin käyttäytymisen, perheen muodostuksen, institutionaalisen kapasiteetin ja sivilisaation dynamiikan kautta. Alla oleva ketju jäljittää tämän etenemisen vaiheesta 0 (geometrinen tausta) vaiheeseen 10 (sivilisaation tulos). Kukin vaihe on dokumentoitu erikseen muualla mallissa; tämä osio näyttää, miten ne yhdistyvät yhdeksi katkeamattomaksi sekvenssiksi.",
+    bioCivLead: "BERM soveltaa biologisesti reduktionistista, kompositionaalista hypoteesia molekyyli- ja hormonitiloista yksilökäyttäytymisen kautta populaatioaggregaatteihin. Alla oleva ketju esittää ehdotetun etenemisen fysikaalisesta syötteestä sivilisaatiotulokseen. Erillisten lenkkien näyttö voi rajata ketjua, mutta koko monitasoketju ei ole empiirisesti suljettu eikä ryhmätason poliittista tulosta lueta takaisin yksilön hormonimittaukseksi.",
     bioCivChain: [
       { step: 0, title: "Taustageometria", desc: "Geomagneettinen kenttä luo χ(Ā)-substraatin — sähkömagneettisen perusgeometrian, jossa kaikki biologia on kehittynyt" },
       { step: 1, title: "EMF-häiriö", desc: "Ihmisen aiheuttamat kentät (ELF, IF, RF) häiritsevät geometrista taustaa muuttaen aika-avaruuden metriikkaa" },
@@ -1032,7 +1032,7 @@ const t = {
       { symbol: "α", desc: "Palautumiskerroin (biologinen korjausnopeus EM-kuorman pienentyessä)" },
       { symbol: "σ(τ)", desc: "Ihmisen aiheuttama EM-saturaatio — peittää auringon palautumisikkunan vuoden 1880 jälkeen" },
     ],
-    bioCivEpistemic: "Tämä kausaaliketju on käsitteellinen viitekehys, joka yhdistää dokumentoidut mekanismit koherentiksi sekvenssiksi. Yksittäisillä vaiheilla (0–4) on suora kokeellinen tuki; ylempien vaiheiden (5–10) kvantitatiivisia parametreja ei ole vielä kalibroitu. BioCap-integraali on viitekehyksen logiikan muodollinen ilmaus, ei sovitettu yhtälö empiirisin kertoimiin.",
+    bioCivEpistemic: "Tämä on BERM:n reduktionistinen kausaalihypoteesi. Näyttö tukee osaa komponenttimekanismeista rajatuissa järjestelmissä, mutta L2-tulo-operaattori ja useat tasojen väliset aggregointilenkit ovat avoimia. Vaiheet 5–10 ovat testattavia malliseurauksia, eivät poliittisesta käyttäytymisestä pääteltyjä hormonimäärityksiä. BioCap-integraali on muodollinen ilmaus, ei validoiduilla kertoimilla sovitettu yhtälö.",
 
     biocapDecompTitle: "BioCap-hajotus",
     biocapDecompDesc: "BioCap hajoaa kahdeksaan mitattavaan biomarkkeriin. Jokaisella biomarkkerilla on paino, joka heijastaa sen suhteellista osuutta sivilisaatiokapasiteetista. Hajotus mahdollistaa sekä mittaamisen että ennustamisen.",
@@ -1072,7 +1072,7 @@ const t = {
     archDesc:
       "BERM erottelee syntyvyyden laskun kolmeen erilliseen kausaalitasoon. Jokaisella tasolla on oma dynamiikkansa, aikaskaalansa ja näyttöpohjansa. Maan kokonaishedelmällisyysluku (TFR) on kaikkien kolmen tason tulo, ei summa -- kukin toimii kertoimena muille.",
     archPredictionSource:
-      "Sivuston lukitut maakohtaiset ennusteet tulevat v17-skalaarimallista. FieldState-spesifikaatio v2 (/model/fieldstate) on mittausprotokolla: se määrittelee, mitkä kenttäsuureet kirjataan ja miten, eikä se tuota maakohtaisia ennusteita.",
+      "Sivuston lukitut maakohtaiset ennusteet tulevat v17-skalaarimallista. FieldState v2 -sivuhaara (/measurement/fieldstate) on valinnainen mittaus- ja estimointiprotokolla: se määrittelee, mitkä kenttäsuureet kirjataan ja miten, eikä se tuota maakohtaisia ennusteita.",
     level1Label: "Taso 1",
     level1Title: "Biologinen kapasiteetti",
     level1Desc:
@@ -1088,9 +1088,9 @@ const t = {
 
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yksitoista tasoa, 41 solmua, 59 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason näytöllä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Kaavio näyttää BERM:n rekisteröidyt kausaalihypoteesit ja evidenssirajat. FieldState-havainnot ja legacy-teknologiaproxy tulevat vain päättelysyötteinä eksplisiittisesti avoimeen L2-siltaan. VGCC/ROS-, RPM/CRY- ja muut jatkohaarat ovat lenkkikohtaisella näytöllä rajattuja biologisia realisaatiokandidaatteja; yhtäkään niistä ei ole johdettu Lindgren-geometriasta. Solmua klikkaamalla näet roolin, kalibrointitilan ja viitteet.",
     pathwayHierarchyNote:
-      "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on ENSISIJAINEN polku, koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatutkimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+      "Legacy-polkujen painot ja yhteisövertailut kuuluvat mallikalibrointiin, eivät teoreettiseen arvojärjestykseen. Raportoitu RPM:n algebrallinen vastaavuus, Schwanin kalvoarvio ja Cav3/HPG-kirjallisuus rajaavat siltakandidaatteja mutta eivät sulje geometriasta havaittavaan vasteeseen johtavaa operaattoria. BERM pitää siksi RPM/CRY-, VGCC/ROS- ja HPA/HPG-haarat rinnakkaisina, falsifioitavina propositioina.",
     rpmFrequencyNote:
       "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
     vgccHierarchyTitle: "VGCC-herkkyyshierarkia lepopotentiaalissa",
@@ -1101,7 +1101,7 @@ const t = {
       "Kriittinen löydös BERM:n kumulatiivisen altistusmallin kannalta: CaMKII:n (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) fosforylaatio siirtää Cav3.2:n aktivaatiokynnystä NEGATIIVISEMPAAN suuntaan (PMC9913649). Tämä luo positiivisen takaisinkytkentäsilmukan: EMF → Cav3.2 Ca²⁺ -sisäänvirtaus → CaMKII:n aktivaatio → Cav3.2:n kynnys siirtyy vasemmalle → kanava tulee HERKEMMÄKSI EMF:lle → lisää Ca²⁺ -sisäänvirtausta. Tämä molekulaarinen mekanismi selittää, miksi EMF-vaikutukset ovat kumulatiivisia ajan myötä: jokainen altistusjakso tekee järjestelmästä herkemmän seuraaville altistuksille. CaMKII-takaisinkytkentä selittää myös, miksi lyhytaikaiset tutkimukset voivat aliarvioida pitkäaikaisvaikutuksia — herkistyminen kehittyy viikkojen tai kuukausien kuluessa. Farmakologinen ennuste: CaMKII-inhibiittorit (KN-93) estävät etenevän herkistymisen vaikuttamatta akuutteihin EMF-vasteisiin.",
 
     chiSub: "Saturaatiokäyrä ympäristö- × henkilökohtaisen altistuksen vuorovaikutukselle",
-    chiTitle: "Lindgrenin chi-kytkentäyhtälö",
+    chiTitle: "BERM:n chi-sulkeuma avoimella L2-rajalla",
     chiDesc:
       "Ympäristön EMF-infrastruktuurin ja henkilökohtaisen laitealtistuksen välinen kytkentä ei ole lineaarinen. Chi-funktio kuvaa saturaatiokäyrää: matalilla ympäristötasoilla henkilökohtainen altistus lisää vain vähän; korkeilla ympäristötasoilla henkilökohtainen altistus on jo ympäristökentän hallitsema.",
     chiExplain:
@@ -1420,7 +1420,7 @@ const t = {
 
     bdnfHormesisTitle: "BDNF-hormeesi: taajuus määrää suunnan",
     bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — sama reitti, vastakkaiset lopputulokset",
-    bdnfHormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneeisille. RF-EMF (835–2650 MHz) vähentää BDNF:ää hippokampuksessa dendriittien piikkien menetyksen ja kognitiivisen heikentymisen kera. Samalla ELF (50 Hz) KASVATTAA BDNF:ää ja edistää neurogeneesiä. Tämä on taajuusriippuvaista hormeesia saman VGCC-reitin kautta. TTFields-todentaminen: 200 kHz välitaajuus kasvattaa NK-solujen sytotoksisuutta kun 50 Hz ELF vaimentaa sitä. Lindgrenin χ-parametri ennustaa nämä suuntaerot — erilaiset resonanssiolosuhteet eri taajuuksilla tuottavat vastakkaisia biologisia lopputuloksia.",
+    bdnfHormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneesille. RF-EMF- ja ELF-tutkimuksissa on raportoitu erisuuntaisia BDNF- ja NK-solupäätepisteitä. BERM käyttää näitä löydöksiä perusteena taajuusriippuvaiselle hormeesihypoteesille ehdotettujen VGCC-reittien kautta. Ehdotettu χ-sulkeuma ei johda biologisia lopputuloksia Lindgrenin geometriasta; L2-kytkentä ja päätepistekohtainen vaste on vielä kalibroitava.",
 
     agingSpiralTitle: "Ikääntymiskierre: Melatoniini anti-aging-molekyylinä",
     agingSpiralSub: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → kiihtynyt ikääntyminen (masennus = 7 vuotta)",
@@ -1566,10 +1566,10 @@ const t = {
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
-    mathSub: "Täydellinen derivointi Lindgrenin geometriasta TFR-ennusteeseen",
+    mathSub: "Johdettu geometria, avoin L2-silta ja ehdolliset BERM-yhtälöt",
     mathTitle: "Matemaattinen perusta",
     mathSubtitle:
-      'Täydellinen johtaminen Lindgrenin geometriasta TFR-ennusteeseen. Jokainen yhtälö on johdettavissa edellisestä. Klikkaa "Täysi johtaminen" nähdäksesi välivaiheet.',
+      "Matematiikka erottaa vuoden 2025 Lindgren-ansatzin ja sen geometriset seuraukset BERM:n ehdotetuista biologisista ja demografisista sulkeumista. Geometriasta havaittavaan suureeseen johtava L2-kytkentäoperaattori on avoin.",
 
     thresholdTitle: "Testosteroni → TFR -kynnysmalli",
     thresholdSub: "Kvantitatiivinen yhteys biologisen kapasiteetin laskusta demografiseen romahdukseen",
@@ -1868,17 +1868,17 @@ const t = {
     metaTitle: "モデル文書 - Extinction Field",
     metaDesc:
       "BERMモデル文書:三層アーキテクチャ、因果経路、方程式、回復動態。",
-    specNote: "BERMは二つの仕様レベルで動作する。モデル（本ページ）は因果理論であり、累積曝露プロキシから導出される経路・方程式・予測を含む。FieldState測定仕様は曝露の直接測定方法を定義し、プロキシを限定的プロトコルで置き換える。現在の予測はプロキシを使用し、FieldState検証は前向きである。",
+    specNote: "BERMは説明・導出・予測モデルです。FieldState v2は独立した任意の測定・観察・推定モジュールであり、モデルの別名でも因果的起点でもありません。公開v17出力は国家技術タイミングプロキシを使用し、FieldState校正済みではありません。幾何学から観測量へのL2結合は未解決です。",
 
     physBioTitle: "物理学から生物学へ",
-    physBioSub: "Lindgrenの幾何学的電磁気学が背景場に対する生物学的感受性をいかに予測するか",
-    physBioLead: "BERMの生物学的予測はアドホックなものではない。電磁場が時空計量の一部であり、外的摂動ではないとする幾何学的電磁気モデル（GME）から導出される。本節では計量アンザッツから組織レベルの感受性に至る連鎖を辿る。",
+    physBioSub: "Lindgren前提、導出済み幾何学、BERMが提案する生物学的ブリッジ",
+    physBioLead: "2025年Lindgren仮定はBERMの理論的前提です。その幾何学的帰結とBERMの生物学的命題を分離します。幾何学からSHBG、アンドロゲン受容体、イオンチャネル、受容体後シグナルへの演算子はまだ導出されていません。",
     physBioGMETitle: "Lindgren幾何学的計量拡張",
     physBioGMEDesc: "標準物理学では、電磁場は時空を伝播する独立した実体である。Lindgrenの幾何学モデルでは、電磁場は計量テンソルに直接エンコードされる：",
     physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
-    physBioGMEExplain: "ここでη_μνは平坦なMinkowski計量、A_μは電磁四元ポテンシャルである。重要な帰結：生体システムは電磁場の「中に」存在するのではなく、その幾何学が部分的に電磁的である時空の「中に」存在する。「場のない」基準状態は存在しない。すべての生物は特定の電磁幾何学（地磁気バックグラウンド）の中で進化してきたのであり、その幾何学への摂動は生物学的動作環境そのものへの摂動である。",
+    physBioGMEExplain: "ここでη_μνは平坦なMinkowski計量、A_μは電磁四元ポテンシャルです。この仮定ではAが計量に寄与します。幾何学的結果を生物学的観測量へ拡張するには別のL2演算子が必要であり、背景場生物学は自動的帰結ではなく検証すべきBERM仮説です。",
     physBioChiTitle: "χ(Ā)選択則",
-    physBioChiDesc: "計量拡張は選択則を含意する：電磁摂動に対する生物学的感受性は背景場Āに依存する。背景が不在のとき、摂動は作用する幾何学的基盤を持たず、χ → 0。背景が存在するとき、摂動は既存の幾何学的構造を修正し、χ → 1。これは自由パラメータではなく、計量アンザッツの構造的帰結である。",
+    physBioChiDesc: "BERMは未解決L2境界の背景依存閉包としてχ(Ā)を提案します。選択したゼロ背景極限でχ → 0、背景スケールの飽和でχ → 1です。この関数形は検証可能なBERM仮定であり、計量仮定から導出された生物学的応答ではありません。",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
     physBioChiExplain: "この飽和曲線はあらゆる生物学的スケールに現れる：分子（CRYはラジカルペア化学のために地磁気バックグラウンドを必要とする）、細胞（VGCCゲーティングはバックグラウンドとして膜電位を必要とする）、臓器（BBBの完全性が有効な場の浸透を調節する）、集団（電化レベルが技術曝露を調節する）。同じ数学的形式、5つの具体例 — 下記の5つのスケールにおけるχを参照。",
     physBioSuperTitle: "重ね合わせの破れ",
@@ -1887,7 +1887,7 @@ const t = {
     physBioSuperExplain: "これはEMF生体影響研究の中心的な謎を解決する：なぜ多周波曝露（実世界の条件）は単一周波数の実験室研究が見逃す効果を生むのか？172件の研究の系統的レビューにより、複合曝露は個別曝露の合計とは質的に異なる効果を生むことが確認されている（[[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]）。完全な重ね合わせエビデンス解析を参照。",
     physBioSuperLink: "完全な重ね合わせ解析を見る →",
     physBioTissueTitle: "組織特異的共鳴",
-    physBioTissueDesc: "幾何学モデルは、異なる組織がイオンチャネル組成、膜特性、共鳴周波数によって決定される異なる電磁摂動感受性を持つことを予測する。これは仮定ではなく、組織特異的バックグラウンドに適用されたχ(Ā)選択則から導かれる：",
+    physBioTissueDesc: "BERMは組織固有のイオンチャネル組成、膜特性、候補応答窓を生物学的情報として導入し、不均一な感受性を提案します。組織順位は未解決L2境界またはその下流の仮説であり、χ(Ā)だけからは導かれません：",
     physBioTissues: [
       { tissue: "精巣（Leydig細胞）", channels: "Cav3.2 (T-type), high density", chi: "非常に高い", reason: "安静時窓電流；StARタンパク質のCa²⁺依存性" },
       { tissue: "視床下部", channels: "Cav3.1, Cav3.3", chi: "非常に高い", reason: "synaptotagmin 1を介したシナプス小胞放出" },
@@ -1927,7 +1927,7 @@ const t = {
 
     bioCivTitle: "From Biology to Civilization",
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
-    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
       { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
@@ -1952,7 +1952,7 @@ const t = {
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
-    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+    bioCivEpistemic: "This is BERM's reductionist causal hypothesis. Evidence supports some component mechanisms in specific systems, while the L2 entry operator and several cross-scale aggregation links remain open. Steps 5–10 are model consequences to test, not hormone assays inferred from political behaviour. The BioCap integral is a formal expression, not a fitted equation with validated coefficients.",
 
     biocapDecompTitle: "BioCap分解",
     biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
@@ -1983,9 +1983,9 @@ const t = {
 
     causalTitle: "因果経路図",
     causalDesc:
-      "下図はLindgren幾何学からTFR低下までの完全な機構的連鎖を示す。11レベル、41ノード、59エッジ。二つの共同主経路が並行して動作する:経路A(VGCC → Ca²⁺ → ROS)は最も強い実験的支持を持ち(23-28のブロッカー研究)、経路B(RPM → CRY → 概日リズム障害)はLindgren幾何学から生物学への最も完全な理論的橋渡し(RPMハミルトニアンの87.5%がメトリック仮説から導出可能)。CRY/RPM経路は種を超えた支持的証拠を持つ:鳥類の磁気コンパスの撹乱([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]])、ショウジョウバエのCRY依存性磁気受容([[ref:yoshii2009|Yoshii 2009]])、ヒト細胞のCRY依存性ROS調節([[ref:sherrard2018|Sherrard 2018]])、そして決定的に、ヒトにおける機能的な青色光依存性磁気受容([[ref:chae2019|Chae et al. 2019]], PLOS ONE)。これはBERMがモデル化する種に生物学的基盤が存在することを示す。両経路はE-レベルのエビデンスで独立に支持されている。任意のノードをクリックすると、そのメカニズム、Lindgren解釈、定量的定式化、回復パラメータ、主要な参考文献が表示される。ノードの境界線は認識論的レベルに応じて着色されている。",
+      "図はBERMに登録された因果仮説とエビデンス境界を示します。FieldState観察と従来の技術プロキシは、明示的に未解決なL2ブリッジへの推論入力に限られます。VGCC/ROS、RPM/CRYその他の下流分岐はリンク固有のエビデンスを持つ生物学的実装候補であり、Lindgren幾何学から導出済みではありません。",
     pathwayHierarchyNote:
-      "経路の重みはコミュニティデータ(アーミッシュ-韓国勾配)に対する経験的較正を反映する。理論的階層は反映しない:経路B(CRY/RPM)はPRIMARY経路である。RPMハミルトニアンの87.5%がLindgren幾何学から導出可能であり、メカニズムの存在が幾何学的帰結として確立されるためである。経路Aはより強い実験的支持を持つ(23-28のブロッカー研究)。以前のδVm反論(幾何学のみからδV_m ≈ 10⁻²¹ V)は、T型カルシウムチャネル分岐メカニズムにより解決された:Schwan方程式は外部電場を膜で7.5-15 μVに増幅し(1 V/m環境で熱ノイズの37%、5 V/m個人レベルで184%)、T型(Cav3)チャネルは約10%が静止時に開いている(ウィンドウ電流)分岐点で動作し、これらの摂動に応答する。経路D(HPA → テストステロン)も同じT型メカニズムにより導出:Schwan δVm → Cav3 → Ca²⁺ → StAR → テストステロン([[ref:xiang2025_clc2_ttype|Xiang 2025]])。",
+      "従来の経路重みと地域比較はモデル校正に属し、理論的順位ではありません。RPMの代数的対応、Schwan膜推定、Cav3/HPG文献はブリッジ候補を制約しますが、幾何学から観測量への演算子を閉じません。BERMは各分岐を並列の反証可能な命題として保持します。",
     rpmFrequencyNote:
       "CRY/RPMはRFキャリア周波数(900 MHz - 3.5 GHz)に応答しない。その共鳴上限は約22.5 MHz([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473)。経路Bの生物学的活性成分は地磁気背景(B_DC)とテレコム信号のELF変調エンベロープ(GSM 217 Hz, WiFi 10 Hz beacon)である。RFキャリア自体の効果は、電場成分を通じて経路Aにより媒介される。二つの経路は相補的な周波数領域を持つ。",
     vgccHierarchyTitle: "静止電位でのVGCC感受性階層",
@@ -1996,7 +1996,7 @@ const t = {
       "BERMの累積暴露モデルにとって重要な発見:CaMKII(カルシウム/カルモジュリン依存性プロテインキナーゼII)のリン酸化はCav3.2の活性化閾値をより負の方向にシフトさせる(PMC9913649)。これは正のフィードバックループを生成する:EMF → Cav3.2 Ca²⁺流入 → CaMKII活性化 → Cav3.2閾値が左にシフト → チャネルがEMFに対してより感受性 → より多くのCa²⁺流入。この分子メカニズムはEMF効果が時間とともに累積的である理由を説明する:各暴露エピソードはシステムを後続の暴露に対してより感受性にする。CaMKIIフィードバックはまた、短期研究が長期効果を過小評価する理由も説明する -- 感作は数週間から数ヶ月の慢性暴露にわたって発達する。薬理学的予測:CaMKII阻害剤(KN-93)は急性EMF応答に影響を与えることなく進行性感作をブロックするべきである。",
 
     chiSub: "周囲 × 個人暴露相互作用の飽和曲線",
-    chiTitle: "Lindgren chi結合方程式",
+    chiTitle: "未解決L2境界におけるBERM chi閉包",
     chiDesc:
       "周囲EMFインフラと個人デバイス暴露の結合は線形ではない。chi関数は飽和曲線を記述する:低い周囲レベルでは個人暴露はほとんど追加しない;高い周囲レベルでは個人暴露はすでに環境場に支配されている。",
     chiExplain:
@@ -2315,7 +2315,7 @@ const t = {
 
     bdnfHormesisTitle: "BDNFホルメシス:周波数が方向を決定する",
     bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ -- 同じ経路、反対の結果",
-    bdnfHormesisBody: "BDNF(脳由来神経栄養因子)は神経可塑性、記憶、神経新生に不可欠。RF-EMF(835-2650 MHz)は海馬のBDNFを減少させ、樹状突起スパインの喪失と認知障害を伴う。一方、ELF(50 Hz)はBDNFを増加させ神経新生を促進する。これは同じVGCC経路を通じた周波数依存性ホルメシス。TTFields検証:200 kHz中間周波数はNK細胞傷害性を増加させるが50 Hz ELFは抑制する。Lindgrenのχパラメータはこれらの方向差を予測する -- 異なる周波数での異なる共鳴条件が反対の生物学的結果を生む。",
+    bdnfHormesisBody: "BDNFは神経可塑性・記憶・神経新生に重要であり、RF-EMFとELFの研究ではBDNFおよびNK細胞エンドポイントに方向の異なる所見が報告されている。BERMはこれらを、候補VGCC経路を介する周波数依存ホルミシス仮説の動機として扱う。提案χ閉包はLindgren幾何学から生物学的結果を導出せず、L2結合とエンドポイント別応答は未校正である。",
 
     agingSpiralTitle: "老化スパイラル:抗老化分子としてのメラトニン",
     agingSpiralSub: "EMF → メラトニン↓ → テロメラーゼ↓ + SIRT1↓ → 加速老化(うつ病 = 7年)",
@@ -2437,10 +2437,10 @@ const t = {
 
     btnEvidence: "エビデンスを閲覧",
     btnPredictions: "予測を表示",
-    mathSub: "Lindgren幾何学からTFR予測までの完全な導出",
+    mathSub: "導出済み幾何学、未解決のL2ブリッジ、条件付きBERM方程式",
     mathTitle: "数学的基礎",
     mathSubtitle:
-      "Lindgren幾何学からTFR予測までの完全な導出。すべての方程式は前の方程式から導出可能。「完全な導出」をクリックして中間ステップを表示。",
+      "数学は2025年Lindgren仮定とその幾何学的帰結を、BERMが提案する生物学的・人口学的閉包から分離します。幾何学から観測量へのL2結合演算子は未解決です。",
 
     thresholdTitle: "テストステロン → TFR閾値モデル",
     thresholdSub: "生物学的容量低下から人口学的崩壊への定量的リンク",
@@ -2739,17 +2739,17 @@ const t = {
     metaTitle: "Documentation du modele - Extinction Field",
     metaDesc:
       "Documentation du modele BERM : architecture a trois niveaux, voies causales, equations et dynamiques de recuperation.",
-    specNote: "BERM fonctionne a deux niveaux de specification. Le modele (cette page) est la theorie causale — voies, equations et predictions derivees d'un proxy d'exposition cumulative. La specification de mesure FieldState definit comment mesurer l'exposition directement, remplacant le proxy par un protocole borne. Les predictions actuelles utilisent le proxy ; la validation FieldState est prospective.",
+    specNote: "BERM est le modèle explicatif, dérivationnel et prédictif. FieldState v2 est un module facultatif et distinct de mesure, d'observation et d'estimation — ni alias du modèle ni racine causale. Les sorties v17 utilisent un proxy national de chronologie technologique et ne sont pas calibrées sur FieldState. Le couplage L2 vers l'observable reste ouvert.",
 
     physBioTitle: "De la physique a la biologie",
-    physBioSub: "Comment l'electromagnetisme geometrique de Lindgren predit la sensibilite biologique aux champs de fond",
-    physBioLead: "Les predictions biologiques du BERM ne sont pas ad hoc — elles derivent d'un modele geometrique de l'electromagnetisme (GME) dans lequel le champ EM fait partie de la metrique de l'espace-temps, et non une perturbation externe. Cette section retrace la chaine de l'ansatz metrique a la sensibilite tissulaire.",
+    physBioSub: "Prémisse de Lindgren, géométrie dérivée et pont biologique proposé par BERM",
+    physBioLead: "L'ansatz de Lindgren 2025 est la prémisse théorique de BERM. Ses conséquences géométriques sont séparées des propositions biologiques de BERM : aucun opérateur vers la SHBG, le récepteur des androgènes, un canal ionique ou la signalisation post-récepteur n'a encore été dérivé.",
     physBioGMETitle: "Extension metrique geometrique de Lindgren",
     physBioGMEDesc: "En physique standard, le champ electromagnetique est une entite separee qui se propage dans l'espace-temps. Dans le modele geometrique de Lindgren, le champ EM est encode directement dans le tenseur metrique :",
     physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
-    physBioGMEExplain: "ou η_μν est la metrique plate de Minkowski et A_μ est le quadri-potentiel electromagnetique. La consequence cle : les systemes biologiques n'existent pas DANS un champ electromagnetique — ils existent DANS un espace-temps dont la geometrie EST partiellement electromagnetique. Il n'y a pas d'etat de reference 'sans champ' ; chaque organisme a evolue dans une geometrie electromagnetique specifique (le fond geomagnetique), et les perturbations de cette geometrie sont des perturbations de l'environnement de fonctionnement biologique lui-meme.",
+    physBioGMEExplain: "où η_μν est la métrique plate de Minkowski et A_μ le quadripotentiel électromagnétique. Dans l'ansatz, A contribue à la métrique. Étendre ce résultat à un observable biologique exige un opérateur L2 distinct ; la biologie du champ de fond est donc une hypothèse BERM à tester, non une conséquence automatique.",
     physBioChiTitle: "La regle de selection χ(Ā)",
-    physBioChiDesc: "L'extension metrique implique une regle de selection : la sensibilite biologique a la perturbation EM depend du champ de fond Ā. Quand le fond est absent, la perturbation n'a pas de substrat geometrique pour agir — χ → 0. Quand le fond est present, la perturbation modifie la structure geometrique existante — χ → 1. Ce n'est pas un parametre libre ; c'est une consequence structurelle de l'ansatz metrique.",
+    physBioChiDesc: "BERM propose χ(Ā) comme fermeture dépendante du fond à la frontière L2 ouverte : χ → 0 dans la limite de fond nul choisie et χ → 1 lorsque l'échelle de fond sature. Cette forme est une hypothèse BERM testable, pas une réponse biologique dérivée de l'ansatz métrique.",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
     physBioChiExplain: "Cette courbe de saturation apparait a chaque echelle biologique : moleculaire (CRY necessite le fond geomagnetique pour la chimie des paires de radicaux), cellulaire (l'ouverture des VGCC necessite le potentiel membranaire comme fond), organique (l'integrite de la BHE module la penetration effective du champ), populationnelle (le niveau d'electrification module l'exposition technologique). La meme forme mathematique, cinq instanciations — voir χ a cinq echelles ci-dessous.",
     physBioSuperTitle: "Violation de la superposition",
@@ -2758,7 +2758,7 @@ const t = {
     physBioSuperExplain: "Ceci resout une enigme centrale de la recherche sur les bioeffets des CEM : pourquoi les expositions multi-frequences (conditions reelles) produisent-elles des effets que les etudes en laboratoire a frequence unique manquent ? Une revue systematique de 172 etudes confirme que les expositions combinees produisent des effets qualitativement differents de la somme des expositions individuelles ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). Voir l'analyse complete des preuves de superposition.",
     physBioSuperLink: "Voir l'analyse complete de la superposition →",
     physBioTissueTitle: "Resonance specifique aux tissus",
-    physBioTissueDesc: "Le modele geometrique predit que differents tissus ont des susceptibilites differentes a la perturbation EM, determinees par leur composition en canaux ioniques, leurs proprietes membranaires et leurs frequences de resonance. Ce n'est pas une hypothese — cela decoule de la regle de selection χ(Ā) appliquee aux fonds specifiques aux tissus :",
+    physBioTissueDesc: "BERM importe la composition tissulaire en canaux ioniques, les propriétés membranaires et des fenêtres candidates pour proposer une susceptibilité hétérogène. Ces classements tissulaires sont des hypothèses à la frontière L2 ouverte ou en aval ; ils ne découlent pas de χ(Ā) seul :",
     physBioTissues: [
       { tissue: "Testicules (cellules de Leydig)", channels: "Cav3.2 (T-type), high density", chi: "Tres eleve", reason: "Courant de fenetre au repos ; proteine StAR dependante du Ca²⁺" },
       { tissue: "Hypothalamus", channels: "Cav3.1, Cav3.3", chi: "Tres eleve", reason: "Liberation de vesicules synaptiques via synaptotagmin 1" },
@@ -2798,7 +2798,7 @@ const t = {
 
     bioCivTitle: "From Biology to Civilization",
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
-    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
       { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
@@ -2823,7 +2823,7 @@ const t = {
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
-    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+    bioCivEpistemic: "This is BERM's reductionist causal hypothesis. Evidence supports some component mechanisms in specific systems, while the L2 entry operator and several cross-scale aggregation links remain open. Steps 5–10 are model consequences to test, not hormone assays inferred from political behaviour. The BioCap integral is a formal expression, not a fitted equation with validated coefficients.",
 
     biocapDecompTitle: "Décomposition BioCap",
     biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
@@ -2854,9 +2854,9 @@ const t = {
 
     causalTitle: "Diagramme des voies causales",
     causalDesc:
-      "Le diagramme ci-dessous montre la chaine mecanistique complete de la geometrie de Lindgren au declin du TFR. Onze niveaux, 41 noeuds, 59 aretes. Deux voies co-primaires operent en parallele : la Voie A (VGCC → Ca²⁺ → ROS) a le support experimental le plus fort (23-28 etudes de blocage), tandis que la Voie B (RPM → CRY → perturbation circadienne) est le pont theorique le plus complet de la geometrie de Lindgren a la biologie (87,5 % du Hamiltonien RPM est derivable de l'ansatz metrique). La voie CRY/RPM a des preuves de soutien inter-especes : perturbation du compas magnetique chez les oiseaux ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), magnetoreception CRY-dependante chez la Drosophile ([[ref:yoshii2009|Yoshii 2009]]), modulation ROS CRY-dependante dans les cellules humaines ([[ref:sherrard2018|Sherrard 2018]]), et -- de maniere cruciale -- magnetoreception fonctionnelle dependante de la lumiere bleue chez l'humain ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indiquant que le substrat biologique est present chez l'espece modelisee par BERM. Les deux voies sont independamment soutenues au niveau de preuve E. Cliquez sur un noeud pour voir son mecanisme, son interpretation de Lindgren, sa formulation quantitative, ses parametres de recuperation et ses references cles. Les bordures des noeuds sont colorees par niveau epistemique.",
+      "Le diagramme montre les hypothèses causales enregistrées de BERM et leurs frontières de preuve. Les observations FieldState et le proxy technologique historique n'entrent que comme données d'inférence vers le pont L2 explicitement ouvert. VGCC/ROS, RPM/CRY et les autres branches sont des réalisations biologiques candidates avec des preuves propres à chaque lien ; aucune n'est dérivée de la géométrie de Lindgren.",
     pathwayHierarchyNote:
-      "Les poids des voies refletent la calibration empirique sur les donnees communautaires (gradient Amish-Coree). Ils ne refletent pas la hierarchie theorique : la Voie B (CRY/RPM) est la voie PRIMAIRE car 87,5 % du Hamiltonien RPM est derivable de la geometrie de Lindgren, etablissant l'EXISTENCE du mecanisme comme consequence geometrique. La Voie A a un support experimental plus fort (23-28 etudes de blocage). L'ancienne objection δVm (δV_m ≈ 10⁻²¹ V de la geometrie seule) est maintenant resolue par le mecanisme de bifurcation du canal calcique de type T : l'equation de Schwan amplifie les champs externes a 7,5-15 μV a la membrane (37 % du bruit thermique a 1 V/m ambiant ; 184 % a 5 V/m personnel), et les canaux de type T (Cav3) operent a un point de bifurcation ou ~10 % sont ouverts au repos (courant de fenetre), les rendant sensibles a ces perturbations. La Voie D (HPA → testosterone) est egalement derivee via le meme mecanisme de type T : Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+      "Les pondérations historiques et les contrastes communautaires relèvent de la calibration, non d'une hiérarchie théorique. La correspondance algébrique RPM, l'estimation membranaire de Schwan et la littérature Cav3/HPG contraignent des ponts candidats sans fermer l'opérateur géométrie–observable. BERM conserve donc ces branches comme propositions parallèles et falsifiables.",
     rpmFrequencyNote:
       "CRY/RPM ne repond pas a la frequence porteuse RF (900 MHz – 3,5 GHz). Son plafond de resonance est ~22,5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). Les composants biologiquement actifs pour la Voie B sont le fond geomagnetique (B_DC) et les enveloppes de modulation ELF des signaux telecoms (GSM 217 Hz, WiFi 10 Hz beacon). Les effets de la porteuse RF elle-meme sont medies par la Voie A via la composante du champ electrique. Les deux voies ont des domaines frequentiels complementaires.",
     vgccHierarchyTitle: "Hierarchie de sensibilite VGCC au potentiel de repos",
@@ -2867,7 +2867,7 @@ const t = {
       "Une decouverte critique pour le modele d'exposition cumulative de BERM : la phosphorylation de CaMKII (proteine kinase II dependante du calcium/calmoduline) deplace le seuil d'activation de Cav3.2 vers des potentiels PLUS NEGATIFS (PMC9913649). Ceci cree une boucle de retroaction positive : EMF → afflux Ca²⁺ via Cav3.2 → activation de CaMKII → seuil de Cav3.2 se deplace vers la gauche → le canal devient PLUS sensible a l'EMF → plus d'afflux Ca²⁺. Ce mecanisme moleculaire explique pourquoi les effets EMF sont cumulatifs dans le temps : chaque episode d'exposition rend le systeme plus sensible aux expositions subsequentes. La retroaction CaMKII explique aussi pourquoi les etudes a court terme peuvent sous-estimer les effets a long terme — la sensibilisation se developpe sur des semaines a des mois d'exposition chronique. Prediction pharmacologique : les inhibiteurs de CaMKII (KN-93) devraient bloquer la sensibilisation progressive sans affecter les reponses EMF aigues.",
 
     chiSub: "Courbe de saturation pour l'interaction exposition ambiante × personnelle",
-    chiTitle: "Equation de couplage chi de Lindgren",
+    chiTitle: "Fermeture chi de BERM à la frontière L2 ouverte",
     chiDesc:
       "Le couplage entre l'infrastructure EMF ambiante et l'exposition aux appareils personnels n'est pas lineaire. La fonction chi decrit une courbe de saturation : a de faibles niveaux ambiants, l'exposition personnelle ajoute peu ; a de hauts niveaux ambiants, l'exposition personnelle est deja dominee par le champ environnemental.",
     chiExplain:
@@ -3186,7 +3186,7 @@ const t = {
 
     bdnfHormesisTitle: "Hormesis BDNF : la frequence determine la direction",
     bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — meme voie, resultats opposes",
-    bdnfHormesisBody: "Le BDNF (facteur neurotrophique derive du cerveau) est essentiel pour la neuroplasticite, la memoire et la neurogenese. L'EMF RF (835-2650 MHz) reduit le BDNF dans l'hippocampe avec perte de spines dendritiques et deficience cognitive. Pendant ce temps, l'ELF (50 Hz) AUGMENTE le BDNF et favorise la neurogenese. C'est une hormesis dependante de la frequence via la meme voie VGCC. Validation TTFields : 200 kHz frequence intermediaire augmente la cytotoxicite des cellules NK tandis que 50 Hz ELF la supprime. Le parametre χ de Lindgren predit ces differences directionnelles — differentes conditions de resonance a differentes frequences produisent des resultats biologiques opposes.",
+    bdnfHormesisBody: "Le BDNF est essentiel à la neuroplasticité, à la mémoire et à la neurogenèse. Des études RF-EMF et ELF rapportent des résultats de directions différentes pour le BDNF et les cellules NK. BERM les traite comme motivation d'une hypothèse d'hormèse dépendante de la fréquence via des voies VGCC candidates. La fermeture χ proposée ne dérive pas ces résultats biologiques de la géométrie de Lindgren ; le couplage L2 et la réponse propre à chaque endpoint restent à calibrer.",
 
     agingSpiralTitle: "Spirale du vieillissement : la melatonine comme molecule anti-vieillissement",
     agingSpiralSub: "EMF → melatonine↓ → telomerase↓ + SIRT1↓ → vieillissement accelere (depression = 7 ans)",
@@ -3308,10 +3308,10 @@ const t = {
 
     btnEvidence: "Parcourir les preuves",
     btnPredictions: "Voir les predictions",
-    mathSub: "Derivation complete de la geometrie de Lindgren a la prediction du TFR",
+    mathSub: "Géométrie dérivée, pont L2 ouvert et équations BERM conditionnelles",
     mathTitle: "Fondements mathematiques",
     mathSubtitle:
-      "Derivation complete de la geometrie de Lindgren a la prediction du TFR. Chaque equation est derivable de la precedente. Cliquez sur « Derivation complete » pour voir les etapes intermediaires.",
+      "Les mathématiques séparent l'ansatz de Lindgren 2025 et ses conséquences géométriques des fermetures biologiques et démographiques proposées par BERM. L'opérateur de couplage L2 de la géométrie vers l'observable reste ouvert.",
 
     thresholdTitle: "Modele de seuil testosterone → TFR",
     thresholdSub: "Lien quantitatif du declin de la capacite biologique a l'effondrement demographique",
@@ -3610,17 +3610,17 @@ const t = {
     metaTitle: "모델 문서 - Extinction Field",
     metaDesc:
       "BERM 모델 문서: 3단계 아키텍처, 인과 경로, 방정식 및 회복 역학.",
-    specNote: "BERM은 두 가지 사양 수준에서 작동한다. 모델(이 페이지)은 인과 이론으로, 누적 노출 프록시에서 도출된 경로, 방정식 및 예측을 포함한다. FieldState 측정 사양은 노출을 직접 측정하는 방법을 정의하며, 프록시를 한정된 프로토콜로 대체한다. 현재 예측은 프록시를 사용하며, FieldState 검증은 전향적이다.",
+    specNote: "BERM은 설명·도출·예측 모델입니다. FieldState v2는 별도의 선택적 측정·관찰·추정 모듈이며 모델의 별칭이나 인과적 뿌리가 아닙니다. 공개 v17 출력은 국가 기술 시점 프록시를 사용하며 FieldState로 교정되지 않았습니다. 기하학에서 관측량으로 가는 L2 결합은 미해결입니다.",
 
     physBioTitle: "물리학에서 생물학으로",
-    physBioSub: "Lindgren의 기하학적 전자기학이 배경장에 대한 생물학적 감수성을 예측하는 방법",
-    physBioLead: "BERM의 생물학적 예측은 임시방편이 아니다 — 전자기장이 외부 교란이 아닌 시공간 메트릭의 일부인 기하학적 전자기 모델(GME)에서 도출된다. 이 섹션은 메트릭 안사츠에서 조직 수준의 감수성에 이르는 연쇄를 추적한다.",
+    physBioSub: "Lindgren 전제, 도출된 기하학, BERM이 제안하는 생물학적 연결",
+    physBioLead: "2025 Lindgren 가정은 BERM의 이론적 전제입니다. 그 기하학적 결과와 BERM의 생물학적 명제를 분리합니다. 기하학에서 SHBG, 안드로겐 수용체, 이온 채널 또는 수용체 후 신호로 가는 연산자는 아직 도출되지 않았습니다.",
     physBioGMETitle: "Lindgren 기하학적 메트릭 확장",
     physBioGMEDesc: "표준 물리학에서 전자기장은 시공간을 통해 전파되는 별개의 존재이다. Lindgren의 기하학적 모델에서 전자기장은 메트릭 텐서에 직접 인코딩된다:",
     physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
-    physBioGMEExplain: "여기서 η_μν는 평탄한 Minkowski 메트릭이고 A_μ는 전자기 사원 퍼텐셜이다. 핵심적 귀결: 생체 시스템은 전자기장 '안에' 존재하는 것이 아니라, 그 기하학이 부분적으로 전자기적인 시공간 '안에' 존재한다. '장이 없는' 기준 상태는 없다. 모든 유기체는 특정 전자기 기하학(지자기 배경) 안에서 진화해 왔으며, 그 기하학에 대한 교란은 생물학적 작동 환경 자체에 대한 교란이다.",
+    physBioGMEExplain: "여기서 η_μν는 평탄한 Minkowski 메트릭이고 A_μ는 전자기 사원 퍼텐셜입니다. 이 가정에서 A는 메트릭에 기여합니다. 이 기하학적 결과를 생물학적 관측량으로 확장하려면 별도의 L2 연산자가 필요하므로 배경장 생물학은 자동적 귀결이 아니라 검증할 BERM 가설입니다.",
     physBioChiTitle: "χ(Ā) 선택 규칙",
-    physBioChiDesc: "메트릭 확장은 선택 규칙을 함축한다: 전자기 교란에 대한 생물학적 감수성은 배경장 Ā에 의존한다. 배경이 없으면 교란은 작용할 기하학적 기판이 없어 χ → 0이 된다. 배경이 있으면 교란은 기존의 기하학적 구조를 수정하여 χ → 1이 된다. 이것은 자유 매개변수가 아니라 메트릭 안사츠의 구조적 귀결이다.",
+    physBioChiDesc: "BERM은 열린 L2 경계에서 배경 의존적 폐쇄로 χ(Ā)를 제안합니다. 선택한 영배경 극한에서 χ → 0이고 배경 규모가 포화되면 χ → 1입니다. 이 함수형은 검증 가능한 BERM 가정이며 메트릭 가정에서 도출된 생물학적 반응이 아닙니다.",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
     physBioChiExplain: "이 포화 곡선은 모든 생물학적 스케일에서 나타난다: 분자(CRY는 라디칼 쌍 화학을 위해 지자기 배경을 필요로 함), 세포(VGCC 게이팅은 배경으로서 막전위를 필요로 함), 장기(BBB 완전성이 유효 장 침투를 조절), 인구(전기화 수준이 기술 노출을 조절). 동일한 수학적 형태, 다섯 가지 구현 — 아래 다섯 스케일에서의 χ를 참조.",
     physBioSuperTitle: "중첩 위반",
@@ -3629,7 +3629,7 @@ const t = {
     physBioSuperExplain: "이것은 EMF 생체효과 연구의 핵심 수수께끼를 해결한다: 왜 다주파수 노출(실제 조건)이 단일 주파수 실험실 연구가 놓치는 효과를 만들어내는가? 172건의 연구에 대한 체계적 리뷰는 복합 노출이 개별 노출의 합과 질적으로 다른 효과를 생성함을 확인한다([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). 전체 중첩 증거 분석을 참조.",
     physBioSuperLink: "전체 중첩 분석 보기 →",
     physBioTissueTitle: "조직 특이적 공명",
-    physBioTissueDesc: "기하학적 모델은 서로 다른 조직이 이온 채널 구성, 막 특성 및 공명 주파수에 의해 결정되는 서로 다른 전자기 교란 감수성을 가짐을 예측한다. 이것은 가정이 아니라 조직 특이적 배경에 적용된 χ(Ā) 선택 규칙에서 도출된다:",
+    physBioTissueDesc: "BERM은 조직별 이온 채널 구성, 막 특성 및 후보 반응 창을 생물학적 정보로 도입해 이질적 감수성을 제안합니다. 조직 순위는 열린 L2 경계 또는 그 하류의 가설이며 χ(Ā)만으로 도출되지 않습니다:",
     physBioTissues: [
       { tissue: "고환 (Leydig 세포)", channels: "Cav3.2 (T-type), high density", chi: "매우 높음", reason: "안정 시 창 전류; StAR 단백질의 Ca²⁺ 의존성" },
       { tissue: "시상하부", channels: "Cav3.1, Cav3.3", chi: "매우 높음", reason: "synaptotagmin 1을 통한 시냅스 소포 방출" },
@@ -3669,7 +3669,7 @@ const t = {
 
     bioCivTitle: "From Biology to Civilization",
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
-    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
       { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
@@ -3694,7 +3694,7 @@ const t = {
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
-    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+    bioCivEpistemic: "This is BERM's reductionist causal hypothesis. Evidence supports some component mechanisms in specific systems, while the L2 entry operator and several cross-scale aggregation links remain open. Steps 5–10 are model consequences to test, not hormone assays inferred from political behaviour. The BioCap integral is a formal expression, not a fitted equation with validated coefficients.",
 
     biocapDecompTitle: "BioCap 분해",
     biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
@@ -3725,9 +3725,9 @@ const t = {
 
     causalTitle: "인과 경로 다이어그램",
     causalDesc:
-      "아래 다이어그램은 Lindgren 기하학에서 TFR 감소까지의 완전한 메커니즘 체인을 보여줍니다. 11개 수준, 41개 노드, 59개 엣지. 두 개의 공동 주요 경로가 병렬로 작동합니다: 경로 A(VGCC → Ca²⁺ → ROS)는 가장 강력한 실험적 지지(23-28개 차단 연구)를 가지며, 경로 B(RPM → CRY → 일주기 교란)는 Lindgren 기하학에서 생물학으로의 가장 완전한 이론적 다리입니다(RPM 해밀토니안의 87.5%가 계량 가설에서 유도 가능). CRY/RPM 경로는 종간 지지 증거가 있습니다: 조류의 자기 나침반 교란([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), 초파리의 CRY 의존 자기수용([[ref:yoshii2009|Yoshii 2009]]), 인간 세포의 CRY 의존 ROS 변조([[ref:sherrard2018|Sherrard 2018]]), 그리고 결정적으로 인간의 기능적 청색광 의존 자기수용([[ref:chae2019|Chae et al. 2019]], PLOS ONE)이 BERM이 모델링하는 종에 생물학적 기질이 존재함을 나타냅니다. 두 경로 모두 증거 수준 E에서 독립적으로 지지됩니다. 노드를 클릭하면 메커니즘, Lindgren 해석, 정량적 공식화, 회복 매개변수 및 주요 참고문헌을 볼 수 있습니다. 노드 테두리는 인식론적 수준에 따라 색상이 지정됩니다.",
+      "다이어그램은 BERM에 등록된 인과 가설과 증거 경계를 보여줍니다. FieldState 관측과 기존 기술 프록시는 명시적으로 열린 L2 연결에 대한 추론 입력으로만 들어갑니다. VGCC/ROS, RPM/CRY 및 기타 하류 분기는 링크별 증거가 있는 생물학적 구현 후보이며 Lindgren 기하학에서 도출된 것이 아닙니다.",
     pathwayHierarchyNote:
-      "경로 가중치는 커뮤니티 데이터(Amish-한국 기울기)에 대한 경험적 보정을 반영합니다. 이론적 계층구조를 반영하지는 않습니다: 경로 B(CRY/RPM)가 이론적으로 PRIMARY 경로인 이유는 RPM 해밀토니안의 87.5%가 Lindgren 기하학에서 유도 가능하여 메커니즘의 존재를 기하학적 결과로 확립하기 때문입니다. 경로 A는 더 강력한 실험적 지지(23-28개 차단 연구)를 가집니다. 이전의 δVm 반론(기하학만으로 δV_m ≈ 10⁻²¹ V)은 이제 T형 칼슘 채널 분기 메커니즘에 의해 해결됩니다: Schwan 방정식은 외부 전장을 막에서 7.5-15 μV로 증폭하고(주변 1 V/m에서 열 잡음의 37%; 개인 5 V/m에서 184%), T형 채널(Cav3)은 휴지 상태에서 ~10%가 열려있는 분기점에서 작동하여(창 전류) 이러한 교란에 민감합니다. 경로 D(HPA → 테스토스테론)도 같은 T형 메커니즘을 통해 유도됩니다: Schwan δVm → Cav3 → Ca²⁺ → StAR → 테스토스테론([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+      "기존 경로 가중치와 지역 비교는 모델 교정에 속하며 이론적 순위가 아닙니다. RPM 대수 대응, Schwan 막 추정 및 Cav3/HPG 문헌은 연결 후보를 제한하지만 기하학에서 관측량으로 가는 연산자를 닫지 않습니다. BERM은 각 분기를 병렬적이고 반증 가능한 명제로 유지합니다.",
     rpmFrequencyNote:
       "CRY/RPM은 RF 반송 주파수(900 MHz – 3.5 GHz)에 반응하지 않습니다. 공진 상한은 ~22.5 MHz입니다([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). 경로 B의 생물학적 활성 구성요소는 지자기 배경(B_DC)과 통신 신호의 ELF 변조 포락선(GSM 217 Hz, WiFi 10 Hz 비콘)입니다. RF 반송파 자체의 효과는 전기장 구성요소를 통해 경로 A에 의해 매개됩니다. 두 경로는 상보적인 주파수 영역을 가집니다.",
     vgccHierarchyTitle: "휴지 전위에서의 VGCC 감도 계층",
@@ -3738,7 +3738,7 @@ const t = {
       "BERM의 누적 노출 모델에 대한 핵심 발견: CaMKII(칼슘/칼모듈린 의존 단백질 키나아제 II) 인산화는 Cav3.2 활성화 역치를 더 음성 전위로 이동시킵니다(PMC9913649). 이것은 양성 피드백 루프를 만듭니다: EMF → Cav3.2를 통한 Ca²⁺ 유입 → CaMKII 활성화 → Cav3.2 역치가 왼쪽으로 이동 → 채널이 EMF에 더 민감해짐 → 더 많은 Ca²⁺ 유입. 이 분자 메커니즘은 EMF 효과가 시간이 지남에 따라 누적되는 이유를 설명합니다: 각 노출 에피소드가 후속 노출에 대한 시스템의 민감도를 높입니다. CaMKII 피드백은 또한 단기 연구가 장기 효과를 과소평가할 수 있는 이유를 설명합니다 — 감작은 만성 노출에 걸쳐 수주에서 수개월에 걸쳐 발달합니다. 약리학적 예측: CaMKII 억제제(KN-93)는 급성 EMF 반응에 영향을 주지 않으면서 점진적 감작을 차단해야 합니다.",
 
     chiSub: "주변 × 개인 노출 상호작용에 대한 포화 곡선",
-    chiTitle: "Lindgren chi 결합 방정식",
+    chiTitle: "열린 L2 경계의 BERM chi 폐쇄",
     chiDesc:
       "주변 EMF 인프라와 개인 기기 노출 사이의 결합은 선형이 아닙니다. chi 함수는 포화 곡선을 설명합니다: 낮은 주변 수준에서는 개인 노출이 거의 추가하지 않고; 높은 주변 수준에서는 개인 노출이 이미 환경 전장에 의해 지배됩니다.",
     chiExplain:
@@ -4057,7 +4057,7 @@ const t = {
 
     bdnfHormesisTitle: "BDNF 호르메시스: 주파수가 방향을 결정",
     bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — 같은 경로, 반대 결과",
-    bdnfHormesisBody: "BDNF(뇌유래 신경영양인자)는 신경가소성, 기억, 신경발생에 필수적입니다. EMF RF(835-2650 MHz)는 해마에서 BDNF를 감소시키며 수상돌기 가시 상실과 인지 장애를 동반합니다. 한편 ELF(50 Hz)는 BDNF를 증가시키고 신경발생을 촉진합니다. 이것은 동일한 VGCC 경로를 통한 주파수 의존 호르메시스입니다. TTFields 검증: 200 kHz 중간 주파수는 NK 세포 세포독성을 증가시키는 반면 50 Hz ELF는 이를 억제합니다. Lindgren의 χ 매개변수는 이러한 방향 차이를 예측합니다 — 다른 주파수에서 다른 공진 조건이 반대의 생물학적 결과를 생성합니다.",
+    bdnfHormesisBody: "BDNF는 신경가소성·기억·신경발생에 중요하며 RF-EMF와 ELF 연구에서는 BDNF 및 NK 세포 종점에 방향이 다른 결과가 보고되었다. BERM은 이를 후보 VGCC 경로를 통한 주파수 의존 호르메시스 가설의 동기로 취급한다. 제안된 χ 폐쇄는 Lindgren 기하학에서 생물학적 결과를 도출하지 않으며 L2 결합과 종점별 반응은 아직 보정되어야 한다.",
 
     agingSpiralTitle: "노화 나선: 항노화 분자로서의 멜라토닌",
     agingSpiralSub: "EMF → 멜라토닌↓ → 텔로머라제↓ + SIRT1↓ → 가속 노화 (우울증 = 7년)",
@@ -4179,10 +4179,10 @@ const t = {
 
     btnEvidence: "증거 탐색",
     btnPredictions: "예측 보기",
-    mathSub: "Lindgren 기하학에서 TFR 예측까지의 완전한 유도",
+    mathSub: "도출된 기하학, 미해결 L2 연결, 조건부 BERM 방정식",
     mathTitle: "수학적 기초",
     mathSubtitle:
-      "Lindgren 기하학에서 TFR 예측까지의 완전한 유도. 각 방정식은 이전 방정식에서 유도 가능합니다. '전체 유도'를 클릭하면 중간 단계를 볼 수 있습니다.",
+      "수학은 2025 Lindgren 가정과 그 기하학적 결과를 BERM이 제안하는 생물학적·인구학적 폐쇄와 분리합니다. 기하학에서 관측량으로 가는 L2 결합 연산자는 아직 미해결입니다.",
 
     thresholdTitle: "테스토스테론 → TFR 역치 모델",
     thresholdSub: "생물학적 역량 감소에서 인구학적 붕괴까지의 정량적 연결",
@@ -5133,7 +5133,7 @@ export default async function ModelPage({
             </div>
           </section>
 
-          {/* Lindgren chi coupling */}
+          {/* BERM chi closure motivated by the Lindgren premise; L2 remains open. */}
           <CollapsibleSection id="chi-coupling" title={d.chiTitle} subtitle={d.chiSub}>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
               <ClaimRef claimId="claim.proxy.lindgren-selection">{d.chiDesc}</ClaimRef>

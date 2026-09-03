@@ -680,9 +680,13 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "Low-frequency electric-field waveform / polarity state",
     fi: "Matalataajuisen sähkökentän aaltomuoto- / polariteettitila",
   },
-  FIELDSTATE_SELECTED_PROXY: {
-    en: "Lindgren-selected two-channel timing proxy",
-    fi: "Lindgren-valittu kaksikanavainen ajoitusproxy",
+  TECHNOLOGY_TIMING_PROXY: {
+    en: "National technology-timing proxy (legacy v17 comparison)",
+    fi: "Kansallinen teknologian ajoitusproxy (legacy-v17-vertailu)",
+  },
+  BERM_L2_BRIDGE: {
+    en: "Open geometry-to-observable coupling proposition",
+    fi: "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
   },
   FIELDSTATE_VECTOR: {
     en: "FieldState vector / background geometry",

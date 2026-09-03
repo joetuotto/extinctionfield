@@ -1,9 +1,10 @@
-"""TFR prediction pipeline: Phase 4.2.
+"""Legacy scalar TFR prediction pipeline retained for compatibility.
 
-Ties together the full BERM pipeline:
-  ambient EMF -> personal EMF -> two-channel exposure (Lindgren chi on VGIC only)
-  -> sperm cascade -> CRY circadian -> bio capacity -> behavioral coupling
-  -> alpha-compensated TFR prediction.
+This historical implementation composes a technology-timing proxy, BERM's
+proposed two-channel ``chi`` closure, candidate biological submodels and a TFR
+mapping.  It is not a FieldState-calibrated route.  The biological submodels
+are BERM hypotheses rather than results derived from Lindgren geometry, and
+the geometry-to-observable L2 operator remains open.
 """
 
 import numpy as np

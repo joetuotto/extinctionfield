@@ -1970,11 +1970,11 @@ const SUB_PAGES = [
   {
     slug: "superposition",
     icon: Layers,
-    en: { title: "Superposition Violation", desc: "172 studies show combined EMF exposures produce non-additive biological effects — the defining signature of geometric non-linearity predicted by the Lindgren metric extension." },
-    fi: { title: "Superpositiorikkomus", desc: "172 tutkimusta osoittaa, että yhdistetyt EMF-altistukset tuottavat ei-additiivisia biologisia vaikutuksia — geometrisen epälineaarisuuden tunnusmerkki, jonka Lindgrenin metriikkalaajennus ennustaa." },
-    ja: { title: "重ね合わせの破れ", desc: "172件の研究が、複合EMF曝露が非加算的な生物学的効果を生むことを実証 — リンドグレン計量拡張が予測する幾何学的非線形性の決定的特徴。" },
-    fr: { title: "Violation de la superposition", desc: "172 etudes montrent que les expositions EMF combinees produisent des effets biologiques non additifs — la signature de la non-linearite geometrique predite par l'extension metrique de Lindgren." },
-    ko: { title: "중첩 위반", desc: "172건의 연구가 복합 EMF 노출이 비가산적 생물학적 효과를 생성함을 입증 — 린드그렌 메트릭 확장이 예측하는 기하학적 비선형성의 결정적 특징." },
+    en: { title: "Superposition Violation", desc: "A 172-study combined-exposure catalogue motivates BERM's non-additivity test. The observations alone do not demonstrate Lindgren geometry or derive a biological L2 coupling." },
+    fi: { title: "Superpositiorikkomus", desc: "172 yhdistelmäaltistustutkimuksen luettelo motivoi BERM:n ei-additiivisuuden testiä. Havainnot eivät yksin osoita Lindgrenin geometriaa eivätkä johda biologista L2-kytkentää." },
+    ja: { title: "重ね合わせの破れ", desc: "172件の複合曝露研究はBERMの非加算性試験を動機づけるが、Lindgren幾何学や生物学的L2結合を単独で実証しない。" },
+    fr: { title: "Violation de la superposition", desc: "Un catalogue de 172 études d'expositions combinées motive le test de non-additivité de BERM ; il ne démontre pas à lui seul la géométrie de Lindgren ni un couplage biologique L2." },
+    ko: { title: "중첩 위반", desc: "172건의 복합 노출 연구 목록은 BERM의 비가산성 시험을 동기화하지만 그 자체로 Lindgren 기하학이나 생물학적 L2 결합을 입증하지 않는다." },
   },
   {
     slug: "reproductive-navigation",

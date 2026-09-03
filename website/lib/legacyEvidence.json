@@ -469,7 +469,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": 119
   },
   {
@@ -488,7 +488,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": 190
   },
   {
@@ -507,7 +507,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -526,7 +526,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -543,7 +543,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": 8538
   },
   {
@@ -561,7 +561,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -580,7 +580,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -598,7 +598,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -616,7 +616,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -921,7 +921,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1099,7 +1099,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1117,7 +1117,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1136,7 +1136,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1563,7 +1563,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": 1925
   },
   {
@@ -1588,7 +1588,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": 667125
   },
   {
@@ -1608,7 +1608,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1651,7 +1651,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1671,7 +1671,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1714,7 +1714,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1734,7 +1734,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1753,7 +1753,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1840,7 +1840,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1881,7 +1881,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1969,7 +1969,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -1989,7 +1989,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2008,7 +2008,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2028,7 +2028,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2139,7 +2139,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2422,7 +2422,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2466,7 +2466,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2487,7 +2487,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2507,7 +2507,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2527,7 +2527,7 @@
     "causalNodes": [],
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
-    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "translationScope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
     "n": null
   },
   {
@@ -2897,13 +2897,13 @@
       "discrimination"
     ],
     "causalNodes": [
-      "FIELDSTATE_SELECTED_PROXY"
+      "TECHNOLOGY_TIMING_PROXY"
     ],
     "evidenceRole": "METHODOLOGICAL",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "When all EMF layers correlate with GDP, a two-layer model cannot separate causation from confounding. Twelve layers with orthogonal drivers (energy policy, vehicle safety, Cold War, municipal decisions) create natural experiments. If insect decline tracks weather radar (energy-independent, 1988) but not smart meters (energy-dependent, 2005), discrimination improves.",
     "n": null,
-    "note": "causalNodes remapped from 'FIELDSTATE' (not a causal-graph node) to FIELDSTATE_SELECTED_PROXY on 2026-09-02."
+    "note": "causalNodes remapped from 'FIELDSTATE' (not a causal-graph node) to TECHNOLOGY_TIMING_PROXY on 2026-09-02."
   },
   {
     "id": "yap2025_cry2_trpc1",

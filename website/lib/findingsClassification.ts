@@ -91,7 +91,7 @@ export const GROUP_STYLES: Record<Group, { text: string; border: string; bg: str
 
 const CLASSIFICATION_LABELS: Record<string, Record<Locale, string>> = {
   falsification: { en: "Falsification", fi: "Falsifikaatio" },
-  lindgren_chi_falsified: { en: "Lindgren χ falsified", fi: "Lindgrenin χ falsifioitu" },
+  lindgren_chi_falsified: { en: "BERM χ closure falsified", fi: "BERM:n χ-sulkeuma falsifioitu" },
   mechanism_failure: { en: "Mechanism failure", fi: "Mekanismin epäonnistuminen" },
   soliton_layer_falsified: { en: "Soliton layer falsified", fi: "Solitonikerros falsifioitu" },
   mechanism_impossible: { en: "Mechanism impossible", fi: "Mekanismi mahdoton" },

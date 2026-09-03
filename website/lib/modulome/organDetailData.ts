@@ -12,8 +12,8 @@ export interface ModulomeTarget {
   keyRefs: string[];
   level: string;
   bermPathway: string[];
-  lindgrenChiEn: string;
-  lindgrenChiFi: string;
+  bermBridgeEn: string;
+  bermBridgeFi: string;
   predictionEn: string;
   predictionFi: string;
   verified: boolean;
@@ -34,8 +34,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["ijms2026-hpg"],
     level: "M|C",
     bermPathway: ["A", "D"],
-    lindgrenChiEn: "Pituitary is OUTSIDE BBB → direct vascular EMF access without barrier attenuation. T-type channels at bifurcation in gonadotroph. This is the THIRD independent EMF→TFR route.",
-    lindgrenChiFi: "Aivolisäke on BBB:n ULKOPUOLELLA → suora vaskulaarinen EMF-pääsy ilman estevaimennusta. T-tyypin kanavat bifurkaatiossa gonadotroopissa. Tämä on KOLMAS itsenäinen EMF→TFR-reitti.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: pituitary location and gonadotroph T-type channels may motivate an HPG-axis test; they do not establish an independent EMF→TFR route.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: aivolisäkkeen sijainti ja gonadotroopin T-tyypin kanavat motivoivat HPG-akselin testiä, mutta eivät osoita itsenäistä EMF→TFR-reittiä.",
     predictionEn: "FSH/LH pulsatile ratio is EMF-sensitive. Chronic EMF shifts the ratio → impaired follicle selection (women) and spermatogenesis support (men).",
     predictionFi: "FSH/LH-pulssisuhde on EMF-herkkä. Krooninen EMF siirtää suhdetta → heikentynyt follikkelivalinta (naiset) ja spermatogeneesin tuki (miehet).",
     verified: true,
@@ -54,8 +54,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["mohamed-bp-emf"],
     level: "M|C",
     bermPathway: ["A"],
-    lindgrenChiEn: "Cav3.2 in glomerulosa → T-type bifurcation at resting potential → aldosterone synthesis. Chronic EMF → chronic aldosterone → hypertension. Adrenal is NOT protected by BBB.",
-    lindgrenChiFi: "Cav3.2 glomerulosassa → T-tyypin bifurkaatio lepopotentiaalissa → aldosteronisynteesi. Krooninen EMF → krooninen aldosteroni → verenpainetauti. Lisämunuainen EI ole BBB:n suojassa.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: Cav3.2 and adrenal location motivate an endpoint-specific aldosterone test; no chronic EMF→hypertension mapping is derived here.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: Cav3.2 ja lisämunuaisen sijainti motivoivat aldosteronin päätepistetestiä; kroonista EMF→verenpainetauti-kuvausta ei johdeta tässä.",
     predictionEn: "Hypertension prevalence correlates with chronic EMF exposure after controlling for salt, obesity, and age.",
     predictionFi: "Verenpainetaudin esiintyvyys korreloi kroonisen EMF-altistuksen kanssa suolan, lihavuuden ja iän kontrolloinnin jälkeen.",
     verified: true,
@@ -74,8 +74,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["sakurai2008"],
     level: "M|C",
     bermPathway: ["A"],
-    lindgrenChiEn: "GLUCOSE-DEPENDENT χ: High glucose → K_ATP close → Vmem depolarizes → VGCCs primed → χ_β-cell MAXIMUM. Fasting → K_ATP open → χ_β-cell LOW. EMF × high-GI diet = synergistic diabetes risk.",
-    lindgrenChiFi: "GLUKOOSIRIIPPUVAINEN χ: Korkea glukoosi → K_ATP sulkeutuu → Vmem depolarisoituu → VGCC:t viritetty → χ_β-solu MAKSIMI. Paasto → K_ATP auki → χ_β-solu MATALA. EMF × korkean GI:n ruokavalio = synergistinen diabetesriski.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: glucose state may moderate a separately calibrated beta-cell response. The proposed interaction is not a Lindgren-derived chi function.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: glukoositila voi moderoida erikseen kalibroitua beetasoluvastetta. Ehdotettu interaktio ei ole Lindgrenistä johdettu χ-funktio.",
     predictionEn: "EMF effect on insulin is glucose-dependent. At high glucose: Ca²⁺ overload → β-cell exhaustion → diabetes. At low glucose: minimal effect.",
     predictionFi: "EMF:n vaikutus insuliiniin on glukoosiriippuvainen. Korkealla glukoosilla: Ca²⁺-ylikuormitus → β-solun uupuminen → diabetes. Matalalla glukoosilla: minimaalinen vaikutus.",
     verified: true,
@@ -94,8 +94,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["pall2022-ad"],
     level: "M|C",
     bermPathway: ["A", "F"],
-    lindgrenChiEn: "Double hit: (1) Cav3.2 bifurcation in DG → chronic Ca²⁺ → amyloid cascade. (2) BBB opening → blood-borne Aβ enters brain. Both converge on hippocampus. Age amplifies via mitochondrial χ.",
-    lindgrenChiFi: "Kaksoisosuma: (1) Cav3.2-bifurkaatio DG:ssä → krooninen Ca²⁺ → amyloidikaskadi. (2) BBB:n avautuminen → veren Aβ pääsee aivoihin. Molemmat yhtyvät hippokampukseen. Ikä vahvistaa mitokondriaalisella χ:llä.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: Cav3.2, BBB and amyloid endpoints can be tested jointly, but their convergence and any age interaction require independent calibration.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: Cav3.2-, BBB- ja amyloidipäätepisteitä voidaan testata yhdessä, mutta niiden yhdentyminen ja ikäinteraktio vaativat riippumattoman kalibroinnin.",
     predictionEn: "Alzheimer's onset age correlates inversely with cumulative EMF exposure. VGCC blocker slows progression.",
     predictionFi: "Alzheimerin alkamisikä korreloi käänteisesti kumulatiivisen EMF-altistuksen kanssa. VGCC-salpaaja hidastaa etenemistä.",
     verified: true,
@@ -114,8 +114,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["mohamed-bp-emf"],
     level: "M",
     bermPathway: ["A"],
-    lindgrenChiEn: "SA node T-type channels → pacemaking. EMF perturbation → HRV reduction → autonomic imbalance. Ventricular L-type → contractile dysfunction at high chronic Ca²⁺.",
-    lindgrenChiFi: "SA-solmun T-tyypin kanavat → tahdistus. EMF-häiriö → HRV:n lasku → autonominen epätasapaino. Kammioiden L-tyyppi → kontraktiilinen toimintahäiriö korkealla kroonisella Ca²⁺:lla.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: SA-node and ventricular channel biology motivate HRV and contractility endpoints; an exposure response is not derived here.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: SA-solmun ja kammioiden kanavabiologia motivoi HRV- ja supistuvuusvastemuuttujia; altistusvastetta ei johdeta tässä.",
     predictionEn: "Chronic EMF exposure reduces HRV. Nighttime phone use → arrhythmia risk.",
     predictionFi: "Krooninen EMF-altistus vähentää HRV:tä. Yöllinen puhelinkäyttö → arytmiariski.",
     verified: false,
@@ -134,8 +134,8 @@ export const MODULOME_TARGETS: ModulomeTarget[] = [
     keyRefs: ["thyroid-sysrev-2024", "lte-thyroid-2024"],
     level: "M|C",
     bermPathway: ["A", "D"],
-    lindgrenChiEn: "Two-level attack: (1) Pituitary thyrotroph Cav3 → TSH dysregulation (OUTSIDE BBB). (2) Thyroid in anterior neck → maximum phone-proximity exposure.",
-    lindgrenChiFi: "Kaksitasoinen hyökkäys: (1) Aivolisäkkeen tyreotrooppi Cav3 → TSH:n säätelyn häiriö (BBB:n ULKOPUOLELLA). (2) Kilpirauhanen kaulan etuosassa → maksimaalinen puhelinläheisyysaltistus.",
+    bermBridgeEn: "BERM candidate after the open L2 bridge: pituitary and thyroid endpoints can be paired with calibrated local exposure measurements; anatomy alone does not establish an effect.",
+    bermBridgeFi: "BERM-ehdokas avoimen L2-sillan jälkeen: aivolisäkkeen ja kilpirauhasen päätepisteet voidaan yhdistää kalibroituihin paikallismittauksiin; anatomia ei yksin osoita vaikutusta.",
     predictionEn: "Hypothyroidism prevalence correlates with mobile phone adoption. T-type blocker protects thyroid function.",
     predictionFi: "Kilpirauhasen vajaatoiminnan esiintyvyys korreloi matkapuhelimen yleistymisen kanssa. T-tyypin salpaaja suojaa kilpirauhasen toimintaa.",
     verified: true,

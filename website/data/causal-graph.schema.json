@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "causal-graph.schema.json",
-  "title": "BERM Causal Graph",
+  "title": "BERM Model Graph",
   "type": "object",
   "required": ["version", "nodes", "edges", "ui_groups"],
   "additionalProperties": false,
@@ -63,12 +63,16 @@
     },
     "CausalEdge": {
       "type": "object",
-      "required": ["id", "from", "to"],
+      "required": ["id", "from", "to", "kind"],
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string" },
         "from": { "type": "string" },
         "to": { "type": "string" },
+        "kind": {
+          "type": "string",
+          "enum": ["inference_input", "proposed_bridge", "causal_model"]
+        },
         "label": { "type": "string" }
       }
     },

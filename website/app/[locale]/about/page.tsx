@@ -73,7 +73,7 @@ const t: Record<string, Copy> = {
     ],
     statusTitle: "Current status",
     statusText:
-      "The v2 code and causal registry exist, but a matched national FieldState–biomarker–couple–ASFR panel has not yet been assembled. The active model therefore makes no calibrated country-level TFR forecast.",
+      "BERM v17 retains its published scalar-proxy forecasts. FieldState v2 is a separate measurement module and has no calibrated country-level route because a matched FieldState–biomarker–couple–ASFR panel has not yet been assembled.",
     deepHistoryTitle: "Deep history: why Northern Europe first?",
     deepHistoryText: [
       "Between 10,000 and 6,000 years ago, a cluster of traits co-selected in Northern European populations: blue eyes (OCA2 mutation), lactose tolerance (LCT persistence), and cattle husbandry. All three optimise the same molecule — cryptochrome — through different pathways. Blue irises transmit more short-wavelength light to retinal CRY1. Dairy-derived riboflavin (B2) sustains the FAD chromophore that CRY requires for magnetic sensitivity. Cattle husbandry provided the selective pressure for both.",
@@ -139,7 +139,7 @@ const t: Record<string, Copy> = {
     ],
     statusTitle: "Nykytila",
     statusText:
-      "V2-koodi ja kausaalirekisteri ovat olemassa, mutta kohdistettua kansallista FieldState–biomarkkeri–pari–ASFR-paneelia ei ole vielä koottu. Aktiivinen malli ei siksi anna kalibroitua maakohtaista TFR-ennustetta.",
+      "BERM v17 säilyttää julkaistut skalaariproxyennusteensa. FieldState v2 on erillinen mittausmoduuli, jolla ei ole kalibroitua maakohtaista reittiä, koska kohdistettua FieldState–biomarkkeri–pari–ASFR-paneelia ei ole vielä koottu.",
     deepHistoryTitle: "Syvähistoria: miksi Pohjois-Eurooppa ensin?",
     deepHistoryText: [
       "Noin 10 000–6 000 vuotta sitten pohjoiseuroppalaisiin populaatioihin koselektoitui piirteiden klusteri: siniset silmät (OCA2-mutaatio), laktoosinsietokyky (LCT-persistenssi) ja karjankasvatus. Kaikki kolme optimoivat saman molekyylin — kryptokromin — eri reittien kautta. Siniset iirikset läpäisevät enemmän lyhytaaltoista valoa verkkokalvon CRY1:lle. Maitotuotteista saatava riboflaviini (B2) ylläpitää FAD-kromofooria, jota CRY tarvitsee magneettiseen herkkyyteen. Karjankasvatus tarjosi valintapaineen molemmille.",
@@ -205,7 +205,7 @@ const t: Record<string, Copy> = {
     ],
     statusTitle: "現在の状況",
     statusText:
-      "v2コードと因果レジスターは存在しますが、マッチされた国別FieldState–バイオマーカー–カップル–ASFRパネルはまだ構成されていません。したがって、現行モデルはキャリブレーションされた国別TFR予測を行いません。",
+      "BERM v17は公開済みのスカラープロキシ予測を保持します。FieldState v2は別個の測定モジュールであり、対応するFieldState–バイオマーカー–カップル–ASFRパネルが未構成のため、校正済み国別ルートはありません。",
     deepHistoryTitle: "深い歴史：なぜ北ヨーロッパが最初なのか？",
     deepHistoryText: [
       "約10,000年前から6,000年前の間に、北ヨーロッパの集団で形質のクラスターが共選択されました：青い目（OCA2変異）、乳糖耐性（LCT持続性）、牧畜。3つすべてが同じ分子——クリプトクロム——を異なる経路で最適化します。青い虹彩はより多くの短波長光を網膜のCRY1に透過させます。乳製品由来のリボフラビン（B2）は、CRYが磁気感受性に必要とするFAD発色団を維持します。牧畜がその両方に対する選択圧を提供しました。",
@@ -271,7 +271,7 @@ const t: Record<string, Copy> = {
     ],
     statusTitle: "Statut actuel",
     statusText:
-      "Le code v2 et le registre causal existent, mais un panel national apparié FieldState–biomarqueur–couple–ASFR n'a pas encore été assemblé. Le modèle actif ne produit donc aucune prévision TFR calibrée au niveau national.",
+      "BERM v17 conserve ses prévisions publiées par proxy scalaire. FieldState v2 est un module de mesure distinct sans route nationale calibrée, car aucun panel apparié FieldState–biomarqueur–couple–ASFR n’a encore été assemblé.",
     deepHistoryTitle: "Histoire profonde : pourquoi l'Europe du Nord en premier ?",
     deepHistoryText: [
       "Entre 10 000 et 6 000 ans, un ensemble de traits a été co-sélectionné dans les populations d'Europe du Nord : les yeux bleus (mutation OCA2), la tolérance au lactose (persistance LCT) et l'élevage bovin. Tous trois optimisent la même molécule — le cryptochrome — par des voies différentes. Les iris bleus transmettent davantage de lumière à courte longueur d'onde au CRY1 rétinien. La riboflavine (B2) d'origine laitière maintient le chromophore FAD dont CRY a besoin pour la sensibilité magnétique. L'élevage bovin a fourni la pression sélective pour les deux.",
@@ -337,7 +337,7 @@ const t: Record<string, Copy> = {
     ],
     statusTitle: "현재 상태",
     statusText:
-      "v2 코드와 인과 레지스터는 존재하지만, 매칭된 국가별 FieldState–바이오마커–커플–ASFR 패널은 아직 구성되지 않았습니다. 따라서 현행 모델은 보정된 국가 수준의 TFR 예측을 제공하지 않습니다.",
+      "BERM v17은 공개된 스칼라 프록시 예측을 유지합니다. FieldState v2는 별도의 측정 모듈이며, 매칭된 FieldState–바이오마커–커플–ASFR 패널이 아직 없어 보정된 국가 경로가 없습니다.",
     deepHistoryTitle: "심층 역사: 왜 북유럽이 먼저인가?",
     deepHistoryText: [
       "약 10,000년에서 6,000년 전 사이에 북유럽 인구에서 형질 군집이 공동 선택되었습니다: 파란 눈(OCA2 돌연변이), 유당 내성(LCT 지속성), 축산업. 세 가지 모두 동일한 분자——크립토크롬——을 서로 다른 경로를 통해 최적화합니다. 파란 홍채는 더 많은 단파장 빛을 망막의 CRY1에 투과시킵니다. 유제품 유래 리보플라빈(B2)은 CRY가 자기 감수성에 필요로 하는 FAD 발색단을 유지합니다. 축산업은 이 둘 모두에 대한 선택 압력을 제공했습니다.",

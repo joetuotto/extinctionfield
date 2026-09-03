@@ -1,20 +1,24 @@
-# FieldState–ASFR v2: Lindgrenistä ikäkohtaiseen hedelmällisyyteen
+# FieldState v2 -mittausrajapinta ja ehdollinen ASFR-laskenta
 
-**Tila:** BERM:n kanoninen tulkinta- ja integraatiokerros; legacy-v16/v17 säilyy numeerisena vertailureittinä.
-**Versio:** `fieldstate-asfr-v2`.  
-**Tavoite:** tehdä BERM:n Lindgren-pohjaisesta fysiikasta koko TFR-selitysketjun lähtöpiste siten, että fysikaalinen kenttätila, biologinen kapasiteetti, pari, ASFR ja TFR pysyvät erillisinä mitattavina kerroksina.
+**Tila:** historiallisella tiedostonimellä säilytetty integraatio-ohje. FieldState on BERM:n valinnainen mittaus-, havainto- ja estimointisivuhaara, ei kanoninen malli, mallin alias eikä kausaalinen juuri.
 
-Tämä reitti ei poista BERM:n aiempaa biologista runkoa eikä muuta v16/v17:n lukittuja numeerisia ajoja. Sen tehtävä on **tulkita koko malli yhdenmukaisesti**: vanhat mekanismit, tutkimuslähteet ja laskennalliset komponentit säilyvät, mutta ne kiinnitetään nimettyihin biologisiin solmuihin ja niille ilmoitetaan altistusluokka, tutkimusjärjestelmä, siirtoraja ja kalibrointirooli.
+**Mittausmäärittely:** `fieldstate` / `v2`.
+
+**Ehdollinen laskentareitti:** `berm-conditional-asfr-v1`.
+
+**Avoin kohta:** Lindgren-geometrian ja havaittavan biologisen suureen välistä L2-kytkentäoperaattoria ei ole johdettu.
+
+BERM on varsinainen selitys-, johtamis- ja ennustemalli. Tämä ohje kuvaa, miten FieldState-havainto voidaan tulevaisuudessa tuoda BERM:n avoimelle mittausrajalle ja miten erikseen annetut biologiset paritilat voidaan viedä ehdollisesti ASFR:ään ja TFR:ään. Se ei johda biologisia tiloja FieldStatesta.
 
 Käytännössä muutos on seuraava:
 
 - aiempi `ambient + χ·personal` säilyy historiallisena ajoitusproxyna ja vertailureitin syötteenä;
-- Lindgrenin fysiikka tulkitaan elinpaikallisena `FieldState`-syötteenä, ei kansallisena EMF-annoksena;
+- FieldState voi toimittaa elinpaikallisen mittauksen tai siirtoarvion avoimen L2-rajapinnan tarkasteluun, ei kansallisena EMF-annoksena eikä valmiina biologisena syötteenä;
 - A–F/T-kirjainten alle kertyneet mekanismit säilytetään, mutta epäyhtenäiset kirjaimet ratkaistaan **lähdetiedoston mukaan** semanttisiin nimiin;
 - biologinen näyttö tukee ensiksi omaa linkkiään (esim. `BTB → siittiötuotanto`), ei automaattisesti maakohtaista TFR-kerrointa;
 - väestöpääte mallinnetaan edelleen `pari → ASFR → TFR`, jossa kysyntä, tempo ja ART ovat erillisiä selittäjiä.
 
-Näin v2 ei ole vanhan BERM:n korvaaja eikä pelkkä uusi sivuhaara. Se on yhteinen tietomalli, jonka kautta legacy-laskelmat, fysiikka, mekanistinen evidenssi ja myöhempi endpoint-kalibrointi voidaan vertailla ilman että niiden merkitykset sekoittuvat.
+FieldState v2 on tarkoituksellisesti BERM:n sivuhaara. Yhteinen arkkitehtuurisopimus estää mittaustietueen, legacy-proxyn, biologisen mekanismin ja ennustereitin sekoittamisen toisiinsa.
 
 Evidenssin discovery-first- ja bayesilainen tulkintasääntö on
 [`fieldstate-discovery-inference.md`](fieldstate-discovery-inference.md):
@@ -24,12 +28,13 @@ signaalin löytämiselle tai lajienvälisten FieldState-ennusteiden tekemiselle.
 Koko v2-reitin vartijoiden ja tulkintojen läpikäynti on
 [`evidence-inference-audit.md`](evidence-inference-audit.md)-auditissa.
 
-## 1. Kanoninen kausaaliketju
+## 1. BERM:n ja mittaushaaran rajapinta
 
 ```mermaid
 flowchart LR
-  FS["FieldState\ntausta + henkilökohtainen lähde + vektori + vaihe + PSD + aika"]
-  L["Lindgren-valinta ja paikallinen elinsiirto"]
+  G["BERM / Lindgren 2025\ng = eta + A A"]
+  FS["Valinnainen FieldState-havainto\nvektori + vaihe + PSD + aika"]
+  L["AVOIN L2\ngeometria / mittaus → biologinen havaittava"]
   A["Vmem/VGCC - Ca2+ - mitoROS\n(legacy A)"]
   B["RPM/CRY - clock/redox\n(legacy B)"]
   R["Melatoniini/redox\n(legacy C joissakin v16-artefakteissa)"]
@@ -45,11 +50,12 @@ flowchart LR
   ASFR["ASFR: ikä x kohortti x vuosi"]
   TFR["TFR = 5 sum(ASFR) / 1000"]
   DU["Kysyntä/mahdollisuus + tempo + ART/live-birth"]
-  FS --> L
-  L --> A
-  L --> B
-  L --> V
-  L --> X
+  G --> L
+  FS -. mittausrajoite .-> L
+  L -. ehdotettu kytkentä .-> A
+  L -. ehdotettu kytkentä .-> B
+  L -. ehdotettu kytkentä .-> V
+  L -. ehdotettu kytkentä .-> X
   B --> R
   A --> BTB
   A --> O
@@ -89,9 +95,9 @@ Siksi pelkkä `C`, `F` tai `T` ei enää ratkea koodissa automaattisesti. Tämä
 
 Koko aiempi 129-tietueinen bibliografia on säilytetty [`legacy-evidence-migration.md`](legacy-evidence-migration.md)-kuvatulla tietuekohtaisella siirtokerroksella. Se ei hävitä näyttöä, mutta erottaa jo aktiiviseen rekisteriin varmennetut lähteet, uudelleentulkintaa odottavat kandidaatit ja pelkän kontekstin.
 
-## 2. Lindgrenin fysiikka on FieldState, ei yksi EMF-luku
+## 2. FieldState säilyttää mittausrakenteen, ei ratkaise L2-kytkentää
 
-Lindgren-pohjainen syöte organille `o` on toteutettu muodossa
+FieldState-mittaushaaran elinkohtainen valintasuure on toteutettu muodossa
 
 \[
 \mathbf A_{\mathrm{selected},o}
@@ -126,7 +132,7 @@ Toteutus: [`berm/physics/field_state.py`](../berm/physics/field_state.py).
 | `PARTIAL_FIELD_STATE` | Jokin fysikaalisen tilan osa on mitattu, mutta esimerkiksi PSD, B0, elinsiirto tai vuorokausikonteksti puuttuu. | Aktiiviseksi mitatuksi FieldState-komponentiksi, paikallisen/alueellisen likelihoodin sekä suunta-, siirto- ja lajikohtaisten posteriori-ennusteiden rakentamiseen; puuttuvat komponentit kannetaan epävarmuutena. Ei yksin väitä valmista elinannosta tai kapeaa endpoint-kerrointa. |
 | `MEASUREMENT_READY_FIELD_STATE` | Dokumentoitu normalisointi, B0-vektori, elinsiirto, PSD, circadian-konteksti, vaihe/koherenssi ja mittausprovenienssi ovat läsnä. | Elinkohtaisen endpoint-mallin kalibrointiin, kun myös biologinen päätepiste on yhdistetty ennalta määritellysti. |
 
-Tämä erottelu ratkaisee BERM:n keskeisen mittausongelman: kansallinen teknologian levinneisyys ei saa hiljaisesti muuttua kivesten, munasarjan tai hypotalamuksen paikalliseksi kenttätilaksi.
+Tämä erottelu ratkaisee BERM:n keskeisen mittausongelman: kansallinen teknologian levinneisyys ei saa hiljaisesti muuttua kivesten, munasarjan tai hypotalamuksen paikalliseksi kenttätilaksi. Se ei kuitenkaan ratkaise seuraavaa askelta eli sitä, miten kenttätilasta johdettaisiin biologinen havaittava.
 
 ## 3. Elinkohtainen R/P-muisti ja biologinen kapasiteetti
 
@@ -138,7 +144,7 @@ R_{o,t}=r_oR_{o,t-1}+\Delta R_{o,t},
 P_{o,t}=p_oP_{o,t-1}+\Delta P_{o,t}.
 \]
 
-`R` on palautuva kuorma, `P` persistentti kuorma. Incrementit eivät ole koodissa oletuksia: kutakin elintä varten tutkimus- tai mittausmallin on ilmoitettava incrementti, retentio, parameter-ID ja evidenssi-ID. Tämä mahdollistaa esimerkiksi erilaiset aikaskaalat siittiöiden akuutille redox-/CatSper-haaralle, 70–90 päivän spermatogeneesille, BTB:n hitaalle palautumiselle sekä munasarjavarannon kehitykselliselle muistille.
+`R` on palautuva kuorma, `P` persistentti kuorma. Incrementit eivät synny FieldState-laskennasta: ulkoisen tutkimus- tai biologisen mallin on annettava kullekin elimelle incrementti, retentio, parameter-ID ja evidenssi-ID. Tämä mahdollistaa eri aikaskaalojen ehdollisen tarkastelun johtamatta niitä mittausmoduulista.
 
 Kun elinendpointille on oma ennalta rekisteröity mapping, kuorma muutetaan kapasiteettitekijäksi näkyvällä muodolla
 
@@ -147,7 +153,7 @@ F_o=f_{\min,o}+(1-f_{\min,o})
 \exp[-(\beta_{R,o}R_o+\beta_{P,o}P_o)].
 \]
 
-`beta_R`, `beta_P` ja `f_min` on aina annettava yhdessä parameter- ja evidenssi-ID:n kanssa. Siksi mallissa ei ole piilotettua "FieldState -> TFR" -kulmakerrointa: ensin fyysinen tila, sitten elinmuisti, sitten elinendpointti ja vasta sen jälkeen parin kapasiteetti.
+`beta_R`, `beta_P` ja `f_min` on aina annettava yhdessä parameter- ja evidenssi-ID:n kanssa. Siksi mallissa ei ole piilotettua "FieldState -> TFR" -kulmakerrointa. BERM:n ehdollinen ketju alkaa ulkoisesti annetusta biologisesta incrementistä: vasta ehdotetun ja validoidun L2-operaattorin jälkeen mittaus voisi tuottaa incrementin, josta seuraisivat elinmuisti, elinendpointti ja parin kapasiteetti.
 
 Toteutus: [`berm/biology/reproductive_state.py`](../berm/biology/reproductive_state.py) ja [`berm/stats/fieldstate_core.py`](../berm/stats/fieldstate_core.py).
 
@@ -190,7 +196,7 @@ Naispuoli ei siis enää rajoitu legacy-reitin `CRY × melatonin × ovulation` -
 F_{\mathrm{shared\ household},ij,t}L_{f,j,t}.
 \]
 
-Väestötasolla malli laskee paritilojen keskiarvon, ei `keskiarvomies × keskiarvonainen` -tuloa. Tämä säilyttää Lindgrenin yhteisen kotiympäristön, paikallisgeometrian ja biologisen varannon aiheuttaman parikorrelaation.
+Väestötasolla laskin laskee annettujen paritilojen keskiarvon, ei `keskiarvomies × keskiarvonainen` -tuloa. Yhteinen kotiympäristö, paikallisgeometria ja biologinen varanto voidaan näin säilyttää eksplisiittisinä kovarianssilähteinä ilman että niiden vaikutus johdetaan FieldStatesta.
 
 ## 4. ASFR ensin, TFR vasta sen summana
 
@@ -230,7 +236,7 @@ Koneellisesti luettava rekisteri: [`data/evidence/fieldstate_causal_evidence.jso
 
 Jokaisessa rekisteritietueessa on mukana tutkimusjärjestelmä, altistusluokka, solmu, suoruus, siirtoraja, rajoitteet ja kalibrointirooli. Siirtorajan näkyminen on olennaista: se vahvistaa mallin oikeaa solmua ilman että esimerkiksi soluviljelmä tai lintukompassi esitetään ihmisen TFR-ennusteena.
 
-## 6. TFR-datan tulkinta FieldState-mallissa
+## 6. TFR-datan tulkinta BERM:ssä
 
 BERM:n kohortti-premissi ennustaa, että kehitysvaiheessa enemmän digitaalisen kenttäympäristön ajoitusproxyä saanut kohortti poikkeaa myöhemmin nuorten ASFR-ryhmien suhteessa vanhempiin ryhmiin. Tämä on täsmällisempi ennuste kuin samanaikainen `mobiililiittymät -> TFR`-korrelaatio.
 
@@ -260,10 +266,10 @@ Näin BERM kasvaa selitysvoimaisemmaksi juuri siellä, missä sen omat premissit
 - Organismi-, barrieri- ja paritila: [`berm/biology/reproductive_state.py`](../berm/biology/reproductive_state.py)
 - Fysiikka → R/P -bridge: [`berm/stats/fieldstate_core.py`](../berm/stats/fieldstate_core.py)
 - ASFR → TFR: [`berm/outcomes/fieldstate_asfr.py`](../berm/outcomes/fieldstate_asfr.py)
-- Julkinen WPP-reference-fasadi: [`berm/model_fieldstate_asfr.py`](../berm/model_fieldstate_asfr.py)
+- Ehdollisen WPP-reference-laskennan yhteensopivuusfasadi: [`berm/model_fieldstate_asfr.py`](../berm/model_fieldstate_asfr.py)
 - Sentinelli → ihmisbiologia → ASFR/TFR -lukitus: [`berm/validation/sentinel_hindcast_protocol.py`](../berm/validation/sentinel_hindcast_protocol.py)
 - Kohortti–ASFR-timing-proxy: [`berm/validation/fieldstate_cohort_signature.py`](../berm/validation/fieldstate_cohort_signature.py)
 - Tutkimusrekisteri: [`data/evidence/fieldstate_causal_evidence.json`](../data/evidence/fieldstate_causal_evidence.json)
 - Testit: [`tests/test_field_state.py`](../tests/test_field_state.py), [`tests/test_fieldstate_asfr_v2.py`](../tests/test_fieldstate_asfr_v2.py), [`tests/test_fieldstate_evidence.py`](../tests/test_fieldstate_evidence.py), [`tests/test_fieldstate_cohort_signature.py`](../tests/test_fieldstate_cohort_signature.py)
 
-Legacy-v16/v17 säilyy vertailureittinä. Uusi v2 ei anna lukuarvoa ilman eksplisiittisiä ulkoisia syötteitä, jolloin jokainen julkaistu ennuste kertoo näkyvästi, mitkä osat ovat mitattuja, mitkä proxyjä ja mitkä endpoint-kalibroituja.
+Legacy-v16/v17 säilyy vertailureittinä. FieldState v2 ei julkaise ennusteita. Ehdollinen ASFR-laskin antaa tuloksen vain eksplisiittisistä ulkoisista biologisista ja demografisista syötteistä, eikä tulosta saa nimetä FieldState-kalibroiduksi ilman erillistä ratkaistua L2-operaattoria ja kalibrointia.

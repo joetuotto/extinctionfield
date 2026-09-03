@@ -98,15 +98,15 @@
       "id": "claim.sperm.multi-parameter-decline",
       "statement": {
         "en": {
-          "text": "FieldState exposure reduces sperm count, motility, and DNA integrity through converging pathways: direct ROS damage to membranes and DNA, BTB disruption reducing Sertoli cell support, and impaired steroidogenesis from HPG axis interference.",
+          "text": "BERM registers ROS damage, BTB disruption and impaired steroidogenesis as converging candidate explanations for changes in sperm count, motility and DNA integrity. Connecting any FieldState record to those endpoints requires an independently calibrated L2 exposure-to-response mapping.",
           "sourceRevision": 1
         },
         "fi": {
-          "text": "FieldState-altistus heikentää siittiöiden määrää, liikkuvuutta ja DNA-eheyttä konvergoivien reittien kautta: suora ROS-vaurio kalvoille ja DNA:lle, BTB-häiriö vähentäen Sertolin solujen tukea, ja heikentynyt steroidogeneesi HPG-akselin häiriöstä.",
+          "text": "BERM rekisteröi ROS-vaurion, BTB-häiriön ja heikentyneen steroidogeneesin ehdokkaiksi, jotka voivat yhdessä selittää siittiömäärän, liikkuvuuden ja DNA-eheyden muutoksia. FieldState-tietueen kytkeminen näihin päätepisteisiin vaatii erikseen kalibroidun L2-altistus–vaste-kuvauksen.",
           "sourceRevision": 1
         }
       },
-      "kind": "measurement",
+      "kind": "mechanistic_step",
       "lifecycle": "draft",
       "target": {
         "type": "node",
@@ -118,13 +118,13 @@
       "supersedes": [],
       "scope": {
         "supports": [
-          "Multiple converging mechanisms reduce male fertility parameters"
+          "BERM can test multiple converging candidate mechanisms against separate male-fertility endpoints"
         ],
         "does_not_support": [
           "Sperm decline alone explains the full fertility drop"
         ]
       },
-      "falsification_condition": "Meta-analysis of semen parameter studies shows no dose-response relationship with any FieldState metric"
+      "falsification_condition": "Pre-registered endpoint-specific studies fail to support the proposed pathway after a FieldState-to-response mapping has been independently specified and calibrated"
     },
     {
       "id": "claim.couple.fecundability-convergence",
@@ -162,11 +162,11 @@
       "id": "claim.proxy.lindgren-selection",
       "statement": {
         "en": {
-          "text": "The Lindgren two-channel timing proxy selects the field components most predictive of biological response by optimizing the coupling function χ between ambient background and personal exposure channels.",
+          "text": "BERM v17 uses a two-channel technology-timing proxy with the proposed closure χ to combine ambient and personal proxy channels. It is not a FieldState measurement, an optimized biological coupling, or a selection rule derived by Lindgren.",
           "sourceRevision": 1
         },
         "fi": {
-          "text": "Lindgrenin kahden kanavan ajoitusproxy valitsee biologiselle vasteelle eniten ennustavat kenttäkomponentit optimoimalla kytkentäfunktion χ taustakentän ja henkilökohtaisen altistuksen kanavien välillä.",
+          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä ja ehdotettua χ-sulkeumaa yhdistämään ympäristö- ja henkilökohtaiset proxykanavat. Se ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenin johtama valintasääntö.",
           "sourceRevision": 1
         }
       },
@@ -174,19 +174,19 @@
       "lifecycle": "draft",
       "target": {
         "type": "node",
-        "nodeId": "FIELDSTATE_SELECTED_PROXY"
+        "nodeId": "TECHNOLOGY_TIMING_PROXY"
       },
       "depends_on": [],
       "supersedes": [],
       "scope": {
         "supports": [
-          "The proxy captures the dominant coupling mode between FieldState and biological systems"
+          "The proxy provides a reproducible timing input for the archived BERM v17 comparison route"
         ],
         "does_not_support": [
-          "The proxy captures all biologically relevant field characteristics"
+          "The proxy measures FieldState, identifies a biological coupling mode, or closes the open L2 operator"
         ]
       },
-      "falsification_condition": "An alternative proxy formulation consistently outperforms the Lindgren selection in predicting reproductive endpoints across ≥3 independent datasets"
+      "falsification_condition": "The pre-specified two-channel timing proxy fails its registered out-of-sample BERM v17 comparisons or is outperformed by pre-registered alternatives across independent datasets"
     },
     {
       "id": "claim.tfr.multi-input-decomposition",

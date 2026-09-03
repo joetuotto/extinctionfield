@@ -1,4 +1,4 @@
-"""Canonical causal-node registry for the FieldState ASFR route.
+"""Canonical causal-node registry for the BERM model.
 
 The historical A--F letters are retained only through the namespace-qualified
 compatibility adapter.  Several layers of the repository assigned different
@@ -26,7 +26,7 @@ from typing import Iterable
 
 @dataclass(frozen=True)
 class CausalNode:
-    """One stable node in the Lindgren → ASFR causal graph.
+    """One stable node in the BERM causal graph.
 
     ``calibration_status`` says only how directly a numerical mapping for this
     node has been resolved.  It is intentionally separate from the evidence
@@ -43,35 +43,33 @@ class CausalNode:
     calibration_status: str
 
 
-# Node IDs intentionally encode meaning rather than UI order.  The graph is
-# acyclic in its causal direction; feedback (e.g. redox/Ca) is represented
-# within a biological state model rather than by ambiguous letter aliases.
+# Node IDs intentionally encode meaning rather than UI order.  Measurement
+# observations and the legacy timing proxy enter only through the explicitly
+# open BERM_L2_BRIDGE.  They are not causal roots of the biological model.
+# Feedback (e.g. redox/Ca) is represented within a biological state model
+# rather than by ambiguous letter aliases.
 CAUSAL_NODES: tuple[CausalNode, ...] = (
     CausalNode(
-        "FIELDSTATE_SELECTED_PROXY",
-        "Lindgren-selected two-channel timing proxy",
+        "TECHNOLOGY_TIMING_PROXY",
+        "National technology-timing proxy (legacy v17 comparison)",
         "physics",
-        ("legacy chi", "ambient + chi(ambient) * personal"),
-        (),
         (
-            "FIELDSTATE_VECTOR",
-            "FIELDSTATE_ENVELOPE",
-            "A_VGCC_ROS",
-            "MICROBIOME_OT",
-            "IF_MITOTIC_DISRUPTION",
-            "GPCR_ADENOSINE",
-            "VAGUS_ANTIINFLAMMATORY",
+            "FIELDSTATE_SELECTED_PROXY",
+            "legacy chi",
+            "ambient + chi(ambient) * personal",
         ),
+        (),
+        ("BERM_L2_BRIDGE",),
         "diagnostic_input",
         "proxy_only",
     ),
     CausalNode(
         "FIELDSTATE_VECTOR",
-        "Background/personal vector, phase and organ-transfer state",
+        "FieldState vector/phase observation and organ-transfer estimate",
         "physics",
         ("Lindgren vector state",),
-        ("FIELDSTATE_SELECTED_PROXY",),
-        ("B_RPM_CRY", "A_VGCC_ROS"),
+        (),
+        ("BERM_L2_BRIDGE",),
         "diagnostic_input",
         "requires_matched_measurement",
     ),
@@ -80,8 +78,8 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Measured envelope/beat spectral overlap",
         "physics",
         ("GME", "R42"),
-        ("FIELDSTATE_SELECTED_PROXY",),
-        ("A_VGCC_ROS", "VMEM_MTOR"),
+        (),
+        ("BERM_L2_BRIDGE",),
         "diagnostic_input",
         "requires_psd_measurement",
     ),
@@ -91,7 +89,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "physics",
         ("static textile interface", "triboelectric interface", "0 Hz interface state"),
         (),
-        ("A_VGCC_ROS", "VMEM_MTOR", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"),
+        ("BERM_L2_BRIDGE",),
         "diagnostic_input",
         "requires_matched_measurement",
     ),
@@ -101,22 +99,42 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "physics",
         ("ELF electric field", "AC/DC electric field", "electric-field waveform"),
         (),
-        ("A_VGCC_ROS", "VMEM_MTOR", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"),
+        ("BERM_L2_BRIDGE",),
         "diagnostic_input",
         "requires_matched_measurement",
+    ),
+    CausalNode(
+        "BERM_L2_BRIDGE",
+        "Open geometry-to-observable coupling proposition",
+        "physics",
+        ("geometry-to-biology operator", "L2 bridge", "open coupling operator"),
+        (
+            "TECHNOLOGY_TIMING_PROXY",
+            "FIELDSTATE_VECTOR",
+            "FIELDSTATE_ENVELOPE",
+            "STATIC_TRIBO_INTERFACE",
+            "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+        ),
+        (
+            "A_VGCC_ROS",
+            "B_RPM_CRY",
+            "VMEM_MTOR",
+            "HPA_HPG",
+            "MICROBIOME_OT",
+            "IF_MITOTIC_DISRUPTION",
+            "GPCR_ADENOSINE",
+            "VAGUS_ANTIINFLAMMATORY",
+            "ECOLOGICAL_ENCOUNTER",
+        ),
+        "bridge_proposition",
+        "requires_endpoint_calibration",
     ),
     CausalNode(
         "A_VGCC_ROS",
         "Vmem/VGCC → Ca2+ → mitochondrial ROS",
         "mechanism",
         ("VGIC", "Ca2+/ROS"),
-        (
-            "FIELDSTATE_SELECTED_PROXY",
-            "FIELDSTATE_VECTOR",
-            "FIELDSTATE_ENVELOPE",
-            "STATIC_TRIBO_INTERFACE",
-            "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
-        ),
+        ("BERM_L2_BRIDGE",),
         (
             "VMEM_MTOR",
             "BARRIER_BBB",
@@ -135,7 +153,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Radical-pair/cryptochrome → clock/redox state",
         "mechanism",
         ("RPM", "CRY"),
-        ("FIELDSTATE_VECTOR",),
+        ("BERM_L2_BRIDGE",),
         ("MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK", "OOCYTE_REDOX"),
         "organ_state_input",
         "structural_only",
@@ -164,9 +182,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         ("Vmem", "mTOR", "T_BE"),
         (
             "A_VGCC_ROS",
-            "FIELDSTATE_ENVELOPE",
-            "STATIC_TRIBO_INTERFACE",
-            "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+            "BERM_L2_BRIDGE",
         ),
         ("BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE", "MALE_GERMLINE_RESERVE"),
         "organ_state_input",
@@ -193,8 +209,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
             "MICROBIOME_OT",
             "A_VGCC_ROS",
             "BARRIER_BBB",
-            "STATIC_TRIBO_INTERFACE",
-            "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+            "BERM_L2_BRIDGE",
             "GPCR_ADENOSINE",
             "VAGUS_ANTIINFLAMMATORY",
         ),
@@ -207,7 +222,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Microbiome/L. reuteri–oxytocin mediator state",
         "mechanism",
         ("microbiome dysbiosis", "L. reuteri", "microbiome oxytocin"),
-        ("FIELDSTATE_SELECTED_PROXY", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"),
+        ("BERM_L2_BRIDGE", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"),
         ("HPA_HPG", "MALE_STEROIDOGENESIS"),
         "legacy_diagnostic_input",
         "structural_only",
@@ -351,7 +366,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Intermediate-frequency field disruption of cell division",
         "mechanism",
         ("TTFields mechanism", "mitotic spindle disruption", "IF channel"),
-        ("FIELDSTATE_SELECTED_PROXY",),
+        ("BERM_L2_BRIDGE",),
         ("MALE_SPERM", "MALE_GERMLINE_RESERVE", "OOCYTE_REDOX"),
         "organ_state_input",
         "structural_only",
@@ -361,7 +376,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "PEMF-validated adenosine A2A/A3 receptor modulation",
         "mechanism",
         ("adenosine receptor", "GPCR modulation", "PEMF mechanism"),
-        ("FIELDSTATE_SELECTED_PROXY",),
+        ("BERM_L2_BRIDGE",),
         ("HPA_HPG", "MICROBIOME_OT"),
         "organ_state_input",
         "structural_only",
@@ -371,7 +386,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Vagus nerve cholinergic anti-inflammatory pathway state",
         "mechanism",
         ("vagus nerve", "cholinergic anti-inflammatory", "VNS mechanism"),
-        ("FIELDSTATE_SELECTED_PROXY",),
+        ("BERM_L2_BRIDGE",),
         ("HPA_HPG", "MICROBIOME_OT"),
         "organ_state_input",
         "structural_only",
@@ -381,7 +396,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Species-specific field encounter, sensing, physiology and dispersal state",
         "ecology",
         ("electroecology", "host–vegetation encounter", "electrostatic attachment", "field physiology"),
-        ("STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"),
+        ("BERM_L2_BRIDGE",),
         ("ECOLOGICAL_SELECTION",),
         "cross_species_mechanism",
         "requires_matched_ecological_measurement",

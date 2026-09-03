@@ -1,7 +1,9 @@
 """Vector-, geometry-, spectrum-, and circadian-aware FieldState boundary.
 
-This module implements the *input contract* implied by the Lindgren layer,
-without changing a legacy TFR prediction or inventing an outcome coefficient.
+This module implements an optional physical measurement and estimation record
+at BERM's input boundary.  Its retained coordinates are motivated by BERM and
+the Lindgren premise; they are not implied biological observables and do not
+change a legacy TFR prediction or invent an outcome coefficient.
 
 The legacy scalar remains available separately:
 
@@ -476,7 +478,11 @@ def assess_field_state_completeness(
 
 
 def lindgren_chi(background_magnitude: float) -> float:
-    """Return ``A / sqrt(1 + A²)`` for a normalized non-negative magnitude."""
+    """Return BERM's legacy chi closure for a normalized magnitude.
+
+    The function name is retained for compatibility.  The closure is not a
+    Lindgren-derived observable and does not close the open L2 operator.
+    """
     amplitude = _nonnegative("background_magnitude", background_magnitude)
     return amplitude / math.sqrt(1.0 + amplitude * amplitude)
 
@@ -499,12 +505,14 @@ def evaluate_field_state(
     receptor: ReceptorState,
     transfer: TransferMatrix = IDENTITY_TRANSFER,
 ) -> FieldStateResponse:
-    """Resolve local Lindgren components for one organ/receptor.
+    """Evaluate a declared FieldState adapter for one organ/receptor record.
 
     The selected vector is ``T(Aambient) + chi(|T(Abackground)|)T(Apersonal)``.
     The separately visible cross term is
     ``2 * T(Abackground) dot T(Apersonal)``.  In the scalar adapter both
-    reduce to the existing legacy calculation as appropriate.
+    reduce to the existing legacy calculation as appropriate.  ``T``, the
+    receptor window and the chi closure are externally declared BERM inputs;
+    this calculation is not a derived biological response or a closed L2 map.
     """
     if not isinstance(state, FieldState):
         raise TypeError("state must be a FieldState")

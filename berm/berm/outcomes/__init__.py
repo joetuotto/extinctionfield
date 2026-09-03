@@ -19,7 +19,11 @@ from berm.outcomes.asfr_model import (
 )
 
 from berm.outcomes.fieldstate_asfr import (
+    CONDITIONAL_ASFR_VERSION,
     FIELDSTATE_ASFR_VERSION,
+    AgeSpecificConditionalInput,
+    ConditionalASFRProjection,
+    project_conditional_asfr,
     AgeSpecificFieldStateInput,
     FieldStateASFRProjection,
     project_fieldstate_asfr,
@@ -39,6 +43,10 @@ __all__ = [
     "youngest_cohort_effect",
     "asfr_country_report",
     "FIELDSTATE_ASFR_VERSION",
+    "CONDITIONAL_ASFR_VERSION",
+    "AgeSpecificConditionalInput",
+    "ConditionalASFRProjection",
+    "project_conditional_asfr",
     "AgeSpecificFieldStateInput",
     "FieldStateASFRProjection",
     "project_fieldstate_asfr",

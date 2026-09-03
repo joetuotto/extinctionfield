@@ -23,7 +23,7 @@
   },
   "manifest_contract": {
     "active_registry": "berm/data/evidence/fieldstate_causal_evidence.json",
-    "active_registry_rule": "Only active-registry records may support the current FieldState–ASFR route. A migration record never becomes a parameter, coefficient or active causal claim merely by appearing here.",
+    "active_registry_rule": "Only active-registry records may support the current BERM causal graph. A migration record never becomes a parameter, coefficient or active causal claim merely by appearing here.",
     "legacy_pathway_label_rule": "Legacy A–F/T labels are provenance labels, not unqualified canonical node IDs. Their historical namespace is resolved only through the qualified legacy compatibility adapter.",
     "empty_canonical_nodes_rule": "An empty canonical_nodes list is deliberate for sources outside the active graph. It prevents a forced, unsupported causal attachment.",
     "allowed_calibration_roles": [
@@ -896,7 +896,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -932,7 +932,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -968,7 +968,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1004,7 +1004,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1038,7 +1038,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1073,7 +1073,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1109,7 +1109,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1144,7 +1144,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1179,7 +1179,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -1743,7 +1743,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -2077,7 +2077,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -2112,7 +2112,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -2149,7 +2149,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -2939,7 +2939,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -2981,7 +2981,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3017,7 +3017,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3092,7 +3092,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3171,7 +3171,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3246,7 +3246,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3282,7 +3282,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3317,7 +3317,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3468,7 +3468,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3541,7 +3541,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3696,7 +3696,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3733,7 +3733,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3768,7 +3768,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3804,7 +3804,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -3996,7 +3996,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -4531,7 +4531,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -4608,7 +4608,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -4645,7 +4645,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -4682,7 +4682,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",
@@ -4718,7 +4718,7 @@
       "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
       "status": "OUTSIDE_ACTIVE_GRAPH",
       "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "translation_scope": "Retained bibliographic context outside the active BERM causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
       "limitations": [
         "No canonical-node attachment in the current graph",
         "No FieldState causal inference",

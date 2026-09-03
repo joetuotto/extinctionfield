@@ -44,7 +44,7 @@ from berm.biology.pathways import dysbiosis_index, pathway_f, l_reuteri_oxytocin
 # === stdlib chi (no numpy dependency) ===
 
 def chi(ambient_level: float) -> float:
-    """Lindgren selection rule: A / sqrt(1 + A^2)."""
+    """BERM's legacy chi closure; not a Lindgren-derived observable."""
     return ambient_level / math.sqrt(1 + ambient_level ** 2)
 
 

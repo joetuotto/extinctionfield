@@ -1,4 +1,4 @@
-"""Static triboelectric interface contract for the FieldState route.
+"""Static triboelectric interface contract for the FieldState measurement module.
 
 This module represents a *local, measured interface state* such as a textile-
 skin contact or a host-vegetation air gap.  It deliberately does not turn a

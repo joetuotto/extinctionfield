@@ -275,7 +275,7 @@ const COPY = {
     chainLead:
       "BERM proposes a continuous causal chain from photon absorption to population-level health effects. Each intermediate layer has been independently verified against published experimental and clinical evidence.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Photon → metric distortion", evidence: "Lindgren 2025 χ-parameter, Vassallo confirmation", status: "confirmed", detail: "EMF photon creates metric distortion at the quantum level. Lindgren's χ-parameter provides the physics-level mechanism for why biological tissue responds to non-thermal EMF." },
+      { scale: "10⁻¹⁵ m", link: "Metric premise → biological observable", evidence: "Lindgren 2025 ansatz; BERM χ closure proposal", status: "partial", detail: "Lindgren's metric ansatz is the theory premise. BERM proposes χ as a closure, but the geometry-to-observable L2 operator has not been derived or calibrated. Biological response therefore remains an open link." },
       { scale: "10⁻¹⁰ m", link: "Metric → S4 voltage sensor", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Metric distortion acts on the S4 helix voltage sensor of VGCCs. Tang 2024 demonstrated direct S4 conformational change from EMF at non-thermal intensities." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC opens", evidence: "Panagopoulos 2025 IFO, Trus 2024 non-ionotropic", status: "confirmed", detail: "S4 conformational change triggers VGCC gating. Panagopoulos 2025 provides the mechanistic model; Trus 2024 demonstrates non-ionotropic (non-thermal) activation pathway." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ permeation", evidence: "Marchetti 2013, Cd→Cav3.1 radiolabeled", status: "confirmed", detail: "Open VGCCs allow Ca²⁺ influx — but also toxic metals. Cd²⁺ permeates through Cav3.1 (confirmed with ¹⁰⁹Cd²⁺ radiolabel). Pb²⁺ mimics Ca²⁺ at calmodulin binding sites." },
@@ -469,7 +469,7 @@ const COPY = {
         level: "Strong consilience",
         desc: "Independent evidence lines converge",
         examples: [
-          "Physics ([[ref:lindgren2025|Lindgren χ]]) ↔ Pharmacology (Ca²⁺ drugs converge)",
+          "Theory premise ([[ref:lindgren2025|Lindgren 2025]]) ↔ open BERM χ/L2 proposal ↔ pharmacological Ca²⁺ evidence",
           "Genetics (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Experimental ([[ref:lopez_martin_2006|López-Martín seizures]])",
           "Epidemiology ([[ref:klimentidis2010|Klimentidis 8 species]]) ↔ Pathology (SIDS 5-HT deficiency)",
         ],
@@ -566,7 +566,7 @@ const COPY = {
     chainLead:
       "BERM ehdottaa jatkuvaa kausaaliketjua fotonin absorptiosta väestötason terveysvaikutuksiin. Jokainen välikerros on todennettu itsenäisesti julkaistua kokeellista ja kliinistä näyttöä vasten.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Fotoni → metriikkahäiriö", evidence: "Lindgren 2025 χ-parametri, Vassallon vahvistus", status: "confirmed", detail: "EMF-fotoni luo metriikkahäiriön kvanttitasolla. Lindgrenin χ-parametri tarjoaa fysiikkatason mekanismin sille, miksi biologinen kudos reagoi ei-termiseen EMF:ään." },
+      { scale: "10⁻¹⁵ m", link: "Metriikkapremissi → biologinen havaittava", evidence: "Lindgrenin 2025 ansatz; BERM:n χ-sulkeumaehdotus", status: "partial", detail: "Lindgrenin metriikkansatz on teoriapremissi. BERM ehdottaa χ-sulkeumaa, mutta geometriasta havaittavaan johtavaa L2-operaattoria ei ole johdettu eikä kalibroitu. Biologinen vaste on siksi avoin linkki." },
       { scale: "10⁻¹⁰ m", link: "Metriikka → S4-jänniteanturi", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Metriikkahäiriö vaikuttaa VGCC:iden S4-heliksin jänniteanturiin. Tang 2024 osoitti suoran S4-konformaatiomuutoksen EMF:stä ei-termisillä intensiteeteillä." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC avautuu", evidence: "Panagopoulos 2025 IFO, Trus 2024 ei-ionotrooppinen", status: "confirmed", detail: "S4-konformaatiomuutos laukaisee VGCC:n avautumisen. Panagopoulos 2025 tarjoaa mekanistisen mallin; Trus 2024 osoittaa ei-ionotrooppisen (ei-termisen) aktivaatioreitin." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ läpäisy", evidence: "Marchetti 2013, Cd→Cav3.1 radioleimattu", status: "confirmed", detail: "Avoimet VGCC:t sallivat Ca²⁺-sisäänvirtauksen — mutta myös myrkyllisten metallien. Cd²⁺ läpäisee Cav3.1:n läpi (vahvistettu ¹⁰⁹Cd²⁺-radioleimauksella). Pb²⁺ matkii Ca²⁺:ia kalmoduliinin sitoutumispaikoissa." },
@@ -760,7 +760,7 @@ const COPY = {
         level: "Vahva konsilienssi",
         desc: "Itsenäiset näyttölinjat yhtyvät",
         examples: [
-          "Fysiikka ([[ref:lindgren2025|Lindgren χ]]) ↔ Farmakologia (Ca²⁺-lääkkeet yhtyvät)",
+          "Teoriapremissi ([[ref:lindgren2025|Lindgren 2025]]) ↔ avoin BERM:n χ/L2-ehdotus ↔ farmakologinen Ca²⁺-näyttö",
           "Genetiikka (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Kokeellinen ([[ref:lopez_martin_2006|López-Martín kohtaukset]])",
           "Epidemiologia ([[ref:klimentidis2010|Klimentidis 8 lajia]]) ↔ Taudinkuva (SIDS 5-HT-puutos)",
         ],
@@ -856,7 +856,7 @@ const COPY = {
     chainLead:
       "BERMは光子吸収から集団レベルの健康影響までの連続的因果連鎖を提案します。各中間層は公表された実験的・臨床的エビデンスに対して独立に検証されています。",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "光子 → 計量歪み", evidence: "Lindgren 2025 χパラメータ、Vassallo確認", status: "confirmed", detail: "EMF光子が量子レベルで計量歪みを生成。Lindgrenのχパラメータは、生体組織が非熱的EMFに応答する物理レベルのメカニズムを提供。" },
+      { scale: "10⁻¹⁵ m", link: "計量の前提 → 生物学的観測量", evidence: "Lindgren 2025アンザッツ；BERM χ閉包命題", status: "partial", detail: "Lindgrenの計量アンザッツは理論前提である。BERMはχ閉包を提案するが、幾何学から観測量へのL2演算子は未導出・未校正であり、生物応答は未解決リンクである。" },
       { scale: "10⁻¹⁰ m", link: "計量 → S4電圧センサー", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "計量歪みがVGCCのS4ヘリックス電圧センサーに作用。Tang 2024は非熱的強度でのEMFによる直接的S4コンフォメーション変化を実証。" },
       { scale: "10⁻⁹ m", link: "S4 → VGCC開口", evidence: "Panagopoulos 2025 IFO、Trus 2024 非イオン性", status: "confirmed", detail: "S4コンフォメーション変化がVGCCゲーティングを誘発。Panagopoulos 2025がメカニズムモデルを提供；Trus 2024が非イオン性（非熱的）活性化経路を実証。" },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺透過", evidence: "Marchetti 2013、Cd→Cav3.1放射標識", status: "confirmed", detail: "開口したVGCCがCa²⁺流入を許可 — しかし有毒金属も。Cd²⁺はCav3.1を透過（¹⁰⁹Cd²⁺放射標識で確認）。Pb²⁺はカルモジュリン結合部位でCa²⁺を模倣。" },
@@ -1050,7 +1050,7 @@ const COPY = {
         level: "強いコンシリエンス",
         desc: "独立したエビデンスラインが収束",
         examples: [
-          "物理学（[[ref:lindgren2025|Lindgren χ]]）↔ 薬理学（Ca²⁺薬が収束）",
+          "理論前提（[[ref:lindgren2025|Lindgren 2025]]）↔ 未解決のBERM χ/L2命題 ↔ Ca²⁺薬理学的証拠",
           "遺伝学（CACNA1C、[[ref:sousouri2025|Sousouri 2025]]）↔ 実験（[[ref:lopez_martin_2006|López-Martín発作]]）",
           "疫学（[[ref:klimentidis2010|Klimentidis 8種]]）↔ 病理学（SIDS 5-HT欠乏）",
         ],
@@ -1146,7 +1146,7 @@ const COPY = {
     chainLead:
       "BERM propose une chaîne causale continue de l'absorption du photon aux effets sanitaires au niveau populationnel. Chaque couche intermédiaire a été vérifiée indépendamment contre des preuves expérimentales et cliniques publiées.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Photon → distorsion métrique", evidence: "Lindgren 2025 paramètre χ, confirmation de Vassallo", status: "confirmed", detail: "Le photon EMF crée une distorsion métrique au niveau quantique. Le paramètre χ de Lindgren fournit le mécanisme au niveau physique expliquant pourquoi les tissus biologiques répondent aux EMF non thermiques." },
+      { scale: "10⁻¹⁵ m", link: "Prémisse métrique → observable biologique", evidence: "Ansatz de Lindgren 2025 ; fermeture χ proposée par BERM", status: "partial", detail: "L'ansatz métrique de Lindgren est la prémisse théorique. BERM propose une fermeture χ, mais l'opérateur L2 géométrie-observable n'est ni dérivé ni calibré. La réponse biologique reste donc un maillon ouvert." },
       { scale: "10⁻¹⁰ m", link: "Métrique → capteur de tension S4", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "La distorsion métrique agit sur le capteur de tension de l'hélice S4 des VGCC. Tang 2024 a démontré un changement conformationnel direct du S4 par EMF à des intensités non thermiques." },
       { scale: "10⁻⁹ m", link: "S4 → ouverture VGCC", evidence: "Panagopoulos 2025 IFO, Trus 2024 non ionotrope", status: "confirmed", detail: "Le changement conformationnel du S4 déclenche l'ouverture du VGCC. Panagopoulos 2025 fournit le modèle mécanistique ; Trus 2024 démontre la voie d'activation non ionotrope (non thermique)." },
       { scale: "10⁻⁹ m", link: "VGCC → perméation Ca²⁺ + Pb²⁺/Cd²⁺", evidence: "Marchetti 2013, Cd→Cav3.1 radiomarqué", status: "confirmed", detail: "Les VGCC ouverts permettent l'influx de Ca²⁺ — mais aussi de métaux toxiques. Le Cd²⁺ perméabilise à travers Cav3.1 (confirmé avec ¹⁰⁹Cd²⁺ radiomarqué). Le Pb²⁺ imite le Ca²⁺ aux sites de liaison de la calmoduline." },
@@ -1340,7 +1340,7 @@ const COPY = {
         level: "Consilience forte",
         desc: "Des lignes de preuves indépendantes convergent",
         examples: [
-          "Physique ([[ref:lindgren2025|Lindgren χ]]) ↔ Pharmacologie (convergence des médicaments Ca²⁺)",
+          "Prémisse théorique ([[ref:lindgren2025|Lindgren 2025]]) ↔ proposition BERM χ/L2 ouverte ↔ preuves pharmacologiques Ca²⁺",
           "Génétique (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Expérimental ([[ref:lopez_martin_2006|crises López-Martín]])",
           "Épidémiologie ([[ref:klimentidis2010|Klimentidis 8 espèces]]) ↔ Pathologie (déficience 5-HT du SIDS)",
         ],
@@ -1436,7 +1436,7 @@ const COPY = {
     chainLead:
       "BERM은 광자 흡수에서 집단 수준 건강 효과까지의 연속적 인과 사슬을 제안합니다. 각 중간 층은 공개된 실험적 및 임상적 증거에 대해 독립적으로 검증되었습니다.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "광자 → 메트릭 왜곡", evidence: "Lindgren 2025 χ 파라미터, Vassallo 확인", status: "confirmed", detail: "EMF 광자가 양자 수준에서 메트릭 왜곡을 생성. Lindgren의 χ 파라미터는 생체 조직이 비열적 EMF에 반응하는 물리학 수준의 메커니즘을 제공." },
+      { scale: "10⁻¹⁵ m", link: "계량 전제 → 생물학적 관측량", evidence: "Lindgren 2025 앤자츠; BERM χ 폐쇄 제안", status: "partial", detail: "Lindgren의 계량 앤자츠는 이론 전제다. BERM은 χ 폐쇄를 제안하지만 기하학-관측량 L2 연산자는 도출·보정되지 않았으므로 생물학적 반응은 열린 고리다." },
       { scale: "10⁻¹⁰ m", link: "메트릭 → S4 전압 센서", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "메트릭 왜곡이 VGCC의 S4 헬릭스 전압 센서에 작용. Tang 2024는 비열적 강도에서 EMF에 의한 직접적 S4 구조 변화를 입증." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC 개방", evidence: "Panagopoulos 2025 IFO, Trus 2024 비이온성", status: "confirmed", detail: "S4 구조 변화가 VGCC 게이팅을 유발. Panagopoulos 2025가 메커니즘 모델을 제공; Trus 2024가 비이온성(비열적) 활성화 경로를 입증." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ 투과", evidence: "Marchetti 2013, Cd→Cav3.1 방사표지", status: "confirmed", detail: "개방된 VGCC가 Ca²⁺ 유입을 허용 — 그러나 독성 금속도. Cd²⁺가 Cav3.1을 투과(¹⁰⁹Cd²⁺ 방사표지로 확인). Pb²⁺가 칼모듈린 결합 부위에서 Ca²⁺를 모방." },
@@ -1524,7 +1524,7 @@ const COPY = {
     consilienceLead:
       "컨실리언스 — 독립적인 증거 라인이 같은 결론으로 수렴하는 것 — 는 과학적 지지의 가장 강한 형태입니다. BERM은 3가지 수준의 컨실리언스를 보여줍니다.",
     consilienceLevels: [
-      { level: "강한 컨실리언스", desc: "독립적인 증거 라인이 수렴", examples: ["물리학([[ref:lindgren2025|Lindgren χ]]) ↔ 약리학(Ca²⁺ 약물 수렴)", "유전학(CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ 실험([[ref:lopez_martin_2006|López-Martín 발작]])", "역학([[ref:klimentidis2010|Klimentidis 8종]]) ↔ 병리학(SIDS 5-HT 결핍)"] },
+      { level: "강한 컨실리언스", desc: "독립적인 증거 라인이 수렴", examples: ["이론 전제([[ref:lindgren2025|Lindgren 2025]]) ↔ 열린 BERM χ/L2 제안 ↔ Ca²⁺ 약리학 증거", "유전학(CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ 실험([[ref:lopez_martin_2006|López-Martín 발작]])", "역학([[ref:klimentidis2010|Klimentidis 8종]]) ↔ 병리학(SIDS 5-HT 결핍)"] },
       { level: "중간 컨실리언스", desc: "관련된 증거 라인이 서로 지지", examples: ["ELF 프라이밍([[ref:sun2016_elf_vgcc|Sci. Rep. 2016]]) ↔ 가바펜틴이 차단([[ref:eroglu_2009_cell|Cell 2009]])", "PGC ↔ 멜라토닌([[ref:kunz2008_pgc_insomnia|r=0.569]]) ↔ [[ref:intechopen2020_melatonin_heart|송과선 절제 → 부정맥]]", "[[ref:dell2022_sleep_seizure|수면 부족 → GABA↓]](임상) ↔ EMF → 멜라토닌↓(동물)"] },
       { level: "약한 컨실리언스(보편성 위험)", desc: "Ca²⁺는 편재 — 일부 연결은 사소할 수 있음", examples: ["'하나의 분모로 25개 유행' — Ca²⁺는 어디에나 있음", "일부 Ca²⁺ 연관은 특정 EMF 인과관계가 아닌 보편적 생물학을 반영할 수 있음", "이것은 모델의 주요 인식론적 위험"] },
     ],

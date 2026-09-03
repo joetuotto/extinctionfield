@@ -1,10 +1,13 @@
-"""Public facade for the external-input FieldState ASFR/TFR route.
+"""Compatibility facade for BERM's conditional ASFR/TFR calculator.
 
-Unlike ``berm.model`` and ``berm.model_data_driven``, this route never
-generates a national exposure history internally.  Callers provide age-specific
-paired biological states and the separately measured/estimated demographic
-terms.  It can use observed UN WPP ASFR as a reference base, but it does not
-fit the target year to WPP.
+Unlike ``berm.model`` and ``berm.model_data_driven``, this route generates no
+exposure history and consumes no FieldState observation.  Callers provide
+age-specific paired biological states and separately measured or estimated
+demographic terms.  It can use observed UN WPP ASFR as a reference base, but
+does not fit the target year to WPP.
+
+The module name is retained for import compatibility.  New callers should use
+``project_wpp_conditional_asfr`` and the route ID from ``berm.architecture``.
 """
 
 from __future__ import annotations
@@ -15,15 +18,15 @@ from berm.biology.reproductive_state import CoupleReproductiveState
 from berm.data import wpp
 from berm.evidence_registry import evidence_summary, legacy_evidence_summary
 from berm.evidence_constraints import evidence_constraint_summary
+from berm.architecture import CONDITIONAL_ASFR_ROUTE_ID, FIELDSTATE_SPEC_VERSION
 from berm.outcomes.fieldstate_asfr import (
-    FIELDSTATE_ASFR_VERSION,
-    AgeSpecificFieldStateInput,
-    FieldStateASFRProjection,
-    project_fieldstate_asfr,
+    AgeSpecificConditionalInput,
+    ConditionalASFRProjection,
+    project_conditional_asfr,
 )
 
 
-MODEL_VERSION = FIELDSTATE_ASFR_VERSION
+MODEL_VERSION = CONDITIONAL_ASFR_ROUTE_ID
 
 _AGE_MIDPOINTS = {
     "15-19": 17,
@@ -71,7 +74,7 @@ def _couples_by_group(
     return result
 
 
-def project_wpp_fieldstate_asfr(
+def project_wpp_conditional_asfr(
     *,
     geography_id: str,
     year: int,
@@ -86,12 +89,12 @@ def project_wpp_fieldstate_asfr(
     target_art_live_birth_delivery: Mapping[str, float] | None = None,
     input_provenance: Mapping[str, str] | None = None,
 ) -> dict:
-    """Use observed WPP reference ASFR with explicit FieldState biological states.
+    """Use observed WPP reference ASFR with supplied biological states.
 
-    This is the entry point for the eventual train-only country/cohort hindcast:
-    the caller builds states from a local FieldState panel up to each target
-    year, provides non-biological factors independently, and holds the target
-    WPP ASFR out for comparison.
+    This is a conditional scenario entry point.  A caller may eventually build
+    the supplied states from a separately calibrated local measurement panel,
+    but this function neither requires nor performs that mapping.  The target
+    WPP ASFR remains held out for comparison.
     """
     reference = wpp.load_asfr(geography_id, reference_year)
     if reference is None:
@@ -112,7 +115,7 @@ def project_wpp_fieldstate_asfr(
     )
 
     groups = tuple(
-        AgeSpecificFieldStateInput(
+        AgeSpecificConditionalInput(
             age_group=group,
             reference_asfr=reference["values"][index],
             reference_couple=ref_couples[group],
@@ -131,7 +134,7 @@ def project_wpp_fieldstate_asfr(
         )
         for index, group in enumerate(wpp.AGE_GROUPS)
     )
-    projection = project_fieldstate_asfr(
+    projection = project_conditional_asfr(
         geography_id=geography_id,
         year=year,
         reference_year=reference_year,
@@ -147,7 +150,7 @@ def project_wpp_fieldstate_asfr(
 
 
 def _as_public_result(
-    projection: FieldStateASFRProjection,
+    projection: ConditionalASFRProjection,
     *,
     reference_series_status: str | None = None,
 ) -> dict:
@@ -156,16 +159,29 @@ def _as_public_result(
     result.update({
         "route": MODEL_VERSION,
         "reference_series_status": reference_series_status,
-        "active_chain": (
-            "FieldState -> organ R/P memory -> male/female states -> paired "
-            "couple capacity + demand/opportunity + tempo + ART/live-birth "
-            "delivery -> ASFR -> TFR"
+        "implemented_chain": (
+            "externally supplied paired biological states + demand/opportunity + "
+            "tempo + ART/live-birth delivery -> ASFR -> TFR"
         ),
+        "theoretical_chain": (
+            "Lindgren 2025 premise -> geometric consequence -> OPEN BERM L2 bridge -> "
+            "molecular/receptor response -> biology -> aggregate outcome"
+        ),
+        "active_chain": (
+            "externally supplied paired biological states + demand/opportunity + "
+            "tempo + ART/live-birth delivery -> ASFR -> TFR"
+        ),
+        "fieldstate_measurement": {
+            "spec_version": FIELDSTATE_SPEC_VERSION,
+            "role": "optional measurement/observation input to a future calibrated bridge",
+            "accepted_by_this_function": False,
+            "causal_root": False,
+        },
         "evidence_by_causal_node": evidence_summary(),
         "legacy_evidence_migration": legacy_evidence_summary(),
         "evidence_constraint_ledger": evidence_constraint_summary(),
         "warnings": [
-            "This route requires externally supplied local FieldState and paired biological states; it does not infer them from national mobile subscriptions.",
+            "This route requires externally supplied paired biological states; it does not infer them from FieldState observations or national mobile subscriptions.",
             "A STRUCTURAL_ONLY output is a transparent, evidence-constrained scenario calculation rather than a narrow locally calibrated causal estimate; it is not a zero-evidence or zero-effect label.",
             "Demand/opportunity, tempo and ART/live-birth delivery remain separate age-specific inputs.",
         ],
@@ -173,4 +189,14 @@ def _as_public_result(
     return result
 
 
-__all__ = ["MODEL_VERSION", "project_wpp_fieldstate_asfr"]
+def project_wpp_fieldstate_asfr(**kwargs) -> dict:
+    """Deprecated compatibility alias for :func:`project_wpp_conditional_asfr`."""
+
+    return project_wpp_conditional_asfr(**kwargs)
+
+
+__all__ = [
+    "MODEL_VERSION",
+    "project_wpp_conditional_asfr",
+    "project_wpp_fieldstate_asfr",
+]

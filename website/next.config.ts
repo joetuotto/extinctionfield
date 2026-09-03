@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         destination: "/:locale/about/history",
         permanent: true,
       },
+      {
+        source: "/:locale/model/fieldstate",
+        destination: "/:locale/measurement/fieldstate",
+        permanent: true,
+      },
+      {
+        source: "/:locale/model/fieldstate/math",
+        destination: "/:locale/measurement/fieldstate/math",
+        permanent: true,
+      },
     ];
   },
 };

@@ -1,4 +1,4 @@
-# BERM: sentinelli → ihmisbiologia → ASFR/TFR -hindcast-protokolla
+# BERM: ehdollisen sentinelli → ihmisbiologia → ASFR/TFR -ketjun hindcast-protokolla
 
 Versio: `sentinel-hindcast-protocol-v1`
 Tila: **rakenne- ja suuntaevidenssi aktiivinen; paikallinen numeerinen
@@ -12,28 +12,32 @@ FieldState–biologia-paneeli](measured-fieldstate-biology-panel.md).
 Tämä protokolla tekee seuraavan tutkimusvaiheen ennustavaksi BERM:n omien
 premissien sisältä. Se ei hae FieldState-, muisti-, sentinelli- tai
 viiveparametreja siitä, mikä sopii parhaiten jälkikäteen TFR-sarjaan. Ensin
-lukitaan paikallinen FieldState–biologia-ketju; ASFR/TFR on vasta ulkoinen,
-ajallisesti myöhempi arviointi.
+lukitaan BERM:n ehdottama paikallinen mittaus → L2 → biologia -ketju ulkoisella
+endpoint-datalla; ASFR/TFR on vasta ulkoinen, ajallisesti myöhempi arviointi.
+FieldState määrittelee mittaustietueen eikä itse muodosta tai lukitse biologista
+kytkentää.
 
 ```mermaid
 flowchart LR
   FS["Mitattu paikallinen FieldState"]
+  L2["BERM L2: ehdotettu ja kalibroitava"]
   S["Sentinellin biologinen endpoint"]
   H["Ihmisen biologinen endpoint"]
   C["Lukittu Φ-couple / ASFR -mapping"]
   T["Sokko ASFR/TFR-hindcast"]
-  FS --> S --> H --> C --> T
+  FS -.-> L2 --> S --> H --> C --> T
 ```
 
 ## Parametrien tunnistettavuus
 
-Lindgren-pohjaisessa ketjussa FieldState-skaala, elinsiirto `T_o`, biologinen
+BERM:n ehdokasketjussa FieldState-skaala, elinsiirto `T_o`, biologinen
 vastekertoimen `β_o` ja R/P-muisti voivat muuten korvata toisensa. Jokainen
 `ParameterFamily` ilmoittaa siksi yhden mitatun tai ennalta kiinnitetyn
 skaala-ankkurin, kohdesolmun, parametrit ja manifest-lukitut
 upstream-kalibrointiaineistot.
 
-- FieldState / elinsiirto: normalisointi, `T_o`, vektori-, vaihe- ja PSD-piirteet.
+- FieldState-mittaus: normalisointi, vektori-, vaihe- ja PSD-piirteet.
+- Avoin L2 / elinsiirto: ulkoisesti spesifioitu ja endpoint-datalla kalibroitava `T_o`.
 - R/P-muisti: palautuvan ja persistentin komponentin retentio sarjaendpointista.
 - Sentinellivaste: laji- ja endpoint-kohtainen vaste mitattuun FieldStateen.
 - Sentinelli → ihmisbiologia: biologinen muutos samassa paneelissa.

@@ -62,11 +62,13 @@ EXCLUDED_LEGACY_ACUTE_SUBPATHS = (
 
 
 def lindgren_chi(ambient: float) -> float:
-    """Return the scalar Lindgren selection weight ``A / sqrt(1 + A²)``.
+    """Return BERM's scalar closure ``A / sqrt(1 + A²)``.
 
-    A local scalar implementation avoids importing the legacy/numpy exposure
-    stack.  Ambient values in this core are physical magnitudes and therefore
-    must be non-negative; validation happens at the public boundary.
+    The function name is retained for compatibility.  The closure is motivated
+    by the Lindgren premise but is not derived from it and does not close L2.
+    A local implementation avoids importing the legacy/numpy exposure stack.
+    Ambient values must be non-negative; validation happens at the public
+    boundary.
     """
     return ambient / math.sqrt(1.0 + ambient * ambient)
 

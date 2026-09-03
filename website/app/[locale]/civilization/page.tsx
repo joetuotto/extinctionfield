@@ -10,9 +10,9 @@ const COPY = {
     subtitle:
       "What happens to a society when the hormonal substrate of both sexes changes simultaneously?",
     heroLead:
-      "Testosterone, estrogen, dopamine, cortisol, oxytocin, and melatonin are not just medical terms. They are the biological infrastructure of motivation, trust, bonding, sleep, reproduction, and cognition. When electromagnetic fields disrupt the cryptochrome–melatonin clock that gates these hormones (pathway B) and, secondarily, their calcium-channel signalling (pathway A), the effects propagate from molecules to cells to organs to individuals to families to institutions.",
+      "BERM treats testosterone, estrogen, dopamine, cortisol, oxytocin and melatonin as biological substrates of motivation, trust, bonding, sleep, reproduction and cognition. Its reductionist working hypothesis is that, if electromagnetic conditions shift these systems through the proposed pathways, population distributions can propagate from molecular and organ states to behavioural and institutional outcomes.",
     heroTrail:
-      "This section traces that propagation — from seven randomized controlled trials to population-level behavioral data to the dynamics of civilizational change.",
+      "This section derives that proposed propagation inside BERM and identifies the empirical links required to test it, from hormone–behaviour experiments to population-level distributions and civilizational outcomes.",
     readingGuide: "Reading path",
     readingGuideDesc:
       "The argument builds in six stages. Each page is self-contained but the causal chain runs left to right.",
@@ -53,17 +53,17 @@ const COPY = {
     predictionsLink: "See all predictions",
     readMore: "Read",
     epistemicTitle: "Epistemic note",
-    epistemicBody: "Each link in the chain below is independently supported by peer-reviewed research. The full chain — from electromagnetic physics to civilizational dynamics — has not been and cannot be tested as a single experiment. This is structurally identical to other long causal chains in science (smoking → cancer, CO₂ → climate change, lead → crime): the mechanism is established link by link, not end to end.",
-    epistemicBody2: "The confidence in the full chain is necessarily lower than the confidence in any individual link. Where model-derived values appear in tables, they are marked as such. Where observations are \"consistent\" with predictions, this means directional agreement — not formal testing.",
+    epistemicBody: "This is a BERM derivation, not a FieldState result. Peer-reviewed findings constrain several separate hormone–behaviour links, but the geometry-to-observable L2 bridge and multiple population-scale effect mappings remain open. The full multiscale chain is therefore a model hypothesis, not an established mechanism.",
+    epistemicBody2: "Within the reductionist hypothesis, a shift in the population distribution of biological states may generate a shift in aggregate political behaviour without claiming that every individual changes identically. The inference is one-way and distributional: a group-level political outcome alone cannot be used to diagnose an individual’s hormone state.",
   },
   fi: {
     title: "Sivilisaatio",
     subtitle:
       "Mitä tapahtuu yhteiskunnalle, kun molempien sukupuolten hormonaalinen substraatti muuttuu samanaikaisesti?",
     heroLead:
-      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettiset kentät häiritsevät näitä hormoneja portittavaa kryptokromi–melatoniinikelloa (polku B) ja toissijaisesti niiden kalsiumkanavasignalointia (polku A), vaikutukset etenevät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
+      "BERM käsittelee testosteronia, estrogeenia, dopamiinia, kortisolia, oksitosiinia ja melatoniinia motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologisina substraatteina. Sen reduktionistinen työhypoteesi on, että jos sähkömagneettiset olosuhteet siirtävät näitä järjestelmiä ehdotettujen reittien kautta, populaatiojakaumien muutos voi edetä molekyyli- ja elintiloista käyttäytymis- ja instituutiotuloksiin.",
     heroTrail:
-      "Tämä osio jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaatiomuutoksen dynamiikkaan.",
+      "Tämä osio johtaa ehdotetun etenemisen BERM:n sisällä ja nimeää sen testaamiseen tarvittavat empiiriset lenkit hormonien ja käyttäytymisen kokeista populaatiojakaumiin ja sivilisaatiotuloksiin.",
     readingGuide: "Lukupolku",
     readingGuideDesc:
       "Argumentti rakentuu kuudessa vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
@@ -104,17 +104,17 @@ const COPY = {
     predictionsLink: "Katso kaikki ennusteet",
     readMore: "Lue",
     epistemicTitle: "Episteeminen huomautus",
-    epistemicBody: "Jokainen yksittäinen lenkki alla olevassa ketjussa on itsenäisesti tuettu vertaisarvioidulla tutkimuksella. Koko ketjua — sähkömagneettisesta fysiikasta sivilisaatiodynamiikkaan — ei ole testattu eikä voida testata yhtenä kokeena. Tämä on rakenteellisesti identtinen muiden pitkien kausaaliketjujen kanssa tieteessä (tupakointi → syöpä, CO₂ → ilmastonmuutos, lyijy → rikollisuus): mekanismi on todennettu lenkki lenkiltä, ei päästä päähän.",
-    epistemicBody2: "Luottamus koko ketjuun on välttämättä matalampi kuin luottamus yksittäiseen lenkkiin. Kun mallin tuottamia arvoja esiintyy taulukoissa, ne on merkitty sellaisiksi. Kun havaintoja kuvataan ennusteiden kanssa \"yhdenmukaisiksi\", tämä tarkoittaa suunnan vastaavuutta — ei muodollista testausta.",
+    epistemicBody: "Tämä on BERM-johdanto, ei FieldState-tulos. Vertaisarvioitu näyttö rajaa useita erillisiä hormoni–käyttäytymislenkkejä, mutta geometriasta havaittavaan suureeseen johtava L2-silta ja useat populaatiotason vaikutuskuvaukset ovat avoimia. Koko monitasoinen ketju on siksi mallihypoteesi, ei todennettu mekanismi.",
+    epistemicBody2: "Reduktionistisen hypoteesin sisällä biologisten tilojen populaatiojakauman siirtymä voi tuottaa muutoksen poliittisen käyttäytymisen aggregaattijakaumaan ilman oletusta, että jokainen yksilö muuttuu samoin. Päättely on yksisuuntainen ja jakaumatasoinen: ryhmätason poliittisesta tuloksesta ei yksin voi diagnosoida yksilön hormonitilaa.",
   },
   ja: {
     title: "文明",
     subtitle:
       "両性のホルモン基盤が同時に変化するとき、社会に何が起こるのか？",
     heroLead:
-      "テストステロン、エストロゲン、ドーパミン、コルチゾール、オキシトシン、メラトニンは単なる医学用語ではありません。それらはモチベーション、信頼、絆、睡眠、生殖、認知の生物学的インフラストラクチャーです。電磁場がこれらのホルモンを調節するカルシウムチャネルを乱すと、影響は分子から細胞、臓器、個人、家族、制度へと伝播します。",
+      "BERMはこれらのホルモンを動機、信頼、絆、睡眠、生殖、認知の生物学的基質として扱います。その還元主義的作業仮説は、電磁条件が提案経路を通じてこれらの系を変えるなら、集団分布の変化が分子・臓器状態から行動・制度結果へ伝播し得るというものです。",
     heroTrail:
-      "このセクションはその伝播を追跡します — 7つのランダム化比較試験から人口レベルの行動データ、そして文明変動のダイナミクスへ。",
+      "本節はBERM内でその伝播を導出し、ホルモン–行動実験から集団分布と文明結果まで、検証に必要なリンクを示します。",
     readingGuide: "読書経路",
     readingGuideDesc:
       "議論は6段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
@@ -154,16 +154,18 @@ const COPY = {
     evidenceLink: "証拠を探る",
     predictionsLink: "すべての予測を見る",
     readMore: "読む",
-    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
+    epistemicTitle: "認識論的注記",
+    epistemicBody: "これはBERMの導出であり、FieldStateの結果ではありません。複数のホルモン–行動リンクには研究上の制約がありますが、幾何学から観測量へのL2ブリッジと複数の集団効果写像は未解決です。多尺度連鎖全体はモデル仮説であり、確立した機構ではありません。",
+    epistemicBody2: "仮説内では生物状態の集団分布変化から政治行動の集約分布変化を導けますが、全個人が同じように変わるとは仮定しません。逆に、集団政治結果だけから個人のホルモン状態を診断することはできません。",
   },
   fr: {
     title: "Civilisation",
     subtitle:
       "Que se passe-t-il quand le substrat hormonal des deux sexes change simultanement ?",
     heroLead:
-      "Testosterone, estrogene, dopamine, cortisol, ocytocine et melatonine ne sont pas de simples termes medicaux. Ce sont les infrastructures biologiques de la motivation, de la confiance, du lien, du sommeil, de la reproduction et de la cognition.",
+      "BERM traite ces hormones comme des substrats biologiques de la motivation, de la confiance, du lien, du sommeil, de la reproduction et de la cognition. Son hypothèse réductionniste est qu’un déplacement de ces systèmes par les voies proposées peut propager un changement de distribution des états moléculaires et organiques vers les comportements et les institutions.",
     heroTrail:
-      "Cette section retrace cette propagation — des essais cliniques aux donnees comportementales de population et a la dynamique du changement civilisationnel.",
+      "Cette section dérive cette propagation proposée dans BERM et identifie les liens empiriques nécessaires pour la tester, des expériences hormone–comportement aux distributions populationnelles et aux résultats civilisationnels.",
     readingGuide: "Parcours de lecture",
     readingGuideDesc:
       "L'argument se construit en six etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
@@ -203,16 +205,18 @@ const COPY = {
     evidenceLink: "Explorer les preuves",
     predictionsLink: "Voir toutes les predictions",
     readMore: "Lire",
-    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
+    epistemicTitle: "Note épistémique",
+    epistemicBody: "Il s’agit d’une dérivation BERM, pas d’un résultat FieldState. Plusieurs liens hormone–comportement sont contraints par la littérature, mais le pont L2 géométrie–observable et plusieurs mappages d’effets populationnels restent ouverts. La chaîne multi-échelle complète est une hypothèse du modèle, non un mécanisme établi.",
+    epistemicBody2: "Dans l’hypothèse réductionniste, un déplacement de la distribution populationnelle des états biologiques peut produire un déplacement du comportement politique agrégé sans supposer que chaque individu change pareillement. Le résultat politique du groupe ne permet pas, à lui seul, de diagnostiquer l’état hormonal d’un individu.",
   },
   ko: {
     title: "문명",
     subtitle:
       "양성의 호르몬 기질이 동시에 변화할 때 사회에 무슨 일이 일어나는가?",
     heroLead:
-      "테스토스테론, 에스트로겐, 도파민, 코르티솔, 옥시토신, 멜라토닌은 단순한 의학 용어가 아닙니다. 이것들은 동기, 신뢰, 유대, 수면, 생식, 인지의 생물학적 인프라입니다.",
+      "BERM은 이러한 호르몬을 동기, 신뢰, 유대, 수면, 생식 및 인지의 생물학적 기질로 취급합니다. 환원주의적 작업 가설은 전자기 조건이 제안된 경로를 통해 이 체계를 이동시키면 집단 분포의 변화가 분자·장기 상태에서 행동·제도 결과로 전파될 수 있다는 것입니다.",
     heroTrail:
-      "이 섹션은 그 전파를 추적합니다 — 7개의 무작위 대조 시험에서 인구 수준의 행동 데이터, 그리고 문명 변동의 역학으로.",
+      "이 절은 BERM 안에서 제안된 전파를 도출하고 호르몬–행동 실험부터 집단 분포와 문명 결과까지 검증에 필요한 연결을 제시합니다.",
     readingGuide: "독서 경로",
     readingGuideDesc:
       "논증은 6단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
@@ -252,7 +256,9 @@ const COPY = {
     evidenceLink: "증거 탐색",
     predictionsLink: "모든 예측 보기",
     readMore: "읽기",
-    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
+    epistemicTitle: "인식론적 주석",
+    epistemicBody: "이는 FieldState 결과가 아니라 BERM 도출입니다. 여러 호르몬–행동 연결은 연구로 제약되지만 기하학–관측량 L2 브리지와 여러 집단 효과 매핑은 열려 있습니다. 전체 다중 규모 사슬은 모델 가설이지 확립된 메커니즘이 아닙니다.",
+    epistemicBody2: "환원주의 가설 안에서 생물학적 상태의 집단 분포 이동은 모든 개인이 동일하게 변한다고 가정하지 않고도 집계 정치 행동의 이동을 만들 수 있습니다. 반대로 집단 정치 결과만으로 개인의 호르몬 상태를 진단할 수 없습니다.",
   },
 };
 

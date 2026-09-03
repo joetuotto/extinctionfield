@@ -1,4 +1,4 @@
-"""Descriptive cohort/ASFR signature derived from the FieldState architecture.
+"""Descriptive technology-timing cohort/ASFR signature for BERM validation.
 
 The calculation asks a narrow question implied by BERM's developmental-memory
 premise: do younger reproductive cohorts, whose early-life *technology timing
@@ -6,8 +6,9 @@ proxy* is higher than older cohorts, have a more negative young-versus-older
 ASFR change?  It deliberately does not call the proxy a physical FieldState,
 fit an EMF coefficient, or change the v2 outcome model.
 
-It is a bridge from currently available WPP/World Bank data to the future
-matched FieldState panel.  Its output therefore carries ``PROXY_ONLY`` status.
+It is a proxy-only diagnostic that can inform the design of a future matched
+FieldState panel.  It is not a FieldState-derived biological bridge, so its
+output always carries ``PROXY_ONLY`` status.
 """
 
 from __future__ import annotations

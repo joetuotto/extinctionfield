@@ -166,7 +166,8 @@ export interface CausalGraphEdge {
   id: string;
   from: string;
   to: string;
-  label: string;
+  kind: "inference_input" | "proposed_bridge" | "causal_model";
+  label?: string;
 }
 
 export interface CausalGraphUIGroup {
@@ -178,7 +179,7 @@ export interface CausalGraphUIGroup {
 export interface CausalGraph {
   version: string;
   nodes: Record<string, CausalGraphNode>;
-  edges: Record<string, CausalGraphEdge>;
+  edges: CausalGraphEdge[];
   ui_groups: Record<string, CausalGraphUIGroup>;
 }
 

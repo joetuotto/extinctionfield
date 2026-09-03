@@ -1,13 +1,13 @@
 # Näyttörekisterit: kolme rekisteriä, yksi liitosavain
 
-**Versio:** 2026-09-02
+**Versio:** 2026-09-03
 **Tila:** Nykytilan kuvaus ja migraatiopolku. Ei CODELLE-ohje; luvut ovat kirjoitushetken lukuja.
 
 ## 1. Kolme rekisteriä
 
 | # | Tiedosto | Tietueita | Kiinnityskohde | Tarkoitus |
 |---|---|---|---|---|
-| A | `website/lib/evidence.ts` → `FIELDSTATE_EVIDENCE` | 34 | `causalNodes[]` → `website/data/causal-graph.json` (35 solmua) | Rajatut tutkimus→solmu-tietueet FieldState v2 -mittausmäärittelyn skeemalla. Sivun `/evidence` "bounded records". |
+| A | `website/lib/evidence.ts` → `FIELDSTATE_EVIDENCE` | 34 | `causalNodes[]` → `website/data/causal-graph.json` (36 solmua) | Rajatut tutkimus→solmu-tietueet FieldState v2 -mittausmäärittelyn skeemalla. Sivun `/evidence` "bounded records". |
 | B | `website/lib/legacyEvidence.json` → `LEGACY_EVIDENCE_CATALOGUE` | 150 | `pathway`-kirjain + `causalNodes[]` (94 tietueella; 56 tyhjää) | Aiempi A–F-polkubibliografia lähdetason tarkistusta varten. Sivun `/evidence` "extended catalogue". |
 | C | `website/data/claims.json` → `evidence_relations[]` | 56 | `claimId` → `claims[]` (28 väitettä, kaikki `draft`, kaikki solmukohteita; väite voi kiinnittyä myös kaareen tai reittiin) | Kuratoitu Reference × Claim -liitostaulu. Ainoa rekisteri, jonka `npm run registry:validate` tarkistaa. |
 
@@ -69,7 +69,7 @@ A → C: sama polku. A:n `directness` → C:n `directness`, `calibrationRole` pi
 ## 4. Mikä estää täyden yhdistämisen
 
 1. C:n 28 väitettä ovat kaikki `draft`-tilassa ja 20:llä on relaatioita; 53 MIGRATION_CANDIDATE-tietuetta (57 − 4) ja 4 A-tietuetta odottaa kohdeväitettä ja relaatiota.
-2. 56 B-tietueella ei ole solmua ja 33 on OUTSIDE_ACTIVE_GRAPH; 35 solmun graafi ei kata niitä.
+2. 56 B-tietueella ei ole solmua ja 33 on OUTSIDE_ACTIVE_GRAPH; 36 solmun graafi ei kata niitä.
 3. A on TypeScript-literaali, ei JSON: `validate-registry.mjs` ei näe sitä, ja berm-rekisteri (33) ja sivusto (34) eroavat ilman synkronointia.
 4. Kuraattorikentät edellyttävät ihmisen päätöksen; automaattinen siirto rikkoo protokollaa.
 5. Polkukirjaimet eivät vastaa solmuja 1:1 (RPM on koodissa ja sivustolla B, `docs/protocol/REASONING_PROTOCOL_v1.md`:ssä C), joten `pathway` ei kelpaa väitteen kohteeksi.
@@ -78,9 +78,9 @@ A → C: sama polku. A:n `directness` → C:n `directness`, `calibrationRole` pi
 
 ## 5. Tehdyt korjaukset 2026-09-02
 
-- `led_emf_component`, `display_multiplication`: `CIRCADIAN_DISRUPTION` → `MELATONIN_REDOX`; `orthogonal_layer_convergence`: `FIELDSTATE` → `FIELDSTATE_SELECTED_PROXY`; `yap2025_cry2_trpc1`: `B_CRY_MELATONIN` → `B_RPM_CRY`. Alkuperäinen id tietueen `note`-kentässä.
+- `led_emf_component`, `display_multiplication`: `CIRCADIAN_DISRUPTION` → `MELATONIN_REDOX`; `orthogonal_layer_convergence`: `FIELDSTATE` → `TECHNOLOGY_TIMING_PROXY`; `yap2025_cry2_trpc1`: `B_CRY_MELATONIN` → `B_RPM_CRY`. Alkuperäinen id tietueen `note`-kentässä.
 - `becker1985` level `H` → `L*`, `satellite_predictive_test` level `P` → `L*`; alkuperäinen kirjain `note`-kentässä.
 - `STATUS_LABELS`: VERIFIED ja PREDICTION lisätty (en/fi).
 - `LEGACY_EVIDENCE_MIGRATION` poistettu `lib/evidence.ts`:stä (ei tuojia; luvut 129/35 olivat vanhentuneet).
-- `CAUSAL_NODE_LABELS` kattaa kaikki 35 graafin solmua.
-- `/evidence`-, `/model/fieldstate`- ja `/model/fieldstate/math`-sivuille lisätty en+fi-kappale, joka erottaa v2:n (mittausmäärittely) ja v17:n (ennusteet tuottava malli).
+- `CAUSAL_NODE_LABELS` kattaa kaikki 36 graafin solmua.
+- `/evidence`-, `/measurement/fieldstate`- ja `/measurement/fieldstate/math`-sivut erottavat v2:n (mittausmäärittely) ja v17:n (ennusteet tuottava malli); vanhat `/model/fieldstate*`-osoitteet ohjataan pysyvästi uusiin osoitteisiin.
