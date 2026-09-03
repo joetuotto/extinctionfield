@@ -11,9 +11,10 @@ import { LayersExplorer } from "./LayersExplorer";
 import { ThresholdExplorer } from "./ThresholdExplorer";
 import { CivilizationTimeline } from "./CivilizationTimeline";
 import { NaturalEMVisualization } from "./NaturalEMVisualization";
+import { SolarExplorer } from "./SolarExplorer";
 import { getExploreTabs } from "@/lib/navigation";
 
-type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM";
+type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar";
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
@@ -73,6 +74,8 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "civilizations" && <CivilizationTimeline locale={locale} />}
 
       {activeTab === "naturalEM" && <NaturalEMVisualization locale={locale} />}
+
+      {activeTab === "solar" && <SolarExplorer locale={locale} />}
     </div>
   );
 }

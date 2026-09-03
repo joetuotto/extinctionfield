@@ -28,7 +28,7 @@ const COPY = {
       "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
 
     leadParagraph:
-      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength drops to B ≈ 0–few μT (compared to 25–65 μT at Earth’s surface). Astronauts experience dramatic magnetic field reduction during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its geomagnetic reference background.",
+      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
 
     effectsTitle: "Observed effects in spaceflight",
     effects: [
@@ -99,7 +99,7 @@ const COPY = {
       "Tämä osio käyttää ISS-astronauttidataa tahattomana luonnollisena kokeena. Astronautit EIVÄT ole suunniteltu RCT — mikrogravitaatio, säteily ja eristys ovat merkittäviä sekoittavia tekijöitä. Magneettikentäkomponentti on yksi useista samanaikaisista altistuksista.",
 
     leadParagraph:
-      "Kansainvälinen avaruusasema kiertaa noin 400 km korkeudessa, jossa geomagneettisen kentän voimakkuus putoaa tasolle B ≈ 0–muutama μT (verrattuna 25–65 μT Maan pinnalla). Astronautit kokevat dramaattisen magneettikentän vaimenemisen 6 kuukauden tehtäviensä aikana — luonnollinen koe siitä, mitä tapahtuu kun kryptokromin spin-suskeptibiliteetti (χ_B) menettää geomagneettisen referenssitaustansa.",
+      "Kansainvälinen avaruusasema kiertaa noin 400 km korkeudessa, jossa geomagneettisen kentän voimakkuus putoaa tasolle B ≈ 21–54 μT (~83% pintatasosta, verrattuna 25–65 μT merenpinnalla). Vaikka kenttä ei ole lähellä nollaa, astronautit kokevat mitattavan kentän muutoksen yhdistettynä vuorokautisen geomagneettisen vaihtelun menetykseen 6 kuukauden tehtäviensä aikana — luonnollinen koe siitä, mitä tapahtuu kun kryptokromin spin-suskeptibiliteetti (χ_B) menettää geomagneettisen referenssitaustansa.",
 
     effectsTitle: "Havaitut vaikutukset avaruuslennolla",
     effects: [
@@ -170,7 +170,7 @@ const COPY = {
       "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
 
     leadParagraph:
-      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength drops to B ≈ 0–few μT (compared to 25–65 μT at Earth’s surface). Astronauts experience dramatic magnetic field reduction during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its geomagnetic reference background.",
+      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
 
     effectsTitle: "宇宙飛行で観察された影響",
     effects: [
@@ -241,7 +241,7 @@ const COPY = {
       "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
 
     leadParagraph:
-      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength drops to B ≈ 0–few μT (compared to 25–65 μT at Earth’s surface). Astronauts experience dramatic magnetic field reduction during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its geomagnetic reference background.",
+      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
 
     effectsTitle: "Effets observés en vol spatial",
     effects: [
@@ -312,7 +312,7 @@ const COPY = {
       "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
 
     leadParagraph:
-      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength drops to B ≈ 0–few μT (compared to 25–65 μT at Earth’s surface). Astronauts experience dramatic magnetic field reduction during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its geomagnetic reference background.",
+      "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
 
     effectsTitle: "우주 비행에서 관찰된 효과",
     effects: [

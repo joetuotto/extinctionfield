@@ -27,6 +27,7 @@ import {
   Shield,
   Globe,
   UserX,
+  Sun,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -463,7 +464,7 @@ export function getNavRoutes(locale: string): ResolvedNavRoute[] {
 }
 
 export interface ExploreTab {
-  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold" | "civilizations" | "naturalEM";
+  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar";
   labels: Labels;
   icon: LucideIcon;
 }
@@ -478,6 +479,7 @@ export const EXPLORE_TABS: ExploreTab[] = [
   { key: "layers", labels: { en: "Layers", fi: "Kerrokset", ja: "レイヤー", fr: "Couches", ko: "레이어" }, icon: Layers },
   { key: "civilizations", labels: { en: "Civilizations", fi: "Sivilisaatiot", ja: "文明", fr: "Civilisations", ko: "문명" }, icon: Landmark },
   { key: "naturalEM", labels: { en: "Natural EM", fi: "Luonnollinen EM", ja: "自然EM", fr: "EM naturel", ko: "자연 EM" }, icon: Radio },
+  { key: "solar", labels: { en: "Solar χ", fi: "Aurinko-χ", ja: "太陽χ", fr: "Solaire χ", ko: "태양 χ" }, icon: Sun },
 ];
 
 export function getExploreTabs(locale: string) {

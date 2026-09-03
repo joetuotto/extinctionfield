@@ -44,7 +44,7 @@ const COPY = {
       status: "Status",
     },
     section5Title: "Testable Predictions",
-    section5Intro: "Five predictions derived from the nested χ model. Each is designed to be falsifiable within its stated timeframe.",
+    section5Intro: "Twenty predictions derived from the nested χ model. Each is designed to be falsifiable within its stated timeframe.",
     predictionHeaders: {
       test: "Test",
       falsification: "Falsification criterion",
@@ -95,7 +95,7 @@ const COPY = {
       status: "Tila",
     },
     section5Title: "Testattavat ennusteet",
-    section5Intro: "Viisi ennustetta jotka on johdettu sisäkkäisestä χ-mallista. Jokainen on suunniteltu falsifioitavaksi ilmoitetulla aikavälillä.",
+    section5Intro: "Kaksikymmentä ennustetta jotka on johdettu sisäkkäisestä χ-mallista. Jokainen on suunniteltu falsifioitavaksi ilmoitetulla aikavälillä.",
     predictionHeaders: {
       test: "Testi",
       falsification: "Falsifikaatiokriteeri",
@@ -146,7 +146,7 @@ const COPY = {
       status: "状態",
     },
     section5Title: "検証可能な予測",
-    section5Intro: "入れ子型χモデルから導出された5つの予測。それぞれが規定の期間内に反証可能なように設計されている。",
+    section5Intro: "入れ子型χモデルから導出された20の予測。それぞれが規定の期間内に反証可能なように設計されている。",
     predictionHeaders: {
       test: "検証",
       falsification: "反証基準",
@@ -197,7 +197,7 @@ const COPY = {
       status: "Statut",
     },
     section5Title: "Predictions testables",
-    section5Intro: "Cinq predictions derivees du modele χ imbrique. Chacune est concue pour etre falsifiable dans le delai indique.",
+    section5Intro: "Vingt predictions derivees du modele χ imbrique. Chacune est concue pour etre falsifiable dans le delai indique.",
     predictionHeaders: {
       test: "Test",
       falsification: "Critere de falsification",
@@ -248,7 +248,7 @@ const COPY = {
       status: "상태",
     },
     section5Title: "검증 가능한 예측",
-    section5Intro: "중첩 χ 모델에서 도출된 다섯 가지 예측. 각각은 명시된 기간 내에 반증 가능하도록 설계되었다.",
+    section5Intro: "중첩 χ 모델에서 도출된 스무 가지 예측. 각각은 명시된 기간 내에 반증 가능하도록 설계되었다.",
     predictionHeaders: {
       test: "검증",
       falsification: "반증 기준",

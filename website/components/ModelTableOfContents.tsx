@@ -88,7 +88,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Modulomi",
       sections: [
-        { id: "modulome", label: "7-tasoinen modulooma" },
+        { id: "modulome", label: "12-kerroksinen moduloomi" },
       ],
     },
     {

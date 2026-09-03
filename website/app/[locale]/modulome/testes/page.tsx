@@ -19,7 +19,7 @@ const COPY = {
     s1p2:
       "This means EMF exposure attacks male reproductive function through multiple independent mechanisms simultaneously. Even if one mechanism is marginal, the convergence of several mechanisms on the same endpoint (reduced fertility) creates a robust effect that is difficult to attribute to any single pathway.",
     s1p3:
-      "The testes occupy a unique position in the BERM framework: they are the only organ where both VGCC-mediated ion channel disruption (pathways A/B) and biological barrier disruption (pathway F) converge on the same functional outcome.",
+      "The testes occupy a unique position in the BERM framework: they are the only organ where both VGCC-mediated ion channel disruption (pathway A) and biological barrier disruption (pathway C) converge on the same functional outcome.",
 
     /* 02 Channel Profile */
     s2Title: "Channel Profile",
@@ -87,7 +87,7 @@ const COPY = {
       {
         citation: "23-28 VGCC blocker studies",
         year: "2018-2025", referenceId: "vgcc_blocker_studies_collection",
-        finding: "Systematic evidence from 23-28 studies: VGCC blocker administration prevents or attenuates EMF-induced biological effects. Confirms that VGCC/Cav channels are the primary transduction pathway.",
+        finding: "Systematic evidence from 23-28 studies: VGCC blocker administration prevents or attenuates EMF-induced biological effects. Confirms that VGCC/Cav channels are the pathway-A transduction step. B (CRY/RPM) is the primary pathway overall.",
         level: "M",
       },
     ],

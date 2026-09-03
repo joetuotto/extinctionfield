@@ -422,7 +422,7 @@ const t = {
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(electrification_years, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_free_hours/day",
-    s14V20Desc: "Where EMF_comp is the three-channel weighted composite (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P captures cumulative priming from decades of power grid exposure — years of electrification upregulate VGCC expression, making cells more sensitive to all subsequent EMF. R captures the recovery window: hours per day without significant EMF allow CaMKII dephosphorylation and Ca²⁺ homeostasis restoration.",
+    s14V20Desc: "Where EMF_comp is the three-channel weighted composite (ELF < 300 Hz, IF 300 Hz–1 MHz, RF > 1 MHz). P captures cumulative priming from decades of power grid exposure — years of electrification upregulate VGCC expression, making cells more sensitive to all subsequent EMF. R captures the recovery window: hours per day without significant EMF allow CaMKII dephosphorylation and Ca²⁺ homeostasis restoration.",
     s14V21Title: "Formula v21 (proposed: + Season × Genotype)",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(latitude, season)",
@@ -876,7 +876,7 @@ const t = {
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(sähköistys_vuodet, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_vapaat_tunnit/vrk",
-    s14V20Desc: "Missä EMF_comp on kolmikanavainen painotettu komposiitti (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P kuvaa kumulatiivista esialtistusta vuosikymmenten sähköverkkoaltistuksesta — sähköistysvuodet ylös­säätelevät VGCC-ekspressiota tehden soluista herkempiä kaikelle myöhemmälle EMF:lle. R kuvaa palautumisikkunaa: tunnit päivässä ilman merkittävää EMF:ää mahdollistavat CaMKII-defosforylaation ja Ca²⁺-homeo­staasin palautumisen.",
+    s14V20Desc: "Missä EMF_comp on kolmikanavainen painotettu komposiitti (ELF < 300 Hz, IF 300 Hz–1 MHz, RF > 1 MHz). P kuvaa kumulatiivista esialtistusta vuosikymmenten sähköverkkoaltistuksesta — sähköistysvuodet ylös­säätelevät VGCC-ekspressiota tehden soluista herkempiä kaikelle myöhemmälle EMF:lle. R kuvaa palautumisikkunaa: tunnit päivässä ilman merkittävää EMF:ää mahdollistavat CaMKII-defosforylaation ja Ca²⁺-homeo­staasin palautumisen.",
     s14V21Title: "Formula v21 (ehdotettu: + Vuodenaika × Genotyyppi)",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(leveysaste, vuodenaika)",
@@ -1175,7 +1175,7 @@ const t = {
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(electrification_years, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_free_hours/day",
-    s14V20Desc: "EMF_compは3チャネル加重コンポジット（ELF < 300 Hz、IF 300 Hz–10 MHz、RF > 10 MHz）です。Pは数十年の送電網曝露からの累積プライミングを捕捉 — 電化年数がVGCC発現を上方制御し、後続のすべてのEMFに対して細胞をより感受性にします。Rは回復ウィンドウを捕捉：1日の有意なEMFなしの時間がCaMKII脱リン酸化とCa²⁺恒常性の回復を可能にします。",
+    s14V20Desc: "EMF_compは3チャネル加重コンポジット（ELF < 300 Hz、IF 300 Hz–1 MHz、RF > 1 MHz）です。Pは数十年の送電網曝露からの累積プライミングを捕捉 — 電化年数がVGCC発現を上方制御し、後続のすべてのEMFに対して細胞をより感受性にします。Rは回復ウィンドウを捕捉：1日の有意なEMFなしの時間がCaMKII脱リン酸化とCa²⁺恒常性の回復を可能にします。",
     s14V21Title: "公式v21（提案：+ 季節 × ジェノタイプ）",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(latitude, season)",
@@ -1465,7 +1465,7 @@ const t = {
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(electrification_years, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_free_hours/day",
-    s14V20Desc: "EMF_comp est le composite pondéré à trois canaux (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P capture l'amorçage cumulatif de décennies d'exposition au réseau électrique — les années d'électrification régulent à la hausse l'expression des VGCC, rendant les cellules plus sensibles à tout EMF ultérieur. R capture la fenêtre de récupération : les heures par jour sans EMF significatif permettent la déphosphorylation de CaMKII et la restauration de l'homéostasie Ca²⁺.",
+    s14V20Desc: "EMF_comp est le composite pondéré à trois canaux (ELF < 300 Hz, IF 300 Hz–1 MHz, RF > 1 MHz). P capture l'amorçage cumulatif de décennies d'exposition au réseau électrique — les années d'électrification régulent à la hausse l'expression des VGCC, rendant les cellules plus sensibles à tout EMF ultérieur. R capture la fenêtre de récupération : les heures par jour sans EMF significatif permettent la déphosphorylation de CaMKII et la restauration de l'homéostasie Ca²⁺.",
     s14V21Title: "Formule v21 (proposée : + Saison × Génotype)",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(latitude, saison)",
@@ -1755,7 +1755,7 @@ const t = {
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(electrification_years, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_free_hours/day",
-    s14V20Desc: "EMF_comp는 3채널 가중 합성(ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz)입니다. P는 수십 년의 전력망 노출에 의한 누적 프라이밍을 포착 — 전화 연수가 VGCC 발현을 상향 조절하여 이후 모든 EMF에 세포를 더 민감하게 만듭니다. R은 회복 창을 포착: 하루 중 유의한 EMF 없는 시간이 CaMKII 탈인산화와 Ca²⁺ 항상성 회복을 가능하게 합니다.",
+    s14V20Desc: "EMF_comp는 3채널 가중 합성(ELF < 300 Hz, IF 300 Hz–1 MHz, RF > 1 MHz)입니다. P는 수십 년의 전력망 노출에 의한 누적 프라이밍을 포착 — 전화 연수가 VGCC 발현을 상향 조절하여 이후 모든 EMF에 세포를 더 민감하게 만듭니다. R은 회복 창을 포착: 하루 중 유의한 EMF 없는 시간이 CaMKII 탈인산화와 Ca²⁺ 항상성 회복을 가능하게 합니다.",
     s14V21Title: "공식 v21 (제안: + 계절 × 유전자형)",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(latitude, season)",
@@ -2554,7 +2554,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <text x="62" y="258" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">10 kHz</text>
                 <text x="62" y="213" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">100 kHz</text>
                 <text x="62" y="168" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">1 MHz</text>
-                <text x="62" y="123" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">10 MHz</text>
+                <text x="62" y="123" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">1 MHz</text>
                 <text x="62" y="78" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">100 MHz</text>
                 <text x="62" y="33" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.45">1 GHz</text>
                 {/* Y-axis title */}

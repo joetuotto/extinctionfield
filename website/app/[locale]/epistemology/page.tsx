@@ -205,7 +205,7 @@ const COPY = {
     predictionItems: [
       "Amish populations evaluate novel scientific frameworks more accurately than urban populations matched for IQ and education — because cognitive complexity (0.964) exceeds the model evaluation threshold (0.70).",
       "Urban-to-rural migration produces measurable political orientation shift within 12–24 months — tracking biomarker recovery, not social influence.",
-      "Testosterone supplementation in urban males shifts political orientation toward hierarchy acceptance and reduced redistribution preference — replicating Welling 2025 (N=136) in a larger sample.",
+      "Testosterone supplementation in urban males shifts political orientation toward hierarchy acceptance and reduced redistribution preference — replicating Alogaily et al. 2025 (N=136) in a larger sample.",
       "Melatonin supplementation improves time preference and reduces threat sensitivity — independent of sleep quality gains.",
     ],
 
@@ -416,7 +416,7 @@ const COPY = {
     predictionItems: [
       "Amish-väestöt arvioivat uusia tieteellisiä viitekehyksiä tarkemmin kuin kaupunkiväestöt, jotka on kalibroitu ÄO:lla ja koulutuksella — koska kognitiivinen kompleksisuus (0,964) ylittää mallin arviointikynnyksen (0,70).",
       "Kaupungista maaseudulle muutto tuottaa mitattavan poliittisen orientaation muutoksen 12–24 kuukaudessa — seuraten biomarkkerien palautumista, ei sosiaalista vaikutusta.",
-      "Testosteronilisä kaupunkimiehillä siirtää poliittista orientaatiota hierarkian hyväksymisen ja vähentyneen uudelleenjakopreferenssin suuntaan — replikoiden Wellingin 2025 (N=136) suuremmassa otoksessa.",
+      "Testosteronilisä kaupunkimiehillä siirtää poliittista orientaatiota hierarkian hyväksymisen ja vähentyneen uudelleenjakopreferenssin suuntaan — replikoiden Alogaily ym. 2025 (N=136) suuremmassa otoksessa.",
       "Melatoniinilisä parantaa aikapreferenssiä ja vähentää uhkaherkkyyttä — riippumatta unenlaadun paranemisesta.",
     ],
 

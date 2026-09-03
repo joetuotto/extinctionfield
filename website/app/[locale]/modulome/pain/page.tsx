@@ -31,7 +31,7 @@ const COPY = {
       "Cav3.2 (CACNA1H) is the dominant T-type calcium channel in DRG nociceptors — it controls neuronal excitability at the peripheral pain sensing level ([[ref:cav32-chronic-pain-2021|Snutch & Bhargava 2021]]).",
       "Cav3.2 expression and activity are significantly upregulated in both inflammatory and neuropathic pain models.",
       "T-type channel blockers are effective analgesics in multiple pain models, confirming the causal role of these channels in pain signaling.",
-      "This is the same Cav3.2 channel that BERM identifies as the PRIMARY EMF TRANSDUCER — the channel sits at a bifurcation point where ~10% are open at resting potential (window current).",
+      "This is the same Cav3.2 channel that BERM identifies as the pathway-A transduction step — the channel sits at a bifurcation point where ~10% are open at resting potential (window current).",
     ],
 
     /* --- SECTION 2: Sex Differences in Pain --- */

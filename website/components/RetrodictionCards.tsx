@@ -270,7 +270,7 @@ const RETRODICTIONS: Retrodiction[] = [
 const COPY = {
   en: {
     title: "Retrodictions: What the modulome explains",
-    lead: "Six independent biological systems decline on the same timeline, in the same populations, with the same EMF-exposure gradient. The eight-layer modulome makes specific predictions about the past — retrodictions — that can be tested against existing data. The probability that six unrelated systems would co-decline by chance alone is p < 0.005 (binomial test, assuming independent 50% base-rate). This convergence is the argument: a single shared environmental driver is the parsimonious explanation.",
+    lead: "Six independent biological systems decline on the same timeline, in the same populations, with the same EMF-exposure gradient. The twelve-layer modulome makes specific predictions about the past — retrodictions — that can be tested against existing data. The probability that six unrelated systems would co-decline by chance alone is p < 0.005 (binomial test, assuming independent 50% base-rate). This convergence is the argument: a single shared environmental driver is the parsimonious explanation.",
     data: "Data",
     modulomeExplanation: "Modulome explanation",
     testable: "Testable prediction",
@@ -290,7 +290,7 @@ const COPY = {
   },
   ja: {
     title: "遡及予測：モジュロームが説明すること",
-    lead: "6つの独立した生物学的システムが、同じタイムライン、同じ集団、同じEMF曝露勾配で低下している。8層のモジュロームは過去について特定の予測 — 遡及予測 — を行い、既存のデータに対して検証できる。6つの無関係なシステムが偶然だけで同時に低下する確率はp < 0.005（二項検定、独立した50%基準率を仮定）。この収束こそが論拠である：単一の共有環境要因が最も簡潔な説明である。",
+    lead: "6つの独立した生物学的システムが、同じタイムライン、同じ集団、同じEMF曝露勾配で低下している。12層のモジュロームは過去について特定の予測 — 遡及予測 — を行い、既存のデータに対して検証できる。6つの無関係なシステムが偶然だけで同時に低下する確率はp < 0.005（二項検定、独立した50%基準率を仮定）。この収束こそが論拠である：単一の共有環境要因が最も簡潔な説明である。",
     data: "データ",
     modulomeExplanation: "モジュロームの説明",
     testable: "検証可能な予測",
@@ -300,7 +300,7 @@ const COPY = {
   },
   fr: {
     title: "Rétrodictions : ce que le modulome explique",
-    lead: "Six systèmes biologiques indépendants déclinent sur la même chronologie, dans les mêmes populations, avec le même gradient d'exposition aux EMF. Le modulome à huit couches fait des prédictions spécifiques sur le passé — des rétrodictions — testables contre les données existantes. La probabilité que six systèmes non liés co-déclinent par hasard seul est p < 0,005 (test binomial, en supposant un taux de base indépendant de 50 %). Cette convergence est l'argument : un seul facteur environnemental partagé est l'explication la plus parcimonieuse.",
+    lead: "Six systèmes biologiques indépendants déclinent sur la même chronologie, dans les mêmes populations, avec le même gradient d'exposition aux EMF. Le modulome à douze couches fait des prédictions spécifiques sur le passé — des rétrodictions — testables contre les données existantes. La probabilité que six systèmes non liés co-déclinent par hasard seul est p < 0,005 (test binomial, en supposant un taux de base indépendant de 50 %). Cette convergence est l'argument : un seul facteur environnemental partagé est l'explication la plus parcimonieuse.",
     data: "Données",
     modulomeExplanation: "Explication par le modulome",
     testable: "Prédiction testable",
@@ -310,7 +310,7 @@ const COPY = {
   },
   ko: {
     title: "소급 예측: 모듈롬이 설명하는 것",
-    lead: "6개의 독립적 생물학적 시스템이 같은 타임라인, 같은 인구집단, 같은 EMF 노출 기울기에서 감소하고 있다. 8층 모듈롬은 과거에 대한 구체적 예측 — 소급 예측 — 을 생성하며, 기존 데이터에 대해 검증할 수 있다. 관련 없는 6개 시스템이 우연만으로 동시에 감소할 확률은 p < 0.005(이항 검정, 독립적 50% 기준율 가정). 이 수렴이 논거이다: 단일 공유 환경 요인이 가장 간결한 설명이다.",
+    lead: "6개의 독립적 생물학적 시스템이 같은 타임라인, 같은 인구집단, 같은 EMF 노출 기울기에서 감소하고 있다. 12층 모듈롬은 과거에 대한 구체적 예측 — 소급 예측 — 을 생성하며, 기존 데이터에 대해 검증할 수 있다. 관련 없는 6개 시스템이 우연만으로 동시에 감소할 확률은 p < 0.005(이항 검정, 독립적 50% 기준율 가정). 이 수렴이 논거이다: 단일 공유 환경 요인이 가장 간결한 설명이다.",
     data: "데이터",
     modulomeExplanation: "모듈롬 설명",
     testable: "검증 가능한 예측",

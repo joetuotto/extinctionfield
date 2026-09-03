@@ -8,6 +8,7 @@ import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
 import { PredictionTrack } from "@/components/PredictionTrack";
 import { FeedbackLoop } from "@/components/FeedbackLoop";
 import { EVOLUTION_PREDICTIONS } from "@/lib/evolutionData";
+import { CIVILIZATION_PREDICTIONS, CIV_PRED_GROUPS } from "@/lib/civilizationPredictions";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { pickCopy } from "@/lib/i18n";
@@ -45,7 +46,7 @@ const COPY = {
     finlandFalsification: "Status: INTERIM (observed 1.25 in 2024; the 2030 envelope is 1.02–1.24 and the 2030 observation is not yet available). Three possible explanations within BERM’s framework: (a) Model overestimates biological effect in Finland — the exponential EMF-TFR relationship may saturate earlier than modeled. (b) Exogenous compensation: immigration TFR contribution larger than estimated — Finland’s immigrant TFR (~1.8–2.2) may lift national TFR above the native-population prediction. (c) CI too narrow: the model’s uncertainty bands underestimate stochastic variation in small-population TFR. Discriminating test: compare native-born TFR (if available from Statistics Finland) against the prediction. If native TFR ≤ 1.24, explanation (b) is confirmed and the model is not falsified.",
     southKoreaFalsification: "Status: INTERIM (observed 0.75 in 2024; the 2030 envelope is 0.48–0.72 and the 2030 observation is not yet available). Three possible explanations: (a) Model overestimates EMF suppression in Korea — cultural/policy factors may have independent negative effects on TFR that partially offset EMF. (b) Measurement lag: Korea’s pronatalist policies (cash transfers, housing subsidies) may have temporarily elevated TFR above the biological trajectory. (c) The model’s recovery estimate for Korea may be too optimistic. Discriminating test: track whether Korea’s TFR continues declining toward the predicted value or stabilizes at current levels.",
     modulomeTitle: "Modulome predictions",
-    modulomeLead: "Mechanistic predictions derived from the eight-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
+    modulomeLead: "Mechanistic predictions derived from the twelve-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
     modulomePredictions: [
       {
         id: "M-1",
@@ -1721,40 +1722,6 @@ const COPY = {
     geneticFalsification: "Falsification criterion",
     geneticLocked: "Locked: 2026-08-26",
     geneticStatus: "LOCKED — awaiting test",
-    plantCryTitle: "Ecosystem & plant CRY predictions",
-    plantCryLead: "Predictions derived from the universal CRY/RPM mechanism operating across trophic levels. These test whether masting synchrony, plant reproduction, and ecosystem dynamics respond to electromagnetic field parameters through cryptochrome.",
-    plantCryPredictions: [
-      {
-        id: "MAST-SOLAR-1",
-        metric: "Masting frequency vs solar sunspot number (SSN)",
-        prediction: "Super-mast years (multiple species masting simultaneously) correlate with solar minimum phase when natural RF is lowest. Testable with MASTREE database + SSN records.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-RF-1",
-        metric: "Masting synchrony vs anthropogenic RF background",
-        prediction: "Masting synchrony is weaker in forests near cell towers / urban areas than in remote forests with low RF. Already partially reported (Bogdziewicz 2021) but attributed to climate change. BERM's alternative: RF disrupts CRY2.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "PLANT-CRY-RF-1",
-        metric: "CRY2-knockout plants vs wild-type under RF exposure",
-        prediction: "CRY2-knockout Arabidopsis shows no flowering time change under RF; wild-type does. Ahmad 2020 showed CRY1 effect; CRY2 flowering effect under RF not yet tested with knockouts. Discriminating test.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-SOIL-B2-1",
-        metric: "Masting synchrony vs soil microbiome B2 production",
-        prediction: "Higher masting synchrony in B2-rich soils. Soil microbiome produces riboflavin (B2) supplementing plant endogenous FAD. Depleted soils → lower microbial B2 → CRY2 less stable → weaker synchrony. Speculative (L*) — plants also synthesize B2 endogenously.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-    ],
-    plantCryStatus: "LOCKED — awaiting test",
-    plantCryLocked: "Locked: 2026-08-31",
     criticalLabel: "Critical",
     pharmEvidenceLink: "Pharmacological evidence →",
     infantEvidenceLink: "Infant vulnerability evidence →",
@@ -1765,7 +1732,7 @@ const COPY = {
     dashVerified: "Verified",
     dashAwaiting: "Awaiting test",
     dashPredictionStatus: "Prediction status",
-    statusBarAria: "Status bar: 4 verified, 276 pending, 0 CI exceeded",
+    statusBarAria: "Status bar: 4 verified, 290 pending, 0 CI exceeded",
     statusVerified: "Verified",
     statusAwaiting: "Awaiting test",
     statusCiExceeded: "CI exceeded",
@@ -1821,6 +1788,8 @@ const COPY = {
     civFalsification: "Falsification criterion",
     civLocked: "Locked: 2026-08-31",
     civStatus: "LOCKED — awaiting test",
+    civRegTitle: "Civilization-layer prediction registry",
+    civRegLead: "48 predictions from the civilization layer — patokinesis, patopolis, pathopolites, patopoliteia — each registered with its testable formulation and epistemic status.",
     actTitle: "Hormetic activation predictions",
     actLead: "Predictions derived from the hormetic dose-response framework: low-EMF populations maintain higher biological capacity, and transition to high-EMF environments produces measurable biomarker convergence.",
     actPredictions: [
@@ -1910,7 +1879,7 @@ const COPY = {
     finlandFalsification: "Tila: VÄLITILA (havaittu 1,25 vuonna 2024; vuoden 2030 vaihteluväli on 1,02–1,24, eikä vuoden 2030 havaintoa ole vielä saatavilla). Kolme mahdollista selitystä BERM:n kehyksessä: (a) Malli yliarvioi biologista vaikutusta Suomessa — eksponentiaalinen EMF–TFR-suhde voi saturoitua mallinnettua aiemmin. (b) Eksogeeninen kompensaatio: maahanmuuton TFR-panos suurempi kuin arvioitu — Suomen maahanmuuttajien TFR (~1,8–2,2) voi nostaa kansallista TFR:ää yli syntyperäisväestön ennusteen. (c) CI liian kapea: mallin epävarmuusvyöhykkeet aliarvioivat stokastista vaihtelua pienen väestön TFR:ssä. Erotteleva testi: vertaa syntyperäisten TFR:ää (jos saatavissa Tilastokeskuksesta) ennusteeseen. Jos syntyperäisten TFR ≤ 1,24, selitys (b) vahvistuu eikä malli ole falsifioitu.",
     southKoreaFalsification: "Tila: VÄLITILA (havaittu 0,75 vuonna 2024; vuoden 2030 vaihteluväli on 0,48–0,72, eikä vuoden 2030 havaintoa ole vielä saatavilla). Kolme mahdollista selitystä: (a) Malli yliarvioi EMF-suppressiota Koreassa — kulttuuriset/poliittiset tekijät voivat vaikuttaa TFR:ään itsenäisesti EMF:stä riippumatta. (b) Mittausviive: Korean pronatalistiset politiikat (käteistuet, asumistuet) ovat voineet tilapäisesti nostaa TFR:ää biologisen trajektorin yläpuolelle. (c) Mallin palautumisarvio Korealle voi olla liian optimistinen. Erotteleva testi: seuraa laskeeko Korean TFR kohti ennustettua arvoa vai vakiintuuko se nykyiselle tasolle.",
     modulomeTitle: "Modulooma-ennusteet",
-    modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden näyttöön. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
+    modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdentoistakerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden näyttöön. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
     modulomePredictions: [
       {
         id: "M-1",
@@ -3586,40 +3555,6 @@ const COPY = {
     geneticFalsification: "Kumoamisehto",
     geneticLocked: "Lukittu: 2026-08-26",
     geneticStatus: "LUKITTU — odottaa testiä",
-    plantCryTitle: "Ekosysteemi- ja kasvi-CRY-ennusteet",
-    plantCryLead: "Ennusteet jotka perustuvat universaaliin CRY/RPM-mekanismiin joka operoi troofisten tasojen läpi. Nämä testaavat reagoivatko masting-synkronia, kasvien lisääntyminen ja ekosysteemidynamiikka sähkömagneettisiin kenttäparametreihin kryptokromin kautta.",
-    plantCryPredictions: [
-      {
-        id: "MAST-SOLAR-1",
-        metric: "Masting-frekvenssi vs auringonpilkkuluku (SSN)",
-        prediction: "Super-mast-vuodet (useat lajit mastaten samanaikaisesti) korreloivat aurinkominimivaiheen kanssa jolloin luonnollinen RF on matalimmillaan. Testattavissa MASTREE-tietokannalla + SSN-tiedoilla.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-RF-1",
-        metric: "Masting-synkronia vs antropogeeninen RF-tausta",
-        prediction: "Masting-synkronia on heikompaa metsissä lähellä tukiasemia / kaupunkialueita kuin syrjäisissä matalan RF:n metsissä. Jo osittain raportoitu (Bogdziewicz 2021) mutta selitetty ilmastonmuutoksella. BERM:n vaihtoehto: RF häiritsee CRY2:ta.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "PLANT-CRY-RF-1",
-        metric: "CRY2-knockout-kasvit vs villityyppi RF-altistuksessa",
-        prediction: "CRY2-knockout Arabidopsis ei näytä kukinta-ajan muutosta RF:ssä; villityyppi näyttää. Ahmad 2020 osoitti CRY1-efektin; CRY2:n kukintavaikutusta RF:ssä ei ole testattu knockouteilla. Diskriminoiva testi.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-SOIL-B2-1",
-        metric: "Masting-synkronia vs maaperän mikrobiston B2-tuotanto",
-        prediction: "Korkeampi masting-synkronia B2-rikkaassa maaperässä. Maaperän mikrobisto tuottaa riboflaviinia (B2) joka täydentää kasvien endogeenistä FAD:ia. Köyhtynyt maaperä → vähemmän mikrobi-B2:ta → CRY2 epästabiilimpi → heikompi synkronia. Spekulatiivinen (L*) — kasvit syntetisoivat B2:ta myös itse.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-    ],
-    plantCryStatus: "LUKITTU — odottaa testiä",
-    plantCryLocked: "Lukittu: 2026-08-31",
     criticalLabel: "Kriittinen",
     pharmEvidenceLink: "Farmakologinen näyttö →",
     infantEvidenceLink: "Imeväisen haavoittuvuus -näyttö →",
@@ -3630,7 +3565,7 @@ const COPY = {
     dashVerified: "Vahvistettua",
     dashAwaiting: "Odottaa testiä",
     dashPredictionStatus: "Ennusteiden tila",
-    statusBarAria: "Tilapalkki: 4 vahvistettua, 276 odottaa, 0 CI ylitetty",
+    statusBarAria: "Tilapalkki: 4 vahvistettua, 290 odottaa, 0 CI ylitetty",
     statusVerified: "Vahvistettu",
     statusAwaiting: "Odottaa testiä",
     statusCiExceeded: "CI ylitetty",
@@ -3686,6 +3621,8 @@ const COPY = {
     civFalsification: "Kumoamisehto",
     civLocked: "Lukittu: 2026-08-31",
     civStatus: "LUKITTU — odottaa testiä",
+    civRegTitle: "Sivilisaatiokerroksen ennusterekisteri",
+    civRegLead: "48 ennustetta sivilisaatiokerroksesta — patokinesis, patopolis, pathopolites, patopoliteia — jokainen rekisteröity testattavalla muotoilullaan ja episteemisellä statuksellaan.",
     actTitle: "Hormeettisen aktivaation ennusteet",
     actLead: "Hormeettiseen annosvasteeseen perustuvat ennusteet: matalan EMF:n populaatiot ylläpitävät korkeampaa biologista kapasiteettia, ja siirtyminen korkean EMF:n ympäristöihin tuottaa mitattavaa biomarkkerien konvergenssia.",
     actPredictions: [
@@ -3971,40 +3908,6 @@ const COPY = {
     geneticFalsification: "反証基準",
     geneticLocked: "ロック日：2026-08-26",
     geneticStatus: "ロック済み ― テスト待ち",
-    plantCryTitle: "生態系・植物CRY予測",
-    plantCryLead: "栄養段階を横断する普遍的CRY/RPMメカニズムから導出された予測。マスティング同期性、植物の生殖、生態系動態がクリプトクロムを通じて電磁場パラメータに応答するかを検証する。",
-    plantCryPredictions: [
-      {
-        id: "MAST-SOLAR-1",
-        metric: "マスティング頻度 vs 太陽黒点数（SSN）",
-        prediction: "スーパーマスト年（複数種が同時にマスティング）は自然RFが最低の太陽極小期と相関する。MASTREEデータベース＋SSN記録で検証可能。",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-RF-1",
-        metric: "マスティング同期性 vs 人為的RFバックグラウンド",
-        prediction: "基地局/都市部付近の森林ではマスティング同期性が弱い。すでに部分的に報告（Bogdziewicz 2021）だが気候変動で説明。BERMの代替：RFがCRY2を妨害。",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "PLANT-CRY-RF-1",
-        metric: "CRY2ノックアウト植物 vs 野生型のRF曝露下",
-        prediction: "CRY2ノックアウトシロイヌナズナはRF下で開花時期の変化なし；野生型は変化あり。Ahmad 2020はCRY1効果を示した；CRY2の開花効果はノックアウトで未検証。識別試験。",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-SOIL-B2-1",
-        metric: "マスティング同期性 vs 土壌微生物叢B2産生",
-        prediction: "B2豊富な土壌でマスティング同期性が高い。土壌微生物叢はリボフラビン（B2）を産生し植物の内因性FADを補充。枯渇土壌→微生物B2低下→CRY2不安定→同期性弱化。推測的（L*）。",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-    ],
-    plantCryStatus: "ロック済み ― テスト待ち",
-    plantCryLocked: "ロック日：2026-08-31",
     criticalLabel: "重要",
     pharmEvidenceLink: "薬理学的エビデンス →",
     infantEvidenceLink: "乳児脆弱性エビデンス →",
@@ -4016,7 +3919,7 @@ const COPY = {
     dashVerified: "検証済み",
     dashAwaiting: "テスト待ち",
     dashPredictionStatus: "予測ステータス",
-    statusBarAria: "ステータスバー：検証済み4件、保留276件、CI超過0件",
+    statusBarAria: "ステータスバー：検証済み4件、保留290件、CI超過0件",
     statusVerified: "検証済み",
     statusAwaiting: "テスト待ち",
     statusCiExceeded: "CI超過",
@@ -4072,6 +3975,7 @@ const COPY = {
     civFalsification: "反証基準",
     civLocked: "ロック日：2026-08-31",
     civStatus: "ロック済み ― テスト待ち",
+    civRegTitle: "", civRegLead: "",
     actTitle: "ホルメシス活性化予測",
     actLead: "",
     actPredictions: [
@@ -5591,7 +5495,7 @@ const COPY = {
     finlandFalsification: "Statut : INTERMÉDIAIRE (observé 1,25 en 2024 ; l’enveloppe 2030 est 1,02–1,24 et l’observation 2030 n’est pas encore disponible). Trois explications possibles dans le cadre BERM : (a) Le modèle surestime l'effet biologique en Finlande — la relation exponentielle EMF-TFR peut saturer plus tôt que modélisé. (b) Compensation exogène : la contribution TFR de l'immigration est plus importante qu'estimée — le TFR des immigrants finlandais (~1,8-2,2) peut élever le TFR national. (c) IC trop étroit : les bandes d'incertitude du modèle sous-estiment la variation stochastique du TFR en petite population. Test discriminant : comparer le TFR des natifs (si disponible) à la prédiction. Si le TFR natif ≤ 1,24, l'explication (b) est confirmée.",
     southKoreaFalsification: "Statut : INTERMÉDIAIRE (observé 0,75 en 2024 ; l’enveloppe 2030 est 0,48–0,72 et l’observation 2030 n’est pas encore disponible). Trois explications possibles : (a) Le modèle surestime la suppression EMF en Corée — des facteurs culturels/politiques ont des effets négatifs indépendants sur le TFR. (b) Décalage de mesure : les politiques natalistes (transferts, subventions logement) ont temporairement élevé le TFR. (c) L'estimation de récupération du modèle pour la Corée est trop optimiste. Test discriminant : suivre si le TFR coréen continue de baisser vers la valeur prédite.",
     modulomeTitle: "Prédictions du modulome",
-    modulomeLead: "Prédictions mécanistiques dérivées du modulome EMF à huit couches et des preuves de dispositifs thérapeutiques. Ce sont des prédictions qualitatives et falsifiables — chacune spécifie un résultat expérimental concret.",
+    modulomeLead: "Prédictions mécanistiques dérivées du modulome EMF à douze couches et des preuves de dispositifs thérapeutiques. Ce sont des prédictions qualitatives et falsifiables — chacune spécifie un résultat expérimental concret.",
     modulomeTimeline: "Chronologie",
     modulomeFalsification: "Critère de falsification",
     modulomeLocked: "Verrouillé : 2026-08-21",
@@ -5787,40 +5691,6 @@ const COPY = {
     geneticFalsification: "Critère de falsification",
     geneticLocked: "Verrouillé : 2026-08-26",
     geneticStatus: "VERROUILLÉ — en attente de test",
-    plantCryTitle: "Predictions ecosysteme & CRY vegetal",
-    plantCryLead: "Predictions derivees du mecanisme universel CRY/RPM operant a travers les niveaux trophiques. Ces predictions testent si la synchronie du masting, la reproduction vegetale et la dynamique des ecosystemes repondent aux parametres du champ electromagnetique via le cryptochrome.",
-    plantCryPredictions: [
-      {
-        id: "MAST-SOLAR-1",
-        metric: "Frequence de masting vs nombre de taches solaires (SSN)",
-        prediction: "Les super-annees de mast (plusieurs especes mastant simultanement) correlent avec le minimum solaire quand le RF naturel est le plus bas. Testable avec la base MASTREE + SSN.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-RF-1",
-        metric: "Synchronie de masting vs fond RF anthropogenique",
-        prediction: "La synchronie de masting est plus faible dans les forets pres des antennes-relais que dans les forets isolees a faible RF. Deja partiellement rapporte (Bogdziewicz 2021) mais attribue au changement climatique. Alternative BERM : le RF perturbe CRY2.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "PLANT-CRY-RF-1",
-        metric: "Plantes CRY2-knockout vs type sauvage sous RF",
-        prediction: "Arabidopsis CRY2-knockout ne montre aucun changement de floraison sous RF ; le type sauvage si. Ahmad 2020 a montre l'effet CRY1 ; l'effet de floraison CRY2 sous RF non teste avec des knockouts. Test discriminant.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-SOIL-B2-1",
-        metric: "Synchronie de masting vs production de B2 par le microbiome du sol",
-        prediction: "Synchronie de masting plus elevee dans les sols riches en B2. Le microbiome du sol produit de la riboflavine (B2) supplementant le FAD endogene vegetal. Sols appauvris → moins de B2 microbien → CRY2 moins stable → synchronie affaiblie. Speculatif (L*).",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-    ],
-    plantCryStatus: "VERROUILLÉ — en attente de test",
-    plantCryLocked: "Verrouillé : 2026-08-31",
     criticalLabel: "Critique",
     pharmEvidenceLink: "Évidences pharmacologiques →",
     infantEvidenceLink: "Évidences de vulnérabilité infantile →",
@@ -5832,7 +5702,7 @@ const COPY = {
     dashVerified: "Vérifiées",
     dashAwaiting: "En attente de test",
     dashPredictionStatus: "État des prédictions",
-    statusBarAria: "Barre d'état : 4 vérifiées, 276 en attente, 0 IC dépassé",
+    statusBarAria: "Barre d'état : 4 vérifiées, 290 en attente, 0 IC dépassé",
     statusVerified: "Vérifié",
     statusAwaiting: "En attente de test",
     statusCiExceeded: "IC dépassé",
@@ -5888,6 +5758,7 @@ const COPY = {
     civFalsification: "Critère de falsification",
     civLocked: "Verrouillé : 2026-08-31",
     civStatus: "VERROUILLÉ — en attente de test",
+    civRegTitle: "", civRegLead: "",
     actTitle: "Prédictions d'activation hormétique",
     actLead: "",
     actPredictions: [
@@ -7407,7 +7278,7 @@ const COPY = {
     finlandFalsification: "상태: 중간 (2024년 관측값 1.25; 2030년 구간은 1.02–1.24이며 2030년 관측값은 아직 없음). BERM 프레임워크 내 세 가지 가능한 설명: (a) 모델이 핀란드의 생물학적 효과를 과대 추정 — 지수적 EMF-TFR 관계가 모델링보다 일찍 포화. (b) 외인성 보상: 이민 TFR 기여가 추정보다 큼 — 핀란드의 이민 TFR(~1.8-2.2)이 국가 TFR을 상승. (c) CI가 너무 좁음: 모델의 불확실성 범위가 소규모 인구 TFR의 확률적 변동을 과소 추정. 판별 테스트: 핀란드 통계청에서 출생지 TFR(가용 시)을 예측과 비교. 출생지 TFR ≤ 1.24이면 설명(b)이 확인.",
     southKoreaFalsification: "상태: 중간 (2024년 관측값 0.75; 2030년 구간은 0.48–0.72이며 2030년 관측값은 아직 없음). 세 가지 가능한 설명: (a) 모델이 한국의 EMF 억제를 과대 추정 — 문화적/정책적 요인이 TFR에 독립적 부정적 영향. (b) 측정 지연: 한국의 출산 장려 정책(현금 지원, 주거 보조)이 TFR을 일시적으로 상승. (c) 모델의 한국 회복 추정이 지나치게 낙관적. 판별 테스트: 한국 TFR이 예측 값으로 계속 하락하는지 현재 수준에서 안정되는지 추적.",
     modulomeTitle: "모듈롬 예측",
-    modulomeLead: "8층 EMF 모듈롬과 치료 장치 증거에서 도출된 기전적 예측. 정성적이고 반증 가능 — 각 예측은 구체적인 실험 결과를 지정.",
+    modulomeLead: "12층 EMF 모듈롬과 치료 장치 증거에서 도출된 기전적 예측. 정성적이고 반증 가능 — 각 예측은 구체적인 실험 결과를 지정.",
     modulomeTimeline: "타임라인",
     modulomeFalsification: "반증 기준",
     modulomeLocked: "잠금일: 2026-08-21",
@@ -7603,40 +7474,6 @@ const COPY = {
     geneticFalsification: "반증 기준",
     geneticLocked: "잠금일: 2026-08-26",
     geneticStatus: "잠금 — 테스트 대기 중",
-    plantCryTitle: "생태계 및 식물 CRY 예측",
-    plantCryLead: "영양 단계를 가로지르는 보편적 CRY/RPM 메커니즘에서 도출된 예측. 마스팅 동기화, 식물 생식, 생태계 역학이 크립토크롬을 통해 전자기장 매개변수에 반응하는지 검증한다.",
-    plantCryPredictions: [
-      {
-        id: "MAST-SOLAR-1",
-        metric: "마스팅 빈도 vs 태양흑점수(SSN)",
-        prediction: "슈퍼 마스트 연도(여러 종이 동시에 마스팅)는 자연 RF가 가장 낮은 태양 극소기와 상관. MASTREE 데이터베이스 + SSN 기록으로 검증 가능.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-RF-1",
-        metric: "마스팅 동기성 vs 인위적 RF 배경",
-        prediction: "기지국/도시 근처 산림에서 마스팅 동기성이 약함. 이미 부분적으로 보고됨(Bogdziewicz 2021) 기후변화로 설명. BERM 대안: RF가 CRY2 교란.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "PLANT-CRY-RF-1",
-        metric: "CRY2 녹아웃 식물 vs 야생형 RF 노출 하",
-        prediction: "CRY2 녹아웃 애기장대는 RF에서 개화 시기 변화 없음; 야생형은 변화 있음. Ahmad 2020은 CRY1 효과를 보여줌; CRY2 개화 효과는 녹아웃으로 미검증. 식별 시험.",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-      {
-        id: "MAST-SOIL-B2-1",
-        metric: "마스팅 동기성 vs 토양 미생물 B2 생산",
-        prediction: "B2가 풍부한 토양에서 마스팅 동기성이 높음. 토양 미생물이 리보플라빈(B2)을 생산하여 식물 내인성 FAD 보충. 고갈된 토양 → 미생물 B2 감소 → CRY2 불안정 → 동기성 약화. 추측적(L*).",
-        status: "pending",
-        locked: "2026-08-31",
-      },
-    ],
-    plantCryStatus: "잠금 — 테스트 대기 중",
-    plantCryLocked: "잠금일: 2026-08-31",
     criticalLabel: "중요",
     pharmEvidenceLink: "약리학적 증거 →",
     infantEvidenceLink: "영아 취약성 증거 →",
@@ -7648,7 +7485,7 @@ const COPY = {
     dashVerified: "검증됨",
     dashAwaiting: "테스트 대기 중",
     dashPredictionStatus: "예측 상태",
-    statusBarAria: "상태 바: 검증됨 4건, 대기 중 276건, CI 초과 0건",
+    statusBarAria: "상태 바: 검증됨 4건, 대기 중 290건, CI 초과 0건",
     statusVerified: "검증됨",
     statusAwaiting: "테스트 대기 중",
     statusCiExceeded: "CI 초과",
@@ -7704,6 +7541,7 @@ const COPY = {
     civFalsification: "반증 기준",
     civLocked: "잠금일: 2026-08-31",
     civStatus: "잠금 — 테스트 대기 중",
+    civRegTitle: "", civRegLead: "",
     actTitle: "호르메시스 활성화 예측",
     actLead: "",
     actPredictions: [
@@ -9225,7 +9063,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
             </svg>
-            <p className="text-3xl font-bold text-accent">280</p>
+            <p className="text-3xl font-bold text-accent">342</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashPredictions}
             </p>
@@ -9235,7 +9073,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
             </svg>
-            <p className="text-3xl font-bold text-accent">39</p>
+            <p className="text-3xl font-bold text-accent">38</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashCategories}
             </p>
@@ -9255,7 +9093,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6" style={{ color: "#f59e0b" }} fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
             </svg>
-            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>276</p>
+            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>338</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashAwaiting}
             </p>
@@ -9267,10 +9105,10 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             {d.dashPredictionStatus}
           </p>
           <svg viewBox="0 0 600 28" className="w-full" role="img" aria-label={d.statusBarAria}>
-            {/* Green: verified — 4/280 = 1.43% ≈ 8.6px of 600 */}
-            <rect x="0" y="0" width="8.6" height="20" rx="4" fill="#22c55e" />
-            {/* Amber: pending — 276/280 = 98.6% ≈ 591.4px */}
-            <rect x="10.6" y="0" width="589.4" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
+            {/* Green: verified — 4/342 ≈ 1.2% ≈ 7.0px of 600 */}
+            <rect x="0" y="0" width="7" height="20" rx="4" fill="#22c55e" />
+            {/* Amber: pending — 338/342 ≈ 98.8% ≈ 593px */}
+            <rect x="9" y="0" width="591" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
             {/* Red: CI exceeded — 0/280 (Finland and South Korea 2030 predictions are interim, not exceeded) */}
           </svg>
           <div className="flex flex-wrap gap-4 mt-2 text-xs text-foreground-muted">
@@ -10697,34 +10535,6 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* Ecosystem & Plant CRY predictions */}
-      <section className="mb-14 border-t editorial-rule pt-6">
-        <h2 className="editorial-section-heading mb-3">{d.plantCryTitle}</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.plantCryLead}</p>
-        <div className="grid gap-4 max-w-4xl">
-          {d.plantCryPredictions.map((pc) => (
-            <article key={pc.id} className="rounded-xl border border-card-border bg-card-bg p-5">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-mono-num text-xs text-accent">{pc.id}</span>
-                    <h3 className="font-semibold">{pc.metric}</h3>
-                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
-                      {d.plantCryStatus}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{pc.prediction}</p>
-              <div className="space-y-1 text-xs text-foreground-muted">
-                <p className="font-mono-num">{d.plantCryLocked}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Historical / evolutionary predictions */}
       <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-3">{d.histTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.histLead}</p>
@@ -10849,6 +10659,51 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           <p className="font-mono-num">{d.spaceWeatherLocked}</p>
           <p className="font-semibold">{d.spaceWeatherStatus}</p>
         </div>
+      </section>
+
+      {/* Civilization-layer prediction registry (PK, CIV, PP, L, BEH, IQS) */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3 flex items-center gap-2">
+          <Building2 className="w-5 h-5 text-accent shrink-0" />
+          {d.civRegTitle || "Civilization-layer prediction registry"}
+        </h2>
+        {(d.civRegLead || "48 predictions from the civilization layer.") && (
+          <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">
+            {d.civRegLead || "48 predictions from the civilization layer — patokinesis, patopolis, pathopolites, patopoliteia — each registered with its testable formulation and epistemic status."}
+          </p>
+        )}
+        {(["PK", "CIV", "PP", "L", "BEH", "IQS"] as const).map((group) => {
+          const preds = CIVILIZATION_PREDICTIONS.filter((p) => p.group === group);
+          if (preds.length === 0) return null;
+          const labels = CIV_PRED_GROUPS[group];
+          const label = locale === "fi" ? labels.label_fi : labels.label_en;
+          return (
+            <div key={group} className="mb-8 max-w-4xl">
+              <h3 className="text-lg font-semibold mb-3">{label} ({preds.length})</h3>
+              <div className="space-y-3">
+                {preds.map((pred) => {
+                  const color = CHAIN_EPISTEMIC_COLORS[pred.level as EpistemicLevel] ?? "#6B7280";
+                  return (
+                    <article key={pred.id} className="rounded-lg border border-card-border bg-card-bg p-4">
+                      <div className="flex items-start justify-between gap-3 mb-1">
+                        <h4 className="font-semibold text-sm">
+                          <span className="font-mono-num text-xs text-accent mr-2">{pred.id}</span>
+                          {locale === "fi" ? pred.title_fi : pred.title_en}
+                        </h4>
+                        <span className="rounded-full px-2 py-0.5 text-xs font-semibold shrink-0" style={{ backgroundColor: `${color}20`, color, border: `1px solid ${color}40` }}>
+                          {pred.level}
+                        </span>
+                      </div>
+                      <p className="text-sm text-foreground-muted leading-relaxed">
+                        {locale === "fi" ? pred.test_fi : pred.test_en}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       {/* v2 status */}

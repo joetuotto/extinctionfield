@@ -836,7 +836,7 @@ FOUNDATION_VULNERABILITY: dict[str, dict[str, Any]] = {
         "primary_substrates": ["T", "CORT"],
         "vulnerability": (
             "Depends primarily on T — the most EMF-sensitive major hormone "
-            "(Welling 2025 RCT, N=136). CORT elevation further suppresses "
+            "(Alogaily et al. 2025 RCT, N=136). CORT elevation further suppresses "
             "T-driven hierarchy via the dual-hormone mechanism (Mehta & "
             "Josephs 2010). Double hit: T falls AND CORT rises."
         ),
@@ -974,7 +974,7 @@ def foundation_collapse_order(
 #   Wilson 1975 (Sociobiology: K-strategy and parental investment)
 #   Rushton 1985 (differential K theory in humans)
 #   Settle 2010 (DRD4-7r → liberal ideology, N=2574)
-#   Welling 2025 (T RCT → conservative shift, N=136)
+#   Alogaily et al. 2025 (T RCT → conservative shift, N=136)
 
 
 RK_TRAIT_FUNCTIONS: dict[str, Any] = {}
@@ -990,7 +990,7 @@ def rk_competition(m: dict[str, float]) -> float:
     K-selected organisms are programmed to compete aggressively.
     r-selected organisms avoid direct competition, seeking advantage
     through quantity over quality (Anonymous Conservative Ch 3).
-    Welling 2025 RCT: exogenous T shifts ideology conservative.
+    Alogaily et al. 2025 RCT: exogenous T shifts ideology conservative.
     """
     raw = (0.50 * m["T"] + 0.35 * m["DA"]) * (1.0 - 0.30 * m["CORT"])
     return max(0.0, min(1.0, raw))

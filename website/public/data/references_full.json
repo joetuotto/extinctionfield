@@ -10,7 +10,18 @@
     "unlinked_count": 666,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 38,
-    "last_updated": "2026-09-02"
+    "last_updated": "2026-09-02",
+    "pathway_scheme": {
+      "A": "VGCC/ROS (A_VGCC_ROS)",
+      "B": "RPM/CRY incl. melatonin arm (B_RPM_CRY, MELATONIN_REDOX)",
+      "C": "BBB/HPA barrier attribution (BARRIER_BBB)",
+      "D": "HPA→HPG (HPA_HPG) — note: on history_institutional/demographic entries the D/E pair is a legacy import code, not a mechanism",
+      "E": "microbiome–oxytocin (MICROBIOME_OT)",
+      "F": "BBB chemical-transport multiplier",
+      "other": "theme codes (H history, T testosterone/male fertility, MET, IF, STATIC, VGCC, emf, calcium, sentinel …) kept as-is",
+      "curated_on": "2026-09-02",
+      "rule": "legacy v16 'C' (pineal/melatonin) remapped to B on melatonin/circadian/light/solar entries; 'E' remapped to C on BBB/barrier entries; duplicates removed"
+    }
   },
   "categories": [
     {
@@ -8620,7 +8631,7 @@
       "url": null,
       "category": "cellular_ros_dna",
       "pathway": [
-        "E"
+        "C"
       ],
       "level": "C",
       "type": "journal",
@@ -9865,7 +9876,7 @@
       "url": null,
       "category": "ecology_sentinels",
       "pathway": [
-        "C",
+        "B",
         "IF",
         "sentinel"
       ],
@@ -10016,7 +10027,7 @@
       "url": null,
       "category": "ecology_sentinels",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -10101,7 +10112,7 @@
       "url": null,
       "category": "ecology_sentinels",
       "pathway": [
-        "C",
+        "B",
         "IF",
         "sentinel"
       ],
@@ -10168,7 +10179,6 @@
       "pathway": [
         "A",
         "B",
-        "C",
         "D",
         "E",
         "F"
@@ -10204,7 +10214,6 @@
       "pathway": [
         "A",
         "B",
-        "C",
         "D",
         "E",
         "F"
@@ -12721,7 +12730,7 @@
       "url": null,
       "category": "history_institutional",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "book",
@@ -14733,7 +14742,6 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
         "B"
       ],
       "level": "P",
@@ -14759,7 +14767,6 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
         "B"
       ],
       "level": "P",
@@ -14786,7 +14793,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "C",
       "type": "observational-cross",
@@ -14868,7 +14875,7 @@
       "category": "neurobiology_circadian",
       "pathway": [
         "A",
-        "E"
+        "C"
       ],
       "level": "C",
       "type": "journal",
@@ -14903,7 +14910,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
+        "B",
         "D"
       ],
       "level": "P",
@@ -14930,7 +14937,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "journal",
@@ -15021,7 +15028,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -15201,7 +15208,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
+        "B",
         "D"
       ],
       "level": "P",
@@ -15228,7 +15235,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
+        "B",
         "D"
       ],
       "level": "P",
@@ -15395,7 +15402,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -15455,7 +15462,6 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
         "B"
       ],
       "level": "P",
@@ -15717,7 +15723,6 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
         "B"
       ],
       "level": "E",
@@ -15946,7 +15951,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
+        "B",
         "D",
         "metabolic",
         "immune"
@@ -16041,7 +16046,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "report",
@@ -16071,7 +16076,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C",
+        "B",
         "D"
       ],
       "level": "P",
@@ -16210,7 +16215,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "epidemiological",
@@ -16351,7 +16356,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -16686,7 +16691,6 @@
       "category": "neurobiology_circadian",
       "pathway": [
         "B",
-        "C",
         "MET"
       ],
       "level": "E",
@@ -16810,7 +16814,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -16875,7 +16879,7 @@
       "url": null,
       "category": "neurobiology_circadian",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M",
       "type": "journal",
@@ -18776,7 +18780,7 @@
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [
-        "C",
+        "B",
         "D"
       ],
       "level": "E",
@@ -22519,8 +22523,7 @@
       "category": "rf_safety_regulation",
       "pathway": [
         "A",
-        "B",
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "review",
@@ -22551,8 +22554,7 @@
       "category": "rf_safety_regulation",
       "pathway": [
         "A",
-        "B",
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -23623,8 +23625,8 @@
       "url": null,
       "category": "transduction_rpm_calcium",
       "pathway": [
-        "A",
-        "C"
+        "B",
+        "A"
       ],
       "level": "E",
       "type": "journal",
@@ -24886,7 +24888,7 @@
       "url": null,
       "category": "transduction_rpm_calcium",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "journal",
@@ -27044,7 +27046,7 @@
       "doi": "10.1007/s10900-017-0389-6",
       "finding": "Birth rates in USA and New Zealand show 11-year oscillation phase-locked to solar cycle, identified across 7 geographic regions",
       "pathway": [
-        "C"
+        "B"
       ],
       "tags": [
         "solar-cycle",
@@ -27082,7 +27084,7 @@
       "doi": "10.1007/s004840050081",
       "finding": "Seasonal amplitude of birth rates in Greece decreased >50% between 1960-1992, coinciding with rapid electrification — natural geomagnetic seasonal signal masked by anthropogenic EMF",
       "pathway": [
-        "C"
+        "B"
       ],
       "tags": [
         "seasonality",
@@ -27953,8 +27955,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -27985,8 +27986,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28016,8 +28016,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28050,7 +28049,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28081,8 +28080,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28210,8 +28208,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "historiometric",
@@ -28243,7 +28240,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": null,
       "type": "meta_analysis",
@@ -28274,7 +28271,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28306,8 +28303,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28340,8 +28336,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "theoretical",
@@ -28489,7 +28484,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": null,
       "type": "epidemiological",
@@ -28584,7 +28579,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": null,
       "type": "GWAS",
@@ -29139,8 +29134,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "review",
@@ -29168,8 +29162,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "journal",
@@ -29279,8 +29272,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "journal",
@@ -29307,8 +29299,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "journal",
@@ -29335,8 +29326,7 @@
       "url": null,
       "category": "solar_geomagnetic",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": null,
       "type": "journal",
@@ -29549,7 +29539,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "experimental",
@@ -29581,7 +29571,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "experimental",
@@ -29641,7 +29631,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "experimental",
@@ -29673,7 +29663,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "epidemiological",
@@ -29704,7 +29694,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "epidemiological",
@@ -29735,7 +29725,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "epidemiological",
@@ -29766,8 +29756,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "review",
@@ -29799,8 +29788,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "review",
@@ -29831,7 +29819,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "experimental",
@@ -29863,8 +29851,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": "E",
       "type": "experimental",
@@ -29895,7 +29882,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M|C",
       "type": "review",
@@ -29958,8 +29945,7 @@
       "url": null,
       "category": "space_weather_biology",
       "pathway": [
-        "B",
-        "C"
+        "B"
       ],
       "level": "C",
       "type": "review",

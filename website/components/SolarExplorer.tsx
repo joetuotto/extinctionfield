@@ -15,53 +15,48 @@ interface CountryGeomag {
 }
 
 const COUNTRY_GEOMAG: CountryGeomag[] = [
-  { code: "FIN", name: "Finland", geomag_lat: 64.0, field_uT: 52.5, blue_eye_frac: 0.89, lactose_tol_frac: 0.82 },
-  { code: "SWE", name: "Sweden", geomag_lat: 63.0, field_uT: 51.8, blue_eye_frac: 0.78, lactose_tol_frac: 0.79 },
-  { code: "NOR", name: "Norway", geomag_lat: 62.5, field_uT: 51.2, blue_eye_frac: 0.72, lactose_tol_frac: 0.85 },
-  { code: "EST", name: "Estonia", geomag_lat: 58.5, field_uT: 49.5, blue_eye_frac: 0.53, lactose_tol_frac: 0.75 },
-  { code: "DNK", name: "Denmark", geomag_lat: 56.0, field_uT: 48.8, blue_eye_frac: 0.64, lactose_tol_frac: 0.76 },
-  { code: "GBR", name: "United Kingdom", geomag_lat: 54.0, field_uT: 48.2, blue_eye_frac: 0.48, lactose_tol_frac: 0.65 },
-  { code: "DEU", name: "Germany", geomag_lat: 51.5, field_uT: 47.5, blue_eye_frac: 0.39, lactose_tol_frac: 0.62 },
-  { code: "USA", name: "United States", geomag_lat: 49.0, field_uT: 47.0, blue_eye_frac: 0.27, lactose_tol_frac: 0.65 },
-  { code: "FRA", name: "France", geomag_lat: 49.0, field_uT: 46.5, blue_eye_frac: 0.22, lactose_tol_frac: 0.43 },
-  { code: "RUS", name: "Russia", geomag_lat: 56.0, field_uT: 50.5, blue_eye_frac: 0.30, lactose_tol_frac: 0.48 },
-  { code: "ITA", name: "Italy", geomag_lat: 43.0, field_uT: 44.5, blue_eye_frac: 0.14, lactose_tol_frac: 0.25 },
-  { code: "JPN", name: "Japan", geomag_lat: 25.5, field_uT: 42.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.10 },
-  { code: "KOR", name: "South Korea", geomag_lat: 27.0, field_uT: 42.5, blue_eye_frac: 0.01, lactose_tol_frac: 0.05 },
-  { code: "CHN", name: "China", geomag_lat: 30.0, field_uT: 43.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.12 },
-  { code: "IND", name: "India", geomag_lat: 15.0, field_uT: 40.0, blue_eye_frac: 0.02, lactose_tol_frac: 0.35 },
-  { code: "BRA", name: "Brazil", geomag_lat: -16.0, field_uT: 23.0, blue_eye_frac: 0.08, lactose_tol_frac: 0.30 },
-  { code: "AUS", name: "Australia", geomag_lat: -42.0, field_uT: 55.0, blue_eye_frac: 0.35, lactose_tol_frac: 0.68 },
-  { code: "NGA", name: "Nigeria", geomag_lat: 5.0, field_uT: 33.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.15 },
-  { code: "EGY", name: "Egypt", geomag_lat: 27.0, field_uT: 40.5, blue_eye_frac: 0.02, lactose_tol_frac: 0.22 },
-  { code: "ISR", name: "Israel", geomag_lat: 28.5, field_uT: 41.0, blue_eye_frac: 0.10, lactose_tol_frac: 0.35 },
+  { code: "FIN", name: "Finland", geomag_lat: 64.5, field_uT: 52.0, blue_eye_frac: 0.89, lactose_tol_frac: 0.82 },
+  { code: "ISL", name: "Iceland", geomag_lat: 70.0, field_uT: 53.0, blue_eye_frac: 0.75, lactose_tol_frac: 0.80 },
+  { code: "NOR", name: "Norway", geomag_lat: 65.5, field_uT: 52.5, blue_eye_frac: 0.80, lactose_tol_frac: 0.90 },
+  { code: "SWE", name: "Sweden", geomag_lat: 62.0, field_uT: 51.0, blue_eye_frac: 0.78, lactose_tol_frac: 0.85 },
+  { code: "EST", name: "Estonia", geomag_lat: 60.5, field_uT: 51.0, blue_eye_frac: 0.70, lactose_tol_frac: 0.75 },
+  { code: "DNK", name: "Denmark", geomag_lat: 58.0, field_uT: 50.5, blue_eye_frac: 0.65, lactose_tol_frac: 0.88 },
+  { code: "GBR", name: "United Kingdom", geomag_lat: 55.0, field_uT: 49.5, blue_eye_frac: 0.48, lactose_tol_frac: 0.82 },
+  { code: "DEU", name: "Germany", geomag_lat: 51.0, field_uT: 48.5, blue_eye_frac: 0.40, lactose_tol_frac: 0.78 },
+  { code: "USA", name: "United States", geomag_lat: 50.0, field_uT: 48.0, blue_eye_frac: 0.27, lactose_tol_frac: 0.70 },
+  { code: "FRA", name: "France", geomag_lat: 48.5, field_uT: 47.0, blue_eye_frac: 0.22, lactose_tol_frac: 0.65 },
+  { code: "ITA", name: "Italy", geomag_lat: 42.5, field_uT: 46.0, blue_eye_frac: 0.12, lactose_tol_frac: 0.45 },
+  { code: "ESP", name: "Spain", geomag_lat: 43.0, field_uT: 44.5, blue_eye_frac: 0.10, lactose_tol_frac: 0.40 },
+  { code: "GRC", name: "Greece", geomag_lat: 37.5, field_uT: 45.0, blue_eye_frac: 0.08, lactose_tol_frac: 0.30 },
+  { code: "IRN", name: "Iran", geomag_lat: 28.0, field_uT: 44.0, blue_eye_frac: 0.05, lactose_tol_frac: 0.20 },
+  { code: "CHN", name: "China", geomag_lat: 30.0, field_uT: 47.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.10 },
+  { code: "JPN", name: "Japan", geomag_lat: 27.0, field_uT: 46.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.05 },
+  { code: "KOR", name: "South Korea", geomag_lat: 28.0, field_uT: 46.5, blue_eye_frac: 0.01, lactose_tol_frac: 0.10 },
+  { code: "IND", name: "India", geomag_lat: 12.0, field_uT: 38.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.35 },
+  { code: "NGA", name: "Nigeria", geomag_lat: 3.5, field_uT: 32.0, blue_eye_frac: 0.01, lactose_tol_frac: 0.25 },
+  { code: "BRA", name: "Brazil", geomag_lat: -15.0, field_uT: 24.0, blue_eye_frac: 0.08, lactose_tol_frac: 0.45 },
 ];
 
-/* ── chi_B computation ───────────────────────────────────────── */
+/* ── chi_B computation (matches v17_chi_B) ─────────────────── */
 
-const GYRO_RATIO = 42.577; // MHz/T for proton
+const GAMMA_E = 28.025e9; // Hz/T, electron gyromagnetic ratio
 
 function larmorFreqMHz(field_uT: number): number {
-  return GYRO_RATIO * (field_uT / 1e6) * 1e6; // f = gamma * B  (MHz)
-  // field_uT is in micro-tesla, so B in T = field_uT * 1e-6
-  // f in Hz = 42.577e6 * field_uT * 1e-6 = 42.577 * field_uT Hz
-  // f in MHz = 42.577 * field_uT * 1e-6 MHz
+  const B_tesla = field_uT * 1e-6;
+  return (GAMMA_E * B_tesla) / 1e6;
 }
 
-function computeChiB(field_uT: number): number {
-  const f = larmorFreqMHz(field_uT); // Larmor frequency in MHz
-  const f0 = 1.4; // MHz
-  const f1 = 50e-6; // 50 Hz expressed in MHz
-  const sigma = 0.5; // MHz
-  const sigma1 = 20e-6; // 20 Hz expressed in MHz
-  const A = 1.0;
-  const A2 = 0.3;
+function dualPeakFactor(geomag_lat: number): number {
+  const abs_lat = Math.abs(geomag_lat);
+  if (abs_lat < 30) return 0.2;
+  if (abs_lat < 55) return 0.5;
+  if (abs_lat < 65) return 0.8;
+  return 1.0;
+}
 
-  const r1 = (f - f0) / (2 * sigma);
-  const r2 = (f - f1) / (2 * sigma1);
-  const term1 = A * Math.exp(-(r1 * r1));
-  const term2 = A2 * Math.exp(-(r2 * r2));
-  return term1 + term2;
+function computeChiB(field_uT: number, geomag_lat: number): number {
+  const dpf = dualPeakFactor(geomag_lat);
+  return Math.min(1.0, Math.max(0.0, (field_uT / 65.0) * (0.3 + 0.7 * dpf)));
 }
 
 /* ── Northern Package components ─────────────────────────────── */
@@ -101,7 +96,7 @@ const COPY = {
     chiGeomagnetic: "chi_geomagnetic (field)",
     product: "Product (NP score)",
     barChartTitle: "Northern Package component breakdown",
-    note: "chi_B uses a dual-Gaussian resonance model: chi_B = A * exp(-((f - f0)/(2*sigma))^2) + A2 * exp(-((f - f1)/(2*sigma1))^2), where f is the proton Larmor frequency from the local geomagnetic field. The Northern Package score is the product of three independent coupling channels.",
+    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), where B is the local geomagnetic field strength and the dual-peak factor encodes latitude-dependent solar-cycle sensitivity (v17 formula). The Larmor frequency uses the electron gyromagnetic ratio (28.025 GHz/T). The Northern Package score is the product of three independent coupling channels.",
   },
   fi: {
     title: "Aurinkosykli",
@@ -119,7 +114,7 @@ const COPY = {
     chiGeomagnetic: "chi_geomagneettinen (kentta)",
     product: "Tulo (NP-pistemäärä)",
     barChartTitle: "Pohjoisen paketin osatekijat",
-    note: "chi_B kayttaa kaksi-gaussista resonanssimallia: chi_B = A * exp(-((f - f0)/(2*sigma))^2) + A2 * exp(-((f - f1)/(2*sigma1))^2), jossa f on protonin Larmor-taajuus paikallisesta geomagneettisesta kentasta. Pohjoisen paketin pistemäärä on kolmen itsenäisen kytkentakanavan tulo.",
+    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), jossa B on paikallinen geomagneettisen kentän voimakkuus ja kaksoishuipputekijä koodaa leveysasteesta riippuvan aurinkosykliherkkyden (v17-kaava). Larmor-taajuus käyttää elektronin gyromagneettista suhdetta (28,025 GHz/T). Pohjoisen paketin pistemäärä on kolmen itsenäisen kytkentäkanavan tulo.",
   },
   ja: {
     title: "太陽周期エクスプローラー",
@@ -137,7 +132,7 @@ const COPY = {
     chiGeomagnetic: "chi_地磁気 (磁場)",
     product: "積 (NPスコア)",
     barChartTitle: "北方パッケージ構成要素の内訳",
-    note: "chi_Bは二重ガウス共鳴モデルを使用: chi_B = A * exp(-((f - f0)/(2*sigma))^2) + A2 * exp(-((f - f1)/(2*sigma1))^2)、ここでfは地元の地磁気場からのプロトンラーモア周波数。北方パッケージスコアは3つの独立した結合チャネルの積。",
+    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor)、Bは地域の地磁気場強度、二重ピーク因子は緯度依存の太陽周期感受性を符号化(v17式)。ラーモア周波数は電子のジャイロ磁気比(28.025 GHz/T)を使用。北方パッケージスコアは3つの独立した結合チャネルの積。",
   },
   fr: {
     title: "Explorateur du cycle solaire",
@@ -155,7 +150,7 @@ const COPY = {
     chiGeomagnetic: "chi_geomagnetique (champ)",
     product: "Produit (score NP)",
     barChartTitle: "Decomposition des composantes du paquet nordique",
-    note: "chi_B utilise un modele de resonance a double gaussienne : chi_B = A * exp(-((f - f0)/(2*sigma))^2) + A2 * exp(-((f - f1)/(2*sigma1))^2), ou f est la frequence de Larmor du proton du champ geomagnetique local. Le score du paquet nordique est le produit de trois canaux de couplage independants.",
+    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), ou B est l'intensite du champ geomagnetique local et le facteur de double pic code la sensibilite au cycle solaire dependante de la latitude (formule v17). La frequence de Larmor utilise le rapport gyromagnetique de l'electron (28,025 GHz/T). Le score du paquet nordique est le produit de trois canaux de couplage independants.",
   },
   ko: {
     title: "태양 주기 탐색기",
@@ -173,7 +168,7 @@ const COPY = {
     chiGeomagnetic: "chi_지자기 (자기장)",
     product: "곱 (NP 점수)",
     barChartTitle: "북방 패키지 구성 요소 분석",
-    note: "chi_B는 이중 가우시안 공명 모델을 사용: chi_B = A * exp(-((f - f0)/(2*sigma))^2) + A2 * exp(-((f - f1)/(2*sigma1))^2), 여기서 f는 지역 지자기장의 양성자 라모어 주파수. 북방 패키지 점수는 세 가지 독립적 결합 채널의 곱.",
+    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), 여기서 B는 지역 지자기장 강도이고 이중 피크 인자는 위도 의존적 태양 주기 감수성을 인코딩합니다 (v17 공식). 라모어 주파수는 전자 자이로자기 비율(28.025 GHz/T)을 사용합니다. 북방 패키지 점수는 세 가지 독립적 결합 채널의 곱.",
   },
 } as const;
 
@@ -346,7 +341,7 @@ export function SolarExplorer({ locale }: { locale: string }) {
 
   const computed = useMemo(() => {
     const larmor = larmorFreqMHz(country.field_uT);
-    const chiB = computeChiB(country.field_uT);
+    const chiB = computeChiB(country.field_uT, country.geomag_lat);
     const chiOpt = computeChiOptical(country.blue_eye_frac);
     const chiMol = computeChiMolecular(country.lactose_tol_frac);
     const chiGeo = computeChiGeomagnetic(country.geomag_lat, country.field_uT);

@@ -18,7 +18,7 @@ const COPY = {
     /* Section 1: Hero */
     heroHeading: "THE HUMAN BODY AS AN ELECTROMAGNETIC SYSTEM",
     heroBody:
-      "Every cell maintains voltage, every mitochondrion sustains \u0394\u03A8m, every barrier guards a gradient, every gland secretes via Ca\u00B2\u207A-dependent exocytosis, every heartbeat is paced by VGCCs. The EMF Modulome maps this: 12 layers, 10 target organs, 4 independent routes.",
+      "Every cell maintains voltage, every mitochondrion sustains \u0394\u03A8m, every barrier guards a gradient, every gland secretes via Ca\u00B2\u207A-dependent exocytosis, every heartbeat is paced by VGCCs. The EMF Modulome maps this: 12 layers, 12 target organs, 4 independent routes.",
     /* Section 2: Terminology */
     termHeading: "What is the EMF Modulome?",
     termBody:
@@ -120,7 +120,7 @@ const COPY = {
     /* Section 1: Hero */
     heroHeading: "電磁システムとしての人体",
     heroBody:
-      "すべての細胞は電圧を維持し、すべてのミトコンドリアはΔΨmを維持し、すべてのバリアは勾配を守り、すべての腺はCa²⁺依存性エキソサイトーシスを介して分泌し、すべての心拍はVGCCによって調律される。EMFモジュロームはこれをマッピングする：12層、10の標的臓器、4つの独立経路。",
+      "すべての細胞は電圧を維持し、すべてのミトコンドリアはΔΨmを維持し、すべてのバリアは勾配を守り、すべての腺はCa²⁺依存性エキソサイトーシスを介して分泌し、すべての心拍はVGCCによって調律される。EMFモジュロームはこれをマッピングする：12層、12の標的臓器、4つの独立経路。",
     /* Section 2: Terminology */
     termHeading: "EMFモジュロームとは？",
     termBody:
@@ -171,7 +171,7 @@ const COPY = {
     /* Section 1: Hero */
     heroHeading: "LE CORPS HUMAIN COMME SYSTÈME ÉLECTROMAGNÉTIQUE",
     heroBody:
-      "Chaque cellule maintient une tension, chaque mitochondrie soutient ΔΨm, chaque barrière protège un gradient, chaque glande sécrète par exocytose Ca²⁺-dépendante, chaque battement cardiaque est cadencé par les VGCC. Le Modulome EMF cartographie ceci : 12 couches, 10 organes cibles, 4 voies indépendantes.",
+      "Chaque cellule maintient une tension, chaque mitochondrie soutient ΔΨm, chaque barrière protège un gradient, chaque glande sécrète par exocytose Ca²⁺-dépendante, chaque battement cardiaque est cadencé par les VGCC. Le Modulome EMF cartographie ceci : 12 couches, 12 organes cibles, 4 voies indépendantes.",
     /* Section 2: Terminology */
     termHeading: "Qu'est-ce que le Modulome EMF ?",
     termBody:
@@ -222,7 +222,7 @@ const COPY = {
     /* Section 1: Hero */
     heroHeading: "전자기 시스템으로서의 인체",
     heroBody:
-      "모든 세포는 전압을 유지하고, 모든 미토콘드리아는 ΔΨm을 유지하며, 모든 장벽은 기울기를 보호하고, 모든 분비선은 Ca²⁺ 의존성 세포외배출을 통해 분비하며, 모든 심박은 VGCC에 의해 조율된다. EMF 모듈롬은 이를 매핑한다: 12개 층, 10개 표적 기관, 4개 독립 경로.",
+      "모든 세포는 전압을 유지하고, 모든 미토콘드리아는 ΔΨm을 유지하며, 모든 장벽은 기울기를 보호하고, 모든 분비선은 Ca²⁺ 의존성 세포외배출을 통해 분비하며, 모든 심박은 VGCC에 의해 조율된다. EMF 모듈롬은 이를 매핑한다: 12개 층, 12개 표적 기관, 4개 독립 경로.",
     /* Section 2: Terminology */
     termHeading: "EMF 모듈롬이란?",
     termBody:
@@ -402,7 +402,7 @@ export default async function ModulomePage({
         </div>
       </section>
 
-      {/* ── 05 Eight Target Organs ── */}
+      {/* ── 05 Twelve Target Organs ── */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <h3 className="text-lg font-semibold mb-6">
           <span className="font-mono-num text-xs text-accent mr-2">05</span>
