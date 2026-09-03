@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, "../data");
+const WEBSITE_DIR = resolve(__dirname, "..");
 
 let errors = 0;
 let warnings = 0;
@@ -376,11 +377,21 @@ const fieldStateModule = architecture.measurementModules?.fieldState;
 if (architecture.model?.id !== "berm") {
   error("Architecture manifest must identify BERM as the model");
 }
+if (architecture.model?.role !== "explanatory_derivational_prediction_model") {
+  error("BERM must remain the explanatory, derivational and prediction model");
+}
 if (fieldStateModule?.role !== "measurement_observation_estimation") {
   error("FieldState must be a measurement/observation/estimation module");
 }
 if (fieldStateModule?.isModelAlias !== false || fieldStateModule?.isCausalRoot !== false) {
   error("FieldState must not be a model alias or causal root");
+}
+if (fieldStateModule?.canonicalRoute !== "/measurement/fieldstate") {
+  error("FieldState must remain under the canonical measurement route");
+}
+if (fieldStateModule?.publishesLockedForecasts !== false ||
+    architecture.theory?.fieldStateRole !== "optional_measurement_input_only") {
+  error("FieldState must remain an optional measurement input and publish no locked forecasts");
 }
 if (architecture.theory?.l2BridgeStatus !== "conditional_formal_operator") {
   error("The geometry-to-observable L2 bridge must expose the conditional formal operator");
@@ -393,6 +404,31 @@ if (architecture.routes?.prediction?.fieldStateCalibrated !== false) {
 }
 if (architecture.routes?.conditionalAsfr?.acceptsFieldStateObservations !== false) {
   error("The conditional ASFR calculator must not claim to accept FieldState observations");
+}
+
+const publicBoundarySources = [
+  "app/[locale]/model/page.tsx",
+  "app/[locale]/mathematics/page.tsx",
+  "app/[locale]/evidence/evolution/page.tsx",
+  "components/SolarExplorer.tsx",
+].map((relativePath) => ({
+  relativePath,
+  source: readFileSync(resolve(WEBSITE_DIR, relativePath), "utf-8"),
+}));
+const forbiddenBoundaryPhrases = [
+  "Geomagnetic field creates the χ(Ā) substrate",
+  'symbol: "χ(λ)"',
+  'title: "χ(Ā) [VGCC]"',
+  'title: "χ_B [CRY/RPM]"',
+  "χ_tissue candidate",
+  "FieldState-derived timing-proxy",
+];
+for (const { relativePath, source } of publicBoundarySources) {
+  for (const phrase of forbiddenBoundaryPhrases) {
+    if (source.includes(phrase)) {
+      error(`${relativePath}: obsolete BERM/FieldState conflation remains: ${phrase}`);
+    }
+  }
 }
 
 const measurementInputs = new Set([

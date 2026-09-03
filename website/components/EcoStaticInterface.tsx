@@ -149,13 +149,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "01 · NATURAL FUNCTION",
         title: "A field can be a biological signal or force",
-        text: "Electric and magnetic fields can guide floral foraging, orientation, dispersal and host encounter in different organisms. This anchors the FieldState premise: vector, geometry and time are biologically meaningful inputs.",
+        text: "Electric and magnetic fields can guide floral foraging, orientation, dispersal and host encounter in different organisms. This motivates BERM to test vector, geometry and time as physical inputs; FieldState is only the optional measurement branch for recording them.",
         source: { label: "England & Robert 2022", referenceId: "england2022_electric_ecology" },
         tone: "direct",
       },
       {
         step: "02 · MEASURED RESPONSE",
-        title: "A changed FieldState can alter a defined endpoint",
+        title: "BERM tests whether a measured field change alters an endpoint",
         text: "A matched sham-controlled experiment can establish a component-specific behavioural or physiological response. It does not by itself establish a population trend or a universal species effect.",
         source: { label: "Mallinson, Woodburn & O’Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
         tone: "direct",
@@ -335,7 +335,7 @@ const COPY: Record<string, Copy> = {
     selectionLandscapeP2: "The honeybee-Varroa system is the clearest case study: EMF simultaneously weakens the host and does not affect the parasite, creating a \"double cascade\" that amplifies all other stressors.",
     selectionLandscapeArticleLink: "Case study: Why the Bees Can't Fight Back",
     selectionLandscapeSentinelLink: "Full analysis on sentinel page",
-    selectionLandscapeNote: "Species positions are BERM-Eco estimates [H] based on known mechanisms, not quantitative fitness measurements. The scatter illustrates the hypothesis that EM-dependent species are systematically disadvantaged in the changed FieldState.",
+    selectionLandscapeNote: "Species positions are BERM-Eco estimates [H] based on candidate mechanisms, not quantitative fitness measurements. The scatter illustrates a BERM hypothesis about a changed physical field environment; FieldState would only record that environment.",
     protocolTitle: "Minimal discriminating study design",
     protocol: [
       "Measure surface potential or local static field, geometry, separation distance, material, grounding state, temperature and relative humidity for every trial.",
@@ -626,7 +626,7 @@ const COPY: Record<string, Copy> = {
     selectionLandscapeP2: "Mehiläis-Varroa-järjestelmä on selkein tapaustutkimus: EMF heikentää samanaikaisesti isäntää eikä vaikuta loiseen, luoden \"kaksinkertaisen kaskadin\" joka vahvistaa kaikkia muita stressitekijöitä.",
     selectionLandscapeArticleLink: "Tapaustutkimus: Miksi mehiläiset eivät pysty puolustautumaan",
     selectionLandscapeSentinelLink: "Täysi analyysi sentinellisivulla",
-    selectionLandscapeNote: "Lajien sijainnit ovat BERM-Eco-arvioita [H] perustuen tunnettuihin mekanismeihin, eivät kvantitatiivisia kelpoisuusmittauksia. Hajontakuvaaja havainnollistaa hypoteesia, jonka mukaan EM-riippuvaiset lajit ovat systemaattisesti epäedullisessa asemassa muuttuneessa FieldStatessa.",
+    selectionLandscapeNote: "Lajien sijainnit ovat BERM-Eco-arvioita [H] ehdokasmekanismien perusteella, eivät kvantitatiivisia kelpoisuusmittauksia. Hajontakuvaaja havainnollistaa BERM-hypoteesia muuttuneesta fysikaalisesta kenttäympäristöstä; FieldState vain mittaisi ympäristön.",
     protocolTitle: "Minimaalinen erottava tutkimusasetelma",
     protocol: [
       "Mittaa jokaisessa kokeessa pintapotentiaali tai paikallinen staattinen kenttä, geometria, erotusetäisyys, materiaali, maadoitustila, lämpötila ja suhteellinen kosteus.",
@@ -737,7 +737,7 @@ const COPY: Record<string, Copy> = {
       },
       {
         step: "02 · 測定された応答",
-        title: "変化したFieldStateは定義されたエンドポイントを変えることができる",
+        title: "BERMは測定された場の変化がエンドポイントを変えるか検証する",
         text: "対応するシャム対照実験は、成分特異的な行動的・生理学的応答を確立できる。それ自体では個体群トレンドや普遍的な種効果を確立しない。",
         source: { label: "Mallinson, Woodburn & O'Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
         tone: "direct",
@@ -917,7 +917,7 @@ const COPY: Record<string, Copy> = {
     selectionLandscapeP2: "ミツバチ-Varroaシステムが最も明確な事例研究である: EMFは同時に宿主を弱体化させ寄生者に影響しないため、全ての他のストレス因子を増幅する「二重カスケード」を生む。",
     selectionLandscapeArticleLink: "事例研究: ミツバチが反撃できない理由",
     selectionLandscapeSentinelLink: "センチネルページの完全分析",
-    selectionLandscapeNote: "種の位置は既知のメカニズムに基づくBERM-Eco推定[H]であり、定量的適応度測定ではない。散布図はEM依存種が変化したFieldStateで体系的に不利であるという仮説を例示する。",
+    selectionLandscapeNote: "種の位置は候補メカニズムに基づくBERM-Eco推定[H]で、定量的適応度測定ではない。散布図は物理的場環境の変化についてのBERM仮説を示し、FieldStateはその環境を記録するだけである。",
     protocolTitle: "最小識別研究デザイン",
     protocol: [
       "各試行で表面電位または局所静電場、幾何学、分離距離、材料、接地状態、温度、相対湿度を測定する。",
@@ -1313,7 +1313,7 @@ const COPY: Record<string, Copy> = {
       {
         step: "01 · 자연 기능",
         title: "전자기장은 생물학적 신호 또는 힘이 될 수 있다",
-        text: "전기장과 자기장은 다른 생물의 꽃 탐색, 방위 결정, 분산, 숙주 조우를 유도할 수 있다. 이것이 FieldState 전제를 고정한다: 벡터, 기하학, 시간은 생물학적으로 의미 있는 입력이다.",
+        text: "전기장과 자기장은 여러 생물의 탐색, 방위, 분산과 숙주 조우에 관여할 수 있다. 이는 BERM이 벡터·기하·시간을 물리 입력으로 검사할 동기를 주며 FieldState는 이를 기록하는 선택적 측정 분기일 뿐이다.",
         source: { label: "England & Robert 2022", referenceId: "england2022_electric_ecology" },
         tone: "direct",
       },

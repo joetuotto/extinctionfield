@@ -17,7 +17,7 @@ const t = {
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren geometry" },
       { id: "evo-calibration", num: "§1b", label: "Candidate biological bridge" },
-      { id: "chi", num: "§2", label: "Selection rule χ(Ā)" },
+      { id: "chi", num: "§2", label: "Inverse-metric coordinate χ_geo" },
       { id: "l2-response", num: "§2a", label: "Conditional response operator" },
       { id: "three-channel-derivation", num: "§2b", label: "Three-channel derivation" },
       { id: "two-channel", num: "§3", label: "Two-channel model" },
@@ -32,7 +32,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
       { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
       { id: "cross-sectional", num: "§12", label: "Cross-sectional validation" },
-      { id: "nested-chi", num: "§13", label: "Nested χ (population model)" },
+      { id: "nested-chi", num: "§13", label: "Candidate population moderators" },
       { id: "layered-formula", num: "§14", label: "Layered formula v20→v21" },
       { id: "recovery-function", num: "§15", label: "Recovery function" },
       { id: "cultural-energy", num: "§16", label: "Cultural energy formalization" },
@@ -60,7 +60,7 @@ const t = {
     // S1b Evolutionary Calibration
     s1bTitle: "Candidate biological bridge analogies",
     s1bIntro:
-      "Biological sensing examples constrain plausible sensitivity ranges: the eye detects single photons ([[ref:vaziri2016|Vaziri et al. 2016]]), electroreception and magnetoreception operate in specialized systems, and an ion-forced-oscillation proposal reports a 10⁻⁵ V/m scale ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). These are comparative observations and mechanism proposals; they do not calibrate BERM’s proposed χ(Ā) closure for a human membrane.",
+      "Biological sensing examples constrain plausible sensitivity ranges: the eye detects single photons ([[ref:vaziri2016|Vaziri et al. 2016]]), electroreception and magnetoreception operate in specialized systems, and an ion-forced-oscillation proposal reports a 10⁻⁵ V/m scale ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). These are comparative observations and mechanism proposals; they do not calibrate BERM’s tissue kernel Ξ_i or a human membrane response.",
     s1bAfter:
       "BERM treats spectral filtering and receptor selectivity as empirical questions. Evolutionary novelty alone does not establish susceptibility, and no assumption that every technical signal is disruptive is used as a derived result.",
     s1bd1: "Amplification cascade — photon analogy:",
@@ -78,7 +78,7 @@ const t = {
     s2bFRPM:
       "f_RPM ≈ 1 MHz — the radical pair coherence limit. Above f_RPM: classical field–membrane interaction weakens but quantum spin effects become relevant.",
     s2bELF:
-      "ELF channel (f < ~1 kHz): field drops across the membrane. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturated at 7×10⁶ V/m. Linear response. Mechanisms: VGCC→Ca²⁺→ROS (pathway A), GPCR-adenosine ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav-modulation ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), vagus nerve ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
+      "ELF channel (f < ~1 kHz): a membrane transfer estimate can use ΔV_mem = E_ext · d_cell · H(f). Its response modifier and scale belong to the open tissue kernel Ξ_i. Candidate routes include VGCC→Ca²⁺→ROS (pathway A), GPCR-adenosine ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav modulation ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]) and vagus-nerve stimulation ([[ref:vns_gammacore_fda|VNS, FDA 2017]]); these applications do not calibrate an environmental ELF response.",
     s2bIF:
       "IF channel (f_c < f < f_RPM): field penetrates the cell interior. T(f) = 1/√(1+(f_c/f)²). Primary mechanism at environmental levels: IFO-VGIC (linear, threshold 10⁻⁵ V/m). Geometric field amplification at cleavage furrow: G ≈ (d_cell/d_furrow)² ≈ 25×. Selective effect on dividing cells. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] validates the mechanism at therapeutic intensity via DEP.",
     s2bIFSources:
@@ -89,7 +89,7 @@ const t = {
     s2bRegGap:
       "ICNIRP 2010 sets exposure limits for f < 300 Hz (ELF). [[ref:icnirp2020|ICNIRP 2020]] sets limits for f > 100 kHz (RF). The range 300 Hz < f < 100 kHz has overlapping, inconsistent limits. LED driver emissions (20–300 kHz) fall in this gap. A [[ref:ijrb2022_if_review|2022 systematic review (IJRB, Ohkubo & Okano)]] confirmed: 'studies on health effects with more diverse perspectives of IF-EMF have NOT been conducted.' Biological relevance at these frequencies is supported by: IFO threshold 10⁻⁵ V/m exceeded by LED drivers at 1 m; [[ref:kim2026_cell_gene_switch|Kim 2026]] gene expression activation at 4 kHz (Cyb5b); [[ref:ttfields_novocure_fda|TTFields FDA-approved cancer treatment at 200 kHz]]; [[ref:heliyon_150khz_fertility_2022|150 kHz rat testicular effects (Heliyon 2022)]].",
     s2bAfter:
-      "Channel weights (w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35) are DIAGNOSTIC and require empirical calibration. The three-channel decomposition is structurally derived from membrane biophysics; only the relative weights are uncertain.",
+      "The three-channel decomposition is a BERM candidate partition motivated by distinct frequency-dependent mechanisms. Its cutoffs, tissue transfer and diagnostic weights (w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35) require empirical calibration; the weights are not Lindgren-derived or FieldState outputs.",
 
     // S2 Chi
     s2Title: "Normalized inverse-metric coordinate χ_geo(ρ)",
@@ -108,22 +108,22 @@ const t = {
     s2d8: "The legacy v17 proxy reuses this shape, but neither a membrane scale nor tissue sensitivity follows from χ_geo alone.",
 
     // S3 Two-channel
-    s3Title: "Two-Channel Model",
+    s3Title: "Archived v17 two-channel proxy",
     s3Intro:
-      "Total exposure is the sum of two channels where the personal channel is modulated by the selection rule:",
+      "The locked v17 comparison route uses the following two-channel technology-timing proxy. It is a BERM predictor specification, not a FieldState measurement or a derived biological response law:",
     s3d1: "Ambient = base stations + Wi-Fi + IoT (infrastructure level)",
     s3d2: "Personal = phone + earbuds + watches (personal devices)",
-    s3d3: "Ambient is the background Ā that determines χ.",
-    s3d4: "Personal is the perturbation a whose biological response depends on χ(Ā).",
-    s3d5: "When Ā = 0 (Amish): total = 0 + χ(0) × personal = 0 + 0 = 0",
-    s3d6: "→ Personal devices produce no biological response.",
-    s3d7: "When Ā → ∞ (saturated city): total ≈ ambient + 1 × personal",
-    s3d8: "→ Personal adds at full magnitude.",
+    s3d3: "Ambient is the national background proxy supplied to χ_v17, not measured four-potential Ā.",
+    s3d4: "Personal is a technology-timing proxy term, not a tissue perturbation inferred by FieldState.",
+    s3d5: "At zero background proxy: total = 0 + χ_v17(0) × personal = 0.",
+    s3d6: "→ This is an algebraic property of the archived proxy; it does not prove zero biological response.",
+    s3d7: "At a very large background proxy: total ≈ ambient + personal.",
+    s3d8: "→ This is the proxy’s saturation limit, not a calibrated tissue-gain limit.",
     s3d9: "Cumulative exposure is the historical sum:",
     s3d10: "where start is the country’s EMF history start year (e.g. Finland 1991).",
     s3rwTitle: "Why cumulative exposure works: the recovery window",
     s3rwIntro:
-      "Cumulative exposure is the correct metric because DNA repair capacity is finite. The BER (base excision repair) pathway has a half-life τ_repair ≈ 6 hours. Net daily damage depends on the ratio of exposure time to recovery time:",
+      "The archived v17 route sums this proxy over time. A finite-repair recovery window is a separate BERM mechanism candidate; the illustrative BER half-life and daily-damage expression below do not derive the national proxy or calibrate Ξ_i:",
     s3rwTable: "Historical exposure scenarios:",
     s3rwRow1: "1950 (radio + TV): 4h EMF, 20h free → 90% repair → net 0.40/day",
     s3rwRow2: "1990 (phone, no Wi-Fi): 8h EMF, 16h free → 84% repair → net 1.26/day",
@@ -131,7 +131,7 @@ const t = {
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h free → 21% repair → net 17.46/day",
     s3rwRow5: "Amish (no electronics): 1h EMF, 23h free → 93% repair → net 0.07/day",
     s3rwThreshold:
-      "Critical threshold: when EMF-free period < 2× repair half-life (< 12h for BER), repair is incomplete and cumulation begins. Modern humans crossed this threshold around 2005–2010.",
+      "Scenario threshold: an EMF-free period below 2× an assumed repair half-life leaves incomplete recovery in this illustrative equation. The claim that populations crossed such a threshold in 2005–2010 remains uncalibrated.",
     s3tcTitle: "Three-channel extension",
     s3tcIntro:
       "In the three-channel decomposition, cumEMF becomes a weighted sum of frequency-specific cumulative exposures:",
@@ -290,7 +290,7 @@ const t = {
       {
         condition: "Lindgren’s metric is mathematically incorrect",
         detail:
-          "If the derivation g_μν = η_μν + A_μA_ν is shown to be internally inconsistent or to contradict established electrodynamics, the geometric foundation fails.",
+          "If the ansatz g_μν = η_μν + κA_μA_ν is shown to be internally inconsistent or to contradict established electrodynamics, the geometric foundation fails.",
       },
       {
         condition: "VGCC blockers do not prevent EMF’s biological effects",
@@ -361,11 +361,11 @@ const t = {
     s10d7Link: "→ Controlled experimental evidence (laboratory mammals)",
 
     // S11 Individual susceptibility
-    s11Title: "Individual Susceptibility and the χ Distribution",
+    s11Title: "Candidate individual response modifiers",
     s11Intro:
-      "The population-level selection rule χ(Ā) predicts a mean response. Individuals vary around this mean due to three measurable factors: VGCC genotype, anatomical geometry, and cumulative allostatic load. The individual susceptibility modifier is:",
+      "BERM proposes VGCC genotype, anatomical transfer and cumulative state as endpoint-specific response modifiers. They belong to the tissue kernel Ξ_i; they are not χ_geo and their joint gain is not calibrated:",
     s11After:
-      "This means that two individuals in the same ambient field may experience effective biological doses differing by an order of magnitude. The population TFR is a convolution over the individual χ distribution — the mean hides the tails.",
+      "If calibrated, these factors could produce response heterogeneity among people in the same measured field. Neither an order-of-magnitude spread nor its propagation to population TFR is currently established.",
     s11d1: "The VGCC genotype modifier follows from CACNA1C rs1006737 functional phenotyping:",
     s11d2:
       "AA homozygous risk carriers show 40% greater Ca²⁺ influx per unit field perturbation ([[ref:cacna1c_genotyping_2024|medrxiv 2024, MIT DSpace functional data]]).",
@@ -375,9 +375,9 @@ const t = {
     s11d5: "The cumulative modifier uses [[ref:selye1936|Selye's General Adaptation Syndrome]] phases:",
     s11d6:
       "In the resistance phase, compensation capacity declines linearly. In exhaustion (allostatic load > 15), compensation collapses and the effective modifier amplifies sharply — this is the predicted EHS onset regime.",
-    s11d7: "The combined individual modifier multiplies into the population χ:",
+    s11d7: "The combined candidate modifier is kept separate from χ_geo:",
     s11d8:
-      "For population-level TFR prediction, BERM integrates over the genotype frequency distribution (Hardy-Weinberg) × anatomical demographics × exposure-duration distribution. The mean individual modifier is 1.0 by construction — it cancels in the population average. The DIAGNOSTIC value lies in the tails: high-susceptibility individuals (AA, young, exhaustion phase) may have combined modifiers of 5–10×, explaining why a subpopulation reports symptoms while the majority does not.",
+      "A future population application would integrate a measured modifier distribution over genotype, anatomy and exposure history. Normalizing its mean to 1 is a modelling convention; tail values such as 5–10× are scenarios, not empirical estimates or an explanation already established by BERM.",
     s11d9Link: "→ Individual susceptibility evidence",
 
     // S12 Cross-Sectional Validation
@@ -406,15 +406,15 @@ const t = {
       "Replication data: 54-country sample roster with observed TFR, electricity consumption, broadband subscriptions, and model predictions available at /data/cross_section_manifest.csv. Source: UN WPP 2024 (TFR), OWID/IEA (electricity), ITU (broadband).",
     s12Caveat:
       "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
-    s13Title: "Nested χ (Population Model)",
-    s13Intro: "The χ selection rule generalizes to populations when biological background variables (optical, molecular) differ between groups. The combined reproductive suppression from pathways A and B, modulated by population-specific χ profiles:",
+    s13Title: "Nested candidate moderators (population model)",
+    s13Intro: "BERM proposes a population closure in which separately measured environmental, membrane, optical and molecular moderators can vary between groups. These m-functions are not instances of χ_geo and the combined reproductive response below is an uncalibrated candidate:",
     s13PathwayA: "Pathway A (VGIC)",
     s13PathwayB: "Pathway B (CRY/RPM)",
     s13Combined: "Combined suppression",
     s13TFR: "Population TFR",
-    s13Where: "where γ_A, γ_B are pathway weights (0.75, 0.25); χ(Ā_env) is environmental coupling; χ(V_mem) is membrane background (≈ 1.0 for living cells); χ(I_blue) is optical coupling (iris-dependent); χ([FAD]) is molecular coupling (B2-dependent); and EMF_personal is the personal device contribution.",
-    s13Implication: "This formulation predicts that populations with higher biological χ values (blue-eyed, lactose-tolerant) experience steeper TFR decline per unit of environmental EMF increase. See the population χ profiles for estimated values.",
-    s13Level: "Epistemic level: L* (testable synthesis). Individual χ instantiations are E or M|C level; the population-level integration is the L* component.",
+    s13Where: "Here γ_A and γ_B are candidate pathway weights; m_env, m_mem, m_opt and m_mol are distinct measured or estimated moderators. The archived values 0.75/0.25 and population profiles are scenarios, not Lindgren-derived coefficients.",
+    s13Implication: "The discriminating prediction is an exposure × moderator interaction measured prospectively. Eye colour or lactase persistence alone must not be treated as a calibrated biological susceptibility or as proof of a TFR effect.",
+    s13Level: "Epistemic level: L* (testable BERM synthesis). Component biology can constrain individual moderators, but the population integration and its endpoint coefficients remain uncalibrated.",
 
     // S14 Layered Formula
     s14Title: "Layered Formula v20 → v21",
@@ -471,7 +471,7 @@ const t = {
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgrenin geometria" },
       { id: "evo-calibration", num: "§1b", label: "Biologisen sillan kandidaatit" },
-      { id: "chi", num: "§2", label: "Valintaehto χ(Ā)" },
+      { id: "chi", num: "§2", label: "Käänteisen metriikan koordinaatti χ_geo" },
       { id: "l2-response", num: "§2a", label: "Ehdollinen vasteoperaattori" },
       { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohdannainen" },
       { id: "two-channel", num: "§3", label: "Kaksikanavamalli" },
@@ -486,7 +486,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
       { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
-      { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
+      { id: "nested-chi", num: "§13", label: "Populaation ehdokasmoderaattorit" },
       { id: "layered-formula", num: "§14", label: "Kerrostumakaava v20→v21" },
       { id: "recovery-function", num: "§15", label: "Palautumisfunktio" },
       { id: "cultural-energy", num: "§16", label: "Kulttuurisen energian formalisointi" },
@@ -514,7 +514,7 @@ const t = {
     // S1b Evoluutionäärinen kalibraatio
     s1bTitle: "Biologisen sillan kandidaattianalogiat",
     s1bIntro:
-      "Biologisen aistimisen esimerkit rajaavat mahdollisia herkkyysalueita: silmä havaitsee yksittäisiä fotoneita ([[ref:vaziri2016|Vaziri ym. 2016]]), erikoistuneet järjestelmät toteuttavat elektro- ja magnetoreseptiota, ja ionien pakotetun oskillaation ehdotus raportoi 10⁻⁵ V/m mittakaavan ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Nämä ovat vertailuhavaintoja ja mekanismiehdotuksia; ne eivät kalibroi BERM:n ehdottamaa χ(Ā)-sulkeumaa ihmisen solukalvolle.",
+      "Biologisen aistimisen esimerkit rajaavat mahdollisia herkkyysalueita: silmä havaitsee yksittäisiä fotoneita ([[ref:vaziri2016|Vaziri ym. 2016]]), erikoistuneet järjestelmät toteuttavat elektro- ja magnetoreseptiota, ja ionien pakotetun oskillaation ehdotus raportoi 10⁻⁵ V/m mittakaavan ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Nämä ovat vertailuhavaintoja ja mekanismiehdotuksia; ne eivät kalibroi BERM:n kudosydintä Ξ_i tai ihmisen solukalvovastetta.",
     s1bAfter:
       "BERM käsittelee spektrisuodatuksen ja reseptoriselektiivisyyden empiirisinä kysymyksinä. Evolutiivinen uutuus ei yksin osoita herkkyyttä, eikä oletusta jokaisen teknisen signaalin häiritsevyydestä käytetä johdettuna tuloksena.",
     s1bd1: "Vahvistuskaskadi — fotoni-analogia:",
@@ -532,7 +532,7 @@ const t = {
     s2bFRPM:
       "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat merkityksellisiksi.",
     s2bELF:
-      "ELF-kanava (f < ~1 kHz): kenttä putoaa kalvon yli. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturoitunut 7×10⁶ V/m:ssä. Lineaarinen vaste. Mekanismit: VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav-modulaatio ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), vagushermo ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
+      "ELF-kanava (f < ~1 kHz): kalvosiirron arvio voi käyttää muotoa ΔV_mem = E_ext · d_cell · H(f). Vasteen moderaattori ja mittakaava kuuluvat avoimeen kudosydimeen Ξ_i. Ehdokasreittejä ovat VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav-modulaatio ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]) ja vagushermostimulaatio ([[ref:vns_gammacore_fda|VNS, FDA 2017]]); nämä sovellukset eivät kalibroi ympäristön ELF-vastetta.",
     s2bIF:
       "IF-kanava (f_c < f < f_RPM): kenttä tunkeutuu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
     s2bIFSources:
@@ -543,7 +543,7 @@ const t = {
     s2bRegGap:
       "ICNIRP 2010 asettaa altistusrajat taajuuksille f < 300 Hz (ELF). [[ref:icnirp2020|ICNIRP 2020]] asettaa rajat taajuuksille f > 100 kHz (RF). Alue 300 Hz < f < 100 kHz:lla on päällekkäiset, epäjohdonmukaiset rajat. LED-ajuriemissiot (20–300 kHz) osuvat tähän aukkoon. [[ref:ijrb2022_if_review|Vuoden 2022 systemaattinen katsaus (IJRB, Ohkubo & Okano)]] vahvisti: 'IF-EMF:n terveysvaikutuksia EI ole tutkittu monipuolisemmista näkökulmista.' Biologinen relevanssi näillä taajuuksilla tuettu: IFO-kynnys 10⁻⁵ V/m ylittyy LED-ajurilla 1 m:ssä; [[ref:kim2026_cell_gene_switch|Kim 2026]] geeniekspression aktivointi 4 kHz:llä (Cyb5b); [[ref:ttfields_novocure_fda|TTFields FDA-hyväksytty syöpähoito 200 kHz:llä]]; [[ref:heliyon_150khz_fertility_2022|150 kHz rottatutkimuksen kivesvaikutukset (Heliyon 2022)]].",
     s2bAfter:
-      "Kanavapainot (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) ovat DIAGNOSTISIA ja vaativat empiirisen kalibraation. Kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta; vain suhteelliset painot ovat epävarmoja.",
+      "Kolmikanavadekompositio on BERM:n ehdokasjako, jota erilliset taajuusriippuvaiset mekanismit motivoivat. Sen rajataajuudet, kudossiirto ja diagnostiset painot (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) vaativat empiirisen kalibraation; painot eivät ole Lindgrenistä johdettuja eivätkä FieldState-tuloksia.",
 
     // S2 Chi
     s2Title: "Normalisoitu käänteisen metriikan koordinaatti χ_geo(ρ)",
@@ -562,22 +562,22 @@ const t = {
     s2d8: "Legacy-v17-proxy käyttää samaa muotoa, mutta kalvomittakaava tai kudosherkkyys ei seuraa yksin χ_geo:sta.",
 
     // S3 Two-channel
-    s3Title: "Kaksikanavamalli",
+    s3Title: "Arkistoitu v17-kaksikanavaproxy",
     s3Intro:
-      "Kokonaisaltistus on kahden kanavan summa, jossa henkilökohtaista kanavaa säätelee valintaehto:",
+      "Lukittu v17-vertailureitti käyttää seuraavaa kaksikanavaista teknologian ajoitusproxya. Se on BERM:n ennustajamäärittely, ei FieldState-mittaus eikä johdettu biologinen vastelaki:",
     s3d1: "Ympäristö = tukiasemat + Wi-Fi + IoT (infrastruktuuritaso)",
     s3d2: "Henkilökohtainen = puhelin + kuulokkeet + kellot (henkilökohtaiset laitteet)",
-    s3d3: "Ympäristö on tausta Ā, joka määrittää χ:n.",
-    s3d4: "Henkilökohtainen on häiriö a, jonka biologinen vaste riippuu χ(Ā):sta.",
-    s3d5: "Kun Ā = 0 (amissit): total = 0 + χ(0) × personal = 0 + 0 = 0",
-    s3d6: "→ Henkilökohtaiset laitteet eivät tuota biologista vastetta.",
-    s3d7: "Kun Ā → ∞ (kyllästynyt kaupunki): total ≈ ambient + 1 × personal",
-    s3d8: "→ Henkilökohtainen lisää täydellä voimakkuudella.",
+    s3d3: "Ympäristö on χ_v17:lle annettu kansallinen taustaproxy, ei mitattu nelipotentiaali Ā.",
+    s3d4: "Henkilökohtainen on teknologian ajoitusproxy, ei FieldStatesta päätelty kudoshäiriö.",
+    s3d5: "Taustaproxyn ollessa nolla: total = 0 + χ_v17(0) × personal = 0.",
+    s3d6: "→ Tämä on arkistoidun proxyn algebrallinen ominaisuus; se ei todista biologisen vasteen puuttumista.",
+    s3d7: "Taustaproxyn ollessa hyvin suuri: total ≈ ambient + personal.",
+    s3d8: "→ Tämä on proxyn kyllästymisraja, ei kalibroitu kudosvahvistuksen raja.",
     s3d9: "Kumulatiivinen altistus on historiallinen summa:",
     s3d10: "missä start on maan EMF-historian aloitusvuosi (esim. Suomi 1991).",
     s3rwTitle: "Miksi kumulatiivinen altistus toimii: palautumisikkuna",
     s3rwIntro:
-      "Kumulatiivinen altistus on oikea metriikka, koska DNA-korjauskapasiteetti on rajallinen. BER-reitin (emäksen leikkauskorjaus) puoliintumisaika on τ_repair ≈ 6 tuntia. Nettopäivävaurio riippuu altistusajan ja palautumisajan suhteesta:",
+      "Arkistoitu v17-reitti summaa tämän proxyn ajan yli. Rajalliseen korjauskapasiteettiin perustuva palautumisikkuna on erillinen BERM-mekanismiehdokas; alla oleva havainnollinen BER-puoliintumisaika ja päivävauriolauseke eivät johda kansallista proxya eivätkä kalibroi Ξ_i:tä:",
     s3rwTable: "Historialliset altistusskenaariot:",
     s3rwRow1: "1950 (radio + TV): 4h EMF, 20h vapaa → 90 % korjaus → netto 0,40/pv",
     s3rwRow2: "1990 (puhelin, ei Wi-Fi): 8h EMF, 16h vapaa → 84 % korjaus → netto 1,26/pv",
@@ -585,7 +585,7 @@ const t = {
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h vapaa → 21 % korjaus → netto 17,46/pv",
     s3rwRow5: "Amissit (ei elektroniikkaa): 1h EMF, 23h vapaa → 93 % korjaus → netto 0,07/pv",
     s3rwThreshold:
-      "Kriittinen kynnys: kun EMF-vapaa jakso < 2× korjauksen puoliintumisaika (< 12h BER-reitille), korjaus jää epätäydelliseksi ja kumulaatio alkaa. Moderni ihminen ylitti tämän kynnyksen noin 2005–2010.",
+      "Skenaariokynnys: alle 2× oletetun korjauksen puoliintumisajan jäävä EMF-vapaa jakso tuottaa tässä havainnollisessa yhtälössä epätäydellisen palautumisen. Väite populaatioiden kynnyksen ylityksestä 2005–2010 on kalibroimatta.",
     s3tcTitle: "Kolmikanavalaajennus",
     s3tcIntro:
       "Kolmikanavadekompositiossa cumEMF muuttuu taajuuskohtaisten kumulatiivisten altistusten painotetuksi summaksi:",
@@ -744,7 +744,7 @@ const t = {
       {
         condition: "Lindgrenin metriikka on matemaattisesti virheellinen",
         detail:
-          "Jos johtamisen g_μν = η_μν + A_μA_ν osoitetaan olevan sisäisesti ristiriitainen tai ristiriidassa vakiintuneen sähködynamiikan kanssa, geometrinen perusta pettää.",
+          "Jos ansatz g_μν = η_μν + κA_μA_ν osoitetaan sisäisesti ristiriitaiseksi tai vakiintuneen sähködynamiikan vastaiseksi, geometrinen perusta pettää.",
       },
       {
         condition:
@@ -816,11 +816,11 @@ const t = {
     s10d7Link: "→ Kontrolloitu kokeellinen näyttö (laboratorionisäkkäät)",
 
     // S11 Individual susceptibility
-    s11Title: "Yksilöllinen herkkyys ja χ-jakauma",
+    s11Title: "Yksilövasteen ehdokasmoderaattorit",
     s11Intro:
-      "Populaatiotason valintaehto χ(Ā) ennustaa keskimääräisen vasteen. Yksilöt vaihtelevat tämän keskiarvon ympärillä kolmen mitattavan tekijän vuoksi: VGCC-genotyyppi, anatominen geometria ja kumulatiivinen allostaattinen kuorma. Yksilöllinen herkkyyskertoin on:",
+      "BERM ehdottaa VGCC-genotyyppiä, anatomista siirtoa ja kumulatiivista tilaa päätepistekohtaisiksi vasteen moderaattoreiksi. Ne kuuluvat kudosytimeen Ξ_i, eivät ole χ_geo, eikä niiden yhteisvahvistusta ole kalibroitu:",
     s11After:
-      "Tämä tarkoittaa, että kaksi yksilöä samassa ympäristökentässä voi kokea efektiivisiä biologisia annoksia, jotka eroavat kertaluvulla. Populaation TFR on konvoluutio yksilöllisen χ-jakauman yli — keskiarvo peittää hännät.",
+      "Kalibroituina tekijät voisivat tuottaa vasteheterogeenisuutta samassa mitatussa kentässä olevien ihmisten välille. Kertaluvun ero ja sen eteneminen väestön TFR:ään eivät ole tällä hetkellä osoitettuja.",
     s11d1: "VGCC-genotyyppikerroin seuraa CACNA1C rs1006737 -funktionaalisesta fenotyypityksestä:",
     s11d2:
       "AA-homotsygoottiset riskikantajat osoittavat 40 % suurempaa Ca²⁺-sisäänvirtausta kenttähäiriöyksikköä kohti ([[ref:cacna1c_genotyping_2024|medrxiv 2024, MIT DSpace funktionaalinen data]]).",
@@ -830,9 +830,9 @@ const t = {
     s11d5: "Kumulatiivinen kerroin käyttää [[ref:selye1936|Selyen yleisen adaptaatio-oireyhtymän]] vaiheita:",
     s11d6:
       "Resistenssivaiheessa kompensaatiokapasiteetti laskee lineaarisesti. Uupumusvaiheessa (allostaattinen kuorma > 15) kompensaatio romahtaa ja efektiivinen kerroin vahvistuu jyrkästi — tämä on ennustettu EHS:n alkamisregime.",
-    s11d7: "Yhdistetty yksilökerroin kertautuu populaation χ:hin:",
+    s11d7: "Yhdistetty ehdokasmoderaattori pidetään erillään χ_geo:sta:",
     s11d8:
-      "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssijakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää, miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
+      "Tuleva populaatiosovellus integroisi mitatun moderaattorijakauman genotyypin, anatomian ja altistushistorian yli. Keskiarvon normalisointi yhteen on mallinnussopimus; 5–10×-häntäarvot ovat skenaarioita, eivät empiirisiä estimaatteja tai BERM:n jo osoittama selitys.",
     s11d9Link: "→ Yksilöllisen herkkyyden todisteet",
 
     // S12 Poikkileikkausvalidointi
@@ -861,15 +861,15 @@ const t = {
       "Replikaatiodata: 54 maan otosluettelo (havaittu TFR, sähkönkulutus, laajakaistatilaukset, mallin ennusteet) saatavilla osoitteessa /data/cross_section_manifest.csv. Lähteet: UN WPP 2024 (TFR), OWID/IEA (sähkö), ITU (laajakaista).",
     s12Caveat:
       "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva näyttö tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
-    s13Title: "Sisäkkäinen χ (populaatiomalli)",
-    s13Intro: "χ-valintasääntö yleistyy populaatioihin kun biologiset taustamuuttujat (optinen, molekulaarinen) eroavat ryhmien välillä. Polkujen A ja B yhdistetty lisääntymissuppressio, moduloituna populaatiokohtaisilla χ-profiileilla:",
+    s13Title: "Sisäkkäiset ehdokasmoderaattorit (populaatiomalli)",
+    s13Intro: "BERM ehdottaa populaatiosulkeumaa, jossa erikseen mitatut ympäristö-, kalvo-, optiset ja molekulaariset moderaattorit voivat erota ryhmien välillä. Nämä m-funktiot eivät ole χ_geo:n instansseja, ja alla oleva yhdistetty lisääntymisvaste on kalibroimaton ehdokas:",
     s13PathwayA: "Polku A (VGIC)",
     s13PathwayB: "Polku B (CRY/RPM)",
     s13Combined: "Yhdistetty suppressio",
     s13TFR: "Populaation TFR",
-    s13Where: "missä γ_A, γ_B ovat polkujen painot (0,75; 0,25); χ(Ā_env) on ympäristökytkentä; χ(V_mem) on kalvotausta (≈ 1,0 eläville soluille); χ(I_blue) on optinen kytkentä (iiriksestä riippuvainen); χ([FAD]) on molekulaarinen kytkentä (B2-riippuvainen); ja EMF_personal on henkilökohtaisten laitteiden osuus.",
-    s13Implication: "Tämä muotoilu ennustaa, että populaatiot korkeammilla biologisilla χ-arvoilla (sinisilmäiset, laktoosinsietokykyiset) kokevat jyrkemmän TFR-laskun ympäristön EMF:n yksikköä kohden. Katso populaatioiden χ-profiilit arvioitujen arvojen osalta.",
-    s13Level: "Episteeminen taso: L* (testattava synteesi). Yksittäiset χ-instanssit ovat E- tai M|C-tasoa; populaatiotason integraatio on L*-komponentti.",
+    s13Where: "Tässä γ_A ja γ_B ovat ehdokasreittipainoja; m_env, m_mem, m_opt ja m_mol ovat erillisiä mitattuja tai estimoituja moderaattoreita. Arkistoidut 0,75/0,25-arvot ja populaatioprofiilit ovat skenaarioita, eivät Lindgrenistä johdettuja kertoimia.",
+    s13Implication: "Erotteleva ennuste on prospektiivisesti mitattu altistus × moderaattori -interaktio. Silmien väriä tai laktaasipersistenssiä ei yksin pidä käsitellä kalibroituna biologisena herkkyytenä tai TFR-vaikutuksen todisteena.",
+    s13Level: "Episteeminen taso: L* (testattava BERM-synteesi). Osabiologia voi rajata yksittäisiä moderaattoreita, mutta populaatiointegraatio ja sen päätepistekertoimet ovat kalibroimatta.",
 
     // S14 Layered Formula
     s14Title: "Kerrostumakaava v20 → v21",
@@ -922,10 +922,10 @@ const t = {
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren幾何学" },
       { id: "evo-calibration", num: "§1b", label: "生物学的ブリッジ候補" },
-      { id: "chi", num: "§2", label: "選択則 χ(Ā)" },
+      { id: "chi", num: "§2", label: "逆計量座標 χ_geo" },
       { id: "l2-response", num: "§2a", label: "条件付き応答演算子" },
       { id: "three-channel-derivation", num: "§2b", label: "3チャネル導出" },
-      { id: "two-channel", num: "§3", label: "2チャネルモデル" },
+      { id: "two-channel", num: "§3", label: "v17 proxy" },
       { id: "biocap", num: "§4", label: "生物学的容量" },
       { id: "androgen-capacity", num: "§4b", label: "アンドロゲン利用能力" },
       { id: "behavioral", num: "§5", label: "行動因子" },
@@ -937,7 +937,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "薬理学的検証" },
       { id: "individual-susceptibility", num: "§11", label: "個人感受性" },
       { id: "cross-sectional", num: "§12", label: "横断的検証" },
-      { id: "nested-chi", num: "§13", label: "ネストされたχ（集団モデル）" },
+      { id: "nested-chi", num: "§13", label: "集団候補修飾因子" },
       { id: "layered-formula", num: "§14", label: "階層式 v20→v21" },
       { id: "recovery-function", num: "§15", label: "回復関数" },
       { id: "cultural-energy", num: "§16", label: "文化的エネルギーの形式化" },
@@ -957,7 +957,7 @@ const t = {
     s1d6b: "(2) 非イオノトロピックVGCCシグナリング：イオンフラックスなしの構造変化、より低いエネルギー閾値（[[ref:trus2024|Trus & Atlas 2024]]）。",
     s1d6c: "(3) RPM経路はVGCCを迂回できます。従来報告された87.5%の代数的対応は構造比較であり、導出済みの幾何学–RPM結合演算子ではありません。",
     s1bTitle: "生物学的ブリッジ候補の類比",
-    s1bIntro: "生物学的センシングの例は感度候補を制約しますが、ヒト細胞膜に対するBERMのχ(Ā)閉包を校正するものではありません。",
+    s1bIntro: "生物学的センシングの例は感度候補を制約しますが、BERMの組織カーネルΞ_iまたはヒト細胞膜応答を校正するものではありません。",
     s1bAfter: "BERMはスペクトルフィルタリングと受容体選択性を実証課題として扱います。進化的新規性だけでは感受性は確立されず、すべての技術信号が撹乱的だという仮定を導出結果として用いません。",
     s1bd1: "増幅カスケード — 光子アナロジー：",
     s1bd2: "目：1光子→ロドプシン→トランスデューシン→PDE→cGMP→測定可能な電流。増幅率：~10⁶×。",
@@ -968,46 +968,46 @@ const t = {
     s2bIntro: "2つの生物学的カットオフ周波数がEMFスペクトルを3つの領域に分割し、それぞれ異なる生物物理学的メカニズムを持ちます。これらのカットオフは細胞生物学の基本的な性質であり、任意のパラメータではありません。",
     s2bFC: "f_c ≈ 1 kHz — 膜のRC時定数。f_c以下：場が膜全体にかかりV_memを摂動します。f_c以上：場が細胞内部に浸透します。",
     s2bFRPM: "f_RPM ≈ 1 MHz — ラジカル対コヒーレンスの限界。f_RPM以上：古典的な場-膜相互作用は弱まりますが、量子スピン効果が関連するようになります。",
-    s2bELF: "ELFチャネル（f < ~1 kHz）：場が膜全体にかかります。ΔV_mem = E_ext · d_cell · H(f)。χ_memは7×10⁶ V/mで飽和。線形応答。メカニズム：VGCC→Ca²⁺→ROS（経路A）、GPCR-アデノシン（[[ref:pemf_bone_fda_review_2020|PEMF、FDA 1979]]）、Nav変調（[[ref:tms_fda_depression_2008|TMS、FDA 2008]]）、迷走神経（[[ref:vns_gammacore_fda|VNS、FDA 2017]]）。",
+    s2bELF: "ELFチャネル（f < ~1 kHz）：膜移送の推定にはΔV_mem = E_ext · d_cell · H(f)を用い得ます。応答修飾因子と尺度は未校正の組織カーネルΞ_iに属します。VGCC、GPCR、Nav、迷走神経は候補経路ですが、治療応用は環境ELF応答を校正しません。",
     s2bIF: "IFチャネル（f_c < f < f_RPM）：場が細胞内部に浸透。T(f) = 1/√(1+(f_c/f)²)。環境レベルでの主要メカニズム：IFO-VGIC（線形、閾値10⁻⁵ V/m）。卵割溝での幾何学的場増幅：G ≈ (d_cell/d_furrow)² ≈ 25×。分裂細胞への選択的効果。[[ref:ttfields_novocure_fda|TTFields（FDA 2011+）]]がDEPによる治療強度でメカニズムを検証。",
     s2bIFSources: "環境IF源の特性：典型的なLEDドライバーはスイッチング周波数f_sw 20–200 kHzで動作し、2f_sw、3f_sw、5f_swの高調波がMHz範囲まで拡張します。波形は正弦波ではなく方形パルス列であり、連続波源よりも豊富な高調波を生成します。Panagopoulos 2025はパルス場が同じ平均強度の連続波場よりも生物学的に活性が高いことを実証しています。[[ref:zeghoudi2025_led_driver_emf|Zeghoudi et al. 2025]]はLEDドライバーの近接場放射を直接測定し、センチメートル距離で測定可能なE場成分を確認しました。",
     s2bRF: "RFチャネル：B_local = (1/w)b + (A·b)A/(w(1+w))はLindgren前提内の幾何学式である。BERMは異方的応答とCRY/RPM・コンパス経路を別候補として提案する。条件付き演算子形はそれらの組織機構、符号、遅延、校正を決定しない。",
     s2bRegGapTitle: "IF規制ギャップ",
     s2bRegGap: "ICNIRP 2010はf < 300 Hz（ELF）の曝露限度を設定。[[ref:icnirp2020|ICNIRP 2020]]はf > 100 kHz（RF）の限度を設定。300 Hz < f < 100 kHzの範囲には重複する不整合な限度があります。LEDドライバー放射（20–300 kHz）はこのギャップに該当します。[[ref:ijrb2022_if_review|2022年のIJRBシステマティックレビュー（Ohkubo & Okano）]]は確認しました：「IF-EMFの健康影響に関するより多様な観点からの研究は行われていない。」",
-    s2bAfter: "チャネル重み（w_ELF = 0.05、w_IF = 0.60、w_RF = 0.35）は診断的であり、経験的キャリブレーションを必要とします。3チャネル分解は膜生物物理学から構造的に導出されます。相対的な重みだけが不確実です。",
-    s2Title: "選択則 χ(Ā)",
-    s2Intro: "計量がバックグラウンドĀの周りで線形化されるとき、摂動に対する生物学的に関連する応答",
+    s2bAfter: "3チャネル分解は異なる周波数依存機構に動機づけられたBERM候補です。カットオフ、組織移送、診断重みは経験的校正を要し、Lindgren導出値でもFieldState出力でもありません。",
+    s2Title: "正規化した逆計量座標 χ_geo(ρ)",
+    s2Intro: "明示的に正規化した正ノルムモードρ²=κA²について、rank-one逆計量が与える有界な幾何座標",
     s2IntroEnd: "は：",
-    s2After: "ゼロバックグラウンド（Ā = 0）では線形応答はありません。細胞膜（Ā ≈ 7 × 10⁶ V/m）で応答は最大です。",
-    s2d1: "g_μνをバックグラウンドġ = η + Ā⊗Āの周りで線形化：",
-    s2d2: "ここで：",
-    s2d3: "1次（線形応答）：",
-    s2d4: "生物学的に関連する量は計量摂動の相対的大きさです：",
-    s2d5: "これにより選択則が得られます：",
-    s2d6: "性質：",
-    s2d7: "細胞膜：",
-    s2d8: "細胞は外部EMF摂動に対して最大限に感受性があります。",
-    s3Title: "2チャネルモデル",
-    s3Intro: "総曝露量は2つのチャネルの合計であり、パーソナルチャネルは選択則で変調されます：",
+    s2After: "χ_geoは導出された幾何であり、生物学的利得ではありません。組織応答には別途Ξ_iカーネルが必要です。",
+    s2d1: "g_μνをバックグラウンドġ = η + κĀ⊗Āの周りで展開：",
+    s2d2: "明示的な縮約を指定するまでスカラー2Ā·aは用いません。",
+    s2d3: "ρ²=κA²≥0ではSherman–Morrison逆行列は：",
+    s2d4: "有界係数は振幅の二乗として書けます：",
+    s2d5: "これは受容体応答ではなくχ_geoを定義します：",
+    s2d6: "幾何学的性質：",
+    s2d7: "未解決の変換：",
+    s2d8: "legacy v17 proxyは同じ形を再利用しますが、膜尺度や組織感受性はχ_geoだけからは導けません。",
+    s3Title: "アーカイブv17二チャネルproxy",
+    s3Intro: "ロック済みv17比較経路は次の技術タイミングproxyを用います。これはBERMの予測子仕様であり、FieldState測定でも導出生物応答則でもありません：",
     s3d1: "環境 = 基地局 + Wi-Fi + IoT（インフラレベル）",
     s3d2: "パーソナル = 電話 + イヤホン + 腕時計（個人デバイス）",
-    s3d3: "環境はχを決定するバックグラウンドĀです。",
-    s3d4: "パーソナルは生物学的応答がχ(Ā)に依存する摂動aです。",
-    s3d5: "Ā = 0（アーミッシュ）の場合：total = 0 + χ(0) × personal = 0 + 0 = 0",
-    s3d6: "→ 個人デバイスは生物学的応答を生じません。",
-    s3d7: "Ā → ∞（飽和都市）の場合：total ≈ ambient + 1 × personal",
-    s3d8: "→ パーソナルが全強度で追加されます。",
+    s3d3: "ambientはχ_v17に与える国家背景proxyであり、測定された四元ポテンシャルĀではありません。",
+    s3d4: "personalは技術タイミングproxyであり、FieldStateから推論した組織摂動ではありません。",
+    s3d5: "背景proxyがゼロなら：total = 0 + χ_v17(0) × personal = 0。",
+    s3d6: "→ これはアーカイブproxyの代数的性質であり、生物応答ゼロの証明ではありません。",
+    s3d7: "背景proxyが非常に大きいなら：total ≈ ambient + personal。",
+    s3d8: "→ これはproxyの飽和極限であり、校正済み組織利得ではありません。",
     s3d9: "累積曝露量は歴史的な合計です：",
     s3d10: "ここでstartは国のEMF履歴開始年（例：フィンランド1991年）。",
     s3rwTitle: "なぜ累積曝露が機能するか：回復ウィンドウ",
-    s3rwIntro: "DNA修復容量が有限であるため、累積曝露量が正しいメトリックです。BER（塩基除去修復）経路の半減期はτ_repair ≈ 6時間です。1日の正味損傷は曝露時間と回復時間の比率に依存します：",
+    s3rwIntro: "アーカイブv17経路はproxyを時間積算します。有限修復の回復窓は別のBERM機構候補であり、下記の式は国家proxyを導出せずΞ_iを校正しません：",
     s3rwTable: "歴史的曝露シナリオ：",
     s3rwRow1: "1950年（ラジオ + TV）：4h EMF、20h フリー → 90%修復 → 正味0.40/日",
     s3rwRow2: "1990年（電話、Wi-Fiなし）：8h EMF、16h フリー → 84%修復 → 正味1.26/日",
     s3rwRow3: "2010年（スマートフォン + Wi-Fi）：16h EMF、8h フリー → 60%修復 → 正味6.35/日",
     s3rwRow4: "2020年（24/7 Wi-Fi + IoT）：22h EMF、2h フリー → 21%修復 → 正味17.46/日",
     s3rwRow5: "アーミッシュ（電子機器なし）：1h EMF、23h フリー → 93%修復 → 正味0.07/日",
-    s3rwThreshold: "臨界閾値：EMFフリー期間 < 2×修復半減期（BERで<12h）の場合、修復は不完全で累積が始まります。現代人はこの閾値を2005〜2010年頃に超えました。",
+    s3rwThreshold: "シナリオ閾値：無EMF期間が仮定した修復半減期の2倍未満なら、この例示式では回復が不完全です。2005〜2010年の集団閾値超過は未校正です。",
     s3tcTitle: "3チャネル拡張",
     s3tcIntro: "3チャネル分解では、cumEMFは周波数固有の累積曝露の加重和になります：",
     s3tcAfter: "チャネル重みは周波数固有で組織依存です（§2b参照）。上記の単一チャネルcumEMFは3チャネルの加重集約です。チャネル重み（0.05/0.60/0.35）は経験的キャリブレーションを必要とする診断的推定値です。",
@@ -1111,7 +1111,7 @@ const t = {
     s9Title: "反証条件",
     s9Intro: "モデルは明示的に反証可能です。各条件は具体的で検証可能です：",
     s9Items: [
-      { condition: "Lindgrenの計量が数学的に不正確", detail: "導出g_μν = η_μν + A_μA_νが内的に矛盾するか、確立された電気力学と矛盾することが示された場合、幾何学的基盤は失敗します。" },
+      { condition: "Lindgrenの計量が数学的に不正確", detail: "導出g_μν = η_μν + κA_μA_νが内的に矛盾するか、確立された電気力学と矛盾することが示された場合、幾何学的基盤は失敗します。" },
       { condition: "VGCCブロッカーがEMFの生物学的効果を防がない", detail: "カルシウムチャネルブロッカーが管理された実験でEMF誘発ROS、SDF、またはホルモン変化を減衰させない場合、一次メカニズムは誤りです。" },
       { condition: "アーミッシュコミュニティのTFRが一般集団と同じ速度で低下", detail: "アーミッシュは準実験的対照群として機能します。現在のアーミッシュTFR ≈ 6.5は安定しており、周囲の集団は低下しています。" },
       { condition: "精子濃度の低下がEMF曝露の減少なしに停止", detail: "−1.2%/年の精子減少が累積EMFの増加が続く中で反転または安定した場合、用量-応答関係は誤りです。" },
@@ -1136,17 +1136,17 @@ const t = {
     s10d5: "メラトニンキャリブレーション（経路B）：",
     s10d6: "夜間EMF曝露はCRY媒介概日シグナリングを撹乱します。外因性メラトニン（3–5 mg）はCRYとは独立に概日振幅を回復させ、経路Bのバイパスを提供します。",
     s10d7Link: "→ 管理された実験的証拠（実験室哺乳類）",
-    s11Title: "個人感受性とχ分布",
-    s11Intro: "集団レベルの選択則χ(Ā)は平均応答を予測します。個人は3つの測定可能な因子により変動します：VGCCジェノタイプ、解剖学的幾何学、累積アロスタティック負荷。個人感受性修飾因子は：",
-    s11After: "これは同じ環境場にいる2人の個人が桁違いの有効生物学的線量を経験する可能性があることを意味します。集団TFRは個人χ分布上の畳み込みです — 平均は裾を隠します。",
+    s11Title: "個人応答の候補修飾因子",
+    s11Intro: "BERMはVGCC遺伝子型、解剖学的移送、累積状態をエンドポイント固有の応答修飾因子として提案します。これらは組織カーネルΞ_iに属し、χ_geoではなく、結合利得も未校正です：",
+    s11After: "校正されれば、同じ測定場にいる個人間の応答不均一性を生み得ます。桁違いの差や集団TFRへの伝播は現在確立していません。",
     s11d1: "VGCCジェノタイプ修飾因子はCACNA1C rs1006737の機能的表現型決定から導かれます：",
     s11d2: "AAホモ接合リスクキャリアは場摂動単位あたり40%大きいCa²⁺流入を示します。",
     s11d3: "解剖学的修飾因子は内部場分布に影響する組織幾何学を説明します：",
     s11d4: "6歳未満の子供は同じ外部場で成人の2–3倍のSARを受けます（[[ref:gandhi1996|Gandhi 1996]]）。BMIは脂肪層減衰を調節します。",
     s11d5: "累積修飾因子は[[ref:selye1936|Selyeの一般適応症候群]]の段階を使用します：",
     s11d6: "抵抗段階では補償容量が線形に減少します。疲弊段階（アロスタティック負荷 > 15）では補償が崩壊し、有効修飾因子が急激に増幅されます — これが予測されるEHS発症域です。",
-    s11d7: "結合された個人修飾因子は集団χに乗算されます：",
-    s11d8: "集団レベルのTFR予測では、BERMはジェノタイプ頻度分布（Hardy-Weinberg）× 解剖学的人口統計 × 曝露期間分布にわたって積分します。平均個人修飾因子は構造的に1.0です。診断的価値は裾にあります。",
+    s11d7: "結合候補修飾因子はχ_geoから分離して保持します：",
+    s11d8: "将来の集団応用は遺伝子型、解剖、曝露履歴にわたる測定分布を積分します。平均を1に正規化するのは規約であり、裾の倍率は経験的推定ではありません。",
     s11d9Link: "→ 個人感受性の証拠",
     s12Title: "横断的検証 v19.1",
     s12Intro: "54カ国（2022年データ）にわたる公式発見は、時間的モデルの独立した検証を提供します。横断的公式は2つのEMFプロキシ変数と1つのバイナリ閾値を使用して、LOOCV RMSE 0.522で国家TFRを予測します。",
@@ -1164,15 +1164,15 @@ const t = {
     s12Limitation: "正直な評価：R² = 0.851は主に人口転換の勾配（ニジェール→韓国）を反映しており、EMF固有の分散ではありません。高所得OECD諸国（n ≈ 36）では、電力消費量だけではTFRの分散をほぼ説明できません（R² ≈ 0.0002）。横断的公式は電化閾値 — 前工業社会から工業社会への二値的なゲートウェイ — を捉えており、電化された集団内での用量反応ではありません。これにより横断分析はBERMの最も弱い独立した証拠線となります。より強い証拠は：(1)規制当局が検証した非熱効果を持つメカニズム経路、(2)薬理学的用量反応（メラトニン、テストステロン）、(3)遺伝的選択マーカー（CatSper、VGCC）、(4)管理条件下のセンチネル種から来ます。横断分析の価値は構造的です：携帯電話パラドックスと電力＞GDP予測は弁別的であり、集計的な適合が交絡していても意味があります。",
     s12DataNote: "再現データ：54カ国サンプル名簿（観測TFR、電力消費、ブロードバンド加入、モデル予測）は/data/cross_section_manifest.csvで入手可能。出典：UN WPP 2024（TFR）、OWID/IEA（電力）、ITU（ブロードバンド）。",
     s12Caveat: "横断的分析は因果方向を決定できません。弁別的証拠はセンチネル種、自然実験、電力のない集団から得られます。",
-    s13Title: "ネストされたχ（集団モデル）",
-    s13Intro: "χ選択則は、生物学的バックグラウンド変数（光学的、分子的）がグループ間で異なる場合に集団に一般化されます。経路AとBからの結合された生殖抑制、集団固有のχプロファイルで変調：",
+    s13Title: "ネストした候補修飾因子（集団モデル）",
+    s13Intro: "BERMは環境、膜、光学、分子の修飾因子を別々に測定する集団閉包を提案します。これらのm関数はχ_geoの実例ではなく、下記の結合応答は未校正候補です：",
     s13PathwayA: "経路A（VGIC）",
     s13PathwayB: "経路B（CRY/RPM）",
     s13Combined: "結合された抑制",
     s13TFR: "集団TFR",
-    s13Where: "ここでγ_A、γ_Bは経路重み（0.75、0.25）；χ(Ā_env)は環境結合；χ(V_mem)は膜バックグラウンド（生細胞で≈ 1.0）；χ(I_blue)は光学的結合（虹彩依存）；χ([FAD])は分子結合（B2依存）；EMF_personalは個人デバイスの寄与です。",
-    s13Implication: "この定式化は、より高い生物学的χ値を持つ集団（青い目、乳糖耐性）が環境EMFの単位増加あたりより急峻なTFR低下を経験することを予測します。",
-    s13Level: "認識論的レベル：L*（検証可能な統合）。個々のχインスタンスはEまたはM|Cレベル；集団レベルの積分はL*コンポーネントです。",
+    s13Where: "γ_Aとγ_Bは候補経路重み、m_env、m_mem、m_opt、m_molは別個の測定・推定修飾因子です。0.75/0.25と集団プロファイルはシナリオで、Lindgren導出係数ではありません。",
+    s13Implication: "識別予測は前向きに測定する曝露×修飾因子相互作用です。眼色やラクターゼ持続だけを校正済み感受性またはTFR効果の証拠として扱いません。",
+    s13Level: "認識論的レベル：L*（検証可能なBERM統合）。要素生物学は各修飾因子を制約できますが、集団統合とエンドポイント係数は未校正です。",
     s14Title: "階層式 v20 → v21",
     s14Intro: "元の横断的公式（v19.1）は2チャネルEMFインデックスを使用します。階層式はプライミング履歴、回復能力、季節変調、集団ジェノタイプを組み込んで拡張します。",
     s14V20Title: "公式v20（プライミング × 回復）",
@@ -1214,10 +1214,10 @@ const t = {
     sections: [
       { id: "lindgren", num: "§1", label: "Géométrie de Lindgren" },
       { id: "evo-calibration", num: "§1b", label: "Candidats au pont biologique" },
-      { id: "chi", num: "§2", label: "Règle de sélection χ(Ā)" },
+      { id: "chi", num: "§2", label: "Coordonnée inverse χ_geo" },
       { id: "l2-response", num: "§2a", label: "Opérateur de réponse conditionnel" },
       { id: "three-channel-derivation", num: "§2b", label: "Dérivation trois canaux" },
-      { id: "two-channel", num: "§3", label: "Modèle deux canaux" },
+      { id: "two-channel", num: "§3", label: "Proxy v17" },
       { id: "biocap", num: "§4", label: "Capacité biologique" },
       { id: "androgen-capacity", num: "§4b", label: "Capacité d’utilisation des androgènes" },
       { id: "behavioral", num: "§5", label: "Facteur comportemental" },
@@ -1229,7 +1229,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "Validation pharmacologique" },
       { id: "individual-susceptibility", num: "§11", label: "Susceptibilité individuelle" },
       { id: "cross-sectional", num: "§12", label: "Validation transversale" },
-      { id: "nested-chi", num: "§13", label: "χ imbriqué (modèle de population)" },
+      { id: "nested-chi", num: "§13", label: "Modérateurs candidats de population" },
       { id: "layered-formula", num: "§14", label: "Formule stratifiée v20→v21" },
       { id: "recovery-function", num: "§15", label: "Fonction de récupération" },
       { id: "cultural-energy", num: "§16", label: "Formalisation de l'énergie culturelle" },
@@ -1249,7 +1249,7 @@ const t = {
     s1d6b: "(2) Signalisation VGCC non ionotropique : changement conformationnel sans flux ionique, seuil d'énergie plus bas ([[ref:trus2024|Trus & Atlas 2024]]).",
     s1d6c: "(3) La voie RPM peut contourner le VGCC. La correspondance algébrique de 87,5 % rapportée auparavant est une comparaison structurelle, pas un opérateur de couplage géométrie–RPM dérivé.",
     s1bTitle: "Analogies candidates pour le pont biologique",
-    s1bIntro: "Des exemples de détection biologique bornent des plages plausibles de sensibilité : détection de photons par l'œil ([[ref:vaziri2016|Vaziri et al. 2016]]), électro- et magnétoréception spécialisées, et échelle de 10⁻⁵ V/m proposée pour l'oscillation forcée des ions ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Ce sont des observations comparatives ou des propositions mécanistiques, non une calibration de χ(Ā) pour la membrane humaine.",
+    s1bIntro: "Des exemples de détection biologique bornent des plages plausibles de sensibilité : détection de photons par l'œil ([[ref:vaziri2016|Vaziri et al. 2016]]), électro- et magnétoréception spécialisées, et échelle de 10⁻⁵ V/m proposée pour l'oscillation forcée des ions ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Ce sont des observations comparatives ou des propositions mécanistiques, non une calibration du noyau tissulaire Ξ_i de BERM ni de la réponse membranaire humaine.",
     s1bAfter: "BERM traite le filtrage spectral et la sélectivité des récepteurs comme des questions empiriques. La nouveauté évolutive n'établit pas à elle seule la sensibilité, et aucun postulat selon lequel tout signal technique serait perturbateur n'est utilisé comme résultat dérivé.",
     s1bd1: "Cascade d'amplification — analogie photonique :",
     s1bd2: "Œil : 1 photon → rhodopsine → transducine → PDE → cGMP → courant mesurable. Gain : ~10⁶×.",
@@ -1260,46 +1260,46 @@ const t = {
     s2bIntro: "Deux fréquences de coupure biologiques divisent le spectre EMF en trois régimes avec des mécanismes biophysiques distincts. Ces coupures sont des propriétés fondamentales de la biologie cellulaire, pas des paramètres arbitraires.",
     s2bFC: "f_c ≈ 1 kHz — la constante de temps RC de la membrane. Sous f_c : le champ tombe à travers la membrane et perturbe V_mem. Au-dessus de f_c : le champ pénètre à l'intérieur de la cellule.",
     s2bFRPM: "f_RPM ≈ 1 MHz — la limite de cohérence de la paire radicale. Au-dessus de f_RPM : l'interaction classique champ-membrane s'affaiblit mais les effets de spin quantique deviennent pertinents.",
-    s2bELF: "Canal ELF (f < ~1 kHz) : le champ tombe à travers la membrane. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturé à 7×10⁶ V/m. Réponse linéaire. Mécanismes : VGCC→Ca²⁺→ROS (voie A), GPCR-adénosine ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), modulation Nav ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), nerf vague ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
+    s2bELF: "Canal ELF (f < ~1 kHz) : une estimation du transfert membranaire peut utiliser ΔV_mem = E_ext · d_cell · H(f). Le modérateur et l'échelle de réponse appartiennent au noyau tissulaire ouvert Ξ_i. VGCC, GPCR, Nav et nerf vague sont des voies candidates ; leurs usages thérapeutiques ne calibrent pas une réponse ELF environnementale.",
     s2bIF: "Canal IF (f_c < f < f_RPM) : le champ pénètre à l'intérieur de la cellule. T(f) = 1/√(1+(f_c/f)²). Mécanisme primaire aux niveaux environnementaux : IFO-VGIC (linéaire, seuil 10⁻⁵ V/m). Amplification géométrique du champ au sillon de clivage : G ≈ (d_cell/d_furrow)² ≈ 25×. Effet sélectif sur les cellules en division. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] valide le mécanisme à intensité thérapeutique via DEP.",
     s2bIFSources: "Caractérisation des sources IF environnementales : un pilote LED typique fonctionne à une fréquence de commutation f_sw dans la plage 20–200 kHz avec un contenu harmonique à 2f_sw, 3f_sw, 5f_sw s'étendant dans la plage MHz. La forme d'onde est un train d'impulsions carrées, pas une sinusoïde. Panagopoulos 2025 démontre que les champs pulsés sont biologiquement plus actifs que les champs à onde continue à la même intensité moyenne.",
     s2bRF: "Canal RF : B_local = (1/w)b + (A·b)A/(w(1+w)) est une expression géométrique de la prémisse de Lindgren. BERM propose séparément une réponse anisotrope et des voies CRY/RPM ou boussole ; l'opérateur conditionnel ne détermine ni leurs mécanismes tissulaires, ni leur signe, délai ou calibration.",
     s2bRegGapTitle: "Le fossé réglementaire IF",
     s2bRegGap: "L'ICNIRP 2010 fixe les limites d'exposition pour f < 300 Hz (ELF). L'[[ref:icnirp2020|ICNIRP 2020]] fixe les limites pour f > 100 kHz (RF). La plage 300 Hz < f < 100 kHz a des limites qui se chevauchent et sont incohérentes. Les émissions des pilotes LED (20–300 kHz) tombent dans ce fossé.",
-    s2bAfter: "Les poids des canaux (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) sont DIAGNOSTIQUES et nécessitent une calibration empirique. La décomposition en trois canaux est structurellement dérivée de la biophysique membranaire ; seuls les poids relatifs sont incertains.",
-    s2Title: "Règle de sélection χ(Ā)",
-    s2Intro: "Lorsque la métrique est linéarisée autour d'un fond Ā, la réponse biologiquement pertinente à une perturbation",
+    s2bAfter: "La décomposition en trois canaux est une partition candidate de BERM motivée par des mécanismes dépendant de la fréquence. Ses coupures, son transfert tissulaire et ses poids diagnostiques exigent une calibration ; ils ne dérivent ni de Lindgren ni de FieldState.",
+    s2Title: "Coordonnée normalisée de métrique inverse χ_geo(ρ)",
+    s2Intro: "Pour un mode de norme positive explicitement normalisé, ρ²=κA², la métrique inverse de rang un fournit la coordonnée géométrique bornée",
     s2IntroEnd: "est :",
-    s2After: "En fond nul (Ā = 0) il n'y a pas de réponse linéaire. À la membrane cellulaire (Ā ≈ 7 × 10⁶ V/m) la réponse est maximale.",
-    s2d1: "Linéariser g_μν autour du fond ġ = η + Ā⊗Ā :",
-    s2d2: "où :",
-    s2d3: "Premier ordre (réponse linéaire) :",
-    s2d4: "La quantité biologiquement pertinente est l'amplitude relative de la perturbation métrique :",
-    s2d5: "Cela donne la règle de sélection :",
-    s2d6: "Propriétés :",
-    s2d7: "Membrane cellulaire :",
-    s2d8: "Les cellules sont MAXIMALEMENT sensibles aux perturbations EMF externes.",
-    s3Title: "Modèle deux canaux",
-    s3Intro: "L'exposition totale est la somme de deux canaux où le canal personnel est modulé par la règle de sélection :",
+    s2After: "χ_geo est une géométrie dérivée, pas un gain biologique. Une réponse tissulaire exige le noyau Ξ_i fourni séparément.",
+    s2d1: "Développer g_μν autour du fond ġ = η + κĀ⊗Ā :",
+    s2d2: "Aucun scalaire 2Ā·a n'est utilisé avant de déclarer une contraction explicite.",
+    s2d3: "Pour ρ²=κA²≥0, l'inverse de Sherman–Morrison est :",
+    s2d4: "Le coefficient borné s'écrit comme amplitude au carré :",
+    s2d5: "Cela définit χ_geo, non une réponse de récepteur :",
+    s2d6: "Propriétés géométriques :",
+    s2d7: "Traduction ouverte :",
+    s2d8: "Le proxy v17 historique réutilise cette forme, mais ni l'échelle membranaire ni la sensibilité tissulaire ne découlent de χ_geo seul.",
+    s3Title: "Proxy historique v17 à deux canaux",
+    s3Intro: "La voie comparative v17 verrouillée utilise le proxy temporel technologique suivant. C'est une spécification de prédicteur BERM, ni mesure FieldState ni loi de réponse biologique dérivée :",
     s3d1: "Ambiant = stations de base + Wi-Fi + IoT (niveau d'infrastructure)",
     s3d2: "Personnel = téléphone + écouteurs + montres (appareils personnels)",
-    s3d3: "L'ambiant est le fond Ā qui détermine χ.",
-    s3d4: "Le personnel est la perturbation a dont la réponse biologique dépend de χ(Ā).",
-    s3d5: "Quand Ā = 0 (Amish) : total = 0 + χ(0) × personnel = 0 + 0 = 0",
-    s3d6: "→ Les appareils personnels ne produisent pas de réponse biologique.",
-    s3d7: "Quand Ā → ∞ (ville saturée) : total ≈ ambiant + 1 × personnel",
-    s3d8: "→ Le personnel s'ajoute à pleine magnitude.",
+    s3d3: "L'ambiant est le proxy national fourni à χ_v17, non un quadripotentiel Ā mesuré.",
+    s3d4: "Le personnel est un terme proxy temporel, non une perturbation tissulaire inférée par FieldState.",
+    s3d5: "À proxy de fond nul : total = 0 + χ_v17(0) × personnel = 0.",
+    s3d6: "→ C'est une propriété algébrique du proxy historique, pas la preuve d'une réponse biologique nulle.",
+    s3d7: "À proxy de fond très grand : total ≈ ambiant + personnel.",
+    s3d8: "→ C'est la limite de saturation du proxy, pas un gain tissulaire calibré.",
     s3d9: "L'exposition cumulative est la somme historique :",
     s3d10: "où start est l'année de début de l'historique EMF du pays (ex. Finlande 1991).",
     s3rwTitle: "Pourquoi l'exposition cumulative fonctionne : la fenêtre de récupération",
-    s3rwIntro: "L'exposition cumulative est la bonne métrique car la capacité de réparation de l'ADN est finie. La voie BER a une demi-vie τ_repair ≈ 6 heures. Les dommages nets quotidiens dépendent du ratio temps d'exposition/temps de récupération :",
+    s3rwIntro: "La voie v17 historique somme ce proxy dans le temps. Une fenêtre de récupération à réparation finie est un candidat mécanistique BERM distinct ; l'équation illustrative ci-dessous ne dérive pas le proxy national et ne calibre pas Ξ_i :",
     s3rwTable: "Scénarios d'exposition historiques :",
     s3rwRow1: "1950 (radio + TV) : 4h EMF, 20h libre → 90 % réparation → net 0,40/jour",
     s3rwRow2: "1990 (téléphone, sans Wi-Fi) : 8h EMF, 16h libre → 84 % réparation → net 1,26/jour",
     s3rwRow3: "2010 (smartphone + Wi-Fi) : 16h EMF, 8h libre → 60 % réparation → net 6,35/jour",
     s3rwRow4: "2020 (Wi-Fi 24/7 + IoT) : 22h EMF, 2h libre → 21 % réparation → net 17,46/jour",
     s3rwRow5: "Amish (sans électronique) : 1h EMF, 23h libre → 93 % réparation → net 0,07/jour",
-    s3rwThreshold: "Seuil critique : quand la période sans EMF < 2× la demi-vie de réparation (< 12h pour BER), la réparation est incomplète et la cumulation commence. Les humains modernes ont franchi ce seuil vers 2005–2010.",
+    s3rwThreshold: "Seuil de scénario : une période sans EMF inférieure à 2× une demi-vie supposée laisse une récupération incomplète dans cette équation illustrative. Le franchissement populationnel en 2005–2010 reste non calibré.",
     s3tcTitle: "Extension trois canaux",
     s3tcIntro: "Dans la décomposition en trois canaux, cumEMF devient une somme pondérée des expositions cumulatives spécifiques à chaque fréquence :",
     s3tcAfter: "Les poids des canaux sont spécifiques à la fréquence et dépendants du tissu (voir §2b). Le cumEMF à canal unique ci-dessus est l'agrégat pondéré des trois canaux. Les poids (0,05/0,60/0,35) sont des estimations diagnostiques nécessitant une calibration empirique.",
@@ -1403,7 +1403,7 @@ const t = {
     s9Title: "Conditions de falsification",
     s9Intro: "Le modèle est explicitement falsifiable. Chaque condition est spécifique et testable :",
     s9Items: [
-      { condition: "La métrique de Lindgren est mathématiquement incorrecte", detail: "Si la dérivation g_μν = η_μν + A_μA_ν s'avère internement incohérente ou en contradiction avec l'électrodynamique établie, le fondement géométrique échoue." },
+      { condition: "La métrique de Lindgren est mathématiquement incorrecte", detail: "Si la dérivation g_μν = η_μν + κA_μA_ν s'avère internement incohérente ou en contradiction avec l'électrodynamique établie, le fondement géométrique échoue." },
       { condition: "Les bloqueurs VGCC ne préviennent pas les effets biologiques de l'EMF", detail: "Si les bloqueurs de canaux calciques ne parviennent pas à atténuer les ROS, SDF ou changements hormonaux induits par l'EMF dans des expériences contrôlées, le mécanisme primaire est erroné." },
       { condition: "Le TFR de la communauté Amish décline au même rythme que la population générale", detail: "Les Amish fonctionnent comme un groupe de contrôle quasi-expérimental. Le TFR actuel des Amish ≈ 6,5 est stable tandis que les populations environnantes déclinent." },
       { condition: "Le déclin de la concentration de spermatozoïdes s'arrête sans réduction de l'exposition EMF", detail: "Si le déclin de −1,2 %/an des spermatozoïdes s'inverse ou se stabilise alors que l'EMF cumulative continue d'augmenter, la relation dose-réponse est erronée." },
@@ -1428,17 +1428,17 @@ const t = {
     s10d5: "Calibration mélatonine (voie B) :",
     s10d6: "L'exposition EMF nocturne perturbe la signalisation circadienne médiée par CRY. La mélatonine exogène (3–5 mg) restaure l'amplitude circadienne indépendamment de CRY, fournissant un contournement de la voie B.",
     s10d7Link: "→ Preuves expérimentales contrôlées (mammifères de laboratoire)",
-    s11Title: "Susceptibilité individuelle et distribution χ",
-    s11Intro: "La règle de sélection χ(Ā) au niveau populationnel prédit une réponse moyenne. Les individus varient autour de cette moyenne en raison de trois facteurs mesurables : génotype VGCC, géométrie anatomique et charge allostatique cumulative. Le modificateur de susceptibilité individuelle est :",
-    s11After: "Cela signifie que deux individus dans le même champ ambiant peuvent expérimenter des doses biologiques effectives différant d'un ordre de grandeur. Le TFR de la population est une convolution sur la distribution individuelle de χ — la moyenne cache les queues.",
+    s11Title: "Modérateurs candidats de la réponse individuelle",
+    s11Intro: "BERM propose le génotype VGCC, le transfert anatomique et l'état cumulatif comme modérateurs propres à l'endpoint. Ils appartiennent au noyau Ξ_i, ne sont pas χ_geo et leur gain conjoint n'est pas calibré :",
+    s11After: "Une fois calibrés, ils pourraient produire une hétérogénéité entre personnes dans un même champ mesuré. Un écart d'un ordre de grandeur et sa propagation au TFR ne sont pas établis.",
     s11d1: "Le modificateur de génotype VGCC découle du phénotypage fonctionnel de CACNA1C rs1006737 :",
     s11d2: "Les porteurs de risque homozygotes AA montrent un influx de Ca²⁺ 40 % plus élevé par unité de perturbation de champ.",
     s11d3: "Le modificateur anatomique tient compte de la géométrie tissulaire affectant la distribution interne du champ :",
     s11d4: "Les enfants de moins de 6 ans reçoivent 2–3× le SAR adulte dans le même champ externe ([[ref:gandhi1996|Gandhi 1996]]). L'IMC module l'atténuation de la couche graisseuse.",
     s11d5: "Le modificateur cumulatif utilise les phases du [[ref:selye1936|Syndrome d'Adaptation Générale de Selye]] :",
     s11d6: "Dans la phase de résistance, la capacité de compensation décline linéairement. En épuisement (charge allostatique > 15), la compensation s'effondre et le modificateur effectif s'amplifie brusquement — c'est le régime prédit de début d'EHS.",
-    s11d7: "Le modificateur individuel combiné se multiplie dans le χ de la population :",
-    s11d8: "Pour la prédiction du TFR au niveau populationnel, BERM intègre sur la distribution de fréquence des génotypes (Hardy-Weinberg) × démographie anatomique × distribution de durée d'exposition. Le modificateur individuel moyen est 1,0 par construction. La valeur DIAGNOSTIQUE est dans les queues.",
+    s11d7: "Le modérateur candidat combiné reste séparé de χ_geo :",
+    s11d8: "Une application future intégrerait une distribution mesurée sur génotype, anatomie et histoire d'exposition. Normaliser la moyenne à 1 est une convention ; les multiplicateurs de queue ne sont pas des estimations empiriques.",
     s11d9Link: "→ Preuves de susceptibilité individuelle",
     s12Title: "Validation transversale v19.1",
     s12Intro: "La découverte de formule sur 54 pays (données 2022) fournit une validation indépendante du modèle temporel. La formule transversale utilise deux variables proxy EMF et un seuil binaire pour prédire le TFR national avec un RMSE LOOCV de 0,522.",
@@ -1456,15 +1456,15 @@ const t = {
     s12Limitation: "Évaluation honnête : R² = 0,851 reflète principalement le gradient de transition démographique (Niger → Corée), pas la variance spécifique aux CEM. Parmi les pays OCDE à revenu élevé (n ≈ 36), la consommation d'électricité seule n'explique quasiment aucune variance du TFR (R² ≈ 0,0002). La formule transversale capture le seuil d'électrification — la porte binaire de la fécondité pré-industrielle à industrielle — pas une dose-réponse au sein des populations électrifiées. Cela fait de l'analyse transversale la ligne de preuve indépendante la PLUS FAIBLE du BERM. Les preuves plus solides viennent de : (1) les voies mécanistiques avec effets non thermiques validés réglementairement, (2) la dose-réponse pharmacologique (mélatonine, testostérone), (3) les marqueurs de sélection génétique (CatSper, VGCC), (4) les espèces sentinelles en conditions contrôlées. La valeur de l'analyse transversale est structurelle : le paradoxe du téléphone mobile et la prédiction électricité > PIB sont discriminants, même si l'ajustement agrégé est confondu.",
     s12DataNote: "Données de réplication : liste des 54 pays (TFR observé, consommation d'électricité, abonnements haut débit, prédictions du modèle) disponible à /data/cross_section_manifest.csv. Sources : UN WPP 2024 (TFR), OWID/AIE (électricité), UIT (haut débit).",
     s12Caveat: "L'analyse transversale ne peut pas déterminer la direction causale. Les preuves discriminantes proviennent des espèces sentinelles, des expériences naturelles et des populations sans électricité.",
-    s13Title: "χ imbriqué (modèle de population)",
-    s13Intro: "La règle de sélection χ se généralise aux populations lorsque les variables de fond biologiques (optique, moléculaire) diffèrent entre les groupes. La suppression reproductive combinée des voies A et B, modulée par les profils χ spécifiques à la population :",
+    s13Title: "Modérateurs candidats imbriqués (modèle de population)",
+    s13Intro: "BERM propose une fermeture où les modérateurs environnementaux, membranaires, optiques et moléculaires sont mesurés séparément. Ces fonctions m ne sont pas des instances de χ_geo et la réponse combinée est un candidat non calibré :",
     s13PathwayA: "Voie A (VGIC)",
     s13PathwayB: "Voie B (CRY/RPM)",
     s13Combined: "Suppression combinée",
     s13TFR: "TFR de la population",
-    s13Where: "où γ_A, γ_B sont les poids des voies (0,75 ; 0,25) ; χ(Ā_env) est le couplage environnemental ; χ(V_mem) est le fond membranaire (≈ 1,0 pour les cellules vivantes) ; χ(I_blue) est le couplage optique (dépendant de l'iris) ; χ([FAD]) est le couplage moléculaire (dépendant de B2) ; et EMF_personal est la contribution des appareils personnels.",
-    s13Implication: "Cette formulation prédit que les populations avec des valeurs χ biologiques plus élevées (yeux bleus, tolérants au lactose) connaissent un déclin TFR plus prononcé par unité d'augmentation EMF environnementale.",
-    s13Level: "Niveau épistémique : L* (synthèse testable). Les instanciations χ individuelles sont de niveau E ou M|C ; l'intégration au niveau populationnel est la composante L*.",
+    s13Where: "γ_A et γ_B sont des poids candidats ; m_env, m_mem, m_opt et m_mol sont des modérateurs distincts mesurés ou estimés. Les valeurs 0,75/0,25 et profils sont des scénarios, non des coefficients dérivés de Lindgren.",
+    s13Implication: "La prédiction discriminante est une interaction exposition × modérateur mesurée prospectivement. Couleur des yeux ou persistance de la lactase seules ne sont ni susceptibilité calibrée ni preuve d'un effet TFR.",
+    s13Level: "Niveau épistémique : L* (synthèse BERM testable). La biologie des composants contraint les modérateurs, mais l'intégration populationnelle et les coefficients d'endpoint restent non calibrés.",
     s14Title: "Formule stratifiée v20 → v21",
     s14Intro: "La formule transversale originale (v19.1) utilise un indice EMF à deux canaux. La formule stratifiée l'étend en incorporant l'historique d'amorçage, la capacité de récupération, la modulation saisonnière et le génotype de la population.",
     s14V20Title: "Formule v20 (Amorçage × Récupération)",
@@ -1506,10 +1506,10 @@ const t = {
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren 기하학" },
       { id: "evo-calibration", num: "§1b", label: "생물학적 연결 후보" },
-      { id: "chi", num: "§2", label: "선택 규칙 χ(Ā)" },
+      { id: "chi", num: "§2", label: "역메트릭 좌표 χ_geo" },
       { id: "l2-response", num: "§2a", label: "조건부 응답 연산자" },
       { id: "three-channel-derivation", num: "§2b", label: "3채널 유도" },
-      { id: "two-channel", num: "§3", label: "2채널 모델" },
+      { id: "two-channel", num: "§3", label: "v17 프록시" },
       { id: "biocap", num: "§4", label: "생물학적 용량" },
       { id: "androgen-capacity", num: "§4b", label: "안드로겐 사용 능력" },
       { id: "behavioral", num: "§5", label: "행동 인자" },
@@ -1521,7 +1521,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "약리학적 검증" },
       { id: "individual-susceptibility", num: "§11", label: "개인 감수성" },
       { id: "cross-sectional", num: "§12", label: "횡단적 검증" },
-      { id: "nested-chi", num: "§13", label: "중첩된 χ (집단 모델)" },
+      { id: "nested-chi", num: "§13", label: "집단 후보 조절인자" },
       { id: "layered-formula", num: "§14", label: "계층 공식 v20→v21" },
       { id: "recovery-function", num: "§15", label: "회복 함수" },
       { id: "cultural-energy", num: "§16", label: "문화 에너지 형식화" },
@@ -1541,7 +1541,7 @@ const t = {
     s1d6b: "(2) 비이온성 VGCC 신호전달: 이온 플럭스 없는 구조 변화, 더 낮은 에너지 임계값 ([[ref:trus2024|Trus & Atlas 2024]]).",
     s1d6c: "(3) RPM 경로는 VGCC를 우회할 수 있습니다. 기존의 87.5% 대수적 대응은 구조 비교이며 도출된 기하학–RPM 결합 연산자가 아닙니다.",
     s1bTitle: "생물학적 연결 후보의 유비",
-    s1bIntro: "생물학적 감지 사례는 후보 감도 범위를 제한하지만 인간 세포막에 대한 BERM의 제안 χ(Ā) 폐쇄를 보정하지 않습니다.",
+    s1bIntro: "생물학적 감지 사례는 후보 감도 범위를 제한하지만 BERM의 조직 커널 Ξ_i나 인간 세포막 반응을 보정하지 않습니다.",
     s1bAfter: "BERM은 스펙트럼 필터링과 수용체 선택성을 경험적 문제로 다룹니다. 진화적 새로움만으로 감수성이 확립되지 않으며 모든 기술 신호가 교란적이라는 가정을 도출 결과로 사용하지 않습니다.",
     s1bd1: "증폭 캐스케이드 — 광자 비유:",
     s1bd2: "눈: 1 광자 → 로돕신 → 트랜스듀신 → PDE → cGMP → 측정 가능한 전류. 이득: ~10⁶×.",
@@ -1552,46 +1552,46 @@ const t = {
     s2bIntro: "두 개의 생물학적 차단 주파수가 EMF 스펙트럼을 서로 다른 생물물리학적 메커니즘을 가진 세 영역으로 나눕니다. 이 차단 주파수는 세포 생물학의 근본적 성질이며 임의의 매개변수가 아닙니다.",
     s2bFC: "f_c ≈ 1 kHz — 막의 RC 시간 상수. f_c 이하: 장이 막 전체에 걸려 V_mem을 섭동합니다. f_c 이상: 장이 세포 내부로 침투합니다.",
     s2bFRPM: "f_RPM ≈ 1 MHz — 라디칼 쌍 코히어런스 한계. f_RPM 이상: 고전적 장-막 상호작용은 약해지지만 양자 스핀 효과가 관련됩니다.",
-    s2bELF: "ELF 채널 (f < ~1 kHz): 장이 막 전체에 걸림. ΔV_mem = E_ext · d_cell · H(f). χ_mem은 7×10⁶ V/m에서 포화. 선형 반응. 메커니즘: VGCC→Ca²⁺→ROS (경로 A), GPCR-아데노신 ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav 변조 ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), 미주신경 ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
+    s2bELF: "ELF 채널 (f < ~1 kHz): 막 전달 추정은 ΔV_mem = E_ext · d_cell · H(f)를 사용할 수 있습니다. 반응 조절인자와 척도는 열린 조직 커널 Ξ_i에 속합니다. VGCC, GPCR, Nav, 미주신경은 후보 경로이지만 치료 응용이 환경 ELF 반응을 보정하지는 않습니다.",
     s2bIF: "IF 채널 (f_c < f < f_RPM): 장이 세포 내부로 침투. T(f) = 1/√(1+(f_c/f)²). 환경 수준에서의 주요 메커니즘: IFO-VGIC (선형, 임계값 10⁻⁵ V/m). 분열구에서의 기하학적 장 증폭: G ≈ (d_cell/d_furrow)² ≈ 25×. 분열 세포에 대한 선택적 효과. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]]가 DEP를 통한 치료 강도에서 메커니즘을 검증.",
     s2bIFSources: "환경 IF 원 특성: 전형적인 LED 드라이버는 스위칭 주파수 f_sw 20–200 kHz에서 동작하며 2f_sw, 3f_sw, 5f_sw의 고조파가 MHz 범위까지 확장됩니다. 파형은 정현파가 아닌 구형 펄스열입니다. Panagopoulos 2025는 펄스 장이 동일한 평균 강도의 연속파 장보다 생물학적으로 더 활성적임을 입증했습니다.",
     s2bRF: "RF 채널: B_local = (1/w)b + (A·b)A/(w(1+w))는 Lindgren 전제 안의 기하학식이다. BERM은 이방성 반응과 CRY/RPM·나침반 경로를 별도 후보로 제안하며, 조건부 연산자 형태는 해당 조직 기전과 부호, 지연, 보정을 결정하지 않는다.",
     s2bRegGapTitle: "IF 규제 공백",
     s2bRegGap: "ICNIRP 2010은 f < 300 Hz (ELF)의 노출 한계를 설정합니다. [[ref:icnirp2020|ICNIRP 2020]]은 f > 100 kHz (RF)의 한계를 설정합니다. 300 Hz < f < 100 kHz 범위에는 중복되고 불일치하는 한계가 있습니다. LED 드라이버 방출(20–300 kHz)은 이 공백에 해당합니다.",
-    s2bAfter: "채널 가중치(w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35)는 진단적이며 경험적 교정이 필요합니다. 3채널 분해는 막 생물물리학에서 구조적으로 유도됩니다. 상대적 가중치만이 불확실합니다.",
-    s2Title: "선택 규칙 χ(Ā)",
-    s2Intro: "메트릭이 배경 Ā 주위에서 선형화될 때, 섭동에 대한 생물학적으로 관련된 반응",
+    s2bAfter: "3채널 분해는 주파수 의존 메커니즘에 의해 동기화된 BERM 후보 구분입니다. 차단 주파수, 조직 전달, 진단 가중치는 경험적 보정이 필요하며 Lindgren 도출값이나 FieldState 출력이 아닙니다.",
+    s2Title: "정규화 역메트릭 좌표 χ_geo(ρ)",
+    s2Intro: "명시적으로 정규화한 양의 노름 모드 ρ²=κA²에 대해 rank-one 역메트릭이 제공하는 유계 기하 좌표",
     s2IntroEnd: "은:",
-    s2After: "제로 배경(Ā = 0)에서는 선형 반응이 없습니다. 세포막(Ā ≈ 7 × 10⁶ V/m)에서 반응은 최대입니다.",
-    s2d1: "g_μν를 배경 ġ = η + Ā⊗Ā 주위에서 선형화:",
-    s2d2: "여기서:",
-    s2d3: "1차(선형 반응):",
-    s2d4: "생물학적으로 관련된 양은 메트릭 섭동의 상대적 크기입니다:",
-    s2d5: "이것은 선택 규칙을 제공합니다:",
-    s2d6: "성질:",
-    s2d7: "세포막:",
-    s2d8: "세포는 외부 EMF 섭동에 최대한 민감합니다.",
-    s3Title: "2채널 모델",
-    s3Intro: "총 노출은 두 채널의 합이며, 개인 채널은 선택 규칙에 의해 변조됩니다:",
+    s2After: "χ_geo는 도출된 기하이지 생물학적 이득이 아닙니다. 조직 반응에는 별도의 Ξ_i 커널이 필요합니다.",
+    s2d1: "g_μν를 배경 ġ = η + κĀ⊗Ā 주위에서 전개:",
+    s2d2: "명시적 축약을 선언하기 전에는 스칼라 2Ā·a를 사용하지 않습니다.",
+    s2d3: "ρ²=κA²≥0에서 Sherman–Morrison 역행렬은:",
+    s2d4: "유계 계수는 진폭의 제곱으로 쓸 수 있습니다:",
+    s2d5: "이는 수용체 반응이 아니라 χ_geo를 정의합니다:",
+    s2d6: "기하학적 성질:",
+    s2d7: "열린 변환:",
+    s2d8: "기존 v17 프록시는 같은 형태를 재사용하지만 막 척도나 조직 감수성은 χ_geo만으로 도출되지 않습니다.",
+    s3Title: "보관된 v17 2채널 프록시",
+    s3Intro: "잠긴 v17 비교 경로는 다음 기술 시점 프록시를 사용합니다. 이는 BERM 예측자 명세이며 FieldState 측정이나 도출된 생물학적 반응 법칙이 아닙니다:",
     s3d1: "환경 = 기지국 + Wi-Fi + IoT (인프라 수준)",
     s3d2: "개인 = 전화 + 이어버드 + 시계 (개인 장치)",
-    s3d3: "환경은 χ를 결정하는 배경 Ā입니다.",
-    s3d4: "개인은 생물학적 반응이 χ(Ā)에 의존하는 섭동 a입니다.",
-    s3d5: "Ā = 0 (아미시): total = 0 + χ(0) × personal = 0 + 0 = 0",
-    s3d6: "→ 개인 장치는 생물학적 반응을 생성하지 않습니다.",
-    s3d7: "Ā → ∞ (포화 도시): total ≈ ambient + 1 × personal",
-    s3d8: "→ 개인이 전체 강도로 추가됩니다.",
+    s3d3: "ambient는 χ_v17에 입력되는 국가 배경 프록시이며 측정된 4-퍼텐셜 Ā가 아닙니다.",
+    s3d4: "personal은 기술 시점 프록시 항이며 FieldState에서 추론한 조직 섭동이 아닙니다.",
+    s3d5: "배경 프록시가 0이면: total = 0 + χ_v17(0) × personal = 0.",
+    s3d6: "→ 이는 보관 프록시의 대수적 성질이며 생물학적 반응이 0이라는 증명이 아닙니다.",
+    s3d7: "배경 프록시가 매우 크면: total ≈ ambient + personal.",
+    s3d8: "→ 이는 프록시 포화 한계이며 보정된 조직 이득 한계가 아닙니다.",
     s3d9: "누적 노출은 역사적 합계입니다:",
     s3d10: "여기서 start는 국가의 EMF 역사 시작 연도(예: 핀란드 1991).",
     s3rwTitle: "왜 누적 노출이 작동하는가: 회복 창",
-    s3rwIntro: "DNA 수리 용량이 유한하기 때문에 누적 노출이 올바른 메트릭입니다. BER 경로의 반감기는 τ_repair ≈ 6시간입니다. 일일 순 손상은 노출 시간과 회복 시간의 비율에 의존합니다:",
+    s3rwIntro: "보관된 v17 경로는 이 프록시를 시간에 따라 합산합니다. 유한 수리 회복 창은 별도의 BERM 메커니즘 후보이며 아래 예시식은 국가 프록시를 도출하거나 Ξ_i를 보정하지 않습니다:",
     s3rwTable: "역사적 노출 시나리오:",
     s3rwRow1: "1950 (라디오 + TV): 4h EMF, 20h 자유 → 90% 수리 → 순 0.40/일",
     s3rwRow2: "1990 (전화, Wi-Fi 없음): 8h EMF, 16h 자유 → 84% 수리 → 순 1.26/일",
     s3rwRow3: "2010 (스마트폰 + Wi-Fi): 16h EMF, 8h 자유 → 60% 수리 → 순 6.35/일",
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h 자유 → 21% 수리 → 순 17.46/일",
     s3rwRow5: "아미시 (전자기기 없음): 1h EMF, 23h 자유 → 93% 수리 → 순 0.07/일",
-    s3rwThreshold: "임계 역치: EMF 무노출 기간 < 2× 수리 반감기(BER의 경우 < 12h)이면 수리가 불완전하고 누적이 시작됩니다. 현대인은 2005~2010년경에 이 역치를 넘었습니다.",
+    s3rwThreshold: "시나리오 역치: EMF 무노출 기간이 가정한 수리 반감기의 2배보다 짧으면 이 예시식에서 회복이 불완전합니다. 2005~2010년 집단 역치 초과 주장은 미보정입니다.",
     s3tcTitle: "3채널 확장",
     s3tcIntro: "3채널 분해에서 cumEMF는 주파수별 누적 노출의 가중 합이 됩니다:",
     s3tcAfter: "채널 가중치는 주파수별이고 조직 의존적입니다(§2b 참조). 위의 단일 채널 cumEMF는 3채널의 가중 집계입니다. 채널 가중치(0.05/0.60/0.35)는 경험적 교정이 필요한 진단적 추정치입니다.",
@@ -1695,7 +1695,7 @@ const t = {
     s9Title: "반증 조건",
     s9Intro: "모델은 명시적으로 반증 가능합니다. 각 조건은 구체적이고 검증 가능합니다:",
     s9Items: [
-      { condition: "Lindgren의 메트릭이 수학적으로 부정확", detail: "유도 g_μν = η_μν + A_μA_ν가 내적으로 불일치하거나 확립된 전기역학과 모순되는 것으로 밝혀지면 기하학적 기반은 실패합니다." },
+      { condition: "Lindgren의 메트릭이 수학적으로 부정확", detail: "유도 g_μν = η_μν + κA_μA_ν가 내적으로 불일치하거나 확립된 전기역학과 모순되는 것으로 밝혀지면 기하학적 기반은 실패합니다." },
       { condition: "VGCC 차단제가 EMF의 생물학적 효과를 방지하지 못함", detail: "칼슘 채널 차단제가 통제된 실험에서 EMF 유도 ROS, SDF 또는 호르몬 변화를 감쇠시키지 못하면 일차 메커니즘이 잘못된 것입니다." },
       { condition: "아미시 공동체 TFR이 일반 인구와 같은 속도로 감소", detail: "아미시는 준실험적 대조군으로 기능합니다. 현재 아미시 TFR ≈ 6.5는 안정적이며 주변 인구는 감소하고 있습니다." },
       { condition: "EMF 노출 감소 없이 정자 농도 감소가 중단", detail: "−1.2%/년 정자 감소가 누적 EMF가 계속 증가하는 동안 반전되거나 안정화되면 용량-반응 관계가 잘못된 것입니다." },
@@ -1720,17 +1720,17 @@ const t = {
     s10d5: "멜라토닌 교정 (경로 B):",
     s10d6: "야간 EMF 노출은 CRY 매개 일주기 신호전달을 교란합니다. 외인성 멜라토닌(3–5 mg)은 CRY와 독립적으로 일주기 진폭을 회복시켜 경로 B 우회를 제공합니다.",
     s10d7Link: "→ 통제된 실험적 증거 (실험실 포유류)",
-    s11Title: "개인 감수성과 χ 분포",
-    s11Intro: "집단 수준의 선택 규칙 χ(Ā)는 평균 반응을 예측합니다. 개인은 세 가지 측정 가능한 요인으로 변동합니다: VGCC 유전자형, 해부학적 기하학, 누적 알로스태틱 부하. 개인 감수성 수정인자는:",
-    s11After: "이것은 같은 환경 장에 있는 두 개인이 크기 차수만큼 다른 유효 생물학적 선량을 경험할 수 있음을 의미합니다. 집단 TFR은 개인 χ 분포에 대한 합성곱입니다 — 평균이 꼬리를 숨깁니다.",
+    s11Title: "개인 반응 후보 조절인자",
+    s11Intro: "BERM은 VGCC 유전자형, 해부학적 전달, 누적 상태를 종점별 반응 조절인자로 제안합니다. 이들은 조직 커널 Ξ_i에 속하고 χ_geo가 아니며 결합 이득은 미보정입니다:",
+    s11After: "보정되면 같은 측정 장의 사람들 사이 반응 이질성을 만들 수 있습니다. 크기 차수의 차이나 집단 TFR로의 전파는 확립되지 않았습니다.",
     s11d1: "VGCC 유전자형 수정인자는 CACNA1C rs1006737 기능적 표현형 결정으로부터 도출됩니다:",
     s11d2: "AA 동형접합 위험 보인자는 장 섭동 단위당 40% 더 큰 Ca²⁺ 유입을 보입니다.",
     s11d3: "해부학적 수정인자는 내부 장 분포에 영향을 미치는 조직 기하학을 설명합니다:",
     s11d4: "6세 미만 어린이는 같은 외부 장에서 성인의 2–3배 SAR을 받습니다([[ref:gandhi1996|Gandhi 1996]]). BMI는 지방층 감쇠를 조절합니다.",
     s11d5: "누적 수정인자는 [[ref:selye1936|Selye의 일반 적응 증후군]] 단계를 사용합니다:",
     s11d6: "저항 단계에서 보상 용량이 선형으로 감소합니다. 탈진 단계(알로스태틱 부하 > 15)에서 보상이 붕괴하고 유효 수정인자가 급격히 증폭됩니다 — 이것이 예측된 EHS 발병 영역입니다.",
-    s11d7: "결합된 개인 수정인자는 집단 χ에 곱셈됩니다:",
-    s11d8: "집단 수준 TFR 예측에서 BERM은 유전자형 빈도 분포(Hardy-Weinberg) × 해부학적 인구통계 × 노출 기간 분포에 걸쳐 적분합니다. 평균 개인 수정인자는 구성적으로 1.0입니다. 진단적 가치는 꼬리에 있습니다.",
+    s11d7: "결합 후보 조절인자는 χ_geo와 분리합니다:",
+    s11d8: "미래 집단 적용은 유전자형, 해부학, 노출 이력의 측정 분포를 적분합니다. 평균을 1로 정규화하는 것은 규약이며 꼬리 배수는 경험적 추정치가 아닙니다.",
     s11d9Link: "→ 개인 감수성 증거",
     s12Title: "횡단적 검증 v19.1",
     s12Intro: "54개국(2022년 데이터)에 걸친 공식 발견은 시간적 모델의 독립적 검증을 제공합니다. 횡단적 공식은 2개의 EMF 프록시 변수와 1개의 이진 임계값을 사용하여 LOOCV RMSE 0.522로 국가 TFR을 예측합니다.",
@@ -1748,15 +1748,15 @@ const t = {
     s12Limitation: "정직한 평가: R² = 0.851은 주로 인구 전환 기울기(니제르 → 한국)를 반영하며 EMF 고유 분산이 아닙니다. 고소득 OECD 국가(n ≈ 36)에서 전력 소비만으로는 TFR 분산을 거의 설명하지 못합니다(R² ≈ 0.0002). 횡단적 공식은 전기화 임계값 — 전산업사회에서 산업사회로의 이진 관문 — 을 포착하며, 전기화된 집단 내의 용량-반응이 아닙니다. 이로 인해 횡단 분석은 BERM의 가장 약한 독립적 증거선이 됩니다. 더 강한 증거는: (1) 규제 검증된 비열적 효과가 있는 메커니즘 경로, (2) 약리학적 용량-반응(멜라토닌, 테스토스테론), (3) 유전적 선택 마커(CatSper, VGCC), (4) 통제 조건의 센티넬 종에서 옵니다. 횡단 분석의 가치는 구조적입니다: 휴대전화 역설과 전력>GDP 예측은 변별적이며, 집합적 적합이 교란되더라도 의미가 있습니다.",
     s12DataNote: "재현 데이터: 54개국 표본 명단(관측 TFR, 전력 소비, 브로드밴드 가입, 모델 예측)은 /data/cross_section_manifest.csv에서 이용 가능. 출처: UN WPP 2024(TFR), OWID/IEA(전력), ITU(브로드밴드).",
     s12Caveat: "횡단적 분석은 인과 방향을 결정할 수 없습니다. 변별적 증거는 센티넬 종, 자연 실험, 전력 없는 집단에서 나옵니다.",
-    s13Title: "중첩된 χ (집단 모델)",
-    s13Intro: "χ 선택 규칙은 생물학적 배경 변수(광학적, 분자적)가 그룹 간에 다를 때 집단으로 일반화됩니다. 경로 A와 B의 결합된 생식 억제, 집단별 χ 프로파일로 변조:",
+    s13Title: "중첩 후보 조절인자 (집단 모델)",
+    s13Intro: "BERM은 환경·막·광학·분자 조절인자를 별도로 측정하는 집단 폐쇄를 제안합니다. 이 m 함수들은 χ_geo의 인스턴스가 아니며 아래 결합 반응은 미보정 후보입니다:",
     s13PathwayA: "경로 A (VGIC)",
     s13PathwayB: "경로 B (CRY/RPM)",
     s13Combined: "결합된 억제",
     s13TFR: "집단 TFR",
-    s13Where: "여기서 γ_A, γ_B는 경로 가중치(0.75, 0.25); χ(Ā_env)는 환경 결합; χ(V_mem)은 막 배경(생세포에서 ≈ 1.0); χ(I_blue)는 광학적 결합(홍채 의존); χ([FAD])는 분자 결합(B2 의존); EMF_personal은 개인 장치 기여입니다.",
-    s13Implication: "이 공식은 더 높은 생물학적 χ 값을 가진 집단(파란 눈, 유당 내성)이 환경 EMF 단위 증가당 더 급격한 TFR 감소를 경험한다고 예측합니다.",
-    s13Level: "인식론적 수준: L* (검증 가능한 통합). 개별 χ 인스턴스화는 E 또는 M|C 수준; 집단 수준 적분은 L* 구성요소입니다.",
+    s13Where: "γ_A와 γ_B는 후보 경로 가중치이고 m_env, m_mem, m_opt, m_mol은 별도로 측정·추정하는 조절인자입니다. 0.75/0.25와 집단 프로파일은 시나리오이며 Lindgren에서 도출된 계수가 아닙니다.",
+    s13Implication: "식별 예측은 전향적으로 측정한 노출 × 조절인자 상호작용입니다. 눈 색이나 락타아제 지속성만으로 보정된 감수성 또는 TFR 효과의 증거로 취급하지 않습니다.",
+    s13Level: "인식론적 수준: L* (검증 가능한 BERM 통합). 구성요소 생물학은 각 조절인자를 제약할 수 있지만 집단 통합과 종점 계수는 미보정입니다.",
     s14Title: "계층 공식 v20 → v21",
     s14Intro: "원래 횡단적 공식(v19.1)은 2채널 EMF 지수를 사용합니다. 계층 공식은 프라이밍 이력, 회복 능력, 계절 변조, 집단 유전자형을 통합하여 확장합니다.",
     s14V20Title: "공식 v20 (프라이밍 × 회복)",
@@ -1930,7 +1930,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {referenceText(d.s1Intro)}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + A_\mu A_\nu" />
+              <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + \kappa \, A_\mu A_\nu" />
             </div>
             <p className="text-foreground-muted text-sm leading-relaxed">
               {d.s1After}
@@ -2223,7 +2223,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <div className="p-3 rounded border-l-2 border-blue-500/50">
                   <p className="text-xs font-semibold text-blue-400 mb-1">ELF (f {"<"} ~1 kHz)</p>
                   <div className="text-center my-2">
-                    <MathBlock tex="\chi_{mem} = \frac{E_{mem}}{\sqrt{1 + E_{mem}^2}} \approx 1.0, \quad H(f) = \frac{1}{\sqrt{1+(f/f_c)^2}}" />
+                    <MathBlock tex="\Delta V_{mem}^{\mathrm{est}}=E_{ext}d_{cell}H(f),\quad H(f)=\frac{1}{\sqrt{1+(f/f_c)^2}},\quad m_{mem}\subset\Xi_i\ \mathrm{(open)}" />
                   </div>
                   <DerivationLine>{referenceText(d.s2bELF)}</DerivationLine>
                 </div>
@@ -2265,7 +2265,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {d.s3Intro}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="\text{total}(y) = \text{ambient}(y) + \chi\!\big(\text{ambient}(y)\big) \times \text{personal}(y)" />
+              <MathBlock tex="\text{proxy}_{v17}(y) = \text{ambient}(y) + \chi_{v17}\!\big(\text{ambient}(y)\big) \times \text{personal}(y)" />
             </div>
             <div className="text-center my-4">
               <MathBlock tex="\text{cumEMF} = \sum_{y=y_0}^{Y} \text{total}(y)" />
@@ -2287,7 +2287,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <div className="mt-3">
                 <DerivationLine>{d.s3d9}</DerivationLine>
                 <div className="text-center my-2">
-                  <MathBlock tex="\text{cumEMF}(Y) = \sum_{y=\text{start}}^{Y} \Big[\text{ambient}(y) + \chi\!\big(\text{ambient}(y)\big) \times \text{personal}(y)\Big]" />
+                <MathBlock tex="\text{cumProxy}_{v17}(Y) = \sum_{y=\text{start}}^{Y} \Big[\text{ambient}(y) + \chi_{v17}\!\big(\text{ambient}(y)\big) \times \text{personal}(y)\Big]" />
                 </div>
                 <DerivationLine>{d.s3d10}</DerivationLine>
               </div>
@@ -3035,7 +3035,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <h2 className="text-xl font-bold mb-2">§11 — {d.s11Title}</h2>
             <p className="mb-4">{d.s11Intro}</p>
             <div className="text-center my-4">
-              <MathBlock tex="\chi_i = \chi(\bar{A}) \times g_{\text{VGCC}} \times g_{\text{anatomy}} \times g_{\text{cumulative}}" />
+              <MathBlock tex="m_i^{\text{bio}} = g_{\text{VGCC}} \times g_{\text{anatomy}} \times g_{\text{cumulative}}" />
             </div>
             <p className="mb-4">{d.s11After}</p>
 
@@ -3065,7 +3065,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <div className="mt-4">
                 <DerivationLine>{d.s11d7}</DerivationLine>
                 <div className="text-center my-2">
-                  <MathBlock tex="\chi_i = \chi(\bar{A}) \times g_{\text{VGCC}} \times g_{\text{GST}} \times g_{\text{anatomy}} \times \frac{1}{\text{capacity}(\text{load})}" />
+                  <MathBlock tex="m_i^{\text{bio}} = g_{\text{VGCC}} \times g_{\text{GST}} \times g_{\text{anatomy}} \times \frac{1}{\text{capacity}(\text{load})}" />
                 </div>
                 <DerivationLine>{d.s11d8}</DerivationLine>
               </div>
@@ -3247,25 +3247,25 @@ export function MathematicsSections({ locale }: { locale: string }) {
 
             <Derivation label={d.s13PathwayA}>
               <DerivationLine>
-                R_A = γ_A × χ(Ā_env) × χ(V_mem) × EMF_personal
+                R_A^cand = γ_A × m_env × m_mem × X_personal
               </DerivationLine>
             </Derivation>
 
             <Derivation label={d.s13PathwayB}>
               <DerivationLine>
-                R_B = γ_B × χ(Ā_env) × χ(I_blue) × χ([FAD]) × EMF_personal
+                R_B^cand = γ_B × m_env × m_opt × m_mol × X_personal
               </DerivationLine>
             </Derivation>
 
             <Derivation label={d.s13Combined}>
               <DerivationLine>
-                R = (1 − R_A) × (1 − R_B)
+                R_cand = (1 − R_A^cand) × (1 − R_B^cand)
               </DerivationLine>
             </Derivation>
 
             <Derivation label={d.s13TFR}>
               <DerivationLine>
-                TFR(pop) = TFR_max × R(χ_env(pop), χ_opt(pop), χ_mol(pop))
+                TFR_cand(pop) = TFR_max × R_cand(m_env, m_mem, m_opt, m_mol)
               </DerivationLine>
             </Derivation>
 

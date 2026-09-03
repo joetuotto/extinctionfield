@@ -6,7 +6,7 @@ import { ModelTableOfContents } from "@/components/ModelTableOfContents";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
 import { ModulomeLayers } from "@/components/ModulomeLayers";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
-import { CHI_SCALES } from "@/lib/evolutionData";
+import { RESPONSE_MODIFIER_SCALES } from "@/lib/evolutionData";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
@@ -89,7 +89,7 @@ const t = {
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
     bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain below states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
-      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 0, title: "Measured background", desc: "Geomagnetic and anthropogenic fields are measured as physical inputs. BERM then applies an endpoint-specific response kernel; FieldState does not supply that biological response." },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
       { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
       { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
@@ -103,12 +103,12 @@ const t = {
     ],
     bioCivFormulaTitle: "BioCap integral",
     bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
-    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormula: "BioCap_cand(t,λ) = BioCap₀ − ∫₀ᵗ m_lat^cand(λ)·[S(τ)+U(τ)+E(τ)]dτ + recovery",
     bioCivFormulaTerms: [
       { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
       { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
       { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
-      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "m_lat^cand(λ)", desc: "Candidate latitude moderator inside BERM; it is neither χ_geo nor a calibrated biological coefficient" },
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
@@ -190,11 +190,11 @@ const t = {
 
     chiFiveTitle: "Candidate background moderators at five scales",
     chiFiveSub: "Analogies to test separately — not instances of χ_geo",
-    chiFiveDesc: "BERM registers five places where a background state may moderate a perturbation. The table's χ labels are shorthand for separate candidate response functions; they are not one universal function derived from Lindgren geometry.",
+    chiFiveDesc: "BERM registers five places where a background state may moderate a perturbation. They are separate candidate m-functions, not χ_geo and not one universal function derived from Lindgren geometry or FieldState.",
     chiFiveColScale: "Scale",
     chiFiveColBg: "Background (B)",
     chiFiveColPerturb: "Perturbation",
-    chiFiveColExpr: "χ expression",
+    chiFiveColExpr: "Candidate function",
     chiFiveColVerify: "Verification",
     chiFiveColLevel: "Level",
     chiFiveLink: "See full analysis →",
@@ -203,13 +203,13 @@ const t = {
     chiEvidenceSub: "Six domain-specific hypotheses requiring separate kernels",
     chiEvidenceDesc: "These evidence families motivate specific interaction tests. Their moderators are not evidence for a shared χ_geo tissue law; each needs its own exposure measure, endpoint, sign and calibration.",
     chiEvidenceFamilies: [
-      { referenceId: "sakurai2008", family: "Diabetes (β-cells)", chi: "χ(glucose): K_ATP → V_mem → VGCC priming", mechanism: "High glucose closes K_ATP channels → membrane depolarizes → VGCCs primed → χ HIGH. Low glucose → K_ATP open → χ LOW.", prediction: "EMF × high-GI diet produces synergistic diabetes risk. Fasting protects β-cells.", verification: "Sakurai 2008: ELF reduced insulin secretion 30%", level: "M|C" },
+      { referenceId: "sakurai2008", family: "Diabetes (β-cells)", chi: "m_glucose: K_ATP → V_mem → VGCC candidate", mechanism: "Glucose state can alter membrane potential and therefore motivates an exposure × glucose interaction test. The BERM gain is uncalibrated.", prediction: "Test whether measured exposure and glucose state interact on insulin secretion, with prespecified controls.", verification: "Sakurai 2008 supplies a study-specific ELF/insulin endpoint, not a human risk coefficient", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Sperm quality (BTB)", chi: "Candidate barrier-transfer moderator", mechanism: "BERM proposes: altered BTB integrity → changed target-cell exposure → possible feedback. The tissue-kernel gain is uncalibrated.", prediction: "If the feedback is real, sperm-quality change should accelerate with measured barrier loss.", verification: "Yu 2019 reports time-dependent 4G-RF-associated BTB disruption; it does not calibrate χ_geo", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "Barriers (BBB + BTB)", chi: "χ(barrier permeability): continuous modulator", mechanism: "Barriers are continuous χ modulators. Partially damaged barrier = partial χ increase. Produces multiplicative amplification.", prediction: "Super-linear dose-response with cumulative exposure.", verification: "Ulusoy 2025: progressive BBB degradation 30–360 min", level: "E" },
-      { family: "Sentinel species", chi: "χ(metabolic rate): M^(−0.25) scaling", mechanism: "Small animals: higher mass-specific metabolic rate → higher baseline ROS → higher χ → larger EMF response.", prediction: "Insects and small birds affected first; larger mammals later.", verification: "Temporal order matches body mass scaling", level: "M|C" },
-      { family: "Aquatic axis (CatSper conservation)", chi: "χ(ELF): submarine cable fields × aquatic CatSper", mechanism: "CatSper is conserved from sea urchin to human — the same Ca²⁺ channel that navigates sperm across all species. Aquatic species validate three BERM channels: ELF via elasmobranch electrosensory thresholds (VGIC sensitivity), RPM/CRY via gray whale magnetoreception, and CatSper via the conservation argument. Submarine cable ELF fields reach the activation threshold for aquatic CatSper.", prediction: "Marine reproduction declines near high-power submarine cable corridors. Farmed salmon CatSper weaker than wild.", verification: "CatSper KO = sterile in all tested species. Gray whale migration tracks geomagnetic field. Elasmobranch sensitivity to nV/m-scale fields confirmed.", level: "L*" },
-      { family: "Cardiac (CRY2-TRPC1)", chi: "χ(CRY2 state): light- and FAD-dependent", mechanism: "If CRY2-TRPC1 operates in cardiomyocytes (as in myoblasts, [[ref:yap2025|Yap 2025]]), cardiac calcium entry is light/FAD-dependent.", prediction: "Nighttime phone use → higher arrhythmia risk than daytime.", verification: "Not yet tested. TRPC channels confirmed in myocytes.", level: "L*" },
-      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman window", chi: "χ(photocycle) × χ(temperature) × χ(DC orientation)", mechanism: "The 'biological window' emerges from three superimposed χ windows. Labs controlling all three find consistent results.", prediction: "Five-parameter standard resolves 50-year replication debate.", verification: "Blackman 1985–1991: demonstrated each window independently", level: "M" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Barriers (BBB + BTB)", chi: "m_barrier: candidate permeability moderator", mechanism: "Measured barrier integrity may modify target-cell exposure; multiplicative gain is a BERM hypothesis, not an established law.", prediction: "Test exposure × measured barrier integrity against a prespecified additive model.", verification: "Ulusoy 2025 motivates a time-resolved barrier endpoint", level: "E" },
+      { family: "Sentinel species", chi: "m_metabolic: candidate allometric moderator", mechanism: "Mass-specific metabolism and baseline oxidative state motivate a cross-species interaction model; they do not establish a universal scaling coefficient.", prediction: "Estimate species-specific slopes before testing an allometric meta-model.", verification: "Requires harmonized exposure and endpoint data across species", level: "M|C" },
+      { family: "Aquatic axis (CatSper conservation)", chi: "m_aquatic: candidate ELF/CatSper comparison", mechanism: "CatSper conservation and aquatic electromagnetic sensing motivate targeted studies, but neither shows that cable fields activate CatSper at environmental levels.", prediction: "Measure field spectra, gonadal dose and reproductive endpoints near matched cable/control sites.", verification: "Conservation and sensory evidence constrain plausibility, not environmental activation threshold", level: "L*" },
+      { family: "Cardiac (CRY2-TRPC1)", chi: "m_CRY: candidate light/FAD state", mechanism: "A cardiomyocyte CRY2–TRPC1 route is a BERM extrapolation from other cell systems ([[ref:yap2025|Yap 2025]]).", prediction: "Test exposure × light/FAD state on prespecified cardiac calcium endpoints.", verification: "Cardiomyocyte-specific EM interaction remains untested", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman window", chi: "m_photo × m_temp × m_DC candidates", mechanism: "Photocycle, temperature and DC orientation are separate candidate moderators, not a shared χ law.", prediction: "A factorial replication can estimate each interaction and their joint term.", verification: "Blackman studies motivate factor-specific replication", level: "M" },
     ],
 
     dualSuscTitle: "Two Independent Susceptibilities",
@@ -220,7 +220,7 @@ const t = {
     dualSuscLabelTests: "Tests via",
     dualSuscLabelPathways: "Pathways",
     dualSuscLeft: {
-      title: "χ(Ā) [VGCC]",
+      title: "VGCC candidate kernel",
       type: "Geometric",
       channel: "Ca²⁺ channel (VGCC)",
       threshold: "REQUIRES electrification threshold (Ā > 0)",
@@ -228,7 +228,7 @@ const t = {
       pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
-      title: "χ_B [CRY/RPM]",
+      title: "CRY/RPM candidate kernel",
       type: "Spin-chemical",
       channel: "Radical pair mechanism",
       threshold: "NO electrification threshold (operates always)",
@@ -255,7 +255,7 @@ const t = {
     phyloText: [
       "BERM identifies five biological pathways (A–E) through which EMF affects reproduction. Their operational weights reflect importance for human fertility. But their phylogenetic hierarchy — which is more fundamental and which is derived — is different.",
       "Pathway B (CRY/RPM) is the ancestral mechanism. Present in all eukaryotes: plants, fungi, insects, birds, mammals. Cryptochrome was first discovered in plants (Arabidopsis, 1993). CRY’s reproductive role is best documented in plants — CRY2 → CONSTANS → FLOWERING LOCUS T → flowering induction. Conserved over 1 billion years as a photolyase homolog. Does not require membrane potential. Operates via spin chemistry (radical pair mechanism). RF disruption demonstrated in plants (Ahmad 2020: 7 MHz), insects (Gegear 2008: Drosophila), and mammals (PMC11817702 2025).",
-      "Pathway A (VGCC/IFO) is the derived mechanism. Animal-specific — excitable cells: neurons, muscle, sperm. Requires membrane potential (−70 mV / 10 nm → χ ≈ 1.0). Evolved approximately 500 million years ago with voltage-gated ion channels. Adds sensitivity in tissues with high membrane potential. Strongest single pathway for human sperm damage. Plants have ion channels (TPC1, CNGC) but not S4-helix-based VGCCs.",
+      "Pathway A (VGCC/IFO) is a BERM candidate assembled from imported ion-channel biology and exposure studies. It is animal-specific and relevant to excitable cells, but it is not derived from Lindgren geometry or FieldState. Its human tissue kernel, environmental dose response, sign and gain remain open. Plants have ion channels (TPC1, CNGC) but not S4-helix-based VGCCs.",
       "Together: Pathway B is the evolutionary foundation. Pathway A is the animal-specific amplification layer on top of it. Both operate simultaneously in animals. Only Pathway B operates in plants.",
       "Critical B2/FAD difference — why effect sizes differ between plants and animals: Plants synthesize their own riboflavin (B2), so FAD supply is endogenous and CRY function depends only on RF disruption — Ahmad 2020’s ‘relatively minor’ effect is a pure RPM test. Animals require dietary B2, so FAD supply depends on nutrition and CRY function depends on both RF and B2 status — a double vulnerability: EMF disruption plus nutritional deficiency. This explains why animal effect sizes exceed plant effect sizes: animals have two disruption sources, plants have only one.",
     ] as const,
@@ -642,7 +642,7 @@ const t = {
 
     modulomeSub: "Twelve-layer susceptibility model — from molecular spin physics to population patterns",
     modulomeTitle: "EMF Modulome",
-    modulomeDesc: "The twelve-layer modulome maps electromagnetic susceptibility from molecular spin physics to population-level patterns. Each layer modulates χ — the dimensionless coupling between external EMF and biological function. Twelve layers, ten target organs, four independent routes to fertility decline.",
+    modulomeDesc: "The twelve-layer modulome catalogues candidate moderators from molecular spin physics to population patterns. BERM maps them through endpoint-specific response kernels; they are not a universal χ, are not χ_geo, and are not derived by FieldState. Twelve layers, ten target organs, four proposed routes to fertility decline.",
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
@@ -1009,7 +1009,7 @@ const t = {
     bioCivSub: "10-vaiheinen kausaaliketju molekyylitason EMF-vaikutuksista sivilisaation seurauksiin",
     bioCivLead: "BERM soveltaa biologisesti reduktionistista, kompositionaalista hypoteesia molekyyli- ja hormonitiloista yksilökäyttäytymisen kautta populaatioaggregaatteihin. Alla oleva ketju esittää ehdotetun etenemisen fysikaalisesta syötteestä sivilisaatiotulokseen. Erillisten lenkkien näyttö voi rajata ketjua, mutta koko monitasoketju ei ole empiirisesti suljettu eikä ryhmätason poliittista tulosta lueta takaisin yksilön hormonimittaukseksi.",
     bioCivChain: [
-      { step: 0, title: "Taustageometria", desc: "Geomagneettinen kenttä luo χ(Ā)-substraatin — sähkömagneettisen perusgeometrian, jossa kaikki biologia on kehittynyt" },
+      { step: 0, title: "Mitattu tausta", desc: "Geomagneettiset ja ihmisen tuottamat kentät mitataan fysikaalisina syötteinä. BERM soveltaa sen jälkeen päätepistekohtaista vasteydintä; FieldState ei tuota biologista vastetta." },
       { step: 1, title: "EMF-häiriö", desc: "Ihmisen aiheuttamat kentät (ELF, IF, RF) häiritsevät geometrista taustaa muuttaen aika-avaruuden metriikkaa" },
       { step: 2, title: "VGCC-aktivaatio", desc: "Jänniteportilliset kalsiumkanavat — erityisesti T-tyyppi (Cav3) bifurkaatiopisteessä — reagoivat kenttähäiriöön Schwanin vahvistuksen kautta" },
       { step: 3, title: "Ca²⁺-kaskadi", desc: "Solunsisäinen kalsiumsignalointi häiriintyy: CaMKII-aktivaatio, mitokondriaalinen ROS, NF-κB-tulehdusreitti" },
@@ -1023,12 +1023,12 @@ const t = {
     ],
     bioCivFormulaTitle: "BioCap-integraali",
     bioCivFormulaDesc: "Populaation kumulatiivinen biologinen kapasiteetti formalisoidaan BioCap-integraalina — juokseva saldo ehtymisen (ensimmäinen integraali) ja palautumisen (toinen integraali) välillä:",
-    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormula: "BioCap_ehd(t,λ) = BioCap₀ − ∫₀ᵗ m_lat^ehd(λ)·[S(τ)+U(τ)+E(τ)]dτ + palautuminen",
     bioCivFormulaTerms: [
       { symbol: "S(τ)", desc: "Normalisoitu aurinkoaktiivisuus (ohjaa luonnollista geomagneettista häiriötä)" },
       { symbol: "U(τ)", desc: "Kaupungistumispainotettu EMF-altistus (väestötiheys × infrastruktuuri)" },
       { symbol: "E(τ)", desc: "Sähköistyspainotettu altistus (verkkotiheys × henkilökohtainen kulutus)" },
-      { symbol: "χ(λ)", desc: "Leveysasteesta riippuva herkkyys (geomagneettinen kenttävoimakkuus vaihtelee leveysasteen mukaan)" },
+      { symbol: "m_lat^ehd(λ)", desc: "BERM:n ehdokasmoderaattori leveysasteelle; se ei ole χ_geo eikä kalibroitu biologinen kerroin" },
       { symbol: "α", desc: "Palautumiskerroin (biologinen korjausnopeus EM-kuorman pienentyessä)" },
       { symbol: "σ(τ)", desc: "Ihmisen aiheuttama EM-saturaatio — peittää auringon palautumisikkunan vuoden 1880 jälkeen" },
     ],
@@ -1110,11 +1110,11 @@ const t = {
 
     chiFiveTitle: "Taustamoderaattoriehdokkaat viidellä skaalalla",
     chiFiveSub: "Erikseen testattavia analogioita — ei χ_geo:n instansseja",
-    chiFiveDesc: "BERM rekisteröi viisi kohtaa, joissa taustatila voi moderoida häiriötä. Taulukon χ-merkinnät ovat erillisten vastefunktioehdokkaiden lyhenteitä, eivät yksi Lindgrenin geometriasta johdettu universaali funktio.",
+    chiFiveDesc: "BERM rekisteröi viisi kohtaa, joissa taustatila voi moderoida häiriötä. Ne ovat erillisiä m-funktioehdokkaita, eivät χ_geo eivätkä yksi Lindgrenin geometriasta tai FieldStatesta johdettu universaali funktio.",
     chiFiveColScale: "Skaala",
     chiFiveColBg: "Tausta (B)",
     chiFiveColPerturb: "Häiriö",
-    chiFiveColExpr: "χ-lauseke",
+    chiFiveColExpr: "Ehdokasfunktio",
     chiFiveColVerify: "Todentaminen",
     chiFiveColLevel: "Taso",
     chiFiveLink: "Katso koko analyysi →",
@@ -1123,13 +1123,13 @@ const t = {
     chiEvidenceSub: "Kuusi kudoskohtaista hypoteesia, joilla on eri vasteytimet",
     chiEvidenceDesc: "Näyttöperheet motivoivat täsmällisiä interaktiotestejä. Niiden moderaattorit eivät osoita yhteistä χ_geo-kudoslakia; jokainen vaatii oman altistusmitan, päätepisteen, etumerkin ja kalibroinnin.",
     chiEvidenceFamilies: [
-      { referenceId: "sakurai2008", family: "Diabetes (β-solut)", chi: "χ(glukoosi): K_ATP → V_mem → VGCC-esiviriytys", mechanism: "Korkea glukoosi sulkee K_ATP-kanavat → kalvo depolarisoituu → VGCC:t virittyvät → χ KORKEA. Matala glukoosi → K_ATP auki → χ MATALA.", prediction: "EMF × korkea-GI-ruokavalio tuottaa synergistisen diabetesriskin. Paasto suojaa β-soluja.", verification: "Sakurai 2008: ELF vähensi insuliinineritystä 30 %", level: "M|C" },
+      { referenceId: "sakurai2008", family: "Diabetes (β-solut)", chi: "m_glukoosi: K_ATP → V_mem → VGCC-ehdokas", mechanism: "Glukoositila voi muuttaa kalvopotentiaalia ja motivoi altistus × glukoosi -interaktiotestin. BERM-vahvistus on kalibroimaton.", prediction: "Testaa mitatun altistuksen ja glukoositilan interaktio insuliinineritykseen ennalta määrätyin kontrollein.", verification: "Sakurai 2008 antaa tutkimuskohtaisen ELF/insuliinipäätepisteen, ei ihmisen riskikerrointa", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Siittiölaatu (BTB)", chi: "Esteen siirron ehdokasmoderaattori", mechanism: "BERM ehdottaa: BTB:n eheyden muutos → kohdesolualtistuksen muutos → mahdollinen takaisinkytkentä. Kudosytimen vahvistus on kalibroimaton.", prediction: "Jos takaisinkytkentä on todellinen, siittiölaadun muutoksen pitäisi kiihtyä mitatun estevaurion mukana.", verification: "Yu 2019 raportoi aikariippuvaisen 4G-RF:ään liittyvän BTB-häiriön; se ei kalibroi χ_geo:ta", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: etenevä BBB-degradaatio 30–360 min", level: "E" },
-      { family: "Indikaattorilajit", chi: "χ(aineenvaihduntanopeus): M^(−0.25) skaalaus", mechanism: "Pienet eläimet: korkeampi massatarkka metabolianopeus → korkeampi perus-ROS → korkeampi χ → suurempi EMF-vaste.", prediction: "Hyönteiset ja pienet linnut kärsivät ensin; suuret nisäkkäät myöhemmin.", verification: "Ajallinen järjestys vastaa kehon massan skaalausta", level: "M|C" },
-      { family: "Vesieliöakseli (CatSper-konservaatio)", chi: "χ(ELF): merenalaiskaapelien kentät × vesieliöiden CatSper", mechanism: "CatSper on konservoitu merisiilistä ihmiseen — sama Ca²⁺-kanava navigoi siittiöitä kaikissa lajeissa. Vesieliölajit todentavat kolme BERM-kanavaa: ELF rusto- ja luukalojen sähköaistinherkkyyden kautta (VGIC-sensitiivisyys), RPM/CRY harmaavalaiden magnetoreseption kautta, ja CatSper konservaatioargumentin kautta. Merenalaiskaapeleiden ELF-kentät saavuttavat vesieliöiden CatSper-aktivaatiokynnyksen.", prediction: "Merieliöiden lisääntyminen heikkenee korkeateholisten merenalaiskaapelien lähellä. Viljellyn lohen CatSper heikompi kuin villin.", verification: "CatSper-KO = steriili kaikissa testatuissa lajeissa. Harmaavalaiden muutto seuraa geomagneettista kenttää. Rustokalojen herkkyys nV/m-tason kentille vahvistettu.", level: "L*" },
-      { family: "Sydän (CRY2-TRPC1)", chi: "χ(CRY2:n tila): valo- ja FAD-riippuvainen", mechanism: "Jos CRY2-TRPC1 toimii kardiomyosyyteissä (kuten myoblasteissa, [[ref:yap2025|Yap 2025]]), sydämen kalsiumsisäänvirtaus on valo/FAD-riippuvainen.", prediction: "Yöllinen puhelimen käyttö → korkeampi arytmiariski kuin päivällä.", verification: "Ei vielä testattu. TRPC-kanavat vahvistettu myosyyteissä.", level: "L*" },
-      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adeyn–Blackmanin ikkuna", chi: "χ(fotosykli) × χ(lämpötila) × χ(DC-orientaatio)", mechanism: "'Biologinen ikkuna' syntyy kolmesta päällekkäisestä χ-ikkunasta. Kaikkia kolmea kontrolloivat laboratoriot saavat yhdenmukaisia tuloksia.", prediction: "Viiden parametrin standardi ratkaisee 50 vuoden replikaatiodebatin.", verification: "Blackman 1985–1991: osoitti jokaisen ikkunan erikseen", level: "M" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Esteet (BBB + BTB)", chi: "m_este: läpäisevyyden ehdokasmoderaattori", mechanism: "Mitattu esteen eheys voi muuttaa kohdesolualtistusta; multiplikatiivinen vahvistus on BERM-hypoteesi, ei osoitettu laki.", prediction: "Testaa altistus × mitattu esteeheys ennalta määrättyä additiivista mallia vastaan.", verification: "Ulusoy 2025 motivoi aikaerotellun estepäätepisteen", level: "E" },
+      { family: "Indikaattorilajit", chi: "m_metabolia: allometrinen ehdokasmoderaattori", mechanism: "Massatarkka metabolia ja oksidatiivinen lähtötila motivoivat lajien välisen interaktiomallin, eivät universaalia skaalauskerrointa.", prediction: "Estimoi lajikohtaiset kulmakertoimet ennen allometrista meta-mallia.", verification: "Vaatii yhdenmukaiset altistus- ja päätepistetiedot lajeittain", level: "M|C" },
+      { family: "Vesieliöakseli (CatSper-konservaatio)", chi: "m_vesi: ELF/CatSper-vertailuehdokas", mechanism: "CatSper-konservaatio ja vesieliöiden sähkömagneettinen aistiminen motivoivat kohdennettuja tutkimuksia, mutta eivät osoita kaapelikenttien aktivoivan CatSperiä ympäristötasoilla.", prediction: "Mittaa kenttäspektri, gonadiannos ja lisääntymispäätepisteet kaltaistetuilla kaapeli- ja kontrollialueilla.", verification: "Konservaatio- ja aistinäyttö rajaa uskottavuutta, ei ympäristön aktivaatiokynnystä", level: "L*" },
+      { family: "Sydän (CRY2-TRPC1)", chi: "m_CRY: valo/FAD-tilan ehdokas", mechanism: "Kardiomyosyyttien CRY2–TRPC1-reitti on BERM:n ekstrapolaatio muista solujärjestelmistä ([[ref:yap2025|Yap 2025]]).", prediction: "Testaa altistus × valo/FAD-tila ennalta määrättyihin sydämen kalsiumpäätepisteisiin.", verification: "Kardiomyosyyttikohtainen EM-interaktio on testaamatta", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adeyn–Blackmanin ikkuna", chi: "m_foto × m_lämpö × m_DC -ehdokkaat", mechanism: "Fotosykli, lämpötila ja DC-orientaatio ovat erillisiä moderaattoriehdokkaita, eivät yhteinen χ-laki.", prediction: "Faktoriaalinen replikaatio voi estimoida jokaisen interaktion ja yhteistermin.", verification: "Blackman-tutkimukset motivoivat tekijäkohtaisen replikaation", level: "M" },
     ],
 
     dualSuscTitle: "Kaksi itsenäistä susceptibiliteettia",
@@ -1140,7 +1140,7 @@ const t = {
     dualSuscLabelTests: "Testattavissa",
     dualSuscLabelPathways: "Polut",
     dualSuscLeft: {
-      title: "χ(Ā) [VGCC]",
+      title: "VGCC-ydinehdokas",
       type: "Geometrinen",
       channel: "Ca²⁺-kanava (VGCC)",
       threshold: "VAATII sähköistyskynnyksen (Ā > 0)",
@@ -1148,7 +1148,7 @@ const t = {
       pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
-      title: "χ_B [CRY/RPM]",
+      title: "CRY/RPM-ydinehdokas",
       type: "Spin-kemiallinen",
       channel: "Radikaalipari-mekanismi",
       threshold: "EI sähköistyskynnystä (toimii aina)",
@@ -1175,7 +1175,7 @@ const t = {
     phyloText: [
       "BERM tunnistaa viisi biologista polkua (A–E) joiden kautta EMF vaikuttaa lisääntymiseen. Niiden operatiiviset painot heijastavat merkitystä ihmisen hedelmällisyydelle. Mutta niiden fylogeneettinen hierarkia — mikä on perustavanlaatuisempi ja mikä johdettu — on erilainen.",
       "Polku B (CRY/RPM) on kantamekanismi. Läsnä kaikissa eukaryooteissa: kasvit, sienet, hyönteiset, linnut, nisäkkäät. Kryptokromi löydettiin ensin kasveista (Arabidopsis, 1993). CRY:n lisääntymiskykyyn liittyvä rooli on parhaiten dokumentoitu kasveissa — CRY2 → CONSTANS → FLOWERING LOCUS T → kukinta-induktio. Konservoitu yli miljardin vuoden ajan fotolyaasin homologina. Ei vaadi kalvopotentiaalia. Operoi spin-kemialla (radikaaliparimekanismi). RF-häiriö osoitettu kasveissa (Ahmad 2020: 7 MHz), hyönteisissä (Gegear 2008: Drosophila) ja nisäkkäissä (PMC11817702 2025).",
-      "Polku A (VGCC/IFO) on johdettu mekanismi. Eläintarkka — eksitaabelit solut: neuronit, lihassyyt, siittiöt. Vaatii kalvopotentiaalin (−70 mV / 10 nm → χ ≈ 1.0). Kehittyi noin 500 miljoonaa vuotta sitten jänniteohjattujen ionikanavien myötä. Lisää herkkyyttä kudoksissa joissa kalvopotentiaali on korkea. Vahvin yksittäinen polku ihmisen siittiövauriolle. Kasveilla on ionikanavia (TPC1, CNGC) mutta ne eivät ole S4-heliksipohjaisia VGCC:itä.",
+      "Polku A (VGCC/IFO) on BERM:n ehdokasmekanismi, joka on koottu tuodusta ionikanavabiologiasta ja altistustutkimuksista. Se on eläimille ominainen ja relevantti eksitaabeleissa soluissa, mutta sitä ei ole johdettu Lindgrenin geometriasta eikä FieldStatesta. Ihmisen kudosydin, ympäristöannosvaste, etumerkki ja vahvistus ovat avoimia. Kasveilla on ionikanavia (TPC1, CNGC), mutta ei S4-heliksipohjaisia VGCC:itä.",
       "Yhdessä: polku B on evoluutiivinen perusta. Polku A on eläinten lisäkerros sen päälle. Molemmat operoivat samanaikaisesti eläimissä. Vain polku B operoi kasveissa.",
       "Kriittinen B2/FAD-ero — miksi efektikoot eroavat kasvien ja eläinten välillä: Kasvit syntetisoivat oman riboflaviininsa (B2), joten FAD-saatavuus on endogeeninen ja CRY-toiminta riippuu vain RF-häiriöstä — Ahmad 2020:n 'relatively minor' efekti on puhdas RPM-testi. Eläimet tarvitsevat ravinnon B2:ta, joten FAD-saatavuus riippuu ruokavaliosta ja CRY-toiminta riippuu sekä RF:stä että B2-statuksesta — kaksinkertainen haavoittuvuus: EMF-häiriö + ravitsemuspuutos. Tämä selittää miksi eläinten efektikoot ylittävät kasvien efektikoot: eläimillä on kaksi häiriölähdettä, kasveilla vain yksi.",
     ] as const,
@@ -1562,7 +1562,7 @@ const t = {
 
     modulomeSub: "Kaksitoistakerroksinen alttiusmalli — molekulaarisesta spinfysiikasta populaatiotason malleihin",
     modulomeTitle: "EMF-moduloomi",
-    modulomeDesc: "Kaksitoistatasoinen moduloomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros säätelee χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
+    modulomeDesc: "Kaksitoistatasoinen moduloomi luetteloi moderaattoriehdokkaita molekulaarisesta spinfysiikasta populaatiotason malleihin. BERM kuvaa ne päätepistekohtaisilla vasteytimillä; ne eivät ole universaali χ tai χ_geo eikä niitä johdeta FieldStatesta. Kaksitoista kerrosta, kymmenen kohde-elintä ja neljä ehdotettua reittiä fertiliteetin laskuun.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -1929,7 +1929,7 @@ const t = {
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
     bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
-      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 0, title: "Measured background", desc: "Physical fields are measurement inputs. BERM, not FieldState, proposes the endpoint-specific biological response kernel." },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
       { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
       { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
@@ -1943,12 +1943,12 @@ const t = {
     ],
     bioCivFormulaTitle: "BioCap integral",
     bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
-    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormula: "BioCap_cand(t,λ) = BioCap₀ − ∫₀ᵗ m_lat^cand(λ)·[S(τ)+U(τ)+E(τ)]dτ + recovery",
     bioCivFormulaTerms: [
       { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
       { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
       { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
-      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "m_lat^cand(λ)", desc: "BERM candidate latitude moderator; neither χ_geo nor a calibrated biological coefficient" },
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
@@ -2005,11 +2005,11 @@ const t = {
 
     chiFiveTitle: "5スケールの背景モデレーター候補",
     chiFiveSub: "個別に検証する類推 — χ_geoの実装ではない",
-    chiFiveDesc: "表のχラベルは別々の候補応答関数の略記であり、Lindgren幾何学から導出された単一の普遍関数ではありません。",
+    chiFiveDesc: "これらは別々の候補m関数であり、χ_geoでも、Lindgren幾何学やFieldStateから導出された普遍関数でもありません。",
     chiFiveColScale: "スケール",
     chiFiveColBg: "背景(B)",
     chiFiveColPerturb: "摂動",
-    chiFiveColExpr: "χ式",
+    chiFiveColExpr: "候補関数",
     chiFiveColVerify: "検証",
     chiFiveColLevel: "レベル",
     chiFiveLink: "完全な分析を見る →",
@@ -2018,13 +2018,13 @@ const t = {
     chiEvidenceSub: "個別カーネルを要する6つの領域仮説",
     chiEvidenceDesc: "各モデレーターには独自の曝露測定、エンドポイント、符号、校正が必要で、共通のχ_geo組織法則を示すものではありません。",
     chiEvidenceFamilies: [
-      { referenceId: "sakurai2008", family: "糖尿病(β細胞)", chi: "χ(グルコース): K_ATP → V_mem → VGCCプライミング", mechanism: "高グルコースがK_ATPチャネルを閉じる → 膜が脱分極 → VGCCがプライミングされる → χ高。低グルコース → K_ATP開 → χ低。", prediction: "EMF × 高GI食がシナジー的な糖尿病リスクを生む。断食はβ細胞を保護する。", verification: "Sakurai 2008: ELFがインスリン分泌を30%減少", level: "M|C" },
+      { referenceId: "sakurai2008", family: "糖尿病(β細胞)", chi: "m_glucose: VGCC候補修飾因子", mechanism: "グルコース状態は膜電位を変え得るため、曝露×グルコース相互作用試験を動機づけます。BERM利得は未校正です。", prediction: "測定曝露とグルコース状態の相互作用を、事前指定した対照で検定する。", verification: "Sakurai 2008は研究固有のELF/インスリン終点であり、ヒトのリスク係数ではない", level: "M|C" },
       { referenceId: "yu2019_btb", family: "精子品質(BTB)", chi: "バリア移送の候補修飾因子", mechanism: "BERMはBTB完全性変化→標的細胞曝露変化→候補フィードバックを提案する。組織カーネル利得は未校正。", prediction: "実在するなら、測定した障壁損失とともに精子品質変化が加速する。", verification: "Yu 2019は時間依存4G-RF関連BTB障害を報告するがχ_geoを校正しない", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "バリア(BBB + BTB)", chi: "χ(バリア透過性): 連続的変調器", mechanism: "バリアは連続的なχ変調器。部分的に損傷したバリア = 部分的なχ増加。乗法的増幅を生む。", prediction: "累積暴露による超線形の用量反応。", verification: "Ulusoy 2025: 30-360分の進行性BBB劣化", level: "E" },
-      { family: "センチネル種", chi: "χ(代謝率): M^(-0.25)スケーリング", mechanism: "小動物:より高い質量特異的代謝率 → より高い基礎ROS → より高いχ → より大きなEMF応答。", prediction: "昆虫と小鳥が最初に影響;大型哺乳類は後に。", verification: "時間的順序が体質量スケーリングと一致", level: "M|C" },
-      { family: "水生軸 (CatSper保存)", chi: "χ(ELF): 海底ケーブル場 × 水生CatSper", mechanism: "CatSperはウニからヒトまで保存されている — すべての種で精子をナビゲートする同じCa²⁺チャネル。水生種は3つのBERMチャネルを検証: 板鰓類の電気感覚閾値によるELF(VGIC感度)、コククジラの磁気受容によるRPM/CRY、保存性論拠によるCatSper。海底ケーブルのELF場は水生CatSperの活性化閾値に達する。", prediction: "高電力海底ケーブル回廊付近で海洋生殖が低下。養殖サーモンのCatSperは天然より弱い。", verification: "CatSper KO = テストされたすべての種で不妊。コククジラの回遊は地磁気場を追跡。板鰓類のnV/mスケール場への感度が確認。", level: "L*" },
-      { family: "心臓(CRY2-TRPC1)", chi: "χ(CRY2状態): 光およびFAD依存性", mechanism: "CRY2-TRPC1が心筋細胞で動作する場合(筋芽細胞と同様、[[ref:yap2025|Yap 2025]])、心臓カルシウム流入は光/FAD依存性。", prediction: "夜間の携帯電話使用 → 日中より高い不整脈リスク。", verification: "未検証。TRPCチャネルは心筋細胞で確認済み。", level: "L*" },
-      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackmanウィンドウ", chi: "χ(光周期) × χ(温度) × χ(DC方向)", mechanism: "「生物学的ウィンドウ」は3つの重畳されたχウィンドウから生じる。3つすべてを制御する研究室は一貫した結果を得る。", prediction: "5パラメータ標準が50年の再現性論争を解決する。", verification: "Blackman 1985-1991: 各ウィンドウを独立に実証", level: "M" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "バリア(BBB + BTB)", chi: "m_barrier: 透過性候補修飾因子", mechanism: "測定されたバリア完全性が標的細胞曝露を修飾し得ます。乗法利得はBERM仮説で、確立した法則ではありません。", prediction: "曝露×測定バリア完全性を加法モデルと比較する。", verification: "Ulusoy 2025は時間分解バリア終点を動機づける", level: "E" },
+      { family: "センチネル種", chi: "m_metabolic: 候補相対成長修飾因子", mechanism: "代謝率と酸化状態は種間相互作用モデルを動機づけますが、普遍係数を確立しません。", prediction: "相対成長メタモデル前に種別傾きを推定する。", verification: "種間で調和した曝露・終点データが必要", level: "M|C" },
+      { family: "水生軸 (CatSper保存)", chi: "m_aquatic: ELF/CatSper候補比較", mechanism: "CatSper保存と電磁感覚は標的研究を動機づけますが、環境濃度のケーブル場がCatSperを活性化する証拠ではありません。", prediction: "整合したケーブル地点と対照地点で場スペクトル、性腺線量、生殖終点を測定する。", verification: "保存性は妥当性を制約するが環境活性化閾値ではない", level: "L*" },
+      { family: "心臓(CRY2-TRPC1)", chi: "m_CRY: 光/FAD状態候補", mechanism: "心筋CRY2–TRPC1経路は他細胞系からのBERM外挿です ([[ref:yap2025|Yap 2025]])。", prediction: "事前指定した心臓Ca²⁺終点で曝露×光/FAD状態を検定する。", verification: "心筋固有のEM相互作用は未検証", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackmanウィンドウ", chi: "m_photo × m_temp × m_DC候補", mechanism: "光周期、温度、DC方向は別々の候補修飾因子で、共通χ法則ではありません。", prediction: "要因実験で各相互作用と結合項を推定する。", verification: "Blackman研究は因子別再現を動機づける", level: "M" },
     ],
 
     dualSuscTitle: "2つの独立した感受性",
@@ -2035,7 +2035,7 @@ const t = {
     dualSuscLabelTests: "テスト方法",
     dualSuscLabelPathways: "経路",
     dualSuscLeft: {
-      title: "χ(Ā) [VGCC]",
+      title: "VGCC候補カーネル",
       type: "幾何学的",
       channel: "Ca²⁺チャネル（VGCC）",
       threshold: "電化閾値が必要（Ā > 0）",
@@ -2043,7 +2043,7 @@ const t = {
       pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
-      title: "χ_B [CRY/RPM]",
+      title: "CRY/RPM候補カーネル",
       type: "スピン化学的",
       channel: "ラジカルペア機構",
       threshold: "電化閾値なし（常に作動）",
@@ -2070,7 +2070,7 @@ const t = {
     phyloText: [
       "BERMはEMFが生殖に影響する5つの生物学的経路（A〜E）を同定する。運用上の重みはヒトの生殖能力への重要性を反映するが、系統発生的階層——どちらがより根本的でどちらが派生的か——は異なる。",
       "経路B（CRY/RPM）は祖先型メカニズムである。全ての真核生物に存在：植物、菌類、昆虫、鳥類、哺乳類。クリプトクロムは植物で最初に発見された（シロイヌナズナ、1993年）。CRYの生殖的役割は植物で最もよく文書化されている——CRY2→CONSTANS→FT→開花誘導。フォトリアーゼ相同体として10億年以上保存。膜電位を必要としない。スピン化学（ラジカル対メカニズム）で動作。RF妨害は植物（Ahmad 2020：7 MHz）、昆虫（Gegear 2008：ショウジョウバエ）、哺乳類（PMC11817702 2025）で実証。",
-      "経路A（VGCC/IFO）は派生型メカニズムである。動物特異的——興奮性細胞：神経、筋肉、精子。膜電位を必要とする（−70 mV / 10 nm → χ ≈ 1.0）。約5億年前に電位依存性イオンチャネルとともに進化。膜電位の高い組織で感受性を追加。ヒト精子損傷の最強経路。植物にもイオンチャネル（TPC1、CNGC）はあるがS4ヘリックスベースのVGCCではない。",
+      "経路A（VGCC/IFO）は、既存のイオンチャネル生物学と曝露研究からBERMが構成する候補メカニズムです。Lindgren幾何学やFieldStateから導出されたものではなく、ヒト組織カーネル、環境用量反応、符号、利得は未確定です。植物にもイオンチャネル（TPC1、CNGC）はありますが、S4ヘリックス型VGCCではありません。",
       "合わせて：経路Bは進化的基盤。経路Aはその上の動物特異的増幅層。動物では両方が同時に動作。植物では経路Bのみが動作。",
       "重要なB2/FADの違い——植物と動物でエフェクトサイズが異なる理由：植物は自らリボフラビン（B2）を合成するため、FAD供給は内因性でCRY機能はRF妨害にのみ依存——Ahmad 2020の「比較的軽微」な効果は純粋なRPMテスト。動物は食事性B2を必要とし、FAD供給は栄養に依存、CRY機能はRFとB2状態の両方に依存——二重の脆弱性：EMF妨害＋栄養欠乏。動物のエフェクトサイズが植物を上回る理由：動物には2つの妨害源があり、植物には1つしかない。",
     ] as const,
@@ -2433,7 +2433,7 @@ const t = {
 
     modulomeSub: "分子スピン物理から集団パターンまでの12層感受性モデル",
     modulomeTitle: "EMFモジュローム",
-    modulomeDesc: "12層モジュロームは分子スピン物理から集団レベルパターンまでの電磁感受性をマッピングする。各層はχを変調する -- 外部EMFと生物学的機能間の無次元結合。12層、10標的臓器、出生率低下への4つの独立経路。",
+    modulomeDesc: "12層モジュロームは分子スピン物理から集団パターンまでの候補修飾因子を整理します。BERMはエンドポイント固有カーネルでそれらを結びます。普遍的χやχ_geoではなく、FieldStateからも導出されません。12層、10標的臓器、出生率低下への4つの提案経路です。",
 
     btnEvidence: "エビデンスを閲覧",
     btnPredictions: "予測を表示",
@@ -2800,7 +2800,7 @@ const t = {
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
     bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
-      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 0, title: "Measured background", desc: "Physical fields are measurement inputs. BERM, not FieldState, proposes the endpoint-specific biological response kernel." },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
       { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
       { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
@@ -2814,12 +2814,12 @@ const t = {
     ],
     bioCivFormulaTitle: "BioCap integral",
     bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
-    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormula: "BioCap_cand(t,λ) = BioCap₀ − ∫₀ᵗ m_lat^cand(λ)·[S(τ)+U(τ)+E(τ)]dτ + recovery",
     bioCivFormulaTerms: [
       { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
       { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
       { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
-      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "m_lat^cand(λ)", desc: "BERM candidate latitude moderator; neither χ_geo nor a calibrated biological coefficient" },
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
@@ -2876,11 +2876,11 @@ const t = {
 
     chiFiveTitle: "Modérateurs de fond candidats à cinq échelles",
     chiFiveSub: "Analogies à tester séparément — pas des instances de χ_geo",
-    chiFiveDesc: "Les étiquettes χ du tableau abrègent des fonctions candidates distinctes ; elles ne constituent pas une fonction universelle dérivée de la géométrie de Lindgren.",
+    chiFiveDesc: "Ces modérateurs sont des fonctions candidates m distinctes : ni χ_geo, ni une fonction universelle dérivée de la géométrie de Lindgren ou de FieldState.",
     chiFiveColScale: "Echelle",
     chiFiveColBg: "Fond (B)",
     chiFiveColPerturb: "Perturbation",
-    chiFiveColExpr: "Expression χ",
+    chiFiveColExpr: "Fonction candidate",
     chiFiveColVerify: "Verification",
     chiFiveColLevel: "Niveau",
     chiFiveLink: "Voir l'analyse complete →",
@@ -2889,13 +2889,13 @@ const t = {
     chiEvidenceSub: "Six hypothèses propres aux tissus nécessitant des noyaux distincts",
     chiEvidenceDesc: "Chaque modérateur exige sa mesure d’exposition, son endpoint, son signe et sa calibration ; ces familles ne démontrent pas une loi tissulaire χ_geo commune.",
     chiEvidenceFamilies: [
-      { referenceId: "sakurai2008", family: "Diabete (cellules β)", chi: "χ(glucose) : K_ATP → V_mem → amorcage VGCC", mechanism: "Un glucose eleve ferme les canaux K_ATP → la membrane se depolarise → les VGCC sont amorces → χ ELEVE. Glucose bas → K_ATP ouvert → χ BAS.", prediction: "EMF × regime a IG eleve produit un risque synergique de diabete. Le jeune protege les cellules β.", verification: "Sakurai 2008 : ELF a reduit la secretion d'insuline de 30 %", level: "M|C" },
+      { referenceId: "sakurai2008", family: "Diabete (cellules β)", chi: "m_glucose : modérateur VGCC candidat", mechanism: "L'état glucidique peut modifier le potentiel membranaire et motive un test exposition × glucose. Le gain BERM n'est pas calibré.", prediction: "Tester l'interaction entre exposition mesurée et glucose avec contrôles préspécifiés.", verification: "Sakurai 2008 fournit un endpoint ELF/insuline propre à l'étude, pas un coefficient de risque humain", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Qualité du sperme (BTB)", chi: "Modérateur candidat du transfert de barrière", mechanism: "BERM propose : changement d'intégrité BTB → exposition des cellules cibles modifiée → rétroaction possible. Le gain du noyau tissulaire n'est pas calibré.", prediction: "Si elle existe, la variation de qualité devrait accélérer avec la perte de barrière mesurée.", verification: "Yu 2019 rapporte une perturbation BTB associée à la RF 4G et au temps ; sans calibrer χ_geo", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "Barrieres (BBB + BTB)", chi: "χ(permeabilite de la barriere) : modulateur continu", mechanism: "Les barrieres sont des modulateurs χ continus. Barriere partiellement endommagee = augmentation partielle de χ. Produit une amplification multiplicative.", prediction: "Relation dose-reponse super-lineaire avec l'exposition cumulative.", verification: "Ulusoy 2025 : degradation progressive de la BBB 30–360 min", level: "E" },
-      { family: "Especes sentinelles", chi: "χ(taux metabolique) : echelle M^(−0,25)", mechanism: "Petits animaux : taux metabolique specifique a la masse plus eleve → ROS de base plus eleves → χ plus eleve → reponse EMF plus grande.", prediction: "Les insectes et petits oiseaux sont affectes en premier ; les grands mammiferes ensuite.", verification: "L'ordre temporel correspond a l'echelle de masse corporelle", level: "M|C" },
-      { family: "Axe aquatique (conservation CatSper)", chi: "χ(ELF) : champs des cables sous-marins × CatSper aquatique", mechanism: "CatSper est conserve de l'oursin a l'homme — le meme canal Ca²⁺ qui guide les spermatozoides chez toutes les especes. Les especes aquatiques valident trois canaux BERM : ELF via les seuils electrosensoriels des elasmobranchies (sensibilite VGIC), RPM/CRY via la magnetoreception de la baleine grise, et CatSper via l'argument de conservation. Les champs ELF des cables sous-marins atteignent le seuil d'activation du CatSper aquatique.", prediction: "La reproduction marine decline pres des corridors de cables sous-marins a haute puissance. Le CatSper du saumon d'elevage est plus faible que celui du sauvage.", verification: "CatSper KO = sterile chez toutes les especes testees. La migration de la baleine grise suit le champ geomagnetique. Sensibilite des elasmobranchies aux champs nV/m confirmee.", level: "L*" },
-      { family: "Cardiaque (CRY2-TRPC1)", chi: "χ(etat CRY2) : dependant de la lumiere et du FAD", mechanism: "Si CRY2-TRPC1 opere dans les cardiomyocytes (comme dans les myoblastes, [[ref:yap2025|Yap 2025]]), l'entree calcique cardiaque est dependante de la lumiere/FAD.", prediction: "Utilisation du telephone la nuit → risque d'arythmie plus eleve que le jour.", verification: "Pas encore teste. Canaux TRPC confirmes dans les myocytes.", level: "L*" },
-      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Fenetre Adey-Blackman", chi: "χ(photocycle) × χ(temperature) × χ(orientation DC)", mechanism: "La « fenetre biologique » emerge de trois fenetres χ superposees. Les laboratoires controlant les trois obtiennent des resultats coherents.", prediction: "Le standard a cinq parametres resout 50 ans de debat sur la replication.", verification: "Blackman 1985–1991 : a demontre chaque fenetre independamment", level: "M" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Barrieres (BBB + BTB)", chi: "m_barrière : modérateur candidat", mechanism: "L'intégrité mesurée peut modifier l'exposition cellulaire ; le gain multiplicatif est une hypothèse BERM, non une loi établie.", prediction: "Tester exposition × intégrité mesurée contre un modèle additif.", verification: "Ulusoy 2025 motive un endpoint de barrière résolu dans le temps", level: "E" },
+      { family: "Especes sentinelles", chi: "m_métabolique : modérateur allométrique candidat", mechanism: "Le métabolisme et l'état oxydatif motivent un modèle interespèces, sans établir de coefficient universel.", prediction: "Estimer les pentes par espèce avant le méta-modèle allométrique.", verification: "Nécessite des expositions et endpoints harmonisés", level: "M|C" },
+      { family: "Axe aquatique (conservation CatSper)", chi: "m_aquatique : comparaison ELF/CatSper candidate", mechanism: "La conservation de CatSper et l'électrosensation motivent des études ciblées sans démontrer une activation aux niveaux environnementaux des câbles.", prediction: "Mesurer spectres, dose gonadique et endpoints reproductifs sur sites câble/témoins appariés.", verification: "La conservation contraint la plausibilité, pas le seuil environnemental", level: "L*" },
+      { family: "Cardiaque (CRY2-TRPC1)", chi: "m_CRY : état lumière/FAD candidat", mechanism: "La voie cardiomyocyte CRY2–TRPC1 est une extrapolation BERM d'autres systèmes cellulaires ([[ref:yap2025|Yap 2025]]).", prediction: "Tester exposition × lumière/FAD sur endpoints calciques cardiaques préspécifiés.", verification: "Interaction EM propre au cardiomyocyte non testée", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Fenetre Adey-Blackman", chi: "m_photo × m_temp × m_DC candidats", mechanism: "Photocycle, température et orientation DC sont des modérateurs distincts, non une loi χ commune.", prediction: "Une réplication factorielle peut estimer chaque interaction et leur terme conjoint.", verification: "Les études Blackman motivent une réplication par facteur", level: "M" },
     ],
 
     dualSuscTitle: "Deux susceptibilites independantes",
@@ -2906,7 +2906,7 @@ const t = {
     dualSuscLabelTests: "Tests via",
     dualSuscLabelPathways: "Voies",
     dualSuscLeft: {
-      title: "χ(Ā) [VGCC]",
+      title: "Noyau VGCC candidat",
       type: "Geometrique",
       channel: "Canal Ca²⁺ (VGCC)",
       threshold: "NECESSITE le seuil d'electrification (Ā > 0)",
@@ -2914,7 +2914,7 @@ const t = {
       pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
-      title: "χ_B [CRY/RPM]",
+      title: "Noyau CRY/RPM candidat",
       type: "Spin-chimique",
       channel: "Mecanisme des paires de radicaux",
       threshold: "PAS de seuil d'electrification (opere toujours)",
@@ -2941,7 +2941,7 @@ const t = {
     phyloText: [
       "BERM identifie cinq voies biologiques (A-E) par lesquelles les EMF affectent la reproduction. Leurs poids operationnels refletent l'importance pour la fertilite humaine. Mais leur hierarchie phylogenetique — laquelle est plus fondamentale et laquelle est derivee — est differente.",
       "La voie B (CRY/RPM) est le mecanisme ancestral. Present chez tous les eucaryotes : plantes, champignons, insectes, oiseaux, mammiferes. Le cryptochrome a ete decouvert d'abord chez les plantes (Arabidopsis, 1993). Le role reproductif de CRY est le mieux documente chez les plantes — CRY2 → CONSTANS → FT → induction de la floraison. Conserve depuis plus d'un milliard d'annees comme homologue de la photolyase. Ne necessite pas de potentiel membranaire. Opere par chimie de spin (mecanisme de paire de radicaux). La perturbation RF est demontree chez les plantes (Ahmad 2020 : 7 MHz), les insectes (Gegear 2008 : Drosophile) et les mammiferes (PMC11817702 2025).",
-      "La voie A (VGCC/IFO) est le mecanisme derive. Specifique aux animaux — cellules excitables : neurones, muscles, spermatozoides. Necessite un potentiel membranaire (−70 mV / 10 nm → χ ≈ 1.0). A evolue il y a environ 500 millions d'annees avec les canaux ioniques voltage-dependants. Ajoute de la sensibilite dans les tissus a potentiel membranaire eleve. Voie la plus forte pour les dommages aux spermatozoides humains. Les plantes ont des canaux ioniques (TPC1, CNGC) mais pas de VGCC a helice S4.",
+      "La voie A (VGCC/IFO) est un mécanisme candidat de BERM assemblé à partir de la biologie des canaux ioniques et d'études d'exposition. Elle n'est dérivée ni de la géométrie de Lindgren ni de FieldState ; son noyau tissulaire humain, sa dose-réponse environnementale, son signe et son gain restent ouverts. Les plantes ont des canaux ioniques (TPC1, CNGC), mais pas de VGCC à hélice S4.",
       "Ensemble : la voie B est la fondation evolutive. La voie A est la couche d'amplification specifique aux animaux par-dessus. Les deux operent simultanement chez les animaux. Seule la voie B opere chez les plantes.",
       "Difference critique B2/FAD — pourquoi les tailles d'effet different entre plantes et animaux : Les plantes synthetisent leur propre riboflavine (B2), l'approvisionnement en FAD est donc endogene et la fonction CRY ne depend que de la perturbation RF — l'effet 'relativement mineur' d'Ahmad 2020 est un test RPM pur. Les animaux necessitent du B2 alimentaire, donc l'approvisionnement en FAD depend de la nutrition et la fonction CRY depend a la fois du RF et du statut B2 — une double vulnerabilite : perturbation EMF + carence nutritionnelle.",
     ] as const,
@@ -3304,7 +3304,7 @@ const t = {
 
     modulomeSub: "Modele de susceptibilite a douze couches — de la physique des spins moleculaires aux patterns de population",
     modulomeTitle: "Modulome EMF",
-    modulomeDesc: "Le modulome a douze couches cartographie la susceptibilite electromagnetique de la physique des spins moleculaires aux patterns au niveau de la population. Chaque couche module χ — le couplage adimensionnel entre l'EMF externe et la fonction biologique. Douze couches, dix organes cibles, quatre voies independantes vers le declin de la fertilite.",
+    modulomeDesc: "Le modulome à douze couches catalogue des modérateurs candidats, de la physique des spins aux populations. BERM les relie par des noyaux propres aux endpoints : ils ne forment ni un χ universel ni χ_geo et ne sont pas dérivés de FieldState. Douze couches, dix organes cibles et quatre voies proposées vers le déclin de la fertilité.",
 
     btnEvidence: "Parcourir les preuves",
     btnPredictions: "Voir les predictions",
@@ -3671,7 +3671,7 @@ const t = {
     bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
     bioCivLead: "BERM applies a biologically reductionist, compositional hypothesis from molecular and endocrine states through individual behaviour to population aggregates. The chain states the proposed propagation from physical input to civilizational outcome. Evidence for separate links can constrain it, but the full multiscale chain is not empirically closed and aggregate political outcomes are not read back as individual hormone measurements.",
     bioCivChain: [
-      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 0, title: "Measured background", desc: "Physical fields are measurement inputs. BERM, not FieldState, proposes the endpoint-specific biological response kernel." },
       { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
       { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
       { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
@@ -3685,12 +3685,12 @@ const t = {
     ],
     bioCivFormulaTitle: "BioCap integral",
     bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
-    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormula: "BioCap_cand(t,λ) = BioCap₀ − ∫₀ᵗ m_lat^cand(λ)·[S(τ)+U(τ)+E(τ)]dτ + recovery",
     bioCivFormulaTerms: [
       { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
       { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
       { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
-      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "m_lat^cand(λ)", desc: "BERM candidate latitude moderator; neither χ_geo nor a calibrated biological coefficient" },
       { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
@@ -3747,11 +3747,11 @@ const t = {
 
     chiFiveTitle: "5개 규모의 후보 배경 조절자",
     chiFiveSub: "각각 검증할 유사성 — χ_geo의 구현이 아님",
-    chiFiveDesc: "표의 χ 표지는 서로 다른 후보 반응 함수의 약칭이며 Lindgren 기하학에서 도출된 하나의 보편 함수가 아닙니다.",
+    chiFiveDesc: "이들은 서로 다른 후보 m 함수이며 χ_geo도, Lindgren 기하학이나 FieldState에서 도출된 보편 함수도 아닙니다.",
     chiFiveColScale: "스케일",
     chiFiveColBg: "배경 (B)",
     chiFiveColPerturb: "교란",
-    chiFiveColExpr: "χ 표현식",
+    chiFiveColExpr: "후보 함수",
     chiFiveColVerify: "검증",
     chiFiveColLevel: "수준",
     chiFiveLink: "전체 분석 보기 →",
@@ -3760,13 +3760,13 @@ const t = {
     chiEvidenceSub: "서로 다른 커널이 필요한 6개 조직별 가설",
     chiEvidenceDesc: "각 조절자는 자체 노출 측정, 종점, 부호와 보정이 필요하며 공통 χ_geo 조직 법칙의 증거가 아닙니다.",
     chiEvidenceFamilies: [
-      { referenceId: "sakurai2008", family: "당뇨병 (β세포)", chi: "χ(포도당): K_ATP → V_mem → VGCC 프라이밍", mechanism: "높은 포도당이 K_ATP 채널을 닫음 → 막 탈분극 → VGCC 프라이밍 → χ 높음. 낮은 포도당 → K_ATP 열림 → χ 낮음.", prediction: "EMF × 고GI 식단은 시너지 당뇨병 위험을 생성. 단식은 β세포를 보호.", verification: "Sakurai 2008: ELF가 인슐린 분비를 30% 감소", level: "M|C" },
+      { referenceId: "sakurai2008", family: "당뇨병 (β세포)", chi: "m_glucose: VGCC 후보 조절인자", mechanism: "포도당 상태는 막전위를 바꿀 수 있어 노출×포도당 상호작용 검사를 동기화합니다. BERM 이득은 미보정입니다.", prediction: "사전 지정 대조군으로 측정 노출과 포도당 상태의 상호작용을 검사합니다.", verification: "Sakurai 2008은 연구별 ELF/인슐린 종점이며 인간 위험 계수가 아닙니다", level: "M|C" },
       { referenceId: "yu2019_btb", family: "정자 품질 (BTB)", chi: "장벽 전달 후보 조절인자", mechanism: "BERM은 BTB 완전성 변화 → 표적 세포 노출 변화 → 가능한 피드백을 제안합니다. 조직 커널 이득은 미보정입니다.", prediction: "피드백이 실제라면 측정된 장벽 손실과 함께 정자 품질 변화가 가속되어야 합니다.", verification: "Yu 2019는 시간 의존 4G-RF 관련 BTB 교란을 보고하지만 χ_geo를 보정하지 않습니다", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "장벽 (BBB + BTB)", chi: "χ(장벽 투과성): 연속 변조자", mechanism: "장벽은 연속 χ 변조자. 부분 손상된 장벽 = χ의 부분적 증가. 승법적 증폭을 생성.", prediction: "누적 노출에 따른 초선형 용량-반응 관계.", verification: "Ulusoy 2025: 30-360분에 걸친 점진적 BBB 분해", level: "E" },
-      { family: "감시종", chi: "χ(대사율): M^(-0.25) 스케일링", mechanism: "작은 동물: 질량 특이적 대사율이 높음 → 기저 ROS가 높음 → χ가 높음 → EMF 반응이 큼.", prediction: "곤충과 작은 새가 먼저 영향 받고; 큰 포유류가 나중.", verification: "시간 순서가 체질량 스케일링과 일치", level: "M|C" },
-      { family: "수생 축 (CatSper 보존)", chi: "χ(ELF): 해저 케이블 장 × 수생 CatSper", mechanism: "CatSper는 성게에서 인간까지 보존됨 — 모든 종에서 정자를 안내하는 동일한 Ca²⁺ 채널. 수생 종은 세 가지 BERM 채널을 검증: 판새류의 전기감각 역치를 통한 ELF(VGIC 민감도), 회색고래 자기수용을 통한 RPM/CRY, 보존 논거를 통한 CatSper. 해저 케이블의 ELF 장은 수생 CatSper 활성화 역치에 도달.", prediction: "고전력 해저 케이블 회랑 근처에서 해양 생식이 감소. 양식 연어 CatSper가 야생보다 약함.", verification: "CatSper KO = 테스트된 모든 종에서 불임. 회색고래 이동이 지자기장을 추적. 판새류의 nV/m 스케일 장에 대한 민감도 확인.", level: "L*" },
-      { family: "심장 (CRY2-TRPC1)", chi: "χ(CRY2 상태): 빛과 FAD 의존", mechanism: "CRY2-TRPC1이 심근세포에서 작동한다면(근아세포에서와 같이, [[ref:yap2025|Yap 2025]]), 심장 칼슘 유입은 빛/FAD 의존적.", prediction: "야간 전화 사용 → 주간보다 부정맥 위험이 높음.", verification: "아직 테스트되지 않음. TRPC 채널이 근세포에서 확인됨.", level: "L*" },
-      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman 창", chi: "χ(광순환) × χ(온도) × χ(DC 방향)", mechanism: "'생물학적 창'은 세 개의 겹치는 χ 창에서 나타남. 세 가지 모두를 제어하는 실험실은 일관된 결과를 얻음.", prediction: "5-매개변수 표준이 50년간의 재현 논쟁을 해결.", verification: "Blackman 1985-1991: 각 창을 독립적으로 시연", level: "M" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "장벽 (BBB + BTB)", chi: "m_barrier: 투과성 후보 조절인자", mechanism: "측정된 장벽 완전성은 표적 세포 노출을 수정할 수 있습니다. 승법 이득은 BERM 가설이지 확립된 법칙이 아닙니다.", prediction: "노출×측정 장벽 완전성을 가산 모형과 비교합니다.", verification: "Ulusoy 2025는 시간 분해 장벽 종점을 동기화합니다", level: "E" },
+      { family: "감시종", chi: "m_metabolic: 후보 상대성장 조절인자", mechanism: "대사율과 산화 상태는 종간 상호작용 모형을 동기화하지만 보편 계수를 확립하지 않습니다.", prediction: "상대성장 메타모형 전에 종별 기울기를 추정합니다.", verification: "종간 조화된 노출 및 종점 자료가 필요합니다", level: "M|C" },
+      { family: "수생 축 (CatSper 보존)", chi: "m_aquatic: ELF/CatSper 후보 비교", mechanism: "CatSper 보존과 전자기 감각은 표적 연구를 동기화하지만 환경 수준 케이블 장의 CatSper 활성화를 입증하지 않습니다.", prediction: "짝지은 케이블/대조 지점에서 장 스펙트럼, 생식선 선량, 생식 종점을 측정합니다.", verification: "보존성은 개연성을 제한하지만 환경 활성화 역치는 아닙니다", level: "L*" },
+      { family: "심장 (CRY2-TRPC1)", chi: "m_CRY: 빛/FAD 상태 후보", mechanism: "심근 CRY2–TRPC1 경로는 다른 세포계에서의 BERM 외삽입니다 ([[ref:yap2025|Yap 2025]]).", prediction: "사전 지정 심장 Ca²⁺ 종점에서 노출×빛/FAD 상태를 검사합니다.", verification: "심근 특이적 EM 상호작용은 미검증입니다", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman 창", chi: "m_photo × m_temp × m_DC 후보", mechanism: "광주기, 온도, DC 방향은 별도 후보 조절인자이며 공통 χ 법칙이 아닙니다.", prediction: "요인 반복시험으로 각 상호작용과 결합항을 추정합니다.", verification: "Blackman 연구는 요인별 반복시험을 동기화합니다", level: "M" },
     ],
 
     dualSuscTitle: "두 가지 독립적 감수성",
@@ -3777,7 +3777,7 @@ const t = {
     dualSuscLabelTests: "테스트",
     dualSuscLabelPathways: "경로",
     dualSuscLeft: {
-      title: "χ(Ā) [VGCC]",
+      title: "VGCC 후보 커널",
       type: "기하학적",
       channel: "Ca²⁺ 채널 (VGCC)",
       threshold: "전기화 임계값 필요 (Ā > 0)",
@@ -3785,7 +3785,7 @@ const t = {
       pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
-      title: "χ_B [CRY/RPM]",
+      title: "CRY/RPM 후보 커널",
       type: "스핀화학적",
       channel: "라디칼 쌍 메커니즘",
       threshold: "전기화 임계값 없음 (항상 작동)",
@@ -3812,7 +3812,7 @@ const t = {
     phyloText: [
       "BERM은 EMF가 생식에 영향을 미치는 5가지 생물학적 경로(A-E)를 식별한다. 운영상 가중치는 인간 생식력에 대한 중요성을 반영하지만, 계통발생적 위계——어느 것이 더 근본적이고 어느 것이 파생적인가——는 다르다.",
       "경로 B(CRY/RPM)는 조상형 메커니즘이다. 모든 진핵생물에 존재: 식물, 균류, 곤충, 조류, 포유류. 크립토크롬은 식물에서 처음 발견됨(애기장대, 1993). CRY의 생식 역할은 식물에서 가장 잘 문서화됨——CRY2→CONSTANS→FT→개화 유도. 포토리아제 상동체로 10억 년 이상 보존. 막전위 불필요. 스핀 화학(라디칼 쌍 메커니즘)으로 작동. RF 교란은 식물(Ahmad 2020: 7 MHz), 곤충(Gegear 2008: 초파리), 포유류(PMC11817702 2025)에서 입증.",
-      "경로 A(VGCC/IFO)는 파생 메커니즘이다. 동물 특이적——흥분성 세포: 신경, 근육, 정자. 막전위 필요(−70 mV / 10 nm → χ ≈ 1.0). 약 5억 년 전 전압 개폐 이온 채널과 함께 진화. 막전위가 높은 조직에서 감수성 추가. 인간 정자 손상의 최강 단일 경로. 식물에도 이온 채널(TPC1, CNGC)이 있지만 S4 나선 기반 VGCC는 아님.",
+      "경로 A(VGCC/IFO)는 기존 이온 채널 생물학과 노출 연구로 BERM이 구성한 후보 메커니즘입니다. Lindgren 기하학이나 FieldState에서 도출되지 않았으며 인간 조직 커널, 환경 용량-반응, 부호와 이득은 열려 있습니다. 식물에도 이온 채널(TPC1, CNGC)이 있지만 S4 나선 기반 VGCC는 아닙니다.",
       "함께: 경로 B는 진화적 기반. 경로 A는 그 위의 동물 특이적 증폭층. 동물에서는 양쪽 모두 동시 작동. 식물에서는 경로 B만 작동.",
       "중요한 B2/FAD 차이——식물과 동물의 효과 크기가 다른 이유: 식물은 자체적으로 리보플라빈(B2)을 합성하므로 FAD 공급이 내인성이고 CRY 기능은 RF 교란에만 의존——Ahmad 2020의 '비교적 경미한' 효과는 순수한 RPM 테스트. 동물은 식이 B2가 필요하므로 FAD 공급이 영양에 의존하고 CRY 기능은 RF와 B2 상태 모두에 의존——이중 취약성: EMF 교란 + 영양 결핍. 동물의 효과 크기가 식물을 초과하는 이유: 동물에는 교란원이 2개, 식물에는 1개.",
     ] as const,
@@ -4175,7 +4175,7 @@ const t = {
 
     modulomeSub: "12-레이어 감수성 모델 — 분자 스핀 물리학에서 인구 패턴까지",
     modulomeTitle: "EMF 모듈롬",
-    modulomeDesc: "12-레이어 모듈롬은 분자 스핀 물리학에서 인구 수준 패턴까지 전자기 감수성을 매핑합니다. 각 레이어는 χ — 외부 EMF와 생물학적 기능 사이의 무차원 결합을 변조합니다. 12개 레이어, 10개 표적 기관, 출산력 감소로 향하는 4개 독립 경로.",
+    modulomeDesc: "12-레이어 모듈롬은 분자 스핀 물리학부터 인구 패턴까지 후보 조절인자를 정리합니다. BERM은 종점별 커널로 이들을 연결하며, 보편 χ나 χ_geo가 아니고 FieldState에서 도출되지도 않습니다. 12개 레이어, 10개 표적 기관, 출산력 감소로 향하는 4개 제안 경로입니다.",
 
     btnEvidence: "증거 탐색",
     btnPredictions: "예측 보기",
@@ -4607,7 +4607,7 @@ export default async function ModelPage({
                     <tr className="border-b border-card-border">
                       <th className="text-left py-2 pr-4 font-semibold">Tissue</th>
                       <th className="text-left py-2 pr-4 font-semibold">Channels</th>
-                      <th className="text-left py-2 pr-4 font-semibold">χ_tissue candidate</th>
+                      <th className="text-left py-2 pr-4 font-semibold">Tissue-kernel candidate</th>
                       <th className="text-left py-2 font-semibold">Reason</th>
                     </tr>
                   </thead>
@@ -5282,14 +5282,14 @@ export default async function ModelPage({
                   </tr>
                 </thead>
                 <tbody>
-                  {CHI_SCALES.map((s) => {
+                  {RESPONSE_MODIFIER_SCALES.map((s) => {
                     const color = CHAIN_EPISTEMIC_COLORS[s.level as EpistemicLevel] ?? "#6B7280";
                     return (
                       <tr key={s.id} className="border-b border-border/40">
                         <td className="py-2 pr-3 font-medium text-foreground">{locale_key === "fi" ? s.label_fi : s.label_en}</td>
                         <td className="py-2 pr-3 text-foreground-muted text-xs">{locale_key === "fi" ? s.background_fi : s.background_en}</td>
                         <td className="py-2 pr-3 text-foreground-muted text-xs">{locale_key === "fi" ? s.perturbation_fi : s.perturbation_en}</td>
-                        <td className="py-2 pr-3 font-mono text-xs text-foreground">{s.chi_expression}</td>
+                        <td className="py-2 pr-3 font-mono text-xs text-foreground">{s.candidate_expression}</td>
                         <td className="py-2 pr-3 text-foreground-muted text-xs">
                           {s.referenceIds?.length
                             ? s.referenceIds.map((referenceId, index) => (

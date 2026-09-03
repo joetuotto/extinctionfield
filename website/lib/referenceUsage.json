@@ -2,7 +2,7 @@
   "metadata": {
     "generated": "2026-09-03",
     "referencesWithUsages": 676,
-    "usageLocations": 1674
+    "usageLocations": 1671
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -875,20 +875,12 @@
         "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
       },
       {
-        "path": "/evidence",
-        "source": "components/DifferentialSusceptibility.tsx"
-      },
-      {
         "path": "/evidence/circadian",
         "source": "app/[locale]/evidence/circadian/page.tsx"
       },
       {
         "path": "/evidence/lighting",
         "source": "app/[locale]/evidence/lighting/page.tsx"
-      },
-      {
-        "path": "/evidence/magnetoreception",
-        "source": "components/DifferentialSusceptibility.tsx"
       },
       {
         "path": "/map",
@@ -4189,10 +4181,6 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence/magnetoreception",
-        "source": "components/DifferentialSusceptibility.tsx"
       },
       {
         "path": "/explore",

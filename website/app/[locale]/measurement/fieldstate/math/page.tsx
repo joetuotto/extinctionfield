@@ -29,7 +29,7 @@ type Copy = {
 };
 
 const equations = {
-  metric: ["g_{\\mu\\nu}=\\eta_{\\mu\\nu}+A_\\mu A_\\nu"],
+  metric: ["g_{\\mu\\nu}=\\eta_{\\mu\\nu}+\\kappa A_\\mu A_\\nu"],
   record: [
     "\\mathcal M_o=\\{\\mathbf E_o(t),\\mathbf B_o(t),PSD_o(f),\\phi_o(t),p_o(t),c_o(t),u_o,q_o\\}",
     "\\widehat{\\mathbf A}_{o,k}(f)=T_{o,k}(f;\\text{geometry, posture})\\,\\mathbf A_k(f)",

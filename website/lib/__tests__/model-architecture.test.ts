@@ -20,6 +20,13 @@ describe("BERM / FieldState architecture contract", () => {
     );
     expect(MODEL_ARCHITECTURE.measurementModules.fieldState.isModelAlias).toBe(false);
     expect(MODEL_ARCHITECTURE.measurementModules.fieldState.isCausalRoot).toBe(false);
+    expect(MODEL_ARCHITECTURE.measurementModules.fieldState.publishesLockedForecasts).toBe(false);
+    expect(MODEL_ARCHITECTURE.measurementModules.fieldState.canonicalRoute).toBe(
+      "/measurement/fieldstate",
+    );
+    expect(MODEL_ARCHITECTURE.theory.fieldStateRole).toBe(
+      "optional_measurement_input_only",
+    );
   });
 
   it("names independent version and route namespaces", () => {

@@ -47,12 +47,17 @@ def test_versions_have_distinct_namespaces_and_roles() -> None:
 
 
 def test_fieldstate_is_measurement_not_model_or_causal_root() -> None:
-    fieldstate = architecture_manifest()["measurementModules"]["fieldState"]
+    manifest = architecture_manifest()
+    fieldstate = manifest["measurementModules"]["fieldState"]
 
+    assert manifest["model"]["id"] == "berm"
+    assert manifest["model"]["role"] == "explanatory_derivational_prediction_model"
+    assert manifest["theory"]["fieldStateRole"] == "optional_measurement_input_only"
     assert fieldstate["role"] == "measurement_observation_estimation"
     assert fieldstate["isModelAlias"] is False
     assert fieldstate["isCausalRoot"] is False
     assert fieldstate["publishesLockedForecasts"] is False
+    assert fieldstate["canonicalRoute"] == "/measurement/fieldstate"
 
 
 def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() -> None:
