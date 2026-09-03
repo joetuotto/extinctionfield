@@ -262,6 +262,21 @@ const COPY = {
   },
 };
 
+const EPISTAPEGE_SUMMARY_COPY = {
+  en: {
+    title: "Epistapege: the observation layer",
+    text: "BERM adds an epistemic transition to the civilization branch. A biological state can alter behaviour before it is available to introspection; the resulting explanation is then measured as an independent cultural or economic variable. Repetition can make that report distribution precise without recovering its omitted upstream cause. This proposed transition is Epistapege [L*].",
+    sequence: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    link: "Read the composed derivation and rejection tests",
+  },
+  fi: {
+    title: "Epistapege: havaintokerros",
+    text: "BERM lisää sivilisaatiohaaraan episteemisen siirtymän. Biologinen tila voi muuttaa käyttäytymistä ennen kuin tila on introspektiivisesti saavutettavissa; syntyvä selitys mitataan tämän jälkeen itsenäisenä kulttuurisena tai taloudellisena muuttujana. Toisto voi tarkentaa raporttijakaumaa palauttamatta sen pois jätettyä edeltävää syytä. Tämä ehdotettu siirtymä on Epistapege [L*].",
+    sequence: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    link: "Lue koostettu johto ja hylkäystestit",
+  },
+} as const;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const meta: Record<string, { title: string; description: string }> = {
@@ -322,6 +337,7 @@ export default async function CivilizationPage({
 }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const epistapege = pickCopy(EPISTAPEGE_SUMMARY_COPY, locale);
 
   return (
     <main id="main-content">
@@ -370,6 +386,17 @@ export default async function CivilizationPage({
           <p className="text-sm leading-relaxed text-foreground/70">{d.epistemicBody2}</p>
         </section>
         )}
+
+        <section className="mb-16 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-6">
+          <h2 className="text-lg font-semibold">{epistapege.title}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{epistapege.text}</p>
+          <p className="mt-4 overflow-x-auto rounded-lg border border-card-border bg-background p-4 text-center font-mono-num text-xs font-semibold tracking-wide">
+            {epistapege.sequence}
+          </p>
+          <Link href={`/${locale}/about/civilization#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+            {epistapege.link} →
+          </Link>
+        </section>
 
         {/* Reading path */}
         <section className="mb-20">

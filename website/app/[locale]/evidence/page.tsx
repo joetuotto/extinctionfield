@@ -2023,6 +2023,21 @@ const SUB_PAGES = [
   },
 ] as const;
 
+const NARRATIVE_ATTRIBUTION_COPY = {
+  en: {
+    title: "Why directional attenuation requires a second model",
+    text: "Several identified design and interpretation mechanisms can move an estimated EMF effect toward zero: exposure misclassification, contaminated baselines, mediator adjustment, mismatched windows and publication or model-selection rules. Their joint direction does not by itself prove a cognitive cause. It does create a separate explanatory target. BERM composes limited access to causal antecedents, motivated reasoning and omitted-variable structure into a testable account of why downstream narratives can be preferred to an unmeasured biological state. [L*]",
+    test: "The account predicts two discriminating results: evidence thresholds should change when identical results receive different causal framings, and measured biological state should add out-of-sample information beyond reported reasons and socioeconomic controls. Failure of both predictions rejects this extension. [L*]",
+    link: "Read the derivation and test design",
+  },
+  fi: {
+    title: "Miksi samansuuntainen vaimeneminen tarvitsee toisen mallin",
+    text: "Useat tunnistetut tutkimusasetelman ja tulkinnan mekanismit voivat siirtää estimoitua EMF-vaikutusta kohti nollaa: altistuksen mittausvirhe, kontaminoitunut lähtötaso, mediaattorin kontrollointi, yhteensopimattomat vasteikkunat sekä julkaisu- tai mallinvalintasäännöt. Niiden yhteinen suunta ei yksin todista kognitiivista syytä. Se muodostaa kuitenkin erillisen selityskohteen. BERM yhdistää rajallisen pääsyn kausaalisiin edeltäjiin, motivoituneen päättelyn ja pois jätetyn muuttujan rakenteen testattavaksi selitykseksi sille, miksi alavirran narratiivia voidaan suosia mittaamattoman biologisen tilan sijasta. [L*]",
+    test: "Selitys ennustaa kaksi erottavaa tulosta: evidenssikynnysten pitäisi muuttua, kun identtiset tulokset saavat eri kausaalikehyksen, ja mitatun biologisen tilan pitäisi lisätä otoksen ulkopuolista informaatiota ilmoitettujen syiden ja sosioekonomisten kontrollien lisäksi. Molempien ennusteiden epäonnistuminen hylkää laajennuksen. [L*]",
+    link: "Lue johto ja testiasetelma",
+  },
+} as const;
+
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -2036,6 +2051,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   const labelLocale: "en" | "fi" = activeLocale === "fi" ? "fi" : "en";
   const domainLocale = activeLocale;
   const d = pickCopy(COPY, locale);
+  const narrativeAttribution = pickCopy(NARRATIVE_ATTRIBUTION_COPY, locale);
   const bioem = { ...COPY.en, ...d };
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -2190,6 +2206,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="mb-14 max-w-4xl rounded-xl border border-card-border bg-card-bg p-6">
+        <h2 className="editorial-section-heading mb-3">{narrativeAttribution.title}</h2>
+        <p className="text-sm leading-relaxed text-foreground-muted">{narrativeAttribution.text}</p>
+        <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{narrativeAttribution.test}</p>
+        <Link href={`/${locale}/about/civilization#cognitive-immunology`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+          {narrativeAttribution.link} →
+        </Link>
       </section>
 
       {/* Sub-page cards */}

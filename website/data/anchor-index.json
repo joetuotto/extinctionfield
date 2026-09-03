@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T10:46:30.131Z",
+  "generatedAt": "2026-09-03T11:36:38.346Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -14,7 +14,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5245
+      "line": 5310
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -34,7 +34,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5227
+      "line": 5292
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -49,7 +49,7 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5170
+      "line": 5235
     },
     {
       "claimId": "claim.civilization.biocap-tfr-input",
@@ -72,9 +72,14 @@
       "line": 2705
     },
     {
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "file": "app/[locale]/about/civilization/page.tsx",
+      "line": 328
+    },
+    {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4879
+      "line": 4938
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
@@ -84,12 +89,12 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5212
+      "line": 5277
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5195
+      "line": 5260
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
@@ -99,17 +104,17 @@
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4575
+      "line": 4611
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5139
+      "line": 5204
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5056
+      "line": 5121
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -119,12 +124,12 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4866
+      "line": 4925
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5052
+      "line": 5117
     }
   ]
 }

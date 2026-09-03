@@ -1416,6 +1416,27 @@ const t: Record<string, Copy> = {
   },
 };
 
+const INTERPRETER_OBJECTION = {
+  en: {
+    question: "Does the interpreter extension make contrary evidence self-sealing?",
+    response: [
+      "No. The direct evidence establishes a bounded proposition: a verbal explanation can be coherent while the speaker lacks access to all causal antecedents ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). It does not establish that a particular fertility explanation is biologically generated. [E]",
+      "BERM adds a composed and falsifiable application. It predicts that preregistered biological states will improve temporal and out-of-sample prediction of later behaviour and later stated reasons beyond prior reports and socioeconomic variables. It also predicts a framing-dependent evidence threshold in matched-review experiments and an ordered biological → behavioural → report response to a valid upstream intervention. [L*]",
+      "Disagreement with BERM is not evidence of cognitive immunology. If those discriminating predictions fail in adequately powered independent replications, the fertility application and Epistapege extension are rejected."
+    ],
+    boundary: "The interpreter literature supports the possibility of causal misattribution. Only joint biomarker–behaviour–report data can establish its prevalence and effect size in fertility or political behaviour. FieldState can measure a physical input but does not supply the cognitive inference.",
+  },
+  fi: {
+    question: "Tekeekö tulkkilaajennus vastakkaisesta näytöstä itseään suojaavan?",
+    response: [
+      "Ei. Suora näyttö osoittaa rajatun väitteen: sanallinen selitys voi olla koherentti, vaikka puhujalla ei ole pääsyä kaikkiin kausaalisiin edeltäjiin ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). Se ei osoita, että jokin tietty hedelmällisyysselitys olisi biologisesti tuotettu. [E]",
+      "BERM lisää koostetun ja falsifioitavan sovelluksen. Se ennustaa, että ennakkorekisteröidyt biologiset tilat parantavat myöhemmän käyttäytymisen ja myöhemmin ilmoitettujen syiden ajallista ja otoksen ulkopuolista ennustetta aiempien raporttien ja sosioekonomisten muuttujien lisäksi. Se ennustaa myös kehystyksestä riippuvan evidenssikynnyksen yhteensovitetuissa arviointikokeissa sekä järjestetyn biologinen → behavioraalinen → raportti -vasteen validiin edeltävään interventioon. [L*]",
+      "Eriävä kanta BERM:stä ei ole näyttö kognitiivisesta immunologiasta. Jos erottavat ennusteet epäonnistuvat riittävän voimallisissa riippumattomissa replikaatioissa, hedelmällisyyssovellus ja Epistapege-laajennus hylätään."
+    ],
+    boundary: "Tulkkikirjallisuus tukee kausaalisen väärinattribuution mahdollisuutta. Vain yhdistetty biomarkkeri–käyttäytyminen–raportti-aineisto voi osoittaa sen yleisyyden ja efektikoon hedelmällisyydessä tai poliittisessa käyttäytymisessä. FieldState voi mitata fysikaalisen syötteen mutta ei tuota kognitiivista päätelmää.",
+  },
+} as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -1433,6 +1454,7 @@ export default async function ObjectionsPage({
 }) {
   const { locale } = await params;
   const d = pickCopy(t, locale);
+  const interpreterObjection = pickCopy(INTERPRETER_OBJECTION, locale);
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -1670,6 +1692,19 @@ export default async function ObjectionsPage({
             </p>
           </section>
         ))}
+
+        <section className="rounded-xl border border-card-border bg-card-bg p-5">
+          <p className="font-mono-num text-xs text-accent">INTERP</p>
+          <h2 className="mt-2 text-lg font-semibold">{interpreterObjection.question}</h2>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
+            {interpreterObjection.response.map((paragraph) => (
+              <p key={paragraph}><InlineReferenceText text={paragraph} locale={locale} /></p>
+            ))}
+          </div>
+          <p className="mt-4 rounded-lg border border-status-partial/35 bg-status-partial/5 p-3 text-xs leading-relaxed text-foreground-muted">
+            {interpreterObjection.boundary}
+          </p>
+        </section>
 
         <section className="rounded-xl border border-accent/25 bg-accent/5 p-5">
           <h2 className="text-lg font-semibold">{d.closingTitle}</h2>

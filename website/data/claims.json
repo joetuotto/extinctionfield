@@ -6,11 +6,11 @@
       "id": "claim.vgcc.ros-ca2-coupling",
       "statement": {
         "en": {
-          "text": "Voltage-gated calcium channels (VGCCs) open in response to FieldState-modulated membrane depolarization, increasing intracellular Ca²⁺ which activates mitochondrial ROS production via the electron transport chain.",
+          "text": "BERM proposes that a physical field input can alter membrane dynamics through an endpoint-specific response kernel, after which voltage-gated calcium-channel opening can increase intracellular Ca²⁺ and activate mitochondrial ROS production. FieldState may measure the physical input but does not supply this biological operator.",
           "sourceRevision": 1
         },
         "fi": {
-          "text": "Jänniteherkät kalsiumkanavat (VGCC) avautuvat FieldState-moduloidun kalvon depolarisaation seurauksena, nostaen solunsisäistä Ca²⁺-pitoisuutta, joka aktivoi mitokondriaaalisen ROS-tuotannon elektroninsiirtoketjun kautta.",
+          "text": "BERM ehdottaa, että fysikaalinen kenttäsyöte voi muuttaa kalvodynamiikkaa päätepistekohtaisen vasteytimen kautta, minkä jälkeen jänniteherkkien kalsiumkanavien avautuminen voi nostaa solunsisäistä Ca²⁺-pitoisuutta ja aktivoida mitokondriaalisen ROS-tuotannon. FieldState voi mitata fysikaalisen syötteen mutta ei tuota tätä biologista operaattoria.",
           "sourceRevision": 1
         }
       },
@@ -124,7 +124,7 @@
           "Sperm decline alone explains the full fertility drop"
         ]
       },
-      "falsification_condition": "Pre-registered endpoint-specific studies fail to support the proposed pathway after a FieldState-to-response mapping has been independently specified and calibrated"
+      "falsification_condition": "Pre-registered endpoint-specific studies fail to support the proposed pathway after BERM's L2 mapping from FieldState-compatible physical measurements to response has been independently specified and calibrated"
     },
     {
       "id": "claim.couple.fecundability-convergence",
@@ -156,7 +156,7 @@
           "All fertility decline is biologically mediated — demand, tempo, and ART are separate inputs"
         ]
       },
-      "falsification_condition": "Prospective cohort with FieldState measurement shows no association between couple-level FieldState exposure and time-to-pregnancy after controlling for behavioral factors"
+      "falsification_condition": "A prospective cohort with FieldState-compatible physical measurements shows no association between the preregistered BERM exposure estimate and time-to-pregnancy after controlling for behavioral factors"
     },
     {
       "id": "claim.proxy.lindgren-selection",
@@ -972,6 +972,41 @@
         ]
       },
       "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
+    },
+    {
+      "id": "claim.cognition.reported-reason-downstream",
+      "statement": {
+        "en": {
+          "text": "Within BERM's three-level architecture, a stated cultural or economic reason can be a sincere downstream measurement of a latent biological-behavioural state. A survey report alone therefore cannot identify whether Level 2 or Level 3 initiated the observed behaviour.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM:n kolmitasoisessa arkkitehtuurissa ilmoitettu kulttuurinen tai taloudellinen syy voi olla vilpitön alavirran mittaus latentista biologis-behavioraalisesta tilasta. Kyselyraportti ei siksi yksin tunnista, käynnistikö havaitun käyttäytymisen Taso 2 vai Taso 3.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "DEMAND_OPPORTUNITY"
+      },
+      "depends_on": [
+        "claim.civilization.demand-capacity-separation"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Reported reasons and latent biological state must be measured separately before their causal order is assigned",
+          "A longitudinal biomarker-behaviour-report design can discriminate Level 2 from Level 3"
+        ],
+        "does_not_support": [
+          "Every stated fertility reason is biologically generated",
+          "Cultural and economic variables have no independent causal effect",
+          "Political behaviour diagnoses an individual's hormone state"
+        ]
+      },
+      "falsification_condition": "Preregistered biological states add no temporal or out-of-sample information about later behaviour or stated reasons beyond prior reports and socioeconomic variables, and the null result replicates independently."
     }
   ],
   "evidence_relations": [
@@ -2080,6 +2115,132 @@
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
       "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy."
+    },
+    {
+      "id": "er.cognition.delgado1969",
+      "referenceId": "delgado1969",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Clinical brain-stimulation observations",
+      "applicability": "Dissociation between externally induced motor response and the subject's accessible verbal account",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Clinical stimulation context",
+        "The author leaves movement-versus-experience ordering unresolved",
+        "No fertility, hormone or population endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports only the limited-access component of the BERM composition; the source is registered but not yet author-verified in the bibliography."
+    },
+    {
+      "id": "er.cognition.gazzaniga2000",
+      "referenceId": "gazzaniga2000",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of split-brain experimental and clinical research",
+      "applicability": "Interpreter construction under restricted interhemispheric information access",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Split-brain populations are neurologically unusual",
+        "Does not measure endocrine mediation",
+        "No fertility or aggregate political endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the interpreter component, not the full fertility application; the source is registered but not yet author-verified in the bibliography."
+    },
+    {
+      "id": "er.cognition.nisbett-wilson1977",
+      "referenceId": "nisbett_wilson1977",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of experimental verbal-report and attribution research",
+      "applicability": "Limits of introspective access to processes producing judgments and behaviour",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "General verbal-report literature",
+        "Does not identify a hormone-to-report path",
+        "No fertility or population endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the measurement boundary that a verbal report need not expose its complete causal antecedents; the source is registered but not yet author-verified."
+    },
+    {
+      "id": "er.cognition.kunda1990",
+      "referenceId": "kunda1990",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of motivated-reasoning research",
+      "applicability": "Candidate selection pressure on causal explanations and evidence thresholds",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Does not establish the proposed biological-versus-cultural asymmetry",
+        "Does not test BERM",
+        "Requires a matched-framing experiment for this application"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides an empirical component for the evidence-threshold prediction, not validation of Epistapege; the source is registered but not yet author-verified."
+    },
+    {
+      "id": "er.cognition.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of SHBG binding and free-testosterone physiology",
+      "applicability": "Separates circulating total hormone concentration from biologically available androgen state",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Does not measure motivation or reported fertility reasons",
+        "Does not estimate an EMF-to-SHBG coefficient",
+        "Provides a biological-state decomposition rather than the narrative link"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the distinction between assayed total hormone and androgen-effective state used in the BERM composition."
+    },
+    {
+      "id": "er.cognition.soares-cunha2016",
+      "referenceId": "soares_cunha2016_d2_motivation",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Optogenetic animal experiment",
+      "applicability": "Demonstrates a neural control point capable of changing motivational drive",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Animal experiment",
+        "No endocrine or fertility endpoint",
+        "Does not measure narrative attribution"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies direct component evidence for biological control of motivational weighting, not the complete interpreter route."
+    },
+    {
+      "id": "er.cognition.oxley2008",
+      "referenceId": "oxley2008_physiological_traits",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "contextualizes",
+      "directness": "downstream_association",
+      "studyDesign": "Human psychophysiological association study",
+      "applicability": "Connects measured physiological threat sensitivity with political-attitude variation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Small sample",
+        "Association does not establish causal direction",
+        "No fertility, hormone or aggregate political endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Narrows the biology-to-politics bridge to an observed individual-level association; aggregate inference remains open."
     }
   ],
   "epistemic_assessments": [
@@ -2554,6 +2715,26 @@
       "assessorId": "berm-claims-agent",
       "assessedAt": "2026-09-02",
       "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.cognition.reported-reason-downstream.v1",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.delgado1969",
+        "er.cognition.gazzaniga2000",
+        "er.cognition.nisbett-wilson1977",
+        "er.cognition.kunda1990",
+        "er.cognition.narinx2022",
+        "er.cognition.soares-cunha2016",
+        "er.cognition.oxley2008"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The cited literature supports limited causal access and motivated explanation as components. The fertility and institutional application is a BERM-derived testable candidate, not a direct finding of those sources."
     }
   ],
   "routes": [
@@ -2564,8 +2745,8 @@
         "fi": "VGCC → Siittiöt → Hedelmällisyys"
       },
       "description": {
-        "en": "Direct ROS-mediated damage pathway: FieldState activates VGCCs, elevating intracellular Ca²⁺, driving mitochondrial ROS production that directly damages sperm membranes, DNA integrity, and motility.",
-        "fi": "Suora ROS-välitteinen vaurioreitti: FieldState aktivoi VGCC:t, nostaen solunsisäistä Ca²⁺:a, tuottaen mitokondriaaalista ROS:ia joka suoraan vaurioittaa siittiöiden kalvoja, DNA-eheyttä ja liikkuvuutta."
+        "en": "Direct ROS-mediated BERM candidate route: a measured physical field input enters an open endpoint-specific response kernel; BERM then proposes VGCC opening, intracellular Ca²⁺ elevation and mitochondrial ROS that can damage sperm membranes, DNA integrity and motility.",
+        "fi": "BERM:n suora ROS-välitteinen ehdokasreitti: mitattu fysikaalinen kenttäsyöte tulee avoimeen päätepistekohtaiseen vasteytimeen; BERM ehdottaa sen jälkeen VGCC-avautumista, solunsisäisen Ca²⁺:n nousua ja mitokondriaalista ROS:ia, joka voi vaurioittaa siittiökalvoja, DNA-eheyttä ja liikkuvuutta."
       },
       "targetClaim": "claim.couple.fecundability-convergence",
       "routeClaims": [
@@ -2645,7 +2826,7 @@
       "independenceNote": null,
       "direction": "supports",
       "alternativeCompatibility": "Does not distinguish between EMF and other biological causes of fecundability decline",
-      "discriminatingPower": "Requires FieldState-stratified cohort comparison to isolate EMF contribution"
+      "discriminatingPower": "Requires cohort comparison stratified by FieldState-compatible physical measurements and a preregistered BERM exposure mapping to isolate an EMF contribution"
     }
   ]
 }

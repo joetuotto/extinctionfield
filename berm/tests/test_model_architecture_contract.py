@@ -30,6 +30,37 @@ WEB_MANIFEST = REPO_ROOT / "website" / "data" / "model-architecture.json"
 WEB_GRAPH = REPO_ROOT / "website" / "data" / "causal-graph.json"
 
 
+def test_public_copy_does_not_promote_fieldstate_to_a_causal_operator() -> None:
+    """Guard against recurring copy drift from the architecture contract."""
+
+    public_sources = [
+        REPO_ROOT / "website" / "app",
+        REPO_ROOT / "website" / "components",
+        REPO_ROOT / "website" / "data" / "claims.json",
+        REPO_ROOT / "berm" / "berm",
+    ]
+    forbidden = (
+        "FieldState activates",
+        "FieldState-modulated membrane",
+        "FieldState-dependent fitness",
+        "difference in physical FieldState changes",
+        "FieldStatea mitattavana mahdollisena moderaattorina",
+        "FieldState-riippuvainen kelpoisuus",
+        "FieldState calibre modifie",
+        "fitness dependante du FieldState",
+        "FieldState依存的適応度",
+        "FieldState 의존적 적합도",
+    )
+
+    for root in public_sources:
+        paths = [root] if root.is_file() else root.rglob("*")
+        for path in paths:
+            if path.is_file() and path.suffix in {".json", ".py", ".ts", ".tsx"}:
+                text = path.read_text(encoding="utf-8")
+                for phrase in forbidden:
+                    assert phrase not in text, f"FieldState boundary drift in {path}: {phrase}"
+
+
 def test_python_and_website_share_the_exact_architecture_contract() -> None:
     website = json.loads(WEB_MANIFEST.read_text(encoding="utf-8"))
 

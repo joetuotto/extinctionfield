@@ -746,14 +746,14 @@
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "natural selection",
-        "FieldState selection",
+        "measured-field selection",
         "relative abundance"
       ]
     },
     "ECOLOGICAL_TRAIT_STATE": {
       "id": "ECOLOGICAL_TRAIT_STATE",
       "label": {
-        "en": "Time-indexed heritable trait distribution under FieldState-dependent selection",
+        "en": "Time-indexed heritable trait distribution under selection associated with measured physical field conditions",
         "fi": "Aikaindeksoitu periytyvä piirrejakauma FieldState-riippuvaisen valinnan alla"
       },
       "layer": "ecology",
@@ -765,7 +765,7 @@
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "evolutionary trait distribution",
-        "heritable FieldState response"
+        "heritable measured-field response"
       ]
     },
     "DEMAND_OPPORTUNITY": {

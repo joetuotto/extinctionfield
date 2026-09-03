@@ -24,6 +24,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
+        { id: "epistapege", label: "Epistapege" },
       ],
     },
     {
@@ -70,6 +71,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "three-biological-bands", label: "Kolme taajuuskaistaa" },
         { id: "two-susceptibility-functions", label: "Kaksi herkkyysfunktiota" },
         { id: "biology-to-civilization", label: "Biologiasta sivilisaatioon" },
+        { id: "epistapege", label: "Epistapege" },
       ],
     },
     {
@@ -116,6 +118,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
+        { id: "epistapege", label: "Epistapege" },
       ],
     },
     {
@@ -162,6 +165,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
+        { id: "epistapege", label: "Epistapege" },
       ],
     },
     {
@@ -208,6 +212,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
+        { id: "epistapege", label: "Epistapege" },
       ],
     },
     {

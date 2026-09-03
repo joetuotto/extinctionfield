@@ -4476,6 +4476,41 @@ const t = {
   },
 };
 
+const EPISTAPEGE_COPY = {
+  en: {
+    title: "Epistapege: loss of causal observability",
+    subtitle: "A testable BERM extension between biological injury and delayed institutional correction",
+    lead: "BERM introduces Epistapege as the proposed transition by which an upstream biological change becomes difficult to identify after it has been translated into a coherent personal and institutional explanation. The extension is derived compositionally; it is not a direct result of a single experiment. [L*]",
+    chain: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    steps: [
+      "Limited causal access: stimulation, split-brain and verbal-report research shows that an explanation can be coherent even when the full causal antecedent is unavailable ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). [E]",
+      "BERM bridge: a neuroendocrine state can alter motivation or threat weighting before the state is available as a verbal reason; the resulting report is therefore a possible downstream measurement. [L*]",
+      "Institutional persistence: repeated measurement of reports improves the precision of the report distribution but does not recover an omitted upstream state. Motivated reasoning supplies an additional candidate selection pressure on which causal graph is accepted ([[ref:kunda1990|Kunda 1990]]). [L*]",
+      "Correction delay: if policy targets only the reported downstream reason, a weak intervention response can coexist with a stable explanatory framework. Joint biomarker, behaviour, report and intervention data can reject this extension. [L*]",
+    ],
+    boundary: "Epistapege belongs to BERM's civilization branch. FieldState may provide physical input measurements for a test, but it is not the source of the cognitive mechanism and does not derive the transition.",
+    link: "Full derivation and discriminating tests",
+    architectureBridge: "Why can Level 2 appear as Level 3? BERM composes limited introspective access with neuroendocrine control of behaviour: a survey directly measures the reported reason, while the upstream biological state remains unobserved. The report may be sincere, causally active and still downstream. Distinguishing the levels requires longitudinal biomarker–behaviour–report data. [L*]",
+    architectureLink: "Read the interpreter derivation",
+  },
+  fi: {
+    title: "Epistapege: kausaalisen havaittavuuden menetys",
+    subtitle: "Testattava BERM-laajennus biologisen vaurion ja viivästyneen institutionaalisen korjauksen välille",
+    lead: "BERM määrittelee Epistapegen ehdotetuksi siirtymäksi, jossa edeltävän biologisen muutoksen tunnistaminen vaikeutuu sen muunnuttua koherentiksi henkilökohtaiseksi ja institutionaaliseksi selitykseksi. Laajennus johdetaan kompositionaalisesti; se ei ole yhden kokeen suora tulos. [L*]",
+    chain: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    steps: [
+      "Rajallinen kausaalinen pääsy: stimulaatio-, split-brain- ja sanallisen raportoinnin tutkimus osoittaa, että selitys voi olla koherentti, vaikka täydellinen kausaalinen edeltäjä ei ole saavutettavissa ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). [E]",
+      "BERM-silta: neuroendokriininen tila voi muuttaa motivaatiota tai uhkien painotusta ennen kuin tila on käytettävissä sanallisena syynä; syntyvä raportti on siten mahdollinen alavirran mittaus. [L*]",
+      "Institutionaalinen pysyvyys: raporttien toistuva mittaaminen tarkentaa raporttijakaumaa mutta ei palauta pois jätettyä edeltävää tilaa. Motivoitunut päättely antaa lisäksi kandidaattipaineen sille, mikä kausaaligraafi hyväksytään ([[ref:kunda1990|Kunda 1990]]). [L*]",
+      "Korjauksen viive: jos politiikka kohdistuu vain ilmoitettuun alavirran syyhyn, heikko interventiovaste voi esiintyä vakaan selityskehyksen rinnalla. Yhdistetty biomarkkeri-, käyttäytymis-, raportti- ja interventiodata voi hylätä laajennuksen. [L*]",
+    ],
+    boundary: "Epistapege kuuluu BERM:n sivilisaatiohaaraan. FieldState voi toimittaa fysikaalisia syötemittauksia testiin, mutta se ei ole kognitiivisen mekanismin lähde eikä johda tätä siirtymää.",
+    link: "Täysi johto ja erottavat testit",
+    architectureBridge: "Miksi Taso 2 voi näyttää Tasolta 3? BERM yhdistää rajallisen introspektiivisen pääsyn käyttäytymisen neuroendokriiniseen ohjaukseen: kysely mittaa suoraan ilmoitetun syyn, kun edeltävä biologinen tila jää havaitsematta. Raportti voi olla vilpitön, kausaalisesti vaikuttava ja silti alavirran muuttuja. Tasojen erottaminen vaatii pitkittäisen biomarkkeri–käyttäytyminen–raportti-aineiston. [L*]",
+    architectureLink: "Lue tulkkimekanismin johto",
+  },
+} as const;
+
 function SectionCard({
   children,
   className = "",
@@ -4523,6 +4558,7 @@ export default async function ModelPage({
   const { locale } = await params;
   const locale_key = locale;
   const d = pickCopy(t, locale);
+  const epistapege = pickCopy(EPISTAPEGE_COPY, locale);
   const prefix = `/${locale}`;
   const cite = (text: string) => (
     <InlineReferenceText text={text} locale={locale_key} />
@@ -4763,6 +4799,29 @@ export default async function ModelPage({
             </div>
           </CollapsibleSection>
 
+          <CollapsibleSection id="epistapege" title={epistapege.title} subtitle={epistapege.subtitle}>
+            <p className="max-w-3xl text-sm leading-relaxed text-foreground-muted">
+              {epistapege.lead}
+            </p>
+            <p className="my-6 overflow-x-auto rounded-xl border border-accent/30 bg-accent/5 p-5 text-center font-mono-num text-sm font-semibold tracking-wide">
+              {epistapege.chain}
+            </p>
+            <ol className="max-w-4xl space-y-3">
+              {epistapege.steps.map((step, index) => (
+                <li key={step} className="flex gap-3 rounded-lg border border-card-border bg-card-bg p-4 text-sm leading-relaxed text-foreground-muted">
+                  <span className="font-mono-num text-xs text-accent">0{index + 1}</span>
+                  <InlineReferenceText text={step} locale={locale_key} />
+                </li>
+              ))}
+            </ol>
+            <p className="mt-5 max-w-4xl border-l-2 border-status-partial/60 pl-3 text-xs leading-relaxed text-foreground-muted">
+              {epistapege.boundary}
+            </p>
+            <Link href={`${prefix}/about/civilization#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+              {epistapege.link} →
+            </Link>
+          </CollapsibleSection>
+
           {/* BioCap decomposition */}
           {d.biocapDecompMarkers?.length > 0 && (
             <section id="biocap-decomposition" className="mb-14 border-t editorial-rule pt-6">
@@ -4899,6 +4958,12 @@ export default async function ModelPage({
                   {d.level3Desc}
                 </p>
               </SectionCard>
+            </div>
+            <div className="mt-5 max-w-4xl rounded-xl border border-card-border bg-card-bg p-5">
+              <p className="text-sm leading-relaxed text-foreground-muted">{epistapege.architectureBridge}</p>
+              <Link href={`${prefix}/about/civilization#three-level-misclassification`} className="mt-3 inline-flex text-sm font-medium text-accent hover:underline">
+                {epistapege.architectureLink} →
+              </Link>
             </div>
           </section>
 

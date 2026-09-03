@@ -9,6 +9,7 @@ import { PredictionTrack } from "@/components/PredictionTrack";
 import { FeedbackLoop } from "@/components/FeedbackLoop";
 import { EVOLUTION_PREDICTIONS } from "@/lib/evolutionData";
 import { CIVILIZATION_PREDICTIONS, CIV_PRED_GROUPS } from "@/lib/civilizationPredictions";
+import { INTERPRETER_PREDICTIONS } from "@/lib/interpreterPredictions";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { pickCopy } from "@/lib/i18n";
@@ -9032,6 +9033,27 @@ const COPY = {
   },
 } as const;
 
+const INTERPRETER_COPY = {
+  en: {
+    title: "Interpreter-extension predictions",
+    lead: "Four preregistration-ready tests of the BERM claim that an upstream biological state can be recorded as a downstream cultural or economic reason. These are open candidate predictions, not members of the locked v17 scalar country-forecast set.",
+    derivation: "Derived expectation",
+    test: "Registered test",
+    falsification: "Falsification condition",
+    status: "OPEN",
+    note: "BERM is the source model. FieldState can be used as an optional physical measurement input in tests 2–4; it is not a causal or biological model.",
+  },
+  fi: {
+    title: "Tulkkilaajennuksen ennusteet",
+    lead: "Neljä ennakkorekisteröitävää testiä BERM-väitteelle, jonka mukaan edeltävä biologinen tila voi kirjautua alavirran kulttuuriseksi tai taloudelliseksi syyksi. Nämä ovat avoimia kandidaattiennusteita, eivät lukitun v17-skalaarisen maaennusteen osia.",
+    derivation: "Johdettu odotus",
+    test: "Rekisteröity testi",
+    falsification: "Falsifiointiehto",
+    status: "AVOIN",
+    note: "BERM on lähdemalli. FieldStatea voidaan käyttää valinnaisena fysikaalisen mittauksen syötteenä testeissä 2–4; se ei ole kausaalinen eikä biologinen malli.",
+  },
+} as const;
+
 const TFR_IDS = LOCKED_PREDICTIONS.filter(
   (p) => p.metric === "TFR" || p.metric === "feedback_TFR"
 );
@@ -9051,6 +9073,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PredictionsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const interpreterCopy = pickCopy(INTERPRETER_COPY, locale);
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
@@ -9063,7 +9086,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
             </svg>
-            <p className="text-3xl font-bold text-accent">342</p>
+            <p className="text-3xl font-bold text-accent">346</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashPredictions}
             </p>
@@ -9073,7 +9096,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
             </svg>
-            <p className="text-3xl font-bold text-accent">38</p>
+            <p className="text-3xl font-bold text-accent">39</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashCategories}
             </p>
@@ -9093,7 +9116,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6" style={{ color: "#f59e0b" }} fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
             </svg>
-            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>338</p>
+            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>342</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashAwaiting}
             </p>
@@ -9105,9 +9128,9 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             {d.dashPredictionStatus}
           </p>
           <svg viewBox="0 0 600 28" className="w-full" role="img" aria-label={d.statusBarAria}>
-            {/* Green: verified — 4/342 ≈ 1.2% ≈ 7.0px of 600 */}
+            {/* Green: verified — 4/346 ≈ 1.2% ≈ 7.0px of 600 */}
             <rect x="0" y="0" width="7" height="20" rx="4" fill="#22c55e" />
-            {/* Amber: pending — 338/342 ≈ 98.8% ≈ 593px */}
+            {/* Amber: pending — 342/346 ≈ 98.8% ≈ 593px */}
             <rect x="9" y="0" width="591" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
             {/* Red: CI exceeded — 0/280 (Finland and South Korea 2030 predictions are interim, not exceeded) */}
           </svg>
@@ -9118,7 +9141,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </span>
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#f59e0b", opacity: 0.7 }} />
-              {d.statusAwaiting} (276)
+              {d.statusAwaiting} (342)
             </span>
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#ef4444" }} />
@@ -9132,6 +9155,49 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
       <section className="mb-12 max-w-4xl rounded-xl border border-card-border bg-card-bg p-6">
         <h2 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-2">{d.architectureNote}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">{d.architectureText}</p>
+      </section>
+
+      <section id="interpreter-predictions" className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{interpreterCopy.title}</h2>
+        <p className="mb-6 max-w-4xl text-sm leading-relaxed text-foreground-muted">{interpreterCopy.lead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {INTERPRETER_PREDICTIONS.map((prediction) => {
+            const fi = locale === "fi";
+            return (
+              <article key={prediction.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="font-mono-num text-xs text-accent">{prediction.id}</p>
+                    <h3 className="mt-1 font-semibold">{fi ? prediction.title_fi : prediction.title_en}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2 text-[10px] font-mono-num">
+                    <span className="rounded-full border border-status-partial/35 bg-status-partial/10 px-2 py-1 text-status-partial">{interpreterCopy.status}</span>
+                    <span className="rounded-full border border-card-border px-2 py-1 text-foreground-muted">[{prediction.level}]</span>
+                  </div>
+                </div>
+                <dl className="mt-4 grid gap-4 text-sm lg:grid-cols-3">
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-accent">{interpreterCopy.derivation}</dt>
+                    <dd className="mt-1 leading-relaxed text-foreground-muted">{fi ? prediction.derivation_fi : prediction.derivation_en}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-accent">{interpreterCopy.test}</dt>
+                    <dd className="mt-1 leading-relaxed text-foreground-muted">{fi ? prediction.registered_test_fi : prediction.registered_test_en}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-accent">{interpreterCopy.falsification}</dt>
+                    <dd className="mt-1 leading-relaxed text-foreground-muted">{fi ? prediction.falsification_fi : prediction.falsification_en}</dd>
+                  </div>
+                </dl>
+                <p className="mt-4 font-mono-num text-[10px] text-foreground-muted">{prediction.modelVersion} · {prediction.registeredDate}</p>
+              </article>
+            );
+          })}
+        </div>
+        <p className="mt-5 max-w-4xl border-l-2 border-status-partial/60 pl-3 text-xs leading-relaxed text-foreground-muted">{interpreterCopy.note}</p>
+        <Link href={`/${locale}/about/civilization`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+          {locale === "fi" ? "Lue mekanistinen johto" : "Read the mechanistic derivation"} →
+        </Link>
       </section>
 
       {/* TFR predictions */}

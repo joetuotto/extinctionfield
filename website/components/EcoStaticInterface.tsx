@@ -113,7 +113,7 @@ type Copy = {
 
 const COPY: Record<string, Copy> = {
   en: {
-    frameworkTitle: "BERM–Eco: FieldState, ecological sorting and selection",
+    frameworkTitle: "BERM–Eco: measured fields, ecological sorting and selection",
     frameworkLead:
       "The ecology branch tests the same physical premise as the human model: organisms do not encounter one generic “EMF dose”. They encounter a measured field configuration, and each species has its own sensory, morphological and life-stage transfer function. This makes relative ecological outcomes testable without treating every species as uniformly sensitive or resistant.",
     fieldClasses: [
@@ -163,13 +163,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "03 · ECOLOGICAL SORTING",
         title: "Different response functions can reorganise encounters",
-        text: "If the same calibrated FieldState changes a pollinator, host, parasite, predator or competitor differently, visit, attachment, navigation or dispersal rates can shift relative fitness and community structure. This is a testable model consequence.",
+        text: "If the same measured physical field condition changes a pollinator, host, parasite, predator or competitor differently, visit, attachment, navigation or dispersal rates can shift relative fitness and community structure. This is a testable BERM consequence; FieldState can record the condition.",
         tone: "hypothesis",
       },
       {
         step: "04 · EVOLUTION",
         title: "Selection requires inherited variation across generations",
-        text: "Ecological sorting becomes evolution only if the FieldState-dependent fitness difference acts repeatedly on a heritable trait and changes its distribution. Abundance alone is not an evolutionary result.",
+        text: "Ecological sorting becomes evolution only if the fitness difference associated with the measured physical field condition acts repeatedly on a heritable trait and changes its distribution. Abundance alone is not an evolutionary result.",
         tone: "hypothesis",
       },
     ],
@@ -306,11 +306,11 @@ const COPY: Record<string, Copy> = {
     ],
     predictionTitle: "Testable ecology and evolution hypotheses",
     predictionLead:
-      "The ecological result is relative: a species can become more common because its FieldState-dependent fitness declines less than that of a competitor, host, prey or predator. These are model-derived research predictions.",
+      "The ecological result is relative: a species can become more common because its fitness under the measured physical field condition declines less than that of a competitor, host, prey or predator. These are BERM-derived research predictions.",
     selectionEquation:
       "Δ log(Nᵢ/Nⱼ) = log Wᵢ(FieldState, EcoContext) − log Wⱼ(FieldState, EcoContext)",
     evolutionText:
-      "Ecological sorting becomes evolutionary change only when interface, sensory or recovery traits vary heritably and the FieldState-dependent fitness difference persists across generations. The model therefore registers a separate time-indexed trait-distribution state rather than treating a single abundance contrast as evolution.",
+      "Ecological sorting becomes evolutionary change only when interface, sensory or recovery traits vary heritably and the fitness difference associated with the measured physical field condition persists across generations. BERM therefore registers a separate time-indexed trait-distribution state rather than treating a single abundance contrast as evolution.",
     evolutionEquation:
       "P₍g+1₎(θ) ∝ W(θ | FieldState, EcoContext) · P₍g₎(θ)",
     predictions: [
@@ -404,7 +404,7 @@ const COPY: Record<string, Copy> = {
     tickText: "passive induction and attachment are empirical endpoints",
   },
   fi: {
-    frameworkTitle: "BERM–Eco: FieldState, ekologinen lajittuminen ja valinta",
+    frameworkTitle: "BERM–Eco: mitatut kentät, ekologinen lajittuminen ja valinta",
     frameworkLead:
       "Ekologiahaara testaa samaa fysiikan premissiä kuin ihmismalli: eliö ei kohtaa yhtä yleistä “EMF-annosta”. Se kohtaa mitatun kenttäkonfiguraation, johon jokaisella lajilla on oma aisti-, morfologia- ja elinvaihekohtainen siirtofunktionsa. Tämä tekee suhteelliset ekologiset seuraukset testattaviksi ilman oletusta, että kaikki lajit ovat tasaisesti herkkiä tai resistenttejä.",
     fieldClasses: [
@@ -440,13 +440,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "01 · LUONNOLLINEN FUNKTIO",
         title: "Kenttä voi olla biologinen signaali tai voima",
-        text: "Sähkö- ja magneettikentät voivat ohjata eri eliöiden kukkahakua, orientaatiota, dispersaalia ja isäntäkohtaamista. Tämä ankkuroi FieldState-premissin: vektori, geometria ja aika ovat biologisesti merkityksellisiä syötteitä.",
+        text: "Sähkö- ja magneettikentät voivat ohjata eri eliöiden kukkahakua, orientaatiota, dispersaalia ja isäntäkohtaamista. Tämä motivoi BERM:iä testaamaan vektoria, geometriaa ja aikaa fysikaalisina syötteinä; FieldState on vain niitä kirjaava valinnainen mittaushaara.",
         source: { label: "England & Robert 2022", referenceId: "england2022_electric_ecology" },
         tone: "direct",
       },
       {
         step: "02 · MITATTU VASTE",
-        title: "Muuttunut FieldState voi muuttaa määriteltyä päätepistettä",
+        title: "Mitattu kenttämuutos voi muuttaa määriteltyä päätepistettä",
         text: "Vastaava sham-kontrolloitu koe voi osoittaa komponenttikohtaisen käyttäytymis- tai fysiologiavasteen. Se ei sellaisenaan osoita populaatiotrendiä tai yleispätevää lajivaikutusta.",
         source: { label: "Mallinson, Woodburn & O’Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
         tone: "direct",
@@ -454,13 +454,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "03 · EKOLOGINEN LAJITTUMINEN",
         title: "Eri vastefunktiot voivat järjestää kohtaamiset uudelleen",
-        text: "Jos sama kalibroitu FieldState muuttaa pölyttäjän, isännän, loisen, pedon tai kilpailijan vastetta eri tavoin, käynti-, kiinnittymis-, navigointi- tai dispersaalinopeudet voivat muuttaa suhteellista kelpoisuutta ja yhteisörakennetta. Tämä on mallista johdettu testattava seuraus.",
+        text: "Jos sama mitattu fysikaalinen kenttätila muuttaa pölyttäjän, isännän, loisen, pedon tai kilpailijan vastetta eri tavoin, käynti-, kiinnittymis-, navigointi- tai dispersaalinopeudet voivat muuttaa suhteellista kelpoisuutta ja yhteisörakennetta. Tämä on BERM:stä johdettu testattava seuraus; FieldState voi kirjata kenttätilan.",
         tone: "hypothesis",
       },
       {
         step: "04 · EVOLUUTIO",
         title: "Valinta edellyttää periytyvää vaihtelua sukupolvien yli",
-        text: "Ekologinen lajittuminen muuttuu evoluutioksi vasta, jos FieldState-riippuvainen kelpoisuusero kohdistuu toistuvasti periytyvään piirteeseen ja muuttaa sen jakaumaa. Pelkkä runsaus ei ole evoluutiotulos.",
+        text: "Ekologinen lajittuminen muuttuu evoluutioksi vasta, jos mitattuun fysikaaliseen kenttätilaan liittyvä kelpoisuusero kohdistuu toistuvasti periytyvään piirteeseen ja muuttaa sen jakaumaa. Pelkkä runsaus ei ole evoluutiotulos.",
         tone: "hypothesis",
       },
     ],
@@ -597,11 +597,11 @@ const COPY: Record<string, Copy> = {
     ],
     predictionTitle: "Testattavat ekologiset ja evolutiiviset hypoteesit",
     predictionLead:
-      "Ekologinen tulos on suhteellinen: laji voi yleistyä, koska sen FieldState-riippuvainen kelpoisuus heikkenee vähemmän kuin kilpailijan, isännän, saaliin tai pedon. Nämä ovat mallista johdettuja tutkimusennusteita.",
+      "Ekologinen tulos on suhteellinen: laji voi yleistyä, koska sen kelpoisuus mitatussa fysikaalisessa kenttätilassa heikkenee vähemmän kuin kilpailijan, isännän, saaliin tai pedon. Nämä ovat BERM:stä johdettuja tutkimusennusteita.",
     selectionEquation:
       "Δ log(Nᵢ/Nⱼ) = log Wᵢ(FieldState, EcoContext) − log Wⱼ(FieldState, EcoContext)",
     evolutionText:
-      "Ekologinen valikoituminen muuttuu evolutiiviseksi muutokseksi vasta, kun rajapinta-, aisti- tai palautumisominaisuuksissa on periytyvää vaihtelua ja FieldState-riippuvainen kelpoisuusero säilyy sukupolvien yli. Malli rekisteröi siksi erillisen ajassa indeksoidun piirrejakautumatilan eikä käsittele yksittäistä runsauseroa evoluutiona.",
+      "Ekologinen valikoituminen muuttuu evolutiiviseksi muutokseksi vasta, kun rajapinta-, aisti- tai palautumisominaisuuksissa on periytyvää vaihtelua ja mitattuun fysikaaliseen kenttätilaan liittyvä kelpoisuusero säilyy sukupolvien yli. BERM rekisteröi siksi erillisen ajassa indeksoidun piirrejakautumatilan eikä käsittele yksittäistä runsauseroa evoluutiona.",
     evolutionEquation:
       "P₍g+1₎(θ) ∝ W(θ | FieldState, EcoContext) · P₍g₎(θ)",
     predictions: [
@@ -695,7 +695,7 @@ const COPY: Record<string, Copy> = {
     tickText: "passiivinen induktio ja kiinnittyminen ovat empiirisiä päätepisteitä",
   },
   ja: {
-    frameworkTitle: "BERM-Eco: FieldState、生態学的選別、選択",
+    frameworkTitle: "BERM-Eco: 測定された場、生態学的選別、選択",
     frameworkLead:
       "生態学部門はヒトモデルと同じ物理的前提を検証します: 生物は単一の一般的な「EMF線量」に遭遇するのではなく、測定された電磁場構成に遭遇し、各種は独自の感覚的・形態学的・発達段階固有の伝達関数を持っています。これにより、すべての種を均一に感受性または耐性があると扱うことなく、相対的な生態学的結果を検証可能にします。",
     fieldClasses: [
@@ -731,7 +731,7 @@ const COPY: Record<string, Copy> = {
       {
         step: "01 · 自然機能",
         title: "電磁場は生物学的シグナルまたは力でありうる",
-        text: "電場・磁場は異なる生物の花探索・方位決定・分散・宿主遭遇を誘導できる。これがFieldState前提を固定する: ベクトル・幾何学・時間は生物学的に意味のある入力である。",
+        text: "電場・磁場は異なる生物の花探索・方位決定・分散・宿主遭遇を誘導できる。これはBERMがベクトル・幾何学・時間を物理入力として検証する根拠となり、FieldStateはそれらを記録する任意の測定分岐に限られる。",
         source: { label: "England & Robert 2022", referenceId: "england2022_electric_ecology" },
         tone: "direct",
       },
@@ -745,13 +745,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "03 · 生態学的選別",
         title: "異なる応答関数が遭遇を再構成しうる",
-        text: "同一の校正されたFieldStateが花粉媒介者・宿主・寄生者・捕食者・競争者を異なる形で変化させる場合、訪問・付着・ナビゲーション・分散率が相対適応度と群集構造を変える可能性がある。これはモデルから導出される検証可能な帰結である。",
+        text: "同一の測定された物理的場条件が花粉媒介者・宿主・寄生者・捕食者・競争者を異なる形で変化させる場合、訪問・付着・ナビゲーション・分散率が相対適応度と群集構造を変える可能性がある。これはBERMから導出される検証可能な帰結であり、FieldStateは条件を記録できる。",
         tone: "hypothesis",
       },
       {
         step: "04 · 進化",
         title: "選択には世代を超えた遺伝的変異が必要",
-        text: "生態学的選別がFieldState依存的適応度差が遺伝的形質に反復作用しその分布を変える場合にのみ進化となる。単なる個体数だけでは進化的結果ではない。",
+        text: "生態学的選別は、測定された物理的場条件に関連する適応度差が遺伝的形質に反復作用し、その分布を変える場合にのみ進化となる。単なる個体数だけでは進化的結果ではない。",
         tone: "hypothesis",
       },
     ],
@@ -888,11 +888,11 @@ const COPY: Record<string, Copy> = {
     ],
     predictionTitle: "検証可能な生態学・進化仮説",
     predictionLead:
-      "生態学的結果は相対的である: ある種はFieldState依存的適応度が競争者・宿主・被食者・捕食者より低下が少ないため増加しうる。これらはモデルから導出された研究予測である。",
+      "生態学的結果は相対的である: ある種は測定された物理的場条件下での適応度低下が競争者・宿主・被食者・捕食者より小さいため増加しうる。これらはBERMから導出された研究予測である。",
     selectionEquation:
       "Δ log(Nᵢ/Nⱼ) = log Wᵢ(FieldState, EcoContext) − log Wⱼ(FieldState, EcoContext)",
     evolutionText:
-      "生態学的選別は、界面・感覚・回復形質が遺伝可能に変異しFieldState依存的適応度差が世代を超えて持続する場合にのみ進化的変化となる。モデルは単一の個体数対比を進化として扱わず、時間インデックス付き形質分布状態を登録する。",
+      "生態学的選別は、界面・感覚・回復形質が遺伝可能に変異し、測定された物理的場条件に関連する適応度差が世代を超えて持続する場合にのみ進化的変化となる。BERMは単一の個体数対比を進化として扱わず、時間インデックス付き形質分布状態を登録する。",
     evolutionEquation:
       "P₍g+1₎(θ) ∝ W(θ | FieldState, EcoContext) · P₍g₎(θ)",
     predictions: [
@@ -986,7 +986,7 @@ const COPY: Record<string, Copy> = {
     tickText: "受動的誘導と付着は経験的エンドポイントである",
   },
   fr: {
-    frameworkTitle: "BERM-Eco : FieldState, tri ecologique et selection",
+    frameworkTitle: "BERM-Eco : champs mesures, tri ecologique et selection",
     frameworkLead:
       "La branche ecologique teste la meme premisse physique que le modele humain : les organismes ne rencontrent pas une dose generique d'EMF. Ils rencontrent une configuration de champ mesuree, et chaque espece possede sa propre fonction de transfert sensorielle, morphologique et de stade de vie. Cela rend les resultats ecologiques relatifs testables sans traiter chaque espece comme uniformement sensible ou resistante.",
     fieldClasses: [
@@ -1022,13 +1022,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "01 · FONCTION NATURELLE",
         title: "Un champ peut etre un signal ou une force biologique",
-        text: "Les champs electriques et magnetiques peuvent guider la recherche florale, l'orientation, la dispersion et la rencontre avec l'hote chez differents organismes. Cela ancre la premisse FieldState : vecteur, geometrie et temps sont des entrees biologiquement significatives.",
+        text: "Les champs electriques et magnetiques peuvent guider la recherche florale, l'orientation, la dispersion et la rencontre avec l'hote chez differents organismes. Cela motive BERM a tester le vecteur, la geometrie et le temps comme entrees physiques ; FieldState n'est que la branche de mesure optionnelle qui les enregistre.",
         source: { label: "England & Robert 2022", referenceId: "england2022_electric_ecology" },
         tone: "direct",
       },
       {
         step: "02 · REPONSE MESUREE",
-        title: "Un FieldState modifie peut alterer un point final defini",
+        title: "Une modification mesuree du champ peut alterer un point final defini",
         text: "Une experience sham-controlee appariee peut etablir une reponse comportementale ou physiologique specifique au composant. Elle n'etablit pas en soi une tendance de population ou un effet d'espece universel.",
         source: { label: "Mallinson, Woodburn & O'Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
         tone: "direct",
@@ -1036,13 +1036,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "03 · TRI ECOLOGIQUE",
         title: "Differentes fonctions de reponse peuvent reorganiser les rencontres",
-        text: "Si le meme FieldState calibre modifie differemment un pollinisateur, un hote, un parasite, un predateur ou un competiteur, les taux de visite, fixation, navigation ou dispersion peuvent modifier la fitness relative et la structure communautaire. C'est une consequence testable derivee du modele.",
+        text: "Si la meme condition physique de champ mesuree modifie differemment un pollinisateur, un hote, un parasite, un predateur ou un competiteur, les taux de visite, fixation, navigation ou dispersion peuvent modifier la fitness relative et la structure communautaire. C'est une consequence testable derivee de BERM ; FieldState peut enregistrer la condition.",
         tone: "hypothesis",
       },
       {
         step: "04 · EVOLUTION",
         title: "La selection requiert une variation heritee a travers les generations",
-        text: "Le tri ecologique ne devient evolution que si la difference de fitness dependante du FieldState agit de maniere repetee sur un trait heritable et modifie sa distribution. L'abondance seule n'est pas un resultat evolutif.",
+        text: "Le tri ecologique ne devient evolution que si la difference de fitness associee a la condition physique de champ mesuree agit de maniere repetee sur un trait heritable et modifie sa distribution. L'abondance seule n'est pas un resultat evolutif.",
         tone: "hypothesis",
       },
     ],
@@ -1179,11 +1179,11 @@ const COPY: Record<string, Copy> = {
     ],
     predictionTitle: "Hypotheses d'ecologie et d'evolution testables",
     predictionLead:
-      "Le resultat ecologique est relatif : une espece peut devenir plus commune parce que sa fitness dependante du FieldState decline moins que celle d'un competiteur, hote, proie ou predateur. Ce sont des predictions de recherche derivees du modele.",
+      "Le resultat ecologique est relatif : une espece peut devenir plus commune parce que sa fitness sous la condition physique de champ mesuree decline moins que celle d'un competiteur, hote, proie ou predateur. Ce sont des predictions de recherche derivees de BERM.",
     selectionEquation:
       "Δ log(Nᵢ/Nⱼ) = log Wᵢ(FieldState, EcoContext) − log Wⱼ(FieldState, EcoContext)",
     evolutionText:
-      "Le tri ecologique ne devient un changement evolutif que lorsque les traits d'interface, sensoriels ou de recuperation varient de maniere heritable et que la difference de fitness dependante du FieldState persiste a travers les generations. Le modele enregistre donc un etat de distribution de traits indexe dans le temps separe plutot que de traiter un seul contraste d'abondance comme de l'evolution.",
+      "Le tri ecologique ne devient un changement evolutif que lorsque les traits d'interface, sensoriels ou de recuperation varient de maniere heritable et que la difference de fitness associee a la condition physique de champ mesuree persiste a travers les generations. BERM enregistre donc un etat de distribution de traits indexe dans le temps separe plutot que de traiter un seul contraste d'abondance comme de l'evolution.",
     evolutionEquation:
       "P₍g+1₎(θ) ∝ W(θ | FieldState, EcoContext) · P₍g₎(θ)",
     predictions: [
@@ -1208,7 +1208,7 @@ const COPY: Record<string, Copy> = {
     selectionLandscapeP2: "Le systeme abeille-Varroa est l'etude de cas la plus claire : l'EMF affaiblit simultanement l'hote et n'affecte pas le parasite, creant une « double cascade » qui amplifie tous les autres facteurs de stress.",
     selectionLandscapeArticleLink: "Etude de cas : Pourquoi les abeilles ne peuvent pas riposter",
     selectionLandscapeSentinelLink: "Analyse complete sur la page sentinelle",
-    selectionLandscapeNote: "Les positions des especes sont des estimations BERM-Eco [H] basees sur des mecanismes connus, pas des mesures quantitatives de fitness. Le graphique de dispersion illustre l'hypothese que les especes dependantes de l'EM sont systematiquement desavantagees dans le FieldState modifie.",
+    selectionLandscapeNote: "Les positions des especes sont des estimations BERM-Eco [H] basees sur des mecanismes connus, pas des mesures quantitatives de fitness. Le graphique illustre une hypothese BERM concernant un environnement physique de champ modifie ; FieldState ne ferait qu'enregistrer cet environnement.",
     protocolTitle: "Protocole d'etude discriminant minimal",
     protocol: [
       "Mesurer le potentiel de surface ou le champ statique local, la geometrie, la distance de separation, le materiau, l'etat de mise a la terre, la temperature et l'humidite relative pour chaque essai.",
@@ -1277,7 +1277,7 @@ const COPY: Record<string, Copy> = {
     tickText: "l'induction passive et la fixation sont des points finaux empiriques",
   },
   ko: {
-    frameworkTitle: "BERM-Eco: FieldState, 생태학적 선별 및 선택",
+    frameworkTitle: "BERM-Eco: 측정된 장, 생태학적 선별 및 선택",
     frameworkLead:
       "생태학 분과는 인간 모델과 동일한 물리적 전제를 검증합니다: 생물은 하나의 일반적인 'EMF 선량'을 만나는 것이 아닙니다. 측정된 전자기장 구성을 만나며, 각 종은 고유한 감각적, 형태학적, 발달 단계별 전달 함수를 가집니다. 이는 모든 종을 균일하게 민감하거나 저항성이 있다고 취급하지 않고 상대적 생태학적 결과를 검증 가능하게 합니다.",
     fieldClasses: [
@@ -1319,7 +1319,7 @@ const COPY: Record<string, Copy> = {
       },
       {
         step: "02 · 측정된 반응",
-        title: "변경된 FieldState는 정의된 종점을 변경할 수 있다",
+        title: "측정된 장 변화는 정의된 종점을 변경할 수 있다",
         text: "대응하는 가짜 대조 실험은 성분 특이적 행동 또는 생리적 반응을 확립할 수 있다. 그 자체로 개체군 추세나 보편적 종 효과를 확립하지 않는다.",
         source: { label: "Mallinson, Woodburn & O'Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
         tone: "direct",
@@ -1327,13 +1327,13 @@ const COPY: Record<string, Copy> = {
       {
         step: "03 · 생태학적 선별",
         title: "서로 다른 반응 함수가 조우를 재구성할 수 있다",
-        text: "동일한 교정된 FieldState가 수분매개자, 숙주, 기생자, 포식자, 경쟁자를 다르게 변화시키면, 방문, 부착, 탐색, 분산율이 상대적 적합도와 군집 구조를 변경할 수 있다. 이것은 모델에서 도출된 검증 가능한 귀결이다.",
+        text: "동일하게 측정된 물리적 장 조건이 수분매개자, 숙주, 기생자, 포식자, 경쟁자를 다르게 변화시키면 방문, 부착, 탐색, 분산율이 상대적 적합도와 군집 구조를 변경할 수 있다. 이것은 BERM에서 도출된 검증 가능한 귀결이며 FieldState는 그 조건을 기록할 수 있다.",
         tone: "hypothesis",
       },
       {
         step: "04 · 진화",
         title: "선택에는 세대를 넘는 유전적 변이가 필요하다",
-        text: "생태학적 선별은 FieldState 의존적 적합도 차이가 유전 가능한 형질에 반복 작용하여 분포를 변경할 때만 진화가 된다. 단순한 개체수만으로는 진화적 결과가 아니다.",
+        text: "생태학적 선별은 측정된 물리적 장 조건과 연관된 적합도 차이가 유전 가능한 형질에 반복 작용하여 분포를 변경할 때만 진화가 된다. 단순한 개체수만으로는 진화적 결과가 아니다.",
         tone: "hypothesis",
       },
     ],
@@ -1470,11 +1470,11 @@ const COPY: Record<string, Copy> = {
     ],
     predictionTitle: "검증 가능한 생태학 및 진화 가설",
     predictionLead:
-      "생태학적 결과는 상대적이다: 한 종이 FieldState 의존적 적합도가 경쟁자, 숙주, 피식자, 포식자보다 덜 감소하기 때문에 더 흔해질 수 있다. 이들은 모델에서 도출된 연구 예측이다.",
+      "생태학적 결과는 상대적이다: 한 종은 측정된 물리적 장 조건에서의 적합도 감소가 경쟁자, 숙주, 피식자, 포식자보다 작기 때문에 더 흔해질 수 있다. 이들은 BERM에서 도출된 연구 예측이다.",
     selectionEquation:
       "Δ log(Nᵢ/Nⱼ) = log Wᵢ(FieldState, EcoContext) − log Wⱼ(FieldState, EcoContext)",
     evolutionText:
-      "생태학적 선별은 계면, 감각, 회복 형질이 유전 가능하게 변이하고 FieldState 의존적 적합도 차이가 세대를 넘어 지속될 때만 진화적 변화가 된다. 모델은 단일 개체수 대비를 진화로 취급하지 않고 시간 인덱스된 형질 분포 상태를 등록한다.",
+      "생태학적 선별은 계면, 감각, 회복 형질이 유전 가능하게 변이하고 측정된 물리적 장 조건과 연관된 적합도 차이가 세대를 넘어 지속될 때만 진화적 변화가 된다. BERM은 단일 개체수 대비를 진화로 취급하지 않고 시간 인덱스된 형질 분포 상태를 등록한다.",
     evolutionEquation:
       "P₍g+1₎(θ) ∝ W(θ | FieldState, EcoContext) · P₍g₎(θ)",
     predictions: [
@@ -1499,7 +1499,7 @@ const COPY: Record<string, Copy> = {
     selectionLandscapeP2: "꿀벌-Varroa 시스템이 가장 명확한 사례 연구이다: EMF가 동시에 숙주를 약화시키고 기생자에 영향을 주지 않아 모든 다른 스트레스 요인을 증폭하는 '이중 캐스케이드'를 만든다.",
     selectionLandscapeArticleLink: "사례 연구: 꿀벌이 반격할 수 없는 이유",
     selectionLandscapeSentinelLink: "감시 페이지의 전체 분석",
-    selectionLandscapeNote: "종의 위치는 알려진 메커니즘에 기반한 BERM-Eco 추정 [H]이며, 정량적 적합도 측정이 아니다. 산점도는 EM 의존 종이 변경된 FieldState에서 체계적으로 불리하다는 가설을 예시한다.",
+    selectionLandscapeNote: "종의 위치는 알려진 메커니즘에 기반한 BERM-Eco 추정 [H]이며 정량적 적합도 측정이 아니다. 산점도는 변경된 물리적 장 환경에 관한 BERM 가설을 예시하며 FieldState는 그 환경을 기록할 뿐이다.",
     protocolTitle: "최소 식별 연구 설계",
     protocol: [
       "각 시행에서 표면 전위 또는 국소 정전장, 기하학, 분리 거리, 재료, 접지 상태, 온도, 상대 습도를 측정한다.",

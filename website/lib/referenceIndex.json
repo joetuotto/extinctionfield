@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1069,
+    "totalReferences": 1076,
     "linkedReferences": 403
   },
   "references": {
@@ -10695,6 +10695,76 @@
       "type": "randomized_crossover_trial",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1016/j.reprotox.2012.04.003"
+    },
+    "delgado1969": {
+      "id": "delgado1969",
+      "authors": "Delgado JMR",
+      "year": 1969,
+      "title": "Physical Control of the Mind: Toward a Psychocivilized Society",
+      "journal": "Harper & Row",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "gazzaniga2000": {
+      "id": "gazzaniga2000",
+      "authors": "Gazzaniga MS",
+      "year": 2000,
+      "title": "Cerebral specialization and interhemispheric communication: Does the corpus callosum enable the human condition?",
+      "journal": "Brain",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "gazzaniga2011": {
+      "id": "gazzaniga2011",
+      "authors": "Gazzaniga MS",
+      "year": 2011,
+      "title": "Who's in Charge? Free Will and the Science of the Brain",
+      "journal": "Ecco",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "zapffe1933": {
+      "id": "zapffe1933",
+      "authors": "Zapffe PW",
+      "year": 1933,
+      "title": "The Last Messiah (Den sidste Messias)",
+      "journal": "Janus",
+      "type": "essay",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "tooby1992": {
+      "id": "tooby1992",
+      "authors": "Tooby J, Cosmides L",
+      "year": 1992,
+      "title": "The psychological foundations of culture",
+      "journal": "The Adapted Mind: Evolutionary Psychology and the Generation of Culture",
+      "type": "book_chapter",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "nisbett_wilson1977": {
+      "id": "nisbett_wilson1977",
+      "authors": "Nisbett RE, Wilson TD",
+      "year": 1977,
+      "title": "Telling more than we can know: Verbal reports on mental processes",
+      "journal": "Psychological Review",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "kunda1990": {
+      "id": "kunda1990",
+      "authors": "Kunda Z",
+      "year": 1990,
+      "title": "The case for motivated reasoning",
+      "journal": "Psychological Bulletin",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -11597,6 +11667,11 @@
     "doi:10.1016/j.tox.2021.152836": "di2021_static_field_testosterone",
     "pmid:34147545": "di2021_static_field_testosterone",
     "doi:10.1016/j.reprotox.2012.04.003": "mollerlokken2012_mri_hormones",
-    "pmid:22576112": "mollerlokken2012_mri_hormones"
+    "pmid:22576112": "mollerlokken2012_mri_hormones",
+    "doi:10.1093/brain/123.7.1293": "gazzaniga2000",
+    "pmid:10869045": "gazzaniga2000",
+    "doi:10.1037/0033-295x.84.3.231": "nisbett_wilson1977",
+    "doi:10.1037/0033-2909.108.3.480": "kunda1990",
+    "pmid:2270237": "kunda1990"
   }
 }

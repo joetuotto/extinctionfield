@@ -1,10 +1,142 @@
 {
   "metadata": {
     "generated": "2026-09-03",
-    "referencesWithUsages": 676,
-    "usageLocations": 1671
+    "referencesWithUsages": 683,
+    "usageLocations": 1691
   },
   "usage": {
+    "delgado1969": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "gazzaniga2000": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "gazzaniga2011": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      }
+    ],
+    "nisbett_wilson1977": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "narinx2022_free_testosterone": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "soares_cunha2016_d2_motivation": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "oxley2008_physiological_traits": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "zapffe1933": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      }
+    ],
+    "kunda1990": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "tooby1992": [
+      {
+        "path": "/about/civilization",
+        "source": "app/[locale]/about/civilization/page.tsx"
+      }
+    ],
     "adey1976_calcium_window": [
       {
         "path": "/about/history",
@@ -1343,16 +1475,6 @@
         "source": "app/[locale]/predictions/page.tsx"
       }
     ],
-    "soares_cunha2016_d2_motivation": [
-      {
-        "path": "/civilization/pathopege",
-        "source": "app/[locale]/civilization/pathopege/page.tsx"
-      },
-      {
-        "path": "/civilization/patopolis",
-        "source": "app/[locale]/civilization/patopolis/page.tsx"
-      }
-    ],
     "yuksel2016_emf_female_rats": [
       {
         "path": "/civilization/pathopege",
@@ -1456,12 +1578,6 @@
       }
     ],
     "alogaily2025_testosterone_politics": [
-      {
-        "path": "/civilization/patokratia",
-        "source": "app/[locale]/civilization/patokratia/page.tsx"
-      }
-    ],
-    "oxley2008_physiological_traits": [
       {
         "path": "/civilization/patokratia",
         "source": "app/[locale]/civilization/patokratia/page.tsx"
@@ -6805,28 +6921,6 @@
       {
         "path": "/evidence/technology",
         "source": "app/[locale]/evidence/technology/page.tsx"
-      }
-    ],
-    "narinx2022_free_testosterone": [
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
       }
     ],
     "degendt2004_sertoli_ar": [

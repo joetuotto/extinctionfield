@@ -746,6 +746,15 @@ def emf_behavioral_factor_v3(adj_cum_emf: float) -> float:
     900 MHz exposure altered HPA-axis GAS dynamics (compatible
     with cortisol -> testosterone suppression pathway D modelled
     here).
+
+    BERM interpreter extension (qualitative, not encoded numerically):
+    if an upstream neuroendocrine state changes behaviour before that
+    state is available to introspection, the stated cultural or economic
+    reason can be a downstream narrative measurement.  The extension
+    predicts an ordered biological-state -> behaviour -> report path and
+    requires joint longitudinal biomarker, behaviour and survey data.
+    This function does not estimate that mediation, and FieldState is only
+    an optional physical measurement input, not the biological operator.
     """
     oxytocin = math.exp(-0.010 * adj_cum_emf)
     testosterone = math.exp(-0.013 * adj_cum_emf)
