@@ -9,9 +9,10 @@ another or use FieldState as an alias for the model.
 from __future__ import annotations
 
 from copy import deepcopy
+from berm.biology.cross_pathway_synthesis import synthesis_manifest
 
 
-PACKAGE_VERSION = "0.21.0"
+PACKAGE_VERSION = "0.22.0"
 MODEL_ID = "berm"
 MODEL_NAME = "Bio-Electromagnetic Reproductive Model"
 PUBLIC_MODEL_VERSION = "v17"
@@ -121,6 +122,7 @@ _ARCHITECTURE_MANIFEST = {
             "canonicalRoute": "/measurement/fieldstate",
         }
     },
+    "evidenceSynthesis": synthesis_manifest(),
     "civilizationExtensions": {
         "forwardAggregation": {
             "id": "berm-forward-aggregation-v1",

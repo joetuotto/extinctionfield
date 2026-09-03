@@ -54,4 +54,14 @@ describe("BERM / FieldState architecture contract", () => {
     );
     expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.publishesNumericPredictions).toBe(false);
   });
+
+  it("registers seven BERM-owned compositional evidence syntheses", () => {
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.role).toBe(
+      "berm_compositional_evidence_layer",
+    );
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.fieldStateRole).toBe(
+      "optional_physical_measurement_input_only",
+    );
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.clusters).toHaveLength(7);
+  });
 });

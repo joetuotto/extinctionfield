@@ -3,7 +3,7 @@
     "generated": "2026-09-03",
     "generatedBy": "berm/export_civilization.py",
     "source": "berm.civilization.political_biology",
-    "version": "0.21.0",
+    "version": "0.22.0",
     "year": 2025,
     "environment_order": [
       "amish",

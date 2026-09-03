@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "package": {
     "name": "berm",
-    "version": "0.21.0",
+    "version": "0.22.0",
     "role": "implementation_release"
   },
   "model": {
@@ -69,6 +69,63 @@
       "publishesLockedForecasts": false,
       "canonicalRoute": "/measurement/fieldstate"
     }
+  },
+  "evidenceSynthesis": {
+    "id": "berm-cross-pathway-synthesis-v1",
+    "role": "berm_compositional_evidence_layer",
+    "rule": "Independent compatible component findings strengthen a shared BERM causal path; the joint inference is registered separately from end-to-end coefficient calibration.",
+    "fieldStateRole": "optional_physical_measurement_input_only",
+    "clusters": [
+      {
+        "id": "joint-endocrine-gate",
+        "claimId": "claim.synthesis.joint-endocrine-gate",
+        "path": ["HPA_HPG", "ANDROGEN_RECEPTOR_SIGNAL", "INDIVIDUAL_BEHAVIORAL_RESPONSE"],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": ["er.synthesis.joint-endocrine.mehta2010", "er.synthesis.joint-endocrine.narinx2022"]
+      },
+      {
+        "id": "cry-clock-hpg-serial-bridge",
+        "claimId": "claim.synthesis.cry-clock-hpg-chain",
+        "path": ["B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG"],
+        "synthesisClass": "DIRECT_COMPONENT_CONVERGENCE",
+        "relationIds": ["er.synthesis.cry-clock.yoshii2009", "er.synthesis.cry-clock.sherrard2018", "er.synthesis.cry-clock.cao2015", "er.synthesis.cry-clock.liu2014"]
+      },
+      {
+        "id": "pharmacological-target-triangulation",
+        "claimId": "claim.synthesis.target-intervention-triangulation",
+        "path": ["A_VGCC_ROS", "VMEM_MTOR", "MALE_SPERM"],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": ["er.synthesis.pharmacology.pall2013", "er.synthesis.pharmacology.ccb1994", "er.synthesis.pharmacology.sirolimus2008"]
+      },
+      {
+        "id": "protocol-state-heterogeneity",
+        "claimId": "claim.synthesis.protocol-state-heterogeneity",
+        "path": ["BERM_L2_BRIDGE"],
+        "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
+        "relationIds": ["er.bridge.litovitz1991", "er.bridge.blackman1990", "er.bridge.blackman1991", "er.bridge.berman1990"]
+      },
+      {
+        "id": "vmem-calcium-mtor-interface",
+        "claimId": "claim.synthesis.vmem-calcium-interface",
+        "path": ["A_VGCC_ROS", "VMEM_MTOR", "MALE_SPERM"],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": ["er.synthesis.vmem.sempou2022", "er.synthesis.vmem.brown2016", "er.synthesis.vmem.zandieh2025"]
+      },
+      {
+        "id": "conserved-cross-species-prior",
+        "claimId": "claim.synthesis.cross-species-transfer-prior",
+        "path": ["B_RPM_CRY", "ECOLOGICAL_ENCOUNTER", "ECOLOGICAL_SELECTION"],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": ["er.synthesis.cross-species.ritz2004", "er.synthesis.cross-species.yoshii2009", "er.synthesis.cross-species.wan2021", "er.synthesis.cross-species.hallmann2017", "er.synthesis.cross-species.rosenberg2019"]
+      },
+      {
+        "id": "graded-susceptibility-continuum",
+        "claimId": "claim.synthesis.graded-susceptibility",
+        "path": ["BERM_L2_BRIDGE", "INDIVIDUAL_BEHAVIORAL_RESPONSE"],
+        "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
+        "relationIds": ["er.synthesis.susceptibility.mccarty2011", "er.synthesis.susceptibility.belpomme2022", "er.synthesis.susceptibility.rubin2010"]
+      }
+    ]
   },
   "civilizationExtensions": {
     "forwardAggregation": {

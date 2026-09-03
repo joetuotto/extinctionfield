@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Pill } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { DrugDiseaseCrossMap } from "@/components/DrugDiseaseCrossMap";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { pickCopy } from "@/lib/i18n";
@@ -1358,6 +1359,8 @@ export default async function PharmacologyPage({ params }: { params: Promise<{ l
       </p>
 
       <PageHeader icon={Pill} title={d.title} subtitle={d.subtitle} />
+
+      <EvidenceSynthesisBanner locale={locale} />
 
       <section className="mt-12">
         <h2 className="text-lg font-semibold mb-2">{d.cardsTitle}</h2>

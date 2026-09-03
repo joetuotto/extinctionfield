@@ -70,7 +70,7 @@ def test_python_and_website_share_the_exact_architecture_contract() -> None:
 def test_versions_have_distinct_namespaces_and_roles() -> None:
     manifest = architecture_manifest()
 
-    assert berm.__version__ == PACKAGE_VERSION == "0.21.0"
+    assert berm.__version__ == PACKAGE_VERSION == "0.22.0"
     assert PUBLIC_MODEL_VERSION == "v17"
     assert FIELDSTATE_SPEC_VERSION == "v2"
     assert manifest["routes"]["conditionalAsfr"]["id"] == CONDITIONAL_ASFR_ROUTE_ID
@@ -120,6 +120,23 @@ def test_civilization_aggregation_is_forward_only_and_explicitly_persistent() ->
     assert aggregation["reverseEcologicalInferenceAllowed"] is False
     assert "P(Y=p | z,x)" in aggregation["operator"]
     assert "retention" in aggregation["institutionalMemory"]
+
+
+def test_compositional_evidence_layer_is_berm_owned_and_cross_runtime() -> None:
+    synthesis = architecture_manifest()["evidenceSynthesis"]
+
+    assert synthesis["role"] == "berm_compositional_evidence_layer"
+    assert synthesis["fieldStateRole"] == "optional_physical_measurement_input_only"
+    assert len(synthesis["clusters"]) == 7
+    assert {item["id"] for item in synthesis["clusters"]} == {
+        "joint-endocrine-gate",
+        "cry-clock-hpg-serial-bridge",
+        "pharmacological-target-triangulation",
+        "protocol-state-heterogeneity",
+        "vmem-calcium-mtor-interface",
+        "conserved-cross-species-prior",
+        "graded-susceptibility-continuum",
+    }
 
 
 def test_python_and_website_causal_topology_match_exactly() -> None:

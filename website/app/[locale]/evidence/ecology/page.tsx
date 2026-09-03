@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TreePine } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { BermIcon } from "@/components/BermIcon";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
@@ -421,6 +422,8 @@ export default async function EcologyPage({
       </Link>
 
       <PageHeader icon={TreePine} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="ecology" size={28} className="text-accent" />} />
+
+      <EvidenceSynthesisBanner locale={locale} />
 
       {/* Narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

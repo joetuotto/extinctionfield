@@ -77,6 +77,14 @@ interface AnchorIndexFile {
   anchors: { claimId: string; file: string; line: number }[];
 }
 
+interface EvidenceSynthesisManifest {
+  evidenceSynthesis: {
+    role: string;
+    fieldStateRole: string;
+    clusters: { claimId: string; relationIds: string[] }[];
+  };
+}
+
 /** Nodes that carry at least one claim — mirrors getNodeCoverage() in lib/claims. */
 function coveredNodeIds(graphFile: CausalGraphFile, claimsData: ClaimsFile): Set<string> {
   const nodeIds = new Set(Object.keys(graphFile.nodes));
@@ -96,6 +104,7 @@ function loadJSON<T>(filename: string): T {
 const graph = loadJSON<CausalGraphFile>("causal-graph.json");
 const claims = loadJSON<ClaimsFile>("claims.json");
 const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
+const architecture = loadJSON<EvidenceSynthesisManifest>("model-architecture.json");
 
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
@@ -253,6 +262,25 @@ describe("claims.json", () => {
     for (const claim of claims.claims) {
       for (const dep of claim.depends_on) {
         expect(claimIds.has(dep)).toBe(true);
+      }
+    }
+  });
+});
+
+describe("BERM compositional evidence synthesis", () => {
+  it("registers all seven synthesis clusters as BERM-owned claims and relations", () => {
+    const claimIds = new Set(claims.claims.map((claim) => claim.id));
+    const relationIds = new Set(claims.evidence_relations.map((relation) => relation.id));
+    const synthesis = architecture.evidenceSynthesis;
+
+    expect(synthesis.role).toBe("berm_compositional_evidence_layer");
+    expect(synthesis.fieldStateRole).toBe("optional_physical_measurement_input_only");
+    expect(synthesis.clusters).toHaveLength(7);
+    for (const cluster of synthesis.clusters) {
+      expect(claimIds.has(cluster.claimId)).toBe(true);
+      expect(cluster.relationIds.length).toBeGreaterThan(0);
+      for (const relationId of cluster.relationIds) {
+        expect(relationIds.has(relationId)).toBe(true);
       }
     }
   });

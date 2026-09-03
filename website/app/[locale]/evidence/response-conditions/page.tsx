@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { ClaimRef } from "@/components/ClaimRef";
 import { StudyCitation } from "@/components/StudyCitation";
 import { TranslationNotice } from "@/components/TranslationNotice";
+import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { pickCopy } from "@/lib/i18n";
 
 const SOURCES = [
@@ -124,6 +125,8 @@ export default async function ResponseConditionsPage({ params }: { params: Promi
       <TranslationNotice copy={COPY} locale={locale} />
       <main id="main-content" className="mx-auto max-w-5xl px-6 py-16">
         <PageHeader icon={GitMerge} title={d.title} subtitle={d.subtitle} />
+
+        <EvidenceSynthesisBanner locale={locale} />
 
         <section className="mb-12 rounded-xl border border-status-partial/35 bg-status-partial/5 p-6">
           <h2 className="font-semibold">{d.status}</h2>

@@ -1,6 +1,6 @@
 """BERM: Bio-Electromagnetic Reproductive Model Python package.
 
-The 0.21.x number is an implementation-package release, not a BERM model
+The 0.22.x number is an implementation-package release, not a BERM model
 version.  The public prediction specification remains v17.  FieldState v2 is
 an optional measurement/observation specification and is not a model alias,
 causal root, or forecast-producing route.
@@ -54,6 +54,15 @@ from berm.evidence_constraints import (
     evidence_constraint_summary,
     legacy_evidence_placements,
     load_evidence_constraints,
+)
+from berm.biology.cross_pathway_synthesis import (
+    EVIDENCE_SYNTHESIS_CLUSTERS,
+    EVIDENCE_SYNTHESIS_VERSION,
+    additive_interaction_contrast,
+    graded_susceptibility_probability,
+    joint_endocrine_predictor,
+    log_multiplicative_interaction_contrast,
+    synthesis_manifest,
 )
 from berm.validation.evidence_constrained_hindcast import (
     EVIDENCE_CONSTRAINED_HINDCAST_VERSION,
@@ -130,6 +139,13 @@ __all__ = [
     "evidence_constraint_summary",
     "legacy_evidence_placements",
     "load_evidence_constraints",
+    "EVIDENCE_SYNTHESIS_VERSION",
+    "EVIDENCE_SYNTHESIS_CLUSTERS",
+    "additive_interaction_contrast",
+    "log_multiplicative_interaction_contrast",
+    "joint_endocrine_predictor",
+    "graded_susceptibility_probability",
+    "synthesis_manifest",
     "EVIDENCE_CONSTRAINED_HINDCAST_VERSION",
     "default_evidence_constrained_hindcast_specification",
     "evidence_constrained_hindcast_summary",

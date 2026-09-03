@@ -1668,6 +1668,15 @@ const SUB_PAGES = [
     ko: { title: "근거 사슬: 광자→집단", desc: "직접 구성요소 근거, 구성된 수렴, 미해결 연결을 구분하는 척도 간 감사. 제안된 피드백 네트워크는 검사 가능하지만 완전히 검증된 단일 메커니즘은 아니다." },
   },
   {
+    slug: "converging-patterns",
+    icon: GitMerge,
+    en: { title: "Converging BERM Patterns", desc: "Seven cross-source syntheses show how independent methods converge on the same endocrine, CRY, Vmem, calcium, mTOR and susceptibility control points." },
+    fi: { title: "BERM:n konvergoivat patternit", desc: "Seitsemän lähteidenvälistä synteesiä osoittaa, kuinka riippumattomat menetelmät konvergoivat samoihin endokriinisiin, CRY-, Vmem-, kalsium-, mTOR- ja herkkyyden säätöpisteisiin." },
+    ja: { title: "収束するBERMパターン", desc: "7つの資料横断的統合により、独立した方法が同じ内分泌、CRY、Vmem、カルシウム、mTOR、感受性の制御点に収束することを示す。" },
+    fr: { title: "Patterns convergents de BERM", desc: "Sept synthèses inter-sources montrent comment des méthodes indépendantes convergent vers les mêmes points de contrôle endocriniens, CRY, Vmem, calcium, mTOR et de susceptibilité." },
+    ko: { title: "수렴하는 BERM 패턴", desc: "7개의 출처 간 종합은 독립적인 방법들이 동일한 내분비, CRY, Vmem, 칼슘, mTOR 및 감수성 제어점에 수렴함을 보여준다." },
+  },
+  {
     slug: "heavy-metal-synergy",
     icon: FlaskRound,
     en: { title: "Heavy Metal × EMF Synergy", desc: "Cd²⁺ permeates Cav3.1, Pb²⁺ mimics Ca²⁺ at CaM, MeHg increases T-type currents. Pineal gland calcification (PGC) as convergent mechanism. Five metals, one VGCC entry pathway." },

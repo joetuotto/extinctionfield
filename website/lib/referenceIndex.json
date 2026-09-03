@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1088,
-    "linkedReferences": 415
+    "totalReferences": 1089,
+    "linkedReferences": 420
   },
   "references": {
     "5g_hpa_axis": {
@@ -6670,11 +6670,11 @@
       "id": "brown2016",
       "authors": "Brown SG et al.",
       "year": 2016,
-      "title": "Depolarization of sperm membrane potential in infertile men",
-      "journal": "Various",
-      "type": "report",
-      "linkStatus": "missing",
-      "externalUrl": null
+      "title": "Depolarization of sperm membrane potential is a common feature of men with subfertility and is associated with low fertilization rate at IVF",
+      "journal": "Human Reproduction",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/humrep/dew056"
     },
     "dreher2016": {
       "id": "dreher2016",
@@ -6958,13 +6958,13 @@
     },
     "ccb_fertility": {
       "id": "ccb_fertility",
-      "authors": "Various",
-      "year": 2020,
-      "title": "Calcium channel blockers and male fertility",
-      "journal": "Various",
-      "type": "report",
-      "linkStatus": "missing",
-      "externalUrl": null
+      "authors": "Benoff S, Cooper GW, Hurley I, et al.",
+      "year": 1994,
+      "title": "The effect of calcium ion channel blockers on sperm fertilization potential",
+      "journal": "Fertility and Sterility",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/S0015-0282(16)56953-2"
     },
     "chodick-2020-israel": {
       "id": "chodick-2020-israel",
@@ -7180,11 +7180,11 @@
       "id": "sempou2022",
       "authors": "Sempou E et al.",
       "year": 2022,
-      "title": "Membrane potential drives spermatogonial stem cell differentiation via mTOR",
-      "journal": "Nat Commun",
-      "type": "report",
-      "linkStatus": "missing",
-      "externalUrl": null
+      "title": "Membrane potential drives the exit from pluripotency and cell fate commitment via calcium and mTOR",
+      "journal": "Nature Communications",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41467-022-34363-w"
     },
     "cells-2023-genotoxic-rf": {
       "id": "cells-2023-genotoxic-rf",
@@ -7248,13 +7248,13 @@
     },
     "rapamycin_fertility": {
       "id": "rapamycin_fertility",
-      "authors": "Various",
-      "year": 2023,
-      "title": "Rapamycin (mTOR inhibitor) effects on fertility",
-      "journal": "Various",
-      "type": "report",
-      "linkStatus": "missing",
-      "externalUrl": null
+      "authors": "Zuber J, Anglicheau D, Elie C, et al.",
+      "year": 2008,
+      "title": "Sirolimus may reduce fertility in male renal transplant recipients",
+      "journal": "American Journal of Transplantation",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/j.1600-6143.2008.02267.x"
     },
     "sato2023_ih_preterm": {
       "id": "sato2023_ih_preterm",
@@ -10876,6 +10876,16 @@
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1038/s41586-026-10282-4"
     },
+    "rubin2010_ieiemf_provocation": {
+      "id": "rubin2010_ieiemf_provocation",
+      "authors": "Rubin GJ, Nieto-Hernandez R, Wessely S",
+      "year": 2010,
+      "title": "Idiopathic environmental intolerance attributed to electromagnetic fields (formerly 'electromagnetic hypersensitivity'): an updated systematic review of provocation studies",
+      "journal": "Bioelectromagnetics",
+      "type": "systematic_review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.20536"
+    },
     "kunda1990": {
       "id": "kunda1990",
       "authors": "Kunda Z",
@@ -11458,6 +11468,7 @@
     "pmid:20816841": "mehta2010_dual_hormone",
     "doi:10.1001/jama.2011.710": "leproult2011_testosterone_sleep",
     "doi:10.3109/00207454.2011.608139": "mccarty2011",
+    "pmid:21793784": "mccarty2011",
     "doi:10.3109/09513590.2011.631627": "unfer2011_melatonin_ivf",
     "doi:10.1016/j.yuro.2012.07.027": "avendao2012",
     "doi:10.1016/j.yhbeh.2012.01.008": "feldman2012",
@@ -11476,6 +11487,9 @@
     "doi:10.1016/s0160-4120(14)00135-4": "sperm_meta2014",
     "doi:10.1016/s2305-0500(15)00004-4": "rat_50hz_sperm2015",
     "doi:10.3109/15368378.2015.1043557": "yakymenko2016",
+    "doi:10.1093/humrep/dew056": "brown2016",
+    "pmcid:PMC4871192": "brown2016",
+    "pmid:27052499": "brown2016",
     "doi:10.1073/pnas.1608085113": "dreher2016",
     "doi:10.1146/annurev-biophys-032116-094545": "hore2016_v2",
     "doi:10.1530/rep-16-0126": "houston2016",
@@ -11499,6 +11513,8 @@
     "doi:10.1126/science.aaw1313": "rosenberg2019",
     "doi:10.1038/s41598-019-53983-9": "sci-rep-2019-sperm-ros",
     "pmid:31767903": "sci-rep-2019-sperm-ros",
+    "doi:10.1016/s0015-0282(16)56953-2": "ccb_fertility",
+    "pmid:8062958": "ccb_fertility",
     "doi:10.21203/rs.2.20358/v2": "chodick-2020-israel",
     "doi:10.1042/bst20200200": "mpw-agd-sharpe-2020",
     "doi:10.3934/publichealth.2020028": "sato2020_ih_ecological",
@@ -11518,8 +11534,13 @@
     "pmcid:PMC9791864": "heliyon_150khz_fertility_2022",
     "pmid:36578412": "heliyon_150khz_fertility_2022",
     "doi:10.1186/s12875-022-01761-4": "screentime_meta2022",
+    "doi:10.1038/s41467-022-34363-w": "sempou2022",
+    "pmcid:PMC9637099": "sempou2022",
+    "pmid:36335122": "sempou2022",
     "doi:10.3390/cells12040594": "cells-2023-genotoxic-rf",
     "pmcid:PMC10354453": "pmc10354453",
+    "doi:10.1111/j.1600-6143.2008.02267.x": "rapamycin_fertility",
+    "pmid:18510638": "rapamycin_fertility",
     "doi:10.1177/11786302231211114": "sato2023_ih_preterm",
     "doi:10.1101/2024.07.26.605233": "bressan2024",
     "doi:10.1016/j.envint.2024.108509": "cordelli2024",
@@ -11818,6 +11839,8 @@
     "pmid:39061719": "iversen2024_light_magnetic",
     "doi:10.1038/s41586-026-10282-4": "burd2026_engineered_radical_pair",
     "pmid:41851455": "burd2026_engineered_radical_pair",
+    "doi:10.1002/bem.20536": "rubin2010_ieiemf_provocation",
+    "pmid:19681059": "rubin2010_ieiemf_provocation",
     "doi:10.1037/0033-2909.108.3.480": "kunda1990",
     "pmid:2270237": "kunda1990"
   }

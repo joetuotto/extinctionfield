@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T17:32:40.205Z",
+  "generatedAt": "2026-09-03T18:14:23.970Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -14,7 +14,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5345
+      "line": 5397
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -34,7 +34,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5327
+      "line": 5379
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -49,17 +49,17 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5238
-    },
-    {
-      "claimId": "claim.bridge.state-conditioned-kernel",
-      "file": "app/[locale]/evidence/response-conditions/page.tsx",
-      "line": 136
+      "line": 5290
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/evidence/response-conditions/page.tsx",
       "line": 139
+    },
+    {
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "file": "app/[locale]/evidence/response-conditions/page.tsx",
+      "line": 142
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
@@ -69,7 +69,7 @@
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5269
+      "line": 5321
     },
     {
       "claimId": "claim.civilization.asymmetric-evidence-threshold",
@@ -119,7 +119,7 @@
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5378
+      "line": 5430
     },
     {
       "claimId": "claim.cognition.reported-reason-downstream",
@@ -144,12 +144,12 @@
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5366
+      "line": 5418
     },
     {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4941
+      "line": 4993
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
@@ -159,32 +159,32 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5312
+      "line": 5364
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5295
+      "line": 5347
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
       "file": "app/[locale]/evidence/circadian/page.tsx",
-      "line": 899
+      "line": 902
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4611
+      "line": 4639
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5207
+      "line": 5259
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5124
+      "line": 5176
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -192,14 +192,49 @@
       "line": 410
     },
     {
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 101
+    },
+    {
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 93
+    },
+    {
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 103
+    },
+    {
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 91
+    },
+    {
+      "claimId": "claim.synthesis.protocol-state-heterogeneity",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 97
+    },
+    {
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 95
+    },
+    {
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "file": "app/[locale]/evidence/converging-patterns/page.tsx",
+      "line": 99
+    },
+    {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4928
+      "line": 4980
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5120
+      "line": 5172
     }
   ]
 }

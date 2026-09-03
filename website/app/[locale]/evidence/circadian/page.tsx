@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Moon } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { BermIcon } from "@/components/BermIcon";
 import { BehavioralSuppression } from "@/components/BehavioralSuppression";
 import { CitationLink } from "@/components/CitationLink";
@@ -834,6 +835,8 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
       </Link>
 
       <PageHeader icon={Moon} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="neurobiology" size={28} className="text-accent" />} />
+
+      <EvidenceSynthesisBanner locale={locale} />
 
       {/* Thematic evidence narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

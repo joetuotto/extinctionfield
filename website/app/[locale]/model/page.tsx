@@ -416,7 +416,7 @@ const t = {
     cacna1cSub: "Your Cav1.2 genotype determines your EMF sensitivity threshold",
     cacna1cDesc: "The rs1006737 A-allele increases CACNA1C transcription → more Cav1.2 channels per cell → greater Ca²⁺ influx per EMF stimulus → lower CaMKII autophosphorylation threshold. This variant has been linked by GWAS to bipolar disorder, schizophrenia, autism, cardiac arrhythmias, and neurodevelopmental disorders — ALL conditions predicted by BERM's Ca²⁺ mechanism.",
     cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zurich): In a double-blind study, CACNA1C genotype DIRECTLY determined the sleep response to 5G exposure. This is the first demonstration that EMF sensitivity is genotype-dependent, not psychosomatic. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737 is a quantitative trait locus for CACNA1C transcript levels. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A-allele → altered amygdala activity across diagnoses AND healthy controls.",
-    cacna1cImplication: "EHS (electromagnetic hypersensitivity) reinterpretation: EHS is not psychosomatic — it reflects genotype-dependent threshold variation. Individuals with CACNA1C A/A genotype have more Cav1.2 channels, reach the CaMKII threshold at lower EMF exposure, and experience symptoms earlier.",
+    cacna1cImplication: "BERM reinterprets EHS reports as a possible tail of a continuous, state-conditioned response distribution rather than a binary population. CACNA1C is one candidate threshold modifier alongside channel state, redox state and exposure history; it is not a diagnosis, and the specific genotype × exposure effect requires direct replication.",
     cacna1cFormulaLabel: "Population-level correction:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A_allele_frequency",
     cacna1cFormulaDesc: "G_pop adjusts the population's aggregate EMF sensitivity based on A-allele prevalence. European-origin populations (higher A-allele frequency) may have higher aggregate sensitivity than East Asian populations, though this requires further verification.",
@@ -1336,7 +1336,7 @@ const t = {
     cacna1cSub: "Cav1.2-genotyyppi määrittää EMF-herkkyyskynnyksen",
     cacna1cDesc: "rs1006737 A-alleeli lisää CACNA1C-transkriptiota → enemmän Cav1.2-kanavia per solu → suurempi Ca²⁺-sisäänvirtaus per EMF-stimulus → matalampi CaMKII-autofosforylaatiokynnys. Tämä variantti on yhdistetty GWAS-tutkimuksissa bipolaarihäiriöön, skitsofreniaan, autismiin, sydämen rytmihäiriöihin ja kehityshäiriöihin — KAIKKI BERM:n Ca²⁺-mekanismin ennustamia tiloja.",
     cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zürich): kaksoissokkotutkimuksessa CACNA1C-genotyyppi SUORAAN määritti univasteen 5G-altistukselle. Tämä on ensimmäinen osoitus siitä, että EMF-herkkyys on genotyypistä riippuvainen, ei psykosomaattinen. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737 on kvantitatiivinen ominaisuuslokus CACNA1C-transkriptiotasoille. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A-alleeli → muuttunut amygdala-aktiivisuus eri diagnooseissa JA terveillä kontrolleilla.",
-    cacna1cImplication: "EHS-uudelleentulkinta: sähköherkkyysoireyhtymä ei ole psykosomaattinen — se heijastaa genotyypistä riippuvaa kynnysvaihtelua. CACNA1C A/A -genotyypin yksilöillä on enemmän Cav1.2-kanavia, he saavuttavat CaMKII-kynnyksen matalammalla EMF-altistuksella ja kokevat oireita aikaisemmin.",
+    cacna1cImplication: "BERM tulkitsee EHS-raportit mahdolliseksi jatkuvan, tilariippuvaisen vastejakauman hännäksi eikä binääriseksi populaatioksi. CACNA1C on yksi ehdokas kynnysmuuttuja kanavatilan, redox-tilan ja altistushistorian rinnalla; se ei ole diagnoosi, ja spesifi genotyyppi × altistus -vaikutus vaatii suoran replikaation.",
     cacna1cFormulaLabel: "Populaatiotason korjaus:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
     cacna1cFormulaDesc: "G_pop säätää populaation kokonais-EMF-herkkyyttä A-alleelin esiintyvyyden perusteella. Eurooppalaista alkuperää olevilla populaatioilla (korkeampi A-alleelitaajuus) voi olla korkeampi kokonaisherkkyys kuin itäaasialaisilla populaatioilla, vaikka tämä vaatii lisätodentamista.",
@@ -2231,7 +2231,7 @@ const t = {
     cacna1cSub: "Cav1.2遺伝子型がEMF感受性閾値を決定する",
     cacna1cDesc: "rs1006737 A-アレルはCACNA1C転写を増加 → 細胞あたりのCav1.2チャネル増加 → EMF刺激あたりのCa²⁺流入増加 → CaMKII自己リン酸化閾値低下。このバリアントはGWASで双極性障害、統合失調症、自閉症、心不整脈、神経発達障害に関連 -- すべてBERMのCa²⁺メカニズムが予測する状態。",
     cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]](ETH Zurich):二重盲検試験でCACNA1C遺伝子型が5G暴露に対する睡眠応答を直接決定した。EMF感受性が心因性ではなく遺伝子型依存であることの最初の実証。[[ref:cacna1c_functional|Eckart et al. 2016]]:rs1006737はCACNA1C転写レベルの量的形質遺伝子座。[[ref:cacna1c_amygdala|Tesli et al. 2013]]:A-アレル → 診断を越えた扁桃体活動の変化(健常対照でも)。",
-    cacna1cImplication: "EHS(電磁過敏症)の再解釈:EHSは心因性ではない -- 遺伝子型依存の閾値変動を反映する。CACNA1C A/A遺伝子型の個体はより多くのCav1.2チャネルを持ち、より低いEMF暴露でCaMKII閾値に到達し、より早く症状を経験する。",
+    cacna1cImplication: "BERMはEHS報告を二値集団ではなく、連続的で状態依存的な応答分布の裾として再解釈する。CACNA1Cはチャネル状態、レドックス状態、曝露履歴と並ぶ候補閾値修飾因子であり、診断ではない。特定の遺伝子型×曝露効果には直接的な再現が必要である。",
     cacna1cFormulaLabel: "集団レベル補正:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_Aアレル頻度",
     cacna1cFormulaDesc: "G_popはA-アレル有病率に基づいて集団のEMF感受性を調整する。ヨーロッパ系集団(より高いA-アレル頻度)は東アジア系集団よりも高い集約感受性を持つ可能性があるが、追加の検証が必要。",
@@ -3102,7 +3102,7 @@ const t = {
     cacna1cSub: "Votre genotype Cav1.2 determine votre seuil de sensibilite EMF",
     cacna1cDesc: "L'allele A du rs1006737 augmente la transcription de CACNA1C → plus de canaux Cav1.2 par cellule → plus grand afflux Ca²⁺ par stimulus EMF → seuil d'autophosphorylation CaMKII plus bas. Ce variant a ete lie par GWAS au trouble bipolaire, a la schizophrenie, a l'autisme, aux arythmies cardiaques et aux troubles neurodeveloppementaux — TOUTES des conditions predites par le mecanisme Ca²⁺ de BERM.",
     cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zurich) : dans une etude en double aveugle, le genotype CACNA1C a DIRECTEMENT determine la reponse de sommeil a l'exposition 5G. C'est la premiere demonstration que la sensibilite EMF est dependante du genotype, pas psychosomatique. [[ref:cacna1c_functional|Eckart et al. 2016]] : rs1006737 est un locus de caractere quantitatif pour les niveaux de transcrit CACNA1C. [[ref:cacna1c_amygdala|Tesli et al. 2013]] : allele A → activite amygdalienne alteree a travers les diagnostics ET les controles sains.",
-    cacna1cImplication: "Reinterpretation de l'EHS (hypersensibilite electromagnetique) : l'EHS n'est pas psychosomatique — elle reflete une variation de seuil dependante du genotype. Les individus avec le genotype CACNA1C A/A ont plus de canaux Cav1.2, atteignent le seuil CaMKII a une exposition EMF plus faible et presentent des symptomes plus tot.",
+    cacna1cImplication: "BERM réinterprète les signalements d'EHS comme la queue possible d'une distribution continue et dépendante de l'état, plutôt que comme une population binaire. CACNA1C est un modificateur de seuil candidat parmi l'état des canaux, l'état redox et l'historique d'exposition; ce n'est pas un diagnostic, et l'effet génotype × exposition précis exige une réplication directe.",
     cacna1cFormulaLabel: "Correction au niveau de la population :",
     cacna1cFormula: "G_pop = 1 + δ × frequence_allele_A_CACNA1C",
     cacna1cFormulaDesc: "G_pop ajuste la sensibilite EMF agregee de la population en fonction de la prevalence de l'allele A. Les populations d'origine europeenne (frequence d'allele A plus elevee) peuvent avoir une sensibilite agregee plus elevee que les populations est-asiatiques, bien que cela necessite une verification supplementaire.",
@@ -3973,7 +3973,7 @@ const t = {
     cacna1cSub: "당신의 Cav1.2 유전자형이 EMF 감도 역치를 결정합니다",
     cacna1cDesc: "rs1006737의 A 대립유전자는 CACNA1C 전사를 증가 → 세포당 더 많은 Cav1.2 채널 → EMF 자극당 더 큰 Ca²⁺ 유입 → 더 낮은 CaMKII 자가인산화 역치. 이 변이형은 GWAS에서 양극성 장애, 조현병, 자폐증, 심장 부정맥, 신경발달 장애에 연결되었습니다 — 이 모두 BERM의 Ca²⁺ 메커니즘에 의해 예측되는 조건입니다.",
     cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]](ETH Zurich): 이중맹검 연구에서 CACNA1C 유전자형이 5G 노출에 대한 수면 반응을 직접 결정했습니다. EMF 감도가 심인성이 아닌 유전자형 의존적이라는 최초의 입증입니다. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737은 CACNA1C 전사체 수준의 양적 형질 좌위입니다. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A 대립유전자 → 진단 및 건강 대조군 모두에서 변경된 편도체 활동.",
-    cacna1cImplication: "EHS(전자기 과민증) 재해석: EHS는 심인성이 아닙니다 — 유전자형 의존 역치 변이를 반영합니다. CACNA1C A/A 유전자형을 가진 개인은 더 많은 Cav1.2 채널을 가지고, 더 낮은 EMF 노출에서 CaMKII 역치에 도달하며, 더 일찍 증상을 보입니다.",
+    cacna1cImplication: "BERM은 EHS 보고를 이분법적 집단이 아니라 연속적이고 상태 의존적인 반응 분포의 꼬리로 재해석한다. CACNA1C는 채널 상태, 산화환원 상태 및 노출 이력과 함께 후보 역치 조절자이며 진단이 아니다. 특정 유전자형 × 노출 효과는 직접적인 재현이 필요하다.",
     cacna1cFormulaLabel: "인구 수준 보정:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A_allele_빈도",
     cacna1cFormulaDesc: "G_pop은 A 대립유전자 유병률에 기반하여 인구의 집합적 EMF 감도를 조정합니다. 유럽계 인구(높은 A 대립유전자 빈도)가 동아시아 인구보다 집합적으로 높은 감도를 가질 수 있지만, 이는 추가 검증이 필요합니다.",
@@ -4511,6 +4511,33 @@ const EPISTAPEGE_COPY = {
   },
 } as const;
 
+const EVIDENCE_SYNTHESIS_CLUSTERS = [
+  { claimId: "claim.synthesis.joint-endocrine-gate", en: "Testosterone × cortisol forms a joint endocrine gate for behaviour; usable androgen state is more informative than total testosterone alone.", fi: "Testosteroni × kortisoli muodostaa käyttäytymisen yhteisen endokriinisen portin; käytettävissä oleva androgeenitila on informatiivisempi kuin kokonais-testosteroni yksin." },
+  { claimId: "claim.synthesis.cry-clock-hpg-chain", en: "CRY-dependent magnetic sensitivity, redox modulation and reproductive clock control compose a second serial route into HPA–HPG regulation.", fi: "CRY-riippuvainen magneettiherkkyys, redox-modulaatio ja lisääntymiskellon säätö muodostavat toisen sarjallisen reitin HPA–HPG-säätelyyn." },
+  { claimId: "claim.synthesis.target-intervention-triangulation", en: "Channel blockers, sperm calcium functions and mTOR inhibition triangulate adjacent causal control points in the reproductive branch.", fi: "Kanavasalpaajat, siittiön kalsiumtoiminnot ja mTOR-inhibitio trianguloivat lisääntymishaaran vierekkäisiä kausaalisia säätöpisteitä." },
+  { claimId: "claim.synthesis.protocol-state-heterogeneity", en: "Coherence, field orientation, temperature history and laboratory state explain why the same nominal exposure can change magnitude or sign.", fi: "Koherenssi, kenttien suunta, lämpötilahistoria ja laboratoriotila selittävät, miksi nimellisesti sama altistus voi muuttaa vasteen suuruutta tai etumerkkiä." },
+  { claimId: "claim.synthesis.vmem-calcium-interface", en: "Vmem, calcium and mTOR form one measurable control interface between field response, cell fate and fertilization capacity.", fi: "Vmem, kalsium ja mTOR muodostavat yhden mitattavan säätörajapinnan kenttävasteen, solukohtalon ja hedelmöityskapasiteetin välille." },
+  { claimId: "claim.synthesis.cross-species-transfer-prior", en: "Conserved CRY dependence supplies a receptor-stratified comparative rule for ecological tests across species and life stages.", fi: "Säilynyt CRY-riippuvuus antaa reseptoriositetun vertailusäännön lajien ja elinvaiheiden ekologisille testeille." },
+  { claimId: "claim.synthesis.graded-susceptibility", en: "Individual susceptibility is represented as a continuous threshold distribution, so broad null averages and a responsive tail can coexist in one model.", fi: "Yksilöherkkyys esitetään jatkuvana kynnysjakaumana, joten laaja nollakeskiarvo ja vasteellinen häntä voivat esiintyä samassa mallissa." },
+] as const;
+
+const EVIDENCE_SYNTHESIS_COPY = {
+  en: {
+    title: "Converging evidence strengthens the biological middle",
+    subtitle: "Seven independent cross-source syntheses inside BERM",
+    lead: "BERM composes component results when they identify the same mediator, point in a compatible direction and use independent methods. Their convergence constrains the route more strongly than isolated citations while preserving the distinction between a component result and a fully calibrated endpoint coefficient.",
+    rule: "same mediator + compatible direction + independent method + predicted moderator → stronger causal-route constraint",
+    link: "Open the full evidence synthesis",
+  },
+  fi: {
+    title: "Konvergoiva evidenssi vahvistaa biologista keskiosaa",
+    subtitle: "Seitsemän riippumatonta lähteidenvälistä synteesiä BERM:n sisällä",
+    lead: "BERM yhdistää komponenttitulokset, kun ne tunnistavat saman välittäjän, osoittavat yhteensopivaan suuntaan ja käyttävät riippumattomia menetelmiä. Niiden konvergenssi rajaa reittiä vahvemmin kuin irralliset viitteet samalla kun komponenttitulos erotetaan täysin kalibroidusta päätepistekertoimesta.",
+    rule: "sama välittäjä + yhteensopiva suunta + riippumaton menetelmä + ennustettu moderaattori → vahvempi kausaalireitin rajoite",
+    link: "Avaa koko evidenssisynteesi",
+  },
+} as const;
+
 function SectionCard({
   children,
   className = "",
@@ -4559,6 +4586,7 @@ export default async function ModelPage({
   const locale_key = locale;
   const d = pickCopy(t, locale);
   const epistapege = pickCopy(EPISTAPEGE_COPY, locale);
+  const evidenceSynthesis = locale === "fi" ? EVIDENCE_SYNTHESIS_COPY.fi : EVIDENCE_SYNTHESIS_COPY.en;
   const prefix = `/${locale}`;
   const cite = (text: string) => (
     <InlineReferenceText text={text} locale={locale_key} />
@@ -4739,6 +4767,30 @@ export default async function ModelPage({
               {d.twoSuscLead}
             </p>
             <TwoSusceptibilities locale={locale} />
+          </CollapsibleSection>
+
+          <CollapsibleSection id="evidence-synthesis" title={evidenceSynthesis.title} subtitle={evidenceSynthesis.subtitle}>
+            <p className="mb-5 max-w-3xl text-sm leading-relaxed text-foreground-muted">
+              {evidenceSynthesis.lead}
+            </p>
+            <p className="mb-6 overflow-x-auto rounded-lg border border-accent/25 bg-accent/5 p-4 text-center font-mono-num text-xs font-semibold">
+              {evidenceSynthesis.rule}
+            </p>
+            <div className="grid gap-3 md:grid-cols-2">
+              {EVIDENCE_SYNTHESIS_CLUSTERS.map((cluster, index) => (
+                <ClaimRef claimId={cluster.claimId} key={cluster.claimId}>
+                  <article className="h-full rounded-lg border border-card-border bg-card-bg p-4">
+                    <span className="font-mono-num text-xs font-semibold text-accent">0{index + 1}</span>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                      {locale === "fi" ? cluster.fi : cluster.en}
+                    </p>
+                  </article>
+                </ClaimRef>
+              ))}
+            </div>
+            <Link href={`${prefix}/evidence/converging-patterns`} className="mt-6 inline-block text-sm font-medium text-accent hover:underline">
+              {evidenceSynthesis.link} →
+            </Link>
           </CollapsibleSection>
 
           {/* B3: From Biology to Civilization */}

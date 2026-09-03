@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-03",
-    "referencesWithUsages": 695,
-    "usageLocations": 1744
+    "referencesWithUsages": 696,
+    "usageLocations": 1767
   },
   "usage": {
     "delgado1969": [
@@ -89,6 +89,10 @@
       {
         "path": "/civilization/epistapege",
         "source": "app/[locale]/about/civilization/page.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/testosterone",
@@ -321,6 +325,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/magnetoreception",
@@ -847,6 +855,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
         "path": "/evidence/magnetoreception",
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
@@ -1215,6 +1227,10 @@
       {
         "path": "/civilization/patokratia",
         "source": "app/[locale]/civilization/patokratia/page.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       }
     ],
     "dekkers2019_dual_hormone": [
@@ -1355,6 +1371,10 @@
       {
         "path": "/evidence/cascades",
         "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/devices",
@@ -1819,6 +1839,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       }
@@ -1945,6 +1969,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -1961,6 +1989,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/magnetoreception",
@@ -1987,6 +2019,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -2193,6 +2229,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -2601,6 +2641,10 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/magnetoreception",
@@ -3051,6 +3095,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       }
@@ -3063,6 +3111,10 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -3153,6 +3205,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       }
@@ -3165,6 +3221,10 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -3229,6 +3289,10 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -3299,6 +3363,10 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/evidence/ecology",
@@ -4777,6 +4845,10 @@
       {
         "path": "/ecology",
         "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       }
     ],
     "leberecht2023_rf_compass_upper_bound": [
@@ -5515,6 +5587,96 @@
       {
         "path": "/evidence/circadian",
         "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "litovitz1991_coherence_time": [
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "blackman1990": [
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "blackman1991": [
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "berman1990_multilab_embryo": [
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      }
+    ],
+    "rubin2010_ieiemf_provocation": [
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       }
     ],
     "tms_fda_depression_2008": [
@@ -6809,50 +6971,6 @@
         "source": "lib/populationData.ts"
       }
     ],
-    "blackman1991": [
-      {
-        "path": "/evidence/replication",
-        "source": "app/[locale]/evidence/replication/page.tsx"
-      },
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "blackman1990": [
-      {
-        "path": "/evidence/replication",
-        "source": "app/[locale]/evidence/replication/page.tsx"
-      },
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
     "blackman1985": [
       {
         "path": "/evidence/replication",
@@ -6955,24 +7073,6 @@
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       }
     ],
-    "litovitz1991_coherence_time": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
     "rosenspire2005_metabolic_phase": [
       {
         "path": "/evidence/response-conditions",
@@ -7007,12 +7107,6 @@
       {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "berman1990_multilab_embryo": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
       }
     ],
     "burch2000_personal_mf_melatonin": [

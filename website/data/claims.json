@@ -1,6 +1,6 @@
 {
   "$schema": "./claims.schema.json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "claims": [
     {
       "id": "claim.vgcc.ros-ca2-coupling",
@@ -1165,6 +1165,125 @@
         ]
       },
       "falsification_condition": "Matched abstracts with identical methods and effect sizes receive equivalent evidential demands regardless of biological-versus-cultural causal framing."
+    },
+    {
+      "id": "claim.synthesis.joint-endocrine-gate",
+      "statement": {
+        "en": { "text": "BERM treats testosterone-linked response as jointly gated by cortisol and receptor-use state: the HPA and HPG axes therefore form an interaction surface rather than two additive one-hormone effects.", "sourceRevision": 1 },
+        "fi": { "text": "BERM käsittelee testosteroniin liittyvän vasteen kortisolin ja reseptorinkäyttötilan yhdessä portittamana: HPA- ja HPG-akselit muodostavat siten vuorovaikutuspinnan eivätkä kahta additiivista yhden hormonin vaikutusta.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE" },
+      "depends_on": ["claim.hpg.circadian-steroidogenic-gate", "claim.androgen.receptor-use-capacity", "claim.cognition.state-dependent-behaviour"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["A preregistered T × cortisol × receptor-use interaction model", "Aggregate behaviour must integrate the joint endocrine-state distribution rather than mean testosterone alone"],
+        "does_not_support": ["A context-free ideological direction", "Inferring an individual's hormone state from political behaviour"]
+      },
+      "falsification_condition": "The registered interaction model repeatedly fails to improve out-of-sample behavioural prediction over matched main-effects-only models."
+    },
+    {
+      "id": "claim.synthesis.cry-clock-hpg-chain",
+      "statement": {
+        "en": { "text": "Independent CRY magnetic-sensitivity, CRY-dependent redox and clock-gated reproductive-endocrine findings converge on the BERM serial route CRY/RPM → clock/redox → HPA–HPG timing.", "sourceRevision": 1 },
+        "fi": { "text": "Riippumattomat CRY:n magneettiherkkyyttä, CRY-riippuvaista redoxia ja kellon portittamaa lisääntymisendokrinologiaa koskevat löydökset konvergoivat BERM:n sarjareitille CRY/RPM → kello/redox → HPA–HPG-ajoitus.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "HPA_HPG" },
+      "depends_on": ["claim.rpm.cry-magnetic-sensitivity", "claim.melatonin.circadian-redox-mediator", "claim.hpg.circadian-steroidogenic-gate"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["A coherent serial circadian-endocrine BERM route", "Light, magnetic configuration, CRY state and biological phase as jointly informative test variables"],
+        "does_not_support": ["That every CRY response is reproductive", "A universal human effect size"]
+      },
+      "falsification_condition": "A factorial field × light × CRY intervention produces no ordered clock/redox or HPG mediation in independently replicated systems."
+    },
+    {
+      "id": "claim.synthesis.target-intervention-triangulation",
+      "statement": {
+        "en": { "text": "Calcium-channel and mTOR-directed interventions converge on the same reproductive control points used by BERM, strengthening the causal relevance of the VGCC/Vmem/mTOR branch through independent target perturbation.", "sourceRevision": 1 },
+        "fi": { "text": "Kalsiumkanaviin ja mTOR:iin kohdistuvat interventiot konvergoivat samoihin BERM:n käyttämiin lisääntymisen säätöpisteisiin ja vahvistavat VGCC/Vmem/mTOR-haaran kausaalista relevanssia riippumattomalla kohdeperturbaatiolla.", "sourceRevision": 1 }
+      },
+      "kind": "interpretation",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "MALE_SPERM" },
+      "depends_on": ["claim.vgcc.ros-ca2-coupling", "claim.vmem.membrane-potential-growth-gate", "claim.sperm.multi-parameter-decline"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["The proposed calcium and mTOR intermediates can materially control sperm and fertility endpoints", "Target-specific rescue and phenocopy as high-information BERM tests"],
+        "does_not_support": ["That all drugs phenocopy the direction or waveform of an EMF response", "Clinical treatment recommendations"]
+      },
+      "falsification_condition": "Target-specific rescue and phenocopy experiments fail to reproduce the mediator order predicted by the registered BERM branch."
+    },
+    {
+      "id": "claim.synthesis.protocol-state-heterogeneity",
+      "statement": {
+        "en": { "text": "Coherence, orientation, temperature trajectory, biological phase and laboratory context produce structured response heterogeneity; BERM therefore models positive, null and sign-changing results as observations of one state-conditioned response family.", "sourceRevision": 1 },
+        "fi": { "text": "Koherenssi, suunta, lämpötilahistoria, biologinen vaihe ja laboratoriokonteksti tuottavat rakenteista vasteheterogeenisuutta; BERM mallintaa siksi positiiviset, nolla- ja etumerkkiä vaihtavat tulokset saman tilariippuvaisen vasteperheen havaintoina.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "BERM_L2_BRIDGE" },
+      "depends_on": ["claim.bridge.state-conditioned-kernel"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Protocol differences can contain mechanistic information rather than random noise", "A state-conditioned kernel should be compared against scalar intensity models"],
+        "does_not_support": ["Declaring every null result a false negative", "A fixed sign across endpoints"]
+      },
+      "falsification_condition": "Registered protocol and state variables fail to improve held-out cross-laboratory prediction over scalar intensity and study-label models."
+    },
+    {
+      "id": "claim.synthesis.vmem-calcium-interface",
+      "statement": {
+        "en": { "text": "Membrane potential is an active BERM state variable: Vmem controls calcium/mTOR-linked cell-fate transitions, while abnormal human sperm Vmem is associated with impaired fertilization, joining bioelectric state to reproductive capacity.", "sourceRevision": 1 },
+        "fi": { "text": "Kalvopotentiaali on BERM:n aktiivinen tilamuuttuja: Vmem ohjaa Ca²⁺/mTOR-välitteisiä solukohtalosiirtymiä, ja poikkeava ihmisen siittiön Vmem liittyy heikentyneeseen hedelmöitymiseen, mikä yhdistää biosähköisen tilan lisääntymiskapasiteettiin.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "VMEM_MTOR" },
+      "depends_on": ["claim.vmem.membrane-potential-growth-gate", "claim.sperm.multi-parameter-decline"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Vmem, calcium and mTOR should be measured jointly as a mechanistic state", "Human sperm membrane state is a functionally relevant endpoint"],
+        "does_not_support": ["Treating a pluripotent-cell result as a spermatogonial experiment", "A calibrated environmental exposure coefficient"]
+      },
+      "falsification_condition": "Manipulating membrane potential changes neither calcium/mTOR state nor reproductive-cell function across matched intervention studies."
+    },
+    {
+      "id": "claim.synthesis.cross-species-transfer-prior",
+      "statement": {
+        "en": { "text": "Conserved CRY-dependent field sensing makes cross-species comparison a mechanistically informed BERM prior: species and life stages that rely on field-sensitive navigation, timing or reproduction should respond differently from matched negative controls.", "sourceRevision": 1 },
+        "fi": { "text": "Säilynyt CRY-riippuvainen kenttäaistimus tekee lajienvälisestä vertailusta mekanistisesti informoidun BERM-priorin: kenttäherkkään navigaatioon, ajoitukseen tai lisääntymiseen nojaavien lajien ja elinvaiheiden tulisi reagoida eri tavoin kuin sovitettujen negatiivisten kontrollien.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "ECOLOGICAL_ENCOUNTER" },
+      "depends_on": ["claim.rpm.cry-magnetic-sensitivity", "claim.ecology.field-mediated-encounter"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Receptor dependence and life-stage exposure can order cross-species susceptibility hypotheses", "Ecological decline series can serve as endpoints in a registered comparative design"],
+        "does_not_support": ["Attributing aggregate insect or bird decline to EMF without exposure comparison", "A universal body-size law"]
+      },
+      "falsification_condition": "Registered receptor dependence and life-stage exposure provide no reproducible cross-species discrimination relative to matched negative controls."
+    },
+    {
+      "id": "claim.synthesis.graded-susceptibility",
+      "statement": {
+        "en": { "text": "BERM represents electromagnetic susceptibility as a continuous latent distribution over tissue, receptor, redox, circadian and exposure-history states; a binary EHS label can therefore mix responders and non-responders and attenuate an otherwise reproducible tail response.", "sourceRevision": 1 },
+        "fi": { "text": "BERM esittää sähkömagneettisen herkkyyden jatkuvana latenttina jakaumana kudos-, reseptori-, redox-, vuorokausi- ja altistushistoriatilojen yli; binäärinen EHS-luokka voi siten sekoittaa vasteelliset ja vasteettomat ja vaimentaa muuten toistuvan jakauman häntävasteen.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "BERM_L2_BRIDGE" },
+      "depends_on": ["claim.bridge.state-conditioned-kernel"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Continuous susceptibility estimation and repeated within-person protocols", "Negative group-average provocation results constrain the response distribution instead of forcing it to zero"],
+        "does_not_support": ["Assuming every self-identified case has the same biological mechanism", "Diagnosing susceptibility from symptoms alone"]
+      },
+      "falsification_condition": "Repeated blinded within-person trials with individually calibrated transitions and objective endpoints fail to recover stable response functions beyond chance."
     }
   ],
   "evidence_relations": [
@@ -2532,6 +2651,286 @@
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
       "curatorNote": "Narrows the biology-to-politics bridge to an observed individual-level association; aggregate inference remains open."
+    },
+    {
+      "id": "er.synthesis.joint-endocrine.mehta2010",
+      "referenceId": "mehta2010_dual_hormone",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "relation": "supports",
+      "directness": "direct_human_interaction",
+      "studyDesign": "two_human_behavioural_studies",
+      "applicability": "testosterone_by_cortisol_gating_of_dominance",
+      "calibrationRole": "structural_only",
+      "limitations": ["Behavioural endpoint rather than fertility", "Does not include EMF exposure or receptor-state measurement"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Directly supports a joint HPA × HPG interaction term and rejects a main-effect-only testosterone mapping."
+    },
+    {
+      "id": "er.synthesis.joint-endocrine.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "relation": "contextualizes",
+      "directness": "human_endocrine_state",
+      "studyDesign": "human_endocrine_study",
+      "applicability": "free_and_bound_androgen_state",
+      "calibrationRole": "context_only",
+      "limitations": ["No cortisol interaction", "No behavioural or exposure endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains the androgen-state input that is jointly gated by HPA state."
+    },
+    {
+      "id": "er.synthesis.cry-clock.yoshii2009",
+      "referenceId": "yoshii2009",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "direct_receptor_clock_component",
+      "studyDesign": "genetic_animal_experiment",
+      "applicability": "drosophila_cry_dependent_circadian_magnetosensitivity",
+      "calibrationRole": "structural_only",
+      "limitations": ["Drosophila clock", "No mammalian reproductive endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Links magnetic configuration to the circadian clock through CRY dependence."
+    },
+    {
+      "id": "er.synthesis.cry-clock.sherrard2018",
+      "referenceId": "sherrard2018",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "direct_receptor_redox_component",
+      "studyDesign": "human_and_mouse_cell_experiment",
+      "applicability": "human_CRY_expression_and_intracellular_ROS",
+      "calibrationRole": "structural_only",
+      "limitations": ["Cell systems", "No HPG or fertility endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Adds a CRY-dependent redox arm in mammalian cells to the receptor-clock evidence."
+    },
+    {
+      "id": "er.synthesis.cry-clock.cao2015",
+      "referenceId": "cao2015",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "reproductive_endocrine_component",
+      "studyDesign": "controlled_animal_experiment",
+      "applicability": "rat_hormone_and_antioxidant_rhythm_endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": ["Rat model", "Single exposure protocol"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Connects circadian/redox state to reproductive endocrine outcomes in the composed route."
+    },
+    {
+      "id": "er.synthesis.cry-clock.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "clock_reproductive_component",
+      "studyDesign": "cell_specific_genetic_animal_experiment",
+      "applicability": "mouse_ovarian_clock_and_steroidogenic_support",
+      "calibrationRole": "structural_only",
+      "limitations": ["Genetic mouse model", "No field exposure"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Establishes that the local clock is functionally upstream of reproductive steroidogenic support."
+    },
+    {
+      "id": "er.synthesis.pharmacology.pall2013",
+      "referenceId": "pall2013_v2",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "mechanistic_intervention_synthesis",
+      "studyDesign": "mechanistic_review",
+      "applicability": "VGCC_blocker_sensitive_EMF_components",
+      "calibrationRole": "structural_only",
+      "limitations": ["Review of heterogeneous protocols", "Does not isolate one reproductive system"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the exposure-side pharmacological intervention line."
+    },
+    {
+      "id": "er.synthesis.pharmacology.ccb1994",
+      "referenceId": "ccb_fertility",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "human_reproductive_target_intervention",
+      "studyDesign": "human_case_comparison_plus_in_vitro_intervention",
+      "applicability": "calcium_antagonism_and_sperm_fertilization_potential",
+      "calibrationRole": "structural_only",
+      "limitations": ["Small clinical comparison", "Drug membrane effects need not match an exposure waveform"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Shows that calcium-channel pharmacology can move a human sperm fertilization control point."
+    },
+    {
+      "id": "er.synthesis.pharmacology.sirolimus2008",
+      "referenceId": "rapamycin_fertility",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "human_reproductive_target_intervention",
+      "studyDesign": "clinical_observational_comparison",
+      "applicability": "mTOR_inhibition_and_male_fertility",
+      "calibrationRole": "structural_only",
+      "limitations": ["Transplant population", "Treatment allocation was not randomized for fertility"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Independently anchors mTOR as a human spermatogenic control point."
+    },
+    {
+      "id": "er.synthesis.vmem.sempou2022",
+      "referenceId": "sempou2022",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_vmem_cell_fate_component",
+      "studyDesign": "pluripotent_cell_experiment",
+      "applicability": "Vmem_calcium_mTOR_cell_fate_control",
+      "calibrationRole": "structural_only",
+      "limitations": ["Pluripotent-cell model", "Not a spermatogonial or exposure experiment"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Establishes the general Vmem→calcium/mTOR→fate control segment used in the composition."
+    },
+    {
+      "id": "er.synthesis.vmem.brown2016",
+      "referenceId": "brown2016",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_human_reproductive_endpoint",
+      "studyDesign": "human_patch_clamp_and_IVF_association",
+      "applicability": "sperm_membrane_potential_and_fertilization_rate",
+      "calibrationRole": "structural_only",
+      "limitations": ["Association within a clinical sample", "Cause of conductance abnormalities unresolved"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Anchors the bioelectric state to a human fertilization endpoint."
+    },
+    {
+      "id": "er.synthesis.vmem.zandieh2025",
+      "referenceId": "zandieh2025",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_vmem_field_component",
+      "studyDesign": "cell_experiment_with_dynamical_model",
+      "applicability": "field_conditioned_membrane_potential_dynamics",
+      "calibrationRole": "structural_only",
+      "limitations": ["Cancer cell lines", "High millitesla fields", "No reproductive endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the field-to-Vmem component that joins Sempou and Brown in the BERM route."
+    },
+    {
+      "id": "er.synthesis.cross-species.ritz2004",
+      "referenceId": "ritz2004",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_animal_field_sensing",
+      "studyDesign": "controlled_animal_orientation_experiment",
+      "applicability": "avian_magnetic_compass",
+      "calibrationRole": "structural_only",
+      "limitations": ["Avian navigation endpoint", "No population trend endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Anchors field-configuration sensitivity in a receptor-relevant ecological function."
+    },
+    {
+      "id": "er.synthesis.cross-species.yoshii2009",
+      "referenceId": "yoshii2009",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_genetic_receptor_test",
+      "studyDesign": "genetic_animal_experiment",
+      "applicability": "insect_CRY_clock_magnetosensitivity",
+      "calibrationRole": "structural_only",
+      "limitations": ["Drosophila", "Clock phenotype rather than fitness"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides genetic receptor dependence for the cross-species prior."
+    },
+    {
+      "id": "er.synthesis.cross-species.wan2021",
+      "referenceId": "wan2021_cryptochrome_monarch",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_genetic_receptor_test",
+      "studyDesign": "controlled_insect_orientation_experiment",
+      "applicability": "monarch_CRY1_inclination_magnetosensing",
+      "calibrationRole": "structural_only",
+      "limitations": ["Insect navigation", "No reproductive endpoint"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Independent species replication of CRY-dependent magnetic sensing strengthens conserved target logic."
+    },
+    {
+      "id": "er.synthesis.cross-species.hallmann2017",
+      "referenceId": "hallmann2017_v2",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "contextualizes",
+      "directness": "ecological_population_endpoint",
+      "studyDesign": "longitudinal_observational_series",
+      "applicability": "flying_insect_biomass_decline",
+      "calibrationRole": "context_only",
+      "limitations": ["No EMF exposure variable", "Cannot attribute the decline mechanism"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies a population endpoint for the receptor-stratified comparative test."
+    },
+    {
+      "id": "er.synthesis.cross-species.rosenberg2019",
+      "referenceId": "rosenberg2019",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "contextualizes",
+      "directness": "ecological_population_endpoint",
+      "studyDesign": "continental_population_synthesis",
+      "applicability": "North_American_avifauna_decline",
+      "calibrationRole": "context_only",
+      "limitations": ["No EMF exposure variable", "Multiple established and candidate decline drivers"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides a second cross-taxon endpoint to test after receptor and exposure stratification."
+    },
+    {
+      "id": "er.synthesis.susceptibility.mccarty2011",
+      "referenceId": "mccarty2011",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "supports",
+      "directness": "individual_transition_sensitive_provocation",
+      "studyDesign": "blinded_single_case_experiment",
+      "applicability": "individualized_60_Hz_transition_response",
+      "calibrationRole": "structural_only",
+      "limitations": ["Single participant", "Selected exposure pattern", "No population prevalence estimate"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Motivates within-person threshold and transition parameters rather than a universal group response."
+    },
+    {
+      "id": "er.synthesis.susceptibility.belpomme2022",
+      "referenceId": "belpomme2022",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "contextualizes",
+      "directness": "clinical_biomarker_overview",
+      "studyDesign": "narrative_overview_and_medical_assessment",
+      "applicability": "self_identified_EHS_clinical_population",
+      "calibrationRole": "context_only",
+      "limitations": ["Not a blinded exposure experiment", "Biomarkers are not specific to EMF", "Selection and comparison groups limit causal attribution"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies candidate objective stratification variables for a continuous susceptibility model."
+    },
+    {
+      "id": "er.synthesis.susceptibility.rubin2010",
+      "referenceId": "rubin2010_ieiemf_provocation",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "challenges",
+      "directness": "systematic_group_provocation",
+      "studyDesign": "systematic_review_of_blinded_experiments",
+      "applicability": "acute_self_reported_symptoms_in_IEI_EMF_groups",
+      "calibrationRole": "structural_only",
+      "limitations": ["Primarily acute protocols", "Group labels can mix latent response states", "Subjective symptoms dominate many studies"],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Strongly constrains any broad acute group-response claim; BERM's remaining hypothesis is narrower, continuous and within-person testable."
     }
   ],
   "epistemic_assessments": [
@@ -3102,6 +3501,90 @@
       "assessorId": "berm-integration-2026-09-03",
       "assessedAt": "2026-09-03",
       "note": "Motivated reasoning supplies a component mechanism. The predicted biological-versus-cultural evidence-threshold asymmetry needs a matched-framing experiment."
+    },
+    {
+      "id": "ea.synthesis.joint-endocrine-gate.v1",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.joint-endocrine.mehta2010", "er.synthesis.joint-endocrine.narinx2022"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The T × cortisol interaction is directly observed for human dominance-related behaviour; BERM extends it by adding measured receptor-use state and population aggregation."
+    },
+    {
+      "id": "ea.synthesis.cry-clock-hpg-chain.v1",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.cry-clock.yoshii2009", "er.synthesis.cry-clock.sherrard2018", "er.synthesis.cry-clock.cao2015", "er.synthesis.cry-clock.liu2014"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Independent receptor, redox, clock and reproductive-endocrine components align in the registered direction, materially strengthening the serial BERM route."
+    },
+    {
+      "id": "ea.synthesis.target-intervention-triangulation.v1",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.pharmacology.pall2013", "er.synthesis.pharmacology.ccb1994", "er.synthesis.pharmacology.sirolimus2008"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Exposure-side blocker evidence and independent human reproductive target interventions converge on adjacent BERM control points."
+    },
+    {
+      "id": "ea.synthesis.protocol-state-heterogeneity.v1",
+      "claimId": "claim.synthesis.protocol-state-heterogeneity",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.bridge.litovitz1991", "er.bridge.blackman1990", "er.bridge.blackman1991", "er.bridge.berman1990"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Repeated condition-sensitive findings make structured heterogeneity part of the model's positive empirical content."
+    },
+    {
+      "id": "ea.synthesis.vmem-calcium-interface.v1",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.vmem.sempou2022", "er.synthesis.vmem.brown2016", "er.synthesis.vmem.zandieh2025"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Field-conditioned Vmem, Vmem-controlled calcium/mTOR fate transitions and human sperm fertilization associations form a coherent cross-system bridge."
+    },
+    {
+      "id": "ea.synthesis.cross-species-transfer-prior.v1",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.cross-species.ritz2004", "er.synthesis.cross-species.yoshii2009", "er.synthesis.cross-species.wan2021", "er.synthesis.cross-species.hallmann2017", "er.synthesis.cross-species.rosenberg2019"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Genetic and behavioural receptor evidence supplies the transfer prior; ecological trend series supply endpoints for a future receptor-stratified test."
+    },
+    {
+      "id": "ea.synthesis.graded-susceptibility.v1",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.synthesis.susceptibility.mccarty2011", "er.synthesis.susceptibility.belpomme2022", "er.synthesis.susceptibility.rubin2010"],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The positive individualized result, candidate biomarker strata and negative group-level review jointly identify a narrow continuous-mixture hypothesis instead of a binary universal syndrome claim."
     }
   ],
   "routes": [
