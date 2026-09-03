@@ -53,8 +53,8 @@ const COPY = {
     predictionsLink: "See all predictions",
     readMore: "Read",
     epistemicTitle: "Epistemic note",
-    epistemicBody: "This is a BERM derivation, not a FieldState result. Peer-reviewed findings constrain several separate hormone–behaviour links, but the geometry-to-observable L2 bridge and multiple population-scale effect mappings remain open. The full multiscale chain is therefore a model hypothesis, not an established mechanism.",
-    epistemicBody2: "Within the reductionist hypothesis, a shift in the population distribution of biological states may generate a shift in aggregate political behaviour without claiming that every individual changes identically. The inference is one-way and distributional: a group-level political outcome alone cannot be used to diagnose an individual’s hormone state.",
+    epistemicBody: "This is a BERM derivation, not a FieldState result. BERM derives a conditional formal L2 response operator under stated coupling assumptions, but its tissue kernel, sign, lag and calibration — and multiple population-scale mappings — remain open. The full multiscale chain is therefore a model hypothesis, not an established mechanism.",
+    epistemicBody2: "The biological state is not reduced to serum total-hormone concentration: BERM separately tracks production, SHBG/albumin availability, free hormone, AR/ZIP9 occupancy and post-receptor gain as androgen-effective capacity. Within the reductionist hypothesis, a shift in the population distribution of such states may shift aggregate political behaviour without every individual changing identically. The inference is one-way and distributional: a group outcome alone cannot diagnose an individual’s hormone state.",
   },
   fi: {
     title: "Sivilisaatio",
@@ -104,8 +104,8 @@ const COPY = {
     predictionsLink: "Katso kaikki ennusteet",
     readMore: "Lue",
     epistemicTitle: "Episteeminen huomautus",
-    epistemicBody: "Tämä on BERM-johdanto, ei FieldState-tulos. Vertaisarvioitu näyttö rajaa useita erillisiä hormoni–käyttäytymislenkkejä, mutta geometriasta havaittavaan suureeseen johtava L2-silta ja useat populaatiotason vaikutuskuvaukset ovat avoimia. Koko monitasoinen ketju on siksi mallihypoteesi, ei todennettu mekanismi.",
-    epistemicBody2: "Reduktionistisen hypoteesin sisällä biologisten tilojen populaatiojakauman siirtymä voi tuottaa muutoksen poliittisen käyttäytymisen aggregaattijakaumaan ilman oletusta, että jokainen yksilö muuttuu samoin. Päättely on yksisuuntainen ja jakaumatasoinen: ryhmätason poliittisesta tuloksesta ei yksin voi diagnosoida yksilön hormonitilaa.",
+    epistemicBody: "Tämä on BERM-johdanto, ei FieldState-tulos. BERM johtaa ehdollisen formaalin L2-vasteoperaattorin lausutuilla kytkentäoletuksilla, mutta sen kudosydin, etumerkki, viive ja kalibrointi sekä useat populaatiotason kuvaukset ovat avoimia. Koko monitasoinen ketju on siksi mallihypoteesi, ei todennettu mekanismi.",
+    epistemicBody2: "Biologista tilaa ei palauteta pelkkään seerumin kokonaishormonipitoisuuteen: BERM erottaa tuotannon, SHBG-/albumiinisaatavuuden, vapaan hormonin, AR/ZIP9-miehityksen ja reseptorin jälkeisen vahvistuksen androgeenivaikutuksen kapasiteetiksi. Reduktionistisen hypoteesin sisällä tällaisten tilojen populaatiojakauman siirtymä voi muuttaa poliittisen käyttäytymisen aggregaattijakaumaa ilman, että jokainen yksilö muuttuu samoin. Päättely on yksisuuntainen: ryhmätulos ei yksin diagnosoi yksilön hormonitilaa.",
   },
   ja: {
     title: "文明",
@@ -155,8 +155,8 @@ const COPY = {
     predictionsLink: "すべての予測を見る",
     readMore: "読む",
     epistemicTitle: "認識論的注記",
-    epistemicBody: "これはBERMの導出であり、FieldStateの結果ではありません。複数のホルモン–行動リンクには研究上の制約がありますが、幾何学から観測量へのL2ブリッジと複数の集団効果写像は未解決です。多尺度連鎖全体はモデル仮説であり、確立した機構ではありません。",
-    epistemicBody2: "仮説内では生物状態の集団分布変化から政治行動の集約分布変化を導けますが、全個人が同じように変わるとは仮定しません。逆に、集団政治結果だけから個人のホルモン状態を診断することはできません。",
+    epistemicBody: "これはBERMの導出であり、FieldStateの結果ではありません。BERMは明示した結合仮定の下で条件付き形式L2演算子を導出しますが、組織カーネル、符号、遅延、校正および複数の集団効果写像は未解決です。多尺度連鎖全体はモデル仮説であり、確立した機構ではありません。",
+    epistemicBody2: "生物状態は血清総ホルモンだけではなく、産生、SHBG/アルブミン利用可能性、遊離ホルモン、AR/ZIP9占有、受容体後ゲインを分離した有効容量として扱います。その集団分布から政治行動の集約分布変化を導けますが、集団結果だけから個人のホルモン状態を診断することはできません。",
   },
   fr: {
     title: "Civilisation",
@@ -206,8 +206,8 @@ const COPY = {
     predictionsLink: "Voir toutes les predictions",
     readMore: "Lire",
     epistemicTitle: "Note épistémique",
-    epistemicBody: "Il s’agit d’une dérivation BERM, pas d’un résultat FieldState. Plusieurs liens hormone–comportement sont contraints par la littérature, mais le pont L2 géométrie–observable et plusieurs mappages d’effets populationnels restent ouverts. La chaîne multi-échelle complète est une hypothèse du modèle, non un mécanisme établi.",
-    epistemicBody2: "Dans l’hypothèse réductionniste, un déplacement de la distribution populationnelle des états biologiques peut produire un déplacement du comportement politique agrégé sans supposer que chaque individu change pareillement. Le résultat politique du groupe ne permet pas, à lui seul, de diagnostiquer l’état hormonal d’un individu.",
+    epistemicBody: "Il s’agit d’une dérivation BERM, pas d’un résultat FieldState. BERM dérive un opérateur L2 formel conditionnel sous des hypothèses de couplage explicites, mais le noyau tissulaire, le signe, le délai, la calibration et plusieurs mappages populationnels restent ouverts. La chaîne complète est une hypothèse du modèle, non un mécanisme établi.",
+    epistemicBody2: "L’état biologique ne se réduit pas à l’hormone totale sérique : BERM sépare production, disponibilité SHBG/albumine, hormone libre, occupation AR/ZIP9 et gain post-récepteur en capacité androgénique effective. La distribution de ces états peut déplacer le comportement politique agrégé sans que chaque individu change pareillement ; un résultat de groupe ne diagnostique pas l’état hormonal individuel.",
   },
   ko: {
     title: "문명",
@@ -257,8 +257,8 @@ const COPY = {
     predictionsLink: "모든 예측 보기",
     readMore: "읽기",
     epistemicTitle: "인식론적 주석",
-    epistemicBody: "이는 FieldState 결과가 아니라 BERM 도출입니다. 여러 호르몬–행동 연결은 연구로 제약되지만 기하학–관측량 L2 브리지와 여러 집단 효과 매핑은 열려 있습니다. 전체 다중 규모 사슬은 모델 가설이지 확립된 메커니즘이 아닙니다.",
-    epistemicBody2: "환원주의 가설 안에서 생물학적 상태의 집단 분포 이동은 모든 개인이 동일하게 변한다고 가정하지 않고도 집계 정치 행동의 이동을 만들 수 있습니다. 반대로 집단 정치 결과만으로 개인의 호르몬 상태를 진단할 수 없습니다.",
+    epistemicBody: "이는 FieldState 결과가 아니라 BERM 도출입니다. BERM은 명시적 결합 가정 아래 조건부 형식 L2 연산자를 도출하지만 조직 커널, 부호, 지연, 보정과 여러 집단 효과 매핑은 미해결입니다. 전체 다중 규모 사슬은 모델 가설이지 확립된 메커니즘이 아닙니다.",
+    epistemicBody2: "생물학적 상태는 혈청 총호르몬만으로 환원하지 않고 생산, SHBG/알부민 가용성, 유리 호르몬, AR/ZIP9 점유, 수용체 후 이득을 안드로겐 유효 용량으로 분리합니다. 이런 상태의 집단 분포는 개인 모두가 똑같이 변하지 않아도 집계 정치 행동을 이동시킬 수 있지만, 집단 결과만으로 개인 호르몬 상태를 진단할 수 없습니다.",
   },
 };
 

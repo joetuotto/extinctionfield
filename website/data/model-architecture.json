@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "package": {
     "name": "berm",
-    "version": "0.19.0",
+    "version": "0.20.0",
     "role": "implementation_release"
   },
   "model": {
@@ -13,9 +13,14 @@
   },
   "theory": {
     "formulation": "2025-weyl-gme",
-    "premise": "g_mu_nu = eta_mu_nu + A_mu A_nu",
-    "l2BridgeStatus": "open",
-    "l2BridgeMeaning": "The geometry-to-observable coupling operator has not been derived. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations, not Lindgren-derived results."
+    "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
+    "l2BridgeStatus": "conditional_formal_operator",
+    "l2BridgeMeaning": "Conditional on minimal matter-metric coupling and response theory, BERM derives the formal geometry-to-observable operator. Its gauge prescription, physical scale, tissue response kernels and human endpoint calibration remain open; downstream biology is not a Lindgren-derived result.",
+    "derivedGeometry": "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)",
+    "responseOperator": "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response",
+    "geometricCoordinate": "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, for an explicitly normalized positive-norm mode",
+    "calibrationStatus": "open",
+    "fieldStateRole": "optional_measurement_input_only"
   },
   "routes": {
     "prediction": {

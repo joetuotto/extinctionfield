@@ -481,7 +481,8 @@ def lindgren_chi(background_magnitude: float) -> float:
     """Return BERM's legacy chi closure for a normalized magnitude.
 
     The function name is retained for compatibility.  The closure is not a
-    Lindgren-derived observable and does not close the open L2 operator.
+    Lindgren-derived observable and does not calibrate BERM's conditional L2
+    tissue-response operator.
     """
     amplitude = _nonnegative("background_magnitude", background_magnitude)
     return amplitude / math.sqrt(1.0 + amplitude * amplitude)

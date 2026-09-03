@@ -684,9 +684,13 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "National technology-timing proxy (legacy v17 comparison)",
     fi: "Kansallinen teknologian ajoitusproxy (legacy-v17-vertailu)",
   },
+  LINDGREN_METRIC_DRIVE: {
+    en: "Lindgren rank-one metric drive (theory premise)",
+    fi: "Lindgrenin rank-one-metriikka-ajuri (teoriapremissi)",
+  },
   BERM_L2_BRIDGE: {
-    en: "Open geometry-to-observable coupling proposition",
-    fi: "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
+    en: "Conditional geometry-to-response operator; tissue kernel open",
+    fi: "Ehdollinen geometria–vasteoperaattori; kudosydin avoin",
   },
   FIELDSTATE_VECTOR: {
     en: "FieldState vector / background geometry",
@@ -759,6 +763,14 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
   MALE_STEROIDOGENESIS: {
     en: "Male steroidogenesis",
     fi: "Miehen steroidogeneesi",
+  },
+  ANDROGEN_BINDING_AVAILABILITY: {
+    en: "Androgen binding availability (SHBG / albumin / free T)",
+    fi: "Androgeenien sitoutumissaatavuus (SHBG / albumiini / vapaa T)",
+  },
+  ANDROGEN_RECEPTOR_SIGNAL: {
+    en: "Androgen receptor-use signal (AR / ZIP9 / post-receptor gain)",
+    fi: "Androgeenireseptorin käyttösignaali (AR / ZIP9 / jälkivahvistus)",
   },
   MALE_SPERM: {
     en: "Sperm output, function and DNA integrity",

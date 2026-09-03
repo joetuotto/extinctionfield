@@ -8,8 +8,8 @@ signature, life stage or memory family.  It never becomes an unexamined single
 prediction parameter merely by being listed here.
 
 FieldState records constrain the optional measurement interface.  They do not
-make FieldState an alias or causal root of BERM and do not close the open L2
-geometry-to-observable coupling operator.
+make FieldState an alias or causal root of BERM.  They can constrain inputs to
+BERM's conditional formal L2 operator but do not calibrate its tissue kernels.
 
 Each record names the exact causal node(s), study system, field class,
 directness and translation boundary.  This prevents, for example, an avian

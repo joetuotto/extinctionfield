@@ -26,13 +26,34 @@ MEASUREMENT_INPUTS = {
 }
 
 NEW_LABELS = {
+    "LINDGREN_METRIC_DRIVE": {
+        "en": "Lindgren 2025 metric perturbation and quadratic mixing drive",
+        "fi": "Lindgren 2025 -metriikkahäiriö ja neliöllinen sekoitusajuri",
+        "ja": "Lindgren 2025 計量摂動と二次混合駆動",
+        "fr": "Perturbation métrique et mélange quadratique de Lindgren 2025",
+        "ko": "Lindgren 2025 계량 섭동 및 이차 혼합 구동",
+    },
     "BERM_L2_BRIDGE": {
-        "en": "Open geometry-to-observable coupling proposition",
-        "fi": "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
-        "ja": "幾何学から観測量への未解決の結合命題",
-        "fr": "Proposition ouverte de couplage géométrie–observable",
-        "ko": "기하학-관측량 간 개방형 결합 명제",
-    }
+        "en": "Conditional metric-to-observable response operator",
+        "fi": "Ehdollinen metriikasta havaittavaan johtava vasteoperaattori",
+        "ja": "計量から観測量への条件付き応答演算子",
+        "fr": "Opérateur conditionnel de réponse métrique–observable",
+        "ko": "계량-관측량 조건부 응답 연산자",
+    },
+    "ANDROGEN_BINDING_AVAILABILITY": {
+        "en": "SHBG/albumin binding and free or intratesticular androgen availability",
+        "fi": "SHBG-/albumiinisitoutuminen sekä vapaan tai intratestikulaarisen androgeenin saatavuus",
+        "ja": "SHBG・アルブミン結合と遊離・精巣内アンドロゲン利用可能性",
+        "fr": "Liaison SHBG/albumine et disponibilité androgénique libre ou intratesticulaire",
+        "ko": "SHBG/알부민 결합 및 유리·고환내 안드로겐 가용성",
+    },
+    "ANDROGEN_RECEPTOR_SIGNAL": {
+        "en": "AR/ZIP9 occupancy and post-receptor androgen-use capacity",
+        "fi": "AR-/ZIP9-miehitys ja reseptorin jälkeinen androgeeninkäyttökapasiteetti",
+        "ja": "AR/ZIP9占有率と受容体後アンドロゲン利用能力",
+        "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
+        "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력",
+    },
 }
 
 
@@ -49,8 +70,10 @@ def _web_prediction_role(role: str) -> str:
 def _edge_kind(source: str, target: str) -> str:
     if source in MEASUREMENT_INPUTS and target == "BERM_L2_BRIDGE":
         return "inference_input"
+    if source == "LINDGREN_METRIC_DRIVE" and target == "BERM_L2_BRIDGE":
+        return "derived_geometry"
     if source == "BERM_L2_BRIDGE":
-        return "proposed_bridge"
+        return "conditional_response"
     return "causal_model"
 
 
@@ -109,12 +132,28 @@ def build_graph(existing: dict) -> dict:
             ],
             "ui_level": 0,
         },
+        "berm-theory": {
+            "id": "berm-theory",
+            "contains": ["LINDGREN_METRIC_DRIVE"],
+            "ui_level": 0,
+        },
         "berm-l2": {
             "id": "berm-l2",
             "contains": ["BERM_L2_BRIDGE"],
             "ui_level": 1,
         },
         **ui_groups,
+    }
+    ui_groups["male"] = {
+        "id": "male",
+        "contains": [
+            "MALE_SPERM",
+            "MALE_GERMLINE_RESERVE",
+            "MALE_STEROIDOGENESIS",
+            "ANDROGEN_BINDING_AVAILABILITY",
+            "ANDROGEN_RECEPTOR_SIGNAL",
+        ],
+        "ui_level": 4,
     }
 
     return {

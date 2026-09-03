@@ -1,9 +1,10 @@
-"""Legacy exposure helpers motivated by the Lindgren geometric premise.
+"""Legacy exposure helpers and the normalized Lindgren geometry coordinate.
 
-Lindgren 2025 supplies the ansatz ``g_uv = eta_uv + A_u A_v``.  BERM—not
-Lindgren—proposes the compatibility closure
-``chi(A_bar) = A_bar / sqrt(1 + A_bar^2)`` and the two-channel proxy below.
-Neither function closes the open L2 geometry-to-observable coupling.
+Lindgren 2025 supplies the ansatz ``g_uv = eta_uv + kappa A_u A_v``.  For an
+explicitly normalized positive-norm mode, the same bounded shape follows from
+the rank-one inverse metric as the coordinate ``chi_geo``.  It remains only a
+geometric coordinate: BERM's use of it in the legacy two-channel technology-
+timing proxy is not a Lindgren-derived biological response.
 
 Two-channel model: total = ambient + chi(ambient) * personal
 
@@ -17,9 +18,15 @@ import numpy as np
 from numpy.typing import NDArray
 
 def chi(a_bar: float | NDArray) -> float | NDArray:
-    """Return BERM's legacy chi closure, not a Lindgren-derived observable."""
+    """Legacy signed proxy; its non-negative branch has the ``chi_geo`` shape.
+
+    The sign-preserving extension is retained for compatibility with the
+    archived v17 proxy.  ``geometric_chi`` is the stricter geometry API and
+    accepts only the non-negative normalized magnitude ``rho``.
+    """
     a = np.asarray(a_bar)
-    return a / np.sqrt(1 + a**2)
+    result = a / np.sqrt(1 + a**2)
+    return float(result) if result.ndim == 0 else result
 
 def chi_derivative(a_bar: float | NDArray) -> float | NDArray:
     """d(chi)/d(A_bar) = 1 / (1 + A_bar^2)^(3/2). Peak sensitivity at A_bar=0."""
@@ -30,5 +37,5 @@ def two_channel_exposure(
     ambient: float | NDArray,
     personal: float | NDArray,
 ) -> float | NDArray:
-    """Two-channel exposure: ambient + chi(ambient) * personal."""
+    """Legacy proxy combination, not a calibrated biological response."""
     return np.asarray(ambient) + chi(ambient) * np.asarray(personal)

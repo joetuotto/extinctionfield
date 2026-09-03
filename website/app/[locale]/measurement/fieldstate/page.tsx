@@ -61,11 +61,11 @@ const t: Record<string, Copy> = {
     ecologyLink: "Open the static-interface ecology branch",
     diagramTitle: "Measurement-to-BERM interface",
     diagramText:
-      "The diagram separates FieldState observations from BERM through an explicit open L2 bridge. Downstream mechanisms are conditional BERM propositions or imported biological mechanisms; the diagram does not derive them from FieldState or turn studies into a country-level coefficient. Click a node to inspect its bounded role.",
+      "The diagram separates FieldState observations from BERM through an explicit L2 boundary. BERM derives a conditional response-operator form under stated assumptions, but its tissue kernel, sign, lag and calibration remain open. Downstream mechanisms are conditional BERM propositions or imported biological mechanisms; the diagram does not derive them from FieldState or turn studies into a country-level coefficient. Click a node to inspect its bounded role.",
     diagramLabel: "FIGURE 01 · MEASUREMENT INTERFACE",
     organTitle: "Organ-specific reproductive state before population aggregation",
     organText: [
-      "The male branch keeps blood–testis-barrier integrity, germline reserve, steroidogenesis, sperm output/function and DNA integrity distinct. The female branch keeps ovarian reserve, oocyte redox, ovulatory clock, luteal/implantation support and placental barrier distinct.",
+      "The male branch keeps blood–testis-barrier integrity, germline reserve, steroidogenesis, SHBG/albumin binding availability, free or intratesticular testosterone, AR/ZIP9 receptor use, post-receptor gain, sperm output/function and DNA integrity distinct. The female branch keeps ovarian reserve, oocyte redox, ovulatory clock, luteal/implantation support and placental barrier distinct.",
       "Each state has reversible (R) and persistent (P) components only where an explicit increment mapping, parameter identifier and supporting evidence record are supplied. BTB has its own registered reproductive branch. BBB, placenta and retina remain separate candidate states rather than evidence for a global barrier multiplier or a female-capacity coefficient.",
     ],
     asfrTitle: "ASFR first; TFR is a derived period identity",
@@ -106,11 +106,11 @@ const t: Record<string, Copy> = {
     ecologyLink: "Avaa staattisen rajapinnan ekologinen haara",
     diagramTitle: "Mittauksen ja BERM:n rajapinta",
     diagramText:
-      "Kaavio erottaa FieldState-havainnot BERM:stä eksplisiittisellä avoimella L2-sillalla. Jatkomekanismit ovat ehdollisia BERM-propositioita tai muualta tuotua biologiaa; kaavio ei johda niitä FieldStatesta eikä muuta tutkimuksia maakohtaiseksi kertoimeksi. Solmua klikkaamalla näet sen rajatun roolin.",
+      "Kaavio erottaa FieldState-havainnot BERM:stä eksplisiittisellä L2-rajalla. BERM johtaa ehdollisen vasteoperaattorimuodon lausutuilla oletuksilla, mutta sen kudosydin, etumerkki, viive ja kalibrointi ovat avoimia. Jatkomekanismit ovat ehdollisia BERM-propositioita tai muualta tuotua biologiaa; kaavio ei johda niitä FieldStatesta eikä muuta tutkimuksia maakohtaiseksi kertoimeksi.",
     diagramLabel: "KUVIO 01 · MITTAUSRAJAPINTA",
     organTitle: "Elinkohtainen lisääntymistila ennen väestötason yhdistämistä",
     organText: [
-      "Mieshaara pitää veri–kivesesteen, ituradan varannon, steroidogeneesin, siittiötuoton/toiminnan ja DNA-eheyden erillisinä. Naishaara pitää munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen, luteaali-/implantaatio-tuen ja istukkaesteen erillisinä.",
+      "Mieshaara pitää veri–kivesesteen, ituradan varannon, steroidogeneesin, SHBG-/albumiinisitoutumisen, vapaan tai intratestikulaarisen testosteronin, AR/ZIP9-reseptorikäytön, reseptorin jälkeisen vahvistuksen, siittiötuoton/toiminnan ja DNA-eheyden erillisinä. Naishaara pitää munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen, luteaali-/implantaatio-tuen ja istukkaesteen erillisinä.",
       "Jokaisella tilalla on palautuva (R) ja pysyvä (P) osa vain silloin, kun nimenomainen inkrementtikartoitus, parametri-ID ja sitä tukeva näyttötietue on määritelty. BTB:llä on oma rekisteröity lisääntymishaara. BBB, istukka ja retina ovat erillisiä kandidaattitiloja, eivät näyttöä globaalista estekertoimesta tai naiskapasiteetin kertoimesta.",
     ],
     asfrTitle: "ASFR ensin; TFR on johdettu periodi-identiteetti",
@@ -129,10 +129,10 @@ const t: Record<string, Copy> = {
     subtitle:
       "v2レコードに含まれるべき内容：臓器固有の伝達を伴うバックグラウンド、環境および個人電磁界成分、ベクトル方向、パルス構造、概日リズム文脈および来歴。",
     versionNote:
-      "このサイトで公開されている国別予測はBERM v17スカラープロキシ経路の結果です。FieldState v2は任意の測定・観察・推定仕様であり、BERMの別名でも因果的起点でもありません。幾何学から観測量へのL2結合は未解決で、FieldState v2自体は国別予測を生成しません。",
+      "このサイトで公開されている国別予測はBERM v17スカラープロキシ経路の結果です。FieldState v2は任意の測定・観察・推定仕様であり、BERMの別名でも因果的起点でもありません。BERMの形式的L2演算子は条件付きで導出されますが、組織カーネルと校正は未解決で、FieldState v2自体は国別予測を生成しません。",
     metaTitle: "FieldState 仕様 – Extinction Field",
     metaDescription:
-      "FieldState v2測定仕様：レコードの内容、BERMとの境界、未解決のL2結合。",
+      "FieldState v2測定仕様：レコードの内容、BERMとの境界、条件付きL2演算子と未校正の組織応答。",
     fieldStateTitle: "FieldStateはBERMへの任意入力を測定する",
     fieldStateText: [
       "各臓器について、v2はバックグラウンド、環境および個人電磁界成分を臓器・姿勢・形状固有の伝達後も個別に保持します。ベクトル情報、位相/コヒーレンス、包絡線またはビートPSD、概日リズム文脈、校正および来歴を保持します。",
@@ -151,7 +151,7 @@ const t: Record<string, Copy> = {
     ecologyLink: "静電界面の生態学的分岐を開く",
     diagramTitle: "測定とBERMのインターフェース",
     diagramText:
-      "図はFieldState観察とBERMを、明示的な未解決L2ブリッジで分離します。下流メカニズムは条件付きBERM命題または外部から導入された生物学であり、FieldStateから導出されたものではありません。",
+      "図はFieldState観察とBERMを明示的なL2境界で分離します。形式的応答演算子は条件付きで導出されますが、組織カーネル、符号、遅延、校正は未解決です。下流メカニズムはFieldStateから導出されたものではありません。",
     diagramLabel: "図01 · 測定インターフェース",
     organTitle: "集団集約前の臓器固有の生殖状態",
     organText: [
@@ -174,10 +174,10 @@ const t: Record<string, Copy> = {
     subtitle:
       "Ce qu'un enregistrement v2 doit contenir : composantes de champ de fond, ambiant et personnel avec transfert spécifique aux organes, direction vectorielle, structure d'impulsion, contexte circadien et provenance.",
     versionNote:
-      "Les prévisions nationales publiées sur ce site proviennent de la route BERM v17 à proxy scalaire. FieldState v2 est une spécification facultative de mesure, d'observation et d'estimation : ce n'est ni un alias de BERM ni sa racine causale. Le couplage L2 de la géométrie vers l'observable reste ouvert et FieldState v2 ne produit aucune prévision nationale.",
+      "Les prévisions nationales publiées sur ce site proviennent de la route BERM v17 à proxy scalaire. FieldState v2 est une spécification facultative de mesure, d'observation et d'estimation : ce n'est ni un alias de BERM ni sa racine causale. L'opérateur formel L2 de BERM est dérivé conditionnellement, mais son noyau tissulaire et sa calibration restent ouverts ; FieldState v2 ne produit aucune prévision nationale.",
     metaTitle: "Spécification FieldState – Extinction Field",
     metaDescription:
-      "La spécification de mesure FieldState v2, sa frontière avec BERM et le couplage L2 encore ouvert.",
+      "La spécification FieldState v2, sa frontière avec BERM, l'opérateur L2 conditionnel et la réponse tissulaire non calibrée.",
     fieldStateTitle: "FieldState mesure une entrée BERM facultative",
     fieldStateText: [
       "Pour chaque organe, v2 maintient distinctes les composantes de champ de fond, ambiant et personnel après un transfert spécifique à l'organe, à la posture et à la géométrie. Il conserve l'information vectorielle, la phase/cohérence, le PSD d'enveloppe ou de battement, le contexte circadien, la calibration et la provenance.",
@@ -196,7 +196,7 @@ const t: Record<string, Copy> = {
     ecologyLink: "Ouvrir la branche écologique d'interface statique",
     diagramTitle: "Interface entre la mesure et BERM",
     diagramText:
-      "Le diagramme sépare les observations FieldState de BERM par un pont L2 explicitement ouvert. Les mécanismes en aval sont des propositions BERM conditionnelles ou de la biologie importée ; ils ne sont pas dérivés de FieldState et ne constituent pas un coefficient national.",
+      "Le diagramme sépare les observations FieldState de BERM par une frontière L2 explicite. L'opérateur formel est dérivé conditionnellement, mais le noyau tissulaire, le signe, le délai et la calibration restent ouverts. Les mécanismes en aval ne sont pas dérivés de FieldState et ne constituent pas un coefficient national.",
     diagramLabel: "FIGURE 01 · INTERFACE DE MESURE",
     organTitle: "État reproductif spécifique aux organes avant agrégation populationnelle",
     organText: [
@@ -219,10 +219,10 @@ const t: Record<string, Copy> = {
     subtitle:
       "v2 레코드가 포함해야 할 내용: 장기별 전달을 포함한 배경, 환경 및 개인 전자기장 성분, 벡터 방향, 펄스 구조, 일주기 맥락 및 출처.",
     versionNote:
-      "이 사이트의 국가별 예측은 BERM v17 스칼라 프록시 경로의 결과입니다. FieldState v2는 선택적 측정·관찰·추정 사양이며 BERM의 별칭이나 인과적 뿌리가 아닙니다. 기하학에서 관측량으로 가는 L2 결합은 미해결 상태이고 FieldState v2 자체는 국가 예측을 생성하지 않습니다.",
+      "이 사이트의 국가별 예측은 BERM v17 스칼라 프록시 경로의 결과입니다. FieldState v2는 선택적 측정·관찰·추정 사양이며 BERM의 별칭이나 인과적 뿌리가 아닙니다. BERM의 형식 L2 연산자는 조건부로 도출되지만 조직 커널과 보정은 미해결이며 FieldState v2 자체는 국가 예측을 생성하지 않습니다.",
     metaTitle: "FieldState 사양 – Extinction Field",
     metaDescription:
-      "FieldState v2 측정 사양, BERM과의 경계, 아직 해결되지 않은 L2 결합.",
+      "FieldState v2 측정 사양, BERM과의 경계, 조건부 L2 연산자와 미보정 조직 반응.",
     fieldStateTitle: "FieldState는 선택적 BERM 입력을 측정합니다",
     fieldStateText: [
       "각 장기에 대해 v2는 장기, 자세 및 형상 특이적 전달 후에도 배경, 환경 및 개인 전자기장 성분을 구별하여 유지합니다. 벡터 정보, 위상/코히어런스, 포락선 또는 비트 PSD, 일주기 맥락, 교정 및 출처를 보존합니다.",
@@ -241,7 +241,7 @@ const t: Record<string, Copy> = {
     ecologyLink: "정전 계면 생태학적 분기 열기",
     diagramTitle: "측정과 BERM의 인터페이스",
     diagramText:
-      "다이어그램은 명시적으로 열린 L2 연결을 통해 FieldState 관측과 BERM을 분리합니다. 하류 메커니즘은 조건부 BERM 명제 또는 외부에서 가져온 생물학이며 FieldState에서 도출된 것이 아니고 국가 수준 계수를 만들지 않습니다.",
+      "다이어그램은 명시적 L2 경계에서 FieldState 관측과 BERM을 분리합니다. 형식 반응 연산자는 조건부로 도출되지만 조직 커널, 부호, 지연, 보정은 미해결입니다. 하류 메커니즘은 FieldState에서 도출된 것이 아니며 국가 수준 계수를 만들지 않습니다.",
     diagramLabel: "그림 01 · 측정 인터페이스",
     organTitle: "집단 집약 전 장기별 생식 상태",
     organText: [

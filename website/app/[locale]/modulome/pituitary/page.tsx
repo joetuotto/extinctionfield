@@ -91,7 +91,7 @@ const COPY = {
     ],
 
     /* 05 Lindgren Analysis */
-    s5Title: "BERM candidate susceptibility analysis — L2 open",
+    s5Title: "BERM candidate susceptibility analysis — conditional L2 operator, tissue calibration open",
     s5p1:
       "The pituitary represents the maximum EMF sensitivity configuration in the BERM framework:",
     s5Criteria: [
@@ -207,7 +207,7 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM:n herkkyyden ehdokasanalyysi — L2 avoin",
+    s5Title: "BERM:n herkkyyden ehdokasanalyysi — ehdollinen L2-operaattori, kudoskalibrointi avoin",
     s5p1:
       "Aivolisäke edustaa suurinta EMF-herkkyyskonfiguraatiota BERM-kehyksessä:",
     s5Criteria: [
@@ -322,7 +322,7 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM感受性候補解析 — L2未解決",
+    s5Title: "BERM感受性候補解析 — 条件付きL2演算子、組織校正は未完了",
     s5p1:
       "下垂体はBERMフレームワークにおける最大EMF感受性構成を表す：",
     s5Criteria: [
@@ -437,7 +437,7 @@ const COPY = {
       },
     ],
 
-    s5Title: "Analyse candidate de susceptibilité BERM — L2 ouvert",
+    s5Title: "Analyse candidate de susceptibilité BERM — opérateur L2 conditionnel, calibration tissulaire ouverte",
     s5p1:
       "L'hypophyse represente la configuration de sensibilite EMF maximale dans le cadre BERM :",
     s5Criteria: [
@@ -552,7 +552,7 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM 감수성 후보 분석 — L2 미해결",
+    s5Title: "BERM 감수성 후보 분석 — 조건부 L2 연산자, 조직 보정 미완료",
     s5p1:
       "뇌하수체는 BERM 프레임워크에서 최대 EMF 감수성 구성을 나타낸다:",
     s5Criteria: [

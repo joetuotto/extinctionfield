@@ -20,7 +20,7 @@ const COPY: Record<string, {
     clickHint: "→ click for details",
     levelTitles: {
       1: "Optional measurements",
-      2: "Open L2 bridge",
+      2: "Conditional L2 operator · tissue kernel open",
       3: "Biological intermediates",
       4: "BTB and other barrier states",
       5: "Reproductive states",
@@ -41,7 +41,7 @@ const COPY: Record<string, {
     clickHint: "→ klikkaa tiedot",
     levelTitles: {
       1: "Valinnaiset mittaukset",
-      2: "Avoin L2-silta",
+      2: "Ehdollinen L2-operaattori · kudosydin avoin",
       3: "Biologiset välitilat",
       4: "BTB ja muut estetilat",
       5: "Lisääntymistilat",
@@ -62,7 +62,7 @@ const COPY: Record<string, {
     clickHint: "→ クリックで詳細",
     levelTitles: {
       1: "任意の測定",
-      2: "未解決のL2ブリッジ",
+      2: "条件付きL2演算子・組織カーネル未校正",
       3: "生物学的中間体",
       4: "BTBおよび他のバリア状態",
       5: "生殖状態",
@@ -83,7 +83,7 @@ const COPY: Record<string, {
     clickHint: "→ cliquer pour détails",
     levelTitles: {
       1: "Mesures facultatives",
-      2: "Pont L2 non résolu",
+      2: "Opérateur L2 conditionnel · noyau tissulaire ouvert",
       3: "Intermédiaires biologiques",
       4: "BTB et autres états de barrière",
       5: "États reproductifs",
@@ -104,7 +104,7 @@ const COPY: Record<string, {
     clickHint: "→ 클릭하여 상세 보기",
     levelTitles: {
       1: "선택적 측정",
-      2: "미해결 L2 연결",
+      2: "조건부 L2 연산자 · 조직 커널 미보정",
       3: "생물학적 중간체",
       4: "BTB 및 기타 장벽 상태",
       5: "생식 상태",

@@ -136,9 +136,10 @@ def replication_prediction(
 ) -> ReplicationResult:
     """Predict how much a biological experiment's effect size shrinks on replication.
 
-    If the same protocol is repeated years later in a lab with higher
-    ambient EMF, the control group's χ rises, compressing the observable
-    effect size.
+    Under the archived v17 background-dependent closure, repeating the same
+    protocol years later in a lab with higher ambient EMF raises the closure's
+    legacy χ proxy and compresses the observable effect size.  This is a BERM
+    model prediction, not a biological susceptibility derived from χ_geo.
 
     Parameters
     ----------

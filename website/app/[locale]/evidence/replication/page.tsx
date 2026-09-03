@@ -41,7 +41,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagnetic Field Intensity",
       blackman:
         "Blackman: Normal (49.4 µT) vs reduced (19.0 µT) produced different calcium efflux.",
-      chi: "χ(|Ā_DC|) — BERM closure proposed at the open L2 boundary; not derived by Lindgren. Higher background → higher χ is the hypothesis to test.",
+      chi: "χ_geo(ρ) — bounded coordinate derived from the inverse rank-one metric for an explicitly normalized positive-norm mode. A higher biological response is not implied: its tissue kernel, sign, lag and calibration must be tested.",
       labImpact:
         "Near magnetic equator (~25 µT) weaker effects than Scandinavia (~50 µT).",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -149,7 +149,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "地磁気の強度",
       blackman:
         "Blackman: 通常（49.4 µT）対減衰（19.0 µT）で異なるカルシウム流出を生じた。",
-      chi: "χ(|Ā_DC|) — 未解決L2境界におけるBERM閉包命題であり、Lindgrenによる導出ではない。高い背景 → 高いχは検証仮説。",
+      chi: "χ_geo(ρ) — 正規化した正ノルムモードのランク1逆計量から導出された有界座標。高い生物応答は含意せず、組織カーネル、符号、遅延、校正を検証する必要がある。",
       labImpact:
         "磁気赤道付近（~25 µT）ではスカンジナビア（~50 µT）より弱い効果。",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -203,7 +203,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Intensité du champ géomagnétique",
       blackman:
         "Blackman : Normal (49,4 µT) vs réduit (19,0 µT) ont produit un efflux de calcium différent.",
-      chi: "χ(|Ā_DC|) — fermeture BERM proposée à la frontière L2 ouverte, non dérivée par Lindgren. Fond plus élevé → χ plus élevé est l'hypothèse à tester.",
+      chi: "χ_geo(ρ) — coordonnée bornée dérivée de la métrique inverse de rang un pour un mode normalisé de norme positive. Elle n'implique pas une réponse biologique plus forte ; noyau, signe, délai et calibration doivent être testés.",
       labImpact:
         "Près de l'équateur magnétique (~25 µT), effets plus faibles qu'en Scandinavie (~50 µT).",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -465,7 +465,7 @@ const COPY = {
     s4Title: "見かけの矛盾がどのように解消されるか",
     s4p1: "研究室Aと研究室Bは5次元パラメータ空間の異なる点にいる。制御されていないパラメータが異なる場合、異なる結果は異常ではなく予想されるものである。Blackmanはこれを直接実証した：同じ研究者が、同じ機器で、温度だけによって増強、減少、またはヌルを得た。",
     s4p2: "EMF生物学の再現性危機は現象の危機ではない — それは実験的制御の危機である。5つの交絡因子が認識され文書化されると、見かけの矛盾は一貫した多次元的用量反応曲面に解消される。",
-    s4p3: "BERMが提案するχ(Ā)は共通の検証枠組みを与えるが、熱的・光学的・磁気的・発達的背景に同じ関数が適用できるという主張は未検証であり、L2演算子は未解決である。",
+    s4p3: "χ_geoは幾何座標である。熱的・光学的・磁気的・発達的背景に同じ組織関数を適用できるという主張は未検証で、各領域には独自の応答カーネルと校正が必要である。",
     s5Title: "研究成果を予測する7つのモデレーター",
     s5Lead: "5つのエンドポイント（メラトニン、精子、睡眠EEG、DNA損傷、酸化ストレス）にわたる600以上の公表されたEMF生体影響研究の分析は、「矛盾するエビデンス」が7つの制御されていないモデレーターのアーティファクトであることを明らかにする。3つは統計的に有意、2つはRCTレベルで直接証明され、2つは特定の研究によって定量化されている。",
     s5StatsCaption: "統計結果 — モデレーター×結果の関連のカイ二乗検定",
@@ -516,7 +516,7 @@ const COPY = {
     s4Title: "Comment cela résout la contradiction apparente",
     s4p1: "Le laboratoire A et le laboratoire B sont à des points différents dans l'espace paramétrique à cinq dimensions. Quand les paramètres non contrôlés diffèrent, des résultats différents sont ATTENDUS, pas anomaux. Blackman l'a démontré directement : le même chercheur, avec le même équipement, a obtenu une augmentation, une réduction ou un résultat nul selon la température seule.",
     s4p2: "La crise de réplication en biologie EMF n'est pas une crise du phénomène — c'est une crise du contrôle expérimental. Une fois les cinq facteurs de confusion reconnus et documentés, les contradictions apparentes se résolvent en une surface dose-réponse multidimensionnelle cohérente.",
-    s4p3: "Le χ(Ā) proposé par BERM fournit un cadre de test commun, mais l'application d'une même fonction aux fonds thermique, optique, magnétique et développemental n'est pas vérifiée et les opérateurs L2 restent ouverts.",
+    s4p3: "χ_geo est une coordonnée géométrique. L'application d'une même fonction tissulaire aux fonds thermique, optique, magnétique et développemental n'est pas vérifiée ; chaque domaine exige son propre noyau et sa calibration.",
     s5Title: "Sept modérateurs qui prédisent les résultats des études",
     s5Lead: "L'analyse de plus de 600 études publiées sur les bioeffets EMF à travers cinq endpoints (mélatonine, sperme, EEG du sommeil, dommages à l'ADN, stress oxydatif) révèle que les « preuves contradictoires » sont un artefact de sept modérateurs non contrôlés. Trois sont statistiquement significatifs, deux sont directement prouvés par des ECR, et deux sont quantifiés par des études spécifiques.",
     s5StatsCaption: "Résultats statistiques — tests du chi carré d'association modérateur × résultat",
@@ -567,7 +567,7 @@ const COPY = {
     s4Title: "겉보기 모순이 어떻게 해소되는가",
     s4p1: "실험실 A와 실험실 B는 5차원 매개변수 공간의 다른 지점에 있다. 통제되지 않은 매개변수가 다를 때, 다른 결과는 이상이 아니라 예상되는 것이다. Blackman은 이를 직접 입증했다: 동일한 연구자가, 동일한 장비로, 온도만으로 증강, 감소, 또는 무효를 얻었다.",
     s4p2: "EMF 생물학의 재현성 위기는 현상의 위기가 아니다 — 실험적 통제의 위기이다. 다섯 교란 요인이 인식되고 문서화되면, 겉보기 모순은 일관된 다차원 용량-반응 곡면으로 해소된다.",
-    s4p3: "BERM이 제안한 χ(Ā)는 공통 검증 틀을 제공하지만 열·광학·자기·발달 배경에 하나의 함수가 적용된다는 주장은 검증되지 않았고 L2 연산자는 열려 있다.",
+    s4p3: "χ_geo는 기하 좌표다. 열·광학·자기·발달 배경에 같은 조직 함수를 적용한다는 주장은 검증되지 않았으며 각 영역에는 자체 반응 커널과 보정이 필요하다.",
     s5Title: "연구 결과를 예측하는 7가지 조절 인자",
     s5Lead: "5가지 종말점(멜라토닌, 정자, 수면 EEG, DNA 손상, 산화 스트레스)에 걸쳐 600건 이상의 발표된 EMF 생체효과 연구 분석은 '모순되는 근거'가 7가지 통제되지 않은 조절 인자의 인공산물임을 밝힌다. 3가지는 통계적으로 유의하고, 2가지는 RCT로 직접 입증되었으며, 2가지는 특정 연구에 의해 정량화되었다.",
     s5StatsCaption: "통계 결과 — 조절 인자 × 결과 연관의 카이제곱 검정",

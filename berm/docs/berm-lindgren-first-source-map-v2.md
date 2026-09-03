@@ -1,7 +1,7 @@
 # BERM: Lindgren-lähtöinen tutkimus- ja lähdekartta
 
-**Versio:** 2.0  
-**Päiväys:** 1.9.2026  
+**Versio:** 2.1
+**Päiväys:** 3.9.2026
 **Korvaa:** version 1.0  
 **Kysymys:** mitä jo julkaistua tutkimusta voidaan käyttää BERM:n nykyisten todistusketjujen täydentämiseen, kun tarkastelu aloitetaan Lindgrenin omista premisseistä eikä vakiintuneista biologisista EMF-mekanismeista?
 
@@ -122,7 +122,7 @@ Siten \(g=\eta+A\otimes A\) ei ole sellaisenaan U(1)-gauge-invariantti **[JOHDET
 Lisäksi tarvitaan:
 
 - dimensioasteikko tai kytkentävakio, jos fysikaalisten yksiköiden \(A_\mu\) sijoitetaan dimensiottomaan metriikkaan **[AVOIN]**;
-- aineen kytkentä ja määrittely sille, mitä biologinen järjestelmä mittaa **[AVOIN]**;
+- aineen minimaalinen metriikkakytkentä voidaan asettaa eksplisiittiseksi BERM-ehdoksi ja yleinen vasteoperaattori johtaa sen alla **[JOHDETTU EHDOLLISESTI]**; kudosydin ja sen kerroin ovat **[AVOIN]**;
 - GME:n alkuarvo-, hyperbolisuus-, vapausaste- ja energiarakenteen analyysi **[AVOIN]**;
 - virran säilymisen ja varauksen operationalisoinnin osoitus **[AVOIN]**;
 - ennuste, joka eroaa Maxwellin, QED:n tai tavallisen väliainevasteen ennusteesta **[AVOIN]**.
@@ -137,7 +137,7 @@ Lisäksi tarvitaan:
 | L0-4 | Lindgren, J. & Liukkonen, J. (2020). *The Heisenberg uncertainty principle as an endogenous equilibrium property of stochastic optimal control systems in quantum mechanics.* **Symmetry** 12, 1533. [DOI](https://doi.org/10.3390/sym12091533) | Stokastisen optimoinnin rinnakkaisen tutkimuslinjan. | Ei BERM:n metristä tai biologista johtoa. **[L0-tausta]** |
 | L0-5 | Lindgren, J. ym. (2025). *Why Sabine Hossenfelder is Wrong about Geometric Electromagnetism: A Technical Response.* [Tekninen muistio](https://physicsdetective.com/wp-content/uploads/Technical-Note-Lindgren.pdf) | Tekijöiden oman vastauksen esitettyyn kritiikkiin. | Ei vertaisarvioitu riippumaton replikaatio. **[L0-kommentaari]** |
 
-**Kirjallisuustilanne 1.9.2026:** riippumatonta vertaisarvioitua työtä, joka reprodukoisi Lindgrenin täsmällisen johdon, testaisi ansatzia \(g=\eta+A\otimes A\) sitä erottelevalla kokeella tai johtaisi siitä biologisen vasteoperaattorin, ei tunnistettu. Tämä ei osoita teoriaa vääräksi; se määrittää validoinnin tilan **[AVOIN]**.
+**Kirjallisuustilanne 3.9.2026:** riippumatonta vertaisarvioitua työtä, joka reprodukoisi Lindgrenin täsmällisen johdon tai testaisi ansatzia \(g=\eta+\kappa A\otimes A\) sitä erottelevalla kokeella, ei tunnistettu. BERM johtaa nyt yleisen metriikka–havaittava-operaattorin **ehdollisesti** standardista minimaalisesta materiakytkennästä ja vasteformalismista. Tämä ei ole Lindgrenin biologinen tulos: \(\kappa\), gauge-resepti, kudosydin ja ihmispäätepistekalibraatio ovat yhä **[AVOIN]**.
 
 ## 4. L1 — geometrinen tutkimusperinne ja konsistenssirajoitteet
 
@@ -182,17 +182,23 @@ Lisäksi tarvitaan:
 
 **L1-johtopäätös:** kirjallisuus osoittaa, että geometrisointi, rank-one-metrimuutokset, dynaamiset vektorit ja epälineaarinen elektrodynamiikka ovat vakavasti tutkittuja rakenteita. Se ei osoita, että Lindgrenin erityinen ansatz tai GME olisi oikea. L1-lähteiden päätehtävä on määrittää ansatzille testattavat konsistenssiehdot.
 
-## 5. L2 — puuttuvan geometria–havaittava-sillan rakennusosat
+## 5. L2 — ehdollinen geometria–havaittava-operaattori
 
-Tarvittava silta on yleisessä muodossa esimerkiksi
+Kun standardi minimaalinen materiakytkentä asetetaan näkyväksi BERM-premissiksi,
 
 \[
-\mathcal O_{\mathrm{bio}}=
-\mathcal M^{\mu\nu}[\text{aine, tila, reunaehdot, rata, mittaus}]\,
-\delta g_{\mu\nu},
+\delta S_m=\frac12\int d^4x\,\sqrt{-g}\,T^{\mu\nu}\delta g_{\mu\nu},
 \]
 
-tai gauge-invariantti epäpaikallinen funktionaali. Lindgrenin julkaisuista tai biologisesta kirjallisuudesta ei ole tunnistettu operaattoria, joka toteuttaisi tämän. Alla olevat lähteet tuottavat sillan rakennusosia ja rajoitteita, eivät valmista BERM-siltaa.
+ja Kubon vasteformalismilla havaittavan ensimmäisen kertaluvun muutos voidaan kirjoittaa
+
+\[
+\delta\langle O_i(x)\rangle
+=\int d^4x'\,\Xi^{\mu\nu}_{i,R}(x,x';\mathcal S_i)\,\delta g_{\mu\nu}(x')
++O(\delta g^2).
+\]
+
+Operaattorin muoto on näin **[JOHDETTU EHDOLLISESTI]**, ei enää kokonaan nimeämätön aukko. Lindgrenin julkaisuista ei kuitenkaan saada minimaalista biologista materiakytkentää, kudosydintä \(\Xi_i\), gauge-reseptiä tai numeerista endpoint-kerrointa. Alla olevat lähteet rajaavat näitä avoimia komponentteja. Kanoninen johto ja androgeenikapasiteetin biologinen jatko ovat asiakirjassa berm-conditional-response-and-androgen-capacity.md.
 
 ### 5.1 Gauge, holonomia ja potentiaalin havaittavuus
 
@@ -212,7 +218,7 @@ tai gauge-invariantti epäpaikallinen funktionaali. Lindgrenin julkaisuista tai 
 
 | ID | Lähde | Merkitys |
 |---|---|---|
-| L2-10 | Kubo, R. (1957). *Statistical-mechanical theory of irreversible processes. I.* **Journal of the Physical Society of Japan** 12, 570–586. [DOI](https://doi.org/10.1143/JPSJ.12.570) | Antaa yleisen, tilasta riippuvan lineaarisen vasteen formalismiin. BERM tarvitsee analogisesti määritellyn vastefunktion, mutta Kubo ei johda sitä Lindgrenin metriikasta. **[TUOTU]** |
+| L2-10 | Kubo, R. (1957). *Statistical-mechanical theory of irreversible processes. I.* **Journal of the Physical Society of Japan** 12, 570–586. [DOI](https://doi.org/10.1143/JPSJ.12.570) | Antaa yleisen, tilasta riippuvan lineaarisen vasteen formalismin. BERM käyttää sitä ehdollisen operaattorimuodon rakennuspalikkana; Kubo ei anna Lindgren-spesifistä kudosydintä. **[TUOTU EHTO → JOHDETTU EHDOLLISESTI]** |
 | L2-11 | Franken, P. A. ym. (1961). *Generation of optical harmonics.* **Physical Review Letters** 7, 118–119. [DOI](https://doi.org/10.1103/PhysRevLett.7.118) | Osoittaa, että aineen epälineaarinen suskeptibiliteetti tuottaa kenttien sekoitus- ja harmonisia termejä. **[TUOTU]** |
 | L2-12 | Schwan, H. P. (1957). *Electrical properties of tissue and cell suspensions.* **Advances in Biological and Medical Physics** 5, 147–209. | Historiallinen kudoksen dispersio- ja polarisaatiokehys. **[TUOTU]** |
 | L2-13 | Marszalek, P. ym. (1990). *Schwan equation and transmembrane potential induced by alternating electric fields.* **Biophysical Journal**. [DOI](https://doi.org/10.1016/S0006-3495(90)82447-4) | Ulkoisen kentän, solugeometrian ja kalvopotentiaalin välisen mitattavan siirron esimerkki. **[TUOTU]** |

@@ -366,6 +366,6 @@ class TestPackageImports:
         from berm import vagus_earbud_analysis, hrv_prediction
         assert callable(vagus_earbud_analysis)
 
-    def test_version_is_v19(self):
+    def test_version_matches_current_package(self):
         import berm
-        assert berm.__version__ == "0.19.0"
+        assert berm.__version__ == "0.20.0"

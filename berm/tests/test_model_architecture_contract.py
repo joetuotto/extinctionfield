@@ -39,7 +39,7 @@ def test_python_and_website_share_the_exact_architecture_contract() -> None:
 def test_versions_have_distinct_namespaces_and_roles() -> None:
     manifest = architecture_manifest()
 
-    assert berm.__version__ == PACKAGE_VERSION == "0.19.0"
+    assert berm.__version__ == PACKAGE_VERSION == "0.20.0"
     assert PUBLIC_MODEL_VERSION == "v17"
     assert FIELDSTATE_SPEC_VERSION == "v2"
     assert manifest["routes"]["conditionalAsfr"]["id"] == CONDITIONAL_ASFR_ROUTE_ID
@@ -55,12 +55,13 @@ def test_fieldstate_is_measurement_not_model_or_causal_root() -> None:
     assert fieldstate["publishesLockedForecasts"] is False
 
 
-def test_lindgren_to_observable_bridge_remains_explicitly_open() -> None:
+def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() -> None:
     theory = architecture_manifest()["theory"]
 
     assert theory["formulation"] == "2025-weyl-gme"
-    assert theory["l2BridgeStatus"] == L2_BRIDGE_STATUS == "open"
-    assert "not been derived" in theory["l2BridgeMeaning"]
+    assert theory["l2BridgeStatus"] == L2_BRIDGE_STATUS == "conditional_formal_operator"
+    assert theory["calibrationStatus"] == "open"
+    assert "tissue response kernels" in theory["l2BridgeMeaning"]
 
 
 def test_python_and_website_causal_topology_match_exactly() -> None:
@@ -76,7 +77,7 @@ def test_python_and_website_causal_topology_match_exactly() -> None:
         assert web["calibration_status"] == node.calibration_status
 
 
-def test_measurements_and_proxy_enter_only_through_open_l2_bridge() -> None:
+def test_measurements_and_proxy_enter_only_through_conditional_l2_operator() -> None:
     graph = json.loads(WEB_GRAPH.read_text(encoding="utf-8"))
     measurement_inputs = {
         "TECHNOLOGY_TIMING_PROXY",
@@ -91,7 +92,10 @@ def test_measurements_and_proxy_enter_only_through_open_l2_bridge() -> None:
             assert edge["to"] == "BERM_L2_BRIDGE"
             assert edge["kind"] == "inference_input"
         if edge["from"] == "BERM_L2_BRIDGE":
-            assert edge["kind"] == "proposed_bridge"
+            assert edge["kind"] == "conditional_response"
+        if edge["from"] == "LINDGREN_METRIC_DRIVE":
+            assert edge["to"] == "BERM_L2_BRIDGE"
+            assert edge["kind"] == "derived_geometry"
 
 
 def test_conditional_asfr_types_are_canonical_and_legacy_function_is_a_wrapper() -> None:

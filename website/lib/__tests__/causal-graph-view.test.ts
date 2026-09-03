@@ -20,7 +20,7 @@ describe("rendered canonical causal graph", () => {
 
   it("renders the open bridge between every measurement input and biology", () => {
     const incoming = graph.edges.filter((edge) => edge.kind === "inference_input");
-    const outgoing = graph.edges.filter((edge) => edge.kind === "proposed_bridge");
+    const outgoing = graph.edges.filter((edge) => edge.kind === "conditional_response");
 
     expect(incoming.length).toBeGreaterThan(0);
     expect(outgoing.length).toBeGreaterThan(0);

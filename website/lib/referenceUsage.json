@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-02",
-    "referencesWithUsages": 670,
-    "usageLocations": 1647
+    "generated": "2026-09-03",
+    "referencesWithUsages": 676,
+    "usageLocations": 1674
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -1641,6 +1641,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "lib/civilizationPredictions.ts"
       }
     ],
     "magnesium_testosterone_2025": [
@@ -6815,6 +6819,94 @@
         "source": "app/[locale]/evidence/technology/page.tsx"
       }
     ],
+    "narinx2022_free_testosterone": [
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "degendt2004_sertoli_ar": [
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "yu2023_zip9_rf_sertoli": [
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "mollerlokken2012_mri_hormones": [
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
     "splawski2005_cardiac_ltype": [
       {
         "path": "/evidence/timothy-experiment",
@@ -6888,7 +6980,7 @@
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "app/[locale]/model/page.tsx"
       },
       {
         "path": "/model/math",
@@ -7435,6 +7527,34 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      }
+    ],
+    "kubo1957_linear_response": [
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "laurent2016_shbg_bioactivity": [
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "ttfields_cell_size_frequency": [

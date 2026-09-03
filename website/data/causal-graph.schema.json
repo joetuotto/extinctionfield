@@ -71,7 +71,7 @@
         "to": { "type": "string" },
         "kind": {
           "type": "string",
-          "enum": ["inference_input", "proposed_bridge", "causal_model"]
+          "enum": ["inference_input", "derived_geometry", "conditional_response", "causal_model"]
         },
         "label": { "type": "string" }
       }

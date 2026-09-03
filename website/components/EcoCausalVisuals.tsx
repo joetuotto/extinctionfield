@@ -42,7 +42,7 @@ const COPY: Record<
     modelKicker: "Causal reading guide",
     modelTitle: "BERM candidate mappings from one measured FieldState",
     modelLead:
-      "Read this BERM candidate chain from left to right. FieldState supplies the measurement record; sensing, transport and physiological transfer are species- and stage-specific candidate mappings across the open L2 bridge. Solid steps summarize measured premises. The amber sequence is the explicitly testable ecological and evolutionary extension.",
+      "Read this BERM candidate chain from left to right. FieldState supplies the measurement record. The L2 response form is conditional on stated coupling assumptions, while sensing, transport and physiological transfer require species- and stage-specific tissue kernels and calibration. Solid steps summarize measured premises. The amber sequence is the explicitly testable ecological and evolutionary extension.",
     observed: "Measured premise",
     hypothesis: "BERM hypothesis; L2 operator open",
     steps: [
@@ -246,9 +246,9 @@ const COPY: Record<
     modelKicker: "Guide de lecture causale",
     modelTitle: "Mappings candidats BERM depuis un FieldState mesure",
     modelLead:
-      "Lire cette chaine candidate BERM de gauche a droite. FieldState fournit l'enregistrement de mesure ; la detection, le transport et le transfert physiologique sont des mappings candidats propres a l'espece et au stade a travers le pont L2 ouvert. Les etapes en trait plein resument les premisses mesurees. La sequence ambre est l'extension ecologique et evolutive explicitement testable.",
+      "Lire cette chaine candidate BERM de gauche a droite. FieldState fournit l'enregistrement de mesure. La forme L2 est conditionnelle ; la détection, le transport et le transfert physiologique exigent des noyaux et calibrations propres à l'espèce et au stade. La séquence ambre est l'extension écologique et évolutive testable.",
     observed: "Premisse mesuree",
-    hypothesis: "Hypothese BERM ; operateur L2 ouvert",
+    hypothesis: "Hypothèse BERM ; opérateur L2 conditionnel, noyau ouvert",
     steps: [
       {
         eyebrow: "01 · ENTREE PHYSIQUE",

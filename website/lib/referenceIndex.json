@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1062,
-    "linkedReferences": 396
+    "totalReferences": 1069,
+    "linkedReferences": 403
   },
   "references": {
     "5g_hpa_axis": {
@@ -10625,6 +10625,76 @@
       "type": "report",
       "linkStatus": "missing",
       "externalUrl": null
+    },
+    "kubo1957_linear_response": {
+      "id": "kubo1957_linear_response",
+      "authors": "Kubo R",
+      "year": 1957,
+      "title": "Statistical-Mechanical Theory of Irreversible Processes. I. General Theory and Simple Applications to Magnetic and Conduction Problems",
+      "journal": "Journal of the Physical Society of Japan",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1143/JPSJ.12.570"
+    },
+    "narinx2022_free_testosterone": {
+      "id": "narinx2022_free_testosterone",
+      "authors": "Narinx N, David K, Walravens J, et al.",
+      "year": 2022,
+      "title": "Role of sex hormone-binding globulin in the free hormone hypothesis and the relevance of free testosterone in androgen physiology",
+      "journal": "Cellular and Molecular Life Sciences",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1007/s00018-022-04562-1"
+    },
+    "laurent2016_shbg_bioactivity": {
+      "id": "laurent2016_shbg_bioactivity",
+      "authors": "Laurent MR, Hammond GL, Blokland M, et al.",
+      "year": 2016,
+      "title": "Sex hormone-binding globulin regulation of androgen bioactivity in vivo: validation of the free hormone hypothesis",
+      "journal": "Scientific Reports",
+      "type": "experimental_animal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/srep35539"
+    },
+    "degendt2004_sertoli_ar": {
+      "id": "degendt2004_sertoli_ar",
+      "authors": "De Gendt K, Swinnen JV, Saunders PTK, et al.",
+      "year": 2004,
+      "title": "A Sertoli cell-selective knockout of the androgen receptor causes spermatogenic arrest in meiosis",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "experimental_animal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.0308114100"
+    },
+    "yu2023_zip9_rf_sertoli": {
+      "id": "yu2023_zip9_rf_sertoli",
+      "authors": "Yu G, Zhu Y, Song C, et al.",
+      "year": 2023,
+      "title": "The ZIP9-centered androgen pathway compensates for the 2605 MHz radiofrequency electromagnetic radiation-mediated reduction in resistance to H2O2 damage in Sertoli cells of adult rats",
+      "journal": "Ecotoxicology and Environmental Safety",
+      "type": "experimental_animal_in_vitro",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.ecoenv.2023.114733"
+    },
+    "di2021_static_field_testosterone": {
+      "id": "di2021_static_field_testosterone",
+      "authors": "Di G, Xiang J, Dong L, Wu J",
+      "year": 2021,
+      "title": "Testosterone synthesis in testicular Leydig cells after long-term exposure to a static electric field (SEF)",
+      "journal": "Toxicology",
+      "type": "experimental_animal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.tox.2021.152836"
+    },
+    "mollerlokken2012_mri_hormones": {
+      "id": "mollerlokken2012_mri_hormones",
+      "authors": "Møllerløkken OJ, Moen BE, Baste V, et al.",
+      "year": 2012,
+      "title": "No effects of MRI scan on male reproduction hormones",
+      "journal": "Reproductive Toxicology",
+      "type": "randomized_crossover_trial",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.reprotox.2012.04.003"
     }
   },
   "aliases": {
@@ -11512,6 +11582,21 @@
     "doi:10.1073/pnas.2419630121": "mcconnell2025_roman_lead",
     "doi:10.1002/brb3.70651": "alogaily2025_testosterone_politics",
     "doi:10.1016/j.yhbeh.2011.11.002": "bosch_neumann2012_oxytocin_maternal",
-    "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding"
+    "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding",
+    "doi:10.1143/jpsj.12.570": "kubo1957_linear_response",
+    "doi:10.1007/s00018-022-04562-1": "narinx2022_free_testosterone",
+    "pmid:36205798": "narinx2022_free_testosterone",
+    "doi:10.1038/srep35539": "laurent2016_shbg_bioactivity",
+    "pmcid:PMC5066276": "laurent2016_shbg_bioactivity",
+    "pmid:27748448": "laurent2016_shbg_bioactivity",
+    "doi:10.1073/pnas.0308114100": "degendt2004_sertoli_ar",
+    "pmcid:PMC337052": "degendt2004_sertoli_ar",
+    "pmid:14745012": "degendt2004_sertoli_ar",
+    "doi:10.1016/j.ecoenv.2023.114733": "yu2023_zip9_rf_sertoli",
+    "pmid:36889209": "yu2023_zip9_rf_sertoli",
+    "doi:10.1016/j.tox.2021.152836": "di2021_static_field_testosterone",
+    "pmid:34147545": "di2021_static_field_testosterone",
+    "doi:10.1016/j.reprotox.2012.04.003": "mollerlokken2012_mri_hormones",
+    "pmid:22576112": "mollerlokken2012_mri_hormones"
   }
 }

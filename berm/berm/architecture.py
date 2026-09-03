@@ -11,7 +11,7 @@ from __future__ import annotations
 from copy import deepcopy
 
 
-PACKAGE_VERSION = "0.19.0"
+PACKAGE_VERSION = "0.20.0"
 MODEL_ID = "berm"
 MODEL_NAME = "Bio-Electromagnetic Reproductive Model"
 PUBLIC_MODEL_VERSION = "v17"
@@ -24,11 +24,11 @@ FIELDSTATE_MODULE_ID = "fieldstate"
 FIELDSTATE_SPEC_VERSION = "v2"
 
 LINDGREN_FORMULATION = "2025-weyl-gme"
-L2_BRIDGE_STATUS = "open"
+L2_BRIDGE_STATUS = "conditional_formal_operator"
 
 
 _ARCHITECTURE_MANIFEST = {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "package": {
         "name": "berm",
         "version": PACKAGE_VERSION,
@@ -42,13 +42,27 @@ _ARCHITECTURE_MANIFEST = {
     },
     "theory": {
         "formulation": LINDGREN_FORMULATION,
-        "premise": "g_mu_nu = eta_mu_nu + A_mu A_nu",
+        "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
         "l2BridgeStatus": L2_BRIDGE_STATUS,
         "l2BridgeMeaning": (
-            "The geometry-to-observable coupling operator has not been derived. "
-            "Downstream mechanisms are conditional BERM bridge propositions or "
-            "imported biological realizations, not Lindgren-derived results."
+            "Conditional on minimal matter-metric coupling and response theory, "
+            "BERM derives the formal geometry-to-observable operator. Its gauge "
+            "prescription, physical scale, tissue response kernels and human "
+            "endpoint calibration remain open; downstream biology is not a "
+            "Lindgren-derived result."
         ),
+        "derivedGeometry": (
+            "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)"
+        ),
+        "responseOperator": (
+            "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response"
+        ),
+        "geometricCoordinate": (
+            "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, "
+            "for an explicitly normalized positive-norm mode"
+        ),
+        "calibrationStatus": "open",
+        "fieldStateRole": "optional_measurement_input_only",
     },
     "routes": {
         "prediction": {

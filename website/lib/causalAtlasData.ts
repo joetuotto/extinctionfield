@@ -188,8 +188,8 @@ export const GUIDED_SCENES: GuidedScene[] = [
     id: "overview",
     title: { en: "The BERM Model", fi: "BERM-malli" },
     description: {
-      en: "The Bio-Electromagnetic Reproductive Model proposes testable multiscale routes from environmental EMF channels through biological systems to population and ecological outcomes. The L2 coupling from physical input to biological observable remains open.",
-      fi: "Bio-elektromagneettinen lisääntymismalli ehdottaa testattavia monitasoreittejä ympäristön EMF-kanavista biologisten järjestelmien kautta populaatio- ja ekologisiin tuloksiin. Fyysisestä syötteestä biologiseen havaittavaan johtava L2-kytkentä on avoin.",
+      en: "The Bio-Electromagnetic Reproductive Model proposes testable multiscale routes from environmental EMF channels through biological systems to population and ecological outcomes. The formal L2 operator is conditional; its tissue kernels and endpoint calibration remain open.",
+      fi: "Bio-elektromagneettinen lisääntymismalli ehdottaa testattavia monitasoreittejä ympäristön EMF-kanavista biologisten järjestelmien kautta populaatio- ja ekologisiin tuloksiin. Formaali L2-operaattori on ehdollinen; kudosytimet ja päätepistekalibraatio ovat avoimia.",
     },
     nodes: [],
     edges: [],
@@ -208,8 +208,8 @@ export const GUIDED_SCENES: GuidedScene[] = [
     id: "fertility",
     title: { en: "The Fertility Pathway", fi: "Hedelmällisyyspolku" },
     description: {
-      en: "BERM proposes the conditional route EMF → ion-channel/VGCC modulation → calcium/ROS state → sperm, ovulation and androgen function → couple capacity → ASFR → TFR. The first L2 coupling is open and every later arrow remains separately testable.",
-      fi: "BERM ehdottaa ehdollista reittiä EMF → ionikanava-/VGCC-modulaatio → kalsium-/ROS-tila → siittiö-, ovulaatio- ja androgeenitoiminta → parikapasiteetti → ASFR → TFR. Ensimmäinen L2-kytkentä on avoin ja jokainen myöhempi nuoli erikseen testattava.",
+      en: "BERM proposes the conditional route EMF → tissue response → ion-channel/VGCC or androgen-use state → sperm and ovulation → couple capacity → ASFR → TFR. The L2 operator form is derived under stated premises, its tissue kernel is uncalibrated, and every later arrow remains separately testable.",
+      fi: "BERM ehdottaa ehdollista reittiä EMF → kudosvaste → ionikanava-/VGCC- tai androgeeninkäyttötila → siittiöt ja ovulaatio → parikapasiteetti → ASFR → TFR. L2-operaattorin muoto on johdettu ilmoitetuilla ehdoilla, kudosydin on kalibroimatta ja jokainen myöhempi nuoli erikseen testattava.",
     },
     nodes: ["ch_elf", "ch_if", "mod_ion", "mech_vgcc_ros", "mech_ifo_linear", "tissue_sperm", "tissue_ovarian", "tissue_testosterone", "disease_fertility", "demo_biocap", "demo_asfr", "demo_tfr"],
     edges: ["ch_elf->mod_ion", "ch_if->mod_ion", "mod_ion->mech_vgcc_ros", "mod_ion->mech_ifo_linear", "mech_vgcc_ros->tissue_sperm", "mech_vgcc_ros->tissue_ovarian", "mech_vgcc_ros->tissue_testosterone", "mech_ifo_linear->tissue_sperm", "tissue_sperm->disease_fertility", "tissue_ovarian->disease_fertility", "tissue_testosterone->disease_fertility", "disease_fertility->demo_biocap", "demo_biocap->demo_asfr", "demo_asfr->demo_tfr"],
@@ -218,8 +218,8 @@ export const GUIDED_SCENES: GuidedScene[] = [
     id: "sleep",
     title: { en: "Sleep–Depression Cascade", fi: "Uni–masennuskaskadi" },
     description: {
-      en: "BERM proposes an RF-sensitive radical-pair/cryptochrome → melatonin/circadian → sleep and depression route. RPM biology is imported evidence, not a result derived from Lindgren geometry, and the exposure-to-response bridge remains open.",
-      fi: "BERM ehdottaa RF-herkkää radikaalipari-/kryptokromi → melatoniini-/vuorokausirytmi → uni- ja masennusreittiä. RPM-biologia on muualta tuotua näyttöä, ei Lindgrenin geometriasta johdettu tulos, ja altistuksesta vasteeseen johtava silta on avoin.",
+      en: "BERM proposes an RF-sensitive radical-pair/cryptochrome → melatonin/circadian → sleep and depression route. RPM biology is imported evidence, not a Lindgren-derived result, and its tissue-specific response kernel remains uncalibrated.",
+      fi: "BERM ehdottaa RF-herkkää radikaalipari-/kryptokromi → melatoniini-/vuorokausirytmi → uni- ja masennusreittiä. RPM-biologia on muualta tuotua näyttöä, ei Lindgrenistä johdettu tulos, ja sen kudoskohtainen vasteydin on kalibroimatta.",
     },
     nodes: ["ch_rf", "mod_pineal", "mech_cry_melatonin", "tissue_melatonin", "tissue_cortisol", "disease_sleep", "disease_depression"],
     edges: ["ch_rf->mod_pineal", "mod_pineal->mech_cry_melatonin", "mech_cry_melatonin->tissue_melatonin", "mech_cry_melatonin->tissue_cortisol", "tissue_melatonin->disease_sleep", "tissue_cortisol->disease_sleep", "tissue_cortisol->disease_depression"],

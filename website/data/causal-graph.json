@@ -94,10 +94,33 @@
         "electric-field waveform"
       ]
     },
+    "LINDGREN_METRIC_DRIVE": {
+      "id": "LINDGREN_METRIC_DRIVE",
+      "label": {
+        "en": "Lindgren 2025 metric perturbation and quadratic mixing drive",
+        "fi": "Lindgren 2025 -metriikkahäiriö ja neliöllinen sekoitusajuri",
+        "ja": "Lindgren 2025 計量摂動と二次混合駆動",
+        "fr": "Perturbation métrique et mélange quadratique de Lindgren 2025",
+        "ko": "Lindgren 2025 계량 섭동 및 이차 혼합 구동"
+      },
+      "layer": "physics",
+      "parents": [],
+      "children": [
+        "BERM_L2_BRIDGE"
+      ],
+      "calibration_status": "structural_only",
+      "prediction_role": "input",
+      "legacy_aliases": [
+        "g = eta + kappa A tensor A",
+        "delta g",
+        "chi_geo",
+        "quadratic envelope mixing"
+      ]
+    },
     "BERM_L2_BRIDGE": {
       "id": "BERM_L2_BRIDGE",
       "label": {
-        "en": "Open geometry-to-observable coupling proposition",
+        "en": "Conditional metric-to-observable response operator",
         "fi": "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
         "ja": "幾何学から観測量への未解決の結合命題",
         "fr": "Proposition ouverte de couplage géométrie–observable",
@@ -105,6 +128,7 @@
       },
       "layer": "physics",
       "parents": [
+        "LINDGREN_METRIC_DRIVE",
         "TECHNOLOGY_TIMING_PROXY",
         "FIELDSTATE_VECTOR",
         "FIELDSTATE_ENVELOPE",
@@ -120,14 +144,15 @@
         "IF_MITOTIC_DISRUPTION",
         "GPCR_ADENOSINE",
         "VAGUS_ANTIINFLAMMATORY",
+        "ANDROGEN_RECEPTOR_SIGNAL",
         "ECOLOGICAL_ENCOUNTER"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "geometry-to-biology operator",
-        "L2 bridge",
-        "open coupling operator"
+        "L2 response operator",
+        "conditional response kernel"
       ]
     },
     "A_VGCC_ROS": {
@@ -330,7 +355,8 @@
       },
       "layer": "barrier",
       "parents": [
-        "A_VGCC_ROS"
+        "A_VGCC_ROS",
+        "ANDROGEN_RECEPTOR_SIGNAL"
       ],
       "children": [
         "MALE_SPERM",
@@ -392,6 +418,7 @@
         "BARRIER_BTB",
         "MALE_GERMLINE_RESERVE",
         "MALE_STEROIDOGENESIS",
+        "ANDROGEN_RECEPTOR_SIGNAL",
         "IF_MITOTIC_DISRUPTION"
       ],
       "children": [
@@ -429,7 +456,7 @@
     "MALE_STEROIDOGENESIS": {
       "id": "MALE_STEROIDOGENESIS",
       "label": {
-        "en": "Leydig/HPG steroidogenic support",
+        "en": "Leydig/HPG androgen production support",
         "fi": "Leydigin solujen/HPG steroidogeeninen tuki"
       },
       "layer": "reproductive",
@@ -439,12 +466,66 @@
         "MICROBIOME_OT"
       ],
       "children": [
-        "MALE_SPERM"
+        "MALE_SPERM",
+        "ANDROGEN_BINDING_AVAILABILITY"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "Leydig"
+      ]
+    },
+    "ANDROGEN_BINDING_AVAILABILITY": {
+      "id": "ANDROGEN_BINDING_AVAILABILITY",
+      "label": {
+        "en": "SHBG/albumin binding and free or intratesticular androgen availability",
+        "fi": "SHBG-/albumiinisitoutuminen sekä vapaan tai intratestikulaarisen androgeenin saatavuus",
+        "ja": "SHBG・アルブミン結合と遊離・精巣内アンドロゲン利用可能性",
+        "fr": "Liaison SHBG/albumine et disponibilité androgénique libre ou intratesticulaire",
+        "ko": "SHBG/알부민 결합 및 유리·고환내 안드로겐 가용성"
+      },
+      "layer": "reproductive",
+      "parents": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "children": [
+        "ANDROGEN_RECEPTOR_SIGNAL"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "free testosterone",
+        "SHBG",
+        "albumin",
+        "androgen availability"
+      ]
+    },
+    "ANDROGEN_RECEPTOR_SIGNAL": {
+      "id": "ANDROGEN_RECEPTOR_SIGNAL",
+      "label": {
+        "en": "AR/ZIP9 occupancy and post-receptor androgen-use capacity",
+        "fi": "AR-/ZIP9-miehitys ja reseptorin jälkeinen androgeeninkäyttökapasiteetti",
+        "ja": "AR/ZIP9占有率と受容体後アンドロゲン利用能力",
+        "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
+        "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력"
+      },
+      "layer": "reproductive",
+      "parents": [
+        "ANDROGEN_BINDING_AVAILABILITY",
+        "BERM_L2_BRIDGE"
+      ],
+      "children": [
+        "MALE_SPERM",
+        "BARRIER_BTB"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "androgen effective capacity",
+        "AEC",
+        "androgen receptor",
+        "ZIP9",
+        "post-receptor signalling"
       ]
     },
     "OVARIAN_RESERVE": {
@@ -814,384 +895,420 @@
     },
     {
       "id": "e06",
-      "from": "BERM_L2_BRIDGE",
-      "to": "A_VGCC_ROS",
-      "kind": "proposed_bridge"
+      "from": "LINDGREN_METRIC_DRIVE",
+      "to": "BERM_L2_BRIDGE",
+      "kind": "derived_geometry"
     },
     {
       "id": "e07",
       "from": "BERM_L2_BRIDGE",
-      "to": "B_RPM_CRY",
-      "kind": "proposed_bridge"
+      "to": "A_VGCC_ROS",
+      "kind": "conditional_response"
     },
     {
       "id": "e08",
       "from": "BERM_L2_BRIDGE",
-      "to": "VMEM_MTOR",
-      "kind": "proposed_bridge"
+      "to": "B_RPM_CRY",
+      "kind": "conditional_response"
     },
     {
       "id": "e09",
       "from": "BERM_L2_BRIDGE",
-      "to": "HPA_HPG",
-      "kind": "proposed_bridge"
+      "to": "VMEM_MTOR",
+      "kind": "conditional_response"
     },
     {
       "id": "e10",
       "from": "BERM_L2_BRIDGE",
-      "to": "MICROBIOME_OT",
-      "kind": "proposed_bridge"
+      "to": "HPA_HPG",
+      "kind": "conditional_response"
     },
     {
       "id": "e11",
       "from": "BERM_L2_BRIDGE",
-      "to": "IF_MITOTIC_DISRUPTION",
-      "kind": "proposed_bridge"
+      "to": "MICROBIOME_OT",
+      "kind": "conditional_response"
     },
     {
       "id": "e12",
       "from": "BERM_L2_BRIDGE",
-      "to": "GPCR_ADENOSINE",
-      "kind": "proposed_bridge"
+      "to": "IF_MITOTIC_DISRUPTION",
+      "kind": "conditional_response"
     },
     {
       "id": "e13",
       "from": "BERM_L2_BRIDGE",
-      "to": "VAGUS_ANTIINFLAMMATORY",
-      "kind": "proposed_bridge"
+      "to": "GPCR_ADENOSINE",
+      "kind": "conditional_response"
     },
     {
       "id": "e14",
       "from": "BERM_L2_BRIDGE",
-      "to": "ECOLOGICAL_ENCOUNTER",
-      "kind": "proposed_bridge"
+      "to": "VAGUS_ANTIINFLAMMATORY",
+      "kind": "conditional_response"
     },
     {
       "id": "e15",
-      "from": "A_VGCC_ROS",
-      "to": "VMEM_MTOR",
-      "kind": "causal_model"
+      "from": "BERM_L2_BRIDGE",
+      "to": "ANDROGEN_RECEPTOR_SIGNAL",
+      "kind": "conditional_response"
     },
     {
       "id": "e16",
-      "from": "A_VGCC_ROS",
-      "to": "BARRIER_BBB",
-      "kind": "causal_model"
+      "from": "BERM_L2_BRIDGE",
+      "to": "ECOLOGICAL_ENCOUNTER",
+      "kind": "conditional_response"
     },
     {
       "id": "e17",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_BTB",
+      "to": "VMEM_MTOR",
       "kind": "causal_model"
     },
     {
       "id": "e18",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_PLACENTA",
+      "to": "BARRIER_BBB",
       "kind": "causal_model"
     },
     {
       "id": "e19",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_RETINA",
+      "to": "BARRIER_BTB",
       "kind": "causal_model"
     },
     {
       "id": "e20",
       "from": "A_VGCC_ROS",
-      "to": "HPA_HPG",
+      "to": "BARRIER_PLACENTA",
       "kind": "causal_model"
     },
     {
       "id": "e21",
       "from": "A_VGCC_ROS",
-      "to": "MALE_SPERM",
+      "to": "BARRIER_RETINA",
       "kind": "causal_model"
     },
     {
       "id": "e22",
       "from": "A_VGCC_ROS",
-      "to": "OOCYTE_REDOX",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e23",
-      "from": "B_RPM_CRY",
-      "to": "MELATONIN_REDOX",
+      "from": "A_VGCC_ROS",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e24",
-      "from": "B_RPM_CRY",
-      "to": "HPA_HPG",
+      "from": "A_VGCC_ROS",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e25",
       "from": "B_RPM_CRY",
-      "to": "OVULATION_CLOCK",
+      "to": "MELATONIN_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e26",
       "from": "B_RPM_CRY",
-      "to": "OOCYTE_REDOX",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e27",
-      "from": "MELATONIN_REDOX",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
+      "id": "e27",
+      "from": "B_RPM_CRY",
+      "to": "OVULATION_CLOCK",
+      "kind": "causal_model"
+    },
+    {
       "id": "e28",
-      "from": "MELATONIN_REDOX",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "B_RPM_CRY",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e29",
       "from": "MELATONIN_REDOX",
-      "to": "MALE_SPERM",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e30",
       "from": "MELATONIN_REDOX",
-      "to": "OOCYTE_REDOX",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e31",
       "from": "MELATONIN_REDOX",
-      "to": "OVULATION_CLOCK",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e32",
       "from": "MELATONIN_REDOX",
-      "to": "IMPLANTATION",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e33",
-      "from": "VMEM_MTOR",
-      "to": "BIOELECTRIC_DEVELOPMENT",
+      "from": "MELATONIN_REDOX",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e34",
-      "from": "VMEM_MTOR",
-      "to": "OVARIAN_RESERVE",
+      "from": "MELATONIN_REDOX",
+      "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
       "id": "e35",
       "from": "VMEM_MTOR",
-      "to": "MALE_GERMLINE_RESERVE",
+      "to": "BIOELECTRIC_DEVELOPMENT",
       "kind": "causal_model"
     },
     {
       "id": "e36",
-      "from": "BIOELECTRIC_DEVELOPMENT",
+      "from": "VMEM_MTOR",
       "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e37",
-      "from": "BIOELECTRIC_DEVELOPMENT",
+      "from": "VMEM_MTOR",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e38",
-      "from": "HPA_HPG",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e39",
-      "from": "HPA_HPG",
-      "to": "OVULATION_CLOCK",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e40",
       "from": "HPA_HPG",
-      "to": "IMPLANTATION",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e41",
-      "from": "MICROBIOME_OT",
-      "to": "HPA_HPG",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e42",
-      "from": "MICROBIOME_OT",
       "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
+      "id": "e41",
+      "from": "HPA_HPG",
+      "to": "OVULATION_CLOCK",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e42",
+      "from": "HPA_HPG",
+      "to": "IMPLANTATION",
+      "kind": "causal_model"
+    },
+    {
       "id": "e43",
-      "from": "BARRIER_BBB",
+      "from": "MICROBIOME_OT",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e44",
+      "from": "MICROBIOME_OT",
+      "to": "MALE_STEROIDOGENESIS",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e45",
+      "from": "BARRIER_BBB",
+      "to": "HPA_HPG",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e46",
       "from": "BARRIER_BTB",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e45",
+      "id": "e47",
       "from": "BARRIER_BTB",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e46",
+      "id": "e48",
       "from": "BARRIER_PLACENTA",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e47",
+      "id": "e49",
       "from": "MALE_SPERM",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e48",
+      "id": "e50",
       "from": "MALE_GERMLINE_RESERVE",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e49",
+      "id": "e51",
       "from": "MALE_STEROIDOGENESIS",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e50",
+      "id": "e52",
+      "from": "MALE_STEROIDOGENESIS",
+      "to": "ANDROGEN_BINDING_AVAILABILITY",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e53",
+      "from": "ANDROGEN_BINDING_AVAILABILITY",
+      "to": "ANDROGEN_RECEPTOR_SIGNAL",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e54",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "MALE_SPERM",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e55",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "BARRIER_BTB",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e56",
       "from": "OVARIAN_RESERVE",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e51",
+      "id": "e57",
       "from": "OVARIAN_RESERVE",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
-      "id": "e52",
+      "id": "e58",
       "from": "OOCYTE_REDOX",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
-      "id": "e53",
+      "id": "e59",
       "from": "OOCYTE_REDOX",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e54",
+      "id": "e60",
       "from": "OVULATION_CLOCK",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e55",
+      "id": "e61",
       "from": "IMPLANTATION",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e56",
+      "id": "e62",
       "from": "COUPLE_FECUNDABILITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e57",
+      "id": "e63",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e58",
+      "id": "e64",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e59",
+      "id": "e65",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e60",
+      "id": "e66",
       "from": "GPCR_ADENOSINE",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e61",
+      "id": "e67",
       "from": "GPCR_ADENOSINE",
       "to": "MICROBIOME_OT",
       "kind": "causal_model"
     },
     {
-      "id": "e62",
+      "id": "e68",
       "from": "VAGUS_ANTIINFLAMMATORY",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e63",
+      "id": "e69",
       "from": "VAGUS_ANTIINFLAMMATORY",
       "to": "MICROBIOME_OT",
       "kind": "causal_model"
     },
     {
-      "id": "e64",
+      "id": "e70",
       "from": "ECOLOGICAL_ENCOUNTER",
       "to": "ECOLOGICAL_SELECTION",
       "kind": "causal_model"
     },
     {
-      "id": "e65",
+      "id": "e71",
       "from": "ECOLOGICAL_SELECTION",
       "to": "ECOLOGICAL_TRAIT_STATE",
       "kind": "causal_model"
     },
     {
-      "id": "e66",
+      "id": "e72",
       "from": "DEMAND_OPPORTUNITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e67",
+      "id": "e73",
       "from": "TEMPO",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e68",
+      "id": "e74",
       "from": "ART_LIVE_BIRTH_DELIVERY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e69",
+      "id": "e75",
       "from": "ASFR",
       "to": "TFR",
       "kind": "causal_model"
@@ -1212,6 +1329,13 @@
         "FIELDSTATE_ENVELOPE",
         "STATIC_TRIBO_INTERFACE",
         "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      ],
+      "ui_level": 0
+    },
+    "berm-theory": {
+      "id": "berm-theory",
+      "contains": [
+        "LINDGREN_METRIC_DRIVE"
       ],
       "ui_level": 0
     },
@@ -1259,7 +1383,9 @@
       "contains": [
         "MALE_SPERM",
         "MALE_GERMLINE_RESERVE",
-        "MALE_STEROIDOGENESIS"
+        "MALE_STEROIDOGENESIS",
+        "ANDROGEN_BINDING_AVAILABILITY",
+        "ANDROGEN_RECEPTOR_SIGNAL"
       ],
       "ui_level": 4
     },

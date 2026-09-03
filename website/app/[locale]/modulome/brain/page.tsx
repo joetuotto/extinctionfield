@@ -36,7 +36,7 @@ const COPY = {
       "[[ref:pall2022-ad|Pall 2022]]: 18 types of evidence for EMF → VGCC → Ca²⁺ → Alzheimer's. 34% brain cell death in 4 weeks of EMF exposure in rats — partially blocked by L-type blocker amlodipine (DHP, Cav1.2-selective; low T-type affinity — PMC4657039). Note: amlodipine does NOT block T-type channels — its efficacy here indicates L-type (Cav1.2) involvement alongside the dominant T-type pathway. BBB opening → amyloid entry.",
 
     /* 03 Chi Analysis */
-    chiAnalysis: "BERM χ candidate analysis — L2 open",
+    chiAnalysis: "BERM tissue-response analysis — conditional L2 operator, calibration open",
     chiAnalysisText:
       "Double hit: (1) Cav3.2 bifurcation in DG → chronic Ca²⁺ → amyloid cascade. (2) BBB opening → blood-borne Aβ enters brain. Both converge on hippocampus. Age amplifies via mitochondrial χ.",
 
@@ -200,7 +200,7 @@ const COPY = {
       "[[ref:pall2022-ad|Pall 2022]]: 18 tyyppistä näyttöä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — osittain estetty L-tyypin salpaajalla amlodipiinilla (DHP, Cav1.2-selektiivinen; matala T-tyypin affiniteetti — PMC4657039). Huom: amlodipiini EI salpaa T-tyypin kanavia — sen teho tässä osoittaa L-tyypin (Cav1.2) osallisuuden dominoivan T-tyypin reitin rinnalla. BBB:n avautuminen → amyloidin pääsy.",
 
     /* 03 Chi-analyysi */
-    chiAnalysis: "BERM:n χ-ehdokasanalyysi — L2 avoin",
+    chiAnalysis: "BERM:n kudosvasteanalyysi — ehdollinen L2-operaattori, kalibrointi avoin",
     chiAnalysisText:
       "Kaksoisosuma: (1) Cav3.2-bifurkaatio DG:ssä → krooninen Ca²⁺ → amyloidikaskadi. (2) BBB:n avautuminen → veren Aβ pääsee aivoihin. Molemmat yhtyvät hippokampukseen. Ikä vahvistaa mitokondriaalisella χ:llä.",
 
@@ -360,7 +360,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]]：EMF → VGCC → Ca²⁺ → アルツハイマー病の連鎖を示す18種類のエビデンス。ラットにおける4週間のEMF曝露で34%の脳細胞死——L型チャネル遮断薬amlodipine（DHP、Cav1.2選択的；T型親和性低）で部分的に阻止。注：amlodipineはT型チャネルを遮断しない——ここでの有効性は、優位なT型経路と並行するL型（Cav1.2）の関与を示す。BBB開放 → アミロイド流入。",
 
-    chiAnalysis: "BERM χ候補解析 — L2未解決",
+    chiAnalysis: "BERM組織応答解析 — 条件付きL2演算子、校正未完了",
     chiAnalysisText:
       "二重打撃：(1) DGにおけるCav3.2分岐 → 慢性Ca²⁺ → アミロイドカスケード。(2) BBB開放 → 血中Aβが脳に侵入。両者は海馬に収束する。加齢がミトコンドリアχを通じて増幅。",
 
@@ -510,7 +510,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]] : 18 types de preuves pour la chaine CEM → VGCC → Ca²⁺ → Alzheimer. 34 % de mort cellulaire cerebrale en 4 semaines d'exposition CEM chez le rat — partiellement bloquee par le bloqueur L-type amlodipine (DHP, selectif Cav1.2 ; faible affinite T-type). Note : l'amlodipine ne bloque PAS les canaux T-type — son efficacite ici indique l'implication du type L (Cav1.2) en parallele de la voie T-type dominante. Ouverture de la BHE → entree d'amyloide.",
 
-    chiAnalysis: "Analyse candidate χ de BERM — L2 ouvert",
+    chiAnalysis: "Analyse de réponse tissulaire BERM — opérateur L2 conditionnel, calibration ouverte",
     chiAnalysisText:
       "Double impact : (1) Bifurcation de Cav3.2 dans le DG → Ca²⁺ chronique → cascade amyloide. (2) Ouverture de la BHE → l'Aβ sanguin entre dans le cerveau. Les deux convergent vers l'hippocampe. L'age amplifie via le χ mitochondrial.",
 
@@ -660,7 +660,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]]: EMF → VGCC → Ca²⁺ → 알츠하이머병 연쇄에 대한 18가지 유형의 근거. 쥐에서 4주간 EMF 노출 시 34% 뇌세포 사멸 — L형 차단제 amlodipine(DHP, Cav1.2 선택적; 낮은 T형 친화성)으로 부분 차단. 주의: amlodipine은 T형 채널을 차단하지 않음 — 여기서의 효능은 지배적 T형 경로와 병행하는 L형(Cav1.2) 관여를 시사. BBB 개방 → 아밀로이드 유입.",
 
-    chiAnalysis: "BERM χ 후보 분석 — L2 미해결",
+    chiAnalysis: "BERM 조직 반응 분석 — 조건부 L2 연산자, 보정 미완료",
     chiAnalysisText:
       "이중 타격: (1) DG에서 Cav3.2 분기 → 만성 Ca²⁺ → 아밀로이드 캐스케이드. (2) BBB 개방 → 혈중 Aβ가 뇌로 침입. 둘 다 해마에 수렴. 노화가 미토콘드리아 χ를 통해 증폭.",
 

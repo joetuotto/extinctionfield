@@ -1031,7 +1031,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test: measure Ca²⁺ signaling in osteoblasts across PEMF frequency, intensity and duration. Prediction: optimal parameters correspond to a peak in BERM's proposed χ closure; this is not derived from Lindgren geometry and the L2 coupling remains open.",
+        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test: measure Ca²⁺ signaling in osteoblasts across PEMF frequency, intensity and duration. Prediction: optimal parameters correspond to a peak in the endpoint response. The bounded χ_geo coordinate and a conditional response-operator form follow from the stated geometric and coupling assumptions, but the osteoblast tissue kernel, sign and dose-response remain uncalibrated.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -2864,7 +2864,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF-terapian parametrit karttuvat Ca²⁺-hormeesikäyrälle",
-        description: "PEMF edistää luunkasvua tietyillä parametreilla, kun taas osassa kroonisen EMF:n tutkimuksia raportoidaan haittaa. BERM ehdottaa Ca²⁺-kanavahormeesia selitykseksi. Testi mittaa osteoblastien Ca²⁺-signalointia taajuuden, intensiteetin ja keston yli. Ennuste: optimi vastaa BERM:n ehdotetun χ-sulkeuman huippua; tulosta ei ole johdettu Lindgrenin geometriasta ja L2-kytkentä on avoin.",
+        description: "PEMF edistää luunkasvua tietyillä parametreilla, kun taas osassa kroonisen EMF:n tutkimuksia raportoidaan haittaa. BERM ehdottaa Ca²⁺-kanavahormeesia selitykseksi. Testi mittaa osteoblastien Ca²⁺-signalointia taajuuden, intensiteetin ja keston yli. Ennuste: optimi vastaa päätepistevasteen huippua. Rajattu χ_geo-koordinaatti ja ehdollisen vasteoperaattorin muoto seuraavat lausutuista geometria- ja kytkentäoletuksista, mutta osteoblastin kudosydin, etumerkki ja annosvaste ovat kalibroimatta.",
         timeline: "Testattavissa 12 kuukaudessa (in vitro osteoblastien Ca²⁺-annosvaste)",
         falsification: "PEMF-vaikutukset eivät noudata hormeesikäyrää Ca²⁺-kanavien kautta",
       },
@@ -4911,7 +4911,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test the full parameter space. The predicted optimum belongs to BERM's proposed χ closure, is not derived from Lindgren geometry, and leaves L2 open.",
+        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test the full parameter space. The predicted optimum is an endpoint-level hypothesis: χ_geo and the conditional operator form do not determine the osteoblast tissue kernel, sign or dose-response.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -6694,7 +6694,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "Le PEMF favorise la croissance osseuse sous certains paramètres, tandis que certaines études d'EMF chroniques rapportent des effets nocifs. BERM propose une hormèse des canaux Ca²⁺. L'optimum prédit appartient à la fermeture χ proposée par BERM, n'est pas dérivé de la géométrie de Lindgren et laisse L2 ouvert.",
+        description: "Le PEMF favorise la croissance osseuse sous certains paramètres, tandis que certaines études chroniques rapportent des effets nocifs. BERM propose une hormèse Ca²⁺. L'optimum est une hypothèse d'endpoint : χ_geo et la forme conditionnelle de l'opérateur ne déterminent ni le noyau ostéoblastique, ni son signe ou sa dose-réponse.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -8477,7 +8477,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF는 특정 매개변수에서 골 성장을 촉진하며 일부 만성 EMF 연구는 위해를 보고한다. BERM은 Ca²⁺ 채널 호르메시스를 제안한다. 예측 최적점은 BERM의 제안된 χ 폐쇄에 속하며 Lindgren 기하학에서 도출된 것이 아니고 L2는 열려 있다.",
+        description: "PEMF는 특정 매개변수에서 골 성장을 촉진하며 일부 만성 연구는 위해를 보고한다. BERM은 Ca²⁺ 채널 호르메시스를 제안한다. 예측 최적점은 종점 가설이며 χ_geo와 조건부 연산자 형태는 골모세포 조직 커널, 부호 또는 용량반응을 결정하지 않는다.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },

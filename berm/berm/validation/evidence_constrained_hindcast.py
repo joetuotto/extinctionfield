@@ -14,8 +14,8 @@ uses of evidence separate:
 
 The result is deliberately not an EMF-to-TFR regression.  It is a compact
 specification for a conditional Bayesian BERM route: a separately measured or
-estimated mobility-weighted local field record can enter an explicitly open L2
-bridge, followed by candidate species/organ transfer, reversible/persistent
+estimated mobility-weighted local field record can enter BERM's conditional L2
+response operator with an explicitly open tissue kernel, followed by candidate species/organ transfer, reversible/persistent
 memory, endpoint likelihoods, and demographic posterior-predictive evaluation.
 FieldState is the optional measurement module, not the model or a causal root.
 """
@@ -686,7 +686,7 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
                 "local_vector_to_male_endpoint",
                 ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "MALE_SPERM"),
                 ("BLACKMAN_1985_BACKGROUND_FREQUENCY", "USSELMAN_2016_ORIENTATION_ROS", "DE_IULIIS_2009_HUMAN_SPERM", "BALDINI_2025_ART_LAB_SPERM"),
-                "Local vector/geometry-sensitive FieldState constrains a proposed redox-linked male endpoint path through the open L2 bridge.",
+                "Local vector/geometry-sensitive FieldState constrains a redox-linked male endpoint path through the conditional L2 response operator; the tissue kernel remains open.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX"),
                 ("Endpoint magnitude remains context- and assay-dependent.",),
             ),
@@ -702,7 +702,7 @@ def default_evidence_constrained_hindcast_specification() -> EvidenceConstrained
                 "fieldstate_to_female_developmental_reserve",
                 ("FIELDSTATE_VECTOR", "BERM_L2_BRIDGE", "A_VGCC_ROS", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE"),
                 ("ZANDIEH_2025_MITO_RESONANCE", "AHMADI_2016_OVARIAN_FOLLICLES", "CALIS_2021_PRENATAL_OVARIAN_RESERVE", "YOUSEFI_2025_NEONATAL_OOGENESIS"),
-                "Female developmental reserve is a candidate BERM biology-to-capacity route distinct from the male sperm route; any FieldState-to-biology operator remains open.",
+                "Female developmental reserve is a candidate BERM biology-to-capacity route distinct from the male sperm route; the conditional FieldState-input response kernel remains uncalibrated.",
                 ("LOCAL_VECTOR_GEOMETRY", "ORGAN_AND_SEX", "DEVELOPMENTAL_STAGE"),
                 ("Developmental and adult endpoint scales remain separately parameterized.",),
             ),

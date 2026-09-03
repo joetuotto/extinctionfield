@@ -32,7 +32,8 @@ describe("BERM / FieldState architecture contract", () => {
 
   it("does not overstate the missing Lindgren-to-observable bridge", () => {
     expect(MODEL_ARCHITECTURE.theory.formulation).toBe("2025-weyl-gme");
-    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatus).toBe("open");
+    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatus).toBe("conditional_formal_operator");
+    expect(MODEL_ARCHITECTURE.theory.calibrationStatus).toBe("open");
     expect(MODEL_ARCHITECTURE.routes.prediction.fieldStateCalibrated).toBe(false);
     expect(MODEL_ARCHITECTURE.routes.conditionalAsfr.acceptsFieldStateObservations).toBe(false);
   });

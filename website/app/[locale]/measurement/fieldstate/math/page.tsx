@@ -41,7 +41,7 @@ const equations = {
     "\\tau_{RC}\\approx R_{\\mathrm{leak}}C_{\\mathrm{eff}}",
   ],
   boundary: [
-    "\\text{FieldState observation}\\;\\xrightarrow{\\;L2\\;\\mathrm{open}\\;}\\;\\text{BERM biological state}",
+    "\\text{FieldState observation}\\;\\xrightarrow{\\;L2:\\ \\Xi_i\\;\\mathrm{uncalibrated}\\;}\\;\\text{BERM biological state}",
   ],
 } as const;
 
@@ -49,12 +49,12 @@ const t: Record<string, Copy> = {
   en: {
     metaTitle: "FieldState v2 measurement mathematics – Extinction Field",
     metaDescription:
-      "FieldState v2 vector, spectrum, transfer and provenance equations, separated from BERM by an open L2 coupling boundary.",
+      "FieldState v2 vector, spectrum, transfer and provenance equations, separated from BERM by a conditional L2 response boundary with open tissue calibration.",
     title: "FieldState v2 measurement mathematics",
     subtitle:
       "Measurement and estimation coordinates at BERM’s input boundary—not a derived route from Lindgren geometry to a biological or demographic outcome.",
     versionNote:
-      "FieldState v2 is an optional measurement, observation and estimation module. Sections 1–3 define its physical record; section 4 marks where it stops. The geometry-to-observable L2 operator is open, and FieldState v2 produces no country forecast.",
+      "FieldState v2 is an optional measurement, observation and estimation module. Sections 1–3 define its physical record; section 4 marks where it stops. BERM owns the conditional formal L2 operator, whose tissue kernel remains uncalibrated; FieldState v2 produces no country forecast.",
     nav: [
       { id: "premise", label: "Geometry context" },
       { id: "field-record", label: "Field record" },
@@ -67,11 +67,11 @@ const t: Record<string, Copy> = {
         title: "1. Geometry supplies context, not a biological operator",
         body: [
           "The 2025 Lindgren ansatz places the electromagnetic four-potential in the metric. Its geometric consequences motivate retaining background dependence, vector orientation and quadratic cross-terms in a measurement record.",
-          "No equation currently maps that geometry to SHBG, an androgen receptor, an ion channel, post-receptor signalling or an organ endpoint. That missing geometry-to-observable mapping is BERM’s open L2 bridge.",
+          "BERM now derives the formal mapping δ⟨O_i⟩=∫Ξ_i^{μν}δg_{μν}+… conditional on matter–metric coupling and response theory. FieldState supplies neither the tissue kernel Ξ_i nor its SHBG, AR, ZIP9, ion-channel or organ-endpoint calibration.",
         ],
         equations: equations.metric,
         note:
-          "The bounded coordinate χ(a)=a/√(1+a²) is a BERM closure proposal. It is not derived from the Lindgren ansatz and is not a FieldState measurement result.",
+          "For a normalized positive-norm mode, χ_geo(ρ)=ρ/√(1+ρ²) is derived from the rank-one inverse metric. It is a geometry coordinate—not a FieldState measurement or calibrated biological susceptibility.",
       },
       {
         id: "field-record",
@@ -100,7 +100,7 @@ const t: Record<string, Copy> = {
         title: "4. FieldState stops at the BERM input boundary",
         body: [
           "A FieldState observation may constrain a future BERM input. It does not itself determine a molecular response, hormone production or use, organ capacity, behaviour, ASFR, TFR or political outcome.",
-          "Those downstream links belong to BERM and must remain conditional until the open L2 bridge and subsequent endpoint mappings are supplied. The published locked country predictions use the archived BERM v17 national scalar-proxy route; they are not FieldState-calibrated forecasts.",
+          "Those downstream links belong to BERM and remain conditional until the tissue-response kernel and subsequent endpoint mappings are calibrated. The published locked country predictions use the archived BERM v17 national scalar-proxy route; they are not FieldState-calibrated forecasts.",
         ],
         equations: equations.boundary,
         note:
@@ -115,12 +115,12 @@ const t: Record<string, Copy> = {
   fi: {
     metaTitle: "FieldState v2 -mittausmatematiikka – Extinction Field",
     metaDescription:
-      "FieldState v2:n vektori-, spektri-, siirto- ja provenienssiyhtälöt erotettuna BERM:stä avoimella L2-kytkentärajalla.",
+      "FieldState v2:n vektori-, spektri-, siirto- ja provenienssiyhtälöt erotettuna BERM:stä ehdollisella L2-vasteella ja avoimella kudoskalibroinnilla.",
     title: "FieldState v2:n mittausmatematiikka",
     subtitle:
       "Mittaus- ja estimointikoordinaatit BERM:n syöterajalla – ei johdettu reitti Lindgrenin geometriasta biologiseen tai demografiseen tulokseen.",
     versionNote:
-      "FieldState v2 on valinnainen mittaus-, havainto- ja estimointimoduuli. Osat 1–3 määrittelevät sen fysikaalisen tietueen; osa 4 osoittaa, mihin se päättyy. Geometriasta havaittavaan suureeseen johtava L2-operaattori on avoin, eikä FieldState v2 tuota maakohtaisia ennusteita.",
+      "FieldState v2 on valinnainen mittaus-, havainto- ja estimointimoduuli. Osat 1–3 määrittelevät sen fysikaalisen tietueen; osa 4 osoittaa, mihin se päättyy. BERM omistaa ehdollisen formaalin L2-operaattorin, jonka kudosydin on kalibroimatta; FieldState v2 ei tuota maakohtaisia ennusteita.",
     nav: [
       { id: "premise", label: "Geometriakonteksti" },
       { id: "field-record", label: "Kenttätietue" },
@@ -133,11 +133,11 @@ const t: Record<string, Copy> = {
         title: "1. Geometria antaa kontekstin, ei biologista operaattoria",
         body: [
           "Vuoden 2025 Lindgren-ansatz sijoittaa sähkömagneettisen nelipotentiaalin metriikkaan. Sen geometriset seuraukset motivoivat taustariippuvuuden, vektorisuunnan ja neliöllisten ristitermien säilyttämistä mittaustietueessa.",
-          "Mikään nykyinen yhtälö ei kuvaa tätä geometriaa SHBG:hen, androgeenireseptoriin, ionikanavaan, reseptorin jälkeiseen signalointiin tai elinpäätepisteeseen. Tämä puuttuva geometria–havaittava-kuvaus on BERM:n avoin L2-silta.",
+          "BERM johtaa nyt formaalin kuvauksen δ⟨O_i⟩=∫Ξ_i^{μν}δg_{μν}+… ehdolla, että materia–metriikka-kytkentä ja vastefunktioteoria pätevät. FieldState ei anna kudosydintä Ξ_i eikä sen SHBG-, AR-, ZIP9-, ionikanava- tai elinpäätepistekalibraatiota.",
         ],
         equations: equations.metric,
         note:
-          "Rajattu koordinaatti χ(a)=a/√(1+a²) on BERM:n sulkeumaehdotus. Sitä ei ole johdettu Lindgren-ansatzista, eikä se ole FieldState-mittaustulos.",
+          "Normalisoidulle positiivinormiselle moodille χ_geo(ρ)=ρ/√(1+ρ²) johdetaan käänteisestä rank-one-metriikasta. Se on geometriakoordinaatti – ei FieldState-mittaus eikä kalibroitu biologinen herkkyys.",
       },
       {
         id: "field-record",
@@ -166,7 +166,7 @@ const t: Record<string, Copy> = {
         title: "4. FieldState päättyy BERM:n syöterajalle",
         body: [
           "FieldState-havainto voi rajata BERM:n tulevaa syötettä. Se ei itsessään määrää molekyylivastetta, hormonien tuotantoa tai käyttöä, elinkapasiteettia, käyttäytymistä, ASFR:ää, TFR:ää eikä poliittista lopputulosta.",
-          "Nämä jatkolinkit kuuluvat BERM:ään ja pysyvät ehdollisina, kunnes avoin L2-silta ja sitä seuraavat päätepistekuvaukset on annettu. Julkaistut lukitut maaennusteet käyttävät arkistoitua BERM v17:n kansallista skalaariproxyreittiä; ne eivät ole FieldState-kalibroituja ennusteita.",
+          "Nämä jatkolinkit kuuluvat BERM:ään ja pysyvät ehdollisina. L2:n formaali vastemuoto on johdettu lausutuilla oletuksilla, mutta kudosydin ja sitä seuraavat päätepistekuvaukset on edelleen kalibroitava. Julkaistut lukitut maaennusteet käyttävät arkistoitua BERM v17:n kansallista skalaariproxyreittiä; ne eivät ole FieldState-kalibroituja ennusteita.",
         ],
         equations: equations.boundary,
         note:
@@ -180,10 +180,10 @@ const t: Record<string, Copy> = {
   },
   ja: {
     metaTitle: "FieldState v2 測定数学 – Extinction Field",
-    metaDescription: "BERMとの間に未解決のL2境界を置いたFieldState v2のベクトル、スペクトル、伝達および来歴の数式。",
+    metaDescription: "条件付きL2応答と未校正の組織カーネルでBERMから分離したFieldState v2のベクトル、スペクトル、伝達および来歴の数式。",
     title: "FieldState v2 測定数学",
     subtitle: "BERM入力境界における測定・推定座標であり、Lindgren幾何学から生物学・人口統計結果への導出経路ではありません。",
-    versionNote: "FieldState v2は任意の測定・観察・推定モジュールです。第1～3節が物理記録を定義し、第4節がその終端を示します。幾何学から観測量へのL2演算子は未解決で、国別予測を生成しません。",
+    versionNote: "FieldState v2は任意の測定・観察・推定モジュールです。第1～3節が物理記録を定義し、第4節がその終端を示します。BERMは条件付き形式L2演算子を所有し、その組織カーネルは未校正です。FieldStateは国別予測を生成しません。",
     nav: [
       { id: "premise", label: "幾何学的文脈" },
       { id: "field-record", label: "電磁界記録" },
@@ -196,10 +196,10 @@ const t: Record<string, Copy> = {
         title: "1. 幾何学は文脈を与えるが、生物学的演算子ではない",
         body: [
           "2025年のLindgrenアンザッツは電磁四元ポテンシャルを計量に組み込みます。その幾何学的帰結は、背景依存性、ベクトル方向および二次交差項を測定記録に保持する動機になります。",
-          "この幾何学をSHBG、アンドロゲン受容体、イオンチャネル、受容体後シグナルまたは臓器エンドポイントへ写す式はまだありません。この欠けた写像がBERMの未解決L2ブリッジです。",
+          "BERMは物質–計量結合と応答理論を条件として形式写像δ⟨O_i⟩=∫Ξ_iδg+…を導出します。FieldStateは組織カーネルΞ_iやSHBG、AR、ZIP9、臓器エンドポイントの校正を与えません。",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²)はBERMの閉包提案であり、Lindgrenアンザッツからの導出結果でもFieldState測定結果でもありません。",
+        note: "χ_geo(ρ)=ρ/√(1+ρ²)は正規化された正ノルム・モードの逆計量から導出される幾何学座標であり、FieldState測定や生物学的感受性ではありません。",
       },
       {
         id: "field-record",
@@ -226,7 +226,7 @@ const t: Record<string, Copy> = {
         title: "4. FieldStateはBERM入力境界で終了する",
         body: [
           "FieldState観察は将来のBERM入力を制約できますが、分子応答、ホルモン産生・利用、臓器容量、行動、ASFR、TFRまたは政治結果を決定しません。",
-          "下流リンクはBERMに属し、L2ブリッジとエンドポイント写像が与えられるまで条件付きです。公開済み国別予測はBERM v17国家スカラープロキシ経路であり、FieldState校正予測ではありません。",
+          "下流リンクはBERMに属し、形式L2応答は条件付きで導出されていますが、組織カーネルとエンドポイント写像の校正が必要です。公開済み国別予測はBERM v17国家スカラープロキシ経路であり、FieldState校正予測ではありません。",
         ],
         equations: equations.boundary,
         note: "将来の校正には、対応する局所FieldState、生物学的エンドポイントおよび下流結果のパネルと、時系列外部評価が必要です。",
@@ -239,10 +239,10 @@ const t: Record<string, Copy> = {
   },
   fr: {
     metaTitle: "Mathématiques de mesure FieldState v2 – Extinction Field",
-    metaDescription: "Équations vectorielles, spectrales, de transfert et de provenance de FieldState v2, séparées de BERM par une frontière L2 ouverte.",
+    metaDescription: "Équations vectorielles, spectrales, de transfert et de provenance de FieldState v2, séparées de BERM par une réponse L2 conditionnelle et une calibration tissulaire ouverte.",
     title: "Mathématiques de mesure FieldState v2",
     subtitle: "Coordonnées de mesure et d’estimation à la frontière d’entrée de BERM — pas une dérivation de la géométrie de Lindgren vers un résultat biologique ou démographique.",
-    versionNote: "FieldState v2 est un module facultatif de mesure, d’observation et d’estimation. Les sections 1–3 définissent son enregistrement physique ; la section 4 marque sa limite. L’opérateur L2 géométrie–observable reste ouvert et FieldState ne produit aucune prévision nationale.",
+    versionNote: "FieldState v2 est un module facultatif de mesure, d’observation et d’estimation. Les sections 1–3 définissent son enregistrement physique ; la section 4 marque sa limite. BERM possède l’opérateur L2 formel conditionnel, dont le noyau tissulaire reste non calibré ; FieldState ne produit aucune prévision nationale.",
     nav: [
       { id: "premise", label: "Contexte géométrique" },
       { id: "field-record", label: "Enregistrement" },
@@ -255,10 +255,10 @@ const t: Record<string, Copy> = {
         title: "1. La géométrie fournit un contexte, pas un opérateur biologique",
         body: [
           "L’ansatz de Lindgren de 2025 place le quadripotentiel électromagnétique dans la métrique. Ses conséquences géométriques motivent la conservation de la dépendance au fond, de l’orientation vectorielle et des termes croisés quadratiques dans un enregistrement de mesure.",
-          "Aucune équation ne relie actuellement cette géométrie à la SHBG, au récepteur des androgènes, à un canal ionique, à la signalisation post-récepteur ou à un endpoint d’organe. Ce mappage manquant est le pont L2 ouvert de BERM.",
+          "BERM dérive le mappage formel δ⟨O_i⟩=∫Ξ_iδg+… sous les conditions de couplage matière–métrique et de théorie de réponse. FieldState ne fournit ni le noyau Ξ_i ni sa calibration SHBG, AR, ZIP9 ou d’endpoint.",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²) est une proposition de fermeture de BERM, non un résultat dérivé de Lindgren ni une mesure FieldState.",
+        note: "χ_geo(ρ)=ρ/√(1+ρ²) est une coordonnée géométrique dérivée de la métrique inverse pour un mode normalisé de norme positive, ni une mesure FieldState ni une sensibilité biologique.",
       },
       {
         id: "field-record",
@@ -285,7 +285,7 @@ const t: Record<string, Copy> = {
         title: "4. FieldState s’arrête à la frontière d’entrée de BERM",
         body: [
           "Une observation FieldState peut contraindre une future entrée BERM. Elle ne détermine pas une réponse moléculaire, la production ou l’utilisation hormonale, la capacité d’un organe, le comportement, l’ASFR, le TFR ou un résultat politique.",
-          "Ces liens aval appartiennent à BERM et restent conditionnels jusqu’à la résolution du pont L2 et des mappages d’endpoints. Les prévisions nationales publiées utilisent la route BERM v17 à proxy scalaire national ; elles ne sont pas calibrées par FieldState.",
+          "Ces liens aval appartiennent à BERM. La forme L2 est dérivée conditionnellement, mais le noyau tissulaire et les mappages d’endpoints doivent encore être calibrés. Les prévisions nationales publiées utilisent la route BERM v17 à proxy scalaire national ; elles ne sont pas calibrées par FieldState.",
         ],
         equations: equations.boundary,
         note: "Une future calibration exige des panels appariés de FieldState local, d’endpoints biologiques et de résultats aval, avec évaluation temporelle hors échantillon.",
@@ -298,10 +298,10 @@ const t: Record<string, Copy> = {
   },
   ko: {
     metaTitle: "FieldState v2 측정 수학 – Extinction Field",
-    metaDescription: "개방형 L2 경계로 BERM과 분리된 FieldState v2 벡터, 스펙트럼, 전달 및 출처 방정식.",
+    metaDescription: "조직 보정이 열린 조건부 L2 경계에서 BERM과 분리된 FieldState v2 벡터, 스펙트럼, 전달 및 출처 방정식.",
     title: "FieldState v2 측정 수학",
     subtitle: "BERM 입력 경계의 측정·추정 좌표이며, Lindgren 기하학에서 생물학적 또는 인구학적 결과로의 도출 경로가 아닙니다.",
-    versionNote: "FieldState v2는 선택적 측정·관찰·추정 모듈입니다. 1–3절은 물리 기록을 정의하고 4절은 그 경계를 표시합니다. 기하학에서 관측량으로의 L2 연산자는 열려 있으며 국가 예측을 생성하지 않습니다.",
+    versionNote: "FieldState v2는 선택적 측정·관찰·추정 모듈입니다. 1–3절은 물리 기록을 정의하고 4절은 그 경계를 표시합니다. 조건부 형식 L2 연산자는 BERM에 속하고 조직 커널은 미보정이며, FieldState는 국가 예측을 생성하지 않습니다.",
     nav: [
       { id: "premise", label: "기하학적 맥락" },
       { id: "field-record", label: "전자기장 기록" },
@@ -314,10 +314,10 @@ const t: Record<string, Copy> = {
         title: "1. 기하학은 맥락을 제공하지만 생물학적 연산자는 아니다",
         body: [
           "2025년 Lindgren 안자츠는 전자기 4-퍼텐셜을 계량에 포함합니다. 그 기하학적 결과는 배경 의존성, 벡터 방향 및 이차 교차항을 측정 기록에 보존할 동기를 제공합니다.",
-          "이 기하학을 SHBG, 안드로겐 수용체, 이온 채널, 수용체 후 신호 또는 장기 엔드포인트에 매핑하는 방정식은 아직 없습니다. 이 누락된 매핑이 BERM의 개방형 L2 브리지입니다.",
+          "BERM은 물질–계량 결합과 응답 이론을 조건으로 형식 사상 δ⟨O_i⟩=∫Ξ_iδg+…을 도출합니다. FieldState는 조직 커널 Ξ_i나 SHBG, AR, ZIP9, 장기 종점 보정을 제공하지 않습니다.",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²)는 BERM의 폐쇄 제안이며 Lindgren 도출 결과나 FieldState 측정 결과가 아닙니다.",
+        note: "χ_geo(ρ)=ρ/√(1+ρ²)는 정규화된 양의 노름 모드의 역계량에서 도출된 기하 좌표이며 FieldState 측정이나 생물학적 감수성이 아닙니다.",
       },
       {
         id: "field-record",
@@ -344,7 +344,7 @@ const t: Record<string, Copy> = {
         title: "4. FieldState는 BERM 입력 경계에서 끝난다",
         body: [
           "FieldState 관측은 미래의 BERM 입력을 제약할 수 있지만 분자 반응, 호르몬 생산·이용, 장기 용량, 행동, ASFR, TFR 또는 정치적 결과를 결정하지 않습니다.",
-          "하류 연결은 BERM에 속하며 L2 브리지와 엔드포인트 매핑이 제공될 때까지 조건부입니다. 공개 국가 예측은 BERM v17 국가 스칼라 프록시 경로이며 FieldState 교정 예측이 아닙니다.",
+          "하류 연결은 BERM에 속합니다. 형식 L2 반응은 조건부로 도출되지만 조직 커널과 종점 매핑은 보정되어야 합니다. 공개 국가 예측은 BERM v17 국가 스칼라 프록시 경로이며 FieldState 교정 예측이 아닙니다.",
         ],
         equations: equations.boundary,
         note: "향후 교정에는 매칭된 국소 FieldState, 생물학적 엔드포인트 및 하류 결과 패널과 표본 외 시간 평가가 필요합니다.",

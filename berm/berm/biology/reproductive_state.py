@@ -3,7 +3,7 @@
 These states belong to BERM's biological layer.  FieldState is only one
 possible upstream measurement specification and does not own this layer:
 
-    Lindgren premise -> geometric consequence -> open BERM L2 bridge
+    Lindgren premise -> geometric consequence -> conditional BERM response operator
     -> organ R/P memory -> reproductive capacity -> couple fecundability
     -> age-specific fertility.
 
@@ -26,7 +26,7 @@ import math
 from typing import Iterable, Mapping
 
 
-REPRODUCTIVE_STATE_VERSION = "reproductive-state-v1"
+REPRODUCTIVE_STATE_VERSION = "reproductive-state-v2"
 
 # These labels distinguish coefficient resolution, not evidentiary weight.
 # ``STRUCTURAL_ONLY`` keeps a calculation transparently conditional on its
@@ -330,11 +330,12 @@ class BarrierState:
 
 @dataclass(frozen=True)
 class MaleReproductiveState:
-    """Male reproductive capacity with explicit BTB and reserve components."""
+    """Male capacity with production and androgen-use capacity kept separate."""
 
     germline_reserve: float = 1.0
     btb: BarrierState = field(default_factory=lambda: BarrierState("BTB"))
     steroidogenic_support: float = 1.0
+    androgen_effective_capacity: float = 1.0
     sperm_output: float = 1.0
     sperm_function: float = 1.0
     sperm_dna_integrity: float = 1.0
@@ -347,6 +348,7 @@ class MaleReproductiveState:
             raise ValueError("btb must be a BarrierState('BTB')")
         for name in (
             "steroidogenic_support",
+            "androgen_effective_capacity",
             "sperm_output",
             "sperm_function",
             "sperm_dna_integrity",
@@ -365,6 +367,7 @@ class MaleReproductiveState:
             self.germline_reserve,
             self.btb.integrity,
             self.steroidogenic_support,
+            self.androgen_effective_capacity,
             self.sperm_output,
             self.sperm_function,
             self.sperm_dna_integrity,

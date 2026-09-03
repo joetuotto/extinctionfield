@@ -14,7 +14,7 @@ const COPY = {
     cautionText: "The superposition violation evidence comes primarily from ELF combination studies. Extension to RF combinations and to the geometric interpretation is BERM's synthesis (M-level), not established consensus.",
 
     s1Title: "The principle",
-    s1Lead: "In standard electromagnetism, fields obey superposition. Lindgren's ansatz changes the geometric description, while BERM separately proposes a non-linear biological closure. The geometry-to-response L2 operator is open, so non-additive biological response is a hypothesis rather than a derived consequence:",
+    s1Lead: "In standard electromagnetism, fields obey superposition. Lindgren's ansatz changes the geometric description. Its quadratic term produces exact mixing terms, and a response-operator form follows conditionally under explicit matter–metric and linear-response assumptions. Biological detectability and non-additive endpoint response still depend on an uncalibrated tissue kernel:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "This means the biological effect of two simultaneous EMF sources cannot be predicted from their individual effects alone. The interaction term — the part that superposition misses — is often larger than either individual effect.",
 
@@ -60,7 +60,7 @@ const COPY = {
     cautionText: "Superpositiorikkomuksen näyttö tulee pääasiassa ELF-yhdistelmätutkimuksista. Laajennus RF-yhdistelmiin ja geometriseen tulkintaan on BERMin synteesi (M-taso), ei vakiintunut konsensus.",
 
     s1Title: "Periaate",
-    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota. Lindgrenin ansatz muuttaa geometrista kuvausta, kun taas BERM ehdottaa erikseen epälineaarista biologista sulkeumaa. Geometriasta vasteeseen johtava L2-operaattori on avoin, joten ei-additiivinen biologinen vaste on hypoteesi eikä johdettu seuraus:",
+    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota. Lindgrenin ansatz muuttaa geometrista kuvausta: sen neliöllinen termi tuottaa täsmälliset sekoitustermit, ja eksplisiittisillä aine–metriikka- ja lineaarivasteoletuksilla seuraa ehdollinen vasteoperaattorimuoto. Biologinen havaittavuus ja päätepisteen ei-additiivisuus riippuvat silti kalibroimattomasta kudosytimestä:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Tämä tarkoittaa, että kahden samanaikaisen EMF-lähteen biologista vaikutusta ei voida ennustaa pelkästään niiden yksittäisistä vaikutuksista. Vuorovaikutustermi — osa, jonka superpositio ohittaa — on usein suurempi kuin kumpikin yksittäinen vaikutus.",
 
@@ -106,7 +106,7 @@ const COPY = {
     cautionText: "重ね合わせ破れの証拠は主にELF組み合わせ研究からのものです。RF組み合わせおよび幾何学的解釈への拡張はBERMの統合（Mレベル）であり、確立されたコンセンサスではありません。",
 
     s1Title: "原理",
-    s1Lead: "標準電磁気学では場は重ね合わせに従う。Lindgrenアンザッツは幾何学的記述を変える一方、BERMは別に非線形生物閉包を提案する。幾何学から応答へのL2演算子は未解決であり、非加算的生物応答は導出結果ではなく仮説である：",
+    s1Lead: "標準電磁気学では場は重ね合わせに従う。Lindgrenアンザッツの二次項は厳密な混合項を生み、明示的な物質–計量・線形応答仮定から条件付き応答演算子形が得られる。生物学的検出と非加算的エンドポイントは未校正の組織カーネルに依存する：",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "これは、2つの同時EMFソースの生物学的効果を個別の効果のみから予測できないことを意味します。相互作用項 — 重ね合わせが見逃す部分 — は、個別の効果よりも大きいことが多いです。",
 
@@ -152,7 +152,7 @@ const COPY = {
     cautionText: "Les preuves de violation de superposition proviennent principalement d'études de combinaison ELF. L'extension aux combinaisons RF et à l'interprétation géométrique est la synthèse de BERM (niveau M), pas un consensus établi.",
 
     s1Title: "Le principe",
-    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition. L'ansatz de Lindgren modifie la description géométrique, tandis que BERM propose séparément une fermeture biologique non linéaire. L'opérateur L2 géométrie-réponse reste ouvert : la non-additivité est une hypothèse, pas une conséquence dérivée :",
+    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition. Le terme quadratique de l'ansatz de Lindgren produit des termes de mélange exacts et une forme d'opérateur conditionnelle suit d'hypothèses explicites matière–métrique et réponse linéaire. La détection biologique et la non-additivité dépendent d'un noyau tissulaire non calibré :",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Cela signifie que l'effet biologique de deux sources EMF simultanées ne peut pas être prédit à partir de leurs effets individuels seuls. Le terme d'interaction — la partie que la superposition manque — est souvent plus grand que chaque effet individuel.",
 
@@ -198,7 +198,7 @@ const COPY = {
     cautionText: "중첩 위반 증거는 주로 ELF 조합 연구에서 비롯됩니다. RF 조합 및 기하학적 해석으로의 확장은 BERM의 종합(M 수준)이며, 확립된 합의가 아닙니다.",
 
     s1Title: "원리",
-    s1Lead: "표준 전자기학에서 장은 중첩을 따른다. Lindgren 앤자츠는 기하학적 기술을 바꾸고 BERM은 별도로 비선형 생물학적 폐쇄를 제안한다. 기하학-반응 L2 연산자는 열려 있으므로 비가산 생물 반응은 도출 결과가 아니라 가설이다:",
+    s1Lead: "표준 전자기학에서 장은 중첩을 따른다. Lindgren 가정의 이차항은 정확한 혼합항을 만들고 명시적 물질–메트릭 및 선형반응 가정에서 조건부 반응 연산자 형태가 따른다. 생물학적 검출과 비가산 종점 반응은 미보정 조직 커널에 달려 있다:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "이는 두 개의 동시 EMF 소스의 생물학적 효과를 개별 효과만으로 예측할 수 없음을 의미합니다. 상호 작용 항 — 중첩이 놓치는 부분 — 은 종종 어느 한 개별 효과보다 큽니다.",
 

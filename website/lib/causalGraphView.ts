@@ -11,7 +11,7 @@ const GRAPH = graphJson as CausalGraph;
 const LEVEL_TITLES: Record<string, Record<number, string>> = {
   en: {
     1: "Measurement and proxy inputs",
-    2: "Open L2 coupling bridge",
+    2: "Conditional L2 response operator",
     3: "Mechanisms",
     4: "Barrier states",
     5: "Reproductive states",
@@ -21,7 +21,7 @@ const LEVEL_TITLES: Record<string, Record<number, string>> = {
   },
   fi: {
     1: "Mittaus- ja proxysyötteet",
-    2: "Avoin L2-kytkentäsilta",
+    2: "Ehdollinen L2-vasteoperaattori",
     3: "Mekanismit",
     4: "Estetilat",
     5: "Lisääntymistilat",
@@ -50,8 +50,8 @@ function mechanism(node: CausalGraphNode, locale: "en" | "fi"): string {
   const status = node.calibration_status.replaceAll("_", " ");
   if (node.id === "BERM_L2_BRIDGE") {
     return locale === "fi"
-      ? "Geometriasta tai mittauksesta biologiseen havaittavaan johtavaa operaattoria ei ole vielä johdettu. Jatkohaarat ovat ehdollisia BERM-propositioita tai muualta tuotua biologiaa."
-      : "No operator from geometry or measurement to a biological observable has yet been derived. Downstream branches are conditional BERM propositions or imported biology.";
+      ? "BERM johtaa formaalin operaattorin ehdolla, että materia kytkeytyy metriikkaan ja kudos noudattaa vastefunktiota. Kudosytimet, mittakaava ja ihmispäätepisteiden kalibraatio ovat avoimia; jatkohaarat eivät ole Lindgrenistä johdettua biologiaa."
+      : "BERM derives the formal operator conditional on matter-metric coupling and tissue response theory. Tissue kernels, scale and human-endpoint calibration remain open; downstream branches are not Lindgren-derived biology.";
   }
   return locale === "fi"
     ? `Kanoninen BERM-solmu. Kalibrointitila: ${status}. Ennusterooli: ${node.prediction_role}.`
@@ -60,7 +60,8 @@ function mechanism(node: CausalGraphNode, locale: "en" | "fi"): string {
 
 function edgeLabel(edge: CausalGraphEdge, locale: "en" | "fi"): string {
   if (edge.kind === "inference_input") return locale === "fi" ? "päättelysyöte" : "inference input";
-  if (edge.kind === "proposed_bridge") return locale === "fi" ? "ehdotettu kytkentä (avoin)" : "proposed coupling (open)";
+  if (edge.kind === "derived_geometry") return locale === "fi" ? "johdettu geometria" : "derived geometry";
+  if (edge.kind === "conditional_response") return locale === "fi" ? "ehdollinen vaste" : "conditional response";
   return locale === "fi" ? "BERM-kausaalireuna" : "BERM causal edge";
 }
 
@@ -83,11 +84,11 @@ function nodeView(node: CausalGraphNode): ChainNode {
     mechanism_en: mechanism(node, "en"),
     quantitative:
       node.id === "BERM_L2_BRIDGE"
-        ? "K_L2 : geometria / mittaus → biologinen havaittava  [AVOIN]"
+        ? "δ⟨Oᵢ⟩ = ∫Ξᵢ^{μν} δgμν + O(δg²)  [EHDOLLINEN; Ξ AVOIN]"
         : undefined,
     quantitative_en:
       node.id === "BERM_L2_BRIDGE"
-        ? "K_L2 : geometry / measurement → biological observable  [OPEN]"
+        ? "δ⟨Oᵢ⟩ = ∫Ξᵢ^{μν} δgμν + O(δg²)  [CONDITIONAL; Ξ OPEN]"
         : undefined,
     keyReferences: [],
     falsificationCondition:
@@ -108,7 +109,7 @@ export const CANONICAL_CAUSAL_EDGES: ChainEdge[] = GRAPH.edges.map((edge) => ({
   to: edge.to,
   label: edgeLabel(edge, "fi"),
   label_en: edgeLabel(edge, "en"),
-  epistemicLevel: edge.kind === "causal_model" ? "M" : "L*",
+  epistemicLevel: edge.kind === "derived_geometry" ? "L" : edge.kind === "causal_model" ? "M" : "L*",
   priority: edge.kind === "causal_model" ? "secondary" : "primary",
 }));
 

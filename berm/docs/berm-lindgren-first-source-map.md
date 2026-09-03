@@ -1,6 +1,6 @@
 # BERM: Lindgren-lähtöinen lähdekartta
 
-> **Arkistoitu versio 1.0.** Ajantasainen, uudelleen rakennettu ja laajennettu lähdekartta on [versio 2.0](./berm-lindgren-first-source-map-v2.md). Tätä tiedostoa ei pidä käyttää ensisijaisena lähdekarttana.
+> **Arkistoitu versio 1.0.** Ajantasainen, uudelleen rakennettu ja laajennettu lähdekartta on [versio 2.1](./berm-lindgren-first-source-map-v2.md). Se sisältää BERM:n eksplisiittisillä materia–metriikka- ja lineaarivasteoletuksilla ehdollisesti johtaman operaattorimuodon sekä edelleen avoimen kudoskalibraation. Tätä tiedostoa ei pidä käyttää nykyisen mallin lähdekarttana.
 
 **Versio:** 1.0  
 **Päiväys:** 1.9.2026  

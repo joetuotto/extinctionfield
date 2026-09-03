@@ -3,6 +3,8 @@ import Link from "next/link";
 import { MathBlock } from "@/components/MathBlock";
 import { Derivation } from "@/components/Derivation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { ClaimRef } from "@/components/ClaimRef";
+import { StudyCitation } from "@/components/StudyCitation";
 import { pickCopy } from "@/lib/i18n";
 
 const t = {
@@ -10,15 +12,17 @@ const t = {
     meta: {
       title: "Mathematics - Extinction Field",
       description:
-        "BERM mathematics with the 2025 Lindgren ansatz, derived geometric layer, open L2 coupling bridge and explicitly conditional biological and demographic equations.",
+        "BERM mathematics with the 2025 Lindgren ansatz, derived geometric layer, conditional formal L2 response operator and explicitly open tissue calibration.",
     },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren geometry" },
       { id: "evo-calibration", num: "§1b", label: "Candidate biological bridge" },
       { id: "chi", num: "§2", label: "Selection rule χ(Ā)" },
+      { id: "l2-response", num: "§2a", label: "Conditional response operator" },
       { id: "three-channel-derivation", num: "§2b", label: "Three-channel derivation" },
       { id: "two-channel", num: "§3", label: "Two-channel model" },
       { id: "biocap", num: "§4", label: "Biological capacity" },
+      { id: "androgen-capacity", num: "§4b", label: "Androgen-use capacity" },
       { id: "behavioral", num: "§5", label: "Behavioral factor" },
       { id: "cell-size-frequency", num: "§5b", label: "Cell size × frequency" },
       { id: "cultural", num: "§6", label: "Cultural / compensation" },
@@ -35,14 +39,14 @@ const t = {
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
-      "The 2025 Lindgren ansatz and derived geometric layer are shown separately from BERM's conditional biological and demographic equations. The geometry-to-observable L2 coupling operator remains open.",
+      "The 2025 Lindgren ansatz and derived geometric layer are shown separately from BERM's conditional biology. The formal L2 response operator is derived under stated matter-coupling premises; gauge, scale, tissue kernels and endpoint calibration remain open.",
 
     // S1 Lindgren
     s1Title: "Lindgren Geometry",
     s1Intro:
       "In the framework of [[ref:lindgren2025|Lindgren, Kovacs & Liukkonen (2025)]], the electromagnetic potential is part of spacetime geometry. The metric tensor absorbs the EM four-potential:",
     s1After:
-      "Within this ansatz the electromagnetic potential contributes to the metric. This geometric statement does not by itself derive an effect on an ion channel, hormone or receptor; that geometry-to-observable L2 coupling remains open.",
+      "Within this ansatz the electromagnetic potential contributes to the metric. BERM derives the exact perturbation and, conditionally, its formal contraction with a tissue-response kernel. The ansatz alone does not specify an ion-channel, hormone or receptor coefficient.",
     s1d1: "In standard GR the metric is dynamical:",
     s1d2: "In Lindgren’s framework, the EM potential replaces the gravitational perturbation:",
     s1d3: "where κ is a coupling constant (normalized to 1 in suitable units).",
@@ -80,7 +84,7 @@ const t = {
     s2bIFSources:
       "Environmental IF source characterization: a typical LED driver operates at switching frequency f_sw in the range 20–200 kHz with harmonic content at 2f_sw, 3f_sw, 5f_sw extending into the MHz range. The waveform is a square pulse train, not a sinusoid, which produces richer harmonic content than continuous-wave sources. Panagopoulos 2025 demonstrates that pulsed fields are biologically more active than continuous-wave fields at the same average intensity. [[ref:zeghoudi2025_led_driver_emf|Zeghoudi et al. 2025]] directly measured LED driver near-field emissions, confirming measurable E-field components at centimeter distances.",
     s2bRF:
-      "RF channel (f > ~1 MHz): B_local = (1/w)b + (A·b)A/(w(1+w)) is a geometric expression within the Lindgren premise. BERM proposes anisotropic biological response and CRY/RPM or compass routes as separate candidates; the expression does not derive those mechanisms and the L2 coupling remains open.",
+      "RF channel (f > ~1 MHz): B_local = (1/w)b + (A·b)A/(w(1+w)) is a geometric expression within the Lindgren premise. BERM proposes anisotropic biological response and CRY/RPM or compass routes as separate candidates. The conditional response-operator form does not determine those tissue mechanisms, their sign, lag or calibration.",
     s2bRegGapTitle: "The IF Regulatory Gap",
     s2bRegGap:
       "ICNIRP 2010 sets exposure limits for f < 300 Hz (ELF). [[ref:icnirp2020|ICNIRP 2020]] sets limits for f > 100 kHz (RF). The range 300 Hz < f < 100 kHz has overlapping, inconsistent limits. LED driver emissions (20–300 kHz) fall in this gap. A [[ref:ijrb2022_if_review|2022 systematic review (IJRB, Ohkubo & Okano)]] confirmed: 'studies on health effects with more diverse perspectives of IF-EMF have NOT been conducted.' Biological relevance at these frequencies is supported by: IFO threshold 10⁻⁵ V/m exceeded by LED drivers at 1 m; [[ref:kim2026_cell_gene_switch|Kim 2026]] gene expression activation at 4 kHz (Cyb5b); [[ref:ttfields_novocure_fda|TTFields FDA-approved cancer treatment at 200 kHz]]; [[ref:heliyon_150khz_fertility_2022|150 kHz rat testicular effects (Heliyon 2022)]].",
@@ -88,21 +92,20 @@ const t = {
       "Channel weights (w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35) are DIAGNOSTIC and require empirical calibration. The three-channel decomposition is structurally derived from membrane biophysics; only the relative weights are uncertain.",
 
     // S2 Chi
-    s2Title: "Selection Rule χ(Ā)",
+    s2Title: "Normalized inverse-metric coordinate χ_geo(ρ)",
     s2Intro:
-      "When the metric is linearized around a background Ā, the biologically relevant response to a perturbation",
-    s2IntroEnd: "is:",
+      "For an explicitly normalized positive-norm mode ρ² = κA², the rank-one inverse metric supplies the bounded geometric coordinate",
+    s2IntroEnd: ":",
     s2After:
-      "In zero background (Ā = 0) there is no linear response. At the cell membrane (Ā ≈ 7 × 10⁶ V/m) the response is maximal.",
-    s2d1: "Linearize g_μν around background ġ = η + Ā⊗Ā:",
-    s2d2: "where:",
-    s2d3: "First order (linear response):",
-    s2d4:
-      "The biologically relevant quantity is the relative magnitude of the metric perturbation:",
-    s2d5: "This gives the selection rule:",
-    s2d6: "Properties:",
-    s2d7: "Cell membrane:",
-    s2d8: "Cells are MAXIMALLY sensitive to external EMF perturbation.",
+      "χ_geo is derived geometry, not biological gain. Its squared value is the coefficient of the rank-one inverse-metric correction. A tissue response requires the separately supplied Ξ_i kernel.",
+    s2d1: "The exact background-plus-perturbation expansion is:",
+    s2d2: "No scalar 2Ā·a is used until an explicit contraction is declared.",
+    s2d3: "For ρ² = κA² ≥ 0, the Sherman–Morrison inverse is:",
+    s2d4: "The bounded coefficient can be written as a squared amplitude:",
+    s2d5: "This defines χ_geo, not a receptor response:",
+    s2d6: "Geometric properties:",
+    s2d7: "Open translation:",
+    s2d8: "The legacy v17 proxy reuses this shape, but neither a membrane scale nor tissue sensitivity follows from χ_geo alone.",
 
     // S3 Two-channel
     s3Title: "Two-Channel Model",
@@ -463,15 +466,17 @@ const t = {
     meta: {
       title: "Matematiikka - Extinction Field",
       description:
-        "BERM:n matematiikka: vuoden 2025 Lindgren-ansatz, johdettu geometriakerros, avoin L2-kytkentäsilta sekä eksplisiittisesti ehdolliset biologiset ja demografiset yhtälöt.",
+        "BERM:n matematiikka: vuoden 2025 Lindgren-ansatz, johdettu geometriakerros, ehdollinen formaali L2-vasteoperaattori ja avoin kudoskalibraatio.",
     },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgrenin geometria" },
       { id: "evo-calibration", num: "§1b", label: "Biologisen sillan kandidaatit" },
       { id: "chi", num: "§2", label: "Valintaehto χ(Ā)" },
+      { id: "l2-response", num: "§2a", label: "Ehdollinen vasteoperaattori" },
       { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohdannainen" },
       { id: "two-channel", num: "§3", label: "Kaksikanavamalli" },
       { id: "biocap", num: "§4", label: "Biologinen kapasiteetti" },
+      { id: "androgen-capacity", num: "§4b", label: "Androgeeninkäyttökapasiteetti" },
       { id: "behavioral", num: "§5", label: "Käyttäytymistekijä" },
       { id: "cell-size-frequency", num: "§5b", label: "Solukoko × taajuus" },
       { id: "cultural", num: "§6", label: "Kulttuuri / kompensaatio" },
@@ -488,14 +493,14 @@ const t = {
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
-      "Vuoden 2025 Lindgren-ansatz ja johdettu geometriakerros esitetään erillään BERM:n ehdollisista biologisista ja demografisista yhtälöistä. Geometriasta havaittavaan suureeseen johtava L2-kytkentäoperaattori on avoin.",
+      "Vuoden 2025 Lindgren-ansatz ja johdettu geometriakerros esitetään erillään BERM:n ehdollisesta biologiasta. Formaali L2-vasteoperaattori johdetaan ilmoitetuilla materiakytkennän ehdoilla; gauge, mittakaava, kudosytimet ja päätepistekalibraatio ovat avoimia.",
 
     // S1 Lindgren
     s1Title: "Lindgrenin geometria",
     s1Intro:
       "[[ref:lindgren2025|Lindgrenin, Kovacsin ja Liukkosen (2025)]] viitekehyksessä sähkömagneettinen potentiaali on osa aika-avaruuden geometriaa. Metriikkatensori absorboi EM-nelipotentiaalin:",
     s1After:
-      "Tässä ansatzissa sähkömagneettinen potentiaali osallistuu metriikkaan. Geometrinen väite ei yksin johda vaikutusta ionikanavaan, hormoniin tai reseptoriin; tämä geometriasta havaittavaan suureeseen johtava L2-kytkentä on avoin.",
+      "Tässä ansatzissa sähkömagneettinen potentiaali osallistuu metriikkaan. BERM johtaa tarkan häiriön ja ehdollisesti sen kontraktion kudosvasteytimen kanssa. Ansatz ei yksin määrää ionikanava-, hormoni- tai reseptorikerrointa.",
     s1d1: "Standardissa yleisessä suhteellisuusteoriassa metriikka on dynaaminen:",
     s1d2: "Lindgrenin viitekehyksessä EM-potentiaali korvaa gravitaatiohäiriön:",
     s1d3: "missä κ on kytkentävakio (normalisoitu arvoon 1 sopivissa yksiköissä).",
@@ -533,7 +538,7 @@ const t = {
     s2bIFSources:
       "Ympäristön IF-lähteiden luonnehdinta: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. [[ref:zeghoudi2025_led_driver_emf|Zeghoudi ym. 2025]] mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
     s2bRF:
-      "RF-kanava (f > ~1 MHz): B_local = (1/w)b + (A·b)A/(w(1+w)) on geometrinen lauseke Lindgren-premissin sisällä. BERM ehdottaa anisotrooppista biologista vastetta sekä CRY/RPM- ja kompassireittejä erillisinä ehdokkaina; lauseke ei johda näitä mekanismeja ja L2-kytkentä on avoin.",
+      "RF-kanava (f > ~1 MHz): B_local = (1/w)b + (A·b)A/(w(1+w)) on geometrinen lauseke Lindgren-premissin sisällä. BERM ehdottaa anisotrooppista biologista vastetta sekä CRY/RPM- ja kompassireittejä erillisinä ehdokkaina. Ehdollinen vasteoperaattorimuoto ei määrää näitä kudosmekanismeja, niiden etumerkkiä, viivettä tai kalibrointia.",
     s2bRegGapTitle: "IF-säätelyaukko",
     s2bRegGap:
       "ICNIRP 2010 asettaa altistusrajat taajuuksille f < 300 Hz (ELF). [[ref:icnirp2020|ICNIRP 2020]] asettaa rajat taajuuksille f > 100 kHz (RF). Alue 300 Hz < f < 100 kHz:lla on päällekkäiset, epäjohdonmukaiset rajat. LED-ajuriemissiot (20–300 kHz) osuvat tähän aukkoon. [[ref:ijrb2022_if_review|Vuoden 2022 systemaattinen katsaus (IJRB, Ohkubo & Okano)]] vahvisti: 'IF-EMF:n terveysvaikutuksia EI ole tutkittu monipuolisemmista näkökulmista.' Biologinen relevanssi näillä taajuuksilla tuettu: IFO-kynnys 10⁻⁵ V/m ylittyy LED-ajurilla 1 m:ssä; [[ref:kim2026_cell_gene_switch|Kim 2026]] geeniekspression aktivointi 4 kHz:llä (Cyb5b); [[ref:ttfields_novocure_fda|TTFields FDA-hyväksytty syöpähoito 200 kHz:llä]]; [[ref:heliyon_150khz_fertility_2022|150 kHz rottatutkimuksen kivesvaikutukset (Heliyon 2022)]].",
@@ -541,21 +546,20 @@ const t = {
       "Kanavapainot (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) ovat DIAGNOSTISIA ja vaativat empiirisen kalibraation. Kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta; vain suhteelliset painot ovat epävarmoja.",
 
     // S2 Chi
-    s2Title: "Valintaehto χ(Ā)",
+    s2Title: "Normalisoitu käänteisen metriikan koordinaatti χ_geo(ρ)",
     s2Intro:
-      "Kun metriikka linearisoidaan taustan Ā ympärille, biologisesti merkitsevä vaste häiriölle",
-    s2IntroEnd: "on:",
+      "Eksplisiittisesti normalisoidulle positiivinormiselle moodille ρ² = κA² rank-one-käänteismetriikka antaa rajatun geometrisen koordinaatin",
+    s2IntroEnd: ":",
     s2After:
-      "Nollataustassa (Ā = 0) lineaarista vastetta ei ole. Solukalvolla (Ā ≈ 7 × 10⁶ V/m) vaste on maksimaalinen.",
-    s2d1: "Linearisoi g_μν taustan ġ = η + Ā⊗Ā ympärillä:",
-    s2d2: "missä:",
-    s2d3: "Ensimmäinen kertaluku (lineaarinen vaste):",
-    s2d4:
-      "Biologisesti merkitsevä suure on metriikkahäiriön suhteellinen suuruus:",
-    s2d5: "Tästä saadaan valintaehto:",
-    s2d6: "Ominaisuudet:",
-    s2d7: "Solukalvo:",
-    s2d8: "Solut ovat MAKSIMAALISESTI herkkiä ulkoiselle EMF-häiriölle.",
+      "χ_geo on johdettua geometriaa, ei biologinen vahvistus. Sen neliö on käänteisen metriikan rank-one-korjauksen kerroin. Kudosvaste vaatii erikseen annetun Ξ_i-ytimen.",
+    s2d1: "Taustan ja häiriön tarkka hajotelma on:",
+    s2d2: "Skalaaria 2Ā·a ei käytetä ennen eksplisiittisen kontraktion ilmoittamista.",
+    s2d3: "Kun ρ² = κA² ≥ 0, Sherman–Morrison-käänteismatriisi on:",
+    s2d4: "Rajattu kerroin voidaan kirjoittaa amplitudin neliönä:",
+    s2d5: "Tämä määrittelee χ_geo:n, ei reseptorivastetta:",
+    s2d6: "Geometriset ominaisuudet:",
+    s2d7: "Avoin translaatio:",
+    s2d8: "Legacy-v17-proxy käyttää samaa muotoa, mutta kalvomittakaava tai kudosherkkyys ei seuraa yksin χ_geo:sta.",
 
     // S3 Two-channel
     s3Title: "Kaksikanavamalli",
@@ -914,14 +918,16 @@ const t = {
     ],
   },
   ja: {
-    meta: { title: "数学 - Extinction Field", description: "2025年Lindgren仮定、導出済み幾何学、未解決L2結合、条件付きBERM方程式を区別する数学的記述。" },
+    meta: { title: "数学 - Extinction Field", description: "2025年Lindgren仮定、導出済み幾何学、条件付きL2応答演算子、未校正の組織応答を区別する数学的記述。" },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren幾何学" },
       { id: "evo-calibration", num: "§1b", label: "生物学的ブリッジ候補" },
       { id: "chi", num: "§2", label: "選択則 χ(Ā)" },
+      { id: "l2-response", num: "§2a", label: "条件付き応答演算子" },
       { id: "three-channel-derivation", num: "§2b", label: "3チャネル導出" },
       { id: "two-channel", num: "§3", label: "2チャネルモデル" },
       { id: "biocap", num: "§4", label: "生物学的容量" },
+      { id: "androgen-capacity", num: "§4b", label: "アンドロゲン利用能力" },
       { id: "behavioral", num: "§5", label: "行動因子" },
       { id: "cell-size-frequency", num: "§5b", label: "細胞サイズ×周波数" },
       { id: "cultural", num: "§6", label: "文化/補償" },
@@ -937,10 +943,10 @@ const t = {
       { id: "cultural-energy", num: "§16", label: "文化的エネルギーの形式化" },
     ],
     pageTitle: "数学的基盤",
-    pageSubtitle: "2025年Lindgren仮定と導出済み幾何学を、BERMの条件付き生物学・人口学方程式から分離して示します。幾何学から観測量へのL2結合演算子は未解決です。",
+    pageSubtitle: "2025年Lindgren仮定と導出済み幾何学を、BERMの条件付き生物学・人口学方程式から分離して示します。形式的L2演算子は明示的な結合仮定の下で導出されますが、ゲージ、尺度、組織カーネル、校正は未解決です。",
     s1Title: "Lindgren幾何学",
     s1Intro: "[[ref:lindgren2025|Lindgren、Kovacs、Liukkonen（2025）]]の枠組みでは、電磁ポテンシャルは時空幾何学の一部です。計量テンソルがEM四元ポテンシャルを吸収します：",
-    s1After: "この仮定では電磁ポテンシャルが計量に寄与します。この幾何学的主張だけではイオンチャネル、ホルモン、受容体への効果は導出されず、幾何学から観測量へのL2結合は未解決です。",
+    s1After: "この仮定では電磁ポテンシャルが計量に寄与します。δgは厳密に導出され、形式的応答演算子は明示的な物質–計量・線形応答仮定の下で条件付きに導出されます。ただしイオンチャネル、ホルモン、受容体の組織カーネルは幾何学だけからは得られません。",
     s1d1: "標準的な一般相対性理論では計量は動的です：",
     s1d2: "Lindgrenの枠組みでは、EMポテンシャルが重力摂動に置き換わります：",
     s1d3: "ここでκは結合定数（適切な単位で1に正規化）。",
@@ -965,7 +971,7 @@ const t = {
     s2bELF: "ELFチャネル（f < ~1 kHz）：場が膜全体にかかります。ΔV_mem = E_ext · d_cell · H(f)。χ_memは7×10⁶ V/mで飽和。線形応答。メカニズム：VGCC→Ca²⁺→ROS（経路A）、GPCR-アデノシン（[[ref:pemf_bone_fda_review_2020|PEMF、FDA 1979]]）、Nav変調（[[ref:tms_fda_depression_2008|TMS、FDA 2008]]）、迷走神経（[[ref:vns_gammacore_fda|VNS、FDA 2017]]）。",
     s2bIF: "IFチャネル（f_c < f < f_RPM）：場が細胞内部に浸透。T(f) = 1/√(1+(f_c/f)²)。環境レベルでの主要メカニズム：IFO-VGIC（線形、閾値10⁻⁵ V/m）。卵割溝での幾何学的場増幅：G ≈ (d_cell/d_furrow)² ≈ 25×。分裂細胞への選択的効果。[[ref:ttfields_novocure_fda|TTFields（FDA 2011+）]]がDEPによる治療強度でメカニズムを検証。",
     s2bIFSources: "環境IF源の特性：典型的なLEDドライバーはスイッチング周波数f_sw 20–200 kHzで動作し、2f_sw、3f_sw、5f_swの高調波がMHz範囲まで拡張します。波形は正弦波ではなく方形パルス列であり、連続波源よりも豊富な高調波を生成します。Panagopoulos 2025はパルス場が同じ平均強度の連続波場よりも生物学的に活性が高いことを実証しています。[[ref:zeghoudi2025_led_driver_emf|Zeghoudi et al. 2025]]はLEDドライバーの近接場放射を直接測定し、センチメートル距離で測定可能なE場成分を確認しました。",
-    s2bRF: "RFチャネル：B_local = (1/w)b + (A·b)A/(w(1+w))はLindgren前提内の幾何学式である。BERMは異方的生物応答とCRY/RPM・コンパス経路を別の候補として提案するが、この式は機構を導出せずL2は未解決である。",
+    s2bRF: "RFチャネル：B_local = (1/w)b + (A·b)A/(w(1+w))はLindgren前提内の幾何学式である。BERMは異方的応答とCRY/RPM・コンパス経路を別候補として提案する。条件付き演算子形はそれらの組織機構、符号、遅延、校正を決定しない。",
     s2bRegGapTitle: "IF規制ギャップ",
     s2bRegGap: "ICNIRP 2010はf < 300 Hz（ELF）の曝露限度を設定。[[ref:icnirp2020|ICNIRP 2020]]はf > 100 kHz（RF）の限度を設定。300 Hz < f < 100 kHzの範囲には重複する不整合な限度があります。LEDドライバー放射（20–300 kHz）はこのギャップに該当します。[[ref:ijrb2022_if_review|2022年のIJRBシステマティックレビュー（Ohkubo & Okano）]]は確認しました：「IF-EMFの健康影響に関するより多様な観点からの研究は行われていない。」",
     s2bAfter: "チャネル重み（w_ELF = 0.05、w_IF = 0.60、w_RF = 0.35）は診断的であり、経験的キャリブレーションを必要とします。3チャネル分解は膜生物物理学から構造的に導出されます。相対的な重みだけが不確実です。",
@@ -1204,14 +1210,16 @@ const t = {
     s16body: [] as string[],
   },
   fr: {
-    meta: { title: "Mathématiques - Extinction Field", description: "Mathématiques de BERM distinguant l'ansatz de Lindgren 2025, la géométrie dérivée, le couplage L2 ouvert et les équations conditionnelles." },
+    meta: { title: "Mathématiques - Extinction Field", description: "Mathématiques de BERM distinguant l'ansatz de Lindgren 2025, la géométrie dérivée, l'opérateur L2 conditionnel et la réponse tissulaire non calibrée." },
     sections: [
       { id: "lindgren", num: "§1", label: "Géométrie de Lindgren" },
       { id: "evo-calibration", num: "§1b", label: "Candidats au pont biologique" },
       { id: "chi", num: "§2", label: "Règle de sélection χ(Ā)" },
+      { id: "l2-response", num: "§2a", label: "Opérateur de réponse conditionnel" },
       { id: "three-channel-derivation", num: "§2b", label: "Dérivation trois canaux" },
       { id: "two-channel", num: "§3", label: "Modèle deux canaux" },
       { id: "biocap", num: "§4", label: "Capacité biologique" },
+      { id: "androgen-capacity", num: "§4b", label: "Capacité d’utilisation des androgènes" },
       { id: "behavioral", num: "§5", label: "Facteur comportemental" },
       { id: "cell-size-frequency", num: "§5b", label: "Taille cellulaire × fréquence" },
       { id: "cultural", num: "§6", label: "Culture / compensation" },
@@ -1227,10 +1235,10 @@ const t = {
       { id: "cultural-energy", num: "§16", label: "Formalisation de l'énergie culturelle" },
     ],
     pageTitle: "Fondement mathématique",
-    pageSubtitle: "L'ansatz de Lindgren 2025 et la géométrie dérivée sont séparés des équations biologiques et démographiques conditionnelles de BERM. L'opérateur de couplage L2 de la géométrie vers l'observable reste ouvert.",
+    pageSubtitle: "L'ansatz de Lindgren 2025 et la géométrie dérivée sont séparés des équations biologiques et démographiques conditionnelles de BERM. L'opérateur formel L2 est dérivé sous des hypothèses explicites de couplage ; jauge, échelle, noyaux tissulaires et calibration restent ouverts.",
     s1Title: "Géométrie de Lindgren",
     s1Intro: "Dans le cadre de [[ref:lindgren2025|Lindgren, Kovacs & Liukkonen (2025)]], le potentiel électromagnétique fait partie de la géométrie de l'espace-temps. Le tenseur métrique absorbe le quadri-potentiel EM :",
-    s1After: "Dans cet ansatz, le potentiel électromagnétique contribue à la métrique. Cette proposition géométrique ne dérive pas à elle seule un effet sur un canal ionique, une hormone ou un récepteur ; le couplage L2 vers l'observable reste ouvert.",
+    s1After: "Dans cet ansatz, le potentiel électromagnétique contribue à la métrique. δg est dérivé exactement et un opérateur formel de réponse suit conditionnellement d'hypothèses explicites matière–métrique et réponse linéaire. Les noyaux tissulaires des canaux, hormones et récepteurs ne découlent pas de la géométrie seule.",
     s1d1: "En RG standard, la métrique est dynamique :",
     s1d2: "Dans le cadre de Lindgren, le potentiel EM remplace la perturbation gravitationnelle :",
     s1d3: "où κ est une constante de couplage (normalisée à 1 dans les unités appropriées).",
@@ -1255,7 +1263,7 @@ const t = {
     s2bELF: "Canal ELF (f < ~1 kHz) : le champ tombe à travers la membrane. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturé à 7×10⁶ V/m. Réponse linéaire. Mécanismes : VGCC→Ca²⁺→ROS (voie A), GPCR-adénosine ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), modulation Nav ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), nerf vague ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
     s2bIF: "Canal IF (f_c < f < f_RPM) : le champ pénètre à l'intérieur de la cellule. T(f) = 1/√(1+(f_c/f)²). Mécanisme primaire aux niveaux environnementaux : IFO-VGIC (linéaire, seuil 10⁻⁵ V/m). Amplification géométrique du champ au sillon de clivage : G ≈ (d_cell/d_furrow)² ≈ 25×. Effet sélectif sur les cellules en division. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] valide le mécanisme à intensité thérapeutique via DEP.",
     s2bIFSources: "Caractérisation des sources IF environnementales : un pilote LED typique fonctionne à une fréquence de commutation f_sw dans la plage 20–200 kHz avec un contenu harmonique à 2f_sw, 3f_sw, 5f_sw s'étendant dans la plage MHz. La forme d'onde est un train d'impulsions carrées, pas une sinusoïde. Panagopoulos 2025 démontre que les champs pulsés sont biologiquement plus actifs que les champs à onde continue à la même intensité moyenne.",
-    s2bRF: "Canal RF : B_local = (1/w)b + (A·b)A/(w(1+w)) est une expression géométrique de la prémisse de Lindgren. BERM propose séparément une réponse anisotrope et des voies CRY/RPM ou boussole ; l'expression ne les dérive pas et L2 reste ouvert.",
+    s2bRF: "Canal RF : B_local = (1/w)b + (A·b)A/(w(1+w)) est une expression géométrique de la prémisse de Lindgren. BERM propose séparément une réponse anisotrope et des voies CRY/RPM ou boussole ; l'opérateur conditionnel ne détermine ni leurs mécanismes tissulaires, ni leur signe, délai ou calibration.",
     s2bRegGapTitle: "Le fossé réglementaire IF",
     s2bRegGap: "L'ICNIRP 2010 fixe les limites d'exposition pour f < 300 Hz (ELF). L'[[ref:icnirp2020|ICNIRP 2020]] fixe les limites pour f > 100 kHz (RF). La plage 300 Hz < f < 100 kHz a des limites qui se chevauchent et sont incohérentes. Les émissions des pilotes LED (20–300 kHz) tombent dans ce fossé.",
     s2bAfter: "Les poids des canaux (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) sont DIAGNOSTIQUES et nécessitent une calibration empirique. La décomposition en trois canaux est structurellement dérivée de la biophysique membranaire ; seuls les poids relatifs sont incertains.",
@@ -1494,14 +1502,16 @@ const t = {
     s16body: [] as string[],
   },
   ko: {
-    meta: { title: "수학 - Extinction Field", description: "2025 Lindgren 가정, 도출된 기하학, 미해결 L2 결합, 조건부 BERM 방정식을 구분하는 수학적 설명." },
+    meta: { title: "수학 - Extinction Field", description: "2025 Lindgren 가정, 도출된 기하학, 조건부 L2 반응 연산자, 미보정 조직 반응을 구분하는 수학적 설명." },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren 기하학" },
       { id: "evo-calibration", num: "§1b", label: "생물학적 연결 후보" },
       { id: "chi", num: "§2", label: "선택 규칙 χ(Ā)" },
+      { id: "l2-response", num: "§2a", label: "조건부 응답 연산자" },
       { id: "three-channel-derivation", num: "§2b", label: "3채널 유도" },
       { id: "two-channel", num: "§3", label: "2채널 모델" },
       { id: "biocap", num: "§4", label: "생물학적 용량" },
+      { id: "androgen-capacity", num: "§4b", label: "안드로겐 사용 능력" },
       { id: "behavioral", num: "§5", label: "행동 인자" },
       { id: "cell-size-frequency", num: "§5b", label: "세포 크기 × 주파수" },
       { id: "cultural", num: "§6", label: "문화 / 보상" },
@@ -1517,10 +1527,10 @@ const t = {
       { id: "cultural-energy", num: "§16", label: "문화 에너지 형식화" },
     ],
     pageTitle: "수학적 기반",
-    pageSubtitle: "2025 Lindgren 가정과 도출된 기하학을 BERM의 조건부 생물학·인구학 방정식과 분리해 제시합니다. 기하학에서 관측량으로 가는 L2 결합 연산자는 미해결입니다.",
+    pageSubtitle: "2025 Lindgren 가정과 도출된 기하학을 BERM의 조건부 생물학·인구학 방정식과 분리해 제시합니다. 형식 L2 연산자는 명시적 결합 가정 아래 도출되지만 게이지, 척도, 조직 커널과 보정은 미해결입니다.",
     s1Title: "Lindgren 기하학",
     s1Intro: "[[ref:lindgren2025|Lindgren, Kovacs & Liukkonen (2025)]]의 프레임워크에서 전자기 퍼텐셜은 시공간 기하학의 일부입니다. 메트릭 텐서가 EM 4-퍼텐셜을 흡수합니다:",
-    s1After: "이 가정에서 전자기 퍼텐셜은 메트릭에 기여합니다. 이 기하학적 명제만으로 이온 채널, 호르몬 또는 수용체 효과가 도출되지는 않으며 기하학에서 관측량으로 가는 L2 결합은 미해결입니다.",
+    s1After: "이 가정에서 전자기 퍼텐셜은 메트릭에 기여합니다. δg는 정확히 도출되고 형식 반응 연산자는 명시적 물질–메트릭 및 선형반응 가정 아래 조건부로 도출됩니다. 이온채널, 호르몬, 수용체의 조직 커널은 기하학만으로 정해지지 않습니다.",
     s1d1: "표준 일반상대성이론에서 메트릭은 동적입니다:",
     s1d2: "Lindgren의 프레임워크에서 EM 퍼텐셜이 중력 섭동을 대체합니다:",
     s1d3: "여기서 κ는 결합 상수(적절한 단위에서 1로 정규화).",
@@ -1545,7 +1555,7 @@ const t = {
     s2bELF: "ELF 채널 (f < ~1 kHz): 장이 막 전체에 걸림. ΔV_mem = E_ext · d_cell · H(f). χ_mem은 7×10⁶ V/m에서 포화. 선형 반응. 메커니즘: VGCC→Ca²⁺→ROS (경로 A), GPCR-아데노신 ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav 변조 ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]), 미주신경 ([[ref:vns_gammacore_fda|VNS, FDA 2017]]).",
     s2bIF: "IF 채널 (f_c < f < f_RPM): 장이 세포 내부로 침투. T(f) = 1/√(1+(f_c/f)²). 환경 수준에서의 주요 메커니즘: IFO-VGIC (선형, 임계값 10⁻⁵ V/m). 분열구에서의 기하학적 장 증폭: G ≈ (d_cell/d_furrow)² ≈ 25×. 분열 세포에 대한 선택적 효과. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]]가 DEP를 통한 치료 강도에서 메커니즘을 검증.",
     s2bIFSources: "환경 IF 원 특성: 전형적인 LED 드라이버는 스위칭 주파수 f_sw 20–200 kHz에서 동작하며 2f_sw, 3f_sw, 5f_sw의 고조파가 MHz 범위까지 확장됩니다. 파형은 정현파가 아닌 구형 펄스열입니다. Panagopoulos 2025는 펄스 장이 동일한 평균 강도의 연속파 장보다 생물학적으로 더 활성적임을 입증했습니다.",
-    s2bRF: "RF 채널: B_local = (1/w)b + (A·b)A/(w(1+w))는 Lindgren 전제 안의 기하학식이다. BERM은 이방성 생물 반응과 CRY/RPM·나침반 경로를 별도 후보로 제안하지만 이 식은 그 기전을 도출하지 않으며 L2는 열려 있다.",
+    s2bRF: "RF 채널: B_local = (1/w)b + (A·b)A/(w(1+w))는 Lindgren 전제 안의 기하학식이다. BERM은 이방성 반응과 CRY/RPM·나침반 경로를 별도 후보로 제안하며, 조건부 연산자 형태는 해당 조직 기전과 부호, 지연, 보정을 결정하지 않는다.",
     s2bRegGapTitle: "IF 규제 공백",
     s2bRegGap: "ICNIRP 2010은 f < 300 Hz (ELF)의 노출 한계를 설정합니다. [[ref:icnirp2020|ICNIRP 2020]]은 f > 100 kHz (RF)의 한계를 설정합니다. 300 Hz < f < 100 kHz 범위에는 중복되고 불일치하는 한계가 있습니다. LED 드라이버 방출(20–300 kHz)은 이 공백에 해당합니다.",
     s2bAfter: "채널 가중치(w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35)는 진단적이며 경험적 교정이 필요합니다. 3채널 분해는 막 생물물리학에서 구조적으로 유도됩니다. 상대적 가중치만이 불확실합니다.",
@@ -1979,11 +1989,10 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {d.s2Title}
             </h2>
             <p className="text-foreground-muted text-sm leading-relaxed mb-4">
-              {d.s2Intro}{" "}
-              <MathBlock tex="a" display={false} /> {d.s2IntroEnd}
+              {d.s2Intro} {d.s2IntroEnd}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="\chi(\bar{A}) = \frac{\bar{A}}{\sqrt{1 + \bar{A}^2}}" />
+              <MathBlock tex="\chi_{\mathrm{geo}}(\rho) = \frac{\rho}{\sqrt{1+\rho^2}},\qquad \rho^2=\kappa A^2\ge0" />
             </div>
             <p className="text-foreground-muted text-sm leading-relaxed">
               {d.s2After}
@@ -1992,60 +2001,135 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <Derivation>
               <DerivationLine>{d.s2d1}</DerivationLine>
               <div className="text-center my-2">
-                <MathBlock tex="g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu}" />
+                <MathBlock tex="\delta g_{\mu\nu}=\kappa\left(\bar A_\mu a_\nu+a_\mu\bar A_\nu+a_\mu a_\nu\right)" />
               </div>
               <DerivationLine>{d.s2d2}</DerivationLine>
-              <div className="text-center my-2">
-                <MathBlock tex="h_{\mu\nu} = \bar{A}_\mu a_\nu + a_\mu \bar{A}_\nu + a_\mu a_\nu \quad (a = \text{perturbation})" />
-              </div>
               <DerivationLine>{d.s2d3}</DerivationLine>
               <div className="text-center my-2">
-                <MathBlock tex="h^{(1)}_{\mu\nu} = \bar{A}_\mu a_\nu + a_\mu \bar{A}_\nu" />
+                <MathBlock tex="g^{-1}=\eta^{-1}-\frac{\kappa A^\sharp\otimes A^\sharp}{1+\kappa A^2}" />
               </div>
               <DerivationLine>{d.s2d4}</DerivationLine>
               <div className="text-center my-2">
-                <MathBlock tex="\frac{|h^{(1)}|}{|\bar{g}|} = \frac{2|\bar{A}||a|}{1 + |\bar{A}|^2}" />
+                <MathBlock tex="\frac{\rho^2}{1+\rho^2}=\chi_{\mathrm{geo}}^2" />
               </div>
               <DerivationLine>{d.s2d5}</DerivationLine>
               <div className="text-center my-2">
-                <MathBlock tex="\chi(\bar{A}) = \frac{|\bar{A}|}{\sqrt{1 + |\bar{A}|^2}}" />
+                <MathBlock tex="\chi_{\mathrm{geo}}(\rho)=\frac{\rho}{\sqrt{1+\rho^2}}" />
               </div>
               <DerivationLine>{d.s2d6}</DerivationLine>
               <div className="space-y-1 mt-2 ml-4">
                 <div>
                   <MathBlock
-                    tex="\chi(0) = 0 \quad \text{— no linear response in empty background}"
+                    tex="\chi_{\mathrm{geo}}(0)=0"
                     display={false}
                   />
                 </div>
                 <div>
                   <MathBlock
-                    tex="\chi(\bar{A}) \to 1 \;\text{as}\; \bar{A} \to \infty \quad \text{— saturates}"
+                    tex="\chi_{\mathrm{geo}}(\rho)\to1\quad\mathrm{as}\quad\rho\to\infty"
                     display={false}
                   />
                 </div>
                 <div>
                   <MathBlock
-                    tex="\chi'(0) = 1 \quad \text{— maximum sensitivity near zero}"
+                    tex="\chi'_{\mathrm{geo}}(0)=1"
                     display={false}
                   />
                 </div>
                 <div>
                   <MathBlock
-                    tex="\chi'(\bar{A}) = \frac{1}{(1+\bar{A}^2)^{3/2}} \quad \text{— sensitivity decreases}"
+                    tex="\chi'_{\mathrm{geo}}(\rho)=\frac{1}{(1+\rho^2)^{3/2}}"
                     display={false}
                   />
                 </div>
               </div>
               <DerivationLine>{d.s2d7}</DerivationLine>
               <div className="text-center my-2">
-                <MathBlock tex="V_{\text{mem}} = -70\;\text{mV}, \quad d = 10\;\text{nm} \;\Rightarrow\; E = 7 \times 10^6\;\text{V/m}" />
-              </div>
-              <div className="text-center my-2">
-                <MathBlock tex="\chi(7 \times 10^6) \approx 1.0 \quad \text{(saturated)}" />
+                <MathBlock tex="\chi_{\mathrm{geo}}\not\equiv\chi_{\mathrm{tissue}},\qquad \delta\langle O_i\rangle\ \mathrm{requires}\ \Xi_i" />
               </div>
               <DerivationLine>{d.s2d8}</DerivationLine>
             </Derivation>
+          </section>
+
+          <section id="l2-response">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§2a"}</span>
+              {pickCopy({
+                en: "Conditional geometry-to-observable response operator",
+                fi: "Ehdollinen geometria–havaittava-vasteoperaattori",
+                ja: "幾何学から観測量への条件付き応答演算子",
+                fr: "Opérateur conditionnel géométrie–observable",
+                ko: "기하학-관측량 조건부 응답 연산자",
+              }, locale)}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              <ClaimRef claimId="claim.bridge.conditional-response-operator">
+                {pickCopy({
+                  en: "If matter couples minimally to the metric and the tissue is treated with causal response theory, the formal mapping is derivable. This is a BERM closure under stated premises—not a biological result in Lindgren's paper.",
+                  fi: "Jos materia kytkeytyy minimaalisesti metriikkaan ja kudosta käsitellään kausaalisella vastefunktioteorialla, formaali kuvaus voidaan johtaa. Tämä on BERM:n sulkeuma ilmoitetuilla ehdoilla – ei Lindgrenin artikkelin biologinen tulos.",
+                  ja: "物質が計量に最小結合し、組織を因果応答理論で扱うなら形式的写像を導出できます。これは明示条件下のBERM閉包であり、Lindgren論文の生物学的結果ではありません。",
+                  fr: "Si la matière est couplée minimalement à la métrique et le tissu décrit par une théorie de réponse causale, le mappage formel est dérivable. Il s’agit d’une fermeture BERM conditionnelle, non d’un résultat biologique de Lindgren.",
+                  ko: "물질이 계량에 최소 결합하고 조직을 인과 응답 이론으로 다루면 형식적 사상을 도출할 수 있습니다. 이는 명시된 조건의 BERM 폐쇄이며 Lindgren 논문의 생물학적 결과가 아닙니다.",
+                }, locale)}
+              </ClaimRef>
+            </p>
+            <Derivation>
+              <DerivationLine>
+                {pickCopy({
+                  en: "Imported condition: minimal matter–metric coupling defines the perturbation of the matter action.",
+                  fi: "Tuotu ehto: minimaalinen materia–metriikka-kytkentä määrittää materia-action häiriön.",
+                  ja: "導入条件：最小物質–計量結合が物質作用の摂動を定義します。",
+                  fr: "Condition importée : le couplage matière–métrique minimal définit la perturbation de l’action matérielle.",
+                  ko: "도입 조건: 최소 물질–계량 결합이 물질 작용의 섭동을 정의합니다.",
+                }, locale)}
+              </DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="\delta S_m=\frac12\int d^4x\,\sqrt{-g}\,T^{\mu\nu}\delta g_{\mu\nu}" />
+              </div>
+              <DerivationLine>
+                {pickCopy({
+                  en: "Conditional derivation: a retarded tissue kernel maps the tensor perturbation to the selected observable.",
+                  fi: "Ehdollinen johto: retardoitu kudosydin kuvaa tensorihäiriön valittuun havaittavaan.",
+                  ja: "条件付き導出：遅延組織カーネルがテンソル摂動を選択した観測量へ写します。",
+                  fr: "Dérivation conditionnelle : un noyau tissulaire retardé relie la perturbation tensorielle à l’observable.",
+                  ko: "조건부 유도: 지연 조직 커널이 텐서 섭동을 선택한 관측량으로 사상합니다.",
+                }, locale)}
+              </DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="\delta\langle O_i(x)\rangle=\int d^4x'\,\Xi^{\mu\nu}_{i,R}(x,x';\mathcal S_i)\,\delta g_{\mu\nu}(x')+\frac12\iint\Xi_i^{(2)}\,\delta g\,\delta g+\cdots" />
+              </div>
+              <DerivationLine>
+                {pickCopy({
+                  en: "Open components: κ and units, gauge prescription, tissue kernels Ξ_i, sign, lag, dose-response and human endpoint calibration.",
+                  fi: "Avoimet osat: κ ja yksiköt, gauge-resepti, kudosytimet Ξ_i, merkki, viive, annos–vaste ja ihmispäätepistekalibraatio.",
+                  ja: "未解決：κと単位、ゲージ処方、組織カーネルΞ_i、符号、遅延、用量反応、ヒト校正。",
+                  fr: "Éléments ouverts : κ et unités, jauge, noyaux Ξ_i, signe, délai, dose–réponse et calibration humaine.",
+                  ko: "열린 요소: κ와 단위, 게이지 처방, 조직 커널 Ξ_i, 부호, 지연, 용량-반응 및 인체 보정.",
+                }, locale)}
+              </DerivationLine>
+              <div className="mt-3 text-xs text-foreground-muted">
+                <StudyCitation referenceId="lindgren2025" locale={locale} />{" · "}
+                <StudyCitation referenceId="kubo1957_linear_response" locale={locale} />
+              </div>
+            </Derivation>
+
+            <div className="mt-5 rounded-lg border border-card-border p-4">
+              <p className="text-sm font-semibold mb-2">
+                {pickCopy({ en: "Quadratic RF demodulation is geometry, not yet biology", fi: "RF:n neliöllinen demodulaatio on geometriaa, ei vielä biologiaa", ja: "二次RF復調は幾何学であり、まだ生物学ではない", fr: "La démodulation RF quadratique est géométrique, pas encore biologique", ko: "이차 RF 복조는 기하학이며 아직 생물학이 아님" }, locale)}
+              </p>
+              <p className="text-xs text-foreground-muted leading-relaxed mb-3">
+                <ClaimRef claimId="claim.geometry.quadratic-mixing">
+                  {pickCopy({
+                    en: "For a(t)=a₀[1+m cos Ωt]cos ωt, the exact a⊗a term leaves DC, Ω-envelope and 2Ω components after ideal carrier removal. Two tones also create a |ω₁−ω₂| term with amplitude κa₁a₂. Whether tissue detects these terms is encoded only in Ξ_i.",
+                    fi: "Kun a(t)=a₀[1+m cos Ωt]cos ωt, tarkka a⊗a-termi jättää ideaalisen kantoaallon poiston jälkeen DC-, Ω-verho- ja 2Ω-komponentit. Kaksi taajuutta synnyttää lisäksi |ω₁−ω₂|-termin amplitudilla κa₁a₂. Havaitseeko kudos nämä termit, määräytyy vain Ξ_i:stä.",
+                    ja: "a(t)=a₀[1+m cos Ωt]cos ωtでは、a⊗a項がキャリア除去後にDC、Ω包絡線、2Ω成分を残します。二音は振幅κa₁a₂の差周波数も生成します。組織検出はΞ_iに依存します。",
+                    fr: "Pour a(t)=a₀[1+m cos Ωt]cos ωt, le terme a⊗a laisse des composantes DC, Ω et 2Ω après retrait idéal de la porteuse. Deux tons créent aussi |ω₁−ω₂| d’amplitude κa₁a₂. La détection tissulaire dépend de Ξ_i.",
+                    ko: "a(t)=a₀[1+m cos Ωt]cos ωt에서 a⊗a 항은 반송파 제거 후 DC, Ω 포락선, 2Ω 성분을 남깁니다. 두 톤은 진폭 κa₁a₂의 차주파수도 만듭니다. 조직 검출 여부는 Ξ_i에 달려 있습니다.",
+                  }, locale)}
+                </ClaimRef>
+              </p>
+              <MathBlock tex="\operatorname{LP}\{\kappa a^2\}=\frac{\kappa a_0^2}{2}\left[1+2m\cos\Omega t+\frac{m^2}{2}(1+\cos2\Omega t)\right]" />
+            </div>
           </section>
 
           {/* S2b Three-Channel Derivation */}
@@ -2318,6 +2402,62 @@ export function MathematicsSections({ locale }: { locale: string }) {
                   {d.s4d5Link}
                 </Link>
               </p>
+            </Derivation>
+          </section>
+
+          <section id="androgen-capacity">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§4b"}</span>
+              {pickCopy({
+                en: "Androgen effective capacity: production is not use",
+                fi: "Androgeenien efektiivinen kapasiteetti: tuotanto ei ole sama kuin käyttö",
+                ja: "アンドロゲン有効容量：産生と利用は同一ではない",
+                fr: "Capacité androgénique effective : produire n’est pas utiliser",
+                ko: "유효 안드로겐 능력: 생산과 사용은 다르다",
+              }, locale)}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              <ClaimRef claimId="claim.androgen.binding-availability">
+                {pickCopy({
+                  en: "BERM separates total testosterone production from binding-dependent availability, tissue compartment, receptor occupancy and post-receptor transmission. This allows reduced hormone use even when a serum total-T assay is unchanged.",
+                  fi: "BERM erottaa kokonais-testosteronin tuotannon sitoutumisesta riippuvasta saatavuudesta, kudoskompartimentista, reseptorimiehityksestä ja reseptorin jälkeisestä välityksestä. Näin hormoninkäyttö voi heikentyä, vaikka seerumin kokonais-T-mittaus ei muutu.",
+                  ja: "BERMは総テストステロン産生を、結合依存の利用可能性、組織区画、受容体占有、受容体後伝達から分離します。血清総Tが不変でも利用低下を表現できます。",
+                  fr: "BERM sépare la production de testostérone totale de la disponibilité liée aux protéines, du compartiment tissulaire, de l’occupation des récepteurs et de la transmission post-récepteur.",
+                  ko: "BERM은 총 테스토스테론 생산을 결합 의존 가용성, 조직 구획, 수용체 점유 및 수용체 후 전달과 분리합니다.",
+                }, locale)}
+              </ClaimRef>
+            </p>
+            <Derivation>
+              <DerivationLine>
+                {pickCopy({ en: "Mass-action binding balance (all concentrations in one declared unit):", fi: "Massavaikutuslain sitoutumistasapaino (kaikki pitoisuudet yhdessä ilmoitetussa yksikössä):", ja: "質量作用結合平衡：", fr: "Équilibre de liaison par action de masse :", ko: "질량작용 결합 평형:" }, locale)}
+              </DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="T_{\mathrm{tot}}=T_f+B_{\mathrm{SHBG}}\frac{T_f}{K_{\mathrm{SHBG}}+T_f}+B_{\mathrm{Alb}}\frac{T_f}{K_{\mathrm{Alb}}+T_f}" />
+              </div>
+              <DerivationLine>
+                {pickCopy({ en: "Each receptor route retains ligand occupancy, receptor abundance and downstream transmission:", fi: "Jokainen reseptorireitti säilyttää ligandin miehityksen, reseptorimäärän ja alavirran välityksen:", ja: "各受容体経路はリガンド占有・受容体量・下流伝達を保持します：", fr: "Chaque voie conserve occupation, abondance du récepteur et transmission aval :", ko: "각 수용체 경로는 리간드 점유, 수용체 양, 하류 전달을 유지합니다:" }, locale)}
+              </DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="S_r=R_r\frac{T_f}{K_{d,r}+T_f}G_r,\qquad \mathrm{AEC}=\frac{\sum_r w_rS_r}{\sum_r w_r},\quad r\in\{\mathrm{AR},\mathrm{ZIP9},\ldots\}" />
+              </div>
+              <DerivationLine>
+                <ClaimRef claimId="claim.androgen.receptor-use-capacity">
+                  {pickCopy({
+                    en: "AEC enters male reproductive capacity separately from steroidogenic support. No EMF→SHBG, EMF→AR or EMF→ZIP9 coefficient is activated without a registered endpoint model.",
+                    fi: "AEC tulee mieskapasiteettiin erillään steroidogeenisesta tuesta. EMF→SHBG-, EMF→AR- tai EMF→ZIP9-kerrointa ei aktivoida ilman rekisteröityä päätepistemallia.",
+                    ja: "AECはステロイド産生支援とは別に男性生殖容量へ入ります。登録済みエンドポイントモデルなしにEMF→SHBG/AR/ZIP9係数は有効化されません。",
+                    fr: "L’AEC entre séparément du soutien stéroïdogène. Aucun coefficient EMF→SHBG/AR/ZIP9 n’est activé sans modèle d’endpoint enregistré.",
+                    ko: "AEC는 스테로이드 생성 지원과 별도로 남성 생식 능력에 들어갑니다. 등록된 종점 모델 없이 EMF→SHBG/AR/ZIP9 계수는 활성화되지 않습니다.",
+                  }, locale)}
+                </ClaimRef>
+              </DerivationLine>
+              <div className="mt-3 text-xs text-foreground-muted">
+                <StudyCitation referenceId="narinx2022_free_testosterone" locale={locale} />{" · "}
+                <StudyCitation referenceId="laurent2016_shbg_bioactivity" locale={locale} />{" · "}
+                <StudyCitation referenceId="degendt2004_sertoli_ar" locale={locale} />{" · "}
+                <StudyCitation referenceId="yu2023_zip9_rf_sertoli" locale={locale} />{" · "}
+                <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale} />
+              </div>
             </Derivation>
           </section>
 

@@ -1,7 +1,7 @@
 /**
  * Legacy filename for the scalar v17 comparison route.
- * `chi` is a BERM closure proposal, not a response derived by Lindgren, and
- * the geometry-to-observable L2 operator remains open.
+ * The same shape is a derived normalized rank-one inverse-metric coordinate.
+ * Its use here remains a legacy proxy weighting, not a biological response.
  */
 export function chi(aBar: number): number {
   return aBar / Math.sqrt(1 + aBar * aBar);

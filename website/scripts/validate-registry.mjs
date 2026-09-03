@@ -71,7 +71,7 @@ for (const edge of graph.edges) {
   if (!nodeIds.has(edge.to)) {
     error(`Edge ${edge.id}: "to" node "${edge.to}" does not exist`);
   }
-  if (!["inference_input", "proposed_bridge", "causal_model"].includes(edge.kind)) {
+  if (!["inference_input", "derived_geometry", "conditional_response", "causal_model"].includes(edge.kind)) {
     error(`Edge ${edge.id}: invalid kind "${edge.kind}"`);
   }
 }
@@ -382,8 +382,11 @@ if (fieldStateModule?.role !== "measurement_observation_estimation") {
 if (fieldStateModule?.isModelAlias !== false || fieldStateModule?.isCausalRoot !== false) {
   error("FieldState must not be a model alias or causal root");
 }
-if (architecture.theory?.l2BridgeStatus !== "open") {
-  error("The geometry-to-observable L2 bridge must remain explicitly open");
+if (architecture.theory?.l2BridgeStatus !== "conditional_formal_operator") {
+  error("The geometry-to-observable L2 bridge must expose the conditional formal operator");
+}
+if (architecture.theory?.calibrationStatus !== "open") {
+  error("The L2 tissue kernels and endpoint calibration must remain explicitly open");
 }
 if (architecture.routes?.prediction?.fieldStateCalibrated !== false) {
   error("The published v17 prediction route must not be marked FieldState-calibrated");
@@ -402,14 +405,21 @@ const measurementInputs = new Set([
 if (!nodeIds.has("BERM_L2_BRIDGE")) {
   error("Graph is missing the explicit BERM_L2_BRIDGE node");
 }
+if (!nodeIds.has("LINDGREN_METRIC_DRIVE")) {
+  error("Graph is missing the explicit Lindgren theory-premise node");
+}
 for (const edge of graph.edges) {
   if (measurementInputs.has(edge.from)) {
     if (edge.to !== "BERM_L2_BRIDGE" || edge.kind !== "inference_input") {
       error(`${edge.from} may enter BERM only through an inference_input edge to BERM_L2_BRIDGE`);
     }
   }
-  if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "proposed_bridge") {
-    error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled proposed_bridge`);
+  if (edge.from === "LINDGREN_METRIC_DRIVE" &&
+      (edge.to !== "BERM_L2_BRIDGE" || edge.kind !== "derived_geometry")) {
+    error(`LINDGREN_METRIC_DRIVE edge ${edge.id} must be derived_geometry into BERM_L2_BRIDGE`);
+  }
+  if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "conditional_response") {
+    error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled conditional_response`);
   }
 }
 

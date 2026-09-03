@@ -162,12 +162,12 @@
       "id": "claim.proxy.lindgren-selection",
       "statement": {
         "en": {
-          "text": "BERM v17 uses a two-channel technology-timing proxy with the proposed closure χ to combine ambient and personal proxy channels. It is not a FieldState measurement, an optimized biological coupling, or a selection rule derived by Lindgren.",
-          "sourceRevision": 1
+          "text": "BERM v17 uses a two-channel technology-timing proxy whose χ shape matches the normalized rank-one inverse-metric coordinate χ_geo. Its proxy weighting is not a FieldState measurement, an optimized biological coupling, or a Lindgren-derived tissue response.",
+          "sourceRevision": 2
         },
         "fi": {
-          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä ja ehdotettua χ-sulkeumaa yhdistämään ympäristö- ja henkilökohtaiset proxykanavat. Se ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenin johtama valintasääntö.",
-          "sourceRevision": 1
+          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä, jonka χ-muoto vastaa normalisoitua käänteisen rank-one-metriikan koordinaattia χ_geo. Sen proxypainotus ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenistä johdettu kudosvaste.",
+          "sourceRevision": 2
         }
       },
       "kind": "proxy_interpretation",
@@ -183,10 +183,95 @@
           "The proxy provides a reproducible timing input for the archived BERM v17 comparison route"
         ],
         "does_not_support": [
-          "The proxy measures FieldState, identifies a biological coupling mode, or closes the open L2 operator"
+          "The proxy measures FieldState, identifies a biological coupling mode, or calibrates the conditional L2 response kernel"
         ]
       },
       "falsification_condition": "The pre-specified two-channel timing proxy fails its registered out-of-sample BERM v17 comparisons or is outperformed by pre-registered alternatives across independent datasets"
+    },
+    {
+      "id": "claim.geometry.rank-one-coordinate",
+      "statement": {
+        "en": { "text": "For the 2025 ansatz g = η + κA⊗A and an explicitly normalized positive-norm mode ρ² = κA², the rank-one inverse metric contains the bounded coefficient ρ²/(1+ρ²); defining χ_geo = ρ/√(1+ρ²) is therefore a derived geometric coordinate, not a biological susceptibility.", "sourceRevision": 1 },
+        "fi": { "text": "Vuoden 2025 ansatzille g = η + κA⊗A ja eksplisiittisesti normalisoidulle positiivinormiselle moodille ρ² = κA² käänteinen rank-one-metriikka sisältää rajatun kertoimen ρ²/(1+ρ²); määritelmä χ_geo = ρ/√(1+ρ²) on siten johdettu geometrinen koordinaatti, ei biologinen herkkyys.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "LINDGREN_METRIC_DRIVE" },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": ["A dimensionless bounded geometry coordinate after the stated norm and normalization choices"],
+        "does_not_support": ["A universal tissue gain, dose-response curve, membrane field scale or receptor effect"]
+      },
+      "falsification_condition": "The rank-one inverse identity or the stated normalization is algebraically invalid for the selected positive-norm mode."
+    },
+    {
+      "id": "claim.geometry.quadratic-mixing",
+      "statement": {
+        "en": { "text": "The exact BERM decomposition δg = κ(Ā⊗a + a⊗Ā + a⊗a) contains a quadratic self-term. For an amplitude-modulated carrier or two tones, that term algebraically generates DC, envelope and difference-frequency components before any biological mechanism is assumed.", "sourceRevision": 1 },
+        "fi": { "text": "Tarkka BERM-hajotelma δg = κ(Ā⊗a + a⊗Ā + a⊗a) sisältää neliöllisen itseistermin. Amplitudimoduloidulle kantoaallolle tai kahdelle taajuudelle tämä termi synnyttää algebrallisesti DC-, verhokäyrä- ja erotustaajuuskomponentit ennen biologisen mekanismin olettamista.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "LINDGREN_METRIC_DRIVE" },
+      "depends_on": ["claim.geometry.rank-one-coordinate"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["A theory-internal route by which high-frequency waveforms can contain low-frequency metric-drive components"],
+        "does_not_support": ["That the generated term is large enough to affect a tissue or that a tissue detects it"]
+      },
+      "falsification_condition": "The stated waveform expansion fails to produce the registered DC, envelope and difference-frequency coefficients."
+    },
+    {
+      "id": "claim.bridge.conditional-response-operator",
+      "statement": {
+        "en": { "text": "Conditional on minimal matter–metric coupling and response theory, BERM maps the Lindgren metric perturbation to an observable with δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + higher-order response. This derives the operator form but not its tissue kernel Ξ_i, physical scale, gauge prescription or human endpoint coefficient.", "sourceRevision": 1 },
+        "fi": { "text": "Ehdolla, että materia kytkeytyy metriikkaan minimaalisesti ja vastefunktioteoria pätee, BERM kuvaa Lindgrenin metriikkahäiriön havaittavaan suureeseen muodossa δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + korkeamman kertaluvun vaste. Tämä johtaa operaattorin muodon mutta ei kudosydintä Ξ_i, fysikaalista mittakaavaa, gauge-reseptiä tai ihmispäätepisteen kerrointa.", "sourceRevision": 1 }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "BERM_L2_BRIDGE" },
+      "depends_on": ["claim.geometry.quadratic-mixing"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["A conditional, falsifiable geometry-to-observable response architecture"],
+        "does_not_support": ["A calibrated causal effect of an environmental field on any human endpoint"]
+      },
+      "falsification_condition": "A registered tissue observable cannot be represented by linear or higher-order causal response kernels under the stated matter-coupling premises."
+    },
+    {
+      "id": "claim.androgen.binding-availability",
+      "statement": {
+        "en": { "text": "Total testosterone does not uniquely determine tissue androgen exposure: SHBG and albumin binding transform total concentration into a free or bioavailable fraction, while intratesticular concentration is a separate compartment. BERM therefore keeps production and availability as separate state variables.", "sourceRevision": 1 },
+        "fi": { "text": "Kokonais-testosteroni ei yksikäsitteisesti määrää kudoksen androgeenialtistusta: SHBG- ja albumiinisitoutuminen muuntavat kokonaispitoisuuden vapaaksi tai biologisesti saatavaksi osuudeksi, ja intratestikulaarinen pitoisuus on erillinen kompartimentti. BERM pitää siksi tuotannon ja saatavuuden erillisinä tilamuuttujina.", "sourceRevision": 1 }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "ANDROGEN_BINDING_AVAILABILITY" },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Free testosterone, SHBG, albumin and compartment-specific androgen measurements alongside total testosterone"],
+        "does_not_support": ["That EMF changes SHBG or free testosterone in humans"]
+      },
+      "falsification_condition": "Matched measurements show that total testosterone alone predicts every tissue androgen endpoint with no added information from binding or compartment state."
+    },
+    {
+      "id": "claim.androgen.receptor-use-capacity",
+      "statement": {
+        "en": { "text": "Androgen action is a serial capacity chain: free or intratesticular ligand availability × receptor occupancy and abundance (classical AR and tissue-specific membrane routes such as ZIP9) × post-receptor transmission. Thus hormone-use capacity can fall without a proportional fall in measured total testosterone.", "sourceRevision": 1 },
+        "fi": { "text": "Androgeenivaikutus on sarjallinen kapasiteettiketju: vapaan tai intratestikulaarisen ligandin saatavuus × reseptorimiehitys ja -määrä (klassinen AR sekä kudoskohtaiset kalvoreitit kuten ZIP9) × reseptorin jälkeinen välitys. Siksi hormoninkäyttökapasiteetti voi laskea ilman suhteellista laskua mitatussa kokonais-testosteronissa.", "sourceRevision": 1 }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "ANDROGEN_RECEPTOR_SIGNAL" },
+      "depends_on": ["claim.androgen.binding-availability", "claim.bridge.conditional-response-operator"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["An androgen-effective-capacity state with separately observable ligand, AR, ZIP9 and downstream components"],
+        "does_not_support": ["A universal EMF-to-AR coefficient or extrapolation of one rat RF protocol to human population effects"]
+      },
+      "falsification_condition": "Prospective receptor-level measurements show unchanged tissue response whenever total testosterone is unchanged, across altered binding, receptor abundance and post-receptor states."
     },
     {
       "id": "claim.tfr.multi-input-decomposition",
@@ -890,6 +975,104 @@
     }
   ],
   "evidence_relations": [
+    {
+      "id": "er.geometry.lindgren2025",
+      "referenceId": "lindgren2025",
+      "claimId": "claim.geometry.rank-one-coordinate",
+      "relation": "method",
+      "directness": "theory_premise",
+      "studyDesign": "mathematical_theory",
+      "applicability": "theory_internal",
+      "calibrationRole": "structural_only",
+      "limitations": ["Does not provide a biological response kernel or endpoint calibration"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "The inverse-metric coordinate and perturbation expansion are BERM derivations from the registered 2025 premise."
+    },
+    {
+      "id": "er.bridge.kubo1957",
+      "referenceId": "kubo1957_linear_response",
+      "claimId": "claim.bridge.conditional-response-operator",
+      "relation": "method",
+      "directness": "formal_response_method",
+      "studyDesign": "mathematical_theory",
+      "applicability": "general_response_system",
+      "calibrationRole": "structural_only",
+      "limitations": ["Does not identify the BERM tissue kernel or establish minimal metric coupling in a biological endpoint"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the response-kernel formalism, not the missing tissue-specific coefficient."
+    },
+    {
+      "id": "er.androgen.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.androgen.binding-availability",
+      "relation": "supports",
+      "directness": "mechanism_review",
+      "studyDesign": "review",
+      "applicability": "human_and_experimental",
+      "calibrationRole": "structural_only",
+      "limitations": ["Free-hormone models and assays retain method-dependent uncertainty"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null
+    },
+    {
+      "id": "er.androgen.laurent2016",
+      "referenceId": "laurent2016_shbg_bioactivity",
+      "claimId": "claim.androgen.binding-availability",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "experimental_animal",
+      "applicability": "mouse_model",
+      "calibrationRole": "structural_only",
+      "limitations": ["Species differences in SHBG physiology prevent direct numerical transfer to humans"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null
+    },
+    {
+      "id": "er.androgen.degendt2004",
+      "referenceId": "degendt2004_sertoli_ar",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "relation": "supports",
+      "directness": "receptor_causal_intervention",
+      "studyDesign": "cell_selective_knockout",
+      "applicability": "mouse_model",
+      "calibrationRole": "structural_only",
+      "limitations": ["Knockout establishes receptor necessity in mice, not an environmental human effect size"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null
+    },
+    {
+      "id": "er.androgen.yu2023",
+      "referenceId": "yu2023_zip9_rf_sertoli",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "experimental_animal_and_primary_cells",
+      "applicability": "rat_sertoli_model",
+      "calibrationRole": "structural_only",
+      "limitations": ["Single 2605 MHz protocol", "Rat and isolated-cell evidence", "Short-term sperm endpoints were unchanged"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports ZIP9 as a measurable response branch while preserving the study's short-term null sperm result."
+    },
+    {
+      "id": "er.androgen.mollerlokken2012",
+      "referenceId": "mollerlokken2012_mri_hormones",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "relation": "challenges",
+      "directness": "human_hormone_endpoint",
+      "studyDesign": "randomized_crossover_trial",
+      "applicability": "healthy_adult_men_single_mri",
+      "calibrationRole": "context_only",
+      "limitations": ["N=24", "Single acute MRI protocol", "Did not measure AR, ZIP9 or downstream tissue response"],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Direct counterevidence against a broad immediate serum-hormone response, not a receptor-capacity test."
+    },
     {
       "id": "er.vgcc.pall2013",
       "referenceId": "pall2013_v2",
@@ -1901,6 +2084,66 @@
   ],
   "epistemic_assessments": [
     {
+      "id": "ea.geometry.rank-one.v1",
+      "claimId": "claim.geometry.rank-one-coordinate",
+      "revision": 1,
+      "level": "L",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.geometry.lindgren2025"],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Algebraically derived under the displayed norm, sign and normalization conditions; no biological interpretation is included."
+    },
+    {
+      "id": "ea.geometry.mixing.v1",
+      "claimId": "claim.geometry.quadratic-mixing",
+      "revision": 1,
+      "level": "L",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.geometry.lindgren2025"],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Exact waveform algebra within the stated ansatz; amplitude and tissue detectability remain open."
+    },
+    {
+      "id": "ea.bridge.conditional.v1",
+      "claimId": "claim.bridge.conditional-response-operator",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.bridge.kubo1957"],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Formal operator derived conditionally; gauge choice, scale, tissue kernels and endpoint calibration are unresolved."
+    },
+    {
+      "id": "ea.androgen.binding.v1",
+      "claimId": "claim.androgen.binding-availability",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": ["er.androgen.narinx2022", "er.androgen.laurent2016"],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Imported endocrine physiology justifies the state decomposition but does not establish EMF causation."
+    },
+    {
+      "id": "ea.androgen.receptor.v1",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": ["er.androgen.degendt2004", "er.androgen.yu2023", "er.androgen.mollerlokken2012"],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Link-by-link synthesis: receptor necessity is established in animal tissue, one RF model implicates ZIP9, and an acute human MRI trial is null for serum hormones. Human chronic receptor-level calibration remains open."
+    },
+    {
       "id": "ea.vgcc.v1",
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "revision": 1,
@@ -1969,14 +2212,14 @@
     {
       "id": "ea.proxy.v1",
       "claimId": "claim.proxy.lindgren-selection",
-      "revision": 1,
+      "revision": 2,
       "level": "L*",
       "compatibility": "current",
       "origin": "derived",
       "basis": [],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
-      "note": "Proxy formulation is model-internal; external validation requires independent replication"
+      "note": "The bounded shape now has a geometric derivation after explicit normalization; its technology-proxy weighting and any tissue response remain model-internal and uncalibrated."
     },
     {
       "id": "ea.tfr.v1",

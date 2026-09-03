@@ -44,8 +44,9 @@ class CausalNode:
 
 
 # Node IDs intentionally encode meaning rather than UI order.  Measurement
-# observations and the legacy timing proxy enter only through the explicitly
-# open BERM_L2_BRIDGE.  They are not causal roots of the biological model.
+# observations and the legacy timing proxy enter only through BERM's
+# conditional response operator.  They are not causal roots of the model;
+# Lindgren's 2025 ansatz is the separate theory premise.
 # Feedback (e.g. redox/Ca) is represented within a biological state model
 # rather than by ambiguous letter aliases.
 CAUSAL_NODES: tuple[CausalNode, ...] = (
@@ -104,11 +105,31 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "requires_matched_measurement",
     ),
     CausalNode(
-        "BERM_L2_BRIDGE",
-        "Open geometry-to-observable coupling proposition",
+        "LINDGREN_METRIC_DRIVE",
+        "Lindgren 2025 metric perturbation and quadratic mixing drive",
         "physics",
-        ("geometry-to-biology operator", "L2 bridge", "open coupling operator"),
         (
+            "g = eta + kappa A tensor A",
+            "delta g",
+            "chi_geo",
+            "quadratic envelope mixing",
+        ),
+        (),
+        ("BERM_L2_BRIDGE",),
+        "theory_input",
+        "structural_only",
+    ),
+    CausalNode(
+        "BERM_L2_BRIDGE",
+        "Conditional metric-to-observable response operator",
+        "physics",
+        (
+            "geometry-to-biology operator",
+            "L2 response operator",
+            "conditional response kernel",
+        ),
+        (
+            "LINDGREN_METRIC_DRIVE",
             "TECHNOLOGY_TIMING_PROXY",
             "FIELDSTATE_VECTOR",
             "FIELDSTATE_ENVELOPE",
@@ -124,6 +145,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
             "IF_MITOTIC_DISRUPTION",
             "GPCR_ADENOSINE",
             "VAGUS_ANTIINFLAMMATORY",
+            "ANDROGEN_RECEPTOR_SIGNAL",
             "ECOLOGICAL_ENCOUNTER",
         ),
         "bridge_proposition",
@@ -242,7 +264,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         "Blood-testis barrier/Sertoli tight-junction state",
         "barrier",
         ("T_BTB", "BTB"),
-        ("A_VGCC_ROS",),
+        ("A_VGCC_ROS", "ANDROGEN_RECEPTOR_SIGNAL"),
         ("MALE_SPERM", "MALE_GERMLINE_RESERVE"),
         "organ_state_input",
         "structural_only",
@@ -278,6 +300,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
             "BARRIER_BTB",
             "MALE_GERMLINE_RESERVE",
             "MALE_STEROIDOGENESIS",
+            "ANDROGEN_RECEPTOR_SIGNAL",
             "IF_MITOTIC_DISRUPTION",
         ),
         ("COUPLE_FECUNDABILITY",),
@@ -296,11 +319,37 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
     ),
     CausalNode(
         "MALE_STEROIDOGENESIS",
-        "Leydig/HPG steroidogenic support",
+        "Leydig/HPG androgen production support",
         "reproductive",
         ("Leydig",),
         ("HPA_HPG", "MELATONIN_REDOX", "MICROBIOME_OT"),
-        ("MALE_SPERM",),
+        ("MALE_SPERM", "ANDROGEN_BINDING_AVAILABILITY"),
+        "capacity_component",
+        "requires_endpoint_calibration",
+    ),
+    CausalNode(
+        "ANDROGEN_BINDING_AVAILABILITY",
+        "SHBG/albumin binding and free or intratesticular androgen availability",
+        "reproductive",
+        ("free testosterone", "SHBG", "albumin", "androgen availability"),
+        ("MALE_STEROIDOGENESIS",),
+        ("ANDROGEN_RECEPTOR_SIGNAL",),
+        "capacity_component",
+        "requires_matched_measurement",
+    ),
+    CausalNode(
+        "ANDROGEN_RECEPTOR_SIGNAL",
+        "AR/ZIP9 occupancy and post-receptor androgen-use capacity",
+        "reproductive",
+        (
+            "androgen effective capacity",
+            "AEC",
+            "androgen receptor",
+            "ZIP9",
+            "post-receptor signalling",
+        ),
+        ("ANDROGEN_BINDING_AVAILABILITY", "BERM_L2_BRIDGE"),
+        ("MALE_SPERM", "BARRIER_BTB"),
         "capacity_component",
         "requires_endpoint_calibration",
     ),

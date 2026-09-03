@@ -20,7 +20,7 @@ interface CausalGraphFile {
     id: string;
     from: string;
     to: string;
-    kind: "inference_input" | "proposed_bridge" | "causal_model";
+    kind: "inference_input" | "derived_geometry" | "conditional_response" | "causal_model";
   }[];
   ui_groups: Record<string, { id: string; contains: string[] }>;
 }
@@ -100,12 +100,12 @@ const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 36 nodes", () => {
-    expect(nodeIds.size).toBe(36);
+  it("has 39 nodes", () => {
+    expect(nodeIds.size).toBe(39);
   });
 
-  it("has 69 typed edges", () => {
-    expect(graph.edges.length).toBe(69);
+  it("has 75 typed edges", () => {
+    expect(graph.edges.length).toBe(75);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {
@@ -142,7 +142,7 @@ describe("causal-graph.json", () => {
         expect(edge.kind).toBe("inference_input");
       }
       if (edge.from === "BERM_L2_BRIDGE") {
-        expect(edge.kind).toBe("proposed_bridge");
+        expect(edge.kind).toBe("conditional_response");
       }
     }
   });

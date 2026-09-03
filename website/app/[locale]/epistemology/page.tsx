@@ -30,7 +30,7 @@ const COPY = {
         level: "Strong consilience",
         color: "green",
         examples: [
-          "Theory premise (Lindgren 2025 metric) ↔ BERM χ closure proposal [L*, L2 open] ↔ pharmacological Ca²⁺ evidence",
+          "Theory premise (Lindgren 2025 metric) ↔ derived χ_geo and conditional response operator [tissue kernel open] ↔ pharmacological Ca²⁺ evidence",
           "Genetics ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zürich double-blind]]) ↔ Experimental ([[ref:lopez_martin_2006|López-Martín seizures]])",
           "Epidemiology ([[ref:klimentidis2010|Klimentidis 8-species obesity, p=10⁻⁷]]) ↔ Pathology (SIDS brainstem 5-HT deficiency)",
           "Comparative biology (sentinel species decline) ↔ Clinical (neonatal Q → ∞ prediction)",
@@ -128,14 +128,14 @@ const COPY = {
     burdenBefore: "Traditional framing: 'Prove that EMF causes disease.' This demands a single definitive study — an impossibly high bar for a multi-step causal chain spanning 18 orders of magnitude.",
     burdenAfter: "New framing: 'Show where the chain breaks.' Each link has been independently verified. To dismiss the model, identify which specific verified link is wrong — and explain why the evidence supporting it is incorrect.",
     burdenSteps: [
-      { step: "1. Theory boundary explicit", detail: "Lindgren's 2025 metric is the premise; BERM's χ closure and the geometry-to-observable L2 operator remain proposed and uncalibrated. [[ref:tang2024|Tang 2024]] is separate S4 evidence, not a derivation of that bridge." },
+      { step: "1. Theory boundary explicit", detail: "Lindgren's 2025 metric is the premise. χ_geo is a derived geometric coordinate and the formal L2 response shape is conditional on explicit coupling assumptions; tissue kernels remain uncalibrated. [[ref:tang2024|Tang 2024]] is separate S4 evidence, not a calibration of that bridge." },
       { step: "2. Biochemistry verified", detail: "VGCC → Ca²⁺ → CaM → CaMKII → multiple cascades — basic biochemistry, textbook level" },
       { step: "3. Pharmacology converges", detail: "Every effective treatment targets a Ca²⁺ cascade component — ethosuximide, gabapentin, verapamil, melatonin, lithium, bumetanide" },
       { step: "4. Genetics confirms", detail: "CACNA1C genotype modulates EMF response ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII mutations produce BERM-predicted phenotypes ([[ref:kury2017_camk2|Küry 2017]])" },
       { step: "5. Intermediate layers verified", detail: "BBB, BAT, HPA axis, β-cell, hypothalamus, cortisol-hippocampus, Leydig cell, mast cell — each independently confirmed" },
       { step: "6. Epidemiology consistent", detail: "54-country R²=0.851, [[ref:klimentidis2010|Klimentidis 8-species]] (p=10⁻⁷), Amish/Mennonite data — consistent across multiple designs" },
     ],
-    burdenConclusion: "BERM is a linked, falsifiable hypothesis with evidence of different strength at different nodes, not a fully verified sequence. The open L2 operator is a specific unresolved link; testing it requires matched physical inputs and biological endpoints rather than treating support elsewhere in the chain as proof of this bridge.",
+    burdenConclusion: "BERM is a linked, falsifiable hypothesis with evidence of different strength at different nodes, not a fully verified sequence. The L2 operator form is conditionally derived under explicit coupling and response assumptions, while its tissue kernel, sign, lag and calibration are unresolved; testing them requires matched physical inputs and biological endpoints rather than treating support elsewhere in the chain as proof.",
 
     iarcTitle: "The IARC 2A Precedent",
     iarcLead: "[[ref:iarc_2a_shift|IARC classifies shift work involving circadian disruption as Group 2A]] — 'probably carcinogenic to humans.' The proposed mechanism is melatonin suppression. BERM identifies the same mechanism through a different exposure route.",
@@ -241,7 +241,7 @@ const COPY = {
         level: "Vahva konsilienss",
         color: "green",
         examples: [
-          "Teoriapremissi (Lindgrenin 2025 metriikka) ↔ BERM:n χ-sulkeumaehdotus [L*, L2 avoin] ↔ farmakologinen Ca²⁺-näyttö",
+          "Teoriapremissi (Lindgrenin 2025 metriikka) ↔ johdettu χ_geo ja ehdollinen vasteoperaattori [kudosydin avoin] ↔ farmakologinen Ca²⁺-näyttö",
           "Genetiikka ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zürich kaksoissokko]]) ↔ Kokeellinen ([[ref:lopez_martin_2006|López-Martín]] kohtaukset)",
           "Epidemiologia ([[ref:klimentidis2010|Klimentidis]] 8 lajin liikalihavuus, p=10⁻⁷) ↔ Taudinkuva (SIDS aivorungon 5-HT-puutos)",
           "Vertaileva biologia (sentinel-lajien väheneminen) ↔ Kliininen (neonataalinen Q → ∞ -ennuste)",
@@ -339,14 +339,14 @@ const COPY = {
     burdenBefore: "Perinteinen kehystys: 'Todista, että EMF aiheuttaa sairautta.' Tämä vaatii yhtä lopullista tutkimusta — mahdottoman korkea rima 18 kertaluokkaa kattavalle monivaiheiselle kausaaliketjulle.",
     burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on todennettu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä tarkka todennettu linkki on väärässä — ja selitettävä miksi sitä tukeva näyttö on virheellistä.",
     burdenSteps: [
-      { step: "1. Teoriaraja ilmaistu", detail: "Lindgrenin vuoden 2025 metriikka on premissi; BERM:n χ-sulkeuma ja geometriasta havaittavaan johtava L2-operaattori ovat ehdotettuja ja kalibroimattomia. [[ref:tang2024|Tang 2024]] on erillistä S4-näyttöä, ei sillan johtaminen." },
+      { step: "1. Teoriaraja ilmaistu", detail: "Lindgrenin vuoden 2025 metriikka on premissi. χ_geo on johdettu geometrinen koordinaatti ja formaali L2-vastemuoto on ehdollinen eksplisiittisille kytkentäoletuksille; kudosytimet ovat kalibroimatta. [[ref:tang2024|Tang 2024]] on erillistä S4-näyttöä, ei sillan kalibrointi." },
       { step: "2. Biokemia todennettu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
       { step: "3. Farmakologia konvergoi", detail: "Jokainen tehokas hoito kohdistuu Ca²⁺-kaskadin komponenttiin — etosuksimidi, gabapentiini, verapamiili, melatoniini, litium, bumetanidi" },
       { step: "4. Genetiikka vahvistaa", detail: "CACNA1C-genotyyppi säätelee EMF-vastetta ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII-mutaatiot tuottavat BERM:n ennustamat fenotyypit ([[ref:kury2017_camk2|Küry 2017]])" },
       { step: "5. Välikerrokset todennettu", detail: "BBB, BAT, HPA-akseli, β-solu, hypotalamus, kortisoli-hippokampus, Leydig-solu, syöttösolu — jokainen itsenäisesti vahvistettu" },
       { step: "6. Epidemiologia konsistentti", detail: "54 maan R²=0,851, [[ref:klimentidis2010|Klimentidis 8 lajia]] (p=10⁻⁷), Amish/mennoniittidata — konsistentti eri tutkimusasetelmissa" },
     ],
-    burdenConclusion: "BERM on linkitetty ja falsifioitava hypoteesi, jonka solmujen näytön vahvuus vaihtelee; se ei ole kokonaan todennettu sekvenssi. Avoin L2-operaattori on täsmällinen ratkaisematon linkki, jota on testattava kohdistetuilla fyysisillä syötteillä ja biologisilla päätepisteillä.",
+    burdenConclusion: "BERM on linkitetty ja falsifioitava hypoteesi, jonka solmujen näytön vahvuus vaihtelee; se ei ole kokonaan todennettu sekvenssi. L2-operaattorin muoto on ehdollisesti johdettu, mutta kudosydin, etumerkki, viive ja kalibrointi ovat ratkaisematta ja vaativat kohdistetut fyysiset syötteet sekä biologiset päätepisteet.",
 
     iarcTitle: "IARC 2A -ennakkotapaus",
     iarcLead: "[[ref:iarc_2a_shift|IARC luokittelee vuorotyön, johon liittyy vuorokausirytmin häiriintyminen, ryhmään 2A]] — 'todennäköisesti karsinogeeninen ihmisille.' Ehdotettu mekanismi on melatoniinin suppressio. BERM tunnistaa saman mekanismin eri altistumisreitin kautta.",
@@ -452,7 +452,7 @@ const COPY = {
         level: "強い共鳴的一致",
         color: "green",
         examples: [
-          "理論前提（Lindgren 2025計量）↔ BERM χ閉包命題［L*、L2未解決］↔ Ca²⁺薬理学的証拠",
+          "理論前提（Lindgren 2025計量）↔ 導出済みχ_geoと条件付き応答演算子［組織カーネル未校正］↔ Ca²⁺薬理学的証拠",
           "遺伝学（[[ref:sousouri2025|CACNA1C、Sousouri 2025、ETH Zurich二重盲検]]） ↔ 実験的（[[ref:lopez_martin_2006|Lopez-Martin発作]]）",
           "疫学（[[ref:klimentidis2010|Klimentidis 8種の肥満、p=10⁻⁷]]） ↔ 病理学（SIDSの脳幹5-HT欠乏）",
           "比較生物学（センチネル種の減少） ↔ 臨床（新生児Q → ∞予測）",
@@ -557,7 +557,7 @@ const COPY = {
       { step: "5. 中間層が検証済み", detail: "BBB、BAT、HPA軸、β細胞、視床下部、コルチゾール-海馬、ライディッヒ細胞、マスト細胞 — 各々独立して確認" },
       { step: "6. 疫学的一貫性", detail: "54か国でR²=0.851、[[ref:klimentidis2010|Klimentidisの8種]]（p=10⁻⁷）、アーミッシュ/メノナイトデータ — 複数の研究設計で一貫" },
     ],
-    burdenConclusion: "BERMはノードごとに証拠強度が異なる連結された反証可能な仮説であり、完全に検証済みの連鎖ではない。未解決のL2演算子は、対応する物理入力と生物学的エンドポイントで検証すべき特定の未解決リンクである。",
+    burdenConclusion: "BERMはノードごとに証拠強度が異なる反証可能な仮説である。L2演算子形は条件付きで導出済みだが、組織カーネル、符号、遅延、校正は対応する物理入力と生物学的エンドポイントで検証する必要がある。",
 
     iarcTitle: "IARC 2Aの先例",
     iarcLead: "[[ref:iarc_2a_shift|IARCは概日リズムの乱れを伴う交代制勤務をグループ2A]]（ヒトに対しておそらく発がん性）に分類する。提案機構はメラトニン抑制であり、BERMは別の曝露経路を通じて同じ機構を特定する。",
@@ -629,7 +629,7 @@ const COPY = {
         level: "Consilience forte",
         color: "green",
         examples: [
-          "Prémisse théorique (métrique de Lindgren 2025) ↔ fermeture χ proposée par BERM [L*, L2 ouvert] ↔ preuves pharmacologiques Ca²⁺",
+          "Prémisse théorique (métrique de Lindgren 2025) ↔ χ_geo dérivé et opérateur conditionnel [noyau tissulaire ouvert] ↔ preuves pharmacologiques Ca²⁺",
           "Génétique ([[ref:sousouri2025|CACNA1C, Sousouri 2025, double aveugle ETH Zürich]]) ↔ Expérimental ([[ref:lopez_martin_2006|crises de Lopez-Martin]])",
           "Épidémiologie ([[ref:klimentidis2010|analyse de 8 espèces de Klimentidis, p=10⁻⁷]]) ↔ Pathologie (déficience en 5-HT du tronc cérébral dans le SIDS)",
           "Biologie comparative (déclin des espèces sentinelles) ↔ Clinique (prédiction néonatale Q → ∞)",
@@ -734,7 +734,7 @@ const COPY = {
       { step: "5. Couches intermédiaires vérifiées", detail: "BHE, TAB, axe HPA, cellule β, hypothalamus, cortisol-hippocampe, cellule de Leydig, mastocyte — chacune confirmée indépendamment" },
       { step: "6. Épidémiologie cohérente", detail: "54 pays R²=0,851, [[ref:klimentidis2010|8 espèces de Klimentidis]] (p=10⁻⁷), données Amish/Mennonites — cohérence entre plusieurs plans d'étude" },
     ],
-    burdenConclusion: "BERM est une hypothèse liée et falsifiable dont la force des preuves varie selon les nœuds, pas une séquence entièrement vérifiée. L'opérateur L2 ouvert est un maillon non résolu précis à tester avec des entrées physiques et des endpoints biologiques appariés.",
+    burdenConclusion: "BERM est une hypothèse liée et falsifiable, pas une séquence entièrement vérifiée. La forme L2 est dérivée conditionnellement, mais noyau tissulaire, signe, délai et calibration doivent être testés avec des entrées physiques et endpoints biologiques appariés.",
 
     iarcTitle: "Le précédent IARC 2A",
     iarcLead: "[[ref:iarc_2a_shift|L'IARC classe le travail posté impliquant une perturbation circadienne dans le Groupe 2A]] — probablement cancérogène pour l'homme. Le mécanisme proposé est la suppression de la mélatonine. BERM identifie le même mécanisme par une autre voie d'exposition.",
@@ -806,7 +806,7 @@ const COPY = {
         level: "강한 공명적 일치",
         color: "green",
         examples: [
-          "이론 전제(Lindgren 2025 계량) ↔ BERM χ 폐쇄 제안[L*, L2 미해결] ↔ Ca²⁺ 약리학 증거",
+          "이론 전제(Lindgren 2025 계량) ↔ 도출된 χ_geo와 조건부 반응 연산자[조직 커널 미보정] ↔ Ca²⁺ 약리학 증거",
           "유전학 ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zurich 이중 맹검]]) ↔ 실험적 ([[ref:lopez_martin_2006|Lopez-Martin 발작]])",
           "역학 ([[ref:klimentidis2010|Klimentidis 8종 비만, p=10⁻⁷]]) ↔ 병리학 (SIDS 뇌간 5-HT 결핍)",
           "비교 생물학 (센티넬 종의 감소) ↔ 임상 (신생아 Q → ∞ 예측)",
@@ -911,7 +911,7 @@ const COPY = {
       { step: "5. 중간 층 검증됨", detail: "BBB, BAT, HPA 축, β세포, 시상하부, 코르티솔-해마, 라이디히 세포, 비만세포 — 각각 독립적으로 확인" },
       { step: "6. 역학적 일관성", detail: "54개국 R²=0.851, [[ref:klimentidis2010|Klimentidis 8종]] (p=10⁻⁷), 아미시/메노나이트 자료 — 여러 설계에서 일관됨" },
     ],
-    burdenConclusion: "BERM은 노드마다 증거 강도가 다른 연결된 반증 가능 가설이지 완전히 검증된 연쇄가 아니다. 열린 L2 연산자는 매칭된 물리 입력과 생물학적 종점으로 검증해야 할 구체적인 미해결 고리다.",
+    burdenConclusion: "BERM은 완전히 검증된 연쇄가 아니라 반증 가능한 가설이다. L2 연산자 형태는 조건부로 도출되지만 조직 커널, 부호, 지연과 보정은 매칭된 물리 입력과 생물학적 종점으로 검증해야 한다.",
 
     iarcTitle: "IARC 2A 선례",
     iarcLead: "[[ref:iarc_2a_shift|IARC는 일주기 교란을 수반하는 교대근무를 그룹 2A]](인체에 아마도 발암성)로 분류한다. 제안된 메커니즘은 멜라토닌 억제이며, BERM은 다른 노출 경로를 통한 같은 메커니즘을 식별한다.",

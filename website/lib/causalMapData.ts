@@ -94,12 +94,12 @@ export const NODES: CausalMapNode[] = [
     color: "#3B82F6", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "BERM treats membrane-potential perturbation by 50/60 Hz fields and harmonics as a candidate route. The relevant field-to-membrane transfer belongs to the open L2 coupling problem and must be calibrated for the system and exposure.",
+        mechanism: "BERM treats membrane-potential perturbation by 50/60 Hz fields and harmonics as a candidate route. Its formal L2 response has a defined operator shape, but the relevant field-to-membrane tissue kernel must be calibrated for the system and exposure.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Electricity consumption per capita correlates with autoimmune diseases",
       },
       fi: {
-        mechanism: "BERM käsittelee 50/60 Hz:n kenttien ja harmonisten taajuuksien kalvopotentiaalimodulaatiota ehdokasreittinä. Kentästä kalvolle johtuva siirto kuuluu avoimeen L2-kytkentäongelmaan ja on kalibroitava järjestelmä- ja altistuskohtaisesti.",
+        mechanism: "BERM käsittelee 50/60 Hz:n kenttien ja harmonisten taajuuksien kalvopotentiaalimodulaatiota ehdokasreittinä. L2-vastemuodolla on ehdollinen operaattorirakenne, mutta kentästä kalvolle johtuva kudosydin on kalibroitava järjestelmä- ja altistuskohtaisesti.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Sähkönkulutus/cap korreloi autoimmuunisairauksien kanssa",
       },
@@ -175,15 +175,15 @@ export const NODES: CausalMapNode[] = [
   // ── LEVEL 1: Modulation layers (12) ──
   {
     id: "mod_geometry", level: 1,
-    label: { en: "1. Open L2 coupling", fi: "1. Avoin L2-kytkentä" },
-    sublabel: { en: "Lindgren premise + BERM χ proposal", fi: "Lindgren-premissi + BERM:n χ-ehdotus" },
+    label: { en: "1. Conditional L2 response", fi: "1. Ehdollinen L2-vaste" },
+    sublabel: { en: "derived δg + response kernel Ξ", fi: "johdettu δg + vasteydin Ξ" },
     color: "#8B5CF6", epistemicLevel: "L",
     detail: {
       en: {
-        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + A_μA_ν is the theory premise. BERM separately proposes χ(Ā) as a candidate closure, but no operator from that geometry to a membrane, receptor or other biological observable has yet been derived. L2 remains open.",
+        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + κA_μA_ν is the theory premise. BERM derives the exact δg and, conditional on minimal matter coupling and response theory, δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν}+…. Gauge, scale, tissue kernel Ξ_i and endpoint calibration remain open.",
       },
       fi: {
-        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + A_μA_ν on teoriapremissi. BERM ehdottaa erikseen χ(Ā):ta sulkeumana, mutta geometriasta kalvoon, reseptoriin tai muuhun biologiseen havaittavaan johtavaa operaattoria ei ole vielä johdettu. L2 on avoin.",
+        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + κA_μA_ν on teoriapremissi. BERM johtaa tarkan δg:n ja ehdollisesti minimaaliselle materiakytkennälle sekä vasteteorialle muodon δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν}+…. Gauge, mittakaava, kudosydin Ξ_i ja päätepistekalibraatio ovat avoimia.",
       },
       bermPathway: "Geometric foundation",
       keyRefs: ["lindgren2025"],
@@ -395,8 +395,8 @@ export const NODES: CausalMapNode[] = [
     label: { en: "T-type Cav3 bifurcation", fi: "T-tyypin Cav3 bifurkaatio" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM bridge. They do not yet derive or close the geometry-to-observable L2 coupling operator. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
-      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen siltamekanismin. Ne eivät vielä johda tai sulje geometriasta havaittavaan suureeseen johtavaa L2-kytkentäoperaattoria. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM tissue kernel. The formal L2 operator shape is conditional; Cav3 transfer, sign, lag and calibration are not derived by geometry. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen kudosytimen. Formaali L2-operaattorimuoto on ehdollinen; geometria ei johda Cav3-siirtoa, etumerkkiä, viivettä eikä kalibrointia. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
       bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/measurement/fieldstate/math#s16",
     },
   },
@@ -830,7 +830,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mod_ion" },
 
   // Modulation layers → mechanisms
-  { from: "mod_geometry", to: "mod_ion", label: "BERM coupling proposition; L2 open" },
+  { from: "mod_geometry", to: "mod_ion", label: "conditional operator; tissue kernel open" },
   { from: "mod_ion", to: "mech_vgcc_ros" },
   { from: "mod_ion", to: "mech_ifo_linear" },
   { from: "mod_ion", to: "mech_gpcr" },
@@ -848,7 +848,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mech_vgcc_genotype" },
 
   // T-type bifurcation: Schwan → Cav3 → testosterone/sperm
-  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "candidate transfer; L2 open" },
+  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "candidate tissue transfer; calibration open" },
   { from: "mech_ttype_bifurcation", to: "tissue_testosterone", label: "Ca²⁺ → StAR → testosterone (Xiang 2025)" },
   { from: "mech_ttype_bifurcation", to: "tissue_sperm", label: "Ca²⁺ → spermatocyte dev (Ma 2026)" },
 

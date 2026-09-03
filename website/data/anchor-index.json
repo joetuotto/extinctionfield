@@ -1,6 +1,56 @@
 {
-  "generatedAt": "2026-09-03T08:46:02.727Z",
+  "generatedAt": "2026-09-03T10:05:42.178Z",
   "anchors": [
+    {
+      "claimId": "claim.androgen.binding-availability",
+      "file": "app/[locale]/evidence/testosterone/page.tsx",
+      "line": 374
+    },
+    {
+      "claimId": "claim.androgen.binding-availability",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2420
+    },
+    {
+      "claimId": "claim.androgen.binding-availability",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5245
+    },
+    {
+      "claimId": "claim.androgen.binding-availability",
+      "file": "app/[locale]/modulome/testes/page.tsx",
+      "line": 954
+    },
+    {
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "file": "app/[locale]/evidence/testosterone/page.tsx",
+      "line": 357
+    },
+    {
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2444
+    },
+    {
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5227
+    },
+    {
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "file": "app/[locale]/modulome/testes/page.tsx",
+      "line": 958
+    },
+    {
+      "claimId": "claim.bridge.conditional-response-operator",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2066
+    },
+    {
+      "claimId": "claim.bridge.conditional-response-operator",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5170
+    },
     {
       "claimId": "claim.civilization.biocap-tfr-input",
       "file": "app/[locale]/civilization/patokratia/page.tsx",
@@ -25,6 +75,21 @@
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
       "line": 4879
+    },
+    {
+      "claimId": "claim.geometry.quadratic-mixing",
+      "file": "app/[locale]/mathematics/page.tsx",
+      "line": 2121
+    },
+    {
+      "claimId": "claim.geometry.quadratic-mixing",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5212
+    },
+    {
+      "claimId": "claim.geometry.rank-one-coordinate",
+      "file": "app/[locale]/model/page.tsx",
+      "line": 5195
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",

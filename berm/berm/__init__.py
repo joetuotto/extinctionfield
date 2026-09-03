@@ -1,6 +1,6 @@
 """BERM: Bio-Electromagnetic Reproductive Model Python package.
 
-The 0.19.x number is an implementation-package release, not a BERM model
+The 0.20.x number is an implementation-package release, not a BERM model
 version.  The public prediction specification remains v17.  FieldState v2 is
 an optional measurement/observation specification and is not a model alias,
 causal root, or forecast-producing route.

@@ -166,7 +166,7 @@ export interface CausalGraphEdge {
   id: string;
   from: string;
   to: string;
-  kind: "inference_input" | "proposed_bridge" | "causal_model";
+  kind: "inference_input" | "derived_geometry" | "conditional_response" | "causal_model";
   label?: string;
 }
 
