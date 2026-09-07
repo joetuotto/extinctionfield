@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Navigation } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
@@ -32,12 +33,12 @@ interface CanaryPoint {
 const COPY = {
   en: {
     title: "Reproductive Navigation",
-    subtitle: "Sperm are BERM's most specific biological argument. Nine calcium-dependent steps from production to fertilization — every one EMF-vulnerable, with no backup channel.",
+    subtitle: "Calcium entry, clearance and timing connect sperm production to functional fertilization gates. BERM separates measured component mechanisms from the field-specific transitions to be tested.",
     backLink: "← Back to Evidence",
-    cautionText: "The CatSper–EMF connection is established for individual mechanisms (capacitation, chemotaxis). The chain from phone-in-pocket to population fertility decline is BERM's synthesis (M-level), not established consensus. Animal model results may not translate directly to humans.",
+    cautionText: "The reproductive pathway is composed from distinct component experiments. CatSper deficiency, calcium-pulse rescue and implantation interventions identify functional gates; they do not by themselves establish that an environmental field perturbs each gate. BERM tests that added input with a recorded local exposure and a declared receiving state.",
 
-    s1Title: "Nine EMF-vulnerable steps",
-    s1Lead: "A human sperm's journey from production to fertilization spans ~95 days and 10 cm. Every critical step depends on calcium signaling — and every one is EMF-vulnerable.",
+    s1Title: "From production to functional success",
+    s1Lead: "Different stages require calcium at different places and times. Track pH, membrane potential, CatSper entry, PMCA4 clearance and ATP together, then measure transport, hyperactivation, fusion, oocyte activation and implantation as distinct transitions.",
     s1Points: [
       {
         id: "spermatogenesis",
@@ -52,10 +53,10 @@ const COPY = {
         id: "epididymal",
         label: "Epididymal maturation & premature activation",
         duration: "Epididymis, 12–21 days",
-        mechanism: "In the epididymis, sperm are IMMOBILE (low pH → CatSper INACTIVE). EMF → premature CatSper activation → Ca²⁺↑ → hyperactivation BEFORE ejaculation → finite energy stores (ATP, glycogen) DEPLETED → sperm becomes immotile in the female tract.",
-        evidence: "ESHRE 2021 ([[ref:catsper_2021|Ayas & Kocaman]]): 2100 MHz → motility (A+B) 47.62→34.19 (p<0.05) + intracellular Ca²⁺ 2.46→1.85 (p<0.05). Nature Comms 2025 ([[ref:catsper-temp-2025|temperature gating]]): CatSper is temperature-gated (Q₁₀=5.1, threshold 33.5°C) → premature activation physiologically possible.",
+        mechanism: "Candidate timing route: a measured local field changes sperm receiving state → altered calcium-entry/clearance timing → misplaced hyperactivation or inadequate later activation → altered transport. Test ATP and calcium through time; both premature and insufficient activation are possible failure modes.",
+        evidence: "[[ref:catsper_2021|ESHRE 2021 abstract]]: 50 male Wistar-Albino rats, in vivo 2100 MHz for 1 h/day over 28 days, with amlodipine 1 mg/kg in the intervention design. Motility and intracellular calcium differed (p<0.05); mating and live-birth endpoints did not differ significantly, and CatSper gene analysis was still in progress. This was neither a human in-vitro experiment nor a specific CatSper inhibition test.",
         pharmacological: "Ca²⁺ ionophore A23187 → capacitation WITHOUT CatSper ([[ref:scirep2016_ionophore|Sci.Rep. 2016]]). BUT: Ca²⁺ decrease after ionophore REQUIRED for hyperactivation → Ca²⁺ DYNAMICS are critical, not just level.",
-        recovery: "Ion level: fast (hours-days). BUT: if energy stores depleted → NO recovery for that batch. Mature epididymal sperm do NOT regenerate → damage PERMANENT for that cohort. Next batch (~2–3 weeks) recovers IF exposure ceases.",
+        recovery: "Measure calcium clearance, ATP recovery and later hyperactivation in the same cohort. A lower later calcium or motility value does not identify irreversible depletion or its recovery time. New sperm cohorts add a separate production/turnover timescale.",
       },
       {
         id: "dna-integrity",
@@ -64,7 +65,7 @@ const COPY = {
         mechanism: "EMF → VGCC → Ca²⁺↑ → NADPH oxidase → ROS↑ → lipid peroxidation (PUFA-rich membrane) → 8-OH-dG↑ → DNA fragmentation (TUNEL+) → chromosomal aberrations.",
         evidence: "De Iuliis 2009 ([[ref:iuliis2009|PLOS ONE]]): RF-EMR → mitochondrial ROS↑ → motility↓, vitality↓, DNA fragmentation↑ (p<0.001). 8-OH-dG correlated with SAR (dose-response). Meta-analysis ([[ref:meta2021_mobile|ScienceDirect 2021]]): RF-EMW → motility↓, vitality↓, DNA fragmentation↑, mitochondrial apoptosis.",
         pharmacological: "NAC (N-acetylcysteine) + vitamin C → partial protection. Antioxidants work as DOWNSTREAM defense BUT do not prevent Ca²⁺ influx → do NOT protect navigation.",
-        recovery: "Individual sperm DNA damage: NO RECOVERY (no DNA repair machinery). Population level: new sperm in 74d → recovers. BUT: stem cell epigenetic damage → PERMANENT quality decline. DNA-fragmented sperm CAN fertilize (especially via ICSI) → offspring health risk↑.",
+        recovery: "Separate damage in mature sperm from changes in germ cells and the tissue environment. Later cohorts can replace mature sperm, but sustained impairment requires a measured persistent germ-cell or tissue state. A DNA marker alone does not establish inherited damage or failed fertilization.",
       },
       {
         id: "btb",
@@ -129,17 +130,17 @@ const COPY = {
       "Triple modulation: voltage + pH + temperature — three EMF-sensitive parameters in ONE channel",
       "No redundancy: CatSper KO = complete male sterility, no backup channel exists ([[ref:physiology2022_20yr|Physiology 2022]])",
       "Human proof: CATSPER2⁻/⁻ men cannot hyperactivate, cannot fertilize ([[ref:catsper_human|JCI 2024]])",
-      "Direct EMF evidence: 2100 MHz → Ca²⁺↓ + motility↓ in human sperm ([[ref:catsper_2021|ESHRE 2021]])",
+      "Field-component evidence: a 28-day in-vivo rat experiment reported calcium/motility changes without significant mating/live-birth differences; CatSper analysis was unfinished ([[ref:catsper_2021|ESHRE 2021 abstract]]).",
     ],
 
-    s3Title: "Premature activation: death before the journey",
-    s3Lead: "BERM's most elegant mechanism: EMF does not destroy sperm — it CONFUSES them.",
-    s3Desc: "In the epididymis, sperm are held in a dormant state (low pH keeps CatSper inactive). Phone-in-pocket EMF can prematurely activate CatSper, triggering hyperactivation before ejaculation. The sperm burns through its finite energy stores (ATP, glycogen) while still in storage. After ejaculation, it arrives in the female tract looking morphologically normal but unable to navigate — an exhausted swimmer that cannot reach the egg.",
-    s3Quote: "Sperm that look normal but cannot navigate",
-    s3Evidence: "ESHRE 2021 showed 2100 MHz reduces both motility AND intracellular Ca²⁺ — consistent with energy depletion from premature activation. The researchers noted: 'If this occurs when sperm are in the non-progressively motile phase in the epididymis, it may lead to depletion of finite energy stores.'",
+    s3Title: "Activation at the right place and time",
+    s3Lead: "A sperm can look normal while failing a functional gate.",
+    s3Desc: "Human CatSper deficiency can prevent hyperactivation despite normal routine semen parameters; ICSI can bypass a gate that ordinary IVF does not. Calcium-ionophore rescue in mouse mutants further shows that the entry pulse and subsequent clearance belong to the signal. BERM therefore predicts the time course Ċ=J_CatSper(pH,V_m,state)−J_PMCA4(C,ATP), then tests correctly timed hyperactivation and fertilization.",
+    s3Quote: "Measure the timing signal and the function it enables",
+    s3Evidence: "[[ref:catsper2024|Young 2024]] locates a human functional gate; [[ref:scirep2016_ionophore|Navarrete 2016]] separates calcium entry and clearance. The [[ref:catsper_2021|2100 MHz ESHRE abstract]] concerns a 28-day in-vivo rat protocol, with calcium/motility differences but no significant mating or live-birth difference and no completed CatSper analysis. [[ref:sci-rep-2019-sperm-ros|Houston 2019]] likewise separates sperm-marker changes from preserved measured IVF and early embryo development. Neither experiment establishes the proposed premature-activation/ATP-depletion sequence.",
 
     s4Title: "The egg's quality control: five gates in series",
-    s4Lead: "The oocyte runs the most extreme selection process in biology: 200 million sperm → 1 fertilization = 99.99999% rejection. Five sequential calcium-dependent gates enforce this selection.",
+    s4Lead: "Compose the stages as conditional probabilities: arrival and penetration × fusion given penetration × activation given fusion × implantation given embryo development. A common calcium or clock disturbance is represented once as a shared input, rather than counted repeatedly as independent damage.",
     s4Gates: [
       { label: "Gate 1: Capacitation", process: "CatSper → cAMP → PKA", emfDisruption: "Incomplete capacitation → rejection" },
       { label: "Gate 2: Hyperactivation", process: "CatSper → asymmetric flagellar beat", emfDisruption: "Weak or PREMATURE hyperactivation → rejection" },
@@ -173,18 +174,18 @@ const COPY = {
     ] as CanaryPoint[],
     s6Conclusion: "Levine's finding of −51.6% global sperm count decline is BERM's most visible consequence — the canary has been singing for decades.",
 
-    predictionText: "Prediction REPRO-NAV-1: In vitro sperm exposed to phone-equivalent RF (2100 MHz, SAR ~2 W/kg) for the duration of epididymal transit (~14 days) will show premature CatSper activation, energy store depletion, and failed rheotaxis compared to sham-exposed controls — even when conventional semen parameters (count, morphology) remain within normal range.",
+    predictionText: "REPRO-NAV-1, revised protocol: use a viable, species-declared sperm preparation with measured local RF and matched sham, temperature and medium. Record CatSper current or specific perturbation, calcium entry/clearance and ATP before testing rheotaxis, hyperactivation and fertilization. Choose sampling times from measured preparation viability; a 14-day in-vitro exposure is not a validated surrogate for epididymal transit. The predicted field-dependent timing defect must precede the functional change.",
     predictionLink: "See predictions →",
     predictionHref: "/predictions",
   },
   fi: {
     title: "Lisääntymiskykyyn liittyvä navigointi",
-    subtitle: "Siittiöt ovat BERM:n tarkin biologinen argumentti. Yhdeksän kalsiumriippuvaista vaihetta tuotannosta hedelmöitykseen — jokainen EMF-haavoittuva, ilman varakanavaa.",
+    subtitle: "Kalsiumin sisäänvirtaus, poistuma ja ajoitus yhdistävät siittiötuotannon hedelmöityksen toiminnallisiin portteihin. BERM erottaa mitatut osamekanismit testattavista kenttäkohtaisista siirtymistä.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "CatSper–EMF-yhteys on vahvistettu yksittäisille mekanismeille (kapasitaatio, kemotaksis). Ketju puhelin-taskussa → väestötason hedelmällisyyden lasku on BERMin synteesi (M-taso), ei vakiintunut konsensus. Eläinmallien tulokset eivät välttämättä siirry suoraan ihmisiin.",
+    cautionText: "Lisääntymisreitti yhdistetään erillisistä osakokeista. CatSper-puutos, kalsiumpulssilla tehty palautus ja implantaatiointerventiot tunnistavat toiminnallisia portteja; ne eivät yksin osoita ympäristökentän häiritsevän jokaista porttia. BERM testaa lisäsyötteen tallennetulla paikallisella altistuksella ja määritellyllä vastaanotintilalla.",
 
-    s1Title: "Yhdeksän EMF-herkkää pistettä",
-    s1Lead: "Ihmisen siittiön matka tuotannosta hedelmöitykseen kestää ~95 päivää ja 10 cm. Jokainen kriittinen vaihe riippuu kalsiumsignaloinnista — ja jokainen on EMF-haavoittuva.",
+    s1Title: "Tuotannosta toiminnalliseen onnistumiseen",
+    s1Lead: "Eri vaiheet tarvitsevat kalsiumia eri paikoissa ja eri aikoina. Seuraa pH:ta, kalvopotentiaalia, CatSper-sisäänvirtausta, PMCA4-poistumaa ja ATP:tä yhdessä ja mittaa sitten kulkeutuminen, hyperaktivaatio, fuusio, munasolun aktivaatio ja implantaatio erillisinä siirtyminä.",
     s1Points: [
       {
         id: "spermatogenesis",
@@ -199,10 +200,10 @@ const COPY = {
         id: "epididymal",
         label: "Lisäkiveskypsyminen ja ennenaikainen aktivaatio",
         duration: "Lisäkives, 12–21 päivää",
-        mechanism: "Lisäkiveksessä siittiöt ovat IMMOBIILEJA (matala pH → CatSper INAKTIIVINEN). EMF → ennenaikainen CatSper-aktivaatio → Ca²⁺↑ → hyperaktivaatio ENNEN ejakulaatiota → rajallisten energiavarastojen ehtyminen → siittiöstä tulee immotiili naisen elimistössä.",
-        evidence: "ESHRE 2021 ([[ref:catsper_2021|Ayas & Kocaman]]): 2100 MHz → motiliteetti (A+B) 47,62→34,19 (p<0,05) + solunsisäinen Ca²⁺ 2,46→1,85 (p<0,05). Nature Comms 2025 ([[ref:catsper-temp-2025|lämpötilaherkkä]]): CatSper on lämpötilaherkkä (Q₁₀=5,1, kynnys 33,5 °C).",
+        mechanism: "Ajoitusreitin ehdokas: mitattu paikallinen kenttä muuttaa siittiön vastaanotintilaa → kalsiumin sisäänvirtauksen/poistuman ajoitus muuttuu → hyperaktivaatio väärässä paikassa tai riittämätön myöhempi aktivaatio → kulkeutuminen muuttuu. Mittaa ATP ja kalsium ajassa; sekä ennenaikainen että riittämätön aktivaatio ovat mahdollisia häiriöitä.",
+        evidence: "[[ref:catsper_2021|ESHRE 2021 -abstrakti]]: 50 Wistar-Albino-urosrottaa, in vivo 2100 MHz 1 h/päivä 28 päivän ajan; interventioasetelmassa amlodipiini 1 mg/kg. Liikkuvuus ja solunsisäinen kalsium erosivat (p<0,05); parittelu- ja elävänä syntymisen päätepisteissä ei ollut merkitsevää eroa, ja CatSper-geenianalyysi oli kesken. Kyse ei ollut ihmisen in vitro -kokeesta eikä spesifisestä CatSper-estotestistä.",
         pharmacological: "Ca²⁺-ionofoori A23187 → kapasitaatio ILMAN CatSper:a ([[ref:scirep2016_ionophore|Sci.Rep. 2016]]). MUTTA: Ca²⁺:n lasku ionoforin jälkeen VAADITAAN hyperaktivaatioon.",
-        recovery: "Ionitaso: nopea (tunteja-päiviä). MUTTA: jos energiavarastot ehtyivät → EI palautumista tälle erälle. Seuraava erä (~2–3 viikkoa) palautuu JOS altistus lakkaa.",
+        recovery: "Mittaa kalsiumin poistuma, ATP:n palautuminen ja myöhempi hyperaktivaatio samassa siittiöryhmässä. Myöhempi matala kalsium- tai liikkuvuusarvo ei tunnista peruuttamatonta ehtymistä tai sen palautumisaikaa. Uudet siittiöryhmät tuovat erillisen tuotanto-/uusiutumisaikaskaalan.",
       },
       {
         id: "dna-integrity",
@@ -211,7 +212,7 @@ const COPY = {
         mechanism: "EMF → VGCC → Ca²⁺↑ → NADPH-oksidaasi → ROS↑ → lipidiperoksidaatio (PUFA-rikas membraani) → 8-OH-dG↑ → DNA-fragmentaatio (TUNEL+).",
         evidence: "De Iuliis 2009 ([[ref:iuliis2009|PLOS ONE]]): RF-EMR → mitokondriaalinen ROS↑ → motiliteetti↓, vitaaliteetti↓, DNA-fragmentaatio↑ (p<0,001). Meta-analyysi ([[ref:meta2021_mobile|ScienceDirect 2021]]): motiliteetti↓, DNA-fragmentaatio↑.",
         pharmacological: "NAC + C-vitamiini → osittainen suoja. Antioksidantit toimivat mutta EIVÄT estä Ca²⁺-sisäänvirtausta → EIVÄT suojaa navigointia.",
-        recovery: "Yksittäisen siittiön DNA-vaurio: EI PALAUDU. Populaatiotasolla: uudet siittiöt 74 pv → palautuu. Kantasolujen epigeneettinen vaurio voi olla PYSYVÄ.",
+        recovery: "Erota kypsän siittiön vaurio sukusolujen ja kudosympäristön muutoksista. Myöhemmät ryhmät voivat korvata kypsiä siittiöitä, mutta jatkuva heikentyminen tarvitsee mitatun pysyvän sukusolu- tai kudostilan. DNA-markkeri ei yksin osoita periytyvää vauriota tai hedelmöityksen epäonnistumista.",
       },
       {
         id: "btb",
@@ -276,17 +277,17 @@ const COPY = {
       "Kolmoismodulaatio: jännite + pH + lämpötila — kolme EMF-herkkää parametria YHDESSÄ kanavassa",
       "Ei redundanssia: CatSper KO = täydellinen miehen steriiliys, varakanavaa ei ole ([[ref:physiology2022_20yr|Physiology 2022]])",
       "Ihmistodiste: CATSPER2⁻/⁻ miehet eivät voi hyperaktivoitua eivätkä hedelmöittää ([[ref:catsper_human|JCI 2024]])",
-      "Suora EMF-todiste: 2100 MHz → Ca²⁺↓ + motiliteetti↓ ihmissiittiöissä ([[ref:catsper_2021|ESHRE 2021]])",
+      "Kentän osanäyttö: 28 päivän in vivo -rottakoe raportoi kalsium-/liikkuvuusmuutoksia ilman merkitseviä parittelu-/elävänä syntymisen eroja; CatSper-analyysi oli kesken ([[ref:catsper_2021|ESHRE 2021 -abstrakti]]).",
     ],
 
-    s3Title: "Ennenaikainen aktivaatio: kuolema ennen matkaa",
-    s3Lead: "BERMin elegantein mekanismi: EMF ei tuhoa siittiöitä — se HÄMMENTÄÄ ne.",
-    s3Desc: "Lisäkiveksessä siittiöt ovat lepotilassa (matala pH pitää CatSper:n inaktiivisena). Puhelin taskussa -EMF voi ennenaikaisesti aktivoida CatSper:n, laukaisten hyperaktivaation ennen ejakulaatiota. Siittiö kuluttaa rajalliset energiavarastonsa vielä varastoinnissa. Ejakulaation jälkeen se saapuu naisen elimistöön morfologisesti normaalina mutta kykenemättömänä navigoimaan.",
-    s3Quote: "Siittiöt jotka näyttävät normaaleilta mutta eivät kykene navigoimaan",
-    s3Evidence: "ESHRE 2021 osoitti, että 2100 MHz vähentää sekä motiliteettia ETTÄ solunsisäistä Ca²⁺:ta — yhteensopivaa energian ehtymisen kanssa ennenaikaisesta aktivaatiosta.",
+    s3Title: "Aktivaatio oikeassa paikassa ja oikeaan aikaan",
+    s3Lead: "Siittiö voi näyttää normaalilta ja epäonnistua toiminnallisessa portissa.",
+    s3Desc: "Ihmisen CatSper-puutos voi estää hyperaktivaation normaaleista rutiiniparametreista huolimatta; ICSI voi ohittaa portin, jota tavallinen IVF ei ohita. Hiirimutanttien kalsiumionoforipalautus osoittaa lisäksi, että sisäänvirtauspulssi ja sitä seuraava poistuma kuuluvat signaaliin. BERM ennustaa siksi aikakulun Ċ=J_CatSper(pH,V_m,tila)−J_PMCA4(C,ATP) ja testaa sitten oikein ajoitetun hyperaktivaation ja hedelmöityksen.",
+    s3Quote: "Mittaa ajoitussignaali ja sen mahdollistama toiminto",
+    s3Evidence: "[[ref:catsper2024|Young 2024]] paikantaa ihmisen toiminnallisen portin; [[ref:scirep2016_ionophore|Navarrete 2016]] erottaa kalsiumin sisäänvirtauksen ja poistuman. [[ref:catsper_2021|2100 MHz:n ESHRE-abstrakti]] koskee 28 päivän in vivo -rottakoetta, jossa havaittiin kalsium-/liikkuvuuseroja mutta ei merkitsevää parittelu- tai elävänä syntymisen eroa eikä valmistunutta CatSper-analyysiä. [[ref:sci-rep-2019-sperm-ros|Houston 2019]] erottaa samoin siittiömarkkerien muutokset säilyneestä mitatusta IVF:stä ja varhaisesta alkionkehityksestä. Kumpikaan koe ei osoita ehdotettua ennenaikaisen aktivaation/ATP-ehtymisen ketjua.",
 
     s4Title: "Munasolun laadunvalvonta: viisi porttia sarjassa",
-    s4Lead: "Munasolu ajaa biologian äärimmäisintä valintaprosessia: 200 miljoonaa siittiötä → 1 hedelmöitys = 99,99999 % hylkäys. Viisi peräkkäistä kalsiumriippuvaista porttia toteuttavat valinnan.",
+    s4Lead: "Yhdistä vaiheet ehdollisina todennäköisyyksinä: saapuminen ja läpäisy × fuusio ehdolla läpäisy × aktivaatio ehdolla fuusio × implantaatio ehdolla alkionkehitys. Yhteinen kalsium- tai kellohäiriö esitetään kerran jaettuna syötteenä eikä toistuvasti riippumattomana vauriona.",
     s4Gates: [
       { label: "Portti 1: Kapasitaatio", process: "CatSper → cAMP → PKA", emfDisruption: "Epätäydellinen kapasitaatio → hylkäys" },
       { label: "Portti 2: Hyperaktivaatio", process: "CatSper → epäsymmetrinen flagellumlyönti", emfDisruption: "Heikko tai ENNENAIKAINEN hyperaktivaatio → hylkäys" },
@@ -320,7 +321,7 @@ const COPY = {
     ] as CanaryPoint[],
     s6Conclusion: "Levinen −51,6 % globaali siittiömäärän lasku on BERM:n NÄKYVIN seuraus — kaivoskanarilintu on laulanut vuosikymmeniä.",
 
-    predictionText: "Ennuste REPRO-NAV-1: In vitro -siittiöt, joita altistetaan puhelinvastaavalle RF:lle (2100 MHz, SAR ~2 W/kg) lisäkivestransitointia vastaavan ajan (~14 päivää), osoittavat ennenaikaisen CatSper-aktivaation, energiavarastojen ehtymisen ja epäonnistuneen reotaksiksen verrattuna kontrolleihin — vaikka tavanomaiset siemennesteanalyysit (lukumäärä, morfologia) pysyvät normaalirajoissa.",
+    predictionText: "REPRO-NAV-1, tarkennettu koe: käytä elinkelpoista, lajiltaan ilmoitettua siittiövalmistetta, mitattua paikallista RF:ää sekä yhtenäistä sham-käsittelyä, lämpötilaa ja kasvatusnestettä. Tallenna CatSper-virta tai spesifinen interventio, kalsiumin sisäänvirtaus/poistuma ja ATP ennen reotaksiksen, hyperaktivaation ja hedelmöityksen testiä. Valitse mittausajat valmisteen mitatun elinkelpoisuuden perusteella; 14 päivän in vitro -altistus ei ole validoitu lisäkivestransitin vastine. Ennustetun kenttäriippuvaisen ajoitushäiriön tulee edeltää toiminnallista muutosta.",
     predictionLink: "Katso ennusteet →",
     predictionHref: "/predictions",
   },
@@ -399,6 +400,7 @@ export default async function ReproductiveNavigationPage({ params }: { params: P
       </p>
 
       <PageHeader icon={Navigation} title={d.title} subtitle={d.subtitle} />
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <div className="mt-8">
         <CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox>
@@ -473,7 +475,7 @@ export default async function ReproductiveNavigationPage({ params }: { params: P
             <p className="text-lg italic font-medium">{d.s3Quote}</p>
           </div>
         )}
-        {d.s3Evidence && <p className="text-sm text-foreground-muted">{d.s3Evidence}</p>}
+        {d.s3Evidence && <p className="text-sm text-foreground-muted"><InlineReferenceText text={d.s3Evidence} locale={locale} /></p>}
       </section>
 
       {/* Section 4: Five gates */}

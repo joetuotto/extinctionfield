@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync } from "fs";
 import { resolve, dirname, relative, extname } from "path";
 import { fileURLToPath } from "url";
+import { atlasBindingAnchors } from "./atlas-anchors.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -24,7 +25,7 @@ function walk(dir) {
   const files = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     const full = resolve(dir, entry.name);
-    if (entry.isDirectory() && entry.name !== "node_modules" && entry.name !== ".next") {
+    if (entry.isDirectory() && !["node_modules", ".next", "__tests__"].includes(entry.name)) {
       files.push(...walk(full));
     } else if (entry.isFile() && EXTENSIONS.has(extname(entry.name))) {
       files.push(full);
@@ -131,6 +132,10 @@ for (const scanDir of SCAN_DIRS) {
     }
   }
 }
+
+// Unlike source literals, the atlas renders ClaimRef from a curated binding map.
+const bindingsSource = readFileSync(resolve(ROOT, "data/atlas-claim-bindings.json"), "utf-8");
+anchors.push(...atlasBindingAnchors(JSON.parse(bindingsSource), knownClaimIds, bindingsSource));
 
 // ── Anchored claim IDs must exist ──────────────────────────────────
 const unknown = anchors.filter((a) => !knownClaimIds.has(a.claimId));

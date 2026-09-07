@@ -93,13 +93,13 @@ for (const reference of registry.references) {
   const fingerprint = bibliographicFingerprint(reference);
   if (fingerprint) {
     const previous = bibliographicFingerprints.get(fingerprint);
-    if (previous) {
+    if (previous && reference.correctionOf !== previous && registry.references.find((r) => r.id === previous)?.correctionOf !== reference.id) {
       fail(
         `Duplicate title/year bibliography: ${previous}, ${reference.id} ` +
           `(${reference.year}: ${reference.title})`,
       );
     }
-    bibliographicFingerprints.set(fingerprint, reference.id);
+    if (!previous || !reference.correctionOf) bibliographicFingerprints.set(fingerprint, reference.id);
   }
 
   for (const alias of reference.aliases ?? []) {
@@ -150,6 +150,8 @@ for (const reference of registry.references) {
   const expectedUrl = expectedExternalUrl(reference);
   if (generated.externalUrl !== expectedUrl) fail(`${reference.id}: generated external URL does not match canonical precedence/status`);
   if (generated.linkStatus !== reference.link_status) fail(`${reference.id}: generated link status is stale`);
+  if (generated.correctionOf !== reference.correctionOf) fail(`${reference.id}: generated correction identity is stale`);
+  if (JSON.stringify(generated.corrections ?? []) !== JSON.stringify(reference.corrections ?? [])) fail(`${reference.id}: generated correction links are stale`);
   if (reference.link_status === "verified" && !expectedUrl) {
     fail(`${reference.id}: ${reference.link_status} record has no publishable DOI, PMCID, PMID or HTTPS URL`);
   }

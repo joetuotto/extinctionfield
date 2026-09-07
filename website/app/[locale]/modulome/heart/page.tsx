@@ -48,7 +48,7 @@ const COPY = {
 
     s6Title: "CRY2-TRPC1 Cardiac Complex",
     s6p1: "TRPC (Transient Receptor Potential Canonical) channels have been confirmed in ventricular cardiomyocytes, where they serve as a substrate for arrhythmia generation. Unlike voltage-gated calcium channels, TRPC channels are non-selective cation channels that can be activated by multiple stimuli including mechanical stretch and receptor-operated signaling.",
-    s6p2: "Yap 2025 demonstrated a physical complex between cryptochrome 2 (CRY2) and TRPC1 in myoblasts. CRY2 is a flavin adenine dinucleotide (FAD)-dependent blue-light photoreceptor. If the CRY2-TRPC1 complex operates in cardiomyocytes — as the presence of both proteins in cardiac tissue suggests — then cardiac calcium entry through TRPC1 is modulated by blue light and FAD redox state. This creates a direct photosensitive pathway for cardiac calcium regulation.",
+    s6p2: "Iversen 2025 demonstrated a physical complex between cryptochrome 2 (CRY2) and TRPC1 in myoblasts. CRY2 is a flavin adenine dinucleotide (FAD)-dependent blue-light photoreceptor. If the CRY2-TRPC1 complex operates in cardiomyocytes — as the presence of both proteins in cardiac tissue suggests — then cardiac calcium entry through TRPC1 is modulated by blue light and FAD redox state. This creates a direct photosensitive pathway for cardiac calcium regulation.",
 
     s7Title: "Circadian Arrhythmia Hypothesis",
     s7Text: "If CRY2-TRPC1 signaling is active in cardiomyocytes, the implications for nighttime electromagnetic exposure are significant. Blue light from phone screens activates CRY2, which modulates TRPC1-mediated calcium entry. At night, when the circadian system expects darkness, blue light exposure combined with RF-EMF from the device creates a dual perturbation: CRY2 activation opens a calcium entry pathway (TRPC1) while EMF simultaneously perturbs voltage-gated calcium channels. This convergence predicts that nighttime phone use carries higher arrhythmia risk than equivalent daytime use — a testable chronobiological prediction.",
@@ -94,8 +94,8 @@ const COPY = {
       },
       {
         id: "yap-2025-cry2-trpc1",
-        citation: "Yap 2025",
-        referenceId: "yap2025",
+        citation: "Iversen 2025",
+        referenceId: "iversen2025",
         finding:
           "CRY2-TRPC1 physical complex demonstrated in myoblasts — establishes a direct photosensitive calcium entry pathway with implications for cardiac tissue.",
       },
@@ -159,7 +159,7 @@ const COPY = {
 
     s6Title: "CRY2-TRPC1-sydänkompleksi",
     s6p1: "TRPC (Transient Receptor Potential Canonical) -kanavat on vahvistettu kammioiden kardiomyosyyteissä, joissa ne toimivat arytmioiden syntymisen substraattina. Toisin kuin jänniteohjatuissa kalsiumkanavissa, TRPC-kanavat ovat epäselektiivisiä kationikanavia, jotka voivat aktivoitua useiden ärsykkeiden kautta mukaan lukien mekaaninen venytys ja reseptorivälitteinen signalointi.",
-    s6p2: "Yap 2025 osoitti fyysisen kompleksin kryptokromi 2:n (CRY2) ja TRPC1:n välillä myoblasteissa. CRY2 on flaviiniadeniinidinukleotidista (FAD) riippuvainen sinisen valon fotoreseptori. Jos CRY2-TRPC1-kompleksi toimii kardiomyosyyteissä — kuten molempien proteiinien läsnäolo sydänkudoksessa viittaa — silloin TRPC1:n kautta tapahtuva sydämen kalsiumin sisäänvirtaus säätyy sinisen valon ja FAD-redokstilan mukaan. Tämä luo suoran valoherkän reitin sydämen kalsiumsäätelyyn.",
+    s6p2: "Iversen 2025 osoitti fyysisen kompleksin kryptokromi 2:n (CRY2) ja TRPC1:n välillä myoblasteissa. CRY2 on flaviiniadeniinidinukleotidista (FAD) riippuvainen sinisen valon fotoreseptori. Jos CRY2-TRPC1-kompleksi toimii kardiomyosyyteissä — kuten molempien proteiinien läsnäolo sydänkudoksessa viittaa — silloin TRPC1:n kautta tapahtuva sydämen kalsiumin sisäänvirtaus säätyy sinisen valon ja FAD-redokstilan mukaan. Tämä luo suoran valoherkän reitin sydämen kalsiumsäätelyyn.",
 
     s7Title: "Vuorokausirytmiin sidottu arytmiahypoteesi",
     s7Text: "Jos CRY2-TRPC1-signalointi on aktiivista kardiomyosyyteissä, vaikutukset yölliselle sähkömagneettiselle altistukselle ovat merkittäviä. Puhelinten näyttöjen sininen valo aktivoi CRY2:n, joka säätelee TRPC1-välitteistä kalsiumin sisäänvirtausta. Yöllä, kun vuorokausirytmi odottaa pimeyttä, sinisen valon altistus yhdistettynä laitteen RF-EMF:ään luo kaksoisperturbaation: CRY2:n aktivaatio avaa kalsiumin sisäänvirtausreitin (TRPC1) samalla kun EMF häiritsee jänniteohjattuja kalsiumkanavia. Tämä yhteenliittymä ennustaa, että yöllinen puhelinkäyttö kantaa suurempaa arytmiariskiä kuin vastaava päiväkäyttö — testattava kronobiologinen ennuste.",
@@ -205,8 +205,8 @@ const COPY = {
       },
       {
         id: "yap-2025-cry2-trpc1",
-        citation: "Yap 2025",
-        referenceId: "yap2025",
+        citation: "Iversen 2025",
+        referenceId: "iversen2025",
         finding:
           "CRY2-TRPC1-fyysinen kompleksi osoitettu myoblasteissa — vahvistaa suoran valoherkän kalsiumin sisäänvirtausreitin, jolla on vaikutuksia sydänkudokseen.",
       },
@@ -270,7 +270,7 @@ const COPY = {
 
     s6Title: "CRY2-TRPC1心臓複合体",
     s6p1: "TRPC（Transient Receptor Potential Canonical）チャネルは心室心筋細胞で確認されており、不整脈発生の基質として機能する。電位依存性カルシウムチャネルとは異なり、TRPCチャネルは機械的伸展や受容体作動性シグナリングを含む複数の刺激で活性化される非選択的カチオンチャネルである。",
-    s6p2: "Yap 2025は筋芽細胞においてクリプトクロム2（CRY2）とTRPC1間の物理的複合体を実証した。CRY2はフラビンアデニンジヌクレオチド（FAD）依存性青色光光受容体である。CRY2-TRPC1複合体が心筋細胞で機能する場合——心臓組織に両タンパク質が存在することが示唆するように——TRPC1を通じた心臓のカルシウム流入は青色光とFAD酸化還元状態により調節される。これは心臓カルシウム調節のための直接的光感受性経路を生み出す。",
+    s6p2: "Iversen 2025は筋芽細胞においてクリプトクロム2（CRY2）とTRPC1間の物理的複合体を実証した。CRY2はフラビンアデニンジヌクレオチド（FAD）依存性青色光光受容体である。CRY2-TRPC1複合体が心筋細胞で機能する場合——心臓組織に両タンパク質が存在することが示唆するように——TRPC1を通じた心臓のカルシウム流入は青色光とFAD酸化還元状態により調節される。これは心臓カルシウム調節のための直接的光感受性経路を生み出す。",
 
     s7Title: "概日不整脈仮説",
     s7Text: "CRY2-TRPC1シグナリングが心筋細胞で活性であれば、夜間電磁場曝露への影響は重大である。携帯電話画面の青色光がCRY2を活性化し、TRPC1媒介カルシウム流入を調節する。夜間、概日システムが暗闇を期待するとき、青色光曝露とデバイスからのRF-EMFが二重擾乱を生み出す：CRY2活性化がカルシウム流入経路（TRPC1）を開く一方、EMFが同時に電位依存性カルシウムチャネルを擾乱する。この収束は夜間の携帯電話使用が同等の日中使用よりも高い不整脈リスクを伴うと予測する——検証可能な時間生物学的予測。",
@@ -316,8 +316,8 @@ const COPY = {
       },
       {
         id: "yap-2025-cry2-trpc1",
-        citation: "Yap 2025",
-        referenceId: "yap2025",
+        citation: "Iversen 2025",
+        referenceId: "iversen2025",
         finding:
           "筋芽細胞でCRY2-TRPC1物理的複合体を実証——心臓組織への影響を持つ直接的光感受性カルシウム流入経路を確立。",
       },
@@ -381,7 +381,7 @@ const COPY = {
 
     s6Title: "Complexe cardiaque CRY2-TRPC1",
     s6p1: "Les canaux TRPC (Transient Receptor Potential Canonical) ont ete confirmes dans les cardiomyocytes ventriculaires, ou ils servent de substrat pour la generation d'arythmies. Contrairement aux canaux calciques voltage-dependants, les canaux TRPC sont des canaux cationiques non selectifs qui peuvent etre actives par de multiples stimuli incluant l'etirement mecanique et la signalisation operee par recepteur.",
-    s6p2: "Yap 2025 a demontre un complexe physique entre le cryptochrome 2 (CRY2) et TRPC1 dans les myoblastes. CRY2 est un photorecepteur de lumiere bleue dependant du flavine adenine dinucleotide (FAD). Si le complexe CRY2-TRPC1 opere dans les cardiomyocytes — comme la presence des deux proteines dans le tissu cardiaque le suggere — alors l'entree calcique cardiaque par TRPC1 est modulee par la lumiere bleue et l'etat redox du FAD. Cela cree une voie photosensible directe pour la regulation calcique cardiaque.",
+    s6p2: "Iversen 2025 a demontre un complexe physique entre le cryptochrome 2 (CRY2) et TRPC1 dans les myoblastes. CRY2 est un photorecepteur de lumiere bleue dependant du flavine adenine dinucleotide (FAD). Si le complexe CRY2-TRPC1 opere dans les cardiomyocytes — comme la presence des deux proteines dans le tissu cardiaque le suggere — alors l'entree calcique cardiaque par TRPC1 est modulee par la lumiere bleue et l'etat redox du FAD. Cela cree une voie photosensible directe pour la regulation calcique cardiaque.",
 
     s7Title: "Hypothese d'arythmie circadienne",
     s7Text: "Si la signalisation CRY2-TRPC1 est active dans les cardiomyocytes, les implications pour l'exposition electromagnetique nocturne sont significatives. La lumiere bleue des ecrans de telephone active CRY2, qui module l'entree calcique mediee par TRPC1. La nuit, quand le systeme circadien attend l'obscurite, l'exposition a la lumiere bleue combinee au RF-CEM du dispositif cree une double perturbation : l'activation de CRY2 ouvre une voie d'entree calcique (TRPC1) tandis que le CEM perturbe simultanement les canaux calciques voltage-dependants. Cette convergence predit que l'utilisation nocturne du telephone comporte un risque d'arythmie plus eleve qu'une utilisation diurne equivalente — une prediction chronobiologique testable.",
@@ -427,8 +427,8 @@ const COPY = {
       },
       {
         id: "yap-2025-cry2-trpc1",
-        citation: "Yap 2025",
-        referenceId: "yap2025",
+        citation: "Iversen 2025",
+        referenceId: "iversen2025",
         finding:
           "Complexe physique CRY2-TRPC1 demontre dans les myoblastes — etablit une voie directe photosensible d'entree calcique avec des implications pour le tissu cardiaque.",
       },
@@ -492,7 +492,7 @@ const COPY = {
 
     s6Title: "CRY2-TRPC1 심장 복합체",
     s6p1: "TRPC(Transient Receptor Potential Canonical) 채널은 심실 심근세포에서 확인되었으며 부정맥 발생의 기질로 기능한다. 전압 의존 칼슘 채널과 달리 TRPC 채널은 기계적 신장과 수용체 작동 신호전달을 포함한 다중 자극에 의해 활성화될 수 있는 비선택적 양이온 채널이다.",
-    s6p2: "Yap 2025는 근아세포에서 크립토크롬 2(CRY2)와 TRPC1 사이의 물리적 복합체를 입증했다. CRY2는 플라빈 아데닌 다이뉴클레오타이드(FAD) 의존성 청색광 광수용체이다. CRY2-TRPC1 복합체가 심근세포에서 작동한다면 — 심장 조직에 두 단백질이 존재하는 것이 시사하듯 — TRPC1을 통한 심장 칼슘 유입은 청색광과 FAD 산화환원 상태에 의해 조절된다. 이는 심장 칼슘 조절을 위한 직접적 광감수성 경로를 생성한다.",
+    s6p2: "Iversen 2025는 근아세포에서 크립토크롬 2(CRY2)와 TRPC1 사이의 물리적 복합체를 입증했다. CRY2는 플라빈 아데닌 다이뉴클레오타이드(FAD) 의존성 청색광 광수용체이다. CRY2-TRPC1 복합체가 심근세포에서 작동한다면 — 심장 조직에 두 단백질이 존재하는 것이 시사하듯 — TRPC1을 통한 심장 칼슘 유입은 청색광과 FAD 산화환원 상태에 의해 조절된다. 이는 심장 칼슘 조절을 위한 직접적 광감수성 경로를 생성한다.",
 
     s7Title: "일주기 부정맥 가설",
     s7Text: "CRY2-TRPC1 신호전달이 심근세포에서 활성이라면 야간 전자기 노출에 대한 함의는 중대하다. 휴대폰 화면의 청색광이 CRY2를 활성화하여 TRPC1 매개 칼슘 유입을 조절한다. 야간에 일주기 시스템이 암흑을 기대할 때 청색광 노출과 기기의 RF-EMF가 이중 교란을 생성한다: CRY2 활성화가 칼슘 유입 경로(TRPC1)를 열면서 EMF가 동시에 전압 의존 칼슘 채널을 교란한다. 이 수렴은 야간 휴대폰 사용이 동등한 주간 사용보다 높은 부정맥 위험을 수반한다고 예측한다 — 검증 가능한 시간생물학적 예측.",
@@ -538,8 +538,8 @@ const COPY = {
       },
       {
         id: "yap-2025-cry2-trpc1",
-        citation: "Yap 2025",
-        referenceId: "yap2025",
+        citation: "Iversen 2025",
+        referenceId: "iversen2025",
         finding:
           "근아세포에서 CRY2-TRPC1 물리적 복합체 입증 — 심장 조직에 대한 함의를 가진 직접적 광감수성 칼슘 유입 경로 확립.",
       },

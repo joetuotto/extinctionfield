@@ -7,6 +7,7 @@
 import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { atlasBindingAnchors } from "./atlas-anchors.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, "../data");
@@ -209,6 +210,12 @@ for (const claim of claims.claims) {
   }
   claimIds.add(claim.id);
 }
+try {
+  const bindingsSource = readFileSync(resolve(DATA_DIR, "atlas-claim-bindings.json"), "utf-8");
+  atlasBindingAnchors(JSON.parse(bindingsSource), claimIds, bindingsSource);
+} catch (e) {
+  error(`Dynamic atlas claim bindings: ${e.message}`);
+}
 
 // ── 10. Claim target validity ─────────────────────────
 console.log("10. Checking claim targets...");
@@ -256,7 +263,51 @@ for (const er of claims.evidence_relations) {
     error(`Evidence relation ${er.id}: claim "${er.claimId}" does not exist`);
   }
   if (refIds && !refIds.has(er.referenceId)) {
-    warn(`Evidence relation ${er.id}: reference "${er.referenceId}" not found in references_full.json`);
+    error(`Evidence relation ${er.id}: canonical reference "${er.referenceId}" not found in references_full.json`);
+  }
+  if (!["supports", "challenges", "contextualizes", "method"].includes(er.relation)) error(`Evidence relation ${er.id}: invalid relation`);
+  if (!["structural_only", "context_only", "calibration"].includes(er.calibrationRole)) error(`Evidence relation ${er.id}: invalid calibration role`);
+  validateProvenance(er.provenance, `Evidence relation ${er.id}`);
+}
+
+function validateProvenance(provenance, label) {
+  if (!provenance || !["partial", "complete"].includes(provenance.status)) {
+    error(`${label}: explicit provenance status is required`);
+    return;
+  }
+  for (const key of ["studyIds", "datasetFamilyIds", "premiseIds"]) {
+    if (!Array.isArray(provenance[key]) || provenance[key].some((id) => typeof id !== "string" || !id.trim())) {
+      error(`${label}: ${key} must contain nonempty identifiers`);
+    } else if (new Set(provenance[key]).size !== provenance[key].length) {
+      error(`${label}: duplicate ${key}`);
+    }
+  }
+}
+
+// A correction is a versioned source, not an additional supporting experiment.
+if (refIndex) {
+  const byReference = new Map(refIndex.references.map((r) => [r.id, r]));
+  for (const ref of refIndex.references) {
+    if (ref.correctionOf) {
+      const original = byReference.get(ref.correctionOf);
+      if (!original || original.id === ref.id) error(`Reference ${ref.id}: invalid correctionOf`);
+      else if (!original.corrections?.includes(ref.id)) error(`Reference ${ref.id}: missing reciprocal correction link`);
+      const visited = new Set([ref.id]);
+      let cursor = original;
+      while (cursor?.correctionOf) {
+        if (visited.has(cursor.id)) { error(`Reference ${ref.id}: correction cycle`); break; }
+        visited.add(cursor.id);
+        cursor = byReference.get(cursor.correctionOf);
+      }
+    }
+    for (const id of ref.corrections ?? []) {
+      if (byReference.get(id)?.correctionOf !== ref.id) error(`Reference ${ref.id}: correction ${id} does not point back`);
+    }
+  }
+  for (const er of claims.evidence_relations) {
+    if (byReference.get(er.referenceId)?.correctionOf && er.relation === "supports") {
+      error(`Evidence relation ${er.id}: a correction must annotate its source rather than count as new supporting evidence`);
+    }
   }
 }
 
@@ -323,6 +374,14 @@ const routeIds = new Set();
 if (routeArray.length > 0) {
   console.log("17. Checking route definitions...");
   for (const route of routeArray) {
+    validateProvenance(route.independenceAudit, `Route ${route.id}`);
+    if (!route.independenceAudit?.reviewedBy || !route.independenceAudit?.reviewedAt) error(`Route ${route.id}: missing audit provenance`);
+    if (route.independenceVerified) {
+      const selected = claims.evidence_relations.filter((er) => route.routeEvidence.includes(er.id));
+      if (route.independenceAudit?.status !== "complete" || selected.length === 0 || selected.some((er) => er.provenance?.status !== "complete" || !er.provenance.studyIds.length)) {
+        error(`Route ${route.id}: independence cannot be verified with incomplete source/audit provenance`);
+      }
+    }
     if (!/^route\.[a-z][a-z0-9-]*$/.test(route.id)) {
       error(`Route ID "${route.id}" does not match pattern "route.<slug>"`);
     }
@@ -364,6 +423,46 @@ if (routeArray.length > 0) {
     const unverified = gRoutes.filter((r) => !r.independenceVerified);
     if (unverified.length > 0 && unverified.length < gRoutes.length) {
       warn(`Independence group "${gid}": ${unverified.length}/${gRoutes.length} routes not verified`);
+    }
+  }
+  // A verified flag must also be consistent with the actual inventories.
+  const referenceById = new Map((refIndex?.references ?? []).map((ref) => [ref.id, ref]));
+  const sourceId = (id) => {
+    const visited = new Set();
+    while (referenceById.get(id)?.correctionOf && !visited.has(id)) {
+      visited.add(id);
+      id = referenceById.get(id).correctionOf;
+    }
+    return id;
+  };
+  const claimById = new Map(claims.claims.map((claim) => [claim.id, claim]));
+  const inventory = (route) => {
+    const ids = new Set();
+    const visit = (id) => {
+      if (ids.has(id)) return;
+      ids.add(id);
+      (claimById.get(id)?.depends_on ?? []).forEach(visit);
+    };
+    route.routeClaims.forEach(visit);
+    const selected = claims.evidence_relations.filter((er) => route.routeEvidence.includes(er.id));
+    return [
+      ...[...ids].map((id) => `claim:${id}`),
+      ...selected.map((er) => `source:${sourceId(er.referenceId)}`),
+      ...route.sharedAssumptions.map((id) => `assumption:${id}`),
+      ...route.sharedDatasets.map((id) => `datasetFamilyIds:${id}`),
+      ...["studyIds", "datasetFamilyIds", "premiseIds"].flatMap((key) => [
+        ...(route.independenceAudit?.[key] ?? []),
+        ...selected.flatMap((er) => er.provenance?.[key] ?? []),
+      ].map((id) => `${key}:${id}`)),
+    ];
+  };
+  for (let i = 0; i < routeArray.length; i++) {
+    for (const other of routeArray.slice(i + 1)) {
+      const route = routeArray[i];
+      if (!route.independenceVerified && !other.independenceVerified) continue;
+      const left = new Set(inventory(route));
+      const overlap = inventory(other).filter((id) => left.has(id));
+      if (overlap.length) error(`Verified independence conflicts with shared provenance: ${route.id} / ${other.id}: ${[...new Set(overlap)].join(", ")}`);
     }
   }
   console.log(`   ${groups.size} independence group(s): ${[...groups.keys()].join(", ")}`);

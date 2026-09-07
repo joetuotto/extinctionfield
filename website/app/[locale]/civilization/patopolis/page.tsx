@@ -39,17 +39,17 @@ const COPY = {
       "South Korea: TFR 0.75 (2024)",
     ],
 
-    s5bTitle: "Multiplicative fertility collapse",
+    s5bTitle: "Functional gates, waiting time and realised births",
     s5bFormula:
-      "Fertility = f(sperm) × g(oocyte) × h(timing) × j(motivation)",
+      "P(live birth per opportunity) = P(reaching the gate) × P(next success | previous success, shared state)",
     s5bFactors: [
-      "f(sperm): −62% concentration ([[ref:levine2023_sperm|Levine 2023]])",
-      "g(oocyte): AMH declining, PCOS rising, reserve depleting earlier",
-      "h(timing): Circadian disruption → ovulation timing errors",
-      "j(motivation): T↓ (male) × OT↓ (female) → fewer attempts",
-    ],
+  "Sperm function: calcium timing, hyperactivation and DNA/energy state; concentration alone is not fecundability.",
+  "Oocyte and implantation gates: local endocrine/clock state and the calcium activation pattern.",
+  "Temporal overlap: ovulation, tissue receptivity and the timing of attempts.",
+  "Opportunity: encounter, mutual response, contraception, desired family size and access to assistance."
+],
     s5bCompound:
-      "If each factor declines 30%, total fecundability declines 76% (0.7⁴ = 0.24). Fecundability is the clinical probability of conception per menstrual cycle — distinct from the total fertility rate (TFR), which measures births per lifetime. The multiplicative structure means small declines in each factor compound into a dramatically larger aggregate decline. This explains why TFR is falling faster than any single factor would predict — and why pronatalist policies fail. Policy addresses j(motivation) with money. It cannot address f, g, or h — which are biological.",
+      "For a couple with stable per-cycle success p, P(pregnancy by n cycles)=1−(1−p)^n. The population average must be taken over the couple distribution, not calculated from the average p alone. Lower-success couples accumulate in the waiting tail; longer waiting can delay the next birth and interact with age. This gives a mechanistic path to age-specific births and period TFR, which summarizes current age-specific fertility rates rather than observed lifetime births. Shared biological gates are counted once; policy can change opportunities, timing and treatment access as well as motivation.",
 
     s5cTitle: "Child development cascade",
     s5cBurdens: [
@@ -70,17 +70,17 @@ const COPY = {
       },
     ],
     s5cSpiral:
-      "Each generation starts from a weaker baseline than the previous one. CaMKII-mediated sensitization means each generation is also more sensitive to the same EMF dose. This produces an accelerating spiral. CaMKII (calcium/calmodulin-dependent protein kinase II) is an enzyme that, once activated by calcium influx, remains active even after calcium levels normalize — it effectively creates a molecular memory of past exposure by auto-phosphorylating and sustaining downstream signaling changes. This mechanism converts temporary Ca²⁺ overload into permanent cellular state changes, including altered gene expression via methylation.",
+      "Developmental history can change the later receiving state and response window. BERM distinguishes inherited germline change, prenatal programming, same-generation adaptation and population selection. A matched history × acute-field experiment measures absolute baseline, frequency selectivity, repair and function. CaMKII autophosphorylation is one candidate memory process; it does not by itself establish permanent methylation or an inevitably weaker next generation.",
 
     s5dTitle: "Institutional decay",
     s5dLead:
-      "Institutions require two complementary inputs:",
+      "Institutions store the results of repeated biological and social activity. Their continuity depends on successful encounters that reproduce skills, care and maintenance.",
     s5dBuilding:
-      "Building (historically T-correlated): innovation, risk-taking, competitive drive, resource acquisition, hierarchical organization, long-term planning under uncertainty.",
+      "Formation: attention, initiative and learning combine with partner availability and acceptance to produce successful collaboration. Hormone reception and sleep can change these probabilities in a context-dependent way.",
     s5dMaintaining:
-      "Maintaining (historically OT-correlated): trust, cooperation, empathy, conflict resolution, caregiving, social norm enforcement, in-group cohesion.",
+      "Renewal: repeated teaching, caregiving, repair and cooperation replenish stored capacity. Both participants and their temporal overlap matter; a network can propagate changes to later partners.",
     s5dConclusion:
-      "An institution that is neither built nor maintained does not collapse dramatically — it decays. Services degrade. Trust erodes. Competence declines. Standards lower. This is not visible as a crisis — it is visible as a slow loss of quality in everything simultaneously.",
+      "A minimal model is dK/dt=αE_social−δK for skills and dM/dt=βQ_care,repair−γM for maintained infrastructure. Earlier accumulated capacity can buffer a sustained loss of successful interactions before a delayed decline becomes visible. Sleep-loss and cooperation experiments anchor interaction changes; the network coefficients and the upstream field contribution require their own measurements.",
 
     s5eTitle: "The accelerating spiral",
     generations: [
@@ -590,17 +590,17 @@ const COPY = {
       "Etelä-Korea: syntyvyys 0,72 (2024)",
     ],
 
-    s5bTitle: "Multiplikatiivinen hedelmällisyysromahdus",
+    s5bTitle: "Toiminnalliset portit, odotusaika ja toteutuneet syntymät",
     s5bFormula:
-      "Hedelmällisyys = f(siittiöt) × g(munasolu) × h(ajoitus) × j(motivaatio)",
+      "P(elävänä syntymä mahdollisuutta kohti) = P(portille pääsy) × P(seuraava onnistuminen | aiempi onnistuminen, yhteinen tila)",
     s5bFactors: [
-      "f(siittiöt): −62 % pitoisuus ([[ref:levine2023_sperm|Levine 2023]])",
-      "g(munasolu): AMH laskee, PCOS kasvaa, reservi ehtyy aiemmin",
-      "h(ajoitus): Vuorokausirytmihäiriö → ovulaation ajoitusvirheet",
-      "j(motivaatio): T↓ (miehet) × OT↓ (naiset) → vähemmän yrityksiä",
-    ],
+  "Siittiön toiminto: kalsiumin ajoitus, hyperaktivaatio sekä DNA-/energiatila; pitoisuus yksin ei ole hedelmöittymistodennäköisyys.",
+  "Munasolu- ja implantaatioportit: paikallinen hormoni-/kellotila ja kalsiumaktivaation kuvio.",
+  "Ajallinen päällekkäisyys: ovulaatio, kudoksen vastaanottavuus ja yritysten ajoitus.",
+  "Mahdollisuus: kohtaaminen, molemminpuolinen vaste, ehkäisy, toivottu lapsiluku ja avun saatavuus."
+],
     s5bCompound:
-      "Jos jokainen tekijä laskee 30 %, kokonaishedelmällisyys laskee 76 % (0,7⁴ = 0,24). Tämä selittää, miksi kokonaishedelmällisyysluku laskee nopeammin kuin mikään yksittäinen tekijä ennustaisi — ja miksi pronatalistiset politiikat epäonnistuvat. Politiikka osoittaa j(motivaatio)-tekijään rahalla. Se ei voi osoittaa f-, g- tai h-tekijöitä — jotka ovat biologisia.",
+      "Parilla, jonka kiertokohtainen onnistuminen p on vakaa, P(raskaus n kierrossa)=1−(1−p)^n. Väestökeskiarvo on laskettava parijakauman yli eikä pelkästä keskimääräisestä p:stä. Pienemmän onnistumisen parit kertyvät odotushäntään; pidempi odotus voi siirtää seuraavaa syntymää ja yhdistyä ikään. Näin muodostuu mekanistinen reitti ikäryhmittäisiin syntymiin ja periodi-TFR:ään, joka tiivistää nykyiset ikäryhmittäiset hedelmällisyysluvut eikä havaittuja elinaikaisia syntymiä. Yhteiset biologiset portit lasketaan kerran; politiikka voi muuttaa mahdollisuuksia, ajoitusta ja hoitoon pääsyä sekä motivaatiota.",
 
     s5cTitle: "Lapsen kehityskaskadi",
     s5cBurdens: [
@@ -621,17 +621,17 @@ const COPY = {
       },
     ],
     s5cSpiral:
-      "Jokainen sukupolvi aloittaa heikommalta lähtötasolta kuin edellinen. CaMKII-välitteinen sensitisaatio tarkoittaa, että jokainen sukupolvi on myös herkempi samalle EMF-annokselle. Tämä tuottaa kiihtyvän kierteen.",
+      "Kehityshistoria voi muuttaa myöhempää vastaanotintilaa ja vasteikkunaa. BERM erottaa periytyvän sukulinjamuutoksen, sikiöaikaisen ohjelmoitumisen, saman sukupolven adaptaation ja populaation valikoitumisen. Vertailukelpoinen historia × akuutti kenttä -koe mittaa absoluuttisen lähtötilan, taajuusvalikoivuuden, korjauksen ja toiminnan. CaMKII-autofosforylaatio on yksi muistiprosessin ehdokas; se ei yksin osoita pysyvää metylaatiota tai väistämättä heikompaa seuraavaa sukupolvea.",
 
     s5dTitle: "Institutionaalinen rapautuminen",
     s5dLead:
-      "Instituutiot vaativat kahta komplementaarista panosta:",
+      "Instituutiot varastoivat toistuvan biologisen ja sosiaalisen toiminnan tuloksia. Niiden jatkuvuus riippuu onnistuneista kohtaamisista, jotka uusintavat osaamista, hoivaa ja ylläpitoa.",
     s5dBuilding:
-      "Rakentaminen (historiallisesti T-korreloitu): innovaatio, riskinotto, kilpailuvietti, resurssien hankinta, hierarkkinen organisointi, pitkän tähtäimen suunnittelu epävarmuudessa.",
+      "Muodostuminen: huomio, aloite ja oppiminen yhdistyvät kumppanin saatavuuteen ja vastaanottoon ja tuottavat onnistunutta yhteistyötä. Hormonivastaanotto ja uni voivat muuttaa näitä todennäköisyyksiä tilannekohtaisesti.",
     s5dMaintaining:
-      "Ylläpito (historiallisesti OT-korreloitu): luottamus, yhteistyö, empatia, konfliktin ratkaisu, hoiva, sosiaalisten normien valvonta, sisäryhmäkoheesio.",
+      "Uusintaminen: toistuva opetus, hoiva, korjaus ja yhteistyö täydentävät varastoitunutta kapasiteettia. Molemmat osallistujat ja heidän ajallinen päällekkäisyytensä vaikuttavat; verkosto voi välittää muutoksia myöhemmille kumppaneille.",
     s5dConclusion:
-      "Instituutio, jota ei rakenneta eikä ylläpidetä, ei romahda dramaattisesti — se rapautuu. Palvelut heikkenevät. Luottamus murenee. Pätevyys vähenee. Standardit laskevat. Tämä ei näy kriisinä — se näkyy hitaana laadun menetyksenä kaikessa samanaikaisesti.",
+      "Minimimalli on dK/dt=αE_social−δK osaamiselle ja dM/dt=βQ_care,repair−γM ylläpidetylle infrastruktuurille. Aiemmin kertynyt kapasiteetti voi puskuroida onnistuneiden vuorovaikutusten jatkuvaa vähenemistä ennen viivästyneen laskun näkymistä. Univaje- ja yhteistyökokeet ankkuroivat vuorovaikutusmuutoksia; verkostokertoimet ja ylävirran kenttäosuus tarvitsevat omat mittauksensa.",
 
     s5eTitle: "Kiihtyvä kierre",
     generations: [
@@ -2623,6 +2623,7 @@ export default async function PatopolisPage({
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
           {d.title}
         </h1>
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mb-6">
           {d.subtitle}
         </p>

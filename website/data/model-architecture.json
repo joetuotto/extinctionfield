@@ -73,6 +73,16 @@
     }
   },
   "routes": {
+    "modulomeAsfr": {
+      "id": "berm-modulome-conditional-asfr-v1",
+      "role": "conditional_scenario_calculator",
+      "inputKind": "caller_supplied_local_biological_driver_and_state",
+      "fieldStateCalibrated": false,
+      "calibrationStatus": "STRUCTURAL_ONLY",
+      "requiresOpenL2Bridge": true,
+      "publishesLockedForecasts": false,
+      "preservesArchivedV17": true
+    },
     "prediction": {
       "id": "berm-v17-scalar-proxy",
       "modelVersion": "v17",

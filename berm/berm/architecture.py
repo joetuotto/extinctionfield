@@ -19,6 +19,7 @@ PUBLIC_MODEL_VERSION = "v17"
 PREDICTION_ROUTE_ID = "berm-v17-scalar-proxy"
 DIAGNOSTIC_ROUTE_ID = "berm-v19.1-three-channel-diagnostic"
 CONDITIONAL_ASFR_ROUTE_ID = "berm-conditional-asfr-v1"
+MODULOME_ASFR_ROUTE_ID = "berm-modulome-conditional-asfr-v1"
 DKC_CANDIDATE_ROUTE_ID = "berm-lindgren-dkc-candidate-v1"
 
 FIELDSTATE_MODULE_ID = "fieldstate"
@@ -129,6 +130,16 @@ _ARCHITECTURE_MANIFEST = {
         },
     },
     "routes": {
+        "modulomeAsfr": {
+            "id": MODULOME_ASFR_ROUTE_ID,
+            "role": "conditional_scenario_calculator",
+            "inputKind": "caller_supplied_local_biological_driver_and_state",
+            "fieldStateCalibrated": False,
+            "calibrationStatus": "STRUCTURAL_ONLY",
+            "requiresOpenL2Bridge": True,
+            "publishesLockedForecasts": False,
+            "preservesArchivedV17": True,
+        },
         "prediction": {
             "id": PREDICTION_ROUTE_ID,
             "modelVersion": PUBLIC_MODEL_VERSION,
@@ -189,6 +200,7 @@ def architecture_manifest() -> dict:
 
 __all__ = [
     "CONDITIONAL_ASFR_ROUTE_ID",
+    "MODULOME_ASFR_ROUTE_ID",
     "DKC_CANDIDATE_ROUTE_ID",
     "DIAGNOSTIC_ROUTE_ID",
     "FIELDSTATE_MODULE_ID",

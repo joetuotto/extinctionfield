@@ -11,6 +11,8 @@ export interface IndexedReference {
   readonly type: string | null;
   readonly linkStatus: ReferenceLinkStatus;
   readonly externalUrl: string | null;
+  readonly correctionOf?: string;
+  readonly corrections?: readonly string[];
 }
 
 interface CompactReferenceIndex {
@@ -23,6 +25,19 @@ const INDEX = indexData as CompactReferenceIndex;
 
 export function canonicalReferenceId(referenceId: string): string {
   return INDEX.aliases[referenceId] ?? referenceId;
+}
+
+/** Corrections are versions of their source, not independent experiments. */
+export function sourceReferenceId(referenceId: string): string {
+  let id = canonicalReferenceId(referenceId);
+  const visited = new Set<string>();
+  while (!visited.has(id)) {
+    visited.add(id);
+    const original = INDEX.references[id]?.correctionOf;
+    if (!original) break;
+    id = canonicalReferenceId(original);
+  }
+  return id;
 }
 
 export function indexedReference(referenceId: string): IndexedReference | null {

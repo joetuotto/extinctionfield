@@ -145,8 +145,8 @@ export const CHI_SCALES: ChiScale[] = [
     at_max_ja: "FAD充足 → 完全な磁気感受性",
     at_max_fr: "FAD saturé → sensibilité magnétique maximale",
     at_max_ko: "FAD 충족 → 완전한 자기 감수성",
-    verification: "Hirano 2017, Yap 2025",
-    referenceIds: ["hirano2017", "yap2025"],
+    verification: "Hirano 2017, Iversen 2025",
+    referenceIds: ["hirano2017", "iversen2025"],
     level: "E",
   },
   {

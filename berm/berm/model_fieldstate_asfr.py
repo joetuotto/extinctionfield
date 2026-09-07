@@ -24,6 +24,7 @@ from berm.outcomes.fieldstate_asfr import (
     ConditionalASFRProjection,
     project_conditional_asfr,
 )
+from berm.outcomes.reproductive_waiting import WaitingHorizonComparison
 
 
 MODEL_VERSION = CONDITIONAL_ASFR_ROUTE_ID
@@ -87,6 +88,7 @@ def project_wpp_conditional_asfr(
     target_tempo: Mapping[str, float] | None = None,
     reference_art_live_birth_delivery: Mapping[str, float] | None = None,
     target_art_live_birth_delivery: Mapping[str, float] | None = None,
+    waiting_comparisons: Mapping[str, WaitingHorizonComparison] | None = None,
     input_provenance: Mapping[str, str] | None = None,
 ) -> dict:
     """Use observed WPP reference ASFR with supplied biological states.
@@ -95,7 +97,16 @@ def project_wpp_conditional_asfr(
     the supplied states from a separately calibrated local measurement panel,
     but this function neither requires nor performs that mapping.  The target
     WPP ASFR remains held out for comparison.
+
+    ``waiting_comparisons`` may select any standard age groups. Each supplied
+    comparison replaces that group's linear biological ratio; it is never
+    multiplied by the individual couple capacity a second time.
     """
+    waiting = dict(waiting_comparisons or {})
+    if set(waiting) - set(wpp.AGE_GROUPS):
+        raise ValueError("waiting_comparisons contains unknown age groups")
+    if not all(isinstance(value, WaitingHorizonComparison) for value in waiting.values()):
+        raise TypeError("waiting_comparisons values must be WaitingHorizonComparison")
     reference = wpp.load_asfr(geography_id, reference_year)
     if reference is None:
         raise LookupError(
@@ -126,6 +137,7 @@ def project_wpp_conditional_asfr(
             target_tempo=tgt_tempo[group],
             reference_art_live_birth_delivery=ref_art[group],
             target_art_live_birth_delivery=tgt_art[group],
+            waiting_comparison=waiting.get(group),
             birth_cohort=year - _AGE_MIDPOINTS[group],
             asfr_source_id=wpp.SOURCE_ID_ASFR,
             demand_source_id=(input_provenance or {}).get("demand_source_id", "UNSPECIFIED_DEMAND_SOURCE"),

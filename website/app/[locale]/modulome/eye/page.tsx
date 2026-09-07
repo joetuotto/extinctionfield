@@ -19,7 +19,7 @@ const COPY = {
     s1p1:
       "The human retina contains two distinct cryptochrome systems. [[ref:bartolke2025|Bartolke et al. (2025, FASEB Journal)]] demonstrated that full-length CRY1 protein localizes exclusively to the outer segments of short-wavelength-sensitive blue cone photoreceptors in human, bonobo, and gorilla retinas. This placement far from nuclei suggests a non-circadian, phototransductive function. The stacked membrane lamellae of cone outer segments provide the structural order required for oriented radical pair magnetoreception.",
     s1p2:
-      "CRY2 operates in retinal ganglion cells as part of the circadian light input pathway to the suprachiasmatic nucleus (SCN). [[ref:yap2025|Yap et al. (2025, Cells)]] showed that CRY2 physically interacts with TRPC1, forming a complex that co-translocates to the nucleus after pulsed electromagnetic field exposure. The FAD chromophore is required for both systems: without FAD, CRY proteins are unstable and magnetically insensitive.",
+      "CRY2 operates in retinal ganglion cells as part of the circadian light input pathway to the suprachiasmatic nucleus (SCN). The CRY2-TRPC1 complex itself was characterised in muscle cells: [[ref:iversen2025|Iversen et al. (2025, Cells)]] showed in C2C12 myoblasts that CRY2 interacts physically with TRPC1 and that CRY2 amount, FAD availability, field direction and light history all change the pulsed-field response. Carrying that axis into the retina is a tissue-transfer hypothesis and is marked as one here. The FAD chromophore is required for both systems: without FAD, CRY proteins are unstable and magnetically insensitive.",
     s1p3:
       "This dual CRY architecture means the eye operates two parallel electromagnetic sensing channels: CRY1 in blue cones for directional magnetoreception, and CRY2 in ganglion cells for circadian-magnetic integration.",
 
@@ -36,9 +36,9 @@ const COPY = {
       {
         name: "CRY2 (retinal ganglion cells)",
         function: "Circadian-magnetic integration",
-        mechanism: "Forms physical complex with TRPC1 ([[ref:yap2025|Yap 2025]]), co-translocates to nucleus",
-        evidence: "Yap 2025 (Cells) — CRY2-TRPC1 interaction, FAD-dependent",
-        referenceId: "yap2025",
+        mechanism: "Forms physical complex with TRPC1 ([[ref:iversen2025|Iversen 2025]]), co-translocates to nucleus",
+        evidence: "Iversen 2025 (Cells) — CRY2-TRPC1 interaction, FAD-dependent",
+        referenceId: "iversen2025",
       },
       {
         name: "FAD chromophore",
@@ -56,7 +56,7 @@ const COPY = {
     s3Chain:
       "Blue light → CRY → FAD• radical pair → RPM spin dynamics → circadian disruption → melatonin ↓ → HPG axis ↓",
     s3Iris:
-      "Iris pigmentation modulates the entire chain at its entry point. Blue eyes transmit approximately 100× more blue light to the retina than brown eyes ([[ref:higuchi2007|Higuchi 2007]]: 89% vs 73% melatonin suppression under identical 1000 lux exposure). This is not a small effect — it is a nearly 2-fold difference in the gain of the entire downstream cascade.",
+      "Iris pigmentation acts at the entry point of the chain, and the modulome records it as measured optical exposure rather than as a transmission coefficient. [[ref:higuchi2007|Higuchi 2007]] reported melatonin suppression of 88.9 per cent against 73.4 per cent in two small groups under the same 1000 lux exposure, and in that design pigmentation and ethnic background varied together. The measurement bounds the claim to melatonin suppression under the stated exposure; it does not measure a hundredfold retinal light dose. What the model needs in its place is the retinal light dose itself, measured.",
     s3Green:
       "Green eyes occupy a unique position: their lipochrome pigment acts as a bandpass filter transmitting the 450–570 nm CRY operational band while reducing UV and extreme blue that cause over-reduction of the semiquinone ([[ref:niessner2014|Niessner 2014]]). This may optimize CRY stability over CRY activation — favoring circadian robustness over raw magnetoreceptive sensitivity.",
 
@@ -78,7 +78,7 @@ const COPY = {
       {
         citation: "Higuchi et al. (Am J Physiol)",
         year: 2007, referenceId: "higuchi2007",
-        finding: "Light-eyed Caucasians: 89% melatonin suppression vs 73% for dark-eyed Asians under identical 1000 lux, 2h exposure. Iris pigmentation modulates non-visual pathway.",
+        finding: "Melatonin suppression 88.9% (light-eyed Caucasians) vs 73.4% (dark-eyed Asians) under identical 1000 lux, 2 h exposure. Two small groups in which pigmentation and ethnic background varied together; the endpoint is melatonin suppression, not retinal light dose.",
         level: "M|C",
       },
       {
@@ -88,8 +88,8 @@ const COPY = {
         level: "E",
       },
       {
-        citation: "Yap et al. (Cells)",
-        year: 2025, referenceId: "yap2025",
+        citation: "Iversen et al. (Cells)",
+        year: 2025, referenceId: "iversen2025",
         finding: "CRY2-TRPC1 physical complex. FAD depletion (RFK silencing) abolished both PEMF responsiveness and magnetic directional selectivity. Dark growth had same effect.",
         level: "E",
       },
@@ -106,8 +106,8 @@ const COPY = {
     s5p1:
       "BERM proposes six candidate criteria for ocular EMF sensitivity and an imported L3 response function χ_eye with three moderators. χ_eye is distinct from the restricted L1 coefficient χ_geo(x); its inputs, weights and biological interpretation remain testable beyond the open L2 bridge:",
     s5Criteria: [
-      "Iris pigmentation — modulates photon flux to CRY (blue ≈ 100×, green ≈ 30×, brown ≈ 1×)",
-      "FAD/B2 nutritional status — determines CRY protein stability and radical pair formation capacity",
+      "Iris pigmentation — recorded as measured retinal light dose, not as a transmission multiplier",
+      "FAD/B2 status — three effects kept apart: the receptor (CRY stability and radical pair formation), clock-protein regulation, and the rest of cellular metabolism through FAD-dependent enzymes. No single protective or sensitising sign follows from them",
       "Ambient light spectrum — blue content determines CRY activation state; darkness = magnetically blind",
     ],
     s5p2:
@@ -186,7 +186,7 @@ const COPY = {
     s1p1:
       "Ihmisen verkkokalvo sisältää kaksi erillistä kryptokromijärjestelmää. [[ref:bartolke2025|Bartolke ym. (2025, FASEB Journal)]] osoittivat, että täyspitkää CRY1-proteiinia esiintyy yksinomaan lyhytaaltoherkissä sinisten tappisolujen ulkosegmenteissa ihmisen, bonobon ja gorillan verkkokalvoilla. Tämä sijainti kaukana tumista viittaa ei-sirkadiaaniseen, fototransduktiiviseen toimintaan. Tappisolujen ulkosegmenttien pinotut kalvolamellit tarjoavat orientoituneelle radikaaliparin magnetoreseptiolle tarvittavan rakenteellisen järjestyksen.",
     s1p2:
-      "CRY2 toimii verkkokalvon gangliosoluissa osana sirkadiaanista valosyötereittiä suprakiasmaattiseen tumakkeeseen (SCN). [[ref:yap2025|Yap ym. (2025, Cells)]] osoittivat, että CRY2 muodostaa fyysisen interaktion TRPC1:n kanssa, ja kompleksi siirtyy yhdessä tumaan pulssisähkömagneettisen kentän altistuksen jälkeen. FAD-kromofori vaaditaan molemmissa järjestelmissä: ilman FAD:ta CRY-proteiinit ovat epästabiileja ja magneettisesti epäherkkiä.",
+      "CRY2 toimii verkkokalvon gangliosoluissa osana sirkadiaanista valosyötereittiä suprakiasmaattiseen tumakkeeseen (SCN). CRY2–TRPC1-kompleksi itse karakterisoitiin lihassoluissa: [[ref:iversen2025|Iversen ym. (2025, Cells)]] osoittivat C2C12-myoblasteissa, että CRY2 on fyysisessä vuorovaikutuksessa TRPC1:n kanssa ja että CRY2:n määrä, FAD:n saatavuus, kentän suunta ja valohistoria muuttavat kaikki pulssikenttävastetta. Tämän akselin vieminen verkkokalvoon on kudossiirtohypoteesi ja merkitään tässä sellaiseksi. FAD-kromofori vaaditaan molemmissa järjestelmissä: ilman FAD:ta CRY-proteiinit ovat epästabiileja ja magneettisesti epäherkkiä.",
     s1p3:
       "Tämä kaksoiskryptokromiarkkitehtuuri tarkoittaa, että silmä käyttää kahta rinnakkaista sähkömagneettista aistikanavaa: CRY1 sinisissä tapeissa suuntakohtaiseen magnetoreseptioon ja CRY2 gangliosoluissa sirkadiaaniseen magneettiseen integraatioon.",
 
@@ -202,9 +202,9 @@ const COPY = {
       {
         name: "CRY2 (verkkokalvon gangliosolut)",
         function: "Sirkadiaaninen magneettinen integraatio",
-        mechanism: "Muodostaa fyysisen kompleksin TRPC1:n kanssa ([[ref:yap2025|Yap 2025]]), siirtyy tumaan",
-        evidence: "Yap 2025 (Cells) — CRY2-TRPC1-interaktio, FAD-riippuvainen",
-        referenceId: "yap2025",
+        mechanism: "Muodostaa fyysisen kompleksin TRPC1:n kanssa ([[ref:iversen2025|Iversen 2025]]), siirtyy tumaan",
+        evidence: "Iversen 2025 (Cells) — CRY2-TRPC1-interaktio, FAD-riippuvainen",
+        referenceId: "iversen2025",
       },
       {
         name: "FAD-kromofori",
@@ -221,7 +221,7 @@ const COPY = {
     s3Chain:
       "Sininen valo → CRY → FAD•-radikaalipari → RPM-spindynamiikka → sirkadiaaninen häiriö → melatoniini ↓ → HPG-akseli ↓",
     s3Iris:
-      "Iiriksen pigmentaatio säätelee koko ketjun syöttöpisteessä. Siniset silmat päästävät noin 100× enemmän sinista valoa verkkokalvolle kuin ruskeat silmat ([[ref:higuchi2007|Higuchi 2007]]: 89 % vs 73 % melatoniinivaimennus identtisessa 1000 luksin altistuksessa). Tämä ei ole pieni efekti — se on lähes kaksinkertainen ero koko alavirran kaskadin vahvistuksessa.",
+      "Iiriksen pigmentaatio vaikuttaa ketjun sisääntulossa, ja moduloomi kirjaa sen mitattuna optisena altistuksena eikä läpäisykertoimena. [[ref:higuchi2007|Higuchi 2007]] raportoi melatoniinivaimennuksen 88,9 prosenttia vastaan 73,4 prosenttia kahdessa pienessä ryhmässä samassa 1000 luksin altistuksessa, ja tuossa asetelmassa pigmentaatio ja etninen tausta vaihtelivat yhdessä. Mittaus rajaa väitteen melatoniinivaimennukseen ilmoitetussa altistuksessa; se ei mittaa satakertaista verkkokalvon valoannosta. Mallille tarvitaan sen tilalle verkkokalvon valoannos itse, mitattuna.",
     s3Green:
       "Vihreät silmät ovat ainutlaatuisessa asemassa: niiden lipokromipigmentti toimii kaistanpäästösuodattimena, joka päästää 450–570 nm CRY:n toimintakaistan samalla vähentäen UV:ta ja äärimmäistä sinista, joka aiheuttaa semikinoni yliredusointia ([[ref:niessner2014|Niessner 2014]]). Tämä voi optimoida CRY-stabiilisuuden CRY-aktivaation sijaan — suosien sirkadiaanista robustisuutta raa'an magnetoreseptiivisen herkkyyden sijaan.",
 
@@ -242,7 +242,7 @@ const COPY = {
       {
         citation: "Higuchi ym. (Am J Physiol)",
         year: 2007, referenceId: "higuchi2007",
-        finding: "Vaalesilmäiset kaukaasialaiset: 89 % melatoniinivaimennus vs 73 % tummasilmäisillä aasialaisilla identtisessa 1000 luksin 2h altistuksessa.",
+        finding: "Melatoniinivaimennus 88,9 % (vaaleasilmäiset kaukaasialaiset) vs 73,4 % (tummasilmäiset aasialaiset) identtisessä 1000 luksin 2 h altistuksessa. Kaksi pientä ryhmää, joissa pigmentaatio ja etninen tausta vaihtelivat yhdessä; päätepiste on melatoniinivaimennus, ei verkkokalvon valoannos.",
         level: "M|C",
       },
       {
@@ -252,8 +252,8 @@ const COPY = {
         level: "E",
       },
       {
-        citation: "Yap ym. (Cells)",
-        year: 2025, referenceId: "yap2025",
+        citation: "Iversen ym. (Cells)",
+        year: 2025, referenceId: "iversen2025",
         finding: "CRY2-TRPC1-fyysinen kompleksi. FAD-puutos (RFK-hiljennys) kumosi sekä PEMF-vasteen että magneettisen suuntaerottelun. Pimea tuotti saman vaikutuksen.",
         level: "E",
       },
@@ -269,8 +269,8 @@ const COPY = {
     s5p1:
       "BERM ehdottaa kuutta silmän EMF-herkkyyden ehdokaskriteeriä ja kolmen moderaattorin tuotua L3-vastefunktiota χ_eye. χ_eye on eri suure kuin rajoitettu L1-kerroin χ_geo(x); sen syötteet, painot ja biologinen tulkinta pysyvät testattavina avoimen L2-sillan jälkeen:",
     s5Criteria: [
-      "Iiriksen pigmentaatio — säätelee fotonivuota CRY:lle (sininen ≈ 100×, vihreä ≈ 30×, ruskea ≈ 1×)",
-      "FAD/B2-ravitsemustila — määrää CRY-proteiinin stabiilisuuden ja radikaaliparin muodostuskyvyn",
+      "Iiriksen pigmentaatio — kirjataan mitattuna verkkokalvon valoannoksena, ei läpäisykertoimena",
+      "FAD/B2-tila — kolme vaikutusta pidetään erillään: vastaanotin (CRY:n vakaus ja radikaaliparin muodostus), kelloproteiinien säätely ja solun muu aineenvaihdunta FAD-riippuvaisten entsyymien kautta. Näistä ei seuraa yhtä suojaavaa tai herkistävää etumerkkiä",
       "Ympäristön valospektri — sininen sisältö määrää CRY:n aktivaatiotilan; pimeys = magneettisesti sokea",
     ],
     s5p2:
@@ -347,7 +347,7 @@ const COPY = {
     s1p1:
       "ヒトの網膜には2つの異なるクリプトクロムシステムが存在する。[[ref:bartolke2025|Bartolke et al.（2025, FASEB Journal）]]は、全長CRY1タンパク質がヒト、ボノボ、ゴリラの網膜において短波長感受性青錐体光受容体の外節にのみ局在することを実証した。核から離れたこの配置は非概日性の光変換機能を示唆する。錐体外節の積層膜ラメラは配向ラジカルペア磁気受容に必要な構造秩序を提供する。",
     s1p2:
-      "CRY2は視交叉上核（SCN）への概日光入力経路の一部として網膜神経節細胞で機能する。[[ref:yap2025|Yap et al.（2025, Cells）]]はCRY2がTRPC1と物理的に相互作用し、パルス電磁場曝露後に複合体として核に共移行することを示した。FADクロモフォアは両システムに必要である：FADがなければCRYタンパク質は不安定で磁気的に不感受性となる。",
+      "CRY2は視交叉上核（SCN）への概日光入力経路の一部として網膜神経節細胞で機能する。[[ref:iversen2025|Iversen et al.（2025, Cells）]]はCRY2がTRPC1と物理的に相互作用し、パルス電磁場曝露後に複合体として核に共移行することを示した。FADクロモフォアは両システムに必要である：FADがなければCRYタンパク質は不安定で磁気的に不感受性となる。",
     s1p3:
       "この二重CRYアーキテクチャは、眼が2つの並行電磁感知チャネルを運用することを意味する：方向性磁気受容のための青錐体のCRY1と、概日-磁気統合のための神経節細胞のCRY2。",
 
@@ -363,9 +363,9 @@ const COPY = {
       {
         name: "CRY2（網膜神経節細胞）",
         function: "概日-磁気統合",
-        mechanism: "TRPC1と物理的複合体を形成（[[ref:yap2025|Yap 2025]]）、核へ共移行",
-        evidence: "Yap 2025 (Cells) — CRY2-TRPC1相互作用、FAD依存性",
-        referenceId: "yap2025",
+        mechanism: "TRPC1と物理的複合体を形成（[[ref:iversen2025|Iversen 2025]]）、核へ共移行",
+        evidence: "Iversen 2025 (Cells) — CRY2-TRPC1相互作用、FAD依存性",
+        referenceId: "iversen2025",
       },
       {
         name: "FADクロモフォア",
@@ -382,7 +382,7 @@ const COPY = {
     s3Chain:
       "青色光 → CRY → FAD•ラジカルペア → RPMスピンダイナミクス → 概日リズム障害 → メラトニン↓ → HPG軸↓",
     s3Iris:
-      "虹彩色素沈着は入力点でチェーン全体を変調する。青い目は茶色い目の約100倍の青色光を網膜に透過させる（[[ref:higuchi2007|Higuchi 2007]]：同一1000ルクス曝露下でメラトニン抑制89% vs 73%）。これは小さな効果ではない——下流カスケード全体のゲインにおけるほぼ2倍の差である。",
+      "虹彩色素沈着は連鎖の入口で作用し、モジュロームはこれを透過係数ではなく測定された光学的曝露として記録する。[[ref:higuchi2007|Higuchi 2007]]は同一の1000ルクス曝露下で、二つの小集団におけるメラトニン抑制88.9%対73.4%を報告した。その設計では色素沈着と民族的背景が同時に変動していた。この測定は主張を「所定の曝露下でのメラトニン抑制」に限定するものであり、網膜光量が100倍であることを測ってはいない。モデルが必要とするのは、その代わりに測定された網膜光量そのものである。",
     s3Green:
       "緑の目は独自の位置を占める：リポクロム色素がバンドパスフィルターとして機能し、CRY動作帯域450〜570 nmを透過させつつ、セミキノンの過還元を引き起こすUVと極端な青を低減する（[[ref:niessner2014|Niessner 2014]]）。これはCRY活性化よりもCRY安定性を最適化する可能性がある——生の磁気受容感度よりも概日ロバスト性を優先する。",
 
@@ -403,7 +403,7 @@ const COPY = {
       {
         citation: "Higuchi et al. (Am J Physiol)",
         year: 2007, referenceId: "higuchi2007",
-        finding: "明るい目の白人：メラトニン抑制89% vs 暗い目のアジア人73%、同一1000ルクス2時間曝露下。虹彩色素沈着が非視覚経路を変調。",
+        finding: "同一1000ルクス2時間曝露下でのメラトニン抑制88.9%（明るい目の白人）対73.4%（暗い目のアジア人）。色素沈着と民族的背景が同時に変動した二つの小集団であり、エンドポイントは網膜光量ではなくメラトニン抑制である。",
         level: "M|C",
       },
       {
@@ -413,8 +413,8 @@ const COPY = {
         level: "E",
       },
       {
-        citation: "Yap et al. (Cells)",
-        year: 2025, referenceId: "yap2025",
+        citation: "Iversen et al. (Cells)",
+        year: 2025, referenceId: "iversen2025",
         finding: "CRY2-TRPC1物理的複合体。FAD枯渇（RFKサイレンシング）がPEMF応答性と磁気方向選択性の両方を消失させた。暗所成長も同効果。",
         level: "E",
       },
@@ -430,8 +430,8 @@ const COPY = {
     s5p1:
       "BERMは眼のEMF感受性について6つの候補基準と3つの修飾因子を持つ導入L3応答関数χ_eyeを提案する。χ_eyeは制限されたL1係数χ_geo(x)とは別物であり、その入力・重み・生物学的解釈は未解決L2橋の下流で検証される：",
     s5Criteria: [
-      "虹彩色素沈着 — CRYへの光子フラックスを変調（青≈100×、緑≈30×、茶≈1×）",
-      "FAD/B2栄養状態 — CRYタンパク質の安定性とラジカルペア形成能力を決定",
+      "虹彩色素沈着 — 透過倍率ではなく、測定された網膜光量として記録する",
+      "FAD/B2状態 — 三つの作用を分けて扱う：受容体（CRYの安定性とラジカルペア形成）、時計タンパク質の調節、そしてFAD依存酵素を介した細胞のその他の代謝。ここから単一の保護的あるいは感作的な符号は導かれない",
       "環境光スペクトル — 青成分がCRY活性化状態を決定；暗所＝磁気的盲目",
     ],
     s5p2:
@@ -508,7 +508,7 @@ const COPY = {
     s1p1:
       "La retine humaine contient deux systemes cryptochrome distincts. [[ref:bartolke2025|Bartolke et al. (2025, FASEB Journal)]] ont demontre que la proteine CRY1 pleine longueur se localise exclusivement dans les segments externes des photorecepteurs a cones bleus sensibles aux courtes longueurs d'onde dans les retines humaines, de bonobos et de gorilles. Ce placement loin des noyaux suggere une fonction non circadienne, phototransductive. Les lamelles membranaires empilees des segments externes des cones fournissent l'ordre structurel requis pour la magnetoreception par paire de radicaux orientee.",
     s1p2:
-      "CRY2 opere dans les cellules ganglionnaires retiniennes comme partie de la voie d'entree lumineuse circadienne vers le noyau suprachiasmatique (NSC). [[ref:yap2025|Yap et al. (2025, Cells)]] ont montre que CRY2 interagit physiquement avec TRPC1, formant un complexe qui co-transloque vers le noyau apres exposition a un champ electromagnetique pulse. Le chromophore FAD est requis pour les deux systemes : sans FAD, les proteines CRY sont instables et magnetiquement insensibles.",
+      "CRY2 opere dans les cellules ganglionnaires retiniennes comme partie de la voie d'entree lumineuse circadienne vers le noyau suprachiasmatique (NSC). [[ref:iversen2025|Iversen et al. (2025, Cells)]] ont montre que CRY2 interagit physiquement avec TRPC1, formant un complexe qui co-transloque vers le noyau apres exposition a un champ electromagnetique pulse. Le chromophore FAD est requis pour les deux systemes : sans FAD, les proteines CRY sont instables et magnetiquement insensibles.",
     s1p3:
       "Cette architecture CRY duale signifie que l'oeil opere deux canaux de detection electromagnetique paralleles : CRY1 dans les cones bleus pour la magnetoreception directionnelle, et CRY2 dans les cellules ganglionnaires pour l'integration circadienne-magnetique.",
 
@@ -524,9 +524,9 @@ const COPY = {
       {
         name: "CRY2 (cellules ganglionnaires retiniennes)",
         function: "Integration circadienne-magnetique",
-        mechanism: "Forme un complexe physique avec TRPC1 ([[ref:yap2025|Yap 2025]]), co-translocation nucleaire",
-        evidence: "Yap 2025 (Cells) — interaction CRY2-TRPC1, dependant du FAD",
-        referenceId: "yap2025",
+        mechanism: "Forme un complexe physique avec TRPC1 ([[ref:iversen2025|Iversen 2025]]), co-translocation nucleaire",
+        evidence: "Iversen 2025 (Cells) — interaction CRY2-TRPC1, dependant du FAD",
+        referenceId: "iversen2025",
       },
       {
         name: "Chromophore FAD",
@@ -543,7 +543,7 @@ const COPY = {
     s3Chain:
       "Lumiere bleue → CRY → paire de radicaux FAD• → dynamique de spin RPM → perturbation circadienne → melatonine ↓ → axe HPG ↓",
     s3Iris:
-      "La pigmentation de l'iris module l'ensemble de la chaine a son point d'entree. Les yeux bleus transmettent environ 100× plus de lumiere bleue a la retine que les yeux marron ([[ref:higuchi2007|Higuchi 2007]] : 89 % vs 73 % de suppression de la melatonine sous exposition identique de 1000 lux). Ce n'est pas un petit effet — c'est une difference de pres de 2 fois dans le gain de toute la cascade en aval.",
+      "La pigmentation de l'iris agit au point d'entrée de la chaîne, et le modulome l'enregistre comme une exposition optique mesurée plutôt que comme un coefficient de transmission. [[ref:higuchi2007|Higuchi 2007]] a rapporté une suppression de la mélatonine de 88,9 % contre 73,4 % dans deux petits groupes sous la même exposition de 1000 lux, et dans ce protocole la pigmentation et l'origine ethnique variaient ensemble. La mesure limite l'affirmation à la suppression de la mélatonine sous l'exposition indiquée ; elle ne mesure pas une dose lumineuse rétinienne centuplée. Ce dont le modèle a besoin à la place, c'est la dose lumineuse rétinienne elle-même, mesurée.",
     s3Green:
       "Les yeux verts occupent une position unique : leur pigment lipochrome agit comme un filtre passe-bande transmettant la bande operationnelle CRY de 450–570 nm tout en reduisant l'UV et le bleu extreme qui causent la surreduction de la semiquinone ([[ref:niessner2014|Niessner 2014]]). Cela pourrait optimiser la stabilite CRY plutot que l'activation CRY — favorisant la robustesse circadienne plutot que la sensibilite magnetoreceptive brute.",
 
@@ -564,7 +564,7 @@ const COPY = {
       {
         citation: "Higuchi et al. (Am J Physiol)",
         year: 2007, referenceId: "higuchi2007",
-        finding: "Caucasiens aux yeux clairs : 89 % de suppression de la melatonine vs 73 % pour les Asiatiques aux yeux fonces sous exposition identique de 1000 lux, 2h. La pigmentation de l'iris module la voie non visuelle.",
+        finding: "Suppression de la mélatonine 88,9 % (Caucasiens aux yeux clairs) contre 73,4 % (Asiatiques aux yeux foncés) sous exposition identique de 1000 lux pendant 2 h. Deux petits groupes où pigmentation et origine ethnique variaient ensemble ; l'endpoint est la suppression de la mélatonine, non la dose lumineuse rétinienne.",
         level: "M|C",
       },
       {
@@ -574,8 +574,8 @@ const COPY = {
         level: "E",
       },
       {
-        citation: "Yap et al. (Cells)",
-        year: 2025, referenceId: "yap2025",
+        citation: "Iversen et al. (Cells)",
+        year: 2025, referenceId: "iversen2025",
         finding: "Complexe physique CRY2-TRPC1. La depletion en FAD (silençage de RFK) a aboli la reactivite aux PEMF et la selectivite directionnelle magnetique. La croissance dans l'obscurite a eu le meme effet.",
         level: "E",
       },
@@ -591,8 +591,8 @@ const COPY = {
     s5p1:
       "BERM propose six critères candidats de sensibilité oculaire aux CEM et une fonction de réponse χ_eye L3 importée à trois modérateurs. χ_eye est distincte du coefficient L1 restreint χ_geo(x) ; ses entrées, poids et interprétation biologique restent testables en aval du pont L2 ouvert :",
     s5Criteria: [
-      "Pigmentation de l'iris — module le flux de photons vers CRY (bleu ≈ 100×, vert ≈ 30×, marron ≈ 1×)",
-      "Statut nutritionnel FAD/B2 — determine la stabilite de la proteine CRY et la capacite de formation de paire de radicaux",
+      "Pigmentation de l'iris — consignée comme dose lumineuse rétinienne mesurée, non comme un multiplicateur de transmission",
+      "Statut FAD/B2 — trois effets tenus séparés : le récepteur (stabilité de CRY et formation de paires de radicaux), la régulation des protéines d'horloge, et le reste du métabolisme cellulaire via les enzymes dépendantes du FAD. Aucun signe protecteur ou sensibilisant unique n'en découle",
       "Spectre lumineux ambiant — le contenu bleu determine l'etat d'activation CRY ; obscurite = magnetiquement aveugle",
     ],
     s5p2:
@@ -669,7 +669,7 @@ const COPY = {
     s1p1:
       "인간 망막에는 두 가지 별개의 크립토크롬 시스템이 존재한다. [[ref:bartolke2025|Bartolke et al.(2025, FASEB Journal)]]은 전장 CRY1 단백질이 인간, 보노보, 고릴라 망막에서 단파장 감수성 청색 원추 광수용체의 외절에만 국한됨을 입증했다. 핵에서 먼 이 배치는 비일주기적, 광변환적 기능을 시사한다. 원추 외절의 적층 막 층판은 배향된 라디칼쌍 자기수용에 필요한 구조적 질서를 제공한다.",
     s1p2:
-      "CRY2는 시교차상핵(SCN)으로의 일주기 광 입력 경로의 일부로서 망막 신경절 세포에서 기능한다. [[ref:yap2025|Yap et al.(2025, Cells)]]은 CRY2가 TRPC1과 물리적으로 상호작용하여 펄스 전자기장 노출 후 핵으로 공동 이동하는 복합체를 형성함을 보여주었다. FAD 색소단은 두 시스템 모두에 필요하다: FAD 없이 CRY 단백질은 불안정하고 자기적으로 불감하다.",
+      "CRY2는 시교차상핵(SCN)으로의 일주기 광 입력 경로의 일부로서 망막 신경절 세포에서 기능한다. [[ref:iversen2025|Iversen et al.(2025, Cells)]]은 CRY2가 TRPC1과 물리적으로 상호작용하여 펄스 전자기장 노출 후 핵으로 공동 이동하는 복합체를 형성함을 보여주었다. FAD 색소단은 두 시스템 모두에 필요하다: FAD 없이 CRY 단백질은 불안정하고 자기적으로 불감하다.",
     s1p3:
       "이 이중 CRY 아키텍처는 눈이 두 개의 병렬 전자기 감지 채널을 운용함을 의미한다: 방향성 자기수용을 위한 청색 원추의 CRY1과 일주기-자기 통합을 위한 신경절 세포의 CRY2.",
 
@@ -685,9 +685,9 @@ const COPY = {
       {
         name: "CRY2 (망막 신경절 세포)",
         function: "일주기-자기 통합",
-        mechanism: "TRPC1과 물리적 복합체 형성([[ref:yap2025|Yap 2025]]), 핵으로 공동 이동",
-        evidence: "Yap 2025 (Cells) — CRY2-TRPC1 상호작용, FAD 의존성",
-        referenceId: "yap2025",
+        mechanism: "TRPC1과 물리적 복합체 형성([[ref:iversen2025|Iversen 2025]]), 핵으로 공동 이동",
+        evidence: "Iversen 2025 (Cells) — CRY2-TRPC1 상호작용, FAD 의존성",
+        referenceId: "iversen2025",
       },
       {
         name: "FAD 색소단",
@@ -704,7 +704,7 @@ const COPY = {
     s3Chain:
       "청색광 → CRY → FAD• 라디칼쌍 → RPM 스핀 역학 → 일주기 교란 → 멜라토닌 ↓ → HPG 축 ↓",
     s3Iris:
-      "홍채 색소침착은 진입점에서 전체 연쇄를 조절한다. 파란 눈은 갈색 눈보다 약 100배 더 많은 청색광을 망막에 투과시킨다([[ref:higuchi2007|Higuchi 2007]]: 동일 1000 럭스 노출에서 멜라토닌 억제 89% vs 73%). 이것은 작은 효과가 아니다 — 전체 하류 캐스케이드의 이득에서 거의 2배의 차이이다.",
+      "홍채 색소침착은 연쇄의 진입점에서 작용하며, 모듈롬은 이를 투과 계수가 아니라 측정된 광학적 노출로 기록한다. [[ref:higuchi2007|Higuchi 2007]]은 동일한 1000럭스 노출에서 두 소규모 집단의 멜라토닌 억제 88.9퍼센트 대 73.4퍼센트를 보고했고, 그 설계에서는 색소침착과 민족적 배경이 함께 변했다. 이 측정은 주장을 명시된 노출에서의 멜라토닌 억제로 한정하며, 망막 광량이 100배라는 것을 측정하지 않는다. 모델에 필요한 것은 그 대신 측정된 망막 광량 자체다.",
     s3Green:
       "녹색 눈은 독특한 위치를 차지한다: 리포크롬 색소가 대역통과 필터로 작용하여 CRY 동작 대역 450-570 nm을 투과시키면서 세미퀴논의 과환원을 유발하는 UV와 극단적 청색을 감소시킨다([[ref:niessner2014|Niessner 2014]]). 이는 CRY 활성화보다 CRY 안정성을 최적화할 수 있다 — 원시 자기수용 감도보다 일주기 견고성을 선호한다.",
 
@@ -725,7 +725,7 @@ const COPY = {
       {
         citation: "Higuchi et al. (Am J Physiol)",
         year: 2007, referenceId: "higuchi2007",
-        finding: "밝은 눈의 백인: 멜라토닌 억제 89% vs 어두운 눈의 아시아인 73%, 동일 1000 럭스 2시간 노출. 홍채 색소침착이 비시각 경로를 조절.",
+        finding: "동일한 1000럭스 2시간 노출에서 멜라토닌 억제 88.9%(밝은 눈 백인) 대 73.4%(어두운 눈 아시아인). 색소침착과 민족적 배경이 함께 변한 두 소규모 집단이며, 종점은 망막 광량이 아니라 멜라토닌 억제다.",
         level: "M|C",
       },
       {
@@ -735,8 +735,8 @@ const COPY = {
         level: "E",
       },
       {
-        citation: "Yap et al. (Cells)",
-        year: 2025, referenceId: "yap2025",
+        citation: "Iversen et al. (Cells)",
+        year: 2025, referenceId: "iversen2025",
         finding: "CRY2-TRPC1 물리적 복합체. FAD 결핍(RFK 침묵)이 PEMF 반응성과 자기 방향 선택성 모두를 소멸시킴. 암소 성장도 동일 효과.",
         level: "E",
       },
@@ -752,8 +752,8 @@ const COPY = {
     s5p1:
       "BERM은 안구 EMF 감수성에 대해 6개 후보 기준과 3개 조절인자를 가진 도입 L3 반응 함수 χ_eye를 제안한다. χ_eye는 제한된 L1 계수 χ_geo(x)와 별개이며 입력·가중치·생물학적 해석은 열린 L2 연결 이후 검정 대상이다:",
     s5Criteria: [
-      "홍채 색소침착 — CRY로의 광자 플럭스 조절(청색 ≈ 100×, 녹색 ≈ 30×, 갈색 ≈ 1×)",
-      "FAD/B2 영양 상태 — CRY 단백질 안정성과 라디칼쌍 형성 능력 결정",
+      "홍채 색소침착 — 투과 배율이 아니라 측정된 망막 광량으로 기록",
+      "FAD/B2 상태 — 세 가지 효과를 분리해 다룬다: 수용체(CRY 안정성과 라디칼쌍 형성), 시계 단백질 조절, 그리고 FAD 의존 효소를 통한 세포의 나머지 대사. 여기서 하나의 보호적 또는 감작적 부호는 따라 나오지 않는다",
       "주변광 스펙트럼 — 청색 함량이 CRY 활성화 상태 결정; 암소 = 자기적 맹목",
     ],
     s5p2:

@@ -21,27 +21,26 @@ CLASSIFICATION_TABLE_PATH = (
 
 REASONING_PROTOCOL_VERSION = "1.0"
 
-#: Pathway B (radical-pair / cryptochrome) is primary after the Lindgren
-#: geometry analysis; pathway A (VGCC) needs biological amplifiers the
-#: geometry does not supply.
+#: Historical research priority retained for consumers of v16/v17 metadata.
+#: The 2025 metric perturbation does not select a biological receptor family.
+#: RPM/CRY and membrane/channel implementations require their own conditional
+#: geometry-to-observable operators; that L2 bridge remains open.
 PRIMARY_PATHWAY = "B_RPM"
 
 #: D1-D3 in docs/audit/DISCRIMINATING_TESTS.md. These test the primary branch
 #: itself, which none of the 13 reviewed findings did.
-#: Chae 2019 does not move this counter. It shows the CRY/RPM substrate is
-#: functional in humans (necessary condition) but applies no RF, so the
-#: disruption step (sufficient condition) is still untested: 0/3.
+#: Chae 2019 does not move this counter: its component result does not test
+#: environmental RF disruption or identify a Lindgren coupling operator.
 #:
 #: Level 3→4 support (causal chain edge): Koivisto 2000, Eliyahu 2006,
-#: Luria 2009 — three GSM RCTs demonstrating acute neural/EEG effects
-#: compatible with VGIC-mediated transduction. These support the
-#: membrane→VGIC edge but do NOT advance discriminating test count
-#: (they test pathway A, not the primary pathway B/RPM).
+#: Luria 2009 — acute neural/EEG endpoints. Those endpoints alone do not
+#: distinguish VGIC from other transduction mechanisms and do not advance
+#: the discriminating-test count.
 #:
 #: Level 4 (VGIC mechanism): Panagopoulos 2025 IFO-VGIC review
-#: (131 studies) provides mechanistic consensus for irregular forced
-#: oscillation of voltage-gated ion channels. Compatible with pathway A
-#: modelling but does not test the RPM discriminating predictions.
+#: (131 studies) proposes an irregular-forced-oscillation interpretation.
+#: A review is not an independent intervention identifying the first sensor
+#: and does not test the RPM discriminating predictions or the open L2 bridge.
 #:
 #: Level 4 (VGIC) multi-pathway Ca2+ mechanism supported by:
 #:   Panagopoulos 2025: IFO-VGIC, 131 studies, 95% oxidative (direct S4)
@@ -80,6 +79,10 @@ def model_metadata() -> dict[str, Any]:
         "discriminating_tests_needed": DISCRIMINATING_TESTS_NEEDED,
         "discriminating_tests_completed": DISCRIMINATING_TESTS_COMPLETED,
         "primary_pathway": PRIMARY_PATHWAY,
+        "primary_pathway_basis": "historical_research_priority_not_geometric_derivation",
+        "pathway_hierarchy_derived_from_geometry": False,
+        "l2_bridge_status": "OPEN",
+        "biological_evidence_validates_l0_l2": False,
         "primary_pathway_empirical_status": "untested_by_discriminating_test",
     }
 

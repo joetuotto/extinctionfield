@@ -56,10 +56,10 @@ const COPY = {
       },
       {
         hormone: "Cortisol",
-        mechanism: "HPA axis hyperactivation → chronic cortisol elevation",
+        mechanism: "HPA output × CRY/GR receiving state × tissue phase → local glucocorticoid response",
         behavioral:
-          "Anxiety ↑, social avoidance ↑, testosterone effect suppression (dual hormone hypothesis: cortisol moderates testosterone's behavioral effects — high cortisol blocks T-driven dominance, status-seeking, and risk-taking even when T is present; the two hormones gate the same behaviors through opposing mechanisms)",
-        evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]], meta n=8,538",
+          "Cortisol can moderate testosterone-associated behavior in a task-dependent way. Test hormone pulses and receptor/tissue timing together with approach, avoidance and cooperation; a serum value alone does not determine those outcomes.",
+        evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]]; [[ref:lamia2011_cry_glucocorticoid|Lamia 2011]]; [[ref:archer2022_glucocorticoid_timing|Archer 2022]]",
         magnitude:
           "Cortisol trends less studied than T — inferred from stress marker increases",
       },
@@ -161,7 +161,7 @@ const COPY = {
       },
     ],
     tripleLockExplain:
-      "When testosterone declines ~40% population-wide ([[ref:santi2025|Santi 2025]], n=1,064,891), all seven behaviors are suppressed simultaneously. Adding cortisol elevation (which further suppresses T effects via the dual hormone hypothesis) and dopamine decline (which reduces reward sensitivity) creates a triple lock: the biological infrastructure of male social initiative is suppressed at three independent nodes.",
+      "BERM models testosterone, cortisol and reward signaling as coupled gates. Hormone availability, receptor readiness and tissue phase determine the local response; shared HPG/HPA and clock feedback prevent treating them as three independent percentages. CRY–GR regulation and timed hormone responses connect these gates to measured approach and cooperation, which then accumulate across social encounters.",
 
     s4title: "The Female Parallel",
     s4lead:
@@ -266,10 +266,10 @@ const COPY = {
       },
       {
         hormone: "Kortisoli",
-        mechanism: "HPA-akselin hyperaktivaatio → krooninen kortisolielevatio",
+        mechanism: "HPA-eritys × CRY/GR-vastaanotintila × kudoksen vaihe → paikallinen glukokortikoidivaste",
         behavioral:
-          "Ahdistus ↑, sosiaalinen välttely ↑, testosteronivaikutuksen vaimentuminen (kaksoishormonihypoteesi)",
-        evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]], meta n=8 538",
+          "Kortisoli voi muuntaa testosteroniin liittyvää käyttäytymistä tehtäväkohtaisesti. Testaa hormonipulssit ja reseptorin/kudoksen ajoitus yhdessä lähestymisen, välttämisen ja yhteistyön kanssa; seerumiarvo ei yksin määrää tuloksia.",
+        evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]]; [[ref:lamia2011_cry_glucocorticoid|Lamia 2011]]; [[ref:archer2022_glucocorticoid_timing|Archer 2022]]",
         magnitude:
           "Kortisolitrendit vähemmän tutkittuja kuin T — päätelty stressimarkkereiden kasvusta",
       },
@@ -371,7 +371,7 @@ const COPY = {
       },
     ],
     tripleLockExplain:
-      "Kun testosteroni laskee ~40 % väestötasolla ([[ref:santi2025|Santi 2025]], n=1 064 891), kaikki seitsemän käyttäytymistä vaimenevat samanaikaisesti. Kun siihen lisätään kortisolielevatio (joka edelleen vaimentaa T-vaikutuksia kaksoishormonihypoteesin kautta) ja dopamiinilasku (joka vähentää palkkioherkkyttä), syntyy kolmoislukko: miesten sosiaalisen aloitteellisuuden biologinen infrastruktuuri on vaimennettu kolmessa riippumattomassa solmussa.",
+      "BERM mallintaa testosteronin, kortisolin ja palkkiosignaloinnin kytkettyinä portteina. Hormonin saatavuus, reseptorivalmius ja kudoksen vaihe määräävät paikallisen vasteen; yhteiset HPG/HPA- ja kellopalautteet estävät käsittelyn kolmena riippumattomana prosenttina. CRY–GR-säätely ja ajoitetut hormonivasteet yhdistävät portit mitattuun lähestymiseen ja yhteistyöhön, jotka kertautuvat sosiaalisissa kohtaamisissa.",
 
     s4title: "Naisten rinnakkaishäiriö",
     s4lead:
@@ -1103,6 +1103,7 @@ export default async function PathopegePage({
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-2">
           {d.title}
         </h1>
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
         <p className="text-lg sm:text-xl text-muted-foreground mb-4">
           {d.subtitle}
         </p>
