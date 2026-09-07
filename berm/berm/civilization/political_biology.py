@@ -532,11 +532,19 @@ def environment_profile(
 
 @dataclass(frozen=True)
 class IdeologyProfile:
-    """An ideology defined as a dimension signature."""
+    """An ideology defined as a dimension signature.
+
+    `required` names the conditions that are constitutive rather than
+    merely typical. A profile that fails a required condition is not a
+    partial instance of the ideology; it is a different state. Without
+    this, a 0.75 partial fit can classify a population as an ideology
+    whose defining capacity it has already lost.
+    """
     name: str
     label: str
     conditions: dict[str, tuple[str, float]]
     biological_strategy: str
+    required: tuple[str, ...] = ()
 
 
 IDEOLOGY_PROFILES: list[IdeologyProfile] = [
@@ -583,6 +591,12 @@ IDEOLOGY_PROFILES: list[IdeologyProfile] = [
             "Insufficient T for organic dominance → relies on external "
             "enforcement (state, religion, punishment)."
         ),
+        # Hierarchy maintenance is what the ideology is; it cannot be
+        # inferred from threat response alone. Under the dual-hormone
+        # hypothesis (Mehta & Josephs 2010, meta N=8538) T-driven dominance
+        # is expressed only while cortisol is low, so a population with
+        # hierarchy acceptance below threshold has no substrate for it.
+        required=("hierarchy_acceptance",),
     ),
     IdeologyProfile(
         name="libertarianism",
@@ -628,6 +642,28 @@ IDEOLOGY_PROFILES: list[IdeologyProfile] = [
             "long time preference. Fragmenting as substraate declines."
         ),
     ),
+    IdeologyProfile(
+        name="anomic_fragmentation",
+        label="Anomic fragmentation",
+        conditions={
+            "hierarchy_acceptance": ("<=", 0.40),
+            "threat_sensitivity": (">=", 0.50),
+            "novelty_seeking": ("<=", 0.50),
+            "empathy_scope": ("<=", 0.40),
+            "time_preference": ("<=", 0.65),
+        },
+        biological_strategy=(
+            "Collapse of ideological capacity rather than the dominance of "
+            "any ideology. The dual-hormone lock is closed: T is too low to "
+            "motivate dominance and cortisol too high to sustain collective "
+            "action, so elevated threat response produces anxiety without "
+            "direction. Narrowed empathy scope (OT suppression) erodes the "
+            "in-group preference that mobilisation would require, and a "
+            "shortened time preference blocks sustained organisation. "
+            "Institutions persist by inertia without adapting."
+        ),
+        required=("hierarchy_acceptance", "threat_sensitivity"),
+    ),
 ]
 
 
@@ -668,12 +704,16 @@ def classify_ideology(
     for ideology in IDEOLOGY_PROFILES:
         met = 0
         total = len(ideology.conditions)
+        required_met = True
         for dim, (op, threshold) in ideology.conditions.items():
-            if dim in profile and _check_condition(profile[dim], op, threshold):
+            passed = dim in profile and _check_condition(profile[dim], op, threshold)
+            if passed:
                 met += 1
+            elif dim in ideology.required:
+                required_met = False
 
         fit = met / total if total > 0 else 0.0
-        if fit >= 0.6:
+        if required_met and fit >= 0.6:
             matches.append({
                 "ideology": ideology.name,
                 "label": ideology.label,

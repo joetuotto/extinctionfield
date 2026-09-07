@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-07T13:15:08.024Z",
+  "generatedAt": "2026-09-07T13:48:54.860Z",
   "anchors": [
     {
       "claimId": "claim.civilization.biocap-tfr-input",
       "file": "app/[locale]/civilization/patokratia/page.tsx",
-      "line": 559
+      "line": 563
     },
     {
       "claimId": "claim.civilization.demand-capacity-separation",
