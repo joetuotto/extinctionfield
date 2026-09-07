@@ -3072,9 +3072,10 @@
       "A_VGCC_ROS"
     ],
     "evidenceRole": "THERAPEUTIC_DEVICE_PARADOX",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "Protocol-specific component evidence for a 27.12 MHz amplitude-modulated Cav3.2 route in HCC. The 2023 HDE establishes probable benefit for a rare-disease device, not randomized effectiveness; environmental, reproductive and population transfer remains open.",
-    "n": null
+    "n": null,
+    "note": " Active claim relations (2026-09-07): er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019. Same source and retained alias, not independent evidence."
   },
   {
     "id": "pgc_five_disorders_cacna1c",

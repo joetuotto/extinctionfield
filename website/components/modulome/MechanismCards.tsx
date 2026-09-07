@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { pickCopy } from "@/lib/i18n";
 import { StudyCitation } from "@/components/StudyCitation";
 import { MECHANISM_CARDS, pickCardText, type MechanismCard } from "@/lib/modulome/stateModel";
+import { getIntervention, interventionHref, interventionText } from "@/lib/interventions";
 
 const COPY = {
   en: {
@@ -31,6 +33,7 @@ const COPY = {
     layers: "Layers",
     sources: "Sources",
     module: "Model module",
+    interventions: "Related intervention experiments",
     open: "Open the card",
     lead:
       "Every mechanism card answers the same eight questions, so two mechanisms can be compared without rereading their prose. The eighth field is the one that makes a card more than a summary: a card that states no intervention result cannot bound its own mechanism.",
@@ -59,6 +62,7 @@ const COPY = {
     layers: "Kerrokset",
     sources: "Lähteet",
     module: "Mallimoduuli",
+    interventions: "Liittyvät interventiokokeet",
     open: "Avaa kortti",
     lead:
       "Jokainen mekanismikortti vastaa samaan kahdeksaan kysymykseen, joten kahta mekanismia voi verrata lukematta niiden tekstiä uudelleen. Kahdeksas kenttä tekee kortista muutakin kuin tiivistelmän: kortti, joka ei kerro interventiotulosta, ei voi rajata omaa mekanismiaan.",
@@ -138,6 +142,20 @@ export function ModulomeMechanismCards({ locale }: { locale: string }) {
                       </div>
                     ))}
                   </dl>
+
+                  {card.interventionProfileIds.length > 0 && (
+                    <nav aria-label={d.interventions} className="flex flex-wrap gap-2 text-xs">
+                      <span className="w-full font-semibold">{d.interventions}</span>
+                      {card.interventionProfileIds.map(id => {
+                        const profile = getIntervention(id);
+                        return profile ? (
+                          <Link key={id} href={interventionHref(locale, id)} className="underline underline-offset-2">
+                            {interventionText(profile.title, locale)}
+                          </Link>
+                        ) : null;
+                      })}
+                    </nav>
+                  )}
 
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs text-foreground-muted">
                     <span className="font-semibold text-foreground">{d.sources}:</span>

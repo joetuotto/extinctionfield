@@ -1,4 +1,5 @@
 import { NODES, EDGES, type CausalMapNode, type BilingualText, type Locale, type NodeDetail, type EpistemicLevel } from "./causalAtlasRegistry";
+import { INTERVENTIONS, getIntervention } from "./interventions";
 export * from "./causalAtlasRegistry";
 export { LEVEL_LABELS } from "./causalMapData";
 export const t = (text: BilingualText, lang: Locale): string => text[lang];
@@ -59,6 +60,13 @@ export function nodesForAtlas(id: AtlasId): CausalMapNode[] {
   return NODES.filter(n => atlas.stages.includes(LEVEL_TO_STAGE[n.level]) || atlas.anchors.includes(n.id) || n.subatlases?.includes(id));
 }
 export function atlasesForNode(id: string): SubAtlas[] { return SUBATLASES.filter(a => a.id !== "all" && nodesForAtlas(a.id).some(n => n.id === id)); }
+/** Cross-subatlas lens over the shared graph, not an additional subatlas. */
+export function nodesForIntervention(profileId: string): CausalMapNode[] {
+  const profiles = profileId === "all" ? INTERVENTIONS.profiles : [getIntervention(profileId)].filter(profile => profile !== undefined);
+  if (!profiles.length) return [];
+  const ids = new Set(["lindgren_2025", "metric_perturbation", "berm_l2_bridge", ...profiles.flatMap(profile => profile.atlasNodeIds)]);
+  return NODES.filter(node => ids.has(node.id));
+}
 export function filterAtlasNodes(nodes: readonly CausalMapNode[], query: string, stage: Stage | "all" = "all", evidence: EpistemicLevel | "all" = "all") {
   const words = query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
   return nodes.filter(n => {

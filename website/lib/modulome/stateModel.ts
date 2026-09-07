@@ -42,6 +42,7 @@ export interface MechanismCard {
   readonly referenceIds: readonly string[];
   readonly epistemicLevel: string;
   readonly implementingModules: readonly string[];
+  readonly interventionProfileIds: readonly string[];
   readonly exposure: LocalisedText;
   readonly receptor: LocalisedText;
   readonly baseline_state: LocalisedText;

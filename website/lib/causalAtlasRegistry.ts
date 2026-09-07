@@ -9,6 +9,7 @@ import { MECHANISM_CARDS } from "./modulome/stateModel";
 import { MODULOME_LAYERS } from "./modulome/layers";
 import { MODULOME_TARGETS } from "./modulome/organDetailData";
 import { atlasClaims, claimIdsForAtlasNode, claimIdsForAtlasEdge } from "./atlasEvidence";
+import { INTERVENTION_NODES, INTERVENTION_EDGES, type InterventionEffect } from "./interventionAtlas";
 
 export type { BilingualText, Locale, NodeDetail, LocalizedDetail } from "./causalMapData";
 export type { EpistemicLevel } from "./types";
@@ -22,7 +23,7 @@ export type CausalMapNode = Omit<OriginalNode, "epistemicLevel"> & {
   provenance?: BilingualText;
   claimIds?: string[];
 };
-export interface CausalMapEdge { from: string; to: string; relation: RelationType; label?: string; sourcePaths: string[]; claimIds?: string[] }
+export interface CausalMapEdge { from: string; to: string; relation: RelationType; label?: string; sourcePaths: string[]; claimIds?: string[]; interventionEffects?: InterventionEffect[] }
 export const EVIDENCE_COLORS = CHAIN_EPISTEMIC_COLORS;
 export const EVIDENCE_LABELS = { en: CHAIN_EPISTEMIC_LABELS_EN, fi: CHAIN_EPISTEMIC_LABELS_FI };
 export const RELATION_LABELS: Record<RelationType, BilingualText> = {
@@ -204,10 +205,10 @@ for (const c of MECHANISM_CARDS) for (const layer of c.layers) {
 for (const n of targetNodes) CORE_EDGES.push({ from: "mech_ttype_bifurcation", to: n.id, relation: "causal", sourcePaths: n.sourcePaths });
 
 const addedNodes = extensions.nodes as CausalMapNode[];
-export const NODES: CausalMapNode[] = [...CORE_NODES, ...addedNodes].map(n => ({ ...n, claimIds: claimIdsForAtlasNode(n.id), searchAliases: extensions.searchAliases.filter(a => a.nodeId === n.id).map(a => a.alias) }));
+export const NODES: CausalMapNode[] = [...CORE_NODES, ...addedNodes, ...INTERVENTION_NODES].map(n => ({ ...n, claimIds: claimIdsForAtlasNode(n.id), searchAliases: [...(n.searchAliases ?? []), ...extensions.searchAliases.filter(a => a.nodeId === n.id).map(a => a.alias)] }));
 const resolveNodeId = (id: string) => MODEL_NODE_MAP[id as keyof typeof MODEL_NODE_MAP] ?? id;
 const edgeMap = new Map<string, CausalMapEdge>();
-for (const e of [...CORE_EDGES, ...extensions.edges as CausalMapEdge[]]) {
+for (const e of [...CORE_EDGES, ...extensions.edges as CausalMapEdge[], ...INTERVENTION_EDGES]) {
   const edge = { ...e, from: resolveNodeId(e.from), to: resolveNodeId(e.to) };
   const key = `${edge.from}->${edge.to}`;
   const previous = edgeMap.get(key);

@@ -86,6 +86,7 @@ class MechanismCard:
     reference_ids: tuple[str, ...]
     epistemic_level: str
     implementing_modules: tuple[str, ...] = ()
+    intervention_profile_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "card_id", nonempty("card_id", self.card_id))
@@ -105,6 +106,9 @@ class MechanismCard:
         object.__setattr__(
             self, "implementing_modules", normalise_ids(self.implementing_modules, "module")
         )
+        object.__setattr__(self, "intervention_profile_ids", normalise_ids(
+            self.intervention_profile_ids, "intervention_profile_id"
+        ))
 
     def as_dict(self) -> dict[str, object]:
         payload: dict[str, object] = {
@@ -114,6 +118,7 @@ class MechanismCard:
             "referenceIds": list(self.reference_ids),
             "epistemicLevel": self.epistemic_level,
             "implementingModules": list(self.implementing_modules),
+            "interventionProfileIds": list(self.intervention_profile_ids),
         }
         for name in CARD_FIELDS:
             value: LocalisedText = getattr(self, name)
@@ -168,6 +173,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("kurth2020",),
         epistemic_level="E",
         implementing_modules=("berm.modulome.membrane",),
+        intervention_profile_ids=("local_ltype_erk", "channel_selectivity", "lipid_ttype_inhibition"),
     ),
     MechanismCard(
         card_id="card.calcium-compartment-cycle",
@@ -211,6 +217,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("bertagna2025",),
         epistemic_level="E",
         implementing_modules=("berm.modulome.calcium",),
+        intervention_profile_ids=("mt2_brake", "local_ltype_erk", "channel_density_store_history"),
     ),
     MechanismCard(
         card_id="card.adaptation-memory",
@@ -254,6 +261,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("sannino2022", "sannino2024"),
         epistemic_level="E",
         implementing_modules=("berm.modulome.state",),
+        intervention_profile_ids=("channel_density_store_history", "coq10_response"),
     ),
     MechanismCard(
         card_id="card.flavin-state-and-light-history",
@@ -297,6 +305,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("iversen2025", "jeibmann2026"),
         epistemic_level="E",
         implementing_modules=("berm.modulome.photostate",),
+        intervention_profile_ids=("cry_fad_competition", "drug_photochemistry"),
     ),
     MechanismCard(
         card_id="card.cry-subtype-specificity",
@@ -340,6 +349,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("wickramaratne2025",),
         epistemic_level="E",
         implementing_modules=("berm.modulome.photostate",),
+        intervention_profile_ids=("cry_fad_competition",),
     ),
     MechanismCard(
         card_id="card.directional-information",

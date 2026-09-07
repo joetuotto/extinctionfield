@@ -200,6 +200,42 @@
     ],
     "institutional_model_reuse": [
       "claim.civilization.asymmetric-evidence-threshold"
+    ],
+    "mech_mt2_store_brake": [
+      "claim.pharmacology.mt2-evoked-feedback",
+      "claim.pharmacology.mt2-brake-conditional"
+    ],
+    "mech_local_ltype_erk": [
+      "claim.pharmacology.local-ltype-erk",
+      "claim.pharmacology.local-ltype-erk-conditional"
+    ],
+    "mech_channel_selectivity": [
+      "claim.pharmacology.channel-specific-response",
+      "claim.pharmacology.channel-selectivity-conditional"
+    ],
+    "mech_aa_lte4_inhibition": [
+      "claim.pharmacology.lipid-ttype-inhibition",
+      "claim.pharmacology.lipid-ttype-inhibition-conditional"
+    ],
+    "mech_channel_density": [
+      "claim.pharmacology.channel-density",
+      "claim.pharmacology.channel-density-store-history-conditional"
+    ],
+    "mech_serca_pretreatment": [
+      "claim.pharmacology.serca-pretreatment",
+      "claim.pharmacology.channel-density-store-history-conditional"
+    ],
+    "mech_cry_ligand_occupancy": [
+      "claim.pharmacology.cry-ligand-occupancy",
+      "claim.pharmacology.cry-fad-competition-conditional"
+    ],
+    "mod_drug_photochemistry": [
+      "claim.pharmacology.probe-photoreversal",
+      "claim.pharmacology.drug-photochemistry-conditional"
+    ],
+    "mech_coq10_response": [
+      "claim.pharmacology.coq10-protocol",
+      "claim.pharmacology.coq10-response-conditional"
     ]
   },
   "edges": [

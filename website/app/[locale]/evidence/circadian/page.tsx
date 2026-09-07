@@ -24,13 +24,13 @@ const COPY = {
         title: "Recovery window elimination",
         paragraphs: [
           "The REFLEX project ([[ref:diem2005|Diem et al. 2005]]) demonstrated that intermittent RF exposure produces greater genotoxic effects than continuous exposure at the same SAR, suggesting that cellular repair mechanisms are activated during exposure-free intervals. The recovery window hypothesis proposes that biological repair of RF-induced damage (ROS neutralization, DNA repair, protein refolding) requires sufficient EMF-free time.",
-          "A modern urban adult experiences approximately 2 hours per day of near-zero RF exposure (sleep in a connected bedroom), yielding ~20.6% potential recovery time. A 1950s adult experienced approximately 20 hours per day in RF-free environments, yielding ~90.1% recovery time. If repair mechanisms require a minimum duty-free fraction to maintain homeostasis, the 4.4× reduction in recovery time could produce cumulative damage even at sub-thermal exposure levels.",
-          "The first 5G-frequency-specific testicular data ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics) supports the recovery window concept from a different angle: CoQ10 supplementation ameliorated 3.5 GHz RF-induced testicular and oxidative damage in rats. The CoQ10 rescue demonstrates mechanism reversibility — the oxidative pathway is pharmacologically blockable, consistent with the model net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair)). CoQ10 increases antioxidant capacity, effectively shortening τ_repair and reducing net daily damage. This is a pharmacological analogue of the recovery window: instead of reducing exposure time, the intervention enhances repair rate.",
+          "BERM keeps receptor readiness s, repair capacity A and damage D separate. In the current model, each declared time step gives D_next = max(0, D + g_D·u·s − r_D·A·D): production adds load and repair removes it. With no new input, repair cannot increase D. CoQ10 is a candidate modifier of redox processing; this study does not estimate g_D, r_D or a repair time constant.",
+          "[[ref:bektas2026|Bektas 2026]] studied 28 rats in four groups with a GSM-modulated 3.5 GHz signal, 2 h/day for 30 days. CoQ10 attenuated some hormonal, testicular and redox changes. This was not a 5G NR waveform. Early calcium responses and repair time constants were not measured, so the result does not isolate a downstream repair site or demonstrate complete reversal of established damage.",
         ],
         studies: [
           { citation: "REFLEX / Diem et al.", year: 2005, referenceId: "diem2005", note: "Intermittent > continuous genotoxicity" },
-          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "20.6% vs 90.1% EMF-free time" },
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → testicular ROS damage; CoQ10 ameliorates — mechanism reversibility, consistent with recovery window." },
+          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "Uncalibrated recovery-window scenario; measured exposure and independently fitted recovery times are required." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM-modulated 3.5 GHz; CoQ10 attenuated some rat endpoints. Not a 5G NR protocol; the intervention site and recovery time remain unmeasured." },
         ],
       },
       {
@@ -185,13 +185,13 @@ const COPY = {
         title: "Palautumisikkunan häviäminen",
         paragraphs: [
           "REFLEX-projekti ([[ref:diem2005|Diem ym. 2005]]) osoitti, että katkonainen RF-altistus tuottaa suurempia genotoksisia vaikutuksia kuin jatkuva altistus samalla SAR-tasolla, viitaten siihen että solujen korjausmekanismit aktivoituvat altistusvapaina jaksoina. Palautumisikkunahypoteesi esittää, että RF:n aiheuttaman vaurion biologinen korjaus (ROS-neutralointi, DNA-korjaus, proteiinien uudelleenlaskostuminen) vaatii riittävästi EMF-vapaata aikaa.",
-          "Moderni kaupunkiaikuinen kokee noin 2 tuntia päivässä lähes nolla-RF-altistusta (uni verkotetussa makuuhuoneessa), jolloin potentiaalinen palautumisaika on noin 20,6 %. 1950-luvun aikuinen koki noin 20 tuntia päivässä RF-vapaissa ympäristöissä, jolloin palautumisaika oli noin 90,1 %. Jos korjausmekanismit vaativat vähimmäismäärän altistusvapaata aikaa homeostaasin ylläpitämiseksi, 4,4-kertainen palautumisajan väheneminen voi tuottaa kumulatiivista vauriota myös subtermisillä altistustasoilla.",
-          "Ensimmäinen 5G-taajuustarkka testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics) tukee palautumisikkunakonseptia eri kulmasta: CoQ10-lisäravinto lievitti 3,5 GHz RF:n aiheuttamaa testis- ja oksidatiivista vauriota rotilla. CoQ10-interventio osoittaa mekanismin reversiibeliuden — oksidatiivinen polku on farmakologisesti estettävissä, yhdenmukainen mallin net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair)) kanssa. CoQ10 lisää antioksidanttikapasiteettia, lyhentäen efektiivisesti τ_repair-arvoa ja vähentäen nettovauriota. Tämä on palautumisikkunan farmakologinen analogi: altistusajan vähentämisen sijaan interventio tehostaa korjausnopeutta.",
+          "BERM erottaa vastaanottajan valmiuden s, korjauskapasiteetin A ja vaurion D. Nykyisessä mallissa jokainen määritelty aika-askel antaa D_next = max(0, D + g_D·u·s − r_D·A·D): tuotanto lisää kuormaa ja korjaus poistaa sitä. Ilman uutta syötettä korjaus ei kasvata D:tä. CoQ10 on redox-käsittelyn muunninehdokas; koe ei estimoi g_D:tä, r_D:tä eikä korjauksen aikavakiota.",
+          "[[ref:bektas2026|Bektas 2026]] tutki 28 rottaa neljässä ryhmässä GSM-moduloidulla 3,5 GHz:n signaalilla, 2 h/päivä 30 päivän ajan. CoQ10 lievensi osaa hormonaalisista, kiveksen ja redox-tilan muutoksista. Kyse ei ollut 5G NR -aaltomuodosta. Varhaista kalsiumvastetta ja korjauksen aikavakiota ei mitattu, joten tulos ei yksilöi alavirran korjauskohtaa eikä osoita jo syntyneen vaurion täydellistä palautumista.",
         ],
         studies: [
           { citation: "REFLEX / Diem ym.", year: 2005, referenceId: "diem2005", note: "Katkonainen > jatkuva genotoksisuus" },
-          { citation: "Palautumisikkunamalli (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "20,6 % vs 90,1 % EMF-vapaata aikaa" },
-          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää — mekanismin palautuvuus, yhdenmukainen palautumisikkunan kanssa." },
+          { citation: "Palautumisikkunamalli (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "Kalibroimaton palautumisikkunaskenaario; altistus on mitattava ja palautumisajat sovitettava riippumattomasti." },
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM-moduloitu 3,5 GHz; CoQ10 lievensi osaa rotan päätepisteistä. Ei 5G NR -protokolla; vaikutuskohta ja palautumisaika jäivät mittaamatta." },
         ],
       },
       {
@@ -346,13 +346,13 @@ const COPY = {
         title: "回復ウィンドウの排除",
         paragraphs: [
           "REFLEXプロジェクト（[[ref:diem2005|Diemら2005]]）は、断続的RF曝露が同じSARでの連続曝露よりも大きな遺伝毒性効果を生じることを実証し、曝露のない間隔中に細胞修復メカニズムが活性化されることを示唆した。回復ウィンドウ仮説は、RF誘発性損傷の生物学的修復（ROS中和、DNA修復、タンパク質リフォールディング）には十分なEMFフリー時間が必要であると提案する。",
-          "現代の都市居住成人は1日約2時間のほぼゼロRF曝露（接続された寝室での睡眠）を経験し、潜在的回復時間は約20.6%となる。1950年代の成人は1日約20時間をRFフリー環境で過ごし、回復時間は約90.1%であった。修復メカニズムがホメオスタシスを維持するために最低限の無曝露率を必要とするなら、回復時間の4.4倍の減少はサブサーマル曝露レベルでも累積的損傷を生じる可能性がある。",
-          "最初の5G周波数特異的精巣データ（[[ref:bektas2026|Bektasら2026]], Bioelectromagnetics）は異なる角度から回復ウィンドウ概念を支持する：CoQ10補給がラットにおける3.5 GHz RF誘発性の精巣および酸化的損傷を改善した。CoQ10レスキューはメカニズムの可逆性を実証する——酸化経路は薬理学的にブロック可能であり、モデルnet_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair))と一致する。CoQ10は抗酸化能力を増加させ、効果的にτ_repairを短縮し、1日あたりの正味損傷を減少させる。これは回復ウィンドウの薬理学的アナログである：曝露時間を減少させる代わりに、介入が修復速度を向上させる。",
+          "BERMは受容準備状態s、修復能力A、損傷Dを分ける。現行モデルの各時間ステップはD_next = max(0, D + g_D·u·s − r_D·A·D)で、生成が負荷を加え、修復が除く。新たな入力がなければ修復はDを増やさない。CoQ10は酸化還元処理の修飾候補だが、この実験はg_D、r_D、修復時定数を推定していない。",
+          "[[ref:bektas2026|Bektas 2026]]は28匹のラットを4群に分け、GSM変調3.5 GHz信号を1日2時間、30日間使用した。CoQ10は一部のホルモン、精巣、酸化還元変化を軽減した。5G NR波形ではない。初期Ca応答や修復時定数は測定しておらず、下流の修復部位や既存損傷の完全回復は特定できない。",
         ],
         studies: [
           { citation: "REFLEX / Diem et al.", year: 2005, referenceId: "diem2005", note: "断続的 > 連続的遺伝毒性" },
-          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "20.6% vs 90.1% EMFフリー時間" },
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → 精巣ROS損傷；CoQ10が改善——メカニズムの可逆性、回復ウィンドウと一致。" },
+          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "未較正の回復時間窓シナリオ。曝露の実測と、独立した回復時間の推定が必要。" },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM変調3.5 GHz、ラットの一部指標をCoQ10が軽減。5G NRではなく、作用部位と回復時間は未測定。" },
         ],
       },
       {
@@ -507,13 +507,13 @@ const COPY = {
         title: "Élimination de la fenêtre de récupération",
         paragraphs: [
           "Le projet REFLEX ([[ref:diem2005|Diem et al. 2005]]) a démontré que l'exposition RF intermittente produit des effets génotoxiques plus importants que l'exposition continue au même DAS, suggérant que les mécanismes de réparation cellulaire s'activent pendant les intervalles sans exposition. L'hypothèse de la fenêtre de récupération propose que la réparation biologique des dommages induits par les RF (neutralisation des ROS, réparation de l'ADN, repliement des protéines) nécessite un temps suffisant sans EMF.",
-          "Un adulte urbain moderne connaît environ 2 heures par jour d'exposition RF quasi nulle (sommeil dans une chambre connectée), soit environ 20,6 % de temps de récupération potentiel. Un adulte des années 1950 passait environ 20 heures par jour dans des environnements sans RF, soit environ 90,1 % de temps de récupération. Si les mécanismes de réparation nécessitent une fraction minimale sans exposition pour maintenir l'homéostasie, la réduction de 4,4× du temps de récupération pourrait produire des dommages cumulatifs même à des niveaux d'exposition sous-thermiques.",
-          "Les premières données testiculaires spécifiques à la fréquence 5G ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics) soutiennent le concept de fenêtre de récupération sous un angle différent : la supplémentation en CoQ10 a amélioré les dommages testiculaires et oxydatifs induits par le RF 3,5 GHz chez les rats. Le sauvetage par CoQ10 démontre la réversibilité du mécanisme — la voie oxydative est pharmacologiquement bloquable, conformément au modèle net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair)). Le CoQ10 augmente la capacité antioxydante, raccourcissant effectivement τ_repair et réduisant les dommages quotidiens nets. C'est un analogue pharmacologique de la fenêtre de récupération : au lieu de réduire le temps d'exposition, l'intervention augmente le taux de réparation.",
+          "BERM sépare disponibilité du récepteur s, capacité de réparation A et dommage D. Chaque pas de temps du modèle actuel donne D_next = max(0, D + g_D·u·s − r_D·A·D) : la production ajoute une charge, la réparation la retire. Sans nouvelle entrée, la réparation ne peut augmenter D. CoQ10 est un modificateur candidat du redox ; cette étude n’estime ni g_D, ni r_D, ni une constante de réparation.",
+          "[[ref:bektas2026|Bektas 2026]] étudie 28 rats en quatre groupes avec un signal de 3,5 GHz à modulation GSM, 2 h/jour pendant 30 jours. Le CoQ10 atténue certaines modifications hormonales, testiculaires et redox. Il ne s’agit pas d’une forme d’onde 5G NR. La réponse calcique précoce et les constantes de réparation n’ont pas été mesurées : le résultat n’isole pas un site de réparation en aval et ne démontre pas la réversion complète de lésions établies.",
         ],
         studies: [
           { citation: "REFLEX / Diem et al.", year: 2005, referenceId: "diem2005", note: "Génotoxicité intermittente > continue" },
-          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "20,6 % vs 90,1 % de temps sans EMF" },
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → dommages testiculaires ROS ; CoQ10 améliore — réversibilité du mécanisme, cohérent avec la fenêtre de récupération." },
+          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "Scénario de fenêtre de récupération non calibré ; exposition mesurée et estimation indépendante des temps de récupération nécessaires." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz à modulation GSM ; certains effets chez le rat sont atténués par CoQ10. Pas de protocole 5G NR ; site d’action et temps de récupération non mesurés." },
         ],
       },
       {
@@ -668,13 +668,13 @@ const COPY = {
         title: "회복 윈도우의 제거",
         paragraphs: [
           "REFLEX 프로젝트([[ref:diem2005|Diem 등 2005]])는 간헐적 RF 노출이 동일한 SAR에서의 연속 노출보다 더 큰 유전독성 효과를 생성함을 실증하여, 노출이 없는 간격 동안 세포 수리 메커니즘이 활성화됨을 시사했다. 회복 윈도우 가설은 RF 유발 손상의 생물학적 수리(ROS 중화, DNA 수리, 단백질 재접힘)에 충분한 EMF 프리 시간이 필요하다고 제안한다.",
-          "현대 도시 거주 성인은 하루 약 2시간의 거의 제로 RF 노출(연결된 침실에서의 수면)을 경험하여 잠재적 회복 시간이 약 20.6%이다. 1950년대 성인은 하루 약 20시간을 RF 프리 환경에서 보내 회복 시간이 약 90.1%였다. 수리 메커니즘이 항상성을 유지하기 위해 최소한의 무노출 비율을 필요로 한다면, 회복 시간의 4.4배 감소는 서브서멀 노출 수준에서도 누적 손상을 생성할 수 있다.",
-          "최초의 5G 주파수 특이적 고환 데이터([[ref:bektas2026|Bektas 등 2026]], Bioelectromagnetics)는 다른 각도에서 회복 윈도우 개념을 지지한다: CoQ10 보충이 쥐에서 3.5 GHz RF 유발 고환 및 산화 손상을 개선했다. CoQ10 구제는 메커니즘의 가역성을 실증한다 — 산화 경로는 약리학적으로 차단 가능하며, 모델 net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair))과 일치한다. CoQ10은 항산화 능력을 증가시켜 효과적으로 τ_repair를 단축하고 일일 순 손상을 감소시킨다. 이것은 회복 윈도우의 약리학적 유사체이다: 노출 시간을 줄이는 대신 개입이 수리 속도를 향상시킨다.",
+          "BERM은 수용 준비도 s, 복구 용량 A와 손상 D를 구별한다. 현재 모델의 각 시간 단계는 D_next = max(0, D + g_D·u·s − r_D·A·D)로, 생성이 부하를 더하고 복구가 제거한다. 새 입력이 없으면 복구는 D를 늘리지 않는다. CoQ10은 산화환원 처리의 후보 조절자지만 이 연구는 g_D, r_D 또는 복구 시상수를 추정하지 않는다.",
+          "[[ref:bektas2026|Bektas 2026]]는 쥐 28마리를 네 군으로 나누어 GSM 변조 3.5 GHz 신호를 하루 2시간씩 30일 사용했다. CoQ10은 일부 호르몬·고환·산화환원 변화를 완화했다. 5G NR 파형은 아니었다. 초기 칼슘 반응과 복구 시상수는 측정하지 않아 하류 복구 지점을 특정하거나 이미 생긴 손상의 완전한 회복을 입증하지 않는다.",
         ],
         studies: [
           { citation: "REFLEX / Diem et al.", year: 2005, referenceId: "diem2005", note: "간헐적 > 연속적 유전독성" },
-          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "20.6% vs 90.1% EMF 프리 시간" },
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → 고환 ROS 손상; CoQ10이 개선 — 메커니즘 가역성, 회복 윈도우와 일치." },
+          { citation: "Recovery window model (BERM)", year: 2026, referenceId: "berm_recovery_window_2026", note: "보정되지 않은 회복 시간창 시나리오. 노출 실측과 독립적인 회복 시간 추정이 필요하다." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM 변조 3.5 GHz에서 일부 쥐 지표를 CoQ10이 완화했다. 5G NR 프로토콜이 아니며 작용 지점과 회복 시간은 미측정이다." },
         ],
       },
       {

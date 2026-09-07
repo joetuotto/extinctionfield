@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InterventionExplorer } from "@/components/InterventionExplorer";
 import Link from "next/link";
 import { Activity } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
@@ -160,6 +161,7 @@ export default async function BiologicalCoordinationPage({ params }: { params: P
             {paragraph(d.timingEquation)}
             <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.coordination.multiple-zeitgebers">{d.multiClaim}</ClaimRef></p>{paragraph(d.multiText)}
           </section>
+          <InterventionExplorer locale={locale} />
           <BiologicalCoordinationExplorer locale={locale} />
           <ConditionalScenarioExplorer locale={locale} />
           <section className={sectionClass} id="functional-gates">

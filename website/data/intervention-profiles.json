@@ -1,0 +1,883 @@
+{
+  "schemaVersion": "berm-intervention-profiles-v1",
+  "derivation": {
+    "theoryVersion": "Lindgren 2025: nondegenerate eta + kappa A tensor A formulation",
+    "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu; A = A0 + a",
+    "metricPerturbation": "delta_g_mu_nu = kappa (A0_mu a_nu + a_mu A0_nu + a_mu a_nu)",
+    "conditionalResponse": "r_j(t) = integral Xi_j,R^mu_nu(t,t-prime; state) delta_g_mu_nu(t-prime) dt-prime",
+    "portMapping": "q_j(t) = baseline_j + gain_j r_j(t); dx/dt = F(x, q, active_drug, protocol_history); Y = H(x)",
+    "assumptions": [
+      "The 2025 ansatz is distinct from the singular 2021 A tensor A formulation.",
+      "Minimal matter–metric coupling is an explicit BERM bridge assumption.",
+      "The retarded kernel and tensor contraction must be supplied for the named observable.",
+      "Imported biological dynamics supply F and the measurement model H; they are not algebraic consequences of the metric ansatz."
+    ],
+    "openBridges": [
+      "Physical gauge prescription and units/scale",
+      "Tissue kernel, sign, lag and port calibration",
+      "Transfer from measured cellular endpoint to tissue/couple/behavior and human ASFR/TFR"
+    ],
+    "status": "CONDITIONAL_FORMAL_OPERATOR"
+  },
+  "profiles": [
+    {
+      "id": "mt2_brake",
+      "title": {
+        "en": "MT2 feedback and evoked calcium",
+        "fi": "MT2-palaute ja evokoitu kalsium"
+      },
+      "mechanism": {
+        "en": "MT2-dependent store release can strengthen a calcium-mediated brake on the sodium-current response.",
+        "fi": "MT2:sta riippuva varastovapautus voi vahvistaa kalsiumin välittämää natriumvirtavasteen jarrua."
+      },
+      "observed": {
+        "en": "Melatonin reduced the field-associated sodium-current increase while enhancing depolarization-evoked calcium, without increasing resting calcium. MT2 pharmacology and store-release intervention bounded the route.",
+        "fi": "Melatoniini pienensi kenttään liittyvää natriumvirran kasvua ja suurensi depolarisaation Ca-vastetta nostamatta lepo-Ca:ta. MT2-farmakologia ja varastovapautuksen interventio rajasivat reittiä."
+      },
+      "prediction": {
+        "en": "Given a specified L2 input to this cell pathway, greater MT2 activation can reduce the sodium-current response through stronger evoked store feedback. If physiological melatonin engages this brake, evening-light suppression of melatonin may change the field interaction; MT2 blockade should occlude that component.",
+        "fi": "Kun nimetty L2-syöte kytketään tähän solureittiin, MT2-aktivaatio voi pienentää natriumvirtavastetta vahvistamalla evokoitua varastopalautetta. Jos fysiologinen melatoniini aktivoi jarrun, iltavalon melatoniinivaikutus voi muuttaa kenttäinteraktiota; MT2-salpauksen pitäisi poistaa kyseinen komponentti."
+      },
+      "limitations": [
+        {
+          "en": "Cell-culture micromolar melatonin is not a calibrated physiological tissue dose.",
+          "fi": "Solukokeen mikromolaarinen melatoniini ei ole kalibroitu fysiologinen kudosannos."
+        },
+        {
+          "en": "The human light experiment did not test a field–MT2 interaction or identify a local CRY sensor.",
+          "fi": "Ihmisen valokoe ei testannut kenttä–MT2-interaktiota eikä tunnistanut paikallista CRY-vastaanotinta."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Rat cerebellar granule cells; separate human evening-light experiment.",
+          "fi": "Rotan pikkuaivojen jyväissolut; erillinen ihmisen iltavalokoe."
+        },
+        "field": {
+          "en": "Liu: 50 Hz, 1 mT, 60 min. Cajochen: no field intervention.",
+          "fi": "Liu: 50 Hz, 1 mT, 60 min. Cajochen: ei kenttäinterventiota."
+        },
+        "light": {
+          "en": "Cajochen: 460 versus 550 nm at matched photon flux, 2 h in the evening.",
+          "fi": "Cajochen: 460 ja 550 nm samalla fotonivuolla, 2 h illalla."
+        },
+        "drugTiming": {
+          "en": "Melatonin 1–5 µM, MT2 agonist/antagonist and store-release interventions; treatment arms must retain their original schedules.",
+          "fi": "Melatoniini 1–5 µM, MT2-agonisti/-antagonisti ja varastovapautuksen interventiot; koehaarojen alkuperäiset ajoitukset säilytetään."
+        },
+        "measurement": {
+          "en": "Resting and depolarization-evoked Ca; sodium-current density. Human melatonin is a separate endpoint.",
+          "fi": "Lepo-Ca, depolarisaation Ca-vaste ja natriumvirran tiheys. Ihmisen melatoniini on erillinen päätepiste."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.liu2014_mt2",
+          "referenceId": "liu2014_mt2",
+          "fieldTested": true,
+          "sourceCoverage": "full_text",
+          "system": "Rat cerebellar granule cells",
+          "protocol": "50 Hz / 1 mT / 60 min with melatonin and MT2/store interventions",
+          "endpoint": "Evoked calcium and sodium-current density"
+        },
+        {
+          "id": "study.cajochen2005_melatonin",
+          "referenceId": "cajochen2005_melatonin",
+          "fieldTested": false,
+          "sourceCoverage": "abstract",
+          "system": "Humans",
+          "protocol": "2 h evening 460/550 nm, matched photon flux",
+          "endpoint": "Melatonin suppression"
+        }
+      ],
+      "referenceIds": [
+        "liu2014_mt2",
+        "cajochen2005_melatonin"
+      ],
+      "studyIds": [
+        "study.liu2014_mt2",
+        "study.cajochen2005_melatonin"
+      ],
+      "interventionTargets": [
+        "MT2",
+        "RyR",
+        "melatonin"
+      ],
+      "endpointIds": [
+        "resting_calcium",
+        "evoked_calcium",
+        "sodium_current",
+        "melatonin"
+      ],
+      "atlasNodeIds": [
+        "mech_mt2_store_brake",
+        "tissue_melatonin",
+        "mech_ca_compartment_cycle"
+      ],
+      "claimIds": [
+        "claim.pharmacology.mt2-evoked-feedback",
+        "claim.pharmacology.mt2-brake-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "local_ltype_erk",
+      "title": {
+        "en": "Local L-channel calcium and ERK",
+        "fi": "L-kanavan paikallinen kalsium ja ERK"
+      },
+      "mechanism": {
+        "en": "A channel microdomain and the cell-average calcium signal feed distinct time-dependent ERK components.",
+        "fi": "Kanavan mikroalue ja koko solun Ca-signaali syöttävät erillisiä ajasta riippuvia ERK-komponentteja."
+      },
+      "observed": {
+        "en": "In MIN6 cells, Bay K8644 activated ERK without a detectable bulk-Ca rise. BAPTA blocked this signal more than EGTA. GLP-1 ERK at 5 min was partly EGTA-sensitive; the 30 min response was not.",
+        "fi": "MIN6-soluissa Bay K8644 aktivoi ERK:n ilman havaittavaa koko solun Ca-nousua. BAPTA esti signaalia EGTA:a enemmän. GLP-1:n ERK-vaste oli 5 minuutissa osittain EGTA-herkkä, mutta 30 minuutissa ei."
+      },
+      "prediction": {
+        "en": "If the conditional BERM input acts on the same local channel pathway, ERK can change while a bulk-Ca measurement remains negative. Fast and slow buffers should differ through binding kinetics and measurement time, not through a drug-specific output multiplier.",
+        "fi": "Jos BERM:n ehdollinen syöte vaikuttaa samaan paikalliseen kanavareittiin, ERK voi muuttua koko solun Ca-mittauksen jäädessä negatiiviseksi. Nopean ja hitaan puskurin eron tulee syntyä sitoutumiskinetiikasta ja mittausajasta."
+      },
+      "limitations": [
+        {
+          "en": "This is a non-field component experiment; the field prediction is a synthesis.",
+          "fi": "Tämä on kentätön komponenttikoe; kenttäennuste on synteesi."
+        },
+        {
+          "en": "Microdomain localization is inferred from buffer kinetics, not directly imaged; β-cell ERK does not calibrate fertility or clinical GLP-1 benefit.",
+          "fi": "Mikroalue paikannetaan puskurikinetiikasta, ei suorasta kuvantamisesta; β-solun ERK ei kalibroi hedelmällisyyttä tai GLP-1:n kliinistä hyötyä."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Mouse MIN6 pancreatic β-cells.",
+          "fi": "Hiiren MIN6-haiman β-solut."
+        },
+        "field": {
+          "en": "No field exposure in Selway 2012.",
+          "fi": "Selway 2012 ei sisällä kenttäaltistusta."
+        },
+        "light": {
+          "en": "No controlled light–field factorial experiment.",
+          "fi": "Ei kontrolloitua valo–kenttä-faktorikoetta."
+        },
+        "drugTiming": {
+          "en": "GLP-1/glucose or Bay K8644, L-channel blockade, BAPTA and EGTA; distinguish 5 and 30 min.",
+          "fi": "GLP-1/glukoosi tai Bay K8644, L-kanavasalpaus sekä BAPTA ja EGTA; 5 ja 30 min erotetaan."
+        },
+        "measurement": {
+          "en": "Bulk calcium and ERK phosphorylation, including early versus sustained responses.",
+          "fi": "Koko solun kalsium ja ERK-fosforylaatio; varhainen ja pitkäkestoinen vaste erikseen."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.bhatt2012_glp1",
+          "referenceId": "bhatt2012_glp1",
+          "fieldTested": false,
+          "sourceCoverage": "full_text",
+          "system": "Mouse MIN6 β-cells",
+          "protocol": "GLP-1/glucose, Bay K8644, BAPTA/EGTA and L-channel interventions",
+          "endpoint": "Bulk calcium; ERK at 5 and 30 min"
+        }
+      ],
+      "referenceIds": [
+        "bhatt2012_glp1"
+      ],
+      "studyIds": [
+        "study.bhatt2012_glp1"
+      ],
+      "interventionTargets": [
+        "L-type",
+        "BAPTA",
+        "EGTA",
+        "GLP-1",
+        "Bay K8644"
+      ],
+      "endpointIds": [
+        "local_calcium",
+        "bulk_calcium",
+        "erk_early",
+        "erk_sustained"
+      ],
+      "atlasNodeIds": [
+        "mech_local_ltype_erk",
+        "mech_vgcc_ros"
+      ],
+      "claimIds": [
+        "claim.pharmacology.local-ltype-erk",
+        "claim.pharmacology.local-ltype-erk-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "channel_selectivity",
+      "title": {
+        "en": "Channel identity and response duration",
+        "fi": "Kanavatyyppi ja vasteen kesto"
+      },
+      "mechanism": {
+        "en": "Channel-specific calcium entry and its time course jointly determine a measured growth response.",
+        "fi": "Kanavakohtainen kalsiumin sisäänvirtaus ja sen aikaprofiili määräävät yhdessä mitattua kasvuvastetta."
+      },
+      "observed": {
+        "en": "T-type blockers suppressed Thomas-field calcium and growth effects; L-type blockers did not. Bay K8644 gave a similar but shorter Ca peak without the same growth inhibition. In a separate AM-RF HCC protocol, CACNA1H knockdown removed the growth effect.",
+        "fi": "T-tyypin salpaajat estivät Thomas-kentän kalsium- ja kasvuvaikutuksia, L-tyypin salpaajat eivät. Bay K8644 tuotti samansuuruusluokkaisen mutta lyhyemmän Ca-huipun ilman samaa kasvun estoa. Erillisessä AM-RF-maksasyöpäsolukokeessa CACNA1H-vaimennus poisti kasvuvaikutuksen."
+      },
+      "prediction": {
+        "en": "Under a specified channel-targeted L2 bridge, deleting CaV3.2 should remove its contribution while preserving an independent L-channel pathway. Matching only the calcium peak need not match the endpoint.",
+        "fi": "Kun L2-silta kohdistetaan nimettyyn kanavareittiin, CaV3.2:n poiston tulee poistaa sen osuus ja säilyttää riippumaton L-kanavareitti. Pelkän Ca-huipun sovittaminen ei välttämättä sovita päätepistettä."
+      },
+      "limitations": [
+        {
+          "en": "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+          "fi": "Salpaajilla on useita kohteita; geneettinen ja farmakologinen näyttö ovat eri rajoitteita."
+        },
+        {
+          "en": "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+          "fi": "Välttämätön välittäjä ei automaattisesti ole ensimmäinen kenttäsensori. Eri aaltomuodot ja solujärjestelmät tarvitsevat erilliset parametrisaatiot."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Buckner: malignant/non-malignant cell comparisons. Jimenez: HCC cell systems.",
+          "fi": "Buckner: pahanlaatuisten ja ei-pahanlaatuisten solujen vertailut. Jimenez: maksasyöpäsolujärjestelmät."
+        },
+        "field": {
+          "en": "Thomas time-varying 25→6 Hz pattern versus reverse/sham; separate 27.12 MHz amplitude-modulated HCC protocol.",
+          "fi": "Thomasin ajassa muuttuva 25→6 Hz -kuvio verrattuna käänteiseen/shamiin; erillinen 27,12 MHz:n amplitudimoduloitu HCC-protokolla."
+        },
+        "light": {
+          "en": "No measured common light history across these studies.",
+          "fi": "Tutkimuksille ei ole mitattua yhteistä valohistoriaa."
+        },
+        "drugTiming": {
+          "en": "T/L blockers, Bay K8644, ethosuximide and CACNA1H/CACNA1G/CACNA1I knockdown; original dose and exposure schedules remain study-specific.",
+          "fi": "T-/L-salpaajat, Bay K8644, etosuksimidi ja CACNA1H/CACNA1G/CACNA1I-vaimennus; annokset ja altistusajat ovat tutkimuskohtaisia."
+        },
+        "measurement": {
+          "en": "Ca time course and proliferation; isoform-specific loss of response.",
+          "fi": "Ca-aikasarja ja proliferaatio; isoformikohtainen vasteen menetys."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.buckner2015_ttype",
+          "referenceId": "buckner2015_ttype",
+          "fieldTested": true,
+          "sourceCoverage": "full_text",
+          "system": "Malignant and non-malignant cells",
+          "protocol": "Thomas 25→6 Hz time-varying pattern; T/L blockers",
+          "endpoint": "Calcium kinetics and proliferation"
+        },
+        {
+          "id": "study.therabionic-ebioMedicine-2019",
+          "referenceId": "therabionic-ebioMedicine-2019",
+          "fieldTested": true,
+          "sourceCoverage": "full_text",
+          "system": "HCC cell systems",
+          "protocol": "27.12 MHz AM RF with HCC-specific versus random modulation; channel interventions",
+          "endpoint": "Calcium and proliferation with isoform knockdown"
+        }
+      ],
+      "referenceIds": [
+        "buckner2015_ttype",
+        "therabionic-ebioMedicine-2019"
+      ],
+      "studyIds": [
+        "study.buckner2015_ttype",
+        "study.therabionic-ebioMedicine-2019"
+      ],
+      "interventionTargets": [
+        "T-type",
+        "L-type",
+        "CaV3.2",
+        "CACNA1H",
+        "ethosuximide",
+        "mibefradil",
+        "bepridil",
+        "nifedipine"
+      ],
+      "endpointIds": [
+        "channel_current",
+        "calcium_timecourse",
+        "proliferation"
+      ],
+      "atlasNodeIds": [
+        "mech_channel_selectivity",
+        "mech_ttype_bifurcation",
+        "mech_vgcc_ros"
+      ],
+      "claimIds": [
+        "claim.pharmacology.channel-specific-response",
+        "claim.pharmacology.channel-selectivity-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "lipid_ttype_inhibition",
+      "title": {
+        "en": "AA–LTE4 inhibition of T channels",
+        "fi": "AA–LTE4-välitteinen T-kanavan esto"
+      },
+      "mechanism": {
+        "en": "AA/LTE4 production can mediate a reduction in a named T-type channel current.",
+        "fi": "AA/LTE4-tuotanto voi välittää nimetyn T-kanavavirran pienenemistä."
+      },
+      "observed": {
+        "en": "A 50 Hz exposure inhibited T-type channels with increased AA/LTE4. Interventions preventing mediator increases removed inhibition, and added LTE4 reproduced it.",
+        "fi": "50 Hz:n altistus esti T-kanavia ja lisäsi AA/LTE4:ää. Välittäjäaineiden nousun estävät interventiot poistivat inhibition, ja lisätty LTE4 jäljitteli sitä."
+      },
+      "prediction": {
+        "en": "Given an explicit L2 input to lipid production, measured lipid state should predict the direction and latency of the channel-current change. Lipid-pathway blockade should remove this component without deleting independent channel inputs.",
+        "fi": "Kun L2-syöte kohdistetaan eksplisiittisesti lipidituotantoon, mitatun lipiditilan tulee ennustaa kanavavirtamuutoksen suuntaa ja viivettä. Lipidireitin salpauksen tulee poistaa tämä komponentti säilyttäen riippumattomat kanavasyötteet."
+      },
+      "limitations": [
+        {
+          "en": "The observed inhibitory route does not determine the response sign of every cell or identify the initial physical coupling.",
+          "fi": "Havaittu estoreitti ei määrää kaikkien solujen vasteen suuntaa eikä tunnista ensimmäistä fysikaalista kytkentää."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Human T-channel isoforms expressed in HEK293; mouse cortical neurons.",
+          "fi": "Ihmisen T-kanavaisoformit HEK293-soluissa; hiiren aivokuoren neuronit."
+        },
+        "field": {
+          "en": "50 Hz; 0.2 mT in the reported CaV3.2 intervention condition.",
+          "fi": "50 Hz; raportoidussa CaV3.2-interventioasetelmassa 0,2 mT."
+        },
+        "light": {
+          "en": "No light interaction established.",
+          "fi": "Valointeraktiota ei osoitettu."
+        },
+        "drugTiming": {
+          "en": "CAY10502, bestatin and exogenous LTE4 within the original cellular protocol.",
+          "fi": "CAY10502, bestatiini ja ulkoinen LTE4 alkuperäisessä soluprotokollassa."
+        },
+        "measurement": {
+          "en": "T-channel current, AA/LTE4, channel protein and gating measures.",
+          "fi": "T-kanavavirta, AA/LTE4 sekä kanavaproteiinin ja portittumisen mittaukset."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.cui2014_lte4",
+          "referenceId": "cui2014_lte4",
+          "fieldTested": true,
+          "sourceCoverage": "abstract",
+          "system": "HEK293 expressed T channels; mouse cortical neurons",
+          "protocol": "50 Hz; CaV3.2 at 0.2 mT; lipid-pathway interventions",
+          "endpoint": "T-channel inhibition and AA/LTE4"
+        }
+      ],
+      "referenceIds": [
+        "cui2014_lte4"
+      ],
+      "studyIds": [
+        "study.cui2014_lte4"
+      ],
+      "interventionTargets": [
+        "AA",
+        "LTE4",
+        "CAY10502",
+        "bestatin",
+        "T-type"
+      ],
+      "endpointIds": [
+        "aa",
+        "lte4",
+        "ttype_current"
+      ],
+      "atlasNodeIds": [
+        "mech_aa_lte4_inhibition",
+        "mech_ttype_bifurcation"
+      ],
+      "claimIds": [
+        "claim.pharmacology.lipid-ttype-inhibition",
+        "claim.pharmacology.lipid-ttype-inhibition-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "channel_density_store_history",
+      "title": {
+        "en": "Channel abundance and store pretreatment",
+        "fi": "Kanavamäärä ja varastojen esikäsittely"
+      },
+      "mechanism": {
+        "en": "Slow channel-population changes and altered calcium-store filling are separate forms of state history.",
+        "fi": "Hidas kanavapopulaation muutos ja kalsiumvaraston täyttymisen muutos ovat erillisiä tilahistorioita."
+      },
+      "observed": {
+        "en": "Grassi found increased whole-cell Ba current and membrane channel protein after 24–72 h, without changed single L/N-channel gating. In Bertagna 2022, thapsigargin pretreatment raised baseline fluorescence and removed the field–sham increment.",
+        "fi": "Grassi havaitsi 24–72 tunnin jälkeen suuremman koko solun Ba-virran ja enemmän kalvon kanavaproteiinia ilman yksittäisten L-/N-kanavien portitusmuutosta. Bertagna 2022:ssa thapsigargiinin esikäsittely nosti lähtöfluoresenssia ja poisti kenttä–sham-lisävasteen."
+      },
+      "prediction": {
+        "en": "A density change can increase total current while single-channel gating is unchanged. For a store-dependent L2 realization, depleted releasable stores can reduce a challenge response despite an elevated baseline; an independent membrane-input component should remain.",
+        "fi": "Kanavamäärän muutos voi kasvattaa kokonaisvirtaa yksittäiskanavan portittumisen pysyessä samana. Varastosta riippuvassa L2-toteutumassa vapautettavan varaston ehtyminen voi pienentää haastevastetta kohonneesta lähtötasosta huolimatta; riippumattoman kalvosyötteen osuuden tulee säilyä."
+      },
+      "limitations": [
+        {
+          "en": "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+          "fi": "Bertagna käytti puhelinlähdettä ilman riittävää soluviljelmän dosimetriaa; laitteen SAR ei ole viljelmän SAR."
+        },
+        {
+          "en": "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+          "fi": "Varaston ehtyminen ja indikaattorin mittausalue tarvitsevat erilliset kontrollit. Kumpikaan koe ei tunnista ylisukupolvista altistusmuistia."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Grassi: GH3 and IMR32 cells. Bertagna 2022: HEK293.",
+          "fi": "Grassi: GH3- ja IMR32-solut. Bertagna 2022: HEK293."
+        },
+        "field": {
+          "en": "Grassi: 50 Hz, prolonged exposure. Bertagna: phone RF with inadequately specified waveform and absorbed culture dose.",
+          "fi": "Grassi: 50 Hz, pitkittynyt altistus. Bertagna: puhelimen RF, jonka aaltomuotoa ja viljelmän absorboimaa annosta ei määritelty riittävästi."
+        },
+        "light": {
+          "en": "Indicator illumination is part of the measurement protocol, not a demonstrated light–field interaction.",
+          "fi": "Indikaattorivalaistus kuuluu mittausprotokollaan; valo–kenttä-interaktiota ei osoitettu."
+        },
+        "drugTiming": {
+          "en": "Grassi: 24–72 h. Bertagna: 10 µM thapsigargin already during dye incubation, before baseline.",
+          "fi": "Grassi: 24–72 h. Bertagna: 10 µM thapsigargiini jo väriainelatauksessa ennen lähtömittausta."
+        },
+        "measurement": {
+          "en": "Ba-current density/channel protein; separate baseline and exposure Fluo-4 trajectories.",
+          "fi": "Ba-virran tiheys/kanavaproteiini; erilliset Fluo-4-lähtö- ja altistusaikasarjat."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.grassi2004_channels",
+          "referenceId": "grassi2004_channels",
+          "fieldTested": true,
+          "sourceCoverage": "abstract",
+          "system": "GH3 and IMR32 cells",
+          "protocol": "50 Hz, 24–72 h",
+          "endpoint": "Ba-current density, channel protein and single-channel gating"
+        },
+        {
+          "id": "study.bertagna2022_serca",
+          "referenceId": "bertagna2022_serca",
+          "fieldTested": true,
+          "sourceCoverage": "full_text",
+          "system": "HEK293",
+          "protocol": "Phone RF; 10 µM thapsigargin before baseline; incomplete dosimetry",
+          "endpoint": "Fluo-4 baseline and field increment"
+        }
+      ],
+      "referenceIds": [
+        "grassi2004_channels",
+        "bertagna2022_serca"
+      ],
+      "studyIds": [
+        "study.grassi2004_channels",
+        "study.bertagna2022_serca"
+      ],
+      "interventionTargets": [
+        "SERCA",
+        "thapsigargin",
+        "channel_density"
+      ],
+      "endpointIds": [
+        "channel_density",
+        "single_channel_gating",
+        "er_store",
+        "resting_calcium",
+        "bulk_calcium"
+      ],
+      "atlasNodeIds": [
+        "mech_channel_density",
+        "mech_serca_pretreatment",
+        "mech_ca_compartment_cycle",
+        "mod_cell_history"
+      ],
+      "claimIds": [
+        "claim.pharmacology.channel-density",
+        "claim.pharmacology.serca-pretreatment",
+        "claim.pharmacology.channel-density-store-history-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "cry_fad_competition",
+      "title": {
+        "en": "CRY amount, FAD occupancy and KL001",
+        "fi": "CRY-määrä, FAD-sitoutuminen ja KL001"
+      },
+      "mechanism": {
+        "en": "Protein abundance and occupied/reactive receptor fractions are independent factors in the conditional receiver capacity.",
+        "fi": "Proteiinimäärä sekä sitoutunut ja reaktiivinen vastaanotinosuus ovat ehdollisen vastaanottokapasiteetin erillisiä tekijöitä."
+      },
+      "observed": {
+        "en": "KL001 stabilized CRY and lengthened circadian period while reducing reporter amplitude. Biochemical competition and a CRY2 structure located binding at the FAD pocket.",
+        "fi": "KL001 stabiloi CRY:tä ja pidensi vuorokausijaksoa pienentäen reporterin amplitudia. Biokemiallinen kilpailu ja CRY2-rakenne paikansivat sitoutumisen FAD-taskuun."
+      },
+      "prediction": {
+        "en": "If a specified BERM response requires reactive CRY-bound FAD, ligand competition and slower protein stabilization can affect capacity in different directions. Short and long pretreatment should distinguish these processes; the resulting field-response sign depends on measured occupancy and kinetics.",
+        "fi": "Jos nimetty BERM-vaste edellyttää CRY:hen sitoutunutta reaktiivista FAD:ia, ligandikilpailu ja hitaampi proteiinin stabiloituminen voivat vaikuttaa kapasiteettiin eri suuntiin. Lyhyen ja pitkän esikäsittelyn tulee erotella prosessit; kenttävasteen suunta riippuu mitatusta sitoutumisasteesta ja kinetiikasta."
+      },
+      "limitations": [
+        {
+          "en": "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+          "fi": "Endogeenisen FAD:n syrjäytymistä soluissa tai magneettivasteen muutosta ei mitattu."
+        },
+        {
+          "en": "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+          "fi": "CRY-alatyyppi, kellovaste ja vapaan flaviinin reitit erotetaan; nykyinen fototuotto sisältää jo FAD-sitoutumisasteen."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "CRY clock assays and biochemical binding; mouse CRY2 structural construct.",
+          "fi": "CRY-kellomääritykset ja biokemiallinen sitoutuminen; hiiren CRY2-rakennekonstruktio."
+        },
+        "field": {
+          "en": "No magnetic-field intervention in these studies.",
+          "fi": "Näissä tutkimuksissa ei tehty magneettikenttäinterventiota."
+        },
+        "light": {
+          "en": "A field/light response is a proposed follow-up, not a measured result.",
+          "fi": "Kenttä-/valovaste on ehdotettu jatkokoe, ei mitattu tulos."
+        },
+        "drugTiming": {
+          "en": "KL001 binding and stabilization; compare short occupancy changes with longer turnover changes.",
+          "fi": "KL001:n sitoutuminen ja stabiloituminen; lyhyt sitoutumismuutos erotetaan hitaammasta proteiinivaihdunnasta."
+        },
+        "measurement": {
+          "en": "CRY stability, clock period/amplitude, biochemical FAD competition and binding structure.",
+          "fi": "CRY:n stabiilisuus, kellon jakso/amplitudi, biokemiallinen FAD-kilpailu ja sitoutumisrakenne."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.hirota2012_kl001",
+          "referenceId": "hirota2012_kl001",
+          "fieldTested": false,
+          "sourceCoverage": "full_text",
+          "system": "Cellular clock and biochemical CRY assays",
+          "protocol": "KL001; excess FAD competition in pull-down",
+          "endpoint": "CRY stability, clock period/amplitude, binding"
+        },
+        {
+          "id": "study.nangle2013_kl001",
+          "referenceId": "nangle2013_kl001",
+          "fieldTested": false,
+          "sourceCoverage": "full_text",
+          "system": "Mouse CRY2 PHR structural construct",
+          "protocol": "KL001 complex structure",
+          "endpoint": "FAD-pocket ligand binding"
+        }
+      ],
+      "referenceIds": [
+        "hirota2012_kl001",
+        "nangle2013_kl001"
+      ],
+      "studyIds": [
+        "study.hirota2012_kl001",
+        "study.nangle2013_kl001"
+      ],
+      "interventionTargets": [
+        "CRY",
+        "FAD",
+        "KL001"
+      ],
+      "endpointIds": [
+        "cry_amount",
+        "fad_occupancy",
+        "reactive_capacity",
+        "clock_period"
+      ],
+      "atlasNodeIds": [
+        "mech_cry_ligand_occupancy",
+        "mod_cry_photostate"
+      ],
+      "claimIds": [
+        "claim.pharmacology.cry-ligand-occupancy",
+        "claim.pharmacology.cry-fad-competition-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "drug_photochemistry",
+      "title": {
+        "en": "Light-sensitive pharmacological probes",
+        "fi": "Valoherkät farmakologiset koettimet"
+      },
+      "mechanism": {
+        "en": "Illumination may change active drug availability separately from the biological receiver state.",
+        "fi": "Valaistus voi muuttaa aktiivisen lääkkeen saatavuutta erillään biologisen vastaanottimen tilasta."
+      },
+      "observed": {
+        "en": "Light rapidly reversed nifedipine and nisoldipine channel blockade in Purkinje fibres, especially at 320–450 nm. The compared nicardipine, nitrendipine and D600 blocks did not behave the same way in that protocol.",
+        "fi": "Valo purki nopeasti nifedipiinin ja nisoldipiinin kanavasalpausta Purkinjen säikeissä, erityisesti 320–450 nm:ssa. Verratut nikardipiini-, nitrendipiini- ja D600-salpaukset eivät käyttäytyneet samoin kyseisessä protokollassa."
+      },
+      "prediction": {
+        "en": "In a light–field–drug experiment, cell-free illumination of the drug can change the drug-dependent field contrast without changing the cell photostate. Matched probe potency and a genetic intervention help distinguish this from a receiver-light effect.",
+        "fi": "Valo–kenttä–lääkekokeessa lääkkeen soluton esivalaistus voi muuttaa lääkkeestä riippuvaa kenttäkontrastia muuttamatta solun fototilaa. Toiminnaltaan sovitetut koettimet ja geneettinen interventio auttavat erottamaan tämän vastaanottimen valovaikutuksesta."
+      },
+      "limitations": [
+        {
+          "en": "This study does not establish a CRY mechanism, a field interaction or universal photostability of other blockers.",
+          "fi": "Tutkimus ei osoita CRY-mekanismia, kenttäinteraktiota tai muiden salpaajien yleistä valonkestävyyttä."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Cardiac Purkinje fibres.",
+          "fi": "Sydämen Purkinjen säikeet."
+        },
+        "field": {
+          "en": "No field interaction tested.",
+          "fi": "Kenttäinteraktiota ei testattu."
+        },
+        "light": {
+          "en": "320–450 nm photoreversal; wavelength and dose must be retained for each probe.",
+          "fi": "Salpauksen purkautuminen 320–450 nm:ssa; aallonpituus ja annos säilytetään koetinkohtaisina."
+        },
+        "drugTiming": {
+          "en": "Channel blockade followed by illumination; cell-free pre-illumination is a proposed additional control.",
+          "fi": "Kanavasalpaus ja sen jälkeinen valaistus; soluton esivalaistus on ehdotettu lisäkontrolli."
+        },
+        "measurement": {
+          "en": "Channel-current recovery during illumination.",
+          "fi": "Kanavavirran palautuminen valaistuksessa."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.sanguinetti1984_photoreversal",
+          "referenceId": "sanguinetti1984_photoreversal",
+          "fieldTested": false,
+          "sourceCoverage": "abstract",
+          "system": "Cardiac Purkinje fibres",
+          "protocol": "Dihydropyridine blockade and 320–450 nm light",
+          "endpoint": "Rapid photoreversal of channel blockade"
+        }
+      ],
+      "referenceIds": [
+        "sanguinetti1984_photoreversal"
+      ],
+      "studyIds": [
+        "study.sanguinetti1984_photoreversal"
+      ],
+      "interventionTargets": [
+        "nifedipine",
+        "nisoldipine",
+        "light",
+        "drug_active_fraction"
+      ],
+      "endpointIds": [
+        "active_drug",
+        "channel_current"
+      ],
+      "atlasNodeIds": [
+        "mod_drug_photochemistry",
+        "optical_light",
+        "mech_vgcc_ros"
+      ],
+      "claimIds": [
+        "claim.pharmacology.probe-photoreversal",
+        "claim.pharmacology.drug-photochemistry-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    },
+    {
+      "id": "coq10_response",
+      "title": {
+        "en": "CoQ10 and the location of protection",
+        "fi": "CoQ10 ja suojavaikutuksen paikka"
+      },
+      "mechanism": {
+        "en": "A reduced final impairment can arise from altered initial transmission, mitochondrial/redox production or repair; these are separate model hypotheses.",
+        "fi": "Pienempi loppuvaiheen haitta voi syntyä muuttuneesta alkuvälityksestä, mitokondrio-/redox-tuotannosta tai korjauksesta; nämä ovat erillisiä mallihypoteeseja."
+      },
+      "observed": {
+        "en": "CoQ10 attenuated some hormonal, oxidative and testicular tissue changes in a 28-rat, four-group study using GSM-modulated 3.5 GHz. Early calcium responses and repair kinetics were not separated.",
+        "fi": "CoQ10 lievensi osaa hormoni-, oksidatiivisista ja kiveksen kudosmuutoksista 28 rotan neliryhmäkokeessa, jossa käytettiin GSM-moduloitua 3,5 GHz:n signaalia. Varhaista kalsiumvastetta ja korjauskinetiikkaa ei eroteltu."
+      },
+      "prediction": {
+        "en": "With the same specified physical input, compare drug effects on early calcium, redox production and recovery. Protection located after calcium should leave the early field contrast intact; an input-stage effect should change it.",
+        "fi": "Samalla nimetyllä fysikaalisella syötteellä verrataan lääkkeen vaikutusta varhaiseen kalsiumiin, redox-tuotantoon ja palautumiseen. Kalsiumin jälkeiseen vaiheeseen sijoittuvan suojan tulee säilyttää varhainen kenttäkontrasti; alkuvälityksen vaikutuksen tulee muuttaa sitä."
+      },
+      "limitations": [
+        {
+          "en": "This is GSM-modulated 3.5 GHz evidence, not a 5G NR waveform experiment.",
+          "fi": "Näyttö koskee GSM-moduloitua 3,5 GHz:n signaalia, ei 5G NR -aaltomuotokoetta."
+        },
+        {
+          "en": "No measured human fertility coefficient, complete functional restoration or CoQ10 repair time constant follows from this experiment.",
+          "fi": "Kokeesta ei saada ihmisen hedelmällisyyskerrointa, täydellistä toiminnallista palautumista tai CoQ10:n korjausaikavakiota."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "28 male Wistar rats, four groups.",
+          "fi": "28 Wistar-urosrottaa, neljä ryhmää."
+        },
+        "field": {
+          "en": "GSM-modulated 3.5 GHz, 2 h/day for 30 days.",
+          "fi": "GSM-moduloitu 3,5 GHz, 2 h/vrk 30 päivän ajan."
+        },
+        "light": {
+          "en": "No light–field interaction tested.",
+          "fi": "Valo–kenttä-interaktiota ei testattu."
+        },
+        "drugTiming": {
+          "en": "CoQ10 10 mg/kg/day intraperitoneally during the exposure study.",
+          "fi": "CoQ10 10 mg/kg/vrk vatsaonteloon altistustutkimuksen aikana."
+        },
+        "measurement": {
+          "en": "Hormonal and oxidative-status measures and testicular histology; no simultaneous early Ca trace.",
+          "fi": "Hormoni- ja oksidatiivisen tilan mittarit sekä kiveksen histologia; ei samanaikaista varhaista Ca-aikasarjaa."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.bektas2026",
+          "referenceId": "bektas2026",
+          "fieldTested": true,
+          "sourceCoverage": "abstract",
+          "system": "28 male Wistar rats, four groups",
+          "protocol": "GSM-modulated 3.5 GHz; 2 h/day × 30 days; CoQ10 10 mg/kg/day i.p.",
+          "endpoint": "Hormones, oxidative status, testicular histology"
+        }
+      ],
+      "referenceIds": [
+        "bektas2026"
+      ],
+      "studyIds": [
+        "study.bektas2026"
+      ],
+      "interventionTargets": [
+        "CoQ10",
+        "mitochondria",
+        "redox",
+        "repair"
+      ],
+      "endpointIds": [
+        "early_calcium",
+        "mitochondrial_redox",
+        "damage",
+        "recovery"
+      ],
+      "atlasNodeIds": [
+        "mech_coq10_response",
+        "mod_repair_capacity",
+        "tissue_sperm"
+      ],
+      "claimIds": [
+        "claim.pharmacology.coq10-protocol",
+        "claim.pharmacology.coq10-response-conditional"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Four matched raw endpoint means and their uncertainty have not been curated. The illustrative model contrast is not a study estimate.",
+          "fi": "Neljän vertailukelpoisen koehaaran päätepistekeskiarvoja ja niiden epävarmuuksia ei ole kuratoitu. Malliesimerkin kontrasti ei ole tutkimuksen estimaatti."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
+    }
+  ]
+}

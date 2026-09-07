@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1164,
-    "linkedReferences": 494
+    "totalReferences": 1172,
+    "linkedReferences": 503
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -6038,9 +6038,9 @@
     },
     "bektas2026": {
       "id": "bektas2026",
-      "authors": "Bektas H et al.",
+      "authors": "Bektas H, Yildirim S, Cakir S, Dogu S, Altindag F.",
       "year": 2026,
-      "title": "Ameliorative Role of Coenzyme Q10 in RF Radiation‐Associated Testicular and Oxidative Impairments in a 3.5‐GHz Exposure Model",
+      "title": "Ameliorative Role of Coenzyme Q10 in RF Radiation-Associated Testicular and Oxidative Impairments in a 3.5-GHz Exposure Model.",
       "journal": "Bioelectromagnetics",
       "type": "journal",
       "linkStatus": "verified",
@@ -6688,10 +6688,10 @@
     },
     "buckner2015_ttype": {
       "id": "buckner2015_ttype",
-      "authors": "Buckner CA, Buckner AL, Koren SA, Persinger MA, Lafrenie RM",
+      "authors": "Buckner CA, Buckner AL, Koren SA, Persinger MA, Lafrenie RM.",
       "year": 2015,
-      "title": "Inhibition of cancer cell growth by exposure to a specific time-varying electromagnetic field involves T-type calcium channels",
-      "journal": "PLoS ONE 10(4):e0124136",
+      "title": "Inhibition of cancer cell growth by exposure to a specific time-varying electromagnetic field involves T-type calcium channels.",
+      "journal": "PloS one",
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1371/journal.pone.0124136"
@@ -8704,13 +8704,13 @@
     },
     "bhatt2012_glp1": {
       "id": "bhatt2012_glp1",
-      "authors": "Bhatt DK et al.",
+      "authors": "Selway J, Rigatti R, Storey N, Lu J, Willars GB, Herbert TP.",
       "year": 2012,
-      "title": "Evidence That Ca2+ within the Microdomain of the L-Type VGCC Activates ERK in MIN6 Cells in Response to GLP-1",
-      "journal": "PLoS ONE",
+      "title": "Evidence that Ca2+ within the microdomain of the L-type voltage gated Ca2+ channel activates ERK in MIN6 cells in response to glucagon-like peptide-1.",
+      "journal": "PloS one",
       "type": null,
-      "linkStatus": "missing",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1371/journal.pone.0033004"
     },
     "amish-depression-cross-2007": {
       "id": "amish-depression-cross-2007",
@@ -10605,10 +10605,10 @@
     },
     "therabionic-ebioMedicine-2019": {
       "id": "therabionic-ebioMedicine-2019",
-      "authors": "Jimenez H, Wang M, et al.",
+      "authors": "Jimenez H, Wang M, Zimmerman JW, Pennison MJ, Sharma S, Surratt T, Xu ZX, Brezovich I, Absher D, Myers RM, DeYoung B, Caudell DL, Chen D, Lo HW, Lin HK, Godwin DW, Olivier M, Ghanekar A, Chen K, Miller LD, Gong Y, Capstick M, D'Agostino RB, Munden R, Merle P, Barbault A, Blackstock AW, Bonkovsky HL, Yang GY, Jin G, Liu L, Zhang W, Watabe K, Blackman CF, Pasche BC.",
       "year": 2019,
-      "title": "Tumour-specific amplitude-modulated radiofrequency electromagnetic fields induce differentiation of hepatocellular carcinoma via targeting Cav3.2 T-type voltage-gated calcium channels and Ca2+ influx",
-      "journal": "eBioMedicine",
+      "title": "Tumour-specific amplitude-modulated radiofrequency electromagnetic fields induce differentiation of hepatocellular carcinoma via targeting Cav3.2 T-type voltage-gated calcium channels and Ca2+ influx.",
+      "journal": "EBioMedicine",
       "type": "experimental",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1016/j.ebiom.2019.05.034"
@@ -11653,6 +11653,86 @@
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1016/j.cell.2026.06.020",
       "correctionOf": "kim2026_cell_gene_switch"
+    },
+    "liu2014_mt2": {
+      "id": "liu2014_mt2",
+      "authors": "Liu DD, Ren Z, Yang G, Zhao QR, Mei YA.",
+      "year": 2014,
+      "title": "Melatonin protects rat cerebellar granule cells against electromagnetic field-induced increases in Na(+) currents through intracellular Ca(2+) release.",
+      "journal": "Journal of cellular and molecular medicine",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/jcmm.12250"
+    },
+    "cajochen2005_melatonin": {
+      "id": "cajochen2005_melatonin",
+      "authors": "Cajochen C, Münch M, Kobialka S, Kräuchi K, Steiner R, Oelhafen P, Orgül S, Wirz-Justice A.",
+      "year": 2005,
+      "title": "High sensitivity of human melatonin, alertness, thermoregulation, and heart rate to short wavelength light.",
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1210/jc.2004-0957"
+    },
+    "cui2014_lte4": {
+      "id": "cui2014_lte4",
+      "authors": "Cui Y, Liu X, Yang T, Mei YA, Hu C.",
+      "year": 2014,
+      "title": "Exposure to extremely low-frequency electromagnetic fields inhibits T-type calcium channels via AA/LTE4 signaling pathway.",
+      "journal": "Cell calcium",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.ceca.2013.11.002"
+    },
+    "grassi2004_channels": {
+      "id": "grassi2004_channels",
+      "authors": "Grassi C, D'Ascenzo M, Torsello A, Martinotti G, Wolf F, Cittadini A, Azzena GB.",
+      "year": 2004,
+      "title": "Effects of 50 Hz electromagnetic fields on voltage-gated Ca2+ channels and their role in modulation of neuroendocrine cell proliferation and death.",
+      "journal": "Cell calcium",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.ceca.2003.09.001"
+    },
+    "bertagna2022_serca": {
+      "id": "bertagna2022_serca",
+      "authors": "Bertagna F, Lewis R, Silva SRP, McFadden J, Jeevaratnam K.",
+      "year": 2022,
+      "title": "Thapsigargin blocks electromagnetic field-elicited intracellular Ca2+ increase in HEK 293 cells.",
+      "journal": "Physiological reports",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.14814/phy2.15189"
+    },
+    "hirota2012_kl001": {
+      "id": "hirota2012_kl001",
+      "authors": "Hirota T, Lee JW, St John PC, Sawa M, Iwaisako K, Noguchi T, Pongsawakul PY, Sonntag T, Welsh DK, Brenner DA, Doyle FJ, Schultz PG, Kay SA.",
+      "year": 2012,
+      "title": "Identification of small molecule activators of cryptochrome.",
+      "journal": "Science (New York, N.Y.)",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1223710"
+    },
+    "nangle2013_kl001": {
+      "id": "nangle2013_kl001",
+      "authors": "Nangle S, Xing W, Zheng N.",
+      "year": 2013,
+      "title": "Crystal structure of mammalian cryptochrome in complex with a small molecule competitor of its ubiquitin ligase.",
+      "journal": "Cell research",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/cr.2013.136"
+    },
+    "sanguinetti1984_photoreversal": {
+      "id": "sanguinetti1984_photoreversal",
+      "authors": "Sanguinetti MC, Kass RS.",
+      "year": 1984,
+      "title": "Photoalteration of calcium channel blockade in the cardiac Purkinje fiber.",
+      "journal": "Biophysical journal",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/s0006-3495(84)84233-2"
     }
   },
   "aliases": {
@@ -11693,6 +11773,7 @@
     "yap2025": "iversen2025",
     "yap2025_cry2_trpc1": "iversen2025",
     "gao2024": "gao2024_bbb_conformational",
+    "selway2012_glp1": "bhatt2012_glp1",
     "travison2007": "travison2007_v2",
     "pubmed2517054": "liu1989_radiation_hormesis",
     "cacna1g_asd_snps": "cacna1g-asd-snps",
@@ -12301,6 +12382,7 @@
     "doi:10.1002/(sici)1521-186x(1996)17:1<58::aid-bem8>3.0.co;2-5": "engstrom1996_ipr_dynamics",
     "doi:10.1016/j.envres.2019.01.015": "if_review2019",
     "doi:10.1371/journal.pone.0124136": "buckner2015_ttype",
+    "pmcid:PMC4397079": "buckner2015_ttype",
     "pmid:25875081": "buckner2015_ttype",
     "doi:10.1038/nn.2727": "anastassiou2011_ephaptic_coupling",
     "pmid:21240273": "anastassiou2011_ephaptic_coupling",
@@ -12483,6 +12565,9 @@
     "doi:10.1074/mcp.ra117.000104": "varroa_protein_atlas_2017",
     "doi:10.3389/fphys.2021.643943": "frontiers2021_hmf_circadian",
     "doi:10.1016/j.envint.2012.10.009": "cucurachi2013",
+    "doi:10.1371/journal.pone.0033004": "bhatt2012_glp1",
+    "pmcid:PMC3296766": "bhatt2012_glp1",
+    "pmid:22412973": "bhatt2012_glp1",
     "doi:10.1093/braincomms/fcag098": "als_excitotox",
     "doi:10.1038/srep00312": "pmc3306017_aldad_fetal",
     "pmcid:PMC3306017": "pmc3306017_aldad_fetal",
@@ -12760,6 +12845,27 @@
     "pmcid:PMC9887155": "yee2023_opsin_gtalpha",
     "pmid:36733826": "yee2023_opsin_gtalpha",
     "doi:10.1016/j.cell.2026.06.020": "kim2026_cell_gene_switch_correction",
-    "pmid:42372722": "kim2026_cell_gene_switch_correction"
+    "pmid:42372722": "kim2026_cell_gene_switch_correction",
+    "doi:10.1111/jcmm.12250": "liu2014_mt2",
+    "pmcid:PMC4508145": "liu2014_mt2",
+    "pmid:24548607": "liu2014_mt2",
+    "doi:10.1210/jc.2004-0957": "cajochen2005_melatonin",
+    "pmid:15585546": "cajochen2005_melatonin",
+    "doi:10.1016/j.ceca.2013.11.002": "cui2014_lte4",
+    "pmid:24360572": "cui2014_lte4",
+    "doi:10.1016/j.ceca.2003.09.001": "grassi2004_channels",
+    "pmid:15036948": "grassi2004_channels",
+    "doi:10.14814/phy2.15189": "bertagna2022_serca",
+    "pmcid:PMC9069166": "bertagna2022_serca",
+    "pmid:35510320": "bertagna2022_serca",
+    "doi:10.1126/science.1223710": "hirota2012_kl001",
+    "pmcid:PMC3589997": "hirota2012_kl001",
+    "pmid:22798407": "hirota2012_kl001",
+    "doi:10.1038/cr.2013.136": "nangle2013_kl001",
+    "pmcid:PMC3847572": "nangle2013_kl001",
+    "pmid:24080726": "nangle2013_kl001",
+    "doi:10.1016/s0006-3495(84)84233-2": "sanguinetti1984_photoreversal",
+    "pmcid:PMC1434971": "sanguinetti1984_photoreversal",
+    "pmid:6329345": "sanguinetti1984_photoreversal"
   }
 }

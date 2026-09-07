@@ -2362,6 +2362,598 @@
         ]
       },
       "falsification_condition": "The named component result fails in a matched replication with the relevant exposure and intervention controls."
+    },
+    {
+      "id": "claim.pharmacology.mt2-evoked-feedback",
+      "statement": {
+        "en": {
+          "text": "Melatonin reduced the field-associated sodium-current increase while enhancing depolarization-evoked calcium, without increasing resting calcium. MT2 pharmacology and store-release intervention bounded the route.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Melatoniini pienensi kenttään liittyvää natriumvirran kasvua ja suurensi depolarisaation Ca-vastetta nostamatta lepo-Ca:ta. MT2-farmakologia ja varastovapautuksen interventio rajasivat reittiä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Cell-culture micromolar melatonin is not a calibrated physiological tissue dose.",
+          "The human light experiment did not test a field–MT2 interaction or identify a local CRY sensor.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.local-ltype-erk",
+      "statement": {
+        "en": {
+          "text": "In MIN6 cells, Bay K8644 activated ERK without a detectable bulk-Ca rise. BAPTA blocked this signal more than EGTA. GLP-1 ERK at 5 min was partly EGTA-sensitive; the 30 min response was not.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "MIN6-soluissa Bay K8644 aktivoi ERK:n ilman havaittavaa koko solun Ca-nousua. BAPTA esti signaalia EGTA:a enemmän. GLP-1:n ERK-vaste oli 5 minuutissa osittain EGTA-herkkä, mutta 30 minuutissa ei.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This is a non-field component experiment; the field prediction is a synthesis.",
+          "Microdomain localization is inferred from buffer kinetics, not directly imaged; β-cell ERK does not calibrate fertility or clinical GLP-1 benefit.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.channel-specific-response",
+      "statement": {
+        "en": {
+          "text": "T-type blockers suppressed Thomas-field calcium and growth effects; L-type blockers did not. Bay K8644 gave a similar but shorter Ca peak without the same growth inhibition. In a separate AM-RF HCC protocol, CACNA1H knockdown removed the growth effect.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "T-tyypin salpaajat estivät Thomas-kentän kalsium- ja kasvuvaikutuksia, L-tyypin salpaajat eivät. Bay K8644 tuotti samansuuruusluokkaisen mutta lyhyemmän Ca-huipun ilman samaa kasvun estoa. Erillisessä AM-RF-maksasyöpäsolukokeessa CACNA1H-vaimennus poisti kasvuvaikutuksen.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+          "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.lipid-ttype-inhibition",
+      "statement": {
+        "en": {
+          "text": "A 50 Hz exposure inhibited T-type channels with increased AA/LTE4. Interventions preventing mediator increases removed inhibition, and added LTE4 reproduced it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "50 Hz:n altistus esti T-kanavia ja lisäsi AA/LTE4:ää. Välittäjäaineiden nousun estävät interventiot poistivat inhibition, ja lisätty LTE4 jäljitteli sitä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "The observed inhibitory route does not determine the response sign of every cell or identify the initial physical coupling.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.channel-density",
+      "statement": {
+        "en": {
+          "text": "Prolonged 50 Hz exposure in GH3/IMR32 cells increased whole-cell Ba-current density and membrane channel protein without a detected change in single L/N-channel gating.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Pitkittynyt 50 Hz:n altistus GH3-/IMR32-soluissa kasvatti koko solun Ba-virran tiheyttä ja kalvon kanavaproteiinia ilman havaittua yksittäisten L-/N-kanavien portitusmuutosta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+          "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.serca-pretreatment",
+      "statement": {
+        "en": {
+          "text": "In the reported HEK293 protocol, thapsigargin present before baseline increased resting Fluo-4 signal and removed the subsequent field–sham difference.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoidussa HEK293-protokollassa ennen lähtömittausta lisätty thapsigargiini nosti lepo-Fluo-4-signaalia ja poisti myöhemmän kenttä–sham-eron.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+          "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.cry-ligand-occupancy",
+      "statement": {
+        "en": {
+          "text": "KL001 stabilized CRY and lengthened circadian period while reducing reporter amplitude. Biochemical competition and a CRY2 structure located binding at the FAD pocket.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "KL001 stabiloi CRY:tä ja pidensi vuorokausijaksoa pienentäen reporterin amplitudia. Biokemiallinen kilpailu ja CRY2-rakenne paikansivat sitoutumisen FAD-taskuun.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+          "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.probe-photoreversal",
+      "statement": {
+        "en": {
+          "text": "Light rapidly reversed nifedipine and nisoldipine channel blockade in Purkinje fibres, especially at 320–450 nm. The compared nicardipine, nitrendipine and D600 blocks did not behave the same way in that protocol.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Valo purki nopeasti nifedipiinin ja nisoldipiinin kanavasalpausta Purkinjen säikeissä, erityisesti 320–450 nm:ssa. Verratut nikardipiini-, nitrendipiini- ja D600-salpaukset eivät käyttäytyneet samoin kyseisessä protokollassa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "methodological",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This study does not establish a CRY mechanism, a field interaction or universal photostability of other blockers.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.coq10-protocol",
+      "statement": {
+        "en": {
+          "text": "CoQ10 attenuated some hormonal, oxidative and testicular tissue changes in a 28-rat, four-group study using GSM-modulated 3.5 GHz. Early calcium responses and repair kinetics were not separated.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "CoQ10 lievensi osaa hormoni-, oksidatiivisista ja kiveksen kudosmuutoksista 28 rotan neliryhmäkokeessa, jossa käytettiin GSM-moduloitua 3,5 GHz:n signaalia. Varhaista kalsiumvastetta ja korjauskinetiikkaa ei eroteltu.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This is GSM-modulated 3.5 GHz evidence, not a 5G NR waveform experiment.",
+          "No measured human fertility coefficient, complete functional restoration or CoQ10 repair time constant follows from this experiment.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.mt2-brake-conditional",
+      "statement": {
+        "en": {
+          "text": "Given a specified L2 input to this cell pathway, greater MT2 activation can reduce the sodium-current response through stronger evoked store feedback. If physiological melatonin engages this brake, evening-light suppression of melatonin may change the field interaction; MT2 blockade should occlude that component.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun nimetty L2-syöte kytketään tähän solureittiin, MT2-aktivaatio voi pienentää natriumvirtavastetta vahvistamalla evokoitua varastopalautetta. Jos fysiologinen melatoniini aktivoi jarrun, iltavalon melatoniinivaikutus voi muuttaa kenttäinteraktiota; MT2-salpauksen pitäisi poistaa kyseinen komponentti.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.mt2-evoked-feedback"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.local-ltype-erk-conditional",
+      "statement": {
+        "en": {
+          "text": "If the conditional BERM input acts on the same local channel pathway, ERK can change while a bulk-Ca measurement remains negative. Fast and slow buffers should differ through binding kinetics and measurement time, not through a drug-specific output multiplier.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Jos BERM:n ehdollinen syöte vaikuttaa samaan paikalliseen kanavareittiin, ERK voi muuttua koko solun Ca-mittauksen jäädessä negatiiviseksi. Nopean ja hitaan puskurin eron tulee syntyä sitoutumiskinetiikasta ja mittausajasta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.local-ltype-erk"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.channel-selectivity-conditional",
+      "statement": {
+        "en": {
+          "text": "Under a specified channel-targeted L2 bridge, deleting CaV3.2 should remove its contribution while preserving an independent L-channel pathway. Matching only the calcium peak need not match the endpoint.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun L2-silta kohdistetaan nimettyyn kanavareittiin, CaV3.2:n poiston tulee poistaa sen osuus ja säilyttää riippumaton L-kanavareitti. Pelkän Ca-huipun sovittaminen ei välttämättä sovita päätepistettä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.channel-specific-response"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.lipid-ttype-inhibition-conditional",
+      "statement": {
+        "en": {
+          "text": "Given an explicit L2 input to lipid production, measured lipid state should predict the direction and latency of the channel-current change. Lipid-pathway blockade should remove this component without deleting independent channel inputs.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun L2-syöte kohdistetaan eksplisiittisesti lipidituotantoon, mitatun lipiditilan tulee ennustaa kanavavirtamuutoksen suuntaa ja viivettä. Lipidireitin salpauksen tulee poistaa tämä komponentti säilyttäen riippumattomat kanavasyötteet.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.lipid-ttype-inhibition"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.channel-density-store-history-conditional",
+      "statement": {
+        "en": {
+          "text": "A density change can increase total current while single-channel gating is unchanged. For a store-dependent L2 realization, depleted releasable stores can reduce a challenge response despite an elevated baseline; an independent membrane-input component should remain.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kanavamäärän muutos voi kasvattaa kokonaisvirtaa yksittäiskanavan portittumisen pysyessä samana. Varastosta riippuvassa L2-toteutumassa vapautettavan varaston ehtyminen voi pienentää haastevastetta kohonneesta lähtötasosta huolimatta; riippumattoman kalvosyötteen osuuden tulee säilyä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.channel-density",
+        "claim.pharmacology.serca-pretreatment"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.cry-fad-competition-conditional",
+      "statement": {
+        "en": {
+          "text": "If a specified BERM response requires reactive CRY-bound FAD, ligand competition and slower protein stabilization can affect capacity in different directions. Short and long pretreatment should distinguish these processes; the resulting field-response sign depends on measured occupancy and kinetics.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Jos nimetty BERM-vaste edellyttää CRY:hen sitoutunutta reaktiivista FAD:ia, ligandikilpailu ja hitaampi proteiinin stabiloituminen voivat vaikuttaa kapasiteettiin eri suuntiin. Lyhyen ja pitkän esikäsittelyn tulee erotella prosessit; kenttävasteen suunta riippuu mitatusta sitoutumisasteesta ja kinetiikasta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.cry-ligand-occupancy"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.drug-photochemistry-conditional",
+      "statement": {
+        "en": {
+          "text": "In a light–field–drug experiment, cell-free illumination of the drug can change the drug-dependent field contrast without changing the cell photostate. Matched probe potency and a genetic intervention help distinguish this from a receiver-light effect.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Valo–kenttä–lääkekokeessa lääkkeen soluton esivalaistus voi muuttaa lääkkeestä riippuvaa kenttäkontrastia muuttamatta solun fototilaa. Toiminnaltaan sovitetut koettimet ja geneettinen interventio auttavat erottamaan tämän vastaanottimen valovaikutuksesta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.probe-photoreversal"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.coq10-response-conditional",
+      "statement": {
+        "en": {
+          "text": "With the same specified physical input, compare drug effects on early calcium, redox production and recovery. Protection located after calcium should leave the early field contrast intact; an input-stage effect should change it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Samalla nimetyllä fysikaalisella syötteellä verrataan lääkkeen vaikutusta varhaiseen kalsiumiin, redox-tuotantoon ja palautumiseen. Kalsiumin jälkeiseen vaiheeseen sijoittuvan suojan tulee säilyttää varhainen kenttäkontrasti; alkuvälityksen vaikutuksen tulee muuttaa sitä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.coq10-protocol"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
     }
   ],
   "evidence_relations": [
@@ -6128,6 +6720,328 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.pharmacology.mt2-evoked-feedback-liu2014-mt2",
+      "referenceId": "liu2014_mt2",
+      "claimId": "claim.pharmacology.mt2-evoked-feedback",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "Rat cerebellar granule cells; 50 Hz / 1 mT / 60 min with melatonin and MT2/store interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell-culture micromolar melatonin is not a calibrated physiological tissue dose.",
+        "The human light experiment did not test a field–MT2 interaction or identify a local CRY sensor.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.liu2014_mt2"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.local-ltype-erk-bhatt2012-glp1",
+      "referenceId": "bhatt2012_glp1",
+      "claimId": "claim.pharmacology.local-ltype-erk",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Mouse MIN6 β-cells; GLP-1/glucose, Bay K8644, BAPTA/EGTA and L-channel interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This is a non-field component experiment; the field prediction is a synthesis.",
+        "Microdomain localization is inferred from buffer kinetics, not directly imaged; β-cell ERK does not calibrate fertility or clinical GLP-1 benefit.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bhatt2012_glp1"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-specific-response-buckner2015-ttype",
+      "referenceId": "buckner2015_ttype",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "Malignant and non-malignant cells; Thomas 25→6 Hz time-varying pattern; T/L blockers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+        "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.buckner2015_ttype"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019",
+      "referenceId": "therabionic-ebioMedicine-2019",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HCC cell systems; 27.12 MHz AM RF with HCC-specific versus random modulation; channel interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+        "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.therabionic-ebioMedicine-2019"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4",
+      "referenceId": "cui2014_lte4",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HEK293 expressed T channels; mouse cortical neurons; 50 Hz; CaV3.2 at 0.2 mT; lipid-pathway interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The observed inhibitory route does not determine the response sign of every cell or identify the initial physical coupling.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.cui2014_lte4"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-density-grassi2004-channels",
+      "referenceId": "grassi2004_channels",
+      "claimId": "claim.pharmacology.channel-density",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "GH3 and IMR32 cells; 50 Hz, 24–72 h",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+        "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.grassi2004_channels"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.serca-pretreatment-bertagna2022-serca",
+      "referenceId": "bertagna2022_serca",
+      "claimId": "claim.pharmacology.serca-pretreatment",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HEK293; Phone RF; 10 µM thapsigargin before baseline; incomplete dosimetry",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+        "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bertagna2022_serca"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+      "referenceId": "hirota2012_kl001",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Cellular clock and biochemical CRY assays; KL001; excess FAD competition in pull-down",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+        "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.hirota2012_kl001"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001",
+      "referenceId": "nangle2013_kl001",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Mouse CRY2 PHR structural construct; KL001 complex structure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+        "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.nangle2013_kl001"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal",
+      "referenceId": "sanguinetti1984_photoreversal",
+      "claimId": "claim.pharmacology.probe-photoreversal",
+      "relation": "method",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Cardiac Purkinje fibres; Dihydropyridine blockade and 320–450 nm light",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This study does not establish a CRY mechanism, a field interaction or universal photostability of other blockers.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.sanguinetti1984_photoreversal"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.coq10-protocol-bektas2026",
+      "referenceId": "bektas2026",
+      "claimId": "claim.pharmacology.coq10-protocol",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "28 male Wistar rats, four groups; GSM-modulated 3.5 GHz; 2 h/day × 30 days; CoQ10 10 mg/kg/day i.p.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This is GSM-modulated 3.5 GHz evidence, not a 5G NR waveform experiment.",
+        "No measured human fertility coefficient, complete functional restoration or CoQ10 repair time constant follows from this experiment.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bektas2026"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.mt2-light-context",
+      "referenceId": "cajochen2005_melatonin",
+      "claimId": "claim.pharmacology.mt2-brake-conditional",
+      "relation": "contextualizes",
+      "directness": "human_light_component",
+      "studyDesign": "Controlled human evening-light experiment without field intervention",
+      "applicability": "Humans; 2 h evening 460/550 nm, matched photon flux",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No field–MT2 interaction was tested.",
+        "The physiological melatonin-to-cellular-MT2 dose bridge remains open.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "This supplies the light-to-melatonin component only. It does not establish a CRY sensor or the full light–field chain.",
+      "provenance": {
+        "studyIds": [
+          "study.cajochen2005_melatonin"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -7237,6 +8151,230 @@
       "assessorId": "berm-research-integration",
       "assessedAt": "2026-09-07",
       "note": "Protocol-bounded component; no cross-system endpoint calibration."
+    },
+    {
+      "id": "ea.pharmacology.mt2-evoked-feedback.v1",
+      "claimId": "claim.pharmacology.mt2-evoked-feedback",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.mt2-evoked-feedback-liu2014-mt2"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.local-ltype-erk.v1",
+      "claimId": "claim.pharmacology.local-ltype-erk",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.local-ltype-erk-bhatt2012-glp1"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.channel-specific-response.v1",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.channel-specific-response-buckner2015-ttype",
+        "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.lipid-ttype-inhibition.v1",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.channel-density.v1",
+      "claimId": "claim.pharmacology.channel-density",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.channel-density-grassi2004-channels"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.serca-pretreatment.v1",
+      "claimId": "claim.pharmacology.serca-pretreatment",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.serca-pretreatment-bertagna2022-serca"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.cry-ligand-occupancy.v1",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+        "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.probe-photoreversal.v1",
+      "claimId": "claim.pharmacology.probe-photoreversal",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.coq10-protocol.v1",
+      "claimId": "claim.pharmacology.coq10-protocol",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.coq10-protocol-bektas2026"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.mt2-brake-conditional.v1",
+      "claimId": "claim.pharmacology.mt2-brake-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.local-ltype-erk-conditional.v1",
+      "claimId": "claim.pharmacology.local-ltype-erk-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.channel-selectivity-conditional.v1",
+      "claimId": "claim.pharmacology.channel-selectivity-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.lipid-ttype-inhibition-conditional.v1",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.channel-density-store-history-conditional.v1",
+      "claimId": "claim.pharmacology.channel-density-store-history-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.cry-fad-competition-conditional.v1",
+      "claimId": "claim.pharmacology.cry-fad-competition-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.drug-photochemistry-conditional.v1",
+      "claimId": "claim.pharmacology.drug-photochemistry-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.coq10-response-conditional.v1",
+      "claimId": "claim.pharmacology.coq10-response-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
     }
   ],
   "routes": [

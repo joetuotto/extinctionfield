@@ -663,8 +663,9 @@ def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
     ongoing, and mating/live-birth comparisons had p > 0.05. It does not
     establish a human in-vitro effect or the assumed three-factor mechanism.
 
-    5G-frequency-specific evidence (Bektas et al. 2026, Bioelectromagnetics
-    bem.70043): rat testicular/oxidative endpoints with CoQ10 amelioration.
+    Protocol-specific evidence (Bektas et al. 2026, Bioelectromagnetics
+    bem.70043): rat testicular/oxidative endpoints with partial CoQ10
+    amelioration under GSM-modulated 3.5 GHz, not a 5G NR waveform.
     This is separate component evidence, not a calibration of the CatSper
     coefficients below or of a human reproductive decrement.
     """

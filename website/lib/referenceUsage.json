@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-07",
-    "referencesWithUsages": 746,
-    "usageLocations": 1996
+    "referencesWithUsages": 755,
+    "usageLocations": 2241
   },
   "usage": {
     "delgado1969": [
@@ -19,12 +19,20 @@
         "source": "app/[locale]/about/civilization/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/objections",
@@ -45,12 +53,20 @@
         "source": "app/[locale]/about/civilization/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/objections",
@@ -81,12 +97,20 @@
         "source": "app/[locale]/about/civilization/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/objections",
@@ -107,6 +131,10 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/testosterone",
         "source": "app/[locale]/evidence/testosterone/page.tsx"
       },
@@ -121,6 +149,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -149,7 +181,15 @@
         "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -167,6 +207,10 @@
         "source": "app/[locale]/civilization/patokratia/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
@@ -177,6 +221,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -197,7 +245,15 @@
         "source": "app/[locale]/civilization/patokratia/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -215,6 +271,10 @@
         "source": "app/[locale]/civilization/patokratia/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
@@ -225,6 +285,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -251,12 +315,20 @@
         "source": "app/[locale]/about/civilization/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "tooby1992": [
@@ -371,6 +443,10 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -385,6 +461,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome/eye",
@@ -447,6 +527,10 @@
         "source": "app/[locale]/evidence/lighting/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "lib/causalMapData.ts"
       },
@@ -457,6 +541,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -507,11 +595,19 @@
         "source": "app/[locale]/evidence/ecology/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       },
       {
@@ -831,6 +927,10 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/technology",
         "source": "app/[locale]/evidence/technology/page.tsx"
       },
@@ -849,6 +949,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -889,11 +993,19 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       },
       {
@@ -959,6 +1071,10 @@
         "source": "app/[locale]/evidence/nutrition/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/replication",
         "source": "app/[locale]/evidence/replication/page.tsx"
       },
@@ -973,6 +1089,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome",
@@ -1001,6 +1121,10 @@
         "source": "app/[locale]/objections/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
@@ -1021,6 +1145,10 @@
       {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/map",
@@ -1125,12 +1253,20 @@
         "source": "components/DifferentialSusceptibility.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "colin_1992_varroa_charge": [
@@ -1175,10 +1311,6 @@
       {
         "path": "/evidence",
         "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence/epidemiology",
-        "source": "app/[locale]/evidence/epidemiology/page.tsx"
       },
       {
         "path": "/explore",
@@ -1317,7 +1449,15 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -1455,6 +1595,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1487,6 +1631,10 @@
       {
         "path": "/evidence/nutrition",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/evidence/reproductive-arc",
@@ -1527,6 +1675,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1547,6 +1699,10 @@
       {
         "path": "/articles/dual-lock",
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/map",
@@ -1577,6 +1733,10 @@
       {
         "path": "/evidence/nutrition",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/evidence/reproductive-arc",
@@ -1617,6 +1777,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1651,6 +1815,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1683,6 +1851,10 @@
       {
         "path": "/evidence/nutrition",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/evidence/reproductive-arc",
@@ -1731,6 +1903,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1773,6 +1949,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1807,6 +1987,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-arc",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1839,6 +2023,10 @@
       {
         "path": "/evidence/nutrition",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/evidence/reproductive-arc",
@@ -1911,6 +2099,10 @@
       {
         "path": "/model",
         "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/predictions",
@@ -2347,11 +2539,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2419,11 +2619,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2437,6 +2645,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2447,6 +2659,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "majewska2025": [
@@ -2463,6 +2679,10 @@
         "source": "app/[locale]/evidence/nutrition/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2473,6 +2693,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "zandieh2025": [
@@ -2489,11 +2713,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       },
       {
@@ -2519,6 +2751,10 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2529,6 +2765,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "cao2015": [
@@ -2545,6 +2785,10 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2555,6 +2799,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "chae2019": [
@@ -2575,6 +2823,10 @@
         "source": "app/[locale]/evidence/nutrition/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2585,6 +2837,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome/eye",
@@ -2605,6 +2861,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-navigation",
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       },
@@ -2623,6 +2883,10 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "iuliis2009": [
@@ -2633,6 +2897,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/evidence/reproductive-navigation",
@@ -2649,6 +2917,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "yu2019_btb": [
@@ -2663,6 +2935,10 @@
       {
         "path": "/evidence/bbb",
         "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/explore",
@@ -2681,6 +2957,10 @@
         "source": "app/[locale]/model/page.tsx"
       },
       {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/modulome/testes",
         "source": "app/[locale]/modulome/testes/page.tsx"
       }
@@ -2695,11 +2975,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2713,6 +3001,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2723,6 +3015,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "lochhead2010": [
@@ -2735,6 +3031,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2745,6 +3045,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "chakraborty2020": [
@@ -2757,6 +3061,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2767,6 +3075,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "he2016": [
@@ -2779,6 +3091,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2789,6 +3105,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "cordelli2024": [
@@ -2801,6 +3121,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2811,6 +3135,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "cordelli2025_corrigendum": [
@@ -2823,6 +3151,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2833,6 +3165,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "naderi2026": [
@@ -2845,11 +3181,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2863,11 +3207,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2881,11 +3233,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2899,6 +3259,10 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2909,6 +3273,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "iolchiev2019": [
@@ -2921,11 +3289,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -2943,6 +3319,10 @@
         "source": "app/[locale]/evidence/epidemiology/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
@@ -2953,6 +3333,10 @@
       {
         "path": "/measurement/fieldstate",
         "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/sentinel",
@@ -2973,12 +3357,20 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "shafik1992_sling": [
@@ -2991,11 +3383,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3013,11 +3413,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3035,11 +3443,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3057,11 +3473,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3079,11 +3503,19 @@
         "source": "lib/evidence.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3105,11 +3537,19 @@
         "source": "app/[locale]/evidence/ecology/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/evidence.ts"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3189,10 +3629,6 @@
         "source": "app/[locale]/evidence/devices/page.tsx"
       },
       {
-        "path": "/evidence/epidemiology",
-        "source": "app/[locale]/evidence/epidemiology/page.tsx"
-      },
-      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
@@ -3237,12 +3673,20 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "natcomms2024rpm": [
@@ -3685,11 +4129,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3707,11 +4159,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3785,6 +4245,10 @@
         "source": "app/[locale]/evidence/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/reproductive-navigation",
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       },
@@ -3819,11 +4283,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3841,11 +4313,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3913,11 +4393,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -3995,11 +4483,19 @@
         "source": "app/[locale]/evidence/ecology/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       },
       {
@@ -4749,11 +5245,19 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -5323,6 +5827,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
       },
@@ -5331,12 +5839,20 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/measurement/fieldstate/math",
         "source": "lib/vgccGeneFamily.ts"
       },
       {
         "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome/pain",
@@ -5467,7 +5983,15 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -5789,8 +6313,16 @@
         "source": "app/[locale]/evidence/cascades/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome",
@@ -6047,6 +6579,10 @@
         "source": "app/[locale]/model/page.tsx"
       },
       {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       }
@@ -6245,6 +6781,10 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
       },
@@ -6259,6 +6799,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -6271,6 +6815,10 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/replication",
         "source": "app/[locale]/evidence/replication/page.tsx"
       },
@@ -6289,6 +6837,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -6301,6 +6853,10 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/replication",
         "source": "app/[locale]/evidence/replication/page.tsx"
       },
@@ -6321,6 +6877,10 @@
         "source": "app/[locale]/model/page.tsx"
       },
       {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
       }
@@ -6331,11 +6891,19 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
       },
       {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -6345,7 +6913,15 @@
         "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
         "source": "data/claims.json"
       }
     ],
@@ -6391,6 +6967,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome",
@@ -6585,6 +7165,10 @@
       {
         "path": "/evidence/ecology",
         "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/map",
@@ -6805,12 +7389,20 @@
         "source": "lib/eyeColorData.ts"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/map",
         "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/modulome",
@@ -6995,6 +7587,24 @@
         "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
       }
     ],
+    "liu2014_mt2": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
     "hausler2024_melatonin": [
       {
         "path": "/evidence/infant-vulnerability",
@@ -7133,6 +7743,10 @@
       {
         "path": "/evidence/klimentidis-explained",
         "source": "app/[locale]/evidence/klimentidis-explained/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
       },
       {
         "path": "/map",
@@ -7467,6 +8081,14 @@
         "source": "app/[locale]/evidence/pharmacology/page.tsx"
       },
       {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       }
@@ -7559,6 +8181,34 @@
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
       }
     ],
+    "hirota2012_kl001": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "cajochen2005_melatonin": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
     "scirep2016_ionophore": [
       {
         "path": "/evidence/pharmacology",
@@ -7577,6 +8227,820 @@
       {
         "path": "/evidence/reproductive-navigation",
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "lindgren2025": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/tensor-derivation",
+        "source": "app/[locale]/model/tensor-derivation/page.tsx"
+      }
+    ],
+    "kubo1957_linear_response": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "rosenspire2005_metabolic_phase": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "ubeda1983_pulse_shape": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "lymangrover1983_acth_steroidogenesis": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "laurent2016_shbg_bioactivity": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "degendt2004_sertoli_ar": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "yu2023_zip9_rf_sertoli": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "mollerlokken2012_mri_hormones": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "meng2026_spin_memory": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "kattnig2016_chemical_amplification": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "kish2026_cry4a_allostery": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "durant2017_bioelectric_memory": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "zhang2021": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "naseri2019_redox_hippocampus": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "welsh2004_cellular_oscillators": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "anastassiou2011_ephaptic_coupling": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "belchetz1978_gnrh_pulses": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "coviello2005_intratesticular_testosterone": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kalafatakis2018_cortisol_pulsatility": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "najjar2016_light_flashes": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "scheer2009_circadian_misalignment": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "sellix2010_ovarian_lh_clock": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "gnoth2003_time_to_pregnancy": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "bensimon2022_sleep_helping": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "knop2017_night_pollination": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kerpal2019_chemical_compass": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "violante2023_temporal_interference": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "grossman2017_temporal_interference": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kurth2020": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "jeibmann2026": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "wickramaratne2025": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "nakajima2015": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "zeni2021_bystander": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "sukumar2026": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome",
+        "source": "data/modulome-state.json"
+      }
+    ],
+    "goertemaker2022_cry4a_gtalpha": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "yee2023_opsin_gtalpha": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "sannino2019_parp_adaptive": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kim2026_cell_gene_switch_correction": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "buckner2015_ttype": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "cui2014_lte4": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "grassi2004_channels": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bertagna2022_serca": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "nangle2013_kl001": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "sanguinetti1984_photoreversal": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "lancet-2017-tsimane-heart": [
@@ -7741,76 +9205,10 @@
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       }
     ],
-    "rosenspire2005_metabolic_phase": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "ubeda1983_pulse_shape": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
     "burch2000_personal_mf_melatonin": [
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      }
-    ],
-    "lymangrover1983_acth_steroidogenesis": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "kavaliers1986_calcium_morphine": [
@@ -7829,36 +9227,6 @@
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      }
-    ],
-    "mollerlokken2012_mri_hormones": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      },
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
       }
     ],
     "iversen2024_light_magnetic": [
@@ -7969,58 +9337,6 @@
         "source": "app/[locale]/evidence/technology/page.tsx"
       }
     ],
-    "degendt2004_sertoli_ar": [
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
-      }
-    ],
-    "yu2023_zip9_rf_sertoli": [
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
-      }
-    ],
     "splawski2005_cardiac_ltype": [
       {
         "path": "/evidence/timothy-experiment",
@@ -8077,40 +9393,6 @@
       {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
-      }
-    ],
-    "lindgren2025": [
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/tensor-derivation",
-        "source": "app/[locale]/model/tensor-derivation/page.tsx"
       }
     ],
     "frontiers2021_neurotransmitters": [
@@ -8577,12 +9859,6 @@
         "source": "lib/causalMapData.ts"
       }
     ],
-    "kim2026_cell_gene_switch_correction": [
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      }
-    ],
     "gegear2008": [
       {
         "path": "/map",
@@ -8659,280 +9935,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      }
-    ],
-    "kubo1957_linear_response": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "laurent2016_shbg_bioactivity": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
-    "meng2026_spin_memory": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "kattnig2016_chemical_amplification": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "kish2026_cry4a_allostery": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "durant2017_bioelectric_memory": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "zhang2021": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "naseri2019_redox_hippocampus": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "welsh2004_cellular_oscillators": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "anastassiou2011_ephaptic_coupling": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "belchetz1978_gnrh_pulses": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "coviello2005_intratesticular_testosterone": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "kalafatakis2018_cortisol_pulsatility": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "najjar2016_light_flashes": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "scheer2009_circadian_misalignment": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "sellix2010_ovarian_lh_clock": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "gnoth2003_time_to_pregnancy": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "bensimon2022_sleep_helping": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "knop2017_night_pollination": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "kerpal2019_chemical_compass": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "violante2023_temporal_interference": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "grossman2017_temporal_interference": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "kurth2020": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "jeibmann2026": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "wickramaratne2025": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "nakajima2015": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "zeni2021_bystander": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "sukumar2026": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/modulome",
-        "source": "data/modulome-state.json"
-      }
-    ],
-    "goertemaker2022_cry4a_gtalpha": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "yee2023_opsin_gtalpha": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      }
-    ],
-    "sannino2019_parp_adaptive": [
-      {
-        "path": "/map",
-        "source": "data/claims.json"
       }
     ],
     "sakurai2008": [
@@ -9235,10 +10237,6 @@
       {
         "path": "/model",
         "source": "components/CaMKIIConvergenceDiagram.tsx"
-      },
-      {
-        "path": "/predictions",
-        "source": "app/[locale]/predictions/page.tsx"
       }
     ],
     "assefa2024_testes_review": [
