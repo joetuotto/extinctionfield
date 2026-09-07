@@ -392,7 +392,7 @@ describe("routes (phases 6-7)", () => {
     expect(groups.size).toBeGreaterThanOrEqual(1);
   });
 
-  it("VGCC and RPM routes are independent", () => {
+  it("does not certify VGCC and RPM routes from disjoint relation identifiers alone", () => {
     const vgcc = routeArray.find((r) => r.id === "route.vgcc-sperm-fecundability");
     const rpm = routeArray.find((r) => r.id === "route.rpm-melatonin-clock");
     if (vgcc && rpm) {
@@ -401,6 +401,8 @@ describe("routes (phases 6-7)", () => {
       expect(sharedClaims.length).toBe(0);
       expect(sharedEvidence.length).toBe(0);
       expect(vgcc.independenceGroup).not.toBe(rpm.independenceGroup);
+      expect(vgcc.independenceVerified).toBe(false);
+      expect(rpm.independenceVerified).toBe(false);
     }
   });
 });

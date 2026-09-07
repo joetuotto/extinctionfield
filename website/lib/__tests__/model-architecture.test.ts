@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   CONDITIONAL_ASFR_ROUTE_ID,
+  BRIDGE_COMPONENTS,
+  MODULOME_ASFR_ROUTE_ID,
   DKC_CANDIDATE_ROUTE_ID,
   FIELDSTATE_CANONICAL_ROUTE,
   FIELDSTATE_SPEC_VERSION,
@@ -42,9 +44,22 @@ describe("BERM / FieldState architecture contract", () => {
   it("does not overstate the missing Lindgren-to-observable bridge", () => {
     expect(MODEL_ARCHITECTURE.theory.formulation).toBe("2025-weyl-gme");
     expect(MODEL_ARCHITECTURE.theory.l2BridgeStatus).toBe("conditional_formal_operator");
+    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatusScope).toBe("operator_form_only");
+    expect(BRIDGE_COMPONENTS.geometry.status).toBe("L1_DERIVED");
+    expect(BRIDGE_COMPONENTS.responseOperator.status).toBe("CONDITIONAL_FORMAL_OPERATOR");
+    expect(BRIDGE_COMPONENTS.responseOperator.assumptions).toEqual([
+      "minimal_matter_metric_coupling", "retarded_response_expansion",
+    ]);
+    expect(BRIDGE_COMPONENTS.physicalIdentification.status).toBe("OPEN");
+    expect(BRIDGE_COMPONENTS.tissueKernel.status).toBe("CALLER_SUPPLIED_UNCALIBRATED");
+    expect(BRIDGE_COMPONENTS.endpointCalibration.status).toBe("OPEN");
     expect(MODEL_ARCHITECTURE.theory.calibrationStatus).toBe("open");
     expect(MODEL_ARCHITECTURE.routes.prediction.fieldStateCalibrated).toBe(false);
     expect(MODEL_ARCHITECTURE.routes.conditionalAsfr.acceptsFieldStateObservations).toBe(false);
+    expect(MODULOME_ASFR_ROUTE_ID).toBe("berm-modulome-conditional-asfr-v1");
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.preservesArchivedV17).toBe(true);
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.fieldStateCalibrated).toBe(false);
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.publishesLockedForecasts).toBe(false);
   });
 
   it("keeps the formal derivation gate and the DKC candidate route explicit", () => {

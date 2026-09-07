@@ -2,12 +2,12 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1161,
-    "verified_count": 483,
+    "total_references": 1164,
+    "verified_count": 487,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 490,
-    "unlinked_count": 671,
+    "linked_count": 494,
+    "unlinked_count": 670,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 46,
     "last_updated": "2026-09-07",
@@ -24512,7 +24512,10 @@
       "aliases": [],
       "contested": true,
       "contest_source": "York, New Scientist April 2026",
-      "link_checked_at": "2026-08-28"
+      "link_checked_at": "2026-08-28",
+      "corrections": [
+        "kim2026_cell_gene_switch_correction"
+      ]
     },
     {
       "id": "seo2016",
@@ -25598,7 +25601,10 @@
       "link_status": "verified",
       "link_source": "curated_official_metadata",
       "aliases": [],
-      "link_checked_at": "2026-08-28"
+      "link_checked_at": "2026-08-28",
+      "corrections": [
+        "cordelli2025_corrigendum"
+      ]
     },
     {
       "id": "iversen2025",
@@ -27278,7 +27284,8 @@
       "link_status": "verified",
       "link_source": "curated_official_metadata",
       "aliases": [],
-      "link_checked_at": "2026-08-28"
+      "link_checked_at": "2026-08-28",
+      "correctionOf": "cordelli2024"
     },
     {
       "id": "durant2017_bioelectric_memory",
@@ -33006,15 +33013,15 @@
     },
     {
       "id": "catsper_2021",
-      "authors": "",
-      "year": 0,
-      "title": "",
-      "journal": null,
+      "authors": "Ayas B, Kocaman A",
+      "year": 2021,
+      "title": "P–036 Investigation of the 2100 MHz electromagnetic field effects on sperm CatSper calcium channel",
+      "journal": "Human Reproduction 36(Supplement_1):deab130.035",
       "doi": "10.1093/humrep/deab130.035",
       "pmid": null,
       "pmcid": null,
-      "url": null,
-      "category": null,
+      "url": "https://academic.oup.com/humrep/article/doi/10.1093/humrep/deab130.035/6344256",
+      "category": "reproduction_hormones",
       "pathway": [
         "emf",
         "catsper",
@@ -33022,8 +33029,8 @@
         "sperm"
       ],
       "level": null,
-      "type": null,
-      "finding": "2100 MHz RF activates CatSper Ca²⁺ channels in sperm prematurely, causing energy depletion before reaching the egg",
+      "type": "conference-abstract",
+      "finding": "In male Wistar-Albino rats exposed to 2100 MHz for 1 h/day over 28 days, sperm motility and measured intracellular calcium declined; mating/live-birth outcomes did not differ significantly. CatSper1–4 expression analysis was still pending in this conference abstract; the amlodipine arm does not identify a CatSper-specific field mechanism.",
       "tags": [
         "rf",
         "fertility",
@@ -33032,12 +33039,12 @@
       ],
       "pdf_section": null,
       "pdf_number": 986,
-      "verified": false,
-      "link_status": "pending",
-      "link_source": "doi",
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "publisher_abstract_and_crossref",
       "aliases": [],
       "source": "Hum Reprod 2021 10.1093/humrep/deab130.035",
-      "link_checked_at": "2026-08-28"
+      "link_checked_at": "2026-09-07"
     },
     {
       "id": "cavg4_camkii_mafa",
@@ -34462,6 +34469,79 @@
       "link_status": "missing",
       "link_source": null,
       "aliases": []
+    },
+    {
+      "id": "goertemaker2022_cry4a_gtalpha",
+      "authors": "Görtemaker K, Yee C, Bartölke R, Behrmann H, Voß JO, Schmidt J, Xu J, Solovyeva V, Leberecht B, Behrmann E, Mouritsen H, Koch KW",
+      "year": 2022,
+      "title": "Direct Interaction of Avian Cryptochrome 4 with a Cone Specific G-Protein",
+      "journal": "Cells 11(13):2043",
+      "doi": "10.3390/cells11132043",
+      "pmid": "35805127",
+      "pmcid": "PMC9265643",
+      "url": "https://doi.org/10.3390/cells11132043",
+      "category": "transduction_rpm_calcium",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": [],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "publisher_and_europe_pmc_primary_record",
+      "link_checked_at": "2026-09-07",
+      "aliases": []
+    },
+    {
+      "id": "yee2023_opsin_gtalpha",
+      "authors": "Yee C, Görtemaker K, Wellpott R, Koch KW",
+      "year": 2023,
+      "title": "Kinetics of cone specific G-protein signaling in avian photoreceptor cells",
+      "journal": "Frontiers in Molecular Neuroscience 16:1107025",
+      "doi": "10.3389/fnmol.2023.1107025",
+      "pmid": "36733826",
+      "pmcid": "PMC9887155",
+      "url": "https://doi.org/10.3389/fnmol.2023.1107025",
+      "category": "transduction_rpm_calcium",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": [],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "publisher_and_europe_pmc_primary_record",
+      "link_checked_at": "2026-09-07",
+      "aliases": []
+    },
+    {
+      "id": "kim2026_cell_gene_switch_correction",
+      "authors": "Kim J, Hwang Y, Kim S, Kwon D, Park J, Cho B, An S, Kang S, Kim Y, Kim S, Lengner CJ, Kim S, Kwon Y, Sung JS, Kim J.",
+      "year": 2026,
+      "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression.",
+      "journal": "Cell",
+      "doi": "10.1016/j.cell.2026.06.020",
+      "pmid": "42372722",
+      "pmcid": null,
+      "url": "https://doi.org/10.1016/j.cell.2026.06.020",
+      "category": "transduction_rpm_calcium",
+      "pathway": [],
+      "level": null,
+      "type": "correction",
+      "finding": null,
+      "tags": [],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "europe_pmc_primary_record",
+      "link_checked_at": "2026-09-07",
+      "aliases": [],
+      "correctionOf": "kim2026_cell_gene_switch"
     }
   ]
 }

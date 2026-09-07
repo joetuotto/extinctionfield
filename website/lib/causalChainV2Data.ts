@@ -15,11 +15,11 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     label: "Lindgren geometry",
     sublabel: "metric + variation + Weyl + Bianchi",
     epistemicLevel: "L",
-    title: "Three-premise Maxwell derivation",
+    title: "Metric variation and Maxwell derivation gates",
     mechanism:
-      "The source-free Maxwell equation ∇μF^μν = 0 follows from Lindgren's metric through the variational principle, the Weyl condition and the Bianchi identity. The Bianchi identity is necessary but not sufficient: it supplies dF = 0 and is not a shortcut to the sourced equation ∇μF^μν = J^ν.",
+      "Lindgren's metric and the variational principle define the geometric problem. The full Einstein–Hilbert variation, the declared Weyl connection and the Bianchi identity must be checked separately. The Bianchi identity supplies dF = 0 for F = dA and is necessary but not sufficient for Maxwell dynamics. Neither ∇μF^μν = 0 nor ∇μF^μν = J^ν is established merely by the contracted geometric identity or a frozen principal-symbol diagnostic.",
     quantitative:
-      "gμν = ημν + κAμAν\nS = ∫√(−g) R d⁴x; δS/δAμ = 0\n∇μgαβ = 0  [Weyl condition]\ndF = 0  [Bianchi identity]",
+      "gμν = ημν + κAμAν\nS = ∫√(−g) R d⁴x; δS/δAμ = 0  [full variation]\nWeyl compatibility: check the declared connection separately\ndF = 0 for F = dA  [homogeneous identity]",
     keyReferences: [
       {
         referenceId: "lindgren2025",
@@ -27,9 +27,9 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
         title: "Electromagnetism as a purely geometric theory",
         journal: "Journal of Physics: Conference Series 2987, 012001",
         keyFinding:
-          "Maxwellin johto käyttää yhdessä kolmea L0-premissiä: Lindgrenin metriikkaa, variaatioperiaatetta ja Weyl-ehtoa; Bianchi-identiteetti on välttämätön mutta ei yksin riittävä.",
+          "Lindgrenin metriikka, täysi variaatioperiaate, ilmoitetun yhteyden Weyl-ehto ja Bianchi-identiteetti tarkistetaan erikseen. Homogeeninen dF = 0 ei yksin osoita lähteetöntä tai lähteellistä Maxwell-dynamiikkaa.",
         keyFinding_en:
-          "The Maxwell derivation jointly uses three L0 premises: Lindgren's metric, the variational principle and the Weyl condition; the Bianchi identity is necessary but not sufficient by itself.",
+          "Lindgren's metric, the full variational principle, the declared connection's Weyl condition and the Bianchi identity require separate checks. The homogeneous identity dF = 0 alone does not establish source-free or sourced Maxwell dynamics.",
       },
     ],
     falsificationCondition:

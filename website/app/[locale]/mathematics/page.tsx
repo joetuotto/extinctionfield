@@ -49,8 +49,8 @@ const t = {
       "Within this ansatz the electromagnetic potential contributes to the metric. BERM derives the exact perturbation and, conditionally, its formal contraction with a tissue-response kernel. The ansatz alone does not specify an ion-channel, hormone or receptor coefficient.",
     s1d1: "In standard GR the metric is dynamical:",
     s1d2: "In Lindgren’s framework, the EM potential replaces the gravitational perturbation:",
-    s1d3: "where κ is a coupling constant (normalized to 1 in suitable units).",
-    s1d4: "Maxwell’s equations follow from the Bianchi identities:",
+    s1d3: "where κ is retained explicitly and κA² must be dimensionless before any reduction.",
+    s1d4: "Only the homogeneous Maxwell identity dF = 0 follows from F = dA; the sourced equation requires separate dynamics.",
     s1d5: "[[ref:vassallo2025|Vassallo et al. (2025)]] is registered as a related theoretical analysis; it does not close BERM's biological L2 operator.",
     s1d6: "The naive estimate δV_mem ≈ 10⁻²¹ V exposes the unresolved coupling problem. BERM tracks three candidate biological realizations, none of which is yet derived from the ansatz:",
     s1d6a: "(1) IFO: ion forced oscillation acts on the S4 voltage sensor directly at <1 nm distance, threshold 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]).",
@@ -78,7 +78,7 @@ const t = {
     s2bFRPM:
       "f_RPM ≈ 1 MHz — the radical pair coherence limit. Above f_RPM: classical field–membrane interaction weakens but quantum spin effects become relevant.",
     s2bELF:
-      "ELF channel (f < ~1 kHz): a membrane transfer estimate can use ΔV_mem = E_ext · d_cell · H(f). Its response modifier and scale belong to the open tissue kernel Ξ_i. Candidate routes include VGCC→Ca²⁺→ROS (pathway A), GPCR-adenosine ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav modulation ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]) and vagus-nerve stimulation ([[ref:vns_gammacore_fda|VNS, FDA 2017]]); these applications do not calibrate an environmental ELF response.",
+      "ELF channel (f < ~1 kHz): the Schwan form ΔV=1.5rE g(f) is conditional L1 within its declared model; only the numerical membrane time constant τ_m is L3 here. Radius r, supplied E and evaluation frequency f are variables of the L1 form, not grounds for relabelling the form. Mapping the result to χ or biology remains open L2.",
     s2bIF:
       "IF channel (f_c < f < f_RPM): field penetrates the cell interior. T(f) = 1/√(1+(f_c/f)²). Primary mechanism at environmental levels: IFO-VGIC (linear, threshold 10⁻⁵ V/m). Geometric field amplification at cleavage furrow: G ≈ (d_cell/d_furrow)² ≈ 25×. Selective effect on dividing cells. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] validates the mechanism at therapeutic intensity via DEP.",
     s2bIFSources:
@@ -129,7 +129,7 @@ const t = {
     s3rwRow2: "1990 (phone, no Wi-Fi): 8h EMF, 16h free → 84% repair → net 1.26/day",
     s3rwRow3: "2010 (smartphone + Wi-Fi): 16h EMF, 8h free → 60% repair → net 6.35/day",
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h free → 21% repair → net 17.46/day",
-    s3rwRow5: "Amish (no electronics): 1h EMF, 23h free → 93% repair → net 0.07/day",
+    s3rwRow5: "Amish technology-timing scenario (L3; no A/x measurement): assumed 1h activity window, 23h recovery → candidate net 0.07/day",
     s3rwThreshold:
       "Scenario threshold: an EMF-free period below 2× an assumed repair half-life leaves incomplete recovery in this illustrative equation. The claim that populations crossed such a threshold in 2005–2010 remains uncalibrated.",
     s3tcTitle: "Three-channel extension",
@@ -163,7 +163,7 @@ const t = {
     s4d3:
       "Threshold θ = 5 reflects biological resistance: small exposures do not exceed repair mechanism capacity.",
     s4d4:
-      'a = 6.5 is calibrated: it is the approximate "natural TFR" without any EMF exposure (cf. Amish ≈ 6.5, Hutterites ≈ 9.0).',
+      "a = 6.5 is an L3 scenario calibration anchored to community TFR observations; it is neither a biological maximum nor a calibration of χ, and it does not establish zero physical exposure.",
     s4d5Link: "→ Controlled laboratory evidence for bioCap parameters",
 
     // S5 Behavioral
@@ -301,7 +301,7 @@ const t = {
         condition:
           "Amish community TFR declines at the same rate as the general population",
         detail:
-          "The Amish function as a quasi-experimental control group: they share genetics, diet and geography with surrounding populations but have near-zero EMF exposure. Current Amish TFR ≈ 6.5 is stable while surrounding populations decline — this eliminates urbanization, diet, education and economics as sufficient explanations for the fertility gap.",
+          "The Amish label is an L3 community/technology-timing proxy, not a measurement of A, x or zero physical exposure. The comparison can test a preregistered proxy association, but testing χ requires an explicit L0→L2 measurement and mapping operator.",
       },
       {
         condition:
@@ -387,10 +387,10 @@ const t = {
     s12Formula:
       "The two-channel EMF index combines residential electricity consumption (ELF proxy) and fixed broadband subscriptions (RF proxy):",
     s12Access:
-      "Electricity access acts as a binary biological exposure boundary. The IFO-VGIC activation threshold (10⁻⁵ V/m) is exceeded at the operating distance of every household electrical device. Populations without electricity are not exposed.",
+      "Electricity access is an L3 technology-timing proxy, not a measured physical or biological exposure boundary. A binary split cannot identify A or x without an explicit L0→L2 measurement and mapping operator.",
     s12Stats: "Validation statistics:",
     s12Stat1: "LOOCV RMSE = 0.522 (full model, leave-one-country-out cross-validation)",
-    s12Stat2: "R² = 0.851 (n = 54; captures electrification threshold, not EMF-specific effect)",
+    s12Stat2: "R² = 0.851 (n = 54; electrification-associated demographic gradient, not an identified biological threshold)",
     s12Stat3: "Skill score = 0.61 (1 − RMSE/sd, improvement over mean predictor)",
     s12Stat4: "Residential electricity is the BEST single predictor (univariate RMSE 0.533)",
     s12Stat5: "Mobile phone subscriptions are the WEAKEST (RMSE 1.053)",
@@ -399,13 +399,13 @@ const t = {
     s12Electrified:
       "For partially electrified countries, the electrified sub-population TFR can be estimated from the binary mixture model:",
     s12Collinearity:
-      "GDP collinearity: EMF proxies and GDP per capita are correlated (r = 0.87). In linear models, neither is significant when the other is controlled. This is a symmetric identification problem — it does not favor GDP over EMF. Three structural differences break the symmetry: (1) binary electrification threshold, (2) mobile phone paradox, (3) sentinel species respond to EMF but not GDP.",
+      "GDP and the technology proxies are correlated (r=0.87), so the aggregate comparison does not identify their separate causal effects. Electricity access is a proxy stratum, not a biological threshold. Mobile-phone comparisons and sentinel experiments can help distinguish pathways only through prespecified exposure, mediator and outcome contrasts.",
     s12Limitation:
-      "Honest assessment: R² = 0.851 primarily reflects the demographic transition gradient (Niger → Korea), not EMF-specific variance. Among high-income OECD countries (n ≈ 36), electricity consumption alone explains near-zero variance in TFR (R² ≈ 0.0002). The cross-sectional formula captures the electrification threshold — the binary gateway from pre-industrial to industrial fertility — not a dose-response within electrified populations. This makes the cross-section BERM's weakest independent evidence line. The stronger evidence comes from: (1) mechanistic pathways with regulatory-validated non-thermal effects, (2) pharmacological dose-response (melatonin, testosterone), (3) genetic selection markers (CatSper, VGCC), and (4) sentinel species under controlled conditions. The cross-section's value is structural: the mobile phone paradox and the electricity-over-GDP prediction are discriminating, even though the aggregate fit is confounded.",
+      "The cross-sectional fit mainly follows the demographic-transition gradient. The reported OECD association with electricity alone is near zero (R²≈0.0002); neither the full-sample fit nor an electrified/unelectrified split estimates a physical dose-response or establishes an EMF-specific biological threshold. The useful prediction is whether measured local fields and biological mediators add out-of-sample information beyond the demographic and technology proxies.",
     s12DataNote:
       "Replication data: 54-country sample roster with observed TFR, electricity consumption, broadband subscriptions, and model predictions available at /data/cross_section_manifest.csv. Source: UN WPP 2024 (TFR), OWID/IEA (electricity), ITU (broadband).",
     s12Caveat:
-      "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
+      "Cross-sectional analysis cannot determine causal direction. A discriminating test needs preregistered natural experiments or sentinel designs with direct dosimetry and an explicit L0→L2 map; an unelectrified label alone is only a proxy.",
     s13Title: "Nested candidate moderators (population model)",
     s13Intro: "BERM proposes a population closure in which separately measured environmental, membrane, optical and molecular moderators can vary between groups. These m-functions are not instances of χ_geo and the combined reproductive response below is an uncalibrated candidate:",
     s13PathwayA: "Pathway A (VGIC)",
@@ -440,7 +440,7 @@ const t = {
       { param: "G_pop (Genotype)", amish: "~1.0", finland: "~1.1", nigeria: "~0.95", desc: "Population CACNA1C A-allele prevalence" },
     ],
     s14Evolution: "Formula evolution: v17 (scalar cumEMF, RMSE ~1.15) → v19.1 (two-channel, 54 countries, RMSE 0.522) → v20 (+ Priming × Recovery, predicted RMSE < 0.45) → v21 (+ Season × Genotype, requires calibration data).",
-    s14Level: "Epistemic level: v20 is M|C (mechanism-derived, calibration pending). v21 is L* (proposed extension, calibration data not yet collected for S and G_pop).",
+    s14Level: "Component status: v20 and v21 are L3 phenomenological scenario models; calibration of S, G_pop and the fitted weights remains pending. These layers neither alter the preceding L1 geometry nor resolve the open L2 mapping.",
 
     // S15 Recovery Function
     s15Title: "The Recovery Function: Quantifying DNA Repair Time",
@@ -503,8 +503,8 @@ const t = {
       "Tässä ansatzissa sähkömagneettinen potentiaali osallistuu metriikkaan. BERM johtaa tarkan häiriön ja ehdollisesti sen kontraktion kudosvasteytimen kanssa. Ansatz ei yksin määrää ionikanava-, hormoni- tai reseptorikerrointa.",
     s1d1: "Standardissa yleisessä suhteellisuusteoriassa metriikka on dynaaminen:",
     s1d2: "Lindgrenin viitekehyksessä EM-potentiaali korvaa gravitaatiohäiriön:",
-    s1d3: "missä κ on kytkentävakio (normalisoitu arvoon 1 sopivissa yksiköissä).",
-    s1d4: "Maxwellin yhtälöt seuraavat Bianchin identiteeteistä:",
+    s1d3: "missä κ säilytetään eksplisiittisenä ja κA²:n on oltava dimensioton ennen reduktiota.",
+    s1d4: "Vain homogeeninen Maxwell-identiteetti dF = 0 seuraa ehdosta F = dA; lähteellinen yhtälö tarvitsee erillisen dynamiikan.",
     s1d5: "[[ref:vassallo2025|Vassallo et al. (2025)]] on rekisteröity rinnakkaiseksi teoreettiseksi analyysiksi; se ei sulje BERM:n biologista L2-operaattoria.",
     s1d6: "Naivi arvio δV_mem ≈ 10⁻²¹ V tekee ratkaisemattoman kytkentäongelman näkyväksi. BERM seuraa kolmea biologisen toteutuksen kandidaattia, joista yhtäkään ei ole vielä johdettu ansatzista:",
     s1d6a: "(1) IFO: ionien pakotettu oskillaatio vaikuttaa S4-jännitesensoriin suoraan <1 nm etäisyydellä, kynnys 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]).",
@@ -532,7 +532,7 @@ const t = {
     s2bFRPM:
       "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat merkityksellisiksi.",
     s2bELF:
-      "ELF-kanava (f < ~1 kHz): kalvosiirron arvio voi käyttää muotoa ΔV_mem = E_ext · d_cell · H(f). Vasteen moderaattori ja mittakaava kuuluvat avoimeen kudosydimeen Ξ_i. Ehdokasreittejä ovat VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini ([[ref:pemf_bone_fda_review_2020|PEMF, FDA 1979]]), Nav-modulaatio ([[ref:tms_fda_depression_2008|TMS, FDA 2008]]) ja vagushermostimulaatio ([[ref:vns_gammacore_fda|VNS, FDA 2017]]); nämä sovellukset eivät kalibroi ympäristön ELF-vastetta.",
+      "ELF-kanava (f < ~1 kHz): Schwanin muoto ΔV=1,5rE g(f) on ehdollinen L1 ilmoitetussa mallissaan; vain kalvon aikavakion τ_m numeerinen arvo on tässä L3. Säde r, annettu E ja evaluointitaajuus f ovat L1-muodon muuttujia eivätkä peruste muodon uudelleenluokittelulle. Kartoitus χ:hin tai biologiaan on avoin L2.",
     s2bIF:
       "IF-kanava (f_c < f < f_RPM): kenttä tunkeutuu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
     s2bIFSources:
@@ -583,7 +583,7 @@ const t = {
     s3rwRow2: "1990 (puhelin, ei Wi-Fi): 8h EMF, 16h vapaa → 84 % korjaus → netto 1,26/pv",
     s3rwRow3: "2010 (älypuhelin + Wi-Fi): 16h EMF, 8h vapaa → 60 % korjaus → netto 6,35/pv",
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h vapaa → 21 % korjaus → netto 17,46/pv",
-    s3rwRow5: "Amissit (ei elektroniikkaa): 1h EMF, 23h vapaa → 93 % korjaus → netto 0,07/pv",
+    s3rwRow5: "Amissien teknologia-ajoitusskenaario (L3; ei A/x-mittausta): oletettu 1 h toimintaikkuna, 23 h palautuminen → kandidaattinetto 0,07/pv",
     s3rwThreshold:
       "Skenaariokynnys: alle 2× oletetun korjauksen puoliintumisajan jäävä EMF-vapaa jakso tuottaa tässä havainnollisessa yhtälössä epätäydellisen palautumisen. Väite populaatioiden kynnyksen ylityksestä 2005–2010 on kalibroimatta.",
     s3tcTitle: "Kolmikanavalaajennus",
@@ -617,7 +617,7 @@ const t = {
     s4d3:
       "Kynnysarvo θ = 5 heijastaa biologista vastustuskykyä: pienet altistukset eivät ylitä korjausmekanismien kapasiteettia.",
     s4d4:
-      'a = 6,5 on kalibroitu: se on likimääräinen "luonnollinen TFR" ilman EMF-altistusta (vrt. amissit ≈ 6,5, hutteristit ≈ 9,0).',
+      "a = 6,5 on yhteisöjen TFR-havaintoihin ankkuroitu L3-skenaariokalibraatio; se ei ole biologinen maksimi eikä χ:n kalibraatio, eikä se osoita fysikaalisen altistuksen nollaa.",
     s4d5Link: "→ Kontrolloitu laboratorionäyttö bioCap-parametreille",
 
     // S5 Behavioral
@@ -756,7 +756,7 @@ const t = {
         condition:
           "Amissiyhteisön TFR laskee samaa vauhtia kuin yleisväestön",
         detail:
-          "Amissit toimivat kvasikokeellisena verrokkiryhmänä: he jakavat genetiikan, ruokavalion ja maantieteen ympäröivien populaatioiden kanssa mutta altistuvat lähes nolla-EMF:lle. Amissien nykyinen TFR ≈ 6,5 on vakaa ympäröivien populaatioiden laskiessa — tämä poistaa kaupungistumisen, ruokavalion, koulutuksen ja talouden riittävinä selityksinä hedelmällisyyskuilulle.",
+          "Amissiluokka on L3-yhteisö-/teknologia-ajoitusproxy, ei A:n, x:n tai fysikaalisen nolla-altistuksen mittaus. Vertailu voi testata ennakkorekisteröityä proxy-yhteyttä, mutta χ:n testi vaatii eksplisiittisen L0→L2-mittaus- ja kartoitusoperaattorin.",
       },
       {
         condition:
@@ -842,10 +842,10 @@ const t = {
     s12Formula:
       "Kaksikanavainen EMF-indeksi yhdistää asumisen sähkönkulutuksen (ELF-proxy) ja kiinteän laajakaistan tilaukset (RF-proxy):",
     s12Access:
-      "Sähkön saatavuus toimii binäärisenä biologisen altistumisen rajana. IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m) ylittyy jokaisen kotitalouden sähkölaitteen käyttöetäisyydellä. Ilman sähköä olevat väestöt eivät altistu.",
+      "Sähkön saatavuus on L3-teknologia-ajoitusproxy, ei mitattu fysikaalisen tai biologisen altistuksen raja. Binäärijako ei identifioi A:ta tai x:ää ilman eksplisiittistä L0→L2-mittaus- ja kartoitusoperaattoria.",
     s12Stats: "Validointitilastot:",
     s12Stat1: "LOOCV RMSE = 0,522 (kokonaismalli, yksi maa kerrallaan pois -ristikkäistodentaminen)",
-    s12Stat2: "R² = 0,851 (n = 54; kuvaa sähköistyskynnystä, ei EMF-tarkkaa vaikutusta)",
+    s12Stat2: "R² = 0,851 (n = 54; sähköistykseen liittyvä demografinen gradientti, ei tunnistettu biologinen kynnys)",
     s12Stat3: "Taitoarvo = 0,61 (1 − RMSE/sd, parannus keskiarvoennustajaan nähden)",
     s12Stat4: "Asumisen sähkönkulutus on PARAS yksittäinen ennustaja (univariaatti-RMSE 0,533)",
     s12Stat5: "Matkapuhelintilaukset ovat HEIKOIN (RMSE 1,053)",
@@ -854,13 +854,13 @@ const t = {
     s12Electrified:
       "Osittain sähköistetyille maille sähköistetyn osaväestön TFR voidaan arvioida binäärisestä sekoitusmallista:",
     s12Collinearity:
-      "BKT-kollineaarisuus: EMF-proxy-muuttujat ja BKT/cap korreloivat (r = 0,87). Lineaarisissa malleissa kumpikaan ei ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma — se ei suosi BKT:tä EMF:n yli. Kolme rakenteellista eroa murtavat symmetrian: (1) binäärinen sähköistymiskynnys, (2) matkapuhelinparadoksi, (3) sentinelkilajit reagoivat EMF:ään mutta eivät BKT:hen.",
+      "BKT ja teknologiaproxyt korreloivat (r=0,87), joten aggregaattivertailu ei tunnista niiden erillisiä kausaalivaikutuksia. Sähkön saatavuus on proxy-osite, ei biologinen kynnys. Puhelinvertailut ja sentinel-kokeet voivat erotella reittejä vain ennalta määriteltyjen altistus-, välittäjä- ja tuloskontrastien kautta.",
     s12Limitation:
-      "Rehellinen arvio: R² = 0,851 kuvastaa pääasiassa demografisen transition gradienttia (Niger → Korea), ei EMF-tarkkaa varianssia. Korkean tulotason OECD-maissa (n ≈ 36) sähkönkulutus yksinään selittää lähes nollan TFR-varianssista (R² ≈ 0,0002). Poikkileikkauskaava kuvaa sähköistyskynnystä — binääristä porttia esiteollisesta teolliseen hedelmällisyyteen — ei annos-vastetta sähköistettyjen väestöjen sisällä. Tämä tekee poikkileikkauksesta BERM:n heikoimman itsenäisen näyttölinjan. Vahvempi näyttö tulee: (1) mekanismipoluilta, joilla on regulatiivisesti validoituja ei-termisiä vaikutuksia, (2) farmakologisesta annos-vasteesta (melatoniini, testosteroni), (3) geneettisistä selektiomarkkereista (CatSper, VGCC) ja (4) sentinelkilajeista kontrolloiduissa olosuhteissa. Poikkileikkauksen arvo on rakenteellinen: matkapuhelinparadoksi ja sähkö > BKT -ennuste ovat erottelevia, vaikka kokonaisistuvuus on sekoitettu.",
+      "Poikkileikkaussovite seuraa pääasiassa demografisen siirtymän gradienttia. Raportoitu OECD-yhteys pelkkään sähkönkulutukseen on lähes nolla (R²≈0,0002); koko otoksen sovite tai sähköistetty/sähköistämätön-jaottelu ei estimoi fysikaalista annosvastetta eikä osoita EMF-spesifistä biologista kynnystä. Hyödyllinen ennuste testaa, lisäävätkö mitatut paikalliskentät ja biologiset välittäjät otoksen ulkopuolista ennustetietoa demografisten ja teknologiaproxyjen lisäksi.",
     s12DataNote:
       "Replikaatiodata: 54 maan otosluettelo (havaittu TFR, sähkönkulutus, laajakaistatilaukset, mallin ennusteet) saatavilla osoitteessa /data/cross_section_manifest.csv. Lähteet: UN WPP 2024 (TFR), OWID/IEA (sähkö), ITU (laajakaista).",
     s12Caveat:
-      "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva näyttö tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
+      "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva testi tarvitsee ennakkorekisteröidyn luonnollisen kokeen tai sentinelasetelman, suoran dosimetrian ja eksplisiittisen L0→L2-kartan; sähköttömyysluokka yksin on vain proxy.",
     s13Title: "Sisäkkäiset ehdokasmoderaattorit (populaatiomalli)",
     s13Intro: "BERM ehdottaa populaatiosulkeumaa, jossa erikseen mitatut ympäristö-, kalvo-, optiset ja molekulaariset moderaattorit voivat erota ryhmien välillä. Nämä m-funktiot eivät ole χ_geo:n instansseja, ja alla oleva yhdistetty lisääntymisvaste on kalibroimaton ehdokas:",
     s13PathwayA: "Polku A (VGIC)",
@@ -895,7 +895,7 @@ const t = {
       { param: "G_pop (Genotyyppi)", amish: "~1,0", finland: "~1,1", nigeria: "~0,95", desc: "Populaation CACNA1C A-alleelin esiintyvyys" },
     ],
     s14Evolution: "Kaavan kehitys: v17 (skalaari cumEMF, RMSE ~1,15) → v19.1 (kaksikanavainen, 54 maata, RMSE 0,522) → v20 (+ Priming × Palautuminen, ennustettu RMSE < 0,45) → v21 (+ Vuodenaika × Genotyyppi, vaatii kalibrointidataa).",
-    s14Level: "Episteeminen taso: v20 on M|C (mekanismijohdettu, kalibrointi kesken). v21 on L* (ehdotettu laajennus, kalibrointidataa S- ja G_pop-parametreille ei vielä kerätty).",
+    s14Level: "Komponenttistatus: v20 ja v21 ovat L3-fenomenologisia skenaariomalleja; S:n, G_pop:n ja sovitettujen painojen kalibrointi on kesken. Nämä kerrokset eivät muuta edeltävää L1-geometriaa eivätkä ratkaise avointa L2-karttaa.",
 
     // S15 Palautumisfunktio
     s15Title: "Palautumisfunktio: DNA-korjausajan kvantifiointi",
@@ -949,8 +949,8 @@ const t = {
     s1After: "この仮定では電磁ポテンシャルが計量に寄与します。δgは厳密に導出され、形式的応答演算子は明示的な物質–計量・線形応答仮定の下で条件付きに導出されます。ただしイオンチャネル、ホルモン、受容体の組織カーネルは幾何学だけからは得られません。",
     s1d1: "標準的な一般相対性理論では計量は動的です：",
     s1d2: "Lindgrenの枠組みでは、EMポテンシャルが重力摂動に置き換わります：",
-    s1d3: "ここでκは結合定数（適切な単位で1に正規化）。",
-    s1d4: "Maxwell方程式はBianchi恒等式から導かれます：",
+    s1d3: "κは明示的に保持し、縮約前にκA²が無次元でなければなりません。",
+    s1d4: "F = dAから得られるのは同次Maxwell恒等式dF = 0だけで、有源方程式には別の力学が必要です。",
     s1d5: "[[ref:vassallo2025|Vassallo et al.（2025）]]は関連する理論解析として登録されていますが、BERMの生物学的L2演算子を閉じるものではありません。",
     s1d6: "素朴な推定δV_mem ≈ 10⁻²¹ Vは未解決の結合問題を示します。BERMは3つの生物学的実装候補を追跡しますが、いずれも仮定から導出済みではありません：",
     s1d6a: "(1) IFO：イオン強制振動がS4電圧センサーに<1 nm距離で直接作用、閾値10⁻⁵ V/m（[[ref:panagopoulos2025_ifo|Panagopoulos 2025]]）。",
@@ -968,7 +968,7 @@ const t = {
     s2bIntro: "2つの生物学的カットオフ周波数がEMFスペクトルを3つの領域に分割し、それぞれ異なる生物物理学的メカニズムを持ちます。これらのカットオフは細胞生物学の基本的な性質であり、任意のパラメータではありません。",
     s2bFC: "f_c ≈ 1 kHz — 膜のRC時定数。f_c以下：場が膜全体にかかりV_memを摂動します。f_c以上：場が細胞内部に浸透します。",
     s2bFRPM: "f_RPM ≈ 1 MHz — ラジカル対コヒーレンスの限界。f_RPM以上：古典的な場-膜相互作用は弱まりますが、量子スピン効果が関連するようになります。",
-    s2bELF: "ELFチャネル（f < ~1 kHz）：膜移送の推定にはΔV_mem = E_ext · d_cell · H(f)を用い得ます。応答修飾因子と尺度は未校正の組織カーネルΞ_iに属します。VGCC、GPCR、Nav、迷走神経は候補経路ですが、治療応用は環境ELF応答を校正しません。",
+    s2bELF: "ELFチャネル（f < ~1 kHz）：Schwan式ΔV=1.5rE g(f)は宣言したモデル内で条件付きL1であり、ここでL3なのは膜時定数τ_mの数値だけです。半径r、与えられたE、評価周波数fはL1式の変数で、式の再分類理由ではありません。χや生物学への写像は未解決L2です。",
     s2bIF: "IFチャネル（f_c < f < f_RPM）：場が細胞内部に浸透。T(f) = 1/√(1+(f_c/f)²)。環境レベルでの主要メカニズム：IFO-VGIC（線形、閾値10⁻⁵ V/m）。卵割溝での幾何学的場増幅：G ≈ (d_cell/d_furrow)² ≈ 25×。分裂細胞への選択的効果。[[ref:ttfields_novocure_fda|TTFields（FDA 2011+）]]がDEPによる治療強度でメカニズムを検証。",
     s2bIFSources: "環境IF源の特性：典型的なLEDドライバーはスイッチング周波数f_sw 20–200 kHzで動作し、2f_sw、3f_sw、5f_swの高調波がMHz範囲まで拡張します。波形は正弦波ではなく方形パルス列であり、連続波源よりも豊富な高調波を生成します。Panagopoulos 2025はパルス場が同じ平均強度の連続波場よりも生物学的に活性が高いことを実証しています。[[ref:zeghoudi2025_led_driver_emf|Zeghoudi et al. 2025]]はLEDドライバーの近接場放射を直接測定し、センチメートル距離で測定可能なE場成分を確認しました。",
     s2bRF: "RFチャネル：B_local = (1/w)b + (A·b)A/(w(1+w))はLindgren前提内の幾何学式である。BERMは異方的応答とCRY/RPM・コンパス経路を別候補として提案する。条件付き演算子形はそれらの組織機構、符号、遅延、校正を決定しない。",
@@ -1006,7 +1006,7 @@ const t = {
     s3rwRow2: "1990年（電話、Wi-Fiなし）：8h EMF、16h フリー → 84%修復 → 正味1.26/日",
     s3rwRow3: "2010年（スマートフォン + Wi-Fi）：16h EMF、8h フリー → 60%修復 → 正味6.35/日",
     s3rwRow4: "2020年（24/7 Wi-Fi + IoT）：22h EMF、2h フリー → 21%修復 → 正味17.46/日",
-    s3rwRow5: "アーミッシュ（電子機器なし）：1h EMF、23h フリー → 93%修復 → 正味0.07/日",
+    s3rwRow5: "アーミッシュ技術時期シナリオ（L3、A/x測定なし）：仮定1h活動窓、23h回復 → 候補正味0.07/日",
     s3rwThreshold: "シナリオ閾値：無EMF期間が仮定した修復半減期の2倍未満なら、この例示式では回復が不完全です。2005〜2010年の集団閾値超過は未校正です。",
     s3tcTitle: "3チャネル拡張",
     s3tcIntro: "3チャネル分解では、cumEMFは周波数固有の累積曝露の加重和になります：",
@@ -1025,7 +1025,7 @@ const t = {
     s4d1: "指数関数的減少は、各年のEMF曝露が比例的に等しい生物学的損傷を生じるという仮定から導かれます：",
     s4d2: "積分すると：",
     s4d3: "閾値θ = 5は生物学的抵抗性を反映：小さな曝露は修復メカニズムの容量を超えません。",
-    s4d4: "a = 6.5はキャリブレーション済み：EMF曝露なしの近似的な「自然TFR」です（参照：アーミッシュ ≈ 6.5、フッター派 ≈ 9.0）。",
+    s4d4: "a = 6.5はコミュニティのTFR観測にアンカーしたL3シナリオ較正です。生物学的最大値でもχの較正でもなく、物理的曝露ゼロを示しません。",
     s4d5Link: "→ bioCパラメータの管理された実験室的証拠",
     s5Title: "行動因子",
     s5Intro: "内分泌ベクトル（テストステロン、オキシトシン、ドーパミン、コルチゾール、バソプレシン）の幾何平均：",
@@ -1113,7 +1113,7 @@ const t = {
     s9Items: [
       { condition: "Lindgrenの計量が数学的に不正確", detail: "導出g_μν = η_μν + κA_μA_νが内的に矛盾するか、確立された電気力学と矛盾することが示された場合、幾何学的基盤は失敗します。" },
       { condition: "VGCCブロッカーがEMFの生物学的効果を防がない", detail: "カルシウムチャネルブロッカーが管理された実験でEMF誘発ROS、SDF、またはホルモン変化を減衰させない場合、一次メカニズムは誤りです。" },
-      { condition: "アーミッシュコミュニティのTFRが一般集団と同じ速度で低下", detail: "アーミッシュは準実験的対照群として機能します。現在のアーミッシュTFR ≈ 6.5は安定しており、周囲の集団は低下しています。" },
+      { condition: "アーミッシュコミュニティのTFRが一般集団と同じ速度で低下", detail: "アーミッシュという分類はL3のコミュニティ・技術時期プロキシであり、A、x、または物理的ゼロ曝露の測定ではありません。比較は事前登録されたプロキシ関連を検定できますが、χの検定には明示的なL0→L2の測定・写像演算子が必要です。" },
       { condition: "精子濃度の低下がEMF曝露の減少なしに停止", detail: "−1.2%/年の精子減少が累積EMFの増加が続く中で反転または安定した場合、用量-応答関係は誤りです。" },
       { condition: "ロックされた予測が信頼区間外で失敗", detail: "§8の予測が観測年に到達した時に95% CIの外に落ちた場合、その予測の範囲でモデルは反証されます。" },
     ],
@@ -1151,19 +1151,19 @@ const t = {
     s12Title: "横断的検証 v19.1",
     s12Intro: "54カ国（2022年データ）にわたる公式発見は、時間的モデルの独立した検証を提供します。横断的公式は2つのEMFプロキシ変数と1つのバイナリ閾値を使用して、LOOCV RMSE 0.522で国家TFRを予測します。",
     s12Formula: "2チャネルEMFインデックスは住宅電力消費（ELFプロキシ）と固定ブロードバンド加入（RFプロキシ）を組み合わせます：",
-    s12Access: "電力アクセスはバイナリ生物学的曝露境界として機能します。IFO-VGIC活性化閾値（10⁻⁵ V/m）はすべての家庭電気機器の動作距離で超過されます。電力のない集団は曝露されません。",
+    s12Access: "電力アクセスはL3の技術時期プロキシであり、測定された物理的または生物学的曝露境界ではありません。二値分類は明示的なL0→L2測定・写像演算子なしにAまたはxを同定できません。",
     s12Stats: "検証統計：",
     s12Stat1: "LOOCV RMSE = 0.522（完全モデル、1カ国除外交差検証）",
-    s12Stat2: "R² = 0.851（n = 54；電化閾値を捉えており、EMF固有の効果ではない）",
+    s12Stat2: "R² = 0.851（n = 54；電化に関連する人口勾配であり、同定済みの生物学的閾値ではない）",
     s12Stat3: "スキルスコア = 0.61（1 − RMSE/sd、平均予測に対する改善）",
     s12Stat4: "住宅電力消費が最良の単一予測因子（単変量RMSE 0.533）",
     s12Stat5: "携帯電話加入が最も弱い（RMSE 1.053）",
     s12Mobile: "携帯電話パラドックス：メカニズムが「情報アクセス→家族計画の選択」であれば、情報デバイス（携帯電話）が最強の予測因子であるべきです。最も弱いのです。インフラ変数（住宅電力消費）が最もよく予測します — 情報メカニズムではなく物理的曝露メカニズムと一致します。",
     s12Electrified: "部分的に電化された国では、電化サブ集団のTFRはバイナリ混合モデルから推定できます：",
-    s12Collinearity: "GDP共線性：EMFプロキシとGDP/capitaは相関（r = 0.87）。線形モデルでは、一方を制御すると他方は有意でなくなります。これは対称的な識別問題であり、EMFに不利な証拠ではありません。3つの構造的差異が対称性を破ります：(1)バイナリ電化閾値、(2)携帯電話パラドックス、(3)センチネル種はEMFに反応するがGDPには反応しない。",
-    s12Limitation: "正直な評価：R² = 0.851は主に人口転換の勾配（ニジェール→韓国）を反映しており、EMF固有の分散ではありません。高所得OECD諸国（n ≈ 36）では、電力消費量だけではTFRの分散をほぼ説明できません（R² ≈ 0.0002）。横断的公式は電化閾値 — 前工業社会から工業社会への二値的なゲートウェイ — を捉えており、電化された集団内での用量反応ではありません。これにより横断分析はBERMの最も弱い独立した証拠線となります。より強い証拠は：(1)規制当局が検証した非熱効果を持つメカニズム経路、(2)薬理学的用量反応（メラトニン、テストステロン）、(3)遺伝的選択マーカー（CatSper、VGCC）、(4)管理条件下のセンチネル種から来ます。横断分析の価値は構造的です：携帯電話パラドックスと電力＞GDP予測は弁別的であり、集計的な適合が交絡していても意味があります。",
+    s12Collinearity: "GDPと技術プロキシは相関するため（r=0.87）、集計比較は各因果効果を同定しません。電力アクセスはプロキシ層であり生物学的閾値ではありません。携帯電話比較やセンチネル実験には、事前指定した曝露・媒介・結果の対比が必要です。",
+    s12Limitation: "横断的適合は主に人口転換勾配に沿います。OECDの電力単独との報告された関連はほぼゼロ（R²≈0.0002）です。全標本の適合も電化の二分も物理的用量反応やEMF固有の生物学的閾値を同定しません。局所場と生物学的媒介の測定が、人口・技術プロキシを超える標本外予測を加えるかを検証します。",
     s12DataNote: "再現データ：54カ国サンプル名簿（観測TFR、電力消費、ブロードバンド加入、モデル予測）は/data/cross_section_manifest.csvで入手可能。出典：UN WPP 2024（TFR）、OWID/IEA（電力）、ITU（ブロードバンド）。",
-    s12Caveat: "横断的分析は因果方向を決定できません。弁別的証拠はセンチネル種、自然実験、電力のない集団から得られます。",
+    s12Caveat: "横断的分析は因果方向を決定できません。弁別試験には、事前登録した自然実験またはセンチネル設計、直接線量測定、明示的L0→L2写像が必要です。無電化という分類だけではプロキシにすぎません。",
     s13Title: "ネストした候補修飾因子（集団モデル）",
     s13Intro: "BERMは環境、膜、光学、分子の修飾因子を別々に測定する集団閉包を提案します。これらのm関数はχ_geoの実例ではなく、下記の結合応答は未校正候補です：",
     s13PathwayA: "経路A（VGIC）",
@@ -1196,7 +1196,7 @@ const t = {
       { param: "G_pop（ジェノタイプ）", amish: "~1.0", finland: "~1.1", nigeria: "~0.95", desc: "集団CACNA1C Aアレル有病率" },
     ],
     s14Evolution: "公式の進化：v17（スカラーcumEMF、RMSE ~1.15）→ v19.1（2チャネル、54カ国、RMSE 0.522）→ v20（+ プライミング × 回復、予測RMSE < 0.45）→ v21（+ 季節 × ジェノタイプ、キャリブレーションデータ必要）。",
-    s14Level: "認識論的レベル：v20はM|C（メカニズム導出、キャリブレーション保留）。v21はL*（提案された拡張、SとG_popのキャリブレーションデータは未収集）。",
+    s14Level: "成分別状態：v20とv21はL3現象論的シナリオモデルで、S、G_pop、適合重みの較正は未完了です。これらの層は先行するL1幾何の状態を変えず、未解決のL2写像も解決しません。",
     s15Title: "回復関数：DNA修復時間の定量化",
     s15Text: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]はEMF誘発DNA鎖切断が曝露停止後9時間以内に正常に戻ることを実証しました。指数関数的減衰モデルへのフィッティングにより、時定数τ ≈ 3–4時間が得られます。これは公式v20の回復因子Rに直接対応します：R = 1 + β × EMF_free_hours、ここで[[ref:ivancsits_dna_recovery|Ivancsitsデータ]]はβ ≈ 0.11を示唆します。",
     s15TableTime: "曝露後の時間",
@@ -1241,8 +1241,8 @@ const t = {
     s1After: "Dans cet ansatz, le potentiel électromagnétique contribue à la métrique. δg est dérivé exactement et un opérateur formel de réponse suit conditionnellement d'hypothèses explicites matière–métrique et réponse linéaire. Les noyaux tissulaires des canaux, hormones et récepteurs ne découlent pas de la géométrie seule.",
     s1d1: "En RG standard, la métrique est dynamique :",
     s1d2: "Dans le cadre de Lindgren, le potentiel EM remplace la perturbation gravitationnelle :",
-    s1d3: "où κ est une constante de couplage (normalisée à 1 dans les unités appropriées).",
-    s1d4: "Les équations de Maxwell découlent des identités de Bianchi :",
+    s1d3: "κ reste explicite et κA² doit être sans dimension avant toute réduction.",
+    s1d4: "Seule l’identité homogène de Maxwell dF = 0 découle de F = dA ; l’équation sourcée exige une dynamique distincte.",
     s1d5: "[[ref:vassallo2025|Vassallo et al. (2025)]] est enregistré comme analyse théorique connexe ; il ne ferme pas l'opérateur biologique L2 de BERM.",
     s1d6: "L'estimation naïve δV_mem ≈ 10⁻²¹ V rend visible le problème de couplage non résolu. BERM suit trois réalisations biologiques candidates, dont aucune n'est encore dérivée de l'ansatz :",
     s1d6a: "(1) IFO : l'oscillation forcée des ions agit directement sur le capteur de tension S4 à <1 nm de distance, seuil 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]).",
@@ -1260,7 +1260,7 @@ const t = {
     s2bIntro: "Deux fréquences de coupure biologiques divisent le spectre EMF en trois régimes avec des mécanismes biophysiques distincts. Ces coupures sont des propriétés fondamentales de la biologie cellulaire, pas des paramètres arbitraires.",
     s2bFC: "f_c ≈ 1 kHz — la constante de temps RC de la membrane. Sous f_c : le champ tombe à travers la membrane et perturbe V_mem. Au-dessus de f_c : le champ pénètre à l'intérieur de la cellule.",
     s2bFRPM: "f_RPM ≈ 1 MHz — la limite de cohérence de la paire radicale. Au-dessus de f_RPM : l'interaction classique champ-membrane s'affaiblit mais les effets de spin quantique deviennent pertinents.",
-    s2bELF: "Canal ELF (f < ~1 kHz) : une estimation du transfert membranaire peut utiliser ΔV_mem = E_ext · d_cell · H(f). Le modérateur et l'échelle de réponse appartiennent au noyau tissulaire ouvert Ξ_i. VGCC, GPCR, Nav et nerf vague sont des voies candidates ; leurs usages thérapeutiques ne calibrent pas une réponse ELF environnementale.",
+    s2bELF: "Canal ELF (f < ~1 kHz) : la forme de Schwan ΔV=1,5rE g(f) est L1 conditionnelle dans son modèle déclaré ; seule la valeur numérique de τ_m est ici L3. Le rayon r, le E fourni et la fréquence f sont des variables de la forme L1, pas un motif de requalification. La projection vers χ ou la biologie reste L2 ouverte.",
     s2bIF: "Canal IF (f_c < f < f_RPM) : le champ pénètre à l'intérieur de la cellule. T(f) = 1/√(1+(f_c/f)²). Mécanisme primaire aux niveaux environnementaux : IFO-VGIC (linéaire, seuil 10⁻⁵ V/m). Amplification géométrique du champ au sillon de clivage : G ≈ (d_cell/d_furrow)² ≈ 25×. Effet sélectif sur les cellules en division. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] valide le mécanisme à intensité thérapeutique via DEP.",
     s2bIFSources: "Caractérisation des sources IF environnementales : un pilote LED typique fonctionne à une fréquence de commutation f_sw dans la plage 20–200 kHz avec un contenu harmonique à 2f_sw, 3f_sw, 5f_sw s'étendant dans la plage MHz. La forme d'onde est un train d'impulsions carrées, pas une sinusoïde. Panagopoulos 2025 démontre que les champs pulsés sont biologiquement plus actifs que les champs à onde continue à la même intensité moyenne.",
     s2bRF: "Canal RF : B_local = (1/w)b + (A·b)A/(w(1+w)) est une expression géométrique de la prémisse de Lindgren. BERM propose séparément une réponse anisotrope et des voies CRY/RPM ou boussole ; l'opérateur conditionnel ne détermine ni leurs mécanismes tissulaires, ni leur signe, délai ou calibration.",
@@ -1298,7 +1298,7 @@ const t = {
     s3rwRow2: "1990 (téléphone, sans Wi-Fi) : 8h EMF, 16h libre → 84 % réparation → net 1,26/jour",
     s3rwRow3: "2010 (smartphone + Wi-Fi) : 16h EMF, 8h libre → 60 % réparation → net 6,35/jour",
     s3rwRow4: "2020 (Wi-Fi 24/7 + IoT) : 22h EMF, 2h libre → 21 % réparation → net 17,46/jour",
-    s3rwRow5: "Amish (sans électronique) : 1h EMF, 23h libre → 93 % réparation → net 0,07/jour",
+    s3rwRow5: "Scénario Amish de calendrier technologique (L3 ; aucune mesure A/x) : fenêtre d’activité supposée de 1 h, récupération de 23 h → net candidat 0,07/jour",
     s3rwThreshold: "Seuil de scénario : une période sans EMF inférieure à 2× une demi-vie supposée laisse une récupération incomplète dans cette équation illustrative. Le franchissement populationnel en 2005–2010 reste non calibré.",
     s3tcTitle: "Extension trois canaux",
     s3tcIntro: "Dans la décomposition en trois canaux, cumEMF devient une somme pondérée des expositions cumulatives spécifiques à chaque fréquence :",
@@ -1317,7 +1317,7 @@ const t = {
     s4d1: "Le déclin exponentiel découle de l'hypothèse que l'exposition EMF de chaque année produit un dommage biologique proportionnellement égal :",
     s4d2: "En intégrant :",
     s4d3: "Le seuil θ = 5 reflète la résistance biologique : les petites expositions ne dépassent pas la capacité des mécanismes de réparation.",
-    s4d4: "a = 6,5 est calibré : c'est le « TFR naturel » approximatif sans exposition EMF (cf. Amish ≈ 6,5, Hutterites ≈ 9,0).",
+    s4d4: "a = 6,5 est une calibration de scénario L3 ancrée dans des observations communautaires du TFR ; ce n’est ni un maximum biologique ni une calibration de χ, et elle n’établit pas une exposition physique nulle.",
     s4d5Link: "→ Preuves de laboratoire contrôlées pour les paramètres bioCap",
     s5Title: "Facteur comportemental",
     s5Intro: "Le vecteur endocrinien (testostérone, ocytocine, dopamine, cortisol, vasopressine) comme moyenne géométrique :",
@@ -1405,7 +1405,7 @@ const t = {
     s9Items: [
       { condition: "La métrique de Lindgren est mathématiquement incorrecte", detail: "Si la dérivation g_μν = η_μν + κA_μA_ν s'avère internement incohérente ou en contradiction avec l'électrodynamique établie, le fondement géométrique échoue." },
       { condition: "Les bloqueurs VGCC ne préviennent pas les effets biologiques de l'EMF", detail: "Si les bloqueurs de canaux calciques ne parviennent pas à atténuer les ROS, SDF ou changements hormonaux induits par l'EMF dans des expériences contrôlées, le mécanisme primaire est erroné." },
-      { condition: "Le TFR de la communauté Amish décline au même rythme que la population générale", detail: "Les Amish fonctionnent comme un groupe de contrôle quasi-expérimental. Le TFR actuel des Amish ≈ 6,5 est stable tandis que les populations environnantes déclinent." },
+      { condition: "Le TFR de la communauté Amish décline au même rythme que la population générale", detail: "La catégorie Amish est un proxy L3 de communauté et de calendrier technologique, non une mesure de A, de x ou d’une exposition physique nulle. La comparaison peut tester une association de proxy préenregistrée, mais tester χ exige un opérateur explicite de mesure et de projection L0→L2." },
       { condition: "Le déclin de la concentration de spermatozoïdes s'arrête sans réduction de l'exposition EMF", detail: "Si le déclin de −1,2 %/an des spermatozoïdes s'inverse ou se stabilise alors que l'EMF cumulative continue d'augmenter, la relation dose-réponse est erronée." },
       { condition: "Une prédiction verrouillée échoue en dehors de son intervalle de confiance", detail: "Toute prédiction du §8 qui tombe en dehors de son IC à 95 % lorsque l'année d'observation arrive falsifie le modèle à la portée de cette prédiction." },
     ],
@@ -1443,19 +1443,19 @@ const t = {
     s12Title: "Validation transversale v19.1",
     s12Intro: "La découverte de formule sur 54 pays (données 2022) fournit une validation indépendante du modèle temporel. La formule transversale utilise deux variables proxy EMF et un seuil binaire pour prédire le TFR national avec un RMSE LOOCV de 0,522.",
     s12Formula: "L'indice EMF à deux canaux combine la consommation résidentielle d'électricité (proxy ELF) et les abonnements haut débit fixe (proxy RF) :",
-    s12Access: "L'accès à l'électricité agit comme une frontière binaire d'exposition biologique. Le seuil d'activation IFO-VGIC (10⁻⁵ V/m) est dépassé à la distance d'exploitation de chaque appareil électrique ménager. Les populations sans électricité ne sont pas exposées.",
+    s12Access: "L’accès à l’électricité est un proxy L3 du calendrier technologique, non une frontière mesurée d’exposition physique ou biologique. Une coupure binaire ne peut identifier A ou x sans opérateur explicite de mesure et de projection L0→L2.",
     s12Stats: "Statistiques de validation :",
     s12Stat1: "RMSE LOOCV = 0,522 (modèle complet, validation croisée en laissant un pays de côté)",
-    s12Stat2: "R² = 0,851 (n = 54 ; capture le seuil d'électrification, pas l'effet spécifique aux CEM)",
+    s12Stat2: "R² = 0,851 (n = 54; gradient démographique associé à l’électrification, pas un seuil biologique identifié)",
     s12Stat3: "Score de compétence = 0,61 (1 − RMSE/sd, amélioration par rapport au prédicteur moyen)",
     s12Stat4: "La consommation résidentielle d'électricité est le MEILLEUR prédicteur unique (RMSE univarié 0,533)",
     s12Stat5: "Les abonnements mobiles sont les PLUS FAIBLES (RMSE 1,053)",
     s12Mobile: "Le paradoxe du téléphone mobile : si le mécanisme était « accès à l'information → choix de planification familiale », l'appareil d'information (téléphone mobile) devrait être le prédicteur le plus fort. C'est le plus faible. La variable d'infrastructure (consommation résidentielle d'électricité) prédit le mieux — cohérent avec un mécanisme d'exposition physique, pas un mécanisme d'information.",
     s12Electrified: "Pour les pays partiellement électrifiés, le TFR de la sous-population électrifiée peut être estimé à partir du modèle de mélange binaire :",
-    s12Collinearity: "Colinéarité PIB : les proxies EMF et le PIB par habitant sont corrélés (r = 0,87). Dans les modèles linéaires, ni l'un ni l'autre n'est significatif quand l'autre est contrôlé. C'est un problème d'identification symétrique — il ne favorise pas le PIB par rapport à l'EMF. Trois différences structurelles brisent la symétrie : (1) seuil binaire d'électrification, (2) paradoxe du téléphone mobile, (3) les espèces sentinelles répondent à l'EMF mais pas au PIB.",
-    s12Limitation: "Évaluation honnête : R² = 0,851 reflète principalement le gradient de transition démographique (Niger → Corée), pas la variance spécifique aux CEM. Parmi les pays OCDE à revenu élevé (n ≈ 36), la consommation d'électricité seule n'explique quasiment aucune variance du TFR (R² ≈ 0,0002). La formule transversale capture le seuil d'électrification — la porte binaire de la fécondité pré-industrielle à industrielle — pas une dose-réponse au sein des populations électrifiées. Cela fait de l'analyse transversale la ligne de preuve indépendante la PLUS FAIBLE du BERM. Les preuves plus solides viennent de : (1) les voies mécanistiques avec effets non thermiques validés réglementairement, (2) la dose-réponse pharmacologique (mélatonine, testostérone), (3) les marqueurs de sélection génétique (CatSper, VGCC), (4) les espèces sentinelles en conditions contrôlées. La valeur de l'analyse transversale est structurelle : le paradoxe du téléphone mobile et la prédiction électricité > PIB sont discriminants, même si l'ajustement agrégé est confondu.",
+    s12Collinearity: "Le PIB et les proxys technologiques sont corrélés (r=0,87); leur comparaison agrégée ne distingue pas leurs effets causaux. L’accès à l’électricité est une strate de proxy, pas un seuil biologique. Les comparaisons mobiles et les expériences sentinelles exigent des contrastes d’exposition, de médiation et d’issue préspécifiés.",
+    s12Limitation: "L’ajustement transversal suit surtout la transition démographique. L’association OCDE avec l’électricité seule est presque nulle (R²≈0,0002). Ni l’ajustement global ni la dichotomie électrifié/non électrifié n’identifient une dose–réponse physique ou un seuil biologique propre aux EMF. Le test utile est l’apport prédictif hors échantillon des champs locaux et médiateurs mesurés au-delà des proxys.",
     s12DataNote: "Données de réplication : liste des 54 pays (TFR observé, consommation d'électricité, abonnements haut débit, prédictions du modèle) disponible à /data/cross_section_manifest.csv. Sources : UN WPP 2024 (TFR), OWID/AIE (électricité), UIT (haut débit).",
-    s12Caveat: "L'analyse transversale ne peut pas déterminer la direction causale. Les preuves discriminantes proviennent des espèces sentinelles, des expériences naturelles et des populations sans électricité.",
+    s12Caveat: "L’analyse transversale ne peut pas déterminer la direction causale. Un test discriminant exige une expérience naturelle ou sentinelle préenregistrée, une dosimétrie directe et une projection L0→L2 explicite ; une catégorie sans électricité n’est qu’un proxy.",
     s13Title: "Modérateurs candidats imbriqués (modèle de population)",
     s13Intro: "BERM propose une fermeture où les modérateurs environnementaux, membranaires, optiques et moléculaires sont mesurés séparément. Ces fonctions m ne sont pas des instances de χ_geo et la réponse combinée est un candidat non calibré :",
     s13PathwayA: "Voie A (VGIC)",
@@ -1488,7 +1488,7 @@ const t = {
       { param: "G_pop (Génotype)", amish: "~1,0", finland: "~1,1", nigeria: "~0,95", desc: "Prévalence de l'allèle A CACNA1C dans la population" },
     ],
     s14Evolution: "Évolution de la formule : v17 (cumEMF scalaire, RMSE ~1,15) → v19.1 (deux canaux, 54 pays, RMSE 0,522) → v20 (+ Amorçage × Récupération, RMSE prédit < 0,45) → v21 (+ Saison × Génotype, données de calibration nécessaires).",
-    s14Level: "Niveau épistémique : v20 est M|C (dérivé du mécanisme, calibration en attente). v21 est L* (extension proposée, données de calibration pour S et G_pop non encore collectées).",
+    s14Level: "Statut par composant : v20 et v21 sont des modèles de scénario phénoménologiques L3 ; la calibration de S, G_pop et des poids ajustés reste en attente. Ces couches ne modifient ni la géométrie L1 antérieure ni la projection L2 ouverte.",
     s15Title: "La fonction de récupération : quantifier le temps de réparation de l'ADN",
     s15Text: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] ont démontré que les cassures de brin d'ADN induites par l'EMF revenaient à la normale dans les 9 heures suivant l'arrêt de l'exposition. L'ajustement d'un modèle de décroissance exponentielle à ces données donne une constante de temps τ ≈ 3–4 heures. Cela correspond directement au facteur de récupération R dans la formule v20 : R = 1 + β × EMF_free_hours, où les [[ref:ivancsits_dna_recovery|données d'Ivancsits]] suggèrent β ≈ 0,11.",
     s15TableTime: "Temps après exposition",
@@ -1533,8 +1533,8 @@ const t = {
     s1After: "이 가정에서 전자기 퍼텐셜은 메트릭에 기여합니다. δg는 정확히 도출되고 형식 반응 연산자는 명시적 물질–메트릭 및 선형반응 가정 아래 조건부로 도출됩니다. 이온채널, 호르몬, 수용체의 조직 커널은 기하학만으로 정해지지 않습니다.",
     s1d1: "표준 일반상대성이론에서 메트릭은 동적입니다:",
     s1d2: "Lindgren의 프레임워크에서 EM 퍼텐셜이 중력 섭동을 대체합니다:",
-    s1d3: "여기서 κ는 결합 상수(적절한 단위에서 1로 정규화).",
-    s1d4: "Maxwell 방정식은 Bianchi 항등식으로부터 도출됩니다:",
+    s1d3: "κ는 명시적으로 유지하며 축약 전에 κA²가 무차원이어야 합니다.",
+    s1d4: "F = dA에서 나오는 것은 동차 Maxwell 항등식 dF = 0뿐이며, 유원 방정식에는 별도 동역학이 필요합니다.",
     s1d5: "[[ref:vassallo2025|Vassallo et al. (2025)]]은 관련 이론 분석으로 등록되지만 BERM의 생물학적 L2 연산자를 닫지는 않습니다.",
     s1d6: "단순 추정 δV_mem ≈ 10⁻²¹ V는 미해결 결합 문제를 드러냅니다. BERM은 세 가지 생물학적 구현 후보를 추적하지만 어느 것도 가정에서 도출된 것은 아닙니다:",
     s1d6a: "(1) IFO: 이온 강제 진동이 S4 전압 센서에 <1 nm 거리에서 직접 작용, 임계값 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]).",
@@ -1552,7 +1552,7 @@ const t = {
     s2bIntro: "두 개의 생물학적 차단 주파수가 EMF 스펙트럼을 서로 다른 생물물리학적 메커니즘을 가진 세 영역으로 나눕니다. 이 차단 주파수는 세포 생물학의 근본적 성질이며 임의의 매개변수가 아닙니다.",
     s2bFC: "f_c ≈ 1 kHz — 막의 RC 시간 상수. f_c 이하: 장이 막 전체에 걸려 V_mem을 섭동합니다. f_c 이상: 장이 세포 내부로 침투합니다.",
     s2bFRPM: "f_RPM ≈ 1 MHz — 라디칼 쌍 코히어런스 한계. f_RPM 이상: 고전적 장-막 상호작용은 약해지지만 양자 스핀 효과가 관련됩니다.",
-    s2bELF: "ELF 채널 (f < ~1 kHz): 막 전달 추정은 ΔV_mem = E_ext · d_cell · H(f)를 사용할 수 있습니다. 반응 조절인자와 척도는 열린 조직 커널 Ξ_i에 속합니다. VGCC, GPCR, Nav, 미주신경은 후보 경로이지만 치료 응용이 환경 ELF 반응을 보정하지는 않습니다.",
+    s2bELF: "ELF 채널(f < ~1 kHz): Schwan 식 ΔV=1.5rE g(f)는 선언된 모델 안에서 조건부 L1이며 여기서 L3인 것은 막 시간상수 τ_m의 수치뿐입니다. 반지름 r, 주어진 E, 평가 주파수 f는 L1 식의 변수이지 식을 재분류할 근거가 아닙니다. χ 또는 생물학으로의 사상은 열린 L2입니다.",
     s2bIF: "IF 채널 (f_c < f < f_RPM): 장이 세포 내부로 침투. T(f) = 1/√(1+(f_c/f)²). 환경 수준에서의 주요 메커니즘: IFO-VGIC (선형, 임계값 10⁻⁵ V/m). 분열구에서의 기하학적 장 증폭: G ≈ (d_cell/d_furrow)² ≈ 25×. 분열 세포에 대한 선택적 효과. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]]가 DEP를 통한 치료 강도에서 메커니즘을 검증.",
     s2bIFSources: "환경 IF 원 특성: 전형적인 LED 드라이버는 스위칭 주파수 f_sw 20–200 kHz에서 동작하며 2f_sw, 3f_sw, 5f_sw의 고조파가 MHz 범위까지 확장됩니다. 파형은 정현파가 아닌 구형 펄스열입니다. Panagopoulos 2025는 펄스 장이 동일한 평균 강도의 연속파 장보다 생물학적으로 더 활성적임을 입증했습니다.",
     s2bRF: "RF 채널: B_local = (1/w)b + (A·b)A/(w(1+w))는 Lindgren 전제 안의 기하학식이다. BERM은 이방성 반응과 CRY/RPM·나침반 경로를 별도 후보로 제안하며, 조건부 연산자 형태는 해당 조직 기전과 부호, 지연, 보정을 결정하지 않는다.",
@@ -1590,7 +1590,7 @@ const t = {
     s3rwRow2: "1990 (전화, Wi-Fi 없음): 8h EMF, 16h 자유 → 84% 수리 → 순 1.26/일",
     s3rwRow3: "2010 (스마트폰 + Wi-Fi): 16h EMF, 8h 자유 → 60% 수리 → 순 6.35/일",
     s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h 자유 → 21% 수리 → 순 17.46/일",
-    s3rwRow5: "아미시 (전자기기 없음): 1h EMF, 23h 자유 → 93% 수리 → 순 0.07/일",
+    s3rwRow5: "아미시 기술 시점 시나리오(L3, A/x 측정 없음): 가정한 1h 활동 창, 23h 회복 → 후보 순 0.07/일",
     s3rwThreshold: "시나리오 역치: EMF 무노출 기간이 가정한 수리 반감기의 2배보다 짧으면 이 예시식에서 회복이 불완전합니다. 2005~2010년 집단 역치 초과 주장은 미보정입니다.",
     s3tcTitle: "3채널 확장",
     s3tcIntro: "3채널 분해에서 cumEMF는 주파수별 누적 노출의 가중 합이 됩니다:",
@@ -1609,7 +1609,7 @@ const t = {
     s4d1: "지수적 감소는 각 연도의 EMF 노출이 비례적으로 동일한 생물학적 손상을 생산한다는 가정으로부터 도출됩니다:",
     s4d2: "적분하면:",
     s4d3: "임계값 θ = 5는 생물학적 저항성을 반영: 작은 노출은 수리 메커니즘 용량을 초과하지 않습니다.",
-    s4d4: "a = 6.5는 교정됨: EMF 노출 없는 근사적 \"자연 TFR\"(참조: 아미시 ≈ 6.5, 후터라이트 ≈ 9.0).",
+    s4d4: "a = 6.5는 공동체 TFR 관측에 앵커링한 L3 시나리오 교정입니다. 이는 생물학적 최댓값이나 χ의 교정이 아니며, 물리적 노출이 0임을 보여주지 않습니다.",
     s4d5Link: "→ bioCap 매개변수에 대한 통제된 실험실 증거",
     s5Title: "행동 인자",
     s5Intro: "내분비 벡터(테스토스테론, 옥시토신, 도파민, 코르티솔, 바소프레신)의 기하 평균:",
@@ -1697,7 +1697,7 @@ const t = {
     s9Items: [
       { condition: "Lindgren의 메트릭이 수학적으로 부정확", detail: "유도 g_μν = η_μν + κA_μA_ν가 내적으로 불일치하거나 확립된 전기역학과 모순되는 것으로 밝혀지면 기하학적 기반은 실패합니다." },
       { condition: "VGCC 차단제가 EMF의 생물학적 효과를 방지하지 못함", detail: "칼슘 채널 차단제가 통제된 실험에서 EMF 유도 ROS, SDF 또는 호르몬 변화를 감쇠시키지 못하면 일차 메커니즘이 잘못된 것입니다." },
-      { condition: "아미시 공동체 TFR이 일반 인구와 같은 속도로 감소", detail: "아미시는 준실험적 대조군으로 기능합니다. 현재 아미시 TFR ≈ 6.5는 안정적이며 주변 인구는 감소하고 있습니다." },
+      { condition: "아미시 공동체 TFR이 일반 인구와 같은 속도로 감소", detail: "아미시 분류는 L3 공동체·기술 시점 프록시이지 A, x 또는 물리적 영 노출의 측정이 아닙니다. 비교는 사전 등록된 프록시 연관성을 검정할 수 있지만, χ를 검정하려면 명시적 L0→L2 측정·사상 연산자가 필요합니다." },
       { condition: "EMF 노출 감소 없이 정자 농도 감소가 중단", detail: "−1.2%/년 정자 감소가 누적 EMF가 계속 증가하는 동안 반전되거나 안정화되면 용량-반응 관계가 잘못된 것입니다." },
       { condition: "잠긴 예측이 신뢰 구간 밖에서 실패", detail: "§8의 예측이 관측 연도에 도달했을 때 95% CI 밖에 떨어지면 해당 예측 범위에서 모델이 반증됩니다." },
     ],
@@ -1735,19 +1735,19 @@ const t = {
     s12Title: "횡단적 검증 v19.1",
     s12Intro: "54개국(2022년 데이터)에 걸친 공식 발견은 시간적 모델의 독립적 검증을 제공합니다. 횡단적 공식은 2개의 EMF 프록시 변수와 1개의 이진 임계값을 사용하여 LOOCV RMSE 0.522로 국가 TFR을 예측합니다.",
     s12Formula: "2채널 EMF 지수는 주거 전력 소비(ELF 프록시)와 고정 광대역 가입(RF 프록시)을 결합합니다:",
-    s12Access: "전력 접근은 이진 생물학적 노출 경계로 작용합니다. IFO-VGIC 활성화 임계값(10⁻⁵ V/m)은 모든 가정용 전기 기기의 작동 거리에서 초과됩니다. 전력이 없는 집단은 노출되지 않습니다.",
+    s12Access: "전력 접근성은 L3 기술 시점 프록시이지 측정된 물리적 또는 생물학적 노출 경계가 아닙니다. 이진 분할은 명시적 L0→L2 측정·사상 연산자 없이 A나 x를 식별할 수 없습니다.",
     s12Stats: "검증 통계:",
     s12Stat1: "LOOCV RMSE = 0.522 (전체 모델, 1개국 제외 교차 검증)",
-    s12Stat2: "R² = 0.851 (n = 54; 전기화 임계값 포착, EMF 고유 효과 아님)",
+    s12Stat2: "R² = 0.851 (n = 54; 전기화와 관련된 인구학적 기울기이며 식별된 생물학적 임계값이 아님)",
     s12Stat3: "스킬 점수 = 0.61 (1 − RMSE/sd, 평균 예측 대비 개선)",
     s12Stat4: "주거 전력 소비가 최고의 단일 예측인자 (단변량 RMSE 0.533)",
     s12Stat5: "휴대전화 가입이 가장 약함 (RMSE 1.053)",
     s12Mobile: "휴대전화 역설: 메커니즘이 '정보 접근 → 가족 계획 선택'이라면 정보 장치(휴대전화)가 가장 강한 예측인자여야 합니다. 가장 약합니다. 인프라 변수(주거 전력 소비)가 가장 잘 예측합니다 — 정보 메커니즘이 아닌 물리적 노출 메커니즘과 일치합니다.",
     s12Electrified: "부분 전화 국가의 경우 전화된 하위 집단 TFR은 이진 혼합 모델에서 추정할 수 있습니다:",
-    s12Collinearity: "GDP 공선성: EMF 프록시와 GDP/capita는 상관(r = 0.87). 선형 모델에서 한쪽을 통제하면 다른 쪽은 유의하지 않습니다. 이것은 대칭적 식별 문제이며 EMF에 불리한 증거가 아닙니다. 세 가지 구조적 차이가 대칭을 깨뜨립니다: (1) 이진 전화 임계값, (2) 휴대전화 역설, (3) 센티넬 종은 EMF에 반응하지만 GDP에는 반응하지 않음.",
-    s12Limitation: "정직한 평가: R² = 0.851은 주로 인구 전환 기울기(니제르 → 한국)를 반영하며 EMF 고유 분산이 아닙니다. 고소득 OECD 국가(n ≈ 36)에서 전력 소비만으로는 TFR 분산을 거의 설명하지 못합니다(R² ≈ 0.0002). 횡단적 공식은 전기화 임계값 — 전산업사회에서 산업사회로의 이진 관문 — 을 포착하며, 전기화된 집단 내의 용량-반응이 아닙니다. 이로 인해 횡단 분석은 BERM의 가장 약한 독립적 증거선이 됩니다. 더 강한 증거는: (1) 규제 검증된 비열적 효과가 있는 메커니즘 경로, (2) 약리학적 용량-반응(멜라토닌, 테스토스테론), (3) 유전적 선택 마커(CatSper, VGCC), (4) 통제 조건의 센티넬 종에서 옵니다. 횡단 분석의 가치는 구조적입니다: 휴대전화 역설과 전력>GDP 예측은 변별적이며, 집합적 적합이 교란되더라도 의미가 있습니다.",
+    s12Collinearity: "GDP와 기술 프록시는 상관되어(r=0.87) 집계 비교로 각각의 인과 효과를 식별할 수 없습니다. 전력 접근성은 프록시 층이며 생물학적 임계값이 아닙니다. 휴대전화 비교와 감시종 실험에는 사전에 정한 노출·매개·결과 대비가 필요합니다.",
+    s12Limitation: "횡단면 적합은 주로 인구 전환 기울기를 따릅니다. OECD에서 전력 단독과의 보고된 관련성은 거의 0입니다(R²≈0.0002). 전체 적합과 전기화 이분법은 물리적 용량-반응이나 EMF 특이 생물학적 임계값을 식별하지 않습니다. 측정한 국소장과 생물학적 매개가 인구·기술 프록시를 넘어 표본 외 예측 정보를 더하는지 시험합니다.",
     s12DataNote: "재현 데이터: 54개국 표본 명단(관측 TFR, 전력 소비, 브로드밴드 가입, 모델 예측)은 /data/cross_section_manifest.csv에서 이용 가능. 출처: UN WPP 2024(TFR), OWID/IEA(전력), ITU(브로드밴드).",
-    s12Caveat: "횡단적 분석은 인과 방향을 결정할 수 없습니다. 변별적 증거는 센티넬 종, 자연 실험, 전력 없는 집단에서 나옵니다.",
+    s12Caveat: "횡단적 분석은 인과 방향을 결정할 수 없습니다. 변별 검정에는 사전 등록된 자연 실험 또는 센티넬 설계, 직접 선량 측정, 명시적 L0→L2 사상이 필요합니다. 비전기화 분류만으로는 프록시에 불과합니다.",
     s13Title: "중첩 후보 조절인자 (집단 모델)",
     s13Intro: "BERM은 환경·막·광학·분자 조절인자를 별도로 측정하는 집단 폐쇄를 제안합니다. 이 m 함수들은 χ_geo의 인스턴스가 아니며 아래 결합 반응은 미보정 후보입니다:",
     s13PathwayA: "경로 A (VGIC)",
@@ -1780,7 +1780,7 @@ const t = {
       { param: "G_pop (유전자형)", amish: "~1.0", finland: "~1.1", nigeria: "~0.95", desc: "집단 CACNA1C A 대립유전자 유병률" },
     ],
     s14Evolution: "공식 진화: v17 (스칼라 cumEMF, RMSE ~1.15) → v19.1 (2채널, 54개국, RMSE 0.522) → v20 (+ 프라이밍 × 회복, 예측 RMSE < 0.45) → v21 (+ 계절 × 유전자형, 교정 데이터 필요).",
-    s14Level: "인식론적 수준: v20은 M|C (메커니즘 유도, 교정 보류). v21은 L* (제안된 확장, S와 G_pop 교정 데이터 미수집).",
+    s14Level: "구성요소 상태: v20과 v21은 L3 현상론적 시나리오 모델이며 S, G_pop, 적합 가중치의 교정은 미완료입니다. 이 계층은 앞선 L1 기하의 상태를 바꾸지 않고 미해결 L2 사상도 해결하지 않습니다.",
     s15Title: "회복 함수: DNA 수리 시간의 정량화",
     s15Text: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]은 EMF 유도 DNA 가닥 절단이 노출 중단 후 9시간 이내에 정상으로 돌아감을 입증했습니다. 이 데이터에 지수 감쇠 모델을 피팅하면 시간 상수 τ ≈ 3–4시간이 산출됩니다. 이것은 공식 v20의 회복 인자 R에 직접 대응합니다: R = 1 + β × EMF_free_hours, 여기서 [[ref:ivancsits_dna_recovery|Ivancsits 데이터]]는 β ≈ 0.11을 시사합니다.",
     s15TableTime: "노출 후 시간",
@@ -1792,6 +1792,214 @@ const t = {
     // S16 문화 에너지 형식화
     s16title: "문화 에너지 형식화",
     s16body: [] as string[],
+  },
+};
+
+const CANONICAL_COPY = {
+  en: {
+    chainTitle: "Three-element conditional residual map",
+    chainIntro:
+      "The 2025 ansatz is not enough on its own. The Einstein–Hilbert variation, the restricted frozen-principal-part diagnostic, the Weyl-connection branch and the differential-Bianchi branch are separate conditional contracts. Displaying them together is an audit map, not a canonical full Euler–Lagrange derivation.",
+    domainTitle: "Domain and inverse",
+    domainBody:
+      "Every inverse, connection and volume expression requires D ≠ 0. The real Lorentz branch continuously connected to the Minkowski background requires D > 0.",
+    variationTitle: "1. EH variation + restricted harmonic/GME diagnostic",
+    variationBody:
+      "The Einstein–Hilbert variation and the harmonic functional are distinct L0 premises. Freezing the connection, inverse metric and volume density defines only a restricted principal-part diagnostic. It is not the canonical equation of motion and is not equivalent to the full Euler–Lagrange variation; that stronger derivation is not claimed here.",
+    weylTitle: "2. Weyl semimetricity → Weyl connection",
+    weylBody:
+      "This connection is a conditional L1 result from semimetricity and zero torsion. It is not the Levi–Civita connection unless φ = 0; the two connections must never be mixed in one residual.",
+    weylBoundary:
+      "The tangent is U=dx/dλ. For a timelike proper-time parameter λ=τ it must satisfy g(U,U)=−1 (for the displayed −+++ signature); a null curve instead uses an affine λ and g(U,U)=0, with no unit normalization. The optional maps φ=cφU, ρ=−A·U and J=ρU are extra L0/theory identifications, not consequences of semimetricity. A charged-particle interpretation remains L2 open until q/m, charge-sign reversal, the neutral limit and a gauge-independent observable are supplied.",
+    bianchiTitle: "3. F = dA → dF = 0 → homogeneous Maxwell",
+    bianchiBody:
+      "Nilpotence of the exterior derivative gives the homogeneous Maxwell equations as an L1 kinematic identity only. The sourced equation ∇·F = J needs separate dynamics and does not follow from the contracted gravitational Bianchi identity.",
+    sourceBoundary:
+      "Passing a symbolic or numerical residual checks the stated equations and conventions only; it does not establish that the ansatz is a physically correct theory.",
+    chiGeodesic:
+      "Two implemented L1 operators are kept explicit and distinct: the metric-perturbation chain g → h → δΓ̂ → δa for one geodesic, and the Jacobi operator D²ξ/dλ²=−R(U,ξ)U for neighbouring-geodesic separation. The algebraic χ(q)=q/√(1+q²) remains L1. Selecting q=|Ā| is a separate L2 spatial/scalar reduction, and concrete physical normalization or biological identification requires an additional open L0→L2 map.",
+    chiIntro:
+      "In Lorentz signature the invariant L1 result is a signed directional derivative. The χ formula itself is L1; obtaining χ(|Ā|) requires an explicit dimensionless Lorentz-to-Euclidean spatial/scalar reduction, which is an L2 choice.",
+    chiDirectional:
+      "The direction u, contraction metric, κ, gauge and the domain D > 0 are part of the input contract. A positive |A| or Euclidean angle is not available for a general Lorentz four-vector.",
+    chiCausal:
+      "For a timelike background the denominator is √(1−κT²), so the factor diverges at the domain boundary instead of saturating. A null direction cannot be normalized by the same spacelike construction.",
+    chiReduction:
+      "Choose a positive-definite spatial slice, Ā = s e, u = e, e² = +1 and κ > 0. This L2 Lorentz-to-Euclidean/scalar reduction defines the dimensionless magnitude |Ā|:=√κ s; the signed directional derivative then evaluates the always-L1 formula as χ(|Ā|).",
+    chiMapping:
+      "V_mem/d, ambient field measurements, Amish scenarios and claims of maximal biological response are not values of x. Mapping any of them to x or to a biological observable requires an explicit open L0→L2 operator with units, gauge, geometry and uncertainty.",
+    transferTitle: "SAR and Schwan: derived structure, empirical inputs",
+    transferBody:
+      "The SAR form and its normalization are L1; only numerical tissue dielectric/material parameters such as conductivity and density are L3, while the supplied E is not reclassified by the formula. The Schwan form ΔV=1.5rE g(f) is L1; only the numerical value of τ_m is L3. Neither structure closes the Lindgren-to-biology L2 bridge.",
+    proxyTitle: "Timing proxies and DKC",
+    proxyBody:
+      "Ambient infrastructure, personal-device histories and community labels are TECHNOLOGY_TIMING_PROXY inputs, not A, x, physical-field measurements or physical dose. They may enter a declared empirical scenario only.",
+    dkcBody:
+      "The dual-kernel convolution, its two kernels, time constants and mixing weight are L3 phenomenology. Using it after an L1 geometric quantity does not demote that earlier L1 result, and it does not promote DKC to L1.",
+  },
+  fi: {
+    chainTitle: "Kolmen elementin ehdollinen residuaalikartta",
+    chainIntro:
+      "Vuoden 2025 ansatz ei yksin riitä. Einstein–Hilbert-variaatio, rajattu jäädytetyn pääosan diagnostiikka, Weyl-yhteyshaara ja differentiaalinen Bianchi-haara ovat erillisiä ehdollisia sopimuksia. Niiden rinnakkainen esitys on auditointikartta, ei kanoninen täydellinen Euler–Lagrange-johto.",
+    domainTitle: "Domain ja käänteismetriikka",
+    domainBody:
+      "Jokainen käänteismetriikka-, yhteys- ja tilavuuslauseke vaatii D ≠ 0. Minkowski-taustaan jatkuva reaalinen Lorentz-haara vaatii D > 0.",
+    variationTitle: "1. EH-variaatio + rajattu harmoninen/GME-diagnostiikka",
+    variationBody:
+      "Einstein–Hilbert-variaatio ja harmoninen funktionaali ovat erillisiä L0-premissejä. Yhteyden, käänteismetriikan ja tilavuustiheyden jäädyttäminen määrittää vain rajatun pääosadiagnostiikan. Se ei ole kanoninen liikeyhtälö eikä sama asia kuin täydellinen Euler–Lagrange-variaatio; vahvempaa johtoa ei tässä väitetä.",
+    weylTitle: "2. Weyl-semimetrisyys → Weyl-yhteys",
+    weylBody:
+      "Yhteys on ehdollinen L1-tulos semimetrisyydestä ja torsioimattomuudesta. Se ei ole Levi–Civita-yhteys, ellei φ = 0; yhteyksiä ei saa sekoittaa samaan residuaaliin.",
+    weylBoundary:
+      "Tangentti on U=dx/dλ. Aikatyyppisellä ominaisaikaparametrilla λ=τ sen on toteutettava g(U,U)=−1 (näytetyllä −+++ signatuurilla); nollakäyrä käyttää affiinia λ:ta ja g(U,U)=0 ilman yksikkönormalisointia. Valinnaiset kartat φ=cφU, ρ=−A·U ja J=ρU ovat ylimääräisiä L0-/teoriaidentifikaatioita, eivät semimetrisyyden seurauksia. Varatun hiukkasen tulkinta pysyy L2-avoimena, kunnes q/m, varauksen etumerkin vaihto, neutraali raja ja gauge-riippumaton havaittava on annettu.",
+    bianchiTitle: "3. F = dA → dF = 0 → homogeeninen Maxwell",
+    bianchiBody:
+      "Ulkoderivaatan nilpotenssi antaa homogeeniset Maxwell-yhtälöt vain L1-kinemaattisena identiteettinä. Lähteellinen yhtälö ∇·F = J tarvitsee erillisen dynamiikan eikä seuraa kontraktoidusta gravitaation Bianchi-identiteetistä.",
+    sourceBoundary:
+      "Symbolisen tai numeerisen residuaalin läpäisy tarkistaa vain ilmoitetut yhtälöt ja konventiot; se ei osoita ansatzia fysikaalisesti oikeaksi teoriaksi.",
+    chiGeodesic:
+      "Kaksi toteutettua L1-operaattoria pidetään eksplisiittisinä ja erillään: yhden geodeesin metriikkaperturbaatioketju g → h → δΓ̂ → δa sekä naapurigeodeesien Jacobi-operaattori D²ξ/dλ²=−R(U,ξ)U. Algebrallinen χ(q)=q/√(1+q²) pysyy L1:nä. Koordinaatin q=|Ā| valinta on erillinen L2 spatiaalinen/skalaari-reduktio, ja konkreettinen fysikaalinen normalisointi tai biologinen identifikaatio tarvitsee lisäksi avoimen L0→L2-kartan.",
+    chiIntro:
+      "Lorentz-signatuurissa invariantti L1-tulos on etumerkillinen suunnattu derivaatta. χ-kaava itsessään on L1; χ(|Ā|):n saaminen vaatii eksplisiittisen dimensiottoman Lorentz→Euklidisen spatiaalisen/skalaari-reduktion, joka on L2-valinta.",
+    chiDirectional:
+      "Suunta u, kontraktiometriikka, κ, gauge ja domain D > 0 kuuluvat syötesopimukseen. Yleinen Lorentz-nelivektori ei tarjoa positiivista |A|-normia tai euklidista kulmaa.",
+    chiCausal:
+      "Timelike-taustalla nimittäjä on √(1−κT²), joten tekijä divergoi domainin rajalla eikä saturoidu. Null-suuntaa ei voi normalisoida samalla spacelike-konstruktiolla.",
+    chiReduction:
+      "Valitse positiividefiniittinen spatiaalinen leikkaus, Ā = s e, u = e, e² = +1 ja κ > 0. Tämä L2 Lorentz→Euklidinen/spatiaalinen skalaari-reduktio määrittää dimensiottoman itseisarvon |Ā|:=√κ s; suunnattu derivaatta evaluoi sen jälkeen aina-L1-kaavan muodossa χ(|Ā|).",
+    chiMapping:
+      "V_mem/d, ambient-kenttämittaukset, amissiskenaariot ja väitteet biologisesta maksimivasteesta eivät ole x:n arvoja. Niiden kartoitus x:ksi tai biologiseksi havaittavaksi vaatii eksplisiittisen avoimen L0→L2-operaattorin, yksiköt, gaugen, geometrian ja epävarmuuden.",
+    transferTitle: "SAR ja Schwan: johdettu rakenne, empiiriset syötteet",
+    transferBody:
+      "SAR-muoto ja sen normalisointi ovat L1; vain kudoksen dielektristen/materiaaliparametrien, kuten johtavuuden ja tiheyden, numeeriset arvot ovat L3, eikä annettua E:tä luokitella kaavan perusteella uudelleen. Schwanin muoto ΔV=1,5rE g(f) on L1; vain τ_m:n numeerinen arvo on L3. Kumpikaan rakenne ei sulje Lindgren–biologia-L2-siltaa.",
+    proxyTitle: "Ajoitusproxyt ja DKC",
+    proxyBody:
+      "Ambient-infrastruktuuri, henkilökohtaisten laitteiden historiat ja yhteisöluokat ovat TECHNOLOGY_TIMING_PROXY-syötteitä, eivät A, x, fysikaalisia kenttämittauksia tai annosta. Niitä saa käyttää vain nimetyssä empiirisessä skenaariossa.",
+    dkcBody:
+      "Kahden ytimen konvoluutio, sen ytimet, aikavakiot ja sekoituspaino ovat L3-fenomenologiaa. Sen käyttö L1-geometriatuloksen jälkeen ei alenna aiempaa L1-tulosta eikä nosta DKC:tä L1:ksi.",
+  },
+  ja: {
+    chainTitle: "3要素の条件付き残差マップ",
+    chainIntro:
+      "2025年のansatzだけでは十分ではありません。Einstein–Hilbert変分、限定された凍結主部診断、Weyl接続分岐、微分Bianchi分岐は別々の条件付き契約です。併記は監査マップであり、正準的な完全Euler–Lagrange導出ではありません。",
+    domainTitle: "定義域と逆計量",
+    domainBody:
+      "逆計量、接続、体積要素を使う全ての式はD ≠ 0を必要とします。Minkowski背景に連続する実Lorentz分岐ではD > 0が必要です。",
+    variationTitle: "1. EH変分 + 限定調和/GME診断",
+    variationBody:
+      "Einstein–Hilbert変分と調和汎関数は別々のL0前提です。接続・逆計量・体積密度を凍結すると、限定された主部診断だけが定義されます。これは正準運動方程式でも完全Euler–Lagrange変分と同値でもなく、その強い導出は主張しません。",
+    weylTitle: "2. Weyl半計量性 → Weyl接続",
+    weylBody:
+      "この接続は半計量性と無ねじれ性から得られる条件付きL1結果です。φ = 0でない限りLevi–Civita接続とは異なり、同じ残差で両者を混同してはいけません。",
+    weylBoundary:
+      "接ベクトルはU=dx/dλです。時間的固有時λ=τではg(U,U)=−1（表示の−+++符号）、ヌル曲線ではアフィンλとg(U,U)=0を用い、単位規格化はありません。任意の写像φ=cφU、ρ=−A·U、J=ρUは半計量性の帰結ではなく追加のL0・理論同定です。荷電粒子の解釈はq/m、電荷符号反転、中性極限、gauge非依存観測量が与えられるまでL2未解決です。",
+    bianchiTitle: "3. F = dA → dF = 0 → 同次Maxwell",
+    bianchiBody:
+      "外微分の冪零性から得られる同次Maxwell方程式はL1運動学的恒等式に限られます。有源方程式∇·F = Jには別の力学が必要で、縮約された重力Bianchi恒等式からは導かれません。",
+    sourceBoundary:
+      "記号的・数値的残差の合格は、指定した方程式と規約だけを検査します。ansatzが物理的に正しい理論であることを証明しません。",
+    chiGeodesic:
+      "実装された2つのL1演算子を明示して分離します。単一測地線の計量摂動連鎖 g → h → δΓ̂ → δa と、隣接測地線分離のJacobi演算子 D²ξ/dλ²=−R(U,ξ)U です。代数式χ(q)=q/√(1+q²)はL1のままです。q=|Ā|の選択は別のL2空間・スカラー縮約で、具体的な物理正規化や生物同定にはさらに未解決L0→L2写像が必要です。",
+    chiIntro:
+      "Lorentz符号で不変なL1結果は符号付き方向微分です。χ式自体はL1ですが、χ(|Ā|)を得る明示的な無次元Lorentz→Euclid空間・スカラー縮約はL2の選択です。",
+    chiDirectional:
+      "方向u、縮約計量、κ、gauge、定義域D > 0は入力契約の一部です。一般のLorentz 4ベクトルには正の|A|ノルムやEuclid角はありません。",
+    chiCausal:
+      "時間的背景では分母が√(1−κT²)となり、係数は飽和せず定義域境界で発散します。ヌル方向は同じ空間的構成で正規化できません。",
+    chiReduction:
+      "正定値の空間切片Ā=s e、u=e、e²=+1、κ>0を選びます。このL2 Lorentz→Euclid空間・スカラー縮約が無次元量|Ā|:=√κ sを定義し、方向微分は常にL1である式をχ(|Ā|)として評価します。",
+    chiMapping:
+      "V_mem/d、ambient場測定、Amishシナリオ、生物学的最大応答の主張はxの値ではありません。xまたは生物学的観測量への写像には、単位・gauge・幾何・不確かさを持つ明示的で未解決のL0→L2演算子が必要です。",
+    transferTitle: "SARとSchwan：導出された構造と経験的入力",
+    transferBody:
+      "SAR式と正規化はL1であり、導電率・密度など組織の誘電・材料パラメータの数値だけがL3です。与えられたEは式によって再分類されません。Schwan式ΔV=1.5rE g(f)はL1で、L3なのはτ_mの数値だけです。どちらもLindgrenから生物学へのL2橋を閉じません。",
+    proxyTitle: "タイミングproxyとDKC",
+    proxyBody:
+      "ambientインフラ、個人機器の履歴、共同体ラベルはTECHNOLOGY_TIMING_PROXY入力であり、A、x、物理場測定、物理線量ではありません。明示した経験的シナリオでのみ使用できます。",
+    dkcBody:
+      "二重kernel畳み込み、その2つのkernel、時定数、混合重みはL3現象論です。L1幾何量の後で使用しても先行L1結果はL3にならず、DKCもL1にはなりません。",
+  },
+  fr: {
+    chainTitle: "Carte conditionnelle des résidus à trois éléments",
+    chainIntro:
+      "L’ansatz de 2025 ne suffit pas. La variation d’Einstein–Hilbert, le diagnostic restreint à partie principale gelée, la branche de Weyl et la branche différentielle de Bianchi sont des contrats conditionnels distincts. Leur présentation commune est une carte d’audit, non une dérivation canonique Euler–Lagrange complète.",
+    domainTitle: "Domaine et métrique inverse",
+    domainBody:
+      "Toute expression d’inverse, de connexion ou de volume exige D ≠ 0. La branche lorentzienne réelle reliée continûment au fond de Minkowski exige D > 0.",
+    variationTitle: "1. Variation EH + diagnostic harmonique/GME restreint",
+    variationBody:
+      "La variation d’Einstein–Hilbert et la fonctionnelle harmonique sont deux prémisses L0 distinctes. Geler la connexion, la métrique inverse et la densité de volume ne définit qu’un diagnostic restreint de partie principale. Ce n’est ni l’équation canonique du mouvement ni l’équivalent de la variation Euler–Lagrange complète, qui n’est pas revendiquée ici.",
+    weylTitle: "2. Semi-métricité de Weyl → connexion de Weyl",
+    weylBody:
+      "Cette connexion est un résultat L1 conditionnel de la semi-métricité et de l’absence de torsion. Elle n’est pas la connexion de Levi–Civita sauf si φ = 0 ; les deux connexions ne doivent jamais être mélangées dans un même résidu.",
+    weylBoundary:
+      "La tangente est U=dx/dλ. Pour un paramétrage temporel propre λ=τ, elle vérifie g(U,U)=−1 (signature −+++ affichée) ; une courbe nulle emploie un λ affine et g(U,U)=0, sans normalisation unitaire. Les projections φ=cφU, ρ=−A·U et J=ρU sont des identifications L0 supplémentaires, non des conséquences de la semi-métricité. L’interprétation chargée reste ouverte en L2 tant que q/m, l’inversion du signe de charge, la limite neutre et un observable indépendant de la jauge ne sont pas fournis.",
+    bianchiTitle: "3. F = dA → dF = 0 → Maxwell homogène",
+    bianchiBody:
+      "La nilpotence de la dérivée extérieure ne donne les équations homogènes de Maxwell que comme identité cinématique L1. L’équation sourcée ∇·F = J exige une dynamique distincte et ne découle pas de l’identité de Bianchi gravitationnelle contractée.",
+    sourceBoundary:
+      "La réussite d’un résidu symbolique ou numérique ne vérifie que les équations et conventions déclarées ; elle n’établit pas que l’ansatz est une théorie physiquement correcte.",
+    chiGeodesic:
+      "Deux opérateurs L1 implémentés restent explicites et distincts : la chaîne de perturbation métrique g → h → δΓ̂ → δa pour une géodésique, et l’opérateur de Jacobi D²ξ/dλ²=−R(U,ξ)U pour la séparation de géodésiques voisines. La formule algébrique χ(q)=q/√(1+q²) reste L1. Choisir q=|Ā| est une réduction spatiale/scalarie L2 distincte ; toute normalisation physique ou identification biologique concrète exige en plus une projection L0→L2 ouverte.",
+    chiIntro:
+      "En signature lorentzienne, le résultat invariant L1 est une dérivée directionnelle signée. La formule χ elle-même est L1 ; obtenir χ(|Ā|) exige une réduction spatiale/scalarie sans dimension de Lorentz vers Euclide, qui est un choix L2.",
+    chiDirectional:
+      "La direction u, la métrique de contraction, κ, la jauge et le domaine D > 0 font partie du contrat d’entrée. Un quadrivecteur lorentzien général n’a ni norme positive |A| ni angle euclidien.",
+    chiCausal:
+      "Pour un fond temporel, le dénominateur vaut √(1−κT²) : le facteur diverge à la frontière du domaine au lieu de saturer. Une direction nulle ne se normalise pas par la même construction spatiale.",
+    chiReduction:
+      "Choisir une tranche spatiale définie positive, Ā=s e, u=e, e²=+1 et κ>0. Cette réduction L2 de Lorentz vers un scalaire euclidien définit la norme sans dimension |Ā|:=√κ s ; la dérivée directionnelle évalue alors la formule toujours L1 sous la forme χ(|Ā|).",
+    chiMapping:
+      "V_mem/d, les mesures de champ ambiant, les scénarios Amish et les affirmations de réponse biologique maximale ne sont pas des valeurs de x. Leur projection vers x ou un observable biologique exige un opérateur L0→L2 explicite et ouvert, avec unités, jauge, géométrie et incertitude.",
+    transferTitle: "SAR et Schwan : structure dérivée, entrées empiriques",
+    transferBody:
+      "La forme SAR et sa normalisation sont L1 ; seules les valeurs numériques des paramètres diélectriques/matériaux tissulaires, comme conductivité et densité, sont L3, et le E fourni n’est pas requalifié par la formule. La forme de Schwan ΔV=1,5rE g(f) est L1 ; seule la valeur numérique de τ_m est L3. Aucune ne ferme le pont L2 vers la biologie.",
+    proxyTitle: "Proxys temporels et DKC",
+    proxyBody:
+      "Les infrastructures ambiantes, les historiques d’appareils personnels et les catégories communautaires sont des entrées TECHNOLOGY_TIMING_PROXY, pas A, x, des mesures de champ physique ni une dose physique. Ils ne peuvent entrer que dans un scénario empirique déclaré.",
+    dkcBody:
+      "La convolution à deux noyaux, ses noyaux, ses constantes de temps et son poids de mélange relèvent de la phénoménologie L3. Son emploi après une quantité géométrique L1 ne dégrade pas ce résultat L1 antérieur et ne promeut pas DKC en L1.",
+  },
+  ko: {
+    chainTitle: "3요소 조건부 잔차 지도",
+    chainIntro:
+      "2025년 ansatz만으로는 충분하지 않습니다. Einstein–Hilbert 변분, 제한된 동결 주부분 진단, Weyl 연결 분기, 미분 Bianchi 분기는 별도의 조건부 계약입니다. 함께 표시한 것은 감사 지도이지 정준적 완전 Euler–Lagrange 유도가 아닙니다.",
+    domainTitle: "정의역과 역계량",
+    domainBody:
+      "역계량, 연결, 부피 표현은 모두 D ≠ 0을 요구합니다. Minkowski 배경에 연속적으로 이어지는 실 Lorentz 분기는 D > 0을 요구합니다.",
+    variationTitle: "1. EH 변분 + 제한된 조화/GME 진단",
+    variationBody:
+      "Einstein–Hilbert 변분과 조화 함수는 서로 다른 L0 전제입니다. 연결·역계량·부피밀도를 동결하면 제한된 주부분 진단만 정의됩니다. 이는 정준 운동방정식이나 완전 Euler–Lagrange 변분과 동등하지 않으며, 그 강한 유도는 여기서 주장하지 않습니다.",
+    weylTitle: "2. Weyl 반계량성 → Weyl 연결",
+    weylBody:
+      "이 연결은 반계량성과 무비틀림에서 나오는 조건부 L1 결과입니다. φ = 0이 아니면 Levi–Civita 연결과 다르며, 하나의 잔차에서 두 연결을 섞어서는 안 됩니다.",
+    weylBoundary:
+      "접벡터는 U=dx/dλ입니다. 시간꼴 고유시간 λ=τ에서는 g(U,U)=−1(표시된 −+++ 부호수)을 만족해야 하며, 영곡선은 단위 정규화 없이 affine λ와 g(U,U)=0을 사용합니다. 선택적 사상 φ=cφU, ρ=−A·U, J=ρU는 반계량성의 결과가 아니라 추가 L0·이론 식별입니다. 하전 입자 해석은 q/m, 하전 부호 역전, 중성 극한, gauge 독립 관측량이 제공될 때까지 L2 미해결로 남습니다.",
+    bianchiTitle: "3. F = dA → dF = 0 → 동차 Maxwell",
+    bianchiBody:
+      "외미분의 멱영성이 주는 동차 Maxwell 방정식은 L1 운동학적 항등식에 한정됩니다. 유원 방정식 ∇·F = J에는 별도 동역학이 필요하며 축약된 중력 Bianchi 항등식에서 나오지 않습니다.",
+    sourceBoundary:
+      "기호 또는 수치 잔차의 통과는 명시된 방정식과 규약만 검사합니다. ansatz가 물리적으로 올바른 이론임을 입증하지 않습니다.",
+    chiGeodesic:
+      "구현된 두 L1 연산자를 명시적으로 구분합니다. 하나는 단일 측지선의 계량 섭동 연쇄 g → h → δΓ̂ → δa이고, 다른 하나는 이웃 측지선 분리를 위한 Jacobi 연산자 D²ξ/dλ²=−R(U,ξ)U입니다. 대수식 χ(q)=q/√(1+q²)는 L1으로 남습니다. q=|Ā|의 선택은 별도 L2 공간·스칼라 축약이며 구체적 물리 정규화나 생물학적 식별에는 추가로 열린 L0→L2 사상이 필요합니다.",
+    chiIntro:
+      "Lorentz 부호수에서 불변 L1 결과는 부호 있는 방향미분입니다. χ 공식 자체는 L1이며, χ(|Ā|)를 얻는 명시적 무차원 Lorentz→Euclid 공간·스칼라 축약은 L2 선택입니다.",
+    chiDirectional:
+      "방향 u, 축약 계량, κ, gauge, 정의역 D > 0은 입력 계약의 일부입니다. 일반 Lorentz 4-벡터에는 양의 |A| 노름이나 Euclid 각이 없습니다.",
+    chiCausal:
+      "시간꼴 배경에서 분모는 √(1−κT²)이므로 인자는 포화하지 않고 정의역 경계에서 발산합니다. 영벡터 방향은 같은 공간꼴 구성으로 정규화할 수 없습니다.",
+    chiReduction:
+      "양의 정부호 공간 절편 Ā=s e, u=e, e²=+1, κ>0을 택합니다. 이 L2 Lorentz→Euclid 공간·스칼라 축약은 무차원 크기 |Ā|:=√κ s를 정의하며, 방향미분은 항상 L1인 공식을 χ(|Ā|)로 평가합니다.",
+    chiMapping:
+      "V_mem/d, ambient 장 측정, Amish 시나리오, 생물학적 최대 반응 주장은 x의 값이 아닙니다. x 또는 생물학적 관측량으로의 사상에는 단위, gauge, 기하, 불확실성을 갖춘 명시적 미해결 L0→L2 연산자가 필요합니다.",
+    transferTitle: "SAR와 Schwan: 유도된 구조와 경험적 입력",
+    transferBody:
+      "SAR 식과 정규화는 L1이며 전도도·밀도 같은 조직 유전·물질 매개변수의 수치만 L3입니다. 주어진 E는 공식 때문에 재분류되지 않습니다. Schwan 식 ΔV=1.5rE g(f)는 L1이며 τ_m의 수치만 L3입니다. 어느 구조도 Lindgren에서 생물학으로 가는 L2 다리를 닫지 않습니다.",
+    proxyTitle: "타이밍 proxy와 DKC",
+    proxyBody:
+      "ambient 인프라, 개인 기기 이력, 공동체 라벨은 TECHNOLOGY_TIMING_PROXY 입력이며 A, x, 물리적 장 측정 또는 선량이 아닙니다. 명시된 경험적 시나리오에서만 사용할 수 있습니다.",
+    dkcBody:
+      "이중 kernel 합성곱, 두 kernel, 시간상수, 혼합 가중치는 L3 현상론입니다. L1 기하량 뒤에 사용해도 앞선 L1 결과는 L3로 낮아지지 않으며 DKC도 L1로 승격되지 않습니다.",
   },
 };
 
@@ -1862,6 +2070,7 @@ const COUNTRY_NAMES: Record<string, Record<string, string>> = {
 
 export function MathematicsSections({ locale }: { locale: string }) {
   const d = pickCopy(t, locale);
+  const canonical = pickCopy(CANONICAL_COPY, locale);
   const WHERE = pickCopy({ en: "where ", fi: "missä ", ja: "ここで ", fr: "où ", ko: "여기서 " }, locale);
   const lp = `/${locale}`;
   const referenceText = (text: string) => (
@@ -1930,34 +2139,108 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {referenceText(d.s1Intro)}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + \kappa \, A_\mu A_\nu" />
+              <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + \kappa A_\mu A_\nu" />
             </div>
             <p className="text-foreground-muted text-sm leading-relaxed">
               {d.s1After}
             </p>
 
-            <Derivation>
-              <DerivationLine>{d.s1d1}</DerivationLine>
-              <div className="text-center my-2">
-                <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu} \quad \text{(linearized gravity)}" />
+            <Derivation label={canonical.chainTitle}>
+              <DerivationLine>{canonical.chainIntro}</DerivationLine>
+
+              <div className="mt-4 rounded border border-card-border p-3">
+                <h3 className="text-sm font-semibold mb-2">{canonical.domainTitle}</h3>
+                <div className="text-center my-2">
+                  <MathBlock tex="A^2 := \eta^{\mu\nu}A_\mu A_\nu, \quad D(A):=1+\kappa A^2" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\det g=(\det\eta)D(A), \quad g^{\mu\nu}=\eta^{\mu\nu}-\frac{\kappa A^\mu A^\nu}{D(A)}" />
+                </div>
+                <DerivationLine>{canonical.domainBody}</DerivationLine>
               </div>
-              <DerivationLine>{d.s1d2}</DerivationLine>
-              <div className="text-center my-2">
-                <MathBlock tex="g_{\mu\nu} = \eta_{\mu\nu} + \kappa \, A_\mu A_\nu" />
+
+              <div className="mt-4 rounded border border-card-border p-3">
+                <h3 className="text-sm font-semibold mb-2">{canonical.variationTitle}</h3>
+                <div className="text-center my-2">
+                  <MathBlock tex="S_{\mathrm{EH}}[A]=\int_\Omega\sqrt{-\det g(A)}\,R_{\mathrm{LC}}[g(A)]\,d^4x" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal R_A^{\mathrm{EL},\lambda}:=\frac{\delta S_{\mathrm{EH}}}{\delta A_\lambda}=-2\kappa\sqrt{-g}\,G_{\mathrm{LC}}^{\lambda\nu}A_\nu=0, \quad G_{\mathrm{LC}}^{\lambda\nu}:=g^{\lambda\alpha}g^{\nu\beta}G^{\mathrm{LC}}_{\alpha\beta}" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal S_H[g,\widetilde\nabla]=\int_\Omega (\widetilde\nabla^\sigma g^{\mu\nu})(\widetilde\nabla_\sigma g_{\mu\nu})\sqrt{|\det g|}\,d^4x \quad [\mathrm{L0\ candidate\ functional}]" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal D_{\mathrm{FPP}}[T]:=\widetilde\nabla_\sigma(g^{\sigma\rho}\widetilde\nabla_\rho T), \quad \mathrm{connection},\ g^{-1},\ \sqrt{|g|}\ \mathrm{held\ fixed}" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal D^H_{\mu\nu}:=\mathcal D_{\mathrm{FPP}}[g_{\mu\nu}] \quad [\mathrm{restricted\ diagnostic},\ \mathrm{not}\ \delta\mathcal S_H/\delta g]" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal D^H_{\mu\nu}=\mathcal D_{\mathrm{FPP}}[\eta_{\mu\nu}]+\kappa\mathcal R^{\mathrm{GME}}_{\mu\nu}, \quad \mathcal D^H=0\ \wedge\ \mathcal D_{\mathrm{FPP}}[\eta]=0 \Longrightarrow \mathcal R^{\mathrm{GME}}=0\ [\mathrm{diagnostic\ only}]" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal R^{\mathrm{GME}}_{\mu\nu}:=(\widetilde\nabla_\sigma A_\mu)(\widetilde\nabla^\sigma A_\nu)+(\widetilde\nabla_\sigma A_\nu)(\widetilde\nabla^\sigma A_\mu)+A_\mu\mathcal D_{\mathrm{FPP}}[A_\nu]+A_\nu\mathcal D_{\mathrm{FPP}}[A_\mu]" />
+                </div>
+                <DerivationLine>{canonical.variationBody}</DerivationLine>
               </div>
-              <DerivationLine>{d.s1d3}</DerivationLine>
-              <DerivationLine>{d.s1d4}</DerivationLine>
-              <div className="text-center my-2">
-                <MathBlock tex="\nabla_\mu F^{\mu\nu} = 0 \quad \text{follows from} \quad \nabla_\mu G^{\mu\nu} = 0" />
+
+              <div className="mt-4 rounded border border-card-border p-3">
+                <h3 className="text-sm font-semibold mb-2">{canonical.weylTitle}</h3>
+                <div className="text-center my-2">
+                  <MathBlock tex="\nabla^{\mathrm{LC}}_\sigma g_{\mu\nu}=0, \quad \Gamma^{\mathrm{LC}}=\Gamma^{\mathrm{LC}}[g] \qquad (\mathrm{Levi\text{-}Civita\ branch})" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\widetilde\nabla_\sigma g_{\mu\nu}=2\varphi_\sigma g_{\mu\nu}, \quad \widetilde T^\lambda{}_{\mu\nu}=0 \qquad (\mathrm{Weyl\ branch})" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\widetilde\Gamma^\lambda{}_{\mu\nu}=\left\{\begin{matrix}\lambda\\\mu\nu\end{matrix}\right\}_g-\delta^\lambda_\mu\varphi_\nu-\delta^\lambda_\nu\varphi_\mu+g_{\mu\nu}\varphi^\lambda" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\Gamma^{\mathrm{LC}\,\lambda}{}_{\mu\nu}=\frac12g^{\lambda\sigma}(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}), \quad \widetilde\Gamma\neq\Gamma^{\mathrm{LC}}\;(\varphi\neq0)" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\partial_0A_\mu=0,\ A_i=0 \Longrightarrow \Gamma^{\mathrm{LC}\,i}{}_{00}=-\kappa g^{ij}A_0\partial_jA_0" />
+                </div>
+                <DerivationLine>{canonical.weylBody}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="U^\mu:=\frac{dx^\mu}{d\lambda}, \quad g_{\mu\nu}U^\mu U^\nu=-1\ (\lambda=\tau,\ \mathrm{timelike}), \quad g(U,U)=0\ (\lambda\ \mathrm{affine},\ \mathrm{null})" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\varphi^\mu:=g^{\mu\nu}\varphi_\nu, \quad \varphi^\mu\stackrel{\mathrm{L0}?}{=}c_\varphi U^\mu, \quad \rho\stackrel{\mathrm{theory}?}{=}-A_\mu U^\mu, \quad J^\mu\stackrel{\mathrm{current\ map}?}{=}\rho U^\mu" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="U^\nu\nabla^{\mathrm{LC}}_\nu U^\mu=\frac qm F^\mu{}_{\nu\,(g)}U^\nu, \quad \mathrm{GEODESIC\_TO\_CHARGED\_PARTICLE\_MAP}=\mathrm{L2\_OPEN}" />
+                </div>
+                <DerivationLine>{canonical.weylBoundary}</DerivationLine>
               </div>
-              <DerivationLine>{referenceText(d.s1d5)}</DerivationLine>
-              <div className="mt-4 p-3 rounded border border-accent/20 bg-card-bg">
-                <DerivationLine>{d.s1d6}</DerivationLine>
-                <DerivationLine>{referenceText(d.s1d6a)}</DerivationLine>
-                <DerivationLine>{referenceText(d.s1d6b)}</DerivationLine>
-                <DerivationLine>{d.s1d6c}</DerivationLine>
+
+              <div className="mt-4 rounded border border-card-border p-3">
+                <h3 className="text-sm font-semibold mb-2">{canonical.bianchiTitle}</h3>
+                <div className="text-center my-2">
+                  <MathBlock tex="F:=dA \quad\Longrightarrow\quad dF=d^2A=0 \quad\Longleftrightarrow\quad \nabla^{\mathrm{LC}}_\mu({}^{\star_g}F)^{\mu\nu}=0" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="F^{\mu\nu}_{(g)}:=g^{\mu\alpha}g^{\nu\beta}F_{\alpha\beta}; \quad F^{\mu\nu}_{(\eta)}:=\eta^{\mu\alpha}\eta^{\nu\beta}F_{\alpha\beta}\ \mathrm{only\ if}\ g^{-1}\approx\eta^{-1}\ \mathrm{is\ declared}" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="\mathcal R_{\mathrm{src}}^\nu:=\nabla^{\mathrm{LC}}_\mu F^{\mu\nu}_{(g)}-J^\nu \stackrel{\mathrm{dynamics}}{=}0" />
+                </div>
+                <DerivationLine>{canonical.bianchiBody}</DerivationLine>
+              </div>
+
+              <div className="mt-4 rounded border border-status-partial/30 bg-status-partial/5 p-3">
+                <DerivationLine>{canonical.sourceBoundary}</DerivationLine>
               </div>
             </Derivation>
+
+            <div className="mt-4 p-3 rounded border border-accent/20 bg-card-bg">
+              <DerivationLine>{referenceText(d.s1d5)}</DerivationLine>
+              <DerivationLine>{d.s1d6}</DerivationLine>
+              <DerivationLine>{referenceText(d.s1d6a)}</DerivationLine>
+              <DerivationLine>{referenceText(d.s1d6b)}</DerivationLine>
+              <DerivationLine>{d.s1d6c}</DerivationLine>
+            </div>
           </section>
 
           {/* S1b Evolutionary Calibration */}
@@ -1989,15 +2272,66 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {d.s2Title}
             </h2>
             <p className="text-foreground-muted text-sm leading-relaxed mb-4">
-              {d.s2Intro} {d.s2IntroEnd}
+              {canonical.chiIntro}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="\chi_{\mathrm{geo}}(\rho) = \frac{\rho}{\sqrt{1+\rho^2}},\qquad \rho^2=\kappa A^2\ge0" />
+              <MathBlock tex="D_u\sqrt{-\det g}\big|_{\bar A}=\frac{\kappa\,\eta^{\mu\nu}\bar A_\mu u_\nu}{\sqrt{1+\kappa\bar A^2}}" />
             </div>
             <p className="text-foreground-muted text-sm leading-relaxed">
-              {d.s2After}
+              {canonical.chiDirectional}
             </p>
 
+            <Derivation>
+              <DerivationLine>{canonical.chiGeodesic}</DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="h_{\mu\nu}:=\left.\frac{d g_{\mu\nu}}{d\varepsilon}\right|_0=\kappa(\bar A_\mu a_\nu+a_\mu\bar A_\nu)" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\delta\Gamma^{\mathrm{LC}\,\lambda}{}_{\mu\nu}=\frac12\bar g^{\lambda\sigma}(\bar\nabla^{\mathrm{LC}}_\mu h_{\nu\sigma}+\bar\nabla^{\mathrm{LC}}_\nu h_{\mu\sigma}-\bar\nabla^{\mathrm{LC}}_\sigma h_{\mu\nu}), \quad \delta\widetilde\Gamma=\delta\Gamma^{\mathrm{LC}}+\delta C^{\mathrm{Weyl}}, \quad \delta a^\lambda=-\delta\widetilde\Gamma^\lambda{}_{\mu\nu}U^\mu U^\nu" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="g\longrightarrow h\longrightarrow\delta\widehat\Gamma\longrightarrow\delta a \quad [\mathrm{L1}]" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\frac{D^2\xi^\lambda}{d\lambda^2}=-R^\lambda{}_{\mu\nu\rho}U^\mu\xi^\nu U^\rho \quad [\mathrm{L1\ Jacobi\ operator}]" />
+              </div>
+              <DerivationLine>{canonical.chiIntro}</DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="A_\mu=\bar A_\mu+\varepsilon a_\mu, \quad \bar g_{\mu\nu}=\eta_{\mu\nu}+\kappa\bar A_\mu\bar A_\nu" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="g_{\mu\nu}=\bar g_{\mu\nu}+\varepsilon\kappa(\bar A_\mu a_\nu+a_\mu\bar A_\nu)+\varepsilon^2\kappa a_\mu a_\nu" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\sqrt{-\det g(A)}=\sqrt{1+\kappa A^2}, \quad D(A)>0, \quad \det\eta=-1" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="D_u\sqrt{-\det g}\big|_{\bar A}=\left.\frac{d}{d\varepsilon}\sqrt{1+\kappa(\bar A+\varepsilon u)^2}\right|_{\varepsilon=0}=\frac{\kappa(\bar A\cdot u)}{\sqrt{1+\kappa\bar A^2}}" />
+              </div>
+              <DerivationLine>{canonical.chiDirectional}</DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="\bar A_\mu=Tt_\mu, \quad t^2=-1 \Longrightarrow D=1-\kappa T^2>0, \quad D_t\sqrt{-\det g}=-\frac{\kappa T}{\sqrt{1-\kappa T^2}}" />
+              </div>
+              <DerivationLine>{canonical.chiCausal}</DerivationLine>
+
+              <DerivationLine>{canonical.chiReduction}</DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="\bar A_\mu=s e_\mu, \quad u_\mu=e_\mu, \quad e^2=+1, \quad |\bar{\mathcal A}|:=\sqrt\kappa\,s \quad [\mathrm{L2\ spatial/scalar\ reduction}]" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\chi(q):=\frac{q}{\sqrt{1+q^2}}\quad[\mathrm{L1}], \qquad \frac{1}{\sqrt\kappa}D_e\sqrt{-\det g}=\chi(|\bar{\mathcal A}|)" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\chi(0)=0, \quad \lim_{x\to+\infty}\chi(x)=1, \quad \chi'(x)=\frac{1}{(1+x^2)^{3/2}}" />
+              </div>
+
+              <div className="mt-4 rounded border border-status-partial/30 bg-status-partial/5 p-3">
+                <div className="text-center my-2">
+                  <MathBlock tex="\left\{V_{\mathrm{mem}}/d,\ E_{\mathrm{ambient}},\ S_{\mathrm{technology}}\right\}\xrightarrow{\;C_{\mathrm{L0}\to\mathrm{L2}}\;?}x\xrightarrow{\;\chi\;}\mathcal O" />
+                </div>
+                <DerivationLine>{canonical.chiMapping}</DerivationLine>
+              </div>
+            </Derivation>
             <Derivation>
               <DerivationLine>{d.s2d1}</DerivationLine>
               <div className="text-center my-2">
@@ -2189,6 +2523,19 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
                 <p className="text-xs text-foreground-muted">{d.s2bFRPM}</p>
               </div>
+            </div>
+
+            <div className="mb-6 rounded-lg border border-card-border p-4">
+              <h3 className="text-sm font-semibold mb-2">{canonical.transferTitle}</h3>
+              <div className="text-center my-2">
+                <MathBlock tex="\mathrm{SAR}_{\mathrm{norm}}(E;\sigma,\rho)=\frac{\sigma|E|^2}{\rho}\ [\mathrm{L1}], \quad \mathrm{numeric}(\sigma,\rho)\in L3, \quad E\ \mathrm{supplied}" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\Delta V_{\mathrm{mem}}(f)=\frac{3}{2}rE_{\mathrm{ext}}g(f)\ [\mathrm{L1}], \quad g(f)=\frac{1}{\sqrt{1+(2\pi f\tau_m)^2}}, \quad \mathrm{numeric}(\tau_m)\in L3" />
+              </div>
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {canonical.transferBody}
+              </p>
             </div>
 
             {/* Frequency Spectrum Diagram */}
@@ -2396,6 +2743,24 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 {d.s3ifoAfter}
               </p>
             </div>
+            <div className="mt-6 rounded-lg border border-card-border p-4">
+              <h3 className="text-sm font-semibold mb-3">{canonical.proxyTitle}</h3>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {canonical.proxyBody}
+            </p>
+            <div className="text-center my-4">
+              <MathBlock tex="P_{\mathrm{tech}}^{\mathrm{PROXY,L3}}(y)=P_{\mathrm{ambient}}(y)+w_pP_{\mathrm{personal}}(y)" />
+            </div>
+            <div className="text-center my-4">
+              <MathBlock tex="k_j(s)=\tau_j^{-1}e^{-s/\tau_j}\mathbf 1_{s\geq0}, \quad \tau_R>\tau_B>0, \quad \beta:=1-\alpha, \quad 0\leq\alpha\leq1" />
+            </div>
+            <div className="text-center my-4">
+              <MathBlock tex="X_{\mathrm{DKC}}(t)=\alpha(k_B\ast P_{\mathrm{tech}})(t)+(1-\alpha)(k_R\ast P_{\mathrm{tech}})(t), \quad [\mathrm{L3}]" />
+            </div>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {canonical.dkcBody}
+            </p>
+            </div>
           </section>
 
           {/* S4 Biological capacity */}
@@ -2468,7 +2833,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <MathBlock tex="T_{\mathrm{tot}}=T_f+B_{\mathrm{SHBG}}\frac{T_f}{K_{\mathrm{SHBG}}+T_f}+B_{\mathrm{Alb}}\frac{T_f}{K_{\mathrm{Alb}}+T_f}" />
               </div>
               <DerivationLine>
-                {pickCopy({ en: "Each receptor route retains ligand occupancy, receptor abundance and downstream transmission:", fi: "Jokainen reseptorireitti säilyttää ligandin miehityksen, reseptorimäärän ja alavirran välityksen:", ja: "各受容体経路はリガンド占有・受容体量・下流伝達を保持します：", fr: "Chaque voie conserve occupation, abondance du récepteur et transmission aval :", ko: "각 수용체 경로는 리간드 점유, 수용체 양, 하류 전달을 유지합니다:" }, locale)}
+                {pickCopy({ en: "Each receptor route retains ligand occupancy, receptor abundance and downstream transmission. Here T_f is the free ligand in that receptor’s compartment. A separate transport relation maps serum to intratesticular availability; w_r and G_r are supplied endpoint parameters:", fi: "Jokainen reseptorireitti säilyttää ligandin miehityksen, reseptorimäärän ja alavirran välityksen. Tässä T_f on vapaa ligandi kyseisen reseptorin kompartimentissa. Seerumin ja intratestikulaarisen saatavuuden yhdistää erillinen kuljetussuhde; w_r ja G_r ovat annettuja päätepisteparametreja:", ja: "各受容体経路はリガンド占有・受容体量・下流伝達を保持します。T_fは当該受容体区画の遊離リガンドです。血清から精巣内利用可能性への写像には別の輸送関係が必要で、w_rとG_rは与えられたエンドポイントパラメータです：", fr: "Chaque voie conserve occupation, abondance du récepteur et transmission aval. T_f est le ligand libre du compartiment concerné. Une relation de transport distincte relie sérum et disponibilité intratesticulaire; w_r et G_r sont des paramètres d’endpoint fournis :", ko: "각 수용체 경로는 리간드 점유, 수용체 양, 하류 전달을 유지합니다. T_f는 해당 수용체 구획의 유리 리간드입니다. 혈청과 고환내 가용성은 별도 수송 관계로 연결하며 w_r과 G_r은 주어진 종점 매개변수입니다:" }, locale)}
               </DerivationLine>
               <div className="text-center my-2">
                 <MathBlock tex="S_r=R_r\frac{T_f}{K_{d,r}+T_f}G_r,\qquad \mathrm{AEC}=\frac{\sum_r w_rS_r}{\sum_r w_r},\quad r\in\{\mathrm{AR},\mathrm{ZIP9},\ldots\}" />
@@ -2720,13 +3085,13 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <DerivationLine>{referenceText(d.s5bd1)}</DerivationLine>
               <DerivationLine>{d.s5bd2}</DerivationLine>
               <div className="text-center my-3">
-                <MathBlock tex="\begin{aligned} \text{GBM (18 µm)} &: 200\;\text{kHz} \\ \text{Pancreas (15 µm)} &: 150\;\text{kHz} \\ \text{Breast (20 µm)} &: 120\;\text{kHz} \\ \text{Melanoma (25 µm)} &: 100\;\text{kHz} \end{aligned}" />
+                <MathBlock tex="\begin{aligned} \text{GBM (18 }\mu\text{m)} &: 200\;\text{kHz} \\ \text{Pancreas (15 }\mu\text{m)} &: 150\;\text{kHz} \\ \text{Breast (20 }\mu\text{m)} &: 120\;\text{kHz} \\ \text{Melanoma (25 }\mu\text{m)} &: 100\;\text{kHz} \end{aligned}" />
               </div>
               <div className="mt-3">
                 <DerivationLine>{d.s5bd3}</DerivationLine>
                 <DerivationLine>{d.s5bd4}</DerivationLine>
                 <div className="text-center my-3">
-                  <MathBlock tex="\begin{aligned} \text{Spermatogonia (12 µm)} &: f_{opt} \approx 310\;\text{kHz} \\ \text{Intestinal epi (10 µm)} &: f_{opt} \approx 370\;\text{kHz} \\ \text{Oocyte (120 µm)} &: f_{opt} \approx 31\;\text{kHz} \end{aligned}" />
+                  <MathBlock tex="\begin{aligned} \text{Spermatogonia (12 }\mu\text{m)} &: f_{opt} \approx 310\;\text{kHz} \\ \text{Intestinal epi (10 }\mu\text{m)} &: f_{opt} \approx 370\;\text{kHz} \\ \text{Oocyte (120 }\mu\text{m)} &: f_{opt} \approx 31\;\text{kHz} \end{aligned}" />
                 </div>
               </div>
               <div className="mt-3">

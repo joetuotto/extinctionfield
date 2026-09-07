@@ -106,7 +106,7 @@ const COPY = {
       "chi_barrier amplifies with cumulative exposure — each cycle of BTB weakening + testosterone decline makes the next cycle worse",
     ],
     s5p2:
-      "The positive feedback structure means that the testes chi does not reach a steady state — it increases with cumulative exposure duration. This predicts that testicular EMF effects should be progressive and irreversible beyond a certain exposure threshold, consistent with the age-dependent fertility decline observed in epidemiological data.",
+      "The two attacks form a loop with mutual gain, and the modulome now writes that loop out rather than reading irreversibility off it. With x a barrier disturbance and y a hormonal disturbance, ẋ = au + by − r_x x and ẏ = cu + dx − r_y y: the equilibrium is stable while the round-trip gain stays below the product of the recovery rates, bd < r_x r_y. Positive feedback on its own therefore does not make the effect irreversible; a stable loop returns to baseline once the drive stops. The testable question is whether chronic exposure moves the gain-to-recovery ratio toward the boundary, and near the boundary recovery slows before any large change in the endpoint.",
 
     /* 06 Predictions */
     s6Title: "Predictions",
@@ -255,7 +255,7 @@ const COPY = {
       "chi_barrier vahvistuu kumulatiivisen altistuksen myötä — jokainen BTB:n heikkenemisen + testosteronin laskun kierros tekee seuraavasta kierroksesta pahemman",
     ],
     s5p2:
-      "Positiivinen takaisinkytkentärakenne tarkoittaa, että kivesten chi ei saavuta tasapainotilaa — se kasvaa kumulatiivisen altistuksen keston myötä. Tämä ennustaa, että kivesten EMF-vaikutusten tulisi olla progressiivisia ja peruuttamattomia tietyn altistuskynnyksen jälkeen, yhdenmukainen epidemiologisissa tiedoissa havaitun ikäriippuvaisen hedelmällisyyden laskun kanssa.",
+      "Kaksi hyökkäyslinjaa muodostavat silmukan, jossa on keskinäinen vahvistus, ja moduloomi kirjoittaa silmukan nyt auki sen sijaan, että lukisi siitä peruuttamattomuuden. Kun x on estehäiriö ja y hormonaalinen häiriö, ẋ = au + by − r_x x ja ẏ = cu + dx − r_y y: tasapaino on vakaa niin kauan kuin kiertovahvistus pysyy alle palautumisnopeuksien tulon, bd < r_x r_y. Pelkkä positiivinen palaute ei siis tee vaikutuksesta peruuttamatonta; vakaa silmukka palaa lähtötasolle, kun ajo loppuu. Testattava kysymys on, siirtääkö krooninen altistus vahvistuksen ja palautumisen suhdetta kohti rajaa, ja lähellä rajaa palautuminen hidastuu ennen suurta muutosta päätepisteessä.",
 
     s6Title: "Ennusteet",
     s6Predictions: [
@@ -403,7 +403,7 @@ const COPY = {
       "chi_barrier は累積曝露とともに増幅 — BTB弱化 + テストステロン低下の各サイクルが次のサイクルを悪化させる",
     ],
     s5p2:
-      "正のフィードバック構造は精巣の chi が定常状態に達しないことを意味する — 累積曝露期間とともに増加する。これは精巣EMF効果が進行性であり、一定の曝露閾値を超えると不可逆的であることを予測し、疫学データで観察される年齢依存的生殖能力低下と一致する。",
+      "二つの攻撃は相互利得をもつループを形成する。モジュロームはそこから不可逆性を読み取るのではなく、ループを明示的に書き下す。xを障壁の乱れ、yをホルモンの乱れとすると、ẋ = au + by − r_x x、ẏ = cu + dx − r_y y であり、平衡は往復利得が回復速度の積を下回る限り安定である（bd < r_x r_y）。したがって正のフィードバックだけでは効果は不可逆にならない。安定なループは駆動が止まれば基線に戻る。検証すべき問いは、慢性曝露が利得と回復の比を境界へ動かすかどうかであり、境界の近くではエンドポイントの大きな変化に先立って回復が遅くなる。",
 
     s6Title: "予測",
     s6Predictions: [
@@ -549,7 +549,7 @@ const COPY = {
       "chi_barrier s'amplifie avec l'exposition cumulative — chaque cycle d'affaiblissement de la BTB + baisse de testosterone aggrave le cycle suivant",
     ],
     s5p2:
-      "La structure de retroaction positive signifie que le chi testiculaire n'atteint pas un etat stable — il augmente avec la duree d'exposition cumulative. Cela predit que les effets EMF testiculaires devraient etre progressifs et irreversibles au-dela d'un certain seuil d'exposition, coherent avec le declin de la fertilite dependant de l'age observe dans les donnees epidemiologiques.",
+      "Les deux attaques forment une boucle à gain mutuel, et le modulome écrit désormais cette boucle au lieu d'y lire une irréversibilité. Avec x une perturbation de barrière et y une perturbation hormonale, ẋ = au + by − r_x x et ẏ = cu + dx − r_y y : l'équilibre est stable tant que le gain de boucle reste sous le produit des taux de récupération, bd < r_x r_y. La rétroaction positive à elle seule ne rend donc pas l'effet irréversible ; une boucle stable revient à la ligne de base une fois l'excitation arrêtée. La question testable est de savoir si l'exposition chronique déplace le rapport gain/récupération vers la frontière ; près de celle-ci, la récupération ralentit avant tout changement important de l'endpoint.",
 
     s6Title: "Predictions",
     s6Predictions: [
@@ -695,7 +695,7 @@ const COPY = {
       "chi_barrier는 누적 노출과 함께 증폭 — BTB 약화 + 테스토스테론 감소의 각 주기가 다음 주기를 악화",
     ],
     s5p2:
-      "양의 피드백 구조는 고환 chi가 정상 상태에 도달하지 않음을 의미한다 — 누적 노출 기간과 함께 증가한다. 이것은 고환 EMF 효과가 진행성이며 특정 노출 역치를 넘으면 비가역적이어야 함을 예측하며, 역학 데이터에서 관찰된 연령 의존적 생식력 감소와 일치한다.",
+      "두 공격은 상호 이득을 가진 루프를 이루며, 모듈롬은 거기서 비가역성을 읽어내는 대신 루프를 명시적으로 적는다. x를 장벽 교란, y를 호르몬 교란이라 하면 ẋ = au + by − r_x x, ẏ = cu + dx − r_y y이며, 평형은 왕복 이득이 회복 속도의 곱보다 작은 동안 안정하다(bd < r_x r_y). 따라서 양의 피드백만으로는 효과가 비가역이 되지 않는다. 안정한 루프는 구동이 멈추면 기준선으로 돌아온다. 검증할 질문은 만성 노출이 이득 대 회복의 비를 경계 쪽으로 옮기는가이며, 경계 근처에서는 종점의 큰 변화보다 먼저 회복이 느려진다.",
 
     s6Title: "예측",
     s6Predictions: [

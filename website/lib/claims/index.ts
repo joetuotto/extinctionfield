@@ -8,6 +8,9 @@ import type {
   RouteDefinition,
 } from "./types";
 import type { Locale } from "@/lib/i18n";
+import { sourceReferenceId } from "@/lib/referenceIndex";
+import { compareRouteIndependence, type IndependenceReport } from "./independence";
+export type { IndependenceReport, IndependenceStatus } from "./independence";
 
 import graphData from "@/data/causal-graph.json";
 import claimsData from "@/data/claims.json";
@@ -100,6 +103,8 @@ export interface NodeCoverage {
   evidence: number;
   assessments: number;
   covered: boolean;
+  evidenceCovered: boolean;
+  calibrated: boolean;
 }
 
 export function getNodeCoverage(): NodeCoverage[] {
@@ -114,11 +119,14 @@ export function getNodeCoverage(): NodeCoverage[] {
       evidence,
       assessments,
       covered: nodeClaims.length > 0,
+      evidenceCovered: evidence > 0,
+      calibrated: evidenceRelations.some((er) => claimIds.has(er.claimId) && er.calibrationRole === "calibration"),
     };
   });
 }
 
 export function getCoverageStats(): {
+  domain: "canonical-model-graph";
   totalNodes: number;
   coveredNodes: number;
   totalClaims: number;
@@ -126,10 +134,14 @@ export function getCoverageStats(): {
   totalAssessments: number;
   totalRoutes: number;
   coveragePercent: number;
+  evidenceCoveredNodes: number;
+  calibratedNodes: number;
+  uniqueSources: number;
 } {
   const coverage = getNodeCoverage();
   const coveredNodes = coverage.filter((c) => c.covered).length;
   return {
+    domain: "canonical-model-graph",
     totalNodes: coverage.length,
     coveredNodes,
     totalClaims: claims.length,
@@ -137,6 +149,9 @@ export function getCoverageStats(): {
     totalAssessments: epistemicAssessments.length,
     totalRoutes: routes.length,
     coveragePercent: coverage.length > 0 ? Math.round((coveredNodes / coverage.length) * 100) : 0,
+    evidenceCoveredNodes: coverage.filter((c) => c.evidenceCovered).length,
+    calibratedNodes: coverage.filter((c) => c.calibrated).length,
+    uniqueSources: new Set(evidenceRelations.map((er) => sourceReferenceId(er.referenceId))).size,
   };
 }
 
@@ -166,16 +181,6 @@ export function getClaimsForRoute(routeId: string): Claim[] {
 
 // ── Phase 7: Independence Analysis ─────────────────────
 
-export interface IndependenceReport {
-  route1Id: string;
-  route2Id: string;
-  sharedAssumptions: string[];
-  sharedDatasets: string[];
-  sharedClaims: string[];
-  sharedEvidence: string[];
-  independent: boolean;
-}
-
 export function analyzeIndependence(
   route1Id: string,
   route2Id: string
@@ -184,32 +189,7 @@ export function analyzeIndependence(
   const r2 = getRoute(route2Id);
   if (!r1 || !r2) return undefined;
 
-  const sharedAssumptions = r1.sharedAssumptions.filter((a) =>
-    r2.sharedAssumptions.includes(a)
-  );
-  const sharedDatasets = r1.sharedDatasets.filter((d) =>
-    r2.sharedDatasets.includes(d)
-  );
-  const sharedClaims = r1.routeClaims.filter((c) =>
-    r2.routeClaims.includes(c)
-  );
-  const sharedEvidence = r1.routeEvidence.filter((e) =>
-    r2.routeEvidence.includes(e)
-  );
-
-  return {
-    route1Id,
-    route2Id,
-    sharedAssumptions,
-    sharedDatasets,
-    sharedClaims,
-    sharedEvidence,
-    independent:
-      sharedAssumptions.length === 0 &&
-      sharedDatasets.length === 0 &&
-      sharedClaims.length === 0 &&
-      sharedEvidence.length === 0,
-  };
+  return compareRouteIndependence(r1, r2, { claims, evidenceRelations, sourceIdentity: sourceReferenceId });
 }
 
 export interface IndependenceGroup {
@@ -224,11 +204,11 @@ export function getIndependenceGroups(): IndependenceGroup[] {
     const existing = groups.get(route.independenceGroup);
     if (existing) {
       existing.routeIds.push(route.id);
-      if (!route.independenceVerified) existing.verified = false;
+      if (!route.independenceVerified || route.independenceAudit?.status !== "complete") existing.verified = false;
     } else {
       groups.set(route.independenceGroup, {
         routeIds: [route.id],
-        verified: route.independenceVerified,
+        verified: route.independenceVerified && route.independenceAudit?.status === "complete",
       });
     }
   }

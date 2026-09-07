@@ -188,14 +188,18 @@ def androgen_effective_capacity(
     if len(weights) != len(pathways):
         raise ValueError("pathway_weights must align with pathways")
     resolved_weights = tuple(_nonnegative("pathway_weight", weight) for weight in weights)
-    weight_sum = sum(resolved_weights)
-    if weight_sum == 0.0:
+    weight_scale = max(resolved_weights)
+    if weight_scale == 0.0:
         raise ValueError("at least one pathway weight must be positive")
+    # A common weight scale cannot change a weighted mean. Normalise before
+    # summing so finite inputs such as (1e308, 1e308) cannot overflow to inf.
+    scaled_weights = tuple(weight / weight_scale for weight in resolved_weights)
+    weight_sum = math.fsum(scaled_weights)
 
     free = binding.free_testosterone
     signals = tuple((pathway.name, pathway.signal(free)) for pathway in pathways)
-    capacity = sum(
-        weight * signal for weight, (_, signal) in zip(resolved_weights, signals)
+    capacity = math.fsum(
+        weight * signal for weight, (_, signal) in zip(scaled_weights, signals)
     ) / weight_sum
     free_fraction = free / binding.total_testosterone if binding.total_testosterone else 0.0
     return AndrogenCapacityResult(

@@ -10,6 +10,8 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
+from pathlib import Path
 import sys
 
 from berm.model import predict_country_year
@@ -17,6 +19,18 @@ from berm.data.countries import COUNTRY_PARAMS, HISTORICAL_TFR
 
 
 def cmd_predict(args: argparse.Namespace) -> None:
+    if args.route == "modulome":
+        if args.scenario is None:
+            raise ValueError("--route modulome requires --scenario INPUT.json")
+        if args.end_year is not None:
+            raise ValueError("a modulome scenario supplies one explicit year; a range is not inferred")
+        payload = json.loads(Path(args.scenario).read_text())
+        if payload.get("year") != args.year or payload.get("geography_id") != args.country:
+            raise ValueError("scenario geography_id/year must match the command arguments")
+        _print_scenario(payload)
+        return
+    if args.scenario is not None:
+        raise ValueError("--scenario requires --route modulome")
     country = args.country
     if country not in COUNTRY_PARAMS:
         print(f"Unknown country: {country}")
@@ -40,6 +54,16 @@ def cmd_predict(args: argparse.Namespace) -> None:
         print(f"  Biological TFR:   {r['biological_tfr']:.3f}")
         print(f"  Mobile pen:       {r['mobile_pen']:.3f}")
         print()
+
+
+def _print_scenario(payload: dict) -> None:
+    from berm.model_modulome_asfr import project_modulome_scenario
+
+    print(json.dumps(project_modulome_scenario(payload), ensure_ascii=False, indent=2, allow_nan=False))
+
+
+def cmd_scenario(args: argparse.Namespace) -> None:
+    _print_scenario(json.loads(Path(args.input).read_text()))
 
 
 def cmd_hindcast(args: argparse.Namespace) -> None:
@@ -112,7 +136,7 @@ def cmd_countries(_args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="berm",
-        description="BERM v17 — BioElectromagnetic Resonance Model",
+        description="BERM — archived v17 comparisons and explicitly conditional biological scenarios",
     )
     sub = parser.add_subparsers(dest="command")
 
@@ -120,6 +144,12 @@ def main() -> None:
     p_pred.add_argument("country", help="Country name (e.g. Finland, SouthKorea)")
     p_pred.add_argument("year", type=int, help="Prediction year")
     p_pred.add_argument("end_year", type=int, nargs="?", help="End year for range")
+    p_pred.add_argument("--route", choices=("v17", "modulome"), default="v17",
+                        help="v17 preserves the archived numbers; modulome requires explicit scenario inputs")
+    p_pred.add_argument("--scenario", help="JSON input for the conditional modulome route")
+
+    p_scenario = sub.add_parser("scenario", help="Run a supplied conditional modulome scenario as JSON")
+    p_scenario.add_argument("input", help="Versioned scenario JSON file")
 
     p_hind = sub.add_parser("hindcast", help="Run hindcast validation")
     p_hind.add_argument("country", help="Country name")
@@ -133,8 +163,11 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    if args.command == "predict":
-        cmd_predict(args)
+    if args.command in {"predict", "scenario"}:
+        try:
+            (cmd_predict if args.command == "predict" else cmd_scenario)(args)
+        except (ValueError, TypeError, KeyError, OSError) as exc:
+            parser.error(str(exc))
     elif args.command == "hindcast":
         cmd_hindcast(args)
     elif args.command == "v16":

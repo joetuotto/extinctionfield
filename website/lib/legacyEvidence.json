@@ -16,9 +16,10 @@
       "A_VGCC_ROS"
     ],
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "note": " Active claim relations (2026-09-07): er.vgcc.pall2013. Same source, not independent evidence."
   },
   {
     "id": "pall2018",
@@ -181,10 +182,11 @@
     "causalNodes": [
       "B_RPM_CRY"
     ],
-    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
-    "status": "VERIFIED",
-    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
-    "n": null
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
+    "translationScope": "Primary-source-qualified cellular CRY/ROS component; no device-specific gonadal dose or fertility coefficient.",
+    "n": null,
+    "note": " Active relation er.receptor.sherrard2018; primary PLOS DOI 10.1371/journal.pbio.2006229 checked 2026-09-07. Same source as bounded record."
   },
   {
     "id": "chae2019",
@@ -206,9 +208,10 @@
       "B_RPM_CRY"
     ],
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": 41
+    "n": 41,
+    "note": " Active claim relations (2026-09-07): er.vector.chae2019. Same source, not independent evidence."
   },
   {
     "id": "yoshii2009",
@@ -227,9 +230,10 @@
       "B_RPM_CRY"
     ],
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "note": " Migrated to the active claim registry in the 2026-09-07 integration: er.synthesis.cry-clock.yoshii2009, er.synthesis.cross-species.yoshii2009. This retains the original record history without counting a second study."
   },
   {
     "id": "natcomms2024rpm",
@@ -720,9 +724,10 @@
       "BIOELECTRIC_DEVELOPMENT"
     ],
     "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
-    "n": null
+    "n": null,
+    "note": " Migrated to the active claim registry in the 2026-09-07 integration: er.synthesis.vmem.sempou2022. This retains the original record history without counting a second study."
   },
   {
     "id": "brown2016",
@@ -865,9 +870,10 @@
       "MALE_SPERM"
     ],
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "note": " Active claim relations (2026-09-07): er.coordination.catsper2024. Same source, not independent evidence."
   },
   {
     "id": "ccb_fertility",
@@ -2183,9 +2189,10 @@
       "MALE_SPERM"
     ],
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "note": " Active claim relations (2026-09-07): er.sperm.adams2014. Same source, not independent evidence."
   },
   {
     "id": "avendano2012",
@@ -2907,8 +2914,8 @@
   },
   {
     "id": "yap2025_cry2_trpc1",
-    "referenceId": "yap2025_cry2_trpc1",
-    "citation": "Yap JLY et al. (2025). CRY2-TRPC1 complex mediates PEMF-induced calcium signaling and nuclear translocation. Cells 14(3):231",
+    "referenceId": "iversen2025",
+    "citation": "Iversen JN et al. (2025). Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis. Cells 14(3):231",
     "year": 2025,
     "pathway": "B",
     "level": "E",
@@ -2924,10 +2931,10 @@
       "B_RPM_CRY"
     ],
     "evidenceRole": "MECHANISM_EXTENSION",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "CRY2 physically interacts with TRPC1 (a TRP channel, NOT a VGCC) and the complex co-translocates to the nucleus after PEMF exposure. This gives pathway B (CRY/RPM) a second downstream branch: calcium signaling via TRPC1, independent of pathway A (VGCC). Blocked by CRY2 silencing, darkness, and RFK silencing — all RPM hallmarks. NOT blocked by L-type VGCC blockers (nifedipine), confirming pharmacological separability from pathway A. Demonstrated in myoblasts; gonadal cell confirmation pending (prediction TRPC1-1).",
     "n": null,
-    "note": "causalNodes remapped from 'B_CRY_MELATONIN' (not a causal-graph node) to B_RPM_CRY on 2026-09-02."
+    "note": "causalNodes remapped from 'B_CRY_MELATONIN' (not a causal-graph node) to B_RPM_CRY on 2026-09-02. Active claim relations (2026-09-07): er.modulome.iversen2025. Same source, not independent evidence."
   },
   {
     "id": "yu2019_btb_disruption",
@@ -2949,9 +2956,10 @@
       "A_VGCC_ROS"
     ],
     "evidenceRole": "MECHANISM_EXTENSION",
-    "status": "MIGRATION_CANDIDATE",
+    "status": "SUPERSEDED_BY_ACTIVE_RECORD",
     "translationScope": "First direct demonstration of BTB disruption by telecom-frequency RF. Long-term 2605 MHz (4G) exposure gradually damaged spermatogenesis via the Spock3-MMP2-BTB axis. The BTB uses the same tight junction proteins (occludin, ZO-1) as the BBB. Validates extending BERM pathway F (BBB multiplier) to a Biological Barrier Multiplier covering both BBB and BTB. Time-dependent toxicity consistent with positive feedback.",
-    "n": null
+    "n": null,
+    "note": " Active claim relations (2026-09-07): er.vector.yu2019_btb, er.btb.yu2019_btb, er.germline.yu2019_btb. Same source, not independent evidence."
   },
   {
     "id": "ulusoy2025_bbb_enos",

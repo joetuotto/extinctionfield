@@ -15,6 +15,36 @@
     "formulation": "2025-weyl-gme",
     "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
     "l2BridgeStatus": "conditional_formal_operator",
+    "l2BridgeStatusScope": "operator_form_only",
+    "bridgeComponents": {
+      "geometry": {
+        "status": "L1_DERIVED",
+        "scope": "exact_delta_metric_given_the_2025_ansatz"
+      },
+      "responseOperator": {
+        "status": "CONDITIONAL_FORMAL_OPERATOR",
+        "assumptions": [
+          "minimal_matter_metric_coupling",
+          "retarded_response_expansion"
+        ],
+        "scope": "operator_form_not_an_identified_tissue_kernel"
+      },
+      "physicalIdentification": {
+        "status": "OPEN",
+        "unresolved": [
+          "gauge_prescription",
+          "physical_coupling_scale"
+        ]
+      },
+      "tissueKernel": {
+        "status": "CALLER_SUPPLIED_UNCALIBRATED",
+        "scope": "organ_state_direction_units_and_lag_are_explicit_inputs"
+      },
+      "endpointCalibration": {
+        "status": "OPEN",
+        "scope": "the_composed_human_endpoint_chain"
+      }
+    },
     "l2BridgeMeaning": "Conditional on minimal matter-metric coupling and response theory, BERM derives the formal geometry-to-observable operator. Its gauge prescription, physical scale, tissue response kernels and human endpoint calibration remain open; downstream biology is not a Lindgren-derived result. The Lorentz-to-spatial scalar reduction that maps the directed derivative through |A_bar| to chi(|A_bar|) is L2, while the chi formula itself always remains L1. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations; their empirical provenance does not erase or relabel any L1-derived component in the same chain.",
     "derivedGeometry": "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)",
     "responseOperator": "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response",
@@ -93,6 +123,16 @@
     }
   },
   "routes": {
+    "modulomeAsfr": {
+      "id": "berm-modulome-conditional-asfr-v1",
+      "role": "conditional_scenario_calculator",
+      "inputKind": "caller_supplied_local_biological_driver_and_state",
+      "fieldStateCalibrated": false,
+      "calibrationStatus": "STRUCTURAL_ONLY",
+      "requiresOpenL2Bridge": true,
+      "publishesLockedForecasts": false,
+      "preservesArchivedV17": true
+    },
     "prediction": {
       "id": "berm-v17-scalar-proxy",
       "modelVersion": "v17",

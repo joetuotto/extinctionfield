@@ -114,6 +114,18 @@ def test_retarded_response_rejects_unaligned_history() -> None:
         contract_retarded_response(np.ones((2, 2, 2)), np.ones((1, 2, 2)))
 
 
+@pytest.mark.parametrize("shape", [(0, 2), (2, 0), (1, 2, 0)])
+def test_linear_response_rejects_any_empty_tensor_axis(shape) -> None:
+    with pytest.raises(ValueError, match="non-empty"):
+        contract_linear_response(np.empty(shape), np.empty(shape))
+
+
+@pytest.mark.parametrize("shape", [(0, 2, 2), (1, 0, 2), (1, 2, 0), (1, 1, 0)])
+def test_retarded_response_rejects_any_empty_tensor_or_lag_axis(shape) -> None:
+    with pytest.raises(ValueError, match="non-empty"):
+        contract_retarded_response(np.empty(shape), np.empty(shape))
+
+
 def test_am_low_pass_coefficients_follow_exact_quadratic_identity() -> None:
     terms = low_pass_am_metric_components(2.0, 0.5, coupling_scale=3.0)
     assert terms.dc == pytest.approx(6.75)

@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1161,
-    "linkedReferences": 490
+    "totalReferences": 1164,
+    "linkedReferences": 494
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -8214,7 +8214,10 @@
       "journal": "Cell",
       "type": "journal",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.cell.2026.03.029"
+      "externalUrl": "https://doi.org/10.1016/j.cell.2026.03.029",
+      "corrections": [
+        "kim2026_cell_gene_switch_correction"
+      ]
     },
     "seo2016": {
       "id": "seo2016",
@@ -8584,7 +8587,10 @@
       "journal": "Environment International",
       "type": "report",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.envint.2024.108509"
+      "externalUrl": "https://doi.org/10.1016/j.envint.2024.108509",
+      "corrections": [
+        "cordelli2025_corrigendum"
+      ]
     },
     "iversen2025": {
       "id": "iversen2025",
@@ -9154,7 +9160,8 @@
       "journal": "Environment International",
       "type": "corrigendum",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.envint.2025.109449"
+      "externalUrl": "https://doi.org/10.1016/j.envint.2025.109449",
+      "correctionOf": "cordelli2024"
     },
     "durant2017_bioelectric_memory": {
       "id": "durant2017_bioelectric_memory",
@@ -11128,13 +11135,13 @@
     },
     "catsper_2021": {
       "id": "catsper_2021",
-      "authors": "",
-      "year": 0,
-      "title": "",
-      "journal": null,
-      "type": null,
-      "linkStatus": "pending",
-      "externalUrl": null
+      "authors": "Ayas B, Kocaman A",
+      "year": 2021,
+      "title": "P–036 Investigation of the 2100 MHz electromagnetic field effects on sperm CatSper calcium channel",
+      "journal": "Human Reproduction 36(Supplement_1):deab130.035",
+      "type": "conference-abstract",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/humrep/deab130.035"
     },
     "cavg4_camkii_mafa": {
       "id": "cavg4_camkii_mafa",
@@ -11615,6 +11622,37 @@
       "type": "collection",
       "linkStatus": "missing",
       "externalUrl": null
+    },
+    "goertemaker2022_cry4a_gtalpha": {
+      "id": "goertemaker2022_cry4a_gtalpha",
+      "authors": "Görtemaker K, Yee C, Bartölke R, Behrmann H, Voß JO, Schmidt J, Xu J, Solovyeva V, Leberecht B, Behrmann E, Mouritsen H, Koch KW",
+      "year": 2022,
+      "title": "Direct Interaction of Avian Cryptochrome 4 with a Cone Specific G-Protein",
+      "journal": "Cells 11(13):2043",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/cells11132043"
+    },
+    "yee2023_opsin_gtalpha": {
+      "id": "yee2023_opsin_gtalpha",
+      "authors": "Yee C, Görtemaker K, Wellpott R, Koch KW",
+      "year": 2023,
+      "title": "Kinetics of cone specific G-protein signaling in avian photoreceptor cells",
+      "journal": "Frontiers in Molecular Neuroscience 16:1107025",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3389/fnmol.2023.1107025"
+    },
+    "kim2026_cell_gene_switch_correction": {
+      "id": "kim2026_cell_gene_switch_correction",
+      "authors": "Kim J, Hwang Y, Kim S, Kwon D, Park J, Cho B, An S, Kang S, Kim Y, Kim S, Lengner CJ, Kim S, Kwon Y, Sung JS, Kim J.",
+      "year": 2026,
+      "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression.",
+      "journal": "Cell",
+      "type": "correction",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.cell.2026.06.020",
+      "correctionOf": "kim2026_cell_gene_switch"
     }
   },
   "aliases": {
@@ -12714,6 +12752,14 @@
     "doi:10.1002/bem.2250160309": "lai1995_dna_breaks",
     "pmid:7473001": "lai1995_dna_breaks",
     "doi:10.3109/09553002.2016.1152415": "turedi2016_ovarian_reserve",
-    "pmid:27007703": "turedi2016_ovarian_reserve"
+    "pmid:27007703": "turedi2016_ovarian_reserve",
+    "doi:10.3390/cells11132043": "goertemaker2022_cry4a_gtalpha",
+    "pmcid:PMC9265643": "goertemaker2022_cry4a_gtalpha",
+    "pmid:35805127": "goertemaker2022_cry4a_gtalpha",
+    "doi:10.3389/fnmol.2023.1107025": "yee2023_opsin_gtalpha",
+    "pmcid:PMC9887155": "yee2023_opsin_gtalpha",
+    "pmid:36733826": "yee2023_opsin_gtalpha",
+    "doi:10.1016/j.cell.2026.06.020": "kim2026_cell_gene_switch_correction",
+    "pmid:42372722": "kim2026_cell_gene_switch_correction"
   }
 }

@@ -30,7 +30,7 @@ const COPY = {
     s2Title: "Glucose-Stimulated Insulin Secretion",
     s2p1: "Pancreatic β-cells are the insulin-producing endocrine cells of the islets of Langerhans. They rely on BOTH L-type (Cav1.2, Cav1.3) and T-type (Cav3.2) voltage-gated calcium channels for glucose-stimulated insulin secretion (GSIS). The canonical GSIS pathway proceeds: glucose enters via GLUT2 → glycolysis raises the ATP/ADP ratio → K_ATP channels close → membrane depolarizes → VGCCs activate → Ca²⁺ influx → insulin vesicle exocytosis.",
     s2p2: "T-type channels (Cav3.2) activate at a lower threshold (~−50mV) than L-type channels (Cav1.2 at ~−30mV), creating a sequential activation cascade. T-type channels fire first during the initial depolarization phase, priming the membrane and generating the early pacemaker depolarization that brings the membrane to L-type activation threshold. The L-type channels then produce the larger, sustained Ca²⁺ influx that drives the main phase of insulin exocytosis.",
-    s2p3: "This dual-channel architecture makes β-cells uniquely dependent on VGCC function. Any perturbation of either channel type — whether pharmacological, genetic, or electromagnetic — directly impairs the insulin secretion pathway. The β-cell has one of the highest VGCC densities of any endocrine cell, making it inherently susceptible to electromagnetic interference.",
+    s2p3: "Channel machinery determines how beta cells convert metabolic state into secretion. A perturbation can alter amplitude, timing or recovery without causing the same functional outcome in every setting. BERM therefore measures the resting potential, calcium stores and glucose state before testing a local field effect. Channel density alone is not an exposure-response coefficient.",
 
     s2SectionTitle: "Glucose-dependent χ_beta candidate response",
 
@@ -44,35 +44,35 @@ const COPY = {
 
     s4Title: "T2D Mechanism Chain",
     s4Chain:
-      "EMF → Cav1/Cav3 perturbation → Ca²⁺ dysregulation → insulin secretion impaired → compensatory β-cell hyperfunction → β-cell exhaustion → T2D",
+      "Receiving state + meal/tissue phase → hepatic glucose output ↔ blood glucose → K_ATP/VGCC/calcium timing → insulin secretion → tissue uptake and feedback",
     s4p1: "The acute EMF effect on β-cells is disruption of the precisely calibrated Ca²⁺ signal that governs insulin exocytosis. EMF-induced perturbation of Cav1 and Cav3 channels alters the timing, amplitude, and duration of Ca²⁺ transients. Sakurai 2008 demonstrated that ELF electromagnetic fields reduced insulin secretion by approximately 30% in exposed islet cells — a direct confirmation that EMF can impair the GSIS pathway.",
-    s4p2: "The chronic pathway to type 2 diabetes follows: sustained insulin secretion impairment triggers compensatory β-cell hyperfunction — the remaining cells work harder to maintain glycemic control. This compensatory overwork accelerates β-cell exhaustion and apoptosis, progressively reducing insulin-secreting capacity. The result is the classic T2D trajectory: impaired glucose tolerance → insulin resistance → overt diabetes.",
+    s4p2: "The chronic branch separates demand from damage. Hepatic CRY–glucagon/cAMP regulation changes glucose production, while meal timing changes tissue phase. Insulin resistance and secretion dynamics then determine beta-cell demand; repair and cell turnover determine whether that demand becomes persistent injury. Measure production, secretion, sensitivity and function before assigning the same insulin value to a direct beta-cell lesion.",
 
     s5Title: "Population Evidence",
     s5Stats: [
-      "Tsimane (Bolivia): T2D prevalence approximately 0% — lowest recorded EMF environment on Earth",
-      "Kitava (Papua New Guinea): T2D effectively absent despite high-carbohydrate diet — near-zero EMF exposure",
-      "Old Order Amish: T2D prevalence significantly below US average — limited technology adoption, lower EMF",
-      "United States: T2D prevalence 11.6% (CDC 2023) — highest population-level EMF density",
-    ],
+  "Population comparisons should measure age, diet, activity, infection, treatment access and local fields on comparable scales.",
+  "Technology adoption or a community label cannot supply a pancreatic dose.",
+  "The target bridge is measured glucose production and secretion → couple/organ state where relevant → age-specific outcomes.",
+  "Low disease prevalence in a population motivates comparison; it does not identify a single protective exposure."
+],
 
     s6Title: "PCOS — 4-Organ Convergence",
-    s6p1: "Polycystic ovary syndrome (PCOS) is reinterpreted by the BERM framework as a 4-organ convergence disease — a condition where EMF simultaneously affects four organs, each independently dependent on voltage-gated calcium channels. This multi-organ convergence produces the characteristic PCOS phenotype:",
+    s6p1: "BERM treats PCOS as a coupled endocrine candidate: pancreatic demand, ovarian theca and granulosa function, pituitary pulses and hepatic metabolism interact. A measured field contribution enters through a declared receiving mechanism rather than being assumed for all organs.",
     s6Organs: [
       "Pancreas β-cells (Cav1 + Cav3): EMF-induced insulin secretion impairment triggers compensatory hyperinsulinemia",
       "Ovarian theca cells: hyperinsulinemia drives excess androgen (testosterone) production",
       "Ovarian granulosa cells: aromatase activity disrupted, reducing estradiol conversion",
       "Pituitary gonadotrophs (Cav3): LH/FSH ratio elevated, disrupting ovulatory cycling",
     ],
-    s6p2: "Each of these four organs independently uses VGCCs for its core endocrine function. EMF does not need to target PCOS specifically — it simultaneously perturbs all four VGCC-dependent systems, and the convergence of these four disruptions produces the PCOS phenotype. PCOS affects 5–20% of reproductive-age women globally, with prevalence rising in parallel with EMF environment densification.",
+    s6p2: "The four listed cell systems share hormones and feedback, so they do not supply independent multiplicative effect sizes. Test insulin/androgen dynamics and ovulatory function together, controlling meal phase and starting state. Component calcium biology supports the causal connections; the complete field-to-PCOS route remains a calibrated-endpoint research task.",
 
     s4SectionTitle: "Evidence and Predictions",
 
     s7Title: "EMF Evidence Summary",
     s7Stats: [
       "Sakurai 2008: ELF electromagnetic fields reduced insulin secretion by ~30% in hamster pancreatic islet cells",
-      "β-cell VGCC density is among the highest of any endocrine cell type, making them inherently EMF-sensitive",
-      "All studied low-EMF populations (Tsimane, Kitava, Amish) show near-zero T2D prevalence regardless of diet composition",
+      "VGCC physiology identifies a receiving mechanism to test, not a universal field sensitivity",
+      "Population contrasts require comparable local-field, metabolic and demographic measurements",
       "TheraBionic parallel: FDA-approved device uses amplitude-modulated EMF → Cav3.2 activation in hepatocellular carcinoma cells at SAR levels 100–1000× below typical phone exposure",
     ],
 
@@ -147,7 +147,7 @@ const COPY = {
     s2Title: "Glukoosistimuloitu insuliinisekretio",
     s2p1: "Haiman β-solut ovat Langerhansin saarekkeiden insuliinia tuottavia endokriinisia soluja. Ne käyttävät SEKÄ L-tyypin (Cav1.2, Cav1.3) ETTÄ T-tyypin (Cav3.2) jänniteohjattuja kalsiumkanavia glukoosistimuloidussa insuliinisekreetiossa (GSIS). Kanoninen GSIS-reitti etenee: glukoosi saapuu GLUT2:n kautta → glykolyysi nostaa ATP/ADP-suhdetta → K_ATP-kanavat sulkeutuvat → kalvo depolarisoituu → VGCC:t aktivoituvat → Ca²⁺-sisäänvirtaus → insuliinivesikkelien eksosytoosi.",
     s2p2: "T-tyypin kanavat (Cav3.2) aktivoituvat matalammalla kynnyksellä (~−50mV) kuin L-tyypin kanavat (Cav1.2, ~−30mV), luoden peräkkäisen aktivaatiokaskadin. T-tyypin kanavat laukeavat ensin alkuvaiheen depolarisaatiossa, virittäen kalvon ja tuottaen varhaisen tahdistindepolarisaation, joka tuo kalvon L-tyypin aktivaatiokynnykseen. L-tyypin kanavat tuottavat sitten suuremman, kestävämmän Ca²⁺-sisäänvirtauksen, joka ajaa insuliinieksosytoosin päävaiheen.",
-    s2p3: "Tämä kaksoiskanavarkkitehtuuri tekee β-soluista ainutlaatuisen riippuvaisia VGCC-toiminnasta. Mikä tahansa häiriö kummassakin kanavatyypissä — farmakologinen, geneettinen tai sähkömagneettinen — heikentää suoraan insuliinisekreetioreititä. β-solun VGCC-tiheys on yksi korkeimmista kaikista endokriinisistä soluista, mikä tekee siitä luonnostaan altista sähkömagneettiselle häiriölle.",
+    s2p3: "Kanavakoneisto määrää, miten β-solut muuttavat aineenvaihduntatilan eritykseksi. Muutos voi vaikuttaa amplitudiin, ajoitukseen tai palautumiseen tuottamatta samaa toiminnallista tulosta kaikissa oloissa. BERM mittaa siksi lepopotentiaalin, kalsiumvarastot ja glukoositilan ennen paikallisen kenttävaikutuksen testiä. Kanavatiheys ei yksin ole altistus–vaste-kerroin.",
 
     s2SectionTitle: "Glukoosiriippuvainen χ_beta-vaste-ehdokas",
 
@@ -161,35 +161,35 @@ const COPY = {
 
     s4Title: "T2D-mekanismiketju",
     s4Chain:
-      "EMF → Cav1/Cav3-häiriö → Ca²⁺-dysregulaatio → insuliinisekretio heikkenee → kompensatorinen β-solun hyperfunktio → β-solun uupuminen → T2D",
+      "Vastaanotintila + aterian/kudoksen vaihe → maksan glukoosintuotanto ↔ veren glukoosi → K_ATP/VGCC/kalsiumin ajoitus → insuliinieritys → kudosten glukoosinotto ja palaute",
     s4p1: "EMF:n akuutti vaikutus β-soluihin on insuliinieksosytoosia ohjaavan tarkasti kalibroidun Ca²⁺-signaalin häiriö. EMF-aiheutettu Cav1- ja Cav3-kanavien häiriö muuttaa Ca²⁺-transienttien ajoitusta, amplitudia ja kestoa. Sakurai 2008 osoitti, että ELF-sähkömagneettiset kentät vähensivät insuliinisekreetiötä noin 30 % altistetuissa saarekesoluissa — suora vahvistus sille, että EMF voi heikentää GSIS-reittiä.",
-    s4p2: "Krooninen reitti tyypin 2 diabetekseen etenee: jatkuva insuliinisekretion heikkeneminen laukaisee kompensatorisen β-solun hyperfunktion — jäljelle jäävät solut työskentelevät kovemmin ylläpitääkseen glykemista kontrollia. Tämä kompensatorinen ylityö kiihdyttää β-solun uupumista ja apoptoosia, vähentäen asteittain insuliinia erittävää kapasiteettia. Tuloksena on klassinen T2D-kehityskulku: heikentynyt glukoositoleranssi → insuliiniresistenssi → manifesti diabetes.",
+    s4p2: "Krooninen haara erottaa kysynnän vauriosta. Maksan CRY–glukagoni/cAMP-säätely muuttaa glukoosintuotantoa ja ateria-aika kudoksen vaihetta. Insuliiniresistenssi ja eritysdynamiikka määräävät sitten β-solun kysyntää; korjaus ja solujen uusiutuminen määräävät, muuttuuko kysyntä pysyväksi vaurioksi. Mittaa tuotanto, eritys, herkkyys ja toiminto ennen saman insuliiniarvon tulkitsemista suoraksi β-soluvaurioksi.",
 
     s5Title: "Populaationäyttö",
     s5Stats: [
-      "Tsimane (Bolivia): T2D-esiintyvyys noin 0 % — maapallon matalin mitattu EMF-ympäristö",
-      "Kitava (Papua-Uusi-Guinea): T2D käytännössä puuttuu korkeahiilihydraattisesta ruokavaliosta huolimatta — lähes nolla-EMF-altistus",
-      "Vanhan linjan amissit: T2D-esiintyvyys merkittävästi alle USA:n keskiarvon — rajoitettu teknologian käyttöönotto, matalampi EMF",
-      "Yhdysvallat: T2D-esiintyvyys 11,6 % (CDC 2023) — korkein väestötason EMF-tiheys",
-    ],
+  "Väestövertailussa tulee mitata ikä, ravinto, aktiivisuus, infektiot, hoitoon pääsy ja paikalliset kentät vertailukelpoisilla asteikoilla.",
+  "Teknologian käyttöönotto tai yhteisön nimi ei anna haiman annosta.",
+  "Tavoitesilta on mitattu glukoosintuotanto ja eritys → soveltuva pari-/elintila → ikäryhmittäiset päätepisteet.",
+  "Väestön pieni sairausesiintyvyys motivoi vertailua; se ei tunnista yhtä suojaavaa altistetta."
+],
 
     s6Title: "PCOS — neljän elimen yhdentyminen",
-    s6p1: "BERM-kehys tulkitsee polykystisen munasarjaoireyhtymän (PCOS) neljän elimen yhdentymissairautena — tilana, jossa EMF vaikuttaa samanaikaisesti neljään elimeen, joista kukin on itsenäisesti riippuvainen jänniteohjattuista kalsiumkanavista. Tämä monieliminen yhdentyminen tuottaa PCOS:lle tyypillisen fenotyypin:",
+    s6p1: "BERM käsittelee PCOS:ää kytkettynä endokriinisenä ehdokkaana: haiman kysyntä, munasarjan teeka- ja granuloosatoiminta, aivolisäkkeen pulssit ja maksan aineenvaihdunta vaikuttavat toisiinsa. Mitatun kentän osuus tulee nimetyn vastaanottomekanismin kautta eikä oletuksena kaikille elimille.",
     s6Organs: [
       "Haiman β-solut (Cav1 + Cav3): EMF-aiheutettu insuliinisekretion heikkeneminen laukaisee kompensatorisen hyperinsulinemian",
       "Munasarjan theca-solut: hyperinsulinemia ajaa liiallista androgeeni(testosteroni)tuotantoa",
       "Munasarjan granuloosasolut: aromataasiaktiivisuus häiriintyy, vähentäen estradiolikonversiota",
       "Aivolisakkeen gonadotrofit (Cav3): LH/FSH-suhde nousee, häiriten ovulatorista sykliä",
     ],
-    s6p2: "Jokainen näistä neljästä elimestä käyttää itsenäisesti VGCC:itä endokriiniseen päätoimintoonsa. EMF:n ei tarvitse kohdistua PCOS:iin erityisesti — se häiritsee samanaikaisesti kaikkia neljää VGCC-riippuvaista järjestelmää, ja näiden neljän häiriön yhdentyminen tuottaa PCOS-fenotyypin. PCOS koskee 5–20 % lisääntymisikäisistä naisista maailmanlaajuisesti, ja esiintyvyys nousee rinnakkain EMF-ympäristön tiivistymisen kanssa.",
+    s6p2: "Neljä lueteltua solujärjestelmää jakavat hormoneja ja palautteita, joten ne eivät anna riippumattomia kertovia vaikutuskokoja. Testaa insuliini-/androgeenidynamiikkaa ja ovulaatiotoimintaa yhdessä ja vakioi ateriavaihe sekä lähtötila. Kalsiumbiologian osanäyttö tukee kausaaliyhteyksiä; koko kentästä PCOS:ään kulkeva reitti tarvitsee päätepistekalibroinnin.",
 
     s4SectionTitle: "Näyttö ja ennusteet",
 
     s7Title: "EMF-näytön yhteenveto",
     s7Stats: [
       "Sakurai 2008: ELF-sähkömagneettiset kentät vähensivät insuliinisekreetiötä ~30 % hamsterin haiman saarekesoluissa",
-      "β-solun VGCC-tiheys on yksi korkeimmista kaikista endokriinisistä solutyypeistä, mikä tekee niistä luonnostaan EMF-herkiä",
-      "Kaikki tutkitut matalan EMF:n populaatiot (Tsimane, Kitava, amissit) osoittavat lähes nolla-T2D-esiintyvyyden ruokavalion koostumuksesta riippumatta",
+      "VGCC-fysiologia tunnistaa testattavan vastaanottomekanismin, ei yleistä kenttäherkkyyttä",
+      "Väestökontrastit tarvitsevat vertailukelpoiset paikalliskentän, aineenvaihdunnan ja väestön mittaukset",
       "TheraBionic-rinnakkaisuus: FDA-hyväksytty laite käyttää amplitudimoduloitua EMF:ää → Cav3.2-aktivaatio maksasolusyopäsoluissa SAR-tasoilla 100–1000× alle tyypillisen puhelimen altistuksen",
     ],
 
@@ -564,6 +564,7 @@ export default async function PancreasPage({
       </Link>
 
       <PageHeader icon={Droplets} title={d.title} subtitle={d.subtitle} />
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <div className="mb-4 mt-12">
         <h2 className="text-xl font-bold text-foreground tracking-tight">

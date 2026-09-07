@@ -49,7 +49,7 @@ const t = {
     physBioSuperDesc: "Electromagnetic fields still obey ordinary superposition. Because the Lindgren ansatz is quadratic in the potential, the induced metric drive contains exact background–perturbation cross terms and a self-term. This establishes mixing in model geometry, not a non-additive biological effect.",
     physBioSuperFormula: "A=A₀+Σᵢaᵢ;  Δg=κ[Σᵢ(A₀⊗aᵢ+aᵢ⊗A₀)+Σᵢaᵢ⊗aᵢ+Σᵢ<ⱼ(aᵢ⊗aⱼ+aⱼ⊗aᵢ)]",
     physBioSuperExplain: "With n channels, the exact expansion retains n(n−1)/2 pair terms. Amplitude modulation and two-tone inputs generate low-frequency envelope or difference-frequency terms in a². Their biological response may be positive, null or negative depending on phase, coherence duration, receptor/agonist state, redox state, developmental window and organ transfer. Combined-exposure studies constrain this experiment but do not calibrate the L2 kernel ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]).",
-    physBioMaxwellExplain: "The source-free Maxwell equation ∇_μF^μν = 0 follows from Lindgren's metric through the variational principle S = ∫√(−g)R d⁴x, the Weyl condition and the Bianchi identity. Bianchi is necessary but not sufficient: dF = 0 is not a shortcut to the sourced equation ∇_μF^μν = J^ν.",
+    physBioMaxwellExplain: "The definition F=dA gives dF=0 as a homogeneous Maxwell identity. The EH variation, Weyl connection and restricted GME residual are separate conditional contracts; checking them together does not by itself derive ∇_μF^μν=0 or ∇_μF^μν=J^ν. The divergence equation needs an explicit dynamical derivation and current identification. The mathematics page displays these gates separately.",
     physBioChiEpistemic: "[L1 + L0/L2 reduction]",
     physBioSuperLink: "See full superposition analysis →",
     physBioTissueTitle: "Tissue-specific resonance",
@@ -280,15 +280,15 @@ const t = {
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, with diagnostic weights w_ELF = 0.05, w_IF = 0.60 and w_RF = 0.35. They require empirical calibration and are not fitted biological parameters. Statements about low-infrastructure or saturated environments are candidate proxy scenarios using x=N(z_proxy), not direct field measurements or a closed L2 operator.",
     twoChLayersTitle: "12 technology layers composing the ambient field",
     twoChLayersDesc:
-      "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
+      "The ambient inventory separates twelve source classes by deployment history, operating mode and frequency. Their trends may be correlated, so they are not automatically independent causal instruments. Local waveform and tissue-transfer measurements determine which combinations enter a receiving model.",
     ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
-    multiPathwayCa2Note: "The Ca²⁺ disruption at Level 4 operates through multiple independent pathways: (1) direct S4 voltage sensor forced oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) intracellular calcium store dysregulation via ryanodine receptors (RyR) and SERCA pumps ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Both pharmacological blockade experiments (VGCC blockers for pathway 1; dantrolene for RyR, CPA for SERCA in pathway 2) abrogate EMF effects, confirming mechanism. The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density AND large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: null results in skin cells). Note: [[ref:bertagna2025|Bertagna 2025]] is ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared.",
+    multiPathwayCa2Note: "[[ref:bertagna2025|Bertagna 2025]] connects the later membrane-current response to ER release and reuptake under 50 Hz, 1 mT exposure. RyR and SERCA interventions constrain a coupled store–cytosol–membrane system; they do not identify two independent damage contributions or establish direct S4 forcing. Measure the first calcium change, ER-store trajectory and later function separately. This complements the IFO candidate ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) while retaining each protocol’s field class.",
     fiveGReproNote: "The first 5G-frequency-specific testicular data ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics): 3.5 GHz RF induced testicular and oxidative damage in rats. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility — consistent with BERM's recovery window model where antioxidant capacity determines net daily damage. This extends the oxidative stress evidence base ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%) to the 5G frequency range.",
     pathwayBQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
-    pathwayBWeightNote: "Note on pathway B weight: Pathway B's 25% reflects both its circadian function (CRY2 → clock gene transcription → melatonin → HPG) and its recently discovered calcium signaling function (CRY2 → TRPC1 modulation → Ca²⁺ entry; [[ref:iversen2025|Iversen et al. 2025]], Cells). TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathways A and B are therefore pharmacologically separable: L-type VGCC blockers (nifedipine) block pathway A effects but not CRY2-TRPC1 effects.",
-    cryIndividualVariationNote: "Individual variation: CRY sensitivity is modulated by iris pigmentation (blue > green > brown; [[ref:higuchi2007|Higuchi 2007]]), nutritional FAD status ([[ref:hirano2017|Hirano 2017]]), and sex (males > females in acute magnetoreception; [[ref:chae2019|Chae 2019]]). These modulators may explain part of the inter-individual and inter-population variance in pathway B effectiveness. The CRY2-TRPC1 physical complex ([[ref:iversen2025|Iversen 2025]]) further reveals that pathway B has a second downstream branch: CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC), enabling calcium signaling independently of pathway A. Pathways A and B remain pharmacologically separable — L-type VGCC blockers inhibit A but not CRY2-TRPC1. See the detailed analysis at /evidence/eyes.",
-    cryDualSystemNote: "Dual CRY system: Pathway B operates through two distinct cryptochrome systems in the retina. CRY1 (sensory): Full-length CRY1 protein was found exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors in human, bonobo, and gorilla retinas ([[ref:bartolke2025|Bartölke et al. 2025]], FASEB J). This location far from nuclei — in the phototransduction machinery — suggests a sensory function beyond circadian clock regulation. The stacked membrane lamellae of cone outer segments provide the orientational order required for directional magnetoreception (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY associates with lipid bilayers in ordered manner). This is the system most directly affected by iris pigmentation: blue eyes transmit ~100× more light to blue cones, increasing CRY1 activation. CRY2 (circadian): CRY2 is expressed in retinal ganglion cells, particularly ipRGCs that project to the SCN. CRY2 forms a physical complex with TRPC1 ([[ref:iversen2025|Iversen et al. 2025]]), linking the circadian pathway to ion channel signaling. Both systems require FAD as their chromophore and are therefore both dependent on riboflavin (B2) status.",
-    recoveryWindowNote: "The distinction between acute and chronic exposure is empirically supported: [[ref:koivisto2000|Koivisto et al. (2000)]] observed cognitive facilitation after 30–60 min exposure (compatible with acute Ca²⁺-mediated synaptic enhancement), while [[ref:panagopoulos2025_ifo|Panagopoulos et al. (2025)]] report 95% oxidative stress in studies with chronic or repeated exposure. The recovery window model resolves this apparent contradiction: 30 min + 23.5h recovery → 93% repair (no net damage); 22h exposure + 2h recovery → 21% repair (cumulative damage).",
+    pathwayBWeightNote: "The CRY2–TRPC1 result ([[ref:iversen2025|Iversen 2025]]) adds a calcium-signaling branch in a named myoblast PEMF system. TRPC1 is a TRP channel. This motivates paired sham/field interventions with L-type blockade, TRPC1 perturbation and rescue; it does not determine a 25% reproductive contribution. Existing weights are scenario choices pending same-system endpoint calibration.",
+    cryIndividualVariationNote: "Candidate receiving coordinates include CRY subtype and compartment, FAD occupancy/redox, membrane orientation and light history. Pigmentation/light-response observations ([[ref:higuchi2007|Higuchi 2007]]) and sex differences in a named magnetoreception task ([[ref:chae2019|Chae 2019]]) do not supply universal CRY sensitivity coefficients. [[ref:iversen2025|Iversen 2025]] constrains CRY2/RFK/TRPC1 in its myoblast PEMF protocol; same-system interventions are needed before transferring a response to gonadal or retinal tissue.",
+    cryDualSystemNote: "Retinal CRY localization ([[ref:bartolke2025|Bartölke 2025]]), membrane-associated Cry4a orientation ([[ref:majewska2025|Majewska 2025]]) and the myoblast CRY2–TRPC1 complex ([[ref:iversen2025|Iversen 2025]]) anchor different receiving coordinates. The synthesis retains protein subtype, species, compartment, cofactor occupancy and light sequence. A localization result suggests where to test reception; it does not establish an ordered human retinal compass, a blue-eye amplification factor or a membrane-diet effect size.",
+    recoveryWindowNote: "Acute facilitation and delayed harm can arise from different receiving and repair states. BERM therefore follows receptor state s, repair capacity A, damage D and functional capacity C through exposure and recovery. Adaptive RF-preconditioning experiments motivate a repair branch; a small later response can also reflect impaired reception or a shifted baseline. These alternatives require repeated absolute measurements, rather than a universal repair percentage.",
     lateralizationNote: "The two-channel model's spatial structure is empirically supported by lateralization studies: [[ref:eliyahu2006|Eliyahu et al. (2006)]] and [[ref:luria2009|Luria et al. (2009)]] demonstrated that 890 MHz exposure affects specifically the hemisphere nearest the phone. This confirms that personal-EMF effects are local, not systemic — EMF attenuates with the square of distance — supporting BERM's premise that phone-in-pocket targets testes, phone-at-ear targets hypothalamus.",
     ifChannelTitle: "IF channel: LED lighting as primary source",
     ifChannelDesc:
@@ -299,10 +299,10 @@ const t = {
     tcbmElfTitle: "Channel 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "Source: power grid, household wiring, appliances, transformers. Mechanism: IFO-VGIC forced ion oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). History: present since electrification (1880s), stable since ~1970. Proxy: residential electricity consumption (kWh per capita). Always on, 24/7, entire home.",
-    tcbmIfTitle: "Channel 2: IF (300 Hz – 10 MHz)",
+    tcbmIfTitle: "Channel 2: IF (300 Hz – 1 MHz)",
     tcbmIfDesc:
       "Source: LED drivers (20–300 kHz), SMPS, VFDs, induction cooktops. Mechanism: Cyb5b → Ca²⁺ oscillations ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO at higher frequencies. History: near-zero before 2009, exponential growth 2009–2019 (EU LED transition). Proxy: LED market share × residential electricity. Pulsed, high dV/dt, regulatory gap ([[ref:ijrb2022_if_review|IJRB 2022]]).",
-    tcbmRfTitle: "Channel 3: RF (100 kHz – 300 GHz)",
+    tcbmRfTitle: "Channel 3: RF (1 MHz – 300 GHz)",
     tcbmRfDesc:
       "Source: mobile phones, Wi-Fi, Bluetooth, base stations, IoT. Mechanism: RPM/CRY spin chemistry ([[ref:ritz2004|Ritz 2004]]), thermal deposition at high SAR. History: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Proxy: broadband subscriptions per 100, mobile subscriptions. Modulated (data encoding), personal + ambient.",
     tcbmIfMitotic:
@@ -339,9 +339,9 @@ const t = {
     recovLeydigNote:
       "Testosterone-producing cells may partially recover, but chronic atrophy reduces regenerative capacity",
     recovBbbLayer: "Biological barriers (BBB + BTB)",
-    recovBbbTime: "BBB: irreversible; BTB: partially reversible",
+    recovBbbTime: "Tissue- and injury-dependent; recovery must be measured",
     recovBbbNote:
-      "Neuronal damage from chronic BBB leakage is assumed permanent. BTB disruption ([[ref:yu2019_btb|Yu et al. 2019]]: Spock3-MMP2 axis at 4G) compromises the spermatogenic microenvironment directly. Both barriers use the same tight junction proteins (occludin, ZO-1). Positive feedback: barrier damage → higher effective field → more damage.",
+      "BTB disruption and SPOCK3–MMP14–MMP2 changes in the long-duration phone-exposure study identify a slow tissue route. Barrier disturbance and endocrine disturbance can feed back on each other. For ẋ=au+by−r_xx and ẏ=cu+dx−r_yy, positive recovery rates give stability when bd<r_xr_y. Irreversibility requires additional measured structural loss or nonlinear dynamics; barrier leakage alone does not establish a larger physical field.",
 
     compSub: "How TFR formula separates biological capacity from cultural demand",
     compTitle: "Compensation mechanism",
@@ -368,24 +368,24 @@ const t = {
 
     techLayersTitle: "Technology Layers: Five Generations of Stacking Exposure",
     techLayersSub: "Each technology generation added a new frequency layer. The biological effect is not additive — it is superadditive through CaMKII threshold integration.",
-    techLayersDesc: "Modern EMF exposure is not one signal — it is 5–12 simultaneous sources spanning 10 orders of magnitude in frequency. The power grid (50/60 Hz ELF) primes cells by upregulating VGCC expression. WiFi adds a hidden 10 Hz ELF beacon with 100:1 crest factor. GSM introduced the most bioactive modulation change in history (NMT→GSM = analog→pulse). 4G/smartphones brought always-on body contact. LED lighting opened the IF channel (20–300 kHz). Each layer stacks on existing ones; CaMKII integrates all Ca²⁺ regardless of source.",
+    techLayersDesc: "Technology histories identify possible changes in local exposure, but source count and generation do not determine biological dose. BERM preserves waveform, phase/coherence, tissue transfer and receiving state, then calculates a declared driver and its response window. Channel, ER, repair and clock processes explain how the resulting signal can propagate across time.",
     techLayersLink: "See all 14 technology profiles →",
 
     elfPrimingTitle: "ELF Priming Hypothesis",
-    elfPrimingDesc: "The power grid does not merely add 50 Hz exposure. It upregulates voltage-gated calcium channel expression (P/Q, N, R subtypes increase after 8–10 days — [[ref:sun2016_elf_vgcc|PMC4757866]]). This makes every cell more sensitive to every other EMF source. This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
+    elfPrimingDesc: "[[ref:sun2016_elf_vgcc|Sun 2016]] identifies altered calcium-channel expression after a named neuronal ELF protocol. This motivates measuring prior exposure → receiving state → later acute response. Electricity consumption is a diffusion proxy, not a channel-state measurement; the experiment does not show that every cell becomes more sensitive to every field.",
     elfFreqNote: "Note: The ELF channel operates at 50 Hz in Europe and 60 Hz in the Americas. 50 Hz is within 2 Hz of the 8th Schumann resonance harmonic (52.0 Hz), potentially producing stronger CRY interference in European populations. This is a novel, falsifiable prediction testable by comparing melatonin profiles between 50 Hz and 60 Hz countries at matched total EMF levels.",
 
     layerModelTitle: "The Layered Exposure Model",
     layerModelSub: "Five epidemics, five technology layers — historical verification and formula update",
-    layerModelDesc: "Historical health trend data shows that the inflection points of five major epidemics (obesity, T2D, autism, sperm decline, teen mental health) correspond to TECHNOLOGY LAYER additions — not individual technology adoptions. The layered model explains anomalies that conventional explanations cannot.",
+    layerModelDesc: "Historical health and technology series provide candidate timing contrasts. BERM tests whether measured local exposure and receiving-state changes explain intermediate biological function and later outcomes beyond the shared development, diet, sleep and demographic changes. Matching inflection years alone does not identify that chain.",
     layerFormulaTitle: "Formula v20: EMF_effective",
     layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
     layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
     layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
     layerFormulaPriming: "P = 1 + α × min(electrification_years, 40)",
     layerFormulaRecovery: "R = 1 + β × EMF_free_hours_per_day",
-    layerFormulaPrimingDesc: "P (Priming): cells in environments electrified longer have higher VGCC expression, making them MORE sensitive to all EMF sources. A country electrified for 100 years is more sensitive than one electrified 10 years ago.",
-    layerFormulaRecoveryDesc: "R (Recovery): hours per day without significant EMF allow Ca²⁺ homeostasis restoration. Modern environments (WiFi 24/7, LED 16h/day, phone in bed) → EMF-free hours ≈ 0 → no recovery. Amish → EMF-free hours ≈ 22 → full recovery.",
+    layerFormulaPrimingDesc: "P is a historical proxy scenario. Electrification years do not measure the receiving state of a present-day cell. A mechanistic history model instead measures passage, differentiation, prior fields, channel state and repair, then predicts whether the next response increases, decreases or shifts in frequency.",
+    layerFormulaRecoveryDesc: "R summarizes assumed interval structure in this proxy scenario. Actual recovery depends on local dose, biological state, sleep and repair rates. Device presence does not establish zero recovery, and a community label does not establish complete recovery.",
     layerFormulaNote: "Parameters α, β, w_IF require calibration against 54-country dataset + Amish/Tsimane data points. Expected improvement: LOOCV RMSE < 0.45 (vs 0.522 for v19.1).",
     layerAnomaliesTitle: "Five anomalies the layered model explains",
     layerAnomalies: [
@@ -569,12 +569,12 @@ const t = {
     genSuscRef: "[[ref:kury2017_camk2|Küry 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
 
     recovWindowTitle: "Recovery Window: CaMKII Dephosphorylation",
-    recovWindowSub: "Modern life eliminates the EMF-free hours needed for Ca²⁺ homeostasis restoration",
-    recovWindowDesc: "CaMKII dephosphorylation (recovery from autophosphorylated state) requires time without Ca²⁺ overload. EMF-free sleep allows this recovery. But modern environments eliminate EMF-free hours: WiFi router 24/7, phone on bedside table, LED lighting until sleep, Bluetooth devices. The Recovery factor (R) captures this: when EMF-free hours approach zero, the denominator 1/R approaches 1.0 (no recovery), and cumulative damage accelerates.",
-    recovWindowEvidence: "Shift work: [[ref:shiftwork_mets2025|OR 1.17]] for metabolic syndrome — night shift disrupts both melatonin and recovery window. [[ref:walker2017_why_we_sleep|Walker (2017)]]: one night of poor sleep → testosterone −15%, NK cells −70%. Good sleep RESTORES → the recovery window is real. COVID lockdown natural experiment: 24h/day at home with WiFi + LED + multiple devices → recovery window eliminated → T2D acceleration from [[ref:t2d_covid2024|2.90% to 3.52%/yr]].",
-    recovWindowIntervention: "The simplest intervention the model predicts: an EMF-free bedroom. Remove WiFi router from bedroom, use airplane mode on phone at night, switch to incandescent or candle light before sleep. This restores the recovery window without requiring any other lifestyle change.",
+    recovWindowSub: "Recovery is a measurable process with several time constants",
+    recovWindowDesc: "BERM separates calcium/CaMKII relaxation, receptor-state recovery, adaptive repair and tissue turnover. Measure these during and after a defined local field protocol, together with functional capacity. Protective preconditioning, sensitization and persistent injury predict different time courses; a single exposure-free-hours factor cannot identify which occurred.",
+    recovWindowEvidence: "Sleep and shift-work evidence anchor the importance of biological timing. They do not isolate a field-free recovery threshold. RF preconditioning and repair interventions provide a closer route to testing field-associated history: measure repair flux and challenge tolerance alongside damage and baseline function.",
+    recovWindowIntervention: "A controlled bedroom study can vary measured local fields while matching light, sleep schedule, temperature and device-use behavior. Serial melatonin, calcium-related markers and functional endpoints then distinguish a field-associated effect from the consequences of the accompanying sleep changes.",
     recovWindowPred1: "RECOV-1: EMF-free bedroom → melatonin levels increase measurably within 2 weeks",
-    recovWindowPred2: "RECOV-2: Minimum recovery window for CaMKII dephosphorylation: 4–6 hours EMF-free",
+    recovWindowPred2: "RECOV-2: measure the recovery curve; test the proposed 4–6-hour window",
     recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID lockdown data · Shift work meta-analyses",
     // --- Dual-Kernel Convolution (DKC) ---
     dkcTitle: "Dual-Kernel Convolution",
@@ -632,13 +632,13 @@ const t = {
     recovPhaseRowsNote: "Crossing year is the first year the exposure-free fraction of the day falls below 0.25; ratio and net daily damage index are the 2024 values. Both are computed from the model's own penetration, screen-contact and bedroom-device inputs.",
     recovPhaseKorea: "South Korea is the clearest case because its penetration saturated early. Between 2013 and 2023 smartphone penetration moved from 0.60 to 0.97 — a diffusion process essentially finished — while the exposure-free fraction of the day fell from 0.63 to 0.10 and the net daily damage index rose from 1.6 to 16.2. The exposure count stopped changing; the interval structure did not.",
     recovPhaseLevel: "M|C",
-    recovPhaseLevelNote: "The repair kinetics and the dosing-interval rule are established; their application to field exposure is the new step.",
+    recovPhaseLevelNote: "The table is a dosing-interval scenario. The threshold and repair parameters require field- and endpoint-specific calibration.",
     // --- Spectral stacking ---
     specStackTitle: "Spectral Stacking",
     specStackSub: "Every generation adds bands without retiring the previous ones",
     specStackDesc: "Exposure is usually summarised as a single power figure, SAR in watts per kilogram. That figure is blind to how many distinct frequencies are present at once, and technology generations accumulate rather than replace: 2G did not switch off when 3G arrived, and Wi-Fi, Bluetooth and household IoT each occupy their own band. If ion channels act as receivers, what matters is not only how much power arrives but across how many channels it arrives simultaneously.",
     specStackFormula: "spectral complexity = log₂(1 + bands)",
-    specStackFormulaNote: "The Shannon form, not a linear count: capacity for noise grows logarithmically in the number of simultaneous bands, which is why a broadband exposure and a single-frequency exposure of equal power are not equivalent.",
+    specStackFormulaNote: "This logarithmic band-count index is a descriptive proxy, not a biological capacity law. A receiving model instead uses a measured local driver spectrum and its projection through a state-dependent response window.",
     specStackRows: [
       { era: "Broadcast only", years: "before 1990", bands: "1", added: "FM and television", complexity: "1.00" },
       { era: "2G", years: "1990s", bands: "2", added: "Cellular voice", complexity: "1.59" },
@@ -647,7 +647,7 @@ const t = {
       { era: "5G", years: "2020s", bands: "11+", added: "New radio bands, household IoT", complexity: "3.99" },
     ],
     specStackRowsNote: "Band counts and complexity are the model's values for South Korea, which reached each generation earliest. A country's complexity depends on when each generation arrived, so the same calendar year gives a different value in each country.",
-    specStackImplication: "This is where the safety-margin arithmetic and the field observations part company. Laboratory exposure protocols test one frequency at a time, so a threshold established that way says nothing about the case where seven or eleven bands are present together. A margin computed against a single-frequency benchmark cannot be read as a margin against the multi-band environment it is applied to, and the metric needs a spectral term beside the power term.",
+    specStackImplication: "Multisource comparisons should preserve phase/coherence, local transfer and the slow driver spectrum. N(N−1)/2 cross pairs do not imply N² damage: their sign, projection and averaging matter. A useful test changes a defined component or coherence while matching power and temperature, and predicts one specified endpoint.",
     specStackLevel: "L*",
     specStackLevelNote: "Testable theory candidate: the Shannon form is an analogy with no direct experimental validation for multi-band biological exposure.",
     specStackCovid: "The COVID ambient dip is the one natural test on record. Industrial and traffic emissions stopped while household devices stayed on, so the lockdown was not simply less exposure but fewer simultaneous bands — a spectral simplification with the personal channel intact. The framework's reading of the bidirectional COVID result rests on that distinction rather than on total power.",
@@ -707,9 +707,9 @@ const t = {
       },
     ],
 
-    fourRoutesTitle: "Five independent EMF -> TFR routes",
-    fourRoutesSub: "Gonadal, circadian, pituitary, autonomic, and neurodevelopmental — each sufficient alone",
-    fourRoutesDesc: "BERM identifies five independent biological routes through which EMF exposure can reduce fertility. Each route operates through a distinct mechanism and target tissue. Crucially, each route is independently sufficient to reduce TFR — they operate in parallel, not in series. This means that blocking one route (e.g., antioxidant supplementation for the gonadal route) does not eliminate the effect, because four other routes remain active.",
+    fourRoutesTitle: "Five proposed EMF → fertility and TFR routes",
+    fourRoutesSub: "Gonadal, circadian, pituitary, autonomic and neurodevelopmental pathways",
+    fourRoutesDesc: "BERM proposes five biological routes through which EMF-related changes could affect fertility and, under further population assumptions, TFR. They describe different tissue mechanisms, but parallel operation and shared mediators must be evaluated together. Distinct mechanisms do not establish statistical independence or show that any one route alone is sufficient to reduce TFR. The net effect of blocking a route depends on its contribution, interactions, compensation and exposure context; the diagram does not demonstrate that the other four remain active.",
     fourRoutesGonadal: "Route 1: Gonadal (established)",
     fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperm DNA damage + Leydig cell StAR suppression -> testosterone decline + spermatogenesis disruption. Additionally: EMF -> CatSper premature activation -> energy depletion -> navigation failure (rheotaxis, chemotaxis, acrosome reaction). Target tissue: testes. Evidence level: E (23-28 blocker studies). Primary channel: RF + ELF.",
     fourRoutesCircadian: "Route 2: Circadian (established)",
@@ -729,7 +729,7 @@ const t = {
 
     modulomeSub: "Twelve-layer susceptibility model — from molecular spin physics to population patterns",
     modulomeTitle: "EMF Modulome",
-    modulomeDesc: "The twelve-layer modulome catalogues candidate moderators from molecular spin physics to population patterns. BERM maps them through endpoint-specific response kernels; they are not a universal χ, are not χ_geo, and are not derived by FieldState. Twelve layers, ten target organs, four proposed routes to fertility decline.",
+    modulomeDesc: "The twelve-layer modulome catalogues candidate moderators from molecular spin physics to population patterns. BERM maps them through endpoint-specific response kernels; they are not a universal χ, are not χ_geo, and are not derived by FieldState. Twelve layers, twelve target organs, four proposed routes to fertility decline.",
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
@@ -1056,7 +1056,7 @@ const t = {
     physBioSuperDesc: "Sähkömagneettiset kentät noudattavat edelleen tavallista superpositioperiaatetta. Koska Lindgrenin ansatz on potentiaalin suhteen neliöllinen, metriikka-ajuri sisältää täsmälliset tausta–häiriö-ristitermit ja itseistermin. Tämä osoittaa sekoittumisen malligeometriassa, ei biologisen vaikutuksen ei-additiivisuutta.",
     physBioSuperFormula: "A=A₀+Σᵢaᵢ;  Δg=κ[Σᵢ(A₀⊗aᵢ+aᵢ⊗A₀)+Σᵢaᵢ⊗aᵢ+Σᵢ<ⱼ(aᵢ⊗aⱼ+aⱼ⊗aᵢ)]",
     physBioSuperExplain: "n kanavan täsmällinen laajennus säilyttää n(n−1)/2 paritermiä. Amplitudimodulaatio ja kaksitaajuussyöte synnyttävät a²:ssa verhokäyrä- ja erotustaajuustermejä. Biologinen vaste voi olla positiivinen, nolla tai negatiivinen vaiheen, koherenssiajan, reseptori-/agonistitilan, redox-tilan, kehitysikkunan ja elinsiirron mukaan. Yhdistelmäaltistustutkimukset rajaavat kokeen mutta eivät kalibroi L2-ydintä ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]).",
-    physBioMaxwellExplain: "Lähteetön Maxwell-yhtälö ∇_μF^μν = 0 seuraa Lindgrenin metriikasta variaatioperiaatteen S = ∫√(−g)R d⁴x, Weyl-ehdon ja Bianchi-identiteetin kautta. Bianchi on välttämätön mutta ei yksin riittävä: dF = 0 ei ole oikotie lähteelliseen yhtälöön ∇_μF^μν = J^ν.",
+    physBioMaxwellExplain: "Määritelmä F=dA antaa homogeenisen Maxwell-identiteetin dF=0. EH-variaatio, Weyl-yhteys ja rajattu GME-residuaali ovat erillisiä ehdollisia sopimuksia; niiden yhteinen tarkistus ei itsessään johda yhtälöä ∇_μF^μν=0 eikä ∇_μF^μν=J^ν. Divergenssiyhtälö tarvitsee eksplisiittisen dynaamisen johdon ja virran identifikaation. Matematiikkasivu näyttää nämä portit erikseen.",
     physBioChiEpistemic: "[L1 + L0/L2 reduktio]",
     physBioSuperLink: "Katso täydellinen superpositioanalyysi →",
     physBioTissueTitle: "Kudostarkka resonanssi",
@@ -1287,15 +1287,15 @@ const t = {
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, diagnostisilla painoilla w_ELF = 0,05, w_IF = 0,60 ja w_RF = 0,35. Ne vaativat empiirisen kalibroinnin eivätkä ole sovitettuja biologisia parametreja. Väitteet matalan infrastruktuurin tai saturoituneen ympäristön vaikutuksista ovat ehdokasproxy-skenaarioita koordinaatilla x=N(z_proxy), eivät suoria kenttämittauksia tai suljettu L2-operaattori.",
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
     twoChLayersDesc:
-      "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin erottelukykyä, koska jokainen kerros toimii ortogonaalisena instrumenttina.",
+      "Ympäristön lähdeluettelo erottaa kaksitoista lähdeluokkaa käyttöönottohistorian, käyttötilan ja taajuuden mukaan. Niiden trendit voivat korreloida, joten ne eivät ole automaattisesti riippumattomia kausaalisia instrumentteja. Paikallisen aaltomuodon ja kudossiirron mittaukset määräävät vastaanottomalliin tulevat yhdistelmät.",
     ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen [[ref:yakymenko2016|Yakymenko ym. 2016]] (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
-    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta ([[ref:bertagna2025|Bertagna ym. 2025]], Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudostarkan herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: nollatulokset ihosoluissa). Huom: [[ref:bertagna2025|Bertagna 2025]] on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
+    multiPathwayCa2Note: "[[ref:bertagna2025|Bertagna 2025]] yhdistää myöhemmän kalvovirtavasteen ER:n vapautukseen ja takaisinottoon 50 Hz:n, 1 mT:n altistuksessa. RyR- ja SERCA-interventiot rajaavat kytkettyä varasto–solulima–kalvojärjestelmää; ne eivät tunnista kahta riippumatonta vaurio-osuutta eivätkä osoita suoraa S4-pakottamista. Mittaa ensimmäinen kalsiummuutos, ER-varaston aikakulku ja myöhempi toiminto erikseen. Tämä täydentää IFO-ehdokasta ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) kunkin kokeen kenttäluokan säilyttäen.",
     fiveGReproNote: "Ensimmäinen 5G-taajuustarkka testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin näyttöpohjan ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
     pathwayBQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-aiheutettua melatoniinivaimennusta (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
-    pathwayBWeightNote: "Huomautus polku B:n painosta: Polku B:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; [[ref:iversen2025|Iversen ym. 2025]], Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja B ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
-    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä säätelevät iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku B:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:iversen2025|Iversen 2025]]) paljastaa lisäksi, että polku B:llä on toinen alaspäin suuntautuva haara: CRY2 säätelee TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja B ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
-    cryDualSystemNote: "CRY:n kaksoissysteemi: Polku B toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. CRY1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa ([[ref:bartolke2025|Bartölke ym. 2025]], FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. [[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. CRY2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa ([[ref:iversen2025|Iversen ym. 2025]]), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
-    recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: [[ref:koivisto2000|Koivisto ym. (2000)]] havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas [[ref:panagopoulos2025_ifo|Panagopoulos ym. (2025)]] raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Palautumisikkuna-malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 93 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
+    pathwayBWeightNote: "CRY2–TRPC1-tulos ([[ref:iversen2025|Iversen 2025]]) lisää kalsiumsignaloinnin haaran nimetyssä myoblastien PEMF-järjestelmässä. TRPC1 on TRP-kanava. Tulos motivoi pareittaisia sham/kenttä-interventioita L-tyypin salpauksella, TRPC1-muutoksella ja palautuksella; se ei määrää 25 prosentin lisääntymisosuutta. Nykyiset painot ovat skenaariovalintoja, kunnes saman järjestelmän päätepisteet kalibroidaan.",
+    cryIndividualVariationNote: "Vastaanoton ehdokaskoordinaatteja ovat CRY-alatyyppi ja sijainti, FAD:n sitoutumis-/redox-tila, kalvo-orientaatio ja valohistoria. Pigmentaatio-/valovastehavainnot ([[ref:higuchi2007|Higuchi 2007]]) ja sukupuolierot nimetyssä magneettiaistitehtävässä ([[ref:chae2019|Chae 2019]]) eivät anna yleisiä CRY-herkkyyskertoimia. [[ref:iversen2025|Iversen 2025]] rajaa CRY2/RFK/TRPC1:tä omassa myoblastien PEMF-kokeessaan; saman järjestelmän interventiot tarvitaan ennen vasteen siirtoa sukurauhas- tai verkkokalvokudokseen.",
+    cryDualSystemNote: "Verkkokalvon CRY-paikannus ([[ref:bartolke2025|Bartölke 2025]]), kalvoon liittyvän Cry4a:n orientaatio ([[ref:majewska2025|Majewska 2025]]) ja myoblastien CRY2–TRPC1-kompleksi ([[ref:iversen2025|Iversen 2025]]) ankkuroivat eri vastaanottokoordinaatteja. Synteesi säilyttää proteiinialatyypin, lajin, sijainnin, kofaktorin sitoutumistilan ja valojärjestyksen. Paikannustulos ehdottaa vastaanoton testipaikkaa; se ei osoita järjestäytynyttä ihmisen verkkokalvokompassia, sinisilmäisyyden vahvistuskerrointa tai kalvoravinnon vaikutuskokoa.",
+    recoveryWindowNote: "Akuutti toiminnan paraneminen ja viivästynyt haitta voivat syntyä erilaisista vastaanotto- ja korjaustiloista. BERM seuraa siksi vastaanotintilaa s, korjauskapasiteettia A, vauriota D ja toimintakykyä C altistuksen ja palautumisen aikana. Adaptiiviset RF-esikäsittelykokeet motivoivat korjaushaaran; pieni myöhempi vaste voi kertoa myös heikentyneestä vastaanotosta tai muuttuneesta lähtötasosta. Vaihtoehdot tarvitsevat toistettuja absoluuttisia mittauksia yleisen korjausprosentin sijaan.",
     lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: [[ref:eliyahu2006|Eliyahu ym. (2006)]] ja [[ref:luria2009|Luria ym. (2009)]] osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei henkilökohtaisen EMF:n vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
     ifChannelTitle: "IF-kanava: LED-valaistus päälähteinä",
     ifChannelDesc:
@@ -1306,10 +1306,10 @@ const t = {
     tcbmElfTitle: "Kanava 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Sijaismuuttuja: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
-    tcbmIfTitle: "Kanava 2: IF (300 Hz – 10 MHz)",
+    tcbmIfTitle: "Kanava 2: IF (300 Hz – 1 MHz)",
     tcbmIfDesc:
       "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-vaihtelut ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Sijaismuuttuja: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko ([[ref:ijrb2022_if_review|IJRB 2022]]).",
-    tcbmRfTitle: "Kanava 3: RF (100 kHz – 300 GHz)",
+    tcbmRfTitle: "Kanava 3: RF (1 MHz – 300 GHz)",
     tcbmRfDesc:
       "Lähde: matkapuhelimet, Wi-Fi, Bluetooth, tukiasemat, IoT. Mekanismi: RPM/CRY spin-kemia ([[ref:ritz2004|Ritz 2004]]), terminen absorptio korkealla SAR:lla. Historia: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Sijaismuuttuja: laajakaistaliittymät per 100, matkapuhelinliittymät. Moduloitu (datakoodaus), henkilökohtainen + ympäristö.",
     tcbmIfMitotic:
@@ -1346,9 +1346,9 @@ const t = {
     recovLeydigNote:
       "Testosteronia tuottavat solut voivat osittain palautua, mutta krooninen atrofia heikentää uudistumiskykyä",
     recovBbbLayer: "Biologiset esteet (BBB + BTB)",
-    recovBbbTime: "BBB: palautumaton; BTB: osittain palautuva",
+    recovBbbTime: "Kudos- ja vauriokohtainen; palautuminen mitattava",
     recovBbbNote:
-      "Kroonisesta BBB-vuodosta johtuvan hermostovaurion oletetaan olevan pysyvä. BTB:n häiriö ([[ref:yu2019_btb|Yu ym. 2019]]: Spock3-MMP2-akseli 4G:llä) vaarantaa spermatogeneettisen mikroympäristön suoraan. Molemmat esteet käyttävät samoja tight junction -proteiineja (okkludiini, ZO-1). Positiivinen takaisinkytkentä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota.",
+      "Pitkän puhelinaltistuskokeen BTB-häiriö ja SPOCK3–MMP14–MMP2-muutokset paikantavat hitaan kudosreitin. Estehäiriö ja hormonihäiriö voivat muodostaa palautteen. Mallissa ẋ=au+by−r_xx ja ẏ=cu+dx−r_yy positiiviset palautumisnopeudet tuottavat vakauden, kun bd<r_xr_y. Peruuttamattomuus vaatii lisäksi mitattua rakenteellista menetystä tai epälineaarista dynamiikkaa; estevuoto ei yksin osoita suurempaa fysikaalista kenttää.",
 
     compSub: "Miten TFR-kaava erottaa biologisen kapasiteetin kulttuurisesta kysynnästä",
     compTitle: "Kompensaatiomekanismi",
@@ -1375,24 +1375,24 @@ const t = {
 
     techLayersTitle: "Teknologiakerrokset: viisi sukupolvea kerrostuvia altistuksia",
     techLayersSub: "Jokainen teknologiasukupolvi lisäsi uuden taajuuskerroksen. Biologinen vaikutus ei ole summautuva — se on superadditiivinen CaMKII-kynnysintegraation kautta.",
-    techLayersDesc: "Moderni EMF-altistus ei ole yksi signaali — se on 5–12 samanaikaista lähdettä, jotka kattavat 10 kertaluokkaa taajuudessa. Sähköverkko (50/60 Hz ELF) herkistää soluja ylössäätelemällä VGCC-ekspressiota. WiFi lisää piilotetun 10 Hz ELF-beacon-pulssin 100:1 huippukertoimella. GSM toi historian bioaktiivisimman modulaatiomuutoksen (NMT→GSM = analoginen→pulssi). 4G/älypuhelimet toivat jatkuvan kehokontaktin. LED-valaistus avasi IF-kanavan (20–300 kHz). Jokainen kerros kerrostuu aiempien päälle; CaMKII integroi kaiken Ca²⁺:n lähteestä riippumatta.",
+    techLayersDesc: "Teknologiahistoriat paikantavat mahdollisia paikallisen altistuksen muutoksia, mutta lähteiden määrä ja sukupolvi eivät määrää biologista annosta. BERM säilyttää aaltomuodon, vaiheen/koherenssin, kudossiirron ja vastaanotintilan ja laskee sitten nimetyn ajurin ja sen vasteikkunan. Kanava-, ER-, korjaus- ja kelloprosessit kuvaavat syntyvän signaalin etenemistä ajassa.",
     techLayersLink: "Katso kaikki 14 teknologiaprofiilia →",
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
-    elfPrimingDesc: "Sähköverkko ei ainoastaan lisää 50 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivässä — [[ref:sun2016_elf_vgcc|PMC4757866]]). Tämä tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille. Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
+    elfPrimingDesc: "[[ref:sun2016_elf_vgcc|Sun 2016]] paikantaa kalsiumkanavien muuttuneen ilmentymisen nimetyn hermosolujen ELF-kokeen jälkeen. Tämä motivoi mittaamaan ketjua aiempi altistus → vastaanotintila → myöhempi akuutti vaste. Sähkönkulutus on yleistymisen sijaismuuttuja, ei kanavatilan mittaus; koe ei osoita jokaisen solun herkistyvän jokaiselle kentälle.",
     elfFreqNote: "Huomautus: ELF-kanava toimii 50 Hz:llä Euroopassa ja 60 Hz:llä Amerikoissa. 50 Hz on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä eurooppalaisissa populaatioissa. Tämä on deduktiivinen hypoteesi ja falsifioitavissa vertaamalla melatoniiniprofiileja 50 Hz:n ja 60 Hz:n maiden välillä sovitetuilla kokonais-EMF-tasoilla.",
 
     layerModelTitle: "Kerrostumamalli",
     layerModelSub: "Viisi epidemiaa, viisi teknologiakerrosta — historiallinen verifikaatio ja formulapäivitys",
-    layerModelDesc: "Historiallinen terveystrendidata osoittaa, että viiden suuren epidemian (obesiteetti, T2D, autismi, siittiölasku, nuorten mielenterveys) inflektiopisteet vastaavat TEKNOLOGIAKERROSTUMIEN lisääntymistä — eivät yksittäisten teknologioiden omaksumista. Kerrostumamalli selittää anomalioita joita konventionaaliset selitykset eivät selitä.",
+    layerModelDesc: "Historialliset terveys- ja teknologiasarjat tarjoavat ajoituskontrastien ehdokkaita. BERM testaa, selittävätkö mitatut paikallisen altistuksen ja vastaanotintilan muutokset biologista välitoimintoa ja myöhempiä tuloksia yhteisten kehitys-, ravinto-, uni- ja väestömuutosten lisäksi. Samanaikaiset taitekohdat eivät yksin tunnista ketjua.",
     layerFormulaTitle: "Formula v20: EMF_effective",
     layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
     layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
     layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
     layerFormulaPriming: "P = 1 + α × min(sähköistysvuodet, 40)",
     layerFormulaRecovery: "R = 1 + β × EMF_vapaat_tunnit_per_päivä",
-    layerFormulaPrimingDesc: "P (Priming): pidempään sähköistetyissä ympäristöissä olevilla soluilla on korkeampi VGCC-ekspressio, mikä tekee niistä HERKEMPIÄ kaikille EMF-lähteille. 100 vuotta sähköistetty maa on herkempi kuin 10 vuotta sitten sähköistetty.",
-    layerFormulaRecoveryDesc: "R (Palautuminen): tunnit päivässä ilman merkittävää EMF:ää mahdollistavat Ca²⁺-homeostaasiin palautumisen. Modernit ympäristöt (WiFi 24/7, LED 16h/pv, puhelin sängyssä) → EMF-vapaat tunnit ≈ 0 → ei palautumista. Amishit → EMF-vapaat tunnit ≈ 22 → täysi palautuminen.",
+    layerFormulaPrimingDesc: "P on historiallinen sijaismuuttujaskenaario. Sähköistymisvuodet eivät mittaa nykyisen solun vastaanotintilaa. Mekanistinen historiamalli mittaa passagen, erilaistumisen, aiemmat kentät, kanavatilan ja korjauksen ja ennustaa niiden perusteella, kasvaako, pieneneekö vai siirtyykö seuraava vaste taajuudessa.",
+    layerFormulaRecoveryDesc: "R tiivistää oletetun taukorakenteen tässä sijaismuuttujaskenaariossa. Todellinen palautuminen riippuu paikallisesta annoksesta, biologisesta tilasta, unesta ja korjausnopeuksista. Laitteen läsnäolo ei osoita palautumisen puuttumista, eikä yhteisön nimi täydellistä palautumista.",
     layerFormulaNote: "Parametrit α, β, w_IF vaativat kalibraation 54 maan datasettiä + amish/tsimane-datapisteitä vastaan. Odotettu parannus: LOOCV RMSE < 0,45 (vs 0,522 v19.1:lle).",
     layerAnomaliesTitle: "Viisi anomaliaa jotka kerrostumamalli selittää",
     layerAnomalies: [
@@ -1576,12 +1576,12 @@ const t = {
     genSuscRef: "[[ref:kury2017_camk2|Küry 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
 
     recovWindowTitle: "Palautumisikkuna: CaMKII-defosforylaatio",
-    recovWindowSub: "Moderni elämä poistaa EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
-    recovWindowDesc: "CaMKII:n defosforylaatio (palautuminen autofosforyloidusta tilasta) vaatii aikaa ilman Ca²⁺-ylikuormaa. EMF-vapaa uni mahdollistaa tämän palautumisen. Mutta modernit ympäristöt poistavat EMF-vapaat tunnit: WiFi-reititin 24/7, puhelin yöpöydällä, LED-valaistus uneen asti, Bluetooth-laitteet. Palautumiskerroin (R) kuvaa tämän: kun EMF-vapaat tunnit lähestyvät nollaa, nimittäjä 1/R lähestyy arvoa 1,0 (ei palautumista), ja kumulatiivinen vaurio kiihtyy.",
-    recovWindowEvidence: "Vuorotyö: [[ref:shiftwork_mets2025|OR 1,17]] metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. [[ref:walker2017_why_we_sleep|Walker (2017)]]: yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna poistettu → T2D-kiihdytys [[ref:t2d_covid2024|2,90 %:sta 3,52 %/v]].",
-    recovWindowIntervention: "Yksinkertaisin interventio, jonka malli ennustaa: EMF-vapaa makuuhuone. Poista WiFi-reititin makuuhuoneesta, käytä lentokonetilaa yöllä, vaihda hehkulamppuun tai kynttilänvaloon ennen unta. Tämä palauttaa palautumisikkunan ilman muita elämäntapamuutoksia.",
+    recovWindowSub: "Palautuminen on mitattava prosessi, jolla on useita aikavakioita",
+    recovWindowDesc: "BERM erottaa kalsiumin/CaMKII:n palautumisen, vastaanotintilan palautumisen, adaptiivisen korjauksen ja kudoksen uusiutumisen. Mittaa ne määritellyn paikallisen kenttäkokeen aikana ja jälkeen yhdessä toimintakyvyn kanssa. Suojaava esikäsittely, herkistyminen ja pysyvä vaurio ennustavat erilaiset aikakulut; yksi altisteettomien tuntien kerroin ei tunnista toteutunutta prosessia.",
+    recovWindowEvidence: "Uni- ja vuorotyönäyttö ankkuroivat biologisen ajoituksen merkityksen. Ne eivät eristä kentättömän palautumisen kynnystä. RF-esikäsittely ja korjausinterventiot tarjoavat läheisemmän testin kenttään liittyvälle historialle: mittaa korjausvirta ja haastetoleranssi vaurion ja lähtötoiminnan rinnalla.",
+    recovWindowIntervention: "Kontrolloidussa makuuhuonetutkimuksessa voidaan vaihdella mitattuja paikallisia kenttiä ja vakioida valo, unirytmi, lämpötila sekä laitteiden käyttötapa. Toistetut melatoniini-, kalsiumvälitteiset ja toiminnalliset mittaukset erottavat silloin kenttään liittyvän vaikutuksen samanaikaisten unimuutosten seurauksista.",
     recovWindowPred1: "RECOV-1: EMF-vapaa makuuhuone → melatoniini nousee mitattavasti 2 viikossa",
-    recovWindowPred2: "RECOV-2: Minimipalautumisaika CaMKII-defosforylaatiolle: 4–6 tuntia EMF-vapaata",
+    recovWindowPred2: "RECOV-2: mittaa palautumiskäyrä; testaa ehdotettu 4–6 tunnin ikkuna",
     recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID-sulkudata · Vuorotyön meta-analyysit",
     // --- Kaksois-kernel-konvoluutio (DKC) ---
     dkcTitle: "Kaksois-kernel-konvoluutio",
@@ -1639,13 +1639,13 @@ const t = {
     recovPhaseRowsNote: "Ylitysvuosi on ensimmäinen vuosi, jona vuorokauden altistusvapaa osuus laskee alle 0,25; osuus ja nettovaurioindeksi ovat vuoden 2024 arvot. Molemmat lasketaan mallin omista penetraatio-, ruutukontakti- ja makuuhuonelaitesyötteistä.",
     recovPhaseKorea: "Etelä-Korea on selkein tapaus, koska sen penetraatio kyllästyi aikaisin. Vuosina 2013–2023 älypuhelinpenetraatio siirtyi 0,60:stä 0,97:ään — diffuusio oli käytännössä valmis — kun vuorokauden altistusvapaa osuus laski 0,63:sta 0,10:een ja nettovaurioindeksi nousi 1,6:sta 16,2:een. Altistusten määrä lakkasi muuttumasta; intervallirakenne ei.",
     recovPhaseLevel: "M|C",
-    recovPhaseLevelNote: "Korjauskinetiikka ja annosvälisääntö ovat vakiintuneita; niiden soveltaminen kenttäaltistukseen on uusi askel.",
+    recovPhaseLevelNote: "Taulukko on altistusvälejä kuvaava skenaario. Kynnys ja korjausparametrit tarvitsevat kenttä- ja päätepistekohtaisen kalibroinnin.",
     // --- Spektraalinen pinoaminen ---
     specStackTitle: "Spektraalinen pinoaminen",
     specStackSub: "Jokainen sukupolvi lisää kaistoja poistamatta aiempia",
     specStackDesc: "Altistus tiivistetään yleensä yhteen tehon lukuun, SAR wattia kilogrammaa kohti. Se luku on sokea sille, montako eri taajuutta on läsnä yhtä aikaa, ja teknologiasukupolvet kumuloituvat eivätkä korvaa: 2G ei sammunut kun 3G tuli, ja WiFi, Bluetooth ja kotitalouden IoT varaavat kukin oman kaistansa. Jos ionikanavat toimivat vastaanottimina, merkitystä ei ole vain sillä paljonko tehoa saapuu vaan myös monen kanavan kautta se saapuu samanaikaisesti.",
     specStackFormula: "spektraalinen monimutkaisuus = log₂(1 + kaistat)",
-    specStackFormulaNote: "Shannonin muoto, ei lineaarinen lukumäärä: kohinakapasiteetti kasvaa logaritmisesti samanaikaisten kaistojen määrässä, ja siksi laajakaistainen ja yksitaajuinen samatehoinen altistus eivät ole sama asia.",
+    specStackFormulaNote: "Tämä logaritminen kaistalukumittari on kuvaileva sijaismuuttuja, ei biologinen kapasiteettilaki. Vastaanottomalli käyttää sen sijaan mitatun paikallisen ajurin spektriä ja sen projektiota tilariippuvaisen vasteikkunan läpi.",
     specStackRows: [
       { era: "Vain yleisradio", years: "ennen 1990", bands: "1", added: "FM ja televisio", complexity: "1,00" },
       { era: "2G", years: "1990-luku", bands: "2", added: "Matkapuhelinpuhe", complexity: "1,59" },
@@ -1654,7 +1654,7 @@ const t = {
       { era: "5G", years: "2020-luku", bands: "11+", added: "Uudet radiokaistat, kotitalouden IoT", complexity: "3,99" },
     ],
     specStackRowsNote: "Kaistamäärät ja monimutkaisuus ovat mallin arvot Etelä-Korealle, joka saavutti jokaisen sukupolven ensimmäisenä. Maan monimutkaisuus riippuu siitä milloin kukin sukupolvi saapui, joten sama kalenterivuosi antaa eri arvon eri maassa.",
-    specStackImplication: "Tässä turvamarginaalien laskenta ja kenttähavainnot erkanevat. Laboratorioprotokollat testaavat yhtä taajuutta kerrallaan, joten näin asetettu kynnys ei kerro mitään tapauksesta jossa seitsemän tai yksitoista kaistaa on läsnä yhdessä. Yksitaajuista vertailukohtaa vasten laskettua marginaalia ei voi lukea marginaaliksi sitä monikaistaista ympäristöä vasten, johon sitä sovelletaan, ja metriikka tarvitsee spektraalisen termin tehotermin rinnalle.",
+    specStackImplication: "Monilähdevertailun tulee säilyttää vaihe/koherenssi, paikallinen siirto ja hitaan ajurin spektri. N(N−1)/2 ristiparia ei tarkoita N²-vauriota: niiden etumerkki, projektio ja keskiarvoistus ratkaisevat. Hyödyllinen testi muuttaa määriteltyä komponenttia tai koherenssia, vakioi tehon ja lämpötilan ja ennustaa yhden nimetyn päätepisteen.",
     specStackLevel: "L*",
     specStackLevelNote: "Testattava teoriakandidaatti: Shannonin muoto on analogia, jolla ei ole suoraa kokeellista validointia monikaistaiselle biologiselle altistukselle.",
     specStackCovid: "COVID:n ambient-notkahdus on ainoa kirjattu luonnollinen testi. Teollisuuden ja liikenteen päästöt pysähtyivät kotitalouden laitteiden jäädessä päälle, joten sulku ei ollut vain vähemmän altistusta vaan vähemmän samanaikaisia kaistoja — spektraalinen yksinkertaistuminen henkilökohtaisen kanavan säilyessä. Kehyksen luenta COVID:n kaksisuuntaisesta tuloksesta nojaa tähän eroon eikä kokonaistehoon.",
@@ -1714,9 +1714,9 @@ const t = {
       },
     ],
 
-    fourRoutesTitle: "Viisi itsenäistä EMF -> TFR -reittiä",
-    fourRoutesSub: "Gonadi-, sirkadiaaninen, aivolisäke-, autonominen ja neurokehityksellinen — jokainen riittää yksinään",
-    fourRoutesDesc: "BERM tunnistaa viisi itsenäistä biologista reittiä, joiden kautta EMF-altistus voi vähentää hedelmällisyyttä. Jokainen reitti toimii erillisen mekanismin ja kohdekudoksen kautta. Kriittisesti jokainen reitti on itsenäisesti riittävä vähentämään TFR:ää — ne toimivat rinnakkain, eivät sarjassa. Tämä tarkoittaa, että yhden reitin estäminen (esim. antioksidanttilisä gonadireitille) ei poista vaikutusta, koska neljä muuta reittiä pysyvät aktiivisina.",
+    fourRoutesTitle: "Viisi ehdotettua reittiä EMF:stä hedelmällisyyteen ja TFR:ään",
+    fourRoutesSub: "Gonadi-, sirkadiaaninen, aivolisäke-, autonominen ja neurokehityksellinen reitti",
+    fourRoutesDesc: "BERM ehdottaa viittä biologista reittiä, joiden kautta EMF:ään liittyvät muutokset voisivat vaikuttaa hedelmällisyyteen ja väestöä koskevin lisäoletuksin TFR:ään. Ne kuvaavat eri kudosmekanismeja, mutta rinnakkaista toimintaa ja yhteisiä välittäjiä on arvioitava yhdessä. Mekanismien erillisyys ei osoita tilastollista riippumattomuutta eikä sitä, että yksikin reitti riittäisi yksin laskemaan TFR:ää. Yhden reitin eston kokonaisvaikutus riippuu sen osuudesta, vuorovaikutuksista, kompensaatiosta ja altistusoloista; kaavio ei osoita, että neljä muuta reittiä pysyisivät aktiivisina.",
     fourRoutesGonadal: "Reitti 1: Gonadaalinen (vakiintunut)",
     fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperman DNA-vaurio + Leydig-solujen StAR-suppressio -> testosteronin lasku + spermatogeneesin häiriö. Lisäksi: EMF -> CatSper-ennenaikainen aktivaatio -> energian ehtyminen -> navigointivika (reotaksis, kemotaksis, akrosomireaktio). Kohdekudos: kivekset. Näyttötaso: E (23-28 salpaajatutkimusta). Ensisijainen kanava: RF + ELF.",
     fourRoutesCircadian: "Reitti 2: Sirkadiaaninen (vakiintunut)",
@@ -1736,7 +1736,7 @@ const t = {
 
     modulomeSub: "Kaksitoistakerroksinen alttiusmalli — molekulaarisesta spinfysiikasta populaatiotason malleihin",
     modulomeTitle: "EMF-moduloomi",
-    modulomeDesc: "Kaksitoistatasoinen moduloomi luetteloi moderaattoriehdokkaita molekulaarisesta spinfysiikasta populaatiotason malleihin. BERM kuvaa ne päätepistekohtaisilla vasteytimillä; ne eivät ole universaali χ tai χ_geo eikä niitä johdeta FieldStatesta. Kaksitoista kerrosta, kymmenen kohde-elintä ja neljä ehdotettua reittiä fertiliteetin laskuun.",
+    modulomeDesc: "Kaksitoistatasoinen moduloomi luetteloi moderaattoriehdokkaita molekulaarisesta spinfysiikasta populaatiotason malleihin. BERM kuvaa ne päätepistekohtaisilla vasteytimillä; ne eivät ole universaali χ tai χ_geo eikä niitä johdeta FieldStatesta. Kaksitoista kerrosta, kaksitoista kohde-elintä ja neljä ehdotettua reittiä fertiliteetin laskuun.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -2063,7 +2063,7 @@ const t = {
     physBioSuperDesc: "電磁場は通常の重ね合わせに従います。Lindgren仮定がポテンシャルの二次式なので、計量駆動には厳密な背景–摂動交差項と自己項が含まれます。これはモデル幾何学の混合であり、生物効果の非加算性を意味しません。",
     physBioSuperFormula: "δg_μν = κ(Ā_μa_ν + a_μĀ_ν + a_μa_ν)",
     physBioSuperExplain: "振幅変調と二周波入力は、a²に低周波包絡または差周波項を厳密に生じさせます。組織がそれを検出するか、エンドポイント応答が加算的かは未校正の応答カーネルに依存します。複合曝露レビュー（[[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]）は試験を動機づけますが、演算子を校正しません。",
-    physBioMaxwellExplain: "無源Maxwell方程式∇_μF^μν = 0は、Lindgren計量から変分原理S = ∫√(−g)R d⁴x、Weyl条件、Bianchi恒等式を通じて導かれる。Bianchiは必要だが単独では十分でなく、dF = 0は有源方程式∇_μF^μν = J^νへの近道ではない。",
+    physBioMaxwellExplain: "定義F=dAから同次Maxwell恒等式dF=0が得られます。EH変分、Weyl接続、限定GME残差は別々の条件付き契約であり、併せて確認しても∇_μF^μν=0や∇_μF^μν=J^νは導出されません。発散方程式には明示的な力学的導出と電流の同定が必要です。数学ページで各ゲートを区別します。",
     physBioChiEpistemic: "[L1 + L0/L2 reduction]",
     physBioSuperLink: "完全な重ね合わせ解析を見る →",
     physBioTissueTitle: "組織特異的共鳴",
@@ -2285,10 +2285,10 @@ const t = {
     tcbmElfTitle: "チャネル1: ELF(0-300 Hz)",
     tcbmElfDesc:
       "発生源:送電網、家庭配線、家電、変圧器。メカニズム:IFO-VGIC強制イオン振動([[ref:panagopoulos2025_ifo|Panagopoulos 2025]])。歴史:電化以来(1880年代)、約1970年以降安定。代理変数:住宅電力消費量(kWh/人)。常時オン、24時間週7日、家全体。",
-    tcbmIfTitle: "チャネル2: IF(300 Hz - 10 MHz)",
+    tcbmIfTitle: "チャネル2: IF(300 Hz - 1 MHz)",
     tcbmIfDesc:
       "発生源:LEDドライバー(20-300 kHz)、SMPS、VFD、IHクッキングヒーター。メカニズム:Cyb5b → Ca²⁺振動([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]])、より高い周波数でのIFO。歴史:2009年以前はほぼゼロ、2009-2019に指数関数的増加(EU LED移行)。代理変数:LED市場シェア × 住宅電力。パルス状、高dV/dt、規制ギャップ([[ref:ijrb2022_if_review|IJRB 2022]])。",
-    tcbmRfTitle: "チャネル3: RF(100 kHz - 300 GHz)",
+    tcbmRfTitle: "チャネル3: RF(1 MHz - 300 GHz)",
     tcbmRfDesc:
       "発生源:携帯電話、Wi-Fi、Bluetooth、基地局、IoT。メカニズム:RPM/CRYスピン化学([[ref:ritz2004|Ritz 2004]])、高SARでの熱的沈着。歴史:2G(1991)、3G(2001)、4G(2009)、5G(2019)、Wi-Fi(1999)。代理変数:100人あたりブロードバンド加入数、携帯電話加入数。変調(データ符号化)、個人 + 周囲。",
     tcbmIfMitotic:
@@ -2608,9 +2608,9 @@ const t = {
       { id: "E6", pred: "シャバット(週25時間EMFフリー)が間欠的mTOR断食として機能し、超正統派のTFRと長寿を支持する", test: "超正統派 vs 世俗的イスラエルコホート" },
     ],
 
-    fourRoutesTitle: "EMF → TFRの5つの独立経路",
-    fourRoutesSub: "性腺、概日、下垂体、自律神経、神経発達 -- 各々が単独で十分",
-    fourRoutesDesc: "BERMはEMF暴露が出生率を低下させる5つの独立した生物学的経路を特定する。各経路は異なるメカニズムと標的組織を通じて動作する。重要なのは、各経路が独立にTFRを低下させるのに十分であること -- 並列に動作し、直列ではない。一つの経路をブロック(例:性腺経路への抗酸化剤補充)しても効果は排除されない。4つの他の経路が活性のままだからである。",
+    fourRoutesTitle: "EMFから妊孕性・TFRへの5つの提案経路",
+    fourRoutesSub: "性腺、概日、下垂体、自律神経、神経発達の経路",
+    fourRoutesDesc: "BERMは、EMFに関連する変化が妊孕性に影響し、さらに集団に関する仮定を加えるとTFRにも影響し得る、5つの生物学的経路を提案する。異なる組織メカニズムを記述するが、並列的な作用と共通の媒介因子を併せて評価する必要がある。メカニズムが異なることは、統計的独立性や、どれか一つの経路だけでTFRを低下させる十分性を示さない。一つの経路を遮断した場合の総合的な影響は、その寄与、相互作用、代償反応、曝露条件に依存する。この図は、他の4経路が活動を続けることを実証するものではない。",
     fourRoutesGonadal: "経路1:性腺(確立)",
     fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 精子DNA損傷 + ライディッヒ細胞StAR抑制 -> テストステロン低下 + 精子形成障害。さらに：EMF -> CatSper早期活性化 -> エネルギー枯渇 -> ナビゲーション障害（レオタキシス、走化性、先体反応）。標的組織:精巣。エビデンスレベル:E(23-28のブロッカー研究)。主チャネル:RF + ELF。",
     fourRoutesCircadian: "経路2:概日(確立)",
@@ -2957,7 +2957,7 @@ const t = {
     physBioSuperDesc: "Les champs électromagnétiques obéissent toujours à la superposition ordinaire. L'ansatz de Lindgren étant quadratique en potentiel, le moteur métrique contient des termes croisés fond–perturbation et un terme propre exacts. Cela établit un mélange géométrique, pas une non-additivité biologique.",
     physBioSuperFormula: "δg_μν = κ(Ā_μa_ν + a_μĀ_ν + a_μa_ν)",
     physBioSuperExplain: "La modulation d'amplitude et deux fréquences génèrent donc dans a² des termes exacts d'enveloppe basse fréquence ou de fréquence différence. Leur détection tissulaire et l'additivité de l'endpoint dépendent du noyau non calibré. La revue des expositions combinées ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]) motive ce test sans calibrer l'opérateur.",
-    physBioMaxwellExplain: "L'équation de Maxwell sans source ∇_μF^μν = 0 découle de la métrique de Lindgren par le principe variationnel S = ∫√(−g)R d⁴x, la condition de Weyl et l'identité de Bianchi. Bianchi est nécessaire mais non suffisant : dF = 0 n'est pas un raccourci vers l'équation sourcée ∇_μF^μν = J^ν.",
+    physBioMaxwellExplain: "La définition F=dA donne l’identité homogène de Maxwell dF=0. La variation EH, la connexion de Weyl et le résidu GME restreint sont des contrats conditionnels distincts; les vérifier ensemble ne dérive pas à lui seul ∇_μF^μν=0 ou ∇_μF^μν=J^ν. L’équation de divergence exige une dérivation dynamique explicite et l’identification du courant. La page mathématique sépare ces étapes.",
     physBioChiEpistemic: "[L1 + L0/L2 reduction]",
     physBioSuperLink: "Voir l'analyse complete de la superposition →",
     physBioTissueTitle: "Resonance specifique aux tissus",
@@ -3179,10 +3179,10 @@ const t = {
     tcbmElfTitle: "Canal 1 : ELF (0–300 Hz)",
     tcbmElfDesc:
       "Source : reseau electrique, cablage domestique, appareils menagers, transformateurs. Mecanisme : oscillation ionique forcee IFO-VGIC ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Histoire : present depuis l'electrification (annees 1880), stable depuis ~1970. Indicateur : consommation electrique residentielle (kWh par habitant). Toujours actif, 24/7, tout le foyer.",
-    tcbmIfTitle: "Canal 2 : IF (300 Hz – 10 MHz)",
+    tcbmIfTitle: "Canal 2 : IF (300 Hz – 1 MHz)",
     tcbmIfDesc:
       "Source : drivers LED (20-300 kHz), SMPS, VFD, plaques a induction. Mecanisme : Cyb5b → oscillations Ca²⁺ ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO a des frequences plus elevees. Histoire : quasi nul avant 2009, croissance exponentielle 2009-2019 (transition LED UE). Indicateur : part de marche LED × electricite residentielle. Pulse, dV/dt eleve, lacune reglementaire ([[ref:ijrb2022_if_review|IJRB 2022]]).",
-    tcbmRfTitle: "Canal 3 : RF (100 kHz – 300 GHz)",
+    tcbmRfTitle: "Canal 3 : RF (1 MHz – 300 GHz)",
     tcbmRfDesc:
       "Source : telephones mobiles, Wi-Fi, Bluetooth, stations de base, IoT. Mecanisme : chimie de spin RPM/CRY ([[ref:ritz2004|Ritz 2004]]), depot thermique a SAR eleve. Histoire : 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Indicateur : abonnements haut debit pour 100, abonnements mobiles. Module (encodage de donnees), personnel + ambiant.",
     tcbmIfMitotic:
@@ -3502,9 +3502,9 @@ const t = {
       { id: "E6", pred: "Le Shabbat (25h/semaine sans EMF) agit comme un jeune mTOR intermittent, soutenant le TFR et la longevite Haredi", test: "Cohorte Haredi vs israelienne seculiere" },
     ],
 
-    fourRoutesTitle: "Cinq voies independantes EMF -> TFR",
-    fourRoutesSub: "Gonadique, circadienne, hypophysaire, autonome et neurodeveloppementale — chacune suffisante seule",
-    fourRoutesDesc: "BERM identifie cinq voies biologiques independantes par lesquelles l'exposition EMF peut reduire la fertilite. Chaque voie opere par un mecanisme et un tissu cible distincts. De maniere cruciale, chaque voie est independamment suffisante pour reduire le TFR — elles operent en parallele, pas en serie. Ceci signifie que bloquer une voie (ex : supplementation antioxydante pour la voie gonadique) n'elimine pas l'effet, car quatre autres voies restent actives.",
+    fourRoutesTitle: "Cinq voies proposées des EMF vers la fertilité et le TFR",
+    fourRoutesSub: "Voies gonadique, circadienne, hypophysaire, autonome et neurodéveloppementale",
+    fourRoutesDesc: "BERM propose cinq voies biologiques par lesquelles des changements liés aux EMF pourraient affecter la fertilité et, sous des hypothèses démographiques supplémentaires, le TFR. Elles décrivent différents mécanismes tissulaires, mais leur fonctionnement parallèle et leurs médiateurs communs doivent être évalués ensemble. Des mécanismes distincts ne démontrent ni une indépendance statistique ni la capacité d’une seule voie à réduire le TFR à elle seule. L’effet global du blocage d’une voie dépend de sa contribution, des interactions, de la compensation et du contexte d’exposition ; le schéma ne démontre pas que les quatre autres restent actives.",
     fourRoutesGonadal: "Voie 1 : Gonadique (etablie)",
     fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> dommage ADN des spermatozoides + suppression StAR des cellules de Leydig -> declin de la testosterone + perturbation de la spermatogenese. De plus : EMF -> activation prematuree de CatSper -> epuisement energetique -> defaillance de navigation (rheotaxie, chimiotaxie, reaction acrosomique). Tissu cible : testicules. Niveau de preuve : E (23-28 etudes de blocage). Canal principal : RF + ELF.",
     fourRoutesCircadian: "Voie 2 : Circadienne (etablie)",
@@ -3524,7 +3524,7 @@ const t = {
 
     modulomeSub: "Modele de susceptibilite a douze couches — de la physique des spins moleculaires aux patterns de population",
     modulomeTitle: "Modulome EMF",
-    modulomeDesc: "Le modulome à douze couches catalogue des modérateurs candidats, de la physique des spins aux populations. BERM les relie par des noyaux propres aux endpoints : ils ne forment ni un χ universel ni χ_geo et ne sont pas dérivés de FieldState. Douze couches, dix organes cibles et quatre voies proposées vers le déclin de la fertilité.",
+    modulomeDesc: "Le modulome à douze couches catalogue des modérateurs candidats, de la physique des spins aux populations. BERM les relie par des noyaux propres aux endpoints : ils ne forment ni un χ universel ni χ_geo et ne sont pas dérivés de FieldState. Douze couches, douze organes cibles et quatre voies proposées vers le déclin de la fertilité.",
 
     btnEvidence: "Parcourir les preuves",
     btnPredictions: "Voir les predictions",
@@ -3851,7 +3851,7 @@ const t = {
     physBioSuperDesc: "전자기장은 일반 중첩을 따릅니다. Lindgren 가정은 퍼텐셜의 이차식이므로 메트릭 구동에 정확한 배경–섭동 교차항과 자체항이 포함됩니다. 이는 모델 기하학의 혼합이지 생물학적 효과의 비가산성을 뜻하지 않습니다.",
     physBioSuperFormula: "δg_μν = κ(Ā_μa_ν + a_μĀ_ν + a_μa_ν)",
     physBioSuperExplain: "진폭 변조와 두 주파수 입력은 a²에 정확한 저주파 포락선 또는 차주파 항을 만듭니다. 조직이 이를 검출하는지와 종점 반응의 가산성은 보정되지 않은 반응 커널에 달려 있습니다. 복합 노출 리뷰([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]])는 이 실험을 동기화하지만 연산자를 보정하지 않습니다.",
-    physBioMaxwellExplain: "무원천 Maxwell 방정식 ∇_μF^μν = 0은 Lindgren 메트릭에서 변분 원리 S = ∫√(−g)R d⁴x, Weyl 조건, Bianchi 항등식을 거쳐 도출된다. Bianchi는 필요하지만 단독으로 충분하지 않으며, dF = 0은 유원천 방정식 ∇_μF^μν = J^ν으로 가는 지름길이 아니다.",
+    physBioMaxwellExplain: "F=dA의 정의는 동차 Maxwell 항등식 dF=0을 줍니다. EH 변분, Weyl 연결, 제한된 GME 잔차는 별도의 조건부 계약이며 함께 확인해도 ∇_μF^μν=0 또는 ∇_μF^μν=J^ν이 유도되지는 않습니다. 발산 방정식에는 명시적 동역학 유도와 전류 식별이 필요합니다. 수학 페이지는 이 관문들을 분리합니다.",
     physBioChiEpistemic: "[L1 + L0/L2 reduction]",
     physBioSuperLink: "전체 중첩 분석 보기 →",
     physBioTissueTitle: "조직 특이적 공명",
@@ -4073,10 +4073,10 @@ const t = {
     tcbmElfTitle: "채널 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "원천: 전력망, 가정 배선, 가전제품, 변압기. 메커니즘: IFO-VGIC 강제 이온 진동([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). 이력: 전기화 이후(1880년대) 존재, ~1970년 이후 안정. 지표: 가정용 전력 소비(1인당 kWh). 항상 활성, 24/7, 전 가정.",
-    tcbmIfTitle: "채널 2: IF (300 Hz – 10 MHz)",
+    tcbmIfTitle: "채널 2: IF (300 Hz – 1 MHz)",
     tcbmIfDesc:
       "원천: LED 드라이버(20-300 kHz), SMPS, VFD, 인덕션 조리기. 메커니즘: Cyb5b → Ca²⁺ 진동([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), 고주파에서 IFO. 이력: 2009년 이전 거의 없음, 2009-2019 지수 성장(EU LED 전환). 지표: LED 시장 점유율 × 가정용 전력. 펄스, 높은 dV/dt, 규제 공백([[ref:ijrb2022_if_review|IJRB 2022]]).",
-    tcbmRfTitle: "채널 3: RF (100 kHz – 300 GHz)",
+    tcbmRfTitle: "채널 3: RF (1 MHz – 300 GHz)",
     tcbmRfDesc:
       "원천: 휴대전화, Wi-Fi, 블루투스, 기지국, IoT. 메커니즘: RPM/CRY 스핀 화학([[ref:ritz2004|Ritz 2004]]), 높은 SAR에서의 열 축적. 이력: 2G(1991), 3G(2001), 4G(2009), 5G(2019), Wi-Fi(1999). 지표: 100명당 광대역 가입, 모바일 가입. 변조(데이터 인코딩), 개인 + 주변.",
     tcbmIfMitotic:
@@ -4396,9 +4396,9 @@ const t = {
       { id: "E6", pred: "안식일(25시간/주 EMF 없음)이 간헐적 mTOR 단식으로 작용하여 Haredi TFR과 장수를 지지", test: "Haredi vs 세속 이스라엘 코호트" },
     ],
 
-    fourRoutesTitle: "EMF → TFR의 5가지 독립 경로",
-    fourRoutesSub: "생식선, 일주기, 뇌하수체, 자율신경, 신경발달 — 각각 단독으로 충분",
-    fourRoutesDesc: "BERM은 EMF 노출이 출산력을 감소시킬 수 있는 5가지 독립적인 생물학적 경로를 식별합니다. 각 경로는 별개의 메커니즘과 표적 조직을 통해 작동합니다. 결정적으로, 각 경로는 TFR을 감소시키기에 독립적으로 충분합니다 — 이들은 직렬이 아닌 병렬로 작동합니다. 이것은 한 경로를 차단해도(예: 생식선 경로를 위한 항산화 보충) 효과를 제거하지 못함을 의미합니다. 다른 네 경로가 여전히 활성이기 때문입니다.",
+    fourRoutesTitle: "EMF에서 생식능력과 TFR로 이어지는 5가지 제안 경로",
+    fourRoutesSub: "생식선, 일주기, 뇌하수체, 자율신경, 신경발달 경로",
+    fourRoutesDesc: "BERM은 EMF 관련 변화가 생식능력에 영향을 줄 수 있고 추가적인 인구 수준 가정하에서는 TFR에도 영향을 줄 수 있는 5가지 생물학적 경로를 제안합니다. 서로 다른 조직 메커니즘을 설명하지만 병렬 작용과 공통 매개체를 함께 평가해야 합니다. 메커니즘이 다르다는 사실은 통계적 독립성이나 어느 한 경로만으로 TFR을 낮추기에 충분하다는 것을 입증하지 않습니다. 한 경로를 차단했을 때의 전체 효과는 해당 경로의 기여도, 상호작용, 보상 반응 및 노출 조건에 달려 있으며, 이 도표는 나머지 네 경로가 계속 활성 상태임을 입증하지 않습니다.",
     fourRoutesGonadal: "경로 1: 생식선 (확립)",
     fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 정자 DNA 손상 + Leydig 세포 StAR 억제 -> 테스토스테론 감소 + 정자발생 교란. 추가: EMF -> CatSper 조기 활성화 -> 에너지 고갈 -> 항행 장애 (유변주성, 주화성, 첨체 반응). 표적 조직: 고환. 증거 수준: E (23-28 차단 연구). 주요 채널: RF + ELF.",
     fourRoutesCircadian: "경로 2: 일주기 (확립)",
@@ -4418,7 +4418,7 @@ const t = {
 
     modulomeSub: "12-레이어 감수성 모델 — 분자 스핀 물리학에서 인구 패턴까지",
     modulomeTitle: "EMF 모듈롬",
-    modulomeDesc: "12-레이어 모듈롬은 분자 스핀 물리학부터 인구 패턴까지 후보 조절인자를 정리합니다. BERM은 종점별 커널로 이들을 연결하며, 보편 χ나 χ_geo가 아니고 FieldState에서 도출되지도 않습니다. 12개 레이어, 10개 표적 기관, 출산력 감소로 향하는 4개 제안 경로입니다.",
+    modulomeDesc: "12-레이어 모듈롬은 분자 스핀 물리학부터 인구 패턴까지 후보 조절인자를 정리합니다. BERM은 종점별 커널로 이들을 연결하며, 보편 χ나 χ_geo가 아니고 FieldState에서 도출되지도 않습니다. 12개 레이어, 12개 표적 기관, 출산력 감소로 향하는 4개 제안 경로입니다.",
 
     btnEvidence: "증거 탐색",
     btnPredictions: "예측 보기",
@@ -5340,7 +5340,7 @@ export default async function ModelPage({
             </p>
           </section>
 
-          {/* Five independent EMF → TFR routes */}
+          {/* Five proposed EMF → fertility and TFR routes */}
           <section id="four-routes" className="mb-14">
             <h2 className="text-xl font-semibold mb-2">{d.fourRoutesTitle}</h2>
             <p className="text-xs text-foreground-muted italic mb-4">{d.fourRoutesSub}</p>

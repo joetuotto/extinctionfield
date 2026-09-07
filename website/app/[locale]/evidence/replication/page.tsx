@@ -54,7 +54,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       chi: "χ_CRY(I_blue, λ) — different lab lighting puts CRY in different states.",
       labImpact:
         "Blue-rich (modern LED) vs warm (incandescent) → systematically different CRY states.",
-      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:yap2025|Yap et al. 2025, Cells]]",
+      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:iversen2025|Iversen et al. 2025, Cells]]",
       level: "M",
       bermNote:
         "This is BERM's synthesis (M-level), not Blackman's direct finding.",
@@ -108,7 +108,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       chi: "χ_CRY(I_blue, λ) — erilainen laboratoriovalaistus asettaa CRY:n eri tiloihin.",
       labImpact:
         "Sinirikas (moderni LED) vs lämmin (hehkulamppu) → systemaattisesti eri CRY-tilat.",
-      ref: "[[ref:niessner2014|Nießner ym. 2014, J Exp Biol]]; [[ref:yap2025|Yap ym. 2025, Cells]]",
+      ref: "[[ref:niessner2014|Nießner ym. 2014, J Exp Biol]]; [[ref:iversen2025|Iversen ym. 2025, Cells]]",
       level: "M",
       bermNote:
         "Tämä on BERM:n synteesi (M-taso), ei Blackmanin suora löydös.",
@@ -162,7 +162,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       chi: "χ_CRY(I_blue, λ) — 異なる実験室照明がCRYを異なる状態に設定する。",
       labImpact:
         "青色リッチ（現代LED）対暖色（白熱灯）→ 系統的に異なるCRY状態。",
-      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:yap2025|Yap et al. 2025, Cells]]",
+      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:iversen2025|Iversen et al. 2025, Cells]]",
       level: "M",
       bermNote:
         "これはBERMの統合（M水準）であり、Blackmanの直接的な発見ではない。",
@@ -216,7 +216,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       chi: "χ_CRY(I_blue, λ) — un éclairage de laboratoire différent met CRY dans des états différents.",
       labImpact:
         "Riche en bleu (LED moderne) vs chaud (incandescent) → états CRY systématiquement différents.",
-      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:yap2025|Yap et al. 2025, Cells]]",
+      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:iversen2025|Iversen et al. 2025, Cells]]",
       level: "M",
       bermNote:
         "Ceci est la synthèse BERM (niveau M), pas une découverte directe de Blackman.",
@@ -270,7 +270,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       chi: "χ_CRY(I_blue, λ) — 다른 실험실 조명이 CRY를 다른 상태로 설정한다.",
       labImpact:
         "청색 풍부(현대 LED) 대 따뜻한(백열등) → 체계적으로 다른 CRY 상태.",
-      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:yap2025|Yap et al. 2025, Cells]]",
+      ref: "[[ref:niessner2014|Nießner et al. 2014, J Exp Biol]]; [[ref:iversen2025|Iversen et al. 2025, Cells]]",
       level: "M",
       bermNote:
         "이것은 BERM의 통합(M 수준)이며, Blackman의 직접적 발견이 아니다.",

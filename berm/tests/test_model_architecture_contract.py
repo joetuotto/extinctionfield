@@ -123,6 +123,19 @@ def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() 
 
     assert theory["formulation"] == "2025-weyl-gme"
     assert theory["l2BridgeStatus"] == L2_BRIDGE_STATUS == "conditional_formal_operator"
+    assert theory["l2BridgeStatusScope"] == "operator_form_only"
+    parts = theory["bridgeComponents"]
+    assert {key: value["status"] for key, value in parts.items()} == {
+        "geometry": "L1_DERIVED",
+        "responseOperator": "CONDITIONAL_FORMAL_OPERATOR",
+        "physicalIdentification": "OPEN",
+        "tissueKernel": "CALLER_SUPPLIED_UNCALIBRATED",
+        "endpointCalibration": "OPEN",
+    }
+    assert parts["responseOperator"]["assumptions"] == [
+        "minimal_matter_metric_coupling", "retarded_response_expansion",
+    ]
+    assert parts["physicalIdentification"]["unresolved"] == ["gauge_prescription", "physical_coupling_scale"]
     assert theory["calibrationStatus"] == "open"
     assert "tissue response kernels" in theory["l2BridgeMeaning"]
     assert "orientation" in theory["responseStateArguments"]
@@ -172,6 +185,16 @@ def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() 
         "weyl_semimetricity_and_connection",
         "bianchi_contracted_identity_and_homogeneous_df",
     ]
+
+
+def test_merge_preserves_modulome_and_archived_route_boundaries() -> None:
+    routes = architecture_manifest()["routes"]
+    assert routes["modulomeAsfr"]["preservesArchivedV17"] is True
+    assert routes["modulomeAsfr"]["calibrationStatus"] == "STRUCTURAL_ONLY"
+    assert routes["modulomeAsfr"]["fieldStateCalibrated"] is False
+    assert routes["modulomeAsfr"]["publishesLockedForecasts"] is False
+    assert routes["prediction"]["fieldStateCalibrated"] is False
+    assert routes["diagnostic"]["publishesLockedForecasts"] is False
 
 
 def test_civilization_aggregation_is_forward_only_and_explicitly_persistent() -> None:

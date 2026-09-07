@@ -39,6 +39,8 @@ export interface Reference {
   readonly link_status?: "verified" | "registered" | "pending" | "missing";
   readonly link_source?: string | null;
   readonly link_checked_at?: string | null;
+  readonly correctionOf?: string;
+  readonly corrections?: readonly string[];
 }
 
 /**

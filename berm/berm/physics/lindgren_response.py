@@ -234,6 +234,8 @@ def contract_linear_response(
     perturbation = np.asarray(delta_metric, dtype=float)
     if kernel.shape != perturbation.shape or kernel.ndim < 2:
         raise ValueError("response_kernel and delta_metric must have the same tensor shape")
+    if any(size == 0 for size in kernel.shape):
+        raise ValueError("response tensors must have non-empty axes")
     if not np.all(np.isfinite(kernel)) or not np.all(np.isfinite(perturbation)):
         raise ValueError("response_kernel and delta_metric must contain only finite values")
     return float(np.tensordot(kernel, perturbation, axes=kernel.ndim))
@@ -266,8 +268,8 @@ def contract_retarded_response(
             "response_kernel_history and delta_metric_history must have the same "
             "shape with a leading lag axis and at least two tensor axes"
         )
-    if kernels.shape[0] == 0:
-        raise ValueError("response histories must contain at least one lag")
+    if any(size == 0 for size in kernels.shape):
+        raise ValueError("response histories must have non-empty lag and tensor axes")
     if not np.all(np.isfinite(kernels)) or not np.all(np.isfinite(perturbations)):
         raise ValueError("response histories must contain only finite values")
 

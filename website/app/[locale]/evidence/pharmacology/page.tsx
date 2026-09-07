@@ -10,23 +10,23 @@ import { pickCopy } from "@/lib/i18n";
 const COPY = {
   en: {
     title: "Pharmacological Evidence",
-    subtitle: "If VGCC activation is the primary transduction mechanism, drugs that block or modulate the same channels should attenuate EMF-associated biological effects. Fourteen drug classes provide convergent pharmacological evidence.",
+    subtitle: "Pharmacological interventions locate calcium, redox, clock and repair processes. BERM separates effects on ordinary physiology from experiments that identify a response to a defined field.",
     backLink: "← Back to Evidence",
     cardsTitle: "Drug evidence cards",
-    cardsLead: "Each card presents a drug class, its mechanism of action on the BERM-relevant pathway, the key evidence, and the model interpretation. Evidence levels follow the BERM classification: E = experimental, C = clinical/epidemiological, M = mechanistic, L = logical inference, L* = novel and falsifiable.",
+    cardsLead: "Read each card as a mechanism contrast: exposure and sham, intervention and control, first response and final function. E marks repeated findings in the stated system; M marks mechanism; C association; L a theoretical premise; L* a testable candidate. None of these labels establishes the full route.",
     cards: [
       {
         id: "CCB",
         drug: "Calcium channel blockers (CCBs)",
         drugSub: "Nifedipine, amlodipine, verapamil, diltiazem",
-        mechanism: "L-type VGCC blockade → prevents EMF-induced Ca²⁺ influx at the primary transduction node (pathway A). CCBs are the most direct pharmacological test of BERM's central mechanism.",
+        mechanism: "L-type channel blockade can test whether those channels mediate a defined field response. The same intervention also changes normal calcium-dependent physiology, so each blocker condition needs its own sham control.",
         evidence: [
           "[[ref:pall2013_v2|Pall 2013 (J. Cell. Mol. Med.)]]: systematic review of 23 studies — VGCC blockers prevent or attenuate EMF-induced biological effects across cell types, exposure frequencies, and endpoints. The most replicated pharmacological finding in EMF bioeffects research.",
           "CCBs are the most prescribed antihypertensive class globally with >264,000 published studies. They are among the best-characterized drugs in clinical medicine. The Ca²⁺ channel they target is the same channel BERM identifies as the EMF transduction node.",
           "Amlodipine (the most prescribed CCB) has a 36-hour half-life — providing near-continuous VGCC blockade. If ambient EMF causes chronic low-grade VGCC activation, amlodipine users should show attenuated EMF bioeffects compared to users of non-CCB antihypertensives.",
-          "Nifedipine (VK44/VK48): first-line tocolytic for preterm labor ([[ref:nifed_tocolytic|Cochrane 2014]]) AND used for pre-eclampsia hypertension management. The same Ca²⁺ channel blocker treats two distinct obstetric conditions — both involving uterine/placental Cav1.2 over-activation. If Ca²⁺ blockade prevents preterm labor and treats pre-eclampsia, Ca²⁺ overload is the pathogenic mechanism.",
+          "Nifedipine inhibits uterine contractions and is used to manage hypertension in pregnancy ([[ref:nifed_tocolytic|Cochrane 2014]]). These interventions establish relevant calcium-dependent physiology. They do not establish a common EMF origin or identify the complete pathogenesis of both conditions.",
         ],
-        interpretation: "CCBs are the BERM model's positive pharmacological control. Nifedipine's dual obstetric use (tocolysis + pre-eclampsia) extends the validation to reproductive tissue: same drug, same channel, two pregnancy complications. Combined with verapamil's β-cell protection and 23 EMF-blocker studies, CCBs provide pharmacological evidence at every level from cellular to clinical.",
+        interpretation: "Pair field/sham with blocker/control and measure proximal current, calcium-store dynamics and tissue function. A changed interaction identifies channel dependence in that setting. Clinical blood-pressure or uterine effects anchor the channel’s physiological importance, while [[ref:bertagna2025|Bertagna 2025]] provides a field-specific ER/calcium intervention route. Neither alone identifies the first field sensor.",
         level: "E",
         critical: true,
       },
@@ -39,10 +39,10 @@ const COPY = {
           "Verapamil's use-dependent blockade is well-established in cardiac pharmacology (class IV antiarrhythmic). The same property makes it theoretically optimal for blocking IFO-induced rapid channel cycling.",
           "Lundberg 1996 (Bioelectromagnetics): verapamil blocked EMF-induced calcium efflux in bone cells — direct evidence that the EMF-calcium pathway is pharmacologically blockable in reproductive-adjacent tissue.",
           "Verapamil is also used in reproductive medicine for sperm preparation protocols, where it can improve motility by modulating calcium dynamics — mechanistic overlap with BERM's predicted EMF pathway.",
-          "[[ref:verap_t1d_jama|Forlenza JAMA 2023]] (VK43): verapamil preserves β-cell function in children with new-onset T1D — C-peptide +30% vs placebo at 52 weeks in double-blind RCT (N=88, ages 7-17). Confirms VK12: if Ca²⁺ channel blockade saves β-cells, then Ca²⁺ overload destroys them.",
+          "[[ref:verap_t1d_jama|Forlenza JAMA 2023]]: verapamil preserved β-cell function in children with new-onset T1D in a randomized trial (N=88). This anchors modifiable β-cell function; the trial did not manipulate EMF exposure and therefore does not establish its contribution to T1D.",
           "[[ref:verap_t1d_natmed|Ovalle Nat Med 2018]]: verapamil increases C-peptide at 3 and 12 months in adults with recent-onset T1D via TXNIP reduction and β-cell protection.",
         ],
-        interpretation: "Verapamil's use-dependent kinetics predict it should be the most effective CCB against EMF effects. The [[ref:verap_t1d_jama|JAMA 2023 T1D RCT]] provides the strongest pharmacological validation: a Ca²⁺ channel blocker protects the exact cell type (β-cells) that BERM predicts EMF destroys via Ca²⁺ overload (VK12). Combined with [[ref:verap_t1d_natmed|Nat Med 2018 adult data]] and [[ref:verap_t2d_dc|Diabetes Care 2025 observational evidence]], verapamil's β-cell protection is a triple-confirmed BERM prediction.",
+        interpretation: "Use-dependent blockade motivates a comparison at measured channel-opening patterns. The T1D trials support a β-cell protection branch; an EMF-specific test must additionally compare field and sham under verapamil and control. Measure secretion, repair and viability separately so protection is not confused with suppression of normal secretion.",
         level: "E|M",
       },
       {
@@ -275,22 +275,23 @@ const COPY = {
   },
   fi: {
     title: "Farmakologinen näyttö",
-    subtitle: "Jos VGCC-aktivaatio on primaarinen transduutiomekanismi, lääkkeet jotka blokkaavat tai säätelevät samoja kanavia pitäisi vaimentaa EMF:ään liittyviä biologisia vaikutuksia. Neljätoista lääkeryhmää tarjoaa yhtyvän farmakologisen näytön.",
+    subtitle: "Farmakologiset interventiot paikantavat kalsium-, redox-, kello- ja korjausprosesseja. BERM erottaa vaikutukset tavalliseen fysiologiaan kokeista, jotka tunnistavat vasteen määriteltyyn kenttään.",
     backLink: "← Takaisin näyttöön",
     cardsTitle: "Lääke-näyttökortit",
-    cardsLead: "Jokainen kortti esittää lääkeryhmän, sen vaikutusmekanismin BERM:n kannalta relevantille reitille, avainnäytön ja mallitulkinnan. Näyttötasot noudattavat BERM-luokittelua: E = kokeellinen, C = kliininen/epidemiologinen, M = mekanistinen, L = looginen päätelmä, L* = deduktiivinen ja falsifioitava ehdokas.",
+    cardsLead: "Lue jokainen kortti mekanismikontrastina: altistus ja sham, interventio ja verrokki, ensimmäinen vaste ja lopullinen toiminto. E tarkoittaa toistettua havaintoa ilmoitetussa järjestelmässä; M mekanismia; C yhteyttä; L teoreettista premissiä; L* testattavaa ehdokasta. Mikään merkintä ei yksin osoita koko reittiä.",
     cards: [
       {
         id: "CCB",
         drug: "Kalsiumkanavan salpaajat (CCB:t)",
         drugSub: "Nifedipiini, amlodipiini, verapamiili, diltiatseemi",
-        mechanism: "L-tyypin VGCC-salpaus → estää EMF:n aiheuttaman Ca²⁺-sisäänvirtauksen primaarisessa transduuktiopisteessä (reitti A). CCB:t ovat suorin farmakologinen testi BERM:n keskeiselle mekanismille.",
+        mechanism: "L-tyypin kanavasalpaus voi testata, välittävätkö nämä kanavat määritellyn kenttävasteen. Sama interventio muuttaa myös normaalia kalsiumriippuvaista fysiologiaa, joten jokainen salpaustila tarvitsee oman sham-verrokin.",
         evidence: [
-          "[[ref:pall2013_v2|Pall 2013 (J. Cell. Mol. Med.)]]: systemaattinen katsaus 23 tutkimuksesta — VGCC-salpaajat estävät tai vaimentavat EMF:n aiheuttamia biologisia vaikutuksia eri solutyypeissä, altistustaajuuksilla ja päätepisteissä. Eniten toistettu farmakologinen havainto EMF-bioeffektitutkimuksessa.",
-          "CCB:t ovat maailmanlaajuisesti eniten määrätty verenpainelääkeryhmä yli 264 000 julkaistulla tutkimuksella. Ca²⁺-kanava johon ne kohdistuvat on sama kanava jonka BERM tunnistaa EMF:n transduutiopisteeksi.",
-          "Amlodipiinilla (eniten määrätty CCB) on 36 tunnin puoliintumisaika — tarjoten lähes jatkuvan VGCC-salpauksen. Jos ympäröivä EMF aiheuttaa kroonista matala-asteista VGCC-aktivaatiota, amlodipiinin käyttäjillä pitäisi näkyä vaimennettuja EMF-bioeffektejä verrattuna muiden verenpainelääkkeiden käyttäjiin.",
-        ],
-        interpretation: "CCB:t ovat BERM-mallin positiivinen farmakologinen kontrolli. Jos EMF toimii VGCC:n kautta, CCB-käyttäjät muodostavat populaatiotason 'osittaisen Faradayn häkin' — farmakologisesti suojattuja transduutiopisteessä.",
+  "[[ref:pall2013_v2|Pall 2013 (J. Cell. Mol. Med.)]]: systemaattinen katsaus 23 tutkimuksesta — VGCC-salpaajat estävät tai vaimentavat EMF:n aiheuttamia biologisia vaikutuksia eri solutyypeissä, altistustaajuuksilla ja päätepisteissä. Eniten toistettu farmakologinen havainto EMF-bioeffektitutkimuksessa.",
+  "CCB:t ovat maailmanlaajuisesti eniten määrätty verenpainelääkeryhmä yli 264 000 julkaistulla tutkimuksella. Ca²⁺-kanava johon ne kohdistuvat on sama kanava jonka BERM tunnistaa EMF:n transduutiopisteeksi.",
+  "Amlodipiinilla (eniten määrätty CCB) on 36 tunnin puoliintumisaika — tarjoten lähes jatkuvan VGCC-salpauksen. Jos ympäröivä EMF aiheuttaa kroonista matala-asteista VGCC-aktivaatiota, amlodipiinin käyttäjillä pitäisi näkyä vaimennettuja EMF-bioeffektejä verrattuna muiden verenpainelääkkeiden käyttäjiin.",
+  "Nifedipiini estää kohdun supistuksia ja sitä käytetään raskaudenaikaisen verenpaineen hoidossa ([[ref:nifed_tocolytic|Cochrane 2014]]). Interventiot osoittavat olennaista kalsiumriippuvaista fysiologiaa. Ne eivät osoita yhteistä EMF-alkuperää tai tunnista kummankin tilan koko patogeneesiä."
+],
+        interpretation: "Yhdistä kenttä/sham ja salpaaja/verrokki ja mittaa lähivirta, kalsiumvarastojen dynamiikka ja kudostoiminta. Muuttunut interaktio tunnistaa kanavariippuvuutta kyseisessä asetelmassa. Kliiniset verenpaine- tai kohtuvaikutukset ankkuroivat kanavan fysiologista merkitystä, kun taas [[ref:bertagna2025|Bertagna 2025]] antaa kenttäkohtaisen ER/kalsium-interventioreitin. Kumpikaan ei yksin tunnista ensimmäistä kenttäsensoria.",
         level: "E",
         critical: true,
       },
@@ -300,11 +301,13 @@ const COPY = {
         drugSub: "Ei-dihydropyridini, taajuusriippuvainen salpaus",
         mechanism: "Verapamiililla on ainutlaatuinen ominaisuus: taajuusriippuvainen (käyttöriippuvainen) kanavasalpaus — se salpaa VGCC:itä tehokkaammin kun kanavat avautuvat usein. Jos EMF aiheuttaa korkeataajuista VGCC-avautumista (IFO-mekanismi), verapamiilin pitäisi olla suhteettoman tehokas EMF-indusoidun Ca²⁺-sisäänvirtauksen estämisessä.",
         evidence: [
-          "Verapamiilin käyttöriippuvainen salpaus on vakiintunut sydänfarmakologiassa (luokka IV antiarytminen). Sama ominaisuus tekee siitä teoreettisesti optimaalisen IFO-indusoidun nopean kanavasyklin estämiseen.",
-          "Lundberg 1996 (Bioelectromagnetics): verapamiili esti EMF:n aiheuttaman kalsiumeffluksin luusoluissa — suora näyttö siitä, että EMF-kalsiumreitti on farmakologisesti estettävissä.",
-          "Verapamiilia käytetään myös lisääntymislääketieteessä siittiöiden valmisteluprotokollissa, joissa se voi parantaa motiliteettia moduloimalla kalsiumdynamiikkaa.",
-        ],
-        interpretation: "Verapamiilin käyttöriippuvainen kinetiikka ennustaa sen olevan tehokkain CCB EMF-vaikutuksia vastaan. Vertailututkimus verapamiili vs. amlodipiini vs. ei-CCB verenpainelääke siittiöiden laatupäätepisteillä olisi korkean erottelukyvyn testi.",
+  "Verapamiilin käyttöriippuvainen salpaus on vakiintunut sydänfarmakologiassa (luokka IV antiarytminen). Sama ominaisuus tekee siitä teoreettisesti optimaalisen IFO-indusoidun nopean kanavasyklin estämiseen.",
+  "Lundberg 1996 (Bioelectromagnetics): verapamiili esti EMF:n aiheuttaman kalsiumeffluksin luusoluissa — suora näyttö siitä, että EMF-kalsiumreitti on farmakologisesti estettävissä.",
+  "Verapamiilia käytetään myös lisääntymislääketieteessä siittiöiden valmisteluprotokollissa, joissa se voi parantaa motiliteettia moduloimalla kalsiumdynamiikkaa.",
+  "[[ref:verap_t1d_jama|Forlenza JAMA 2023]]: verapamiili säilytti β-solujen toimintaa vastasairastuneiden T1D-lasten satunnaistetussa kokeessa (N=88). Tulos ankkuroi muokattavaa β-solutoimintaa; kokeessa ei muutettu EMF-altistusta, joten se ei osoita sen osuutta T1D:ssä.",
+  "[[ref:verap_t1d_natmed|Ovalle Nat Med 2018]]: verapamiili tuki C-peptidivastetta vastasairastuneilla T1D-aikuisilla TXNIP-vähenemisen ja β-solusuojan yhteydessä."
+],
+        interpretation: "Käyttöriippuvainen salpaus motivoi vertailun mitatuilla kanavan avautumiskuvioilla. T1D-kokeet tukevat β-solun suojaushaaraa; EMF-kohtainen testi tarvitsee lisäksi kenttä- ja sham-vertailun verapamiililla ja verrokilla. Mittaa eritys, korjaus ja elinkelpoisuus erikseen, jotta suoja ei sekoitu normaalin erityksen estymiseen.",
         level: "E|M",
       },
       {
@@ -1359,6 +1362,7 @@ export default async function PharmacologyPage({ params }: { params: Promise<{ l
       </p>
 
       <PageHeader icon={Pill} title={d.title} subtitle={d.subtitle} />
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <EvidenceSynthesisBanner locale={locale} />
 

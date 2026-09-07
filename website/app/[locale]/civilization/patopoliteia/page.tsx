@@ -47,7 +47,7 @@ const COPY = {
       "α = biological recovery coefficient (0.3)",
     ],
     sSolarFormulaNote: "BioCap₀ is the initial biological capacity, set to 1.0 for an unexposed population. The formula has two integrals: the first (damage) accumulates exposure across solar, urban, and electrification components weighted by the separate latitude susceptibility χ_lat(λ). The second (recovery) represents biological repair during low-exposure windows, governed by the recovery coefficient α = 0.3. The recovery suppression coefficient σ(τ) captures the key post-electrification change: when artificial EMF (E) dominates, recovery windows that previously coincided with solar minima are blocked. At σ = 0.95 (modern urban), 95% of potential recovery is suppressed. The code divides the accumulated net change by the integration span (t − t₀) to express BioCap as a per-year average and clamps the result to [0, BioCap₀]; with region = name, χ_lat follows chi_total(λ, τ, region) year by year. This BioCap factor is distinct from Lindgren's L1-derived χ(Ā).",
-    sSolarPrePost: "Pre-electric (E=0): BioCap oscillates → cyclical civilizational dynamics. Post-electric (E≫S): BioCap declines monotonically → no recovery window.",
+    sSolarPrePost: "Natural and technological inputs enter through their measured local histories. Whether a population oscillates, adapts or accumulates injury depends on receiving state, repair and renewal; post-electrification recovery is not assumed to vanish.",
     sSolarRenaissance: "Eight of the ten renaissances in the model dataset (six European, four Asian) fall inside a grand solar minimum or within 80 years after its end: the Italian Renaissance in the Spörer Minimum, the Scientific Revolution in the Maunder Minimum, German Romanticism in the Dalton Minimum.",
 
     sMigrationTitle: "The Migration Gradient",
@@ -80,7 +80,7 @@ const COPY = {
     sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
     sCulturalFormulaDesc: "where N(t) = population size, BioCap(t) = mean biological capacity, η(t) = institutional efficiency",
     sCulturalBioTitle: "Eight Biomarkers of Civilizational Capacity",
-    sCulturalBioWeightNote: "Weights reflect each biomarker's relative contribution to aggregate biological capacity, assigned by effect-size magnitude from the empirical literature: T and OXT receive the highest weights (0.20 each) because they are the primary substrates of both individual reproductive behavior and collective social cohesion — the two axes that determine civilizational output. DA and MEL receive 0.15 each as the primary substrates of motivation and cognitive restoration. BDNF receives 0.10 as the cognitive flexibility substrate. CORT receives −0.10 and enters the formula as (1 − CORT), because it suppresses the others via the dual hormone hypothesis and HPA-mediated immunosuppression. D and B2 receive 0.05 each as protective cofactors. The absolute weights sum to 1.0, so BioCap spans [0, 1] with 1.0 as the pre-industrial optimum (all positive markers at 1.0, cortisol at 0.0).",
+    sCulturalBioWeightNote: "The listed weights are explicit choices in the BioCap scenario, normalized for comparison. They do not estimate independent biological contributions or turn a biomarker change directly into institutional output. The mechanistic extension instead measures hormone/tissue reception, encounters and renewal of stored capacity, then estimates each transition in the relevant population.",
     sCulturalBiomarkers: [
       { symbol: "T", name: "Testosterone", weight: 0.20, trend: "↓ 1.2%/yr", function: "Risk-taking, competition, assertiveness, spatial cognition", unwin: "Expansive energy" },
       { symbol: "OXT", name: "Oxytocin", weight: 0.20, trend: "↓ (proxy)", function: "Social trust, group cohesion, cooperation, pair bonding", unwin: "Cohesive energy (asabiya)" },
@@ -123,7 +123,7 @@ const COPY = {
       { marker: "D → 1.0", recovery: "4.5%", desc: "Protective cofactor" },
       { marker: "B2 → 1.0", recovery: "2.5%", desc: "CRY/FAD cofactor" },
     ],
-    sCulturalSensConclusion: "The critical triad (T + MEL + OXT) accounts for 55% of BioCap weight and 59.6% of the attainable recovery. EMF reduction is the only intervention that would raise all biomarkers simultaneously, because all are downstream of the EMF-induced biomarker cascade.",
+    sCulturalSensConclusion: "The displayed shares describe restoration within the chosen BioCap weighting model. BERM’s mechanistic continuation passes hormone reception and sleep through successful encounters into skill and maintenance stocks. No intervention is established here as uniquely restoring all biomarkers, and these percentages are not clinical effect estimates.",
     sCulturalTransTitle: "Phase Transitions",
     sCulturalTransitions: [
       { year: "1983", from: "Rationalistic", to: "Deistic", trigger: "BioCap crosses 0.90; model trigger marker: testosterone", evidence: "Secular T decline from the early 1980s (Travison 2007, Santi 2025), sperm concentration −1.2%/yr (Levine 2017), first sustained sub-replacement TFR in the West" },
@@ -134,9 +134,9 @@ const COPY = {
     sActivationTitle: "The Activation Cycle: Why New Powers Rise as Old Ones Decline",
     sActivationLead: "Previous sections explained why civilizations decline. But decline alone does not explain history's recurring pattern of replacement. For every Rome that falls, there is a Germanic people that rises. For every Byzantium, an Arab expansion. For every Song Dynasty, a Mongol conquest.",
     sActivationBody1: "The conventional narrative treats the newcomer as simply 'more aggressive' or 'more vigorous' — a cultural characterization that explains nothing. BERM's hormesis framework provides a biological mechanism.",
-    sActivationBody2: "The same solar activity that damages a high-EMF urban population stimulates a low-EMF nomadic population. This is not speculation — it is documented experimental physiology. Low-dose electromagnetic exposure produces measurable increases in testosterone, decreases in cortisol, and enhancement of immune function in laboratory animals. The mechanism is hormesis: a stress response that, at low doses, strengthens biological systems rather than damaging them.",
-    sActivationBody3: "A nomadic population living in the hormetic zone of the dose-response curve experiences the rising phase of the solar cycle as biological activation: testosterone rises, cortisol falls, fertility increases, immune function improves. Over two to three generations, this produces a demographic pulse — a surplus of young men with high biological capacity and no land or mates. This surplus is the 'barbarian at the gates.'",
-    sActivationBody4: "Simultaneously, the urban population in the damage zone experiences the same solar phase as additional biological erosion. The gradient between the two populations — one being activated, the other being depleted — grows from both sides simultaneously. When it exceeds a threshold, expansion follows. Not because of ideology or culture, but because of biology and demography.",
+    sActivationBody2: "A state-dependent response can have different signs in different biological starting conditions. BERM represents this through reception, repair and functional capacity, rather than assigning benefit to a nomadic label and harm to an urban label. Translating experimental hormesis to a historical population requires its actual physical inputs and receiving-state distribution.",
+    sActivationBody3: "A conditional historical model first converts measured or reconstructed local inputs into distributions of functional state, then into age-specific survival, reproductive opportunities and births. The signs and lags must be estimated; a demographic pulse is a possible output rather than an automatic consequence of a rising solar cycle.",
+    sActivationBody4: "Differences between populations can propagate through encounters, resource competition and institutions. BERM’s social operator separates direct changes from network propagation and stored capacity; it does not infer expansion or conquest from a hormone index alone. Historical transitions test the composed model after its intermediate inputs and coefficients are declared.",
     sActivationChartTitle: "Hormetic Dose–Response",
     sActivationChartZone1: "Zone 1: Hormetic stimulation (nomad)",
     sActivationChartZone2: "Zone 2: Transition (agrarian)",
@@ -145,7 +145,7 @@ const COPY = {
     sActivationChartXNote: "S = solar activity (0–1), U = urbanization proxy, E = electrification proxy — the three stressor terms of the BioCap integral (biocap.py). Their sum defines position on the hormetic curve.",
     sActivationChartY: "BioCap",
     sActivationChartSun: "Same sun, opposite effects",
-    sActivationEpistemic: "",
+    sActivationEpistemic: "Conditional model: define local physical input, receiving/repair state, functional response and population distribution before predicting an aggregate change. The scenario’s phase boundaries and historical timing require independent calibration.",
 
     sExpansionTitle: "Three Types of Expansion",
     sExpansionCards: [
@@ -249,7 +249,7 @@ const COPY = {
       "α = biologinen palautumiskerroin (0,3)",
     ],
     sSolarFormulaNote: "BioCap₀ on alkuperäinen biologinen kapasiteetti, joka on asetettu arvoon 1,0 altistumattomalle väestölle. Kaavassa on kaksi integraalia: ensimmäinen (vaurio) kerää altistusta aurinko-, kaupungistumis- ja sähköistymiskomponenteista erillisellä leveysasteherkkyydellä χ_lat(λ) painotettuna. Toinen (palautuminen) edustaa biologista korjautumista matalan altistuksen ikkunoissa, ja sitä ohjaa palautumiskerroin α = 0,3. Palautumisen vaimennuskerroin σ(τ) kuvaa keskeisen sähköistymisen jälkeisen muutoksen: kun keinotekoinen EMF (E) hallitsee, aiemmin auringon minimien kanssa yhteen osuneet palautumisikkunat estyvät. Arvolla σ = 0,95 (moderni kaupunki) 95 % mahdollisesta palautumisesta on vaimennettu. Koodi jakaa kertyneen nettomuutoksen integrointivälillä (t − t₀), jolloin BioCap ilmaistaan vuosikeskiarvona, ja rajaa tuloksen välille [0, BioCap₀]; kun region = nimi, χ_lat seuraa chi_total(λ, τ, alue) -arvoa vuosittain. Tämä BioCap-tekijä on eri suure kuin Lindgrenin L1-johdettu χ(Ā).",
-    sSolarPrePost: "Pre-sähköinen (E=0): BioCap oskiloi → syklinen sivilisaatiodynamiikka. Post-sähköinen (E≫S): BioCap laskee monotonisesti → ei palautumisikkunaa.",
+    sSolarPrePost: "Luonnolliset ja teknologiset syötteet tulevat mitattujen paikallisten historioidensa kautta. Väestön vaihtelu, adaptaatio tai vaurion kertyminen riippuvat vastaanotintilasta, korjauksesta ja uusiutumisesta; sähköistymisen jälkeistä palautumista ei oleteta kadonneeksi.",
     sSolarRenaissance: "Kahdeksan mallin aineiston kymmenestä renessanssista (kuusi eurooppalaista, neljä aasialaista) osuu auringon suurminimin sisään tai enintään 80 vuotta sen päättymisen jälkeen: Italian renessanssi Spörer-minimissä, tieteellinen vallankumous Maunder-minimissä, saksalainen romantiikka Dalton-minimissä.",
 
     sMigrationTitle: "Muuttogradientti",
@@ -282,7 +282,7 @@ const COPY = {
     sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
     sCulturalFormulaDesc: "missä N(t) = väestön koko, BioCap(t) = keskimääräinen biologinen kapasiteetti, η(t) = institutionaalinen tehokkuus",
     sCulturalBioTitle: "Kahdeksan sivilisaatiokapasiteetin biomarkkeria",
-    sCulturalBioWeightNote: "Painot kuvaavat kunkin biomarkkerin suhteellista osuutta kokonaisbiologisesta kapasiteetista, ja ne on asetettu empiirisen kirjallisuuden efektikokojen suuruuden perusteella: T ja OXT saavat suurimmat painot (0,20 kumpikin), koska ne ovat sekä yksilön lisääntymiskäyttäytymisen että kollektiivisen sosiaalisen koheesion ensisijaiset substraatit — kaksi akselia, jotka määräävät sivilisaation tuotoksen. DA ja MEL saavat 0,15 kumpikin motivaation ja kognitiivisen palautumisen ensisijaisina substraatteina. BDNF saa 0,10 kognitiivisen joustavuuden substraattina. CORT saa −0,10 ja syötetään kaavaan muodossa (1 − CORT), koska se vaimentaa muita kaksoishormonihypoteesin ja HPA-välitteisen immunosuppression kautta. D ja B2 saavat 0,05 kumpikin suojaavina kofaktoreina. Painojen itseisarvot summautuvat 1,0:aan, joten BioCap kattaa välin [0, 1], jossa 1,0 on esiteollinen optimi (kaikki positiiviset markkerit 1,0, kortisoli 0,0).",
+    sCulturalBioWeightNote: "Luetellut painot ovat BioCap-skenaarion eksplisiittisiä, vertailua varten normalisoituja valintoja. Ne eivät estimoi riippumattomia biologisia osuuksia eivätkä muunna biomarkkerimuutosta suoraan instituutiotuotokseksi. Mekanistinen jatko mittaa sen sijaan hormonin/kudoksen vastaanoton, kohtaamiset ja varastoituneen kapasiteetin uusintamisen ja estimoi sitten kunkin siirtymän kyseisessä väestössä.",
     sCulturalBiomarkers: [
       { symbol: "T", name: "Testosteroni", weight: 0.20, trend: "↓ 1,2 %/v", function: "Riskinotto, kilpailu, itsevarmuus, avaruudellinen kognitio", unwin: "Ekspansiivinen energia" },
       { symbol: "OXT", name: "Oksitosiini", weight: 0.20, trend: "↓ (välillinen)", function: "Sosiaalinen luottamus, ryhmäkoheesio, yhteistyö, parisidonta", unwin: "Koheesioenergia (asabiya)" },
@@ -325,7 +325,7 @@ const COPY = {
       { marker: "D → 1,0", recovery: "4,5 %", desc: "Suojaava kofaktori" },
       { marker: "B2 → 1,0", recovery: "2,5 %", desc: "CRY/FAD-kofaktori" },
     ],
-    sCulturalSensConclusion: "Kriittinen triadi (T + MEL + OXT) muodostaa 55 % BioCap-painosta ja 59,6 % saavutettavissa olevasta palautumisesta. EMF-vähennys on ainoa interventio, joka nostaisi kaikkia biomarkkereita samanaikaisesti, koska ne kaikki ovat EMF-kaskadin alavirran tuotteita.",
+    sCulturalSensConclusion: "Näytetyt osuudet kuvaavat palautusta valitussa BioCap-painotusmallissa. BERM:n mekanistinen jatko siirtää hormonivastaanoton ja unen onnistuneiden kohtaamisten kautta osaamisen ja ylläpidon varantoihin. Mitään interventiota ei tässä osoiteta ainoaksi kaikki biomarkkerit palauttavaksi keinoksi, eivätkä prosentit ole kliinisiä vaikutusarvioita.",
     sCulturalTransTitle: "Vaihesiirtymät",
     sCulturalTransitions: [
       { year: "1983", from: "Rationalistinen", to: "Deistinen", trigger: "BioCap alittaa 0,90:n; mallin laukaisijamarkkeri: testosteroni", evidence: "Sekulaari T-lasku 1980-luvun alusta (Travison 2007, Santi 2025), siittiökonsentraatio −1,2 %/v (Levine 2017), ensimmäinen pysyvä alle uusiutumistason TFR lännessä" },
@@ -336,9 +336,9 @@ const COPY = {
     sActivationTitle: "Aktivaatiosykli: miksi uudet voimat nousevat vanhojen heikentyessä",
     sActivationLead: "Edeltävät osiot selittivät, miksi sivilisaatiot heikkenevät. Pelkkä heikkeneminen ei kuitenkaan selitä historian toistuvaa korvautumisen kaavaa. Jokaisen Rooman rinnalla on germaaniheimojen nousu. Jokaisen Bysantin rinnalla arabiexpansio. Jokaisen Song-dynastian rinnalla mongolivalloitus.",
     sActivationBody1: "Tavanomainen selitys pitää tulijaa yksinkertaisesti 'aggressiivisempana' tai 'elinvoimaisempana' — kulttuurinen luonnehdinta, joka ei selitä mitään. BERM:n hormeesin viitekehys tarjoaa biologisen mekanismin.",
-    sActivationBody2: "Sama aurinkoaktiivisuus, joka vahingoittaa korkean sähkömagneettisen kuorman alaista kaupunkiväestöä, stimuloi matalan kuorman alaista paimentolaisväestöä. Tämä ei ole spekulaatiota — se on dokumentoitua kokeellista fysiologiaa. Matala-annoksinen sähkömagneettinen altistus nostaa mitattavasti testosteronitasoa, laskee kortisolitasoa ja tehostaa immuunivastetta koe-eläimillä. Mekanismi on hormesis: stressivaste, joka pieninä annoksina vahvistaa biologisia järjestelmiä vahingoittamisen sijaan.",
-    sActivationBody3: "Paimentolaisväestö, joka elää annos-vastekäyrän hormeettisella alueella, kokee auringon aktiivivaiheen biologisena aktivaationa: testosteroni nousee, kortisoli laskee, hedelmällisyys paranee ja immuunitoiminta tehostuu. Kahdessa tai kolmessa sukupolvessa tämä tuottaa väestöpulssin — nuorten miesten ylijäämän, joilla on korkea biologinen kapasiteetti mutta ei maata eikä puolisoa. Tämä ylijäämä on 'barbaari portilla'.",
-    sActivationBody4: "Samanaikaisesti kaupunkiväestö vahinkovyöhykkeellä kokee saman auringon vaiheen lisäbiologisena kulumisena. Kahden väestön välinen gradientti — toinen aktivoituu, toinen heikentyy — kasvaa molemmilta puolilta yhtä aikaa. Kun se ylittää kynnysarvon, seuraa ekspansio. Ei ideologian tai kulttuurin vaan biologian ja demografian vuoksi.",
+    sActivationBody2: "Tilariippuvaisella vasteella voi olla eri etumerkki eri biologisissa lähtöoloissa. BERM kuvaa tämän vastaanoton, korjauksen ja toimintakyvyn avulla eikä nimeämällä paimentolaisuutta hyödyksi ja kaupunkilaisuutta haitaksi. Kokeellisen hormeesin siirto historialliseen väestöön tarvitsee sen todelliset fysikaaliset syötteet ja vastaanotintilan jakauman.",
+    sActivationBody3: "Ehdollinen historiamalli muuntaa ensin mitatut tai rekonstruoidut paikalliset syötteet toimintatilan jakaumiksi ja sitten ikäryhmittäiseksi selviytymiseksi, lisääntymismahdollisuuksiksi ja syntymiksi. Etumerkit ja viiveet on estimoitava; väestöpulssi on mahdollinen tulos eikä nousevan aurinkosyklin automaattinen seuraus.",
+    sActivationBody4: "Väestöjen erot voivat välittyä kohtaamisten, resurssikilpailun ja instituutioiden kautta. BERM:n sosiaalinen operaattori erottaa suorat muutokset verkostovälityksestä ja varastoituneesta kapasiteetista; se ei päättele laajenemista tai valloitusta pelkästä hormoni-indeksistä. Historialliset siirtymät testaavat yhdistettyä mallia sen välisyötteiden ja kertoimien määrittelyn jälkeen.",
     sActivationChartTitle: "Hormeettinen annos-vastekäyrä",
     sActivationChartZone1: "Vyöhyke 1: Hormeettinen stimulaatio (paimentolainen)",
     sActivationChartZone2: "Vyöhyke 2: Siirtymäalue (agraarinen)",
@@ -347,7 +347,7 @@ const COPY = {
     sActivationChartXNote: "S = aurinkoaktiivisuus (0–1), U = kaupungistumisen proxy, E = sähköistymisen proxy — BioCap-integraalin kolme stressoritermiä (biocap.py). Niiden summa määrittää sijainnin hormeettisella käyrällä.",
     sActivationChartY: "BioCap",
     sActivationChartSun: "Sama aurinko, vastakkaiset vaikutukset",
-    sActivationEpistemic: "",
+    sActivationEpistemic: "Ehdollinen malli: määrittele paikallinen fysikaalinen syöte, vastaanotto-/korjaustila, toiminnallinen vaste ja väestöjakauma ennen aggregaattimuutoksen ennustamista. Skenaarion vaiherajat ja historiallinen ajoitus tarvitsevat riippumattoman kalibroinnin.",
 
     sExpansionTitle: "Kolme ekspansiotyyppiä",
     sExpansionCards: [
@@ -700,6 +700,7 @@ export default async function PatopoliteiaPage({
       {/* Hero */}
       <header className="mb-16 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">{d.title}</h1>
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">{d.subtitle}</p>
         <p className="text-sm leading-relaxed text-muted-foreground max-w-3xl mx-auto mb-4">{d.heroLead}</p>
         <p className="text-sm leading-relaxed text-muted-foreground/70 max-w-3xl mx-auto">{d.heroTrail}</p>

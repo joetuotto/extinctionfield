@@ -324,22 +324,22 @@ export const NODES: CausalMapNode[] = [
   },
   {
     id: "mod_cyb5b", level: 1,
-    label: { en: "9. Cyb5b EMF sensor", fi: "9. Cyb5b EMF-sensori" },
+    label: { en: "9. Cyb5b signalling mediator", fi: "9. Cyb5b-signaalivälittäjä" },
     sublabel: { en: "Kim 2026 Cell", fi: "Kim 2026 Cell" },
     color: "#8B5CF6", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "Cytochrome b5 type B (outer mitochondrial membrane protein) identified in a genome-wide CRISPR screen as an EMF sensor. 60 Hz pulsed EMF → Cyb5b → rhythmic Ca²⁺ oscillations → gene promoter activation. Reversible in 24h.",
-        fdaDevice: "EMF gene switch (Cell 2026, [[ref:kim2026_cell_gene_switch|Kim et al.]]) — 25th device class",
-        prediction: "Environmental ELF (50/60 Hz) uncontrollably activates the same gene promoters",
+        mechanism: "A genome-wide CRISPR screen identified Cyb5b as an essential mediator and candidate sensor in an engineered EMF-responsive gene switch. The laboratory protocol combines 60 Hz burst repetition with 4 kHz pulses within each active burst; rhythmic Ca²⁺ oscillations precede promoter activation. The necessity of Cyb5b does not by itself locate the first physical interaction.",
+        fdaDevice: "Experimental gene switch ([[ref:kim2026_cell_gene_switch|Kim et al., Cell 2026]]); this study does not establish a clinical device approval.",
+        prediction: "Compare waveform-matched controls, Cyb5b deletion and rescue, and calcium timing at measured local doses. Transfer to environmental 50/60 Hz exposure requires a separate dose–response experiment.",
       },
       fi: {
-        mechanism: "Sytokromi b5 tyyppi B (mitokondrion ulkokalvoproteiini) tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. 60 Hz pulssi-EMF → Cyb5b → rytmiset Ca²⁺-vaihtelut → geenipromoottorin aktivaatio. Reversiibeli 24h.",
-        fdaDevice: "EMF-geenikytkin (Cell 2026, [[ref:kim2026_cell_gene_switch|Kim ym.]]) — 25. laiteluokka",
-        prediction: "Ympäristö-ELF (50/60 Hz) aktivoi hallitsemattomasti samoja geenipromoottoreita",
+        mechanism: "Genominlaajuinen CRISPR-seulonta tunnisti Cyb5b:n välttämättömäksi välittäjäksi ja sensoriehdokkaaksi muokatussa EMF-geenikytkimessä. Laboratorioprotokollassa purkaukset toistuvat 60 Hz:n taajuudella ja niiden sisällä pulssitetaan 4 kHz:llä; rytmiset Ca²⁺-vaihtelut edeltävät promoottorin aktivaatiota. Cyb5b:n välttämättömyys ei yksin paikanna ensimmäistä fysikaalista vuorovaikutusta.",
+        fdaDevice: "Kokeellinen geenikytkin ([[ref:kim2026_cell_gene_switch|Kim ym., Cell 2026]]); tutkimus ei osoita kliinisen laitteen hyväksyntää.",
+        prediction: "Verrataan samaa aaltomuotoa, Cyb5b-poistoa ja palautusta sekä kalsiumin ajoitusta mitatuilla paikallisilla annoksilla. Siirto ympäristön 50/60 Hz:n altistukseen tarvitsee erillisen annos–vastekokeen.",
       },
       bermPathway: "Cyb5b transduction pathway",
-      keyRefs: ["kim2026_cell_gene_switch"],
+      keyRefs: ["kim2026_cell_gene_switch", "kim2026_cell_gene_switch_correction"],
       link: "/evidence/devices#therapeutic-devices",
     },
   },
@@ -351,20 +351,20 @@ export const NODES: CausalMapNode[] = [
     sublabel: { en: "CRY chromophore", fi: "CRY:n kromofori" },
     color: "#8B5CF6", epistemicLevel: "E",
     detail: {
-      en: { mechanism: "FAD (flavin adenine dinucleotide) is the essential chromophore for both CRY1 and CRY2. Riboflavin (vitamin B2) deficiency reduces CRY protein stability ([[ref:hirano2017|Hirano 2017]]) and abolishes magnetoreception ([[ref:yap2025|Yap 2025]]). China: >90% B2 inadequacy coincides with lowest TFR." },
-      fi: { mechanism: "FAD (flaviiniadeniinidinukleotidi) on välttämätön kromofori sekä CRY1:lle että CRY2:lle. Riboflaviini (B2-vitamiini) -puutos vähentää CRY-proteiinin stabiilisuutta ([[ref:hirano2017|Hirano 2017]]) ja estää magnetoreseption ([[ref:yap2025|Yap 2025]]). Kiina: >90 % B2-puutos yhdistyy maailman alhaisimpaan TFR:ään." },
-      bermPathway: "Pathway B modulator", keyRefs: ["hirano2017", "yap2025"],
+      en: { mechanism: "Flavin availability, binding and turnover can modify cryptochrome state in subtype-specific systems. [[ref:hirano2017|Hirano 2017]] links FAD to CRY stability; [[ref:iversen2025|Iversen 2025]] tests CRY2/RFK/FAD–TRPC1 myogenesis under a defined pulsed magnetic protocol. The model carries cofactor and light-history state into the receiver response. These components do not determine the sign of a human B2 supplement effect on environmental RF, melatonin or fertility." },
+      fi: { mechanism: "Flaviinin saatavuus, sitoutuminen ja vaihtuvuus voivat muuttaa kryptokromin tilaa alatyyppikohtaisissa järjestelmissä. [[ref:hirano2017|Hirano 2017]] yhdistää FAD:n CRY:n stabiilisuuteen; [[ref:iversen2025|Iversen 2025]] tutkii CRY2/RFK/FAD–TRPC1-myogeneesiä määritellyllä magneettipulssiprotokollalla. Malli vie kofaktorin ja valohistorian tilan vastaanottimen vasteeseen. Nämä komponentit eivät määrää ihmisen B2-lisän vaikutussuuntaa ympäristö-RF:ään, melatoniiniin tai hedelmällisyyteen." },
+      bermPathway: "Pathway B modulator", keyRefs: ["hirano2017", "iversen2025"],
     },
   },
   {
     id: "mod_membrane_omega", level: 1,
     label: { en: "Membrane lipid order", fi: "Kalvon lipidijärjestys" },
-    sublabel: { en: "Omega-3/7, Majewska 2025", fi: "Omega-3/7, Majewska 2025" },
+    sublabel: { en: "Cry4a orientation, Majewska 2025", fi: "Cry4a:n orientaatio, Majewska 2025" },
     color: "#8B5CF6", epistemicLevel: "E",
     detail: {
-      en: { mechanism: "CRY4a associates with lipid bilayers in an ordered manner — membrane fatty acid composition (omega-3/7 balance) determines the orientational order available for radical pair magnetoreception. Cone outer segment stacked lamellae provide optimal orientation ([[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol)." },
-      fi: { mechanism: "CRY4a assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti — kalvon rasvahappokoostumus (omega-3/7-tasapaino) määrittää radikaaliparin magnetoreseptiolle käytettävissä olevan suuntajärjestyksen. Tappisolujen ulkosegmenttien pinotut lamellit tarjoavat optimaalisen orientaation ([[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol)." },
-      bermPathway: "Pathway B (CRY1) modulator", keyRefs: ["majewska2025"],
+      en: { mechanism: "European robin Cry4a associates with model lipid bilayers with a measurable orientation and membrane-state dependence ([[ref:majewska2025|Majewska et al. 2025]]). This supplies a receiver-orientation variable for an explicitly proposed magnetic response model. The experiment did not apply a field or measure a reproductive endpoint. Dietary omega-3/7 → tissue lipid state → orientation → magnetic response remains a sequence of separate transfer functions; mammalian CRY1 is a different subtype." },
+      fi: { mechanism: "Punarinnan Cry4a liittyy mallikalvoihin mitattavalla orientaatiolla, joka riippuu kalvon tilasta ([[ref:majewska2025|Majewska ym. 2025]]). Tulos antaa vastaanottimen orientaatiomuuttujan erikseen ehdotettuun magneettivastemalliin. Kokeessa ei käytetty kenttäaltistusta eikä mitattu lisääntymispäätepistettä. Ravinnon omega-3/7 → kudoksen lipiditila → orientaatio → magneettivaste säilyy erillisten siirtofunktioiden ketjuna; nisäkkään CRY1 on eri alatyyppi." },
+      bermPathway: "Avian Cry4a receiver orientation", keyRefs: ["majewska2025"],
     },
   },
   {
@@ -436,9 +436,9 @@ export const NODES: CausalMapNode[] = [
     label: { en: "CRY2 → TRPC1 Ca²⁺", fi: "CRY2 → TRPC1 Ca²⁺" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "CRY2-dependent, light-dependent, FAD-dependent calcium entry through TRPC1 (a TRP channel, NOT a VGCC). CRY2 physically interacts with TRPC1; the complex co-translocates to the nucleus after EMF/PEMF exposure. Pharmacologically distinct from pathway A: not blocked by nifedipine/verapamil. Demonstrated in myoblasts ([[ref:yap2025|Yap et al. 2025]], Cells)." },
-      fi: { mechanism: "CRY2-riippuvainen, valoriippuvainen, FAD-riippuvainen kalsiumsisäänvirtaus TRPC1:n kautta (TRP-kanava, EI VGCC). CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa; kompleksi siirtyy tumaan EMF/PEMF-altistuksen jälkeen. Farmakologisesti erillinen polku A:sta: nifedipiini/verapamiili ei estä. Osoitettu myoblasteissa ([[ref:yap2025|Yap ym. 2025]], Cells)." },
-      bermPathway: "B", keyRefs: ["yap2025"], link: "/evidence/magnetoreception#cry-trpc1",
+      en: { mechanism: "CRY2-dependent, light-dependent, FAD-dependent calcium entry through TRPC1 (a TRP channel, NOT a VGCC). CRY2 physically interacts with TRPC1; the complex co-translocates to the nucleus after EMF/PEMF exposure. Pharmacologically distinct from pathway A: not blocked by nifedipine/verapamil. Demonstrated in myoblasts ([[ref:iversen2025|Iversen et al. 2025]], Cells)." },
+      fi: { mechanism: "CRY2-riippuvainen, valoriippuvainen, FAD-riippuvainen kalsiumsisäänvirtaus TRPC1:n kautta (TRP-kanava, EI VGCC). CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa; kompleksi siirtyy tumaan EMF/PEMF-altistuksen jälkeen. Farmakologisesti erillinen polku A:sta: nifedipiini/verapamiili ei estä. Osoitettu myoblasteissa ([[ref:iversen2025|Iversen ym. 2025]], Cells)." },
+      bermPathway: "B", keyRefs: ["iversen2025"], link: "/evidence/magnetoreception#cry-trpc1",
     },
   },
   {
@@ -489,7 +489,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CRISPR-screen-identified Cyb5b functions as an EMF sensor on the outer mitochondrial membrane. Produces rhythmic Ca²⁺ oscillations that activate gene promoters. Third transduction pathway alongside IFO and RPM. 4 kHz (IF range) was used in the gene switch demonstration — links the IF channel directly to gene expression control cascade." },
       fi: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-vaihtelut jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla. 4 kHz (IF-alue) käytettiin geenikytkin-demonstraatiossa — yhdistää IF-kanavan suoraan geeniekspression kontrollikaskadiin." },
-      bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_gene_switch"], link: "/evidence/lighting#lighting-transition",
+      bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_gene_switch", "kim2026_cell_gene_switch_correction"], link: "/evidence/lighting#lighting-transition",
     },
   },
   {
@@ -913,10 +913,10 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_vgcc_ros", to: "tissue_btb", label: "RF → MMP2 → BTB" },
   { from: "tissue_btb", to: "tissue_sperm", label: "Microenvironment compromised" },
   // CRY2-TRPC1: second downstream branch of pathway B (NOT a coupling to pathway A)
-  { from: "mech_cry_melatonin", to: "mech_trpc1_calcium", label: "CRY2 → TRPC1 modulation (Yap 2025)" },
+  { from: "mech_cry_melatonin", to: "mech_trpc1_calcium", label: "CRY2 → TRPC1 modulation (Iversen 2025)" },
   { from: "mech_trpc1_calcium", to: "tissue_ovarian", label: "Ca²⁺ via TRPC1 → nuclear translocation" },
   { from: "mech_trpc1_calcium", to: "tissue_sperm", label: "Ca²⁺ via TRPC1" },
-  // FAD/B2 → CRY chromophore dependency (Hirano 2017, Yap 2025)
+  // FAD/B2 → CRY chromophore dependency (Hirano 2017, Iversen 2025)
   { from: "mod_fad_riboflavin", to: "mech_cry_melatonin", label: "FAD chromophore (Hirano 2017)" },
   // Membrane lipid order → CRY orientation (Majewska 2025)
   { from: "mod_membrane_omega", to: "mech_cry_melatonin", label: "CRY orientation order (Majewska 2025)" },

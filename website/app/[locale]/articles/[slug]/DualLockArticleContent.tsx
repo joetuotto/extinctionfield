@@ -11,23 +11,23 @@ const COPY = {
         paragraphs: [
           "In 2024, the average testosterone level in a 25-year-old American man was approximately what a 40-year-old had in 1985. This is not aging. It is a population-wide biological shift, documented across every industrialized country that has measured it.",
           "The standard response treats low testosterone as a medical curiosity — something for endocrinologists to manage in individual patients. But testosterone is not only a reproductive hormone. It is one of the brain's primary regulators of motivation, risk-taking, status-seeking, and approach behavior. When it declines across an entire population, the effects extend far beyond the clinic.",
-          "At the same time, cortisol — the stress hormone — has been rising. These two shifts are not independent. BERM predicts that EMF exposure drives both: testosterone down through the HPG axis (pathways A, B, D) and cortisol up through HPA activation (pathway D). The result is what we call the dual lock.",
+          "BERM proposes a coupled HPG/HPA route: a physical input may change receiving state, hormone production and tissue responsiveness. The dual lock therefore concerns the timing and reception of testosterone and cortisol as well as their measured levels. Their population effect is a conditional synthesis.",
         ],
       },
       {
         heading: "The dual-hormone hypothesis",
         paragraphs: [
           "The interaction between testosterone and cortisol in regulating dominant behavior was formalized by [[ref:mehta2010_dual_hormone|Mehta and Josephs in 2010]]. Their dual-hormone hypothesis proposes that testosterone's effect on status-seeking behavior is not fixed — it depends on cortisol. When cortisol is low, testosterone drives approach behavior, competition, and status pursuit. When cortisol is high, testosterone's effect is attenuated.",
-          "A meta-analysis of 8,538 participants confirmed this: the relationship is multiplicative, not additive. High testosterone with low cortisol produces strong status-seeking behavior. High testosterone with high cortisol produces moderate behavior. Low testosterone with high cortisol — the pattern BERM predicts EMF produces — results in behavioral suppression greater than either hormone shift alone.",
-          "This is the dual lock. One lock removes the drive (testosterone down: less motivation, less risk-taking, less competitive impulse). The other lock adds the brake (cortisol up: more anxiety, more avoidance, more withdrawal). Together, they suppress approach behavior more effectively than either mechanism independently.",
+          "The [[ref:dekkers2019_dual_hormone|meta-analysis of 8,538 participants]] evaluates the proposed testosterone–cortisol interaction across heterogeneous tasks. It motivates testing the joint response in a specified context; it does not supply one multiplicative law for all social behavior.",
+          "The two gates meet in the receiving tissue. CRY proteins regulate glucocorticoid-receptor transcriptional activity ([[ref:lamia2011_cry_glucocorticoid|Lamia 2011]]). Receptor availability, redox state and biological phase can consequently change the response to the same hormone profile. This is the molecular extension of the dual-lock hypothesis.",
         ],
       },
       {
-        heading: "A rough quantitative estimate",
+        heading: "From hormone level to timed tissue response",
         paragraphs: [
-          "Consider a simplified model. In 1980, average testosterone was approximately 500 ng/dL and cortisol was at baseline. If we index status-seeking behavior to these values as 1.0, then the 2024 population — with testosterone approximately 320 ng/dL (−36%) and cortisol approximately +20% — produces a multiplicative effect: 0.64 × 0.83 ≈ 0.53.",
-          "This suggests a roughly 47% decline in hormonally-driven status-seeking behavior. Testosterone alone accounts for −36%. Cortisol alone accounts for −17%. The combination, because it is multiplicative, accounts for −47%. The dual lock is substantially worse than the sum of its parts.",
-          "This estimate is illustrative, not precise. The real dose-response curves are nonlinear and poorly characterized. But the direction and the multiplicative interaction are established.",
+          "Represent a hormone signal as S_H=∫W(φ(t))r(t)H_free,organ(t)dt: local free hormone H, receptor readiness r and biological phase φ jointly determine the received signal. A simple recovery law, ṙ=k_rec(1−r)−k_desHr, makes the intervals between pulses biologically active. These are explicitly assumed operators whose coefficients require measurements.",
+          "Human sleep-misalignment data show that circulating cortisol rhythms can persist while glucocorticoid-signaling transcripts change timing ([[ref:archer2014_transcriptome|Archer 2014]]; [[ref:archer2022_glucocorticoid_timing|2022 reanalysis of the same dataset family]]). Pulsatile hormone experiments separately anchor temporal decoding ([[ref:stavreva2009_hormone_pulses|Stavreva 2009]]). Mean hormone levels therefore need not fall for functional coordination to change.",
+          "Carry the tissue response into measured approach, acceptance and cooperation probabilities, then into repeated encounters. The earlier 0.64×0.83 example was arithmetic on chosen indices, not an estimated 47% behavioral decline. The present model instead tests phase, recovery and encounter effects separately before combining them.",
         ],
       },
       {
@@ -68,7 +68,7 @@ const COPY = {
         heading: "5. The depression epidemic",
         paragraphs: [
           "Depression diagnoses have increased dramatically since the 2010s. SSRI prescriptions have risen approximately 400% over 20 years. The increase is especially sharp in young people and in men.",
-          "BERM offers a multi-pathway explanation: testosterone decline produces anhedonia (loss of pleasure and motivation). Melatonin disruption degrades sleep, a primary depression risk factor. Cortisol elevation creates chronic stress physiology. Dopamine desensitization reduces reward sensitivity. These are four independent biological routes to depression operating simultaneously — and all four are predicted by BERM's EMF exposure model.",
+          "BERM combines hormone reception, sleep, stress regulation and reward processing as interacting contributors to vulnerability. They share feedback and downstream machinery; they are not four independent effect sizes. Experiments on sleep and hormone signaling anchor parts of the route, while the contribution of a measured field remains a separate test.",
         ],
       },
       {
@@ -98,7 +98,7 @@ const COPY = {
           "These trends have multiple causes. Economic factors, social media, cultural shifts, and policy changes all contribute. BERM does not claim that EMF is the sole driver of any of them.",
           "What BERM proposes is that the biological substrate — the hormonal shift that the dual lock describes — makes populations more susceptible to these social and economic factors. A population with healthy testosterone and cortisol levels may absorb economic stress without mass labor force exit. A population already under hormonal suppression breaks more easily.",
           "The dual lock is a vulnerability amplifier, not a monocausal explanation. It does not replace sociology — it adds a biological layer underneath it.",
-          "The quantitative estimate (47% decline in hormonally-driven status-seeking) is illustrative. The real number depends on nonlinear dose-response curves that have not been characterized. The correlational evidence for each of the eight trends is strong; the causal attribution to EMF is the BERM-specific hypothesis that remains to be tested directly. This applies equally to conventional explanations.",
+          "A behavioral magnitude must come from the tissue-response and encounter operators, with timing and individual differences retained. The population trends on this page are observations to explain, not field-dose estimates. Component experiments constrain the biological route; the complete field-to-social synthesis is tested through its intermediate predictions.",
           "The predictions on this site's predictions page (SOC-1, SOC-2, SOC-3) are designed to test the societal implications of the dual lock in a falsifiable way.",
         ],
       },
@@ -123,23 +123,23 @@ const COPY = {
         paragraphs: [
           "Vuonna 2024 keskimääräisen 25-vuotiaan amerikkalaisen miehen testosteronitaso vastasi suunnilleen sitä, mikä 40-vuotiaalla oli vuonna 1985. Tämä ei ole ikääntymistä. Se on väestötason biologinen muutos, joka on dokumentoitu jokaisessa teollistuneessa maassa joka on sitä mitannut.",
           "Tyypillinen vastaus käsittelee matalaa testosteronia lääketieteellisenä kuriositeettina — asiana, jota endokrinologit hoitavat yksittäisillä potilailla. Mutta testosteroni ei ole pelkkä lisääntymishormoni. Se on yksi aivojen ensisijaisista motivaation, riskinoton, statushakuisuuden ja lähestymiskäyttäytymisen säätelymekanismeista. Kun se laskee koko populaation tasolla, vaikutukset ulottuvat kauas klinikan ulkopuolelle.",
-          "Samanaikaisesti kortisoli — stressihormoni — on noussut. Nämä kaksi muutosta eivät ole toisistaan riippumattomia. BERM ennustaa, että EMF-altistus ajaa molempia: testosteronia alas HPG-akselin kautta (polut A, B, D) ja kortisolia ylös HPA-aktivaation kautta (polku D). Tulosta kutsumme kaksoisluoksi.",
+          "BERM ehdottaa kytkettyä HPG/HPA-reittiä: fysikaalinen syöte voi muuttaa vastaanotintilaa, hormonituotantoa ja kudoksen vastevalmiutta. Kaksoislukko koskee siksi testosteronin ja kortisolin ajoitusta ja vastaanottoa sekä niiden mitattuja pitoisuuksia. Väestövaikutus on ehdollinen synteesi.",
         ],
       },
       {
         heading: "Kaksoishormonihypoteesi",
         paragraphs: [
           "Testosteronin ja kortisolin vuorovaikutuksen dominanttikäyttäytymisen säätelyssä formalisoivat [[ref:mehta2010_dual_hormone|Mehta ja Josephs vuonna 2010]]. Heidän kaksoishormonihypoteesinsa esittää, että testosteronin vaikutus statushakuiseen käyttäytymiseen ei ole kiinteä — se riippuu kortisolista. Kun kortisoli on matala, testosteroni ajaa lähestymiskäyttäytymistä, kilpailua ja statuksen tavoittelua. Kun kortisoli on korkea, testosteronin vaikutus vaimenee.",
-          "Meta-analyysi 8 538 osallistujasta vahvisti tämän: suhde on multiplikatiivinen, ei additiivinen. Korkea testosteroni ja matala kortisoli tuottavat voimakasta statushakuista käyttäytymistä. Korkea testosteroni ja korkea kortisoli tuottavat kohtalaista käyttäytymistä. Matala testosteroni ja korkea kortisoli — malli jonka BERM ennustaa EMF:n tuottavan — johtaa käyttäytymisen vaimentumiseen, joka on suurempi kuin kummankaan hormonimuutoksen yksinään.",
-          "Tämä on kaksoislukon mekanismi. Ensimmäinen lukko poistaa halun (testosteroni alas: vähemmän motivaatiota, vähemmän riskinottoa, vähemmän kilpailuimpulssia). Toinen lukko lisää jarrun (kortisoli ylös: enemmän ahdistuneisuutta, enemmän välttämistä, enemmän vetäytymistä). Yhdessä ne tukahduttavat lähestymiskäyttäytymistä tehokkaammin kuin kumpikaan mekanismi itsenäisesti.",
+          "[[ref:dekkers2019_dual_hormone|8 538 osallistujan meta-analyysi]] arvioi ehdotettua testosteroni–kortisoli-interaktiota erilaisissa tehtävissä. Se motivoi yhteisvasteen testaamista määritellyssä tilanteessa; se ei anna yhtä kertolakia kaikelle sosiaaliselle käyttäytymiselle.",
+          "Kaksi porttia kohtaavat vastaanottavassa kudoksessa. CRY-proteiinit säätelevät glukokortikoidireseptorin geenivastetta ([[ref:lamia2011_cry_glucocorticoid|Lamia 2011]]). Reseptorin saatavuus, redox-tila ja biologinen vaihe voivat siten muuttaa vastetta samaan hormoniprofiiliin. Tämä on kaksoislukkohypoteesin molekyylitason laajennus.",
         ],
       },
       {
-        heading: "Karkea kvantitatiivinen arvio",
+        heading: "Hormonitasosta ajoitettuun kudosvasteeseen",
         paragraphs: [
-          "Tarkastellaan yksinkertaistettua mallia. Vuonna 1980 keskimääräinen testosteroni oli noin 500 ng/dL ja kortisoli perustasolla. Jos indeksoimme statushakuisen käyttäytymisen näillä arvoilla arvoksi 1,0, niin vuoden 2024 populaatio — testosteroni noin 320 ng/dL (−36 %) ja kortisoli noin +20 % — tuottaa multiplikatiivisen vaikutuksen: 0,64 × 0,83 ≈ 0,53.",
-          "Tämä viittaa noin 47 %:n laskuun hormonaalisesti ohjautuneessa statushakuisessa käyttäytymisessä. Testosteroni yksin selittää −36 %. Kortisoli yksin selittää −17 %. Yhdistelmä, koska se on multiplikatiivinen, selittää −47 %. Kaksoislukon vaikutus on olennaisesti suurempi kuin osiensa summa.",
-          "Tämä arvio on havainnollistava, ei tarkka. Todelliset annos-vastekäyrät ovat epälineaarisia ja huonosti luonnehdittuja. Mutta suunta ja multiplikatiivinen vuorovaikutus ovat vahvistettuja.",
+          "Kuvaa hormonisignaali muodossa S_H=∫W(φ(t))r(t)H_free,organ(t)dt: paikallinen vapaa hormoni H, reseptorivalmius r ja biologinen vaihe φ määräävät yhdessä vastaanotetun signaalin. Yksinkertainen palautumislaki ṙ=k_rec(1−r)−k_desHr tekee pulssien väleistä biologisesti vaikuttavia. Nämä ovat eksplisiittisesti oletettuja operaattoreita, joiden kertoimet vaativat mittauksia.",
+          "Ihmisen unen ajoituskokeessa veren kortisolirytmi voi säilyä samalla, kun glukokortikoidisignaloinnin geenien ajoitus muuttuu ([[ref:archer2014_transcriptome|Archer 2014]]; [[ref:archer2022_glucocorticoid_timing|saman aineistoperheen uudelleenanalyysi 2022]]). Hormonipulssikokeet ankkuroivat erikseen ajallista dekoodausta ([[ref:stavreva2009_hormone_pulses|Stavreva 2009]]). Hormonien keskipitoisuuden ei siis tarvitse laskea toiminnallisen koordinaation muuttuessa.",
+          "Siirrä kudosvaste mitattuihin lähestymisen, vastaanoton ja yhteistyön todennäköisyyksiin ja edelleen toistuviin kohtaamisiin. Aiempi 0,64×0,83-esimerkki oli valittujen indeksien laskutoimitus, ei estimoitu 47 prosentin käyttäytymislasku. Nykyinen malli testaa vaiheen, palautumisen ja kohtaamisen vaikutukset erikseen ennen yhdistämistä.",
         ],
       },
       {
@@ -180,7 +180,7 @@ const COPY = {
         heading: "5. Masennusepidemia",
         paragraphs: [
           "Masennusdiagnoosit ovat kasvaneet dramaattisesti 2010-luvulta. SSRI-määräykset ovat nousseet noin 400 % 20 vuodessa. Kasvu on erityisen jyrkkää nuorilla ja miehillä.",
-          "BERM tarjoaa monipolkuselityksen: testosteronin lasku tuottaa anhedoniaa (mielihyvän ja motivaation menetystä). Melatoniinin häiriö heikentää unta, joka on ensisijainen masennusriskitekijä. Kortisolin nousu luo kroonisen stressifysiologian. Dopamiinin desensitisaatio vähentää palkkioherkkyyttä. Nämä ovat neljä toisistaan riippumatonta biologista reittiä masennukseen, jotka toimivat samanaikaisesti — ja kaikki neljä ovat BERM:n EMF-altistusmallin ennustamia.",
+          "BERM yhdistää hormonivastaanoton, unen, stressisäätelyn ja palkkioprosessoinnin toisiinsa vaikuttaviksi alttiuden osiksi. Niillä on yhteisiä palautteita ja alavirran koneistoa; kyse ei ole neljästä riippumattomasta vaikutuskoosta. Uni- ja hormonikokeet ankkuroivat reitin osia, kun taas mitatun kentän osuus on erillinen testi.",
         ],
       },
       {
@@ -210,7 +210,7 @@ const COPY = {
           "Näillä trendeillä on monia syitä. Taloudelliset tekijät, sosiaalinen media, kulttuuriset muutokset ja poliittiset päätökset kaikki myötävaikuttavat. BERM ei väitä, että EMF olisi yhdenkään niistä ainoa ajuri.",
           "BERM:n väite on, että biologinen perusta — hormonaalinen muutos, jota kaksoislukkoteoria kuvaa — tekee populaatioista alttiimpia näille sosiaalisille ja taloudellisille tekijöille. Populaatio jolla on terve testosteroni- ja kortisolitaso voi absorboida taloudellisen stressin ilman massiivista työvoimasta vetäytymistä. Populaatio, joka on jo hormonaalisen vaimentumisen alaisena, murtuu helpommin.",
           "Kaksoislukkoteoria on haavoittuvuusvahvistin, ei monokausaalinen selitys. Se ei korvaa sosiologiaa — se lisää biologisen kerroksen sen alle.",
-          "Kvantitatiivinen arvio (47 %:n lasku hormonaalisesti ohjautuneessa statushakuisuudessa) on havainnollistava. Todellinen luku riippuu epälineaarisista annos-vastekäyristä, joita ei ole luonnehdittu. Korrelaationäyttö jokaiselle kahdeksasta trendistä on vahva; kausaalinen attribuutio EMF:lle on BERM-tarkka hypoteesi, jota on vielä testattava suoraan. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
+          "Käyttäytymisvaikutuksen suuruus on johdettava kudosvasteen ja kohtaamisten operaattoreista ajoitus ja yksilöerot säilyttäen. Sivun väestötrendit ovat selitettäviä havaintoja, eivät kenttäannoksen arvioita. Osakokeet rajaavat biologista reittiä; koko kentästä sosiaaliseen toimintaan etenevää synteesiä testataan sen välivaihe-ennusteilla.",
           "Tämän sivuston ennustesivulla olevat ennusteet (SOC-1, SOC-2, SOC-3) on suunniteltu testaamaan kaksoislukkoteorian yhteiskunnallisia seurauksia falsifioitavalla tavalla.",
         ],
       },

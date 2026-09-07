@@ -23,13 +23,13 @@ const COPY = {
     tConclusion: "Each route alone produces modest T decline. Combined, they create the population-level testosterone crisis observed by Mazur (T↓ independent of weight change) and explain why no single lifestyle factor accounts for the decline.",
 
     fTitle: "Fertility triple strike",
-    fLead: "Three independent pathways to fertility impairment — sperm function, hormone production, and central regulation — attacking simultaneously.",
+    fLead: "Sperm function, hormone production and central regulation form coupled reproductive gates. Their shared inputs and feedback must be represented before composing an outcome.",
     fRoutes: [
-      { route: "Sperm (VK17)", path: "RF → candidate Ca²⁺ dysregulation → CatSper-timing endpoint → impaired fertilization", evidence: "Sperm effects and CatSper necessity are separate components; direct RF → human CatSper remains unestablished", status: "partial" },
+      { route: "Sperm (VK17)", path: "Measured RF protocol → calcium/motility response → separately tested hyperactivation and fertilization", evidence: "[[ref:catsper_2021|ESHRE 2021 abstract]]: 50 male rats, 2100 MHz 1 h/day for 28 days; no significant mating/live-birth difference; CatSper gene analysis unfinished Sperm effects and human CatSper necessity are separate components; direct RF → human CatSper is unestablished.", status: "partial" },
       { route: "Gonadal (VK15)", path: "EMF → StAR↓ → testosterone↓ → spermatogenesis↓ + Sertoli cell support↓", evidence: "Dose-dependent T↓ confirmed across multiple studies", status: "confirmed" },
       { route: "Central (VK22)", path: "Cortisol↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadal function↓", evidence: "GnIH gene silencing RESTORED fertility in stressed animals", status: "confirmed" },
     ],
-    fConclusion: "The fertility triple strike explains declining sperm counts (-50% since 1973), falling IVF success rates in high-EMF laboratories, and population-level TFR decline that correlates with EMF infrastructure (R²=0.851 across 54 countries).",
+    fConclusion: "Combine measured local gates as conditional probabilities, then carry the couple distribution through waiting time, age and opportunities into births. Biomarker changes, fertilization and period TFR are different endpoints. The field contribution must be estimated at the relevant transition; neither a sperm meta-analysis nor a national proxy correlation identifies the entire route.",
 
     cTitle: "Cognition triple strike",
     cLead: "Three independent pathways to cognitive decline — stress-mediated, neurotrophic, and inflammatory — converging on hippocampal function.",
@@ -63,13 +63,13 @@ const COPY = {
     tConclusion: "Jokainen reitti yksin tuottaa maltillisen T-laskun. Yhdessä ne luovat väestötason testosteronikriisin, jonka Mazur havaitsi (T↓ painonmuutoksista riippumatta) ja selittävät miksi yksikään yksittäinen elämäntapatekijä ei selitä laskua.",
 
     fTitle: "Hedelmällisyyden kolmoisisku",
-    fLead: "Kolme itsenäistä reittiä hedelmällisyyden heikkenemiseen — siittiöiden toiminta, hormonituotanto ja sentraalinen säätely — hyökkäävät samanaikaisesti.",
+    fLead: "Siittiön toiminto, hormonituotanto ja keskussäätely muodostavat kytkettyjä lisääntymisportteja. Niiden yhteiset syötteet ja palautteet on kuvattava ennen tuloksen yhdistämistä.",
     fRoutes: [
-      { route: "Siittiö (VK17)", path: "RF → ehdokas-Ca²⁺-säätelyhäiriö → CatSper-ajoituksen päätepiste → heikentynyt hedelmöitys", evidence: "Siittiövaikutukset ja CatSperin välttämättömyys ovat erillisiä komponentteja; suora RF → ihmisen CatSper on osoittamatta", status: "partial" },
+      { route: "Siittiö (VK17)", path: "Mitattu RF-koe → kalsium-/liikkuvuusvaste → erikseen testattu hyperaktivaatio ja hedelmöitys", evidence: "[[ref:catsper_2021|ESHRE 2021 -abstrakti]]: 50 urosrottaa, 2100 MHz 1 h/päivä 28 päivän ajan; ei merkitsevää parittelu-/elävänä syntymisen eroa; CatSper-geenianalyysi kesken Siittiövaikutukset ja ihmisen CatSperin välttämättömyys ovat erillisiä komponentteja; suora RF → ihmisen CatSper on osoittamatta.", status: "partial" },
       { route: "Gonadaalinen (VK15)", path: "EMF → StAR↓ → testosteroni↓ → spermatogeneesi↓ + Sertoli-solun tuki↓", evidence: "Annosriippuvainen T↓ vahvistettu useissa tutkimuksissa", status: "confirmed" },
       { route: "Sentraalinen (VK22)", path: "Kortisoli↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadaalinen toiminta↓", evidence: "GnIH-geenin hiljennys PALAUTTI hedelmällisyyden stressatuissa eläimissä", status: "confirmed" },
     ],
-    fConclusion: "Hedelmällisyyden kolmoisisku selittää laskevat siittiömäärät (-50 % vuodesta 1973), laskevat IVF-onnistumisprosentit korkean EMF:n laboratorioissa ja väestötason TFR-laskun joka korreloi EMF-infrastruktuurin kanssa (R²=0,851 54 maassa).",
+    fConclusion: "Yhdistä mitatut paikalliset portit ehdollisina todennäköisyyksinä ja siirrä parijakauma sitten odotusajan, iän ja mahdollisuuksien kautta syntymiin. Biomarkkerimuutokset, hedelmöitys ja periodi-TFR ovat eri päätepisteitä. Kentän osuus on estimoitava kyseisessä siirtymässä; siittiömeta-analyysi tai kansallinen proxy-korrelaatio eivät tunnista koko reittiä.",
 
     cTitle: "Kognition kolmoisisku",
     cLead: "Kolme itsenäistä reittiä kognitiiviseen heikkenemiseen — stressivälitteinen, neurotrofinen ja inflammatorinen — yhtyvät hippokampuksen toimintaan.",
@@ -223,6 +223,7 @@ export default async function TripleStrikesPage({ params }: { params: Promise<{ 
 
   const confirmedLabels: Record<string, string> = { en: "✓ Confirmed", fi: "✓ Vahvistettu", ja: "✓ 確認済み", fr: "✓ Confirmé", ko: "✓ 확인됨" };
   const statusColors: Record<string, { bg: string; text: string; label: string }> = {
+    partial: { bg: "bg-amber-500/10", text: "text-amber-600 dark:text-amber-400", label: locale === "fi" ? "Osanäyttö; siirto testattavana" : "Component evidence; transfer under test" },
     confirmed: { bg: "bg-green-500/10", text: "text-green-600 dark:text-green-400", label: confirmedLabels[activeLocale] ?? confirmedLabels.en },
   };
 

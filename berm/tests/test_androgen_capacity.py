@@ -57,3 +57,19 @@ def test_androgen_capacity_enters_male_conception_capacity_independently() -> No
     impaired_use = MaleReproductiveState(androgen_effective_capacity=0.6)
     assert baseline.conception_capacity == pytest.approx(1.0)
     assert impaired_use.conception_capacity == pytest.approx(0.6)
+
+
+@pytest.mark.parametrize("scale", [1e-308, 1.0, 1e308])
+def test_weighted_capacity_is_invariant_to_common_weight_scale(scale) -> None:
+    hormone = HormoneBindingState(1.0, 0.0, 0.0, 1.0, 1.0)
+    pathways = (ReceptorPathway("AR", 1.0, 1.0), ReceptorPathway("ZIP9", 1.0, 1.0))
+    result = androgen_effective_capacity(hormone, pathways, pathway_weights=(scale, scale))
+    assert result.effective_capacity == pytest.approx(0.5)
+
+
+def test_large_unequal_weights_preserve_their_relative_contribution() -> None:
+    hormone = binding(shbg=20.0)
+    pathways = (ReceptorPathway("AR", 1.0, 1.0), ReceptorPathway("ZIP9", 0.1, 1.0))
+    normal = androgen_effective_capacity(hormone, pathways, pathway_weights=(1.0, 0.5))
+    huge = androgen_effective_capacity(hormone, pathways, pathway_weights=(1e308, 5e307))
+    assert huge.effective_capacity == pytest.approx(normal.effective_capacity)

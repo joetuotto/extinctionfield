@@ -20,6 +20,7 @@ PUBLIC_MODEL_VERSION = "v17"
 PREDICTION_ROUTE_ID = "berm-v17-scalar-proxy"
 DIAGNOSTIC_ROUTE_ID = "berm-v19.1-three-channel-diagnostic"
 CONDITIONAL_ASFR_ROUTE_ID = "berm-conditional-asfr-v1"
+MODULOME_ASFR_ROUTE_ID = "berm-modulome-conditional-asfr-v1"
 DKC_CANDIDATE_ROUTE_ID = "berm-lindgren-dkc-candidate-v1"
 
 FIELDSTATE_MODULE_ID = "fieldstate"
@@ -48,6 +49,30 @@ _ARCHITECTURE_MANIFEST = {
         "formulation": LINDGREN_FORMULATION,
         "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
         "l2BridgeStatus": L2_BRIDGE_STATUS,
+        "l2BridgeStatusScope": "operator_form_only",
+        "bridgeComponents": {
+            "geometry": {
+                "status": "L1_DERIVED",
+                "scope": "exact_delta_metric_given_the_2025_ansatz",
+            },
+            "responseOperator": {
+                "status": "CONDITIONAL_FORMAL_OPERATOR",
+                "assumptions": ["minimal_matter_metric_coupling", "retarded_response_expansion"],
+                "scope": "operator_form_not_an_identified_tissue_kernel",
+            },
+            "physicalIdentification": {
+                "status": "OPEN",
+                "unresolved": ["gauge_prescription", "physical_coupling_scale"],
+            },
+            "tissueKernel": {
+                "status": "CALLER_SUPPLIED_UNCALIBRATED",
+                "scope": "organ_state_direction_units_and_lag_are_explicit_inputs",
+            },
+            "endpointCalibration": {
+                "status": "OPEN",
+                "scope": "the_composed_human_endpoint_chain",
+            },
+        },
         "l2BridgeMeaning": (
             "Conditional on minimal matter-metric coupling and response theory, "
             "BERM derives the formal geometry-to-observable operator. Its gauge "
@@ -169,6 +194,16 @@ _ARCHITECTURE_MANIFEST = {
         },
     },
     "routes": {
+        "modulomeAsfr": {
+            "id": MODULOME_ASFR_ROUTE_ID,
+            "role": "conditional_scenario_calculator",
+            "inputKind": "caller_supplied_local_biological_driver_and_state",
+            "fieldStateCalibrated": False,
+            "calibrationStatus": "STRUCTURAL_ONLY",
+            "requiresOpenL2Bridge": True,
+            "publishesLockedForecasts": False,
+            "preservesArchivedV17": True,
+        },
         "prediction": {
             "id": PREDICTION_ROUTE_ID,
             "modelVersion": PUBLIC_MODEL_VERSION,
@@ -255,6 +290,7 @@ def architecture_manifest() -> dict:
 
 __all__ = [
     "CONDITIONAL_ASFR_ROUTE_ID",
+    "MODULOME_ASFR_ROUTE_ID",
     "DKC_CANDIDATE_ROUTE_ID",
     "DIAGNOSTIC_ROUTE_ID",
     "EPISTAPEGE_EXTENSION_ID",

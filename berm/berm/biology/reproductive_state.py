@@ -383,12 +383,13 @@ class MaleReproductiveState:
     germline_reserve: float = 1.0
     btb: BarrierState = field(default_factory=lambda: BarrierState("BTB"))
     steroidogenic_support: float = 1.0
-    androgen_effective_capacity: float = 1.0
     sperm_output: float = 1.0
     sperm_function: float = 1.0
     sperm_dna_integrity: float = 1.0
     calibration_status: str = STRUCTURAL_ONLY
     evidence_ids: tuple[str, ...] = ()
+    # Appended to preserve the positional v1 constructor contract.
+    androgen_effective_capacity: float = 1.0
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "germline_reserve", _unit_interval("germline_reserve", self.germline_reserve))

@@ -6,12 +6,12 @@
       "id": "claim.vgcc.ros-ca2-coupling",
       "statement": {
         "en": {
-          "text": "BERM proposes that a physical field input can alter membrane dynamics through an endpoint-specific response kernel, after which voltage-gated calcium-channel opening can increase intracellular Ca²⁺ and activate mitochondrial ROS production. FieldState may measure the physical input but does not supply this biological operator.",
-          "sourceRevision": 1
+          "text": "Membrane depolarization can open VGCCs and change intracellular calcium and mitochondrial ROS. Applying this cellular mechanism to an external-field response requires a separately specified local input and receiver/tissue transfer. FieldState records observations; it is not the physical cause.",
+          "sourceRevision": 2
         },
         "fi": {
-          "text": "BERM ehdottaa, että fysikaalinen kenttäsyöte voi muuttaa kalvodynamiikkaa päätepistekohtaisen vasteytimen kautta, minkä jälkeen jänniteherkkien kalsiumkanavien avautuminen voi nostaa solunsisäistä Ca²⁺-pitoisuutta ja aktivoida mitokondriaalisen ROS-tuotannon. FieldState voi mitata fysikaalisen syötteen mutta ei tuota tätä biologista operaattoria.",
-          "sourceRevision": 1
+          "text": "Kalvon depolarisaatio voi avata VGCC-kanavia ja muuttaa solunsisäistä kalsiumia ja mitokondrion ROS-tuottoa. Solumekanismin soveltaminen ulkoisen kentän vasteeseen vaatii erikseen määritellyn paikallisen syötteen sekä vastaanotin- ja kudossiirron. FieldState kirjaa havaintoja, eikä ole fysikaalinen aiheuttaja.",
+          "sourceRevision": 2
         }
       },
       "kind": "mechanistic_step",
@@ -24,24 +24,26 @@
       "supersedes": [],
       "scope": {
         "supports": [
-          "VGCC activation is a primary transduction mechanism for RF and ELF fields"
+          "A calcium/ROS component pathway under the named experimental conditions."
         ],
         "does_not_support": [
-          "VGCC activation is the only transduction mechanism"
+          "VGCCs as a universal primary field sensor.",
+          "FieldState as a physical cause.",
+          "An independently calibrated field-to-fertility route."
         ]
       },
-      "falsification_condition": "Selective VGCC blockade eliminates ROS increase in field-exposed cells across three independent labs"
+      "falsification_condition": "Effective selective VGCC blockade leaves the claimed calcium/ROS component unchanged under matched conditions and intervention-only controls."
     },
     {
       "id": "claim.rpm.cry-magnetic-sensitivity",
       "statement": {
         "en": {
-          "text": "Cryptochrome proteins form radical pairs whose spin dynamics are modulated by the ambient magnetic field vector, altering downstream clock gene expression and redox state.",
-          "sourceRevision": 1
+          "text": "Radical-pair spin chemistry and cryptochrome-associated orientation findings support subtype- and protocol-specific candidate magnetic reception. Clock-gene and redox outputs in other CRY subtypes require separate coupling evidence.",
+          "sourceRevision": 2
         },
         "fi": {
-          "text": "Kryptokromiproteiinit muodostavat radikaalipareja, joiden spin-dynamiikkaa moduloi ympäröivän magneettikentän vektori, muuttaen alajuoksun kellogeenien ilmentymistä ja redox-tilaa.",
-          "sourceRevision": 1
+          "text": "Radikaaliparien spin-kemia ja kryptokromeihin liittyvät orientaatiotulokset tukevat alatyyppi- ja protokollakohtaisia magneettisen vastaanoton ehdokkaita. Muiden CRY-alatyyppien kellogeeni- ja redox-ulostulot vaativat erillisen kytkentänäytön.",
+          "sourceRevision": 2
         }
       },
       "kind": "mechanistic_step",
@@ -57,7 +59,9 @@
           "Radical-pair mechanism provides a quantum-coherent transduction pathway"
         ],
         "does_not_support": [
-          "RPM is sufficient to explain all observed biological effects of magnetic fields"
+          "RPM is sufficient to explain all observed biological effects of magnetic fields",
+          "A universal coefficient shared by avian Cry4a, avian Cry1, mammalian CRY1/2 and engineered iLOV.",
+          "A verified magnetic-to-melatonin sequence from avian orientation alone."
         ]
       },
       "falsification_condition": "CRY-knockout organisms show identical circadian and redox responses to magnetic field changes as wild-type"
@@ -92,7 +96,7 @@
           "Melatonin is the sole mediator of field effects on fertility"
         ]
       },
-      "falsification_condition": "Exogenous melatonin replacement fully restores reproductive function in field-exposed animals"
+      "falsification_condition": "Restoring melatonin timing and exposure fails to restore the specifically claimed melatonin-mediated component under matched conditions; independent pathways are measured separately."
     },
     {
       "id": "claim.sperm.multi-parameter-decline",
@@ -162,12 +166,12 @@
       "id": "claim.proxy.lindgren-selection",
       "statement": {
         "en": {
-          "text": "BERM v17 uses a two-channel technology-timing proxy whose χ shape matches the normalized rank-one inverse-metric coordinate χ_geo. Its proxy weighting is not a FieldState measurement, an optimized biological coupling, or a Lindgren-derived tissue response.",
-          "sourceRevision": 2
+          "text": "BERM v17 uses a two-channel technology-timing proxy whose χ shape matches the normalized rank-one inverse-metric coordinate χ_geo. The algebraic χ_geo(q)=q/√(1+q²) and signed geometric response are distinct from choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection. The proxy instead declares q=N(z_proxy); selecting and calibrating N and the tissue response is additional identification work. The proxy is not a FieldState measurement, an optimized biological coupling or a Lindgren-derived tissue response.",
+          "sourceRevision": 3
         },
         "fi": {
-          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä, jonka χ-muoto vastaa normalisoitua käänteisen rank-one-metriikan koordinaattia χ_geo. Sen proxypainotus ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenistä johdettu kudosvaste.",
-          "sourceRevision": 2
+          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä, jonka χ-muoto vastaa normalisoitua käänteisen rank-one-metriikan koordinaattia χ_geo. Algebrallinen χ_geo(q)=q/√(1+q²) ja etumerkillinen geometrinen vaste ovat eri asia kuin koordinaatin q=|Ā| valinta dimensiottoman, kollineaarisen Lorentz→Euklidisen spatiaalisen/skalaari-projektion kautta. Proxy ilmoittaa sen sijaan q=N(z_proxy); N:n valinta ja kalibrointi sekä kudosvaste ovat erillistä identifiointityötä. Proxy ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenistä johdettu kudosvaste.",
+          "sourceRevision": 3
         }
       },
       "kind": "proxy_interpretation",
@@ -1812,6 +1816,552 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.modulome.membrane-machinery-transfer",
+      "statement": {
+        "en": {
+          "text": "TRPC1-dependent magnetic response can be carried by membrane vesicles in the studied preparation; donor silencing and vesicle restoration constrain the required membrane machinery.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "TRPC1-riippuvainen magneettivaste voi kulkea kalvovesikkelien mukana tutkitussa valmisteessa; luovuttajasolun vaimennus ja vesikkelipalautus rajaavat tarvittavaa kalvokoneistoa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Transferable response competence in the reported vesicle/recipient experiments."
+        ],
+        "does_not_support": [
+          "Natural vesicle transfer as an established field-response mechanism in intact tissue.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Matched donor TRPC1 silencing leaves the vesicle calcium response and recipient restoration unchanged."
+    },
+    {
+      "id": "claim.modulome.calcium-compartment-cycle",
+      "statement": {
+        "en": {
+          "text": "In exposed hippocampal neurons, the reported membrane-current changes depended on both RyR-mediated calcium release and SERCA-mediated reuptake, supporting an intracellular-store contribution to the current endpoint.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Altistetuissa hippokampuksen neuroneissa raportoidut kalvovirtamuutokset riippuivat RyR-välitteisestä kalsiumin vapautumisesta ja SERCA-välitteisestä takaisinotosta, mikä tukee solunsisäisen varaston osuutta virtapäätepisteessä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A compartment model separating membrane currents, release and reuptake."
+        ],
+        "does_not_support": [
+          "Two independent primary field sensors or a calibrated memory time.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "The current effect persists under effective RyR and SERCA interventions in a matched replication."
+    },
+    {
+      "id": "claim.modulome.adaptation-memory",
+      "statement": {
+        "en": {
+          "text": "In the studied SH-SY5Y protocols, RF pre-treatment reduced DNA damage from a later chemical challenge; separate autophagy interventions identified a required repair-processing branch.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Tutkituissa SH-SY5Y-protokollissa RF-esikäsittely vähensi myöhemmän kemiallisen haasteen DNA-vauriota; erilliset autofagiainterventiot paikansivat tarvittavan korjaus- ja käsittelyhaaran.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Separate repair capacity from receptor readiness and accumulated damage."
+        ],
+        "does_not_support": [
+          "A universal protective effect or an exponential decay constant inferred from one post-exposure interval.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Protection remains after effective ATG5/7 and autophagy interference with intervention-only sensitivity controlled."
+    },
+    {
+      "id": "claim.modulome.flavin-state-and-light-history",
+      "statement": {
+        "en": {
+          "text": "CRY2/FAD-dependent cellular PEMF responses and human CRY1 photochemical conformational changes constrain separate, subtype-specific receiver states; they motivate an explicitly conditional light-history model.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "CRY2/FAD-riippuvaiset solujen PEMF-vasteet ja ihmisen CRY1:n fotokemialliset rakennemuutokset rajaavat erillisiä alatyyppikohtaisia vastaanotintiloja ja motivoivat eksplisiittisesti ehdollisen valohistoriamallin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Separate parameters for the cellular CRY2 system and purified human CRY1 photochemistry."
+        ],
+        "does_not_support": [
+          "Magnetic modulation of the Jeibmann CRY1 conformation or a protective human riboflavin effect inferred from these experiments.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Matched subtype-specific measurements show no dependence on the stated FAD/light-history interventions."
+    },
+    {
+      "id": "claim.modulome.cry-subtype-specificity",
+      "statement": {
+        "en": {
+          "text": "European robin CRY1 structural and spectroscopic findings support a clock-protein role and constrain physiological flavin binding; Cry4a magnetic-response parameters cannot be assigned to this subtype without separate evidence.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Euroopanpunarinnan CRY1:n rakenne- ja spektroskopiatulokset tukevat kelloproteiinin roolia ja rajaavat fysiologista flaviinisitoutumista; Cry4a:n magneettivasteparametreja ei voi siirtää tälle alatyypille ilman erillistä näyttöä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Subtype-specific applicability of flavin and magnetic-response parameters."
+        ],
+        "does_not_support": [
+          "A universal absence of magnetic effects in every cryptochrome or organism.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Matched physiological binding and functional measurements establish the proposed Cry4a-like parameterization for robin CRY1."
+    },
+    {
+      "id": "claim.modulome.directional-information",
+      "statement": {
+        "en": {
+          "text": "KCNJ15/polyamine and PI3Kγ/PTEN interventions constrain electrically guided cell migration as a functional endpoint that can differ from basal motility or damage.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "KCNJ15/polyamiini- ja PI3Kγ/PTEN-interventiot rajaavat sähköisesti ohjautuvan soluliikkeen toiminnalliseksi päätepisteeksi, joka voi erota perusliikkuvuudesta tai vauriosta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BIOELECTRIC_DEVELOPMENT"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Local-field directionality measured separately from viability and speed."
+        ],
+        "does_not_support": [
+          "Persistence after field removal or a reproductive/developmental endpoint established by the migration experiments.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Effective KCNJ15 silencing leaves field directionality intact while basal motility is controlled."
+    },
+    {
+      "id": "claim.modulome.medium-borne-message",
+      "statement": {
+        "en": {
+          "text": "Medium from RF-exposed donor cells changed the later chemical-challenge response of unexposed recipients in the reported culture system, demonstrating a transferable protective signal without identifying its mediator.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "RF-altistettujen luovuttajasolujen kasvatusneste muutti altistamattomien vastaanottajien myöhempää kemiallista haastevastetta raportoidussa viljelyjärjestelmässä; suojaava viesti oli siirrettävissä, mutta välittäjää ei yksilöity.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Recipient response conditioned by donor medium and transfer timing."
+        ],
+        "does_not_support": [
+          "HSP70 as a proven mediator or routine contamination of all separate control cultures.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Matched medium transfer has no recipient effect after donor exposure and medium handling are controlled."
+    },
+    {
+      "id": "claim.modulome.immune-functional-endpoint",
+      "statement": {
+        "en": {
+          "text": "In the reported macrophage co-culture system, brief pulsed exposure changed TRPC1–STING/NF-κB signalling together with phagocytosis; the named function is required to interpret the signal.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoidussa makrofagien yhteisviljelyjärjestelmässä lyhyt pulssialtistus muutti TRPC1–STING/NF-κB-signalointia yhdessä fagosytoosin kanssa; signaalia tulkitaan nimetyn toiminnon rinnalla.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A TRPC1-dependent immune signalling/function component under defined co-culture conditions."
+        ],
+        "does_not_support": [
+          "A generic inflammatory damage coefficient, direct TRPC1 field sensor identification or clinical cancer efficacy.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Effective TRPC1 interference preserves the exposure-dependent signalling and phagocytosis effects in matched controls."
+    },
+    {
+      "id": "claim.modulome.genotype-exposure-interaction",
+      "statement": {
+        "en": {
+          "text": "The reported human sleep experiment measured a CACNA1C genotype-by-RF interaction at a spindle EEG endpoint within the same participants, supporting endpoint-specific stratification.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoitu ihmisen unitutkimus mittasi CACNA1C-genotyypin ja RF-altistuksen yhteisvaikutuksen unisukkuloiden EEG-päätepisteessä samoilta osallistujilta, mikä tukee päätepistekohtaista ositusta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Genotype-by-exposure analysis in the measured human EEG endpoint."
+        ],
+        "does_not_support": [
+          "A universal individual sensitivity coefficient, persistence across nights or a fertility effect.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "A adequately powered matched study excludes the reported genotype-by-exposure interaction at the prespecified spindle endpoint."
+    },
+    {
+      "id": "claim.modulome.iris-optical-exposure",
+      "statement": {
+        "en": {
+          "text": "The reported small-group light experiment found different melatonin suppression under nominally identical illumination; it motivates measuring retinal optical exposure rather than assigning a universal iris-colour multiplier.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoitu pienten ryhmien valokoe havaitsi erilaisen melatoniinisuppression nimellisesti samassa valaistuksessa; havainto motivoi verkkokalvon valoaltistuksen mittaamista yleisen iiriksen värikertoimen sijaan.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The measured melatonin-suppression endpoint and optical-exposure uncertainty."
+        ],
+        "does_not_support": [
+          "A hundredfold retinal light-dose ratio, isolated causal iris-colour effect or RF susceptibility coefficient.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "The reported group difference does not reproduce under the same light protocol; an isolated iris effect requires matched groups and retinal dosimetry."
+    },
+    {
+      "id": "claim.receptor.membrane-orientation",
+      "statement": {
+        "en": {
+          "text": "European robin Cry4a associates with model lipid bilayers in an ordered manner that depends on membrane physical state, supporting a receptor-orientation parameter.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Euroopanpunarinnan Cry4a liittyy mallikalvojen lipidikaksoiskerroksiin järjestäytyneesti kalvon fysikaalisesta tilasta riippuen, mikä tukee vastaanottimen orientaatioparametria.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Membrane state and Cry4a anchoring/orientation in the studied preparations."
+        ],
+        "does_not_support": [
+          "Applied-field response, mammalian CRY1 function or a dietary omega-3/7 fertility coefficient.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Matched membrane-state perturbations leave Cry4a orientational ordering unchanged."
+    },
+    {
+      "id": "claim.receptor.cry4a-gtalpha-binding",
+      "statement": {
+        "en": {
+          "text": "European robin Cry4a interacts with cone-specific Gtα in the studied biochemical and cell assays, providing a candidate binding step between receptor state and downstream signalling.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Euroopanpunarinnan Cry4a vuorovaikuttaa tappisolukohtaisen Gtα:n kanssa tutkituissa biokemiallisissa ja solukokeissa, mikä tarjoaa sitoutumisvaiheen ehdokkaan vastaanotintilan ja alavirran signaloinnin väliin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Cry4a–Gtα binding under the specified construct and assay conditions."
+        ],
+        "does_not_support": [
+          "Magnetic-field-dependent G-protein activation, downstream membrane response or mammalian CRY1 transfer.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "Specific Cry4a–Gtα interaction is absent in matched SPR, pulldown and cellular FRET controls."
+    },
+    {
+      "id": "claim.receptor.opsin-gtalpha-binding",
+      "statement": {
+        "en": {
+          "text": "European robin long-wavelength opsin cytoplasmic loop 2 binds cone Gtα in the reported assay, supplying a competing binding branch for a conditional Cry4a–Gtα occupancy model.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Euroopanpunarinnan pitkäaaltoisen opsiinin sytoplasmasilmukka 2 sitoutuu tappisolun Gtα:han raportoidussa kokeessa ja tarjoaa kilpailevan sitoutumishaaran ehdolliseen Cry4a–Gtα-miehitysmalliin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "LWO-loop–Gtα affinity and a conditional competition hypothesis."
+        ],
+        "does_not_support": [
+          "A direct Cry4a magnetic activation experiment or measured Cry4a downstream signalling.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "The specific loop-2 interaction and affinity fail to reproduce against scrambled-peptide controls."
+    },
+    {
+      "id": "claim.modulome.parp-dependent-protection",
+      "statement": {
+        "en": {
+          "text": "PARP inhibition removed RF-pre-treatment-associated protection against a later chemical challenge in the reported lymphocyte/V79 experiments, constraining a repair branch without identifying the first field sensor.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "PARP:n esto poisti RF-esikäsittelyyn liittyvän suojan myöhempää kemiallista haastetta vastaan raportoiduissa lymfosyytti-/V79-kokeissa ja rajasi korjaushaaraa yksilöimättä ensimmäistä kenttäsensoria.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "PARP-related processing in the specified protective challenge response."
+        ],
+        "does_not_support": [
+          "A proven serial ATG→PARP pathway across different cell and challenge systems.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "The protective interaction persists with effective PARP inhibition after inhibitor-only chemical sensitivity is controlled."
+    },
+    {
+      "id": "claim.receptor.gene-switch-protocol",
+      "statement": {
+        "en": {
+          "text": "The reported engineered EMF-inducible gene-switch response is tied to its pulse waveform, Cyb5b-related calcium signalling and corrected experimental records; its timing does not define a general environmental response constant.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoitu muokattu EMF-indusoitu geenikytkinvaste sidotaan pulssiaaltomuotoon, Cyb5b:hen liittyvään kalsiumsignalointiin ja korjattuun koeaineistoon; sen ajoitus ei määritä yleistä ympäristövasteen aikavakiota.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The reported protocol-specific gene-switch component and source-version-aware kinetic analysis."
+        ],
+        "does_not_support": [
+          "Kinetics fitted to the superseded S1J interpolation or an environmental fertility transfer coefficient.",
+          "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+        ]
+      },
+      "falsification_condition": "A matched replication fails to reproduce the protocol-specific reporter response with corrected controls and discrete sampling."
+    },
+    {
+      "id": "claim.receptor.cry-dependent-ros",
+      "statement": {
+        "en": {
+          "text": "The tested pulsed-field-associated ROS and response-gene changes depended on cryptochrome function in the studied human and mouse cell systems.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Tutkitut pulssikenttään liittyvät ROS- ja vastegeenimuutokset riippuivat kryptokromin toiminnasta tutkituissa ihmisen ja hiiren solujärjestelmissä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component endpoints within the reported protocol."
+        ],
+        "does_not_support": [
+          "A universal damaging ROS effect or device-specific gonadal dose.",
+          "An isolated primary magnetic sensor established solely by cryptochrome loss of function.",
+          "No calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+        ]
+      },
+      "falsification_condition": "The named component result fails in a matched replication with the relevant exposure and intervention controls."
+    },
+    {
+      "id": "claim.sperm.rf-rat-endpoints",
+      "statement": {
+        "en": {
+          "text": "A rat conference-abstract experiment reported lower epididymal sperm motility and calcium after repeated 2100 MHz exposure, while mating score and live-birth rates did not differ significantly.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Rottien konferenssiabstraktikoe raportoi lisäkiveksen siittiöiden liikkuvuuden ja kalsiumin laskua toistuvan 2100 MHz:n altistuksen jälkeen, mutta parittelupisteet ja elävänä syntymisen osuudet eivät eronneet merkitsevästi.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component endpoints within the reported protocol."
+        ],
+        "does_not_support": [
+          "Direct human gamete evidence.",
+          "A CatSper-specific intervention, an earlier calcium pulse or a demonstrated live-birth reduction.",
+          "No calibrated human fertility or TFR coefficient.",
+          "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+        ]
+      },
+      "falsification_condition": "The named component result fails in a matched replication with the relevant exposure and intervention controls."
     }
   ],
   "evidence_relations": [
@@ -1829,7 +2379,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "The inverse-metric coordinate and perturbation expansion are BERM derivations from the registered 2025 premise."
+      "curatorNote": "The inverse-metric coordinate and perturbation expansion are BERM derivations from the registered 2025 premise.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.kubo1957",
@@ -1845,7 +2401,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies the response-kernel formalism, not the missing tissue-specific coefficient."
+      "curatorNote": "Supplies the response-kernel formalism, not the missing tissue-specific coefficient.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.litovitz1991",
@@ -1862,7 +2424,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains temporal coherence as an argument of a candidate response kernel."
+      "curatorNote": "Constrains temporal coherence as an argument of a candidate response kernel.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.rosenspire2005",
@@ -1879,7 +2447,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains endogenous phase and response sign as kernel arguments."
+      "curatorNote": "Constrains endogenous phase and response sign as kernel arguments.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.ubeda1983",
@@ -1896,7 +2470,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains waveform, intensity window and developmental timing."
+      "curatorNote": "Constrains waveform, intensity window and developmental timing.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.blackman1990",
@@ -1913,7 +2493,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains AC/DC relative orientation rather than scalar field magnitude alone."
+      "curatorNote": "Constrains AC/DC relative orientation rather than scalar field magnitude alone.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.blackman1991",
@@ -1930,7 +2516,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains temperature level and trajectory as response-state variables."
+      "curatorNote": "Constrains temperature level and trajectory as response-state variables.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.lymangrover1983",
@@ -1947,7 +2539,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains agonist state and intensity window in one endocrine tissue."
+      "curatorNote": "Constrains agonist state and intensity window in one endocrine tissue.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bridge.berman1990",
@@ -1963,7 +2561,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports modelling protocol and laboratory state explicitly rather than averaging it away."
+      "curatorNote": "Supports modelling protocol and laboratory state explicitly rather than averaging it away.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.androgen.narinx2022",
@@ -1979,7 +2583,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.androgen.laurent2016",
@@ -1995,7 +2605,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.androgen.degendt2004",
@@ -2011,7 +2627,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.androgen.yu2023",
@@ -2029,7 +2651,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports ZIP9 as a measurable response branch while preserving the study's short-term null sperm result."
+      "curatorNote": "Supports ZIP9 as a measurable response branch while preserving the study's short-term null sperm result.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.androgen.mollerlokken2012",
@@ -2047,7 +2675,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Registers a human null region for one acute MRI protocol and measured serum endpoints; it is not a receptor-capacity test."
+      "curatorNote": "Registers a human null region for one acute MRI protocol and measured serum endpoints; it is not a receptor-capacity test.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vgcc.pall2013",
@@ -2063,7 +2697,13 @@
       ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.sperm.adams2014",
@@ -2079,7 +2719,13 @@
       ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cry.ritz2004",
@@ -2095,7 +2741,13 @@
       ],
       "curatorId": "otto",
       "curatedAt": "2026-09-01",
-      "curatorNote": null
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.blackman1985_calcium_windows",
@@ -2113,7 +2765,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record BLACKMAN_1985_BACKGROUND_FREQUENCY; draft, needs author review. Record finding: Changing local geomagnetism shifted the ELF frequencies associated with calcium efflux."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record BLACKMAN_1985_BACKGROUND_FREQUENCY; draft, needs author review. Record finding: Changing local geomagnetism shifted the ELF frequencies associated with calcium efflux.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.ritz2004",
@@ -2131,7 +2789,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record RITZ_2004_VECTOR_ANGLE; draft, needs author review. Record finding: Orientation disruption depended on the relative angle between RF and static background fields."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record RITZ_2004_VECTOR_ANGLE; draft, needs author review. Record finding: Orientation disruption depended on the relative angle between RF and static background fields.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.usselman2016",
@@ -2149,12 +2813,18 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record USSELMAN_2016_ORIENTATION_ROS; draft, needs author review. Record finding: Field orientation changed radical-pair ROS yield and endothelial bioenergetic readouts."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record USSELMAN_2016_ORIENTATION_ROS; draft, needs author review. Record finding: Field orientation changed radical-pair ROS yield and endothelial bioenergetic readouts.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.majewska2025",
       "referenceId": "majewska2025",
-      "claimId": "claim.vector.background-dependent-coupling",
+      "claimId": "claim.receptor.membrane-orientation",
       "relation": "supports",
       "directness": "mechanistic_intermediate",
       "studyDesign": "Protein–membrane experiment and molecular simulation",
@@ -2166,8 +2836,14 @@
         "No applied exposure or reproductive endpoint"
       ],
       "curatorId": "berm-claims-agent",
-      "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MAJEWSKA_2025_CRY4A_MEMBRANE; draft, needs author review. Record finding: Cry4a associated with lipid bilayers in an ordered manner controlled by membrane physical state."
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Retargeted 2026-09-07 from the broad background-vector claim: no applied-field response was measured. Supports avian Cry4a receptor geometry only.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.chae2019",
@@ -2188,7 +2864,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAE_2019_HUMAN_BLUE_LIGHT_ORIENTATION; draft, needs author review. Record finding: Food-associated orientation in starved men tracked the modulated field direction under light below 500 nm, and reversed when the vertical component was inverted; blindfolded, longer-wavelength, antiparallel-current and female groups showed no significant orientation."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAE_2019_HUMAN_BLUE_LIGHT_ORIENTATION; draft, needs author review. Record finding: Food-associated orientation in starved men tracked the modulated field direction under light below 500 nm, and reversed when the vertical component was inverted; blindfolded, longer-wavelength, antiparallel-current and female groups showed no significant orientation.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.yu2019_btb",
@@ -2206,7 +2888,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.baldini2025",
@@ -2224,7 +2912,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record BALDINI_2025_ART_LAB_SPERM; draft, needs author review. Record finding: Reported lower progressive motility in mobile-phone and Wi-Fi-repeater conditions than comparator conditions."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record BALDINI_2025_ART_LAB_SPERM; draft, needs author review. Record finding: Reported lower progressive motility in mobile-phone and Wi-Fi-repeater conditions than comparator conditions.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.calis2021",
@@ -2242,7 +2936,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.yousefi2025",
@@ -2260,7 +2960,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.iolchiev2019",
@@ -2278,7 +2984,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record IOLCHIEV_2019_GEOMAGNETIC_BULL_SEMEN; draft, needs author review. Record finding: Reported higher geomagnetic-activity periods alongside changes in ejaculate volume, motility, morphology and DNA fragmentation."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record IOLCHIEV_2019_GEOMAGNETIC_BULL_SEMEN; draft, needs author review. Record finding: Reported higher geomagnetic-activity periods alongside changes in ejaculate volume, motility, morphology and DNA fragmentation.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vector.sofrankova2023",
@@ -2297,7 +3009,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.envelope.zandieh2025",
@@ -2315,7 +3033,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.shafik1992",
@@ -2333,7 +3057,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING; draft, needs author review. Record finding: Reported readings ranked 100% polyester above a 50:50 polyester/cotton blend; cotton had no detected reading in the stated setup."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING; draft, needs author review. Record finding: Reported readings ranked 100% polyester above a 50:50 polyester/cotton blend; cotton had no detected reading in the stated setup.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.shafik1992_sling",
@@ -2351,7 +3081,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_POLYESTER_SLING; draft, needs author review. Record finding: Reported reversible azoospermia, seminiferous-tubule changes and static-interface readings; the paper itself proposed electrostatic and thermoregulatory mechanisms."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SHAFIK_1992_HUMAN_POLYESTER_SLING; draft, needs author review. Record finding: Reported reversible azoospermia, seminiferous-tubule changes and static-interface readings; the paper itself proposed electrostatic and thermoregulatory mechanisms.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.dincmen2016",
@@ -2369,7 +3105,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record DINCMEN_2016_PET_ANTISTATIC_DECAY; draft, needs author review. Record finding: Untreated polyester retained a large charge for over 2,000 seconds in the stated test; antistatic treatment reduced both magnitude and decay time."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record DINCMEN_2016_PET_ANTISTATIC_DECAY; draft, needs author review. Record finding: Untreated polyester retained a large charge for over 2,000 seconds in the stated test; antistatic treatment reduced both magnitude and decay time.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.england_2023_ticks",
@@ -2387,7 +3129,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.colin1992_varroa_electrostatic",
@@ -2405,7 +3153,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.garcia_robledo2025",
@@ -2423,7 +3177,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.tribo.morley2018_spider_ballooning",
@@ -2441,7 +3201,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.efield.mallinson2025_electric_pollution",
@@ -2459,7 +3225,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.efield.garcia_robledo2025",
@@ -2477,7 +3249,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vmem.zandieh2025",
@@ -2495,7 +3273,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ZANDIEH_2025_MITO_RESONANCE; draft, needs author review. Record finding: Mitochondrial-potential and ROS responses varied with frequency, including 0.02 and 0.04 Hz conditions.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.vmem.ahmadi2016",
@@ -2513,7 +3297,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.development.ahmadi2016",
@@ -2531,7 +3321,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.development.calis2021",
@@ -2549,7 +3345,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.development.yousefi2025",
@@ -2567,7 +3369,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.hpg.cao2015",
@@ -2585,7 +3393,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.hpg.liu2014",
@@ -2603,7 +3417,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.bbb.lochhead2010",
@@ -2621,7 +3441,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record LOCHHEAD_2010_ROS_BBB; draft, needs author review. Record finding: Oxidative stress increased BBB permeability and altered occludin localization; antioxidant treatment attenuated the change."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LOCHHEAD_2010_ROS_BBB; draft, needs author review. Record finding: Oxidative stress increased BBB permeability and altered occludin localization; antioxidant treatment attenuated the change.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.btb.yu2019_btb",
@@ -2639,7 +3465,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.btb.chakraborty2020",
@@ -2657,7 +3489,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAKRABORTY_2020_OXIDATIVE_BTB; draft, needs author review. Record finding: Oxidative stress accompanied lower BTB junction proteins and adverse sperm endpoints in the model."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CHAKRABORTY_2020_OXIDATIVE_BTB; draft, needs author review. Record finding: Oxidative stress accompanied lower BTB junction proteins and adverse sperm endpoints in the model.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.germline.yu2019_btb",
@@ -2675,7 +3513,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YU_2020_LOCAL_4G_BTB; draft, needs author review. Record finding: Reported delayed sperm/reproductive changes and a Spock3–MMP2 blood-testis-barrier axis; Spock3 inhibition was a rescue arm.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.steroidogenesis.meena2014",
@@ -2693,7 +3537,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MEENA_2014_MELATONIN_RESCUE; draft, needs author review. Record finding: Reported redox, testosterone, sperm and DNA-fragmentation changes attenuated in the melatonin arm."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MEENA_2014_MELATONIN_RESCUE; draft, needs author review. Record finding: Reported redox, testosterone, sperm and DNA-fragmentation changes attenuated in the melatonin arm.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.steroidogenesis.cordelli2024",
@@ -2711,7 +3561,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CORDELLI_2024_MALE_FERTILITY_REVIEW; draft, needs author review. Record finding: Reported lower pregnancy rate (moderate certainty) and lower sperm count (low certainty), no litter-size effect (moderate certainty), and very-low certainty for several other pooled endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CORDELLI_2024_MALE_FERTILITY_REVIEW; draft, needs author review. Record finding: Reported lower pregnancy rate (moderate certainty) and lower sperm count (low certainty), no litter-size effect (moderate certainty), and very-low certainty for several other pooled endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.steroidogenesis.naderi2026",
@@ -2729,7 +3585,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record NADERI_2026_RODENT_SYSTEMATIC_REVIEW; draft, needs author review. Record finding: Identified 88 eligible rodent studies across sperm, oxidative-stress, DNA, apoptosis, histopathology and hormone endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record NADERI_2026_RODENT_SYSTEMATIC_REVIEW; draft, needs author review. Record finding: Identified 88 eligible rodent studies across sperm, oxidative-stress, DNA, apoptosis, histopathology and hormone endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ovarian.ahmadi2016",
@@ -2747,7 +3609,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ovarian.calis2021",
@@ -2765,7 +3633,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ovarian.yousefi2025",
@@ -2783,7 +3657,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.oocyte.cao2015",
@@ -2801,7 +3681,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CAO_2015_RF_CIRCADIAN_REDOX; draft, needs author review. Record finding: Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.oocyte.ahmadi2016",
@@ -2819,7 +3705,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record AHMADI_2016_OVARIAN_FOLLICLES; draft, needs author review. Record finding: Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.oocyte.he2016",
@@ -2837,7 +3729,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.oocyte.calis2021",
@@ -2855,7 +3753,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record CALIS_2021_PRENATAL_OVARIAN_RESERVE; draft, needs author review. Record finding: The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.oocyte.yousefi2025",
@@ -2873,7 +3777,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record YOUSEFI_2025_NEONATAL_OOGENESIS; draft, needs author review. Record finding: Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ovulation.liu2014",
@@ -2891,7 +3801,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.implantation.liu2014",
@@ -2909,7 +3825,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record LIU_2014_OVARIAN_CLOCK_IMPLANTATION; draft, needs author review. Record finding: Ovarian Bmal1 disruption impaired progesterone support and implantation in the experimental system.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.implantation.he2016",
@@ -2927,7 +3849,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record HE_2016_OOCYTE_MELATONIN; draft, needs author review. Record finding: Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.england_2023_ticks",
@@ -2945,7 +3873,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record ENGLAND_2023_TICK_STATIC_ATTACHMENT; draft, needs author review. Record finding: Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.colin1992_varroa_electrostatic",
@@ -2963,7 +3897,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record COLIN_1992_VARROA_ELECTRICAL_CHARGES; draft, needs author review. Record finding: Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.mallinson2025_electric_pollution",
@@ -2981,7 +3921,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MALLINSON_2025_HONEYBEE_EFIELD_FORAGING; draft, needs author review. Record finding: AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.garcia_robledo2025",
@@ -2999,7 +3945,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION; draft, needs author review. Record finding: Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.sofrankova2023",
@@ -3018,7 +3970,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE; draft, needs author review. Record finding: Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.ecology.morley2018_spider_ballooning",
@@ -3036,7 +3994,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record MORLEY_2018_SPIDER_EFIELD_BALLOONING; draft, needs author review. Record finding: Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.asfr.nations2024",
@@ -3055,7 +4019,13 @@
       ],
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
-      "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy."
+      "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.delgado1969",
@@ -3073,7 +4043,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports only the limited-access component of the BERM composition; the source is registered but not yet author-verified in the bibliography."
+      "curatorNote": "Supports only the limited-access component of the BERM composition; the source is registered but not yet author-verified in the bibliography.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.gazzaniga2000",
@@ -3091,7 +4067,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports the interpreter component, not the full fertility application; the source is registered but not yet author-verified in the bibliography."
+      "curatorNote": "Supports the interpreter component, not the full fertility application; the source is registered but not yet author-verified in the bibliography.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.nisbett-wilson1977",
@@ -3109,7 +4091,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports the measurement boundary that a verbal report need not expose its complete causal antecedents; the source is registered but not yet author-verified."
+      "curatorNote": "Supports the measurement boundary that a verbal report need not expose its complete causal antecedents; the source is registered but not yet author-verified.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.kunda1990",
@@ -3127,7 +4115,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Provides an empirical component for the evidence-threshold prediction, not validation of Epistapege; the source is registered but not yet author-verified."
+      "curatorNote": "Provides an empirical component for the evidence-threshold prediction, not validation of Epistapege; the source is registered but not yet author-verified.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.alogaily2025",
@@ -3145,7 +4139,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Directly supports a hormone-state × affiliation-context effect on preference expression, not a universal ideological direction."
+      "curatorNote": "Directly supports a hormone-state × affiliation-context effect on preference expression, not a universal ideological direction.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.bakker2020",
@@ -3162,7 +4162,13 @@
       ],
       "curatorId": "berm-kernel-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Rejects treating the original Oxley association as a general physiology-to-ideology law and narrows BERM to preregistered state- and endpoint-specific mappings."
+      "curatorNote": "Rejects treating the original Oxley association as a general physiology-to-ideology law and narrows BERM to preregistered state- and endpoint-specific mappings.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.narinx2022",
@@ -3180,7 +4186,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supports the distinction between assayed total hormone and androgen-effective state used in the BERM composition."
+      "curatorNote": "Supports the distinction between assayed total hormone and androgen-effective state used in the BERM composition.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.soares-cunha2016",
@@ -3198,7 +4210,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies direct component evidence for biological control of motivational weighting, not the complete interpreter route."
+      "curatorNote": "Supplies direct component evidence for biological control of motivational weighting, not the complete interpreter route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.cognition.oxley2008",
@@ -3216,7 +4234,13 @@
       ],
       "curatorId": "berm-integration-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Narrows the biology-to-politics bridge to an observed individual-level association; aggregate inference remains open."
+      "curatorNote": "Narrows the biology-to-politics bridge to an observed individual-level association; aggregate inference remains open.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.joint-endocrine.mehta2010",
@@ -3233,7 +4257,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Directly supports a joint HPA × HPG interaction term and rejects a main-effect-only testosterone mapping."
+      "curatorNote": "Directly supports a joint HPA × HPG interaction term and rejects a main-effect-only testosterone mapping.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.joint-endocrine.narinx2022",
@@ -3250,7 +4280,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Constrains the androgen-state input that is jointly gated by HPA state."
+      "curatorNote": "Constrains the androgen-state input that is jointly gated by HPA state.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cry-clock.yoshii2009",
@@ -3267,7 +4303,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Links magnetic configuration to the circadian clock through CRY dependence."
+      "curatorNote": "Links magnetic configuration to the circadian clock through CRY dependence.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cry-clock.sherrard2018",
@@ -3284,7 +4326,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Adds a CRY-dependent redox arm in mammalian cells to the receptor-clock evidence."
+      "curatorNote": "Adds a CRY-dependent redox arm in mammalian cells to the receptor-clock evidence.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cry-clock.cao2015",
@@ -3301,7 +4349,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Connects circadian/redox state to reproductive endocrine outcomes in the composed route."
+      "curatorNote": "Connects circadian/redox state to reproductive endocrine outcomes in the composed route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cry-clock.liu2014",
@@ -3318,7 +4372,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Establishes that the local clock is functionally upstream of reproductive steroidogenic support."
+      "curatorNote": "Establishes that the local clock is functionally upstream of reproductive steroidogenic support.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.pharmacology.pall2013",
@@ -3335,7 +4395,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies the exposure-side pharmacological intervention line."
+      "curatorNote": "Supplies the exposure-side pharmacological intervention line.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.pharmacology.ccb1994",
@@ -3352,7 +4418,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Shows that calcium-channel pharmacology can move a human sperm fertilization control point."
+      "curatorNote": "Shows that calcium-channel pharmacology can move a human sperm fertilization control point.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.pharmacology.sirolimus2008",
@@ -3369,7 +4441,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Independently anchors mTOR as a human spermatogenic control point."
+      "curatorNote": "Independently anchors mTOR as a human spermatogenic control point.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.vmem.sempou2022",
@@ -3386,7 +4464,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Establishes the general Vmem→calcium/mTOR→fate control segment used in the composition."
+      "curatorNote": "Establishes the general Vmem→calcium/mTOR→fate control segment used in the composition.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.vmem.brown2016",
@@ -3403,7 +4487,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Anchors the bioelectric state to a human fertilization endpoint."
+      "curatorNote": "Anchors the bioelectric state to a human fertilization endpoint.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.vmem.zandieh2025",
@@ -3421,7 +4511,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies the field-to-Vmem component that joins Sempou and Brown in the BERM route."
+      "curatorNote": "Supplies the field-to-Vmem component that joins Sempou and Brown in the BERM route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cross-species.ritz2004",
@@ -3438,7 +4534,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Anchors field-configuration sensitivity in a receptor-relevant ecological function."
+      "curatorNote": "Anchors field-configuration sensitivity in a receptor-relevant ecological function.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cross-species.yoshii2009",
@@ -3455,7 +4557,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Provides genetic receptor dependence for the cross-species prior."
+      "curatorNote": "Provides genetic receptor dependence for the cross-species prior.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cross-species.wan2021",
@@ -3472,7 +4580,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Independent species replication of CRY-dependent magnetic sensing strengthens conserved target logic."
+      "curatorNote": "Independent species replication of CRY-dependent magnetic sensing strengthens conserved target logic.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cross-species.hallmann2017",
@@ -3489,7 +4603,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies a population endpoint for the receptor-stratified comparative test."
+      "curatorNote": "Supplies a population endpoint for the receptor-stratified comparative test.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.cross-species.rosenberg2019",
@@ -3506,7 +4626,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Provides a second cross-taxon endpoint to test after receptor and exposure stratification."
+      "curatorNote": "Provides a second cross-taxon endpoint to test after receptor and exposure stratification.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.susceptibility.mccarty2011",
@@ -3524,7 +4650,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Motivates within-person threshold and transition parameters rather than a universal group response."
+      "curatorNote": "Motivates within-person threshold and transition parameters rather than a universal group response.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.susceptibility.belpomme2022",
@@ -3542,7 +4674,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Supplies candidate objective stratification variables for a continuous susceptibility model."
+      "curatorNote": "Supplies candidate objective stratification variables for a continuous susceptibility model.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.synthesis.susceptibility.rubin2010",
@@ -3560,7 +4698,13 @@
       ],
       "curatorId": "berm-synthesis-2026-09-03",
       "curatedAt": "2026-09-03",
-      "curatorNote": "Strongly constrains any broad acute group-response claim; BERM's remaining hypothesis is narrower, continuous and within-person testable."
+      "curatorNote": "Strongly constrains any broad acute group-response claim; BERM's remaining hypothesis is narrower, continuous and within-person testable.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.lamia2011_cry_glucocorticoid",
@@ -3576,7 +4720,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "CRY1/CRY2 interact with GR in a ligand-dependent manner and modify transcriptional hormone response; endocrine link, without a field intervention."
+      "curatorNote": "CRY1/CRY2 interact with GR in a ligand-dependent manner and modify transcriptional hormone response; endocrine link, without a field intervention.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.zhang2010_cry_camp",
@@ -3592,7 +4742,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "CRY inhibits glucagon/GPCR-mediated cAMP signalling through a Gs-related mechanism; evidence attaches to the endocrine receiver, not to magnetic sensitivity."
+      "curatorNote": "CRY inhibits glucagon/GPCR-mediated cAMP signalling through a Gs-related mechanism; evidence attaches to the endocrine receiver, not to magnetic sensitivity.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.meng2026_spin_memory",
@@ -3610,7 +4766,17 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Fast spin selection is read through slower chemical-population changes; source data DOI 10.5281/zenodo.19829558. iLOV contrast belongs to its optimized laboratory protocol."
+      "curatorNote": "Fast spin selection is read through slower chemical-population changes; source data DOI 10.5281/zenodo.19829558. iLOV contrast belongs to its optimized laboratory protocol.",
+      "provenance": {
+        "studyIds": [
+          "study.meng2026-flavoproteins"
+        ],
+        "datasetFamilyIds": [
+          "dataset.zenodo.19829558"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.kattnig2016_chemical_amplification",
@@ -3626,7 +4792,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Slow termination reactions amplify a primary magnetic-field effect, anchoring chemical integration after the spin step."
+      "curatorNote": "Slow termination reactions amplify a primary magnetic-field effect, anchoring chemical integration after the spin step.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.kish2026_cry4a_allostery",
@@ -3644,7 +4816,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "arXiv:2604.19579v3, 24 April 2026. A distinct semiquinone conformational fingerprint is a candidate redox-to-structure bridge."
+      "curatorNote": "arXiv:2604.19579v3, 24 April 2026. A distinct semiquinone conformational fingerprint is a candidate redox-to-structure bridge.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.durant2017_bioelectric_memory",
@@ -3661,7 +4839,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Persistent physiological memory after a transient intervention supplies a separate tissue-scale memory anchor."
+      "curatorNote": "Persistent physiological memory after a transient intervention supplies a separate tissue-scale memory anchor.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.thoeni2024_tnmr_clock",
@@ -3678,7 +4862,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Time and DEX pretreatment alter which clock-response properties change. Protocol: 0.4 mT static field, 1–50 Hz sweep, approximately 17.8 kHz RF."
+      "curatorNote": "Time and DEX pretreatment alter which clock-response properties change. Protocol: 0.4 mT static field, 1–50 Hz sweep, approximately 17.8 kHz RF.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.zhang2021",
@@ -3694,7 +4884,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "The same ROS-modifying intervention has opposite functional directions in different magnetic/redox backgrounds; restoration and inhibitor experiments constrain the redox mediator."
+      "curatorNote": "The same ROS-modifying intervention has opposite functional directions in different magnetic/redox backgrounds; restoration and inhibitor experiments constrain the redox mediator.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.wang2012_redox_scn",
@@ -3710,7 +4906,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Redox state changes potassium-channel-related membrane excitability without requiring transcription as the immediate step."
+      "curatorNote": "Redox state changes potassium-channel-related membrane excitability without requiring transcription as the immediate step.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.naseri2019_redox_hippocampus",
@@ -3726,7 +4928,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "The phase relationship differs from the SCN example, motivating physiological relative phase offsets rather than simultaneous tissue peaks."
+      "curatorNote": "The phase relationship differs from the SCN example, motivating physiological relative phase offsets rather than simultaneous tissue peaks.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.welsh2004_cellular_oscillators",
@@ -3742,7 +4950,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Persistent single-cell oscillations become desynchronized; tissue-level amplitude can change through phase dispersion."
+      "curatorNote": "Persistent single-cell oscillations become desynchronized; tissue-level amplitude can change through phase dispersion.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.anastassiou2011_ephaptic_coupling",
@@ -3758,7 +4972,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Endogenous-scale extracellular fields influence spike timing, anchoring local electrical coordination."
+      "curatorNote": "Endogenous-scale extracellular fields influence spike timing, anchoring local electrical coordination.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.archer2014_transcriptome",
@@ -3775,7 +4995,17 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Rhythmic transcript prevalence and temporal expression change with sleep timing. Shared dataset family with Archer 2022; not an independent replication."
+      "curatorNote": "Rhythmic transcript prevalence and temporal expression change with sleep timing. Shared dataset family with Archer 2022; not an independent replication.",
+      "provenance": {
+        "studyIds": [
+          "study.archer2014_transcriptome"
+        ],
+        "datasetFamilyIds": [
+          "dataset.geo.gse48113"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.archer2022_glucocorticoid_timing",
@@ -3793,7 +5023,17 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Same GSE48113 dataset family as Archer 2014. Preserved plasma cortisol rhythm accompanies changed signalling-transcript timing; count as mechanistic refinement of shared data."
+      "curatorNote": "Same GSE48113 dataset family as Archer 2014. Preserved plasma cortisol rhythm accompanies changed signalling-transcript timing; count as mechanistic refinement of shared data.",
+      "provenance": {
+        "studyIds": [
+          "study.archer2022_glucocorticoid_timing"
+        ],
+        "datasetFamilyIds": [
+          "dataset.geo.gse48113"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.belchetz1978_gnrh_pulses",
@@ -3809,7 +5049,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "GnRH pulse structure changes downstream endocrine function."
+      "curatorNote": "GnRH pulse structure changes downstream endocrine function.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.stavreva2009_hormone_pulses",
@@ -3825,7 +5071,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Ultradian hormone pulses produce distinct receptor-mediated transcription dynamics."
+      "curatorNote": "Ultradian hormone pulses produce distinct receptor-mediated transcription dynamics.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.coviello2005_intratesticular_testosterone",
@@ -3841,7 +5093,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Local testosterone availability and serum hormone concentration are separate physiological quantities; hCG preserves intratesticular support dose-dependently."
+      "curatorNote": "Local testosterone availability and serum hormone concentration are separate physiological quantities; hCG preserves intratesticular support dose-dependently.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.kalafatakis2018_cortisol_pulsatility",
@@ -3857,7 +5115,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Controlled hormone-pattern differences altered emotional and cognitive responses; does not supply an exposure coefficient."
+      "curatorNote": "Controlled hormone-pattern differences altered emotional and cognitive responses; does not supply an exposure coefficient.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.najjar2016_light_flashes",
@@ -3874,7 +5138,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Circadian phase response depends on flash spacing, with different temporal profiles for acute melatonin and alertness endpoints."
+      "curatorNote": "Circadian phase response depends on flash spacing, with different temporal profiles for acute melatonin and alertness endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.wehrens2017_meal_timing",
@@ -3890,7 +5160,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Meals shift peripheral endpoints by different amounts, anchoring a tissue-specific phase network."
+      "curatorNote": "Meals shift peripheral endpoints by different amounts, anchoring a tissue-specific phase network.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.chellappa2021_daytime_eating",
@@ -3906,7 +5182,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Daytime eating prevents measured glucose intolerance during the broader misalignment protocol; an intervention anchor for distinct temporal inputs."
+      "curatorNote": "Daytime eating prevents measured glucose intolerance during the broader misalignment protocol; an intervention anchor for distinct temporal inputs.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.scheer2009_circadian_misalignment",
@@ -3922,7 +5204,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Internal misalignment changes multiple metabolic and endocrine endpoints in the same participants."
+      "curatorNote": "Internal misalignment changes multiple metabolic and endocrine endpoints in the same participants.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.catsper2024",
@@ -3938,7 +5226,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "CatSper-dependent hyperactivation can fail despite routine semen measures within reference ranges; the functional gate is distinct from count."
+      "curatorNote": "CatSper-dependent hyperactivation can fail despite routine semen measures within reference ranges; the functional gate is distinct from count.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.sellix2010_ovarian_lh_clock",
@@ -3954,7 +5248,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Ovarian responsiveness to LH depends on circadian timing."
+      "curatorNote": "Ovarian responsiveness to LH depends on circadian timing.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.liu2014",
@@ -3970,7 +5270,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Implantation failure is localized to ovarian steroidogenic clock support through hormone and ovary-transfer rescue. Ovulation and implantation are separate endpoints."
+      "curatorNote": "Implantation failure is localized to ovarian steroidogenic clock support through hormone and ovary-transfer rescue. Ovulation and implantation are separate endpoints.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.gnoth2003_time_to_pregnancy",
@@ -3987,7 +5293,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Published cumulative probabilities constrain waiting-time shape. Within-block constant-probability equivalents are mathematical transformations of summaries, not observed per-cycle estimates."
+      "curatorNote": "Published cumulative probabilities constrain waiting-time shape. Within-block constant-probability equivalents are mathematical transformations of summaries, not observed per-cycle estimates.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.joffe2009_ttp_family_size",
@@ -4005,7 +5317,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "TTP at least twelve months is associated with lower parity progression and smaller achieved family size; below twelve months no association was observed."
+      "curatorNote": "TTP at least twelve months is associated with lower parity progression and smaller achieved family size; below twelve months no association was observed.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.brosi2013_pollination_network",
@@ -4021,7 +5339,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Removing one pollinator species changes remaining pollinators’ floral fidelity and plant seed production."
+      "curatorNote": "Removing one pollinator species changes remaining pollinators’ floral fidelity and plant seed production.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.fowler2010_cooperation_cascades",
@@ -4038,7 +5362,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Earlier partner contributions influence later contributions with new partners, anchoring propagation across interactions."
+      "curatorNote": "Earlier partner contributions influence later contributions with new partners, anchoring propagation across interactions.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.bensimon2018_sleep_social",
@@ -4054,7 +5384,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Sleep loss changes social approach and observer response, connecting biological state to both sides of an encounter."
+      "curatorNote": "Sleep loss changes social approach and observer response, connecting biological state to both sides of an encounter.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.bensimon2022_sleep_helping",
@@ -4070,7 +5406,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Experimental helping scores change with sleep loss; 78% refers to the share of participants with a decrease, not the size of a decrease. Read with correction DOI 10.1371/journal.pbio.3002394."
+      "curatorNote": "Experimental helping scores change with sleep loss; 78% refers to the share of participants with a decrease, not the size of a decrease. Read with correction DOI 10.1371/journal.pbio.3002394.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.knop2017_night_pollination",
@@ -4087,7 +5429,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Optical environmental input changes encounters and plant reproduction in the same experimental context."
+      "curatorNote": "Optical environmental input changes encounters and plant reproduction in the same experimental context.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.mallinson2025_electric_pollution",
@@ -4104,7 +5452,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Electric waveform and polarity alter floral landing; behavior is an encounter-stage endpoint."
+      "curatorNote": "Electric waveform and polarity alter floral landing; behavior is an encounter-stage endpoint.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.kerpal2019_chemical_compass",
@@ -4121,7 +5475,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Orientation shifts the measured magnetic response pattern; isotope changes alter response dynamics. This anchors receiver orientation and chemistry as distinct variables."
+      "curatorNote": "Orientation shifts the measured magnetic response pattern; isotope changes alter response dynamics. This anchors receiver orientation and chemistry as distinct variables.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.violante2023_temporal_interference",
@@ -4139,7 +5499,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "2000/2005 Hz source geometry and current ratios change target-region response; NeuroVault collection 11908 provides six group imaging maps."
+      "curatorNote": "2000/2005 Hz source geometry and current ratios change target-region response; NeuroVault collection 11908 provides six group imaging maps.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.grossman2017_temporal_interference",
@@ -4156,7 +5522,13 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Experimental multisource targeting provides a prior receiver-and-envelope example."
+      "curatorNote": "Experimental multisource targeting provides a prior receiver-and-envelope example.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     },
     {
       "id": "er.coordination.lindgren2025",
@@ -4173,7 +5545,589 @@
       ],
       "curatorId": "berm-research-integration",
       "curatedAt": "2026-09-07",
-      "curatorNote": "Use the 2025 metric with its Minkowski background; do not substitute the singular 2021 ansatz. With A=A_b+a the increment contains A_b⊗a+a⊗A_b+a⊗a."
+      "curatorNote": "Use the 2025 metric with its Minkowski background; do not substitute the singular 2021 ansatz. With A=A_b+a the increment contains A_b⊗a+a⊗A_b+a⊗a.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.kurth2020",
+      "referenceId": "kurth2020",
+      "claimId": "claim.modulome.membrane-machinery-transfer",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Vesicle preparation with donor TRPC1 silencing and recipient restoration",
+      "applicability": "Brief 1.5 mT pulsed magnetic exposure; cell-free vesicles and recipient cultures",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Acute response competence is distinct from long-term memory.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Silencing and restoration are interventions within one study, not independent replications.",
+      "provenance": {
+        "studyIds": [
+          "study.kurth2020"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.bertagna2025",
+      "referenceId": "bertagna2025",
+      "claimId": "claim.modulome.calcium-compartment-cycle",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Electrophysiology with RyR and SERCA pharmacological interventions",
+      "applicability": "50 Hz, 1 mT; hippocampal neurons",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Store-load effects on later exposures remain a model prediction requiring a time-resolved test.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "A late membrane-current response can reflect store regulation. Different blocker arms constrain one study rather than provide independent routes.",
+      "provenance": {
+        "studyIds": [
+          "study.bertagna2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.sannino2024",
+      "referenceId": "sannino2024",
+      "claimId": "claim.modulome.adaptation-memory",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "RF pre-treatment followed by menadione challenge",
+      "applicability": "SH-SY5Y; 1950 MHz UMTS, SAR 0.3 or 1.25 W/kg; exposure hours 48–51 and challenge 71–72",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "RF-only baseline DNA damage and the tested gene panel did not establish a persistent damaging state.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "The approximately 20 h gap is an observed delay, not a fitted exponential time constant.",
+      "provenance": {
+        "studyIds": [
+          "study.sannino2024"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.sannino2022",
+      "referenceId": "sannino2022_autophagy_adaptive",
+      "claimId": "claim.modulome.adaptation-memory",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Pharmacological and ATG5/ATG7 loss-of-function interventions",
+      "applicability": "SH-SY5Y; 20 h UMTS pre-treatment and later chemical challenge",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Separate gene/intervention main effects on growth and chemical sensitivity from the RF interaction.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Autophagy necessity does not identify the first field sensor. The 2022 and 2024 protocols have different pre-exposure durations.",
+      "provenance": {
+        "studyIds": [
+          "study.sannino2022_autophagy_adaptive"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.iversen2025",
+      "referenceId": "iversen2025",
+      "claimId": "claim.modulome.flavin-state-and-light-history",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Cellular CRY2/RFK/FAD perturbations with pulsed magnetic exposure",
+      "applicability": "CRY2–FAD–TRPC1 myogenesis system under reported light and field conditions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Not a human endocrine CRY1 or environmental fertility calibration.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Preserve CRY2, RFK/FAD, TRPC1 and myogenic endpoint identities.",
+      "provenance": {
+        "studyIds": [
+          "study.iversen2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.jeibmann2026",
+      "referenceId": "jeibmann2026",
+      "claimId": "claim.modulome.flavin-state-and-light-history",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Photochemical and conformational characterization",
+      "applicability": "Purified human CRY1 with sequential photon absorption",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No direct magnetic exposure-response calibration from the photochemical result.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Supports a redox/conformation state sequence; magnetic modulation is a separate experiment.",
+      "provenance": {
+        "studyIds": [
+          "study.jeibmann2026"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.wickramaratne2025",
+      "referenceId": "wickramaratne2025",
+      "claimId": "claim.modulome.cry-subtype-specificity",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Protein structure and spectroscopy",
+      "applicability": "European robin CRY1; no applied-field endpoint",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "This bounds protein transfer rather than measuring an environmental field effect.",
+      "provenance": {
+        "studyIds": [
+          "study.wickramaratne2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.nakajima2015",
+      "referenceId": "nakajima2015",
+      "claimId": "claim.modulome.directional-information",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Gene screen and KCNJ15/polyamine interventions",
+      "applicability": "Cell migration in a 200 mV/mm DC electric field",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Directedness during exposure is not evidence of persistent post-exposure memory.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "200 mV/mm is 200 V/m locally; comparable tissue exposure requires a separate calculation.",
+      "provenance": {
+        "studyIds": [
+          "study.nakajima2015"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.zhao2006",
+      "referenceId": "zhao2006_wound_ef",
+      "claimId": "claim.modulome.directional-information",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "PI3Kγ/PTEN interventions in electrically guided migration",
+      "applicability": "Wound-healing and local-electric-field experimental systems",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "A separate polarity branch; not one proven serial pathway with all KCNJ15 experiments.",
+      "provenance": {
+        "studyIds": [
+          "study.zhao2006_wound_ef"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.zeni2021",
+      "referenceId": "zeni2021_bystander",
+      "claimId": "claim.modulome.medium-borne-message",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Donor-to-recipient medium transfer and chemical challenge",
+      "applicability": "RF-exposed SH-SY5Y donors; unexposed recipients",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Shared medium creates dependence within the experiment; different cultures are not assumed contaminated.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Extracellular HSP70 is a candidate; fractionation, neutralization and restoration are required for mediator identification.",
+      "provenance": {
+        "studyIds": [
+          "study.zeni2021_bystander"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.sukumar2026",
+      "referenceId": "sukumar2026",
+      "claimId": "claim.modulome.immune-functional-endpoint",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Macrophage signalling, TRPC1 interference and target-cell phagocytosis",
+      "applicability": "Brief PEMF; macrophage and breast-cancer-cell co-cultures",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Functional benefit in the named assay does not make elevated calcium or inflammatory signals universally beneficial or harmful.",
+      "provenance": {
+        "studyIds": [
+          "study.sukumar2026"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.sousouri2025",
+      "referenceId": "sousouri2025",
+      "claimId": "claim.modulome.genotype-exposure-interaction",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Randomized controlled human sleep exposure with measured genotype",
+      "applicability": "CACNA1C genotype and spindle EEG during the reported RF-exposure night",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Genotype, exposure and outcome belong to the same participants; no cross-population multiplication of susceptibility.",
+      "provenance": {
+        "studyIds": [
+          "study.sousouri2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.higuchi2007",
+      "referenceId": "higuchi2007",
+      "claimId": "claim.modulome.iris-optical-exposure",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Small-group human light exposure and melatonin measurement",
+      "applicability": "Nominally identical illumination; retinal light dose was not measured",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The study does not isolate a universal causal iris-colour effect.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Reported suppression was 88.9% versus 73.4%; group differences and potential confounding are retained.",
+      "provenance": {
+        "studyIds": [
+          "study.higuchi2007"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.receptor.goertemaker2022",
+      "referenceId": "goertemaker2022_cry4a_gtalpha",
+      "claimId": "claim.receptor.cry4a-gtalpha-binding",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Surface plasmon resonance, pulldown and cellular FRET",
+      "applicability": "European robin Cry4a and cone Gtα; chimeric constructs and transfected neuroretinal cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Construct identity and myristoylation affect applicability.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Several assays within one study establish a binding component. Redox-dependent k_on/k_off and G-protein activation remain separate measurements.",
+      "provenance": {
+        "studyIds": [
+          "study.goertemaker2022_cry4a_gtalpha"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.receptor.gtalpha-construct-transfer"
+        ],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.receptor.yee2023",
+      "referenceId": "yee2023_opsin_gtalpha",
+      "claimId": "claim.receptor.opsin-gtalpha-binding",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "SPR kinetics and fluorescence interaction assay",
+      "applicability": "European robin LWO peptides and cone Gtα/Giα chimera",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Related construct/method lineage to Görtemaker; no claim of identical raw datasets.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "The measured approximately 21 nM K_D concerns LWO-loop–Gtα, not Cry4a. Competition is a synthesis, not a measured magnetic output.",
+      "provenance": {
+        "studyIds": [
+          "study.yee2023_opsin_gtalpha"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.receptor.gtalpha-construct-transfer"
+        ],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.modulome.sannino2019",
+      "referenceId": "sannino2019_parp_adaptive",
+      "claimId": "claim.modulome.parp-dependent-protection",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "PARP inhibitor 3-aminobenzamide and mitomycin C challenge",
+      "applicability": "Human lymphocytes and V79 cells under UMTS pre-treatment",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Intervention timing must distinguish induction of protection from subsequent damage handling.",
+      "provenance": {
+        "studyIds": [
+          "study.sannino2019_parp_adaptive"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.receptor.kim2026",
+      "referenceId": "kim2026_cell_gene_switch",
+      "claimId": "claim.receptor.gene-switch-protocol",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Engineered gene-switch and calcium-signalling experiments",
+      "applicability": "Reported pulsed-field protocol; burst repetition and intraburst pulses treated separately",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Response timing must be estimated from source data, not a plotted interpolation.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "60 Hz burst repetition and 4 kHz intraburst pulsing describe distinct waveform coordinates. Use the corrected source and discrete measured time points.",
+      "provenance": {
+        "studyIds": [
+          "study.kim2026_cell_gene_switch"
+        ],
+        "datasetFamilyIds": [
+          "dataset.kim2026-gene-switch"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.receptor.kim2026-correction",
+      "referenceId": "kim2026_cell_gene_switch_correction",
+      "claimId": "claim.receptor.gene-switch-protocol",
+      "relation": "contextualizes",
+      "directness": "source_correction",
+      "studyDesign": "Published correction",
+      "applicability": "Original Kim 2026 Cell gene-switch experimental record",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "The superseded S1J interpolation is unsuitable for fitting a sharp response onset.",
+        "Component evidence in the named system and protocol; no calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator, tissue transfer and endpoint calibration remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Corrects S5P negative-control duplication, clarifies discrete S1J reporter time points and interpolation, and supplies Ei/sEi sequences. Authors state conclusions are unchanged; no independent new experiment is inferred.",
+      "provenance": {
+        "studyIds": [
+          "study.kim2026_cell_gene_switch"
+        ],
+        "datasetFamilyIds": [
+          "dataset.kim2026-gene-switch"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.receptor.sherrard2018",
+      "referenceId": "sherrard2018",
+      "claimId": "claim.receptor.cry-dependent-ros",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled PEMF cell experiments with cryptochrome loss of function",
+      "applicability": "Human HEK293 cells and mouse embryonic fibroblasts",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell systems, not a consumer-RF or reproductive experiment.",
+        "No calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary PLOS Biology source identity and component protocol checked. ROS must be interpreted with dose, cell state and response endpoints; the study also discusses repair/stress responses.",
+      "provenance": {
+        "studyIds": [
+          "study.sherrard2018"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.sperm.ayas2021",
+      "referenceId": "catsper_2021",
+      "claimId": "claim.sperm.rf-rat-endpoints",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Conference abstract; in-vivo exposure and amlodipine groups",
+      "applicability": "50 male Wistar-Albino rats in five groups; 2100 MHz, 1 h/day for 28 days; 20 females for mating assessment",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Conference abstract, not a full peer-reviewed report.",
+        "No significant mating/live-birth difference is not an equivalence demonstration.",
+        "No calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "The publisher abstract reports lower motility (47.62 to 34.19) and intracellular calcium (2.46 to 1.85), but no significant mating/live-birth difference. CatSper1–4 gene-expression analyses were still pending. Amlodipine is not a selective CatSper intervention.",
+      "provenance": {
+        "studyIds": [
+          "study.catsper_2021"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.sperm.deiuliis2009",
+      "referenceId": "iuliis2009",
+      "claimId": "claim.sperm.multi-parameter-decline",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled in-vitro sperm exposure",
+      "applicability": "Purified human sperm; 1.8 GHz RF-EMR, 0.4–27.5 W/kg SAR",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Exposure range includes high SAR; laboratory dose cannot be substituted for an environmental organ dose.",
+        "No calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Links the specified laboratory exposure to mitochondrial ROS, DNA damage, motility and vitality; no BTB or organ-level compensation in the preparation.",
+      "provenance": {
+        "studyIds": [
+          "study.iuliis2009"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.sperm.cordelli2025-correction",
+      "referenceId": "cordelli2025_corrigendum",
+      "claimId": "claim.sperm.multi-parameter-decline",
+      "relation": "contextualizes",
+      "directness": "source_correction",
+      "studyDesign": "Corrigendum to systematic-review meta-analysis",
+      "applicability": "Re-analysis of the 2024 review, mainly non-human/experimental evidence",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Pooled-estimate stability and exposure/thermal heterogeneity.",
+        "No calibrated human fertility or TFR coefficient.",
+        "The geometry-to-receiver L2 operator and endpoint transfer remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Constrains the pregnancy-rate synthesis: its significance is sensitive to exclusion of a high-SAR study. Keep the correction with the original review; no independent new experiment is added.",
+      "provenance": {
+        "studyIds": [
+          "study.cordelli2024"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -4318,7 +6272,9 @@
       "compatibility": "current",
       "origin": "derived",
       "basis": [
-        "er.sperm.adams2014"
+        "er.sperm.adams2014",
+        "er.sperm.deiuliis2009",
+        "er.sperm.cordelli2025-correction"
       ],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
@@ -4371,7 +6327,6 @@
         "er.vector.blackman1985_calcium_windows",
         "er.vector.ritz2004",
         "er.vector.usselman2016",
-        "er.vector.majewska2025",
         "er.vector.chae2019",
         "er.vector.yu2019_btb",
         "er.vector.baldini2025",
@@ -5040,6 +6995,248 @@
       "assessorId": "berm-research-integration",
       "assessedAt": "2026-09-07",
       "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. L1 algebra is conditional on the 2025 premise; the biological operator remains an explicit L2 assumption."
+    },
+    {
+      "id": "ea.modulome.membrane-machinery-transfer.v1",
+      "claimId": "claim.modulome.membrane-machinery-transfer",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.kurth2020"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.calcium-compartment-cycle.v1",
+      "claimId": "claim.modulome.calcium-compartment-cycle",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.bertagna2025"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.adaptation-memory.v1",
+      "claimId": "claim.modulome.adaptation-memory",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.sannino2024",
+        "er.modulome.sannino2022"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.flavin-state-and-light-history.v1",
+      "claimId": "claim.modulome.flavin-state-and-light-history",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.iversen2025",
+        "er.modulome.jeibmann2026"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.cry-subtype-specificity.v1",
+      "claimId": "claim.modulome.cry-subtype-specificity",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.wickramaratne2025"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.directional-information.v1",
+      "claimId": "claim.modulome.directional-information",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.nakajima2015",
+        "er.modulome.zhao2006"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.medium-borne-message.v1",
+      "claimId": "claim.modulome.medium-borne-message",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.zeni2021"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.immune-functional-endpoint.v1",
+      "claimId": "claim.modulome.immune-functional-endpoint",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.sukumar2026"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.genotype-exposure-interaction.v1",
+      "claimId": "claim.modulome.genotype-exposure-interaction",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.sousouri2025"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.iris-optical-exposure.v1",
+      "claimId": "claim.modulome.iris-optical-exposure",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.higuchi2007"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.receptor.membrane-orientation.v1",
+      "claimId": "claim.receptor.membrane-orientation",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.vector.majewska2025"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.receptor.cry4a-gtalpha-binding.v1",
+      "claimId": "claim.receptor.cry4a-gtalpha-binding",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.receptor.goertemaker2022"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.receptor.opsin-gtalpha-binding.v1",
+      "claimId": "claim.receptor.opsin-gtalpha-binding",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.receptor.yee2023"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.modulome.parp-dependent-protection.v1",
+      "claimId": "claim.modulome.parp-dependent-protection",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.modulome.sannino2019"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.receptor.gene-switch-protocol.v1",
+      "claimId": "claim.receptor.gene-switch-protocol",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.receptor.kim2026",
+        "er.receptor.kim2026-correction"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Imported, protocol-bounded component. Cross-system transfers and quantitative endpoint coefficients are not calibrated."
+    },
+    {
+      "id": "ea.receptor.cry-dependent-ros.v1",
+      "claimId": "claim.receptor.cry-dependent-ros",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.receptor.sherrard2018"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded component; no cross-system endpoint calibration."
+    },
+    {
+      "id": "ea.sperm.rf-rat-endpoints.v1",
+      "claimId": "claim.sperm.rf-rat-endpoints",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.sperm.ayas2021"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded component; no cross-system endpoint calibration."
     }
   ],
   "routes": [
@@ -5050,8 +7247,8 @@
         "fi": "VGCC → Siittiöt → Hedelmällisyys"
       },
       "description": {
-        "en": "Direct ROS-mediated BERM candidate route: a measured physical field input enters an open endpoint-specific response kernel; BERM then proposes VGCC opening, intracellular Ca²⁺ elevation and mitochondrial ROS that can damage sperm membranes, DNA integrity and motility.",
-        "fi": "BERM:n suora ROS-välitteinen ehdokasreitti: mitattu fysikaalinen kenttäsyöte tulee avoimeen päätepistekohtaiseen vasteytimeen; BERM ehdottaa sen jälkeen VGCC-avautumista, solunsisäisen Ca²⁺:n nousua ja mitokondriaalista ROS:ia, joka voi vaurioittaa siittiökalvoja, DNA-eheyttä ja liikkuvuutta."
+        "en": "Conditional calcium/ROS route to sperm function and couple fecundability. FieldState observations constrain the physical-state estimate; a separate L2/tissue operator must supply the local biological input. Component evidence does not calibrate the full route.",
+        "fi": "Ehdollinen kalsium/ROS-reitti siittiötoimintaan ja parin hedelmällisyyteen. FieldState-havainnot rajaavat fysikaalisen tilan arviota; erillisen L2-/kudossiirto-operaattorin on tuotettava paikallinen biologinen syöte. Komponenttinäyttö ei kalibroi koko reittiä."
       },
       "targetClaim": "claim.couple.fecundability-convergence",
       "routeClaims": [
@@ -5068,11 +7265,23 @@
       ],
       "sharedDatasets": [],
       "independenceGroup": "direct-ros",
-      "independenceVerified": true,
-      "independenceNote": "Uses Ca²⁺/ROS mechanism exclusively; does not share clockgene or circadian data with RPM route",
+      "independenceVerified": false,
+      "independenceNote": "Independent end-to-end support has not been verified. Shared L2 and cross-system premises remain; selected sources support named components only.",
       "direction": "supports",
-      "alternativeCompatibility": "Compatible with thermal mechanism at high SAR; dominant at low SAR",
-      "discriminatingPower": "VGCC-specific blocker experiments can isolate this route from RPM"
+      "alternativeCompatibility": "The local field protocol, thermal controls and cellular state must be retained; no universal low-SAR dominance is established.",
+      "discriminatingPower": "VGCC-specific blocker experiments can isolate this route from RPM",
+      "independenceAudit": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.berm.lindgren-2025",
+          "premise.berm.l2-operator",
+          "premise.biological.cross-system-transfer"
+        ],
+        "status": "partial",
+        "reviewedBy": "berm-research-integration",
+        "reviewedAt": "2026-09-07"
+      }
     },
     {
       "id": "route.rpm-melatonin-clock",
@@ -5081,8 +7290,8 @@
         "fi": "RPM → Melatoniini → Kellohäiriö"
       },
       "description": {
-        "en": "Circadian disruption pathway: magnetic field vector modulates cryptochrome radical pairs, altering clock gene expression, suppressing pineal melatonin, disrupting HPG axis timing, and impairing ovulatory synchronization.",
-        "fi": "Sirkadiaaninen häiriöreitti: magneettikentän vektori moduloi kryptokromin radikaalipareja, muuttaen kellogeenien ilmentymistä, supressoiden käpylisäkkeen melatoniinia, häiriten HPG-akselin ajoitusta ja heikentäen ovulaation synkronointia."
+        "en": "Conditional receptor-state, redox and clock route. Avian orientation findings do not establish the full mammalian CRY–melatonin–ovulation sequence; subtype, tissue and hormonal transfers remain explicit.",
+        "fi": "Ehdollinen vastaanotintilan, redox-tilan ja kellon reitti. Lintujen orientaatiotulokset eivät osoita koko nisäkkään CRY–melatoniini–ovulaatioketjua; alatyyppi-, kudos- ja hormonisiirrot säilyvät eksplisiittisinä."
       },
       "targetClaim": "claim.couple.fecundability-convergence",
       "routeClaims": [
@@ -5097,11 +7306,23 @@
       ],
       "sharedDatasets": [],
       "independenceGroup": "circadian",
-      "independenceVerified": true,
-      "independenceNote": "Uses magnetic vector/CRY pathway exclusively; does not share VGCC/ROS data with direct-ros route",
+      "independenceVerified": false,
+      "independenceNote": "Independent end-to-end support has not been verified. Shared L2 and cross-system premises remain; selected sources support named components only.",
       "direction": "supports",
       "alternativeCompatibility": "Compatible with light-mediated melatonin suppression; distinguishable by magnetic field specificity",
-      "discriminatingPower": "CRY-knockout experiments can isolate this route from VGCC"
+      "discriminatingPower": "CRY-knockout experiments can isolate this route from VGCC",
+      "independenceAudit": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.berm.lindgren-2025",
+          "premise.berm.l2-operator",
+          "premise.biological.cross-system-transfer"
+        ],
+        "status": "partial",
+        "reviewedBy": "berm-research-integration",
+        "reviewedAt": "2026-09-07"
+      }
     },
     {
       "id": "route.tfr-decomposition",
@@ -5131,7 +7352,17 @@
       "independenceNote": null,
       "direction": "supports",
       "alternativeCompatibility": "Does not distinguish between EMF and other biological causes of fecundability decline",
-      "discriminatingPower": "Requires cohort comparison stratified by FieldState-compatible physical measurements and a preregistered BERM exposure mapping to isolate an EMF contribution"
+      "discriminatingPower": "Requires cohort comparison stratified by FieldState-compatible physical measurements and a preregistered BERM exposure mapping to isolate an EMF contribution",
+      "independenceAudit": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.demography.capacity-to-fertility"
+        ],
+        "status": "partial",
+        "reviewedBy": "berm-research-integration",
+        "reviewedAt": "2026-09-07"
+      }
     },
     {
       "id": "route.biological-coordination",
@@ -5202,7 +7433,21 @@
       "independenceNote": "This route deliberately integrates overlapping clock/redox/endocrine mechanisms. Archer 2014 and 2022 are one dataset family. It is not an independently replicated end-to-end field-to-fertility route.",
       "direction": "supports",
       "alternativeCompatibility": "The component experiments retain their optical, hormonal, chemical, field-protocol or behavioural inputs.",
-      "discriminatingPower": "Tissue phase, hormonal pretreatment, source geometry, recovery interval and waiting-time distribution are explicit component-level observables."
+      "discriminatingPower": "Tissue phase, hormonal pretreatment, source geometry, recovery interval and waiting-time distribution are explicit component-level observables.",
+      "independenceAudit": {
+        "studyIds": [],
+        "datasetFamilyIds": [
+          "dataset.geo.gse48113"
+        ],
+        "premiseIds": [
+          "premise.berm.lindgren-2025",
+          "premise.berm.l2-operator",
+          "premise.biological.cross-system-transfer"
+        ],
+        "status": "partial",
+        "reviewedBy": "berm-research-integration",
+        "reviewedAt": "2026-09-07"
+      }
     }
   ]
 }

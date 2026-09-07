@@ -132,9 +132,9 @@ const t: Record<string, Copy> = {
         question: "Environmental EMF fields are too weak for biological effects",
         response: [
           "[[ref:vaziri2016|The human eye detects single photons.]] Sharks detect 0.5 µV/m electric fields. [[ref:ritz2004|Migratory birds' compass is disrupted by 15 nT RF noise]] — 0.03% of the geomagnetic background. Biology operates at the quantum limit of electromagnetic sensitivity because evolution optimized detection, not tolerance.",
-          "Twenty-six regulatory-approved device categories exploit non-thermal EMF biological effects across the entire EM spectrum — from DC bone stimulators (1986) to UV phototherapy. This includes 12,000+ individual TENS clearances, a $8–10B neuromodulation market, and 160,000+ implanted DBS devices. [[ref:tdcs_fda_depression_2025|tDCS treats depression at 0.3–1.0 V/m]] — the same order of magnitude as measured urban ambient RF (0.67–1.51 V/m). The claim that EMF is 'too weak' directly contradicts regulatory approval decisions worldwide.",
+          "Therapeutic stimulation and field-based devices demonstrate effects under specified clinical protocols. Their usefulness is a positive control for physical intervention. Transfer to ambient exposure requires local dose, frequency-dependent tissue transfer, waveform and the same endpoint; regulatory approval and patent claims are separate evidence classes.",
           "The Ion Forced Oscillation mechanism ([[ref:panagopoulos2025_ifo|Panagopoulos 2025, Frontiers in Public Health]]) demonstrates a biological response threshold of 10⁻⁵ V/m for polarized, coherent fields — five orders of magnitude below typical environmental levels. There is no intensity gap. The gap existed only in models that assumed thermal effects were the only mechanism.",
-          "In 2026, [[ref:kim2026_cell_gene_switch|Kim et al. (Cell, IF ~64)]] identified Cyb5b — a mitochondrial outer membrane protein — as a genetically verified EMF sensor via genome-wide CRISPR screen. 60 Hz pulsed EMF activates gene promoters in vivo through Cyb5b → Ca²⁺ oscillations. This is the first genetically identified EMF receptor. The 'too weak' argument now contradicts not only FDA device approvals and IFO biophysics but also a CRISPR-validated molecular sensor published in Cell.",
+          "[[ref:kim2026_cell_gene_switch|Kim 2026]] identifies CYB5B dependence in an engineered gene-switch response using 60 Hz burst repetition and a 4 kHz intraburst structure. A required component is a candidate sensor or mediator; proximal readouts and rescue/bypass experiments distinguish those roles. The result does not transfer directly to an ambient 60 Hz sinusoid.",
           "In 2013, honeybee researcher [[ref:greggers2013_bee_electric_comm|Uwe Greggers]] stated that anthropogenic electric fields are 'much lower in energy than those produced by the bees themselves' and that bees 'should be naturally protected.' In 2025, [[ref:mallinson2025_electric_pollution|Mallinson et al.]] tested this empirically in field experiments — and found that anthropogenic AC electric fields reduce bee foraging by 71% (iScience / Cell Press). The intuitive assessment that 'the field is too weak' failed the empirical test. This is exactly the error ICNIRP makes for human health: assuming without testing that environmental field strengths are below biological thresholds.",
         ],
         boundary: "The intensity argument is an empirical claim. FDA approvals and IFO threshold measurements are empirical facts. The burden of proof is on the intensity argument to explain why FDA-approved non-thermal devices work.",
@@ -201,10 +201,10 @@ const t: Record<string, Copy> = {
       {
         question: "Danish and NHANES studies found no BMI-independent decline",
         response: [
-          "This interpretation assumes BMI is a confounder (independent cause). BERM's causal model treats BMI as a mediator: EMF simultaneously causes both BMI increase (via six metabolic pathways) and testosterone decline (via direct Cav3.2/melatonin/cortisol pathways). BMI adjustment then removes the mediated signal — an overcorrection that discards real biological effect.",
+          "BERM’s metabolic synthesis permits BMI to mediate part of a pathway, but this is a causal hypothesis rather than a universal adjustment rule. Specify the graph and target estimand before choosing covariates; BMI may also proxy confounding or change over time.",
           "[[ref:mazur2013|Mazur et al. 2013]] (PLOS ONE, n = 991 US Air Force veterans, 20-year follow-up) provides the critical test: men who MAINTAINED THEIR WEIGHT still lost 117 ng/dL (19%) of their testosterone over 20 years. Obesity cannot explain this decline. The direct pathway accounts for approximately two-thirds of the total effect; the mediated pathway (via BMI) accounts for approximately one-third.",
           "[[ref:santi2025|Santi et al. 2025]] (n = 1,064,891, the largest meta-analysis ever conducted) found no BMI temporal trend in their study population, yet testosterone declined significantly. Rising obesity is not the driver in this dataset.",
-          "[[ref:klimentidis2010|Klimentidis et al. 2010]] (Proc R Soc B) showed that laboratory animals on CONTROLLED diets gained weight over decades (p = 1.2×10⁻⁷). An environmental factor beyond diet drives weight gain — the same factor may simultaneously drive testosterone decline through the mediated pathway.",
+          "[[ref:klimentidis2010|Klimentidis 2010]] motivates a shared metabolic comparison across species. Liver glucose output, insulin dynamics, repair and meal/tissue phase provide measurable links. The trends do not by themselves identify EMF or eliminate differences in nutrition, activity, breeding, chemicals and disease.",
         ],
         boundary: "The mediator interpretation is testable via formal mediation analysis (Baron & Kenny or SEM) on longitudinal datasets with concurrent T and BMI measurements. If the indirect effect via BMI is less than 10% of the total effect, the mediator model is weakened.",
       },
@@ -286,28 +286,24 @@ const t: Record<string, Copy> = {
         boundary: "The SLEEP-1 prediction is directly falsifiable. If Faraday-shielded LEDs produce the same sleep disruption as unshielded LEDs (identical spectrum), the IF pathway is not the primary mechanism.",
       },
       {
-        question: "Why does pathway B get 25% when it was originally 15%?",
+        question: "How can the VGCC and CRY–TRPC1 branches be separated?",
         response: [
-          "Pathway B was originally assigned 15% based on its known role as a circadian clock modulator. In 2025, [[ref:yap2025|Yap and colleagues]] discovered that CRY2 — the main protein of pathway B — also physically interacts with TRPC1, a cation channel, and modulates calcium signaling through a mechanism that requires both light and FAD. This means pathway B encompasses TWO downstream effects: circadian clock disruption AND CRY2-dependent calcium signaling. The increased weight (25%) reflects this expanded biological footprint.",
-          "Importantly, TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathway A operates through VGCCs and is blocked by nifedipine. Pathway B's TRPC1 branch is NOT blocked by nifedipine. The two pathways remain pharmacologically distinct — they share the same upstream stimulus (EMF) while acting through completely different channel families.",
-          "The prediction TRPC1-1 tests this directly: EMF exposure of reproductive cells with nifedipine (blocks A), anti-TRPC1 (blocks B-calcium), or both should reveal the relative contributions of each pathway.",
-        ],
-        boundary: "The weight adjustment is based on one study ([[ref:yap2025|Yap 2025]]) in myoblasts. Confirmation in gonadal cells (Sertoli, granulosa) is required before the weight can be considered empirically validated.",
+  "[[ref:iversen2025|Iversen 2025]] identifies a CRY2/RFK/FAD/TRPC1-dependent response to a 1.5 mT pulsed field in myoblasts. This expands the candidate receiving machinery. Counting its downstream functions does not determine a 25% contribution to reproductive effects; existing pathway weights remain scenario parameters.",
+  "Use sham and field exposure at every intervention level: no blocker, L-type blockade, TRPC1 intervention and both. Record the first calcium response, ER-store change, later repair and tissue function. L-type blockade does not remove every VGCC subtype, and the remaining response is not automatically TRPC1-mediated.",
+  "Genetic rescue, a downstream bypass and timed intervention distinguish a receiver from a mediator or repair enabler. The stronger prediction is that the same measured receiving state explains the intervention contrast in a specified gonadal system."
+],
+        boundary: "A mechanism-specific intervention can identify mediation in its own system. Reproductive transfer, ambient-dose sensitivity and relative pathway weights require separate measurements; this evidence does not close the geometric L2 bridge.",
       },
       {
         question: "If EMF effects are real, why do labs get contradictory results?",
         response: [
-          "EMF research has produced contradictory results for decades. BERM identifies four uncontrolled moderators that predict which studies find positive results and which find null:",
-          "1. SEASON: CRY magnetoreceptor sensitivity is light-dependent. In winter (less light), CRY is more sensitive to EMF — biological effects on melatonin are stronger. A study conducted in summer produces a different result than the same study in winter. This has been directly demonstrated in calves (Halgamuge 2015, Nature Sci Rep).",
-          "2. GENOTYPE: CACNA1C rs1006737 polymorphism regulates Cav1.2 channel expression. A-allele carriers produce more channels and show greater Ca²⁺ response per EMF stimulus. [[ref:sousouri2025|Sousouri 2025]] (ETH Zürich) demonstrated directly: CACNA1C genotype determines the 5G sleep response. A study population with low A-allele frequency produces weaker results.",
-          "3. LABORATORY ELF BACKGROUND: The 50/60 Hz power grid upregulates VGCC expression in nerve endings after 8–10 days of exposure (PMC4757866). A laboratory with high ELF background 'primes' cells to respond more strongly. A laboratory with low ELF background produces a weaker response.",
-          "4. SUBJECTS' NIGHTTIME EMF: A Wi-Fi router in the bedroom versus an EMF-free night affects CaMKII recovery. A subject who slept in an EMF-free environment enters the experiment at a different baseline state than one who slept next to Wi-Fi and a phone.",
-          "Three of these moderators predict study outcomes with statistical significance: species/priming (χ²=9.4, p=0.002 — animal studies find effects 92% of the time vs. 35% for human studies), duration (χ²=10.8, p=0.001 — chronic exposure positive 92% vs. acute 31%), and pulsation (χ²=3.9, p=0.048 — pulsed signals positive 88% vs. CW 48%). [[ref:weller2025_dna|Weller et al. (2025)]] validated this pattern in 517 genotoxicity studies: real devices produced more effects than laboratory CW signals, duration was a critical factor, and 58% of DNA damage occurred below ICNIRP safety limits.",
-          "In every null-result study where subgroup analysis was performed, a positive subgroup was found: Graham 1996 identified a 'low baseline melatonin' subgroup, Lustenberger 2015 reported 'striking inter-individual differences,' and [[ref:sousouri2025|Sousouri 2025]] showed response only in T/C carriers. The null overall result masks real effects in susceptible subgroups.",
-          "Study A (winter, northern latitude, AA-genotype subjects, high lab-ELF, Wi-Fi homes) finds a positive result. Study B (summer, southern latitude, GG-genotype subjects, low lab-ELF, EMF-free homes) finds a null result. Both are CORRECT. Meta-analyses report 'contradictory evidence' because they do not control for these four variables.",
-          "This is testable WITHOUT new data: a retrospective analysis of 50–100 published EMF bio-assay studies, coding for study month, laboratory latitude, building material (if reported), and subject background — logistic regression predicting positive vs. null outcome from moderators.",
-        ],
-        boundary: "The four-moderator framework is BERM's synthesis (M-level), now with quantitative validation: three moderators reach statistical significance (p<0.05) and [[ref:weller2025_dna|Weller 2025]] (n=517 genotoxicity studies) independently confirms the pattern. Individual moderators have empirical support: season (Halgamuge 2015, E-level), genotype ([[ref:sousouri2025|Sousouri 2025]], E-level), ELF priming (PMC4757866, E-level). The retrospective meta-moderator test (REPL-1) would elevate this from M-level to E-level.",
+  "The current reanalysis starts from 530 unique genotoxicity publications, not 530 fertility experiments. After excluding 19 ambiguous experimental outcome classifications, the main experimental analysis has 460 publications; 130 meet the quality screen. Studies sharing a donor group are not independent replications.",
+  "The GSM–UMTS difference concerns reported DNA-effect classifications: 73/119 versus 7/30, with an adjusted UMTS/GSM OR of 0.205. The quality-restricted interval includes 1. An exploratory broader biological-outcome analysis did not preserve that ordering. A technology label therefore cannot serve as a universal biological effect coefficient.",
+  "Background reporting was recorded in 46/460 publications. Missing reporting identifies a measurement gap, not a measured contaminated control. The analysis did not find a general historical attenuation of DNA-effect reporting. Publication year cannot substitute for cell lineage, passage, differentiation or actual prior fields.",
+  "BERM now tests moderators as measured receiving states: waveform and local vector fields; receptor/ER/redox state; light order and biological phase; repair and prior exposure. [[ref:iversen2025|Iversen 2025]] found weaker PEMF response after the stated dark pretreatment, so “less light always increases CRY sensitivity” is not a general rule.",
+  "Compare competing predictions before examining the outcome. Saturation predicts impaired absolute baseline with a reduced increment; protective adaptation predicts better challenge tolerance; sensitization predicts a larger increment; selection changes the response distribution. [[ref:sannino2024|Sannino 2024]] and [[ref:sannino2022_autophagy_adaptive|Sannino 2022]] provide repair-linked tests of history, while [[ref:luukkonen2009_menadione_rf|Luukkonen 2009]] supplies a demanding CW/GSM contrast."
+],
+        boundary: "The reanalysis locates testable differences in a publication map; it does not estimate an environmental harm percentage. A receiver-state prediction must be fixed before testing and retain null and protective outcomes as possible results.",
       },
     ],
     closingTitle: "Constructive ways to test the programme",
@@ -401,9 +397,9 @@ const t: Record<string, Copy> = {
         question: "Ympäristön EMF-kentät ovat liian heikkoja biologisiin vaikutuksiin",
         response: [
           "[[ref:vaziri2016|Ihmisen silmä havaitsee yksittäisiä fotoneja.]] Hait havaitsevat 0,5 µV/m sähkökenttiä. [[ref:ritz2004|Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta]] — 0,03 % geomagneettisesta taustasta. Biologia toimii sähkömagneettisen herkkyyden kvanttirajoilla, koska evoluutio optimoi havaitsemisen, ei toleranssin.",
-          "Kaksikymmentäkuusi regulaattorihyväksyttyä laitekategoriaa hyödyntää ei-termisiä EMF-biologisia vaikutuksia koko EM-spektrillä — DC-luunstimulaattoreista (1986) UV-valohoitoon. Tämä sisältää 12 000+ yksittäistä TENS-hyväksyntää, 8–10 miljardin dollarin neuromodulaatiomarkkinat ja 160 000+ implantoitua DBS-laitetta. [[ref:tdcs_fda_depression_2025|tDCS hoitaa masennusta 0,3–1,0 V/m]] — sama suuruusluokka kuin kaupunkiympäristön mitattu RF (0,67–1,51 V/m). Väite EMF:n 'liiallisesta heikkoudesta' on suorassa ristiriidassa regulaattoreiden hyväksymispäätösten kanssa maailmanlaajuisesti.",
+          "Hoitostimulaatio ja kenttään perustuvat laitteet osoittavat vaikutuksia määritellyissä kliinisissä protokollissa. Niiden hyöty on fysikaalisen intervention positiivinen vertailukohta. Siirto ympäristöaltistukseen tarvitsee paikallisen annoksen, taajuusriippuvaisen kudossiirron, aaltomuodon ja saman päätepisteen; viranomaishyväksyntä ja patenttiväite ovat eri näyttöluokkia.",
           "Ionien pakotettu oskillaatio -mekanismi ([[ref:panagopoulos2025_ifo|Panagopoulos 2025, Frontiers in Public Health]]) osoittaa biologisen vasteen kynnyksen 10⁻⁵ V/m polarisoituneille, koherenteille kentille — viisi kertaluokkaa alle tyypillisen ympäristötason. Intensiteettikuilua ei ole. Kuilu oli olemassa vain malleissa, jotka olettivat termisten vaikutusten olevan ainoa mekanismi.",
-          "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym. (Cell, IF ~64)]] tunnistivat Cyb5b:n — mitokondrion ulkokalvoproteiinin — geneettisesti varmennetuksi EMF-sensoriksi genominlaajuisessa CRISPR-seulonnassa. 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta → Ca²⁺-vaihtelut. Tämä on ensimmäinen geneettisesti tunnistettu EMF-reseptori. 'Liian heikko' -argumentti on nyt ristiriidassa paitsi FDA-laitteiden hyväksyntöjen ja IFO-biofysiikan, myös Cell-lehdessä julkaistun CRISPR-validoidun molekyylireseptorin kanssa.",
+          "[[ref:kim2026_cell_gene_switch|Kim 2026]] tunnistaa CYB5B-riippuvuuden rakennetussa geenikytkinvasteessa, jossa purskeet toistuvat 60 Hz:llä ja purskeensisäinen rakenne on 4 kHz. Välttämätön osa on sensori- tai välittäjäehdokas; lähivasteet ja palautus-/ohituskokeet erottavat roolit. Tulos ei siirry suoraan ympäristön 60 Hz:n siniaaltoon.",
           "Vuonna 2013 mehiläistutkija [[ref:greggers2013_bee_electric_comm|Uwe Greggers]] totesi, että ihmisperäiset sähkökentät ovat 'paljon pienempiä energialtaan kuin mehiläisten itsensä tuottamat' ja että mehiläisten 'pitäisi olla luonnollisesti suojattuja.' Vuonna 2025 [[ref:mallinson2025_electric_pollution|Mallinson ym.]] testasivat tämän empiirisesti kenttäkokeessa — ja havaitsivat, että ihmisperäiset AC-sähkökentät vähentävät mehiläisten ravinnonhakua 71 % (iScience / Cell Press). Intuitiivinen arvio 'kenttä on liian heikko' epäonnistui empiirisen testin edessä. Tämä on täsmälleen sama virhe, jonka ICNIRP tekee ihmisten terveyden osalta: oletetaan testaamatta, että ympäristön kenttävoimakkuudet ovat biologisten kynnysarvojen alla.",
         ],
         boundary: "Intensiteettiargumentti on empiirinen väite. FDA-hyväksynnät ja IFO-kynnysmittaukset ovat empiirisiä tosiasioita. Todistustaakka on intensiteettiargumentilla selittää, miksi FDA-hyväksytyt ei-termiset laitteet toimivat.",
@@ -470,10 +466,10 @@ const t: Record<string, Copy> = {
       {
         question: "Tanskalaiset ja NHANES-tutkimukset eivät löytäneet BMI-riippumatonta laskua",
         response: [
-          "Tämä tulkinta olettaa BMI:n olevan sekoittaja (itsenäinen syy). BERM:n kausaalimalli käsittelee BMI:tä mediaattorina: EMF aiheuttaa samanaikaisesti sekä BMI:n nousun (kuuden metabolisen reitin kautta) että testosteronin laskun (suorasti Cav3.2/melatoniini/kortisoli-reittien kautta). BMI-korjaus poistaa medioidun signaalin — ylikorjaus joka hävittää todellista biologista vaikutusta.",
+          "BERM:n aineenvaihduntasynteesi sallii BMI:n välittää osaa reitistä, mutta kyse on kausaalihypoteesista eikä yleisestä vakiointisäännöstä. Määrittele kaavio ja tavoitesuure ennen kovariaattien valintaa; BMI voi myös kuvata sekoittumista tai muuttua ajassa.",
           "[[ref:mazur2013|Mazur ym. 2013]] (PLOS ONE, n = 991 US Air Force -veteraania, 20 vuoden seuranta) tarjoaa kriittisen testin: miehet, jotka PITIVÄT PAINONSA VAKIONA menettivät silti 117 ng/dL (19 %) testosteroninsa 20 vuodessa. Lihavuus ei voi selittää tätä laskua. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
           "[[ref:santi2025|Santi ym. 2025]] (n = 1 064 891, suurin koskaan tehty meta-analyysi) ei havainnut BMI:n ajallista trendiä tutkimuspopulaatiossaan, mutta testosteroni laski merkitsevästi. Kasvava lihavuus ei ole ajuri tässä aineistossa.",
-          "[[ref:klimentidis2010|Klimentidis ym. 2010]] (Proc R Soc B) osoittivat, että laboratorieläimet KONTROLLOIDUILLA ruokavalioilla lihoivat vuosikymmenten kuluessa (p = 1,2×10⁻⁷). Ruokavalion ulkopuolinen ympäristötekijä ajaa painonnousua — sama tekijä voi samanaikaisesti ajaa testosteronin laskua medioidun reitin kautta.",
+          "[[ref:klimentidis2010|Klimentidis 2010]] motivoi yhteistä lajienvälistä aineenvaihduntavertailua. Maksan glukoosintuotanto, insuliinidynamiikka, korjaus ja aterian/kudoksen vaihe antavat mitattavia yhteyksiä. Trendit eivät yksin tunnista EMF:ää eivätkä poista ravinnon, aktiivisuuden, jalostuksen, kemikaalien ja sairauksien eroja.",
         ],
         boundary: "Mediaattoritulkinta on testattavissa formaalilla mediaatioanalyysilla (Baron & Kenny tai SEM) pitkittäisaineistoilla joissa on samanaikaiset T- ja BMI-mittaukset. Jos BMI:n epäsuora vaikutus on alle 10 % kokonaisvaikutuksesta, mediaattorimalli heikkenee.",
       },
@@ -555,28 +551,24 @@ const t: Record<string, Copy> = {
         boundary: "SLEEP-1-ennuste on suoraan falsifioitavissa. Jos Faraday-suojatut LED:t tuottavat saman unihäiriön kuin suojaamattomat (identtinen spektri), IF-polku ei ole ensisijainen mekanismi.",
       },
       {
-        question: "Miksi polku B saa 25 % kun se oli alun perin 15 %?",
+        question: "Miten VGCC- ja CRY–TRPC1-haarat voidaan erottaa?",
         response: [
-          "Polku B sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku B:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja säätelee kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku B kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
-          "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku B:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
-          "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää B-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
-        ],
-        boundary: "Painon muutos perustuu yhteen tutkimukseen ([[ref:yap2025|Yap 2025]]) myoblasteissa. Vahvistus gonadikudoksessa (Sertoli, granuloosa) vaaditaan ennen kuin painoa voidaan pitää empiirisesti validoituna.",
+  "[[ref:iversen2025|Iversen 2025]] paikantaa CRY2/RFK/FAD/TRPC1-riippuvaisen vasteen 1,5 mT:n pulssikenttään myoblasteissa. Havainto laajentaa vastaanottokoneiston ehdokkaita. Sen alavirran tehtävien lukumäärä ei määrää 25 prosentin osuutta lisääntymisvaikutuksista; nykyiset reittipainot pysyvät skenaarioparametreina.",
+  "Käytä sham- ja kenttäaltistusta jokaisessa interventiotilassa: ei salpaajaa, L-tyypin salpaus, TRPC1-interventio ja molemmat. Mittaa ensimmäinen kalsiumvaste, ER-varaston muutos, myöhempi korjaus ja kudostoiminta. L-tyypin salpaus ei poista kaikkia VGCC-alatyyppejä, eikä jäännösvaste ole automaattisesti TRPC1-välitteinen.",
+  "Geenipalautus, alavirran ohitus ja ajoitettu interventio erottavat vastaanottimen välittäjästä tai korjauksen mahdollistajasta. Vahvempi ennuste on, että sama mitattu vastaanotintila selittää interventiokontrastin nimetyssä gonadaalisessa järjestelmässä."
+],
+        boundary: "Mekanismikohtainen interventio voi tunnistaa välityksen omassa järjestelmässään. Lisääntymissiirto, ympäristöannoksen herkkyys ja reittien suhteelliset painot tarvitsevat erilliset mittaukset; näyttö ei sulje geometrista L2-siltaa.",
       },
       {
         question: "Jos EMF-vaikutukset ovat todellisia, miksi laboratoriot saavat ristiriitaisia tuloksia?",
         response: [
-          "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa neljä kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:",
-          "1. VUODENAIKA: CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella (vähemmän valoa) CRY on herkempi — biologiset vaikutukset melatoniiniin ovat voimakkaampia. Kesällä tehty tutkimus tuottaa eri tuloksen kuin sama tutkimus talvella. Tämä on suoraan osoitettu vasikoilla (Halgamuge 2015, Nature Sci Rep).",
-          "2. GENOTYYPPI: CACNA1C rs1006737 -polymorfismi säätelee Cav1.2-kanavien ekspressiota. A-alleelin kantajat tuottavat enemmän kanavia ja suuremman Ca²⁺-vasteen per EMF-stimulus. [[ref:sousouri2025|Sousouri 2025]] (ETH Zürich) osoitti suoraan: CACNA1C-genotyyppi määrittää 5G-univasteen. Tutkimuspopulaatio jossa A-alleeli on harvinainen tuottaa heikomman tuloksen.",
-          "3. LABORATORION ELF-TAUSTA: 50/60 Hz sähköverkko lisää VGCC-ekspressiota hermopäätteissä 8–10 päivän altistuksen jälkeen (PMC4757866). Laboratorio jossa on korkea ELF-tausta 'primaa' solut reagoimaan vahvemmin. Matalan ELF-taustan laboratorio tuottaa heikomman vasteen.",
-          "4. KOEHENKILÖIDEN YÖLLINEN EMF: WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö vaikuttaa CaMKII:n palautumiseen. Koehenkilö joka nukkui EMF-vapaassa ympäristössä tulee kokeeseen eri baseline-tilassa kuin koehenkilö joka nukkui WiFi:n ja puhelimen vieressä.",
-          "Kolme näistä moderaattoreista ennustaa tutkimustuloksia tilastollisesti merkitsevästi: laji/primaus (χ²=9,4, p=0,002 — eläintutkimukset löytävät vaikutuksia 92 % ajasta vs. 35 % ihmistutkimuksista), kesto (χ²=10,8, p=0,001 — krooninen altistus positiivinen 92 % vs. akuutti 31 %) ja pulsaatio (χ²=3,9, p=0,048 — pulsatoidut signaalit positiivisia 88 % vs. CW 48 %). [[ref:weller2025_dna|Weller ym. (2025)]] validoi tämän kuvion 517 genotoksisuustutkimuksessa: todelliset laitteet tuottivat enemmän vaikutuksia kuin laboratorion CW-signaalit, kesto oli kriittinen tekijä ja 58 % DNA-vaurioista tapahtui ICNIRP-turvallisuusrajojen alapuolella.",
-          "Jokaisessa null-tuloksen tutkimuksessa, jossa alaryhmäanalyysi suoritettiin, löydettiin positiivinen alaryhmä: Graham 1996 tunnisti 'matalan baseline-melatoniinin' alaryhmän, Lustenberger 2015 raportoi 'hämmästyttäviä yksilöiden välisiä eroja' ja [[ref:sousouri2025|Sousouri 2025]] osoitti vasteen vain T/C-kantajilla. Kokonaistason nollatulos peittää todellisia vaikutuksia herkissä alaryhmissä.",
-          "Tutkimus A (talvi, pohjoinen leveysaste, AA-genotyypin koehenkilöt, korkea lab-ELF, WiFi-kodit) löytää positiivisen tuloksen. Tutkimus B (kesä, etelä, GG-genotyypin koehenkilöt, matala lab-ELF, EMF-vapaat kodit) löytää nollatuloksen. Molemmat ovat OIKEITA. Meta-analyysit raportoivat 'ristiriitaista näyttöä' koska ne eivät kontrolloi näitä neljää muuttujaa.",
-          "Testattavissa ILMAN uutta dataa: retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta — logistinen regressio ennustaa positiivisen vs. nollatuloksen moderaattoreista.",
-        ],
-        boundary: "Neljän moderaattorin kehys on BERM:n synteesi (M-taso), nyt kvantitatiivisella validoinnilla: kolme moderaattoria saavuttaa tilastollisen merkitsevyyden (p<0,05) ja [[ref:weller2025_dna|Weller 2025]] (n=517 genotoksisuustutkimusta) vahvistaa kuvion itsenäisesti. Yksittäisillä moderaattoreilla on empiiristä tukea: vuodenaika (Halgamuge 2015, E-taso), genotyyppi ([[ref:sousouri2025|Sousouri 2025]], E-taso), ELF-priming (PMC4757866, E-taso). Retrospektiivinen metamoderaattoritesti (REPL-1) nostaisi tämän M-tasolta E-tasolle.",
+  "Nykyinen uudelleenanalyysi alkaa 530 yksilöllisestä genotoksisuusjulkaisusta, ei 530 hedelmällisyyskokeesta. Kun 19 epäselvää kokeellisen tuloksen luokitusta poistetaan, kokeellisessa pääanalyysissä on 460 julkaisua; 130 täyttää laatuseulan. Saman luovuttajaryhmän tutkimukset eivät ole riippumattomia toistoja.",
+  "GSM–UMTS-ero koskee julkaistuja DNA-vaikutusluokkia: 73/119 vastaan 7/30, vakioitu UMTS/GSM-OR 0,205. Laaturajatun arvion luottamusväli sisältää arvon 1. Eksploratiivinen laajemman biologisen päätepisteen analyysi ei säilyttänyt tätä järjestystä. Teknologianimi ei siksi voi toimia yleisenä biologisen vaikutuksen kertoimena.",
+  "Taustan raportointi oli merkitty 46/460 julkaisuun. Puuttuva raportointi tunnistaa mittausvajeen, ei mitattua kontaminoitunutta verrokkia. Analyysi ei löytänyt yleistä historiallista DNA-vaikutusten raportoinnin vaimenemista. Julkaisuvuosi ei korvaa solulinjaa, passagea, erilaistumista tai todellisia aiempia kenttiä.",
+  "BERM testaa moderaattoreita nyt mitattuina vastaanottotiloina: aaltomuoto ja paikalliset vektorikentät; vastaanotin-/ER-/redox-tila; valon järjestys ja biologinen vaihe; korjaus ja esialtistus. [[ref:iversen2025|Iversen 2025]] havaitsi ilmoitetun pimeäesikäsittelyn heikentävän PEMF-vastetta, joten ”vähemmän valoa lisää aina CRY-herkkyyttä” ei ole yleissääntö.",
+  "Vertaa kilpailevia ennusteita ennen tuloksen tarkastelua. Kyllästyminen ennustaa heikentynyttä absoluuttista lähtötasoa ja pienempää lisävastetta; suojaava adaptaatio parempaa haastetoleranssia; herkistyminen suurempaa lisävastetta; valikoituminen vastejakauman muutosta. [[ref:sannino2024|Sannino 2024]] ja [[ref:sannino2022_autophagy_adaptive|Sannino 2022]] antavat korjaukseen liittyviä historiatestejä, kun taas [[ref:luukkonen2009_menadione_rf|Luukkonen 2009]] tarjoaa vaativan CW/GSM-vertailun."
+],
+        boundary: "Uudelleenanalyysi paikantaa testattavia eroja julkaisukartassa; se ei estimoi ympäristöhaitan prosenttiosuutta. Vastaanotintilan ennuste on lukittava ennen testiä, ja nolla- sekä suojatulokset säilyvät mahdollisina tuloksina.",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",
@@ -825,11 +817,11 @@ const t: Record<string, Copy> = {
       {
         question: "なぜ経路Bは元の15%から25%を得るのか？",
         response: [
-          "経路Bは元々15%が割り当てられた。2025年、[[ref:yap2025|Yapと同僚]]はCRY2がTRPC1とも相互作用し、カルシウムシグナリングを調節することを発見した。経路Bは2つの下流効果を包含する。",
+          "経路Bは元々15%が割り当てられた。2025年、[[ref:iversen2025|Iversenと同僚]]はCRY2がTRPC1とも相互作用し、カルシウムシグナリングを調節することを発見した。経路Bは2つの下流効果を包含する。",
           "TRPC1はTRPチャネルであり、VGCCではない。2つの経路は薬理学的に異なったまま。",
           "予測TRPC1-1はこれを直接テストする。",
         ],
-        boundary: "重み調整は筋芽細胞での1つの研究（[[ref:yap2025|Yap 2025]]）に基づく。生殖腺組織での確認が必要。",
+        boundary: "重み調整は筋芽細胞での1つの研究（[[ref:iversen2025|Iversen 2025]]）に基づく。生殖腺組織での確認が必要。",
       },
       {
         question: "EMF効果が実在するなら、なぜ研究室は矛盾する結果を得るのか？",
@@ -1093,11 +1085,11 @@ const t: Record<string, Copy> = {
       {
         question: "Pourquoi la voie B obtient-elle 25 % alors qu’elle était initialement à 15 % ?",
         response: [
-          "La voie B était initialement à 15 %. En 2025, [[ref:yap2025|Yap et al.]] ont découvert que CRY2 interagit aussi avec TRPC1, modulant la signalisation calcique.",
+          "La voie B était initialement à 15 %. En 2025, [[ref:iversen2025|Iversen et al.]] ont découvert que CRY2 interagit aussi avec TRPC1, modulant la signalisation calcique.",
           "TRPC1 est un canal TRP, pas un VGCC. Les deux voies restent pharmacologiquement distinctes.",
           "La prédiction TRPC1-1 teste directement les contributions relatives.",
         ],
-        boundary: "L’ajustement du poids est basé sur une seule étude ([[ref:yap2025|Yap 2025]]) dans les myoblastes.",
+        boundary: "L’ajustement du poids est basé sur une seule étude ([[ref:iversen2025|Iversen 2025]]) dans les myoblastes.",
       },
       {
         question: "Si les effets EMF sont réels, pourquoi les laboratoires obtiennent-ils des résultats contradictoires ?",
@@ -1361,11 +1353,11 @@ const t: Record<string, Copy> = {
       {
         question: "왜 경로 B는 원래 15%에서 25%를 얻는가?",
         response: [
-          "경로 B는 원래 15%가 할당되었다. 2025년, [[ref:yap2025|Yap과 동료들]]은 CRY2가 TRPC1과도 상호작용하여 칼슘 신호전달을 조절함을 발견했다.",
+          "경로 B는 원래 15%가 할당되었다. 2025년, [[ref:iversen2025|Iversen과 동료들]]은 CRY2가 TRPC1과도 상호작용하여 칼슘 신호전달을 조절함을 발견했다.",
           "TRPC1은 TRP 채널이지, VGCC가 아니다. 두 경로는 약리학적으로 구별된다.",
           "예측 TRPC1-1이 이것을 직접 테스트한다.",
         ],
-        boundary: "가중치 조정은 근아세포에서의 한 연구([[ref:yap2025|Yap 2025]])에 기반한다.",
+        boundary: "가중치 조정은 근아세포에서의 한 연구([[ref:iversen2025|Iversen 2025]])에 기반한다.",
       },
       {
         question: "EMF 효과가 실재한다면, 왜 실험실들은 모순된 결과를 얻는가?",

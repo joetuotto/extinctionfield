@@ -1,0 +1,247 @@
+{
+  "version": "1.0.0",
+  "description": "Curated presentation bindings. Component claims retain their own targets and scope; a binding does not establish an entire atlas connection.",
+  "nodes": {
+    "mech_vgcc_ros": [
+      "claim.vgcc.ros-ca2-coupling"
+    ],
+    "mech_cry_melatonin": [
+      "claim.rpm.cry-magnetic-sensitivity",
+      "claim.receptor.cry-dependent-ros"
+    ],
+    "tissue_melatonin": [
+      "claim.melatonin.circadian-redox-mediator"
+    ],
+    "tissue_sperm": [
+      "claim.sperm.multi-parameter-decline",
+      "claim.sperm.rf-rat-endpoints",
+      "claim.synthesis.target-intervention-triangulation"
+    ],
+    "demo_biocap": [
+      "claim.couple.fecundability-convergence",
+      "claim.civilization.pairing-multiplicative-decline",
+      "claim.couple.waiting-time-distribution"
+    ],
+    "legacy_proxy": [
+      "claim.proxy.lindgren-selection"
+    ],
+    "demo_tfr": [
+      "claim.tfr.multi-input-decomposition",
+      "claim.civilization.tfr-multiplicative-decomposition",
+      "claim.civilization.biocap-tfr-input"
+    ],
+    "fieldstate_vector": [
+      "claim.vector.background-dependent-coupling"
+    ],
+    "fieldstate_envelope": [
+      "claim.envelope.frequency-dependent-response"
+    ],
+    "fieldstate_static": [
+      "claim.tribo.material-dependent-interface"
+    ],
+    "fieldstate_electric": [
+      "claim.efield.polarity-dependent-response"
+    ],
+    "vmem_mtor": [
+      "claim.vmem.membrane-potential-growth-gate",
+      "claim.synthesis.vmem-calcium-interface"
+    ],
+    "developmental_memory": [
+      "claim.development.exposure-window-memory"
+    ],
+    "hpa_hpg": [
+      "claim.hpg.circadian-steroidogenic-gate",
+      "claim.synthesis.cry-clock-hpg-chain"
+    ],
+    "tissue_bbb": [
+      "claim.bbb.redox-tight-junction"
+    ],
+    "tissue_btb": [
+      "claim.btb.redox-junction-integrity"
+    ],
+    "male_reserve": [
+      "claim.germline.persistent-reserve-loss"
+    ],
+    "male_steroidogenesis": [
+      "claim.steroidogenesis.leydig-output-decline"
+    ],
+    "ovarian_reserve": [
+      "claim.ovarian.developmental-reserve-loss"
+    ],
+    "oocyte_redox": [
+      "claim.oocyte.mitochondrial-redox-quality"
+    ],
+    "ovulation_clock": [
+      "claim.ovulation.clock-gated-timing"
+    ],
+    "implantation": [
+      "claim.implantation.luteal-support-dependency",
+      "claim.reproduction.local-clock-gates"
+    ],
+    "eco_encounter": [
+      "claim.ecology.field-mediated-encounter",
+      "claim.encounter.network-propagation",
+      "claim.synthesis.cross-species-transfer-prior"
+    ],
+    "demo_asfr": [
+      "claim.asfr.cohort-signature"
+    ],
+    "demand_opportunity": [
+      "claim.civilization.demand-capacity-separation"
+    ],
+    "hormone_target": [
+      "claim.cry.endocrine-gating",
+      "claim.coordination.hormone-target-timing"
+    ],
+    "receptor_memory": [
+      "claim.receptor.chemical-memory",
+      "claim.receptor.state-dependent-response"
+    ],
+    "circadian_coordination": [
+      "claim.coordination.redox-clock",
+      "claim.coordination.multiple-zeitgebers"
+    ],
+    "berm_l2_bridge": [
+      "claim.geometry.multisource-receptor-coupling",
+      "claim.bridge.conditional-response-operator",
+      "claim.bridge.state-conditioned-kernel",
+      "claim.synthesis.protocol-state-heterogeneity",
+      "claim.synthesis.graded-susceptibility"
+    ],
+    "demo_waiting_distribution": [
+      "claim.couple.waiting-time-distribution"
+    ],
+    "mod_cry_photostate": [
+      "claim.modulome.flavin-state-and-light-history",
+      "claim.receptor.chemical-memory"
+    ],
+    "card_membrane_machinery_transfer": [
+      "claim.modulome.membrane-machinery-transfer"
+    ],
+    "card_calcium_compartment_cycle": [
+      "claim.modulome.calcium-compartment-cycle"
+    ],
+    "card_adaptation_memory": [
+      "claim.modulome.adaptation-memory"
+    ],
+    "card_flavin_state_and_light_history": [
+      "claim.modulome.flavin-state-and-light-history"
+    ],
+    "card_cry_subtype_specificity": [
+      "claim.modulome.cry-subtype-specificity"
+    ],
+    "card_directional_information": [
+      "claim.modulome.directional-information"
+    ],
+    "card_medium_borne_message": [
+      "claim.modulome.medium-borne-message"
+    ],
+    "card_immune_functional_endpoint": [
+      "claim.modulome.immune-functional-endpoint"
+    ],
+    "card_genotype_exposure_interaction": [
+      "claim.modulome.genotype-exposure-interaction"
+    ],
+    "card_iris_optical_exposure": [
+      "claim.modulome.iris-optical-exposure"
+    ],
+    "mod_membrane_omega": [
+      "claim.receptor.membrane-orientation"
+    ],
+    "mech_ca_compartment_cycle": [
+      "claim.modulome.calcium-compartment-cycle"
+    ],
+    "mod_repair_capacity": [
+      "claim.modulome.adaptation-memory",
+      "claim.modulome.parp-dependent-protection"
+    ],
+    "mech_directional_polarity": [
+      "claim.modulome.directional-information"
+    ],
+    "tissue_bystander_message": [
+      "claim.modulome.medium-borne-message"
+    ],
+    "mech_trpc1_sting": [
+      "claim.modulome.immune-functional-endpoint"
+    ],
+    "mod_cell_history": [
+      "claim.receptor.state-dependent-response",
+      "claim.modulome.adaptation-memory"
+    ],
+    "mech_cry4a_binding_competition": [
+      "claim.receptor.cry4a-gtalpha-binding",
+      "claim.receptor.opsin-gtalpha-binding"
+    ],
+    "mod_cyb5b": [
+      "claim.receptor.gene-switch-protocol"
+    ],
+    "lindgren_metric_drive": [
+      "claim.geometry.rank-one-coordinate",
+      "claim.geometry.quadratic-mixing"
+    ],
+    "androgen_binding_availability": [
+      "claim.androgen.binding-availability"
+    ],
+    "androgen_receptor_signal": [
+      "claim.androgen.receptor-use-capacity"
+    ],
+    "individual_behavioral_response": [
+      "claim.cognition.state-dependent-behaviour",
+      "claim.synthesis.joint-endocrine-gate"
+    ],
+    "biobehavioral_weighting": [
+      "claim.cognition.biological-behavioural-weighting"
+    ],
+    "narrative_attribution": [
+      "claim.cognition.reported-reason-downstream"
+    ],
+    "epistapege_observability_loss": [
+      "claim.civilization.epistapege-observability-loss"
+    ],
+    "institutional_model_reuse": [
+      "claim.civilization.asymmetric-evidence-threshold"
+    ]
+  },
+  "edges": [
+    {
+      "from": "mech_cry_melatonin",
+      "to": "receptor_memory",
+      "claimIds": [
+        "claim.receptor.chemical-memory"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "receptor_memory",
+      "to": "circadian_coordination",
+      "claimIds": [
+        "claim.coordination.redox-clock"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "circadian_coordination",
+      "to": "hormone_target",
+      "claimIds": [
+        "claim.coordination.hormone-target-timing"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "demo_biocap",
+      "to": "demo_asfr",
+      "claimIds": [
+        "claim.couple.waiting-time-distribution"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "hormone_target",
+      "to": "implantation",
+      "claimIds": [
+        "claim.reproduction.local-clock-gates"
+      ],
+      "scope": "component"
+    }
+  ]
+}

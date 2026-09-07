@@ -65,7 +65,7 @@ const COPY = {
         paragraphs: [
           "Electromagnetic hypersensitivity (EHS) clinical data suggests a continuous distribution of individual susceptibility. [[ref:belpomme2022|Belpomme et al. 2022]] characterized approximately 1,000 EHS patients with objective biomarkers including histamine, S100B protein and nitrotyrosine. While EHS as a clinical entity remains debated, the biomarker data suggests measurable physiological responses in a susceptible subpopulation.",
           "[[ref:sousouri2025|Sousouri et al. 2025 (NeuroImage, ETH Zurich)]] provided the first double-blind human experimental demonstration of VGCC genotype-dependent EMF sensitivity. In 34 healthy volunteers, CACNA1C rs7304986 T/C carriers showed altered sleep spindle frequency after 30 minutes of 3.6 GHz 5G exposure below ICNIRP limits. T/T carriers showed no effect. This is not nocebo — it is a genetically determined, objectively measured neurophysiological response. The regulatory variant does not change the protein but its expression density: more VGCC channels = greater sensitivity. HRV studies under controlled Wi-Fi exposure ([[ref:hrv_wifi_2023|2023]]) show measurable autonomic changes in a subset of participants. If susceptibility follows a normal distribution, the population-level reproductive effect is the integral over the entire distribution, not the response of the median individual.",
-          "See also: Eye Color & Magnetoreception — how iris pigmentation, nutrition, and sex modulate CRY sensitivity. Blue eyes transmit ~100× more light to retinal cryptochrome than brown eyes ([[ref:higuchi2007|Higuchi 2007]]: 89% vs 73% melatonin suppression). FAD availability from vitamin B2 directly controls CRY stability and magnetic field directional selectivity ([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). These modulators may explain part of the inter-individual and inter-population variance in pathway B effectiveness.",
+          "See also: Eye Color & Magnetoreception — how iris pigmentation, nutrition, and sex modulate CRY sensitivity. Blue eyes transmit ~100× more light to retinal cryptochrome than brown eyes ([[ref:higuchi2007|Higuchi 2007]]: 89% vs 73% melatonin suppression). FAD availability from vitamin B2 directly controls CRY stability and magnetic field directional selectivity ([[ref:hirano2017|Hirano 2017]], [[ref:iversen2025|Iversen 2025]]). These modulators may explain part of the inter-individual and inter-population variance in pathway B effectiveness.",
         ],
         studies: [
           { citation: "Belpomme et al.", year: 2022, referenceId: "belpomme2022", note: "EHS biomarkers (~1,000 patients)" },
@@ -73,7 +73,7 @@ const COPY = {
           { citation: "CACNA1C genotyping", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "VGCC polymorphism → EMF sensitivity" },
           { citation: "HRV Wi-Fi exposure", year: 2023, referenceId: "hrv_wifi_2023", note: "Autonomic changes in susceptible subset" },
           { citation: "Higuchi et al.", year: 2007, referenceId: "higuchi2007", note: "Eye color → melatonin suppression (89% vs 73%)" },
-          { citation: "Yap/Sherrard lab (Cells)", year: 2025, referenceId: "yap2025", note: "FAD depletion → loss of magnetic directional selectivity" },
+          { citation: "Franco-Obregón lab (Cells)", year: 2025, referenceId: "iversen2025", note: "FAD depletion → loss of magnetic directional selectivity" },
         ],
       },
     ],
@@ -142,7 +142,7 @@ const COPY = {
         paragraphs: [
           "Sähkömagneettinen yliherkkyys (EHS) -kliininen data viittaa jatkuvaan yksilöllisen herkkyyden jakaumaan. [[ref:belpomme2022|Belpomme ym. 2022]] luonnehtivat noin 1 000 EHS-potilasta objektiivisilla biomarkkereilla, mukaan lukien histamiini, S100B-proteiini ja nitrotyrosiini. Vaikka EHS on kliinisenä entiteettinä epäkonventionaalinen, biomarkkerit viittaavat mitattaviin fysiologisiin vasteisiin herkässä alapopulaatiossa.",
           "[[ref:sousouri2025|Sousouri ym. 2025 (NeuroImage, ETH Zürich)]] tarjosi ensimmäisen kaksoissokko-ihmiskokeellisen osoituksen VGCC-genotyyppiriippuvaisesta EMF-herkkyydestä. Satunnaistetussa kontrolloidussa kokeessa CACNA1C rs7304986 T/C -kantajat osoittivat muuttunutta unisukkuladynamiikkaa 3,6 GHz RF-altistuksessa ICNIRP-rajojen alapuolella, kun taas CC-homotsygootit eivät. Tämä on ensimmäinen kokeellinen vahvistus sille, että ionikanavan genotyyppi ennustaa yksilöllistä EMF-vastetta, ja se muuttaa herkkyysjakauman aiemmin ehdotetusta (CACNA1C-assosiaatiotutkimukset 2024) kokeellisesti todistetuksi. Jos herkkyys noudattaa normaalijakaumaa, väestötason lisääntymisvaikutus on integraali koko jakauman yli, ei mediaani-yksilön vaste.",
-          "Katso myös: Silmien väri ja magnetoreseptio — miten iiriksen pigmentaatio, ravitsemus ja sukupuoli säätelevät CRY-herkkyyttä. Siniset silmät päästävät ~100× enemmän valoa verkkokalvon kryptokromille kuin ruskeat silmät ([[ref:higuchi2007|Higuchi 2007]]: 89 % vs. 73 % melatoniinivaimennus). FAD-saatavuus B2-vitamiinista kontrolloi suoraan CRY-stabiilisuutta ja magneettikentän suuntaerottelukykyä ([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). Nämä modulaattorit voivat selittää osan polku B:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta.",
+          "Katso myös: Silmien väri ja magnetoreseptio — miten iiriksen pigmentaatio, ravitsemus ja sukupuoli säätelevät CRY-herkkyyttä. Siniset silmät päästävät ~100× enemmän valoa verkkokalvon kryptokromille kuin ruskeat silmät ([[ref:higuchi2007|Higuchi 2007]]: 89 % vs. 73 % melatoniinivaimennus). FAD-saatavuus B2-vitamiinista kontrolloi suoraan CRY-stabiilisuutta ja magneettikentän suuntaerottelukykyä ([[ref:hirano2017|Hirano 2017]], [[ref:iversen2025|Iversen 2025]]). Nämä modulaattorit voivat selittää osan polku B:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta.",
         ],
         studies: [
           { citation: "Belpomme ym.", year: 2022, referenceId: "belpomme2022", note: "EHS-biomarkkerit (~1 000 potilasta)" },
@@ -150,7 +150,7 @@ const COPY = {
           { citation: "CACNA1C-genotyypitys", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "VGCC-polymorfismi → EMF-herkkyys" },
           { citation: "HRV Wi-Fi -altistus", year: 2023, referenceId: "hrv_wifi_2023", note: "Autonomiset muutokset herkässä osajoukossa" },
           { citation: "Higuchi ym.", year: 2007, referenceId: "higuchi2007", note: "Silmien väri → melatoniinivaimennus (89 % vs. 73 %)" },
-          { citation: "Yap/Sherrard-lab (Cells)", year: 2025, referenceId: "yap2025", note: "FAD-puutos → magneettisen suuntaerottelun menetys" },
+          { citation: "Franco-Obregón-lab (Cells)", year: 2025, referenceId: "iversen2025", note: "FAD-puutos → magneettisen suuntaerottelun menetys" },
         ],
       },
     ],
@@ -227,7 +227,7 @@ const COPY = {
         paragraphs: [
           "電磁過敏症（EHS）の臨床データは、個人感受性が連続分布することを示唆する。[[ref:belpomme2022|Belpommeら 2022]]は約1,000人のEHS患者をhistamine、S100Bタンパク質、nitrotyrosineなどの客観的biomarkerで特徴づけた。EHSは臨床概念として議論が続くが、biomarkerデータは感受性のある部分集団で測定可能な生理応答を示唆する。",
           "[[ref:sousouri2025|Sousouriら 2025（NeuroImage、ETH Zurich）]]は、VGCC genotype依存性EMF感受性を初めて二重盲検ヒト実験で実証した。34人の健康な志願者で、CACNA1C rs7304986 T/C保有者はICNIRP限度以下の3.6 GHz 5Gに30分曝露した後、睡眠紡錘波周波数が変化した。T/T保有者には作用がなかった。これはnoceboではなく、遺伝的に決定され客観的に測定された神経生理応答である。調節variantはタンパク質自体ではなく発現密度を変える：VGCCチャネルが多いほど感受性が高い。制御Wi-Fi曝露下のHRV研究（[[ref:hrv_wifi_2023|2023]]）は一部参加者で測定可能な自律神経変化を示す。感受性が正規分布するなら、集団レベルの生殖影響は中央値個人の応答ではなく分布全体の積分である。",
-          "関連項目：眼の色と磁気受容——虹彩色素、栄養、性別がCRY感受性をどう調節するか。青い眼は茶色の眼より網膜cryptochromeへ約100倍多く光を通す（[[ref:higuchi2007|Higuchi 2007]]：melatonin抑制89%対73%）。ビタミンB2由来FADの利用可能性はCRY安定性と磁場方向選択性を直接制御する（[[ref:hirano2017|Hirano 2017]]、[[ref:yap2025|Yap/Sherrard 2025]]）。これらの調節因子は経路Bの有効性における個人間・集団間分散の一部を説明し得る。",
+          "関連項目：眼の色と磁気受容——虹彩色素、栄養、性別がCRY感受性をどう調節するか。青い眼は茶色の眼より網膜cryptochromeへ約100倍多く光を通す（[[ref:higuchi2007|Higuchi 2007]]：melatonin抑制89%対73%）。ビタミンB2由来FADの利用可能性はCRY安定性と磁場方向選択性を直接制御する（[[ref:hirano2017|Hirano 2017]]、[[ref:iversen2025|Iversen 2025]]）。これらの調節因子は経路Bの有効性における個人間・集団間分散の一部を説明し得る。",
         ],
         studies: [
           { citation: "Belpomme et al.", year: 2022, referenceId: "belpomme2022", note: "EHSバイオマーカー（約1,000人の患者）" },
@@ -235,7 +235,7 @@ const COPY = {
           { citation: "CACNA1C genotyping", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "VGCCポリモーフィズム → EMF感受性" },
           { citation: "HRV Wi-Fi exposure", year: 2023, referenceId: "hrv_wifi_2023", note: "感受性のある部分集団での自律神経変化" },
           { citation: "Higuchi et al.", year: 2007, referenceId: "higuchi2007", note: "眼の色 → melatonin抑制（89% vs 73%）" },
-          { citation: "Yap/Sherrard lab (Cells)", year: 2025, referenceId: "yap2025", note: "FAD枯渇 → 磁気方向選択性の喪失" },
+          { citation: "Franco-Obregón lab (Cells)", year: 2025, referenceId: "iversen2025", note: "FAD枯渇 → 磁気方向選択性の喪失" },
         ],
       },
     ],
@@ -304,7 +304,7 @@ const COPY = {
         paragraphs: [
           "Les données cliniques sur l'hypersensibilité électromagnétique (EHS) suggèrent une distribution continue de la susceptibilité individuelle. [[ref:belpomme2022|Belpomme et al. 2022]] ont caractérisé environ 1 000 patients EHS avec des biomarqueurs objectifs, dont l'histamine, S100B et la nitrotyrosine. Bien que l'EHS reste débattue, ces biomarqueurs suggèrent des réponses physiologiques mesurables dans une sous-population susceptible.",
           "[[ref:sousouri2025|Sousouri et al. 2025 (NeuroImage, ETH Zurich)]] ont fourni la première démonstration humaine en double aveugle d'une sensibilité EMF dépendante du génotype VGCC. Chez 34 volontaires sains, les porteurs CACNA1C rs7304986 T/C ont montré une fréquence des fuseaux du sommeil modifiée après 30 minutes de 5G à 3,6 GHz sous les limites ICNIRP ; les T/T n'ont montré aucun effet. Ce n'est pas un nocebo, mais une réponse neurophysiologique objectivement mesurée et génétiquement déterminée. Le variant régulateur change la densité d'expression : plus de VGCC signifie plus de sensibilité. Les études HRV sous Wi-Fi contrôlé ([[ref:hrv_wifi_2023|2023]]) montrent des changements autonomiques chez certains participants. Si la sensibilité est normalement distribuée, l'effet reproductif populationnel est l'intégrale de toute la distribution, non la réponse médiane.",
-          "Voir aussi : Couleur des yeux et magnétoréception — comment pigmentation, nutrition et sexe modulent CRY. Les yeux bleus transmettent environ 100 fois plus de lumière au cryptochrome rétinien que les yeux bruns ([[ref:higuchi2007|Higuchi 2007]] : suppression de mélatonine 89 % contre 73 %). Le FAD issu de la B2 contrôle directement la stabilité de CRY et la sélectivité directionnelle magnétique ([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). Ces modulateurs peuvent expliquer une partie de la variance interindividuelle et interpopulationnelle de la voie B.",
+          "Voir aussi : Couleur des yeux et magnétoréception — comment pigmentation, nutrition et sexe modulent CRY. Les yeux bleus transmettent environ 100 fois plus de lumière au cryptochrome rétinien que les yeux bruns ([[ref:higuchi2007|Higuchi 2007]] : suppression de mélatonine 89 % contre 73 %). Le FAD issu de la B2 contrôle directement la stabilité de CRY et la sélectivité directionnelle magnétique ([[ref:hirano2017|Hirano 2017]], [[ref:iversen2025|Iversen 2025]]). Ces modulateurs peuvent expliquer une partie de la variance interindividuelle et interpopulationnelle de la voie B.",
         ],
         studies: [
           { citation: "Belpomme et al.", year: 2022, referenceId: "belpomme2022", note: "Biomarqueurs EHS (environ 1 000 patients)" },
@@ -312,7 +312,7 @@ const COPY = {
           { citation: "CACNA1C genotyping", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "Polymorphisme VGCC → sensibilité EMF" },
           { citation: "HRV Wi-Fi exposure", year: 2023, referenceId: "hrv_wifi_2023", note: "Changements autonomiques dans un sous-ensemble susceptible" },
           { citation: "Higuchi et al.", year: 2007, referenceId: "higuchi2007", note: "Couleur des yeux → suppression de mélatonine (89 % vs 73 %)" },
-          { citation: "Yap/Sherrard lab (Cells)", year: 2025, referenceId: "yap2025", note: "Épuisement du FAD → perte de sélectivité directionnelle magnétique" },
+          { citation: "Franco-Obregón lab (Cells)", year: 2025, referenceId: "iversen2025", note: "Épuisement du FAD → perte de sélectivité directionnelle magnétique" },
         ],
       },
     ],
@@ -381,7 +381,7 @@ const COPY = {
         paragraphs: [
           "전자기 과민증(EHS) 임상 데이터는 개인 감수성이 연속적으로 분포함을 시사한다. [[ref:belpomme2022|Belpomme 등 2022]]은 약 1,000명의 EHS 환자를 histamine, S100B 단백질, nitrotyrosine 등 객관적 바이오마커로 특성화했다. EHS는 임상 개념으로 논쟁 중이지만 바이오마커 데이터는 감수성 하위집단에서 측정 가능한 생리 반응을 시사한다.",
           "[[ref:sousouri2025|Sousouri 등 2025(NeuroImage, ETH Zurich)]]은 VGCC 유전자형 의존적 EMF 감수성을 최초로 이중맹검 인간 실험에서 입증했다. 건강한 지원자 34명 중 CACNA1C rs7304986 T/C 보유자는 ICNIRP 한계 이하 3.6 GHz 5G에 30분 노출 후 수면 방추 주파수가 변했고 T/T 보유자는 효과가 없었다. 이는 nocebo가 아니라 유전적으로 결정되고 객관적으로 측정된 신경생리 반응이다. 조절 variant는 단백질이 아니라 발현 밀도를 바꾼다. VGCC 채널이 많을수록 감수성이 크다. 통제 Wi-Fi 노출 HRV 연구([[ref:hrv_wifi_2023|2023]])는 일부 참가자에서 측정 가능한 자율신경 변화를 보인다. 감수성이 정규분포한다면 인구 수준 생식 효과는 중앙값 개인 반응이 아니라 전체 분포의 적분이다.",
-          "관련 항목: 눈 색상과 자기수용 — 홍채 색소, 영양, 성별이 CRY 감수성을 조절한다. 파란 눈은 갈색 눈보다 망막 cryptochrome에 약 100배 더 많은 빛을 전달한다([[ref:higuchi2007|Higuchi 2007]]: melatonin 억제 89% 대 73%). 비타민 B2의 FAD 가용성은 CRY 안정성과 자기장 방향 선택성을 직접 제어한다([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). 이 조절인자들은 경로 B 효과의 개인 간·인구 간 변이 일부를 설명할 수 있다.",
+          "관련 항목: 눈 색상과 자기수용 — 홍채 색소, 영양, 성별이 CRY 감수성을 조절한다. 파란 눈은 갈색 눈보다 망막 cryptochrome에 약 100배 더 많은 빛을 전달한다([[ref:higuchi2007|Higuchi 2007]]: melatonin 억제 89% 대 73%). 비타민 B2의 FAD 가용성은 CRY 안정성과 자기장 방향 선택성을 직접 제어한다([[ref:hirano2017|Hirano 2017]], [[ref:iversen2025|Iversen 2025]]). 이 조절인자들은 경로 B 효과의 개인 간·인구 간 변이 일부를 설명할 수 있다.",
         ],
         studies: [
           { citation: "Belpomme et al.", year: 2022, referenceId: "belpomme2022", note: "EHS 바이오마커(약 1,000명)" },
@@ -389,7 +389,7 @@ const COPY = {
           { citation: "CACNA1C genotyping", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "VGCC 다형성 → EMF 감수성" },
           { citation: "HRV Wi-Fi exposure", year: 2023, referenceId: "hrv_wifi_2023", note: "감수성 하위 집단의 자율신경 변화" },
           { citation: "Higuchi et al.", year: 2007, referenceId: "higuchi2007", note: "눈 색상 → melatonin 억제(89% vs 73%)" },
-          { citation: "Yap/Sherrard lab (Cells)", year: 2025, referenceId: "yap2025", note: "FAD 고갈 → 자기 방향 선택성 상실" },
+          { citation: "Franco-Obregón lab (Cells)", year: 2025, referenceId: "iversen2025", note: "FAD 고갈 → 자기 방향 선택성 상실" },
         ],
       },
     ],

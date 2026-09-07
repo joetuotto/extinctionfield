@@ -1,0 +1,429 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claims.schema.json",
+  "title": "BERM claims and curated evidence provenance",
+  "type": "object",
+  "required": [
+    "version",
+    "claims",
+    "evidence_relations",
+    "epistemic_assessments",
+    "routes"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Claim"
+      }
+    },
+    "evidence_relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EvidenceRelation"
+      }
+    },
+    "epistemic_assessments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Assessment"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Route"
+      }
+    }
+  },
+  "$defs": {
+    "Provenance": {
+      "type": "object",
+      "required": [
+        "studyIds",
+        "datasetFamilyIds",
+        "premiseIds",
+        "status"
+      ],
+      "properties": {
+        "studyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "datasetFamilyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "premiseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "partial",
+            "complete"
+          ]
+        }
+      }
+    },
+    "Statement": {
+      "type": "object",
+      "required": [
+        "text",
+        "sourceRevision"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceRevision": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "Claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "statement",
+        "kind",
+        "lifecycle",
+        "target",
+        "depends_on",
+        "supersedes",
+        "scope",
+        "falsification_condition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^claim\\.[a-z][a-z0-9-]*\\.[a-z][a-z0-9-]*$"
+        },
+        "statement": {
+          "type": "object",
+          "required": [
+            "en"
+          ],
+          "additionalProperties": {
+            "$ref": "#/$defs/Statement"
+          }
+        },
+        "kind": {
+          "enum": [
+            "measurement",
+            "proxy_interpretation",
+            "mechanistic_step",
+            "theoretical_premise",
+            "model_derived",
+            "prediction",
+            "interpretation",
+            "open_assumption",
+            "methodological",
+            "orphaned_finding",
+            "historical"
+          ]
+        },
+        "lifecycle": {
+          "enum": [
+            "draft",
+            "reviewed",
+            "active",
+            "deprecated",
+            "superseded"
+          ]
+        },
+        "target": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "nodeId"
+              ],
+              "properties": {
+                "type": {
+                  "const": "node"
+                },
+                "nodeId": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "edgeId"
+              ],
+              "properties": {
+                "type": {
+                  "const": "edge"
+                },
+                "edgeId": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "routeId"
+              ],
+              "properties": {
+                "type": {
+                  "const": "route"
+                },
+                "routeId": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "artifactId"
+              ],
+              "properties": {
+                "type": {
+                  "const": "modelArtifact"
+                },
+                "artifactId": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "method"
+                }
+              }
+            }
+          ]
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "supports",
+            "does_not_support"
+          ],
+          "properties": {
+            "supports": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "does_not_support": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        "falsification_condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "EvidenceRelation": {
+      "type": "object",
+      "required": [
+        "id",
+        "referenceId",
+        "claimId",
+        "relation",
+        "directness",
+        "studyDesign",
+        "applicability",
+        "calibrationRole",
+        "limitations",
+        "curatorId",
+        "curatedAt",
+        "curatorNote",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "referenceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "enum": [
+            "supports",
+            "challenges",
+            "contextualizes",
+            "method"
+          ]
+        },
+        "calibrationRole": {
+          "enum": [
+            "structural_only",
+            "context_only",
+            "calibration"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      }
+    },
+    "Assessment": {
+      "type": "object",
+      "required": [
+        "id",
+        "claimId",
+        "revision",
+        "level",
+        "compatibility",
+        "origin",
+        "basis"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "L",
+            "L*",
+            "M",
+            "C",
+            "M|C",
+            "E"
+          ]
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Route": {
+      "type": "object",
+      "required": [
+        "id",
+        "routeClaims",
+        "routeEvidence",
+        "sharedAssumptions",
+        "sharedDatasets",
+        "independenceVerified",
+        "independenceAudit"
+      ],
+      "properties": {
+        "routeClaims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "routeEvidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "independenceVerified": {
+          "type": "boolean"
+        },
+        "independenceAudit": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/Provenance"
+            },
+            {
+              "type": "object",
+              "required": [
+                "reviewedBy",
+                "reviewedAt"
+              ],
+              "properties": {
+                "reviewedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reviewedAt": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
