@@ -26,7 +26,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "Twelve Layers",
     layersSubtitle:
-      "From molecular spin physics to population-level patterns \u2014 each layer modulates \u03C7",
+      "From molecular spin physics to population patterns \u2014 each imported L3 response is named separately from \u03C7_geo",
     /* Section 4: Routes */
     routesHeading: "Four Independent Routes",
     routesMechanism: "Mechanism",
@@ -39,9 +39,9 @@ const COPY = {
     organView: "View organ profile",
     organComingSoon: "Coming soon",
     /* Section 6: Population */
-    popHeading: "Population \u03C7 Profiles",
+    popHeading: "Candidate \u03C7_pop Profiles",
     popBody:
-      "Each population occupies a unique position in \u03C7-space, determined by its combination of genetic variants (OCA2, LCT, CACNA1C), dietary patterns (B2, \u03C9-3 from dairy/fish), and environmental exposure (electrification history, latitude, urbanization). These profiles predict differential susceptibility to EMF effects and are testable against the 54-country fertility dataset.",
+      "\u03C7_pop is an imported L3 population-response candidate built from genetic, dietary and technology-timing variables. It is distinct from \u03C7_geo; its weights, exposure mapping and fertility endpoint require the open L2 bridge and independent calibration against the 54-country data.",
     popLink: "Explore evolution & population data",
     /* Section 7: Predictions */
     predHeading: "Testable Predictions",
@@ -77,7 +77,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "Kaksitoista kerrosta",
     layersSubtitle:
-      "Molekulaarisesta spinfysiikasta populaatiotason malleihin \u2014 kukin kerros säätelee \u03C7:\u00E4",
+      "Molekulaarisesta spinfysiikasta populaatiomalleihin \u2014 kukin tuotu L3-vaste nimetään erilleen \u03C7_geosta",
     /* Section 4: Routes */
     routesHeading: "Nelj\u00E4 itsen\u00E4ist\u00E4 reitti\u00E4",
     routesMechanism: "Mekanismi",
@@ -90,9 +90,9 @@ const COPY = {
     organView: "N\u00E4yt\u00E4 elinprofiili",
     organComingSoon: "Tulossa pian",
     /* Section 6: Population */
-    popHeading: "Populaation \u03C7-profiilit",
+    popHeading: "Ehdokasprofiilit \u03C7_pop",
     popBody:
-      "Kukin populaatio sijaitsee ainutlaatuisessa pisteess\u00E4 \u03C7-avaruudessa, m\u00E4\u00E4ritettyn\u00E4 sen geneettisten varianttien (OCA2, LCT, CACNA1C), ravitsemusmallien (B2, \u03C9-3 maidosta/kalasta) ja ymp\u00E4rist\u00F6altistuksen (s\u00E4hk\u00F6istymishistoria, leveysaste, kaupungistuminen) yhdistelm\u00E4ll\u00E4. N\u00E4m\u00E4 profiilit ennustavat erilaista herkkyyttä EMF-vaikutuksille ja ovat testattavissa 54 maan fertiliteettiaineistoa vasten.",
+      "\u03C7_pop on tuotu L3-populaatiovaste-ehdokas, joka koostuu geneettisistä, ravitsemus- ja teknologia-ajoitusmuuttujista. Se on eri suure kuin \u03C7_geo; painot, altistuskuvaus ja fertiliteettipäätepiste vaativat avoimen L2-sillan sekä riippumattoman kalibroinnin 54 maan aineistossa.",
     popLink: "Tutustu evoluutio- ja populaatiodataan",
     /* Section 7: Predictions */
     predHeading: "Testattavat ennusteet",
@@ -128,7 +128,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "12の層",
     layersSubtitle:
-      "分子スピン物理学から集団レベルのパターンまで — 各層はχを変調する",
+      "分子スピン物理学から集団パターンまで — 各導入L3応答をχ_geoとは別名で扱う",
     /* Section 4: Routes */
     routesHeading: "4つの独立経路",
     routesMechanism: "メカニズム",
@@ -141,9 +141,9 @@ const COPY = {
     organView: "臓器プロファイルを表示",
     organComingSoon: "近日公開",
     /* Section 6: Population */
-    popHeading: "集団χプロファイル",
+    popHeading: "候補χ_popプロファイル",
     popBody:
-      "各集団は、遺伝的変異（OCA2、LCT、CACNA1C）、食事パターン（乳製品・魚由来のB2、ω-3）、環境曝露（電化の歴史、緯度、都市化）の組み合わせによって決定されるχ空間内の固有の位置を占める。これらのプロファイルはEMF効果に対する差異的感受性を予測し、54カ国の出生率データセットに対して検証可能である。",
+      "χ_popは遺伝・食事・技術時期変数から構成する導入L3集団応答候補で、χ_geoとは別物である。その重み、曝露写像、出生エンドポイントには未解決L2橋と54か国データでの独立較正が必要である。",
     popLink: "進化と集団データを探る",
     /* Section 7: Predictions */
     predHeading: "検証可能な予測",
@@ -179,7 +179,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "Douze couches",
     layersSubtitle:
-      "De la physique du spin moléculaire aux tendances au niveau populationnel — chaque couche module χ",
+      "De la physique du spin aux tendances démographiques — chaque réponse L3 importée est nommée séparément de χ_geo",
     /* Section 4: Routes */
     routesHeading: "Quatre voies indépendantes",
     routesMechanism: "Mécanisme",
@@ -192,9 +192,9 @@ const COPY = {
     organView: "Voir le profil d'organe",
     organComingSoon: "Bientôt disponible",
     /* Section 6: Population */
-    popHeading: "Profils χ de population",
+    popHeading: "Profils candidats χ_pop",
     popBody:
-      "Chaque population occupe une position unique dans l'espace χ, déterminée par sa combinaison de variantes génétiques (OCA2, LCT, CACNA1C), de schémas alimentaires (B2, ω-3 provenant des produits laitiers/du poisson) et d'exposition environnementale (historique d'électrification, latitude, urbanisation). Ces profils prédisent une susceptibilité différentielle aux effets des EMF et sont testables par rapport au jeu de données de fécondité de 54 pays.",
+      "χ_pop est un candidat L3 importé de réponse démographique construit à partir de variables génétiques, alimentaires et de calendrier technologique. Il est distinct de χ_geo ; ses poids, son application à l'exposition et l'endpoint de fécondité exigent le pont L2 ouvert et un calibrage indépendant sur 54 pays.",
     popLink: "Explorer les données d'évolution et de population",
     /* Section 7: Predictions */
     predHeading: "Prédictions testables",
@@ -230,7 +230,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "12개 층",
     layersSubtitle:
-      "분자 스핀 물리학에서 집단 수준 패턴까지 — 각 층은 χ를 조절한다",
+      "분자 스핀 물리학에서 집단 패턴까지 — 각 도입 L3 반응은 χ_geo와 별도 명칭을 쓴다",
     /* Section 4: Routes */
     routesHeading: "4개 독립 경로",
     routesMechanism: "메커니즘",
@@ -243,9 +243,9 @@ const COPY = {
     organView: "기관 프로파일 보기",
     organComingSoon: "준비 중",
     /* Section 6: Population */
-    popHeading: "집단 χ 프로파일",
+    popHeading: "후보 χ_pop 프로파일",
     popBody:
-      "각 집단은 유전적 변이(OCA2, LCT, CACNA1C), 식이 패턴(유제품·어류 유래 B2, ω-3), 환경 노출(전기화 역사, 위도, 도시화)의 조합에 의해 결정되는 χ 공간 내 고유한 위치를 차지한다. 이러한 프로파일은 EMF 효과에 대한 차별적 감수성을 예측하며, 54개국 출산율 데이터셋에 대해 검증 가능하다.",
+      "χ_pop은 유전·식이·기술 시점 변수로 구성한 도입 L3 집단 반응 후보이며 χ_geo와 별개다. 가중치, 노출 매핑, 출산 종점에는 열린 L2 다리와 54개국 자료에서의 독립 보정이 필요하다.",
     popLink: "진화 및 집단 데이터 탐색",
     /* Section 7: Predictions */
     predHeading: "검증 가능한 예측",

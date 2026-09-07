@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-09-03",
+    "generated": "2026-09-07",
     "generatedBy": "berm/export_civilization.py",
     "source": "berm.civilization.political_biology",
     "version": "0.22.0",
@@ -194,7 +194,7 @@
       },
       {
         "year": 2050,
-        "ideology": "authoritarian_conservatism",
+        "ideology": "anomic_fragmentation",
         "biocap": 0.525,
         "pathologization": 0.46
       }

@@ -109,12 +109,12 @@ const architecture = loadJSON<EvidenceSynthesisManifest>("model-architecture.jso
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 44 nodes", () => {
-    expect(nodeIds.size).toBe(44);
+  it("has 47 nodes", () => {
+    expect(nodeIds.size).toBe(47);
   });
 
-  it("has 82 typed edges", () => {
-    expect(graph.edges.length).toBe(82);
+  it("has 96 typed edges", () => {
+    expect(graph.edges.length).toBe(96);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {

@@ -13,7 +13,7 @@ const COPY = {
     subtitle: "If VGCC activation is the primary transduction mechanism, drugs that block or modulate the same channels should attenuate EMF-associated biological effects. Fourteen drug classes provide convergent pharmacological evidence.",
     backLink: "← Back to Evidence",
     cardsTitle: "Drug evidence cards",
-    cardsLead: "Each card presents a drug class, its mechanism of action on the BERM-relevant pathway, the key evidence, and the model interpretation. Evidence levels follow the BERM classification: E = experimental, C = clinical/epidemiological, M = mechanistic, L = logical inference, L* = speculative.",
+    cardsLead: "Each card presents a drug class, its mechanism of action on the BERM-relevant pathway, the key evidence, and the model interpretation. Evidence levels follow the BERM classification: E = experimental, C = clinical/epidemiological, M = mechanistic, L = logical inference, L* = novel and falsifiable.",
     cards: [
       {
         id: "CCB",
@@ -69,7 +69,7 @@ const COPY = {
           "[[ref:klimentidis2010|The Klimentidis paradox (2011, Proc. R. Soc. B)]]: 24 populations of 8 species have all gained weight since the 1970s (p = 1.2×10⁻⁷). Diet/exercise cannot explain weight gain in laboratory animals on controlled diets. An environmental factor affecting calcium-dependent metabolic pathways is consistent with BERM.",
           "GLP-1 is expressed in the brain (NTS, hypothalamus) where it modulates appetite, reward, and nausea through calcium-dependent signaling. Semaglutide's central effects could partially compensate for EMF-disrupted hypothalamic calcium dynamics.",
         ],
-        interpretation: "SPECULATIVE: if EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway, semaglutide's efficacy may be partly explained by pharmacological compensation for environmental calcium disruption. Testable prediction: semaglutide efficacy should correlate with ambient EMF level (METAB-3). This prediction is currently locked as evidence level L*.",
+        interpretation: "NOVEL, FALSIFIABLE: if EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway, semaglutide's efficacy may be partly explained by pharmacological compensation for environmental calcium disruption. Testable prediction: semaglutide efficacy should correlate with ambient EMF level (METAB-3). This prediction is currently locked as evidence level L*.",
         level: "L*",
       },
       {
@@ -144,7 +144,7 @@ const COPY = {
         mechanism: "Caffeine blocks adenosine A₁ receptors, which normally inhibit VGCC-mediated Ca²⁺ release. Paradoxically, caffeine also directly modulates ryanodine receptors (RyR), sensitizing intracellular Ca²⁺ stores. The net effect is biphasic: moderate doses increase alertness by modifying Ca²⁺ dynamics; high doses can potentiate Ca²⁺ overload. Caffeine is thus a natural Ca²⁺ modulator — the fifth in BERM's endogenous/dietary modulatory panel (alongside vitamin D, melatonin, magnesium, and lithium).",
         evidence: [
           "Caffeine's neuroprotective effects against Parkinson's and Alzheimer's disease (meta-analyses: OR 0.7–0.8) are consistent with Ca²⁺ modulation at moderate doses opposing chronic Ca²⁺ overload from environmental sources.",
-          "The dose-response curve is non-linear (hormesis): 2–4 cups/day protective, higher doses neutral or harmful. This matches BERM's χ-parameter hormesis curve — moderate Ca²⁺ modulation is beneficial, excess potentiates damage.",
+          "The dose-response curve is non-linear (hormesis): 2–4 cups/day protective, higher doses neutral or harmful. BERM treats this as an imported L3 biological-response hypothesis R_caffeine, not as the geometric χ_geo function or evidence for its open L0→L2 mapping.",
           "Caffeine crosses the BBB freely and has a 3–5 hour half-life, providing intermittent rather than continuous Ca²⁺ modulation — contrasting with EMF's continuous 24/7 VGCC activation.",
         ],
         interpretation: "Caffeine's global prevalence may represent unconscious pharmacological self-medication against chronic Ca²⁺ disruption. The 2–4 cup protective window aligns with hormesis: enough to modulate but not overwhelm Ca²⁺ signaling. BERM prediction: caffeine's neuroprotective benefit should be larger in high-EMF populations (more disruption to counteract).",
@@ -264,7 +264,7 @@ const COPY = {
       "Pathway B (CRY/melatonin): Lithium (CRY stabilization via GSK-3β, trace-dose drinking water data), exogenous melatonin (endpoint replacement)",
       "Ca²⁺ hormesis/reset: Psilocybin (5-HT2A → controlled Ca²⁺ burst → plasticity reset), caffeine (adenosine A₁ antagonism → biphasic Ca²⁺ modulation)",
       "ROS cascade: CoQ10 (antioxidant rescue, [[ref:bektas2026|Bektas 2026 5G data]]), melatonin (dual antioxidant + hormonal)",
-      "Metabolic branch: Semaglutide/GLP-1 agonists (Ca²⁺-ERK pathway amplification) — speculative but testable",
+      "Metabolic branch: Semaglutide/GLP-1 agonists (Ca²⁺-ERK pathway amplification) — novel, falsifiable, and testable",
     ],
     convergenceConclusion: "No other environmental exposure hypothesis predicts that these specific drug classes should be relevant to the same biological endpoints. The pharmacological convergence — CCBs, lithium, melatonin, CoQ10, gabapentinoids, psilocybin, caffeine, and riluzole acting on distinct but connected Ca²⁺ targets — constitutes the model's clinically strongest argument.",
     predictionLink: "See: Pharmacological predictions (PHARM-1 through PHARM-5)",
@@ -278,7 +278,7 @@ const COPY = {
     subtitle: "Jos VGCC-aktivaatio on primaarinen transduutiomekanismi, lääkkeet jotka blokkaavat tai säätelevät samoja kanavia pitäisi vaimentaa EMF:ään liittyviä biologisia vaikutuksia. Neljätoista lääkeryhmää tarjoaa yhtyvän farmakologisen näytön.",
     backLink: "← Takaisin näyttöön",
     cardsTitle: "Lääke-näyttökortit",
-    cardsLead: "Jokainen kortti esittää lääkeryhmän, sen vaikutusmekanismin BERM:n kannalta relevantille reitille, avainnäytön ja mallitulkinnan. Näyttötasot noudattavat BERM-luokittelua: E = kokeellinen, C = kliininen/epidemiologinen, M = mekanistinen, L = looginen päätelmä, L* = spekulatiivinen.",
+    cardsLead: "Jokainen kortti esittää lääkeryhmän, sen vaikutusmekanismin BERM:n kannalta relevantille reitille, avainnäytön ja mallitulkinnan. Näyttötasot noudattavat BERM-luokittelua: E = kokeellinen, C = kliininen/epidemiologinen, M = mekanistinen, L = looginen päätelmä, L* = deduktiivinen ja falsifioitava ehdokas.",
     cards: [
       {
         id: "CCB",
@@ -331,7 +331,7 @@ const COPY = {
           "[[ref:klimentidis2010|Klimentidis-paradoksi (2011, Proc. R. Soc. B)]]: 24 populaatiota 8 lajista on kaikki lihoneet 1970-luvulta (p = 1,2×10⁻⁷). Ruokavalio/liikunta ei selitä painonnousua kontrolloiduilla ruokavalioilla olevilla koe-eläimillä.",
           "GLP-1:tä ilmennetään aivoissa (NTS, hypotalamus) missä se säätelee ruokahalua, palkitsemista ja pahoinvointia kalsiumriippuvaisen signaloinnin kautta.",
         ],
-        interpretation: "SPEKULATIIVINEN: jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä, semaglutidin tehokkuus voi osittain selittyä farmakologisella kompensoinnilla ympäristöperäiselle kalsiumhäiriölle. Testattava ennuste: semaglutidin tehokkuuden pitäisi korreloida ympäröivän EMF-tason kanssa (METAB-3).",
+        interpretation: "DEDUKTIIVINEN JA FALSIFIOITAVA: jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä, semaglutidin tehokkuus voi osittain selittyä farmakologisella kompensoinnilla ympäristöperäiselle kalsiumhäiriölle. Testi: semaglutidin tehokkuuden pitäisi korreloida ympäröivän EMF-tason kanssa (METAB-3); vastakkainen tulos falsifioi ennusteen.",
         level: "L*",
       },
       {
@@ -406,7 +406,7 @@ const COPY = {
         mechanism: "Kofeiini estää adenosiini A₁ -reseptorit, jotka normaalisti inhiboivat VGCC-välitteistä Ca²⁺-vapautusta. Paradoksaalisesti kofeiini myös säätelee suoraan ryanodiinireseptoreja (RyR), herkistäen solunsisäisiä Ca²⁺-varastoja. Kokonaisvaikutus on kaksivaiheinen: kohtuulliset annokset lisäävät vireystilaa modifioimalla Ca²⁺-dynamiikkaa; korkeat annokset voivat tehostaa Ca²⁺-ylikuormitusta. Kofeiini on siis luonnollinen Ca²⁺-modulaattori — viides BERM:n endogeenisessä/ravintoperäisessä modulointipaneelissa (D-vitamiinin, melatoniinin, magnesiumin ja litiumin rinnalla).",
         evidence: [
           "Kofeiinin neuroprotektiiviset vaikutukset Parkinsonia ja Alzheimeria vastaan (meta-analyysit: OR 0,7–0,8) ovat yhdenmukaisia Ca²⁺-modulaation kanssa kohtuullisilla annoksilla vastustaen kroonista Ca²⁺-ylikuormitusta ympäristölähteistä.",
-          "Annos-vaste on epälineaarinen (hormeesi): 2–4 kuppia/päivä suojaava, korkeammat annokset neutraaleja tai haitallisia. Tämä vastaa BERM:n χ-parametrin hormeesikäyrää — kohtuullinen Ca²⁺-modulaatio on hyödyllistä, ylimäärä tehostaa vauriota.",
+          "Annos-vaste on epälineaarinen (hormeesi): 2–4 kuppia/päivä suojaava, korkeammat annokset neutraaleja tai haitallisia. BERM käsittelee tätä tuotuna L3-biologisen vasteen hypoteesina R_caffeine, ei geometrisena χ_geo-funktiona tai näyttönä sen avoimesta L0→L2-kuvauksesta.",
           "Kofeiini läpäisee BBB:n vapaasti ja sen puoliintumisaika on 3–5 tuntia, tarjoten ajoittaista eikä jatkuvaa Ca²⁺-modulaatiota — vastakohta EMF:n jatkuvalle 24/7 VGCC-aktivaatiolle.",
         ],
         interpretation: "Kofeiinin maailmanlaajuinen esiintyvyys voi edustaa tiedostamatonta farmakologista itselääkintää kroonista Ca²⁺-häiriötä vastaan. 2–4 kupin suojaava ikkuna on linjassa hormeesin kanssa: tarpeeksi säädelläkseen mutta ei ylikuormittaakseen Ca²⁺-signalointia. BERM-ennuste: kofeiinin neuroprotektiivinen hyöty pitäisi olla suurempi korkean EMF:n populaatioissa.",
@@ -524,7 +524,7 @@ const COPY = {
       "Reitti B (CRY/melatoniini): Litium (CRY-stabilointi GSK-3β:n kautta, hivenpitoisuus juomavedessä), eksogeeninen melatoniini (päätepisteen korvaus)",
       "Ca²⁺-hormeesi/resetointi: Psilosybiini (5-HT2A → kontrolloitu Ca²⁺-pursuke → plastisuusresetti), kofeiini (adenosiini A₁ -antagonismi → kaksivaiheinen Ca²⁺-modulaatio)",
       "ROS-kaskadi: CoQ10 (antioksidanttipelastus, [[ref:bektas2026|Bektas 2026 5G-data]]), melatoniini (kaksois-antioksidantti + hormonaalinen)",
-      "Metabolinen haara: Semaglutidi/GLP-1-agonistit (Ca²⁺-ERK-reitin vahvistus) — spekulatiivinen mutta testattava",
+      "Metabolinen haara: Semaglutidi/GLP-1-agonistit (Ca²⁺-ERK-reitin vahvistus) — deduktiivinen ja falsifioitava",
     ],
     convergenceConclusion: "Mikään muu ympäristöaltistushypoteesi ei ennusta, että juuri nämä lääkeryhmät olisivat relevantteja samoille biologisille päätepisteille. Farmakologinen yhdentyminen — CCB:t, litium, melatoniini, CoQ10, gabapentinoidit, psilosybiini, kofeiini ja rilutsoli vaikuttaen erillisiin mutta yhteydessä oleviin Ca²⁺-kohteisiin — muodostaa mallin kliinisesti vahvimman argumentin.",
     predictionLink: "Ks. Farmakologiset ennusteet (PHARM-1–PHARM-5)",
@@ -672,7 +672,7 @@ const COPY = {
         mechanism: "CaffeineはVGCC介在Ca²⁺放出を通常阻害するadenosine A₁受容体を遮断する。逆説的にcaffeineはryanodine受容体（RyR）も直接調節し細胞内Ca²⁺ストアを感作する。正味効果は二相性：中程度の用量はCa²⁺動態修正で覚醒を増加、高用量はCa²⁺過負荷を増強する可能性がある。",
         evidence: [
           "CaffeineのParkinson病およびAlzheimer病に対する神経保護効果（メタ分析：OR 0.7–0.8）は、環境源からの慢性Ca²⁺過負荷に対抗する中程度用量でのCa²⁺調節と一致する。",
-          "用量反応曲線は非線形（ホルメシス）：2–4杯/日が保護的、高用量は中性または有害。これはBERMのχパラメータホルメシス曲線と一致する。",
+          "用量反応曲線は非線形（ホルメシス）である。BERMはこれを導入L3生物応答仮説R_caffeineとして扱い、幾何学的χ_geo関数や未解決L0→L2写像の証拠とはしない。",
           "Caffeineは自由にBBBを通過し半減期3–5時間で、EMFの連続24/7 VGCC活性化と対照的に間欠的Ca²⁺調節を提供する。",
         ],
         interpretation: "Caffeineの世界的普及は慢性Ca²⁺妨害に対する無意識の薬理学的自己治療を表す可能性がある。2–4杯の保護的ウィンドウはホルメシスと一致する。BERM予測：caffeineの神経保護的利益は高EMF集団でより大きいはず。",
@@ -803,7 +803,7 @@ const COPY = {
     subtitle: "Si l'activation des VGCC est le mécanisme principal de transduction, les médicaments qui bloquent ou modulent les mêmes canaux devraient atténuer les effets biologiques associés aux EMF. Quatorze classes de médicaments fournissent des preuves pharmacologiques convergentes.",
     backLink: "← Retour aux preuves",
     cardsTitle: "Fiches de preuves médicamenteuses",
-    cardsLead: "Chaque fiche présente une classe de médicaments, son mécanisme d'action sur la voie BERM pertinente, les preuves clés et l'interprétation du modèle. Les niveaux de preuve suivent la classification BERM : E = expérimental, C = clinique/épidémiologique, M = mécanistique, L = inférence logique, L* = spéculatif.",
+    cardsLead: "Chaque fiche présente une classe de médicaments, son mécanisme d'action sur la voie BERM pertinente, les preuves clés et l'interprétation du modèle. Les niveaux de preuve suivent la classification BERM : E = expérimental, C = clinique/épidémiologique, M = mécanistique, L = inférence logique, L* = candidat déductif et falsifiable.",
     mechanismLabel: "Mécanisme",
     evidenceLabel: "Preuve",
     interpretationLabel: "Interprétation du modèle",
@@ -862,7 +862,7 @@ const COPY = {
           "[[ref:klimentidis2010|Le paradoxe de Klimentidis (2011, Proc. R. Soc. B)]] : 24 populations de 8 espèces ont toutes pris du poids depuis les années 1970 (p = 1,2×10⁻⁷). Le régime/exercice ne peut expliquer la prise de poids d'animaux de laboratoire sous régime contrôlé.",
           "Le GLP-1 est exprimé dans le cerveau (NTS, hypothalamus) où il module l'appétit, la récompense et la nausée via la signalisation calcium-dépendante.",
         ],
-        interpretation: "SPÉCULATIF : si les EMF perturbent la voie L-type VGCC → Ca²⁺ → ERK, l'efficacité du sémaglutide pourrait s'expliquer partiellement par une compensation pharmacologique de la perturbation calcique environnementale. Prédiction testable : l'efficacité devrait corréler avec le niveau EMF ambiant (METAB-3).",
+        interpretation: "DÉDUCTIF ET FALSIFIABLE : si les EMF perturbent la voie L-type VGCC → Ca²⁺ → ERK, l'efficacité du sémaglutide pourrait s'expliquer partiellement par une compensation pharmacologique de la perturbation calcique environnementale. Test : l'efficacité devrait corréler avec le niveau EMF ambiant (METAB-3) ; un résultat opposé falsifierait la prédiction.",
         level: "L*",
       },
       {
@@ -937,7 +937,7 @@ const COPY = {
         mechanism: "La caféine bloque les récepteurs adénosine A₁, qui inhibent normalement la libération de Ca²⁺ médiée par VGCC. Paradoxalement, la caféine module aussi directement les récepteurs ryanodine (RyR), sensibilisant les réserves intracellulaires de Ca²⁺. L'effet net est biphasique : doses modérées augmentent la vigilance ; doses élevées peuvent potentialiser la surcharge Ca²⁺.",
         evidence: [
           "Les effets neuroprotecteurs de la caféine contre Parkinson et Alzheimer (méta-analyses : OR 0,7–0,8) sont cohérents avec la modulation Ca²⁺ à doses modérées s'opposant à la surcharge chronique.",
-          "La courbe dose-réponse est non-linéaire (hormèse) : 2–4 tasses/jour protectrices, doses plus élevées neutres ou nocives. Ceci correspond à la courbe d'hormèse du paramètre χ de BERM.",
+          "La courbe dose-réponse est non linéaire (hormèse). BERM la traite comme l’hypothèse L3 importée de réponse biologique R_caffeine, non comme la fonction géométrique χ_geo ni comme une preuve de son application L0→L2 ouverte.",
           "La caféine traverse librement la BHE avec une demi-vie de 3–5 heures, fournissant une modulation Ca²⁺ intermittente — contrastant avec l'activation VGCC continue 24/7 des EMF.",
         ],
         interpretation: "La prévalence mondiale de la caféine peut représenter une automédication pharmacologique inconsciente contre la perturbation chronique du Ca²⁺. La fenêtre protectrice de 2–4 tasses est alignée avec l'hormèse. Prédiction BERM : le bénéfice neuroprotecteur de la caféine devrait être plus grand dans les populations à EMF élevé.",
@@ -1057,7 +1057,7 @@ const COPY = {
       "Voie B (CRY/mélatonine) : Lithium (stabilisation CRY via GSK-3β, données eau potable à dose trace), mélatonine exogène (remplacement du point terminal)",
       "Hormèse/réinitialisation Ca²⁺ : Psilocybine (5-HT2A → burst Ca²⁺ contrôlé → réinitialisation plasticité), caféine (antagonisme adénosine A₁ → modulation Ca²⁺ biphasique)",
       "Cascade ROS : CoQ10 (sauvetage antioxydant, [[ref:bektas2026|données 5G Bektas 2026]]), mélatonine (double antioxydant + hormonal)",
-      "Branche métabolique : Sémaglutide/agonistes GLP-1 (amplification voie Ca²⁺-ERK) — spéculatif mais testable",
+      "Branche métabolique : Sémaglutide/agonistes GLP-1 (amplification voie Ca²⁺-ERK) — déductif et falsifiable",
     ],
     convergenceConclusion: "Aucune autre hypothèse d'exposition environnementale ne prédit que ces classes spécifiques de médicaments devraient être pertinentes pour les mêmes critères biologiques. La convergence pharmacologique — CCB, lithium, mélatonine, CoQ10, gabapentinoïdes, psilocybine, caféine et riluzole agissant sur des cibles Ca²⁺ distinctes mais connectées — constitue l'argument cliniquement le plus fort du modèle.",
     predictionLink: "Voir : Prédictions pharmacologiques (PHARM-1 à PHARM-5)",
@@ -1068,7 +1068,7 @@ const COPY = {
     subtitle: "VGCC 활성화가 주요 전달 메커니즘이라면, 동일한 채널을 차단하거나 조절하는 약물은 EMF 관련 생물학적 효과를 감쇠시켜야 한다. 14개 약물 클래스가 수렴적 약리학적 증거를 제공한다.",
     backLink: "← 증거로 돌아가기",
     cardsTitle: "약물 증거 카드",
-    cardsLead: "각 카드는 약물 클래스, BERM 관련 경로에 대한 작용 메커니즘, 주요 증거, 모델 해석을 제시한다. 증거 수준은 BERM 분류를 따른다: E = 실험적, C = 임상/역학적, M = 메커니즘적, L = 논리적 추론, L* = 추측적.",
+    cardsLead: "각 카드는 약물 클래스, BERM 관련 경로에 대한 작용 메커니즘, 주요 증거, 모델 해석을 제시한다. 증거 수준은 BERM 분류를 따른다: E = 실험적, C = 임상/역학적, M = 메커니즘적, L = 논리적 추론, L* = 연역적이고 반증 가능한 후보.",
     mechanismLabel: "기전",
     evidenceLabel: "증거",
     interpretationLabel: "모델 해석",
@@ -1127,7 +1127,7 @@ const COPY = {
           "[[ref:klimentidis2010|Klimentidis 패러독스(2011, Proc. R. Soc. B)]]: 8종 24개 집단이 모두 1970년대 이후 체중 증가(p = 1.2x10⁻⁷). 식이/운동은 통제된 식이의 실험동물 체중 증가를 설명하지 못한다.",
           "GLP-1은 뇌(NTS, 시상하부)에서 발현되어 칼슘 의존적 신호를 통해 식욕, 보상, 구역을 조절한다.",
         ],
-        interpretation: "추측적: EMF가 L형 VGCC → Ca²⁺ → ERK 경로를 교란한다면, semaglutide의 효능은 환경 칼슘 교란에 대한 약리학적 보상으로 부분적으로 설명될 수 있다. 테스트 가능 예측: semaglutide 효능은 주변 EMF 수준과 상관해야 한다(METAB-3).",
+        interpretation: "연역적이고 반증 가능함: EMF가 L형 VGCC → Ca²⁺ → ERK 경로를 교란한다면, semaglutide의 효능은 환경 칼슘 교란에 대한 약리학적 보상으로 부분적으로 설명될 수 있다. 테스트: semaglutide 효능은 주변 EMF 수준과 상관해야 하며(METAB-3), 반대 결과는 예측을 반증한다.",
         level: "L*",
       },
       {
@@ -1202,7 +1202,7 @@ const COPY = {
         mechanism: "Caffeine은 VGCC 매개 Ca²⁺ 방출을 정상적으로 억제하는 adenosine A₁ 수용체를 차단한다. 역설적으로 caffeine은 ryanodine 수용체(RyR)도 직접 조절하여 세포 내 Ca²⁺ 저장소를 감작시킨다. 순 효과는 이상성: 중간 용량은 Ca²⁺ 역학 수정으로 각성 증가; 고용량은 Ca²⁺ 과부하를 강화할 수 있다.",
         evidence: [
           "Caffeine의 Parkinson병 및 Alzheimer병에 대한 신경보호 효과(메타분석: OR 0.7-0.8)는 환경 원천의 만성 Ca²⁺ 과부하에 대항하는 중간 용량 Ca²⁺ 조절과 일치한다.",
-          "용량-반응 곡선은 비선형(호르메시스): 2-4잔/일 보호적, 더 높은 용량은 중립 또는 유해. 이는 BERM의 χ 매개변수 호르메시스 곡선과 일치한다.",
+          "용량-반응 곡선은 비선형(호르메시스)이다. BERM은 이를 도입된 L3 생물학적 반응 가설 R_caffeine으로 다루며, 기하학적 χ_geo 함수나 열린 L0→L2 매핑의 증거로 다루지 않는다.",
           "Caffeine은 BBB를 자유롭게 통과하며 반감기 3-5시간으로, EMF의 연속 24/7 VGCC 활성화와 대조적으로 간헐적 Ca²⁺ 조절을 제공한다.",
         ],
         interpretation: "Caffeine의 세계적 보급은 만성 Ca²⁺ 교란에 대한 무의식적 약리학적 자가치료를 나타낼 수 있다. 2-4잔 보호 창은 호르메시스와 일치한다. BERM 예측: caffeine의 신경보호 이점은 고EMF 집단에서 더 커야 한다.",
@@ -1322,7 +1322,7 @@ const COPY = {
       "경로 B(CRY/melatonin): Lithium(GSK-3β를 통한 CRY 안정화, 미량 음용수 데이터), 외인성 melatonin(종점 보충)",
       "Ca²⁺ 호르메시스/리셋: Psilocybin(5-HT2A → 제어된 Ca²⁺ 분출 → 가소성 리셋), caffeine(adenosine A₁ 길항 → 이상성 Ca²⁺ 조절)",
       "ROS 연쇄반응: CoQ10(항산화 구조, [[ref:bektas2026|Bektas 2026 5G 데이터]]), melatonin(이중 항산화 + 호르몬)",
-      "대사 분기: Semaglutide/GLP-1 작용제(Ca²⁺-ERK 경로 증폭) — 추측적이나 테스트 가능",
+      "대사 분기: Semaglutide/GLP-1 작용제(Ca²⁺-ERK 경로 증폭) — 연역적이고 반증 가능",
     ],
     convergenceConclusion: "다른 어떤 환경 노출 가설도 이 특정 약물 클래스들이 동일한 생물학적 평가변수에 관련되어야 한다고 예측하지 않는다. 약리학적 수렴 — CCB, lithium, melatonin, CoQ10, gabapentinoid계, psilocybin, caffeine, riluzole이 서로 다르지만 연결된 Ca²⁺ 표적에 작용 — 은 모델의 임상적으로 가장 강력한 논거를 구성한다.",
     predictionLink: "참조: 약리학적 예측(PHARM-1~PHARM-5)",

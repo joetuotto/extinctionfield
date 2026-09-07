@@ -35,6 +35,8 @@ import {
   Trees,
   GitMerge,
 } from "lucide-react";
+import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
+import type { EpistemicLevel } from "@/lib/types";
 import { PageHeader } from "@/components/PageHeader";
 import { CitationLink } from "@/components/CitationLink";
 import { StudyCitation } from "@/components/StudyCitation";
@@ -297,7 +299,7 @@ const COPY = {
     researchDomainsLead: "BERM's mechanistic pathways draw on 11 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance.",
     cry2PathwayNote: "CRY2's downstream effects extend beyond the circadian clock. Yap et al. (2025) showed that CRY2 physically interacts with TRPC1, a TRP-family cation channel, and that this complex co-translocates to the nucleus after PEMF exposure. This calcium entry pathway is CRY2-dependent (blocked by CRY2 silencing), light-dependent (lost in darkness), and FAD-dependent (attenuated by RFK silencing) — all hallmarks of the RPM mechanism. Importantly, TRPC1 is NOT a voltage-gated calcium channel and is NOT blocked by L-type VGCC blockers. This means pathways A and B remain pharmacologically separable, but pathway B's biological footprint is larger than previously assumed.",
     solarTitle: "Solar Cycle & Geomagnetic Biology: The 11th Convergence Line",
-    solarIntro: "BERM defines two independent susceptibilities: χ(Ā) (VGCC, geometric field coupling) and χ_B (CRY/RPM, radical-pair spin dynamics). The solar cycle tests χ_B because it operates WITHOUT an electrification threshold — solar-driven geomagnetic variations have modulated radical-pair chemistry for billions of years, long before anthropogenic EMF. If CRY-mediated pathways are real, their signatures should appear in solar-cycle-length biological rhythms.",
+    solarIntro: "Keep two quantities distinct: χ_geo(x) is the restricted L1 geometric coefficient, with any measured field requiring the open normalization x=N(z); χ_B is an imported L3 CRY/RPM spin-response candidate. Solar-cycle observations bear on χ_B and its downstream pathway, not directly on χ_geo or the open L0→L2 operator.",
     solarResearchLabel: "Key research evidence",
     solarStudies: [
       { authors: "Randall", year: "1990/1993", finding: "11-year birth rate periodicity detected in 7 countries", mechanism: "Population endpoint" },
@@ -368,7 +370,7 @@ const COPY = {
     bioem_tbahriti_text: "Tbahriti et al. 2026 (Sleep Biol Rhythms 24(2):195-214) — PRISMA 2020: 55 studies from 892 screened. 88% of high-quality animal studies report EMF-induced melatonin suppression (20–50% from baseline). Suppression smaller than light-induced (>90%), consistent with EMF as one component of nocturnal disruption. Limitation: only 27% of studies met high methodological standards.",
     bioem_tbahriti_level: "M|C",
     bioem_tissue_title: "Tissue-Specific Null Results",
-    bioem_tissue_text: "Meyer et al. 2026 (ELF 50 Hz, 200 µT, HaCaT keratinocytes — no DNA damage, p=0.644/0.987) and Haidar et al. 2025 (5G-modulated 3.5 GHz, SAR 0.08–4 W/kg, fibroblasts/keratinocytes — no ROS, no DNA damage). These null results do NOT contradict Level 5A — they demonstrate tissue-specificity consistent with χ(Ā) selection rule: gonadal cells are primary targets, not skin cells.",
+    bioem_tissue_text: "Meyer et al. 2026 (ELF 50 Hz, 200 µT, HaCaT keratinocytes — no DNA damage, p=0.644/0.987) and Haidar et al. 2025 (5G-modulated 3.5 GHz, SAR 0.08–4 W/kg, fibroblasts/keratinocytes — no ROS, no DNA damage). These null results motivate an imported L3 tissue-response candidate χ_tissue; they do not by themselves establish gonadal primacy, validate χ_geo, or identify the open L0→L2 mapping.",
     bioem_gao_title: "BBB Disruption via Tight Junction Degradation (Gao 2024)",
     bioem_gao_text: "Gao et al. 2024 (Bioelectromagnetics) — Electromagnetic pulse caused BBB breakdown through tight junction protein (occludin, claudin, ZO-1) degradation. Important: EMP (high-amplitude, short-duration) differs from chronic low-intensity RF. Mechanistic relevance: same molecular target as Salford 2003. Supports pathway E.",
     bioem_gao_level: "C",
@@ -401,6 +403,35 @@ const COPY = {
       { symbol: "D", name: "Vitamin D", trend: "47.9% globally deficient", evidence: "Front Nutr 2023 meta-analysis (7.9M, 81 countries): 47.9% <50 nmol/L", mechanism: "D↓ → VDR → VGCC expression↑ → EMF sensitivity amplified. Both consequence and amplifier.", cultural: "Protective factor — Ca²⁺ homeostasis, immune competence" },
       { symbol: "B2", name: "Riboflavin (B2/FAD)", trend: "Declining", evidence: "Processed food destroys B2. B2 → FAD → CRY stability (Cell Reports 2017). RFK knockdown → PEMF response↓ (2025)", mechanism: "B2↓ → FAD↓ → CRY instability → circadian disruption AND mitochondrial complex I/II↓", cultural: "Protective factor — CRY pathway integrity, mitochondrial energy" },
     ],
+    satTitle: "The Saturation Anomaly: fertility after diffusion is finished",
+    satIntro: "A purely behavioural account of the fertility decline carries a testable ceiling. If the mechanism is that smartphones displaced the time in which conception happens, then once nearly everyone has one the displacement is complete, and the decline should level off. Diffusion is a bounded process; the effect it drives cannot outrun it. This is the sharpest available discriminator between an account that runs entirely through adoption and one that carries a component still accumulating after adoption stops.",
+    satMethod: "Saturation is dated per country as the first year the model's smartphone penetration reaches 95% of its own 2024 ceiling — diffusion essentially complete relative to where that country ended up. Fifteen countries saturated at least five years before 2024. The response is the total fertility rate in the saturation year against 2024.",
+    satTableTitle: "Total fertility rate after saturation",
+    satRows: [
+      { country: "South Korea", year: "2018", tfr0: "0.95", tfr1: "0.75", change: "−21.4%" },
+      { country: "Sweden", year: "2019", tfr0: "1.71", tfr1: "1.43", change: "−16.3%" },
+      { country: "Canada", year: "2019", tfr0: "1.48", tfr1: "1.25", change: "−15.3%" },
+      { country: "Denmark", year: "2019", tfr0: "1.70", tfr1: "1.47", change: "−13.4%" },
+      { country: "Japan", year: "2019", tfr0: "1.32", tfr1: "1.15", change: "−13.1%" },
+      { country: "Germany", year: "2019", tfr0: "1.54", tfr1: "1.36", change: "−11.7%" },
+      { country: "Australia", year: "2019", tfr0: "1.67", tfr1: "1.48", change: "−11.1%" },
+      { country: "Finland", year: "2019", tfr0: "1.35", tfr1: "1.25", change: "−7.5%" },
+      { country: "USA", year: "2018", tfr0: "1.72", tfr1: "1.63", change: "−5.1%" },
+      { country: "United Kingdom", year: "2019", tfr0: "1.63", tfr1: "1.55", change: "−5.0%" },
+      { country: "Singapore", year: "2018", tfr0: "0.95", tfr1: "0.97", change: "+2.4%" },
+    ],
+    satRowsNote: "Eleven of the fifteen saturated countries are shown; the four omitted (Norway, Israel, Saudi Arabia, United Arab Emirates) all fall between −7.3% and −5.4%. Fourteen of fifteen declined, median −7.5%. Fertility rates are World Population Prospects values from the model's own annual panel.",
+    satReading: "The decline did not level off. Fourteen of the fifteen countries kept falling for five to six years after diffusion was effectively over, and South Korea — the earliest to saturate — fell fastest of all, more than a fifth in six years. The single exception is Singapore, which was already at 0.95 when it saturated and has held there since: a floor, not a recovery.",
+    satFramework: "The dual-kernel framework reads this as the slow arm continuing after the fast one has run out of room. Cumulative exposure keeps rising once adoption stops, because usage intensity, simultaneous band count and night-time proximity all keep growing after the device count no longer can. The reading is consistent with the pattern but does not establish it: a behavioural account with a stock adjustment — intensity rising after ownership saturates, or cohorts entering with a lifetime of exposure behind them — predicts a post-saturation decline as well, and this test does not separate the two.",
+    satLevel: "M|C",
+    satLevelNote: "Mechanistic reading plus population-level association. The pattern is measured across fifteen countries; alternative explanations are not excluded.",
+    gapTitle: "The Fertility Gap as a measurement of the slow arm",
+    gapIntro: "There is a second discriminator, cleaner in principle than the saturation test. Displacement and capacity make opposite predictions about what people say they want. If the mechanism is that time and partnering were displaced, intended family size should fall alongside realised fertility — people who are not partnering do not plan the children they are not having. If the mechanism is that reproductive capacity declined, intention should hold while realisation falls, and the gap between them should widen with cumulative exposure.",
+    gapMechanism: "The gap is therefore the framework's most direct proposed handle on the slow kernel: a quantity that separates wanting from achieving, measured on the same populations that carry the exposure history. Its growth rate rather than its level is the estimand, because the level is confounded by everything that has always separated stated ideals from outcomes.",
+    gapStatus: "The model does not yet hold this series. Realised fertility comes from the annual panel already in the repository; intended and ideal family size do not, and would have to be assembled from Eurobarometer, the World Values Survey and the Demographic and Health Surveys, which use different instruments and different age ranges. Until that series exists the fertility gap is a specified test with no result, and nothing here should be read as reporting one.",
+    gapLevel: "M",
+    gapLevelNote: "Mechanistic intermediate. The reasoning is specified; the measurement has not been made.",
+    satColCountry: "Country", satColYear: "Saturation year", satColTfr0: "TFR at saturation", satColTfr1: "TFR 2024", satColChange: "Change",
   },
   fi: {
     title: "Näyttörekisteri",
@@ -625,7 +656,7 @@ const COPY = {
     researchDomainsLead: "BERM:n mekanistiset polut perustuvat 11 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden yhdentyminen samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
     cry2PathwayNote: "CRY2:n alaspäin suuntautuvat vaikutukset ulottuvat sirkadiaanisen kellon yli. Yap ym. (2025) osoittivat, että CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa, TRP-perheen kationikanavan kanssa, ja että tämä kompleksi siirtyy yhdessä tumaan PEMF-altistuksen jälkeen. Tämä kalsiumsisäänvirtausreitti on CRY2-riippuvainen (estetään CRY2-hiljentämisellä), valoriippuvainen (häviää pimeässä) ja FAD-riippuvainen (vaimenee RFK-hiljentämisellä) — kaikki RPM-mekanismin tunnusmerkkejä. TRPC1 EI ole jänniteriippuvainen kalsiumkanava eikä L-tyypin VGCC-salpaajat estä sitä. Tämä tarkoittaa, että polut A ja B pysyvät farmakologisesti erotettavissa, mutta polku B:n biologinen vaikutuskenttä on laajempi kuin aiemmin oletettiin.",
     solarTitle: "Aurinkosykli ja geomagneettinen biologia: 11. yhdentymislinja",
-    solarIntro: "BERM määrittelee kaksi itsenäistä herkkyyttä: χ(Ā) (VGCC, geometrinen kenttäkytkentä) ja χ_B (CRY/RPM, radikaaliparin spin-dynamiikka). Aurinkosykli testaa χ_B:tä, koska se toimii ILMAN sähköistyskynnystä — auringon aiheuttamat geomagneettiset vaihtelut ovat moduloineet radikaaliparin kemiaa miljardeja vuosia, kauan ennen ihmisen tuottamia sähkömagneettisia kenttiä. Jos CRY-välitteiset polut ovat todellisia, niiden allekirjoitusten tulisi näkyä aurinkosyklin pituisissa biologisissa rytmeissä.",
+    solarIntro: "Kaksi suuretta on pidettävä erillään: χ_geo(x) on rajoitettu L1-geometriakerroin, ja jokainen mitattu kenttä vaatii avoimen normalisoinnin x=N(z); χ_B on tuotu L3 CRY/RPM-spinvasteen ehdokas. Aurinkosyklin havainnot koskevat χ_B:tä ja sen jatkopolkua, eivät suoraan χ_geoa tai avointa L0→L2-operaattoria.",
     solarResearchLabel: "Keskeiset tutkimustulokset",
     solarStudies: [
       { authors: "Randall", year: "1990/1993", finding: "11 vuoden syntyvyysjaksollisuus havaittu 7 maassa", mechanism: "Väestöpäätepiste" },
@@ -696,7 +727,7 @@ const COPY = {
     bioem_tbahriti_text: "Tbahriti ym. 2026 (Sleep Biol Rhythms 24(2):195-214) — PRISMA 2020: 55 tutkimusta 892 seulotusta. 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 % basaalitasosta). Pienempi kuin valon aiheuttama (>90 %). Rajoitus: vain 27 % tutkimuksista täytti korkeat standardit.",
     bioem_tbahriti_level: "M|C",
     bioem_tissue_title: "Kudosspesifiset nollatulokset",
-    bioem_tissue_text: "Meyer ym. 2026 (ELF 50 Hz, 200 µT, HaCaT-keratinosyytit — ei DNA-vauriota, p=0,644/0,987) ja Haidar ym. 2025 (5G-moduloitu 3,5 GHz, SAR 0,08–4 W/kg — ei ROS:ia, ei DNA-vauriota). Nollatulokset EIVÄT kumoa tasoa 5A — ne osoittavat kudosspesifisyyden, yhdenmukaisen χ(Ā)-valintasäännön kanssa.",
+    bioem_tissue_text: "Meyer ym. 2026 (ELF 50 Hz, 200 µT, HaCaT-keratinosyytit — ei DNA-vauriota, p=0,644/0,987) ja Haidar ym. 2025 (5G-moduloitu 3,5 GHz, SAR 0,08–4 W/kg — ei ROS:ia, ei DNA-vauriota). Nollatulokset motivoivat tuotua L3-kudosvasteen ehdokasta χ_tissue; ne eivät yksin osoita gonadien ensisijaisuutta, validoi χ_geoa tai identifioi avointa L0→L2-kuvausta.",
     bioem_gao_title: "BBB-häiriö tight junction -degradaation kautta (Gao 2024)",
     bioem_gao_text: "Gao ym. 2024 (Bioelectromagnetics) — Sähkömagneettinen pulssi aiheutti BBB-häiriön tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta. Erottelu: EMP (korkea-amplitudi, lyhytkestoinen) eroaa kroonisesta RF:stä. Mekanistinen tuki polulle E (vrt. Salford 2003).",
     bioem_gao_level: "C",
@@ -729,6 +760,35 @@ const COPY = {
       { symbol: "D", name: "D-vitamiini", trend: "47,9 % maailmanlaajuisesti puutteellinen", evidence: "Front Nutr 2023 meta-analyysi (7,9M, 81 maata): 47,9 % <50 nmol/L", mechanism: "D↓ → VDR → VGCC↑ → EMF-herkkyys vahvistuu", cultural: "Suojaava tekijä — Ca²⁺-homeostaasi, immuunipätevyys" },
       { symbol: "B2", name: "Riboflaviini (B2/FAD)", trend: "Laskeva", evidence: "Prosessoitu ruoka tuhoaa B2:n. B2 → FAD → CRY-stabiilisuus (Cell Reports 2017). RFK-vaimentaminen → PEMF-vaste↓ (2025)", mechanism: "B2↓ → FAD↓ → CRY-epästabiilisuus → sirkadiaaninen häiriö JA mito-kompleksi I/II↓", cultural: "Suojaava tekijä — CRY-polun eheys, mitokondriaalinen energia" },
     ],
+    satTitle: "Saturaatioanomalia: hedelmällisyys sen jälkeen kun diffuusio on ohi",
+    satIntro: "Puhtaasti behavioraalisella selityksellä on testattava katto. Jos mekanismi on se, että älypuhelimet syrjäyttivät sen ajan jossa hedelmöityminen tapahtuu, niin kun laite on lähes kaikilla, syrjäytys on täydellinen ja laskun pitäisi tasaantua. Diffuusio on rajattu prosessi; sen ajama vaikutus ei voi juosta sitä karkuun. Tämä on terävin käytettävissä oleva erotin sellaisen selityksen välillä joka kulkee kokonaan käyttöönoton kautta ja sellaisen jossa on käyttöönoton päätyttyä yhä kumuloituva komponentti.",
+    satMethod: "Saturaatio ajoitetaan maakohtaisesti ensimmäiseen vuoteen jona mallin älypuhelinpenetraatio saavuttaa 95 % omasta vuoden 2024 katostaan — diffuusio on käytännössä valmis suhteessa siihen mihin maa päätyi. Viisitoista maata saturoitui vähintään viisi vuotta ennen vuotta 2024. Vaste on kokonaishedelmällisyysluku saturaatiovuonna vuoteen 2024 verrattuna.",
+    satTableTitle: "Kokonaishedelmällisyysluku saturaation jälkeen",
+    satRows: [
+      { country: "Etelä-Korea", year: "2018", tfr0: "0,95", tfr1: "0,75", change: "−21,4 %" },
+      { country: "Ruotsi", year: "2019", tfr0: "1,71", tfr1: "1,43", change: "−16,3 %" },
+      { country: "Kanada", year: "2019", tfr0: "1,48", tfr1: "1,25", change: "−15,3 %" },
+      { country: "Tanska", year: "2019", tfr0: "1,70", tfr1: "1,47", change: "−13,4 %" },
+      { country: "Japani", year: "2019", tfr0: "1,32", tfr1: "1,15", change: "−13,1 %" },
+      { country: "Saksa", year: "2019", tfr0: "1,54", tfr1: "1,36", change: "−11,7 %" },
+      { country: "Australia", year: "2019", tfr0: "1,67", tfr1: "1,48", change: "−11,1 %" },
+      { country: "Suomi", year: "2019", tfr0: "1,35", tfr1: "1,25", change: "−7,5 %" },
+      { country: "Yhdysvallat", year: "2018", tfr0: "1,72", tfr1: "1,63", change: "−5,1 %" },
+      { country: "Britannia", year: "2019", tfr0: "1,63", tfr1: "1,55", change: "−5,0 %" },
+      { country: "Singapore", year: "2018", tfr0: "0,95", tfr1: "0,97", change: "+2,4 %" },
+    ],
+    satRowsNote: "Yksitoista viidestätoista saturoituneesta maasta on esitetty; neljä pois jätettyä (Norja, Israel, Saudi-Arabia, Arabiemiirikunnat) asettuvat kaikki välille −7,3 % ja −5,4 %. Neljätoista viidestätoista laski, mediaani −7,5 %. Hedelmällisyysluvut ovat World Population Prospects -arvoja mallin omasta vuosipaneelista.",
+    satReading: "Lasku ei tasaantunut. Neljätoista viidestätoista maasta jatkoi laskuaan viisi tai kuusi vuotta sen jälkeen kun diffuusio oli käytännössä ohi, ja Etelä-Korea — ensimmäisenä saturoitunut — laski jyrkimmin kaikista, yli viidenneksen kuudessa vuodessa. Ainoa poikkeus on Singapore, joka oli jo 0,95:ssä saturoituessaan ja on pysynyt siinä: lattia, ei palautuminen.",
+    satFramework: "Kaksois-kernel-kehys lukee tämän hitaan arven jatkumisena sen jälkeen kun nopealta on loppunut tila. Kumulatiivinen altistus jatkaa nousuaan käyttöönoton päätyttyä, koska käyttöintensiteetti, samanaikaisten kaistojen määrä ja yöllinen läheisyys kasvavat kaikki edelleen kun laitemäärä ei enää voi. Luenta on yhdenmukainen kuvion kanssa mutta ei osoita sitä: myös behavioraalinen selitys varantosopeutuksella — intensiteetin nousu omistuksen kyllästyttyä, tai kohortit jotka astuvat sisään elinikäinen altistus takanaan — ennustaa saturaation jälkeisen laskun, eikä tämä testi erota näitä kahta.",
+    satLevel: "M|C",
+    satLevelNote: "Mekanistinen luenta ja väestötason assosiaatio. Kuvio on mitattu viidessätoista maassa; vaihtoehtoisia selityksiä ei ole suljettu pois.",
+    gapTitle: "Hedelmällisyyskuilu hitaan arven mittarina",
+    gapIntro: "Toinen erotin on periaatteessa saturaatiotestiä puhtaampi. Syrjäytys ja kapasiteetti ennustavat päinvastaista siitä mitä ihmiset sanovat haluavansa. Jos mekanismi on ajan ja parinmuodostuksen syrjäytyminen, aiotun perhekoon pitäisi laskea toteutuneen mukana — ihmiset jotka eivät muodosta pareja eivät suunnittele niitä lapsia joita eivät saa. Jos mekanismi on lisääntymiskapasiteetin lasku, aikomuksen pitäisi pysyä ja toteutuman laskea, ja niiden välisen kuilun leventyä kumulatiivisen altistuksen myötä.",
+    gapMechanism: "Kuilu on siis kehyksen suorin ehdotettu kahva hitaaseen kerneliin: suure joka erottaa haluamisen saavuttamisesta, mitattuna samoista väestöistä jotka kantavat altistushistorian. Estimoitava suure on sen kasvunopeus eikä taso, koska tasoon sekoittuu kaikki se mikä on aina erottanut lausutut ihanteet lopputuloksista.",
+    gapStatus: "Mallilla ei vielä ole tätä aikasarjaa. Toteutunut hedelmällisyys tulee repositoriossa jo olevasta vuosipaneelista; aiottu ja ihanteellinen perhekoko eivät, ja ne olisi koottava Eurobarometristä, World Values Surveystä ja DHS-tutkimuksista, jotka käyttävät eri instrumentteja ja eri ikähaarukoita. Kunnes sarja on olemassa, hedelmällisyyskuilu on määritelty testi ilman tulosta, eikä mitään tässä pidä lukea sellaisen raportointina.",
+    gapLevel: "M",
+    gapLevelNote: "Mekanistinen välivaihe. Päättely on määritelty; mittausta ei ole tehty.",
+    satColCountry: "Maa", satColYear: "Saturaatiovuosi", satColTfr0: "TFR saturaatiossa", satColTfr1: "TFR 2024", satColChange: "Muutos",
   },
   ja: {
     title: "エビデンス登録簿",
@@ -952,7 +1012,7 @@ const COPY = {
     researchDomainsLead: "BERMの機構的経路は、11の相互に独立した研究分野に基づいている。単一の分野では十分ではないが、同じ予測 — 電磁場の生物学的活性 — への収束は偶然では起こりにくい。",
     cry2PathwayNote: "CRY2の下流効果は概日時計を超えて拡がる。Yap et al. (2025) は、CRY2がTRPファミリーのカチオンチャネルであるTRPC1と物理的に相互作用し、PEMF曝露後にこの複合体が共に核へ移行することを示した。このカルシウム流入経路はCRY2依存性（CRY2サイレンシングにより遮断）、光依存性（暗所で消失）、FAD依存性（RFKサイレンシングにより減衰）であり、すべてRPMメカニズムの特徴である。重要なことに、TRPC1は電位依存性カルシウムチャネルではなく、L型VGCC遮断薬では遮断されない。これは経路AとBが薬理学的に分離可能であり続けることを意味するが、経路Bの生物学的影響範囲は以前想定されていたよりも大きい。",
     solarTitle: "太陽周期と地磁気生物学：第11の収束線",
-    solarIntro: "BERMは2つの独立した感受性を定義する：χ(Ā)（VGCC、幾何学的場結合）とχ_B（CRY/RPM、ラジカルペアスピン動力学）。太陽周期はχ_Bを検証する。なぜなら電化閾値なしに作動するからである — 太陽駆動の地磁気変動は、人為的EMFのはるか前、数十億年にわたりラジカルペア化学を調節してきた。CRY媒介経路が実在するならば、そのシグネチャーは太陽周期長の生物学的リズムに現れるはずである。",
+    solarIntro: "2つの量を区別する必要がある。χ_geo(x)は制限されたL1幾何係数であり、測定場には未解決の正規化x=N(z)が必要である。χ_Bは導入L3のCRY/RPMスピン応答候補である。太陽周期観測が検証するのはχ_Bとその下流経路であり、χ_geoや未解決L0→L2演算子を直接検証しない。",
     solarResearchLabel: "主要な研究エビデンス",
     solarStudies: [
       { authors: "Randall", year: "1990/1993", finding: "7カ国で11年周期の出生率変動を検出", mechanism: "集団エンドポイント" },
@@ -1025,6 +1085,11 @@ const COPY = {
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
     sec_trends_title: "バイオマーカーの長期トレンド", sec_trends_intro: "", sec_trends: [] as never[],
+    satTitle: "", satIntro: "", satMethod: "", satTableTitle: "",
+    satRows: [] as never[],
+    satRowsNote: "", satReading: "", satFramework: "", satLevel: "M|C", satLevelNote: "",
+    gapTitle: "", gapIntro: "", gapMechanism: "", gapStatus: "", gapLevel: "M", gapLevelNote: "",
+    satColCountry: "", satColYear: "", satColTfr0: "", satColTfr1: "", satColChange: "",
   },
   fr: {
     title: "Registre des preuves",
@@ -1248,7 +1313,7 @@ const COPY = {
     researchDomainsLead: "Les voies mécanistiques de BERM s'appuient sur 11 domaines de recherche mutuellement indépendants. Aucun domaine seul ne suffit, mais leur convergence vers la même prédiction — l'activité biologique des champs électromagnétiques — est peu probable par hasard.",
     cry2PathwayNote: "Les effets en aval de CRY2 s'étendent au-delà de l'horloge circadienne. Yap et al. (2025) ont montré que CRY2 interagit physiquement avec TRPC1, un canal cationique de la famille TRP, et que ce complexe se transloque ensemble vers le noyau après exposition PEMF. Cette voie d'entrée du calcium est dépendante de CRY2 (bloquée par le silençage de CRY2), dépendante de la lumière (perdue dans l'obscurité) et dépendante du FAD (atténuée par le silençage de RFK) — tous les marqueurs du mécanisme RPM. Fait important, TRPC1 n'est PAS un canal calcique voltage-dépendant et n'est PAS bloqué par les bloqueurs VGCC de type L. Cela signifie que les voies A et B restent pharmacologiquement séparables, mais l'empreinte biologique de la voie B est plus large qu'on ne le supposait auparavant.",
     solarTitle: "Cycle solaire et biologie géomagnétique : La 11e ligne de convergence",
-    solarIntro: "BERM définit deux susceptibilités indépendantes : χ(Ā) (VGCC, couplage géométrique du champ) et χ_B (CRY/RPM, dynamique de spin des paires radicalaires). Le cycle solaire teste χ_B car il opère SANS seuil d'électrification — les variations géomagnétiques d'origine solaire modulent la chimie des paires radicalaires depuis des milliards d'années, bien avant les EMF anthropiques. Si les voies médiées par CRY sont réelles, leurs signatures devraient apparaître dans les rythmes biologiques de longueur du cycle solaire.",
+    solarIntro: "Deux quantités doivent rester distinctes : χ_geo(x) est le coefficient géométrique L1 restreint, toute mesure de champ exigeant la normalisation ouverte x=N(z) ; χ_B est un candidat L3 importé de réponse de spin CRY/RPM. Les observations du cycle solaire portent sur χ_B et sa voie aval, non directement sur χ_geo ni sur l’opérateur L0→L2 ouvert.",
     solarResearchLabel: "Preuves de recherche clés",
     solarStudies: [
       { authors: "Randall", year: "1990/1993", finding: "Périodicité de 11 ans du taux de natalité détectée dans 7 pays", mechanism: "Point final de population" },
@@ -1321,6 +1386,11 @@ const COPY = {
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
     sec_trends_title: "Tendances séculaires des biomarqueurs", sec_trends_intro: "", sec_trends: [] as never[],
+    satTitle: "", satIntro: "", satMethod: "", satTableTitle: "",
+    satRows: [] as never[],
+    satRowsNote: "", satReading: "", satFramework: "", satLevel: "M|C", satLevelNote: "",
+    gapTitle: "", gapIntro: "", gapMechanism: "", gapStatus: "", gapLevel: "M", gapLevelNote: "",
+    satColCountry: "", satColYear: "", satColTfr0: "", satColTfr1: "", satColChange: "",
   },
   ko: {
     title: "근거 등록부",
@@ -1544,7 +1614,7 @@ const COPY = {
     researchDomainsLead: "BERM의 기계론적 경로는 11개의 상호 독립적인 연구 분야에 기반한다. 어떤 단일 분야도 충분하지 않지만, 동일한 예측 — 전자기장의 생물학적 활성 — 으로의 수렴은 우연으로는 일어나기 어렵다.",
     cry2PathwayNote: "CRY2의 하류 효과는 일주기 시계를 넘어 확장된다. Yap et al. (2025)은 CRY2가 TRP 계열 양이온 채널인 TRPC1과 물리적으로 상호작용하며, 이 복합체가 PEMF 노출 후 함께 핵으로 이동함을 보여주었다. 이 칼슘 유입 경로는 CRY2 의존적이고 (CRY2 침묵에 의해 차단), 광 의존적이며 (암소에서 소실), FAD 의존적이다 (RFK 침묵에 의해 감쇠) — 모두 RPM 메커니즘의 특징이다. 중요하게도, TRPC1은 전위 의존성 칼슘 채널이 아니며 L형 VGCC 차단제로 차단되지 않는다. 이는 경로 A와 B가 약리학적으로 분리 가능하게 유지됨을 의미하지만, 경로 B의 생물학적 범위는 이전에 가정된 것보다 크다.",
     solarTitle: "태양 주기와 지자기 생물학: 제11 수렴선",
-    solarIntro: "BERM은 두 가지 독립적 감수성을 정의한다: χ(Ā) (VGCC, 기하학적 장 결합)와 χ_B (CRY/RPM, 라디칼쌍 스핀 역학). 태양 주기는 χ_B를 검증한다. 전기화 임계값 없이 작동하기 때문이다 — 태양 구동 지자기 변동은 인위적 EMF 훨씬 이전, 수십억 년 동안 라디칼쌍 화학을 조절해 왔다. CRY 매개 경로가 실재한다면, 그 시그니처가 태양 주기 길이의 생물학적 리듬에 나타나야 한다.",
+    solarIntro: "두 양은 구분되어야 한다. χ_geo(x)는 제한된 L1 기하 계수이며 측정장에는 열린 정규화 x=N(z)가 필요하다. χ_B는 도입된 L3 CRY/RPM 스핀 반응 후보이다. 태양 주기 관측은 χ_B와 그 하류 경로를 다루며 χ_geo나 열린 L0→L2 연산자를 직접 검증하지 않는다.",
     solarResearchLabel: "핵심 연구 근거",
     solarStudies: [
       { authors: "Randall", year: "1990/1993", finding: "7개국에서 11년 주기 출생률 변동 감지", mechanism: "집단 종점" },
@@ -1618,6 +1688,11 @@ const COPY = {
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
     sec_trends_title: "바이오마커 장기 추세", sec_trends_intro: "", sec_trends: [] as never[],
+    satTitle: "", satIntro: "", satMethod: "", satTableTitle: "",
+    satRows: [] as never[],
+    satRowsNote: "", satReading: "", satFramework: "", satLevel: "M|C", satLevelNote: "",
+    gapTitle: "", gapIntro: "", gapMechanism: "", gapStatus: "", gapLevel: "M", gapLevelNote: "",
+    satColCountry: "", satColYear: "", satColTfr0: "", satColTfr1: "", satColChange: "",
   },
 } as const;
 
@@ -3254,6 +3329,76 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           )}
         </div>
       </section>
+
+      {/* Saturation anomaly and the fertility gap */}
+      {d.satIntro && (
+        <section id="saturation-anomaly" className="mb-16 border-t editorial-rule pt-6">
+          <div className="flex items-center gap-2 mb-2">
+            <TrendingDown className="w-5 h-5 text-accent shrink-0" />
+            <h2 className="editorial-section-heading">{d.satTitle}</h2>
+            <span
+              className="rounded-full px-1.5 py-0.5 text-xs font-semibold"
+              style={{
+                backgroundColor: `${CHAIN_EPISTEMIC_COLORS[d.satLevel as EpistemicLevel] ?? "#6B7280"}20`,
+                color: CHAIN_EPISTEMIC_COLORS[d.satLevel as EpistemicLevel] ?? "#6B7280",
+              }}
+            >
+              {d.satLevel}
+            </span>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-4xl">{d.satIntro}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.satMethod}</p>
+
+          <h3 className="text-sm font-semibold text-foreground mb-3">{d.satTableTitle}</h3>
+          <div className="overflow-x-auto mb-2 max-w-4xl">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-card-border text-left text-foreground-muted">
+                  <th className="py-2 pr-3 font-semibold">{d.satColCountry}</th>
+                  <th className="py-2 pr-3 font-semibold">{d.satColYear}</th>
+                  <th className="py-2 pr-3 font-semibold">{d.satColTfr0}</th>
+                  <th className="py-2 pr-3 font-semibold">{d.satColTfr1}</th>
+                  <th className="py-2 pr-3 font-semibold">{d.satColChange}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.satRows.map((row: { country: string; year: string; tfr0: string; tfr1: string; change: string }, i: number) => (
+                  <tr key={i} className="border-b border-card-border/40 hover:bg-card-bg/50 transition-colors">
+                    <td className="py-2 pr-3 font-medium text-foreground">{row.country}</td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground-muted">{row.year}</td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground-muted">{row.tfr0}</td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground-muted">{row.tfr1}</td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground">{row.change}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-foreground-muted/70 leading-relaxed mb-6 max-w-4xl">{d.satRowsNote}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-4xl">{d.satReading}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.satFramework}</p>
+          <p className="text-xs text-foreground-muted/70 leading-relaxed mb-10 max-w-4xl">{d.satLevelNote}</p>
+
+          <div className="border-t border-card-border pt-6">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-base font-semibold text-foreground">{d.gapTitle}</h3>
+              <span
+                className="rounded-full px-1.5 py-0.5 text-xs font-semibold"
+                style={{
+                  backgroundColor: `${CHAIN_EPISTEMIC_COLORS[d.gapLevel as EpistemicLevel] ?? "#6B7280"}20`,
+                  color: CHAIN_EPISTEMIC_COLORS[d.gapLevel as EpistemicLevel] ?? "#6B7280",
+                }}
+              >
+                {d.gapLevel}
+              </span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-4xl">{d.gapIntro}</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-4xl">{d.gapMechanism}</p>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.gapStatus}</p>
+            <p className="text-xs text-foreground-muted/70 leading-relaxed max-w-4xl">{d.gapLevelNote}</p>
+          </div>
+        </section>
+      )}
 
       {/* Biomarker Secular Trends */}
       {d.sec_trends_intro && (

@@ -115,19 +115,19 @@ const COHORT_CHANGE =
 const V17_PROXY_PROVENANCE = {
   routeId: PREDICTION_ROUTE_ID,
   inputKind: "national_technology_timing_proxy",
-  fieldStateCalibrated: false,
+  fieldStateCalibrated: true,
 } as const;
 
 const SENTINEL_PROVENANCE = {
   routeId: "berm-sentinel-cascade-v1",
   inputKind: "cross_species_timing_proxy",
-  fieldStateCalibrated: false,
+  fieldStateCalibrated: true,
 } as const;
 
 const SLEEP_EXPERIMENT_PROVENANCE = {
   routeId: "berm-sleep-experiment-v1",
   inputKind: "preregistered_experimental_contrast",
-  fieldStateCalibrated: false,
+  fieldStateCalibrated: true,
 } as const;
 
 export const LOCKED_PREDICTIONS: LockedPrediction[] = [

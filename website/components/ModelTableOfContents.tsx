@@ -19,11 +19,15 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Lindgren physics",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "From physics to biology" },
         { id: "solar-biological", label: "Solar-biological connection" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "evidence-synthesis", label: "Converging evidence" },
+        { id: "mechanism-candidate", label: "Mechanism candidate (IPR)" },
+        { id: "signal-structure", label: "Field structure & identifiability" },
+        { id: "biological-constraints", label: "Cell memory & exposure classes" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
         { id: "epistapege", label: "Epistapege" },
       ],
@@ -48,6 +52,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       ],
     },
     {
+      title: "Exposure structure",
+      sections: [
+        { id: "recovery-window", label: "Recovery window & phase transition" },
+        { id: "dual-kernel", label: "Dual-kernel convolution" },
+        { id: "spectral-stacking", label: "Spectral stacking" },
+      ],
+    },
+    {
       title: "Mathematical specification",
       sections: [
         { id: "premise", num: "§1", label: "Physics premise" },
@@ -67,11 +79,15 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Lindgrenin fysiikka",
       sections: [
+        { id: "biological-coordination", label: "Biologinen koordinaatio" },
         { id: "physics-to-biology", label: "Fysiikasta biologiaan" },
         { id: "solar-biological", label: "Aurinko-biologinen yhteys" },
         { id: "three-biological-bands", label: "Kolme taajuuskaistaa" },
         { id: "two-susceptibility-functions", label: "Kaksi herkkyysfunktiota" },
         { id: "evidence-synthesis", label: "Konvergoiva evidenssi" },
+        { id: "mechanism-candidate", label: "Mekanismikandidaatti (IPR)" },
+        { id: "signal-structure", label: "Kenttärakenne ja identifioitavuus" },
+        { id: "biological-constraints", label: "Solumuisti ja altistusluokat" },
         { id: "biology-to-civilization", label: "Biologiasta sivilisaatioon" },
         { id: "epistapege", label: "Epistapege" },
       ],
@@ -96,6 +112,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       ],
     },
     {
+      title: "Altistusrakenne",
+      sections: [
+        { id: "recovery-window", label: "Palautumisikkuna ja faasitransitio" },
+        { id: "dual-kernel", label: "Kaksois-kernel-konvoluutio" },
+        { id: "spectral-stacking", label: "Spektraalinen pinoaminen" },
+      ],
+    },
+    {
       title: "Matemaattinen määrittely",
       sections: [
         { id: "premise", num: "§1", label: "Fysiikan premissi" },
@@ -115,11 +139,15 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "リンドグレン物理学",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "物理学から生物学へ" },
         { id: "solar-biological", label: "太陽-生物学的接続" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "evidence-synthesis", label: "Converging evidence" },
+        { id: "mechanism-candidate", label: "メカニズム候補（IPR）" },
+        { id: "signal-structure", label: "場構造と識別可能性" },
+        { id: "biological-constraints", label: "細胞記憶と暴露クラス" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
         { id: "epistapege", label: "Epistapege" },
       ],
@@ -144,6 +172,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       ],
     },
     {
+      title: "暴露構造",
+      sections: [
+        { id: "recovery-window", label: "回復ウィンドウと相転移" },
+        { id: "dual-kernel", label: "二核畳み込み" },
+        { id: "spectral-stacking", label: "スペクトル積層" },
+      ],
+    },
+    {
       title: "数学的仕様",
       sections: [
         { id: "premise", num: "§1", label: "物理学的前提" },
@@ -163,11 +199,15 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Physique de Lindgren",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "De la physique à la biologie" },
         { id: "solar-biological", label: "Connexion solaire-biologique" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "evidence-synthesis", label: "Converging evidence" },
+        { id: "mechanism-candidate", label: "Candidat mécanistique (IPR)" },
+        { id: "signal-structure", label: "Structure du champ et identifiabilite" },
+        { id: "biological-constraints", label: "Memoire cellulaire et classes d'exposition" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
         { id: "epistapege", label: "Epistapege" },
       ],
@@ -192,6 +232,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       ],
     },
     {
+      title: "Structure de l'exposition",
+      sections: [
+        { id: "recovery-window", label: "Fenetre de recuperation et transition de phase" },
+        { id: "dual-kernel", label: "Convolution a deux noyaux" },
+        { id: "spectral-stacking", label: "Empilement spectral" },
+      ],
+    },
+    {
       title: "Spécification mathématique",
       sections: [
         { id: "premise", num: "§1", label: "Prémisse physique" },
@@ -211,11 +259,15 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "린드그렌 물리학",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "물리학에서 생물학으로" },
         { id: "solar-biological", label: "태양-생물학적 연결" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
         { id: "evidence-synthesis", label: "Converging evidence" },
+        { id: "mechanism-candidate", label: "기전 후보 (IPR)" },
+        { id: "signal-structure", label: "장 구조와 식별 가능성" },
+        { id: "biological-constraints", label: "세포 기억과 노출 클래스" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
         { id: "epistapege", label: "Epistapege" },
       ],
@@ -237,6 +289,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "모듈로옴",
       sections: [
         { id: "modulome", label: "12층 모듈로옴" },
+      ],
+    },
+    {
+      title: "노출 구조",
+      sections: [
+        { id: "recovery-window", label: "회복 창과 상전이" },
+        { id: "dual-kernel", label: "이중 커널 컨볼루션" },
+        { id: "spectral-stacking", label: "스펙트럼 적층" },
       ],
     },
     {

@@ -87,6 +87,6 @@ Civilization-sivu on BERM:n kolmas taso (L3): biologisista mekanismeista (Model)
 
 ## EPISTEEMINEN HUOMAUTUS
 
-Civilization-sivu on BERM:n spekulatiivisin osa. Hormonaaliset mekanismit (L1) ovat kokeellisesti tuettuja. Yhteiskunnallisten seurausten johtaminen hormonaalisista muutoksista on päätelmä, ei suora havainto. Sivulla käytetään varovaisempaa kieltä kuin Model- tai Evidence-sivuilla.
+Civilization-sivulla on BERM:n pisin avoin L2/L3-päättelyketju ja eksplisiittiset falsifikaatiotestit. Hormonaaliset mekanismit (L1) ovat kokeellisesti tuettuja. Yhteiskunnallisten seurausten johtaminen hormonaalisista muutoksista on päätelmä, ei suora havainto. Sivulla käytetään komponenttikohtaista kieltä kuten Model- ja Evidence-sivuilla.
 
 **Episteeminen taso:** Pääosin M|C (mekanistinen/koherenssi), ei E (kokeellinen).

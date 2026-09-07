@@ -13,7 +13,7 @@ const COPY = {
     title: "Amish: The Missing Control Group",
     subtitle: "Old Order Amish have minimal electricity, no personal electronics, and dramatically lower rates of every BERM-predicted condition: obesity -89%, T2D -75%, hypertension -66%, cancer -40%. However, massive lifestyle confounders (diet, exercise, smoking, community) make direct attribution impossible. The critical test is the Amish-Mennonite EMF gradient.",
     backLink: "← Back to Evidence",
-    cautionText: "This page presents Amish health data as a natural experiment. The health differences are real and well-documented, but lifestyle confounders are massive. This analysis explicitly acknowledges that Amish data alone CANNOT prove EMF causation. The gradient test is needed.",
+    cautionText: "This page presents Amish health data as a natural experiment. The health differences are real and well-documented, but lifestyle confounders are massive. This analysis explicitly acknowledges that Amish data alone CANNOT prove EMF causation. This applies equally to conventional explanations. The gradient test is needed.",
 
     dataTitle: "The data",
     dataCards: [
@@ -39,7 +39,7 @@ const COPY = {
       { source: "Mazur et al.", referenceId: "mazur2013", detail: "Weight-stable men still show testosterone decline. If obesity were the sole driver of T decline, weight-stable men should have stable T. They do not." },
       { source: "Santi et al.", referenceId: "santi2025", detail: "LH + T declining after controlling for BMI. The decline persists even when body mass is statistically removed. Something beyond weight is driving hormonal changes." },
     ],
-    crossConclusion: "These independent lines REDUCE the lifestyle-only explanation. They do not prove EMF causation, but they establish that lifestyle factors alone are insufficient to explain all observed trends.",
+    crossConclusion: "These independent lines REDUCE the lifestyle-only explanation. They do not prove EMF causation, but they establish that lifestyle factors alone are insufficient to explain all observed trends. This applies equally to conventional explanations.",
 
     gradientTitle: "The critical test: Amish-Mennonite EMF gradient",
     gradientSteps: [
@@ -59,7 +59,7 @@ const COPY = {
     title: "Amish: Puuttuva kontrolliryhmä",
     subtitle: "Vanhan järjestyksen amishilla on minimaalinen sähkönkäyttö, ei henkilökohtaista elektroniikkaa, ja dramaattisesti alhaisemmat esiintyvyydet jokaisessa BERM:n ennustamassa tilassa: lihavuus -89 %, T2D -75 %, verenpainetauti -66 %, syöpä -40 %. Massiiviset elämäntapamuuttujat (ruokavalio, liikunta, tupakointi, yhteisö) tekevät suoran attribuution mahdottomaksi. Kriittinen testi on amish–mennoniittigradientti.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "Tämä sivu esittää amish-terveysdata luonnollisena kokeena. Terveyserot ovat todellisia ja hyvin dokumentoituja, mutta elämäntapamuuttujat ovat massiivisia. Tämä analyysi tunnustaa nimenomaisesti, että amish-data yksinään EI VOI todistaa EMF-kausaatiota. Gradienttitesti tarvitaan.",
+    cautionText: "Tämä sivu esittää amish-terveysdata luonnollisena kokeena. Terveyserot ovat todellisia ja hyvin dokumentoituja, mutta elämäntapamuuttujat ovat massiivisia. Tämä analyysi tunnustaa nimenomaisesti, että amish-data yksinään EI VOI todistaa EMF-kausaatiota. Tämä koskee yhtä lailla konventionaalisia selityksiä. Gradienttitesti tarvitaan.",
 
     dataTitle: "Data",
     dataCards: [
@@ -85,7 +85,7 @@ const COPY = {
       { source: "Mazur ym.", referenceId: "mazur2013", detail: "Painoltaan vakaiden miesten testosteroni laskee silti. Jos lihavuus olisi ainoa T-laskun ajuri, painoltaan vakailla miehillä pitäisi olla vakaa T. Näin ei ole." },
       { source: "Santi ym.", referenceId: "santi2025", detail: "LH + T laskevat BMI:n kontrolloinnin jälkeen. Lasku jatkuu, vaikka kehon massa poistetaan tilastollisesti. Jokin painon ulkopuolinen tekijä ajaa hormonaalisia muutoksia." },
     ],
-    crossConclusion: "Nämä riippumattomat todistuslinjat VÄHENTÄVÄT pelkän elämäntavan selitystä. Ne eivät todista EMF-kausaatiota, mutta ne osoittavat, että elämäntapatekijät yksinään eivät riitä selittämään kaikkia havaittuja trendejä.",
+    crossConclusion: "Nämä riippumattomat todistuslinjat VÄHENTÄVÄT pelkän elämäntavan selitystä. Ne eivät todista EMF-kausaatiota, mutta ne osoittavat, että elämäntapatekijät yksinään eivät riitä selittämään kaikkia havaittuja trendejä. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     gradientTitle: "Kriittinen testi: Amish–mennoniittigradientti",
     gradientSteps: [
@@ -105,7 +105,7 @@ const COPY = {
     title: "Amish：欠落した対照群",
     subtitle: "Old Order Amishは電気使用が最小限で、個人用電子機器を持たず、BERMが予測するすべての疾患で劇的に低い罹患率を示す：肥満-89%、T2D-75%、高血圧-66%、癌-40%。しかし、大規模な生活様式交絡因子（食事、運動、喫煙、コミュニティ）が直接的帰属を不可能にする。決定的テストはAmish-Mennonite EMF勾配である。",
     backLink: "← エビデンスに戻る",
-    cautionText: "このページはAmishの健康データを自然実験として提示する。健康差は実在し十分に文書化されているが、生活様式交絡因子は大規模である。この分析はAmishデータだけではEMF因果関係を証明できないことを明示的に認める。勾配テストが必要である。",
+    cautionText: "このページはAmishの健康データを自然実験として提示する。健康差は実在し十分に文書化されているが、生活様式交絡因子は大規模である。この分析はAmishデータだけではEMF因果関係を証明できないことを明示的に認める。これは従来の説明にも同様に当てはまる。勾配テストが必要である。",
 
     dataTitle: "データ",
     dataCards: [
@@ -131,7 +131,7 @@ const COPY = {
       { source: "Mazur et al.", referenceId: "mazur2013", detail: "体重安定の男性でもテストステロン低下を示す。肥満がT低下の唯一の原因なら、体重安定の男性はTが安定しているはずである。そうではない。" },
       { source: "Santi et al.", referenceId: "santi2025", detail: "BMI制御後もLH + Tが低下。体重を統計的に除外しても低下は持続する。体重以外の何かがホルモン変化を駆動している。" },
     ],
-    crossConclusion: "これらの独立したエビデンスラインは生活様式のみの説明を減少させる。EMF因果関係を証明はしないが、生活様式要因だけでは観察されたすべてのトレンドを説明するのに不十分であることを確立する。",
+    crossConclusion: "これらの独立したエビデンスラインは生活様式のみの説明を減少させる。EMF因果関係を証明はしないが、生活様式要因だけでは観察されたすべてのトレンドを説明するのに不十分であることを確立する。これは従来の説明にも同様に当てはまる。",
 
     gradientTitle: "決定的テスト：Amish-Mennonite EMF勾配",
     gradientSteps: [
@@ -151,7 +151,7 @@ const COPY = {
     title: "Amish : le groupe témoin manquant",
     subtitle: "Les Amish Old Order ont une utilisation minimale de l'électricité, aucun appareil électronique personnel et des taux considérablement plus bas pour chaque condition prédite par BERM : obésité -89 %, DT2 -75 %, hypertension -66 %, cancer -40 %. Cependant, d'importants facteurs de confusion liés au mode de vie (alimentation, exercice, tabagisme, communauté) rendent l'attribution directe impossible. Le test critique est le gradient EMF Amish-Mennonite.",
     backLink: "← Retour aux preuves",
-    cautionText: "Cette page présente les données sanitaires Amish comme une expérience naturelle. Les différences de santé sont réelles et bien documentées, mais les facteurs de confusion liés au mode de vie sont considérables. Cette analyse reconnaît explicitement que les données Amish seules NE PEUVENT PAS prouver la causalité EMF. Le test de gradient est nécessaire.",
+    cautionText: "Cette page présente les données sanitaires Amish comme une expérience naturelle. Les différences de santé sont réelles et bien documentées, mais les facteurs de confusion liés au mode de vie sont considérables. Cette analyse reconnaît explicitement que les données Amish seules NE PEUVENT PAS prouver la causalité EMF. Cela s'applique tout autant aux explications conventionnelles. Le test de gradient est nécessaire.",
 
     dataTitle: "Les données",
     dataCards: [
@@ -177,7 +177,7 @@ const COPY = {
       { source: "Mazur et al.", referenceId: "mazur2013", detail: "Les hommes à poids stable montrent encore un déclin de la testostérone. Si l'obésité était le seul facteur du déclin de T, les hommes à poids stable devraient avoir un T stable. Ce n'est pas le cas." },
       { source: "Santi et al.", referenceId: "santi2025", detail: "LH + T déclinent après contrôle de l'IMC. Le déclin persiste même lorsque la masse corporelle est statistiquement retirée. Quelque chose au-delà du poids entraîne des changements hormonaux." },
     ],
-    crossConclusion: "Ces lignes de preuve indépendantes RÉDUISENT l'explication par le mode de vie seul. Elles ne prouvent pas la causalité EMF, mais elles établissent que les facteurs de mode de vie seuls sont insuffisants pour expliquer toutes les tendances observées.",
+    crossConclusion: "Ces lignes de preuve indépendantes RÉDUISENT l'explication par le mode de vie seul. Elles ne prouvent pas la causalité EMF, mais elles établissent que les facteurs de mode de vie seuls sont insuffisants pour expliquer toutes les tendances observées. Cela s'applique tout autant aux explications conventionnelles.",
 
     gradientTitle: "Le test critique : gradient EMF Amish–Mennonite",
     gradientSteps: [
@@ -197,7 +197,7 @@ const COPY = {
     title: "Amish: 누락된 대조군",
     subtitle: "Old Order Amish는 전기 사용이 최소이고, 개인 전자기기가 없으며, BERM이 예측하는 모든 질환에서 극적으로 낮은 유병률을 보인다: 비만 -89%, T2D -75%, 고혈압 -66%, 암 -40%. 그러나 대규모 생활양식 교란변수(식이, 운동, 흡연, 공동체)가 직접적 귀속을 불가능하게 만든다. 결정적 시험은 Amish-Mennonite EMF 기울기이다.",
     backLink: "← 증거로 돌아가기",
-    cautionText: "이 페이지는 Amish 건강 데이터를 자연 실험으로 제시한다. 건강 차이는 실재하며 잘 문서화되어 있지만, 생활양식 교란변수는 대규모이다. 이 분석은 Amish 데이터만으로는 EMF 인과관계를 증명할 수 없음을 명시적으로 인정한다. 기울기 시험이 필요하다.",
+    cautionText: "이 페이지는 Amish 건강 데이터를 자연 실험으로 제시한다. 건강 차이는 실재하며 잘 문서화되어 있지만, 생활양식 교란변수는 대규모이다. 이 분석은 Amish 데이터만으로는 EMF 인과관계를 증명할 수 없음을 명시적으로 인정한다. 이는 기존 설명에도 동일하게 적용된다. 기울기 시험이 필요하다.",
 
     dataTitle: "데이터",
     dataCards: [
@@ -223,7 +223,7 @@ const COPY = {
       { source: "Mazur et al.", referenceId: "mazur2013", detail: "체중이 안정적인 남성도 여전히 테스토스테론 감소를 보인다. 비만이 T 감소의 유일한 원인이라면, 체중 안정 남성은 T가 안정적이어야 한다. 그렇지 않다." },
       { source: "Santi et al.", referenceId: "santi2025", detail: "BMI 통제 후에도 LH + T가 감소. 체질량을 통계적으로 제거해도 감소가 지속된다. 체중 이외의 무언가가 호르몬 변화를 구동한다." },
     ],
-    crossConclusion: "이러한 독립적 증거 라인은 생활양식만의 설명을 감소시킨다. EMF 인과관계를 증명하지는 않지만, 생활양식 요인만으로는 관찰된 모든 추세를 설명하기에 불충분함을 확립한다.",
+    crossConclusion: "이러한 독립적 증거 라인은 생활양식만의 설명을 감소시킨다. EMF 인과관계를 증명하지는 않지만, 생활양식 요인만으로는 관찰된 모든 추세를 설명하기에 불충분함을 확립한다. 이는 기존 설명에도 동일하게 적용된다.",
 
     gradientTitle: "결정적 시험: Amish-Mennonite EMF 기울기",
     gradientSteps: [

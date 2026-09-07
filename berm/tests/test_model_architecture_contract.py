@@ -8,6 +8,7 @@ from pathlib import Path
 import berm
 from berm.architecture import (
     CONDITIONAL_ASFR_ROUTE_ID,
+    DKC_CANDIDATE_ROUTE_ID,
     FIELDSTATE_SPEC_VERSION,
     L2_BRIDGE_STATUS,
     PACKAGE_VERSION,
@@ -74,6 +75,23 @@ def test_versions_have_distinct_namespaces_and_roles() -> None:
     assert PUBLIC_MODEL_VERSION == "v17"
     assert FIELDSTATE_SPEC_VERSION == "v2"
     assert manifest["routes"]["conditionalAsfr"]["id"] == CONDITIONAL_ASFR_ROUTE_ID
+    assert manifest["routes"]["lindgrenDkc"] == {
+        "id": DKC_CANDIDATE_ROUTE_ID,
+        "role": "candidate_scenario_and_validation",
+        "calculationEnabled": True,
+        "candidateOutputsEnabled": True,
+        "inputKind": (
+            "national_technology_timing_proxy_or_caller_supplied_normalized_state"
+        ),
+        "fieldStateCalibrated": True,
+        "fieldStateCalibrationScope": (
+            "CALIBRATION_PIPELINE_IMPLEMENTED_AND_PRODUCES_VALUES"
+        ),
+        "refinedM4CurrentDataStatus": "NOT_IDENTIFIABLE_WITH_CURRENT_DATA",
+        "supportsUncalibratedExecution": True,
+        "requiresOpenL2Bridge": True,
+        "publishesLockedForecasts": True,
+    }
     assert len({PACKAGE_VERSION, PUBLIC_MODEL_VERSION, FIELDSTATE_SPEC_VERSION}) == 3
 
 
@@ -111,6 +129,49 @@ def test_lindgren_to_observable_bridge_is_formal_but_calibration_remains_open() 
     assert "coherence" in theory["responseStateArguments"]
     assert "temperature_trajectory" in theory["responseStateArguments"]
     assert "do not validate" in theory["responseEvidenceRole"]
+    assert theory["epistemicStatusPolicy"] == "componentwise_no_weakest_link_collapse"
+    assert theory["derivedStatusPreserved"] is True
+    derivation = theory["formalDerivation"]
+    assert derivation["implemented"] is True
+    assert derivation["epistemicStatus"] == "L1_DERIVED_FORMULAS"
+    assert derivation["gateStatus"] == "CONDITIONAL_INPUT_CONTRACT"
+    assert derivation["derivedStatusPreserved"] is True
+    assert derivation["requiresAllElements"] is True
+    assert derivation["bianchiAloneSufficient"] is False
+    assert derivation["actionPremise"] == "S=integral sqrt(-det g) R d^4x"
+    assert derivation["fullEulerLagrangeRequired"] is True
+    assert derivation["fullEulerLagrangeEvidence"] == (
+        "CONTENT_BOUND_NUMERICAL_RESIDUAL_AND_STRUCTURED_ATTESTATION_REQUIRED"
+    )
+    assert derivation["inputProvenanceBinding"] == "NUMERIC_INPUT_BUNDLE_SHA256"
+    assert derivation["ehResidualComputation"] == (
+        "FROM_SUPPLIED_POTENTIAL_AND_SUPPLIED_SYMMETRIC_EINSTEIN_TENSOR"
+    )
+    assert derivation["weylChecks"] == [
+        "levi_civita_metric_compatibility",
+        "semimetricity",
+        "connection_reconstruction",
+        "torsion_free",
+    ]
+    assert derivation["metricCompatibilityCondition"] == ("nabla^LC_sigma g_mu_nu=0")
+    assert derivation["bianchiChecks"] == [
+        "levi_civita_contracted_identity",
+        "field_definition_F_equals_dA",
+        "same_field_derivative_attestation",
+        "homogeneous_dF",
+    ]
+    assert derivation["residualAcceptance"] == (
+        "PER_RESIDUAL_ATOL_PLUS_RTOL_TIMES_REFERENCE_SCALE"
+    )
+    assert derivation["variationalEquation"] == "delta S/delta A_mu=0"
+    assert derivation["acceptanceAssertion"] == (
+        "variational_check AND weyl_check AND bianchi_check"
+    )
+    assert derivation["requiredElements"] == [
+        "variational_harmonic_metric_gme",
+        "weyl_semimetricity_and_connection",
+        "bianchi_contracted_identity_and_homogeneous_df",
+    ]
 
 
 def test_civilization_aggregation_is_forward_only_and_explicitly_persistent() -> None:

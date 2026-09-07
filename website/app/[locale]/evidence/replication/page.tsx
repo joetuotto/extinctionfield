@@ -31,7 +31,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagnetic Field Orientation",
       blackman:
         "Blackman 1990: DC–AC angle is critical for calcium release. Consistent with magnetic resonance-like mechanism.",
-      chi: "χ(Ā_DC, θ) — radical pair mechanism is anisotropic.",
+      chi: "χ_B(B_DC, θ) — imported L3 radical-pair response candidate; distinct from χ_geo.",
       labImpact:
         "Helsinki (inclination ~73°) vs Rome (~57°) get different results at same AC.",
       ref: "[[ref:blackman1990|Blackman et al. 1990, Bioelectromagnetics 11:159–167]]",
@@ -85,7 +85,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagneettisen kentän suunta",
       blackman:
         "Blackman 1990: DC–AC-kulma on kriittinen kalsiumin vapautumiselle. Yhdenmukainen magneettiseen resonanssiin perustuvan mekanismin kanssa.",
-      chi: "χ(Ā_DC, θ) — radikaaliparin mekanismi on anisotrooppinen.",
+      chi: "χ_B(B_DC, θ) — tuotu L3-radikaaliparivasteen ehdokas; eri suure kuin χ_geo.",
       labImpact:
         "Helsinki (inklinaatio ~73°) vs Rooma (~57°) saavat eri tuloksia samalla AC:lla.",
       ref: "[[ref:blackman1990|Blackman ym. 1990, Bioelectromagnetics 11:159–167]]",
@@ -95,7 +95,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Geomagneettisen kentän voimakkuus",
       blackman:
         "Blackman: Normaali (49,4 µT) vs vähennetty (19,0 µT) tuotti erilaisen kalsiumeffluksin.",
-      chi: "χ(|Ā_DC|) — BERM:n sulkeumaehdotus avoimella L2-rajalla, ei Lindgrenin johtama. Korkeampi tausta → korkeampi χ on testattava hypoteesi.",
+      chi: "L1-kaava: χ_geo(q)=q/√(1+q²). Koordinaatin q=|Ā_DC| valinta dimensiottomalla Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2; mitatun DC-magnitudin samaistaminen q:hun on toinen avoin L0→L2-kartta. Korkeampi mitattu tausta → korkeampi vaste testaa ehdokassiltaa, ei yksin L1-kaavaa.",
       labImpact:
         "Lähellä magneettista päiväntasaajaa (~25 µT) heikommat vaikutukset kuin Skandinaviassa (~50 µT).",
       ref: "Blackman ym., kokeet normaalissa ja vähennetyssä LGF:ssä",
@@ -139,7 +139,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "地磁気の方向",
       blackman:
         "Blackman 1990: DC-AC角度はカルシウム放出に重要。磁気共鳴様メカニズムと一致。",
-      chi: "χ(Ā_DC, θ) — ラジカルペアメカニズムは異方性である。",
+      chi: "χ_B(B_DC, θ) — 導入L3ラジカルペア応答候補であり、χ_geoとは異なる。",
       labImpact:
         "ヘルシンキ（傾斜角~73°）対ローマ（~57°）では同じACで異なる結果が得られる。",
       ref: "[[ref:blackman1990|Blackman et al. 1990, Bioelectromagnetics 11:159–167]]",
@@ -193,7 +193,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "Orientation du champ géomagnétique",
       blackman:
         "Blackman 1990 : L'angle DC-AC est critique pour la libération de calcium. Compatible avec un mécanisme de type résonance magnétique.",
-      chi: "χ(Ā_DC, θ) — le mécanisme de paire radicalaire est anisotrope.",
+      chi: "χ_B(B_DC, θ) — candidat L3 importé de réponse par paire radicalaire, distinct de χ_geo.",
       labImpact:
         "Helsinki (inclinaison ~73°) vs Rome (~57°) obtiennent des résultats différents au même AC.",
       ref: "[[ref:blackman1990|Blackman et al. 1990, Bioelectromagnetics 11:159–167]]",
@@ -247,7 +247,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "지자기장 방향",
       blackman:
         "Blackman 1990: DC-AC 각도가 칼슘 방출에 결정적이다. 자기 공명 유사 메커니즘과 일치한다.",
-      chi: "χ(Ā_DC, θ) — 라디칼 쌍 메커니즘은 이방성이다.",
+      chi: "χ_B(B_DC, θ) — 도입된 L3 라디칼쌍 반응 후보이며 χ_geo와 별개이다.",
       labImpact:
         "헬싱키(경사각 ~73°) 대 로마(~57°)는 동일한 AC에서 다른 결과를 얻는다.",
       ref: "[[ref:blackman1990|Blackman et al. 1990, Bioelectromagnetics 11:159–167]]",
@@ -257,7 +257,7 @@ const CONFOUNDS: Record<string, Confound[]> = {
       title: "지자기장 강도",
       blackman:
         "Blackman: 정상(49.4 µT) 대 감소(19.0 µT)에서 다른 칼슘 유출을 생성했다.",
-      chi: "χ(|Ā_DC|) — 열린 L2 경계의 BERM 폐쇄 제안이며 Lindgren의 도출이 아니다. 높은 배경 → 높은 χ는 검증할 가설이다.",
+      chi: "L1 공식: χ_geo(q)=q/√(1+q²). 무차원 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā_DC|를 선택하는 것은 L2이고 측정 DC 크기를 q와 동일시하는 것은 별도의 열린 L0→L2 사상이다. 더 높은 측정 배경→더 높은 반응은 후보 다리를 검정하며 L1 공식 단독 검정이 아니다.",
       labImpact:
         "자기 적도 부근(~25 µT)에서 스칸디나비아(~50 µT)보다 약한 효과.",
       ref: "Blackman et al., experiments at normal and reduced LGF",
@@ -342,11 +342,11 @@ const COPY = {
       "Why EMF Biology Seems Inconsistent — And Why It Isn’t",
     s1p1: "For fifty years, the central objection to non-thermal electromagnetic bioeffects has been inconsistency: ‘If the effect is real, why can’t laboratories reproduce it reliably?’",
     s1p2: "The answer was published between 1985 and 1991 by Carl Blackman at the US Environmental Protection Agency — but it was never synthesized into a unified framework. Blackman’s own experiments identified five variables that, when uncontrolled, produce apparently contradictory results from the SAME underlying phenomenon. When all five are controlled, the results are consistent.",
-    s1p3: "BERM proposes that these five variables can be represented by a shared background-dependent structure χ(Ā). This is a model closure to test at different scales, not Lindgren’s derived selection rule. Each proposed mapping requires its own measured input, biological endpoint and L2 calibration.",
+    s1p3: "The geodesic-deviation chain gives the signed directional response and the χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. Every thermal, optical, magnetic or developmental measurement z requires its own q=N(z) at the open L0→L2 boundary; named biological responses remain imported L3 components.",
     /* Section 2 */
     s2Title: "The Five Confounds",
     s2BlackmanLabel: "Blackman finding",
-    s2ChiLabel: "χ interpretation",
+    s2ChiLabel: "χ mapping (L1 shape → L2 identification)",
     s2LabLabel: "Lab impact",
     s2RefLabel: "Reference",
     /* Section 3 */
@@ -357,7 +357,7 @@ const COPY = {
     s4Title: "How This Resolves the Apparent Contradiction",
     s4p1: "Lab A and Lab B are at different points in five-dimensional parameter space. When uncontrolled parameters differ, different results are EXPECTED, not anomalous. Blackman demonstrated this directly: the same researcher, with the same equipment, obtained enhancement, reduction, or null depending on temperature alone.",
     s4p2: "The replication crisis in EMF biology is not a crisis of the phenomenon — it is a crisis of experimental control. Once the five confounds are recognized and documented, apparent contradictions resolve into a consistent, multidimensional dose-response surface.",
-    s4p3: "BERM’s proposed χ(Ā) supplies a common test scaffold: thermal, optical, magnetic and developmental backgrounds may moderate response. The claim that one function applies across them is unverified and the relevant L2 operators remain open.",
+    s4p3: "The restricted L1 χ_geo(x) shape supplies a formal test scaffold. Each measured background z needs an explicit candidate x=N(z); the normalization and response operator remain open at L0→L2, while separately named biological realizations retain L3 provenance.",
     /* Section 5 */
     s5Title: "Seven Moderators That Predict Study Outcomes",
     s5Lead: "Analysis of 600+ published EMF bioeffect studies across five endpoints (melatonin, sperm, sleep EEG, DNA damage, oxidative stress) reveals that ‘contradictory evidence’ is an artifact of seven uncontrolled moderators. Three are statistically significant, two are directly proven by RCTs, and two are quantified by specific studies.",
@@ -398,11 +398,11 @@ const COPY = {
       "Miksi EMF-biologia vaikuttaa ristiriitaiselta — ja miksi se ei ole",
     s1p1: "Viisikymmentä vuotta keskeisin vastaargumentti ei-termisille sähkömagneettisille biovaikutuksille on ollut epäjohdonmukaisuus: ’Jos vaikutus on todellinen, miksi laboratoriot eivät pysty toistamaan sitä luotettavasti?’",
     s1p2: "Vastaus julkaistiin vuosina 1985–1991 Carl Blackmanin toimesta Yhdysvaltain ympäristönsuojeluvirastossa (EPA) — mutta sitä ei koskaan syntetisoitu yhtenäiseksi kehykseksi. Blackmanin omat kokeet tunnistivat viisi muuttujaa, jotka kontrolloimattomina tuottavat näennäisesti ristiriitaisia tuloksia SAMASTA taustailmiöstä. Kun kaikki viisi kontrolloidaan, tulokset ovat johdonmukaisia.",
-    s1p3: "BERM ehdottaa, että viisi muuttujaa voidaan esittää yhteisellä taustariippuvaisella rakenteella χ(Ā). Se on eri skaaloissa testattava mallisulkeuma, ei Lindgrenin johtama valintaehto. Jokainen ehdotettu kuvaus vaatii oman mitatun syötteen, biologisen päätepisteen ja L2-kalibroinnin.",
+    s1p3: "Geodeesipoikkeamaketju antaa etumerkillisen suunnatun vasteen ja χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Jokainen terminen, optinen, magneettinen tai kehityksellinen mittaus z tarvitsee oman q=N(z)-normalisointinsa avoimella L0→L2-rajalla; nimetyt biologiset vasteet ovat tuotuja L3-komponentteja.",
     /* Section 2 */
     s2Title: "Viisi sekoittavaa tekijää",
     s2BlackmanLabel: "Blackmanin löydös",
-    s2ChiLabel: "χ-tulkinta",
+    s2ChiLabel: "χ-kuvaus (L1-muoto → L2-identifikaatio)",
     s2LabLabel: "Laboratoriovaikutus",
     s2RefLabel: "Viite",
     /* Section 3 */
@@ -413,7 +413,7 @@ const COPY = {
     s4Title: "Miten tämä ratkaisee näennäisen ristiriidan",
     s4p1: "Laboratorio A ja laboratorio B ovat eri pisteissä viisiulotteisessa parametriavaruudessa. Kun kontrolloimattomat parametrit eroavat, erilaiset tulokset ovat ODOTETTUJA, eivät poikkeavia. Blackman osoitti tämän suoraan: sama tutkija, samat laitteet, sai vahvistuksen, vähenemisen tai nollatuloksen pelkästään lämpötilasta riippuen.",
     s4p2: "EMF-biologian replikaatiokriisi ei ole ilmiön kriisi — se on kokeellisen kontrollin kriisi. Kun viisi sekoittavaa tekijää tunnistetaan ja dokumentoidaan, näennäiset ristiriidat ratkeavat johdonmukaiseksi, moniulotteiseksi annos-vastepinnaksi.",
-    s4p3: "BERM:n ehdottama χ(Ā) antaa yhteisen testikehyksen: terminen, optinen, magneettinen ja kehityksellinen tausta voivat moderoida vastetta. Väite saman funktion soveltumisesta niihin kaikkiin on todentamatta ja L2-operaattorit ovat avoimia.",
+    s4p3: "Rajoitettu L1-muoto χ_geo(x) antaa formaalin testikehyksen. Jokainen mitattu tausta z tarvitsee eksplisiittisen ehdokaskuvauksen x=N(z); normalisointi ja vasteoperaattori pysyvät avoimina L0→L2-tasolla, kun taas erikseen nimetyt biologiset realisaatiot säilyttävät L3-provenienssinsa.",
     /* Section 5 */
     s5Title: "Seitsemän moderaattoria jotka ennustavat tutkimustuloksia",
     s5Lead: "Analyysi yli 600 julkaistusta EMF-bioefektitutkimuksesta viidellä endpointilla (melatoniini, siittiöt, uni-EEG, DNA-vaurio, oksidatiivinen stressi) paljastaa, että 'ristiriitainen näyttö' on seitsemän kontrolloimattoman moderaattorin artefakti. Kolme on tilastollisesti merkitseviä, kaksi on suoraan todistettu RCT-tasolla ja kaksi on kvantifioitu tarkoilla tutkimuksilla.",
@@ -453,10 +453,10 @@ const COPY = {
       "EMF生物学がなぜ一貫しないように見えるか — そしてなぜ一貫しているのか",
     s1p1: "50年間、非熱的電磁生体影響に対する中心的な反論は一貫性のなさであった：「効果が本物なら、なぜ研究室は確実に再現できないのか？」",
     s1p2: "その答えは1985年から1991年の間に、米国環境保護庁のCarl Blackmanによって公表されていた — しかし統一的な枠組みとして統合されることはなかった。Blackman自身の実験は、制御されない場合に同じ基礎現象から見かけ上矛盾する結果を生む5つの変数を特定した。5つすべてが制御されると、結果は一貫する。",
-    s1p3: "BERMは5変数を共通の背景依存構造χ(Ā)で表せると提案する。これは異なる尺度で検証すべきモデル閉包であり、Lindgrenが導出した選択則ではない。各写像には固有の測定入力、生物学的エンドポイント、L2校正が必要である。",
+    s1p3: "測地線偏差の連鎖は符号付き方向応答とχ_geo(q)=q/√(1+q²)式をL1で与える。無次元・共線Lorentz→Euclid空間・スカラー射影によるq=|Ā|の選択はL2である。熱・光・磁気・発達の各測定zには未解決L0→L2境界で固有のq=N(z)が必要で、名称付き生物応答は導入L3要素である。",
     s2Title: "5つの交絡因子",
     s2BlackmanLabel: "Blackmanの発見",
-    s2ChiLabel: "χの解釈",
+    s2ChiLabel: "χ写像（L1形状 → L2同定）",
     s2LabLabel: "実験室への影響",
     s2RefLabel: "参考文献",
     s3Title: "提案：5パラメータEMF生物学基準",
@@ -504,10 +504,10 @@ const COPY = {
       "Pourquoi la biologie EMF semble incohérente — et pourquoi elle ne l'est pas",
     s1p1: "Pendant cinquante ans, l'objection centrale aux bioeffets électromagnétiques non thermiques a été l'incohérence : « Si l'effet est réel, pourquoi les laboratoires ne peuvent-ils pas le reproduire de manière fiable ? »",
     s1p2: "La réponse a été publiée entre 1985 et 1991 par Carl Blackman à l'Agence américaine de protection de l'environnement (EPA) — mais elle n'a jamais été synthétisée en un cadre unifié. Les propres expériences de Blackman ont identifié cinq variables qui, lorsqu'elles ne sont pas contrôlées, produisent des résultats apparemment contradictoires à partir du MÊME phénomène sous-jacent. Lorsque les cinq sont contrôlées, les résultats sont cohérents.",
-    s1p3: "BERM propose de représenter ces cinq variables par une structure commune dépendante du fond, χ(Ā). C'est une fermeture à tester à différentes échelles, non une règle de sélection dérivée par Lindgren. Chaque application exige son entrée mesurée, son endpoint biologique et son calibrage L2.",
+    s1p3: "La chaîne de déviation géodésique donne la réponse directionnelle signée et la formule χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. Chaque mesure thermique, optique, magnétique ou développementale z exige son q=N(z) à la frontière L0→L2 ouverte ; les réponses biologiques nommées restent des composants L3 importés.",
     s2Title: "Les cinq facteurs de confusion",
     s2BlackmanLabel: "Découverte de Blackman",
-    s2ChiLabel: "Interprétation χ",
+    s2ChiLabel: "Application χ (forme L1 → identification L2)",
     s2LabLabel: "Impact laboratoire",
     s2RefLabel: "Référence",
     s3Title: "Proposition : Le standard à cinq paramètres pour la biologie EMF",
@@ -555,10 +555,10 @@ const COPY = {
       "EMF 생물학이 왜 일관성 없어 보이는가 — 그리고 왜 그렇지 않은가",
     s1p1: "50년간 비열적 전자기 생체효과에 대한 핵심적 반론은 비일관성이었다: '효과가 실재한다면, 왜 실험실들은 신뢰할 수 있게 재현하지 못하는가?'",
     s1p2: "그 답은 1985년에서 1991년 사이에 미국 환경보호국의 Carl Blackman에 의해 발표되었으나 — 통합된 프레임워크로 합성된 적이 없었다. Blackman 자신의 실험은 통제되지 않을 때 동일한 기저 현상으로부터 겉보기에 모순되는 결과를 생산하는 다섯 가지 변수를 식별했다. 다섯 가지 모두가 통제되면 결과는 일관된다.",
-    s1p3: "BERM은 다섯 변수를 공통 배경 의존 구조 χ(Ā)로 표현할 수 있다고 제안한다. 이는 여러 규모에서 검증할 모델 폐쇄이지 Lindgren이 도출한 선택 규칙이 아니다. 각 매핑에는 고유한 측정 입력, 생물학적 종점, L2 보정이 필요하다.",
+    s1p3: "측지선 편차 연쇄는 부호 있는 방향 반응과 χ_geo(q)=q/√(1+q²) 공식을 L1에서 준다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2다. 열·광학·자기·발달의 각 측정 z에는 열린 L0→L2 경계에서 고유한 q=N(z)가 필요하며, 명명된 생물 반응은 도입 L3 구성요소다.",
     s2Title: "다섯 가지 교란 요인",
     s2BlackmanLabel: "Blackman의 발견",
-    s2ChiLabel: "χ 해석",
+    s2ChiLabel: "χ 매핑(L1 형태 → L2 식별)",
     s2LabLabel: "실험실 영향",
     s2RefLabel: "참고문헌",
     s3Title: "제안: 다섯 매개변수 EMF 생물학 기준",

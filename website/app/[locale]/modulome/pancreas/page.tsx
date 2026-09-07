@@ -32,13 +32,13 @@ const COPY = {
     s2p2: "T-type channels (Cav3.2) activate at a lower threshold (~−50mV) than L-type channels (Cav1.2 at ~−30mV), creating a sequential activation cascade. T-type channels fire first during the initial depolarization phase, priming the membrane and generating the early pacemaker depolarization that brings the membrane to L-type activation threshold. The L-type channels then produce the larger, sustained Ca²⁺ influx that drives the main phase of insulin exocytosis.",
     s2p3: "This dual-channel architecture makes β-cells uniquely dependent on VGCC function. Any perturbation of either channel type — whether pharmacological, genetic, or electromagnetic — directly impairs the insulin secretion pathway. The β-cell has one of the highest VGCC densities of any endocrine cell, making it inherently susceptible to electromagnetic interference.",
 
-    s2SectionTitle: "Glucose-Dependent χ Mechanism",
+    s2SectionTitle: "Glucose-dependent χ_beta candidate response",
 
     s3Title: "Meal-Dependent Vulnerability Window",
     s3Chain:
-      "High glucose → K_ATP closes → membrane depolarizes → VGCCs primed → χ HIGH ↔ Fasting → K_ATP open → membrane hyperpolarized → VGCCs inactive → χ LOW",
-    s3p1: "The β-cell presents a unique feature in the BERM framework: its EMF susceptibility (χ) is dynamically modulated by blood glucose concentration. The K_ATP channel acts as a molecular voltage gate — when blood glucose is low, K_ATP channels remain open, clamping the membrane at approximately −70mV. At this potential, VGCCs are firmly inactive and cannot be perturbed by external electromagnetic fields. The cell is effectively shielded.",
-    s3p2: "When blood glucose rises postprandially, K_ATP channels close, the membrane depolarizes toward the VGCC activation window (−50 to −30mV), and the channels become primed — poised at the threshold where small voltage perturbations can trigger premature or excessive Ca²⁺ influx. This creates a meal-dependent vulnerability window: after eating (especially high-glycemic meals), β-cell χ is maximized. Fasting, conversely, hyperpolarizes the membrane and minimizes χ. This mechanism explains why fasting may be protective against EMF-induced metabolic disruption, and why high-glycemic diets synergize with EMF exposure.",
+      "High glucose → K_ATP closes → membrane depolarizes → VGCCs primed → χ_beta HIGH ↔ Fasting → K_ATP open → membrane hyperpolarized → VGCCs inactive → χ_beta LOW",
+    s3p1: "BERM names the proposed glucose-dependent β-cell response χ_beta. It is an imported L3 biological candidate, distinct from the restricted L1 geometric coefficient χ_geo(x); no raw glucose or membrane voltage is inserted into χ_geo. The K_ATP/VGCC state supplies candidate biology downstream of the open L2 bridge.",
+    s3p2: "When blood glucose rises postprandially, K_ATP channels close and the membrane approaches the VGCC activation window (−50 to −30mV). BERM hypothesizes that this raises χ_beta and creates a meal-dependent vulnerability window; fasting is hypothesized to lower χ_beta. These biological predictions require controlled exposure and endpoint tests and do not close the L0→L2 mapping.",
 
     s3SectionTitle: "T2D and PCOS Mechanism",
 
@@ -78,16 +78,16 @@ const COPY = {
 
     s8Title: "BERM Predictions",
     s8Text:
-      "The BERM framework generates three specific, testable predictions from the glucose-dependent χ mechanism:",
+      "The BERM framework generates three testable predictions from the imported L3 χ_beta response candidate:",
     s8Predictions: [
       {
         id: "PANC-1",
-        text: "EMF exposure combined with high-glycemic diet produces synergistic T2D risk exceeding the additive prediction of either factor alone. The glucose-dependent χ mechanism predicts that EMF effects on insulin secretion are amplified during high-glucose states, creating a multiplicative interaction.",
+        text: "The χ_beta candidate predicts that EMF exposure combined with a high-glycemic diet produces a larger insulin-secretion effect than either factor alone. This is an uncalibrated L3 interaction hypothesis, not a result derived from χ_geo.",
         discriminating: true,
       },
       {
         id: "PANC-2",
-        text: "Intermittent fasting or time-restricted feeding protects β-cells from EMF-induced insulin dysfunction. Fasting periods hyperpolarize the β-cell membrane via open K_ATP channels, reducing χ to near zero and creating temporal windows of EMF resilience.",
+        text: "The χ_beta candidate predicts that intermittent fasting or time-restricted feeding reduces β-cell vulnerability during controlled exposure. The magnitude and any protective endpoint remain to be measured; χ_beta is not χ_geo.",
         discriminating: true,
       },
       {
@@ -149,13 +149,13 @@ const COPY = {
     s2p2: "T-tyypin kanavat (Cav3.2) aktivoituvat matalammalla kynnyksellä (~−50mV) kuin L-tyypin kanavat (Cav1.2, ~−30mV), luoden peräkkäisen aktivaatiokaskadin. T-tyypin kanavat laukeavat ensin alkuvaiheen depolarisaatiossa, virittäen kalvon ja tuottaen varhaisen tahdistindepolarisaation, joka tuo kalvon L-tyypin aktivaatiokynnykseen. L-tyypin kanavat tuottavat sitten suuremman, kestävämmän Ca²⁺-sisäänvirtauksen, joka ajaa insuliinieksosytoosin päävaiheen.",
     s2p3: "Tämä kaksoiskanavarkkitehtuuri tekee β-soluista ainutlaatuisen riippuvaisia VGCC-toiminnasta. Mikä tahansa häiriö kummassakin kanavatyypissä — farmakologinen, geneettinen tai sähkömagneettinen — heikentää suoraan insuliinisekreetioreititä. β-solun VGCC-tiheys on yksi korkeimmista kaikista endokriinisistä soluista, mikä tekee siitä luonnostaan altista sähkömagneettiselle häiriölle.",
 
-    s2SectionTitle: "Glukoosiriippuvainen χ -mekanismi",
+    s2SectionTitle: "Glukoosiriippuvainen χ_beta-vaste-ehdokas",
 
     s3Title: "Aterioista riippuva haavoittuvuusikkuna",
     s3Chain:
-      "Korkea glukoosi → K_ATP sulkeutuu → kalvo depolarisoituu → VGCC:t viritetty → χ KORKEA ↔ Paasto → K_ATP auki → kalvo hyperpolarisoitu → VGCC:t inaktiivisia → χ MATALA",
-    s3p1: "β-solu esittää ainutlaatuisen piirteen BERM-kehyksessä: sen EMF-herkkyys (χ) säätely muuttuu dynaamisesti veren glukoosikonsentraation mukaan. K_ATP-kanava toimii molekulaarisena jänniteporttina — kun verensokeri on matala, K_ATP-kanavat pysyvät auki, lukiten kalvon noin −70mV:iin. Tässä potentiaalissa VGCC:t ovat lujasti inaktiivisia eikä ulkoinen sähkömagneettinen kenttä voi häiritä niitä. Solu on käytännössä suojattu.",
-    s3p2: "Kun verensokeri nousee postprandiaalisesti, K_ATP-kanavat sulkeutuvat, kalvo depolarisoituu kohti VGCC-aktivaatioikkunaa (−50...−30mV) ja kanavat virittyvät — valmiina kynnyksellä, jossa pienet jännitehäiriöt voivat laukaista ennenaikaisen tai liiallisen Ca²⁺-sisäänvirtauksen. Tämä luo aterioista riippuvan haavoittuvuusikkunan: syömisen jälkeen (erityisesti korkean glykeemisen indeksin aterioiden) β-solun χ on maksimoitu. Paasto puolestaan hyperpolarisoi kalvon ja minimoi χ:n. Tämä mekanismi selittää, miksi paasto voi suojata EMF-indusoidulta metaboliselta häiriöltä ja miksi korkean glykeemisen indeksin ruokavaliot synergioivat EMF-altistuksen kanssa.",
+      "Korkea glukoosi → K_ATP sulkeutuu → kalvo depolarisoituu → VGCC:t viritetty → χ_beta KORKEA ↔ Paasto → K_ATP auki → kalvo hyperpolarisoitu → VGCC:t inaktiivisia → χ_beta MATALA",
+    s3p1: "BERM nimeää ehdotetun glukoosiriippuvaisen β-soluvasteen χ_beta:ksi. Se on tuotu L3-biologiaehdokas ja eri suure kuin rajoitettu L1-geometriakerroin χ_geo(x); raakaa glukoosia tai kalvojännitettä ei syötetä χ_geoon. K_ATP/VGCC-tila on ehdokasbiologiaa avoimen L2-sillan jälkeen.",
+    s3p2: "Kun verensokeri nousee aterian jälkeen, K_ATP-kanavat sulkeutuvat ja kalvo lähestyy VGCC-aktivaatioikkunaa (−50...−30mV). BERM hypotesoi tämän nostavan χ_beta-vastetta ja luovan ateriariippuvaisen haavoittuvuusikkunan; paaston hypotesoidaan laskevan χ_betaa. Ennusteet vaativat kontrolloidut altistus- ja päätepistetestit eivätkä sulje L0→L2-kuvausta.",
 
     s3SectionTitle: "T2D- ja PCOS-mekanismi",
 
@@ -195,16 +195,16 @@ const COPY = {
 
     s8Title: "BERM-ennusteet",
     s8Text:
-      "BERM-kehys tuottaa kolme tarkkaa, testattavaa ennustetta glukoosiriippuvaisesta χ-mekanismista:",
+      "BERM-kehys tuottaa kolme testattavaa ennustetta tuodusta L3-χ_beta-vaste-ehdokkaasta:",
     s8Predictions: [
       {
         id: "PANC-1",
-        text: "EMF-altistus yhdistettynä korkean glykeemisen indeksin ruokavalioon tuottaa synergistisen T2D-riskin, joka ylittää kummankaan tekijän yksinään aiheuttaman additiivisen ennusteen. Glukoosiriippuvainen χ-mekanismi ennustaa, että EMF:n vaikutukset insuliinisekreetioon vahvistuvat korkean glukoosin tilassa, luoden multiplikatiivisen vuorovaikutuksen.",
+        text: "χ_beta-ehdokas ennustaa, että EMF-altistus ja korkean glykeemisen indeksin ruokavalio tuottavat suuremman insuliinineritysvaikutuksen kuin kumpikaan tekijä yksin. Tämä on kalibroimaton L3-vuorovaikutushypoteesi, ei χ_geosta johdettu tulos.",
         discriminating: true,
       },
       {
         id: "PANC-2",
-        text: "Jaksottainen paasto tai aikaikkunaruokailu suojaa β-soluja EMF-indusoidulta insuliinin toimintahäiriöltä. Paastojaksot hyperpolarisoivat β-solun kalvon avointen K_ATP-kanavien kautta, vähentäen χ:n lähelle nollaa ja luoden ajallisia EMF-resilienssit ikkunoita.",
+        text: "χ_beta-ehdokas ennustaa, että jaksottainen paasto tai aikaikkunaruokailu vähentää β-solun haavoittuvuutta kontrolloidussa altistuksessa. Vaikutuksen koko ja suojaava päätepiste on mitattava; χ_beta ei ole χ_geo.",
         discriminating: true,
       },
       {
@@ -261,11 +261,11 @@ const COPY = {
     s2p1: "膵β細胞はランゲルハンス島のインスリン産生内分泌細胞である。グルコース刺激インスリン分泌（GSIS）にL型（Cav1.2, Cav1.3）とT型（Cav3.2）の両方の電位依存性カルシウムチャネルを使用する。標準的なGSIS経路は：グルコースがGLUT2を介して入る → 解糖がATP/ADP比を上昇 → K_ATPチャネル閉鎖 → 膜脱分極 → VGCC活性化 → Ca²⁺流入 → インスリン小胞エキソサイトーシス。",
     s2p2: "T型チャネル（Cav3.2）はL型チャネル（Cav1.2, ~-30mV）より低い閾値（~-50mV）で活性化し、順次活性化カスケードを形成する。T型チャネルは初期脱分極相で最初に発火し、膜をプライミングしてL型活性化閾値への早期ペースメーカー脱分極を生成する。L型チャネルはその後、インスリンエキソサイトーシスの主相を駆動するより大きく持続的なCa²⁺流入を生成する。",
     s2p3: "このデュアルチャネル構造により、β細胞はVGCC機能に独自に依存する。いずれかのチャネル型への摂動 — 薬理学的、遺伝的、または電磁的 — はインスリン分泌経路を直接損なう。β細胞のVGCC密度はすべての内分泌細胞の中で最も高い部類であり、電磁干渉に対して本質的に感受性が高い。",
-    s2SectionTitle: "グルコース依存性χメカニズム",
+    s2SectionTitle: "グルコース依存性χ_beta応答候補",
     s3Title: "食事依存性脆弱性ウィンドウ",
-    s3Chain: "高グルコース → K_ATP閉鎖 → 膜脱分極 → VGCCプライミング → χ高 ↔ 空腹 → K_ATP開放 → 膜過分極 → VGCC不活性 → χ低",
-    s3p1: "β細胞はBERMフレームワークにおいて独自の特徴を示す：そのEMF感受性（χ）は血糖濃度によって動的に変調される。K_ATPチャネルは分子電圧ゲートとして機能する — 血糖が低い場合、K_ATPチャネルは開いたままで膜を約-70mVに固定する。この電位ではVGCCは確実に不活性であり、外部電磁場はそれらを摂動できない。細胞は実質的に遮蔽されている。",
-    s3p2: "食後に血糖が上昇すると、K_ATPチャネルが閉じ、膜がVGCC活性化ウィンドウ（-50～-30mV）に向かって脱分極し、チャネルがプライミングされる — 小さな電圧摂動が早期または過剰なCa²⁺流入を誘発できる閾値に準備される。これは食事依存性の脆弱性ウィンドウを作り出す：食後（特に高GI食後）、β細胞のχは最大化される。空腹状態では逆に膜を過分極させχを最小化する。このメカニズムは、空腹がEMF誘発代謝撹乱に対して保護的である理由、および高GI食がEMF曝露と相乗作用する理由を説明する。",
+    s3Chain: "高グルコース → K_ATP閉鎖 → 膜脱分極 → VGCCプライミング → χ_beta高 ↔ 空腹 → K_ATP開放 → 膜過分極 → VGCC不活性 → χ_beta低",
+    s3p1: "BERMは提案するグルコース依存β細胞応答をχ_betaと名付ける。これは導入L3生物学候補であり、制限されたL1幾何係数χ_geo(x)とは別物である。生のグルコース値や膜電位をχ_geoへ入力せず、K_ATP/VGCC状態は未解決L2橋の下流にある候補生物学として扱う。",
+    s3p2: "食後に血糖が上昇するとK_ATPチャネルが閉じ、膜がVGCC活性化域（−50～−30mV）へ近づく。BERMはこれがχ_betaを高め、食事依存の脆弱性窓を作り、空腹がχ_betaを低めると仮定する。この生物学的予測には制御曝露とエンドポイント試験が必要で、L0→L2写像を閉じない。",
     s3SectionTitle: "T2DとPCOSメカニズム",
     s4Title: "T2Dメカニズムチェーン",
     s4Chain: "EMF → Cav1/Cav3撹乱 → Ca²⁺調節不全 → インスリン分泌障害 → 代償性β細胞機能亢進 → β細胞疲弊 → T2D",
@@ -296,16 +296,16 @@ const COPY = {
       "TheraBionic並行：FDA承認デバイスが振幅変調EMF → 肝細胞癌細胞でのCav3.2活性化を典型的な電話曝露より100-1000倍低いSARレベルで使用",
     ],
     s8Title: "BERM予測",
-    s8Text: "BERMフレームワークはグルコース依存性χメカニズムから3つの特定の検証可能な予測を生成する：",
+    s8Text: "BERMフレームワークは導入L3 χ_beta応答候補から3つの検証可能な予測を生成する：",
     s8Predictions: [
       {
         id: "PANC-1",
-        text: "EMF曝露と高GI食の組み合わせは、いずれかの要因単独の加算的予測を超える相乗的T2Dリスクを生成する。グルコース依存性χメカニズムはEMFのインスリン分泌への影響が高グルコース状態で増幅されることを予測し、乗算的相互作用を作り出す。",
+        text: "χ_beta候補はEMF曝露と高GI食の組合せが単独要因より大きいインスリン分泌影響を生むと予測する。これは未較正L3相互作用仮説であり、χ_geoから導出された結果ではない。",
         discriminating: true,
       },
       {
         id: "PANC-2",
-        text: "間欠的断食または時間制限食がEMF誘発インスリン機能障害からβ細胞を保護する。断食期間は開放K_ATPチャネルを介してβ細胞膜を過分極させ、χをほぼゼロに低下させ、EMFレジリエンスの時間的ウィンドウを作り出す。",
+        text: "χ_beta候補は間欠的断食または時間制限食が制御曝露下のβ細胞脆弱性を下げると予測する。効果量と保護エンドポイントは測定が必要であり、χ_betaはχ_geoではない。",
         discriminating: true,
       },
       {
@@ -358,11 +358,11 @@ const COPY = {
     s2p1: "Les cellules beta pancreatiques sont les cellules endocrines productrices d'insuline des ilots de Langerhans. Elles reposent sur les canaux calciques voltage-dependants de type L (Cav1.2, Cav1.3) et de type T (Cav3.2) pour la secretion d'insuline stimulee par le glucose (GSIS). La voie canonique GSIS est : glucose entre via GLUT2 → la glycolyse augmente le ratio ATP/ADP → les canaux K_ATP se ferment → depolarisation membranaire → activation des VGCC → influx de Ca²⁺ → exocytose des vesicules d'insuline.",
     s2p2: "Les canaux de type T (Cav3.2) s'activent a un seuil plus bas (~-50mV) que les canaux de type L (Cav1.2, ~-30mV), creant une cascade d'activation sequentielle. Les canaux de type T tirent en premier pendant la phase initiale de depolarisation, amorcant la membrane et generant la depolarisation precoce du pacemaker qui amene la membrane au seuil d'activation du type L. Les canaux de type L produisent ensuite l'influx de Ca²⁺ plus important et soutenu qui conduit la phase principale de l'exocytose de l'insuline.",
     s2p3: "Cette architecture a double canal rend les cellules beta uniquement dependantes de la fonction VGCC. Toute perturbation de l'un ou l'autre type de canal — pharmacologique, genetique ou electromagnetique — compromet directement la voie de secretion de l'insuline. La densite VGCC des cellules beta est parmi les plus elevees de toutes les cellules endocrines, ce qui les rend inheremment susceptibles aux interferences electromagnetiques.",
-    s2SectionTitle: "Mecanisme chi dependant du glucose",
+    s2SectionTitle: "Réponse candidate χ_beta dépendante du glucose",
     s3Title: "Fenetre de vulnerabilite dependante du repas",
-    s3Chain: "Glucose eleve → K_ATP ferme → membrane depolarisee → VGCC amorces → chi ELEVE ↔ Jeune → K_ATP ouvert → membrane hyperpolarisee → VGCC inactifs → chi BAS",
-    s3p1: "La cellule beta presente une caracteristique unique dans le cadre BERM : sa susceptibilite EMF (chi) est dynamiquement modulee par la concentration de glucose sanguin. Le canal K_ATP agit comme une porte de tension moleculaire — quand le glucose sanguin est bas, les canaux K_ATP restent ouverts, fixant la membrane a environ -70mV. A ce potentiel, les VGCC sont fermement inactifs et ne peuvent etre perturbes par les champs electromagnetiques externes. La cellule est effectivement blindee.",
-    s3p2: "Quand le glucose sanguin augmente en postprandial, les canaux K_ATP se ferment, la membrane se depolarise vers la fenetre d'activation VGCC (-50 a -30mV), et les canaux deviennent amorces — prets au seuil ou de petites perturbations de tension peuvent declencher un influx de Ca²⁺ premature ou excessif. Cela cree une fenetre de vulnerabilite dependante du repas : apres manger (surtout les repas a indice glycemique eleve), le chi des cellules beta est maximise. Le jeune, inversement, hyperpolarise la membrane et minimise chi. Ce mecanisme explique pourquoi le jeune peut proteger contre la perturbation metabolique induite par les EMF, et pourquoi les regimes a indice glycemique eleve agissent en synergie avec l'exposition aux EMF.",
+    s3Chain: "Glucose élevé → K_ATP fermé → membrane dépolarisée → VGCC amorcés → χ_beta ÉLEVÉ ↔ Jeûne → K_ATP ouvert → membrane hyperpolarisée → VGCC inactifs → χ_beta BAS",
+    s3p1: "BERM nomme χ_beta la réponse proposée des cellules bêta dépendante du glucose. C'est un candidat biologique L3 importé, distinct du coefficient géométrique L1 restreint χ_geo(x) ; ni le glucose brut ni le potentiel membranaire ne sont injectés dans χ_geo. L'état K_ATP/VGCC est une biologie candidate en aval du pont L2 ouvert.",
+    s3p2: "Après un repas, les canaux K_ATP se ferment et la membrane approche la fenêtre d'activation VGCC (−50 à −30 mV). BERM pose l'hypothèse que cela élève χ_beta et crée une fenêtre de vulnérabilité liée au repas, tandis que le jeûne abaisse χ_beta. Ces prédictions exigent des tests contrôlés d'exposition et d'endpoint et ne ferment pas l'application L0→L2.",
     s3SectionTitle: "Mecanisme T2D et SOPK",
     s4Title: "Chaine mecanistique T2D",
     s4Chain: "EMF → perturbation Cav1/Cav3 → dysregulation Ca²⁺ → secretion d'insuline alteree → hyperfonction beta compensatoire → epuisement des cellules beta → T2D",
@@ -393,16 +393,16 @@ const COPY = {
       "Parallele TheraBionic : un dispositif approuve par la FDA utilise des EMF modules en amplitude → activation de Cav3.2 dans les cellules de carcinome hepatocellulaire a des niveaux de SAR 100 a 1000 fois inferieurs a l'exposition typique d'un telephone",
     ],
     s8Title: "Predictions BERM",
-    s8Text: "Le cadre BERM genere trois predictions specifiques et testables a partir du mecanisme chi dependant du glucose :",
+    s8Text: "Le cadre BERM génère trois prédictions testables à partir du candidat L3 importé χ_beta :",
     s8Predictions: [
       {
         id: "PANC-1",
-        text: "L'exposition EMF combinee a un regime a indice glycemique eleve produit un risque synergique de T2D depassant la prediction additive de chaque facteur seul. Le mecanisme chi dependant du glucose predit que les effets des EMF sur la secretion d'insuline sont amplifies pendant les etats de glucose eleve, creant une interaction multiplicative.",
+        text: "Le candidat χ_beta prédit que l'exposition EMF combinée à un régime à indice glycémique élevé produit un effet plus grand sur la sécrétion d'insuline que chaque facteur seul. C'est une hypothèse d'interaction L3 non calibrée, non un résultat dérivé de χ_geo.",
         discriminating: true,
       },
       {
         id: "PANC-2",
-        text: "Le jeune intermittent ou l'alimentation a temps restreint protege les cellules beta du dysfonctionnement insulinique induit par les EMF. Les periodes de jeune hyperpolarisent la membrane des cellules beta via les canaux K_ATP ouverts, reduisant chi a presque zero et creant des fenetres temporelles de resilience aux EMF.",
+        text: "Le candidat χ_beta prédit que le jeûne intermittent ou l'alimentation à temps restreint réduit la vulnérabilité des cellules bêta sous exposition contrôlée. L'ampleur et l'endpoint protecteur restent à mesurer ; χ_beta n'est pas χ_geo.",
         discriminating: true,
       },
       {
@@ -455,11 +455,11 @@ const COPY = {
     s2p1: "췌장 β세포는 랑게르한스섬의 인슐린 생산 내분비 세포이다. 포도당 자극 인슐린 분비(GSIS)에 L형(Cav1.2, Cav1.3)과 T형(Cav3.2) 전압 의존성 칼슘 채널을 모두 사용한다. 표준 GSIS 경로: 포도당이 GLUT2를 통해 유입 → 해당과정이 ATP/ADP 비율 상승 → K_ATP 채널 폐쇄 → 막 탈분극 → VGCC 활성화 → Ca²⁺ 유입 → 인슐린 소포 외분비.",
     s2p2: "T형 채널(Cav3.2)은 L형 채널(Cav1.2, ~-30mV)보다 낮은 역치(~-50mV)에서 활성화되어 순차적 활성화 캐스케이드를 형성한다. T형 채널은 초기 탈분극 상에서 먼저 발화하여 막을 프라이밍하고 L형 활성화 역치로 도달하게 하는 초기 페이스메이커 탈분극을 생성한다. L형 채널은 이후 인슐린 외분비의 주 단계를 구동하는 더 크고 지속적인 Ca²⁺ 유입을 생성한다.",
     s2p3: "이 이중 채널 구조는 β세포를 VGCC 기능에 고유하게 의존적으로 만든다. 어느 채널 유형에 대한 교란이든 — 약리학적, 유전적, 또는 전자기적 — 인슐린 분비 경로를 직접 손상시킨다. β세포의 VGCC 밀도는 모든 내분비 세포 중 가장 높은 부류로, 전자기 간섭에 본질적으로 감수성이 높다.",
-    s2SectionTitle: "포도당 의존적 χ 메커니즘",
+    s2SectionTitle: "포도당 의존 χ_beta 반응 후보",
     s3Title: "식사 의존적 취약성 창",
-    s3Chain: "고혈당 → K_ATP 폐쇄 → 막 탈분극 → VGCC 프라이밍 → χ 높음 ↔ 공복 → K_ATP 개방 → 막 과분극 → VGCC 비활성 → χ 낮음",
-    s3p1: "β세포는 BERM 프레임워크에서 독특한 특성을 보인다: EMF 감수성(χ)이 혈당 농도에 의해 동적으로 변조된다. K_ATP 채널은 분자 전압 게이트로 작용한다 — 혈당이 낮으면 K_ATP 채널이 열린 채로 유지되어 막을 약 -70mV에 고정한다. 이 전위에서 VGCC는 확실히 비활성 상태이며 외부 전자기장이 교란할 수 없다. 세포는 사실상 차폐되어 있다.",
-    s3p2: "식후 혈당이 상승하면 K_ATP 채널이 닫히고, 막이 VGCC 활성화 창(-50~-30mV)으로 탈분극되며, 채널이 프라이밍된다 — 작은 전압 교란이 조기 또는 과도한 Ca²⁺ 유입을 유발할 수 있는 역치에 준비된다. 이는 식사 의존적 취약성 창을 만든다: 식후(특히 고GI 식사), β세포의 χ는 최대화된다. 공복은 반대로 막을 과분극시키고 χ를 최소화한다.",
+    s3Chain: "고혈당 → K_ATP 폐쇄 → 막 탈분극 → VGCC 프라이밍 → χ_beta 높음 ↔ 공복 → K_ATP 개방 → 막 과분극 → VGCC 비활성 → χ_beta 낮음",
+    s3p1: "BERM은 제안된 포도당 의존 β세포 반응을 χ_beta로 명명한다. 이는 제한된 L1 기하 계수 χ_geo(x)와 구별되는 도입 L3 생물학 후보이며 원시 포도당이나 막전위를 χ_geo에 넣지 않는다. K_ATP/VGCC 상태는 열린 L2 다리 하류의 후보 생물학이다.",
+    s3p2: "식후 혈당이 상승하면 K_ATP 채널이 닫히고 막이 VGCC 활성화 창(−50~−30 mV)에 접근한다. BERM은 이것이 χ_beta를 높여 식사 의존 취약성 창을 만들고 공복이 χ_beta를 낮춘다고 가정한다. 이 생물학적 예측에는 통제 노출과 종점 검정이 필요하며 L0→L2 매핑을 닫지 않는다.",
     s3SectionTitle: "T2D 및 PCOS 메커니즘",
     s4Title: "T2D 메커니즘 사슬",
     s4Chain: "EMF → Cav1/Cav3 교란 → Ca²⁺ 조절 장애 → 인슐린 분비 장애 → 보상적 β세포 기능항진 → β세포 소진 → T2D",
@@ -490,16 +490,16 @@ const COPY = {
       "TheraBionic 병행: FDA 승인 장치가 진폭 변조 EMF 사용 → 간세포 암종 세포에서 Cav3.2 활성화를 전형적 전화 노출보다 100-1000배 낮은 SAR 수준에서",
     ],
     s8Title: "BERM 예측",
-    s8Text: "BERM 프레임워크는 포도당 의존적 χ 메커니즘에서 3가지 특정 검증 가능한 예측을 생성한다:",
+    s8Text: "BERM 프레임워크는 도입 L3 χ_beta 반응 후보에서 세 가지 검정 가능한 예측을 만든다:",
     s8Predictions: [
       {
         id: "PANC-1",
-        text: "EMF 노출과 고GI 식단의 조합이 각 요인 단독의 가산 예측을 초과하는 상승적 T2D 위험을 생성한다. 포도당 의존적 χ 메커니즘은 인슐린 분비에 대한 EMF 효과가 고혈당 상태에서 증폭되어 승수적 상호작용을 만든다고 예측한다.",
+        text: "χ_beta 후보는 EMF 노출과 고GI 식단의 조합이 각 요인 단독보다 더 큰 인슐린 분비 효과를 만든다고 예측한다. 이는 보정되지 않은 L3 상호작용 가설이지 χ_geo에서 도출된 결과가 아니다.",
         discriminating: true,
       },
       {
         id: "PANC-2",
-        text: "간헐적 단식 또는 시간 제한 식사가 EMF 유도 인슐린 기능 장애로부터 β세포를 보호한다. 단식 기간은 개방된 K_ATP 채널을 통해 β세포 막을 과분극시켜 χ를 거의 제로로 감소시키고 EMF 회복력의 시간적 창을 만든다.",
+        text: "χ_beta 후보는 간헐적 단식 또는 시간 제한 식사가 통제 노출에서 β세포 취약성을 낮춘다고 예측한다. 효과 크기와 보호 종점은 측정이 필요하며 χ_beta는 χ_geo가 아니다.",
         discriminating: true,
       },
       {

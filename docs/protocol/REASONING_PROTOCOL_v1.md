@@ -12,7 +12,7 @@ Kielimallit on koulutettu datalla, jossa konsensusbiofysiikka (terminen kynnys, 
 
 ### Dokumentoitu esimerkki: Nike-BBS-analyysi (elokuu 2026)
 
-Tehtävä oli testata Lindgrenin χ(Ā)-funktion non-monotonisuusennustetta tutkadatalla. Oikein johdettu BERM/Lindgren-ennuste olisi edellyttänyt ensin eksplisiittistä laskua: mitä χ-funktio ennustaa etäisyyden funktiona, kun taustakentän ja tutkan kenttäkomponenttien geometrinen ristiterni δg = 2A_bio · a_ext otetaan huomioon? Tämä olisi saattanut tuottaa ei-triviaalia muotoa, koska χ(a) = a/√(1+a²) kyllästyy suurilla a:n arvoilla.
+Tehtävä oli testata Lindgrenin χ(Ā)-kertoimen kyllästymis- ja taustariippuvuusennustetta tutkadatalla. Oikein johdettu BERM/Lindgren-ennuste olisi edellyttänyt ensin eksplisiittistä laskua: mitä suunnattu Lorentz-tulos ja vasta sen jälkeen tehty avaruudellinen/skalaari-reduktio ennustavat etäisyyden funktiona, kun taustakentän ja tutkan kenttäkomponenttien L1-ristitensori δg⁽¹⁾_μν = κ(A_bio,μa_ext,ν+a_ext,μA_bio,ν) otetaan huomioon? Abstrakti χ(a) = a/√(1+a²) ja sen kyllästyminen ovat L1-matematiikkaa, mutta havaitsijan, spatiaalisen/euklidisen normin, kollineaarisuuden ja `a∝|Ā|`-kartan valinta on L2-silta. Fysikaalinen ennuste voisi tuottaa ei-triviaalia muotoa vasta, kun tämä silta sekä suunta-, vaihe- ja muut L0→L2-kytkentäehdot on määritelty.
 
 Sen sijaan analyysi liukui suoraan standardiin dose-response-kehykseen: "lähempänä tutkaa → vahvempi kenttä → huonompi vaste." Tulos (lineaarinen, monotoninen) tulkittiin "Lindgrenin ennuste falsifioitu", vaikka Lindgrenin ennustetta ei koskaan eksplisiittisesti johdettu kyseiselle geometrialle.
 
@@ -27,25 +27,26 @@ Nämä ovat BERM:n omat lähtökohdat. Ne ovat joko oikein tai väärin — täm
 ### 2.1 Lindgrenin geometrinen ansatz (L-BERM)
 
 ```
-g_μν = η_μν + A_μ A_ν
+g_μν = η_μν + κ A_μ A_ν
 ```
 
 Seuraukset, joita kielimallin on pidettävä mielessä:
 
-- **Neliöllinen ristiterni**: δg⁽¹⁾ = 2 A_bio · a_ext. Biologinen taustapotentiaali (A_bio) ja ulkoinen kenttä (a_ext) tuottavat ristitenerin, joka on kudos- ja orientaatiokohtainen. Tämä EI ole sama kuin "kentän voimakkuus V/m."
-- **χ-funktio**: χ(a) = a/√(1+a²) kyllästyy. Tämä tarkoittaa, että suuren taustakentän läsnäolo voi vaimentaa lisäkentän vaikutusta (kyllästyminen) tai muuttaa vasteen muotoa (non-monotonisuus). Tämä on Lindgren-spesifi ennuste, joka poikkeaa lineaarisesta dose-responsesta.
+- **Neliöllinen ristitermi**: δg⁽¹⁾_μν = κ(A_bio,μ a_ext,ν + a_ext,μ A_bio,ν). Biologinen taustapotentiaali (A_bio) ja ulkoinen kenttä (a_ext) tuottavat ristitensorin, joka on kudos- ja orientaatiokohtainen. Tämä EI ole sama kuin "kentän voimakkuus V/m."
+- **χ-funktio**: Abstrakti kaava χ(a) = a/√(1+a²) on L1-tulos, monotoninen ja kyllästyvä. Sen argumentin samaistaminen positiiviseen spatiaaliseen/euklidiseen suureeseen `a∝|Ā|` on L2-silta. Vasta tämän sillan jälkeen voidaan puhua fysikaalisesta taustakoordinaatista; mahdollinen non-monotonisuus vaatii lisäksi eksplisiittisen suunta-, vaihe-, tehonsäätö- tai biologisen L2/L3-kytkennän eikä seuraa pelkästä χ-muodosta.
 - **Taustariippuvuus**: Sama ulkoinen kenttä voi tuottaa eri vasteen eri kudoksissa, koska A_bio vaihtelee. Tämä on rakenteellinen piirre, ei ad hoc -selitys.
 - **Vaihe, koherenssi, verhokäyrä**: FieldState säilyttää nämä. Pelkkä tehoskaalaari ei ole FieldState.
 
 ### 2.2 Polkuhierarkia
 
-BERM:llä on kuusi polkua (A–F). Polkukirjaimet noudattavat kanonista skeemaa
-(`website/lib/evidence.ts` → `PATHWAY_LABELS`; `berm/berm/biology/pathways.py`).
-Lindgrenin geometriasta seuraa hierarkia:
+BERM:llä on kuusi ehdokaspolkua (A–F). Polkukirjaimet noudattavat kanonista
+skeemaa (`website/lib/evidence.ts` → `PATHWAY_LABELS`;
+`berm/berm/biology/pathways.py`). Polkujen status on arvioitava erillään
+Lindgrenin L0/L1-johdosta:
 
 | Polku | Mekanismi | Geometrinen status | Skaala |
 |-------|-----------|-------------------|--------|
-| **B (RPM/kronobio)** | Kryptokromi → melatoniini → HPG | JOHDETTU: 4/5 RPM-Hamiltonin termiä seuraa geometriasta. g=2 johdettu. | nT (saavutettavissa) |
+| **B (RPM/kronobio)** | Kryptokromi → melatoniini → HPG | TUOTU/AVOIN: standardi-RPM on tuotu L3-mekanismi; Lindgren→RPM-kytkentä vaatii erillisen L2-johdon | nT (mekanismin oma skaala) |
 | A (VGCC/Ca²⁺) | Kalvokytkentä → Ca²⁺ → ROS | RIITTÄMÄTÖN: δV_m ≈ 10⁻²¹ V, eli 10¹⁷× liian pieni ilman biologisia vahvistimia | mV (ei saavutettavissa geometriasta) |
 | C (veri-aivoeste) | BBB/BTB-läpäisevyys → HPA | EI JOHDETTU geometriasta | vaihtelee |
 | D (HPA→HPG) | Kortisoli → HPG-ristikkäisinhibitio | EI JOHDETTU geometriasta | Epäsuora |
@@ -55,7 +56,10 @@ Lindgrenin geometriasta seuraa hierarkia:
 Dopaminerginen haara (motivaatio, addiktio) ei ole oma polkunsa kanonisessa
 skeemassa: se on tason 7 motivaatiokerroin M_repro, EI JOHDETTU geometriasta.
 
-**Kriittinen seuraus**: Jos analyysissa tarvitaan "BERM:n ennuste", johda se ensisijaisesti polusta B (RPM), ei polusta A (VGCC) — ellei kysymys koske nimenomaan VGCC:tä.
+**Kriittinen seuraus**: Jos analyysissa tarvitaan BERM-ennuste, aloita
+Lindgrenin täsmällisestä L0-versiosta ja johda testattava L1-suure. Valitse RPM,
+VGCC tai muu biologinen polku vasta eksplisiittisen L2-sillan jälkeen ja merkitse
+se tuoduksi ehdokkaaksi, ellei kyseistä kytkentää ole erikseen johdettu.
 
 ### 2.3 FieldState vs. annosskaalaari
 
@@ -100,7 +104,7 @@ Konsensus ja BERM ennustavat usein samaa suuntaa (esim. "vahvempi kenttä → su
 |--------------|-------------------|-------------------|
 | Vaste riippuu B₀:n suunnasta | Vaste riippuu vain tehosta | Suuntariippuvuus |
 | ELF-modulaatioikkunat (0,1–100 Hz) | Ei ikkunailmiötä | Taajuusspesifisyys |
-| Saturaatio suurilla kentillä (χ-funktio) | Lineaarinen dose-response | Vasteen muoto |
+| Abstraktin χ-funktion saturaatio; kenttätulkinta vasta eksplisiittisen L2-sillan jälkeen | Lineaarinen dose-response | Vasteen muoto |
 | Biologisen taustan riippuvuus (A_bio) | Sama vaste kaikille kudoksille | Kudosspesifisyys |
 | Kumulatiivinen muisti (persistentti P-tila) | Vaikutus lakkaa altistuksen loppuessa | Viiverakenne |
 | Ikäkohorttivaikutus (in utero -altistus) | Ei kohorttiporrasta | Kohorttisignaali |
@@ -116,7 +120,7 @@ Tarkistuslista jokaiselle kilpailevalle selitykselle:
 □ Onko mekanismi spesifioitu? (koulutus: miten diplomi vaikuttaa munasarjaan?)
 □ Onko annos-vaste osoitettu? (urbanisaatio: mikä V/m tai lux?)
 □ Onko mediaattori vs. sekoittaja erotettu? (ehkäisy: onko EMF→ehkäisy→TFR?)
-□ Onko attenuation bias korjattu? (proxy-mittaus aliestioi aina)
+□ Onko mittausvirheen vaikutus arvioitu? (suunta päätellään mittausmallista; sitä ei oleteta)
 □ Onko kontrolliryhmä puhdas? (vertailuryhmä altistuu myös)
 ```
 
@@ -130,8 +134,8 @@ Tarkistuslista jokaiselle kilpailevalle selitykselle:
 | 4 | **VGCC-oletuspolku** | "BERM perustuu kalvokytkentään" | Lindgrenin jälkeen polku B (RPM) on primäärinen. Polku A vaatii vahvistimia. |
 | 5 | **Proxy = annos** | "Mobiilipenetraatio mittaa EMF-altistusta" | Se mittaa teknologian ajoitusta. FieldState vaatii fysikaaliset mittaukset. |
 | 6 | **Yksipuolinen falsifikaatio** | "Tämä data ei tue BERM:ää" → stop | Kysy myös: tukeeko data kilpailijoita paremmin? Erotteleeko testi malleja? |
-| 7 | **Biasien symmetrisointi** | "Bias voi olla kumpaankin suuntaan" | Attenuation, kontrollikontaminaatio, lyhyt kesto → suunta on kohti nollaa (tilastollinen teoreema). |
-| 8 | **Katsausargumentti** | "Systemaattiset katsaukset eivät löydä vaikutusta" | Jos katsausten oma metodologia aliestioi (proxy, kontrollikontaminaatio), tulos on odotettu eikä informatiivinen. |
+| 7 | **Biasin suunnan olettaminen** | Jokainen proxy- tai kontrolliongelma tulkitaan automaattisesti BERM:n hyväksi | Johda suunta tuloskohtaisesta mittaus- ja valikoitumismallista; ilman perustetta merkitse `UNPREDICTABLE`. |
+| 8 | **Katsauksen automaattinen hyväksyminen tai hylkääminen** | Katsaus ratkaisee kysymyksen asemansa perusteella tai sen nollatulos sivuutetaan ennakolta | Arvioi haku, sisäänottokriteerit, dosimetria, kontrollit, puuttuvat tulokset ja risk of bias samalla menetelmällä tuloksen suunnasta riippumatta. |
 
 ### Sääntö 5: RAPORTOI KOLME ASIAA JOKAISESTA ANALYYSISTA
 
@@ -148,7 +152,7 @@ C. EROTTELUKYKY: Erottiko testi mallit toisistaan? Jos ei, miksi?
 L-BERM:n rajaava periaate: vain Lindgrenin premisseistä johdetut tulokset kuuluvat L-BERM:iin. Jos käytät tulosta standardista QM:stä tai QED:stä, merkitse se näkyvästi:
 
 ```
-[JOHDETTU]  — seuraa g_μν = η_μν + A_μA_ν:stä
+[JOHDETTU]  — seuraa g_μν = η_μν + κA_μA_ν:stä
 [EMERGENTTI] — seuraa Lindgrenin rakenteesta mutta ei suoraan premissistä
 [TUOTU]     — tuotu standardifysiikasta (esim. HFC-arvot, J(r))
 [AVOIN]     — ei johdettu eikä tuotu, ratkaisematon
@@ -230,7 +234,7 @@ Käytä tätä referenssinä kun johdat BERM:n ennustetta uudessa kontekstissa:
 - Efekti heikkenee jos spin-koherenssiaika lyhenee (lämpötila, viskoositeetti)
 
 ### A.2 Lindgren/χ-spesifejä
-- Kyllästyminen: χ(a) → 1 kun a → ∞, joten lisäkentän marginaalivaikutus pienenee jo korkeilla taustatasoilla
+- L1-kaavan kyllästyminen: χ(a) → 1 kun a → ∞. Väite, että `a` on positiivinen kenttä- tai taustasuure `|Ā|`, vaatii erillisen spatiaalisen/euklidisen L2-sillan
 - Taustariippuvuus: sama a_ext tuottaa eri δg eri A_bio-konteksteissa
 - Beat-taajuudet: metriikan A²-rakenne tuottaa sekoitustaajuuksia algebrallisesti
 - Neliöllinen ristiteneri: efekti ∝ A_bio × a_ext, ei ∝ a_ext²

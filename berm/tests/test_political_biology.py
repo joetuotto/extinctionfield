@@ -2778,3 +2778,110 @@ class TestTransmissionGradient:
 class TestSocialTransmissionFunctions:
     def test_all_registered(self):
         assert len(SOCIAL_TRANSMISSION_FUNCTIONS) == 7
+
+
+# ── Required conditions and the anomic state ──
+
+
+class TestRequiredIdeologyConditions:
+    """An ideology may not be assigned when its constitutive condition fails.
+
+    Before this rule the suburban 2050 profile classified as authoritarian
+    conservatism on a 0.75 partial fit while the one condition it failed was
+    hierarchy acceptance (0.351 against a 0.40 threshold) — the capacity the
+    ideology is defined by. Under the dual-hormone hypothesis a population
+    with T-driven hierarchy acceptance below threshold has no substrate for
+    hierarchy maintenance, so the label contradicted the model's own state.
+    """
+
+    def test_authoritarian_conservatism_requires_hierarchy_acceptance(self):
+        authoritarian = next(
+            i for i in IDEOLOGY_PROFILES if i.name == "authoritarian_conservatism"
+        )
+        assert "hierarchy_acceptance" in authoritarian.required
+
+    def test_failing_a_required_condition_excludes_the_ideology(self):
+        """Threat response alone must not yield authoritarian conservatism."""
+        profile = {
+            "hierarchy_acceptance": 0.30,  # below the 0.40 threshold
+            "threat_sensitivity": 0.60,
+            "empathy_scope": 0.30,
+            "cognitive_complexity": 0.55,
+            "novelty_seeking": 0.45,
+            "time_preference": 0.60,
+            "group_conformity": 0.60,
+        }
+        matched = {m["ideology"] for m in classify_ideology(profile)["matches"]}
+        assert "authoritarian_conservatism" not in matched
+
+    def test_meeting_every_condition_still_yields_the_ideology(self):
+        """The rule must not make the ideology unreachable."""
+        profile = {
+            "hierarchy_acceptance": 0.50,
+            "threat_sensitivity": 0.60,
+            "empathy_scope": 0.30,
+            "cognitive_complexity": 0.55,
+            "novelty_seeking": 0.30,
+            "time_preference": 0.70,
+            "group_conformity": 0.45,
+        }
+        matched = {m["ideology"] for m in classify_ideology(profile)["matches"]}
+        assert "authoritarian_conservatism" in matched
+
+
+class TestAnomicFragmentation:
+    """The dual-hormone lock state: low T, high CORT, no mobilisation capacity."""
+
+    def test_suburban_2050_is_anomic_fragmentation(self):
+        profile = environment_profile("suburban", 2050)
+        ideology = profile["dominant_ideology"]
+        assert ideology["primary"] == "anomic_fragmentation"
+        assert ideology["matches"][0]["fit"] == pytest.approx(1.0)
+
+    def test_suburban_2050_keeps_its_published_numbers(self):
+        """The label changed; BioCap and pathologization must not.
+
+        The site publishes these at three decimals as 0.525 and 0.460.
+        """
+        profile = environment_profile("suburban", 2050)
+        assert profile["biocap"] == pytest.approx(0.5248, abs=1e-4)
+        assert profile["dominant_ideology"]["pathologization"] == pytest.approx(0.4595, abs=1e-4)
+        assert f"{profile['biocap']:.3f}" == "0.525"
+        assert f"{profile['dominant_ideology']['pathologization']:.3f}" == "0.460"
+
+    def test_earlier_trajectory_years_are_unchanged(self):
+        expected = {
+            1950: "pragmatic_localism",
+            1990: "pragmatic_localism",
+            2010: "green_abstraction",
+            2025: "green_abstraction",
+        }
+        for year, name in expected.items():
+            assert environment_profile("suburban", year)["dominant_ideology"]["primary"] == name
+
+    def test_2025_environment_labels_are_unchanged(self):
+        expected = {
+            "amish": "pragmatic_localism",
+            "rural": "pragmatic_localism",
+            "suburban": "green_abstraction",
+            "urban_residential": "progressive_egalitarianism",
+            "urban_office": "progressive_egalitarianism",
+        }
+        for env, name in expected.items():
+            assert environment_profile(env, 2025)["dominant_ideology"]["primary"] == name
+
+    def test_anomic_state_needs_both_lock_conditions(self):
+        """Low hierarchy acceptance without elevated threat is not anomic."""
+        anomic = next(i for i in IDEOLOGY_PROFILES if i.name == "anomic_fragmentation")
+        assert set(anomic.required) == {"hierarchy_acceptance", "threat_sensitivity"}
+        calm = {
+            "hierarchy_acceptance": 0.30,
+            "threat_sensitivity": 0.20,  # no chronic cortisol load
+            "novelty_seeking": 0.40,
+            "empathy_scope": 0.35,
+            "time_preference": 0.60,
+            "group_conformity": 0.50,
+            "cognitive_complexity": 0.55,
+        }
+        matched = {m["ideology"] for m in classify_ideology(calm)["matches"]}
+        assert "anomic_fragmentation" not in matched

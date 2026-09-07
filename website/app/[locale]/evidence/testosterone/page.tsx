@@ -54,7 +54,7 @@ const COPY = {
     s4Title: "Cross-species gradient",
     s4Lead: "Seven species/population groups arranged by estimated cumulative EMF exposure show a dose-response relationship with reproductive decline:",
     s4Stat: "r = 0.84, p = 0.017, n = 7 species groups",
-    s4Caveat: "Ecological correlation across species with heterogeneous decline measurements and EMF burden estimates. The species differ in body size, lifespan, generation time, and confounders. Consistent with but not proof of dose-response.",
+    s4Caveat: "Ecological correlation across species with heterogeneous decline measurements and EMF burden estimates. The species differ in body size, lifespan, generation time, and confounders. Consistent with but not proof of dose-response. This applies equally to conventional explanations.",
 
     s5Title: "Epistemological honesty",
     s5Points: [
@@ -112,7 +112,7 @@ const COPY = {
     s4Title: "Lajien välinen gradientti",
     s4Lead: "Seitsemän lajia/populaatioryhmaa arvioidun kumulatiivisen EMF-altistuksen mukaan järjestettyinä osoittaa annosvastesuhdetta lisääntymisen laskuun:",
     s4Stat: "r = 0,84, p = 0,017, n = 7 lajiryhmaa",
-    s4Caveat: "Ekologinen korrelaatio lajien välillä heterogeenisilla laskumittauksilla ja EMF-kuorma-arvioilla. Lajit eroavat ruumiinkoon, eliniän, sukupolven ajan ja sekoittavien tekijöiden suhteen. Yhdenmukainen mutta ei todiste annosvasteesta.",
+    s4Caveat: "Ekologinen korrelaatio lajien välillä heterogeenisilla laskumittauksilla ja EMF-kuorma-arvioilla. Lajit eroavat ruumiinkoon, eliniän, sukupolven ajan ja sekoittavien tekijöiden suhteen. Yhdenmukainen mutta ei todiste annosvasteesta. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     s5Title: "Epistemologinen rehellisyys",
     s5Points: [
@@ -170,7 +170,7 @@ const COPY = {
     s4Title: "種間グラディエント",
     s4Lead: "推定累積EMF暴露で配列された7種/集団が生殖低下との用量反応関係を示しています：",
     s4Stat: "r = 0.84, p = 0.017, n = 7種グループ",
-    s4Caveat: "異質な低下測定とEMF負荷推定を持つ種間の生態学的相関。種は体サイズ、寿命、世代時間、交絡因子が異なります。用量反応と整合しますが証明ではありません。",
+    s4Caveat: "異質な低下測定とEMF負荷推定を持つ種間の生態学的相関。種は体サイズ、寿命、世代時間、交絡因子が異なります。用量反応と整合しますが証明ではありません。これは従来の説明にも同様に当てはまります。",
 
     s5Title: "認識論的誠実さ",
     s5Points: [
@@ -228,7 +228,7 @@ const COPY = {
     s4Title: "Gradient inter-espèces",
     s4Lead: "Sept espèces/groupes de population classés par exposition EMF cumulée montrent une relation dose-réponse :",
     s4Stat: "r = 0,84, p = 0,017, n = 7 groupes d'espèces",
-    s4Caveat: "Corrélation écologique inter-espèces avec des mesures hétérogènes. Cohérent mais non probant.",
+    s4Caveat: "Corrélation écologique inter-espèces avec des mesures hétérogènes. Cohérent mais non probant. Cela s'applique tout autant aux explications conventionnelles.",
 
     s5Title: "Honnêteté épistémologique",
     s5Points: [
@@ -286,7 +286,7 @@ const COPY = {
     s4Title: "종간 그래디언트",
     s4Lead: "추정 누적 EMF 노출로 배열된 7개 종/집단이 생식 감소와의 용량-반응 관계를 보여줍니다:",
     s4Stat: "r = 0.84, p = 0.017, n = 7개 종 그룹",
-    s4Caveat: "이질적인 감소 측정과 EMF 부하 추정을 가진 종간 생태학적 상관관계.",
+    s4Caveat: "이질적인 감소 측정과 EMF 부하 추정을 가진 종간 생태학적 상관관계. 이는 기존 설명에도 동일하게 적용됩니다.",
 
     s5Title: "인식론적 정직",
     s5Points: [

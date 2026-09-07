@@ -18,7 +18,11 @@ from berm.physics.field_state import (
     TransferMatrix,
     Vector3,
     evaluate_field_state,
+    lindgren_chi,
 )
+
+
+CHI_DOCSTRING = "L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."
 
 
 def test_package_exports_field_state_contract():
@@ -27,6 +31,10 @@ def test_package_exports_field_state_contract():
 
     assert PackageFieldState is FieldState
     assert package_status is assess_field_state_completeness
+
+
+def test_chi_has_canonical_l1_docstring():
+    assert lindgren_chi.__doc__ == CHI_DOCSTRING
 
 
 def test_legacy_adapter_exactly_preserves_two_channel_scalar_semantics():
@@ -104,14 +112,14 @@ def test_vector_geometry_is_retained_while_legacy_proxy_remains_magnitude_only()
     assert aligned_result.legacy_timing_proxy == pytest.approx(
         perpendicular_result.legacy_timing_proxy
     )
-    assert aligned_result.geometric_cross_term == pytest.approx(2.0)
-    assert perpendicular_result.geometric_cross_term == pytest.approx(0.0)
+    assert aligned_result.candidate_euclidean_cross_term == pytest.approx(2.0)
+    assert perpendicular_result.candidate_euclidean_cross_term == pytest.approx(0.0)
     assert aligned_result.background_personal_cosine == pytest.approx(1.0)
     assert perpendicular_result.background_personal_cosine == pytest.approx(0.0)
     assert aligned_result.tissue_axis_projection > perpendicular_result.tissue_axis_projection
 
 
-def test_coherent_cross_term_requires_explicit_phase_and_coherence():
+def test_candidate_euclidean_coherent_term_requires_phase_and_coherence():
     base = dict(
         background=Vector3(1.0, 0.0, 0.0),
         ambient=Vector3(0.0, 0.0, 0.0),
@@ -142,10 +150,26 @@ def test_coherent_cross_term_requires_explicit_phase_and_coherence():
         ReceptorState(organ="testis"),
     )
 
-    assert unknown.geometric_cross_term == pytest.approx(4.0)
-    assert unknown.coherent_cross_term == 0.0
-    assert in_phase.coherent_cross_term == pytest.approx(2.0)
-    assert anti_phase.coherent_cross_term == pytest.approx(-2.0)
+    assert unknown.candidate_euclidean_cross_term == pytest.approx(4.0)
+    assert unknown.candidate_euclidean_coherent_cross_term == 0.0
+    assert in_phase.candidate_euclidean_coherent_cross_term == pytest.approx(2.0)
+    assert anti_phase.candidate_euclidean_coherent_cross_term == pytest.approx(-2.0)
+
+
+def test_legacy_cross_term_names_are_read_only_compatibility_aliases():
+    result = evaluate_field_state(
+        FieldState(
+            background=Vector3(1.0, 0.0, 0.0),
+            ambient=Vector3(0.0, 0.0, 0.0),
+            personal=Vector3(2.0, 0.0, 0.0),
+            normalization_id="fixture",
+            source_coupling=SourceCoupling(relative_phase_rad=0.0, coherence=0.5),
+        ),
+        ReceptorState(organ="testis"),
+    )
+
+    assert result.geometric_cross_term == result.candidate_euclidean_cross_term
+    assert result.coherent_cross_term == result.candidate_euclidean_coherent_cross_term
 
 
 def test_measurement_ready_state_requires_coherence_duration() -> None:

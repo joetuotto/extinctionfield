@@ -279,6 +279,11 @@ def test_v17j_ovulation_vgic_active():
 def test_chi_zero():
     assert chi(0.0) == 0.0
 
+def test_chi_has_canonical_l1_docstring():
+    assert chi.__doc__ == (
+        "L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."
+    )
+
 def test_chi_large_saturates():
     assert abs(chi(100.0) - 1.0) < 0.001
 

@@ -39,3 +39,18 @@ def two_channel_exposure(
 ) -> float | NDArray:
     """Legacy proxy combination, not a calibrated biological response."""
     return np.asarray(ambient) + chi(ambient) * np.asarray(personal)
+
+
+def candidate_ion_channel_response(
+    a_bar: float | NDArray,
+    delta_v_mem: float | NDArray,
+    bridge_coupling: float | NDArray,
+) -> float | NDArray:
+    """Evaluate the explicit L2 candidate response ``C·χ(Ā)·ΔV_mem``.
+
+    The coefficient ``χ`` keeps its L1 status.  Multiplication by the supplied
+    membrane-voltage shift and bridge coupling is the open L2 biological
+    identification; neither quantity is claimed to follow from the metric.
+    """
+
+    return np.asarray(bridge_coupling) * chi(a_bar) * np.asarray(delta_v_mem)

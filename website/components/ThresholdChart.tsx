@@ -68,6 +68,15 @@ function yRightScale(tfr: number) {
   return PAD.top + ((TFR_MAX - tfr) / (TFR_MAX - TFR_MIN)) * CH;
 }
 
+/**
+ * Keep server- and browser-rendered SVG attributes byte-identical. The two
+ * JavaScript runtimes may differ by one floating-point ULP in Math.pow, which
+ * is invisible in the chart but otherwise triggers a React hydration error.
+ */
+function svgPoint(x: number, y: number): string {
+  return `${x.toFixed(6)},${y.toFixed(6)}`;
+}
+
 export function ThresholdChart({ locale }: { locale: string }) {
   const [selectedId, setSelectedId] = useState("finland");
   const copy = pickCopy(COPY, locale);
@@ -76,7 +85,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
   const tCurvePoints: string[] = [];
   for (let yr = YEAR_MIN; yr <= YEAR_MAX; yr++) {
     const t = computeTIndex(yr, YEAR_MIN, country.tDeclinePct);
-    tCurvePoints.push(`${xScale(yr)},${yLeftScale(t)}`);
+    tCurvePoints.push(svgPoint(xScale(yr), yLeftScale(t)));
   }
   const tCurveSolid = tCurvePoints.slice(0, 2025 - YEAR_MIN + 1).join(" ");
   const tCurveDashed = tCurvePoints.slice(2025 - YEAR_MIN).join(" ");
@@ -99,17 +108,17 @@ export function ThresholdChart({ locale }: { locale: string }) {
       ]
     : [];
   const projLinePath = projLine
-    .map((p) => `${xScale(p.year)},${yRightScale(p.tfr)}`)
+    .map((p) => svgPoint(xScale(p.year), yRightScale(p.tfr)))
     .join(" ");
 
   const bandPath = lastTfr
     ? [
-        `${xScale(lastTfr.year)},${yRightScale(lastTfr.tfr)}`,
-        `${xScale(2030)},${yRightScale(country.tfrProjection2030[1])}`,
-        `${xScale(2035)},${yRightScale(country.tfrProjection2035[1])}`,
-        `${xScale(2035)},${yRightScale(country.tfrProjection2035[0])}`,
-        `${xScale(2030)},${yRightScale(country.tfrProjection2030[0])}`,
-        `${xScale(lastTfr.year)},${yRightScale(lastTfr.tfr)}`,
+        svgPoint(xScale(lastTfr.year), yRightScale(lastTfr.tfr)),
+        svgPoint(xScale(2030), yRightScale(country.tfrProjection2030[1])),
+        svgPoint(xScale(2035), yRightScale(country.tfrProjection2035[1])),
+        svgPoint(xScale(2035), yRightScale(country.tfrProjection2035[0])),
+        svgPoint(xScale(2030), yRightScale(country.tfrProjection2030[0])),
+        svgPoint(xScale(lastTfr.year), yRightScale(lastTfr.tfr)),
       ].join(" ")
     : "";
 

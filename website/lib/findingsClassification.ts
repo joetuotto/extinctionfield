@@ -59,9 +59,10 @@ export function findingsInGroup(group: Group): readonly Finding[] {
   return FINDINGS.filter((f) => groupOf(f) === group);
 }
 
-type Locale = "en" | "fi";
+type Locale = "en" | "fi" | "ja" | "fr" | "ko";
+type LocalizedLabel = Record<"en" | "fi", string> & Partial<Record<Exclude<Locale, "en" | "fi">, string>>;
 
-export const GROUP_LABELS: Record<Group, Record<Locale, string>> = {
+export const GROUP_LABELS: Record<Group, LocalizedLabel> = {
   remains_negative: { en: "Remains negative", fi: "Pysyy negatiivisena" },
   reclassified: { en: "Reclassified", fi: "Uudelleenluokiteltu" },
   internal_refinement: { en: "Internal refinement", fi: "Sisäinen tarkennus" },
@@ -89,9 +90,15 @@ export const GROUP_STYLES: Record<Group, { text: string; border: string; bg: str
   },
 };
 
-const CLASSIFICATION_LABELS: Record<string, Record<Locale, string>> = {
+const CLASSIFICATION_LABELS: Record<string, LocalizedLabel> = {
   falsification: { en: "Falsification", fi: "Falsifikaatio" },
-  lindgren_chi_falsified: { en: "BERM χ closure falsified", fi: "BERM:n χ-sulkeuma falsifioitu" },
+  lindgren_chi_falsified: {
+    en: "L1 χ_geo shape falsified",
+    fi: "L1-χ_geo-muoto falsifioitu",
+    ja: "L1 χ_geo形状の反証",
+    fr: "Forme L1 χ_geo réfutée",
+    ko: "L1 χ_geo 형태 반증",
+  },
   mechanism_failure: { en: "Mechanism failure", fi: "Mekanismin epäonnistuminen" },
   soliton_layer_falsified: { en: "Soliton layer falsified", fi: "Solitonikerros falsifioitu" },
   mechanism_impossible: { en: "Mechanism impossible", fi: "Mekanismi mahdoton" },
@@ -109,14 +116,20 @@ const CLASSIFICATION_LABELS: Record<string, Record<Locale, string>> = {
 };
 
 export function classificationLabel(key: string, locale: string): string {
-  const l: Locale = locale === "fi" ? "fi" : "en";
-  return CLASSIFICATION_LABELS[key]?.[l] ?? key;
+  const l: Locale = locale === "fi" || locale === "ja" || locale === "fr" || locale === "ko" ? locale : "en";
+  return CLASSIFICATION_LABELS[key]?.[l] ?? CLASSIFICATION_LABELS[key]?.en ?? key;
 }
 
-const AFFECTS_LABELS: Record<string, Record<Locale, string>> = {
+const AFFECTS_LABELS: Record<string, LocalizedLabel> = {
   demographic_claims: { en: "demographic claims", fi: "demografiset väitteet" },
   none: { en: "nothing in the current model", fi: "ei mitään nykymallissa" },
-  l_berm_chi_shape: { en: "L-BERM χ shape", fi: "L-BERM:n χ-muoto" },
+  l_berm_chi_shape: {
+    en: "L-BERM L1 χ_geo shape",
+    fi: "L-BERM:n L1-χ_geo-muoto",
+    ja: "L-BERMのL1 χ_geo形状",
+    fr: "Forme L1 χ_geo du L-BERM",
+    ko: "L-BERM의 L1 χ_geo 형태",
+  },
   pathway_a_geometry: { en: "pathway A geometry", fi: "polun A geometria" },
   l_berm_soliton: { en: "L-BERM soliton layer", fi: "L-BERM:n solitonikerros" },
   berm_v6_v9_resonance: { en: "BERM v6–v9 resonance claim", fi: "BERM v6–v9 -resonanssiväite" },
@@ -126,6 +139,6 @@ const AFFECTS_LABELS: Record<string, Record<Locale, string>> = {
 };
 
 export function affectsLabel(key: string, locale: string): string {
-  const l: Locale = locale === "fi" ? "fi" : "en";
-  return AFFECTS_LABELS[key]?.[l] ?? key;
+  const l: Locale = locale === "fi" || locale === "ja" || locale === "fr" || locale === "ko" ? locale : "en";
+  return AFFECTS_LABELS[key]?.[l] ?? AFFECTS_LABELS[key]?.en ?? key;
 }

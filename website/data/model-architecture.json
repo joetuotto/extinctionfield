@@ -15,7 +15,7 @@
     "formulation": "2025-weyl-gme",
     "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
     "l2BridgeStatus": "conditional_formal_operator",
-    "l2BridgeMeaning": "Conditional on minimal matter-metric coupling and response theory, BERM derives the formal geometry-to-observable operator. Its gauge prescription, physical scale, tissue response kernels and human endpoint calibration remain open; downstream biology is not a Lindgren-derived result.",
+    "l2BridgeMeaning": "Conditional on minimal matter-metric coupling and response theory, BERM derives the formal geometry-to-observable operator. Its gauge prescription, physical scale, tissue response kernels and human endpoint calibration remain open; downstream biology is not a Lindgren-derived result. The Lorentz-to-spatial scalar reduction that maps the directed derivative through |A_bar| to chi(|A_bar|) is L2, while the chi formula itself always remains L1. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations; their empirical provenance does not erase or relabel any L1-derived component in the same chain.",
     "derivedGeometry": "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)",
     "responseOperator": "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response",
     "stateConditionedResponse": "u_i(t) = integral K_i^{mu nu}(tau; S_i(t-tau)) delta_g_mu_nu(t-tau) d tau",
@@ -35,7 +35,62 @@
     "responseEvidenceRole": "Component studies constrain arguments, null regions and lag families of the open tissue kernel; they do not validate the Lindgren premise or calibrate a human endpoint coefficient.",
     "geometricCoordinate": "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, for an explicitly normalized positive-norm mode",
     "calibrationStatus": "open",
-    "fieldStateRole": "optional_measurement_input_only"
+    "fieldStateRole": "optional_measurement_input_only",
+    "epistemicStatusPolicy": "componentwise_no_weakest_link_collapse",
+    "derivedStatusPreserved": true,
+    "formalDerivation": {
+      "implemented": true,
+      "epistemicStatus": "L1_DERIVED_FORMULAS",
+      "gateStatus": "CONDITIONAL_INPUT_CONTRACT",
+      "derivedStatusPreserved": true,
+      "requiredElements": [
+        "variational_harmonic_metric_gme",
+        "weyl_semimetricity_and_connection",
+        "bianchi_contracted_identity_and_homogeneous_df"
+      ],
+      "requiresAllElements": true,
+      "bianchiAloneSufficient": false,
+      "actionPremise": "S=integral sqrt(-det g) R d^4x",
+      "parallelActionPremises": [
+        "EINSTEIN_HILBERT_WITH_LEVI_CIVITA_CURVATURE",
+        "WEYL_METRIC_GRADIENT_HARMONIC_GME"
+      ],
+      "variationalEquation": "delta S/delta A_mu=0",
+      "variationalResidual": "branch-selected numerical full-action delta S/delta A_mu; EH also checks -2 kappa sqrt(-det g) G^(mu nu) A_nu; GME also checks the harmonic decomposition and R_outer=kappa R_GME",
+      "fullEulerLagrangeRequired": true,
+      "fullEulerLagrangeEvidence": "CONTENT_BOUND_NUMERICAL_RESIDUAL_AND_STRUCTURED_ATTESTATION_REQUIRED",
+      "inputProvenanceBinding": "NUMERIC_INPUT_BUNDLE_SHA256",
+      "ehResidualComputation": "FROM_SUPPLIED_POTENTIAL_AND_SUPPLIED_SYMMETRIC_EINSTEIN_TENSOR",
+      "weylCondition": "nabla^LC_sigma g_mu_nu=0; the Weyl branch separately requires tilde_nabla_sigma g_mu_nu=2 phi_sigma g_mu_nu",
+      "metricCompatibilityCondition": "nabla^LC_sigma g_mu_nu=0",
+      "weylSemimetricityCondition": "tilde_nabla_sigma g_mu_nu=2 phi_sigma g_mu_nu",
+      "weylChecks": [
+        "levi_civita_metric_compatibility",
+        "semimetricity",
+        "connection_reconstruction",
+        "torsion_free"
+      ],
+      "bianchiCondition": "F=dA and homogeneous dF=0",
+      "contractedBianchiCheck": "nabla^LC_mu G_LC^(mu nu)=0 is audited separately and is not a sourced-Maxwell equation",
+      "bianchiChecks": [
+        "levi_civita_contracted_identity",
+        "field_definition_F_equals_dA",
+        "same_field_derivative_attestation",
+        "homogeneous_dF"
+      ],
+      "acceptanceAssertion": "variational_check AND weyl_check AND bianchi_check",
+      "residualAcceptance": "PER_RESIDUAL_ATOL_PLUS_RTOL_TIMES_REFERENCE_SCALE",
+      "sourceEquationOrigin": "variational principle plus Weyl conditions and identifications",
+      "homogeneousEquationOrigin": "Bianchi identity for F=dA",
+      "unitTests": {
+        "variational": "tests/test_lindgren_tensor.py::test_variational_field_residual_and_three_way_gate_are_explicit",
+        "weyl": "tests/test_lindgren_tensor.py::test_weyl_semimetricity_uses_the_full_weyl_connection",
+        "leviCivitaMetricCompatibility": "tests/test_lindgren_tensor.py::test_weyl_connection_and_torsion_residuals_use_same_nontrivial_metric",
+        "bianchi": "tests/test_lindgren_tensor.py::test_bianchi_is_the_homogeneous_cyclic_identity_not_the_source_equation"
+      },
+      "validationMeaning": "formal_residual_consistency_not_physical_confirmation",
+      "gateStatusMeaning": "conditional_input_contract_not_independent_proof"
+    }
   },
   "routes": {
     "prediction": {
@@ -57,6 +112,19 @@
       "acceptsFieldStateObservations": false,
       "requiresExternallySuppliedBiologicalStates": true,
       "publishesLockedForecasts": false
+    },
+    "lindgrenDkc": {
+      "id": "berm-lindgren-dkc-candidate-v1",
+      "role": "candidate_scenario_and_validation",
+      "calculationEnabled": true,
+      "candidateOutputsEnabled": true,
+      "inputKind": "national_technology_timing_proxy_or_caller_supplied_normalized_state",
+      "fieldStateCalibrated": true,
+      "fieldStateCalibrationScope": "CALIBRATION_PIPELINE_IMPLEMENTED_AND_PRODUCES_VALUES",
+      "refinedM4CurrentDataStatus": "NOT_IDENTIFIABLE_WITH_CURRENT_DATA",
+      "supportsUncalibratedExecution": true,
+      "requiresOpenL2Bridge": true,
+      "publishesLockedForecasts": true
     }
   },
   "measurementModules": {
@@ -79,51 +147,107 @@
       {
         "id": "joint-endocrine-gate",
         "claimId": "claim.synthesis.joint-endocrine-gate",
-        "path": ["HPA_HPG", "ANDROGEN_RECEPTOR_SIGNAL", "INDIVIDUAL_BEHAVIORAL_RESPONSE"],
+        "path": [
+          "HPA_HPG",
+          "ANDROGEN_RECEPTOR_SIGNAL",
+          "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+        ],
         "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
-        "relationIds": ["er.synthesis.joint-endocrine.mehta2010", "er.synthesis.joint-endocrine.narinx2022"]
+        "relationIds": [
+          "er.synthesis.joint-endocrine.mehta2010",
+          "er.synthesis.joint-endocrine.narinx2022"
+        ]
       },
       {
         "id": "cry-clock-hpg-serial-bridge",
         "claimId": "claim.synthesis.cry-clock-hpg-chain",
-        "path": ["B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG"],
+        "path": [
+          "B_RPM_CRY",
+          "MELATONIN_REDOX",
+          "HPA_HPG"
+        ],
         "synthesisClass": "DIRECT_COMPONENT_CONVERGENCE",
-        "relationIds": ["er.synthesis.cry-clock.yoshii2009", "er.synthesis.cry-clock.sherrard2018", "er.synthesis.cry-clock.cao2015", "er.synthesis.cry-clock.liu2014"]
+        "relationIds": [
+          "er.synthesis.cry-clock.yoshii2009",
+          "er.synthesis.cry-clock.sherrard2018",
+          "er.synthesis.cry-clock.cao2015",
+          "er.synthesis.cry-clock.liu2014"
+        ]
       },
       {
         "id": "pharmacological-target-triangulation",
         "claimId": "claim.synthesis.target-intervention-triangulation",
-        "path": ["A_VGCC_ROS", "VMEM_MTOR", "MALE_SPERM"],
+        "path": [
+          "A_VGCC_ROS",
+          "VMEM_MTOR",
+          "MALE_SPERM"
+        ],
         "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
-        "relationIds": ["er.synthesis.pharmacology.pall2013", "er.synthesis.pharmacology.ccb1994", "er.synthesis.pharmacology.sirolimus2008"]
+        "relationIds": [
+          "er.synthesis.pharmacology.pall2013",
+          "er.synthesis.pharmacology.ccb1994",
+          "er.synthesis.pharmacology.sirolimus2008"
+        ]
       },
       {
         "id": "protocol-state-heterogeneity",
         "claimId": "claim.synthesis.protocol-state-heterogeneity",
-        "path": ["BERM_L2_BRIDGE"],
+        "path": [
+          "BERM_L2_BRIDGE"
+        ],
         "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
-        "relationIds": ["er.bridge.litovitz1991", "er.bridge.blackman1990", "er.bridge.blackman1991", "er.bridge.berman1990"]
+        "relationIds": [
+          "er.bridge.litovitz1991",
+          "er.bridge.blackman1990",
+          "er.bridge.blackman1991",
+          "er.bridge.berman1990"
+        ]
       },
       {
         "id": "vmem-calcium-mtor-interface",
         "claimId": "claim.synthesis.vmem-calcium-interface",
-        "path": ["A_VGCC_ROS", "VMEM_MTOR", "MALE_SPERM"],
+        "path": [
+          "A_VGCC_ROS",
+          "VMEM_MTOR",
+          "MALE_SPERM"
+        ],
         "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
-        "relationIds": ["er.synthesis.vmem.sempou2022", "er.synthesis.vmem.brown2016", "er.synthesis.vmem.zandieh2025"]
+        "relationIds": [
+          "er.synthesis.vmem.sempou2022",
+          "er.synthesis.vmem.brown2016",
+          "er.synthesis.vmem.zandieh2025"
+        ]
       },
       {
         "id": "conserved-cross-species-prior",
         "claimId": "claim.synthesis.cross-species-transfer-prior",
-        "path": ["B_RPM_CRY", "ECOLOGICAL_ENCOUNTER", "ECOLOGICAL_SELECTION"],
+        "path": [
+          "B_RPM_CRY",
+          "ECOLOGICAL_ENCOUNTER",
+          "ECOLOGICAL_SELECTION"
+        ],
         "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
-        "relationIds": ["er.synthesis.cross-species.ritz2004", "er.synthesis.cross-species.yoshii2009", "er.synthesis.cross-species.wan2021", "er.synthesis.cross-species.hallmann2017", "er.synthesis.cross-species.rosenberg2019"]
+        "relationIds": [
+          "er.synthesis.cross-species.ritz2004",
+          "er.synthesis.cross-species.yoshii2009",
+          "er.synthesis.cross-species.wan2021",
+          "er.synthesis.cross-species.hallmann2017",
+          "er.synthesis.cross-species.rosenberg2019"
+        ]
       },
       {
         "id": "graded-susceptibility-continuum",
         "claimId": "claim.synthesis.graded-susceptibility",
-        "path": ["BERM_L2_BRIDGE", "INDIVIDUAL_BEHAVIORAL_RESPONSE"],
+        "path": [
+          "BERM_L2_BRIDGE",
+          "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+        ],
         "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
-        "relationIds": ["er.synthesis.susceptibility.mccarty2011", "er.synthesis.susceptibility.belpomme2022", "er.synthesis.susceptibility.rubin2010"]
+        "relationIds": [
+          "er.synthesis.susceptibility.mccarty2011",
+          "er.synthesis.susceptibility.belpomme2022",
+          "er.synthesis.susceptibility.rubin2010"
+        ]
       }
     ]
   },

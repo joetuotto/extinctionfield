@@ -10,11 +10,11 @@ const COPY = {
   en: {
     title: "Heliobiology: A Century of Evidence",
     subtitle:
-      "From Chizhevsky's 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism.",
+      "From Chizhevsky's 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism; conventional explanations are subject to the same causal test.",
     backLink: "← Back to Evidence",
 
     cautionText:
-      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed.",
+      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed. This applies equally to conventional explanations.",
 
     chiKicker: "CHIZHEVSKY AND THE ORIGINS",
     chiTitle: "The terrestrial echo of solar storms (1936)",
@@ -73,11 +73,11 @@ const COPY = {
   fi: {
     title: "Heliobiologia: Vuosisata todisteita",
     subtitle:
-      "Tshizhevskin vuoden 1936 havainnoista moderniin epidemiologiaan — heliobiologia on dokumentoinut aurinko-biologisia korrelaatioita vuosisadan ajan. BERM ehdottaa CRY/RPM:aa kausaalimekanismiksi.",
+      "Tshizhevskin vuoden 1936 havainnoista moderniin epidemiologiaan — heliobiologia on dokumentoinut aurinko-biologisia korrelaatioita vuosisadan ajan. BERM ehdottaa CRY/RPM:aa kausaalimekanismiksi; sama kausaalinen testivaatimus koskee konventionaalisia selityksiä.",
     backLink: "← Takaisin todisteisiin",
 
     cautionText:
-      "Heliobiologia on kerryttanyt vuosisadan korrelaationayttöa. BERM ehdottaa CRY/RPM:aa kausaalimekanismiksi — tama on testattavissa mutta ei viela vahvistettu.",
+      "Heliobiologia on kerryttanyt vuosisadan korrelaationayttöa. BERM ehdottaa CRY/RPM:aa kausaalimekanismiksi — tama on testattavissa mutta ei viela vahvistettu. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     chiKicker: "TSHIZHEVSKI JA ALKUPERAISET",
     chiTitle: "Aurinkomyrskyjen maanpaallinen kaiku (1936)",
@@ -136,11 +136,11 @@ const COPY = {
   ja: {
     title: "太陽生物学：1世紀の証拠",
     subtitle:
-      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism.",
+      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism; conventional explanations are subject to the same causal test.",
     backLink: "← 証拠に戻る",
 
     cautionText:
-      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed.",
+      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed. This applies equally to conventional explanations.",
 
     chiKicker: "チジェフスキーと起源",
     chiTitle: "太陽嵐の地上の反響（1936）",
@@ -199,11 +199,11 @@ const COPY = {
   fr: {
     title: "Héliobiologie : Un siècle de preuves",
     subtitle:
-      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism.",
+      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism; conventional explanations are subject to the same causal test.",
     backLink: "← Retour aux preuves",
 
     cautionText:
-      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed.",
+      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed. This applies equally to conventional explanations.",
 
     chiKicker: "CHIZHEVSKY ET LES ORIGINES",
     chiTitle: "L’écho terrestre des tempêtes solaires (1936)",
@@ -262,11 +262,11 @@ const COPY = {
   ko: {
     title: "태양생물학: 한 세기의 증거",
     subtitle:
-      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism.",
+      "From Chizhevsky’s 1936 observations to modern epidemiology, heliobiology has documented solar-biological correlations for a century. BERM proposes CRY/RPM as the causal mechanism; conventional explanations are subject to the same causal test.",
     backLink: "← 증거로 돌아가기",
 
     cautionText:
-      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed.",
+      "Heliobiology has accumulated a century of correlational evidence. BERM proposes CRY/RPM as the causal mechanism — this is testable but not yet confirmed. This applies equally to conventional explanations.",
 
     chiKicker: "치제프스키와 기원",
     chiTitle: "태양 폭풍의 지상의 메아리 (1936)",

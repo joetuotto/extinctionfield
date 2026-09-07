@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Moon } from "lucide-react";
@@ -837,6 +838,8 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
       <PageHeader icon={Moon} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="neurobiology" size={28} className="text-accent" />} />
 
       <EvidenceSynthesisBanner locale={locale} />
+
+      <BiologicalCoordinationContext locale={locale} context="circadian" />
 
       {/* Thematic evidence narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

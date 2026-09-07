@@ -26,6 +26,27 @@ MEASUREMENT_INPUTS = {
 }
 
 NEW_LABELS = {
+    "RECEPTOR_STATE_MEMORY": {
+        "en": "Receptor chemical-state memory and recovery",
+        "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
+        "ja": "受容体の化学的状態記憶と回復",
+        "fr": "Mémoire de l'état chimique du récepteur et récupération",
+        "ko": "수용체 화학적 상태 기억과 회복",
+    },
+    "CIRCADIAN_COORDINATION": {
+        "en": "Tissue-specific circadian phase relationships and electrical timing",
+        "fi": "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus",
+        "ja": "組織別の概日位相関係と電気的タイミング",
+        "fr": "Relations de phase circadienne par tissu et synchronisation électrique",
+        "ko": "조직별 일주기 위상 관계와 전기적 타이밍",
+    },
+    "HORMONE_TARGET_RESPONSE": {
+        "en": "Hormone signal, target readiness and phase-dependent response",
+        "fi": "Hormonisignaali, kohdekudoksen valmius ja vaiheesta riippuva vaste",
+        "ja": "ホルモン信号、標的の準備状態、位相依存的応答",
+        "fr": "Signal hormonal, disponibilité de la cible et réponse dépendante de la phase",
+        "ko": "호르몬 신호, 표적 준비 상태 및 위상 의존적 반응",
+    },
     "LINDGREN_METRIC_DRIVE": {
         "en": "Lindgren 2025 metric perturbation and quadratic mixing drive",
         "fi": "Lindgren 2025 -metriikkahäiriö ja neliöllinen sekoitusajuri",
@@ -150,6 +171,14 @@ def build_graph(existing: dict) -> dict:
             edge_number += 1
 
     ui_groups = dict(existing["ui_groups"])
+    mechanism_group = dict(ui_groups["mechanisms"])
+    mechanism_group["contains"] = list(dict.fromkeys([
+        *mechanism_group["contains"],
+        "RECEPTOR_STATE_MEMORY",
+        "CIRCADIAN_COORDINATION",
+        "HORMONE_TARGET_RESPONSE",
+    ]))
+    ui_groups["mechanisms"] = mechanism_group
     ui_groups.pop("fieldstate", None)
     ui_groups = {
         "legacy-proxy": {

@@ -1,5 +1,11 @@
 """Outcome models: fecundability, ASFR, TFR, sex ratio."""
 
+from berm.outcomes.reproductive_waiting import (
+    CoupleWaitingState,
+    WaitingCohortResult,
+    WaitingHorizonComparison,
+    summarize_waiting_cohort,
+)
 from berm.outcomes.cohort_exposure import (
     cohort_cumulative_emf,
     cohort_cumulative_with_retention,
@@ -30,6 +36,10 @@ from berm.outcomes.fieldstate_asfr import (
 )
 
 __all__ = [
+    "CoupleWaitingState",
+    "WaitingCohortResult",
+    "WaitingHorizonComparison",
+    "summarize_waiting_cohort",
     "cohort_cumulative_emf",
     "cohort_cumulative_with_retention",
     "cohort_bio_capacity",

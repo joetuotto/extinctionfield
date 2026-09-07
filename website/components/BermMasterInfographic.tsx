@@ -344,7 +344,7 @@ export function BermMasterInfographic({ locale = "en" }: { locale?: string }) {
       </svg>
 
       {/* Below-chart content */}
-      <div className="px-6 pb-10 pt-2 space-y-6 max-w-3xl mx-auto">
+      <div className="px-6 pb-10 pt-8 space-y-6 max-w-3xl mx-auto">
         <h1 className="text-center text-lg sm:text-xl lg:text-2xl font-serif text-foreground tracking-tight leading-snug">
           {t.thesis}
         </h1>

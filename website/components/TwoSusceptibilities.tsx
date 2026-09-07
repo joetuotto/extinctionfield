@@ -12,6 +12,7 @@ const COPY = {
     leftSource: "Derived geometry; tissue interpretation uncalibrated",
     leftFormula: "χ_geo(ρ) = ρ / √(1 + ρ²)",
     rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1 geometric response and imported spin-susceptibility candidate",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
@@ -29,6 +30,7 @@ const COPY = {
     leftSource: "Johdettu geometria; kudostulkinta kalibroimatta",
     leftFormula: "χ_geo(ρ) = ρ / √(1 + ρ²)",
     rightTitle: "χ_B — Spin-herkkyys",
+    ariaLabel: "L1-geometrinen vaste ja tuotu spin-herkkyysehdokas",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomaalinen",
@@ -46,6 +48,7 @@ const COPY = {
     leftSource: "Derived geometry; tissue kernel open",
     leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
     rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1幾何学的応答と導入されたスピン感受性候補",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
@@ -63,6 +66,7 @@ const COPY = {
     leftSource: "Géométrie dérivée ; noyau tissulaire ouvert",
     leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
     rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "Réponse géométrique L1 et candidat de susceptibilité de spin importé",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
@@ -80,6 +84,7 @@ const COPY = {
     leftSource: "도출된 기하학; 조직 커널 미교정",
     leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
     rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1 기하학적 반응과 도입된 스핀 감수성 후보",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
@@ -90,9 +95,9 @@ const COPY = {
   },
 };
 
-/* Curve: chi(A) = A / sqrt(1 + A^2), sampled on 0..20 */
-function chiGeometric(a: number): number {
-  return a / Math.sqrt(1 + a * a);
+/* Restricted L1 curve chi_geo(x), sampled only on dimensionless x. */
+function chiGeometric(x: number): number {
+  return x / Math.sqrt(1 + x * x);
 }
 
 /* Conceptual spin susceptibility: peaks near B_ext/B_geo = 1, drops at 0 and high ratios */
@@ -113,14 +118,14 @@ const TOTAL_W = PW * 2 + GAP;
 export function TwoSusceptibilities({ locale }: { locale: string }) {
   const d = pickCopy(COPY, locale);
 
-  /* Left panel: chi(A) over A in [0, 10] */
+  /* Left panel: chi_geo(x) over dimensionless x in [0, 10]. */
   const leftN = 60;
   const leftXMax = 10;
   const leftPts: string[] = [];
   for (let i = 0; i <= leftN; i++) {
-    const a = (i / leftN) * leftXMax;
-    const y = chiGeometric(a);
-    const px = P.left + (a / leftXMax) * GW;
+    const x = (i / leftN) * leftXMax;
+    const y = chiGeometric(x);
+    const px = P.left + (x / leftXMax) * GW;
     const py = P.top + (1 - y) * GH;
     leftPts.push(`${px},${py}`);
   }
@@ -137,7 +142,7 @@ export function TwoSusceptibilities({ locale }: { locale: string }) {
     rightPts.push(`${px},${py}`);
   }
 
-  /* Key point on left: A=7e6 -> chi ~ 1.0 (off the visible axis but we mark it at the saturation plateau) */
+  /* Reference marker at x=10 near the saturation plateau; it is not a membrane calibration. */
   const keyPx = P.left + GW - 4;
   const keyPy = P.top + (1 - 1.0) * GH;
 
@@ -156,7 +161,7 @@ export function TwoSusceptibilities({ locale }: { locale: string }) {
         viewBox={`0 0 ${TOTAL_W} ${PH + 70}`}
         className="w-full min-w-[560px] max-w-[760px]"
         role="img"
-        aria-label="Two susceptibility functions"
+        aria-label={d.ariaLabel}
       >
         {/* ── LEFT PANEL ── */}
         <g>

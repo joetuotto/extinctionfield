@@ -43,7 +43,7 @@
       "name": "Nike-BBS monotonic dose-response",
       "original_classification": "lindgren_chi_falsified",
       "revised_classification": "underdetermined",
-      "reason": "χ prediction not derived pre-test; R²<1% insufficient power; compatible with both models",
+      "reason": "L1 χ_geo prediction not preregistered pre-test; R²<1% insufficient power; compatible with both models",
       "affects": "l_berm_chi_shape",
       "affects_l_berm": true,
       "affects_empirical_berm": false,

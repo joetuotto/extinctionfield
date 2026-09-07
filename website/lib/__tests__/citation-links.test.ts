@@ -168,7 +168,8 @@ describe("canonical reference registry", () => {
       expect(pmcid, `${owner} has a malformed PMCID`).toMatch(/^PMC\d+$/);
     }
     for (const [pmid, owner] of pmids) {
-      expect(pmid, `${owner} has a malformed PMID`).toMatch(/^\d{7,9}$/);
+      // PubMed includes older records with shorter positive integer IDs.
+      expect(pmid, `${owner} has a malformed PMID`).toMatch(/^[1-9]\d{0,8}$/);
     }
   });
 

@@ -19,7 +19,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     warningTitle: "Massive confounders",
     warningText:
-      "Every population listed below differs from modern societies in diet, exercise, community structure, chemical exposure, and genetics. None of this is proof that EMF causes disease. It is a consistency check: do low-EMF populations show the health patterns BERM predicts? If they did not, BERM would be falsified. That they do is necessary but not sufficient.",
+      "Every population listed below differs from modern societies in diet, exercise, community structure, chemical exposure, and genetics. None of this is proof that EMF causes disease. This applies equally to conventional explanations. It is a consistency check: do low-EMF populations show the health patterns BERM predicts? If they did not, BERM would be falsified. That they do is necessary but not sufficient.",
     s1Kicker: "SECTION 1",
     s1Title: "Why These Populations Matter",
     s1Text: [
@@ -49,19 +49,19 @@ const COPY = {
     gradientLabels: [
       {
         name: "Tsimane",
-        chi: "χ_env = 0",
+        chi: "χ_env: LOW_CANDIDATE (not measured)",
         desc: "No electricity, no phones, no modern technology",
         health: "Lowest CVD ever recorded. Dementia 1.2%. Brain atrophy 70% slower.",
       },
       {
         name: "Mosetén",
-        chi: "χ_env > 0",
+        chi: "χ_env: INTERMEDIATE_CANDIDATE (not measured)",
         desc: "Shared ancestry with Tsimane but more technology and infrastructure",
         health: "CVD low. Dementia intermediate. Brain atrophy intermediate.",
       },
       {
         name: "Modern (USA)",
-        chi: "χ_env = high",
+        chi: "χ_env: HIGH_CANDIDATE (not measured)",
         desc: "Full electrification, smartphones, dense RF environment",
         health: "CVD high. Dementia 8–11%. Obesity 42%. TFR 1.66.",
       },
@@ -143,7 +143,7 @@ const COPY = {
       "Genetics — population-specific adaptations over millennia",
     ],
     s6Text2: [
-      "This evidence is CONSISTENCY with BERM, not proof of it. Any of the confounders above could explain some or all of the observed differences. The Tsimane→Mosetén gradient is the strongest argument because it controls for genetics and geography, isolating technology adoption as the primary variable.",
+      "This evidence is CONSISTENCY with BERM, not proof of it. This applies equally to conventional explanations. Any of the confounders above could explain some or all of the observed differences. The Tsimane→Mosetén gradient is the strongest argument because it controls for genetics and geography, isolating technology adoption as the primary variable.",
       "To move from consistency to evidence, we need prospective studies in populations where EMF is the primary variable that changes. Two are proposed below.",
     ],
     proposedStudies: [
@@ -175,7 +175,7 @@ const COPY = {
     backLink: "← Takaisin näyttöön",
     warningTitle: "Massiiviset sekoittavat tekijät",
     warningText:
-      "Jokainen alla listattu populaatio eroaa moderneista yhteiskunnista ruokavalion, liikunnan, yhteisörakenteen, kemikaalialtistuksen ja genetiikan osalta. Mikään tästä ei todista, että EMF aiheuttaa sairauksia. Kyseessä on yhteensopivuustarkistus: osoittavatko matalan EMF:n populaatiot BERM:n ennustamat terveyskuviot? Jos eivät osoittaisi, BERM olisi falsifioitu. Se, että osoittavat, on välttämätöntä mutta ei riittävää.",
+      "Jokainen alla listattu populaatio eroaa moderneista yhteiskunnista ruokavalion, liikunnan, yhteisörakenteen, kemikaalialtistuksen ja genetiikan osalta. Mikään tästä ei todista, että EMF aiheuttaa sairauksia. Tämä koskee yhtä lailla konventionaalisia selityksiä. Kyseessä on yhteensopivuustarkistus: osoittavatko matalan EMF:n populaatiot BERM:n ennustamat terveyskuviot? Jos eivät osoittaisi, BERM olisi falsifioitu. Se, että osoittavat, on välttämätöntä mutta ei riittävää.",
     s1Kicker: "OSIO 1",
     s1Title: "Miksi nämä populaatiot ovat merkityksellisiä",
     s1Text: [
@@ -205,19 +205,19 @@ const COPY = {
     gradientLabels: [
       {
         name: "Tsimane",
-        chi: "χ_env = 0",
+        chi: "χ_env: LOW_CANDIDATE (not measured)",
         desc: "Ei sähköä, ei puhelimia, ei modernia teknologiaa",
         health: "Matalin CVD koskaan mitattu. Dementia 1,2 %. Aivoatrofia 70 % hitaampi.",
       },
       {
         name: "Mosetén",
-        chi: "χ_env > 0",
+        chi: "χ_env: INTERMEDIATE_CANDIDATE (not measured)",
         desc: "Jaettu syntyperä Tsimanen kanssa mutta enemmän teknologiaa ja infrastruktuuria",
         health: "CVD matala. Dementia keskitaso. Aivoatrofia keskitaso.",
       },
       {
         name: "Moderni (USA)",
-        chi: "χ_env = korkea",
+        chi: "χ_env: HIGH_CANDIDATE (ei mitattu)",
         desc: "Täysi sähköistys, älypuhelimet, tiheä RF-ympäristö",
         health: "CVD korkea. Dementia 8–11 %. Obesiteetti 42 %. TFR 1,66.",
       },
@@ -299,7 +299,7 @@ const COPY = {
       "Genetiikka — populaatiotarkkoja adaptaatioita vuosituhansien ajalta",
     ],
     s6Text2: [
-      "Tämä näyttö on YHTEENSOPIVUUTTA BERM:n kanssa, ei sen todistusta. Mikä tahansa yllä olevista sekoittavista tekijöistä voisi selittää osan tai kaikki havaitut erot. Tsimane→Mosetén-gradientti on vahvin argumentti, koska se kontrolloi genetiikkaa ja maantiedettä, eristäen teknologian omaksumisen ensisijaiseksi muuttujaksi.",
+      "Tämä näyttö on YHTEENSOPIVUUTTA BERM:n kanssa, ei sen todistusta. Tämä koskee yhtä lailla konventionaalisia selityksiä. Mikä tahansa yllä olevista sekoittavista tekijöistä voisi selittää osan tai kaikki havaitut erot. Tsimane→Mosetén-gradientti on vahvin argumentti, koska se kontrolloi genetiikkaa ja maantiedettä, eristäen teknologian omaksumisen ensisijaiseksi muuttujaksi.",
       "Siirtyäksemme yhteensopivuudesta näyttöön tarvitsemme prospektiivisia tutkimuksia populaatioissa, joissa EMF on ensisijainen muuttuva tekijä. Kaksi ehdotetaan alla.",
     ],
     proposedStudies: [
@@ -331,7 +331,7 @@ const COPY = {
     backLink: "← エビデンスに戻る",
     warningTitle: "大規模な交絡因子",
     warningText:
-      "以下にリストされたすべての集団は、食事、運動、コミュニティ構造、化学物質曝露、遺伝学において現代社会と異なります。これはEMFが疾病を引き起こす証拠ではありません。これは整合性チェックです：低EMF集団はBERMが予測する健康パターンを示すか？示さなければBERMは反証されます。示すことは必要条件ですが十分条件ではありません。",
+      "以下にリストされたすべての集団は、食事、運動、コミュニティ構造、化学物質曝露、遺伝学において現代社会と異なります。これはEMFが疾病を引き起こす証拠ではありません。これは従来の説明にも同様に当てはまります。これは整合性チェックです：低EMF集団はBERMが予測する健康パターンを示すか？示さなければBERMは反証されます。示すことは必要条件ですが十分条件ではありません。",
     s1Kicker: "セクション 1",
     s1Title: "これらの集団が重要な理由",
     s1Text: [
@@ -361,19 +361,19 @@ const COPY = {
     gradientLabels: [
       {
         name: "Tsimane",
-        chi: "χ_env = 0",
+        chi: "χ_env: LOW_CANDIDATE (not measured)",
         desc: "電気なし、電話なし、現代テクノロジーなし",
         health: "記録された中で最低のCVD。認知症1.2%。脳萎縮70%遅い。",
       },
       {
         name: "Mosetén",
-        chi: "χ_env > 0",
+        chi: "χ_env: INTERMEDIATE_CANDIDATE (not measured)",
         desc: "Tsimaneと祖先を共有するが、より多くのテクノロジーとインフラ",
         health: "CVD低い。認知症中程度。脳萎縮中程度。",
       },
       {
         name: "現代（米国）",
-        chi: "χ_env = high",
+        chi: "χ_env: HIGH_CANDIDATE (not measured)",
         desc: "完全電化、スマートフォン、高密度RF環境",
         health: "CVD高い。認知症8–11%。肥満42%。TFR 1.66。",
       },
@@ -455,7 +455,7 @@ const COPY = {
       "遺伝学 — 数千年にわたる集団固有の適応",
     ],
     s6Text2: [
-      "このエビデンスはBERMとの整合性であり、その証明ではありません。上記の交絡因子のいずれかが、観察された差異の一部またはすべてを説明できる可能性があります。Tsimane→Mosetén勾配は、遺伝学と地理を制御し、テクノロジーの採用を主要な変数として分離するため、最も強力な議論です。",
+      "このエビデンスはBERMとの整合性であり、その証明ではありません。これは従来の説明にも同様に当てはまります。上記の交絡因子のいずれかが、観察された差異の一部またはすべてを説明できる可能性があります。Tsimane→Mosetén勾配は、遺伝学と地理を制御し、テクノロジーの採用を主要な変数として分離するため、最も強力な議論です。",
       "整合性からエビデンスに移行するには、EMFが変化する主要な変数である集団における前向き研究が必要です。以下に2つを提案します。",
     ],
     proposedStudies: [
@@ -487,7 +487,7 @@ const COPY = {
     backLink: "← Retour aux preuves",
     warningTitle: "Facteurs de confusion massifs",
     warningText:
-      "Chaque population listée ci-dessous diffère des sociétés modernes en termes d'alimentation, d'exercice, de structure communautaire, d'exposition chimique et de génétique. Rien de cela ne prouve que les EMF causent des maladies. Il s'agit d'un contrôle de cohérence : les populations à faible EMF présentent-elles les schémas de santé prédits par BERM ? Si ce n'était pas le cas, BERM serait falsifié. Qu'elles le fassent est nécessaire mais pas suffisant.",
+      "Chaque population listée ci-dessous diffère des sociétés modernes en termes d'alimentation, d'exercice, de structure communautaire, d'exposition chimique et de génétique. Rien de cela ne prouve que les EMF causent des maladies. Cela s'applique tout autant aux explications conventionnelles. Il s'agit d'un contrôle de cohérence : les populations à faible EMF présentent-elles les schémas de santé prédits par BERM ? Si ce n'était pas le cas, BERM serait falsifié. Qu'elles le fassent est nécessaire mais pas suffisant.",
     s1Kicker: "SECTION 1",
     s1Title: "Pourquoi ces populations sont importantes",
     s1Text: [
@@ -517,19 +517,19 @@ const COPY = {
     gradientLabels: [
       {
         name: "Tsimane",
-        chi: "χ_env = 0",
+        chi: "χ_env: LOW_CANDIDATE (not measured)",
         desc: "Pas d'électricité, pas de téléphones, pas de technologie moderne",
         health: "CVD la plus basse jamais enregistrée. Démence 1,2 %. Atrophie cérébrale 70 % plus lente.",
       },
       {
         name: "Mosetén",
-        chi: "χ_env > 0",
+        chi: "χ_env: INTERMEDIATE_CANDIDATE (not measured)",
         desc: "Ascendance partagée avec les Tsimane mais plus de technologie et d'infrastructure",
         health: "CVD faible. Démence intermédiaire. Atrophie cérébrale intermédiaire.",
       },
       {
         name: "Moderne (USA)",
-        chi: "χ_env = high",
+        chi: "χ_env: HIGH_CANDIDATE (not measured)",
         desc: "Électrification complète, smartphones, environnement RF dense",
         health: "CVD élevée. Démence 8–11 %. Obésité 42 %. TFR 1,66.",
       },
@@ -611,7 +611,7 @@ const COPY = {
       "Génétique — adaptations spécifiques aux populations sur des millénaires",
     ],
     s6Text2: [
-      "Cette preuve est une COHÉRENCE avec BERM, pas sa preuve. N'importe lequel des facteurs de confusion ci-dessus pourrait expliquer certaines ou toutes les différences observées. Le gradient Tsimane→Mosetén est l'argument le plus fort car il contrôle la génétique et la géographie, isolant l'adoption technologique comme variable principale.",
+      "Cette preuve est une COHÉRENCE avec BERM, pas sa preuve. Cela s'applique tout autant aux explications conventionnelles. N'importe lequel des facteurs de confusion ci-dessus pourrait expliquer certaines ou toutes les différences observées. Le gradient Tsimane→Mosetén est l'argument le plus fort car il contrôle la génétique et la géographie, isolant l'adoption technologique comme variable principale.",
       "Pour passer de la cohérence à la preuve, nous avons besoin d'études prospectives dans des populations où les EMF sont la variable principale qui change. Deux sont proposées ci-dessous.",
     ],
     proposedStudies: [
@@ -643,7 +643,7 @@ const COPY = {
     backLink: "← 증거로 돌아가기",
     warningTitle: "대규모 교란 요인",
     warningText:
-      "아래에 나열된 모든 인구 집단은 식이, 운동, 공동체 구조, 화학물질 노출, 유전학에서 현대 사회와 다릅니다. 이것은 EMF가 질병을 유발한다는 증거가 아닙니다. 이것은 일관성 확인입니다: 저EMF 인구 집단이 BERM이 예측하는 건강 패턴을 보이는가? 보이지 않는다면 BERM은 반증됩니다. 보인다는 것은 필요조건이지만 충분조건은 아닙니다.",
+      "아래에 나열된 모든 인구 집단은 식이, 운동, 공동체 구조, 화학물질 노출, 유전학에서 현대 사회와 다릅니다. 이것은 EMF가 질병을 유발한다는 증거가 아닙니다. 이는 기존 설명에도 동일하게 적용됩니다. 이것은 일관성 확인입니다: 저EMF 인구 집단이 BERM이 예측하는 건강 패턴을 보이는가? 보이지 않는다면 BERM은 반증됩니다. 보인다는 것은 필요조건이지만 충분조건은 아닙니다.",
     s1Kicker: "섹션 1",
     s1Title: "이 인구 집단이 중요한 이유",
     s1Text: [
@@ -673,19 +673,19 @@ const COPY = {
     gradientLabels: [
       {
         name: "Tsimane",
-        chi: "χ_env = 0",
+        chi: "χ_env: LOW_CANDIDATE (not measured)",
         desc: "전기 없음, 전화 없음, 현대 기술 없음",
         health: "기록된 중 가장 낮은 CVD. 치매 1.2%. 뇌 위축 70% 느림.",
       },
       {
         name: "Mosetén",
-        chi: "χ_env > 0",
+        chi: "χ_env: INTERMEDIATE_CANDIDATE (not measured)",
         desc: "Tsimane과 조상을 공유하지만 더 많은 기술과 인프라",
         health: "CVD 낮음. 치매 중간. 뇌 위축 중간.",
       },
       {
         name: "현대(미국)",
-        chi: "χ_env = high",
+        chi: "χ_env: HIGH_CANDIDATE (not measured)",
         desc: "완전 전기화, 스마트폰, 고밀도 RF 환경",
         health: "CVD 높음. 치매 8–11%. 비만 42%. TFR 1.66.",
       },
@@ -767,7 +767,7 @@ const COPY = {
       "유전학 — 수천 년에 걸친 인구 집단 고유의 적응",
     ],
     s6Text2: [
-      "이 증거는 BERM과의 일관성이지 그 증명이 아닙니다. 위의 교란 요인 중 어느 것이든 관찰된 차이의 일부 또는 전부를 설명할 수 있습니다. Tsimane→Mosetén 기울기는 유전학과 지리를 통제하고 기술 채택을 주요 변수로 분리하기 때문에 가장 강력한 논거입니다.",
+      "이 증거는 BERM과의 일관성이지 그 증명이 아닙니다. 이는 기존 설명에도 동일하게 적용됩니다. 위의 교란 요인 중 어느 것이든 관찰된 차이의 일부 또는 전부를 설명할 수 있습니다. Tsimane→Mosetén 기울기는 유전학과 지리를 통제하고 기술 채택을 주요 변수로 분리하기 때문에 가장 강력한 논거입니다.",
       "일관성에서 증거로 이동하려면 EMF가 변화하는 주요 변수인 인구 집단에서 전향적 연구가 필요합니다. 아래에 두 가지를 제안합니다.",
     ],
     proposedStudies: [

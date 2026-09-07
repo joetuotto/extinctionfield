@@ -69,7 +69,7 @@ const COPY = {
     bermParagraphs: [
       "The heliobiology literature documents three distinct frequency-dependent phenomena: SR affects circadian timing, Pc1 affects cardiac rhythm, and GIC affects indoor ELF exposure. Different frequencies, different biological targets — yet all converge on one question: which molecular mechanism responds to such weak fields?",
       "BERM’s answer: the CRY/RPM (cryptochrome radical pair mechanism) pathway. Cryptochrome is both a circadian clock protein and a demonstrated magnetoreceptor. Its radical pair is sensitive to fields in exactly the range of natural geomagnetic variations. When the natural EM reference signal (SR) is masked or the geomagnetic field is perturbed (storms, GIC harmonics), CRY’s function is disrupted — affecting circadian rhythm, melatonin production, and downstream reproductive and immune pathways.",
-      "This connects the century-old observations of heliobiology to BERM’s Level 2 spin susceptibility function χ_B and explains why the effects are strongest at high latitudes (larger geomagnetic variations), during storm recovery phases (Pc1 increase), and in electromagnetically noisy urban environments (SR masking).",
+      "This comparison concerns an imported L3 CRY/RPM spin-response candidate χ_B downstream of the open L2 bridge; χ_B is distinct from Lindgren's restricted L1 χ_geo(x). Latitude, storm phase and urban-noise patterns can test the candidate pathway, but they do not close L2 or validate χ_geo.",
     ],
 
     falsificationTitle: "Falsification criteria",
@@ -139,7 +139,7 @@ const COPY = {
     bermParagraphs: [
       "Heliobiologian kirjallisuus dokumentoi kolme erillistä taajuusriippuvaista ilmiötä: SR vaikuttaa sirkadiaaniseen ajoitukseen, Pc1 sydämen rytmiin ja GIC sisätilojen ELF-altistukseen. Eri taajuudet, eri biologiset kohteet — mutta kaikki yhtyvat yhteen kysymykseen: mikä molekulaarinen mekanismi reagoi näin heikkoihin kenttiin?",
       "BERM:n vastaus: CRY/RPM (kryptokromin radikaalipari -mekanismi) -reitti. Kryptokromi on sekä sirkadiaanisen kellon proteiini että osoitettu magnetoreseptori. Sen radikaalipari on herkkä kentille juuri luonnollisten geomagneettisten vaihtelujen alueella. Kun luonnollinen EM-referenssisignaali (SR) peittyy tai geomagneettinen kenttä häiriintyy (myrskyt, GIC-harmoniset), CRY:n toiminta häiriintyy — vaikuttaen sirkadiaaniseen rytmiin, melatoniinituotantoon ja alavirtaisiin lisääntymis- ja immuunireitteihin.",
-      "Tämä yhdistää vuosisataiset heliobiologian havainnot BERM:n tason 2 spin-herkkyysfunktioon χ_B ja selitää miksi vaikutukset ovat voimakkaimpia korkeilla leveysasteilla (suuremmat geomagneettiset vaihtelut), myrskyjen palautumisvaiheissa (Pc1-kasvu) ja sähkömagneettisesti meluisissa kaupunkiympäristöissä (SR:n peittyminen).",
+      "Vertailu koskee avointa L2-siltaa seuraavaa tuotua L3 CRY/RPM-spinvasteen ehdokasta χ_B:tä, joka on eri suure kuin Lindgrenin rajattu L1-kerroin χ_geo(x). Leveysaste-, myrskyvaihe- ja kaupunkimelukuviot voivat testata ehdokaspolkua, mutta ne eivät sulje L2:ta tai validoi χ_geoa.",
     ],
 
     falsificationTitle: "Falsifikaatiokriteerit",
@@ -209,7 +209,7 @@ const COPY = {
     bermParagraphs: [
       "The heliobiology literature documents three distinct frequency-dependent phenomena: SR affects circadian timing, Pc1 affects cardiac rhythm, and GIC affects indoor ELF exposure. Different frequencies, different biological targets — yet all converge on one question: which molecular mechanism responds to such weak fields?",
       "BERM’s answer: the CRY/RPM (cryptochrome radical pair mechanism) pathway. Cryptochrome is both a circadian clock protein and a demonstrated magnetoreceptor. Its radical pair is sensitive to fields in exactly the range of natural geomagnetic variations. When the natural EM reference signal (SR) is masked or the geomagnetic field is perturbed (storms, GIC harmonics), CRY’s function is disrupted — affecting circadian rhythm, melatonin production, and downstream reproductive and immune pathways.",
-      "This connects the century-old observations of heliobiology to BERM’s Level 2 spin susceptibility function χ_B and explains why the effects are strongest at high latitudes (larger geomagnetic variations), during storm recovery phases (Pc1 increase), and in electromagnetically noisy urban environments (SR masking).",
+      "This comparison concerns an imported L3 CRY/RPM spin-response candidate χ_B downstream of the open L2 bridge; χ_B is distinct from Lindgren's restricted L1 χ_geo(x). Latitude, storm phase and urban-noise patterns can test the candidate pathway, but they do not close L2 or validate χ_geo.",
     ],
 
     falsificationTitle: "反証基準",
@@ -279,7 +279,7 @@ const COPY = {
     bermParagraphs: [
       "The heliobiology literature documents three distinct frequency-dependent phenomena: SR affects circadian timing, Pc1 affects cardiac rhythm, and GIC affects indoor ELF exposure. Different frequencies, different biological targets — yet all converge on one question: which molecular mechanism responds to such weak fields?",
       "BERM’s answer: the CRY/RPM (cryptochrome radical pair mechanism) pathway. Cryptochrome is both a circadian clock protein and a demonstrated magnetoreceptor. Its radical pair is sensitive to fields in exactly the range of natural geomagnetic variations. When the natural EM reference signal (SR) is masked or the geomagnetic field is perturbed (storms, GIC harmonics), CRY’s function is disrupted — affecting circadian rhythm, melatonin production, and downstream reproductive and immune pathways.",
-      "This connects the century-old observations of heliobiology to BERM’s Level 2 spin susceptibility function χ_B and explains why the effects are strongest at high latitudes (larger geomagnetic variations), during storm recovery phases (Pc1 increase), and in electromagnetically noisy urban environments (SR masking).",
+      "This comparison concerns an imported L3 CRY/RPM spin-response candidate χ_B downstream of the open L2 bridge; χ_B is distinct from Lindgren's restricted L1 χ_geo(x). Latitude, storm phase and urban-noise patterns can test the candidate pathway, but they do not close L2 or validate χ_geo.",
     ],
 
     falsificationTitle: "Critères de falsification",
@@ -349,7 +349,7 @@ const COPY = {
     bermParagraphs: [
       "The heliobiology literature documents three distinct frequency-dependent phenomena: SR affects circadian timing, Pc1 affects cardiac rhythm, and GIC affects indoor ELF exposure. Different frequencies, different biological targets — yet all converge on one question: which molecular mechanism responds to such weak fields?",
       "BERM’s answer: the CRY/RPM (cryptochrome radical pair mechanism) pathway. Cryptochrome is both a circadian clock protein and a demonstrated magnetoreceptor. Its radical pair is sensitive to fields in exactly the range of natural geomagnetic variations. When the natural EM reference signal (SR) is masked or the geomagnetic field is perturbed (storms, GIC harmonics), CRY’s function is disrupted — affecting circadian rhythm, melatonin production, and downstream reproductive and immune pathways.",
-      "This connects the century-old observations of heliobiology to BERM’s Level 2 spin susceptibility function χ_B and explains why the effects are strongest at high latitudes (larger geomagnetic variations), during storm recovery phases (Pc1 increase), and in electromagnetically noisy urban environments (SR masking).",
+      "This comparison concerns an imported L3 CRY/RPM spin-response candidate χ_B downstream of the open L2 bridge; χ_B is distinct from Lindgren's restricted L1 χ_geo(x). Latitude, storm phase and urban-noise patterns can test the candidate pathway, but they do not close L2 or validate χ_geo.",
     ],
 
     falsificationTitle: "반증 기준",

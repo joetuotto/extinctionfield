@@ -135,7 +135,7 @@ Kahdeksan tehtävän systemaattinen evidenssihaku tuottaa selkeän kokonaiskuvan
 
 **BERM-TULKINTA:** Ritzin malli asettaa fysikaaliset perusteet: CRY on kvanttibiologinen magnetosensori. BERM laajentaa tulkinnan kompassista yleiseksi EMF-transduktioksi: sama radikaalipari, joka reagoi staattiseen kenttään, reagoi myös oskilloiviin RF-kenttiin (ks. 2.f). Mallin polku B ei edellytä suuntatietoa (inklinaatiokompassi), vaan radikaaliparin singletti/tripletti-suhteen muutoksen vaikutusta CRY:n konformaatioon ja sitä kautta vuorokausikelloon.
 
-**KONVENTIONAALINEN TULKINTA:** RPM on lintujen magnetokompassin selitys. Laajentaminen muihin lajeihin ja erityisesti melatoniinin EMF-herkkyyteen on spekulatiivista. Kompassitoiminta edellyttää valon ja kentän yhteisvaikutusta, jota ei ole osoitettu nisäkkäiden muissa kudoksissa kuin retinassa.
+**KONVENTIONAALINEN TULKINTA:** RPM on lintujen magnetokompassin selitys. Laajentaminen muihin lajeihin ja erityisesti melatoniinin EMF-herkkyyteen on deduktiivinen, falsifioitava hypoteesi. Kompassitoiminta edellyttää valon ja kentän yhteisvaikutusta, jota ei ole osoitettu nisäkkäiden muissa kudoksissa kuin retinassa.
 
 **DISKRIMINOIVA TESTI:** CRY:n in vitro -magneettikentän herkkyys tunnetuilla RF-taajuuksilla (esim. 1,4 MHz Larmor-taajuus) verrattuna puhtaaseen termiseen kohinaan. Jos RPM ei pysty erottelemaan signaalia termisestä kohinasta antropogeenisissä kenttävahvuuksissa, polku B:n paino laskee. [Osittain vastattu Maeda 2008:lla staattisen kentän osalta; RF-vastausta ei ole testattu puhdistetulla proteiinilla.]
 
@@ -357,7 +357,7 @@ BERM:n kanssa yhteensopiva luenta: CRY/RPM on kvanttibiologinen sensori, jonka "
 
 (3) Ahmad 2020 osoittaa, että 7 MHz (lähellä Larmor-kerrannaisia) häiritsee kasvin CRY:tä — kyseessä ei ole lintujen kompassin erityisominaisuus.
 
-**KONVENTIONAALINEN TULKINTA:** Larmor-resonanssi-häiriö on RPM:n diagnostinen testi. Se ei kuitenkaan todista, että kännykän 900 MHz tai WiFin 2,4 GHz signaali häiritsee RPM:ää. Kantoaallon ja Larmor-taajuuden välinen ero on ~1000-kertainen. Modulaatiokirjekuoren väite on spekulatiivinen ja edellyttää biofysikaalista todennusta.
+**KONVENTIONAALINEN TULKINTA:** Larmor-resonanssi-häiriö on RPM:n diagnostinen testi. Se ei kuitenkaan todista, että kännykän 900 MHz tai WiFin 2,4 GHz signaali häiritsee RPM:ää. Kantoaallon ja Larmor-taajuuden välinen ero on ~1000-kertainen. Modulaatiokirjekuoren väite on deduktiivinen ja falsifioitava; ratkaiseva testi edellyttää biofysikaalista todennusta.
 
 **DISKRIMINOIVA TESTI:** In vitro -koe puhdistetulla hCRY2:lla: altistus GSM 900 MHz -signaalilla (moduloitu) vs. jatkuvalla 900 MHz:llä vs. sham. BERM ennustaa, että moduloitu signaali häiritsee radikaaliparin tuotoksia enemmän kuin jatkuva. [AVOIN]
 

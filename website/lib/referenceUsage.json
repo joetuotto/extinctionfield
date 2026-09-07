@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-03",
-    "referencesWithUsages": 696,
-    "usageLocations": 1767
+    "generated": "2026-09-07",
+    "referencesWithUsages": 723,
+    "usageLocations": 1868
   },
   "usage": {
     "delgado1969": [
@@ -903,10 +903,18 @@
         "source": "app/[locale]/objections/page.tsx"
       }
     ],
-    "yap2025": [
+    "iversen2025": [
       {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/evidence/evolution",
@@ -923,6 +931,10 @@
       {
         "path": "/evidence/replication",
         "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
       },
       {
         "path": "/map",
@@ -1343,6 +1355,356 @@
       {
         "path": "/evidence/populations",
         "source": "lib/populationData.ts"
+      }
+    ],
+    "lamia2011_cry_glucocorticoid": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "zhang2010_cry_camp": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "wehrens2017_meal_timing": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "wang2012_redox_scn": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "thoeni2024_tnmr_clock": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "archer2014_transcriptome": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "archer2022_glucocorticoid_timing": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "liu2014": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "joffe2009_ttp_family_size": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "bensimon2018_sleep_social": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "fowler2010_cooperation_cascades": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-arc",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
       }
     ],
     "lai1996_double_strand": [
@@ -2211,28 +2573,6 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      }
-    ],
-    "liu2014": [
-      {
-        "path": "/data",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence/converging-patterns",
-        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
       },
       {
         "path": "/explore",
@@ -3188,11 +3528,27 @@
       },
       {
         "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
       },
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
       }
     ],
     "ccb_fertility": [
@@ -4578,20 +4934,6 @@
       }
     ],
     "orthogonal_layer_convergence": [
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
-      }
-    ],
-    "yap2025_cry2_trpc1": [
       {
         "path": "/data",
         "source": "lib/legacyEvidence.json"
@@ -6797,24 +7139,6 @@
         "source": "app/[locale]/evidence/page.tsx"
       }
     ],
-    "catsper_human": [
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/evidence/reproductive-navigation",
-        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
-      },
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      }
-    ],
     "pmc6104424_nnc": [
       {
         "path": "/evidence",
@@ -7401,12 +7725,24 @@
         "source": "app/[locale]/mathematics/page.tsx"
       },
       {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
       },
       {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      },
+      {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/tensor-derivation",
+        "source": "app/[locale]/model/tensor-derivation/page.tsx"
       }
     ],
     "frontiers2021_neurotransmitters": [
@@ -8021,6 +8357,116 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
+    "ashhab2007_driven_two_level": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "engstrom2004_ion_resonances": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "park2008_calmodulin_kinetics": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
+      }
+    ],
+    "gavoci2013_ipr_k_null": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
+      }
+    ],
+    "kerpal2019_chemical_compass": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "zhang2021": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "meng2026_spin_memory": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "kattnig2016_chemical_amplification": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "kish2026_cry4a_allostery": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "durant2017_bioelectric_memory": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "najjar2016_light_flashes": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "stavreva2009_hormone_pulses": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "chellappa2021_daytime_eating": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "gnoth2003_time_to_pregnancy": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "brosi2013_pollination_network": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "bensimon2022_sleep_helping": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "violante2023_temporal_interference": [
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
     "sakurai2008": [
       {
         "path": "/model",
@@ -8177,6 +8623,12 @@
         "source": "app/[locale]/model/page.tsx"
       }
     ],
+    "hudson2026_teen_fertility": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
     "fert-steril-2023-phone-sperm-trend": [
       {
         "path": "/model",
@@ -8215,6 +8667,12 @@
       {
         "path": "/model",
         "source": "components/SixFactorSummary.tsx"
+      }
+    ],
+    "baureuskoch2003_vesicle_ipr": [
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
       }
     ],
     "timothy-syndrome-cacna1c-autism": [

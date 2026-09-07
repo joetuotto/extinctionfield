@@ -21,6 +21,9 @@ from berm.v16 import (
 )
 
 
+CHI_DOCSTRING = "L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."
+
+
 def test_core_retains_explicit_bio_cap_times_behavioral_structure():
     result = evaluate_temporal_core(
         "USA",
@@ -79,6 +82,10 @@ def test_core_accepts_external_channels_and_preserves_lindgren_selection_rule():
     assert lindgren_chi(0.3) == pytest.approx(expected_chi)
 
 
+def test_chi_has_canonical_l1_docstring():
+    assert lindgren_chi.__doc__ == CHI_DOCSTRING
+
+
 def test_current_channels_do_not_silently_double_count_an_external_memory_value():
     low_current = evaluate_temporal_core(
         "USA", 2020, memory_exposure=15.0, ambient=0.01, personal=0.01
@@ -89,9 +96,14 @@ def test_current_channels_do_not_silently_double_count_an_external_memory_value(
 
     # The upstream temporal model owns the memory value.  The current-year
     # channels remain observable diagnostics, not an implicit second exposure.
-    assert high_current.instantaneous_selected_exposure > low_current.instantaneous_selected_exposure
+    assert (
+        high_current.instantaneous_selected_exposure
+        > low_current.instantaneous_selected_exposure
+    )
     assert high_current.bio_capacity == pytest.approx(low_current.bio_capacity)
-    assert high_current.behavioral_factor == pytest.approx(low_current.behavioral_factor)
+    assert high_current.behavioral_factor == pytest.approx(
+        low_current.behavioral_factor
+    )
     assert high_current.bio_cap_x_behav == pytest.approx(low_current.bio_cap_x_behav)
 
 
@@ -102,7 +114,9 @@ def test_core_does_not_call_legacy_annual_generators_or_global_calibration(monke
     import berm.v16 as legacy_v16
 
     def forbidden(*_args, **_kwargs):
-        raise AssertionError("pure temporal core must not call legacy stateful exposure")
+        raise AssertionError(
+            "pure temporal core must not call legacy stateful exposure"
+        )
 
     monkeypatch.setattr(legacy_v16, "v16_ambient_annual", forbidden)
     monkeypatch.setattr(legacy_v16, "v16_personal_annual", forbidden)
@@ -133,12 +147,27 @@ def test_result_carries_provenance_and_explicitly_lists_excluded_acute_subpaths(
     exported["input_provenance"]["mobile"]["status"] = "changed-after-export"
 
     assert result.input_provenance["mobile"]["status"] == "observed"
-    assert result.input_provenance["temporal_core_input_contract"]["memory_exposure"].startswith(
-        "externally supplied"
-    )
+    assert result.input_provenance["temporal_core_input_contract"][
+        "memory_exposure"
+    ].startswith("externally supplied")
     assert result.model_provenance["exposure_generation"].startswith("caller supplied")
+    statuses = result.model_provenance["epistemic_status"]
+    assert statuses["selection_coefficient"].startswith("chi_geo formula: always L1")
+    assert "explicit L2 spatial/scalar reduction" in statuses["selection_coefficient"]
+    assert (
+        "directed derivative produces chi(|A_bar|)"
+        in statuses["proxy_coordinate_identification"]
+    )
+    assert statuses["proxy_coordinate_identification"].startswith("L2 reduction")
+    assert statuses["proxy_coordinate_identification"].endswith("remains open")
+    assert statuses["biological_components"].startswith("L3 empirical assumptions")
+    input_contract = result.input_provenance["temporal_core_input_contract"]
+    assert "dimensionless" in input_contract["ambient"]
+    assert "raw V/m" in input_contract["normalization"]
     assert result.excluded_legacy_acute_subpaths == EXCLUDED_LEGACY_ACUTE_SUBPATHS
-    assert any("v17_cry_effect" in path for path in result.excluded_legacy_acute_subpaths)
+    assert any(
+        "v17_cry_effect" in path for path in result.excluded_legacy_acute_subpaths
+    )
     assert exported["input_provenance"]["mobile"]["status"] == "changed-after-export"
 
 
@@ -165,6 +194,10 @@ def test_labels_and_provenance_contract_are_validated():
         evaluate_temporal_core("USA", 2020.5, memory_exposure=1, ambient=0, personal=0)
     with pytest.raises(ValueError, match="input_provenance"):
         evaluate_temporal_core(
-            "USA", 2020, memory_exposure=1, ambient=0, personal=0,
+            "USA",
+            2020,
+            memory_exposure=1,
+            ambient=0,
+            personal=0,
             input_provenance=["not", "a", "mapping"],
         )

@@ -21,11 +21,11 @@ const COPY = {
   en: {
     title: "ISS as Hypomagnetic Experiment",
     subtitle:
-      "The International Space Station as an unintentional validation of BERM's cryptochrome spin susceptibility (χ_B) prediction.",
+      "The ISS as a confounded natural-experiment candidate for the imported L3 χ_B pathway—not a validation of χ_geo or the open L2 bridge.",
     backLink: "← Back to Evidence",
 
     cautionText:
-      "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
+      "This section treats ISS astronaut data as a natural-experiment candidate for the imported L3 χ_B pathway. It is not a designed RCT: microgravity, radiation and confinement are major confounders. These observations neither identify the open L2 operator nor validate the distinct L1 χ_geo(x).",
 
     leadParagraph:
       "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
@@ -92,11 +92,11 @@ const COPY = {
   fi: {
     title: "ISS hypomagneettisena kokeena",
     subtitle:
-      "Kansainvälinen avaruusasema tahattomana validointina BERM:n kryptokromin spin-suskeptibiliteetti (χ_B) -ennusteelle.",
+      "ISS sekoittuneena luonnollisena koeehdokkaana tuodulle L3 χ_B -polulle—ei χ_geo:n tai avoimen L2-sillan validointina.",
     backLink: "← Takaisin näyttöön",
 
     cautionText:
-      "Tämä osio käyttää ISS-astronauttidataa tahattomana luonnollisena kokeena. Astronautit EIVÄT ole suunniteltu RCT — mikrogravitaatio, säteily ja eristys ovat merkittäviä sekoittavia tekijöitä. Magneettikentäkomponentti on yksi useista samanaikaisista altistuksista.",
+      "Tämä osio käsittelee ISS-astronauttidataa tuodun L3 χ_B -polun luonnollisena koeehdokkaana. Kyse ei ole suunnitellusta RCT:stä: mikrogravitaatio, säteily ja eristys ovat merkittäviä sekoittavia tekijöitä. Havainnot eivät identifioi avointa L2-operaattoria eivätkä validoi erillistä L1 χ_geo(x):ää.",
 
     leadParagraph:
       "Kansainvälinen avaruusasema kiertaa noin 400 km korkeudessa, jossa geomagneettisen kentän voimakkuus putoaa tasolle B ≈ 21–54 μT (~83% pintatasosta, verrattuna 25–65 μT merenpinnalla). Vaikka kenttä ei ole lähellä nollaa, astronautit kokevat mitattavan kentän muutoksen yhdistettynä vuorokautisen geomagneettisen vaihtelun menetykseen 6 kuukauden tehtäviensä aikana — luonnollinen koe siitä, mitä tapahtuu kun kryptokromin spin-suskeptibiliteetti (χ_B) menettää geomagneettisen referenssitaustansa.",
@@ -163,11 +163,11 @@ const COPY = {
   ja: {
     title: "ISSの低磁場実験",
     subtitle:
-      "国際宇宙ステーションがBERMのクリプトクロムスピン感受性（χ_B）予測を意図せず検証",
+      "ISSは導入L3 χ_B経路の交絡を含む自然実験候補であり、χ_geoや未解決L2橋の検証ではない",
     backLink: "← 証拠に戻る",
 
     cautionText:
-      "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
+      "This section treats ISS astronaut data as a natural-experiment candidate for the imported L3 χ_B pathway. It is not a designed RCT: microgravity, radiation and confinement are major confounders. These observations neither identify the open L2 operator nor validate the distinct L1 χ_geo(x).",
 
     leadParagraph:
       "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
@@ -234,11 +234,11 @@ const COPY = {
   fr: {
     title: "L’ISS comme expérience hypomagnétique",
     subtitle:
-      "La Station spatiale internationale comme validation involontaire de la prédiction de susceptibilité de spin du cryptochrome (χ_B) de BERM.",
+      "L’ISS comme expérience naturelle candidate et confondue pour la voie χ_B importée en L3—not comme validation de χ_geo ni du pont L2 ouvert.",
     backLink: "← Retour aux preuves",
 
     cautionText:
-      "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
+      "This section treats ISS astronaut data as a natural-experiment candidate for the imported L3 χ_B pathway. It is not a designed RCT: microgravity, radiation and confinement are major confounders. These observations neither identify the open L2 operator nor validate the distinct L1 χ_geo(x).",
 
     leadParagraph:
       "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",
@@ -305,11 +305,11 @@ const COPY = {
   ko: {
     title: "ISS 저자기장 실험",
     subtitle:
-      "BERM의 크립토크롬 스핀 감수성(χ_B) 예측에 대한 의도치 않은 검증으로서의 국제우주정거장.",
+      "ISS는 도입된 L3 χ_B 경로를 위한 교란된 자연실험 후보이며 χ_geo나 열린 L2 연결의 검증이 아니다.",
     backLink: "← 증거로 돌아가기",
 
     cautionText:
-      "This section uses ISS astronaut data as an unintentional natural experiment. Astronauts are NOT a designed RCT — microgravity, radiation, and confinement are major confounders. The magnetic field component is one of several simultaneous exposures.",
+      "This section treats ISS astronaut data as a natural-experiment candidate for the imported L3 χ_B pathway. It is not a designed RCT: microgravity, radiation and confinement are major confounders. These observations neither identify the open L2 operator nor validate the distinct L1 χ_geo(x).",
 
     leadParagraph:
       "The International Space Station orbits at ~400 km altitude where the geomagnetic field strength is B ≈ 21–54 μT (~83% of surface values, compared to 25–65 μT at sea level). Although not near-zero, astronauts still experience measurable field reduction combined with loss of diurnal geomagnetic variation during their 6-month missions — a natural experiment in what happens when cryptochrome’s spin susceptibility (χ_B) loses its normal geomagnetic cycling.",

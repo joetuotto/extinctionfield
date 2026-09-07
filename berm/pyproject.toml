@@ -41,3 +41,6 @@ version = {attr = "berm.__version__"}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "slow: panel refits that take seconds rather than milliseconds",
+]

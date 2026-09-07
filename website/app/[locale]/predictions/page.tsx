@@ -14,6 +14,8 @@ import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { pickCopy } from "@/lib/i18n";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { DkcValidationRegistry } from "@/components/DkcValidationRegistry";
+import { DkcPublicationGate } from "@/components/DkcPublicationGate";
 
 const COPY = {
   en: {
@@ -349,7 +351,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -386,7 +388,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -514,7 +516,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -1655,7 +1657,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. This applies equally to conventional explanations.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -2182,7 +2184,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2-puutos x EMF -interaktio 54 maan regressiossa",
-        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista näyttöä — korrelaatio, ei kausaatio.",
+        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista näyttöä — korrelaatio, ei kausaatio. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
         timeline: "Testattavissa heti (olemassa oleva data + B2-tutkimukset ~30 maasta)",
         falsification: "Ei merkitsevää EMF x B2 -interaktiotermiä, tai interaktio on positiivinen",
       },
@@ -2219,7 +2221,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutidin teho korreloi ympäristön EMF-tason kanssa",
-        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on SPEKULATIIVINEN ennuste — mekanistisesti johdettu mutta kliinistä dataa ei vielä ole. Näyttötaso: L*.",
+        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on mekanistisesti johdettu, falsifioitava ennuste; kliininen testi joko vahvistaa tai kumoaa sen. Näyttötaso: L*.",
         timeline: "3-5 vuotta (olemassa olevien RCT:iden data-analyysi)",
         falsification: "Ei korrelaatiota EMF-ympäristön ja semaglutiditehon välillä",
       },
@@ -2347,7 +2349,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Kilpirauhashäiriöiden esiintyvyys korreloi matkapuhelimen yleistymisasteen kanssa kansallisesti",
-        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöesiintyvyyden (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio.",
+        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöesiintyvyyden (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
         type: "ekologinen",
         discriminating: false,
         timeline: "Testattavissa heti (olemassa olevat terveysrekisterit + ITU-data)",
@@ -4306,7 +4308,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -4337,7 +4339,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -4446,7 +4448,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -5417,7 +5419,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. これは従来の説明にも同様に当てはまる。", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -6089,7 +6091,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -6120,7 +6122,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -6229,7 +6231,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -7200,7 +7202,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. Cela s'applique tout autant aux explications conventionnelles.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -7872,7 +7874,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -7903,7 +7905,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -8012,7 +8014,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -8983,7 +8985,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. 이는 기존 설명에도 동일하게 적용됩니다.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -9077,6 +9079,9 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
+
+      <DkcPublicationGate locale={locale} />
+      <DkcValidationRegistry locale={locale} />
 
       {/* Prediction Dashboard Summary */}
       <section className="mb-12 max-w-4xl">
@@ -9363,7 +9368,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
           <div className="grid gap-4 max-w-4xl">
             {SENTINEL_IDS.map((p) => (
-              <article key={p.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <article key={p.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
@@ -9441,7 +9446,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.modulomePredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9500,7 +9505,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.cascadePredictions.map((cp) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9582,7 +9587,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.nutritionalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.nutritionalPredictions.map((np) => (
-            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={np.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9645,7 +9650,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl"><InlineReferenceText text={d.trpc1Lead} locale={locale} /></p>
         <div className="grid gap-4 max-w-4xl">
           {d.trpc1Predictions.map((tp) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9713,7 +9718,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.modIntLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.modIntPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9753,7 +9758,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
         <div className="grid gap-4 max-w-4xl">
           {d.sidsPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9790,7 +9795,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
         <div className="grid gap-4 max-w-4xl">
           {d.sidsResPredictions.map((srp) => (
-            <article key={srp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={srp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9824,7 +9829,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.neuroLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.neuroPredictions.map((np) => (
-            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={np.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9858,7 +9863,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.metalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.metalPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9887,7 +9892,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.mechLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.mechPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9916,7 +9921,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.suppLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.suppPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9945,7 +9950,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.finalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.finalPredictions.map((fp) => (
-            <article key={fp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={fp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9974,7 +9979,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.extLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.extPredictions.map((ep) => (
-            <article key={ep.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ep.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10003,7 +10008,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ultLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.ultPredictions.map((up) => (
-            <article key={up.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={up.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10032,7 +10037,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ttypeLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.ttypePredictions.map((ttp) => (
-            <article key={ttp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ttp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10061,7 +10066,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.repLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.repPredictions.map((rp) => (
-            <article key={rp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={rp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10091,7 +10096,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.diffNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.diffPredictions.map((dp) => (
-            <article key={dp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={dp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10138,7 +10143,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.vgccNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.vgccPredictions.map((vp) => (
-            <article key={vp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={vp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10180,7 +10185,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.tTfrNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.tTfrPredictions.map((tp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10221,7 +10226,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.causalNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.causalPredictions.map((cp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10261,7 +10266,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.popLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.popPredictions.map((pp) => (
-            <article key={pp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={pp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10308,7 +10313,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.tPredLead}</p>
           <div className="grid gap-4 max-w-4xl">
             {d.tPredPredictions.map((tp: { id: string; title: string; description: string; falsification: string }) => (
-              <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                   <span className="font-mono-num text-xs text-red-500">{tp.id}</span>
                   <h3 className="font-semibold">{tp.title}</h3>
@@ -10333,7 +10338,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.societalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.societalPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10361,7 +10366,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.techLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.techPredictions.map((tp) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10390,7 +10395,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.layerLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.layerPredictions.map((lp) => (
-            <article key={lp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={lp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10423,7 +10428,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.investigationLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.investigationPredictions.map((ip) => (
-            <article key={ip.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ip.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10523,7 +10528,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.sentinelPredPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10551,7 +10556,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.supplementLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.supplementPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10579,7 +10584,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.geneticLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.geneticPredictions.map((gp) => (
-            <article key={gp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={gp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10639,7 +10644,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.civLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.civPredictions.map((cp) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10671,7 +10676,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         {d.actLead && <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.actLead}</p>}
         <div className="grid gap-4 max-w-4xl">
           {d.actPredictions.map((ap) => (
-            <article key={ap.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ap.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10703,7 +10708,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.spaceWeatherLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.spaceWeatherPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">

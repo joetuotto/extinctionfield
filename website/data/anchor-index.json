@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T18:14:23.970Z",
+  "generatedAt": "2026-09-07T17:44:30.194Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -14,7 +14,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5397
+      "line": 5664
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -34,7 +34,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5379
+      "line": 5646
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -49,7 +49,7 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5290
+      "line": 5557
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
@@ -69,7 +69,7 @@
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5321
+      "line": 5588
     },
     {
       "claimId": "claim.civilization.asymmetric-evidence-threshold",
@@ -79,7 +79,7 @@
     {
       "claimId": "claim.civilization.biocap-tfr-input",
       "file": "app/[locale]/civilization/patokratia/page.tsx",
-      "line": 563
+      "line": 567
     },
     {
       "claimId": "claim.civilization.demand-capacity-separation",
@@ -119,7 +119,7 @@
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5430
+      "line": 5697
     },
     {
       "claimId": "claim.cognition.reported-reason-downstream",
@@ -134,7 +134,7 @@
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
       "file": "app/[locale]/civilization/patokratia/page.tsx",
-      "line": 605
+      "line": 609
     },
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
@@ -144,12 +144,47 @@
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5418
+      "line": 5685
+    },
+    {
+      "claimId": "claim.coordination.hormone-target-timing",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 157
+    },
+    {
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 160
+    },
+    {
+      "claimId": "claim.coordination.redox-clock",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 156
     },
     {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4993
+      "line": 5260
+    },
+    {
+      "claimId": "claim.couple.waiting-time-distribution",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 166
+    },
+    {
+      "claimId": "claim.cry.endocrine-gating",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 147
+    },
+    {
+      "claimId": "claim.encounter.network-propagation",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 170
+    },
+    {
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 175
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
@@ -159,32 +194,47 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5364
+      "line": 5631
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5347
+      "line": 5614
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
       "file": "app/[locale]/evidence/circadian/page.tsx",
-      "line": 902
+      "line": 905
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4639
+      "line": 4894
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5259
+      "line": 5526
+    },
+    {
+      "claimId": "claim.receptor.chemical-memory",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 151
+    },
+    {
+      "claimId": "claim.receptor.state-dependent-response",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 142
+    },
+    {
+      "claimId": "claim.reproduction.local-clock-gates",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 165
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5176
+      "line": 5443
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -229,12 +279,12 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4980
+      "line": 5247
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5172
+      "line": 5439
     }
   ]
 }

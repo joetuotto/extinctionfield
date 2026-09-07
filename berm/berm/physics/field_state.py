@@ -11,8 +11,9 @@ The legacy scalar remains available separately:
 
 For a scalar-compatible FieldState, the adapter below maps all channels to one
 collinear axis and returns that number exactly.  A richer state additionally
-retains the local background/personal vector cross-term, an organ transfer
-map, measured envelope/beat PSD overlap, and time-of-day context.
+retains a candidate Euclidean background/personal cross-term, an organ
+transfer map, measured envelope/beat PSD overlap, and time-of-day context.
+That Euclidean adapter is not the Lorentz-signature L1 contraction.
 
 All vectors supplied here must already be transformed to one documented,
 dimensionless coupling scale.  This class intentionally does not add raw
@@ -157,7 +158,9 @@ class ResonanceWindow:
         object.__setattr__(self, "window_id", self.window_id.strip())
 
     def weight(self, frequency_hz: float) -> float:
-        z = (_nonnegative("frequency_hz", frequency_hz) - self.center_hz) / self.sigma_hz
+        z = (
+            _nonnegative("frequency_hz", frequency_hz) - self.center_hz
+        ) / self.sigma_hz
         return math.exp(-0.5 * z * z)
 
 
@@ -214,7 +217,9 @@ class SourceCoupling:
     def __post_init__(self) -> None:
         if self.relative_phase_rad is not None:
             object.__setattr__(
-                self, "relative_phase_rad", _finite("relative_phase_rad", self.relative_phase_rad)
+                self,
+                "relative_phase_rad",
+                _finite("relative_phase_rad", self.relative_phase_rad),
             )
         if self.coherence is not None:
             coherence = _finite("coherence", self.coherence)
@@ -222,7 +227,9 @@ class SourceCoupling:
                 raise ValueError("coherence must be in [0, 1]")
             object.__setattr__(self, "coherence", coherence)
         if self.coherence_time_seconds is not None:
-            duration = _nonnegative("coherence_time_seconds", self.coherence_time_seconds)
+            duration = _nonnegative(
+                "coherence_time_seconds", self.coherence_time_seconds
+            )
             if duration == 0.0:
                 raise ValueError("coherence_time_seconds must be > 0")
             object.__setattr__(self, "coherence_time_seconds", duration)
@@ -296,7 +303,10 @@ class FieldState:
     provenance: Mapping[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
-        if not isinstance(self.normalization_id, str) or not self.normalization_id.strip():
+        if (
+            not isinstance(self.normalization_id, str)
+            or not self.normalization_id.strip()
+        ):
             raise ValueError("normalization_id must be a non-empty string")
         object.__setattr__(self, "normalization_id", self.normalization_id.strip())
         for name in ("country", "area", "setting", "biological_sex", "life_stage"):
@@ -372,7 +382,7 @@ class FieldState:
 
 @dataclass(frozen=True)
 class FieldStateResponse:
-    """A transparent local calculation record, not a biological dose."""
+    """A transparent candidate-adapter record, not a biological dose."""
 
     field_state_version: str
     organ: str
@@ -384,8 +394,8 @@ class FieldStateResponse:
     selected_vector_magnitude: float
     tissue_axis_projection: float
     background_personal_cosine: float | None
-    geometric_cross_term: float
-    coherent_cross_term: float
+    candidate_euclidean_cross_term: float
+    candidate_euclidean_coherent_cross_term: float
     legacy_timing_proxy: float
     ambient_envelope_overlap: float
     personal_envelope_overlap: float
@@ -393,6 +403,16 @@ class FieldStateResponse:
     night_selected_projection: float
     window_id: str | None
     completeness: "FieldStateCompleteness"
+
+    @property
+    def geometric_cross_term(self) -> float:
+        """Compatibility alias for the candidate Euclidean adapter term."""
+        return self.candidate_euclidean_cross_term
+
+    @property
+    def coherent_cross_term(self) -> float:
+        """Compatibility alias for the phase-weighted Euclidean adapter term."""
+        return self.candidate_euclidean_coherent_cross_term
 
 
 @dataclass(frozen=True)
@@ -451,7 +471,11 @@ def assess_field_state_completeness(
     )
     has_normalisation = any(
         state.provenance.get(key)
-        for key in ("normalization_reference", "normalisation_reference", "calibration_id")
+        for key in (
+            "normalization_reference",
+            "normalisation_reference",
+            "calibration_id",
+        )
     )
     observed = {
         "field_normalisation_calibration": has_normalisation,
@@ -474,9 +498,7 @@ def assess_field_state_completeness(
     missing = tuple(name for name, value in observed.items() if not value)
     return FieldStateCompleteness(
         status=(
-            "MEASUREMENT_READY_FIELD_STATE"
-            if not missing
-            else "PARTIAL_FIELD_STATE"
+            "MEASUREMENT_READY_FIELD_STATE" if not missing else "PARTIAL_FIELD_STATE"
         ),
         measurement_ready=not missing,
         present_components=present,
@@ -485,12 +507,7 @@ def assess_field_state_completeness(
 
 
 def lindgren_chi(background_magnitude: float) -> float:
-    """Return BERM's legacy chi closure for a normalized magnitude.
-
-    The function name is retained for compatibility.  The closure is not a
-    Lindgren-derived observable and does not calibrate BERM's conditional L2
-    tissue-response operator.
-    """
+    """L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."""
     amplitude = _nonnegative("background_magnitude", background_magnitude)
     return amplitude / math.sqrt(1.0 + amplitude * amplitude)
 
@@ -516,11 +533,19 @@ def evaluate_field_state(
     """Evaluate a declared FieldState adapter for one organ/receptor record.
 
     The selected vector is ``T(Aambient) + chi(|T(Abackground)|)T(Apersonal)``.
-    The separately visible cross term is
-    ``2 * T(Abackground) dot T(Apersonal)``.  In the scalar adapter both
-    reduce to the existing legacy calculation as appropriate.  ``T``, the
-    receptor window and the chi closure are externally declared BERM inputs;
-    this calculation is not a derived biological response or a closed L2 map.
+    The separately visible candidate Euclidean adapter term is
+    ``2 * T(Abackground) dot T(Apersonal)``.  It is a three-vector diagnostic,
+    not the Lorentz-signature contraction used in the restricted L1
+    derivation.  In the scalar adapter both expressions reduce to the existing
+    legacy calculation as appropriate.  ``T``, the receptor window and the
+    concrete chi-coordinate identification are externally declared BERM
+    inputs.  Choosing the positive Euclidean magnitude is an explicit L2
+    dimensionless, collinear, spacelike scalar reduction: the directed
+    derivative then produces ``χ(|A_bar|)`` through ``|A_bar|`` while the
+    algebraic ``χ_geo`` formula retains L1 status.  The concrete proxy, field
+    or membrane identification and biological response remain open L0→L2
+    mappings.  Empirical biological components downstream are L3
+    componentwise.
     """
     if not isinstance(state, FieldState):
         raise TypeError("state must be a FieldState")
@@ -544,10 +569,13 @@ def evaluate_field_state(
     else:
         cosine = max(
             -1.0,
-            min(1.0, background.dot(personal) / (background_magnitude * personal_magnitude)),
+            min(
+                1.0,
+                background.dot(personal) / (background_magnitude * personal_magnitude),
+            ),
         )
 
-    geometric_cross = 2.0 * background.dot(personal)
+    candidate_euclidean_cross = 2.0 * background.dot(personal)
     window = receptor.frequency_window
     completeness = assess_field_state_completeness(state, transfer)
     return FieldStateResponse(
@@ -561,8 +589,10 @@ def evaluate_field_state(
         selected_vector_magnitude=selected.norm,
         tissue_axis_projection=axis_projection,
         background_personal_cosine=cosine,
-        geometric_cross_term=geometric_cross,
-        coherent_cross_term=geometric_cross * state.source_coupling.phase_weight,
+        candidate_euclidean_cross_term=candidate_euclidean_cross,
+        candidate_euclidean_coherent_cross_term=(
+            candidate_euclidean_cross * state.source_coupling.phase_weight
+        ),
         legacy_timing_proxy=ambient.norm + selection * personal_magnitude,
         ambient_envelope_overlap=spectral_overlap(state.ambient_envelope_psd, window),
         personal_envelope_overlap=spectral_overlap(state.personal_envelope_psd, window),

@@ -14,8 +14,12 @@ Todistusketjun tasot ovat:
 - **L0 — Lindgrenin premissi:** Lindgrenin julkaisun yhtälö, määritelmä tai eksplisiittinen väite.
 - **L1 — matemaattinen seuraus ja teoriarajoite:** premissistä johdettava tulos tai riippumaton tutkimus, jonka avulla ansatzin rakennetta, konsistenssia ja suhdetta muuhun fysiikkaan voidaan arvioida.
 - **L2 — geometria–havaittava-silta:** määrittely tai vasteoperaattori, joka vie geometrisen perturbaation mitattavaan fysikaaliseen tai biologiseen suureeseen.
-- **L3 — tuotu biologinen realisaatio:** tunnettu biologinen vastaanotin tai mekanismi, johon geometrinen suure voitaisiin liittää vasta erikseen johdetun L2-sillan kautta.
-- **L4 — alavirran havainto:** solu-, kudos-, eliö-, lisääntymis- tai populaatiotulos, joka voi olla ketjun kanssa yhteensopiva mutta ei yksilöi sen alkupään mekanismia.
+- **L3 — tuotu / empiirinen komponentti:** mallin ulkopuolelta tuotu biologinen vastaanotin tai mekanismi, sen parametri tai solu-, kudos-, eliö-, lisääntymis-, ekologia- tai populaatiohavainto. L3-komponentti voidaan liittää geometriaan vasta erikseen johdetun L2-sillan kautta, eikä alavirran havainto yksilöi alkupään mekanismia.
+
+L3-komponentit pidetään erillään tyyppimetatiedolla `MECHANISM`, `PARAMETER` tai
+`OBSERVATION`. Nämä tyypit sekä `OBS-*`-havaintotunnukset eivät ole uusia
+episteemisiä tasoja. Tuotu L3-aineisto ei validoi L0:aa eikä täytä avointa
+L0→L2-identifikaatiota.
 
 Episteemiset merkinnät:
 
@@ -31,7 +35,7 @@ Lisäksi jokaisesta lähderyhmästä kysytään:
 3. Edellyttääkö sen BERM-tulkinta puuttuvaa L2-siltaa?
 4. Erotteleeko tulos Lindgrenin mallin tavallisesta sähkömagnetismista?
 
-Jos BERM- ja Lindgren-termit voidaan poistaa selityksestä ilman, että tutkimuksen varsinainen mekanistinen sisältö muuttuu, lähde on enintään **[TUOTU, L3/L4]**. Se ei ole Lindgren-spesifinen vahvistus.
+Jos BERM- ja Lindgren-termit voidaan poistaa selityksestä ilman, että tutkimuksen varsinainen mekanistinen sisältö muuttuu, lähde on **[TUOTU, L3]**. Se ei ole Lindgren-spesifinen vahvistus.
 
 ## 2. Lindgrenin premissit ennen lähteitä
 
@@ -58,10 +62,11 @@ ja varauksen yhteyttä potentiaalin divergenssiin käsitellään konjektuurina. 
 Vuoden 2025 ansatz on eri:
 
 \[
-g_{\mu\nu}=\eta_{\mu\nu}+A_\mu A_\nu.
+g_{\mu\nu}=\eta_{\mu\nu}+\kappa A_\mu A_\nu,
 \]
-
-Artikkelin yleistetty Maxwell-yhtälö saadaan ehdosta \(\Delta g_{\mu\nu}=0\):
+missä paperin yksikkönormalisointi vastaa erikoistapausta $\kappa=1$.
+Artikkelin harmonisen metriikan ehto \(\Delta g_{\mu\nu}=0\) tuottaa
+seuraavan GME-residuaalin valitun variaatiohaaran sisällä:
 
 \[
 \nabla_\sigma A_\nu\nabla^\sigma A_\mu
@@ -69,6 +74,13 @@ Artikkelin yleistetty Maxwell-yhtälö saadaan ehdosta \(\Delta g_{\mu\nu}=0\):
 +\nabla_\sigma A_\mu\nabla^\sigma A_\nu
 +A_\mu\Delta A_\nu=0.
 \]
+
+Tätä yhtälöä ei hyväksytä Maxwell-rajaksi yksin. Johtoportti vaatii yhdessä
+(1) eksplisiittisen variaatioperiaatteen ja Euler–Lagrange-yhtälöt,
+(2) torsionittoman Weyl-semimetrisyysehdon ja (3) Bianchi-haaran, jossa
+\(F=dA\Rightarrow dF=0\). Kontraktoitu gravitaation Bianchi-identiteetti ei
+tuota lähteellistä yhtälöä \(\nabla_\mu F^{\mu\nu}=J^\nu\); lähteellinen sektori
+tarvitsee erillisen dynamiikan ja lähdeidentifikaatiot.
 
 Vuoden 2021 ja 2025 metriikkoja ei saa yhdistää yhdeksi jatkuvaksi yhtälöksi ilman erillistä siirtymäjohtoa.
 
@@ -107,6 +119,24 @@ g^{\mu\nu}=\eta^{\mu\nu}-\frac{A^\mu A^\nu}{1+A^2}.
 \]
 
 Metriikka degeneroituu pinnalla \(1+A^2=0\) **[JOHDETTU]**. Teorian on määritettävä sallittu kenttäalue ja singulariteetin fysikaalinen merkitys **[AVOIN]**.
+
+Tilavuuselementin suunnattu Lorentz-linearisaatio on etumerkillinen L1-tulos.
+Abstraktin dimensiottoman skalaarin geometrinen kerroin
+
+\[
+\chi_{\mathrm{geo}}(x)
+=\frac{x}{\sqrt{1+x^2}}
+\]
+
+on **[JOHDETTU, L1]** kaavana ja algebrallisena funktiona. Sen sijaan
+havaitsijan, positiivisen spatiaalisen projektion, euklidisen normin,
+kollineaarisuuden ja dimensiottoman kartan valinta, jolla suunnatusta
+Lorentz-tuloksesta muodostetaan \(x\propto|\bar A|\) ja siten
+\(\chi_{\mathrm{geo}}(|\bar A|)\), on **[AVOIN, L2]**. Konkreettisen V/m-,
+teknologia-proxy- tai kalvomuuttujan identifiointi tämän sillan koordinaatiksi
+ja biologiseksi vasteeksi ovat nekin avoimia L2-osia. Myöhemmät empiiriset
+L3-komponentit eivät alenna abstraktin \(\chi_{\mathrm{geo}}\)-kaavan
+L1-statusta.
 
 Gauge-muunnoksessa \(A\mapsto A+\mathrm d\lambda\)
 
@@ -250,7 +280,7 @@ Operaattorin muoto on näin **[JOHDETTU EHDOLLISESTI]**, ei enää kokonaan nime
 | L2-25 | Beane, W. S. ym. (2013). *A molecular mechanism for normal and regenerative head patterning in planarians.* **Development** 140, 313–322. [DOI](https://doi.org/10.1242/dev.086900) | Bioelektrisen tilan ja anatomisen kuvioinnin mekanistisen yhteyden. **[TUOTU]** | Ei ulkoisen potentiaalin geometrista kytkentää. |
 | L2-26 | Vandenberg, L. N. ym. (2011). *V-ATPase-dependent ectodermal voltage and pH regionalization are required for craniofacial morphogenesis.* **Developmental Dynamics** 240, 1889–1904. [DOI](https://doi.org/10.1002/dvdy.22685) | Spatiaalisen jännitejakauman kehitysbiologisen roolin. **[TUOTU]** | Ei nelipotentiaalin operationalisointia. |
 | L2-27 | Pai, V. P. ym. (2012). *Transmembrane voltage potential controls embryonic eye patterning in Xenopus laevis.* **Development** 139, 313–323. [DOI](https://doi.org/10.1242/dev.073759) | Kalvopotentiaalin kausaalisen kuviointivaikutuksen. **[TUOTU]** | Ei Lindgren-spesifisyyttä. |
-| L2-28 | Durant, F. ym. (2017). *Long-term, stochastic editing of regenerative anatomy via targeting endogenous bioelectric gradients.* **Biophysical Journal** 112, 2231–2243. [DOI](https://doi.org/10.1016/j.bpj.2017.04.011) | Bioelektrisen tilan pitkäkestoisen anatomisen vaikutuksen. **[TUOTU]** | Ei perustele FieldState-siirtofunktiota tai \(\chi\)-funktiota. |
+| L2-28 | Durant, F. ym. (2017). *Long-term, stochastic editing of regenerative anatomy via targeting endogenous bioelectric gradients.* **Biophysical Journal** 112, 2231–2243. [DOI](https://doi.org/10.1016/j.bpj.2017.04.011) | Bioelektrisen tilan pitkäkestoisen anatomisen vaikutuksen. **[TUOTU]** | Ei perustele konkreettisen bioelektrisen muuttujan normalisointia \(x\)-koordinaatiksi, spatiaalisen/euklidisen L2-sillan valintaa tai biologista vasteoperaattoria; tämä ei muuta abstraktin \(\chi_{\mathrm{geo}}\)-kaavan L1-statusta. |
 | L2-29 | Levin, M. (2021). *Bioelectric signaling: reprogrammable circuits underlying embryogenesis, regeneration, and cancer.* **Cell** 184. [DOI](https://doi.org/10.1016/j.cell.2021.02.034) | Synteesin bioelektrisestä ohjauksesta. **[TUOTU]** | Katsaus ei muuta bioelektristä tilaa Lindgrenin metriikaksi. |
 | L2-30 | Whited, J. L. & Levin, M. (2019). *Dynamic bioelectricity in developmental patterning and regeneration.* **Current Opinion in Genetics & Development** 57, 7–14. [DOI](https://doi.org/10.1016/j.gde.2019.06.014) | Dynaamisen bioelektrisen tilan katsauksen. **[TUOTU]** | Ei geometrista vasteoperaattoria. |
 
@@ -333,56 +363,61 @@ Operaattorin muoto on näin **[JOHDETTU EHDOLLISESTI]**, ei enää kokonaan nime
 
 **L3-johtopäätös:** radikaalipari, kryptokromi, bioelektrinen signalointi, VGCC/ROS ja vuorokausikello ovat mahdollisia biologisia realisaatioita. Mikään niistä ei ole tällä hetkellä johdettu Lindgrenin metriikasta. BERM ei saa asettaa RPM:ää, VGCC:tä, ROS:ää tai kelloa ensisijaiseksi vain siksi, että niiden kirjallisuus on runsasta.
 
-## 7. L4 — lisääntymisbiologinen näyttö
+## 7. L3-aineisto — lisääntymisbiologinen näyttö
+
+Tämän osion `OBS-REPRO-*`-tunnukset ovat havaintotietueiden nimiavaruus,
+eivät uusia episteemisiä tasoja. Kaikki osion tuodut havainnot ovat
+komponenttikohtaisesti L3:a; niiden evidenssivahvuus ja rajaukset säilyvät
+erillisinä metatietoina.
 
 ### 7.1 Ihmisen siittiöt ex vivo ja laboratorioympäristössä
 
 | ID | Lähde | Tulosluokka | Rajaus |
 |---|---|---|---|
-| L4-1 | De Iuliis, G. N. ym. (2009). *Mobile phone radiation induces reactive oxygen species production and DNA damage in human spermatozoa in vitro.* **PLoS ONE** 4, e6446. [DOI](https://doi.org/10.1371/journal.pone.0006446) | ROS, DNA-vaurio ja motiliteetti 1,8 GHz:n in vitro -altistuksessa. **[TUOTU]** | Korkea/paikallinen SAR, ei elimistön dosimetriaa eikä Lindgren-mekanismia. |
-| L4-2 | Agarwal, A. ym. (2009). *Effects of radiofrequency electromagnetic waves from cellular phones on human ejaculated semen: an in vitro pilot study.* **Fertility and Sterility** 92, 1318–1325. [DOI](https://doi.org/10.1016/j.fertnstert.2008.08.022) | Paritettu siemennesteen altistus; motiliteetti-, vitaalisuus- ja ROS-päätepisteet. **[TUOTU]** | Pilotti, ex vivo, laitegeometria ja lämpö kontrolloitava. |
-| L4-3 | Avendaño, C. ym. (2012). *Use of laptop computers connected to internet through Wi-Fi decreases human sperm motility and increases sperm DNA fragmentation.* **Fertility and Sterility** 97, 39–45.e2. [DOI](https://doi.org/10.1016/j.fertnstert.2011.10.012) | Motiliteetti ja DNA-fragmentaatio paritetussa asetelmassa. **[TUOTU]** | Ei henkilöaltistus; lämpö ja laitteen paikallinen kenttä sekoittavat. |
-| L4-4 | Baldini, G. M. ym. (2025). *Does Electromagnetic Pollution in the ART Laboratory Affect Sperm Quality?* **Toxics** 13, 510. [DOI](https://doi.org/10.3390/toxics13060510) | ART-laboratorion paikallisympäristön ja siittiölaadun tarkastelu. **[TUOTU]** | Yksi ympäristö, lyhyt altistus; ei yleinen kausaliteetti. |
+| OBS-REPRO-01 | De Iuliis, G. N. ym. (2009). *Mobile phone radiation induces reactive oxygen species production and DNA damage in human spermatozoa in vitro.* **PLoS ONE** 4, e6446. [DOI](https://doi.org/10.1371/journal.pone.0006446) | ROS, DNA-vaurio ja motiliteetti 1,8 GHz:n in vitro -altistuksessa. **[TUOTU]** | Korkea/paikallinen SAR, ei elimistön dosimetriaa eikä Lindgren-mekanismia. |
+| OBS-REPRO-02 | Agarwal, A. ym. (2009). *Effects of radiofrequency electromagnetic waves from cellular phones on human ejaculated semen: an in vitro pilot study.* **Fertility and Sterility** 92, 1318–1325. [DOI](https://doi.org/10.1016/j.fertnstert.2008.08.022) | Paritettu siemennesteen altistus; motiliteetti-, vitaalisuus- ja ROS-päätepisteet. **[TUOTU]** | Pilotti, ex vivo, laitegeometria ja lämpö kontrolloitava. |
+| OBS-REPRO-03 | Avendaño, C. ym. (2012). *Use of laptop computers connected to internet through Wi-Fi decreases human sperm motility and increases sperm DNA fragmentation.* **Fertility and Sterility** 97, 39–45.e2. [DOI](https://doi.org/10.1016/j.fertnstert.2011.10.012) | Motiliteetti ja DNA-fragmentaatio paritetussa asetelmassa. **[TUOTU]** | Ei henkilöaltistus; lämpö ja laitteen paikallinen kenttä sekoittavat. |
+| OBS-REPRO-04 | Baldini, G. M. ym. (2025). *Does Electromagnetic Pollution in the ART Laboratory Affect Sperm Quality?* **Toxics** 13, 510. [DOI](https://doi.org/10.3390/toxics13060510) | ART-laboratorion paikallisympäristön ja siittiölaadun tarkastelu. **[TUOTU]** | Yksi ympäristö, lyhyt altistus; ei yleinen kausaliteetti. |
 
 ### 7.2 Mieslisääntyminen eläimissä ja ihmisissä
 
 | ID | Lähde | Tulosluokka | Rajaus |
 |---|---|---|---|
-| L4-5 | Yu, G. ym. (2020). *Long-term exposure to 4G smartphone radiofrequency electromagnetic radiation diminished male reproductive potential by directly disrupting Spock3–MMP2-BTB axis.* **Science of the Total Environment** 698, 133860. [DOI](https://doi.org/10.1016/j.scitotenv.2019.133860) | Rotan veri-kiveseste, spermatogeneesi ja Spock3–MMP2-akseli. **[TUOTU]** | Protokollasidonnainen eläintulos; ei ihmisannosta eikä Lindgren-siltaa. |
-| L4-6 | Meena, R. ym. (2014). *Therapeutic approaches of melatonin in microwave radiations-induced oxidative stress-mediated toxicity on male fertility pattern of Wistar rats.* **Electromagnetic Biology and Medicine** 33, 81–91. [DOI](https://doi.org/10.3109/15368378.2013.781035) | Melatoniini-/redox-välitteinen rottatulos. **[TUOTU]** | Ei ratkaise lämpöä, dosimetriaa tai geometrista alkuperää. |
-| L4-7 | Møllerløkken, O. J. & Moen, B. E. (2008). *Is fertility reduced among men exposed to radiofrequency fields in the Norwegian Navy?* **Bioelectromagnetics** 29. [DOI](https://doi.org/10.1002/bem.20400) | Ammattialtistuksen kuvailevan ihmisvihjeen. **[TUOTU]** | Karkea altistusluokitus ja sekoittuminen; ei mekanismia. |
-| L4-8 | Shafik, A. ym. (1992). *Effect of different types of textile fabric on spermatogenesis. I. Electrostatic potentials generated on surface of human scrotum.* **Andrologia** 24. [DOI](https://doi.org/10.1111/j.1439-0272.1992.tb02628.x) | Tekstiili–iho-rajapinnan sähköstaattisen mittauksen. **[TUOTU]** | Historiallinen ja mittausgeometrialtaan rajallinen; ei RF eikä Lindgren. |
-| L4-9 | Shafik, A. (1992). *Contraceptive efficacy of polyester-induced azoospermia in normal men.* **Contraception** 45. [DOI](https://doi.org/10.1016/0010-7824(92)90157-O) | Pienen ihmisintervention lisääntymispäätepisteen. **[TUOTU]** | Kontrolloimaton; lämpö, paine, materiaali ja varaus eivät erotu. |
+| OBS-REPRO-05 | Yu, G. ym. (2020). *Long-term exposure to 4G smartphone radiofrequency electromagnetic radiation diminished male reproductive potential by directly disrupting Spock3–MMP2-BTB axis.* **Science of the Total Environment** 698, 133860. [DOI](https://doi.org/10.1016/j.scitotenv.2019.133860) | Rotan veri-kiveseste, spermatogeneesi ja Spock3–MMP2-akseli. **[TUOTU]** | Protokollasidonnainen eläintulos; ei ihmisannosta eikä Lindgren-siltaa. |
+| OBS-REPRO-06 | Meena, R. ym. (2014). *Therapeutic approaches of melatonin in microwave radiations-induced oxidative stress-mediated toxicity on male fertility pattern of Wistar rats.* **Electromagnetic Biology and Medicine** 33, 81–91. [DOI](https://doi.org/10.3109/15368378.2013.781035) | Melatoniini-/redox-välitteinen rottatulos. **[TUOTU]** | Ei ratkaise lämpöä, dosimetriaa tai geometrista alkuperää. |
+| OBS-REPRO-07 | Møllerløkken, O. J. & Moen, B. E. (2008). *Is fertility reduced among men exposed to radiofrequency fields in the Norwegian Navy?* **Bioelectromagnetics** 29. [DOI](https://doi.org/10.1002/bem.20400) | Ammattialtistuksen kuvailevan ihmisvihjeen. **[TUOTU]** | Karkea altistusluokitus ja sekoittuminen; ei mekanismia. |
+| OBS-REPRO-08 | Shafik, A. ym. (1992). *Effect of different types of textile fabric on spermatogenesis. I. Electrostatic potentials generated on surface of human scrotum.* **Andrologia** 24. [DOI](https://doi.org/10.1111/j.1439-0272.1992.tb02628.x) | Tekstiili–iho-rajapinnan sähköstaattisen mittauksen. **[TUOTU]** | Historiallinen ja mittausgeometrialtaan rajallinen; ei RF eikä Lindgren. |
+| OBS-REPRO-09 | Shafik, A. (1992). *Contraceptive efficacy of polyester-induced azoospermia in normal men.* **Contraception** 45. [DOI](https://doi.org/10.1016/0010-7824(92)90157-O) | Pienen ihmisintervention lisääntymispäätepisteen. **[TUOTU]** | Kontrolloimaton; lämpö, paine, materiaali ja varaus eivät erotu. |
 
 ### 7.3 Naaraslisääntyminen, raskaus ja kehitys
 
 | ID | Lähde | Tulosluokka | Rajaus |
 |---|---|---|---|
-| L4-10 | Ahmadi, S. S. ym. (2016). *Effect of non-ionizing electromagnetic field on the alteration of ovarian follicles in rats.* **Electronic Physician** 8, 2168–2174. [DOI](https://doi.org/10.19082/2168) | Rotan munasarjafollikkelien histologia. **[TUOTU]** | Yksi eläinprotokolla; ei ihmisen munasarjareserviä. |
-| L4-11 | Calis, P. ym. (2021). *Does exposure of smart phones during pregnancy affect the offspring's ovarian reserve? A rat model study.* **Fetal and Pediatric Pathology** 40, 142–152. [DOI](https://doi.org/10.1080/15513815.2019.1692112) | Jälkeläisten munasarjareservin rottamalli. **[TUOTU]** | Ei ihmisnäyttöä eikä Lindgren-spesifisyyttä. |
-| L4-12 | Yousefi, B. ym. (2025). *Impairment of Oogenesis and Folliculogenesis in Neonatal Rats after Maternal Exposure to Mobile Phones.* **Reproductive Sciences** 32, 2259–2269. [DOI](https://doi.org/10.1007/s43032-025-01880-0) | Neonataalisen oogeneesin/follikulogeneesin eläintulos. **[TUOTU]** | Protokollasidonnainen; ei väestökausaliteettia. |
+| OBS-REPRO-10 | Ahmadi, S. S. ym. (2016). *Effect of non-ionizing electromagnetic field on the alteration of ovarian follicles in rats.* **Electronic Physician** 8, 2168–2174. [DOI](https://doi.org/10.19082/2168) | Rotan munasarjafollikkelien histologia. **[TUOTU]** | Yksi eläinprotokolla; ei ihmisen munasarjareserviä. |
+| OBS-REPRO-11 | Calis, P. ym. (2021). *Does exposure of smart phones during pregnancy affect the offspring's ovarian reserve? A rat model study.* **Fetal and Pediatric Pathology** 40, 142–152. [DOI](https://doi.org/10.1080/15513815.2019.1692112) | Jälkeläisten munasarjareservin rottamalli. **[TUOTU]** | Ei ihmisnäyttöä eikä Lindgren-spesifisyyttä. |
+| OBS-REPRO-12 | Yousefi, B. ym. (2025). *Impairment of Oogenesis and Folliculogenesis in Neonatal Rats after Maternal Exposure to Mobile Phones.* **Reproductive Sciences** 32, 2259–2269. [DOI](https://doi.org/10.1007/s43032-025-01880-0) | Neonataalisen oogeneesin/follikulogeneesin eläintulos. **[TUOTU]** | Protokollasidonnainen; ei väestökausaliteettia. |
 
 ### 7.4 Systemaattiset katsaukset: korkein käytännöllinen paino alavirran arvioinnissa
 
 | ID | Lähde | Keskeinen tulos | BERM-tulkinta |
 |---|---|---|---|
-| L4-13 | Adams, J. A. ym. (2014). *Effect of mobile telephones on sperm quality: a systematic review and meta-analysis.* **Environment International** 70, 106–112. [DOI](https://doi.org/10.1016/j.envint.2014.04.015) | Varhainen meta-analyysi siittiöiden motiliteetista ja vitaalisuudesta. | Historiallinen synteesi; ei korvaa uudempaa risk-of-bias/GRADE-arviota. **[TUOTU]** |
-| L4-14 | Houston, B. J. ym. (2016). *The effects of radiofrequency electromagnetic radiation on sperm function.* **Reproduction** 152. [DOI](https://doi.org/10.1530/REP-16-0126) | Mekanistinen katsaus RF:n ja siittiölaadun kirjallisuuteen. | Narratiivinen, ei riippumaton vaikutuskoko. **[TUOTU]** |
-| L4-15 | La Vignera, S. ym. (2012). *Effects of the exposure to mobile phones on male reproduction: a review of the literature.* **Journal of Andrology** 33. [DOI](https://doi.org/10.2164/jandrol.111.014373) | Varhaisen ihmis-/eläinkirjallisuuden synteesi. | Altistusmittaus ja tutkimuslaatu heterogeenisiä. **[TUOTU]** |
-| L4-16 | Pacchierotti, F. ym. (2021). *Effects of Radiofrequency Electromagnetic Field (RF-EMF) exposure on male fertility and pregnancy and birth outcomes: Protocols for a systematic review of experimental studies in non-human mammals and in human sperm exposed in vitro.* **Environment International** 157, 106806. [DOI](https://doi.org/10.1016/j.envint.2021.106806) | WHO-arvioinnin ennalta määritellyn menetelmän. | Protokolla, ei vaikutustulos. **[TUOTU]** |
-| L4-17 | Cordelli, E. ym. (2024). *Effects of RF-EMF exposure on male fertility: systematic review of experimental studies on non-human mammals and human sperm in vitro.* **Environment International** 185, 108509. [DOI](https://doi.org/10.1016/j.envint.2024.108509); [korjaus](https://doi.org/10.1016/j.envint.2025.109449) | 117 eläin- ja 10 ihmisen in vitro -julkaisua; kohtalainen varmuus alentuneesta raskausasteesta, matala siittiömäärästä, useimmat muut tulokset hyvin epävarmoja; ei johdonmukaista annos–vastetta. | Tärkein alavirran synteesi. Tukee rajattuja haittasignaaleja, ei mekanismia eikä Lindgren-spesifisyyttä. **[TUOTU]** |
-| L4-18 | Kenny, R. P. W. ym. (2024). *The effects of radiofrequency exposure on male fertility: a systematic review of human observational studies with dose-response meta-analysis.* **Environment International** 190, 108817. [DOI](https://doi.org/10.1016/j.envint.2024.108817) | Ihmishavaintotutkimusten kokonaisnäyttö arvioitiin hyvin epävarmaksi. | Estää vahvan ihmiskausaliteetin johtamisen eläin- tai in vitro -näytöstä. **[TUOTU]** |
-| L4-19 | Johnson, E. E. ym. (2024). *The effects of radiofrequency exposure on adverse female reproductive outcomes: A systematic review of human observational studies with dose-response meta-analysis.* **Environment International** 190, 108816. [DOI](https://doi.org/10.1016/j.envint.2024.108816) | Ihmisen naislisääntymisen havaintonäytön systemaattinen arvio; varmuus pääosin hyvin matala. | Ei vahvaa ihmiskausaliteettia eikä mekanistista erottelua. **[TUOTU]** |
-| L4-20 | Cordelli, E. ym. (2023). *Effects of radiofrequency electromagnetic field exposure on pregnancy and birth outcomes: systematic review of experimental studies in non-human mammals.* **Environment International** 180, 108178. [DOI](https://doi.org/10.1016/j.envint.2023.108178); [korjaus](https://doi.org/10.1016/j.envint.2025.109273) | Korkea varmuus siitä, ettei poikuekokoon havaittu vaikutusta; kohtalainen näyttö pienestä sikiöpainon haitasta; muut päätepisteet matalan/erittäin matalan varmuuden tasolla. | Sekä rajaava että haittaan viittaava näyttö on säilytettävä. **[TUOTU]** |
-| L4-21 | Naderi, N. ym. (2026). *Influence of radiofrequency electromagnetic radiation on spermatogenesis and sperm function in rodent models: a systematic review.* **Reproductive Toxicology** 144, 109300. [DOI](https://doi.org/10.1016/j.reprotox.2026.109300) | Vuoteen 2026 ulottuva jyrsijöiden spermatogeneesi- ja siittiöfunktioiden synteesi. | Heterogeeninen eläinkorpus; ei ihmisannosta eikä Lindgren-erottelua. **[TUOTU]** |
+| OBS-REPRO-13 | Adams, J. A. ym. (2014). *Effect of mobile telephones on sperm quality: a systematic review and meta-analysis.* **Environment International** 70, 106–112. [DOI](https://doi.org/10.1016/j.envint.2014.04.015) | Varhainen meta-analyysi siittiöiden motiliteetista ja vitaalisuudesta. | Historiallinen synteesi; ei korvaa uudempaa risk-of-bias/GRADE-arviota. **[TUOTU]** |
+| OBS-REPRO-14 | Houston, B. J. ym. (2016). *The effects of radiofrequency electromagnetic radiation on sperm function.* **Reproduction** 152. [DOI](https://doi.org/10.1530/REP-16-0126) | Mekanistinen katsaus RF:n ja siittiölaadun kirjallisuuteen. | Narratiivinen, ei riippumaton vaikutuskoko. **[TUOTU]** |
+| OBS-REPRO-15 | La Vignera, S. ym. (2012). *Effects of the exposure to mobile phones on male reproduction: a review of the literature.* **Journal of Andrology** 33. [DOI](https://doi.org/10.2164/jandrol.111.014373) | Varhaisen ihmis-/eläinkirjallisuuden synteesi. | Altistusmittaus ja tutkimuslaatu heterogeenisiä. **[TUOTU]** |
+| OBS-REPRO-16 | Pacchierotti, F. ym. (2021). *Effects of Radiofrequency Electromagnetic Field (RF-EMF) exposure on male fertility and pregnancy and birth outcomes: Protocols for a systematic review of experimental studies in non-human mammals and in human sperm exposed in vitro.* **Environment International** 157, 106806. [DOI](https://doi.org/10.1016/j.envint.2021.106806) | WHO-arvioinnin ennalta määritellyn menetelmän. | Protokolla, ei vaikutustulos. **[TUOTU]** |
+| OBS-REPRO-17 | Cordelli, E. ym. (2024). *Effects of RF-EMF exposure on male fertility: systematic review of experimental studies on non-human mammals and human sperm in vitro.* **Environment International** 185, 108509. [DOI](https://doi.org/10.1016/j.envint.2024.108509); [korjaus](https://doi.org/10.1016/j.envint.2025.109449) | 117 eläin- ja 10 ihmisen in vitro -julkaisua; kohtalainen varmuus alentuneesta raskausasteesta, matala siittiömäärästä, useimmat muut tulokset hyvin epävarmoja; ei johdonmukaista annos–vastetta. | Tärkein alavirran synteesi. Tukee rajattuja haittasignaaleja, ei mekanismia eikä Lindgren-spesifisyyttä. **[TUOTU]** |
+| OBS-REPRO-18 | Kenny, R. P. W. ym. (2024). *The effects of radiofrequency exposure on male fertility: a systematic review of human observational studies with dose-response meta-analysis.* **Environment International** 190, 108817. [DOI](https://doi.org/10.1016/j.envint.2024.108817) | Ihmishavaintotutkimusten kokonaisnäyttö arvioitiin hyvin epävarmaksi. | Estää vahvan ihmiskausaliteetin johtamisen eläin- tai in vitro -näytöstä. **[TUOTU]** |
+| OBS-REPRO-19 | Johnson, E. E. ym. (2024). *The effects of radiofrequency exposure on adverse female reproductive outcomes: A systematic review of human observational studies with dose-response meta-analysis.* **Environment International** 190, 108816. [DOI](https://doi.org/10.1016/j.envint.2024.108816) | Ihmisen naislisääntymisen havaintonäytön systemaattinen arvio; varmuus pääosin hyvin matala. | Ei vahvaa ihmiskausaliteettia eikä mekanistista erottelua. **[TUOTU]** |
+| OBS-REPRO-20 | Cordelli, E. ym. (2023). *Effects of radiofrequency electromagnetic field exposure on pregnancy and birth outcomes: systematic review of experimental studies in non-human mammals.* **Environment International** 180, 108178. [DOI](https://doi.org/10.1016/j.envint.2023.108178); [korjaus](https://doi.org/10.1016/j.envint.2025.109273) | Korkea varmuus siitä, ettei poikuekokoon havaittu vaikutusta; kohtalainen näyttö pienestä sikiöpainon haitasta; muut päätepisteet matalan/erittäin matalan varmuuden tasolla. | Sekä rajaava että haittaan viittaava näyttö on säilytettävä. **[TUOTU]** |
+| OBS-REPRO-21 | Naderi, N. ym. (2026). *Influence of radiofrequency electromagnetic radiation on spermatogenesis and sperm function in rodent models: a systematic review.* **Reproductive Toxicology** 144, 109300. [DOI](https://doi.org/10.1016/j.reprotox.2026.109300) | Vuoteen 2026 ulottuva jyrsijöiden spermatogeneesi- ja siittiöfunktioiden synteesi. | Heterogeeninen eläinkorpus; ei ihmisannosta eikä Lindgren-erottelua. **[TUOTU]** |
 
 ### 7.5 Populaatiotrendi ei ole altisteattribuutio
 
 | ID | Lähde | Käyttö |
 |---|---|---|
-| L4-22 | Levine, H. ym. (2023). *Temporal trends in sperm count: a systematic review and meta-regression analysis of samples collected globally in the 20th and 21st centuries.* **Human Reproduction Update** 29, 157–176. [DOI](https://doi.org/10.1093/humupd/dmac035) | Tukee siittiömäärän ajallisen trendin kuvausta. Ei tunnista RF-EMF:ää, BERM:iä tai Lindgreniä syyksi. **[TUOTU, konteksti]** |
+| OBS-REPRO-22 | Levine, H. ym. (2023). *Temporal trends in sperm count: a systematic review and meta-regression analysis of samples collected globally in the 20th and 21st centuries.* **Human Reproduction Update** 29, 157–176. [DOI](https://doi.org/10.1093/humupd/dmac035) | Tukee siittiömäärän ajallisen trendin kuvausta. Ei tunnista RF-EMF:ää, BERM:iä tai Lindgreniä syyksi. **[TUOTU, konteksti]** |
 
-## 8. L4 — ekologinen ja lajienvälinen aineisto
+## 8. L3-aineisto — ekologinen ja lajienvälinen aineisto
 
 Ekologinen aineisto voi osoittaa, että sähköiset tai magneettiset ympäristömuuttujat ovat biologisesti havaittavia ja joskus käyttäytymiseen vaikuttavia. Se ei sellaisenaan osoita sivilisaatiotason kapasiteetin heikkenemistä eikä Lindgrenin geometrista mekanismia.
 
@@ -457,7 +492,7 @@ Ekologinen aineisto voi osoittaa, että sähköiset tai magneettiset ympäristö
 | Geometria → RPM/CRY | Ei tunnistettua julkaistua johtoa | **[AVOIN]** |
 | CRY/RPM → biologinen vaste | Molekyyli-, solu- ja eliönäyttöä; replikaatioristiriitoja | **[TUOTU, L3]** |
 | Kello → lisääntymistoiminto | Geneettistä eläinnäyttöä | **[TUOTU, L3]** |
-| RF → lisääntymispäätepisteet | Systemaattisesti arvioitua mutta pääosin epävarmaa näyttöä | **[TUOTU, L4]** |
+| RF → lisääntymispäätepisteet | Systemaattisesti arvioitua mutta pääosin epävarmaa näyttöä | **[TUOTU, L3]** |
 | BERM:iä Maxwell/RPM/VGCC/ROS-malleista erotteleva julkaistu tulos | Ei tunnistettu | **[AVOIN]** |
 | Lindgren-johdon riippumaton replikaatio | Ei tunnistettu 1.9.2026 mennessä | **[AVOIN]** |
 
@@ -469,7 +504,7 @@ Ekologinen aineisto voi osoittaa, että sähköiset tai magneettiset ympäristö
 4. **L2-1–L2-10:** rakenna gauge-invariantin havaittavan ja vasteoperaattorin ehdot.
 5. **L2-14–L2-36:** operationalisoi biologinen taustatila ja erottele se tavallisesta kudosvälityksestä.
 6. **L3-1–L3-24:** arvioi spin-kemia mahdollisena realisaationa, mukaan lukien vastanäyttö ja epäonnistunut replikaatio.
-7. **L3-31–L3-37 ja L4:** käytä kello- ja lisääntymistutkimusta vasta alavirran koherenssin arviointiin.
+7. **L3-31–L3-37 ja OBS-REPRO-01–OBS-REPRO-22:** käytä kello- ja lisääntymistutkimusta vasta alavirran koherenssin arviointiin.
 8. **E-1–E-24:** käytä ekologista aineistoa lajikohtaisen kenttärelevanssin osoittamiseen, ei yleisen sivilisaatiokadon attribuutioon.
 
 ## 12. Lähteet ja väitteet, joita ei saa käyttää aktiivisena tukena
@@ -483,7 +518,13 @@ Ekologinen aineisto voi osoittaa, että sähköiset tai magneettiset ympäristö
 Seuraavia väitteitä ei ole nykykirjallisuuden perusteella johdettu:
 
 - \(\delta g=2A_{bio}\cdot a_{ext}\) ilman ilmoitettua kontraktiota;
-- \(\chi(a)=a/\sqrt{1+a^2}\) Lindgrenin teoriasta johdettuna havaittavana;
+- suunnatun Lorentz-derivaatan tulkinta muotona
+  \(\chi_{\mathrm{geo}}(|\bar A|)\) ilman havaitsijan, positiivisen spatiaalisen
+  projektion, euklidisen normin, kollineaarisuuden ja dimensiottoman kartan
+  eksplisiittistä L2-siltaa; itse abstrakti \(\chi(x)\)-kaava säilyy L1:nä;
+- konkreettinen V/m-, teknologia-proxy- tai kalvomuuttuja suoraan \(x\):nä
+  tai \(\chi_{\mathrm{geo}}\) biologisena havaittavana ilman avointa
+  normalisointi- ja identifikaatiovaihetta L0→L2;
 - erityinen FieldState-siirtofunktio Lindgrenin yhtälöiden seurauksena;
 - radikaaliparimekanismin ensisijaisuus;
 - tietty neli- tai viisiradikaalinen Hamiltoniaani geometriasta johdettuna;

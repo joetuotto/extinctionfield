@@ -38,7 +38,7 @@ const COPY = {
     /* 03 Chi Analysis */
     chiAnalysis: "BERM tissue-response analysis — conditional L2 operator, calibration open",
     chiAnalysisText:
-      "Double hit: (1) Cav3.2 bifurcation in DG → chronic Ca²⁺ → amyloid cascade. (2) BBB opening → blood-borne Aβ enters brain. Both converge on hippocampus. Age amplifies via mitochondrial χ.",
+      "Double hit candidate: Cav3.2/Ca²⁺ and BBB/Aβ branches converge on the hippocampus, with age represented by the separately named imported L3 modifier χ_mito. χ_mito is not the L1 χ_geo coefficient, and its L2 input mapping remains open.",
 
     /* 04 Key Prediction */
     prediction: "Key Prediction",
@@ -55,7 +55,7 @@ const COPY = {
       "[[ref:pgc-cacna1c-five-disorders|GWAS mega-analysis]] (Psychiatric Genomics Consortium, 33,332 cases, 27,888 controls): CACNA1C variants significantly associated with ALL FIVE major psychiatric disorders — ASD, ADHD, bipolar disorder, major depression, schizophrenia.",
       "[[ref:pmc6894750_timothy|Timothy syndrome]]: G406R gain-of-function mutation in CACNA1C causes autism with 80% penetrance — highest of any syndromic form. Mechanism: excessive Ca²⁺ influx disrupts axon targeting via selective autophagy → circuit formation defects (PLOS Genetics 2019).",
       "[[ref:cacna1g-asd-snps|CACNA1G (T-type!)]] also associated with ASD via two SNPs (rs757415, rs12603112). This connects T-type channels — the same ones in BERM’s bifurcation mechanism — directly to neurodevelopmental disorders.",
-      "In BERM framework: CACNA1C/CACNA1G variants are GENETIC χ-MODULATORS. Carriers have altered channel gating → different χ_channel → different EMF sensitivity.",
+      "In BERM, CACNA1C/CACNA1G variants are candidate genetic modifiers of the imported L3 response χ_channel. Altered gating can be tested against endpoint response; it does not modify or validate χ_geo.",
     ],
     s5Warning:
       "[[ref:pmc6894750_timothy|Timothy syndrome]] is a RARE de novo mutation. Its significance to BERM is MECHANISTIC (proves excessive VGCC Ca²⁺ is sufficient for autism) — NOT epidemiological. Do NOT present it as \"EMF causes Timothy syndrome.\"",
@@ -202,7 +202,7 @@ const COPY = {
     /* 03 Chi-analyysi */
     chiAnalysis: "BERM:n kudosvasteanalyysi — ehdollinen L2-operaattori, kalibrointi avoin",
     chiAnalysisText:
-      "Kaksoisosuma: (1) Cav3.2-bifurkaatio DG:ssä → krooninen Ca²⁺ → amyloidikaskadi. (2) BBB:n avautuminen → veren Aβ pääsee aivoihin. Molemmat yhtyvät hippokampukseen. Ikä vahvistaa mitokondriaalisella χ:llä.",
+      "Kaksoisosumaehdokkaassa Cav3.2/Ca²⁺- ja BBB/Aβ-haarat yhtyvät hippokampuksessa, ja ikää kuvaa erikseen nimetty tuotu L3-muunnin χ_mito. χ_mito ei ole L1-kerroin χ_geo, ja sen L2-syötekuvaus on avoin.",
 
     /* 04 Ennuste */
     prediction: "Keskeinen ennuste",
@@ -219,7 +219,7 @@ const COPY = {
       "[[ref:pgc-cacna1c-five-disorders|GWAS-mega-analyysi]] (PGC, 33 332 tapausta, 27 888 kontrollia): CACNA1C-variantit merkitsevästi yhteydessä KAIKKIIN VIITEEN suureen psykiatriseen häiriöön — ASD, ADHD, kaksisuuntainen mielialahäiriö, masennus, skitsofrenia.",
       "[[ref:pmc6894750_timothy|Timothyn oireyhtymä]]: G406R gain-of-function-mutaatio CACNA1C:ssä aiheuttaa autismin 80 %:n penetranssilla — korkein kaikista syndromisista muodoista. Mekanismi: liiallinen Ca²⁺-virtaus häiritsee aksonien kohdentumista selektiivisen autofagian kautta → piirimuodostuksen häiriöt (PLOS Genetics 2019).",
       "[[ref:cacna1g-asd-snps|CACNA1G (T-tyyppi!)]] myös yhteydessä ASD:hen kahdella SNP:llä (rs757415, rs12603112). Tämä yhdistää T-tyypin kanavat — samat kuin BERM:n bifurkaatiomekanismissa — suoraan neurokehityshäiriöihin.",
-      "BERM-kehyksessä: CACNA1C/CACNA1G-variantit ovat GENEETTISIÄ χ-MODULAATTOREITA. Kantajilla on muuttunut kanavan avautumiskinetiikka → erilainen χ_channel → erilainen EMF-herkkyys.",
+      "BERM:ssä CACNA1C/CACNA1G-variantit ovat tuodun L3-vasteen χ_channel ehdokasgeneettisiä muuntimia. Muuttunutta kanavatoimintaa voidaan testata päätepistevastetta vasten; se ei muuta tai validoi χ_geoa.",
     ],
     s5Warning:
       "[[ref:pmc6894750_timothy|Timothyn oireyhtymä]] on HARVINAINEN de novo -mutaatio. Sen merkitys BERM:lle on MEKANISTINEN (todistaa, että liiallinen VGCC Ca²⁺ riittää aiheuttamaan autismin) — EI epidemiologinen. ÄLÄ esitä sitä muodossa \"EMF aiheuttaa Timothyn oireyhtymän.\"",
@@ -362,7 +362,7 @@ const COPY = {
 
     chiAnalysis: "BERM組織応答解析 — 条件付きL2演算子、校正未完了",
     chiAnalysisText:
-      "二重打撃：(1) DGにおけるCav3.2分岐 → 慢性Ca²⁺ → アミロイドカスケード。(2) BBB開放 → 血中Aβが脳に侵入。両者は海馬に収束する。加齢がミトコンドリアχを通じて増幅。",
+      "二重打撃候補ではCav3.2/Ca²⁺とBBB/Aβの枝が海馬へ収束し、加齢は別名の導入L3修飾子χ_mitoで表す。χ_mitoはL1係数χ_geoではなく、そのL2入力写像は未解決である。",
 
     prediction: "主要予測",
     predictionText:
@@ -376,7 +376,7 @@ const COPY = {
       "[[ref:pgc-cacna1c-five-disorders|GWASメガ解析]]（PGC、33,332症例、27,888対照）：CACNA1C変異は5大精神疾患すべて——ASD、ADHD、双極性障害、大うつ病、統合失調症——と有意に関連。",
       "[[ref:pmc6894750_timothy|Timothy症候群]]：CACNA1CのG406R機能獲得変異は80%の浸透率で自閉症を引き起こす——症候群型で最高。メカニズム：過剰なCa²⁺流入が選択的オートファジーを介して軸索標的化を障害 → 回路形成の欠陥（PLOS Genetics 2019）。",
       "[[ref:cacna1g-asd-snps|CACNA1G（T型！）]]もASDと2つのSNP（rs757415、rs12603112）で関連。これはBERMの分岐メカニズムと同じT型チャネルを神経発達障害に直接結びつける。",
-      "BERMフレームワークにおいて：CACNA1C/CACNA1G変異は遺伝的χモジュレーターである。保有者はチャネルゲーティングが変化 → χ_channelが異なる → EMF感受性が異なる。",
+      "BERMではCACNA1C/CACNA1G変異を導入L3応答χ_channelの候補遺伝修飾子として扱う。ゲーティング差はエンドポイント応答に対して検定できるが、χ_geoを変更・検証しない。",
     ],
     s5Warning:
       "[[ref:pmc6894750_timothy|Timothy症候群]]は稀なde novo変異である。BERMにとっての意義はメカニズム的（過剰なVGCC Ca²⁺が自閉症に十分であることの証明）であり、疫学的ではない。「EMFがTimothy症候群を引き起こす」と提示してはならない。",
@@ -512,7 +512,7 @@ const COPY = {
 
     chiAnalysis: "Analyse de réponse tissulaire BERM — opérateur L2 conditionnel, calibration ouverte",
     chiAnalysisText:
-      "Double impact : (1) Bifurcation de Cav3.2 dans le DG → Ca²⁺ chronique → cascade amyloide. (2) Ouverture de la BHE → l'Aβ sanguin entre dans le cerveau. Les deux convergent vers l'hippocampe. L'age amplifie via le χ mitochondrial.",
+      "Dans le candidat à double impact, les branches Cav3.2/Ca²⁺ et BHE/Aβ convergent vers l'hippocampe ; l'âge est représenté par le modificateur L3 importé et nommé χ_mito. χ_mito n'est pas le coefficient L1 χ_geo et son entrée L2 reste ouverte.",
 
     prediction: "Prediction cle",
     predictionText:
@@ -526,7 +526,7 @@ const COPY = {
       "[[ref:pgc-cacna1c-five-disorders|Mega-analyse GWAS]] (PGC, 33 332 cas, 27 888 temoins) : les variants CACNA1C sont significativement associes aux CINQ troubles psychiatriques majeurs — TSA, TDAH, trouble bipolaire, depression majeure, schizophrenie.",
       "[[ref:pmc6894750_timothy|Syndrome de Timothy]] : la mutation gain-de-fonction G406R dans CACNA1C cause l'autisme avec une penetrance de 80 % — la plus elevee de toutes les formes syndromiques. Mecanisme : l'influx excessif de Ca²⁺ perturbe le ciblage axonal par autophagie selective → defauts de formation des circuits (PLOS Genetics 2019).",
       "[[ref:cacna1g-asd-snps|CACNA1G (T-type !)]] est egalement associe aux TSA via deux SNPs (rs757415, rs12603112). Cela relie les canaux T-type — les memes que dans le mecanisme de bifurcation BERM — directement aux troubles neurodeveloppementaux.",
-      "Dans le cadre BERM : les variants CACNA1C/CACNA1G sont des MODULATEURS χ GENETIQUES. Les porteurs ont une cinetique d'ouverture des canaux alteree → χ_channel different → sensibilite CEM differente.",
+      "BERM traite les variants CACNA1C/CACNA1G comme des modificateurs génétiques candidats de la réponse L3 importée χ_channel. Le gating peut être testé contre un endpoint ; il ne modifie ni ne valide χ_geo.",
     ],
     s5Warning:
       "[[ref:pmc6894750_timothy|Le syndrome de Timothy]] est une mutation de novo RARE. Sa signification pour BERM est MECANISTIQUE (prouve que l'exces de Ca²⁺ via VGCC suffit a causer l'autisme) — PAS epidemiologique. Ne PAS le presenter comme « les CEM causent le syndrome de Timothy ».",
@@ -662,7 +662,7 @@ const COPY = {
 
     chiAnalysis: "BERM 조직 반응 분석 — 조건부 L2 연산자, 보정 미완료",
     chiAnalysisText:
-      "이중 타격: (1) DG에서 Cav3.2 분기 → 만성 Ca²⁺ → 아밀로이드 캐스케이드. (2) BBB 개방 → 혈중 Aβ가 뇌로 침입. 둘 다 해마에 수렴. 노화가 미토콘드리아 χ를 통해 증폭.",
+      "이중 타격 후보에서 Cav3.2/Ca²⁺와 BBB/Aβ 가지가 해마에 수렴하고 노화는 별도 명칭의 도입 L3 조절자 χ_mito로 표현된다. χ_mito는 L1 계수 χ_geo가 아니며 L2 입력 매핑은 열려 있다.",
 
     prediction: "핵심 예측",
     predictionText:
@@ -676,7 +676,7 @@ const COPY = {
       "[[ref:pgc-cacna1c-five-disorders|GWAS 메가분석]](PGC, 33,332건, 27,888 대조군): CACNA1C 변이는 5대 정신질환 모두 — ASD, ADHD, 양극성 장애, 주요 우울증, 조현병 — 와 유의하게 연관.",
       "[[ref:pmc6894750_timothy|Timothy 증후군]]: CACNA1C의 G406R 기능 획득 돌연변이는 80% 침투율로 자폐증 유발 — 증후군형 중 최고. 메커니즘: 과도한 Ca²⁺ 유입이 선택적 자가포식을 통해 축삭 표적화를 교란 → 회로 형성 결함(PLOS Genetics 2019).",
       "[[ref:cacna1g-asd-snps|CACNA1G(T형!)]]도 두 SNP(rs757415, rs12603112)를 통해 ASD와 연관. 이는 BERM의 분기 메커니즘과 동일한 T형 채널을 신경발달 장애에 직접 연결한다.",
-      "BERM 프레임워크에서: CACNA1C/CACNA1G 변이는 유전적 χ 조절인자이다. 보유자는 채널 게이팅이 변경 → χ_channel이 다름 → EMF 감수성이 다름.",
+      "BERM은 CACNA1C/CACNA1G 변이를 도입 L3 반응 χ_channel의 후보 유전 조절자로 취급한다. 게이팅 차이는 종점 반응에 대해 검정할 수 있지만 χ_geo를 변경하거나 검증하지 않는다.",
     ],
     s5Warning:
       "[[ref:pmc6894750_timothy|Timothy 증후군]]은 희귀한 de novo 돌연변이다. BERM에 대한 의의는 메커니즘적(과도한 VGCC Ca²⁺가 자폐증에 충분함을 증명)이며, 역학적이 아니다. 'EMF가 Timothy 증후군을 유발한다'고 제시하지 말 것.",

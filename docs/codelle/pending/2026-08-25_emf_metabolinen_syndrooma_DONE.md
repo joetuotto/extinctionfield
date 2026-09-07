@@ -46,7 +46,7 @@
 ### 7. Predictions: METAB-1 → METAB-4
 - METAB-1: Faraday-suojatut eläimet (CRITICAL, oranssi reunus)
 - METAB-2: CaMKII-inhibitio
-- METAB-3: Semaglutidi/EMF-korrelaatio (SPECULATIVE, level L*)
+- METAB-3: Semaglutidi/EMF-korrelaatio (UUSI, FALSIFIOITAVA, taso L*)
 - METAB-4: Vuorotyö metabolinen syndrooma
 
 ### 8. Etusivu: Klimentidis Paradox -kortti
@@ -67,6 +67,6 @@
 1. **Klimentidis ei tutkinut EMF:ää** — merkitty selvästi BERM:n derivaatioksi
 2. **Obesiteetti on MULTIFAKTORIAALINEN** — EMF on YKSI tekijä, ei ainoa
 3. **CaMKII-konvergenssi on TUNNISTETTU mutta ei kokeellisesti testattu** — taso M
-4. **GLP-1/Ozempic-ennuste (METAB-3) on SPEKULATIIVINEN** — taso L*
+4. **GLP-1/Ozempic-ennuste (METAB-3) on DEDUKTIIVINEN JA FALSIFIOITAVA** — taso L*
 5. **Adiposyytin suora EMF-vaste (mekanismi 6) on HEIKOIN** — taso M
 6. **Kaikki kuusi mekanismia sisällytetty** — ei yksinkertaistusta

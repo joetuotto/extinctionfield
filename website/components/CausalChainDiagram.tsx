@@ -34,6 +34,7 @@ const COPY: Record<string, {
       ["M", "Mechanistic intermediate"],
       ["C", "Observed association"],
       ["L*", "Theory / measurement premise"],
+      ["L1+L0/L2", "L1 derivation + L0/L2 reduction"],
     ],
   },
   fi: {
@@ -55,6 +56,7 @@ const COPY: Record<string, {
       ["M", "Mekanistinen välitila"],
       ["C", "Havaittu assosiaatio"],
       ["L*", "Teoria- / mittauspremissi"],
+      ["L1+L0/L2", "L1-johto + L0/L2-reduktio"],
     ],
   },
   ja: {
@@ -76,6 +78,7 @@ const COPY: Record<string, {
       ["M", "メカニズム的中間体"],
       ["C", "観察された関連性"],
       ["L*", "理論 / 測定前提"],
+      ["L1+L0/L2", "L1導出 + L0/L2縮約"],
     ],
   },
   fr: {
@@ -97,6 +100,7 @@ const COPY: Record<string, {
       ["M", "Intermédiaire mécanistique"],
       ["C", "Association observée"],
       ["L*", "Prémisse théorique / de mesure"],
+      ["L1+L0/L2", "Dérivation L1 + réduction L0/L2"],
     ],
   },
   ko: {
@@ -118,6 +122,7 @@ const COPY: Record<string, {
       ["M", "메커니즘적 중간체"],
       ["C", "관찰된 연관성"],
       ["L*", "이론 / 측정 전제"],
+      ["L1+L0/L2", "L1 도출 + L0/L2 축약"],
     ],
   },
 };
@@ -164,7 +169,12 @@ const EPISTEMIC_LABELS: Record<string, string> = {
   C: "C",
   "L*": "L*",
   L: "L",
+  "L1+L0/L2": "L1+L0/L2",
 };
+
+function epistemicMarkerId(level: EpistemicLevel): string {
+  return `chain-arrow-${level.replace(/[^a-zA-Z0-9_-]/g, "_")}`;
+}
 
 interface LayoutNode extends ChainNode {
   x: number;
@@ -351,7 +361,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: string 
             {Object.entries(EPISTEMIC_COLORS).map(([key, color]) => (
               <marker
                 key={key}
-                id={`chain-arrow-${key.replace("|", "_")}`}
+                id={epistemicMarkerId(key as EpistemicLevel)}
                 viewBox="0 0 10 7"
                 refX="10"
                 refY="3.5"
@@ -454,7 +464,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: string 
             const color = EPISTEMIC_COLORS[edge.epistemicLevel];
             const isConnected = connectedEdges.has(edgeIdx);
             const isPrimary = edge.priority === "primary";
-            const markerId = `chain-arrow-${edge.epistemicLevel.replace("|", "_")}`;
+            const markerId = epistemicMarkerId(edge.epistemicLevel);
 
             let opacity: number;
             let strokeW: number;
@@ -532,7 +542,9 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: string 
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
-            const textW = n.w - 48;
+            const epistemicLabel = EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel;
+            const badgeW = Math.max(28, epistemicLabel.length * 6.5 + 10);
+            const textW = n.w - badgeW - 20;
 
             return (
               <g
@@ -560,15 +572,15 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: string 
                 />
                 {/* Epistemic badge */}
                 <rect
-                  x={n.x + n.w - 36}
+                  x={n.x + n.w - badgeW - 8}
                   y={n.y + 8}
-                  width={28}
+                  width={badgeW}
                   height={18}
                   rx={4}
                   fill={`${color}25`}
                 />
                 <text
-                  x={n.x + n.w - 22}
+                  x={n.x + n.w - badgeW / 2 - 8}
                   y={n.y + 17}
                   fill={color}
                   fontSize={11}
@@ -577,7 +589,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: string 
                   dominantBaseline="middle"
                   fontFamily="ui-monospace, monospace"
                 >
-                  {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
+                  {epistemicLabel}
                 </text>
                 {/* Label — clipped to node bounds */}
                 <g clipPath={`url(#clip-${n.id})`}>

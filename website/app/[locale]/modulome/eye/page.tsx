@@ -267,7 +267,7 @@ const COPY = {
 
     s5Title: "BERM:n herkkyyden ehdokasanalyysi — ehdollinen L2-operaattori, kudoskalibrointi avoin",
     s5p1:
-      "BERM ehdottaa kuutta silmän EMF-herkkyyden ehdokaskriteeriä ja kolmen moderaattorin χ_eye-sulkeumaa. Ne ovat avoimen L2-sillan jälkeisiä testattavia biologisia propositioita, eivät Lindgrenin johtamia kriteerejä:",
+      "BERM ehdottaa kuutta silmän EMF-herkkyyden ehdokaskriteeriä ja kolmen moderaattorin tuotua L3-vastefunktiota χ_eye. χ_eye on eri suure kuin rajoitettu L1-kerroin χ_geo(x); sen syötteet, painot ja biologinen tulkinta pysyvät testattavina avoimen L2-sillan jälkeen:",
     s5Criteria: [
       "Iiriksen pigmentaatio — säätelee fotonivuota CRY:lle (sininen ≈ 100×, vihreä ≈ 30×, ruskea ≈ 1×)",
       "FAD/B2-ravitsemustila — määrää CRY-proteiinin stabiilisuuden ja radikaaliparin muodostuskyvyn",

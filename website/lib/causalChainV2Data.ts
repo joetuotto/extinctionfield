@@ -10,6 +10,32 @@ import type { ChainEdge, ChainNode } from "./types";
  */
 export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   {
+    id: "geometry",
+    level: 1,
+    label: "Lindgren geometry",
+    sublabel: "metric + variation + Weyl + Bianchi",
+    epistemicLevel: "L",
+    title: "Three-premise Maxwell derivation",
+    mechanism:
+      "The source-free Maxwell equation ∇μF^μν = 0 follows from Lindgren's metric through the variational principle, the Weyl condition and the Bianchi identity. The Bianchi identity is necessary but not sufficient: it supplies dF = 0 and is not a shortcut to the sourced equation ∇μF^μν = J^ν.",
+    quantitative:
+      "gμν = ημν + κAμAν\nS = ∫√(−g) R d⁴x; δS/δAμ = 0\n∇μgαβ = 0  [Weyl condition]\ndF = 0  [Bianchi identity]",
+    keyReferences: [
+      {
+        referenceId: "lindgren2025",
+        authors: "Lindgren, Kovacs & Liukkonen 2025",
+        title: "Electromagnetism as a purely geometric theory",
+        journal: "Journal of Physics: Conference Series 2987, 012001",
+        keyFinding:
+          "Maxwellin johto käyttää yhdessä kolmea L0-premissiä: Lindgrenin metriikkaa, variaatioperiaatetta ja Weyl-ehtoa; Bianchi-identiteetti on välttämätön mutta ei yksin riittävä.",
+        keyFinding_en:
+          "The Maxwell derivation jointly uses three L0 premises: Lindgren's metric, the variational principle and the Weyl condition; the Bianchi identity is necessary but not sufficient by itself.",
+      },
+    ],
+    falsificationCondition:
+      "The derivation fails if any of the three premise checks (metric/variation, Weyl compatibility or Bianchi identity) fails, or if the claimed field equation does not follow after all three pass.",
+  },
+  {
     id: "fieldstate",
     level: 1,
     label: "FieldState observations",
@@ -19,7 +45,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     mechanism:
       "FieldState keeps background, ambient and personal field components, organ-local transfer estimates, spectrum, phase, coherence and circadian context distinct. It is an optional observation and estimation module, not BERM itself or a biological cause. A mobile-subscription series or country average is only a technology-timing proxy, not organ dose.",
     quantitative:
-      "A_selected,o = T_o A_ambient + χ(|T_o A_background|) T_o A_personal\nX_geom,o = 2(T_o A_background)·(T_o A_personal)",
+      "z_background,o = |T_o A_background|\nx_o = N_o(z_background,o)  [dimensionless; N_o OPEN at L0→L2]\nA_selected,o = T_o A_ambient + χ_geo(x_o) T_o A_personal\nX_geom,o = 2(T_o A_background)·(T_o A_personal)",
     keyReferences: [
       {
         authors: "Blackman et al. 1985",
@@ -44,6 +70,101 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     ],
     falsificationCondition:
       "In a preregistered experiment, the same local exposure produces an identical response regardless of measured B₀ vector, geometry, spectrum and circadian state when the registered receptor hypothesis predicts a difference.",
+  },
+  {
+    id: "chi",
+    level: 2,
+    label: "Selection rule χ(|Ā|)",
+    sublabel: "L1 + L0/L2 spatial reduction",
+    epistemicLevel: "L1+L0/L2",
+    title: "Directed derivative followed by explicit reduction",
+    mechanism:
+      "The selection rule is derived in two stages: (1) the directional derivative of the volume element in Lorentz signature gives κ(A·u)/√(1+κA²) [L1]; (2) the explicit dimensionless, collinear spatial/scalar reduction selects the positive spatial magnitude and gives χ(|Ā|)=|Ā|/√(1+|Ā|²) [L0/L2 reduction]. Epistemic status: [L1 + L0/L2 reduction].",
+    quantitative:
+      "D_u√(−g) = κ(A·u)/√(1+κA²)  [L1]\nLorentz → spatial/scalar: q=|Ā|  [L0/L2]\nχ(q) = q/√(1+q²)  [L1 + L0/L2 reduction]",
+    keyReferences: [
+      {
+        referenceId: "lindgren2025",
+        authors: "Lindgren, Kovacs & Liukkonen 2025",
+        title: "Electromagnetism as a purely geometric theory",
+        journal: "Journal of Physics: Conference Series 2987, 012001",
+        keyFinding:
+          "Suunnattu Lorentz-derivaatta tuottaa χ(|Ā|):n eksplisiittisen spatiaalisen/skalaari-reduktion kautta [L1 + L0/L2].",
+        keyFinding_en:
+          "The directed Lorentzian derivative produces χ(|Ā|) through the explicit spatial/scalar reduction [L1 + L0/L2].",
+      },
+    ],
+    falsificationCondition:
+      "The reduction is rejected if its declared dimensionless, collinear and positive-spatial assumptions do not reproduce the scalar coefficient from the Lorentzian directional derivative.",
+  },
+  {
+    id: "bound-ion-hamiltonian",
+    level: 2,
+    label: "Bound-ion Hamiltonian",
+    sublabel: "phase modulation → Bessel sidebands [conditional]",
+    epistemicLevel: "L1",
+    title: "Conditional derivation of the sideband structure",
+    mechanism:
+      "Phase modulation of a bound ion's energy levels produces a Bessel sideband structure through the Jacobi–Anger expansion [conditional derivation]. The same expansion arises in any driven two-level system, so the sideband structure is compatible with phase modulation and is not specific to the metric ansatz. The Layer-2 receptor module computes f_c, n, z and J_n(z); it emits no population figure.",
+    quantitative:
+      "H(t) = (ℏ/2)[Ω₀ + d₁cos(ωt)]σ_z + (ℏv/2)σ_x  [L1 + cond.]\nexp[iz sin(ωt)] = Σₖ Jₖ(z) exp(ikωt)  [Jacobi–Anger]\nf_c = |q|B₀/(2πm); n = round(f_c/f); z = λ·(f_c/f)·(b/B₀)",
+    conditions: [
+      "States exist and have mixing",
+      "Sufficient phase memory",
+      "Measurable readout mechanism",
+    ],
+    keyReferences: [
+      {
+        referenceId: "ashhab2007_driven_two_level",
+        authors: "Ashhab, Johansson, Zagoskin & Nori 2007",
+        title: "Two-level systems driven by large-amplitude fields",
+        journal: "Physical Review A 75, 063414",
+        keyFinding: "Sinimuotoisesti moduloidun energiavälin vaiheintegraali tuottaa Bessel-sivukaistat; formalismi on yleinen ajetuille kaksitilajärjestelmille.",
+        keyFinding_en: "The phase integral of a sinusoidally modulated energy gap yields Bessel sidebands; the formalism is generic to driven two-level systems.",
+      },
+      {
+        referenceId: "engstrom2004_ion_resonances",
+        authors: "Engström & Bowman 2004",
+        title: "Magnetic resonances of ions in biological systems",
+        journal: "Bioelectromagnetics 25, 620–630",
+        keyFinding: "Sidottujen ionien resonanssit antavat q/m-erotuksen isotrooppisen sidonnan mallissa.",
+        keyFinding_en: "Bound-ion resonances give the q/m separation in the isotropic binding model.",
+      },
+    ],
+    falsificationCondition:
+      "Under preregistered f and B₀ variation, the normalised amplitude nodes b_null/B₀ do not track the Bessel-argument prediction; or isotope exchange does not shift f_c by the mass ratio at fixed charge.",
+  },
+  {
+    id: "relaxation-candidate",
+    level: 2,
+    label: "Relaxation candidate",
+    sublabel: "λ(f,τ): 1 → 2, c = γ assumed",
+    epistemicLevel: "KANDIDAATTI",
+    title: "Frequency-dependent sensitivity from binding-site relaxation",
+    mechanism:
+      "Binding-environment relaxation τ·dx/dt + x = B(t) produces a frequency-dependent sensitivity λ(f,τ) that runs from 1 at low frequency to 1 + c/γ at high frequency [candidate hypothesis]. The value c = γ is the candidate's own added assumption, chosen so the high-frequency limit equals the IPR coefficient 2; it is not a constant determined by Lindgren's ansatz. Calmodulin's ~20 ms N-terminal conformational change (Park et al. 2008, chemical Ca²⁺ step) lies close to the ~17.6 ms this candidate requires at 24 Hz; that closeness motivates the receptor-structure test and is not a validation.",
+    quantitative:
+      "u = 2πfτ;  λ = √((1 + (1 + c/γ)²u²)/(1 + u²))  [KANDIDAATTI]\nKoch 2003, 24 Hz, τ = 20 ms: λ = 1.924, s = λ·f_c/f = 2.020 (1 % from 2)  [NUMEERINEN]\nτ for s = 2 exactly: 17.6 ms  [reverse calculation, not a prediction]",
+    keyReferences: [
+      {
+        referenceId: "park2008_calmodulin_kinetics",
+        authors: "Park et al. 2008",
+        title: "Conformational changes of calmodulin upon Ca2+ binding studied with a microfluidic mixer",
+        journal: "PNAS 105, 542–547",
+        keyFinding: "N-terminaalinen rakennemuutos ~20 ms kemiallisessa Ca²⁺-askeleessa; ei magneettikenttävaste.",
+        keyFinding_en: "N-terminal conformational change ~20 ms under a chemical Ca²⁺ step; not a magnetic-field response.",
+      },
+      {
+        referenceId: "gavoci2013_ipr_k_null",
+        authors: "Gavoçi et al. 2013",
+        title: "ELF magnetic fields tuned to ion parametric resonance conditions do not affect TEA-sensitive outward K⁺ currents",
+        journal: "Bioelectromagnetics 34, 579–588",
+        keyFinding: "Nollatulos K⁺:n IPR-ehdoissa; rajaa kandidaattia eikä sitä saa selittää pois vapaalla kudoskertoimella.",
+        keyFinding_en: "Null result at K⁺ IPR conditions; constrains the candidate and may not be absorbed by a free tissue coefficient.",
+      },
+    ],
+    falsificationCondition:
+      "An independently measured receptor τ fails to predict the amplitude-window shift; or the two-frequency phase test shows no phase dependence at equal spectral power.",
   },
   {
     id: "l2-bridge",
@@ -270,6 +391,12 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
 ];
 
 export const BERM_CAUSAL_EDGES_V2: ChainEdge[] = [
+  { from: "geometry", to: "chi", label: "directional derivative → spatial reduction [L1 + L0/L2]", epistemicLevel: "L1+L0/L2", priority: "primary" },
+  { from: "geometry", to: "bound-ion-hamiltonian", label: "δg_μν → modulated energy gap [L1 + conditional]", epistemicLevel: "L1", priority: "secondary" },
+  { from: "fieldstate", to: "bound-ion-hamiltonian", label: "B₀, b, f inputs", epistemicLevel: "L*", priority: "secondary" },
+  { from: "bound-ion-hamiltonian", to: "relaxation-candidate", label: "Bessel argument z → λ(f,τ) [c = γ assumed]", epistemicLevel: "KANDIDAATTI", priority: "secondary" },
+  { from: "relaxation-candidate", to: "l2-bridge", label: "amplitude windows → readout (open)", epistemicLevel: "L*", priority: "secondary" },
+  { from: "chi", to: "l2-bridge", label: "reduced coefficient → biological coupling", epistemicLevel: "L*", priority: "primary" },
   { from: "fieldstate", to: "l2-bridge", label: "measurement input", epistemicLevel: "L*", priority: "primary" },
   { from: "l2-bridge", to: "mechanisms", label: "proposed coupling (open)", epistemicLevel: "L*", priority: "primary" },
   { from: "mechanisms", to: "btb", label: "redox / tight junction", epistemicLevel: "M" },
@@ -288,6 +415,33 @@ type GraphLocale = "en" | "fi";
 
 /** Finnish text for the localised graph. Citations and equations are shared. */
 const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title" | "mechanism" | "falsificationCondition">> = {
+  "bound-ion-hamiltonian": {
+    label: "Sidotun ionin Hamiltonin",
+    sublabel: "vaihemodulaatio → Bessel-sivukaistat [ehdollinen]",
+    title: "Sivukaistarakenteen ehdollinen johto",
+    mechanism:
+      "Sidotun ionin energiatasojen vaihemodulaatio tuottaa Bessel-sivukaistarakenteen Jacobi–Anger-laajennuksen kautta [ehdollinen johto]. Sama laajennus syntyy missä tahansa ajetussa kaksitilajärjestelmässä, joten sivukaistarakenne on yhteensopiva vaihemodulaation kanssa eikä spesifinen metriikan ansatzille. Kerroksen 2 reseptorimoduuli laskee f_c:n, n:n, z:n ja J_n(z):n; se ei tuota väestölukua.",
+    falsificationCondition:
+      "Esirekisteröidyssä f:n ja B₀:n vaihtelussa normalisoidut amplitudisolmut b_null/B₀ eivät seuraa Bessel-argumentin ennustetta; tai isotoopinvaihto ei siirrä f_c:tä massasuhteen mukaan kiinteällä varauksella.",
+  },
+  "relaxation-candidate": {
+    label: "Relaksaatiokandidaatti",
+    sublabel: "λ(f,τ): 1 → 2, c = γ oletettu",
+    title: "Taajuusriippuva herkkyys sidontaympäristön relaksaatiosta",
+    mechanism:
+      "Sidontaympäristön relaksaatio τ·dx/dt + x = B(t) tuottaa taajuusriippuvan herkkyyden λ(f,τ), joka kulkee matalan taajuuden arvosta 1 korkean taajuuden arvoon 1 + c/γ [kandidaattihypoteesi]. Arvo c = γ on kandidaatin oma lisäoletus, valittu jotta korkean taajuuden raja on IPR-kerroin 2; se ei ole Lindgrenin ansatzista määräytyvä vakio. Kalmoduliinin N-terminaalinen rakennemuutos (~20 ms, Park ym. 2008, kemiallinen Ca²⁺-askel) on lähellä kandidaatin 24 Hz:llä vaatimaa ~17,6 ms:ää; läheisyys motivoi reseptorin rakennetestiä eikä ole validointi.",
+    falsificationCondition:
+      "Itsenäisesti mitattu reseptorin τ ei ennusta amplitudi-ikkunan siirtymää; tai kahden taajuuden vaihetesti ei näytä vaiheriippuvuutta samalla spektriteholla.",
+  },
+  geometry: {
+    label: "Lindgrenin geometria",
+    sublabel: "metriikka + variaatio + Weyl + Bianchi",
+    title: "Maxwell-johto kolmella premissillä",
+    mechanism:
+      "Lähteetön Maxwell-yhtälö ∇μF^μν = 0 seuraa Lindgrenin metriikasta variaatioperiaatteen, Weyl-ehdon ja Bianchi-identiteetin kautta. Bianchi-identiteetti on välttämätön mutta ei yksin riittävä: se antaa dF = 0 eikä ole oikotie lähteelliseen yhtälöön ∇μF^μν = J^ν.",
+    falsificationCondition:
+      "Johto epäonnistuu, jos jokin kolmesta premissitarkistuksesta (metriikka/variaatio, Weyl-yhteensopivuus tai Bianchi-identiteetti) epäonnistuu tai jos väitetty kenttäyhtälö ei seuraa kaikkien kolmen läpäisyn jälkeen.",
+  },
   fieldstate: {
     label: "FieldState-havainnot",
     sublabel: "B₀, vektori, PSD, vaihe, aika",
@@ -296,6 +450,15 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
       "FieldState erottaa tausta-, ambient- ja henkilökohtaiset kenttäkomponentit, elinkohtaisen siirtoarvion, spektrin, vaiheen, koherenssin ja vuorokausikontekstin. Se on valinnainen havainto- ja estimointimoduuli, ei BERM tai biologinen syy. Mobiililiittymä tai maakeskiarvo voi toimia vain teknologian ajoitusproxyna, ei elinannoksena.",
     falsificationCondition:
       "Jos esirekisteröidyssä asetelmassa sama paikallinen altistus tuottaa identtisen vasteen riippumatta mitatusta B₀-vektorista, geometriasta, spektristä ja vuorokausitilasta silloin kun kyseinen reseptorihypoteesi ennustaa eron.",
+  },
+  chi: {
+    label: "Valintasääntö χ(|Ā|)",
+    sublabel: "L1 + L0/L2 spatiaalinen reduktio",
+    title: "Suunnattu derivaatta ja eksplisiittinen reduktio",
+    mechanism:
+      "Valintasääntö johdetaan kahdessa vaiheessa: (1) tilavuuselementin suunnattu derivaatta Lorentz-signatuurissa antaa κ(A·u)/√(1+κA²) [L1]; (2) eksplisiittinen dimensioton, kollineaarinen spatiaalinen/skalaari-reduktio valitsee positiivisen spatiaalisen itseisarvon ja antaa χ(|Ā|)=|Ā|/√(1+|Ā|²) [L0/L2-reduktio]. Episteeminen tila: [L1 + L0/L2 reduktio].",
+    falsificationCondition:
+      "Reduktio hylätään, jos ilmoitetut dimensiottomuus-, kollineaarisuus- ja positiivisen spatiaalisen itseisarvon ehdot eivät tuota skalaarikerrointa Lorentz-signatuurin suunnatusta derivaatasta.",
   },
   "l2-bridge": {
     label: "Ehdollinen L2-vasteoperaattori",
@@ -372,6 +535,12 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
 };
 
 const FI_EDGE_LABELS: Record<string, string> = {
+  "geometry-bound-ion-hamiltonian": "δg_μν → moduloitu energiaväli [L1 + ehdollinen]",
+  "fieldstate-bound-ion-hamiltonian": "B₀-, b- ja f-syötteet",
+  "bound-ion-hamiltonian-relaxation-candidate": "Bessel-argumentti z → λ(f,τ) [c = γ oletettu]",
+  "relaxation-candidate-l2-bridge": "amplitudi-ikkunat → lukumekanismi (avoin)",
+  "geometry-chi": "suunnattu derivaatta → spatiaalinen reduktio [L1 + L0/L2]",
+  "chi-l2-bridge": "redusoitu kerroin → biologinen kytkentä",
   "fieldstate-l2-bridge": "mittaussyöte",
   "l2-bridge-mechanisms": "ehdotettu kytkentä (avoin)",
   "mechanisms-btb": "redox / tight junction",

@@ -30,19 +30,20 @@ const COPY = {
       { name: "Pragmatic Localism", patholog: "0.011", desc: "Natural baseline. Strong local hierarchy, low paranoia, innovation within tradition. Not ideological \u2014 functional." },
       { name: "Green Abstraction", patholog: "0.369", desc: "BDNF-dependent abstract concern for non-immediate threats. Requires high cognitive complexity and long time preference. Fragmenting as substrate declines." },
       { name: "Progressive Egalitarianism", patholog: "0.443\u20130.495", desc: "Low-T competitive strategy: delegitimize hierarchy when unable to compete within it. Expanded threat definitions (CORT) reframed as moral sensitivity." },
-      { name: "Authoritarian Conservatism", patholog: "0.460", desc: "Residual hierarchy maintenance under elevated threat. Insufficient T for organic dominance \u2014 relies on external enforcement (state, religion, punishment)." },
+      { name: "Anomic Fragmentation", patholog: "0.460", desc: "Collapse of ideological capacity rather than the dominance of any ideology. The dual-hormone lock is closed: T too low to motivate dominance, cortisol too high to sustain collective action, so elevated threat response becomes anxiety without direction. Narrowed empathy scope erodes the in-group preference mobilisation would need." },
       { name: "Populism", patholog: "\u2014 (never primary, 2025\u20132055)", desc: "Cognitive capacity below institutional complexity threshold. Not a movement \u2014 the biological default when BDNF + DA drop below multi-causal reasoning floor." },
       { name: "Libertarianism", patholog: "0.336 (rural 2055)", desc: "Residual high-DA phenotype. Risk-tolerant, low conformity. Shrinking demographic base as population DA drops." },
     ],
     sPoliticalTrajectoryTitle: "Suburban Trajectory: 1950\u20132050",
     sPoliticalColYear: "Year",
     sPoliticalTrajectoryDesc: "Conditional BERM trajectory: a changing endocrine-state distribution contributes to changing political output together with prior attitudes and social context. The dates and profiles below are model outputs, not observations.",
+    sPoliticalTrajectoryDesc2: "BioCap values from the model. Ideology labels are derived from the neuroendocrine profile through the model's causal pathways (A/B/C/D/F).",
     sPoliticalTrajectory: [
       { year: "1950", ideology: "Pragmatic Localism", biocap: "0.976", patholog: "0.040" },
       { year: "1990", ideology: "Pragmatic Localism", biocap: "0.861", patholog: "0.108" },
       { year: "2010", ideology: "Green Abstraction", biocap: "0.722", patholog: "0.256" },
       { year: "2025", ideology: "Green Abstraction", biocap: "0.614", patholog: "0.369" },
-      { year: "2050", ideology: "Auth. Conservatism", biocap: "0.525", patholog: "0.460" },
+      { year: "2050", ideology: "Anomic Fragmentation", biocap: "0.525", patholog: "0.460" },
     ],
     sPoliticalLitTitle: "Literature",
     sPoliticalLit: [
@@ -221,6 +222,7 @@ const COPY = {
     sWellingCalloutTitle: "Direct subgroup evidence: testosterone × affiliation context",
     sWellingCalloutBody: "Alogaily, Zak et al. (Brain and Behavior, n=136) administered synthetic testosterone or placebo. Weakly affiliated Democrats had 19% higher basal testosterone than strongly affiliated Democrats (p=0.015). In that weak-affiliation subgroup, testosterone reduced party-affiliation strength by about 12% and increased warmth toward Republican candidates by 45%. No political-preference effect was reported for strongly affiliated Democrats or Republicans. The experiment therefore supports a testosterone × affiliation-context effect, not a universal testosterone-to-ideology direction.",
     modelDerived: "Model-derived values from BioCap integral, not directly measured.",
+    modelDerivedIdeology: "BioCap and pathologization are model-produced values. Ideology labels are derived from the model's neuroendocrine profile, not computed directly.",
     modelDerivedLink: "mathematical specification",
     translationPending: "Full translation pending.",
   },
@@ -247,19 +249,20 @@ const COPY = {
       { name: "Pragmaattinen lokalismi", patholog: "0,011", desc: "Luonnollinen peruslinja. Vahva paikallinen hierarkia, matala paranoia, innovaatio tradition sis\u00e4ll\u00e4. Ei ideologinen \u2014 funktionaalinen." },
       { name: "Vihre\u00e4 abstraktio", patholog: "0,369", desc: "BDNF-riippuvainen abstrakti huoli ei-v\u00e4litt\u00f6mist\u00e4 uhkista. Vaatii korkean kognitiivisen kompleksisuuden ja pitk\u00e4n aikapreferenssin. Fragmentoituu substraatin heikenty\u00e4ss\u00e4." },
       { name: "Progressiivinen egalitarismi", patholog: "0,443\u20130,495", desc: "Matalan T:n kilpailustrategia: delegitimoi hierarkia, kun ei kykene kilpailemaan sen sis\u00e4ll\u00e4. Laajennetut uhkam\u00e4\u00e4ritelm\u00e4t uudelleenkehystetty moraalisena herkkyyten\u00e4." },
-      { name: "Autoritaarinen konservatismi", patholog: "0,460", desc: "J\u00e4\u00e4nn\u00f6shierarkian yll\u00e4pito kohonneen uhkavasteen alla. Riitt\u00e4m\u00e4t\u00f6n T orgaaniseen dominanssiin \u2014 turvautuu ulkoiseen pakotukseen (valtio, uskonto, rangaistus)." },
+      { name: "Anominen fragmentaatio", patholog: "0,460", desc: "Ideologisen kapasiteetin romahdus, ei minkään ideologian dominanssi. Kaksoislukko on kiinni: T on liian matala motivoimaan dominanssia ja kortisoli liian korkea yll\u00e4pit\u00e4m\u00e4\u00e4n kollektiivista toimintaa, joten kohonnut uhkavaste muuttuu ahdistukseksi ilman suuntaa. Kapeutunut empatian ala rapauttaa sen sis\u00e4ryhm\u00e4preferenssin, jota mobilisaatio vaatisi." },
       { name: "Populismi", patholog: "\u2014 (ei koskaan prim\u00e4\u00e4ri, 2025\u20132055)", desc: "Kognitiivinen kapasiteetti alle institutionaalisen kompleksisuuden kynnyksen. Ei liike \u2014 biologinen oletus, kun BDNF + DA putoavat monisyisen p\u00e4\u00e4ttelyn lattian alle." },
       { name: "Libertarismi", patholog: "0,336 (maaseutu 2055)", desc: "J\u00e4\u00e4nn\u00f6ksellinen korkean DA:n fenotyyppi. Riskinsietokyvinen, matala konformismi. Kutistuva demografinen pohja DA:n laskiessa." },
     ],
     sPoliticalTrajectoryTitle: "Esikaupunkien trajektori: 1950\u20132050",
     sPoliticalColYear: "Vuosi",
     sPoliticalTrajectoryDesc: "Ehdollinen BERM-trajektori: endokriinisen tilajakauman muutos vaikuttaa poliittiseen tuotokseen aiempien asenteiden ja sosiaalisen kontekstin rinnalla. Alla olevat ajankohdat ja profiilit ovat mallituotoksia, eiv\u00e4t havaintoja.",
+    sPoliticalTrajectoryDesc2: "BioCap-arvot mallista. Ideologialabelit johdettu neuroendokriinisesta profiilista mallin kausaalipolkujen (A/B/C/D/F) kautta.",
     sPoliticalTrajectory: [
       { year: "1950", ideology: "Pragmaattinen lokalismi", biocap: "0,976", patholog: "0,040" },
       { year: "1990", ideology: "Pragmaattinen lokalismi", biocap: "0,861", patholog: "0,108" },
       { year: "2010", ideology: "Vihre\u00e4 abstraktio", biocap: "0,722", patholog: "0,256" },
       { year: "2025", ideology: "Vihre\u00e4 abstraktio", biocap: "0,614", patholog: "0,369" },
-      { year: "2050", ideology: "Aut. konservatismi", biocap: "0,525", patholog: "0,460" },
+      { year: "2050", ideology: "Anominen fragmentaatio", biocap: "0,525", patholog: "0,460" },
     ],
     sPoliticalLitTitle: "Kirjallisuus",
     sPoliticalLit: [
@@ -438,6 +441,7 @@ const COPY = {
     sWellingCalloutTitle: "Suora ositen\u00e4ytt\u00f6: testosteroni \u00d7 affiliaatiokonteksti",
     sWellingCalloutBody: "Alogaily, Zak ym. (Brain and Behavior, n=136) antoivat synteettist\u00e4 testosteronia tai lumel\u00e4\u00e4kett\u00e4. Heikosti affilioituneilla demokraateilla oli 19 % korkeampi basaalitestosteroni kuin vahvasti affilioituneilla (p=0,015). T\u00e4ss\u00e4 heikon sitoutumisen ositteessa testosteroni v\u00e4hensi puolueaffiliaation voimakkuutta noin 12 % ja lis\u00e4si l\u00e4mp\u00f6\u00e4 republikaaniehdokkaita kohtaan 45 %. Vahvasti affilioituneilla demokraateilla tai republikaaneilla ei raportoitu poliittisen preferenssin muutosta. Koe tukee siten testosteroni \u00d7 affiliaatiokonteksti -vaikutusta, ei universaalia testosteroni\u2013ideologia-suuntaa.",
     modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
+    modelDerivedIdeology: "BioCap ja Patol. mallin tuottamia arvoja. Ideologialabelit johdettu mallin neuroendokriinisest\u00e4 profiilista, ei suoraan laskettu.",
     modelDerivedLink: "matemaattinen spesifikaatio",
     translationPending: "T\u00e4ysi k\u00e4\u00e4nn\u00f6s odottaa.",
   },
@@ -454,7 +458,7 @@ const COPY = {
     navPatokinesis: "\u30d1\u30c8\u30ad\u30cd\u30b7\u30b9: \u79fb\u52d5\u3059\u308b\u75c5\u7406",
     sWellingCalloutTitle: "", sWellingCalloutBody: "",
     sCollapseFormulaKey: "", sRKScaleNote: "",
-    modelDerived: "", modelDerivedLink: "",
+    modelDerived: "", modelDerivedLink: "", modelDerivedIdeology: "",
   },
   fr: {
     pageTitle: "Patokratia",
@@ -469,7 +473,7 @@ const COPY = {
     navPatokinesis: "Patokinesis : la pathologie qui se d\u00e9place",
     sWellingCalloutTitle: "", sWellingCalloutBody: "",
     sCollapseFormulaKey: "", sRKScaleNote: "",
-    modelDerived: "", modelDerivedLink: "",
+    modelDerived: "", modelDerivedLink: "", modelDerivedIdeology: "",
   },
   ko: {
     pageTitle: "\ud30c\ud1a0\ud06c\ub77c\ud2f0\uc544",
@@ -484,7 +488,7 @@ const COPY = {
     navPatokinesis: "\ud30c\ud1a0\ud0a4\ub124\uc2dc\uc2a4: \uc774\ub3d9\ud558\ub294 \ubcd1\ub9ac",
     sWellingCalloutTitle: "", sWellingCalloutBody: "",
     sCollapseFormulaKey: "", sRKScaleNote: "",
-    modelDerived: "", modelDerivedLink: "",
+    modelDerived: "", modelDerivedLink: "", modelDerivedIdeology: "",
   },
 } as const;
 
@@ -621,9 +625,9 @@ export default async function PatokratiaPage({
                 </div>
               ))}
             </div>
-          {d.modelDerived && (
+          {d.modelDerivedIdeology && (
           <p className="text-xs text-muted-foreground mt-2 italic">
-            {d.modelDerived}{" "}
+            {d.modelDerivedIdeology}{" "}
             <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
           </p>
           )}
@@ -633,7 +637,10 @@ export default async function PatokratiaPage({
           {(d as CopyType).sPoliticalTrajectory?.length > 0 && (
           <div className="mb-10">
             <h3 className="text-lg font-semibold mb-2">{(d as CopyType).sPoliticalTrajectoryTitle}</h3>
-            <p className="text-sm text-foreground-muted mb-4">{(d as CopyType).sPoliticalTrajectoryDesc}</p>
+            <p className="text-sm text-foreground-muted mb-2">{(d as CopyType).sPoliticalTrajectoryDesc}</p>
+            {(d as CopyType).sPoliticalTrajectoryDesc2 && (
+              <p className="text-sm text-foreground-muted mb-4">{(d as CopyType).sPoliticalTrajectoryDesc2}</p>
+            )}
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
@@ -656,9 +663,9 @@ export default async function PatokratiaPage({
                 </tbody>
               </table>
             </div>
-          {d.modelDerived && (
+          {d.modelDerivedIdeology && (
           <p className="text-xs text-muted-foreground mt-2 italic">
-            {d.modelDerived}{" "}
+            {d.modelDerivedIdeology}{" "}
             <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
           </p>
           )}

@@ -47,7 +47,7 @@ ja varauksen yhteys potentiaalin divergenssiin esitetään teorian keskeisenä k
 
 ### 2.2 Vuoden 2025 Weyl/GME-muotoilu
 
-Lindgrenin, Kovacsin ja Liukkosen vuoden 2025 artikkelissa lähtökohta on Weylin semimetrisyys
+Lindgrenin, Kovacsin ja Liukkosen vuoden 2025 artikkelissa lähtökohta sisältää variaatioperiaatteen ja Weylin semimetrisyyden
 
 \[
 \nabla_\sigma g_{\mu\nu}=2\phi_\sigma g_{\mu\nu}
@@ -59,7 +59,7 @@ ja harmonisen metriikan toimintoperiaate. Metriikka on nyt
 g_{\mu\nu}=\eta_{\mu\nu}+A_\mu A_\nu,
 \]
 
-ei vuoden 2021 singularinen metriikka. Ehdosta \(\Delta g_{\mu\nu}=0\) saadaan artikkelissa yleistetty Maxwellin yhtälö
+ei vuoden 2021 singularinen metriikka. Ehto \(\Delta g_{\mu\nu}=0\) antaa artikkelin GME-residuaalin
 
 \[
 \nabla_\sigma A_\nu\nabla^\sigma A_\mu
@@ -67,6 +67,12 @@ ei vuoden 2021 singularinen metriikka. Ehdosta \(\Delta g_{\mu\nu}=0\) saadaan a
 +\nabla_\sigma A_\mu\nabla^\sigma A_\nu
 +A_\mu\Delta A_\nu=0.
 \]
+
+Tämä residuaali ei yksin muodosta Maxwell-johtoa. Hyväksyntä vaatii samassa
+portissa variaatioperiaatteen ja Euler–Lagrange-yhtälöt, torsionittoman
+Weyl-semimetrisyysehdon sekä Bianchi-haaran \(F=dA\Rightarrow dF=0\).
+Kontraktoitu gravitaation Bianchi-identiteetti ei johda lähteellistä
+Maxwell-yhtälöä, vaan lähde tarvitsee erillisen dynamiikan ja identifikaation.
 
 Kun potentiaali jaetaan biologiseen taustaan ja ulkoiseen perturbaatioon,
 
@@ -91,7 +97,7 @@ Tämä on rank-2-tensori. Sitä ei voida korvata skalaarilla \(2A_{\mathrm{bio}}
 
 Lindgren, J. & Liukkonen, J. **Maxwell's equations from spacetime geometry and the role of Weyl curvature.** *Journal of Physics: Conference Series* 1956, 012017. [DOI 10.1088/1742-6596/1956/1/012017](https://doi.org/10.1088/1742-6596/1956/1/012017). [Aalto-yliopiston julkaisuarkisto](https://aaltodoc.aalto.fi/items/02ff4963-d1dc-4de0-9766-0cccae530291).
 
-- **Tukee:** vuoden 2021 singularisen ansatzin, geometrisen Maxwell-johdon sekä Weyl-kaarevuutta, potentiaalin divergenssiä ja virtaa koskevat alkuperäiset väitteet.
+- **Tukee:** vuoden 2021 singularisen ansatzin sekä artikkelin omat Weyl-kaarevuutta, potentiaalin divergenssiä, virtaa ja Maxwell-rajaa koskevat alkuperäiset väitteet; ilmaus ei tarkoita, että Bianchi tai metriikka yksin johtaisi lähteellisen Maxwell-yhtälön.
 - **Ei tue:** biologista potentiaalia, ulkoisen kentän ja biologisen järjestelmän kytkentää, RPM:ää, vuorokausikelloa tai lisääntymisvaikutuksia.
 - **Asema:** L0; teorian alkuperäislähde. Artikkelin oma konjektuuri ei muutu johdetuksi biologiseksi mekanismiksi myöhemmällä yhteensopivuudella.
 

@@ -9,7 +9,7 @@ import { pickCopy } from "@/lib/i18n";
 const COPY = {
   en: {
     title: "Superposition Violation",
-    subtitle: "The catalogue records 172 combined-exposure studies. BERM tests whether non-additive findings follow a shared background-dependent closure; they do not by themselves demonstrate Lindgren geometry or a biological coupling operator.",
+    subtitle: "The catalogue records 172 combined-exposure studies. BERM tests whether non-additive findings are compatible with the restricted L1 geometric shape χ_geo(x); the studies do not identify the open normalization x=N(z) or a biological L2 coupling operator.",
     backLink: "← Back to Evidence",
     cautionText: "The superposition violation evidence comes primarily from ELF combination studies. Extension to RF combinations and to the geometric interpretation is BERM's synthesis (M-level), not established consensus.",
 
@@ -36,10 +36,10 @@ const COPY = {
       { q: "Why does the Amish exception exist?", a: "The Amish have zero technology layers — no superposition interaction. Their biological response to the geomagnetic background alone is the 'R(A₁)' reference state." },
     ],
 
-    s4Title: "Connection to χ(Ā)",
-    s4Lead: "The superposition violation is mathematically related to the χ selection rule. When background field Ā is present, the perturbation δA acts on the existing geometry:",
-    s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "In BERM's proposed closure, χ(Ā) makes response depend on background Ā. Non-additivity is therefore a discriminating pattern to test, not proof that the closure or Lindgren geometry generated an experimental result.",
+    s4Title: "Connection to χ_geo(x)",
+    s4Lead: "The χ_geo(q)=q/√(1+q²) formula is L1. The dimensionless coordinate q=|Ā|:=√κ·s comes from the declared L2 spatial/scalar projection; a measured background z instead needs an explicit candidate normalization q=N(z) at the open L0→L2 boundary:",
+    s4Formula: "L1: χ_geo(x)=x/√(1+x²);  open L0→L2 candidate: x=N(z), R(z+δz)=R(z)+C_B·χ_geo(x)·δz+O(δz²)",
+    s4Explain: "Empirical use does not change χ_geo's L1 provenance. The normalization N, biological coefficient C_B and response R remain open L2 identifications, while imported response mechanisms remain L3. Non-additivity is a discriminating pattern to test, not proof that this mapping or the Lindgren geometry generated an experimental result. This applies equally to conventional explanations.",
 
     s5Title: "Epistemological honesty",
     s5Points: [
@@ -55,7 +55,7 @@ const COPY = {
   },
   fi: {
     title: "Superpositiorikkomus",
-    subtitle: "Luettelo sisältää 172 yhdistelmäaltistustutkimusta. BERM testaa, noudattavatko ei-additiiviset löydökset yhteistä taustariippuvaista sulkeumaa; ne eivät itsessään osoita Lindgrenin geometriaa tai biologista kytkentäoperaattoria.",
+    subtitle: "Luettelo sisältää 172 yhdistelmäaltistustutkimusta. BERM testaa, ovatko ei-additiiviset löydökset yhteensopivia rajatun L1-geometriamuodon χ_geo(x) kanssa; tutkimukset eivät identifioi avointa normalisointia x=N(z) tai biologista L2-kytkentäoperaattoria.",
     backLink: "← Takaisin näyttöön",
     cautionText: "Superpositiorikkomuksen näyttö tulee pääasiassa ELF-yhdistelmätutkimuksista. Laajennus RF-yhdistelmiin ja geometriseen tulkintaan on BERMin synteesi (M-taso), ei vakiintunut konsensus.",
 
@@ -82,10 +82,10 @@ const COPY = {
       { q: "Miksi amish-poikkeus on olemassa?", a: "Amisheilla on nolla teknologiakerrosta — ei superpositiovuorovaikutusta. Heidän biologinen vasteensa pelkkään geomagneettiseen taustaan on 'R(A₁)'-referenssitila." },
     ],
 
-    s4Title: "Yhteys χ(Ā):hen",
-    s4Lead: "Superpositiorikkomus on matemaattisesti yhteydessä χ-valintasääntöön. Kun taustakenttä Ā on läsnä, häiriö δA vaikuttaa olemassa olevaan geometriaan:",
-    s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "BERM:n ehdotetussa sulkeumassa χ(Ā) tekee vasteesta taustariippuvaisen. Ei-additiivisuus on siksi erotteleva testikuvio, ei todiste siitä, että sulkeuma tai Lindgrenin geometria tuotti koetuloksen.",
+    s4Title: "Yhteys χ_geo(x):ään",
+    s4Lead: "χ_geo(q)=q/√(1+q²)-kaava on L1. Dimensioton q=|Ā|:=√κ·s syntyy ilmoitetulla L2 spatiaalinen/skalaari-projektiolla; mitattu tausta z tarvitsee sen sijaan eksplisiittisen ehdokasnormalisoinnin q=N(z) avoimella L0→L2-rajalla:",
+    s4Formula: "L1: χ_geo(x)=x/√(1+x²);  avoin L0→L2-ehdokas: x=N(z), R(z+δz)=R(z)+C_B·χ_geo(x)·δz+O(δz²)",
+    s4Explain: "Empiirinen käyttö ei muuta χ_geo:n L1-provenienssia. Normalisointi N, biologinen kerroin C_B ja vaste R pysyvät avoimina L2-identifikaatioina, ja tuodut vastemekanismit säilyvät L3-tasolla. Ei-additiivisuus on erotteleva testikuvio, ei todiste siitä, että tämä kuvaus tai Lindgrenin geometria tuotti koetuloksen. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     s5Title: "Epistemologinen rehellisyys",
     s5Points: [
@@ -101,7 +101,7 @@ const COPY = {
   },
   ja: {
     title: "重ね合わせの破れ",
-    subtitle: "172件の複合曝露研究を収録する。BERMは非加算的所見が共通の背景依存閉包に従うかを検証するが、所見だけでLindgren幾何学や生物学的結合演算子が実証されるわけではない。",
+    subtitle: "172件の複合曝露研究を収録する。BERMは非加算的所見が限定されたL1幾何形状χ_geo(x)と整合するかを検証するが、研究だけで未解決の正規化x=N(z)や生物学的L2結合演算子が同定されるわけではない。",
     backLink: "← エビデンスに戻る",
     cautionText: "重ね合わせ破れの証拠は主にELF組み合わせ研究からのものです。RF組み合わせおよび幾何学的解釈への拡張はBERMの統合（Mレベル）であり、確立されたコンセンサスではありません。",
 
@@ -128,10 +128,10 @@ const COPY = {
       { q: "なぜアーミッシュの例外が存在するのか？", a: "アーミッシュはゼロ技術層 — 重ね合わせ相互作用なし。地磁気背景のみに対する生物学的応答がR(A₁)参照状態です。" },
     ],
 
-    s4Title: "χ(Ā)との接続",
-    s4Lead: "重ね合わせ破れはχ選択則と数学的に関連しています。背景場Āが存在する場合、摂動δAは既存の幾何学に作用します：",
-    s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "BERMの提案閉包ではχ(Ā)が応答を背景依存にする。非加算性は識別パターンであり、閉包やLindgren幾何学が実験結果を生んだ証明ではない。",
+    s4Title: "χ_geo(x)との接続",
+    s4Lead: "χ_geo(q)=q/√(1+q²)式はL1である。無次元座標q=|Ā|:=√κ·sは宣言したL2空間・スカラー射影から得られ、測定背景zには未解決L0→L2境界で別の候補正規化q=N(z)が必要である：",
+    s4Formula: "L1: χ_geo(x)=x/√(1+x²);  未解決L0→L2候補: x=N(z), R(z+δz)=R(z)+C_B·χ_geo(x)·δz+O(δz²)",
+    s4Explain: "経験的利用はχ_geoのL1来歴を変えない。正規化N、生物学的係数C_B、応答Rの同定はL2に残り、導入された応答機構はL3に残る。非加算性は識別パターンであり、この写像やLindgren幾何学が実験結果を生んだ証明ではない。これは従来の説明にも同様に当てはまる。",
 
     s5Title: "認識論的誠実さ",
     s5Points: [
@@ -147,7 +147,7 @@ const COPY = {
   },
   fr: {
     title: "Violation de la superposition",
-    subtitle: "Le catalogue recense 172 études d'expositions combinées. BERM teste si les résultats non additifs suivent une fermeture commune dépendante du fond ; ils ne démontrent pas à eux seuls la géométrie de Lindgren ni un opérateur biologique.",
+    subtitle: "Le catalogue recense 172 études d'expositions combinées. BERM teste si les résultats non additifs sont compatibles avec la forme géométrique restreinte χ_geo(x), dérivée en L1 ; ces études n'identifient ni la normalisation ouverte x=N(z), ni l'opérateur biologique L2.",
     backLink: "← Retour aux Preuves",
     cautionText: "Les preuves de violation de superposition proviennent principalement d'études de combinaison ELF. L'extension aux combinaisons RF et à l'interprétation géométrique est la synthèse de BERM (niveau M), pas un consensus établi.",
 
@@ -174,10 +174,10 @@ const COPY = {
       { q: "Pourquoi l'exception Amish existe-t-elle ?", a: "Les Amish ont zéro couche technologique — pas d'interaction de superposition. Leur réponse biologique au seul fond géomagnétique est l'état de référence R(A₁)." },
     ],
 
-    s4Title: "Connexion avec χ(Ā)",
-    s4Lead: "La violation de superposition est mathématiquement liée à la règle de sélection χ. Quand le champ de fond Ā est présent, la perturbation δA agit sur la géométrie existante :",
-    s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "Dans la fermeture proposée par BERM, χ(Ā) rend la réponse dépendante du fond. La non-additivité est donc un motif discriminant à tester, pas la preuve que la fermeture ou la géométrie de Lindgren a produit le résultat.",
+    s4Title: "Connexion avec χ_geo(x)",
+    s4Lead: "La formule χ_geo(q)=q/√(1+q²) est L1. La coordonnée sans dimension q=|Ā|:=√κ·s vient de la projection spatiale/scalarie L2 déclarée ; un fond mesuré z exige plutôt une normalisation candidate explicite q=N(z) à la frontière L0→L2 ouverte :",
+    s4Formula: "L1 : χ_geo(x)=x/√(1+x²) ; candidat L0→L2 ouvert : x=N(z), R(z+δz)=R(z)+C_B·χ_geo(x)·δz+O(δz²)",
+    s4Explain: "L'usage empirique ne change pas la provenance L1 de χ_geo. La normalisation N, le coefficient biologique C_B et la réponse R restent des identifications L2 ouvertes, tandis que les mécanismes importés restent L3. La non-additivité est un motif discriminant, pas la preuve que cette application ou la géométrie de Lindgren a produit le résultat. Cela s'applique tout autant aux explications conventionnelles.",
 
     s5Title: "Honnêteté épistémologique",
     s5Points: [
@@ -193,7 +193,7 @@ const COPY = {
   },
   ko: {
     title: "중첩 위반",
-    subtitle: "172건의 복합 노출 연구를 수록한다. BERM은 비가산 결과가 공통 배경 의존 폐쇄를 따르는지 검증하지만, 그 결과만으로 Lindgren 기하학이나 생물학적 결합 연산자가 입증되지는 않는다.",
+    subtitle: "172건의 복합 노출 연구를 수록한다. BERM은 비가산 결과가 제한된 L1 기하 형태 χ_geo(x)와 양립하는지 검정하지만, 연구만으로 열린 정규화 x=N(z)나 생물학적 L2 결합 연산자가 식별되지는 않는다.",
     backLink: "← 증거로 돌아가기",
     cautionText: "중첩 위반 증거는 주로 ELF 조합 연구에서 비롯됩니다. RF 조합 및 기하학적 해석으로의 확장은 BERM의 종합(M 수준)이며, 확립된 합의가 아닙니다.",
 
@@ -220,10 +220,10 @@ const COPY = {
       { q: "왜 아미쉬 예외가 존재하는가?", a: "아미쉬는 기술 계층이 제로 — 중첩 상호 작용이 없습니다. 지자기 배경만에 대한 생물학적 반응이 R(A₁) 기준 상태입니다." },
     ],
 
-    s4Title: "χ(Ā)와의 연결",
-    s4Lead: "중첩 위반은 χ 선택 규칙과 수학적으로 관련됩니다. 배경장 Ā가 존재할 때, 섭동 δA는 기존 기하학에 작용합니다:",
-    s4Formula: "R(Ā + δA) = R(Ā) + χ(Ā) · δA + O(δA²)",
-    s4Explain: "BERM의 제안 폐쇄에서 χ(Ā)는 반응을 배경 의존적으로 만든다. 비가산성은 판별할 시험 패턴이지 폐쇄나 Lindgren 기하학이 결과를 만들었다는 증거가 아니다.",
+    s4Title: "χ_geo(x)와의 연결",
+    s4Lead: "χ_geo(q)=q/√(1+q²) 공식은 L1이다. 무차원 좌표 q=|Ā|:=√κ·s는 선언된 L2 공간·스칼라 사영에서 나오며, 측정 배경 z에는 열린 L0→L2 경계에서 별도의 후보 정규화 q=N(z)가 필요하다:",
+    s4Formula: "L1: χ_geo(x)=x/√(1+x²);  열린 L0→L2 후보: x=N(z), R(z+δz)=R(z)+C_B·χ_geo(x)·δz+O(δz²)",
+    s4Explain: "경험적 사용은 χ_geo의 L1 출처를 바꾸지 않는다. 정규화 N, 생물학적 계수 C_B와 반응 R의 식별은 열린 L2에 남고, 도입된 반응 메커니즘은 L3에 남는다. 비가산성은 판별 패턴이지 이 매핑이나 Lindgren 기하학이 실험 결과를 만들었다는 증거가 아니다. 이는 기존 설명에도 동일하게 적용된다.",
 
     s5Title: "인식론적 정직",
     s5Points: [

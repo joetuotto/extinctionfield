@@ -237,7 +237,7 @@ const PHENOMENA_EN: Phenomenon[] = [
     berm: [
       "Religious experience is neurobiological: 5-HT → transcendence, DA → ritual reward, OXT → belonging. EMF → all three↓ → the neurobiological capacity for spiritual experience weakens. The \"meaning crisis\" is a biological phenomenon, not a philosophical one.",
     ],
-    epistemic: "L* (analogous, speculative)",
+    epistemic: "L* (analogous, novel, falsifiable)",
     sources: "Vervaeke 2019; GSS trend data",
   },
   {
@@ -471,7 +471,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     berm: [
       "Uskonnollinen kokemus on neurobiologinen: 5-HT → transsendenssi, DA → rituaalinen palkitseminen, OXT → yhteenkuuluvuus. EMF → kaikki kolme↓ → hengellisen kokemuksen neurobiologinen kapasiteetti heikkenee. \"Meaning crisis\" on biologinen ilmiö, ei filosofinen.",
     ],
-    epistemic: "L* (analoginen, spekulatiivinen)",
+    epistemic: "L* (analoginen, deduktiivinen ja falsifioitava)",
     sources: "Vervaeke 2019; GSS trendidata",
   },
   {
@@ -585,7 +585,7 @@ const COPY: Record<string, Copy> = {
       "BERM: 1 mechanism (EMF → Ca²⁺ → hormone cascade) → 13 manifestations = PARSIMONY: BERM is simpler AND more explanatorily powerful.",
       "STRONGEST (E-level): pronatalist failure (#7), precocious puberty (#10).",
       "STRONG (M|C): IQ (#2), Deaths of Despair (#3), autoimmune (#5), myopia (#6), loneliness (#13), female happiness (#4), insomnia (#9), failure to launch (#8), polarization (#11).",
-      "SPECULATIVE (L*): Klimentidis (#1, requires replication), religiosity (#12).",
+      "NOVEL, FALSIFIABLE (L*): Klimentidis (#1, requires replication), religiosity (#12).",
     ],
     refsTitle: "References",
     refs: REFS,
@@ -608,7 +608,7 @@ const COPY: Record<string, Copy> = {
       "BERM: 1 mekanismi (EMF → Ca²⁺ → hormonikaskadi) → 13 ilmentymää = PARSIMONIA: BERM on yksinkertaisempi JA selitysvoimaisempi.",
       "VAHVIMMAT (E-taso): pronatalismin epäonn. (#7), puberteetti (#10).",
       "VAHVAT (M|C): ÄO (#2), epätoivon kuolemat (#3), autoimmuuni (#5), myopia (#6), yksinäisyys (#13), naisen onn. (#4), unettomuus (#9), failure to launch (#8), polarisaatio (#11).",
-      "SPEKULATIIVISET (L*): Klimentidis (#1, vaatii replikaatiota), uskonnollisuus (#12).",
+      "DEDUKTIIVISET JA FALSIFIOITAVAT (L*): Klimentidis (#1, vaatii replikaatiota), uskonnollisuus (#12).",
     ],
     refsTitle: "Viitteet",
     refs: REFS,

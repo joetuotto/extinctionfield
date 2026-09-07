@@ -12,7 +12,7 @@ const COPY = {
     title: "Epigenetic Legacy: Transgenerational Inheritance",
     subtitle: "EMF alters three epigenetic mechanisms — DNA methylation, histone modification, and microRNA — which may transmit biological effects to unexposed offspring. The DDT transgenerational model provides the template; sperm methylation dose-dependence (VK27) provides the mechanism.",
     backLink: "← Back to Evidence",
-    cautionText: "This page presents BERM's most speculative prediction. While EMF-induced epigenetic changes are experimentally demonstrated, and transgenerational inheritance via sperm epigenome is proven for other environmental exposures (DDT, stress), the specific claim that EMF effects persist to F3 generation has NOT been tested. This prediction (E-NEW-10) is designated as BERM's highest priority research proposal precisely because of its profound implications.",
+    cautionText: "This page presents BERM's most novel, falsifiable prediction. While EMF-induced epigenetic changes are experimentally demonstrated, and transgenerational inheritance via sperm epigenome is proven for other environmental exposures (DDT, stress), the specific claim that EMF effects persist to F3 generation has NOT been tested. This prediction (E-NEW-10) is designated as BERM's highest priority research proposal precisely because of its profound implications.",
 
     mechTitle: "Three epigenetic mechanisms",
     mechLead: "EMF disrupts all three known channels of epigenetic regulation. Each independently alters gene expression; together they create a comprehensive epigenetic signature.",
@@ -55,7 +55,7 @@ const COPY = {
     title: "Epigeneettinen perintö: ylisukupolvinen periytyminen",
     subtitle: "EMF muuttaa kolmea epigeneettistä mekanismia — DNA-metylaatio, histonimodifikaatio ja mikroRNA — jotka voivat välittää biologisia vaikutuksia altistumattomille jälkeläisille. DDT:n ylisukupolvinen malli tarjoaa mallin; siittiöiden metylaation annosriippuvuus (VK27) tarjoaa mekanismin.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "Tämä sivu esittää BERM:n spekulatiivisimman ennusteen. Vaikka EMF-indusoidut epigeneettiset muutokset on osoitettu kokeellisesti ja ylisukupolvinen periytyminen siittiöiden epigenomin kautta on todistettu muille ympäristöaltistuksille (DDT, stressi), tarkka väite että EMF-vaikutukset säilyvät F3-sukupolveen EI OLE testattu. Tämä ennuste (E-NEW-10) on nimetty BERM:n korkeimman prioriteetin tutkimusehdotukseksi juuri sen syvällisten seurausten vuoksi.",
+    cautionText: "Tämä sivu esittää BERM:n pisimmän avoimen päättelyketjun ennusteen. Vaikka EMF-indusoidut epigeneettiset muutokset on osoitettu kokeellisesti ja ylisukupolvinen periytyminen siittiöiden epigenomin kautta on todistettu muille ympäristöaltistuksille (DDT, stressi), tarkka väite että EMF-vaikutukset säilyvät F3-sukupolveen EI OLE testattu. E-NEW-10 on deduktiivinen ja falsifioitava ennuste sekä BERM:n korkeimman prioriteetin tutkimusehdotus juuri sen syvällisten seurausten vuoksi.",
 
     mechTitle: "Kolme epigeneettistä mekanismia",
     mechLead: "EMF häiritsee kaikkia kolmea tunnettua epigeneettisen säätelyn kanavaa. Jokainen muuttaa itsenäisesti geeniekspressiota; yhdessä ne luovat kattavan epigeneettisen allekirjoituksen.",
@@ -141,7 +141,7 @@ const COPY = {
     title: "Heritage epigenetique : transmission transgenerationnelle",
     subtitle: "Les EMF alterent trois mecanismes epigenetiques — methylation de l'ADN, modification des histones et microARN — qui pourraient transmettre des effets biologiques a une descendance non exposee. Le modele transgenerationnel du DDT fournit le cadre ; la dose-dependance de la methylation des spermatozoides (VK27) fournit le mecanisme.",
     backLink: "← Retour aux preuves",
-    cautionText: "Cette page presente la prediction la plus speculative de BERM. Bien que les changements epigenetiques induits par les EMF soient demontres experimentalement, et que la transmission transgenerationnelle via l'epigenome spermatique soit prouvee pour d'autres expositions environnementales (DDT, stress), l'affirmation specifique que les effets des EMF persistent jusqu'a la generation F3 n'a PAS ete testee. Cette prediction (E-NEW-10) est designee comme la proposition de recherche prioritaire de BERM precisement en raison de ses implications profondes.",
+    cautionText: "Cette page presente la prediction nouvelle et falsifiable la plus ambitieuse de BERM. Bien que les changements epigenetiques induits par les EMF soient demontres experimentalement, et que la transmission transgenerationnelle via l'epigenome spermatique soit prouvee pour d'autres expositions environnementales (DDT, stress), l'affirmation specifique que les effets des EMF persistent jusqu'a la generation F3 n'a PAS ete testee. Cette prediction (E-NEW-10) est designee comme la proposition de recherche prioritaire de BERM precisement en raison de ses implications profondes.",
 
     mechTitle: "Trois mecanismes epigenetiques",
     mechLead: "Les EMF perturbent les trois canaux connus de regulation epigenetique. Chacun modifie independamment l'expression genique ; ensemble, ils creent une signature epigenetique complete.",
@@ -184,7 +184,7 @@ const COPY = {
     title: "후성유전학적 유산: 세대간 유전",
     subtitle: "EMF는 세 가지 후성유전학적 메커니즘 — DNA 메틸화, 히스톤 변형, 마이크로RNA — 을 변화시켜 비노출 자손에게 생물학적 영향을 전달할 수 있다. DDT 세대간 모델이 틀을 제공하고, 정자 메틸화의 용량 의존성(VK27)이 메커니즘을 제공한다.",
     backLink: "← 근거로 돌아가기",
-    cautionText: "이 페이지는 BERM의 가장 추측적인 예측을 제시한다. EMF 유도 후성유전학적 변화는 실험적으로 입증되었고, 정자 후성유전체를 통한 세대간 유전은 다른 환경 노출(DDT, 스트레스)에서 증명되었지만, EMF 영향이 F3 세대까지 지속된다는 구체적 주장은 테스트되지 않았다. 이 예측(E-NEW-10)은 그 심오한 함의 때문에 BERM의 최우선 연구 제안으로 지정되었다.",
+    cautionText: "이 페이지는 BERM에서 가장 긴 미해결 추론 사슬의 예측을 제시한다. EMF 유도 후성유전학적 변화는 실험적으로 입증되었고, 정자 후성유전체를 통한 세대간 유전은 다른 환경 노출(DDT, 스트레스)에서 증명되었지만, EMF 영향이 F3 세대까지 지속된다는 구체적 주장은 테스트되지 않았다. E-NEW-10은 연역적이고 반증 가능한 예측이며 그 심오한 함의 때문에 BERM의 최우선 연구 제안으로 지정되었다.",
 
     mechTitle: "세 가지 후성유전학적 메커니즘",
     mechLead: "EMF는 후성유전학적 조절의 알려진 세 가지 채널 모두를 교란한다. 각각은 독립적으로 유전자 발현을 변화시키며, 함께 포괄적인 후성유전학적 시그니처를 형성한다.",
