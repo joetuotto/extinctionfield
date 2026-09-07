@@ -17,7 +17,7 @@ const COPY = {
 
     epistemicTitle: "Paleomagnetic correlation, not proven causation",
     epistemicText:
-      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences — megafauna extinctions, Neanderthal disappearance — are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis; the paleontological record cannot distinguish between competing extinction drivers.",
+      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences — megafauna extinctions, Neanderthal disappearance — are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis; the paleontological record cannot distinguish between competing extinction drivers. This applies equally to conventional explanations.",
 
     whatKicker: "THE EVENT",
     whatTitle: "When the magnetic shield collapsed",
@@ -67,7 +67,7 @@ const COPY = {
 
     epistemicTitle: "Paleomag­neettinen korrelaatio, ei todistettu kausaliteetti",
     epistemicText:
-      "Laschamp-eksursio on hyvin ajoitettu paleomagneettisessa aineistossa. Ekologiset seuraukset — megafaunan sukupuutot, neandertalien katoaminen — ovat ajallisesti korreloituja. BERM:n tulkinta CRY/RPM-reitin kautta on hypoteesi; paleontologinen aineisto ei voi erottaa kilpailevia sukupuuttomekanismeja.",
+      "Laschamp-eksursio on hyvin ajoitettu paleomagneettisessa aineistossa. Ekologiset seuraukset — megafaunan sukupuutot, neandertalien katoaminen — ovat ajallisesti korreloituja. BERM:n tulkinta CRY/RPM-reitin kautta on hypoteesi; paleontologinen aineisto ei voi erottaa kilpailevia sukupuuttomekanismeja. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     whatKicker: "TAPAHTUMA",
     whatTitle: "Kun magneettinen suoja romahti",
@@ -116,7 +116,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     epistemicTitle: "Paleomagnetic correlation",
     epistemicText:
-      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis.",
+      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis. This applies equally to conventional explanations.",
     whatKicker: "THE EVENT", whatTitle: "When the magnetic shield collapsed",
     whatParagraphs: [
       "Approximately 42,000 years ago, Earth's magnetic field strength dropped to less than 6% of its current value during the Laschamp geomagnetic excursion. The event lasted roughly 800 years, with the minimum field persisting for approximately 250 years.",
@@ -155,7 +155,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     epistemicTitle: "Corrélation paléomagnétique",
     epistemicText:
-      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis.",
+      "The Laschamp excursion is well-dated in the paleomagnetic record. The ecological consequences are temporally correlated. BERM's interpretation via CRY/RPM is a hypothesis. This applies equally to conventional explanations.",
     whatKicker: "THE EVENT", whatTitle: "When the magnetic shield collapsed",
     whatParagraphs: [
       "Approximately 42,000 years ago, Earth's magnetic field strength dropped to less than 6% of its current value during the Laschamp geomagnetic excursion.",
@@ -194,7 +194,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     epistemicTitle: "Paleomagnetic correlation",
     epistemicText:
-      "The Laschamp excursion is well-dated. The ecological consequences are temporally correlated. BERM's CRY/RPM interpretation is a hypothesis.",
+      "The Laschamp excursion is well-dated. The ecological consequences are temporally correlated. BERM's CRY/RPM interpretation is a hypothesis. This applies equally to conventional explanations.",
     whatKicker: "THE EVENT", whatTitle: "When the magnetic shield collapsed",
     whatParagraphs: [
       "Approximately 42,000 years ago, Earth's magnetic field dropped to less than 6% of its current value.",

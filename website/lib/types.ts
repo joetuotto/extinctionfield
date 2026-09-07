@@ -33,7 +33,16 @@ export interface LockedPrediction {
   history?: PredictionVersion[];
 }
 
-export type EpistemicLevel = "E" | "M|C" | "M" | "C" | "L*" | "L";
+export type EpistemicLevel =
+  | "E"
+  | "M|C"
+  | "M"
+  | "C"
+  | "L*"
+  | "L"
+  | "L1+L0/L2"
+  | "L1"
+  | "KANDIDAATTI";
 
 export interface EvidenceItem {
   pathway: string;
@@ -105,6 +114,9 @@ export interface ChainNode {
   recoveryTimescale?: string;
   recoveryTimescale_en?: string;
   keyReferences: Reference[];
+  /** Named conditions under which a conditional derivation holds. */
+  conditions?: string[];
+  conditions_en?: string[];
   bermComponent?: string;
   falsificationCondition?: string;
   falsificationCondition_en?: string;

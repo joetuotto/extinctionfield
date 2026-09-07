@@ -6,13 +6,26 @@
 
 **Ehdollinen laskentareitti:** `berm-conditional-asfr-v1`.
 
-**Avoin kohta:** Lindgren-geometrian ja havaittavan biologisen suureen välistä L2-kytkentäoperaattoria ei ole johdettu.
+**L1-raja:** geometrisen kertoimen abstrakti kaava
+\(\chi_{\mathrm{geo}}(x)=x/\sqrt{1+x^2}\) ja sen algebralliset ominaisuudet
+säilyvät L1-tuloksina. Lorentz-signatuurissa tilavuuselementin yleinen
+linearisaatio on suunnattu ja etumerkillinen, ei positiivinen normi.
+
+**Avoin L2-raja:** havaitsijan, positiivisen spatiaalisen projektion,
+euklidisen normin, kollineaarisuuden ja dimensiottoman kartan valinta, jolla
+suunnatusta Lorentz-tuloksesta muodostetaan \(x\propto|\bar A|\) ja siten
+\(\chi_{\mathrm{geo}}(|\bar A|)\), on L0→L2-silta. Konkreettisen V/m-,
+teknologia-proxy- tai kalvomuuttujan identifiointi tämän sillan koordinaatiksi
+sekä siitä havaittavaan biologiseen suureeseen ovat myös avoimia L2-
+kytkentöjä. Myöhemmät empiiriset L3-komponentit arvioidaan
+komponenttikohtaisesti: L2-/L3-jatko ei alenna abstraktin
+\(\chi_{\mathrm{geo}}\)-kaavan L1-statusta.
 
 BERM on varsinainen selitys-, johtamis- ja ennustemalli. Tämä ohje kuvaa, miten FieldState-havainto voidaan tulevaisuudessa tuoda BERM:n avoimelle mittausrajalle ja miten erikseen annetut biologiset paritilat voidaan viedä ehdollisesti ASFR:ään ja TFR:ään. Se ei johda biologisia tiloja FieldStatesta.
 
 Käytännössä muutos on seuraava:
 
-- aiempi `ambient + χ·personal` säilyy historiallisena ajoitusproxyna ja vertailureitin syötteenä;
+- aiempi `ambient + χ_geo·personal` säilyy historiallisena ajoitusproxyna ja vertailureitin syötteenä;
 - FieldState voi toimittaa elinpaikallisen mittauksen tai siirtoarvion avoimen L2-rajapinnan tarkasteluun, ei kansallisena EMF-annoksena eikä valmiina biologisena syötteenä;
 - A–F/T-kirjainten alle kertyneet mekanismit säilytetään, mutta epäyhtenäiset kirjaimet ratkaistaan **lähdetiedoston mukaan** semanttisiin nimiin;
 - biologinen näyttö tukee ensiksi omaa linkkiään (esim. `BTB → siittiötuotanto`), ei automaattisesti maakohtaista TFR-kerrointa;
@@ -100,27 +113,45 @@ Koko aiempi 129-tietueinen bibliografia on säilytetty [`legacy-evidence-migrati
 FieldState-mittaushaaran elinkohtainen valintasuure on toteutettu muodossa
 
 \[
+\bar A_{\mathrm{candidate},o}
+=\left\lVert T_o\mathbf A_{\mathrm{background}}\right\rVert_2,
+\]
+
+\[
 \mathbf A_{\mathrm{selected},o}
 =T_o\mathbf A_{\mathrm{ambient}}
-+\chi\!\left(\left|T_o\mathbf A_{\mathrm{background}}\right|\right)
++\chi_{\mathrm{geo}}\!\left(\bar A_{\mathrm{candidate},o}\right)
 T_o\mathbf A_{\mathrm{personal}},
 \qquad
-\chi(a)=\frac{a}{\sqrt{1+a^2}}.
+\chi_{\mathrm{geo}}(a)=\frac{a}{\sqrt{1+a^2}}.
 \]
 
-Lisäksi säilytetään erillisinä, eikä hävitetä yhdeksi kansalliseksi keskiarvoksi:
+Tässä \(\lVert\cdot\rVert_2\) on ohjelmistoadapterin euklidinen
+kolmivektorinormi. Sen valinta \(\bar A\)-koordinaatiksi on **candidate-L2
+adapteri**, ei Lorentz-signatuurisen L1-tuloksen automaattinen seuraus.
+Samoin seuraavat euklidiset ristisuureet säilytetään erillisinä
+candidate-L2-diagnostiikkoina eikä hävitetä yhdeksi kansalliseksi
+keskiarvoksi:
 
 \[
-X_{\mathrm{geom},o}=2(T_o\mathbf A_{\mathrm{background}})\cdot(T_o\mathbf A_{\mathrm{personal}}),
+X_{\mathrm{candidate,Euclidean},o}
+=2(T_o\mathbf A_{\mathrm{background}})\cdot_{\mathbb R^3}
+(T_o\mathbf A_{\mathrm{personal}}),
 \]
 
 \[
-X_{\mathrm{coherent},o}=X_{\mathrm{geom},o}\,c\cos(\phi),
+X_{\mathrm{candidate,coherent},o}
+=X_{\mathrm{candidate,Euclidean},o}\,c\cos(\phi),
 \qquad
 \Xi_o=\int PSD_{\mathrm{envelope/beat},o}(f)W_o(f)\,df.
 \]
 
-Tässä `T_o` on elin-, kudos-, asento-, etäisyys-, rakennus- ja polarisaatiogeometrian siirtofunktio; `c` ja `phi` ovat mitattu koherenssi ja suhteellinen vaihe; `W_o` on ennalta ilmoitettu reseptori-/solutilakohtainen vasteikkuna. Ne eivät ole automaattisesti TFR-kertoimia.
+Tässä `T_o` on elin-, kudos-, asento-, etäisyys-, rakennus- ja
+polarisaatiogeometrian siirtofunktio; `c` ja `phi` ovat mitattu koherenssi ja
+suhteellinen vaihe; `W_o` on ennalta ilmoitettu reseptori-/solutilakohtainen
+vasteikkuna. Näiden konkreettinen identifikaatio kuuluu avoimeen L0→L2-siltaan.
+Ne eivät ole automaattisesti Lorentz-L1-termejä, biologisia vasteita tai
+TFR-kertoimia.
 
 Toteutus: [`berm/physics/field_state.py`](../berm/physics/field_state.py).
 
@@ -128,7 +159,7 @@ Toteutus: [`berm/physics/field_state.py`](../berm/physics/field_state.py).
 
 | Tila | Mitä se tarkoittaa | Miten sitä saa käyttää |
 |---|---|---|
-| `LEGACY_TIMING_PROXY` | Nykyinen `ambient + chi(ambient) * personal` -erikoistapaus; esimerkiksi mobiililiittymät ajoittavat digitaalisen ympäristön leviämistä. | Kohortti- ja ajoitussignaalin tutkimiseen, ei paikalliseksi annokseksi. |
+| `LEGACY_TIMING_PROXY` | Nykyinen `ambient + chi_geo(ambient) * personal` -erikoistapaus; esimerkiksi mobiililiittymät ajoittavat digitaalisen ympäristön leviämistä. Proxykoordinaatin identifikaatio on avoin L0→L2. | Kohortti- ja ajoitussignaalin tutkimiseen, ei paikalliseksi annokseksi. |
 | `PARTIAL_FIELD_STATE` | Jokin fysikaalisen tilan osa on mitattu, mutta esimerkiksi PSD, B0, elinsiirto tai vuorokausikonteksti puuttuu. | Aktiiviseksi mitatuksi FieldState-komponentiksi, paikallisen/alueellisen likelihoodin sekä suunta-, siirto- ja lajikohtaisten posteriori-ennusteiden rakentamiseen; puuttuvat komponentit kannetaan epävarmuutena. Ei yksin väitä valmista elinannosta tai kapeaa endpoint-kerrointa. |
 | `MEASUREMENT_READY_FIELD_STATE` | Dokumentoitu normalisointi, B0-vektori, elinsiirto, PSD, circadian-konteksti, vaihe/koherenssi ja mittausprovenienssi ovat läsnä. | Elinkohtaisen endpoint-mallin kalibrointiin, kun myös biologinen päätepiste on yhdistetty ennalta määritellysti. |
 
@@ -224,7 +255,7 @@ Koneellisesti luettava rekisteri: [`data/evidence/fieldstate_causal_evidence.jso
 
 | Mallin osa | Vahva, solmuun kiinnitetty tutkimustuki | Mitä se lisää BERM:ään |
 |---|---|---|
-| Tausta-, kulma- ja vektoririippuvuus | Blackman 1985, [doi](https://doi.org/10.1002/bem.2250060402); Ritz 2004, [doi](https://doi.org/10.1038/nature02534); Usselman 2016, [doi](https://doi.org/10.1038/srep38543) | `B0`, kulma, elinsiirto ja ristitermejä ei voi hävittää pelkkään maakeskiarvoon. |
+| Tausta-, kulma- ja vektoririippuvuus | Blackman 1985, [doi](https://doi.org/10.1002/bem.2250060402); Ritz 2004, [doi](https://doi.org/10.1038/nature02534); Usselman 2016, [doi](https://doi.org/10.1038/srep38543) | `B0`, kulma ja elinsiirto on säilytettävä näkyvinä. Euklidiset ristisuureet ovat candidate-L2-diagnostiikkoja, eivät näistä lähteistä johdettuja Lorentz-L1-termejä. |
 | Reseptoriorientaatio ja RPM/CRY | Majewska 2025, [doi](https://doi.org/10.1021/acschembio.4c00576); Sherrard 2018, [doi](https://doi.org/10.1371/journal.pbio.2006229) | `B_RPM_CRY` saa oman vektori-, kalvo- ja redox-tilansa eikä sitä pakoteta VGCC-skalaariksi. |
 | Envelope/mHz ja mito-ROS | Zandieh 2025, [doi](https://doi.org/10.1038/s41598-025-87235-w) | `PSD_envelope` ja solu-/redox-tilakohtainen vasteikkuna ovat mitattavia ominaisuuksia. Lähteen 0.01–5 Hz / 0–100 mT rajaus säilytetään. |
 | Vuorokausi/redox | Cao 2015, [doi](https://doi.org/10.3390/ijerph120202071) | FieldState tarvitsee ajan, valon ja yövaiheen; vuosikeskiarvo ei riitä B-haaran syötteeksi. |

@@ -23,6 +23,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "solar-biological", label: "Solar-biological connection" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "mechanism-candidate", label: "Mechanism candidate (IPR)" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
@@ -43,6 +44,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "Modulome",
       sections: [
         { id: "modulome", label: "12-layer modulome" },
+      ],
+    },
+    {
+      title: "Exposure structure",
+      sections: [
+        { id: "recovery-window", label: "Recovery window & phase transition" },
+        { id: "dual-kernel", label: "Dual-kernel convolution" },
+        { id: "spectral-stacking", label: "Spectral stacking" },
       ],
     },
     {
@@ -69,6 +78,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "solar-biological", label: "Aurinko-biologinen yhteys" },
         { id: "three-biological-bands", label: "Kolme taajuuskaistaa" },
         { id: "two-susceptibility-functions", label: "Kaksi herkkyysfunktiota" },
+        { id: "mechanism-candidate", label: "Mekanismikandidaatti (IPR)" },
         { id: "biology-to-civilization", label: "Biologiasta sivilisaatioon" },
       ],
     },
@@ -89,6 +99,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "Modulomi",
       sections: [
         { id: "modulome", label: "12-kerroksinen moduloomi" },
+      ],
+    },
+    {
+      title: "Altistusrakenne",
+      sections: [
+        { id: "recovery-window", label: "Palautumisikkuna ja faasitransitio" },
+        { id: "dual-kernel", label: "Kaksois-kernel-konvoluutio" },
+        { id: "spectral-stacking", label: "Spektraalinen pinoaminen" },
       ],
     },
     {
@@ -115,6 +133,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "solar-biological", label: "太陽-生物学的接続" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "mechanism-candidate", label: "メカニズム候補（IPR）" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
@@ -135,6 +154,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "モジュローム",
       sections: [
         { id: "modulome", label: "12層モジュローム" },
+      ],
+    },
+    {
+      title: "暴露構造",
+      sections: [
+        { id: "recovery-window", label: "回復ウィンドウと相転移" },
+        { id: "dual-kernel", label: "二核畳み込み" },
+        { id: "spectral-stacking", label: "スペクトル積層" },
       ],
     },
     {
@@ -161,6 +188,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "solar-biological", label: "Connexion solaire-biologique" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "mechanism-candidate", label: "Candidat mécanistique (IPR)" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
@@ -181,6 +209,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "Modulome",
       sections: [
         { id: "modulome", label: "Modulome à 12 couches" },
+      ],
+    },
+    {
+      title: "Structure de l'exposition",
+      sections: [
+        { id: "recovery-window", label: "Fenetre de recuperation et transition de phase" },
+        { id: "dual-kernel", label: "Convolution a deux noyaux" },
+        { id: "spectral-stacking", label: "Empilement spectral" },
       ],
     },
     {
@@ -207,6 +243,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "solar-biological", label: "태양-생물학적 연결" },
         { id: "three-biological-bands", label: "Three frequency bands" },
         { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "mechanism-candidate", label: "기전 후보 (IPR)" },
         { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
@@ -227,6 +264,14 @@ const GROUPS: Record<string, TocGroup[]> = {
       title: "모듈로옴",
       sections: [
         { id: "modulome", label: "12층 모듈로옴" },
+      ],
+    },
+    {
+      title: "노출 구조",
+      sections: [
+        { id: "recovery-window", label: "회복 창과 상전이" },
+        { id: "dual-kernel", label: "이중 커널 컨볼루션" },
+        { id: "spectral-stacking", label: "스펙트럼 적층" },
       ],
     },
     {

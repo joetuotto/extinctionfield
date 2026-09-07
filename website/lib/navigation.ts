@@ -28,6 +28,7 @@ import {
   Globe,
   UserX,
   Sun,
+  Braces,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -150,6 +151,54 @@ export const NAV_ROUTES: NavRoute[] = [
           ja: "リンドグレン前提、導出された幾何学、未解決のL2橋渡し、BERMの帰結",
           fr: "Prémisse de Lindgren, géométrie dérivée, pont L2 ouvert et conséquences BERM",
           ko: "린드그렌 전제, 도출된 기하학, 개방형 L2 연결 및 BERM 결과",
+        },
+      },
+      {
+        href: "/model/tensor-derivation",
+        labels: { en: "Tensor Derivation", fi: "Tensorijohto", ja: "テンソル導出", fr: "Dérivation tensorielle", ko: "텐서 유도" },
+        icon: Braces,
+        descs: {
+          en: "Variational GME, Weyl semimetry, Bianchi identity, and open L2",
+          fi: "Variaatio-GME, Weyl-semimetrisyys, Bianchi-identiteetti ja avoin L2",
+          ja: "変分GME、ワイル半計量性、ビアンキ恒等式、未解決のL2",
+          fr: "GME variationnelle, semi-métricité de Weyl, identité de Bianchi et L2 ouvert",
+          ko: "변분 GME, 바일 반계량성, 비앙키 항등식, 개방형 L2",
+        },
+      },
+      {
+        href: "/model/frequency-weights",
+        labels: { en: "Frequency Weights", fi: "Taajuuspainot", ja: "周波数重み", fr: "Pondérations fréquentielles", ko: "주파수 가중치" },
+        icon: Radio,
+        descs: {
+          en: "Inspectable imported candidate factors with an open L2 bridge",
+          fi: "Tarkastettavat tuodut ehdokastekijät ja avoin L2-silta",
+          ja: "検査可能な導入候補因子と未解決のL2橋渡し",
+          fr: "Facteurs candidats importés et inspectables avec un pont L2 ouvert",
+          ko: "검토 가능한 도입 후보 요인과 개방형 L2 연결",
+        },
+      },
+      {
+        href: "/model/dual-kernel",
+        labels: { en: "Dual-Kernel Convolution", fi: "Kaksoisydinkonvoluutio", ja: "二重カーネル畳み込み", fr: "Convolution à double noyau", ko: "이중 커널 합성곱" },
+        icon: Activity,
+        descs: {
+          en: "Candidate memory kernels, Hill response, and locked F1–F9 tests",
+          fi: "Ehdokasmuistiytimet, Hill-vaste ja lukitut F1–F9-testit",
+          ja: "候補記憶カーネル、Hill応答、固定済みF1–F9テスト",
+          fr: "Noyaux candidats, réponse de Hill et tests F1–F9 verrouillés",
+          ko: "후보 기억 커널, Hill 반응, 잠긴 F1–F9 테스트",
+        },
+      },
+      {
+        href: "/model/comparison",
+        labels: { en: "Model Comparison", fi: "Mallivertailu", ja: "モデル比較", fr: "Comparaison des modèles", ko: "모델 비교" },
+        icon: Scale,
+        descs: {
+          en: "Pre-specified M0–M4 BIC and holdout comparison contract",
+          fi: "Ennalta määritelty M0–M4 BIC- ja holdout-vertailusopimus",
+          ja: "事前指定されたM0–M4のBICおよびホールドアウト比較契約",
+          fr: "Contrat prédéfini de comparaison M0–M4 par BIC et holdout",
+          ko: "사전 지정된 M0–M4 BIC 및 홀드아웃 비교 계약",
         },
       },
     ],
@@ -464,7 +513,7 @@ export function getNavRoutes(locale: string): ResolvedNavRoute[] {
 }
 
 export interface ExploreTab {
-  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar";
+  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar" | "dkc";
   labels: Labels;
   icon: LucideIcon;
 }
@@ -480,6 +529,7 @@ export const EXPLORE_TABS: ExploreTab[] = [
   { key: "civilizations", labels: { en: "Civilizations", fi: "Sivilisaatiot", ja: "文明", fr: "Civilisations", ko: "문명" }, icon: Landmark },
   { key: "naturalEM", labels: { en: "Natural EM", fi: "Luonnollinen EM", ja: "自然EM", fr: "EM naturel", ko: "자연 EM" }, icon: Radio },
   { key: "solar", labels: { en: "Solar χ", fi: "Aurinko-χ", ja: "太陽χ", fr: "Solaire χ", ko: "태양 χ" }, icon: Sun },
+  { key: "dkc", labels: { en: "DKC", fi: "DKC", ja: "DKC", fr: "DKC", ko: "DKC" }, icon: Activity },
 ];
 
 export function getExploreTabs(locale: string) {

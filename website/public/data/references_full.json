@@ -2,15 +2,15 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1062,
-    "verified_count": 391,
+    "total_references": 1074,
+    "verified_count": 403,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 396,
+    "linked_count": 408,
     "unlinked_count": 666,
     "schema": "canonical-reference-registry-v1",
-    "alias_count": 38,
-    "last_updated": "2026-09-02",
+    "alias_count": 40,
+    "last_updated": "2026-09-07",
     "pathway_scheme": {
       "A": "VGCC/ROS (A_VGCC_ROS)",
       "B": "RPM/CRY incl. melatonin arm (B_RPM_CRY, MELATONIN_REDOX)",
@@ -24068,7 +24068,7 @@
       ],
       "level": "C",
       "type": "report",
-      "finding": "kHz-range transients elevated blood glucose in electrosensitive diabetic patients. GS filters reduced both IF transients and blood glucose. Small N, controversial author. Mechanism consistent with K-ATP channel hypothesis.",
+      "finding": "kHz-range transients elevated blood glucose in electrosensitive diabetic patients. GS filters reduced both IF transients and blood glucose. Small N; non-conventional author whose source-level credibility requires separate review. Mechanism consistent with K-ATP channel hypothesis.",
       "tags": [
         "IF",
         "diabetes",
@@ -31464,6 +31464,401 @@
       "link_status": "missing",
       "link_source": null,
       "aliases": []
+    },
+    {
+      "id": "myers2026_iphone_att",
+      "authors": "Myers CK, Hooper E",
+      "year": 2026,
+      "title": "Is the iPhone Birth Control? Causal Evidence from AT&T's 2007-2011 Carrier Monopoly",
+      "journal": "NBER Working Paper 35310",
+      "doi": "10.3386/w35310",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "H"
+      ],
+      "level": "E",
+      "type": "report",
+      "finding": "Difference-in-differences on AT&T's 2007-2011 iPhone exclusivity, using variation in AT&T mobile broadband coverage: iPhone access reduced births by 4.5-8.0% at ages 15-19 and 3.2-6.6% at ages 20-24, with smaller significant declines at older ages; placebo tests on rival carriers' networks are null. The authors attribute 33-52% of the decline in the general fertility rate (ages 15-44) to iPhone diffusion, with national time-use and sexual-frequency survey evidence as the proposed mechanism. The four-year identification window captures only the fast, behavioural response.",
+      "tags": [
+        "natural_experiment",
+        "smartphone",
+        "iphone",
+        "fertility_decline",
+        "difference_in_differences",
+        "behavioral_channel",
+        "time_displacement"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [
+        "nber35310"
+      ],
+      "link_checked_at": "2026-09-04"
+    },
+    {
+      "id": "hudson2026_teen_fertility",
+      "authors": "Hudson N, Moscoso Boedo H",
+      "year": 2026,
+      "title": "The Collapse of Teen Fertility in the Digital Era",
+      "journal": "University of Cincinnati, Lindner College of Business (working paper, 25 April 2026)",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://homepages.uc.edu/~moscoshn/Personal_webpage/papers/Smartphone_web.pdf",
+      "category": "history_institutional",
+      "pathway": [
+        "H"
+      ],
+      "level": "E",
+      "type": "report",
+      "finding": "A terrain-ruggedness instrument for county-level broadband and 4G LTE coverage identifies a causal effect of digital diffusion on US teen fertility; a parallel design for England and Wales recovers the same break, which rules out country-specific contraception-access and welfare-reform explanations. Observed US age-specific birth rates 2007-2024: ages 15-19 -71%, 20-24 -43%, 25-29 -23%, 30-34 -1%, 35-39 +9%. Time-use diaries show teen in-person socialising roughly halving while digital leisure roughly triples. The same instrument that lowers teen fertility raises teen suicide, which the authors use as a sign-flipping test of a peer-time coordination shift.",
+      "tags": [
+        "natural_experiment",
+        "instrumental_variable",
+        "terrain_ruggedness",
+        "teen_fertility",
+        "age_profile",
+        "smartphone",
+        "behavioral_channel",
+        "time_displacement"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "author_hosted_pdf",
+      "aliases": [],
+      "link_checked_at": "2026-09-04"
+    },
+    {
+      "id": "hartley2026_india_4g",
+      "authors": "Hartley J",
+      "year": 2026,
+      "title": "Smartphones and Fertility: Evidence From the 2016 4G Rollout in India",
+      "journal": "SSRN Working Paper 6957259 (dated 30 September 2025, posted 19 June 2026)",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6957259",
+      "category": "history_institutional",
+      "pathway": [
+        "H"
+      ],
+      "level": "E",
+      "type": "report",
+      "finding": "Uses Reliance Jio's September 2016 4G rollout, which collapsed mobile-internet prices and accelerated smartphone adoption across India, as an exposure shock. Across National Family Health Survey waves, states and districts with larger smartphone-penetration gains show larger subsequent fertility declines, both across states and within states over time; identification exploits pre-existing telecommunications infrastructure and geographic differences in network expansion. The mechanism is modelled as information access and human-capital accumulation, not a biological pathway.",
+      "tags": [
+        "natural_experiment",
+        "india",
+        "4g_rollout",
+        "reliance_jio",
+        "fertility_decline",
+        "smartphone",
+        "behavioral_channel",
+        "nfhs"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "ssrn_landing_page",
+      "aliases": [
+        "ssrn6957259"
+      ],
+      "link_checked_at": "2026-09-04"
+    },
+    {
+      "id": "catterall2010_voltage_sensors",
+      "authors": "Catterall WA",
+      "year": 2010,
+      "title": "Ion channel voltage sensors: structure, function, and pathophysiology",
+      "journal": "Neuron 67(6):915-928",
+      "doi": "10.1016/j.neuron.2010.08.021",
+      "pmid": "20869590",
+      "pmcid": "PMC2950829",
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "review",
+      "finding": "Review of voltage-sensor structure and electromechanical coupling, including S4 gating charges and sequential ion-pair formation. This is imported ion-channel biophysics; it does not establish DKC or supply the open Lindgren geometry-to-observable L2 bridge.",
+      "tags": [
+        "voltage_gated_ion_channels",
+        "voltage_sensor",
+        "s4",
+        "gating_charge",
+        "review",
+        "imported_mechanism"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "pubmed_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-04"
+    },
+    {
+      "id": "engstrom1996_ipr_dynamics",
+      "authors": "Engström S",
+      "year": 1996,
+      "title": "Dynamic properties of Lednev's parametric resonance mechanism",
+      "journal": "Bioelectromagnetics 17(1):58-70",
+      "doi": "10.1002/(sici)1521-186x(1996)17:1<58::aid-bem8>3.0.co;2-5",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "L",
+      "type": "journal",
+      "finding": "Analyses the time-dependent behaviour of Lednev's ion parametric resonance mechanism and shows how the predicted response depends on the relaxation and driving parameters, which is the historical origin of the IPR argument coefficient used in later amplitude-window models.",
+      "tags": [
+        "ipr",
+        "parametric_resonance",
+        "lednev",
+        "relaxation",
+        "theory"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "engstrom2004_ion_resonances",
+      "authors": "Engström S, Bowman JD",
+      "year": 2004,
+      "title": "Magnetic resonances of ions in biological systems",
+      "journal": "Bioelectromagnetics 25(8):620-630",
+      "doi": "10.1002/bem.20028",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "L",
+      "type": "journal",
+      "finding": "Theoretical treatment of bound-ion magnetic resonances in biological binding sites; supplies the bound-state basis on which a charge-to-mass reference frequency and its resonance index are defined.",
+      "tags": [
+        "ipr",
+        "bound_ion",
+        "resonance",
+        "theory",
+        "charge_to_mass"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "ashhab2007_driven_two_level",
+      "authors": "Ashhab S, Johansson JR, Zagoskin AM, Nori F",
+      "year": 2007,
+      "title": "Two-level systems driven by large-amplitude fields",
+      "journal": "Physical Review A 75:063414",
+      "doi": "10.1103/physreva.75.063414",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "physics_theory",
+      "pathway": [
+        "A"
+      ],
+      "level": "L",
+      "type": "journal",
+      "finding": "Formalism for a two-level system whose energy splitting is sinusoidally modulated: the phase integral yields exp[iz sin(ωt)] = Σ_k J_k(z) exp(ikωt), the Jacobi-Anger expansion that produces Bessel sidebands. This is the phase-modulation formalism the mechanism candidate borrows; it is generic to driven systems and not specific to any metric ansatz.",
+      "tags": [
+        "two_level_system",
+        "phase_modulation",
+        "bessel",
+        "jacobi_anger",
+        "formalism"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "park2008_calmodulin_kinetics",
+      "authors": "Park HY, Kim SA, Korlach J, Rhoades E, Kwok LW, Zipfel WR, Waxham MN, Webb WW, Pollack L",
+      "year": 2008,
+      "title": "Conformational changes of calmodulin upon Ca2+ binding studied with a microfluidic mixer",
+      "journal": "Proceedings of the National Academy of Sciences 105(2):542-547",
+      "doi": "10.1073/pnas.0710810105",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Microfluidic mixing with fluorescence readout resolves the kinetics of calmodulin's conformational change on Ca2+ binding; the N-terminal domain rearranges on a ~20 ms time scale under a chemical Ca2+ step. This is a measured relaxation time under chemical conditions, not a magnetic-field response.",
+      "tags": [
+        "calmodulin",
+        "conformational_change",
+        "kinetics",
+        "calcium",
+        "relaxation_time"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "gavoci2013_ipr_k_null",
+      "authors": "Gavoçi E, Zironi I, Remondini D, Virelli A, Castellani G, Del Re B, Giorgi G, Aicardi G, Bersani F",
+      "year": 2013,
+      "title": "ELF magnetic fields tuned to ion parametric resonance conditions do not affect TEA-sensitive voltage-dependent outward K+ currents in a human neural cell line",
+      "journal": "Bioelectromagnetics 34(8):579-588",
+      "doi": "10.1002/bem.21807",
+      "pmid": "23900932",
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Null result. Static and alternating ELF fields tuned to ion parametric resonance conditions for K+ produced no significant change in TEA-sensitive voltage-dependent outward K+ current density in BE(2)C neuroblastoma cells by whole-cell patch clamp, before, during or after exposure. Constrains the IPR candidate at this endpoint; the authors note it is not a direct disproof for other channels or single-channel recordings.",
+      "tags": [
+        "ipr",
+        "null_result",
+        "potassium",
+        "patch_clamp",
+        "constraint"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "cecchetto2020_kv13",
+      "authors": "Cecchetto C, Maschietto M, Boccaccio P, Vassanelli S",
+      "year": 2020,
+      "title": "Electromagnetic field affects the voltage-dependent potassium channel Kv1.3",
+      "journal": "Electromagnetic Biology and Medicine 39(4):316-322",
+      "doi": "10.1080/15368378.2020.1799386",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Reports an electromagnetic-field effect on the voltage-dependent potassium channel Kv1.3, one channel among many; read together with the Gavoçi null it illustrates channel heterogeneity in field responsiveness rather than a uniform potassium-channel effect.",
+      "tags": [
+        "potassium",
+        "kv1.3",
+        "ion_channel",
+        "heterogeneity"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "ermakov2022_planarian_amf",
+      "authors": "Ermakov A, Afanasyeva V, Ermakova O, Blagodatski A, Popov A",
+      "year": 2022,
+      "title": "Effect of weak alternating magnetic fields on planarian regeneration",
+      "journal": "Biochemical and Biophysical Research Communications 592:7-12",
+      "doi": "10.1016/j.bbrc.2021.12.096",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Weak alternating magnetic fields alter planarian regeneration in a frequency-dependent way; an additional example of a frequency-structured biological response in a whole-organism system.",
+      "tags": [
+        "planarian",
+        "regeneration",
+        "frequency_response",
+        "weak_field"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "baureuskoch2003_vesicle_ipr",
+      "authors": "Bauréus Koch CL, Sommarin M, Persson BR, Salford LG, Eberhardt JL",
+      "year": 2003,
+      "title": "Interaction between weak low frequency magnetic fields and cell membranes",
+      "journal": "Bioelectromagnetics 24(6):395-402",
+      "doi": "10.1002/bem.10136",
+      "pmid": "12929158",
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Purified plasma-membrane vesicles exposed 30 min at 32 °C to static fields of 27-37 µT combined with 7-72 Hz alternating fields of 13-114 µT peak; 45Ca efflux followed combinations of static and alternating field that quantitatively matched Blanchard's ion parametric resonance model. The 24 Hz / 37 µT condition is the worked example of the mechanism candidate.",
+      "tags": [
+        "ipr",
+        "calcium",
+        "vesicle",
+        "amplitude_window",
+        "blanchard"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
     }
   ]
 }

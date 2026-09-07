@@ -15,7 +15,7 @@
 
 | Polku | Mekanismi | Status | Skaala |
 |-------|-----------|--------|--------|
-| B (RPM) | CRY → melatoniini → HPG | PRIMÄÄRINEN, 4/5 termiä johdettu | nT |
+| B (RPM) | CRY → melatoniini → HPG | TUOTU/AVOIN: RPM on L3; Lindgren→RPM-silta on osoitettava erikseen | nT |
 | A (VGCC) | δV_m → Ca²⁺ → ROS | SEKUNDAARINEN, vaatii vahvistimia | mV |
 | C–D | BBB (HPA), HPA→HPG -ristikkäisinhibitio | EI JOHDETTU geometriasta | vaihtelee |
 
@@ -23,7 +23,7 @@
 
 - Suuntariippuvuus (B₀ kulma) — konsensus: isotrooppinen
 - ELF-modulaatioikkunat — konsensus: ei ikkunoita
-- χ-kyllästyminen — konsensus: lineaarinen dose-response
+- χ-kyllästyminen eksplisiittisen spatiaalisen/euklidisen L2-sillan jälkeen — konsensus: lineaarinen dose-response
 - Kudosspesifisyys (A_bio) — konsensus: sama vaste kaikkialla
 - Kohorttiporrashypoteesi — konsensus: ei kohorttivaikutusta
 - Lajihierarkia (CRY spin-koherenssi) — konsensus: ei ennustetta
@@ -33,4 +33,6 @@
 Primer ei kerro onko BERM oikein. Se estää yhden päättelyvirheen: BERM:n
 ennusteen huomaamattoman korvaamisen konsensusmallilla (tai päinvastoin).
 Täysi protokolla: [REASONING_PROTOCOL_v1.md](REASONING_PROTOCOL_v1.md).
+Aineistohaun ja testauksen auditointiprotokolla:
+[EVIDENCE_SEARCH_AND_TEST_PROTOCOL_v1.md](EVIDENCE_SEARCH_AND_TEST_PROTOCOL_v1.md).
 Havaintojen luokittelu: [../audit/CLASSIFICATION_TABLE.json](../audit/CLASSIFICATION_TABLE.json).

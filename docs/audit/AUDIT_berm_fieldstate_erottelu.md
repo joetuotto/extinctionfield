@@ -19,8 +19,8 @@ Auditin tulkintaportti:
 
 - BERM on selitys-, johto- ja ennustemalli.
 - FieldState on BERM:n mittaus-/havainto-/estimointiosio, ei mallin synonyymi eikä kausaalinen alkusyy.
-- Lindgren 2025 antaa auditoidussa repossa L0-premissin `g_μν = η_μν + A_μA_ν`. Kun `A=A_bio+a_ext`, L1-ristitermi on `δg_μν=A_bio,μa_ν+a_μA_bio,ν+a_μa_ν`.
-- χ-laki, skalaari `ambient + χ(ambient)·personal`, 3-vektorin pistetulo ja biologiset vastefunktiot ovat BERM:n sulkeumia/ehdotuksia, ellei niiden erillistä johtoa esitetä. Niitä ei tule nimetä Lindgrenistä johdetuiksi vain siksi, että ne ovat yhteensopivia neliöllisen ristirakenteen kanssa.
+- Lindgren 2025 antaa auditoidussa repossa L0-premissin `g_μν = η_μν + κA_μA_ν`. Kun `A=A_bio+a_ext`, eksakti L1-muutos on `δg_μν=κ(A_bio,μa_ν+a_μA_bio,ν+a_μa_ν)` ja ensimmäisen kertaluvun osa jättää pois vain `κa_μa_ν`-termin.
+- Abstrakti χ-laki `χ(x)=x/√(1+x²)` ja sen algebralliset ominaisuudet säilyvät L1-tuloksina. Tilavuuselementin Lorentz-linearisaatio on suunnattu ja etumerkillinen L1-suure. Havaitsijan, positiivisen spatiaalisen projektion, euklidisen normin, kollineaarisuuden ja kartan `x=√κ·|s|` valinta, jolla suunnatusta tuloksesta tehdään `χ(|s|)`, on erillinen avoin L0→L2-silta. Myös skalaari `ambient + χ(x)·personal`, 3-vektorin pistetulo, raakamittauksen normalisointi `x`:ksi ja biologiset vastefunktiot vaativat L2-identifikaation tai L3-komponentin. Empiirinen jatkoaskel ei alenna abstraktin χ-kaavan L1-statusta.
 
 ## A. Terminologian kartoitus
 
@@ -213,7 +213,7 @@ Nykyisen johtotason mukaan:
 
 - L0 Lindgren-ansatz: lähdepremissi.
 - L1 eksplisiittinen ristiterlaajennus: johdettavissa.
-- χ, `ambient + χ·personal`, 3-vektoripistetulo: BERM-sulkeumia, eivät tässä repossa Lindgrenistä johdettuja.
+- Abstrakti muoto `χ(x)=x/√(1+x²)` on L1-kaava. Siirtymä suunnatusta Lorentz-derivaatasta havaitsijakohtaiseen, positiiviseen spatiaaliseen/euklidiseen suureeseen `x∝|A|` on avoin L2-silta; samoin sen konkreettinen koordinaatti-identifikaatio, `ambient + χ·personal` -adapteri ja 3-vektoripistetulo. Nämä L2-valinnat eivät alenna abstraktin χ-kaavan L1-statusta.
 - reseptori-, elin-, hormoni-, käyttäytymis- ja TFR-operaattorit: BERM-siltoja; niiden parametritaso on ilmoitettava erikseen.
 
 ## E. Python–TypeScript-synkronointi
@@ -330,9 +330,9 @@ Tämä osio kokoaa löydökset, jotka ratkaisevat BERM–FieldState-erottelun sy
 |---|---|---|---|
 | L0 | `model/page.tsx:958`; `berm/berm/exposure/lindgren.py:1` | lähdepremissi | `g=η+AA` |
 | L1 | sivusto käsittelee neliöllisyyttä, mutta ei pidä eksplisiittistä tensorilaajennusta kanonisena artefaktina | johdettavissa | `A=A_bio+a_ext` → ristitermeille indeksoitu johto |
-| L2 | `physics/field_state.py:504–550` | BERM-sulkeuma | Minkä kontraktion, yksiköiden ja fysikaalisen objektin kautta L1 tuottaa 3-vektorin, χ:n, organ transferin tai PSD-painon? |
+| L2 | `physics/field_state.py:504–550` | avoin identifikaatio | Minkä kontraktion, yksiköiden ja fysikaalisen objektin kautta L1:n χ-kerroin kytketään 3-vektoriin, organ transferiin tai PSD-painoon? |
 | L3 | `stats/fieldstate_core.py:154–265`; `biology/reproductive_state.py:95–242` | rakenne on olemassa, parametrit ulkoisia | FieldState-features → receptor state → R/P-increment; SHBG/free hormone/AR/post-receptor-operaattorit |
-| L4 | `outcomes/fieldstate_asfr.py:66–228` | ehdollinen ASFR-laskenta | paritilojen populaatiojakauma sekä O/tempo/ART:n mitattu provenance ja validointi |
+| L3 | `outcomes/fieldstate_asfr.py:66–228` | ehdollinen ASFR-laskenta / tuotu päätepistekartoitus | paritilojen populaatiojakauma sekä O/tempo/ART:n mitattu provenance ja validointi |
 
 Sivuston väitteet, jotka ylittävät tämän statusketjun:
 

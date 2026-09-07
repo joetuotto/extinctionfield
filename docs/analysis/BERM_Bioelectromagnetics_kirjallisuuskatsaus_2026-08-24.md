@@ -11,11 +11,12 @@
 ## BERM:N KAUSAALIKETJUN RAKENNE (referenssi)
 
 ```
-Taso 1: GEOMETRIA         g_μν = η_μν + A_μA_ν (Lindgren 2025)
-    ↓ geometrinen seuraus
-Taso 2: VALINTASÄÄNTÖ      χ(Ā) = Ā/√(1+Ā²) — taustariippuvainen herkkyys
-    ↓ kytkentäfunktio
-Taso 3: ALTISTUS           total = ambient + χ(Ā) × personal
+Taso 1: GEOMETRIA         g_μν = η_μν + κA_μA_ν (Lindgren 2025)
+    ↓ L1: κ(A·u)/√(1+κA²), etumerkillinen suunnattu derivaatta
+Taso 2: L2-REDUKTIO        q=|Ā| eksplisiittisellä spatiaalisella/skalaari-reduktiolla;
+                           χ_geo(q)=q/√(1+q²) on edelleen L1-kaava
+    ↓ avoin L0→L2-normalisointi q=N(z) ja ehdokaskytkentä
+Taso 3: ALTISTUS           total = ambient + χ_geo(N(z_ambient)) × personal
     ↓ EMF saavuttaa solun
 Taso 4: KALVOFYSIIKKA      Vmem = −70 mV/10nm → VGIC/IFO-aktivaatio
     ↓ Ca²⁺ influx / spin-kemia / pineaalihäiriö
@@ -34,7 +35,7 @@ Taso 9: TAKAISINKYTKENTÄ   TFR↓ → urbanisaatio↑ → ambient-EMF↑ → ta
 
 ## KIRJALLISUUSKATSAUKSEN TIIVISTELMÄ
 
-Bioelectromagnetics-lehti on bioelektromagnetiikan alan keskeisin vertaisarvioitu julkaisu (perustettu 1980, Bioelectromagnetics Society). Vuosien 2024–2026 julkaisuista tunnistettiin **14 artikkelia** jotka ovat suoraan relevantteja BERM:n kausaaliketjun eri tasoille, sekä **6 täydentävää artikkelia** lähijulkaisuista. Yhdessä nämä 20 artikkelia kattavat BERM:n tasot 3–6 ja tarjoavat sekä tukevaa että rajoittavaa evidenssiä. Tasot 1–2 (geometrinen perusta ja valintasääntö), 7–9 (konvergenssi, demografinen kaskadi, takaisinkytkentä) eivät kuulu lehden tyypilliseen aihealueeseen.
+Bioelectromagnetics-lehti on bioelektromagnetiikan alan keskeisin vertaisarvioitu julkaisu (perustettu 1980, Bioelectromagnetics Society). Vuosien 2024–2026 julkaisuista tunnistettiin **14 artikkelia** jotka ovat suoraan relevantteja BERM:n kausaaliketjun eri tasoille, sekä **6 täydentävää artikkelia** lähijulkaisuista. Yhdessä nämä 20 artikkelia kattavat BERM:n tasot 3–6 ja tarjoavat sekä tukevaa että rajoittavaa evidenssiä. Tasot 1–2 (geometrinen perusta, L1-χ_geo-kaava ja L2-reduktio), 7–9 (konvergenssi, demografinen kaskadi, takaisinkytkentä) eivät kuulu lehden tyypilliseen aihealueeseen.
 
 ### Kattavuuskartta
 
@@ -59,7 +60,7 @@ Bioelectromagnetics-lehti on bioelektromagnetiikan alan keskeisin vertaisarvioit
 **Tyyppi:** Mittaustutkimus  
 **BERM-taso:** 3 (ambient-altistus)
 
-Tutkimus mittasi 5G RF-EMF -altistustasoja neljässä Euroopan maassa spektraalimenetelmällä. Tulokset tuottavat kvantitatiivista dataa BERM:n ambient-termin kalibrointiin. BERM:n altistusyhtälö `total = ambient + χ(Ā) × personal` edellyttää empiiristä dataa ambient-kentistä eri ympäristöissä. 5G:n käyttöönotto muuttaa sekä taajuusjakaumaa (3.5 GHz, mmWave) että spatiaalirakennetta (suunnatut keilat vs. hajautettu peitto).
+Tutkimus mittasi 5G RF-EMF -altistustasoja neljässä Euroopan maassa spektraalimenetelmällä. Tulokset tuottavat kvantitatiivista dataa ehdokasambient-termin kalibrointiin. Legacy-skenaario `total = ambient + χ_geo(N(z_ambient)) × personal` edellyttää sekä empiiristä ambient-dataa että erikseen määriteltyä, vielä avointa dimensiotonta normalisointia N; tutkimus ei johda tätä karttaa. 5G:n käyttöönotto muuttaa sekä taajuusjakaumaa (3.5 GHz, mmWave) että spatiaalirakennetta (suunnatut keilat vs. hajautettu peitto).
 
 **BERM-relevanssi:** Tarjoaa parametridataa tason 3 ambient-funktiolle. 5G:n spektraalinen rakenne eroaa 2G/3G/4G:stä — suunnattu keila voi tuottaa korkeampia hetkellisiä personal-altistuksia mutta matalamman taustakomponentin. Tämä on yhdenmukainen BERM:n kaksikanavamallin erottelun kanssa.
 
@@ -89,7 +90,7 @@ Kattava mittauspohjainen arviointi RF-EMF-altistuksesta kaupunkiympäristöissä
 
 22 tutkijan katsaus laskennallisista menetelmistä ihmiskehon ja EMF:n vuorovaikutuksen mallintamiseen. Käsittelee kudosten dielektrisiä ominaisuuksia, matala- ja radiotaajuusmallinnusta, stokastista termodosimetriaa ja menetelmien vertailua.
 
-**BERM-relevanssi:** BERM:n taso 4 perustuu solukalvon sähkökentän suuruuteen (V_mem = −70 mV / 10 nm ≈ 7×10⁶ V/m). Laskennalliset dosimetriamenetelmät ovat ratkaisevassa asemassa sen arvioinnissa, kuinka paljon ulkoisesta kentästä todellisuudessa vaikuttaa kalvotasolla. Tämä katsaus edustaa alan nykytilaa mutta ei suoraan testaa BERM:n χ(Ā)-valintasääntöä.
+**BERM-relevanssi:** BERM:n taso 4 käsittelee solukalvon sähkökenttää (V_mem = −70 mV / 10 nm ≈ 7×10⁶ V/m) erillisenä fysikaalisena suureena. Laskennalliset dosimetriamenetelmät ovat ratkaisevassa asemassa sen arvioinnissa, kuinka paljon ulkoisesta kentästä todellisuudessa vaikuttaa kalvotasolla. V_mem/d ei kuitenkaan ole sellaisenaan χ_geo-funktion dimensioton argumentti. Katsaus edustaa alan nykytilaa, mutta ei testaa χ_geo-kaavaa eikä johda avointa q=N(z_membrane)-normalisointia.
 
 **Episteeminen arvio:** L* (menetelmäkatsaus, ei suora BERM-testi)
 
@@ -169,7 +170,7 @@ Tämä on yhdenmukainen Panagopoulosin IFO-VGIC -mekanismin kanssa mutta tarjoaa
 
 Tutkimus altisti soluja samanaikaisesti 5G-moduloidulle 3.5 GHz ja GSM-moduloidulle 1.8 GHz -säteilylle ja mittasi vaikutuksia hermoverkkojen sähköiseen aktiivisuuteen sekä ihon fibroblastisolujen soluvasteisiin.
 
-**BERM-relevanssi:** Kaksitaajuusaltistus on realistisempi kuin yksittäinen taajuus, koska todellisessa ympäristössä ihminen altistuu useille signaaleille samanaikaisesti. BERM:n tason 3 kaksikanavamalli (`total = ambient + χ(Ā) × personal`) ei tällä hetkellä erottele taajuuskomponentteja, mutta tämä tutkimus osoittaa, että samanaikaisen monikomponenttialtistuksen biologiset vaikutukset eivät välttämättä ole lineaarinen summa. Tämä on yhdenmukainen χ(Ā)-funktion epälineaarisen rakenteen kanssa.
+**BERM-relevanssi:** Kaksitaajuusaltistus on realistisempi kuin yksittäinen taajuus, koska todellisessa ympäristössä ihminen altistuu useille signaaleille samanaikaisesti. Legacy-tason ehdokasmalli (`total = ambient + χ_geo(N(z_ambient)) × personal`) ei tällä hetkellä erottele taajuuskomponentteja. Tutkimuksen mahdollinen ei-additiivisuus kuuluu tuotuun biologiseen vasteeseen; se ei yksin testaa χ_geo-kaavaa, määritä N-karttaa tai sulje L2-kytkentää.
 
 **Episteeminen arvio:** C (kokeellinen, monikomponenttialtistus)
 
@@ -261,7 +262,7 @@ Tämä on laadukkaasti toteutettu negatiivinen tulos, jota ei pidä ohittaa. BER
 (b) **Ihosolu vs. gonaadisolu:** HaCaT-keratinosyytit eivät ole BERM:n ensisijainen kohdekudos (testis, aivojen pineaalirauhanen, hypotalamus). VGIC-tiheys ja mitokondrioiden ROS-tuotantokapasiteetti ovat kudosspesifisiä.
 (c) **200 µT on korkea ELF-ympäristöaltistus mutta matala verrattuna Bertagnan 1 mT:iin**, joka tuotti merkitseviä ionikanaavamuutoksia. Annosriippuvuutta ei voi sivuuttaa.
 
-**Johtopäätös BERM:lle:** Ei kumoa tason 5A mekanismia, koska testikonditto (taajuus, kudos, altistusparametrit) on BERM:n relevantin altistusskenaarion ulkopuolella. Dokumentoi kuitenkin, että kaikki EMF-altistukset eivät tuota DNA-vauriota kaikissa kudoksissa, mikä on yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa: vaste on taustariippuvainen, ei universaali.
+**Johtopäätös BERM:lle:** Tulos rajoittaa tason 5A ehdokasmekanismia kyseisessä taajuus-, kudos- ja altistusasetelmassa. Se dokumentoi, etteivät kaikki EMF-altistukset tuota DNA-vauriota kaikissa kudoksissa. Kudos- ja taajuusspesifisyys kuuluu kuitenkin erillisiin L2/L3-siirto- ja vastekomponentteihin; abstrakti χ_geo-kaava ei yksin ennusta sitä.
 
 **Episteeminen arvio:** E (laadukas negatiivinen tulos, sokkoutettu)
 
@@ -305,7 +306,7 @@ Kriittinen katsaus, joka kysyy: voiko radikaaliparimekanismi (RPM) tarjota unive
 BERM:n polku B (CRY/RPM → sirkadiaaninen häiriö) nojaa RPM:ään yhtenä kolmesta transduktiomekanismista (L-BERM-luokittelu: T_RPM). Krylovin katsaus arvioi tämän mekanismin todistusvoimaa laajemmin:
 
 - RPM on magnetoreseption (eläinten magneettisen navigoinnin) hyväksytyin selitys
-- Sen soveltaminen heikkojen EMF-kenttien terveyseffekteihin on kiistanalainen
+- Sen soveltaminen heikkojen EMF-kenttien terveyseffekteihin on epäkonventionaalinen
 - Kryptokromin spin-kemia on taajuus- ja intensiteettiriippuvaista
 
 BERM:n kannalta katsaus muistuttaa, että polku B:n episteeminen taso on matalampi kuin polun A (VGIC → ROS). RPM on mekanistisesti koherentti mutta kokeellisesti vähemmän dokumentoitu kuin VGIC-välitteinen kalsiumpolku.
@@ -465,7 +466,7 @@ Katsaus 5G-verkon nopeasta käyttöönotosta ja ihmisterveyden riskiarvioinnin t
 
 ```
 TASO 1 (geometria): ei kattavuutta — ei lehden aihealuetta
-TASO 2 (valintasääntö): ei kattavuutta — ei lehden aihealuetta
+TASO 2 (spatiaalinen/skalaari-reduktio ja avoin normalisointi): ei kattavuutta — ei lehden aihealuetta
 TASO 3 (altistus):
   ├── Deprez 2025 [C]: 5G spectral, 4 Euroopan maata — ambient-data
   ├── Wang 2025 [C]: kaupunki-RF-altistus — BERM feedback (taso 9)
@@ -525,13 +526,13 @@ TASO 7–9: ei kattavuutta — ei lehden aihealuetta
 
 ### 2. Rajoittava evidenssi
 
-**Ihosolujen negatiiviset tulokset:** Meyer ym. 2026 (ELF, ihosolut) ja Haidar ym. 2025 (5G, ihosolut) eivät löytäneet DNA-vauriota tai ROS-lisäystä. Nämä eivät kumoa BERM:n tason 5A mekanismia, koska kohdesolu on eri (iho vs. gonaadi), mutta ne muistuttavat, että EMF-vasteet ovat kudos- ja taajuusspesifisiä. BERM:n χ(Ā)-valintasääntö ennustaa tätä: kaikki solut eivät ole yhtä herkkiä.
+**Ihosolujen negatiiviset tulokset:** Meyer ym. 2026 (ELF, ihosolut) ja Haidar ym. 2025 (5G, ihosolut) eivät löytäneet DNA-vauriota tai ROS-lisäystä. Tulokset rajoittavat tason 5A ehdokasmekanismia testatuissa kudos- ja taajuusasetelmissa. Mahdollinen kudosspesifisyys on testattava erillisillä L2/L3-siirto- ja vastekomponenteilla; χ_geo-kaava ei yksin tee tätä biologista ennustetta.
 
 **HPA-aksellin akuutti vasteen puute:** Verrender ym. 2025 ei löydä akuuttia kortisolivastetta RF-altistuksesta. BERM:n polku D mallintaa kroonista allostaattista kuormaa, ei akuuttia pulssia, joten tämä ei ole suora kumous, mutta se rajoittaa polun D vahvuutta lyhytaikaisissa altistusasetelmissa.
 
 ### 3. Puuttuvat alueet
 
-- **Taso 1–2:** Geometrinen perusta ja valintasääntö eivät kuulu kokeelliseen bioelektromagnetiikkaan
+- **Taso 1–2:** Geometrinen perusta, L1-χ_geo-kaava ja L2-reduktio eivät kuulu kokeelliseen bioelektromagnetiikkaan
 - **Tasot 7–9:** Demografinen kaskadi ja takaisinkytkentä eivät kuulu lehden aihealueeseen
 - **Ihmisen reproduktio:** Yhtään tuoreea Bioelectromagnetics-artikkelia ei käsittele suoraan EMF:n vaikutusta ihmisen siittiölaatuun tai hedelmällisyyteen (tämä kirjallisuus julkaistaan reproduktiojulkaisuissa)
 - **Pitkäaikaisaltistus:** Suurin osa tutkimuksista käsittelee akuuttia tai subakuuttia altistusta. BERM ennustaa kumulatiivisia vaikutuksia vuosikymmenien aikaskaalalla — tätä ei ole testattu suoraan

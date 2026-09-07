@@ -184,7 +184,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     epistemicTitle: "Pattern-matching, not proof",
     epistemicText:
-      "This page maps historical observations onto BERM mechanisms. The fit is suggestive but does not constitute evidence of causation. These thinkers did not have BERM in mind; the pattern-matching is retrospective. Confidence ratings reflect the specificity of the mechanism match, not the quality of the original observation.",
+      "This page maps historical observations onto BERM mechanisms. The fit is suggestive but does not constitute evidence of causation. This applies equally to conventional explanations. These thinkers did not have BERM in mind; the pattern-matching is retrospective. Confidence ratings reflect the specificity of the mechanism match, not the quality of the original observation.",
     summaryKicker: "CONVERGENCE",
     summaryTitle: "Why 11 independent thinkers matter",
     summaryText: [
@@ -227,7 +227,7 @@ const COPY = {
     backLink: "← Takaisin näyttöön",
     epistemicTitle: "Kuvioiden tunnistamista, ei todistusta",
     epistemicText:
-      "Tämä sivu yhdistää historialliset havainnot BERM-mekanismeihin. Yhteensopivuus on viitteellinen mutta ei muodosta kausaalinäyttöä. Nämä ajattelijat eivät tunteneet BERM:iä; kuvioiden tunnistaminen on retrospektiivistä. Luotettavuusarviot heijastavat mekanismivastaavuuden spesifisyyttä, eivät alkuperäisen havainnon laatua.",
+      "Tämä sivu yhdistää historialliset havainnot BERM-mekanismeihin. Yhteensopivuus on viitteellinen mutta ei muodosta kausaalinäyttöä. Tämä koskee yhtä lailla konventionaalisia selityksiä. Nämä ajattelijat eivät tunteneet BERM:iä; kuvioiden tunnistaminen on retrospektiivistä. Luotettavuusarviot heijastavat mekanismivastaavuuden spesifisyyttä, eivät alkuperäisen havainnon laatua.",
     summaryKicker: "KONVERGENSSI",
     summaryTitle: "Miksi 11 itsenäistä ajattelijaa merkitsee",
     summaryText: [

@@ -12,9 +12,10 @@ import { ThresholdExplorer } from "./ThresholdExplorer";
 import { CivilizationTimeline } from "./CivilizationTimeline";
 import { NaturalEMVisualization } from "./NaturalEMVisualization";
 import { SolarExplorer } from "./SolarExplorer";
+import { DkcExplorer } from "./DkcExplorer";
 import { getExploreTabs } from "@/lib/navigation";
 
-type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar";
+type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar" | "dkc";
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
@@ -76,6 +77,8 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "naturalEM" && <NaturalEMVisualization locale={locale} />}
 
       {activeTab === "solar" && <SolarExplorer locale={locale} />}
+
+      {activeTab === "dkc" && <DkcExplorer locale={locale} />}
     </div>
   );
 }

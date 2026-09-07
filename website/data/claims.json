@@ -162,11 +162,11 @@
       "id": "claim.proxy.lindgren-selection",
       "statement": {
         "en": {
-          "text": "BERM v17 uses a two-channel technology-timing proxy with the proposed closure χ to combine ambient and personal proxy channels. It is not a FieldState measurement, an optimized biological coupling, or a selection rule derived by Lindgren.",
+          "text": "The 2025 Lindgren geodesic-deviation chain yields the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through an explicit dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is an L2 reduction. BERM v17 instead declares a candidate proxy normalization q=N(z_proxy); choosing and calibrating N and mapping the result to biology remain an open L0→L2 step. The result is not a FieldState measurement or an optimized biological coupling.",
           "sourceRevision": 1
         },
         "fi": {
-          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä ja ehdotettua χ-sulkeumaa yhdistämään ympäristö- ja henkilökohtaiset proxykanavat. Se ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenin johtama valintasääntö.",
+          "text": "Vuoden 2025 Lindgrenin geodeesipoikkeamaketju tuottaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta eksplisiittisen dimensiottoman, kollineaarisen Lorentz→Euklidisen spatiaalisen/skalaari-projektion kautta on L2-reduktio. BERM v17 ilmoittaa sen sijaan ehdokasnormalisoinnin q=N(z_proxy); N:n valinta ja kalibrointi sekä biologinen kartoitus ovat avoin L0→L2-askel. Tulos ei ole FieldState-mittaus eikä optimoitu biologinen kytkentä.",
           "sourceRevision": 1
         }
       },

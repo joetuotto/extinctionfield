@@ -345,31 +345,31 @@ export const CIVILIZATION_PREDICTIONS: CivPrediction[] = [
     level: "M|C",
   },
 
-  // L1..L3: Patopoliteia (historical law) predictions
+  // H1..H3: Patopoliteia historical-law predictions (not epistemic L-levels)
   {
-    id: "L1",
+    id: "H1",
     group: "L",
-    title_en: "Civilizational birth requires a low-χ zone",
-    title_fi: "Sivilisaation synty edellyttää matalan χ:n aluetta",
+    title_en: "Civilizational birth requires a low-χ_lat zone",
+    title_fi: "Sivilisaation synty edellyttää matalan χ_lat:n aluetta",
     test_en:
-      "All independent civilizational origins (Mesopotamia, Indus, Yellow River, Mesoamerica, Egypt, Caral) occur in the 25–35°N latitude band where χ is lowest, maximizing biological activation",
+      "All independent civilizational origins (Mesopotamia, Indus, Yellow River, Mesoamerica, Egypt, Caral) occur in the 25–35°N latitude band where the separate BioCap latitude factor χ_lat is lowest, maximizing biological activation",
     test_fi:
-      "Kaikki itsenäiset sivilisaation synnyt (Mesopotamia, Indus, Keltainenjoki, Mesoamerikka, Egypti, Caral) tapahtuvat 25–35°N leveysastekaistalla jossa χ on matalin, maksimoiden biologisen aktivaation",
+      "Kaikki itsenäiset sivilisaation synnyt (Mesopotamia, Indus, Keltainenjoki, Mesoamerikka, Egypti, Caral) tapahtuvat 25–35°N leveysastekaistalla, jossa erillinen BioCapin leveysastetekijä χ_lat on matalin, maksimoiden biologisen aktivaation",
     level: "L*",
   },
   {
-    id: "L2",
+    id: "H2",
     group: "L",
     title_en: "Creative renaissances cluster during grand solar minima",
     title_fi: "Luovat renessanssit klusteroituvat suurten aurinkominimiein aikana",
     test_en:
-      "Creative renaissances cluster during grand solar minima at high-χ latitudes (45–60°N): Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton — because reduced solar wind allows geomagnetic recovery",
+      "Creative renaissances cluster during grand solar minima at high-χ_lat latitudes (45–60°N): Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton — because reduced solar wind allows geomagnetic recovery",
     test_fi:
-      "Luovat renessanssit klusteroituvat suurten aurinkominimiein aikana korkeilla χ-leveysasteilla (45–60°N): Italian renessanssi/Spörer, tieteellinen vallankumous/Maunder, romantiikka/Dalton — koska vähentynyt aurinkotuuli mahdollistaa geomagneettisen palautumisen",
+      "Luovat renessanssit klusteroituvat suurten aurinkominimien aikana korkeilla χ_lat-leveysasteilla (45–60°N): Italian renessanssi/Spörer, tieteellinen vallankumous/Maunder, romantiikka/Dalton — koska vähentynyt aurinkotuuli mahdollistaa geomagneettisen palautumisen",
     level: "L*",
   },
   {
-    id: "L3",
+    id: "H3",
     group: "L",
     title_en: "Empire rises begin during low solar activity",
     title_fi: "Imperiumien nousut alkavat matalan aurinkoaktiivisuuden aikana",

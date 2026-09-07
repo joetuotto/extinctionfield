@@ -4,95 +4,100 @@ import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
-    leftTitle: "χ(Ā) — BERM closure proposal",
-    leftAxisX: "Ā (background field)",
-    leftAxisY: "χ",
-    leftKey: "Cell membrane: Ā ≈ 7×10⁶ → χ ≈ 1.0",
-    leftTargets: "Candidate targets: VGCC → pathways A, D, E",
-    leftSource: "BERM proposal on a Lindgren premise; L2 open",
-    leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
-    rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1 geometric response and imported spin-susceptibility candidate",
+    leftTitle: "χ_geo(x) — L1 geometric response",
+    leftAxisX: "x = √κ·s (dimensionless)",
+    leftAxisY: "χ_geo",
+    leftKey: "x is dimensionless; raw V/m is not an input",
+    leftTargets: "OPEN L0→L2: proxy / V_m / membrane → x",
+    leftSource: "L1: metric-volume / geodesic-deviation chain",
+    leftFormula: "χ_geo(x) = x / √(1 + x²)",
+    rightTitle: "χ_B — imported L3 candidate",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
     rightKey2: "Earth surface: calibrated",
-    rightTargets: "Targets: CRY/RPM → pathways B, C",
-    rightSource: "Source: Quantum spin dynamics",
-    note: "BERM proposes both functions as testable closures. Neither is a biological response derived from Lindgren geometry: the L2 operator to a receptor or other observable remains open. The plotted saturation and radical-pair dependence are model hypotheses to test.",
+    rightTargets: "Imported L3 candidate: CRY/RPM → pathways B, C",
+    rightSource: "Imported spin dynamics; not χ_geo",
+    note: "Metric-volume linearization/geodesic deviation gives the signed directional response and the χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless Lorentz-to-Euclidean spatial/scalar projection is L2. Mapping a proxy, V_m or membrane coordinate to q=N(z)—and q to biology—is separately open at L0→L2. χ_B and downstream CRY/RPM biology are imported L3 candidates.",
   },
   fi: {
-    leftTitle: "χ(Ā) — BERM:n sulkeumaehdotus",
-    leftAxisX: "Ā (taustakentta)",
-    leftAxisY: "χ",
-    leftKey: "Solukkalvo: Ā ≈ 7×10⁶ → χ ≈ 1,0",
-    leftTargets: "Ehdokaskohteet: VGCC → polut A, D, E",
-    leftSource: "BERM-ehdotus Lindgren-premissin päällä; L2 avoin",
-    leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
-    rightTitle: "χ_B — Spin-herkkyys",
+    ariaLabel: "L1-geometrinen vaste ja tuotu spin-herkkyysehdokas",
+    leftTitle: "χ_geo(x) — L1-geometrinen vaste",
+    leftAxisX: "x = √κ·s (dimensioton)",
+    leftAxisY: "χ_geo",
+    leftKey: "x on dimensioton; raaka V/m ei ole syöte",
+    leftTargets: "AVOIN L0→L2: proxy / V_m / kalvo → x",
+    leftSource: "L1: metriikkatilavuus / geodeesipoikkeamaketju",
+    leftFormula: "χ_geo(x) = x / √(1 + x²)",
+    rightTitle: "χ_B — tuotu L3-ehdokas",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomaalinen",
     rightKey2: "Maanpinta: kalibroitu",
-    rightTargets: "Kohteet: CRY/RPM → polut B, C",
-    rightSource: "Lahde: Kvanttispin-dynamiikka",
-    note: "BERM ehdottaa molempia funktioita testattaviksi sulkeumiksi. Kumpikaan ei ole Lindgrenin geometriasta johdettu biologinen vaste: L2-operaattori reseptoriin tai muuhun havaittavaan on avoin. Kuvan saturaatio ja radikaalipaririippuvuus ovat testattavia mallihypoteeseja.",
+    rightTargets: "Tuotu L3-ehdokas: CRY/RPM → polut B, C",
+    rightSource: "Tuotu spin-dynamiikka; ei χ_geo",
+    note: "Metriikan tilavuuslinearisaatio/geodeesipoikkeama antaa etumerkillisen suunnatun vasteen ja χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Proxyn, V_m:n tai kalvokoordinaatin kartoitus q=N(z):ksi ja biologiseksi vasteeksi on erikseen avoin L0→L2-askel. χ_B ja CRY/RPM-biologia ovat tuotuja L3-ehdokkaita.",
   },
   ja: {
-    leftTitle: "χ(Ā) — BERM closure proposal",
-    leftAxisX: "Ā (background field)",
-    leftAxisY: "χ",
-    leftKey: "Cell membrane: Ā ≈ 7×10⁶ → χ ≈ 1.0",
-    leftTargets: "Candidate targets: VGCC → pathways A, D, E",
-    leftSource: "BERM proposal on a Lindgren premise; L2 open",
-    leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
-    rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1幾何学的応答と導入されたスピン感受性候補",
+    leftTitle: "χ_geo(x) — L1幾何学的応答",
+    leftAxisX: "x = √κ·s（無次元）",
+    leftAxisY: "χ_geo",
+    leftKey: "xは無次元；生のV/mは入力しない",
+    leftTargets: "未解決L0→L2：プロキシ／V_m／膜 → x",
+    leftSource: "L1：計量体積／測地線偏差の連鎖",
+    leftFormula: "χ_geo(x) = x / √(1 + x²)",
+    rightTitle: "χ_B — 導入されたL3候補",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
     rightKey2: "Earth surface: calibrated",
-    rightTargets: "Targets: CRY/RPM → pathways B, C",
-    rightSource: "Source: Quantum spin dynamics",
-    note: "BERM proposes both functions as testable closures. Neither is a biological response derived from Lindgren geometry; the L2 operator remains open.",
+    rightTargets: "導入L3候補：CRY/RPM → 経路B、C",
+    rightSource: "導入スピンダイナミクス；χ_geoではない",
+    note: "計量体積の線形化／測地線偏差は、符号付き方向応答とχ_geo(q)=q/√(1+q²)式をL1で与えます。無次元Lorentz→Euclid空間・スカラー射影によるq=|Ā|の選択はL2です。プロキシ、V_m、膜座標からq=N(z)、さらに生物応答への写像は別の未解決L0→L2段階です。χ_Bと下流CRY/RPM生物学は導入L3候補です。",
   },
   fr: {
-    leftTitle: "χ(Ā) — Proposition de fermeture BERM",
-    leftAxisX: "Ā (background field)",
-    leftAxisY: "χ",
-    leftKey: "Cell membrane: Ā ≈ 7×10⁶ → χ ≈ 1.0",
-    leftTargets: "Cibles candidates : VGCC → voies A, D, E",
-    leftSource: "Proposition BERM sur une prémisse de Lindgren ; L2 ouvert",
-    leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
-    rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "Réponse géométrique L1 et candidat de susceptibilité de spin importé",
+    leftTitle: "χ_geo(x) — réponse géométrique L1",
+    leftAxisX: "x = √κ·s (sans dimension)",
+    leftAxisY: "χ_geo",
+    leftKey: "x est sans dimension ; aucun V/m brut en entrée",
+    leftTargets: "L0→L2 OUVERT : proxy / V_m / membrane → x",
+    leftSource: "L1 : volume métrique / déviation géodésique",
+    leftFormula: "χ_geo(x) = x / √(1 + x²)",
+    rightTitle: "χ_B — candidat L3 importé",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
     rightKey2: "Earth surface: calibrated",
-    rightTargets: "Targets: CRY/RPM → pathways B, C",
-    rightSource: "Source: Quantum spin dynamics",
-    note: "BERM propose les deux fonctions comme fermetures testables. Aucune n'est une réponse biologique dérivée de la géométrie de Lindgren ; l'opérateur L2 reste ouvert.",
+    rightTargets: "Candidat L3 importé : CRY/RPM → voies B, C",
+    rightSource: "Dynamique de spin importée ; pas χ_geo",
+    note: "La linéarisation du volume métrique/la déviation géodésique donne la réponse directionnelle signée et la formule χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension de Lorentz vers Euclide est L2. Relier un proxy, V_m ou une coordonnée membranaire à q=N(z), puis à une réponse biologique, reste ouvert en L0→L2. χ_B et la biologie CRY/RPM aval sont des candidats L3 importés.",
   },
   ko: {
-    leftTitle: "χ(Ā) — BERM 폐쇄 제안",
-    leftAxisX: "Ā (background field)",
-    leftAxisY: "χ",
-    leftKey: "Cell membrane: Ā ≈ 7×10⁶ → χ ≈ 1.0",
-    leftTargets: "후보 표적: VGCC → 경로 A, D, E",
-    leftSource: "Lindgren 전제 위의 BERM 제안; L2 미해결",
-    leftFormula: "χ(Ā) = Ā / √(1 + Ā²)",
-    rightTitle: "χ_B — Spin susceptibility",
+    ariaLabel: "L1 기하학적 반응과 도입된 스핀 감수성 후보",
+    leftTitle: "χ_geo(x) — L1 기하학적 반응",
+    leftAxisX: "x = √κ·s (무차원)",
+    leftAxisY: "χ_geo",
+    leftKey: "x는 무차원이며 원시 V/m은 입력이 아님",
+    leftTargets: "열린 L0→L2: 프록시 / V_m / 막 → x",
+    leftSource: "L1: 계량 부피 / 측지선 편차 연쇄",
+    leftFormula: "χ_geo(x) = x / √(1 + x²)",
+    rightTitle: "χ_B — 도입된 L3 후보",
     rightAxisX: "B_ext / B_geo",
     rightAxisY: "χ_B",
     rightKey1: "ISS (B≈0): anomalous",
     rightKey2: "Earth surface: calibrated",
-    rightTargets: "Targets: CRY/RPM → pathways B, C",
-    rightSource: "Source: Quantum spin dynamics",
-    note: "BERM은 두 함수를 검증 가능한 폐쇄로 제안합니다. 어느 것도 Lindgren 기하학에서 도출된 생물학적 반응이 아니며 L2 연산자는 아직 열려 있습니다.",
+    rightTargets: "도입된 L3 후보: CRY/RPM → 경로 B, C",
+    rightSource: "도입된 스핀 동역학; χ_geo가 아님",
+    note: "계량 부피 선형화/측지선 편차는 부호 있는 방향 반응과 χ_geo(q)=q/√(1+q²) 공식을 L1에서 줍니다. 무차원 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2입니다. 프록시, V_m 또는 막 좌표를 q=N(z)로, 다시 생물학적 반응으로 매핑하는 것은 별도의 열린 L0→L2 단계입니다. χ_B와 하류 CRY/RPM 생물학은 도입된 L3 후보입니다.",
   },
 };
 
-/* Curve: chi(A) = A / sqrt(1 + A^2), sampled on 0..20 */
-function chiGeometric(a: number): number {
-  return a / Math.sqrt(1 + a * a);
+/* Restricted L1 curve chi_geo(x), sampled only on dimensionless x. */
+function chiGeometric(x: number): number {
+  return x / Math.sqrt(1 + x * x);
 }
 
 /* Conceptual spin susceptibility: peaks near B_ext/B_geo = 1, drops at 0 and high ratios */
@@ -113,14 +118,14 @@ const TOTAL_W = PW * 2 + GAP;
 export function TwoSusceptibilities({ locale }: { locale: string }) {
   const d = pickCopy(COPY, locale);
 
-  /* Left panel: chi(A) over A in [0, 10] */
+  /* Left panel: chi_geo(x) over dimensionless x in [0, 10]. */
   const leftN = 60;
   const leftXMax = 10;
   const leftPts: string[] = [];
   for (let i = 0; i <= leftN; i++) {
-    const a = (i / leftN) * leftXMax;
-    const y = chiGeometric(a);
-    const px = P.left + (a / leftXMax) * GW;
+    const x = (i / leftN) * leftXMax;
+    const y = chiGeometric(x);
+    const px = P.left + (x / leftXMax) * GW;
     const py = P.top + (1 - y) * GH;
     leftPts.push(`${px},${py}`);
   }
@@ -137,7 +142,7 @@ export function TwoSusceptibilities({ locale }: { locale: string }) {
     rightPts.push(`${px},${py}`);
   }
 
-  /* Key point on left: A=7e6 -> chi ~ 1.0 (off the visible axis but we mark it at the saturation plateau) */
+  /* Reference marker at x=10 near the saturation plateau; it is not a membrane calibration. */
   const keyPx = P.left + GW - 4;
   const keyPy = P.top + (1 - 1.0) * GH;
 
@@ -156,7 +161,7 @@ export function TwoSusceptibilities({ locale }: { locale: string }) {
         viewBox={`0 0 ${TOTAL_W} ${PH + 70}`}
         className="w-full min-w-[560px] max-w-[760px]"
         role="img"
-        aria-label="Two susceptibility functions"
+        aria-label={d.ariaLabel}
       >
         {/* ── LEFT PANEL ── */}
         <g>

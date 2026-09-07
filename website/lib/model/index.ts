@@ -12,7 +12,15 @@ export {
   earpodPenetration,
   phoneBodyContactHours,
 } from "./personal";
-export { chi, twoChannelExposure, threeChannelExposure } from "./lindgren";
+export {
+  CHI_EPISTEMIC_STATUS,
+  MAXWELL_DERIVATION_CONTRACT,
+  asDimensionlessChiCoordinate,
+  chi,
+  twoChannelExposure,
+  threeChannelExposure,
+  type DimensionlessChiCoordinate,
+} from "./lindgren";
 export {
   computeSpermState,
   rosIndex,

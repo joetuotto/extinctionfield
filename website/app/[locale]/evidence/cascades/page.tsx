@@ -89,7 +89,7 @@ const COPY = {
     icFinding5: "VNS → α7nAChR → significant response in rheumatoid arthritis",
     icFinding6: "24 populations across 8 species — even control animals gaining weight (p < 10⁻⁷)",
     icFinding7: "Verapamil (VGCC blocker) inhibits breast cancer cell growth in vitro",
-    icEpistemic: "Epistemic level: Ion channel role in each disease [E] (GWAS, pharmacology, FDA). EMF → ion channel mechanism [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → disease causation [C] (hypothesis). The convergence model is a THEORETICAL FRAMEWORK — it does not prove causation. Each disease is multifactorial. That an ion channel drug works proves the ion channel role in SYMPTOMS but not necessarily in CAUSE.",
+    icEpistemic: "Epistemic level: Ion channel role in each disease [E] (GWAS, pharmacology, FDA). EMF → ion channel mechanism [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → disease causation [C] (hypothesis). The convergence model is a THEORETICAL FRAMEWORK — it does not prove causation. This applies equally to conventional explanations. Each disease is multifactorial. That an ion channel drug works proves the ion channel role in SYMPTOMS but not necessarily in CAUSE.",
     // Section 5: See Also
     seeAlso: "See also",
     evidenceRegister: "Evidence Register",
@@ -180,7 +180,7 @@ const COPY = {
     icFinding5: "VNS → α7nAChR → merkitsevä vaste nivelreumaan",
     icFinding6: "24 populaatiota 8 lajissa — myös kontrollieläimet lihovat (p < 10⁻⁷)",
     icFinding7: "Verapamiili (VGCC-estäjä) estää rintasyöpäsolujen kasvua in vitro",
-    icEpistemic: "Episteeminen taso: Ionikanavien rooli jokaisessa sairaudessa [E] (GWAS, farmakologia, FDA). EMF → ionikanava -mekanismi [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → sairauskausaatio [C] (hypoteesi). Yhdentymismalli on TEOREETTINEN KEHYS — se ei todista kausaatiota. Jokainen sairaus on monitekijäinen. Se, että ionikanavalääke toimii, todistaa ionikanavien roolin OIREISSA mutta ei välttämättä SYYSSÄ.",
+    icEpistemic: "Episteeminen taso: Ionikanavien rooli jokaisessa sairaudessa [E] (GWAS, farmakologia, FDA). EMF → ionikanava -mekanismi [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → sairauskausaatio [C] (hypoteesi). Yhdentymismalli on TEOREETTINEN KEHYS — se ei todista kausaatiota. Tämä koskee yhtä lailla konventionaalisia selityksiä. Jokainen sairaus on monitekijäinen. Se, että ionikanavalääke toimii, todistaa ionikanavien roolin OIREISSA mutta ei välttämättä SYYSSÄ.",
     // Section 5: See Also
     seeAlso: "Katso myös",
     evidenceRegister: "Näyttörekisteri",
@@ -271,7 +271,7 @@ const COPY = {
     icFinding5: "VNS → α7nAChR → 関節リウマチに有意な応答",
     icFinding6: "8種24集団 — 対照動物も体重増加（p < 10⁻⁷）",
     icFinding7: "ベラパミル（VGCC遮断薬）が乳がん細胞の増殖をin vitroで阻害",
-    icEpistemic: "認識論的レベル：各疾患におけるイオンチャネルの役割[E]（GWAS、薬理学、FDA）。EMF → イオンチャネルメカニズム[E]（[[ref:pall2013_v2|Pall 2013]]）。EMF → 疾患因果関係[C]（仮説）。収束モデルは理論的枠組みであり — 因果関係を証明するものではない。各疾患は多因子性。イオンチャネル薬が機能することはイオンチャネルの症状における役割を証明するが、必ずしも原因における役割ではない。",
+    icEpistemic: "認識論的レベル：各疾患におけるイオンチャネルの役割[E]（GWAS、薬理学、FDA）。EMF → イオンチャネルメカニズム[E]（[[ref:pall2013_v2|Pall 2013]]）。EMF → 疾患因果関係[C]（仮説）。収束モデルは理論的枠組みであり — 因果関係を証明するものではない。これは従来の説明にも同様に当てはまる。各疾患は多因子性。イオンチャネル薬が機能することはイオンチャネルの症状における役割を証明するが、必ずしも原因における役割ではない。",
     // Section 5: See Also
     seeAlso: "関連項目",
     evidenceRegister: "エビデンスレジスター",
@@ -362,7 +362,7 @@ const COPY = {
     icFinding5: "VNS → α7nAChR → réponse significative dans la polyarthrite rhumatoïde",
     icFinding6: "24 populations de 8 espèces — même les animaux de contrôle prennent du poids (p < 10⁻⁷)",
     icFinding7: "Le vérapamil (bloqueur VGCC) inhibe la croissance des cellules du cancer du sein in vitro",
-    icEpistemic: "Niveau épistémique : rôle des canaux ioniques dans chaque maladie [E] (GWAS, pharmacologie, FDA). Mécanisme EMF → canal ionique [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → causalité de la maladie [C] (hypothèse). Le modèle de convergence est un CADRE THÉORIQUE — il ne prouve pas la causalité. Chaque maladie est multifactorielle. Qu'un médicament agissant sur les canaux ioniques fonctionne prouve le rôle des canaux ioniques dans les SYMPTÔMES mais pas nécessairement dans la CAUSE.",
+    icEpistemic: "Niveau épistémique : rôle des canaux ioniques dans chaque maladie [E] (GWAS, pharmacologie, FDA). Mécanisme EMF → canal ionique [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → causalité de la maladie [C] (hypothèse). Le modèle de convergence est un CADRE THÉORIQUE — il ne prouve pas la causalité. Cela s’applique également aux explications conventionnelles. Chaque maladie est multifactorielle. Qu'un médicament agissant sur les canaux ioniques fonctionne prouve le rôle des canaux ioniques dans les SYMPTÔMES mais pas nécessairement dans la CAUSE.",
     // Section 5: See Also
     seeAlso: "Voir aussi",
     evidenceRegister: "Registre des preuves",
@@ -453,7 +453,7 @@ const COPY = {
     icFinding5: "VNS → α7nAChR → 류마티스 관절염에서 유의한 반응",
     icFinding6: "8종 24개 집단 — 대조 동물도 체중 증가 (p < 10⁻⁷)",
     icFinding7: "베라파밀(VGCC 차단제)이 유방암 세포 성장을 in vitro에서 억제",
-    icEpistemic: "인식론적 수준: 각 질환에서 이온 채널의 역할 [E] (GWAS, 약리학, FDA). EMF → 이온 채널 메커니즘 [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → 질환 인과관계 [C] (가설). 수렴 모델은 이론적 틀이며 — 인과관계를 증명하지 않는다. 각 질환은 다인자성이다. 이온 채널 약물이 효과가 있다는 것은 증상에서 이온 채널의 역할을 증명하지만 반드시 원인에서는 아니다.",
+    icEpistemic: "인식론적 수준: 각 질환에서 이온 채널의 역할 [E] (GWAS, 약리학, FDA). EMF → 이온 채널 메커니즘 [E] ([[ref:pall2013_v2|Pall 2013]]). EMF → 질환 인과관계 [C] (가설). 수렴 모델은 이론적 틀이며 — 인과관계를 증명하지 않는다. 이는 기존 설명에도 동일하게 적용된다. 각 질환은 다인자성이다. 이온 채널 약물이 효과가 있다는 것은 증상에서 이온 채널의 역할을 증명하지만 반드시 원인에서는 아니다.",
     // Section 5: See Also
     seeAlso: "참고 항목",
     evidenceRegister: "근거 등록부",

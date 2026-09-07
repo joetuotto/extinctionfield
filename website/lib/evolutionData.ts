@@ -18,6 +18,8 @@ export interface ChiScale {
   perturbation_fr: string;
   perturbation_ko: string;
   chi_expression: string;
+  chi_derivation_status: "L1_DERIVED";
+  coordinate_mapping_status: "L2_OPEN";
   at_zero_en: string;
   at_zero_fi: string;
   at_zero_ja: string;
@@ -130,7 +132,9 @@ export const CHI_SCALES: ChiScale[] = [
     perturbation_ja: "磁場",
     perturbation_fr: "Champ magnétique",
     perturbation_ko: "자기장",
-    chi_expression: "χ([FAD])",
+    chi_expression: "χ_geo(x_FAD), x_FAD=N_FAD([FAD])",
+    chi_derivation_status: "L1_DERIVED",
+    coordinate_mapping_status: "L2_OPEN",
     at_zero_en: "No FAD → no radical pairs → no sensitivity",
     at_zero_fi: "Ei FAD:tä → ei radikaaliparia → ei herkkyyttä",
     at_zero_ja: "FADなし → ラジカル対なし → 感受性なし",
@@ -162,7 +166,9 @@ export const CHI_SCALES: ChiScale[] = [
     perturbation_ja: "RF電磁場",
     perturbation_fr: "Champ RF",
     perturbation_ko: "RF 전자기장",
-    chi_expression: "χ(I_blue)",
+    chi_expression: "χ_geo(x_blue), x_blue=N_blue(I_blue)",
+    chi_derivation_status: "L1_DERIVED",
+    coordinate_mapping_status: "L2_OPEN",
     at_zero_en: "Dark / brown iris → CRY1 inactive → no coupling",
     at_zero_fi: "Tumma / ruskea iiris → CRY1 inaktiivinen → ei kytkentää",
     at_zero_ja: "暗色/茶色の虹彩 → CRY1不活性 → 結合なし",
@@ -194,7 +200,9 @@ export const CHI_SCALES: ChiScale[] = [
     perturbation_ja: "外部EMF",
     perturbation_fr: "EMF externe",
     perturbation_ko: "외부 EMF",
-    chi_expression: "χ(V_mem)",
+    chi_expression: "χ_geo(x_mem), x_mem=N_mem(V_mem)",
+    chi_derivation_status: "L1_DERIVED",
+    coordinate_mapping_status: "L2_OPEN",
     at_zero_en: "Dead cell (V_mem = 0) → no VGCC response",
     at_zero_fi: "Kuollut solu (V_mem = 0) → ei VGCC-vastetta",
     at_zero_ja: "死細胞 (V_mem = 0) → VGCC応答なし",
@@ -226,7 +234,9 @@ export const CHI_SCALES: ChiScale[] = [
     perturbation_ja: "個人用デバイス（携帯電話、イヤホン）",
     perturbation_fr: "Appareils personnels (téléphone, écouteurs)",
     perturbation_ko: "개인 기기 (휴대폰, 이어버드)",
-    chi_expression: "χ(Ā_ambient)",
+    chi_expression: "χ_geo(x_ambient), x_ambient=N_ambient(Ā_ambient)",
+    chi_derivation_status: "L1_DERIVED",
+    coordinate_mapping_status: "L2_OPEN",
     at_zero_en: "Unelectrified area → personal devices don't couple",
     at_zero_fi: "Sähköistämätön alue → henkilökohtaiset laitteet eivät kytkeydy",
     at_zero_ja: "非電化地域 → 個人用デバイスは結合しない",
@@ -257,7 +267,9 @@ export const CHI_SCALES: ChiScale[] = [
     perturbation_ja: "スクリーン時間",
     perturbation_fr: "Temps d'écran",
     perturbation_ko: "화면 시간",
-    chi_expression: "χ(Ā_office vs Ā_home)",
+    chi_expression: "χ_geo(x_office) vs χ_geo(x_home), x=N_work(Ā)",
+    chi_derivation_status: "L1_DERIVED",
+    coordinate_mapping_status: "L2_OPEN",
     at_zero_en: "WFH (low ambient) → screen time less coupled → baby bump",
     at_zero_fi: "Etätyö (matala ympäristö) → ruutuaika vähemmän kytkeytynyt → vauvapiikki",
     at_zero_ja: "在宅勤務（低環境） → スクリーン時間の結合が弱い → ベビーブーム",

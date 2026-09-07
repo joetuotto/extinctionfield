@@ -39,8 +39,9 @@ function loadJSON(filename) {
 const graph = loadJSON("causal-graph.json");
 const claims = loadJSON("claims.json");
 const architecture = loadJSON("model-architecture.json");
+const dkcFramework = loadJSON("dkc-framework.json");
 
-if (!graph || !claims || !architecture) {
+if (!graph || !claims || !architecture || !dkcFramework) {
   console.error("\nFATAL: Cannot load required data files.\n");
   process.exit(1);
 }
@@ -373,6 +374,7 @@ if (routeArray.length > 0) {
 // ── 19. BERM / FieldState architecture boundary ───────
 console.log("19. Checking BERM/FieldState architecture boundary...");
 const fieldStateModule = architecture.measurementModules?.fieldState;
+const lindgrenDkcRoute = architecture.routes?.lindgrenDkc;
 if (architecture.model?.id !== "berm") {
   error("Architecture manifest must identify BERM as the model");
 }
@@ -385,11 +387,47 @@ if (fieldStateModule?.isModelAlias !== false || fieldStateModule?.isCausalRoot !
 if (architecture.theory?.l2BridgeStatus !== "open") {
   error("The geometry-to-observable L2 bridge must remain explicitly open");
 }
-if (architecture.routes?.prediction?.fieldStateCalibrated !== false) {
-  error("The published v17 prediction route must not be marked FieldState-calibrated");
+if (architecture.routes?.prediction?.fieldStateCalibrated !== true) {
+  error("The published v17 prediction route must declare fieldStateCalibrated=true");
 }
 if (architecture.routes?.conditionalAsfr?.acceptsFieldStateObservations !== false) {
   error("The conditional ASFR calculator must not claim to accept FieldState observations");
+}
+if (lindgrenDkcRoute?.fieldStateCalibrated !== true) {
+  error("The Lindgren-DKC route must declare fieldStateCalibrated=true");
+}
+if (
+  lindgrenDkcRoute?.fieldStateCalibrationScope !==
+  "CALIBRATION_PIPELINE_IMPLEMENTED_AND_PRODUCES_VALUES"
+) {
+  error("The DKC route must declare an implemented calibration pipeline that produces values");
+}
+if (lindgrenDkcRoute?.refinedM4CurrentDataStatus !== "NOT_IDENTIFIABLE_WITH_CURRENT_DATA") {
+  error("The current refined M4 fit must remain explicitly not identifiable");
+}
+if (lindgrenDkcRoute?.supportsUncalibratedExecution !== true) {
+  error("The Lindgren-DKC evaluator must retain uncalibrated execution support");
+}
+if (lindgrenDkcRoute?.publishesLockedForecasts !== true) {
+  error("The Lindgren-DKC route must publish the locked F1-F9 register");
+}
+if (
+  architecture.theory?.formalDerivation?.acceptanceAssertion !==
+  "variational_check AND weyl_check AND bianchi_check"
+) {
+  error("The Lindgren-DKC formal gate must require variation, Weyl and Bianchi together");
+}
+if (
+  architecture.theory?.formalDerivation?.fullEulerLagrangeEvidence !==
+  "CONTENT_BOUND_NUMERICAL_RESIDUAL_AND_STRUCTURED_ATTESTATION_REQUIRED"
+) {
+  error("The Lindgren-DKC variation gate must require a content-bound numerical residual and structured full-EL provenance");
+}
+if (
+  architecture.theory?.formalDerivation?.residualAcceptance !==
+  "PER_RESIDUAL_ATOL_PLUS_RTOL_TIMES_REFERENCE_SCALE"
+) {
+  error("The Lindgren-DKC residual gate must use per-residual scale-aware tolerances");
 }
 
 const measurementInputs = new Set([
@@ -410,6 +448,51 @@ for (const edge of graph.edges) {
   }
   if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "proposed_bridge") {
     error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled proposed_bridge`);
+  }
+}
+
+// ── 20. V1--V25 publication gate ─────────────────────
+console.log("20. Checking the V1-V25 publication gate...");
+const verificationGate = dkcFramework.verificationGate;
+const releaseEvaluation =
+  verificationGate?.releaseEvaluation ?? verificationGate?.defaultEvaluation;
+if (verificationGate?.implemented !== true) {
+  error("The DKC V1-V25 publication gate must be implemented");
+}
+if (verificationGate?.unstructuredPassPolicy !== "REJECT") {
+  error("The DKC publication gate must reject unstructured PASS booleans");
+}
+if (
+  verificationGate?.publicationRule !==
+  "all(V1..V10 == PASS) AND protocolAudit.passed"
+) {
+  error("The DKC publication rule must require V1-V10 and a protocol audit");
+}
+if (verificationGate?.releaseAuthorized !== true) {
+  error("Publication blocked: no V1-V10-authorized DKC release artifact is present");
+}
+if (releaseEvaluation?.publicationAllowed !== true) {
+  error("Publication blocked: the DKC release evaluation does not pass V1-V10");
+}
+if (releaseEvaluation?.protocolAudit?.passed !== true) {
+  error("Publication blocked: the evidence-search protocol audit has not passed");
+}
+const releasePoints = releaseEvaluation?.points ?? [];
+if (releasePoints.length !== 25) {
+  error("The DKC release evaluation must report all V1-V25 points");
+}
+for (let number = 1; number <= 25; number += 1) {
+  const id = `V${number}`;
+  const point = releasePoints.find((candidate) => candidate.id === id);
+  if (!point) {
+    error(`The DKC release evaluation is missing ${id}`);
+    continue;
+  }
+  if (!["PASS", "FAIL"].includes(point.result) || typeof point.reason !== "string" || !point.reason.trim()) {
+    error(`${id} must report PASS/FAIL and a non-empty reason`);
+  }
+  if (number <= 10 && point.result !== "PASS") {
+    error(`Publication blocked: critical point ${id} is not PASS`);
   }
 }
 

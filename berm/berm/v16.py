@@ -8,6 +8,15 @@ bioCap = maleBioCap * spermCa2 * CRY * melatonin * ovulVGIC
 maleBioCap = baseBioCap * dysbiosis * BBB * nutrition * epigenetic
 
 All functions match the Wolfram LBERMv4Model_1.wl reference exactly.
+
+Epistemic boundary: the geometric coefficient formula ``χ_geo``, exposed here
+as ``chi``, always has L1 status.  Evaluating it at ``|A_bar|`` uses the
+explicit L2 dimensionless, collinear, spacelike scalar reduction: the directed
+derivative produces ``chi(|A_bar|)`` through ``|A_bar|``.  Applying that
+coordinate to v16's technology proxies is a separate open L0→L2
+identification, not a raw-unit field or membrane derivation.
+The biological submodels are empirical L3 assumptions component by component;
+combining them does not promote the full chain.
 """
 
 from __future__ import annotations
@@ -42,13 +51,18 @@ from berm.biology.pathways import dysbiosis_index, pathway_f, l_reuteri_oxytocin
 
 
 # === stdlib chi (no numpy dependency) ===
+# The abstract formula remains L1.  Treating a non-negative ambient scalar as
+# ``|A_bar|`` requires the explicit L2 Lorentz-to-Euclidean spatial reduction;
+# the directed derivative then produces ``chi(|A_bar|)`` through ``|A_bar|``.
+
 
 def chi(ambient_level: float) -> float:
-    """BERM's legacy chi closure; not a Lindgren-derived observable."""
-    return ambient_level / math.sqrt(1 + ambient_level ** 2)
+    """L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."""
+    return ambient_level / math.sqrt(1 + ambient_level**2)
 
 
 # === Tech diffusion curve ===
+
 
 def tech_diffusion_curve(half_year: int, year: int) -> float:
     """Logistic tech adoption: 1 / (1 + exp(-0.3 * (year - halfYear)))."""
@@ -57,6 +71,7 @@ def tech_diffusion_curve(half_year: int, year: int) -> float:
 
 # === Cultural TFR (demographic transition baseline) ===
 
+
 def cultural_tfr(country: str, year: int) -> float:
     """Country-specific cultural TFR ceiling: a + b * exp(-c * (year - 1960))."""
     a, b, c = CULTURAL_TFR_PARAMS.get(country, (1.2, 4.0, 0.04))
@@ -64,6 +79,7 @@ def cultural_tfr(country: str, year: int) -> float:
 
 
 # === Leaf device penetration functions ===
+
 
 def smartphone_penetration(country: str, year: int) -> float:
     """Smartphone penetration: logistic curve with country-specific midpoint."""
@@ -112,6 +128,7 @@ def iot_devices_per_household(country: str, year: int) -> float:
 
 # === Ambient generation multiplier ===
 
+
 def v16_ambient_gen_mult(year: int, td) -> float:
     """Technology generation multiplier for ambient EMF."""
     if year >= td.year_5g:
@@ -127,9 +144,9 @@ def v16_ambient_gen_mult(year: int, td) -> float:
 
 # === Occupational structure ===
 
+
 def agriculture_share(country: str, year: int) -> float:
-    occ = OCCUPATIONAL_STRUCTURE_2024.get(
-        country, {"agriculture": 0.20})
+    occ = OCCUPATIONAL_STRUCTURE_2024.get(country, {"agriculture": 0.20})
     agri2024 = occ.get("agriculture", 0.20)
     if agri2024 > 0.50:
         decline_rate = 0.015
@@ -145,7 +162,8 @@ def agriculture_share(country: str, year: int) -> float:
 
 def service_share(country: str, year: int) -> float:
     occ = OCCUPATIONAL_STRUCTURE_2024.get(
-        country, {"services": 0.50, "agriculture": 0.20})
+        country, {"services": 0.50, "agriculture": 0.20}
+    )
     serv2024 = occ.get("services", 0.50)
     agri2024 = occ.get("agriculture", 0.20)
     agri_year = agriculture_share(country, year)
@@ -154,8 +172,7 @@ def service_share(country: str, year: int) -> float:
 
 
 def remote_work_share(country: str, year: int) -> float:
-    occ = OCCUPATIONAL_STRUCTURE_2024.get(
-        country, {"remote_work": 0.05})
+    occ = OCCUPATIONAL_STRUCTURE_2024.get(country, {"remote_work": 0.05})
     remote2024 = occ.get("remote_work", 0.05)
     if year < 2019:
         return 0.02 * remote2024
@@ -181,8 +198,10 @@ def occupational_emf_multiplier(country: str, year: int) -> float:
 
 # === v16 Annual exposure channels ===
 
+
 def _get_td(country: str):
     from berm.data.countries import TechDiffusion
+
     return TECH_DIFFUSION.get(
         country,
         TechDiffusion(1995, 2005, 2005, 2013, 2022),
@@ -203,8 +222,12 @@ def v16_ambient_annual(country: str, year: int) -> float:
     td = _get_td(country)
     atten = get_attenuation_factor(country)
     nq = NETWORK_QUALITY.get(country, 0.7)
-    bs = (tech_diffusion_curve(td.half, year)
-          * v16_ambient_gen_mult(year, td) * atten * nq)
+    bs = (
+        tech_diffusion_curve(td.half, year)
+        * v16_ambient_gen_mult(year, td)
+        * atten
+        * nq
+    )
     wifi = wifi_penetration(country, year) * 0.15
     iot = iot_devices_per_household(country, year) * 0.005
     telecom = bs + wifi + iot
@@ -235,6 +258,7 @@ def v16_personal_annual(country: str, year: int) -> float:
 
 # === v17 Layer retention (5-layer recovery model) ===
 
+
 def v17_layer_retention(delta_years: int) -> float:
     """Weighted retention across 5 damage layers after delta_years.
 
@@ -254,6 +278,7 @@ def v17_layer_retention(delta_years: int) -> float:
 
 
 # === v17 Cohort adjustment (vulnerability-weighted) ===
+
 
 def vulnerability_by_age(age: float) -> float:
     """Age-dependent EMF vulnerability multiplier.
@@ -276,25 +301,25 @@ def vulnerability_by_age(age: float) -> float:
 
 
 _VULN_BY_AGE = [
-    (-1, 5.0),   # fetal
-    (0, 4.0),    # 0-1
-    (1, 4.0),    # 1-2
-    (2, 3.0),    # 2-3
-    (3, 3.0),    # 3-4
-    (4, 3.0),    # 4-5
-    (5, 3.0),    # 5-6
-    (6, 2.5),    # 6-7
-    (7, 2.5),    # 7-8
-    (8, 2.5),    # 8-9
-    (9, 2.5),    # 9-10
-    (10, 2.5),   # 10-11
-    (11, 2.5),   # 11-12
-    (12, 2.0),   # 12-13
-    (13, 2.0),   # 13-14
-    (14, 2.0),   # 14-15
-    (15, 2.0),   # 15-16
-    (16, 2.0),   # 16-17
-    (17, 2.0),   # 17-18
+    (-1, 5.0),  # fetal
+    (0, 4.0),  # 0-1
+    (1, 4.0),  # 1-2
+    (2, 3.0),  # 2-3
+    (3, 3.0),  # 3-4
+    (4, 3.0),  # 4-5
+    (5, 3.0),  # 5-6
+    (6, 2.5),  # 6-7
+    (7, 2.5),  # 7-8
+    (8, 2.5),  # 8-9
+    (9, 2.5),  # 9-10
+    (10, 2.5),  # 10-11
+    (11, 2.5),  # 11-12
+    (12, 2.0),  # 12-13
+    (13, 2.0),  # 13-14
+    (14, 2.0),  # 14-15
+    (15, 2.0),  # 15-16
+    (16, 2.0),  # 16-17
+    (17, 2.0),  # 17-18
 ]
 
 _VULN_MAX = sum(v for _, v in _VULN_BY_AGE)
@@ -380,6 +405,7 @@ def cohort_weighted_exposure_normalized(country: str, year: int) -> float:
 
 # === Cumulative exposure chain ===
 
+
 def v16_two_channel_cum_exposure(country: str, year: int) -> float:
     """Raw two-channel cumulative: ambient + chi(ambient) * personal.
 
@@ -412,10 +438,9 @@ def v17_weighted_cum_exposure(country: str, year: int) -> float:
 
 def v16_adjusted_cumulative_exposure(country: str, year: int) -> float:
     """Adjusted cumulative = cohort-weighted-normalized * occupational."""
-    return (
-        cohort_weighted_exposure_normalized(country, year)
-        * occupational_emf_multiplier(country, year)
-    )
+    return cohort_weighted_exposure_normalized(
+        country, year
+    ) * occupational_emf_multiplier(country, year)
 
 
 # === v17 Night / CRY / Melatonin / Ovulation ===
@@ -592,9 +617,9 @@ def v18_nutritional_cry_modifier(
     Lamia 2009 (Science): AMPK -> CRY degradation in fasting
     Wacker 2000: B2 deficiency -> preeclampsia OR 4.7
     """
-    b2_factor = b2_adequacy_fraction ** 0.5
+    b2_factor = b2_adequacy_fraction**0.5
     eye_factor = 0.3 + 0.7 * eye_color_blue_prevalence
-    omega_factor = omega_index ** 0.3
+    omega_factor = omega_index**0.3
     return b2_factor * eye_factor * omega_factor
 
 
@@ -628,6 +653,7 @@ def v17_ovulation_vgic(country: str, year: int) -> float:
 
 # === Sperm Ca2+ fecundity ===
 
+
 def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
     """Sperm Ca2+ channel (CatSper) disruption: motility * capacitation * navigation.
 
@@ -648,6 +674,7 @@ def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
 
 # === v11 Base biological capacity ===
 
+
 def v11_biological_capacity(cum_exposure: float) -> float:
     """Base biological capacity: exponential decay above threshold.
 
@@ -662,10 +689,12 @@ def v11_biological_capacity(cum_exposure: float) -> float:
 
 # === v12 Nutrition modifier ===
 
+
 def v12_nutrition_modifier(country: str) -> float:
     """Antioxidant protection modifier from diet quality."""
     profile = NUTRITION_PROFILES.get(
-        country, {"antioxidant_index": 0.55, "diet_quality": 0.55})
+        country, {"antioxidant_index": 0.55, "diet_quality": 0.55}
+    )
     antiox_idx = profile["antioxidant_index"]
     protection = max(-1.0, min(1.0, (antiox_idx - 0.5) / 0.5))
     return 1.0 + 0.10 * protection
@@ -673,15 +702,17 @@ def v12_nutrition_modifier(country: str) -> float:
 
 # === v16 Epigenetic factor ===
 
+
 def v16_epigenetic_factor(country: str, year: int) -> float:
     """Epigenetic generational cumulation: 0.97^generations."""
     td = _get_td(country)
     years_of_emf = max(0, year - td.start)
     generations = years_of_emf / 28.0
-    return 0.97 ** generations
+    return 0.97**generations
 
 
 # === v17 Male biological capacity ===
+
 
 def v17_male_bio_cap(adj_cum_emf: float, country: str, year: int) -> float:
     """Male biological capacity: base * dysbiosis * BBB * nutrition * epigenetic.
@@ -695,13 +726,16 @@ def v17_male_bio_cap(adj_cum_emf: float, country: str, year: int) -> float:
     dys_idx = dysbiosis_index(emf_norm)
     dys_effect = max(0.7, min(1.0, 1.0 - 0.08 * max(0.0, dys_idx - 1.0)))
     bbb_result = pathway_f(emf_norm)
-    bbb_effect = max(0.8, min(1.0, 1.0 - 0.02 * max(0.0, bbb_result["multiplier"] - 1.0)))
+    bbb_effect = max(
+        0.8, min(1.0, 1.0 - 0.02 * max(0.0, bbb_result["multiplier"] - 1.0))
+    )
     nutr_effect = v12_nutrition_modifier(country)
     epi_effect = v16_epigenetic_factor(country, year)
     return base_bio_cap * dys_effect * bbb_effect * nutr_effect * epi_effect
 
 
 # === v16 Full biological capacity ===
+
 
 def v16_biological_capacity(adj_cum_emf: float, country: str, year: int) -> float:
     """Full biological capacity: male * spermCa2 * CRY * melatonin * ovulVGIC."""
@@ -716,10 +750,13 @@ def v16_biological_capacity(adj_cum_emf: float, country: str, year: int) -> floa
 
 # === v17 Male/Female/Couple decomposition ===
 
+
 def v17_f_male(country: str, year: int) -> float:
     """Male fertility factor."""
     adj_cum = v16_adjusted_cumulative_exposure(country, year)
-    return v17_male_bio_cap(adj_cum, country, year) * v17_sperm_ca2_fecundity(country, year)
+    return v17_male_bio_cap(adj_cum, country, year) * v17_sperm_ca2_fecundity(
+        country, year
+    )
 
 
 def v17_f_female(country: str, year: int) -> float:
@@ -738,6 +775,7 @@ def v17_f_couple(country: str, year: int) -> float:
 
 # === Behavioral factor V3 (5D endocrine) ===
 
+
 def emf_behavioral_factor_v3(adj_cum_emf: float) -> float:
     """5-dimensional endocrine behavioral factor.
 
@@ -754,7 +792,9 @@ def emf_behavioral_factor_v3(adj_cum_emf: float) -> float:
     vasopressin = math.exp(-0.006 * adj_cum_emf)
     cortisol_suppression = 0.5 + 0.5 * cortisol
     effective_t = testosterone * cortisol_suppression
-    combined = (oxytocin * effective_t * dopamine * cortisol * vasopressin) ** (1.0 / 5.0)
+    combined = (oxytocin * effective_t * dopamine * cortisol * vasopressin) ** (
+        1.0 / 5.0
+    )
     return max(0.1, combined)
 
 
@@ -770,7 +810,7 @@ def vagal_oxytocin_pathway(cum_emf: float, instant_emf: float) -> dict:
     """
     cortisol_elevation = 1.0 + 0.88 * min(1.0, instant_emf / 5.0)
     vagal_tone = 1.0 / cortisol_elevation
-    ot_from_vagal = vagal_tone ** 0.5
+    ot_from_vagal = vagal_tone**0.5
     chronic_hpa_load = 1 - math.exp(-0.008 * cum_emf)
     selye_phase = "resistance" if chronic_hpa_load < 0.5 else "exhaustion"
 
@@ -785,7 +825,10 @@ def vagal_oxytocin_pathway(cum_emf: float, instant_emf: float) -> dict:
 
 
 def oxytocin_dual_pathway_diagnostic(
-    country: str, year: int, cum_emf: float, instant_emf: float,
+    country: str,
+    year: int,
+    cum_emf: float,
+    instant_emf: float,
 ) -> dict:
     """Combined OT diagnostic from two convergent pathways (DIAGNOSTIC_ONLY).
 
@@ -816,7 +859,10 @@ def oxytocin_dual_pathway_diagnostic(
 
 
 def behavioral_quadruple_suppression(
-    country: str, year: int, cum_emf: float, instant_emf: float,
+    country: str,
+    year: int,
+    cum_emf: float,
+    instant_emf: float,
 ) -> dict:
     """Quadruple suppression diagnostic (DIAGNOSTIC_ONLY).
 
@@ -847,7 +893,9 @@ def behavioral_quadruple_suppression(
     p_total = p_approach * p_attraction * p_sex * p_fertilization
 
     eff_t = t_level * (0.5 + 0.5 * cort_ret)
-    behav = max(0.1, (ot * eff_t * da * cort_ret * math.exp(-0.006 * cum_emf)) ** (1.0 / 5.0))
+    behav = max(
+        0.1, (ot * eff_t * da * cort_ret * math.exp(-0.006 * cum_emf)) ** (1.0 / 5.0)
+    )
 
     return {
         "p_approach": round(p_approach, 4),
@@ -877,8 +925,7 @@ def behavioral_quadruple_suppression(
         ),
         "social_science_proxy_map": {
             "men_dont_commit": (
-                f"T down -> approach down (Puts 2008). "
-                f"P(approach)={p_approach:.2f}"
+                f"T down -> approach down (Puts 2008). P(approach)={p_approach:.2f}"
             ),
             "women_too_picky": (
                 f"T down males -> masculine signal down -> attraction down "
@@ -889,8 +936,7 @@ def behavioral_quadruple_suppression(
                 f"(dual-hormone). P(sex)={p_sex:.2f}"
             ),
             "infertility_rising": (
-                f"Sperm down 62% (Levine 2023). "
-                f"P(fertilization)={p_fertilization:.2f}"
+                f"Sperm down 62% (Levine 2023). P(fertilization)={p_fertilization:.2f}"
             ),
         },
         "sources": [
@@ -988,10 +1034,9 @@ def v16_true_cultural_rate(country: str, year: int) -> float:
     cult_ratio = cultural_tfr(country, year) / cultural_tfr(country, 2024)
     bio_behav24 = _v16_bio_behav_2024.get(country, 1.0)
     adj_cum_y = v16_adjusted_cumulative_exposure(country, year)
-    bio_behav_y = (
-        v16_biological_capacity(adj_cum_y, country, year)
-        * emf_behavioral_factor_v3(adj_cum_y)
-    )
+    bio_behav_y = v16_biological_capacity(
+        adj_cum_y, country, year
+    ) * emf_behavioral_factor_v3(adj_cum_y)
     effective_alpha = ALPHA_EFF
     compensation = (bio_behav24 / max(bio_behav_y, 0.001)) ** effective_alpha
     scaled_rate = rate2024 * cult_ratio * compensation
@@ -999,6 +1044,7 @@ def v16_true_cultural_rate(country: str, year: int) -> float:
 
 
 # === IVF temporal projection ===
+
 
 def ivf_share_projected(country: str, year: int) -> float:
     """IVF share of live births, projected from 2023 baseline.
@@ -1028,8 +1074,7 @@ def observed_from_biological(bio_tfr: float, ivf_share_val: float) -> float:
     return bio_tfr / (1 - ivf_share_val)
 
 
-def native_tfr(total_tfr: float, immigrant_tfr: float,
-               immigrant_share: float) -> float:
+def native_tfr(total_tfr: float, immigrant_tfr: float, immigrant_share: float) -> float:
     """Separate native-born TFR from total TFR.
 
     Does not change predict_tfr output — reported alongside it.
@@ -1067,9 +1112,9 @@ def immigration_buffer(country: str, predicted_tfr: float) -> dict:
     }
 
 
-def immigrant_generation_tfr(origin_emf: float, host_emf: float,
-                              generation: str,
-                              years_in_host: float = 10) -> float:
+def immigrant_generation_tfr(
+    origin_emf: float, host_emf: float, generation: str, years_in_host: float = 10
+) -> float:
     """Immigrant generation TFR by EMF adaptation.
 
     G1: origin-country TFR decays exponentially toward host EMF level.
@@ -1087,6 +1132,7 @@ def immigrant_generation_tfr(origin_emf: float, host_emf: float,
 
 
 # === v16 Prediction ===
+
 
 def v16_predicted_tfr(country: str, year: int) -> float:
     """V16 predicted TFR = bioCap * behavioral * cultural."""
@@ -1129,6 +1175,7 @@ def predict_tfr_extended(country: str, year: int) -> dict:
 
 # === DIAGNOSTIC: SSRI endogenous mediator model ===
 
+
 def ddd_to_prevalence(ddd_per_1000: float) -> float:
     """Convert DDD/1000 inhabitants/day to population prevalence."""
     return ddd_per_1000 / 1000.0
@@ -1144,7 +1191,8 @@ def endogenous_ssri_model(country: str, year: int, cum_emf: float) -> dict:
     Kacem 2024: EMF exposure -> depression OR 1.45.
     """
     dep_params = DEPRESSION_PARAMS.get(
-        country, {"baseline": 0.05, "treatment_access": 0.30})
+        country, {"baseline": 0.05, "treatment_access": 0.30}
+    )
     base_dep = dep_params["baseline"]
     access = dep_params["treatment_access"]
 
@@ -1182,6 +1230,7 @@ def endogenous_ssri_model(country: str, year: int, cum_emf: float) -> dict:
 
 
 # === DIAGNOSTIC: Sempou mTOR pathway ===
+
 
 def sempou_mtor_effect(vmem_perturbation: float) -> dict:
     """Sempou 2022: Vmem -> Ca2+ -> mTOR -> differentiation block (DIAGNOSTIC_ONLY).
@@ -1261,6 +1310,7 @@ def v17_predicted_sex_ratio(country: str, year: int) -> float:
 
 # === v16 Full country report ===
 
+
 def v16_country_tfr(country: str, year: int, *, diagnostics: bool = True) -> dict:
     """Full v16 country report with all intermediate values.
 
@@ -1324,27 +1374,98 @@ def v16_country_tfr(country: str, year: int, *, diagnostics: bool = True) -> dic
         native_tfr_val = observed_predicted
 
     return _build_country_report(
-        country, year, adj_cum, amb_ann, pers_ann, occ_mult, emf_norm,
-        base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
-        night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
-        male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-        cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
-        ivf, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
+        country,
+        year,
+        adj_cum,
+        amb_ann,
+        pers_ann,
+        occ_mult,
+        emf_norm,
+        base_bio_cap,
+        dys_idx,
+        dys_eff,
+        bbb_result,
+        bbb_eff,
+        nutr_eff,
+        epi_eff,
+        night_frac,
+        cry_ann,
+        cry_eff,
+        melat_eff,
+        sperm_ca2,
+        ovul_vgic,
+        male_bio_cap,
+        bio_cap,
+        oxy_ret,
+        test_ret,
+        dopa_ret,
+        cort_ret,
+        avp_ret,
+        cort_supp,
+        eff_t,
+        behav,
+        true_cult,
+        predicted,
+        observed_predicted,
+        ivf,
+        ivf_contribution,
+        imm_share,
+        imm_tfr,
+        native_tfr_val,
         diagnostics=diagnostics,
     )
 
 
 def _build_country_report(
-    country, year, adj_cum, amb_ann, pers_ann, occ_mult, emf_norm,
-    base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
-    night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
-    male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-    cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
-    ivf_share_val, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
-    *, diagnostics: bool = True,
+    country,
+    year,
+    adj_cum,
+    amb_ann,
+    pers_ann,
+    occ_mult,
+    emf_norm,
+    base_bio_cap,
+    dys_idx,
+    dys_eff,
+    bbb_result,
+    bbb_eff,
+    nutr_eff,
+    epi_eff,
+    night_frac,
+    cry_ann,
+    cry_eff,
+    melat_eff,
+    sperm_ca2,
+    ovul_vgic,
+    male_bio_cap,
+    bio_cap,
+    oxy_ret,
+    test_ret,
+    dopa_ret,
+    cort_ret,
+    avp_ret,
+    cort_supp,
+    eff_t,
+    behav,
+    true_cult,
+    predicted,
+    observed_predicted,
+    ivf_share_val,
+    ivf_contribution,
+    imm_share,
+    imm_tfr,
+    native_tfr_val,
+    *,
+    diagnostics: bool = True,
 ):
     retentions = [oxy_ret, eff_t, dopa_ret, cort_ret, avp_ret]
-    labels = ["Oxytocin", "Testosterone(HPA-suppressed)", "Dopamine", "Cortisol", "Vasopressin"]
+    labels = [
+        "Oxytocin",
+        "Testosterone(HPA-suppressed)",
+        "Dopamine",
+        "Cortisol",
+        "Vasopressin",
+    ]
     dominant = labels[retentions.index(min(retentions))]
 
     # Diagnostic sub-reports: not on the prediction path, and
@@ -1354,7 +1475,9 @@ def _build_country_report(
         feedback = feedback_amplification(country, year)
         ot_dual = oxytocin_dual_pathway_diagnostic(country, year, adj_cum, instant_emf)
         vagal = vagal_oxytocin_pathway(adj_cum, instant_emf)
-        quadruple = behavioral_quadruple_suppression(country, year, adj_cum, instant_emf)
+        quadruple = behavioral_quadruple_suppression(
+            country, year, adj_cum, instant_emf
+        )
     else:
         feedback = ot_dual = vagal = quadruple = None
 
@@ -1363,7 +1486,9 @@ def _build_country_report(
         "year": year,
         "ambient_annual": amb_ann,
         "personal_annual": pers_ann,
-        "personal_fraction": pers_ann / (amb_ann + pers_ann) if (amb_ann + pers_ann) > 0 else 0.0,
+        "personal_fraction": pers_ann / (amb_ann + pers_ann)
+        if (amb_ann + pers_ann) > 0
+        else 0.0,
         "occupational_multiplier": occ_mult,
         "adjusted_cumulative_exposure": adj_cum,
         "smartphone_penetration": smartphone_penetration(country, year),
@@ -1428,6 +1553,7 @@ def _build_country_report(
 
 # === LOOCV cross-validation ===
 
+
 def _calibrate_excluding(exclude: str) -> tuple[dict[str, float], dict[str, float]]:
     """Calibrate cultural rates excluding one country. Returns (rates, bio_behav)."""
     rates: dict[str, float] = {}
@@ -1491,7 +1617,7 @@ def loocv_v16() -> dict:
     errors = [r["error"] for r in per_country.values()]
     abs_errors = [r["abs_error"] for r in per_country.values()]
     n = len(errors)
-    rmse = math.sqrt(sum(e ** 2 for e in errors) / n)
+    rmse = math.sqrt(sum(e**2 for e in errors) / n)
     mae = sum(abs_errors) / n
     bias = sum(errors) / n
 
@@ -1506,6 +1632,7 @@ def loocv_v16() -> dict:
 
 
 # === v17 Full extended report ===
+
 
 def v17_full_report(country: str, year_range: range | None = None) -> dict:
     """Extended country diagnostics with time series and decomposition.
@@ -1544,25 +1671,49 @@ def v17_full_report(country: str, year_range: range | None = None) -> dict:
         f_male_val = v17_f_male(country, yr)
         f_female_val = v17_f_female(country, yr)
 
-        ts.append({
-            "year": yr,
-            "predicted_tfr": pred,
-            "adjusted_cumulative_exposure": adj_cum,
-            "bio_cap": bio_cap_val,
-            "behavioral": behav_val,
-            "cultural": cult_val,
-            "f_male": f_male_val,
-            "f_female": f_female_val,
-        })
+        ts.append(
+            {
+                "year": yr,
+                "predicted_tfr": pred,
+                "adjusted_cumulative_exposure": adj_cum,
+                "bio_cap": bio_cap_val,
+                "behavioral": behav_val,
+                "cultural": cult_val,
+                "f_male": f_male_val,
+                "f_female": f_female_val,
+            }
+        )
 
-    ref_year = max(yr for yr in year_range if yr <= 2010) if any(yr <= 2010 for yr in year_range) else min(year_range)
+    ref_year = (
+        max(yr for yr in year_range if yr <= 2010)
+        if any(yr <= 2010 for yr in year_range)
+        else min(year_range)
+    )
     ref_entry = next(e for e in ts if e["year"] == ref_year)
-    latest_entry = next(e for e in ts if e["year"] == 2024) if 2024 in year_range else ts[-1]
+    latest_entry = (
+        next(e for e in ts if e["year"] == 2024) if 2024 in year_range else ts[-1]
+    )
 
-    bio_change = latest_entry["bio_cap"] / ref_entry["bio_cap"] if ref_entry["bio_cap"] > 0 else 1.0
-    behav_change = latest_entry["behavioral"] / ref_entry["behavioral"] if ref_entry["behavioral"] > 0 else 1.0
-    cult_change = latest_entry["cultural"] / ref_entry["cultural"] if ref_entry["cultural"] > 0 else 1.0
-    total_change = latest_entry["predicted_tfr"] / ref_entry["predicted_tfr"] if ref_entry["predicted_tfr"] > 0 else 1.0
+    bio_change = (
+        latest_entry["bio_cap"] / ref_entry["bio_cap"]
+        if ref_entry["bio_cap"] > 0
+        else 1.0
+    )
+    behav_change = (
+        latest_entry["behavioral"] / ref_entry["behavioral"]
+        if ref_entry["behavioral"] > 0
+        else 1.0
+    )
+    cult_change = (
+        latest_entry["cultural"] / ref_entry["cultural"]
+        if ref_entry["cultural"] > 0
+        else 1.0
+    )
+    total_change = (
+        latest_entry["predicted_tfr"] / ref_entry["predicted_tfr"]
+        if ref_entry["predicted_tfr"] > 0
+        else 1.0
+    )
 
     decomposition = {
         "reference_year": ref_year,
@@ -1582,14 +1733,16 @@ def v17_full_report(country: str, year_range: range | None = None) -> dict:
         bio_cap_c = v16_biological_capacity(adj_cum_c, c, 2024)
         behav_c = emf_behavioral_factor_v3(adj_cum_c)
         pred_c = v16_predicted_tfr(c, 2024)
-        ranking.append({
-            "country": c,
-            "predicted_tfr": pred_c,
-            "actual_tfr": V12_ACTUAL_TFR_2024[c],
-            "bio_cap": bio_cap_c,
-            "behavioral": behav_c,
-            "emf_effect": (6.5 - bio_cap_c * behav_c) / 6.5,
-        })
+        ranking.append(
+            {
+                "country": c,
+                "predicted_tfr": pred_c,
+                "actual_tfr": V12_ACTUAL_TFR_2024[c],
+                "bio_cap": bio_cap_c,
+                "behavioral": behav_c,
+                "emf_effect": (6.5 - bio_cap_c * behav_c) / 6.5,
+            }
+        )
     ranking.sort(key=lambda x: x["predicted_tfr"])
 
     return {
@@ -1703,14 +1856,16 @@ def feedback_loop_simulate(
         feedback_tfr = no_feedback_tfr / density_mult
         current_tfr = feedback_tfr
 
-        results.append({
-            "year": year,
-            "predicted_tfr": no_feedback_tfr,
-            "feedback_tfr": feedback_tfr,
-            "urban_frac": round(current_urban, 4),
-            "density_multiplier": round(density_mult, 4),
-            "feedback_effect": round(no_feedback_tfr - feedback_tfr, 4),
-        })
+        results.append(
+            {
+                "year": year,
+                "predicted_tfr": no_feedback_tfr,
+                "feedback_tfr": feedback_tfr,
+                "urban_frac": round(current_urban, 4),
+                "density_multiplier": round(density_mult, 4),
+                "feedback_effect": round(no_feedback_tfr - feedback_tfr, 4),
+            }
+        )
 
     _feedback_urban_overrides.clear()
     _feedback_density_overrides.clear()
@@ -1782,26 +1937,26 @@ POPULATION_CHI_PROFILES = {
 
 COUNTRY_GEOMAG = {
     # country: (geomag_lat, field_uT, blue_eye_frac, lactose_tol_frac)
-    "Finland":      (64.5, 52.0, 0.89, 0.82),
-    "Sweden":       (62.0, 51.0, 0.78, 0.85),
-    "Norway":       (65.5, 52.5, 0.80, 0.90),
-    "Iceland":      (70.0, 53.0, 0.75, 0.80),
-    "Estonia":      (60.5, 51.0, 0.70, 0.75),
-    "Denmark":      (58.0, 50.5, 0.65, 0.88),
-    "UK":           (55.0, 49.5, 0.48, 0.82),
-    "Germany":      (51.0, 48.5, 0.40, 0.78),
-    "France":       (48.5, 47.0, 0.22, 0.65),
-    "Spain":        (43.0, 44.5, 0.10, 0.40),
-    "Italy":        (42.5, 46.0, 0.12, 0.45),
-    "Greece":       (37.5, 45.0, 0.08, 0.30),
-    "USA":          (50.0, 48.0, 0.27, 0.70),
-    "Japan":        (27.0, 46.0, 0.01, 0.05),
-    "SouthKorea":   (28.0, 46.5, 0.01, 0.10),
-    "China":        (30.0, 47.0, 0.01, 0.10),
-    "India":        (12.0, 38.0, 0.01, 0.35),
-    "Brazil":       (-15.0, 24.0, 0.08, 0.45),
-    "Nigeria":      (3.5, 32.0, 0.01, 0.25),
-    "Iran":         (28.0, 44.0, 0.05, 0.20),
+    "Finland": (64.5, 52.0, 0.89, 0.82),
+    "Sweden": (62.0, 51.0, 0.78, 0.85),
+    "Norway": (65.5, 52.5, 0.80, 0.90),
+    "Iceland": (70.0, 53.0, 0.75, 0.80),
+    "Estonia": (60.5, 51.0, 0.70, 0.75),
+    "Denmark": (58.0, 50.5, 0.65, 0.88),
+    "UK": (55.0, 49.5, 0.48, 0.82),
+    "Germany": (51.0, 48.5, 0.40, 0.78),
+    "France": (48.5, 47.0, 0.22, 0.65),
+    "Spain": (43.0, 44.5, 0.10, 0.40),
+    "Italy": (42.5, 46.0, 0.12, 0.45),
+    "Greece": (37.5, 45.0, 0.08, 0.30),
+    "USA": (50.0, 48.0, 0.27, 0.70),
+    "Japan": (27.0, 46.0, 0.01, 0.05),
+    "SouthKorea": (28.0, 46.5, 0.01, 0.10),
+    "China": (30.0, 47.0, 0.01, 0.10),
+    "India": (12.0, 38.0, 0.01, 0.35),
+    "Brazil": (-15.0, 24.0, 0.08, 0.45),
+    "Nigeria": (3.5, 32.0, 0.01, 0.25),
+    "Iran": (28.0, 44.0, 0.05, 0.20),
 }
 
 
@@ -1843,7 +1998,9 @@ def v17_chi_B(geomag_lat_deg: float, field_strength_uT: float = None) -> dict:
     GAMMA_E = 28.025e9  # Hz/T, electron gyromagnetic ratio
 
     if field_strength_uT is None:
-        field_strength_uT = 30 * math.sqrt(1 + 3 * math.sin(math.radians(geomag_lat_deg))**2)
+        field_strength_uT = 30 * math.sqrt(
+            1 + 3 * math.sin(math.radians(geomag_lat_deg)) ** 2
+        )
 
     B_tesla = field_strength_uT * 1e-6
     larmor_hz = GAMMA_E * B_tesla
@@ -1872,16 +2029,16 @@ def v17_chi_B(geomag_lat_deg: float, field_strength_uT: float = None) -> dict:
         "effective_cycle_years": round(effective_cycle, 1),
         "chi_B_relative": round(chi_B, 3),
         "interpretation": (
-            "HIGH" if chi_B > 0.7 else
-            "MODERATE" if chi_B > 0.4 else
-            "LOW"
+            "HIGH" if chi_B > 0.7 else "MODERATE" if chi_B > 0.4 else "LOW"
         ),
     }
 
 
-def v17_northern_package(eye_color: str = "mixed",
-                          lactose_tolerant_frac: float = 0.5,
-                          geomag_lat: float = 45.0) -> dict:
+def v17_northern_package(
+    eye_color: str = "mixed",
+    lactose_tolerant_frac: float = 0.5,
+    geomag_lat: float = 45.0,
+) -> dict:
     """Northern Package: co-selection of three traits for CRY optimization.
 
     Three traits co-selected in Northern Europe 10,000-6,000 years ago
@@ -1931,17 +2088,24 @@ def v17_northern_package(eye_color: str = "mixed",
         "chi_geomagnetic": round(chi_geo, 3),
         "composite_chi": round(composite, 3),
         "vulnerability_class": (
-            "VERY_HIGH" if composite > 0.5 else
-            "HIGH" if composite > 0.3 else
-            "MODERATE" if composite > 0.15 else
-            "LOW"
+            "VERY_HIGH"
+            if composite > 0.5
+            else "HIGH"
+            if composite > 0.3
+            else "MODERATE"
+            if composite > 0.15
+            else "LOW"
         ),
         "population_archetype": (
-            "Northern Package (Fennoskandia)" if composite > 0.5 else
-            "Central European" if composite > 0.3 else
-            "East Asian" if chi_optical < 0.4 and chi_molecular < 0.5 else
-            "Tropical / Sub-Saharan" if chi_geo < 0.3 else
-            "Mixed"
+            "Northern Package (Fennoskandia)"
+            if composite > 0.5
+            else "Central European"
+            if composite > 0.3
+            else "East Asian"
+            if chi_optical < 0.4 and chi_molecular < 0.5
+            else "Tropical / Sub-Saharan"
+            if chi_geo < 0.3
+            else "Mixed"
         ),
     }
 
@@ -1950,7 +2114,7 @@ def v17_ecosystem_cry_cascade(
     rf_power_density_mW_m2: float = 1.0,
     geomag_lat_deg: float = 55.0,
     b2_dietary_mg: float = 1.3,
-    solar_f107: float = 150.0
+    solar_f107: float = 150.0,
 ) -> dict:
     """DIAGNOSTIC_ONLY — CRY trophic cascade across kingdoms.
 
@@ -1989,7 +2153,7 @@ def v17_ecosystem_cry_cascade(
 
     # Geomagnetic field strength from latitude
     B_eq = 30.0  # µT at equator
-    B_total = B_eq * np.sqrt(1 + 3 * np.sin(np.radians(geomag_lat_deg))**2)
+    B_total = B_eq * np.sqrt(1 + 3 * np.sin(np.radians(geomag_lat_deg)) ** 2)
 
     # Larmor frequency for FAD radical pair
     g_factor = 2.0023
@@ -2023,73 +2187,85 @@ def v17_ecosystem_cry_cascade(
 
     # Level 1: PLANTS (synthesize own B2)
     plant_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.3)
-    levels.append({
-        "level": 1,
-        "kingdom": "Plantae",
-        "organism_example": "Arabidopsis / European beech",
-        "cry_gene": "CRY2",
-        "function": "flowering / masting",
-        "b2_source": "endogenous (synthesized)",
-        "b2_factor": 1.0,
-        "rf_sensitivity": 0.3,
-        "cry_disruption": float(plant_disruption),
-        "note": "Ahmad 2020: 'relatively minor' = pure RPM test"
-    })
+    levels.append(
+        {
+            "level": 1,
+            "kingdom": "Plantae",
+            "organism_example": "Arabidopsis / European beech",
+            "cry_gene": "CRY2",
+            "function": "flowering / masting",
+            "b2_source": "endogenous (synthesized)",
+            "b2_factor": 1.0,
+            "rf_sensitivity": 0.3,
+            "cry_disruption": float(plant_disruption),
+            "note": "Ahmad 2020: 'relatively minor' = pure RPM test",
+        }
+    )
 
     # Level 2: INSECTS (dietary B2 from plants)
     insect_b2 = b2_sufficiency(b2_dietary_mg * 0.8)
-    insect_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.7) * insect_b2
-    levels.append({
-        "level": 2,
-        "kingdom": "Insecta",
-        "organism_example": "Apis mellifera / Drosophila",
-        "cry_gene": "CRY1/CRY2",
-        "function": "navigation / immunity / circadian",
-        "b2_source": "dietary (from plants)",
-        "b2_factor": float(insect_b2),
-        "rf_sensitivity": 0.7,
-        "cry_disruption": float(insect_disruption),
-        "note": "Ferrari 2015: 2.7× colony losses near towers"
-    })
+    insect_disruption = (
+        rpm_disruption(rf_power_density_mW_m2, sensitivity=0.7) * insect_b2
+    )
+    levels.append(
+        {
+            "level": 2,
+            "kingdom": "Insecta",
+            "organism_example": "Apis mellifera / Drosophila",
+            "cry_gene": "CRY1/CRY2",
+            "function": "navigation / immunity / circadian",
+            "b2_source": "dietary (from plants)",
+            "b2_factor": float(insect_b2),
+            "rf_sensitivity": 0.7,
+            "cry_disruption": float(insect_disruption),
+            "note": "Ferrari 2015: 2.7× colony losses near towers",
+        }
+    )
 
     # Level 3: BIRDS (dietary B2 from insects + seeds)
     bird_b2 = b2_sufficiency(b2_dietary_mg * 0.6)
     bird_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=1.0) * bird_b2
-    levels.append({
-        "level": 3,
-        "kingdom": "Aves",
-        "organism_example": "Erithacus rubecula / Sylvia atricapilla",
-        "cry_gene": "CRY4",
-        "function": "magnetoreception / migration",
-        "b2_source": "dietary (from insects + seeds)",
-        "b2_factor": float(bird_b2),
-        "rf_sensitivity": 1.0,
-        "cry_disruption": float(bird_disruption),
-        "note": "Rosenberg 2019: -3 billion birds in N. America"
-    })
+    levels.append(
+        {
+            "level": 3,
+            "kingdom": "Aves",
+            "organism_example": "Erithacus rubecula / Sylvia atricapilla",
+            "cry_gene": "CRY4",
+            "function": "magnetoreception / migration",
+            "b2_source": "dietary (from insects + seeds)",
+            "b2_factor": float(bird_b2),
+            "rf_sensitivity": 1.0,
+            "cry_disruption": float(bird_disruption),
+            "note": "Rosenberg 2019: -3 billion birds in N. America",
+        }
+    )
 
     # Level 4: MAMMALS (dietary B2 from mixed diet)
     mammal_b2 = b2_sufficiency(b2_dietary_mg)
-    mammal_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.5) * mammal_b2
-    levels.append({
-        "level": 4,
-        "kingdom": "Mammalia",
-        "organism_example": "Homo sapiens",
-        "cry_gene": "CRY1/CRY2",
-        "function": "melatonin → HPG → fertility",
-        "b2_source": "dietary (from mixed diet)",
-        "b2_factor": float(mammal_b2),
-        "rf_sensitivity": 0.5,
-        "cry_disruption": float(mammal_disruption),
-        "note": "CRY → melatonin → GnRH → sperm/oocyte"
-    })
+    mammal_disruption = (
+        rpm_disruption(rf_power_density_mW_m2, sensitivity=0.5) * mammal_b2
+    )
+    levels.append(
+        {
+            "level": 4,
+            "kingdom": "Mammalia",
+            "organism_example": "Homo sapiens",
+            "cry_gene": "CRY1/CRY2",
+            "function": "melatonin → HPG → fertility",
+            "b2_source": "dietary (from mixed diet)",
+            "b2_factor": float(mammal_b2),
+            "rf_sensitivity": 0.5,
+            "cry_disruption": float(mammal_disruption),
+            "note": "CRY → melatonin → GnRH → sperm/oocyte",
+        }
+    )
 
     # Overall cascade disruption (geometric mean)
-    disruptions = [l["cry_disruption"] for l in levels]
-    cascade = float(np.prod(disruptions) ** (1/len(disruptions)))
+    disruptions = [level["cry_disruption"] for level in levels]
+    cascade = float(np.prod(disruptions) ** (1 / len(disruptions)))
 
     # Find most B2-limited level
-    b2_factors = [(l["kingdom"], l["b2_factor"]) for l in levels]
+    b2_factors = [(level["kingdom"], level["b2_factor"]) for level in levels]
     b2_bottleneck = min(b2_factors, key=lambda x: x[1])
 
     return {
@@ -2099,7 +2275,7 @@ def v17_ecosystem_cry_cascade(
         "f_larmor_MHz": float(f_larmor_MHz),
         "B_total_uT": float(B_total),
         "b2_bottleneck_level": b2_bottleneck[0],
-        "warning": "DIAGNOSTIC_ONLY: sensitivity values are illustrative, not calibrated"
+        "warning": "DIAGNOSTIC_ONLY: sensitivity values are illustrative, not calibrated",
     }
 
 
@@ -2180,9 +2356,13 @@ def v17_solar_bandpass_analysis(
         trend_r = _pearson(lats, rs)
         mean_lat = sum(lats) / len(lats)
         mean_r = sum(rs) / len(rs)
-        ss_lat = sum((l - mean_lat) ** 2 for l in lats)
+        ss_lat = sum((latitude - mean_lat) ** 2 for latitude in lats)
         slope = (
-            sum((l - mean_lat) * (r - mean_r) for l, r in zip(lats, rs)) / ss_lat
+            sum(
+                (latitude - mean_lat) * (response - mean_r)
+                for latitude, response in zip(lats, rs)
+            )
+            / ss_lat
             if ss_lat > 0
             else 0.0
         )
@@ -2198,5 +2378,5 @@ def v17_solar_bandpass_analysis(
         "n_countries": len(results),
         "year_range": [start_yr, end_yr],
         "detrend_window": window,
-        "warning": "DIAGNOSTIC_ONLY: exploratory pattern, not causal — confounders not controlled"
+        "warning": "DIAGNOSTIC_ONLY: exploratory pattern, not causal — confounders not controlled",
     }

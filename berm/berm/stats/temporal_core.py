@@ -62,14 +62,7 @@ EXCLUDED_LEGACY_ACUTE_SUBPATHS = (
 
 
 def lindgren_chi(ambient: float) -> float:
-    """Return BERM's scalar closure ``A / sqrt(1 + A²)``.
-
-    The function name is retained for compatibility.  The closure is motivated
-    by the Lindgren premise but is not derived from it and does not close L2.
-    A local implementation avoids importing the legacy/numpy exposure stack.
-    Ambient values must be non-negative; validation happens at the public
-    boundary.
-    """
+    """L1: χ(Ā) = Ā/√(1+Ā²). Johdettu tilavuuselementin linearisaatiosta."""
     return ambient / math.sqrt(1.0 + ambient * ambient)
 
 
@@ -77,7 +70,13 @@ def selected_two_channel_exposure(ambient: float, personal: float) -> float:
     """Apply the P3 selection rule to two caller-supplied current channels.
 
     This helper is deliberately instantaneous.  It is not an annual history
-    generator and is never substituted for ``memory_exposure``.
+    generator and is never substituted for ``memory_exposure``.  The L1
+    formula belongs to the geometric coefficient ``χ_geo`` at L1.  Choosing
+    the positive ``|A_bar|`` coordinate by a dimensionless, collinear,
+    spacelike Lorentz-to-Euclidean scalar reduction is an explicit L2 bridge:
+    the directed derivative then produces ``χ(|A_bar|)`` through ``|A_bar|``.
+    Identifying these proxy channels with that coordinate remains an open
+    L0→L2 step; this helper is not a biological response.
     """
     resolved_ambient = _nonnegative_finite("ambient", ambient)
     resolved_personal = _nonnegative_finite("personal", personal)
@@ -163,9 +162,11 @@ def evaluate_temporal_core(
         should normally be constructed upstream from external annual channels
         using a documented cumEMF/WCE/R+P/cohort-lag specification.
     ambient, personal:
-        Current-year external two-channel values.  They are retained as an
-        instantaneous diagnostic under the χ(Ā) rule but do not change the
-        memory-derived outcome by themselves.
+        Current-year external two-channel dimensionless proxy values.  Their
+        unit conversion and normalization must happen upstream and be recorded
+        by the caller.  They are retained as an instantaneous diagnostic under
+        the χ(Ā) rule but do not change the memory-derived outcome by
+        themselves.
     input_provenance:
         Optional source/transform record supplied by the caller.  It is
         copied into the result together with mandatory contract annotations.
@@ -207,6 +208,19 @@ def evaluate_temporal_core(
         "selection_rule_role": (
             "current-year diagnostic only; not added to memory_exposure to avoid double counting"
         ),
+        "epistemic_status": {
+            "selection_coefficient": (
+                "chi_geo formula: always L1; its evaluation at |A_bar| follows "
+                "only after the explicit L2 spatial/scalar reduction"
+            ),
+            "proxy_coordinate_identification": (
+                "L2 reduction: the directed derivative produces chi(|A_bar|) "
+                "through |A_bar|; proxy-to-coordinate identification remains open"
+            ),
+            "biological_components": (
+                "L3 empirical assumptions, assessed componentwise; no chain-level promotion"
+            ),
+        },
         "exposure_generation": "caller supplied; this core does not generate or interpolate annual exposure",
         "calibration": "none; no observed TFR, cultural rate, or global calibration is read",
         "retained_functions": (
@@ -318,8 +332,9 @@ def _copy_provenance(provenance: Mapping[str, Any] | None) -> dict[str, Any]:
     # visible even when callers provide no metadata at all.
     copied["temporal_core_input_contract"] = {
         "memory_exposure": "externally supplied; no history reconstructed in this core",
-        "ambient": "externally supplied current-year channel",
-        "personal": "externally supplied current-year channel",
+        "ambient": "externally supplied normalized dimensionless current-year proxy channel",
+        "personal": "externally supplied normalized dimensionless current-year proxy channel",
+        "normalization": "performed and documented upstream; raw V/m is not accepted by implication",
         "interpolation": "must be performed upstream and recorded by the caller",
     }
     return copied

@@ -99,7 +99,7 @@ const COPY = {
         "Epidemiological evidence was mixed: some studies showed elevated risk (McDonald 1986, Goldhaber 1988), others did not (Schnorr/NIOSH 1991). The NIOSH study was treated as definitive, but it used VLF field measurements (15 kHz) only as a crude proxy — it did not distinguish pulsed from continuous fields, nor measure individual monitor emission variability. When LCD screens replaced CRTs in the 2000s, IF exposure from VDT workers disappeared — and with it, the motivation to investigate.",
         "BERM context: The VDT case is a historical precedent for the IF channel. CRT 15–30 kHz fields occupy the same frequency range as LED driver 20–100 kHz emissions. The VDT problem was ‘solved’ by replacing CRTs with LCDs — but LCDs contain LED backlights whose drivers produce fields in the same frequency range. IF exposure did not disappear; it shifted from VDT workers to the entire population.",
       ],
-      epistemic: "Epistemic level: [C] (historical precedent). VDT epidemiology is not proof of IF harm — it is evidence that IF field reproductive effects were observed before and left unresolved.",
+      epistemic: "Epistemic level: [C] (historical precedent). VDT epidemiology is not proof of IF harm — it is evidence that IF field reproductive effects were observed before and left unresolved. This applies equally to conventional explanations.",
     },
   },
   fi: {
@@ -191,7 +191,7 @@ const COPY = {
         "Epidemiologinen näyttö oli ristiriitainen: jotkut tutkimukset osoittivat kohonnutta riskiä (McDonald 1986, Goldhaber 1988), toiset eivät (Schnorr/NIOSH 1991). NIOSH:n tutkimusta pidettiin lopullisena, mutta se käytti VLF-kenttämittauksia (15 kHz) vain karkeana proksi-altistuksena — se ei erottanut pulssimuotoisia kenttiä jatkuvista, eikä mitattu yksittäisten monitorien hetkellistä emissiovaihtelua. Kun LCD-näytöt korvasivat CRT:t 2000-luvulla, IF-altistus VDT-työntekijöiltä hävisi — ja samalla hävisi motiivi tutkia asiaa.",
         "BERM-konteksti: VDT-tapaus on IF-kanavan historiallinen ennakkotapaus. CRT:n 15–30 kHz -kentät ovat samaa taajuusaluetta kuin LED-hakkurien 20–100 kHz -emissiot. VDT-ongelma ‘ratkesi’ korvaamalla CRT:t LCD:illä — mutta LCD:t sisältävät LED-taustavalot, joiden hakkurit tuottavat saman taajuusalueen kenttiä. IF-altistus ei hävinnyt; se siirtyi VDT-työntekijöiltä koko väestöön.",
       ],
-      epistemic: "Episteeminen taso: [C] (historiallinen ennakkotapaus). VDT-epidemiologia ei ole todiste IF:n vaarallisuudesta — se on todiste siitä, että IF-kenttien lisääntymisvaikutukset on havaittu aiemmin ja jätetty ratkaisematta.",
+      epistemic: "Episteeminen taso: [C] (historiallinen ennakkotapaus). VDT-epidemiologia ei ole todiste IF:n vaarallisuudesta — se on todiste siitä, että IF-kenttien lisääntymisvaikutukset on havaittu aiemmin ja jätetty ratkaisematta. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
     },
   },
 
@@ -284,7 +284,7 @@ const COPY = {
         "疫学的エビデンスは混在していました：一部の研究はリスクの上昇を示し（McDonald 1986, Goldhaber 1988）、他の研究は示しませんでした（Schnorr/NIOSH 1991）。NIOSH研究は決定的とされましたが、VLF場測定（15 kHz）を粗いプロキシとしてのみ使用しました――パルス場と連続場を区別せず、個々のモニターの瞬間的放射変動を測定しませんでした。2000年代にLCD画面がCRTに取って代わると、VDT作業者からのIF曝露は消失しました――そして調査の動機も消失しました。",
         "BERMコンテクスト：VDTの事例はIFチャネルの歴史的先例です。CRTの15-30 kHz場はLEDドライバーの20-100 kHz放射と同じ周波数帯域を占めます。VDT問題はCRTをLCDに置き換えることで「解決」されました――しかしLCDは同じ周波数帯域の場を発生するドライバーを持つLEDバックライトを含んでいます。IF曝露は消失しませんでした；VDT作業者から全人口へ移行しました。",
       ],
-      epistemic: "認識論的レベル：[C]（歴史的先例）。VDT疫学はIFの有害性の証明ではありません――IF場の生殖影響が以前に観察され未解決のまま残されたことの証拠です。",
+      epistemic: "認識論的レベル：[C]（歴史的先例）。VDT疫学はIFの有害性の証明ではありません――IF場の生殖影響が以前に観察され未解決のまま残されたことの証拠です。これは従来の説明にも同様に当てはまります。",
     },
   },
 
@@ -377,7 +377,7 @@ const COPY = {
         "Les preuves épidémiologiques étaient mitigées : certaines études montraient un risque élevé (McDonald 1986, Goldhaber 1988), d'autres non (Schnorr/NIOSH 1991). L'étude NIOSH a été considérée comme définitive, mais elle n'utilisait les mesures de champ VLF (15 kHz) que comme proxy grossier — elle ne distinguait pas les champs pulsés des continus, ni ne mesurait la variabilité d'émission des moniteurs individuels. Quand les écrans LCD ont remplacé les CRT dans les années 2000, l'exposition IF des travailleurs VDT a disparu — et avec elle, la motivation d'enquêter.",
         "Contexte BERM : le cas VDT est un précédent historique pour le canal IF. Les champs CRT de 15-30 kHz occupent la même gamme de fréquences que les émissions de 20-100 kHz des drivers LED. Le problème VDT a été 'résolu' en remplaçant les CRT par des LCD — mais les LCD contiennent des rétroéclairages LED dont les drivers produisent des champs dans la même gamme de fréquences. L'exposition IF n'a pas disparu ; elle s'est déplacée des travailleurs VDT à la population entière.",
       ],
-      epistemic: "Niveau épistémique : [C] (précédent historique). L'épidémiologie VDT n'est pas une preuve du danger IF — c'est la preuve que les effets reproductifs des champs IF ont été observés auparavant et laissés non résolus.",
+      epistemic: "Niveau épistémique : [C] (précédent historique). L'épidémiologie VDT n'est pas une preuve du danger IF — c'est la preuve que les effets reproductifs des champs IF ont été observés auparavant et laissés non résolus. Cela s'applique tout autant aux explications conventionnelles.",
     },
   },
 
@@ -470,7 +470,7 @@ const COPY = {
         "역학적 증거는 혼재했습니다: 일부 연구는 위험 증가를 보여주었고(McDonald 1986, Goldhaber 1988), 다른 연구는 그렇지 않았습니다(Schnorr/NIOSH 1991). NIOSH 연구는 결정적인 것으로 취급되었지만, VLF 장 측정(15 kHz)을 조잡한 프록시로만 사용했습니다 — 펄스 장과 연속 장을 구분하지 않았고, 개별 모니터 방출 변동성을 측정하지 않았습니다. 2000년대에 LCD 화면이 CRT를 대체하면서 VDT 작업자의 IF 노출이 사라졌고 — 조사 동기도 함께 사라졌습니다.",
         "BERM 맥락: VDT 사례는 IF 채널의 역사적 선례입니다. CRT의 15-30 kHz 장은 LED 드라이버의 20-100 kHz 방출과 동일한 주파수 범위를 차지합니다. VDT 문제는 CRT를 LCD로 교체함으로써 '해결'되었습니다 — 그러나 LCD는 동일한 주파수 범위의 장을 생성하는 드라이버가 있는 LED 백라이트를 포함합니다. IF 노출은 사라지지 않았습니다; VDT 작업자에서 전체 인구로 이동했습니다.",
       ],
-      epistemic: "인식론적 수준: [C] (역사적 선례). VDT 역학은 IF 유해성의 증거가 아닙니다 — IF 장의 생식 영향이 이전에 관찰되고 미해결로 남겨졌다는 증거입니다.",
+      epistemic: "인식론적 수준: [C] (역사적 선례). VDT 역학은 IF 유해성의 증거가 아닙니다 — IF 장의 생식 영향이 이전에 관찰되고 미해결로 남겨졌다는 증거입니다. 이는 기존 설명에도 동일하게 적용됩니다.",
     },
   },
 };

@@ -8,18 +8,19 @@
 
 ## Yhteenveto
 
-Kuusi analysoitua lähdettä kartoitetaan BERM:n 9-tasoiseen kausaaliketjuun, joka etenee Lindgrenin geometriasta (taso 1) valintasäännön (taso 2), kaksikanava-altistuksen (taso 3) ja kalvofysiikan (taso 4) kautta viiteen biologiseen polkuun (taso 5), kaskadikehityksiin (taso 6), konvergenssiin (taso 7), demografiseen kaskadiin (taso 8) ja takaisinkytkentään (taso 9). Jokainen lähde kohdistuu tiettyihin solmuihin ja nuoliin tässä ketjussa. Analyysi osoittaa, että nämä lähteet tuovat uutta evidenssiä erityisesti tasoille 4–7, mutta eivät kata tasoja 1–3 (teoreettinen perusta ja altistusarkkitehtuuri) eivätkä tasoja 8–9 (demografinen kaskadi ja takaisinkytkentä).
+Kuusi analysoitua lähdettä kartoitetaan BERM:n 9-tasoiseen kausaaliketjuun. Ketjun alku erotellaan komponenttikohtaisesti: Lindgrenin metriikasta saadaan etumerkillinen suunnattu derivaatta L1-tuloksena, abstrakti χ-kaava säilyy L1:nä ja positiivinen spatiaalinen/skalaariargumentti syntyy vasta eksplisiittisessä L2-reduktiossa. Tämän jälkeen ketju etenee ehdokasaltistuksen (taso 3) ja kalvofysiikan (taso 4) kautta viiteen biologiseen polkuun (taso 5), kaskadikehityksiin (taso 6), konvergenssiin (taso 7), demografiseen kaskadiin (taso 8) ja takaisinkytkentään (taso 9). Jokainen lähde kohdistuu tiettyihin solmuihin ja nuoliin tässä ketjussa. Analyysi osoittaa, että nämä lähteet tuovat uutta evidenssiä erityisesti tasoille 4–7, mutta eivät kata tasoja 1–3 (teoreettinen perusta, L2-reduktio ja ehdokasaltistusarkkitehtuuri) eivätkä tasoja 8–9 (demografinen kaskadi ja takaisinkytkentä).
 
 ---
 
 ## BERM:N KAUSAALIKETJUN RAKENNE (referenssi)
 
 ```
-Taso 1: GEOMETRIA         g_μν = η_μν + A_μA_ν (Lindgren 2025)
-    ↓ geometrinen seuraus
-Taso 2: VALINTASÄÄNTÖ      χ(Ā) = Ā/√(1+Ā²) — taustariippuvainen herkkyys
-    ↓ kytkentäfunktio
-Taso 3: ALTISTUS           total = ambient + χ(Ā) × personal
+Taso 1: GEOMETRIA         g_μν = η_μν + κA_μA_ν (Lindgren 2025)
+    ↓ L1: κ(A·u)/√(1+κA²), etumerkillinen suunnattu derivaatta
+Taso 2: L2-REDUKTIO        q=|Ā| eksplisiittisellä spatiaalisella/skalaari-reduktiolla;
+                           χ_geo(q)=q/√(1+q²) on edelleen L1-kaava
+    ↓ avoin L0→L2-normalisointi q=N(z) ja ehdokaskytkentä
+Taso 3: ALTISTUS           total = ambient + χ_geo(N(z_ambient)) × personal
     ↓ EMF saavuttaa solun
 Taso 4: KALVOFYSIIKKA      Vmem = −70 mV/10nm → VGIC/IFO-aktivaatio
     ↓ Ca²⁺ influx / spin-kemia / pineaalihäiriö
@@ -54,7 +55,7 @@ Katsausartikkeli tunnistaa keskeiset riskitekijät: lähityön lisääntyminen, 
 
 Myopian patogeneesissa kalsiumsignalointi osallistuu skleeraalisen remodellaation säätelyyn. MMP-2:n (matriksimetalloproteinaasi-2) aktivaatio riippuu kalsiumriippuvaisista signalointireiteistä, ja HIF-1α on kalsiumherkkä. Tämä on sama solmutyyppi kuin BERM:n taso 4 → 5A -nuoli: VGIC → Ca²⁺ influx → downstream-vaikutus. Kyse on kuitenkin eri kohteesta (retinaalinen/skleeraalinen solu vs. gonadaalinen solu), joten yhteys on analoginen mutta ei suora.
 
-Episteeminen arvio: spekulatiivinen (ei EMF-kausaalinen myopialle). Kalsiumsignalointi on niin yleinen biologinen mekanismi, ettei jaettu osallisuus yksinään ole informatiivinen tason 4 → 5A nuolelle.
+Episteeminen arvio: deduktiivinen ja falsifioitava hypoteesi (ei EMF-kausaalinen myopialle). Kalsiumsignalointi on niin yleinen biologinen mekanismi, ettei jaettu osallisuus yksinään ole informatiivinen tason 4 → 5A nuolelle.
 
 **Taso 5C (melatoniini) + Taso 7 (motivaatiokerroin): dopamiini-melatoniiniakseli**
 
@@ -124,9 +125,9 @@ Recovery window -mallinnus (BERM:n poikkileikkaava mekanismi):
 
 Koiviston koe operoi aivan recovery-mallin yläpäässä: yksittäinen lyhyt altistus, jossa korjauskapasiteetti on täysin riittävä. Akuutti fasilitaatio on yhteensopiva saman VGIC-mekanismin kanssa, joka kroonisesti tuottaa tason 5A vaikutuksia.
 
-**Taso 2 (valintasääntö χ(Ā)): kalvopotentiaali taustana**
+**Taso 2 (χ_geo-kaavan sovellus): kalvopotentiaalin identifikaatio on avoin**
 
-Koiviston tutkimus ei suoraan testaa valintasääntöä, mutta sen löydös on implisiittisesti yhteensopiva χ(Ā)-mallin kanssa: aivojen neuronien kalvopotentiaali (−70 mV / 10 nm = 7×10⁶ V/m → χ ≈ 1.0) on saturoitunut. Tason 2 ennuste: neuronit ovat maksimaalisesti herkkiä ulkoiselle EMF-perturbointille. Koiviston havaitsema vaste on tämän ennusteen mukainen.
+Koiviston tutkimus ei testaa χ_geo-kaavaa eikä anna sille dimensiotonta argumenttia. Aivojen neuronien kalvokenttää (−70 mV / 10 nm = 7×10⁶ V/m) ei saa sijoittaa suoraan funktioon χ_geo(q)=q/√(1+q²): tarvitaan yksiköt, geometrian, gaugen ja epävarmuuden ilmoittava normalisointi q=N(z_membrane) sekä erillinen L2-operaattori biologiseen vasteeseen. Siksi tästä tutkimuksesta ei seuraa väitettä χ≈1 tai neuronien maksimaalisesta Lindgren-herkkyydestä. Koiviston havainto kuuluu erilliseen, tuotuun neuraalisen vasteen komponenttiin.
 
 Episteeminen arvio: C (Correlational) BERM-ketjun tason 3 → 4 nuolelle. RCT-asetelma on vahva, mutta replikaatio on epäonnistunut ja yhteys tason 5+ polkuihin on epäsuora.
 
@@ -253,8 +254,8 @@ Bioelectromagnetics on alan johtava vertaisarvioitu lehti (BEMS, perustettu 1980
 
 ```
 Taso 1: GEOMETRIA            — ei evidenssiä näistä lähteistä
-Taso 2: VALINTASÄÄNTÖ         — epäsuora (Koiviston neuraalinen vaste
-                               yhteensopiva χ ≈ 1.0 neuronikalvolla)
+Taso 2: L2-REDUKTIO           — ei evidenssiä; Koiviston V/m-arvolle ei ole
+                               johdettua q=N(z_membrane)-normalisointia
 Taso 3: ALTISTUS              — personal-EMF 890–902 MHz (Koivisto, Eliyahu,
                                Luria) = BERM:n mallintama taajuus
                              — lateralisaatio tukee spatiaalista rakennetta
@@ -293,7 +294,7 @@ Taso 9: TAKAISINKYTKENTÄ      — myopia: urbanisaatio jaettuna taustatekijän�
 
 Yksikään lähde ei koske:
 - Tasoa 1 (Lindgrenin geometria) — teoreettiset perusteet
-- Tason 2 valintasäännön suoraa testausta (χ(Ā) = 0 tyhjässä taustassa)
+- Tason 2 spatiaalisen/skalaari-reduktion tai avoimen q=N(z)-normalisoinnin testausta; abstraktin L1-kaavan χ_geo(0)=0 on algebrallinen identiteetti, ei biologinen koetulos
 - Tason 3 ambient-EMF-trendiä tai kumulatiivisen altistuksen (cumEMF) mittausta
 - Tason 8 demografista kaskadia (fekundabiliteettiaste → ASFR → TFR)
 - Tason 8 → 9 nuolta (TFR:n lasku → kaupungistumisvauhti)

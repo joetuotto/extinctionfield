@@ -23,7 +23,7 @@ const COPY = {
     subtitle: "How co-selection of blue eyes, lactose tolerance, and cattle husbandry created the population most sensitive to EMF — and why that population's fertility declined first",
     backLink: "← Back to Evidence",
     section1Title: "One Function, Five Scales",
-    section1Intro: "The χ (chi) function appears at every biological scale from molecule to population. At each scale it encodes the same logic: a background variable must be non-zero for a perturbation to have effect. The function χ(B) = 0 when B = 0, and approaches 1 as B increases. This is the selection rule that BERM proposes as the unifying mechanism across all five scales.",
+    section1Intro: "The geodesic-deviation chain gives the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. Every thermal, optical, molecular, environmental or population variable z needs its own declared q=N(z) at the open L0→L2 boundary; named biological responses are imported L3 components.",
     section2Title: "The Northern Package",
     section2Intro: [
       "Three traits co-selected in Northern European populations between 10,000 and 6,000 years ago: blue eyes (OCA2), lactose tolerance (LCT), and cattle husbandry. The conventional explanation treats each as an independent adaptation — blue eyes for vitamin D synthesis, lactose tolerance for calcium absorption, cattle for food security.",
@@ -31,9 +31,9 @@ const COPY = {
       "If correct, the Northern Package represents the strongest biological amplifier of EMF sensitivity in any human population — and explains why Northern Europe was both the first region to electrify and the first below replacement fertility.",
     ],
     section3Title: "Four Historical Phases",
-    section3Intro: "The interaction between biological χ values (evolved) and environmental χ values (technological) creates a four-phase historical pattern that maps onto observed fertility transitions.",
+    section3Intro: "The candidate interaction between L2-mapped biological χ values and L2-mapped environmental χ values creates a four-phase historical pattern to compare with observed fertility transitions. These mappings do not alter the underlying function's L1 status.",
     section4Title: "Population χ Profiles",
-    section4Intro: "Each population has a characteristic χ profile determined by its biology (optical, molecular) and environment. The combination produces distinct fertility trajectories.",
+    section4Intro: "Each listed population profile combines rough L2 candidate mappings for biology (optical, molecular) and environment with imported L3 mechanisms. The resulting fertility trajectories are model outputs, not new geometric derivations.",
     profileHeaders: {
       population: "Population",
       chiEnv: "χ_env",
@@ -44,7 +44,7 @@ const COPY = {
       status: "Status",
     },
     section5Title: "Testable Predictions",
-    section5Intro: "Twenty predictions derived from the nested χ model. Each is designed to be falsifiable within its stated timeframe.",
+    section5Intro: "Twenty conditional predictions propagated through the L1 χ shape, open L2 mappings and imported L3 components. Each is designed to be falsifiable within its stated timeframe; an empirical intermediate does not reclassify the L1 derivation.",
     predictionHeaders: {
       test: "Test",
       falsification: "Falsification criterion",
@@ -66,7 +66,7 @@ const COPY = {
       verification: "Verification",
     },
     epistemicTitle: "Epistemic Status",
-    epistemicText: "This page presents an L*-level synthesis. The individual observations are well-established: OCA2/LCT co-selection timing (E), CRY photocycle requirements (E), iris transmission differences (M|C), B2-FAD-CRY stability chain (E), population TFR differences (C). The synthesis — that these traits form a coherent amplifier of EMF sensitivity — is an L*-level testable hypothesis. The population χ values are rough estimates. The historical narrative is explanatory, not predictive. The CRY-mediated interpretation of co-selection should be presented as an extension of the vitamin D hypothesis, not a replacement.",
+    epistemicText: "At the geometric layer, the χ_geo(q)=q/√(1+q²) formula is always L1, while choosing the positive spatial magnitude q=|Ā| is L2. The table's measured variables z require open L0→L2 normalizations q=N(z); χ_optical, χ_molecular and χ_pop are separately named imported L3 candidates. Evidence labels stay component-specific.",
     levelLabel: "Evidence level",
   },
   fi: {
@@ -74,7 +74,7 @@ const COPY = {
     subtitle: "Miten sinisilmäisyyden, laktoosinsietokyvyn ja karjankasvatuksen koselektio loi EMF:lle herkimmän populaation — ja miksi sen hedelmällisyys laski ensimmäisenä",
     backLink: "← Takaisin näyttöön",
     section1Title: "Yksi funktio, viisi skaalaa",
-    section1Intro: "χ (khi) -funktio esiintyy jokaisella biologisella skaalalla molekyylistä populaatioon. Jokaisella skaalalla se koodaa saman logiikan: taustamuuttujan on oltava nollasta poikkeava, jotta häiriö voi vaikuttaa. Funktio χ(B) = 0 kun B = 0, ja lähestyy 1:tä B:n kasvaessa. Tämä on valintasääntö jonka BERM ehdottaa yhdistäväksi mekanismiksi kaikilla viidellä skaalalla.",
+    section1Intro: "Geodeesipoikkeamaketju antaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Jokainen terminen, optinen, molekulaarinen, ympäristö- tai populaatiomuuttuja z tarvitsee oman q=N(z)-normalisointinsa avoimella L0→L2-rajalla; nimetyt biologiset vasteet ovat tuotuja L3-komponentteja.",
     section2Title: "Pohjoinen paketti",
     section2Intro: [
       "Kolme piirrettä koselektoitui Pohjois-Euroopan populaatioissa 10 000–6 000 vuotta sitten: siniset silmät (OCA2), laktoosinsietokyky (LCT) ja karjankasvatus. Perinteinen selitys käsittelee kutakin itsenäisenä adaptaationa — sinisiä silmiä D-vitamiinisynteesille, laktoosinsietokykyä kalsiumin imeytymiselle, karjaa ruokaturvalle.",
@@ -82,9 +82,9 @@ const COPY = {
       "Jos tämä pitää paikkansa, Pohjoinen paketti edustaa voimakkainta biologista EMF-herkkyyden vahvistinta missään ihmispopulaatiossa — ja selittää, miksi Pohjois-Eurooppa sekä sähköistyi ensimmäisenä että laski ensimmäisenä alle uusiutumistason hedelmällisyyden.",
     ],
     section3Title: "Neljä historiallista vaihetta",
-    section3Intro: "Biologisten χ-arvojen (kehittyneiden) ja ympäristön χ-arvojen (teknologisten) vuorovaikutus luo neljävaiheisen historiallisen kaavan joka heijastuu havaittuihin hedelmällisyyssiirtymiin.",
+    section3Intro: "L2-tasolle kuvattujen biologisten χ-arvojen ja L2-tasolle kuvattujen ympäristön χ-arvojen ehdokasvuorovaikutus luo nelivaiheisen historiallisen kaavan, jota verrataan havaittuihin hedelmällisyyssiirtymiin. Nämä kuvaukset eivät muuta funktion L1-statusta.",
     section4Title: "Populaatioiden χ-profiilit",
-    section4Intro: "Jokaisella populaatiolla on ominainen χ-profiili jonka määräävät sen biologia (optinen, molekulaarinen) ja ympäristö. Yhdistelmä tuottaa erilaiset hedelmällisyyskehityskulut.",
+    section4Intro: "Kukin esitetty populaatioprofiili yhdistää biologian (optisen ja molekulaarisen) ja ympäristön karkeita L2-ehdokaskuvauksia tuotuihin L3-mekanismeihin. Syntyvät hedelmällisyyskehityskulut ovat mallin tuloksia, eivät uusia geometrisia johtoja.",
     profileHeaders: {
       population: "Populaatio",
       chiEnv: "χ_env",
@@ -95,7 +95,7 @@ const COPY = {
       status: "Tila",
     },
     section5Title: "Testattavat ennusteet",
-    section5Intro: "Kaksikymmentä ennustetta jotka on johdettu sisäkkäisestä χ-mallista. Jokainen on suunniteltu falsifioitavaksi ilmoitetulla aikavälillä.",
+    section5Intro: "Kaksikymmentä ehdollista ennustetta, jotka on propagoitu L1-χ-muodon, avoimien L2-kuvausten ja tuotujen L3-komponenttien läpi. Jokainen on falsifioitavissa ilmoitetulla aikavälillä; empiirinen väliaskel ei luokittele L1-johtoa uudelleen.",
     predictionHeaders: {
       test: "Testi",
       falsification: "Falsifikaatiokriteeri",
@@ -117,7 +117,7 @@ const COPY = {
       verification: "Todentaminen",
     },
     epistemicTitle: "Episteeminen tila",
-    epistemicText: "Tämä sivu esittää L*-tason synteesin. Yksittäiset havainnot ovat vakiintuneita: OCA2/LCT-koselektio-ajoitus (E), CRY:n fotosyklivaatimukset (E), iiriksen transmissioerot (M|C), B2-FAD-CRY-stabiiliusketju (E), populaatioiden TFR-erot (C). Synteesi — että nämä piirteet muodostavat yhtenäisen EMF-herkkyyden vahvistimen — on L*-tason testattava hypoteesi. Populaatioiden χ-arvot ovat karkeita arvioita. Historiallinen narratiivi on selittävä, ei ennustava. CRY-välitteinen koselektiotulkinta tulisi esittää D-vitamiinihypoteesin laajennuksena, ei vaihtoehtona.",
+    epistemicText: "Geometriatasolla χ_geo(q)=q/√(1+q²)-kaava on aina L1, kun taas positiivisen spatiaalisen itseisarvon q=|Ā| valinta on L2. Taulukon mitatut muuttujat z vaativat avoimet L0→L2-normalisoinnit q=N(z); χ_optical, χ_molecular ja χ_pop ovat erikseen nimettyjä tuotuja L3-ehdokkaita. Näyttömerkinnät säilyvät komponenttikohtaisina.",
     levelLabel: "Näyttötaso",
   },
   ja: {
@@ -125,7 +125,7 @@ const COPY = {
     subtitle: "青い目、乳糖耐性、牧畜の共選択がいかにしてEMFに最も敏感な集団を生み出したか — そしてなぜその集団の出生率が最初に低下したのか",
     backLink: "← エビデンスに戻る",
     section1Title: "1つの関数、5つのスケール",
-    section1Intro: "χ（カイ）関数は分子から集団まであらゆる生物学的スケールに現れる。各スケールで同じ論理をコードする：摂動が効果を持つためには背景変数がゼロでない必要がある。関数χ(B) = 0（B = 0のとき）で、Bが増加するにつれて1に近づく。これはBERMが5つのスケールすべてにわたる統一メカニズムとして提案する選択則である。",
+    section1Intro: "測地線偏差の連鎖は符号付き方向応答と代数式χ_geo(q)=q/√(1+q²)をL1で与える。無次元・共線Lorentz→Euclid空間・スカラー射影によるq=|Ā|の選択はL2である。熱・光・分子・環境・集団の各変数zには未解決L0→L2境界で固有のq=N(z)が必要で、名称付き生物応答は導入L3要素である。",
     section2Title: "ノーザンパッケージ",
     section2Intro: [
       "1万年から6千年前に北ヨーロッパの集団で3つの形質が共選択された：青い目(OCA2)、乳糖耐性(LCT)、牧畜。従来の説明はそれぞれを独立した適応として扱う — 青い目はビタミンD合成、乳糖耐性はカルシウム吸収、牧畜は食料安全保障のため。",
@@ -133,9 +133,9 @@ const COPY = {
       "これが正しければ、ノーザンパッケージはヒトのいかなる集団においてもEMF感受性の最も強力な生物学的増幅器を表す — そしてなぜ北ヨーロッパが最初に電化し、最初に人口置換水準以下の出生率に達したのかを説明する。",
     ],
     section3Title: "4つの歴史的段階",
-    section3Intro: "生物学的χ値（進化した）と環境χ値（技術的）の相互作用は、観察された出生率転換に対応する4段階の歴史的パターンを生み出す。",
+    section3Intro: "L2に写像された生物学的χ値と環境χ値の候補相互作用は、観察された出生率転換と比較する4段階の歴史的パターンを生む。これらの写像は関数のL1地位を変えない。",
     section4Title: "集団χプロファイル",
-    section4Intro: "各集団はその生物学（光学的、分子的）と環境によって決定される特徴的なχプロファイルを持つ。その組み合わせが異なる出生率軌跡を生み出す。",
+    section4Intro: "各集団プロファイルは、生物学（光学・分子）と環境の概算L2候補写像を、導入されたL3機構と組み合わせる。得られる出生率軌跡はモデル出力であり、新たな幾何学的導出ではない。",
     profileHeaders: {
       population: "集団",
       chiEnv: "χ_env",
@@ -146,7 +146,7 @@ const COPY = {
       status: "状態",
     },
     section5Title: "検証可能な予測",
-    section5Intro: "入れ子型χモデルから導出された20の予測。それぞれが規定の期間内に反証可能なように設計されている。",
+    section5Intro: "L1のχ形状、未解決L2写像、導入L3要素を通して伝播した20の条件付き予測。各予測は規定期間内に反証可能であり、経験的中間段階がL1導出を再分類することはない。",
     predictionHeaders: {
       test: "検証",
       falsification: "反証基準",
@@ -168,7 +168,7 @@ const COPY = {
       verification: "検証",
     },
     epistemicTitle: "認識論的状態",
-    epistemicText: "このページはL*レベルの統合を提示する。個々の観察は確立されている：OCA2/LCT共選択タイミング(E)、CRY光サイクル要件(E)、虹彩透過差(M|C)、B2-FAD-CRY安定性チェーン(E)、集団TFR差(C)。統合 — これらの形質がEMF感受性の一貫した増幅器を形成するということ — はL*レベルの検証可能な仮説である。集団χ値は概算である。歴史的ナラティブは説明的であり、予測的ではない。共選択のCRY媒介解釈はビタミンD仮説の拡張として提示されるべきであり、代替としてではない。",
+    epistemicText: "幾何学層ではχ_geo(q)=q/√(1+q²)式は常にL1で、正の空間量q=|Ā|の選択はL2である。表の測定変数zには未解決L0→L2正規化q=N(z)が必要で、χ_optical、χ_molecular、χ_popは別名の導入L3候補である。証拠ラベルは構成要素ごとに保持される。",
     levelLabel: "エビデンスレベル",
   },
   fr: {
@@ -176,7 +176,7 @@ const COPY = {
     subtitle: "Comment la co-selection des yeux bleus, de la tolerance au lactose et de l'elevage bovin a cree la population la plus sensible aux EMF — et pourquoi la fertilite de cette population a decline en premier",
     backLink: "← Retour aux preuves",
     section1Title: "Une fonction, cinq echelles",
-    section1Intro: "La fonction χ (chi) apparait a chaque echelle biologique, de la molecule a la population. A chaque echelle, elle code la meme logique : une variable de fond doit etre non nulle pour qu'une perturbation ait un effet. La fonction χ(B) = 0 quand B = 0, et approche 1 a mesure que B augmente. C'est la regle de selection que BERM propose comme mecanisme unificateur a travers les cinq echelles.",
+    section1Intro: "La chaîne de déviation géodésique donne la réponse directionnelle signée et la formule algébrique χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. Chaque variable thermique, optique, moléculaire, environnementale ou démographique z exige son propre q=N(z) à la frontière L0→L2 ouverte ; les réponses biologiques nommées sont L3 importées.",
     section2Title: "Le package nordique",
     section2Intro: [
       "Trois traits ont ete co-selectionnes dans les populations d'Europe du Nord entre 10 000 et 6 000 ans : les yeux bleus (OCA2), la tolerance au lactose (LCT) et l'elevage bovin. L'explication conventionnelle traite chacun comme une adaptation independante — les yeux bleus pour la synthese de vitamine D, la tolerance au lactose pour l'absorption du calcium, le betail pour la securite alimentaire.",
@@ -184,9 +184,9 @@ const COPY = {
       "Si c'est correct, le package nordique represente le plus puissant amplificateur biologique de la sensibilite aux EMF dans toute population humaine — et explique pourquoi l'Europe du Nord a ete a la fois la premiere region a s'electrifier et la premiere en dessous du seuil de remplacement de la fertilite.",
     ],
     section3Title: "Quatre phases historiques",
-    section3Intro: "L'interaction entre les valeurs biologiques de χ (evoluees) et les valeurs environnementales de χ (technologiques) cree un schema historique en quatre phases qui correspond aux transitions de fertilite observees.",
+    section3Intro: "L'interaction candidate entre valeurs biologiques et environnementales de χ appliquées en L2 produit un schéma historique en quatre phases à comparer aux transitions de fertilité observées. Ces applications ne changent pas le statut L1 de la fonction.",
     section4Title: "Profils χ des populations",
-    section4Intro: "Chaque population possede un profil χ caracteristique determine par sa biologie (optique, moleculaire) et son environnement. La combinaison produit des trajectoires de fertilite distinctes.",
+    section4Intro: "Chaque profil de population combine des applications candidates L2 approximatives de la biologie (optique, moléculaire) et de l'environnement avec des mécanismes L3 importés. Les trajectoires de fertilité obtenues sont des sorties du modèle, pas de nouvelles dérivations géométriques.",
     profileHeaders: {
       population: "Population",
       chiEnv: "χ_env",
@@ -197,7 +197,7 @@ const COPY = {
       status: "Statut",
     },
     section5Title: "Predictions testables",
-    section5Intro: "Vingt predictions derivees du modele χ imbrique. Chacune est concue pour etre falsifiable dans le delai indique.",
+    section5Intro: "Vingt prédictions conditionnelles propagées par la forme χ L1, les applications L2 ouvertes et les éléments L3 importés. Chacune est falsifiable dans le délai indiqué ; une étape empirique intermédiaire ne requalifie pas la dérivation L1.",
     predictionHeaders: {
       test: "Test",
       falsification: "Critere de falsification",
@@ -219,7 +219,7 @@ const COPY = {
       verification: "Verification",
     },
     epistemicTitle: "Statut epistemique",
-    epistemicText: "Cette page presente une synthese de niveau L*. Les observations individuelles sont bien etablies : chronologie de co-selection OCA2/LCT (E), exigences du photocycle CRY (E), differences de transmission de l'iris (M|C), chaine de stabilite B2-FAD-CRY (E), differences de TFR entre populations (C). La synthese — que ces traits forment un amplificateur coherent de la sensibilite aux EMF — est une hypothese testable de niveau L*. Les valeurs χ des populations sont des estimations approximatives. Le recit historique est explicatif, pas predictif. L'interpretation CRY de la co-selection devrait etre presentee comme une extension de l'hypothese de la vitamine D, pas comme un remplacement.",
+    epistemicText: "Au niveau géométrique, la formule χ_geo(q)=q/√(1+q²) est toujours L1, tandis que le choix de la norme spatiale positive q=|Ā| est L2. Les variables mesurées z exigent des normalisations L0→L2 ouvertes q=N(z) ; χ_optical, χ_molecular et χ_pop sont des candidats L3 importés distincts. Les labels de preuve restent propres aux composants.",
     levelLabel: "Niveau de preuve",
   },
   ko: {
@@ -227,7 +227,7 @@ const COPY = {
     subtitle: "파란 눈, 유당 내성, 소 사육의 공동선택이 어떻게 EMF에 가장 민감한 집단을 만들었는가 — 그리고 왜 그 집단의 출산율이 가장 먼저 감소했는가",
     backLink: "← 근거로 돌아가기",
     section1Title: "하나의 함수, 다섯 개의 스케일",
-    section1Intro: "χ(카이) 함수는 분자에서 집단까지 모든 생물학적 스케일에 나타난다. 각 스케일에서 동일한 논리를 코딩한다: 교란이 효과를 가지려면 배경 변수가 0이 아니어야 한다. 함수 χ(B) = 0(B = 0일 때)이며, B가 증가함에 따라 1에 접근한다. 이것이 BERM이 다섯 개의 모든 스케일에 걸친 통합 메커니즘으로 제안하는 선택 규칙이다.",
+    section1Intro: "측지선 편차 연쇄는 부호 있는 방향 반응과 대수식 χ_geo(q)=q/√(1+q²)를 L1에서 준다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2다. 열·광학·분자·환경·집단 변수 z에는 열린 L0→L2 경계에서 고유한 q=N(z)가 필요하며, 명명된 생물 반응은 도입 L3 구성요소다.",
     section2Title: "노던 패키지",
     section2Intro: [
       "1만 년에서 6천 년 전 사이에 북유럽 집단에서 세 가지 형질이 공동선택되었다: 파란 눈(OCA2), 유당 내성(LCT), 소 사육. 기존 설명은 각각을 독립적 적응으로 다룬다 — 파란 눈은 비타민 D 합성, 유당 내성은 칼슘 흡수, 소는 식량 안보를 위해.",
@@ -235,9 +235,9 @@ const COPY = {
       "이것이 맞다면, 노던 패키지는 인류 집단 중 EMF 감수성의 가장 강력한 생물학적 증폭기를 나타내며 — 왜 북유럽이 가장 먼저 전기화되고 가장 먼저 대체출산율 이하로 떨어졌는지를 설명한다.",
     ],
     section3Title: "네 가지 역사적 단계",
-    section3Intro: "생물학적 χ값(진화된)과 환경적 χ값(기술적)의 상호작용은 관찰된 출산율 전환에 대응하는 4단계 역사적 패턴을 만든다.",
+    section3Intro: "L2로 매핑된 생물학적 χ값과 환경적 χ값의 후보 상호작용은 관찰된 출산율 전환과 비교할 4단계 역사 패턴을 만든다. 이러한 매핑은 함수의 L1 지위를 바꾸지 않는다.",
     section4Title: "집단 χ 프로파일",
-    section4Intro: "각 집단은 생물학(광학적, 분자적)과 환경에 의해 결정되는 특성적 χ 프로파일을 가진다. 이 조합이 서로 다른 출산율 궤적을 만든다.",
+    section4Intro: "각 집단 프로파일은 생물학(광학·분자)과 환경의 대략적인 L2 후보 매핑을 도입된 L3 메커니즘과 결합한다. 그 출산율 궤적은 모델 출력이지 새로운 기하학적 도출이 아니다.",
     profileHeaders: {
       population: "집단",
       chiEnv: "χ_env",
@@ -248,7 +248,7 @@ const COPY = {
       status: "상태",
     },
     section5Title: "검증 가능한 예측",
-    section5Intro: "중첩 χ 모델에서 도출된 스무 가지 예측. 각각은 명시된 기간 내에 반증 가능하도록 설계되었다.",
+    section5Intro: "L1 χ 형태, 열린 L2 매핑, 도입된 L3 구성요소를 통해 전파된 스무 가지 조건부 예측. 각각은 명시된 기간 내에 반증 가능하며, 경험적 중간 단계가 L1 도출을 재분류하지 않는다.",
     predictionHeaders: {
       test: "검증",
       falsification: "반증 기준",
@@ -270,7 +270,7 @@ const COPY = {
       verification: "검증",
     },
     epistemicTitle: "인식론적 상태",
-    epistemicText: "이 페이지는 L* 수준의 종합을 제시한다. 개별 관찰은 확립되어 있다: OCA2/LCT 공동선택 타이밍(E), CRY 광주기 요건(E), 홍채 투과 차이(M|C), B2-FAD-CRY 안정성 체인(E), 집단 TFR 차이(C). 종합 — 이 형질들이 EMF 감수성의 일관된 증폭기를 형성한다는 것 — 은 L* 수준의 검증 가능한 가설이다. 집단 χ값은 대략적 추정치이다. 역사적 서사는 설명적이며 예측적이지 않다. 공동선택의 CRY 매개 해석은 비타민 D 가설의 확장으로 제시되어야 하며, 대체로 제시되어서는 안 된다.",
+    epistemicText: "기하학 층에서 χ_geo(q)=q/√(1+q²) 공식은 항상 L1이고 양의 공간 크기 q=|Ā| 선택은 L2다. 표의 측정 변수 z에는 열린 L0→L2 정규화 q=N(z)가 필요하며 χ_optical·χ_molecular·χ_pop은 별도 명칭의 도입 L3 후보다. 증거 표지는 구성요소별로 유지된다.",
     levelLabel: "근거 수준",
   },
 } as const;
@@ -341,7 +341,12 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.expression}</td>
-                        <td className="py-2 text-foreground font-mono text-xs">{scale.chi_expression}</td>
+                        <td className="py-2 text-foreground text-xs">
+                          <div className="font-mono">{scale.chi_expression}</div>
+                          <div className="mt-1 font-mono text-[10px] text-foreground-muted">
+                            χ_geo: {scale.chi_derivation_status} · N(·): {scale.coordinate_mapping_status}
+                          </div>
+                        </td>
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.atZero}</td>

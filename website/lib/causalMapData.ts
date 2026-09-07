@@ -175,15 +175,15 @@ export const NODES: CausalMapNode[] = [
   // ── LEVEL 1: Modulation layers (12) ──
   {
     id: "mod_geometry", level: 1,
-    label: { en: "1. Open L2 coupling", fi: "1. Avoin L2-kytkentä" },
-    sublabel: { en: "Lindgren premise + BERM χ proposal", fi: "Lindgren-premissi + BERM:n χ-ehdotus" },
+    label: { en: "1. L1 χ_geo / open L2 coupling", fi: "1. L1 χ_geo / avoin L2-kytkentä" },
+    sublabel: { en: "Derived geometric shape; observable mapping open", fi: "Johdettu geometrinen muoto; havaintokuvaus avoin" },
     color: "#8B5CF6", epistemicLevel: "L",
     detail: {
       en: {
-        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + A_μA_ν is the theory premise. BERM separately proposes χ(Ā) as a candidate closure, but no operator from that geometry to a membrane, receptor or other biological observable has yet been derived. L2 remains open.",
+        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + κA_μA_ν is the L0 premise. Metric-volume linearization/geodesic deviation yields a signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is an L2 reduction. A raw V/m value, proxy, V_m or membrane coordinate cannot be inserted directly; an operator mapping it to q=N(z) and then to biology has yet to be derived and remains open at L0→L2. Downstream mechanisms are imported L3 components.",
       },
       fi: {
-        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + A_μA_ν on teoriapremissi. BERM ehdottaa erikseen χ(Ā):ta sulkeumana, mutta geometriasta kalvoon, reseptoriin tai muuhun biologiseen havaittavaan johtavaa operaattoria ei ole vielä johdettu. L2 on avoin.",
+        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + κA_μA_ν on L0-premissi. Metriikan tilavuuslinearisaatio/geodeesipoikkeama tuottaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2-reduktio. Raakaa V/m-arvoa, proxyä, V_m:ää tai kalvokoordinaattia ei voi syöttää suoraan; operaattoria sen kartoittamiseksi q=N(z):ksi ja biologiseksi vasteeksi ei ole vielä johdettu, joten L0→L2-askel pysyy avoimena. Jatkomekanismit ovat tuotuja L3-komponentteja.",
       },
       bermPathway: "Geometric foundation",
       keyRefs: ["lindgren2025"],
@@ -765,7 +765,7 @@ export const NODES: CausalMapNode[] = [
   { id: "eco_amphibian", level: 6, label: { en: "Amphibians ↓", fi: "Sammakkoeläimet ↓" }, sublabel: { en: "Enigmatic declines", fi: "Selittämättömät vähenemät" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Unexplained declines in areas without habitat destruction or disease." }, fi: { mechanism: "Selittämättömät vähenemät alueilla ilman habitaatin tuhoa tai tauteja." }, link: "/sentinel#amphibians" } },
   { id: "eco_bee", level: 6, label: { en: "Bees ↓", fi: "Mehiläiset ↓" }, sublabel: { en: "CCD, grooming↓", fi: "CCD, puhdistuskäyttäytyminen↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Colony Collapse Disorder + grooming behavior impairment → loss of Varroa resistance." }, fi: { mechanism: "Colony Collapse Disorder + grooming-käyttäytymisen heikkeneminen → Varroa-resistenssin menetys." }, link: "/articles/bees" } },
   { id: "eco_varroa", level: 6, label: { en: "Varroa ← protected", fi: "Varroa ← suojassa" }, sublabel: { en: "Sclerotin, small size", fi: "Sclerotin, pieni koko" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Varroa destructor: 1.1mm, sclerotin armor, no CRY navigation → EMF has no effect." }, fi: { mechanism: "Varroa destructor: 1.1mm, sclerotiinipanssari, ei CRY-navigaatiota → EMF ei vaikuta." }, link: "/articles/bees#varroa" } },
-  { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence/ecology#ticks" } },
+  { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Novel and falsifiable." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Uusi ja falsifioitava." }, link: "/evidence/ecology#ticks" } },
   { id: "eco_pollination", level: 6, label: { en: "Pollination ↓", fi: "Pölytys ↓" }, sublabel: { en: "Ecosystem service", fi: "Ekosysteemipalvelu" }, epistemicLevel: "E", detail: { en: { mechanism: "Insect pollinator decline threatens 75% of crops. Electrostatic pollination mechanism disruption." }, fi: { mechanism: "Hyönteispölyttäjien väheneminen uhkaa 75% viljelykasveista. Sähköstaattisen pölytysmekanismin häiriö." }, link: "/sentinel#pollination" } },
   {
     id: "ecosystem_cascade",

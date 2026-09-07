@@ -2869,7 +2869,7 @@
       "satellite",
       "starlink",
       "predictive",
-      "speculative",
+      "novel-falsifiable",
       "migratory",
       "sentinel"
     ],
@@ -2878,7 +2878,7 @@
     ],
     "evidenceRole": "PREDICTION",
     "status": "PREDICTION",
-    "translationScope": "Satellite constellations represent a new EMF layer with unique properties: global coverage, independent of national policy, ground-based infrastructure not required. BERM predicts: migratory species using magnetic compass (birds, bats, sea turtles) will show measurable behavioral effects as constellation density increases. Speculative but falsifiable.",
+    "translationScope": "Satellite constellations represent a new EMF layer with unique properties: global coverage, independent of national policy, ground-based infrastructure not required. BERM predicts: migratory species using magnetic compass (birds, bats, sea turtles) will show measurable behavioral effects as constellation density increases. Novel and falsifiable.",
     "n": null
   },
   {

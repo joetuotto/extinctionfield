@@ -23,7 +23,7 @@ const COPY: Record<string, Copy> = {
   en: {
     title: "BERM mathematical specification",
     subtitle:
-      "The equations behind the three-level scalar architecture: the Lindgren geometry premise, BERM's open selection closure, two-channel exposure model, biological capacity, behavioral factor, cultural compensation, Jacobian stability and locked predictions.",
+      "The equations behind the three-level scalar architecture: the Lindgren premise and restricted L1 χ_geo derivation, the open L0→L2 observable bridge, imported L3 biology, the two-channel exposure model, biological capacity, behavioral factor, cultural compensation, Jacobian stability and locked predictions.",
     metaTitle: "BERM mathematics – Extinction Field",
     metaDescription: "The BERM v17 mathematical specification: §1–§11 from geometry to falsification conditions.",
     modelLink: "← Back to model overview",
@@ -37,7 +37,7 @@ const COPY: Record<string, Copy> = {
   fi: {
     title: "BERM:n matemaattinen määrittely",
     subtitle:
-      "Kolmitasoisen skaalaariarkkitehtuurin yhtälöt: Lindgrenin geometriapremissi, BERM:n avoin valintasulkeuma, kaksikanavamalli, biologinen kapasiteetti, käyttäytymiskerroin, kulttuurikompensaatio, Jacobiaani ja lukitut ennusteet.",
+      "Kolmitasoisen skaalaariarkkitehtuurin yhtälöt: Lindgrenin premissi ja rajoitettu L1-johdettu χ_geo, avoin L0→L2-havaintosilta, tuotu L3-biologia, kaksikanavamalli, biologinen kapasiteetti, käyttäytymiskerroin, kulttuurikompensaatio, Jacobiaani ja lukitut ennusteet.",
     metaTitle: "BERM-matematiikka – Extinction Field",
     metaDescription: "BERM v17:n matemaattinen määrittely: §1–§11 geometriasta falsifikaatioehtoihin.",
     modelLink: "← Takaisin mallin yleiskatsaukseen",
@@ -51,7 +51,7 @@ const COPY: Record<string, Copy> = {
   ja: {
     title: "BERM 数学的仕様",
     subtitle:
-      "三層スカラーアーキテクチャの方程式：Lindgren幾何学の前提、BERMの未解決な選択閉包、二チャネル暴露モデル、生物学的容量、行動因子、文化的補償、ヤコビアン安定性およびロック済み予測。",
+      "三層スカラーアーキテクチャの方程式：Lindgrenの前提と制限されたL1導出χ_geo、未解決のL0→L2観測量ブリッジ、導入されたL3生物学、二チャネル暴露モデル、生物学的容量、行動因子、文化的補償、ヤコビアン安定性およびロック済み予測。",
     metaTitle: "BERM 数学 – Extinction Field",
     metaDescription: "BERM v17 数学的仕様：§1–§11 幾何学から反証条件まで。",
     modelLink: "← モデル概要に戻る",
@@ -65,7 +65,7 @@ const COPY: Record<string, Copy> = {
   fr: {
     title: "Spécification mathématique du BERM",
     subtitle:
-      "Les équations de l’architecture scalaire à trois niveaux : prémisse géométrique de Lindgren, fermeture de sélection ouverte de BERM, modèle d’exposition à deux canaux, capacité biologique, facteur comportemental, compensation culturelle, stabilité jacobienne et prédictions verrouillées.",
+      "Les équations de l’architecture scalaire à trois niveaux : prémisse de Lindgren et dérivation L1 restreinte de χ_geo, pont L0→L2 ouvert vers l’observable, biologie L3 importée, modèle d’exposition à deux canaux, capacité biologique, facteur comportemental, compensation culturelle, stabilité jacobienne et prédictions verrouillées.",
     metaTitle: "Mathématiques du BERM – Extinction Field",
     metaDescription: "Spécification mathématique du BERM v17 : §1–§11, de la géométrie aux conditions de falsification.",
     modelLink: "← Retour à l’aperçu du modèle",
@@ -79,7 +79,7 @@ const COPY: Record<string, Copy> = {
   ko: {
     title: "BERM 수학적 사양",
     subtitle:
-      "3계층 스칼라 아키텍처의 방정식: Lindgren 기하학 전제, BERM의 열린 선택 폐쇄, 2채널 노출 모델, 생물학적 용량, 행동 요인, 문화적 보상, 야코비안 안정성 및 잠금된 예측.",
+      "3계층 스칼라 아키텍처의 방정식: Lindgren 전제와 제한된 L1 도출 χ_geo, 열린 L0→L2 관측량 연결, 도입된 L3 생물학, 2채널 노출 모델, 생물학적 용량, 행동 요인, 문화적 보상, 야코비안 안정성 및 잠금된 예측.",
     metaTitle: "BERM 수학 – Extinction Field",
     metaDescription: "BERM v17 수학적 사양: §1–§11 기하학에서 반증 조건까지.",
     modelLink: "← 모델 개요로 돌아가기",

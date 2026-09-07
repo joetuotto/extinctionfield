@@ -45,6 +45,19 @@ personal = 3 × mobile_per_100 / (mobile_per_100 + 50)
 total    = ambient + chi(ambient) × personal
 ```
 
+Tässä `ambient` ja `personal` ovat eksplisiittisesti **dimensiottomia
+legacy-proxykoordinaatteja**, eivät V/m-mittauksia. Kaavan `chi` toteuttaa
+geometrisen kertoimen
+\(\chi_{\mathrm{geo}}(x)=x/\sqrt{1+x^2}\), jonka kaava ja algebralliset
+ominaisuudet säilyvät L1-tuloksina. Yleinen Lorentz-tulos on suunnattu ja
+etumerkillinen. Sen muuttaminen havaitsijakohtaiseksi avaruudelliseksi,
+euklidiseksi ja kollineaariseksi skalaariksi \(x\propto|\bar A|\) on erillinen
+L2-silta. Yllä olevien mobile-/urban-proxyjen normalisointi ja identifiointi
+tämän sillan \(x\)-koordinaatiksi on samoin avoin L0→L2-vaihe, ei
+kenttämittaus tai kalvopotentiaalin johto. Alavirran empiiriset biologiset
+tekijät ovat L3-komponentteja ja arvioidaan komponenttikohtaisesti; L2-/L3-
+jatko ei alenna abstraktin \(\chi_{\mathrm{geo}}\)-kaavan L1-statusta.
+
 Sotilas- ja broadcast-kerrokset ovat tässä globaalissa reitissä `SCENARIO_PARAMETER/default_zero`-oletuksia, eivät havaintoja. Puuttuva tai ekstrapoloitu mobile/urban-historian arvo tekee testirivin kelvottomaksi.
 
 Jokaisessa skenaariossa ridge-kertoimet, imputointimediaanit ja skaalaus sovitetaan vain training-vuosista. BERM ja M0 arvioidaan täsmälleen samoilla kelvollisilla maa–vuosi-riveillä. Lisäksi tehdään country-held-out-tarkistus: pidetyn maan TFR ja kovariaatit eivät osallistu sovitukseen tai train-mediaaneihin.

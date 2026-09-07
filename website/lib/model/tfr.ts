@@ -2,10 +2,27 @@ import { ALPHA_EFF, GAMMA_MELATONIN, GAMMA_OVUL_VGIC, GAMMA_MOTILITY, GAMMA_CAPA
 import { getCountry, COUNTRIES, RECOVERY_LAYERS, OCCUPATIONAL_EMF_WEIGHTS } from "./countries";
 import { v16AmbientAnnual, wifiPenetration } from "./ambient";
 import { v16PersonalAnnual, smartphonePenetration } from "./personal";
-import { chi } from "./lindgren";
+import {
+  asDimensionlessChiCoordinate,
+  chi,
+  type DimensionlessChiCoordinate,
+} from "./lindgren";
 
 function clamp(x: number, lo: number, hi: number): number {
   return Math.min(hi, Math.max(lo, x));
+}
+
+/**
+ * Legacy v17 candidate L0→L2 adapter. The χ rule's applied status is
+ * [L1 + L0/L2 reduction]: its L1 directional-derivative form does not make
+ * this technology-timing proxy a spatial reduction. The index is already
+ * dimensionless, so the identity preserves the archived calculation; it is
+ * not a geometric/physical calibration or a measured FieldState mapping.
+ */
+function candidateProxyToChiCoordinate(
+  zProxy: number,
+): DimensionlessChiCoordinate {
+  return asDimensionlessChiCoordinate(zProxy);
 }
 
 function vulnerabilityByAge(age: number): number {
@@ -106,7 +123,7 @@ function v17MelatoninSuppression(country: string, year: number): number {
 function v17OvulationVgic(country: string, year: number): number {
   const amb = v16AmbientAnnual(country, year);
   const pers = v16PersonalAnnual(country, year);
-  const vgicExposure = chi(amb) * pers;
+  const vgicExposure = chi(candidateProxyToChiCoordinate(amb)) * pers;
   return clamp(1 - GAMMA_OVUL_VGIC * vgicExposure, 0.95, 1.0);
 }
 
@@ -226,7 +243,7 @@ function v17WeightedCumExposure(country: string, year: number): number {
   for (let y = start; y <= year; y++) {
     const amb = v16AmbientAnnual(country, y);
     const pers = v16PersonalAnnual(country, y);
-    const annual = amb + chi(amb) * pers;
+    const annual = amb + chi(candidateProxyToChiCoordinate(amb)) * pers;
     total += annual * layerRetention(year - y);
   }
   return total;
@@ -249,7 +266,7 @@ function cohortWeightedCumRaw(country: string, year: number): number {
   for (let y = start; y <= year; y++) {
     const amb = v16AmbientAnnual(country, y);
     const pers = v16PersonalAnnual(country, y);
-    const annual = amb + chi(amb) * pers;
+    const annual = amb + chi(candidateProxyToChiCoordinate(amb)) * pers;
     const age = y - birthYear;
     const vuln = vulnerabilityByAge(age);
     const ret = layerRetention(year - y);

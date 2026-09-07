@@ -29,7 +29,10 @@ type Copy = {
 };
 
 const equations = {
-  metric: ["g_{\\mu\\nu}=\\eta_{\\mu\\nu}+A_\\mu A_\\nu"],
+  metric: [
+    "g_{\\mu\\nu}=\\eta_{\\mu\\nu}+A_\\mu A_\\nu",
+    "x=\\sqrt{\\kappa}\\,s,\\qquad \\chi_{\\mathrm{geo}}(x)=\\frac{x}{\\sqrt{1+x^2}}",
+  ],
   record: [
     "\\mathcal M_o=\\{\\mathbf E_o(t),\\mathbf B_o(t),PSD_o(f),\\phi_o(t),p_o(t),c_o(t),u_o,q_o\\}",
     "\\widehat{\\mathbf A}_{o,k}(f)=T_{o,k}(f;\\text{geometry, posture})\\,\\mathbf A_k(f)",
@@ -71,7 +74,7 @@ const t: Record<string, Copy> = {
         ],
         equations: equations.metric,
         note:
-          "The bounded coordinate χ(a)=a/√(1+a²) is a BERM closure proposal. It is not derived from the Lindgren ansatz and is not a FieldState measurement result.",
+          "Metric-volume linearization/geodesic deviation gives the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā|:=√κ·s through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. A raw V/m value, proxy or membrane coordinate must not be inserted into χ_geo; mapping it to q=N(z) and then to biology remains open at L0→L2, with downstream biology imported at L3. χ_geo is not a FieldState measurement result.",
       },
       {
         id: "field-record",
@@ -137,7 +140,7 @@ const t: Record<string, Copy> = {
         ],
         equations: equations.metric,
         note:
-          "Rajattu koordinaatti χ(a)=a/√(1+a²) on BERM:n sulkeumaehdotus. Sitä ei ole johdettu Lindgren-ansatzista, eikä se ole FieldState-mittaustulos.",
+          "Metriikan tilavuuslinearisaatio/geodeesipoikkeama antaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā|:=√κ·s valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Raakaa V/m-arvoa, proxyä tai kalvokoordinaattia ei saa syöttää χ_geo-funktioon; kartoitus q=N(z):ksi ja biologiseksi vasteeksi on avoin L0→L2, ja jatkobiologia on L3:a. χ_geo ei ole FieldState-mittaustulos.",
       },
       {
         id: "field-record",
@@ -199,7 +202,7 @@ const t: Record<string, Copy> = {
           "この幾何学をSHBG、アンドロゲン受容体、イオンチャネル、受容体後シグナルまたは臓器エンドポイントへ写す式はまだありません。この欠けた写像がBERMの未解決L2ブリッジです。",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²)はBERMの閉包提案であり、Lindgrenアンザッツからの導出結果でもFieldState測定結果でもありません。",
+        note: "計量体積の線形化／測地線偏差は、符号付き方向応答と代数式χ_geo(q)=q/√(1+q²)をL1で与えます。無次元・共線Lorentz→Euclid空間・スカラー射影でq=|Ā|:=√κ·sを選ぶ操作はL2です。生のV/m値、プロキシ、膜座標は直接入力できず、q=N(z)と生物応答への写像は未解決L0→L2、下流生物学はL3です。χ_geoはFieldState測定結果ではありません。",
       },
       {
         id: "field-record",
@@ -258,7 +261,7 @@ const t: Record<string, Copy> = {
           "Aucune équation ne relie actuellement cette géométrie à la SHBG, au récepteur des androgènes, à un canal ionique, à la signalisation post-récepteur ou à un endpoint d’organe. Ce mappage manquant est le pont L2 ouvert de BERM.",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²) est une proposition de fermeture de BERM, non un résultat dérivé de Lindgren ni une mesure FieldState.",
+        note: "La linéarisation du volume métrique/la déviation géodésique donne la réponse directionnelle signée et la formule algébrique χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā|:=√κ·s par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. Aucune valeur brute en V/m, aucun proxy ni aucune coordonnée membranaire ne doit être injecté directement ; la projection q=N(z), puis vers la biologie, reste ouverte en L0→L2, et la biologie aval est L3. χ_geo n’est pas un résultat FieldState.",
       },
       {
         id: "field-record",
@@ -317,7 +320,7 @@ const t: Record<string, Copy> = {
           "이 기하학을 SHBG, 안드로겐 수용체, 이온 채널, 수용체 후 신호 또는 장기 엔드포인트에 매핑하는 방정식은 아직 없습니다. 이 누락된 매핑이 BERM의 개방형 L2 브리지입니다.",
         ],
         equations: equations.metric,
-        note: "χ(a)=a/√(1+a²)는 BERM의 폐쇄 제안이며 Lindgren 도출 결과나 FieldState 측정 결과가 아닙니다.",
+        note: "계량 부피 선형화/측지선 편차는 부호 있는 방향 반응과 대수식 χ_geo(q)=q/√(1+q²)를 L1에서 줍니다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|:=√κ·s를 선택하는 것은 L2입니다. 원시 V/m 값·프록시·막 좌표를 직접 넣을 수 없고 q=N(z)와 생물학적 반응으로의 사상은 열린 L0→L2이며 하류 생물학은 L3입니다. χ_geo는 FieldState 측정 결과가 아닙니다.",
       },
       {
         id: "field-record",

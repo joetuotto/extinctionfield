@@ -708,14 +708,14 @@
       "finding": "The monotonic distance gradient (Spearman ρ = +0.088, p = 0.001) is consistent with 1/r² peak field attenuation when 85% of BERM pathways (VGIC 45%, CRY/RPM 25%, HPA 15%) respond to peak field rather than RMS. Peak sidelobe field at 1 km: 24.5 V/m vs RMS 0.037 V/m (ratio 671:1). BERM sigmoid S(E_peak) reaches 50% at 95 km (S(E_rms) at 0.14 km). CRY radical-pair lifetime (~1 µs) matches radar pulse duration.",
       "causal_nodes": ["FIELDSTATE_VECTOR", "A_VGCC_ROS", "B_RPM_CRY", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"],
       "directness": "ECOLOGICAL_ENDPOINT",
-      "translation_scope": "Supports the distinction between peak-field and RMS-field biological relevance for pulsed sources. It does not prove causation: the gradient is correlational (Spearman p = 0.001; the <50 km vs >100 km trend contrast is Welch p = 0.031) and competing explanations (habitat, urbanization) are not excluded.",
+      "translation_scope": "Supports the distinction between peak-field and RMS-field biological relevance for pulsed sources. It does not prove causation: the gradient is correlational (Spearman p = 0.001; the <50 km vs >100 km trend contrast is Welch p = 0.031) and competing explanations (habitat, urbanization) are not excluded. This applies equally to conventional explanations.",
       "calibration_role": "STRUCTURAL_ONLY",
       "protocol_assessment_status": "ASSESSED",
       "discriminating": false,
       "tests_berm_specific_prediction": false,
       "berm_prediction_derived": false,
       "consensus_prediction_same": true,
-      "protocol_note": "See CLASSIFICATION_TABLE F04: chi(A) was not derived for this geometry before the test.",
+      "protocol_note": "See CLASSIFICATION_TABLE F04: the L1 chi_geo rule was not preregistered for this geometry before the test.",
       "limitations": ["Internal analysis, not peer-reviewed", "Correlational spatial gradient", "No measured field dosimetry at routes", "Habitat and urbanization confounders not fully controlled", "VGIC threshold exceedance at 24.5 V/m is a prediction, not confirmed by cell experiment", "Site closure did not predict bird recovery, which constrains the causal reading"]
     }
   ]

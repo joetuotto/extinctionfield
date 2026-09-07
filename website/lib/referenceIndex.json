@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1062,
-    "linkedReferences": 396
+    "totalReferences": 1074,
+    "linkedReferences": 408
   },
   "references": {
     "5g_hpa_axis": {
@@ -10625,6 +10625,126 @@
       "type": "report",
       "linkStatus": "missing",
       "externalUrl": null
+    },
+    "myers2026_iphone_att": {
+      "id": "myers2026_iphone_att",
+      "authors": "Myers CK, Hooper E",
+      "year": 2026,
+      "title": "Is the iPhone Birth Control? Causal Evidence from AT&T's 2007-2011 Carrier Monopoly",
+      "journal": "NBER Working Paper 35310",
+      "type": "report",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3386/w35310"
+    },
+    "hudson2026_teen_fertility": {
+      "id": "hudson2026_teen_fertility",
+      "authors": "Hudson N, Moscoso Boedo H",
+      "year": 2026,
+      "title": "The Collapse of Teen Fertility in the Digital Era",
+      "journal": "University of Cincinnati, Lindner College of Business (working paper, 25 April 2026)",
+      "type": "report",
+      "linkStatus": "verified",
+      "externalUrl": "https://homepages.uc.edu/~moscoshn/Personal_webpage/papers/Smartphone_web.pdf"
+    },
+    "hartley2026_india_4g": {
+      "id": "hartley2026_india_4g",
+      "authors": "Hartley J",
+      "year": 2026,
+      "title": "Smartphones and Fertility: Evidence From the 2016 4G Rollout in India",
+      "journal": "SSRN Working Paper 6957259 (dated 30 September 2025, posted 19 June 2026)",
+      "type": "report",
+      "linkStatus": "verified",
+      "externalUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6957259"
+    },
+    "catterall2010_voltage_sensors": {
+      "id": "catterall2010_voltage_sensors",
+      "authors": "Catterall WA",
+      "year": 2010,
+      "title": "Ion channel voltage sensors: structure, function, and pathophysiology",
+      "journal": "Neuron 67(6):915-928",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.neuron.2010.08.021"
+    },
+    "engstrom1996_ipr_dynamics": {
+      "id": "engstrom1996_ipr_dynamics",
+      "authors": "Engström S",
+      "year": 1996,
+      "title": "Dynamic properties of Lednev's parametric resonance mechanism",
+      "journal": "Bioelectromagnetics 17(1):58-70",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/(sici)1521-186x(1996)17:1<58::aid-bem8>3.0.co;2-5"
+    },
+    "engstrom2004_ion_resonances": {
+      "id": "engstrom2004_ion_resonances",
+      "authors": "Engström S, Bowman JD",
+      "year": 2004,
+      "title": "Magnetic resonances of ions in biological systems",
+      "journal": "Bioelectromagnetics 25(8):620-630",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.20028"
+    },
+    "ashhab2007_driven_two_level": {
+      "id": "ashhab2007_driven_two_level",
+      "authors": "Ashhab S, Johansson JR, Zagoskin AM, Nori F",
+      "year": 2007,
+      "title": "Two-level systems driven by large-amplitude fields",
+      "journal": "Physical Review A 75:063414",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1103/physreva.75.063414"
+    },
+    "park2008_calmodulin_kinetics": {
+      "id": "park2008_calmodulin_kinetics",
+      "authors": "Park HY, Kim SA, Korlach J, Rhoades E, Kwok LW, Zipfel WR, Waxham MN, Webb WW, Pollack L",
+      "year": 2008,
+      "title": "Conformational changes of calmodulin upon Ca2+ binding studied with a microfluidic mixer",
+      "journal": "Proceedings of the National Academy of Sciences 105(2):542-547",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.0710810105"
+    },
+    "gavoci2013_ipr_k_null": {
+      "id": "gavoci2013_ipr_k_null",
+      "authors": "Gavoçi E, Zironi I, Remondini D, Virelli A, Castellani G, Del Re B, Giorgi G, Aicardi G, Bersani F",
+      "year": 2013,
+      "title": "ELF magnetic fields tuned to ion parametric resonance conditions do not affect TEA-sensitive voltage-dependent outward K+ currents in a human neural cell line",
+      "journal": "Bioelectromagnetics 34(8):579-588",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.21807"
+    },
+    "cecchetto2020_kv13": {
+      "id": "cecchetto2020_kv13",
+      "authors": "Cecchetto C, Maschietto M, Boccaccio P, Vassanelli S",
+      "year": 2020,
+      "title": "Electromagnetic field affects the voltage-dependent potassium channel Kv1.3",
+      "journal": "Electromagnetic Biology and Medicine 39(4):316-322",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1080/15368378.2020.1799386"
+    },
+    "ermakov2022_planarian_amf": {
+      "id": "ermakov2022_planarian_amf",
+      "authors": "Ermakov A, Afanasyeva V, Ermakova O, Blagodatski A, Popov A",
+      "year": 2022,
+      "title": "Effect of weak alternating magnetic fields on planarian regeneration",
+      "journal": "Biochemical and Biophysical Research Communications 592:7-12",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.bbrc.2021.12.096"
+    },
+    "baureuskoch2003_vesicle_ipr": {
+      "id": "baureuskoch2003_vesicle_ipr",
+      "authors": "Bauréus Koch CL, Sommarin M, Persson BR, Salford LG, Eberhardt JL",
+      "year": 2003,
+      "title": "Interaction between weak low frequency magnetic fields and cell membranes",
+      "journal": "Bioelectromagnetics 24(6):395-402",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.10136"
     }
   },
   "aliases": {
@@ -10665,7 +10785,9 @@
     "pmc8745621": "kostyuk2021_ldr_mitochondria",
     "pmc5342128": "yang2016_atm_hormesis",
     "pmc5911597": "zhou2018_ldr_tumor_inhibition",
-    "pmc7794644": "vaiserman2021_ldr_hormetin"
+    "pmc7794644": "vaiserman2021_ldr_hormetin",
+    "nber35310": "myers2026_iphone_att",
+    "ssrn6957259": "hartley2026_india_4g"
   },
   "identifiers": {
     "doi:10.1007/s10517-023-05689-2": "5g_hpa_axis",
@@ -11512,6 +11634,20 @@
     "doi:10.1073/pnas.2419630121": "mcconnell2025_roman_lead",
     "doi:10.1002/brb3.70651": "alogaily2025_testosterone_politics",
     "doi:10.1016/j.yhbeh.2011.11.002": "bosch_neumann2012_oxytocin_maternal",
-    "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding"
+    "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding",
+    "doi:10.3386/w35310": "myers2026_iphone_att",
+    "doi:10.1016/j.neuron.2010.08.021": "catterall2010_voltage_sensors",
+    "pmcid:PMC2950829": "catterall2010_voltage_sensors",
+    "pmid:20869590": "catterall2010_voltage_sensors",
+    "doi:10.1002/(sici)1521-186x(1996)17:1<58::aid-bem8>3.0.co;2-5": "engstrom1996_ipr_dynamics",
+    "doi:10.1002/bem.20028": "engstrom2004_ion_resonances",
+    "doi:10.1103/physreva.75.063414": "ashhab2007_driven_two_level",
+    "doi:10.1073/pnas.0710810105": "park2008_calmodulin_kinetics",
+    "doi:10.1002/bem.21807": "gavoci2013_ipr_k_null",
+    "pmid:23900932": "gavoci2013_ipr_k_null",
+    "doi:10.1080/15368378.2020.1799386": "cecchetto2020_kv13",
+    "doi:10.1016/j.bbrc.2021.12.096": "ermakov2022_planarian_amf",
+    "doi:10.1002/bem.10136": "baureuskoch2003_vesicle_ipr",
+    "pmid:12929158": "baureuskoch2003_vesicle_ipr"
   }
 }

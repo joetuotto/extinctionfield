@@ -1,0 +1,1146 @@
+{
+  "schemaVersion": 3,
+  "routeId": "berm-lindgren-dkc-candidate-v1",
+  "status": {
+    "role": "candidate_scenario_and_validation",
+    "calculationEnabled": true,
+    "candidateOutputsEnabled": true,
+    "lindgrenFormulation": "2025-weyl-gme",
+    "l2Bridge": "OPEN",
+    "l2BridgeFormalization": "OPEN_IDENTIFICATION; ROUTE FLAG KEPT SEPARATE FROM PROXY AND M4 FIT",
+    "fieldStateCalibrated": true,
+    "fieldStateCalibrationScope": "CALIBRATION_PIPELINE_IMPLEMENTED_AND_PRODUCES_VALUES",
+    "refinedM4CurrentDataStatus": "NOT_IDENTIFIABLE_WITH_CURRENT_DATA",
+    "supportsUncalibratedExecution": true,
+    "publishesLockedForecasts": true,
+    "nationalInputClass": "TECHNOLOGY_TIMING_PROXY",
+    "epistemicStatusPolicy": "COMPONENTWISE_NO_WEAKEST_LINK_COLLAPSE",
+    "derivedStatusPreserved": true
+  },
+  "derivation": {
+    "L0": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
+    "L1": "exact delta_g plus inverse, determinant, directional volume derivative and parameter-free chi formula on their stated domains",
+    "L1Conditions": "1+kappa A^2>0 for a real Lorentzian volume; D_u sqrt(-det g)=kappa(A dot u)/sqrt(1+kappa A^2) remains directional; chi itself is always L1",
+    "L2": "EXPLICIT BRIDGE: the Lorentz-to-spatial scalar reduction maps the directed derivative through |A_bar| to chi(|A_bar|); concrete observable and delta_V_VGCC identifications still require a response operator and units",
+    "selectionRule": "chi(A_bar)=A_bar/sqrt(1+A_bar^2) is always L1 in the geodesic-deviation chain; the Lorentz-to-spatial |A_bar| reduction and concrete observable mapping are explicit L2 steps",
+    "spatialScalarReduction": {
+      "conditions": "dimensionless, collinear and spacelike",
+      "reductionStatus": "L2_EXPLICIT_BRIDGE",
+      "directedDerivativeToMagnitude": "D_u volume -> |A_bar| -> chi(|A_bar|)",
+      "observableIdentificationStatus": "L2_OPEN",
+      "derivedCoefficientStatus": "L1_ALWAYS"
+    },
+    "imported": "SAR parameters, receptor coupling, modulation, DKC biology and endpoint mappings retain their own L3 provenance without relabelling L1-derived structures",
+    "provenancePolicy": "componentwise_no_weakest_link_collapse",
+    "maxwellCaveat": "the 2025 source uses a variational harmonic-metric equation and Weyl connection; contracted Bianchi alone is not the source equation",
+    "formalThreeElementChain": {
+      "implemented": true,
+      "requiresAll": true,
+      "epistemicStatus": "L1_DERIVED_FORMULAS",
+      "gateStatus": "CONDITIONAL_INPUT_CONTRACT",
+      "derivedStatusPreserved": true,
+      "actionPremise": "S=integral sqrt(-det g) R d^4x",
+      "parallelActionPremises": [
+        "EINSTEIN_HILBERT_WITH_LEVI_CIVITA_CURVATURE",
+        "WEYL_METRIC_GRADIENT_HARMONIC_GME"
+      ],
+      "variationalEquation": "delta S/delta A_mu=0",
+      "variationalResidual": "branch-selected numerical full-action delta S/delta A_mu; EH also checks -2 kappa sqrt(-det g) G^(mu nu) A_nu; GME also checks the harmonic decomposition and R_outer=kappa R_GME",
+      "fullEulerLagrangeRequired": true,
+      "fullEulerLagrangeEvidence": "CONTENT_BOUND_NUMERICAL_RESIDUAL_AND_STRUCTURED_ATTESTATION_REQUIRED",
+      "inputProvenanceBinding": "NUMERIC_INPUT_BUNDLE_SHA256",
+      "ehResidualComputation": "FROM_SUPPLIED_POTENTIAL_AND_SUPPLIED_SYMMETRIC_EINSTEIN_TENSOR",
+      "weylCondition": "nabla^LC_sigma g_mu_nu=0; the Weyl branch separately requires tilde_nabla_sigma g_mu_nu=2 phi_sigma g_mu_nu",
+      "metricCompatibilityCondition": "nabla^LC_sigma g_mu_nu=0",
+      "weylSemimetricityCondition": "tilde_nabla_sigma g_mu_nu=2 phi_sigma g_mu_nu",
+      "weylChecks": [
+        "levi_civita_metric_compatibility",
+        "semimetricity",
+        "connection_reconstruction",
+        "torsion_free"
+      ],
+      "bianchiCondition": "F=dA and homogeneous dF=0",
+      "contractedBianchiCheck": "nabla^LC_mu G_LC^(mu nu)=0 is audited separately and is not a sourced-Maxwell equation",
+      "bianchiChecks": [
+        "levi_civita_contracted_identity",
+        "field_definition_F_equals_dA",
+        "same_field_derivative_attestation",
+        "homogeneous_dF"
+      ],
+      "acceptanceAssertion": "variational_check AND weyl_check AND bianchi_check",
+      "residualAcceptance": "PER_RESIDUAL_ATOL_PLUS_RTOL_TIMES_REFERENCE_SCALE",
+      "elements": [
+        "variational_harmonic_metric_gme",
+        "weyl_semimetricity_and_connection",
+        "bianchi_contracted_identity_and_homogeneous_df"
+      ],
+      "unitTests": {
+        "variational": "tests/test_lindgren_tensor.py::test_variational_field_residual_and_three_way_gate_are_explicit",
+        "weyl": "tests/test_lindgren_tensor.py::test_weyl_semimetricity_uses_the_full_weyl_connection",
+        "leviCivitaMetricCompatibility": "tests/test_lindgren_tensor.py::test_weyl_connection_and_torsion_residuals_use_same_nontrivial_metric",
+        "bianchi": "tests/test_lindgren_tensor.py::test_bianchi_is_the_homogeneous_cyclic_identity_not_the_source_equation"
+      },
+      "passMeaning": "conditional_input_contract_not_independent_proof_or_physical_confirmation"
+    }
+  },
+  "refinements": [
+    {
+      "id": "T1",
+      "name": "country-specific continuous duty cycle",
+      "stage": 2,
+      "formula": "d(t,c)=0.33+0.67/(1+exp(-k_s(t-t_mid(c))))",
+      "freeParameters": 0,
+      "epistemicStatus": "L3_IMPORTED"
+    },
+    {
+      "id": "T2",
+      "name": "Hill response exponent",
+      "stage": 3,
+      "formula": "sigma(x)=x^n/(x_half^n+x^n)",
+      "freeParameters": 1,
+      "parameterBounds": {
+        "n": [
+          1.0,
+          5.0
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T3",
+      "name": "birth-cohort vulnerability",
+      "stage": 2,
+      "formula": "v(a)={5:a<0,4:0<=a<1,3:1<=a<6,2:6<=a<18,1:a>=18}",
+      "freeParameters": 0,
+      "epistemicStatus": "L3_IMPORTED"
+    },
+    {
+      "id": "T4",
+      "name": "Erlang behavioural kernel",
+      "stage": 3,
+      "formula": "k_B(s)=s^(n_B-1) exp(-s/tau_B)/(tau_B^n_B Gamma(n_B))",
+      "freeParameters": 1,
+      "parameterBounds": {
+        "n_B": [
+          2,
+          6
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T5",
+      "name": "endpoint-specific testicular SAR multiplier",
+      "stage": 2,
+      "formula": "w_fertility(f)=SAR_testicular(f) coupling(f) modulation(f)",
+      "freeParameters": 0,
+      "epistemicStatus": "L3_IMPORTED"
+    },
+    {
+      "id": "T6",
+      "name": "separate indoor Wi-Fi proxy",
+      "stage": 4,
+      "formula": "wifi(t)=w_wifi BB(t) D_wifi(t)",
+      "freeParameters": "0-1",
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T7",
+      "name": "handset power-control correction",
+      "stage": 4,
+      "formula": "personal_eff=P_tx_max(1-eta ambient_norm)",
+      "freeParameters": 1,
+      "parameterBounds": {
+        "eta": [
+          0.0,
+          1.0
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T8",
+      "name": "network-density saturation",
+      "stage": 4,
+      "formula": "P_ambient=P_max N/(N_half+N)",
+      "freeParameters": 1,
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T9",
+      "name": "spectral-complexity multiplier",
+      "stage": 4,
+      "formula": "H=-sum(p_f log2 p_f); multiplier=1+lambda_H H",
+      "freeParameters": 1,
+      "parameterBounds": {
+        "lambda_H": [
+          0.0,
+          1.0
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T10",
+      "name": "seasonal-variation prediction",
+      "stage": 2,
+      "formula": "CV_seasonal=CV_0(1-duty_cycle)",
+      "freeParameters": 0,
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T11",
+      "name": "melatonin-redox synergy",
+      "stage": 2,
+      "formula": "BL_syn=BL(1+epsilon_syn d_night chi_pineal)",
+      "freeParameters": 0,
+      "parameterBounds": {
+        "epsilon_syn": [
+          0.1,
+          0.3
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    },
+    {
+      "id": "T12",
+      "name": "explicit parental epigenetic carry-over",
+      "stage": 4,
+      "formula": "BL_final=BL_syn+epsilon_epi BL_parent_at_conception",
+      "freeParameters": 1,
+      "parameterBounds": {
+        "epsilon_epi": [
+          0.05,
+          0.2
+        ]
+      },
+      "epistemicStatus": "L3_PHENOMENOLOGICAL"
+    }
+  ],
+  "predictions": [
+    {
+      "id": "F1",
+      "statement": "South Korea TFR reaches a minimum in 2025-2027 and remains at or above 0.60",
+      "test": "KOSIS annual series",
+      "timing": "2027",
+      "mathematicalForm": "2025 <= argmin_y TFR_KR(y) <= 2027; min_y TFR_KR(y) >= 0.60",
+      "numericValue": {
+        "minimumWindowYears": [
+          2025,
+          2027
+        ],
+        "minimumTfrFloor": 0.6
+      },
+      "timeHorizon": {
+        "type": "calendar_year",
+        "endYear": 2027
+      },
+      "falsificationCriterion": "Falsified if the KOSIS annual minimum occurs outside 2025-2027 or any annual South Korea TFR in that locked window is below 0.60.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "48a886e7df43f72f644e515814b2a822fcd76d62b77b224c0eafc622112fa45c"
+    },
+    {
+      "id": "F2",
+      "statement": "India TFR decline accelerates during 2025-2030 under the smartphone-timing scenario",
+      "test": "SRS/NFHS",
+      "timing": "2030",
+      "mathematicalForm": "Delta^2 TFR_India(y) < 0 for the registered 2025-2030 acceleration contrast",
+      "numericValue": {
+        "windowYears": [
+          2025,
+          2030
+        ],
+        "secondDifferenceUpperBound": 0.0
+      },
+      "timeHorizon": {
+        "type": "calendar_year",
+        "endYear": 2030
+      },
+      "falsificationCriterion": "Falsified if the preregistered SRS/NFHS acceleration contrast is non-negative over 2025-2030.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "aee0598123a8584c7c23973786f71f73f5e9344281472bdcef9434be14daf3aa"
+    },
+    {
+      "id": "F3",
+      "statement": "Seasonal semen variation contracts as the duty-cycle proxy rises",
+      "test": "CECOS/Cryos longitudinal series",
+      "timing": "retrospective",
+      "mathematicalForm": "d A_seasonal / d smartphone_penetration < 0",
+      "numericValue": {
+        "slopeUpperBound": 0.0
+      },
+      "timeHorizon": {
+        "type": "retrospective",
+        "endYear": null
+      },
+      "falsificationCriterion": "Falsified if the preregistered penetration slope for seasonal amplitude is zero or positive.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "855e534434e1bcb4f6d8776b899b50dbf582c06237b2a1cdc50803853cd5a74b"
+    },
+    {
+      "id": "F4",
+      "statement": "ASFR 25-29 is lower for the 2005 birth cohort than the 1985 cohort after age alignment",
+      "test": "national ASFR",
+      "timing": "2034",
+      "mathematicalForm": "ASFR_25_29(cohort=2005) - ASFR_25_29(cohort=1985) < 0",
+      "numericValue": {
+        "birthCohorts": [
+          1985,
+          2005
+        ],
+        "ageBandYears": [
+          25,
+          29
+        ],
+        "differenceUpperBound": 0.0
+      },
+      "timeHorizon": {
+        "type": "calendar_year",
+        "endYear": 2034
+      },
+      "falsificationCriterion": "Falsified if the age-aligned 2005-cohort ASFR at ages 25-29 is greater than or equal to the 1985-cohort value.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "4197aae272a3b433457ffcc06998f97a21dd64cfd3e936a7b0ad73eb33773dd7"
+    },
+    {
+      "id": "F5",
+      "statement": "Rural TFR decline correlates negatively with base-station density in the registered power-control analysis",
+      "test": "geospatial base-station plus municipal TFR panel",
+      "timing": "current",
+      "mathematicalForm": "partial_corr(Delta TFR_rural, base_station_density | preregistered controls) < 0",
+      "numericValue": {
+        "partialCorrelationUpperBound": 0.0
+      },
+      "timeHorizon": {
+        "type": "current_dataset",
+        "endYear": 2026
+      },
+      "falsificationCriterion": "Falsified if the preregistered adjusted rural association is zero or positive.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "fa9d44ff743f0d49f60637426710028ceea2219c8121168ce84e3de940be3b6f"
+    },
+    {
+      "id": "F6",
+      "statement": "A Hill exponent above one is selected in a preregistered multi-country shape test",
+      "test": "20+ country TFR time series, 2000-2024",
+      "timing": "current",
+      "mathematicalForm": "n_hat > 1",
+      "numericValue": {
+        "hillExponentLowerBoundExclusive": 1.0,
+        "minimumCountryCount": 20,
+        "dataWindowYears": [
+          2000,
+          2024
+        ]
+      },
+      "timeHorizon": {
+        "type": "current_dataset",
+        "endYear": 2024
+      },
+      "falsificationCriterion": "Falsified if the preregistered estimate is n <= 1 or fewer than 20 eligible countries remain.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "612a84dee26cf8013034e373252023a3f38440db78c3f546d5d8bc3b7f338caa"
+    },
+    {
+      "id": "F7",
+      "statement": "Low-technology Amish/Haredi comparison communities remain near their own high-fertility baseline",
+      "test": "community demographic series",
+      "timing": "continuous",
+      "mathematicalForm": "d TFR_low_technology / dt = 0 under the registered trend test",
+      "numericValue": {
+        "expectedTrend": 0.0,
+        "amishReferenceTfrRange": [
+          6.5,
+          7.0
+        ]
+      },
+      "timeHorizon": {
+        "type": "continuous",
+        "startYear": 2026,
+        "endYear": null
+      },
+      "falsificationCriterion": "Falsified if a preregistered community-specific trend test shows a sustained departure from zero outside its declared interval.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "be4737e198b403c426d6b599dcc8040b992524800254957ec630fea24df27b19"
+    },
+    {
+      "id": "F8",
+      "statement": "Offspring of persistently low-proxy parents show no generational semen decline attributable to T12",
+      "test": "community health panel",
+      "timing": "continuous",
+      "mathematicalForm": "d semen_quality_low_proxy / d generation = 0",
+      "numericValue": {
+        "expectedGenerationalSlope": 0.0
+      },
+      "timeHorizon": {
+        "type": "continuous",
+        "startYear": 2026,
+        "endYear": null
+      },
+      "falsificationCriterion": "Falsified if a preregistered low-proxy lineage analysis estimates a sustained negative generational slope.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "523bf24736cbc7badf6aee30c713bed0b7747abb6f2e5cd64bb49d982239e98b"
+    },
+    {
+      "id": "F9",
+      "statement": "Male-line cumulative state predicts lower IVF live-birth delivery after female indications are stratified",
+      "test": "IVF registry",
+      "timing": "retrospective",
+      "mathematicalForm": "beta_male_load in logit(P(live_birth)) < 0 after female-indication stratification",
+      "numericValue": {
+        "coefficientUpperBound": 0.0
+      },
+      "timeHorizon": {
+        "type": "retrospective",
+        "endYear": null
+      },
+      "falsificationCriterion": "Falsified if the preregistered adjusted male-load coefficient is zero or positive.",
+      "status": "LOCKED_FALSIFIABLE_FORECAST",
+      "locked": true,
+      "lockRevision": "2026-09-04",
+      "lockDigestSha256": "7fc9cf00f10010b0d6b3a1c82cc108c3486903842367e0b2a283e3fc03972591"
+    }
+  ],
+  "verificationPoints": [
+    {
+      "id": "V1",
+      "level": 1,
+      "claim": "VGCC blockers prevent the reported EMF response in the Pall 2013 evidence set",
+      "test": "source-level replication and blocker specificity review",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V2",
+      "level": 1,
+      "claim": "Schwan membrane-voltage coupling is quantitatively applicable",
+      "test": "protocol-specific membrane-voltage calculation",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V3",
+      "level": 1,
+      "claim": "Amish TFR remains near 6.5-7.0 under the registered low-technology contrast",
+      "test": "community-specific exposure and demographic comparison",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V4",
+      "level": 2,
+      "claim": "Pulsed GSM protocols produce more DNA damage than matched continuous-wave protocols",
+      "test": "matched waveform experiment",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V5",
+      "level": 2,
+      "claim": "The TFR series lacks the proposed decline in the 1950-1985 FM period and accelerates in the GSM period",
+      "test": "pre-specified segmented time-series test",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V6",
+      "level": 2,
+      "claim": "Countries in the proposed 3G transition show slower TFR acceleration than in 2G",
+      "test": "country-panel technology-generation contrast",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V7",
+      "level": 2,
+      "claim": "Measured spectral exposure distributions distinguish the registered frequency bands",
+      "test": "personal spectral dosimetry comparison",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V8",
+      "level": 3,
+      "claim": "Birth cohorts show the registered secular testosterone decline",
+      "test": "age-adjusted cohort analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V9",
+      "level": 3,
+      "claim": "South Korean ASFR ages 25-34 accelerates near the registered 2015 window",
+      "test": "official ASFR breakpoint analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V10",
+      "level": 3,
+      "claim": "The sperm-count decline accelerates in the registered later period",
+      "test": "piecewise meta-regression replication",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": true,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V11",
+      "level": 3,
+      "claim": "Pronatalist programmes do not reverse the registered slow-load trajectory",
+      "test": "policy interruption panel with matched controls",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V12",
+      "level": 3,
+      "claim": "TFR continues declining after smartphone penetration saturation",
+      "test": "post-saturation slope test",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V13",
+      "level": 4,
+      "claim": "The registered endpoints converge temporally during 2007-2015",
+      "test": "multivariate breakpoint comparison",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V14",
+      "level": 4,
+      "claim": "Country ordering of biological load co-varies with myopia and TFR as registered",
+      "test": "out-of-sample country-rank test",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V15",
+      "level": 4,
+      "claim": "The Yakymenko 2016 evidence set retains its reported ROS direction under audit",
+      "test": "study-level extraction and bias-sensitive meta-analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V16",
+      "level": 5,
+      "claim": "The registered Wi-Fi-to-CCD timing is reproduced for honeybees",
+      "test": "species-specific spectral and lag analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V17",
+      "level": 5,
+      "claim": "The registered GSM-to-frog-decline resonance/timing relation is reproduced",
+      "test": "species-specific resonance and breakpoint analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V18",
+      "level": 5,
+      "claim": "House-sparrow abundance varies with base-station exposure in the registered direction",
+      "test": "geospatial replication with habitat controls",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V19",
+      "level": 5,
+      "claim": "Insect biomass decline displays the registered post-saturation pattern",
+      "test": "independent longitudinal biomass analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V20",
+      "level": 5,
+      "claim": "Five ecological crises share the registered 2006-2012 convergence window",
+      "test": "pre-specified multi-series convergence test",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V21",
+      "level": 6,
+      "claim": "Pulsed-GSM studies report effects more often than matched continuous-wave studies",
+      "test": "protocol-coded systematic review",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V22",
+      "level": 6,
+      "claim": "Laboratory background differences predict control-versus-exposed contrast compression",
+      "test": "measured-background multicentre replication",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V23",
+      "level": 7,
+      "claim": "Haredi and secular Israeli TFR retain the registered low-technology contrast",
+      "test": "within-country community comparison",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V24",
+      "level": 7,
+      "claim": "Urbanization-TFR association is mediated by measured ambient exposure under the registered model",
+      "test": "measured-exposure mediation analysis",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    },
+    {
+      "id": "V25",
+      "level": 7,
+      "claim": "Russia's 2007-2015 TFR rise is temporary under the registered 3G-transition timing",
+      "test": "locked post-period trajectory test",
+      "status": "REGISTERED_FOR_CRITICAL_EVALUATION",
+      "gateImplemented": true,
+      "criticalForPublication": false,
+      "defaultResult": "FAIL",
+      "defaultReason": "MISSING_EVALUATION"
+    }
+  ],
+  "verificationGate": {
+    "implemented": true,
+    "enforcementFunction": "require_verification_gate_for_publication",
+    "pointIds": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25"
+    ],
+    "criticalPointIds": [
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10"
+    ],
+    "publicationRule": "all(V1..V10 == PASS) AND protocolAudit.passed",
+    "missingEvaluationPolicy": "FAIL",
+    "unstructuredPassPolicy": "REJECT",
+    "protocolAuditRequirements": [
+      "protocolLockedBeforeSearch",
+      "completeSearchLog",
+      "eligibilityPrespecified",
+      "independentDualScreening",
+      "symmetricModelComparison",
+      "nullAndContradictoryEvidenceSearched",
+      "riskOfBiasComplete",
+      "exclusionsReasoned",
+      "protocolDeviationsDisclosed"
+    ],
+    "defaultEvaluation": {
+      "publicationAllowed": false,
+      "allPointsPassed": false,
+      "criticalFailures": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10"
+      ],
+      "missingEvaluations": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25"
+      ],
+      "publicationBlockers": [
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "PROTOCOL_AUDIT"
+      ],
+      "protocolAudit": {
+        "passed": false,
+        "reason": "MISSING_PROTOCOL_AUDIT",
+        "criticalPointCoverage": false
+      },
+      "points": [
+        {
+          "id": "V1",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V2",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V3",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V4",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V5",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V6",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V7",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V8",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V9",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V10",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": true
+        },
+        {
+          "id": "V11",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V12",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V13",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V14",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V15",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V16",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V17",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V18",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V19",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V20",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V21",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V22",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V23",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V24",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        },
+        {
+          "id": "V25",
+          "result": "FAIL",
+          "reason": "MISSING_EVALUATION",
+          "evidenceSupplied": false,
+          "criticalForPublication": false
+        }
+      ]
+    }
+  },
+  "endpointTests": [
+    {
+      "id": "E1",
+      "test": "2016-2024 country TFR holdout",
+      "criterion": "RMSE < 0.15 TFR units",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    },
+    {
+      "id": "E2",
+      "test": "South Korea ASFR 25-34 acceleration timing",
+      "criterion": "predicted within +/-2 years",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    },
+    {
+      "id": "E3",
+      "test": "Finland TFR exceeds South Korea TFR in 2024",
+      "criterion": "directional ordering",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    },
+    {
+      "id": "E4",
+      "test": "low-technology community TFR approximates its measured baseline",
+      "criterion": "requires community-specific exposure history",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    },
+    {
+      "id": "E5",
+      "test": "same load state maps to the 1973-2018 sperm-concentration series",
+      "criterion": "separate endpoint mapping",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    },
+    {
+      "id": "E6",
+      "test": "allometric honeybee response timing",
+      "criterion": "species-specific spectral input and tau_R",
+      "status": "NOT_RUN_ON_MEASURED_FIELDSTATE"
+    }
+  ],
+  "internalTests": [
+    {
+      "id": "S0",
+      "test": "country holdout coverage",
+      "criterion": "observed TFR is inside the preregistered 95% interval"
+    },
+    {
+      "id": "S1",
+      "test": "kernel ordering",
+      "criterion": "tau_R > tau_B"
+    },
+    {
+      "id": "S2",
+      "test": "long-memory dominance assumption",
+      "criterion": "alpha < 0.5; beta=1-alpha"
+    },
+    {
+      "id": "S3",
+      "test": "South Korea young-ASFR timing",
+      "criterion": "fast arm matches the preregistered timing window"
+    },
+    {
+      "id": "S4",
+      "test": "low-technology contrast",
+      "criterion": "proxy/measurement state is explicitly near the registered reference"
+    },
+    {
+      "id": "S5",
+      "test": "multi-endpoint invariance",
+      "criterion": "same tau_B, tau_R and alpha are retained"
+    },
+    {
+      "id": "S6",
+      "test": "temporal holdout",
+      "criterion": "calibrate through 2015; evaluate 2016-2024"
+    }
+  ],
+  "modelFamilies": [
+    {
+      "id": "M0",
+      "name": "null",
+      "parameters": 0,
+      "description": "constant TFR comparator"
+    },
+    {
+      "id": "M1",
+      "name": "cumulative proxy",
+      "parameters": 1,
+      "description": "legacy cumulative technology proxy"
+    },
+    {
+      "id": "M2",
+      "name": "single exponential",
+      "parameters": 2,
+      "description": "one normalized lag kernel"
+    },
+    {
+      "id": "M3",
+      "name": "base DKC",
+      "parameters": 4,
+      "description": "two normalized kernels plus bounded Hill mapping"
+    },
+    {
+      "id": "M4",
+      "name": "refined DKC",
+      "parameters": "8-10",
+      "description": "T1-T12 candidate calculation"
+    }
+  ],
+  "tensorTests": [
+    {
+      "id": "F_T1",
+      "name": "zero-background prohibition for the candidate ion-channel response",
+      "formula": "chi(0)=0; delta F_ion=C_bridge chi(0) DeltaV_mem=0",
+      "status": "L1_CHI_CONTRACT_WITH_EXPLICIT_L2_RESPONSE_PRODUCT",
+      "implemented": true,
+      "testPath": "tests/test_exposure.py::test_f_t1_zero_background_forbids_personal_response"
+    },
+    {
+      "id": "F_T2",
+      "name": "geodesic selection after scalar spacelike reduction",
+      "formula": "x=sqrt(kappa)s; chi(x)=x/sqrt(1+x^2)=kappa^(-1/2)dV/ds approaches 1",
+      "status": "L1_CHI_FORMULA_AFTER_EXPLICIT_L2_SPATIAL_REDUCTION",
+      "implemented": true,
+      "testPath": "tests/test_exposure.py::test_f_t2_chi_saturates_at_one"
+    },
+    {
+      "id": "F_T3",
+      "name": "directional volume derivative",
+      "formula": "D_u sqrt(-det g)=kappa(A·u)/sqrt(1+kappa A^2); on the L2 spatial slice delta F_ion is proportional to cos(theta)",
+      "status": "L1_DERIVED_DIRECTIONAL_L2_IDENTIFICATION_OPEN",
+      "implemented": true,
+      "testPath": "tests/test_lindgren_tensor.py::test_f_t3_spatial_directional_response_is_proportional_to_cos_theta"
+    },
+    {
+      "id": "F_T4",
+      "name": "frequency-dependent SAR and body resonance",
+      "formula": "SAR=sigma|E_internal|^2/rho; f_res=c/(4L)=44.1 MHz for L=1.7 m, acceptance band +/-20%",
+      "status": "L1_DERIVED_STRUCTURE_WITH_L3_EMPIRICAL_PARAMETERS",
+      "implemented": true,
+      "testPath": "tests/test_schwan.py::test_f_t4_sar_and_human_body_resonance"
+    },
+    {
+      "id": "F_T5",
+      "name": "Schwan membrane filter",
+      "formula": "Delta V=1.5 r E/sqrt(1+(2 pi f tau_m)^2)",
+      "status": "L1_DERIVED_STRUCTURE_WITH_L3_EMPIRICAL_PARAMETERS",
+      "implemented": true,
+      "testPath": "tests/test_schwan.py::test_f_t5_schwan_low_pass_with_one_microsecond_tau"
+    }
+  ],
+  "parameterBudget": {
+    "baseFreeParameters": 4,
+    "refinedFreeParameters": "8-10",
+    "normalization": "beta=1-alpha"
+  }
+}

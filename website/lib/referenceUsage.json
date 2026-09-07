@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-02",
-    "referencesWithUsages": 670,
-    "usageLocations": 1647
+    "generated": "2026-09-07",
+    "referencesWithUsages": 676,
+    "usageLocations": 1649
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -1263,18 +1263,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "icnirp2020": [
@@ -1641,6 +1629,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "lib/civilizationPredictions.ts"
       }
     ],
     "magnesium_testosterone_2025": [
@@ -5323,18 +5315,6 @@
       {
         "path": "/evidence/devices",
         "source": "app/[locale]/evidence/devices/page.tsx"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "vns_gammacore_fda": [
@@ -5345,18 +5325,6 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "ttfields_patent_7016725": [
@@ -6887,12 +6855,20 @@
         "source": "app/[locale]/mathematics/page.tsx"
       },
       {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/mathematics/page.tsx"
       },
       {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/tensor-derivation",
+        "source": "app/[locale]/model/tensor-derivation/page.tsx"
       }
     ],
     "frontiers2021_neurotransmitters": [
@@ -7479,6 +7455,38 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
+    "ashhab2007_driven_two_level": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "engstrom2004_ion_resonances": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "park2008_calmodulin_kinetics": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
+      }
+    ],
+    "gavoci2013_ipr_k_null": [
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
+      }
+    ],
     "sakurai2008": [
       {
         "path": "/model",
@@ -7635,6 +7643,12 @@
         "source": "app/[locale]/model/page.tsx"
       }
     ],
+    "hudson2026_teen_fertility": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
     "fert-steril-2023-phone-sperm-trend": [
       {
         "path": "/model",
@@ -7673,6 +7687,12 @@
       {
         "path": "/model",
         "source": "components/SixFactorSummary.tsx"
+      }
+    ],
+    "baureuskoch2003_vesicle_ipr": [
+      {
+        "path": "/model",
+        "source": "lib/mechanism.ts"
       }
     ],
     "timothy-syndrome-cacna1c-autism": [

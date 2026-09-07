@@ -30,7 +30,7 @@ const COPY = {
         level: "Strong consilience",
         color: "green",
         examples: [
-          "Theory premise (Lindgren 2025 metric) ↔ BERM χ closure proposal [L*, L2 open] ↔ pharmacological Ca²⁺ evidence",
+          "Lindgren 2025 premise ↔ restricted L1 χ_geo derivation ↔ open L0→L2 biological mapping ↔ imported L3 Ca²⁺ pharmacology (distinct provenance)",
           "Genetics ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zürich double-blind]]) ↔ Experimental ([[ref:lopez_martin_2006|López-Martín seizures]])",
           "Epidemiology ([[ref:klimentidis2010|Klimentidis 8-species obesity, p=10⁻⁷]]) ↔ Pathology (SIDS brainstem 5-HT deficiency)",
           "Comparative biology (sentinel species decline) ↔ Clinical (neonatal Q → ∞ prediction)",
@@ -113,7 +113,7 @@ const COPY = {
       "No INTERVENTIONAL evidence — no RCT showing EMF reduction → health improvement",
       "The universality of Ca²⁺ creates false positive risk — some 'convergences' may be trivial",
       "The unbroken chain has 2 partial links (prenatal effects, epidemiology)",
-      "Population-level epidemiology is correlational, not causal",
+      "Population-level epidemiology is correlational, not causal. This applies equally to conventional explanations.",
       "No independent verification method (equivalent to DNA sequencing for evolution)",
       "Industry-funded studies consistently find no effect, creating a contested evidence landscape",
     ],
@@ -128,7 +128,7 @@ const COPY = {
     burdenBefore: "Traditional framing: 'Prove that EMF causes disease.' This demands a single definitive study — an impossibly high bar for a multi-step causal chain spanning 18 orders of magnitude.",
     burdenAfter: "New framing: 'Show where the chain breaks.' Each link has been independently verified. To dismiss the model, identify which specific verified link is wrong — and explain why the evidence supporting it is incorrect.",
     burdenSteps: [
-      { step: "1. Theory boundary explicit", detail: "Lindgren's 2025 metric is the premise; BERM's χ closure and the geometry-to-observable L2 operator remain proposed and uncalibrated. [[ref:tang2024|Tang 2024]] is separate S4 evidence, not a derivation of that bridge." },
+      { step: "1. Theory boundary explicit", detail: "Lindgren's 2025 metric is the L0 premise. Metric-volume linearization/geodesic deviation gives the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. Mapping a proxy, V_m or membrane coordinate to q=N(z) and then to biology remains open at L0→L2. [[ref:tang2024|Tang 2024]] is separate imported L3 S4 evidence." },
       { step: "2. Biochemistry verified", detail: "VGCC → Ca²⁺ → CaM → CaMKII → multiple cascades — basic biochemistry, textbook level" },
       { step: "3. Pharmacology converges", detail: "Every effective treatment targets a Ca²⁺ cascade component — ethosuximide, gabapentin, verapamil, melatonin, lithium, bumetanide" },
       { step: "4. Genetics confirms", detail: "CACNA1C genotype modulates EMF response ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII mutations produce BERM-predicted phenotypes ([[ref:kury2017_camk2|Küry 2017]])" },
@@ -153,7 +153,7 @@ const COPY = {
     iarcQuestion: "Key question: why is circadian disruption via shift work classified as 2A, but circadian disruption via EMF remains at only 2B?",
 
     pemfTitle: "The PEMF Paradox: When EMF Heals",
-    pemfLead: "[[ref:pemf_bone_fda_review_2020|Pulsed electromagnetic field (PEMF) therapy is FDA-approved for bone fracture non-union]]. BERM proposes parameter-dependent hormesis as one way to reconcile therapeutic protocols with reports of harm; this is a testable χ-closure hypothesis, not a result derived from Lindgren geometry.",
+    pemfLead: "[[ref:pemf_bone_fda_review_2020|Pulsed electromagnetic field (PEMF) therapy is FDA-approved for bone fracture non-union]]. BERM proposes a parameter-dependent biological-response optimum as one way to reconcile therapeutic protocols with reports of harm. The hypothesis concerns only the imported L3 Ca²⁺/endpoint response; the restricted L1 χ_geo form remains a separately derived geometric result, and the L0→L2 mapping remains open.",
     pemfParadox: [
       "PEMF promotes bone growth, reduces osteoclast activity, and decreases inflammation",
       "This seems to CONTRADICT BERM: 'if EMF is harmful, why does PEMF heal?'",
@@ -161,15 +161,15 @@ const COPY = {
     pemfResolutionTitle: "BERM proposal: parameter-dependent hormesis",
     pemfResolution: [
       "Ca²⁺ channels mediate BOTH therapeutic and harmful effects",
-      "Controlled parameters (frequency, intensity, duration) → beneficial Ca²⁺ transient",
-      "Chronic uncontrolled exposure → sustained Ca²⁺ overload",
+      "Hypothesis: controlled parameters (frequency, intensity, duration) → beneficial Ca²⁺ transient",
+      "Hypothesis: chronic uncontrolled exposure → sustained Ca²⁺ overload",
       "This is the SAME as any drug: therapeutic dose vs. toxic dose",
     ],
     pemfConclusion: [
       "BERM does NOT predict 'all EMF is harmful'",
       "BERM predicts: outcome depends on Ca²⁺ dynamics (dose, timing, cell type)",
-      "PEMF validation: if PEMF works THROUGH Ca²⁺ channels, this CONFIRMS that EMF affects biology through Ca²⁺ channels — which is BERM's core claim",
-      "The paradox dissolves: PEMF is not an exception to BERM, it is a confirmation",
+      "If PEMF acts through Ca²⁺ channels, that supports the imported L3 channel component for the tested protocol; it does not validate χ_geo or close L0→L2",
+      "A measured optimum would support the parameter-dependent biological hormesis hypothesis, not reclassify the L1 derivation",
     ],
     zapffeTitle: "Zapffe Recursion: The Model Predicts Its Own Rejection",
     zapffeLead: "Peter Wessel Zapffe (1933) identified four mechanisms by which consciousness suppresses intolerable knowledge: isolation (compartmentalization), anchoring (value fixation), distraction (attention displacement), sublimation (aesthetic reframing). BERM predicts that its own reception will follow these mechanisms — not because audiences are irrational, but because EMF-degraded cognitive substrates produce these responses automatically.",
@@ -241,7 +241,7 @@ const COPY = {
         level: "Vahva konsilienss",
         color: "green",
         examples: [
-          "Teoriapremissi (Lindgrenin 2025 metriikka) ↔ BERM:n χ-sulkeumaehdotus [L*, L2 avoin] ↔ farmakologinen Ca²⁺-näyttö",
+          "Lindgrenin 2025 premissi ↔ rajoitettu L1-johdettu χ_geo ↔ avoin biologinen L0→L2-kuvaus ↔ tuotu L3 Ca²⁺-farmakologia (erilliset provenienssit)",
           "Genetiikka ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zürich kaksoissokko]]) ↔ Kokeellinen ([[ref:lopez_martin_2006|López-Martín]] kohtaukset)",
           "Epidemiologia ([[ref:klimentidis2010|Klimentidis]] 8 lajin liikalihavuus, p=10⁻⁷) ↔ Taudinkuva (SIDS aivorungon 5-HT-puutos)",
           "Vertaileva biologia (sentinel-lajien väheneminen) ↔ Kliininen (neonataalinen Q → ∞ -ennuste)",
@@ -324,7 +324,7 @@ const COPY = {
       "Ei INTERVENTIONAALISTA näyttöä — ei RCT:tä joka osoittaa EMF-vähennys → terveyshyöty",
       "Ca²⁺:n universaalisuus luo väärän positiivisen riskin — osa 'konvergensseista' voi olla triviaaleja",
       "Katkeamattomassa ketjussa on 2 osittaista linkkiä (prenataalivaikutukset, epidemiologia)",
-      "Väestötason epidemiologia on korrelatiivista, ei kausaalista",
+      "Väestötason epidemiologia on korrelatiivista, ei kausaalista. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
       "Ei itsenäistä todentamismenetelmää (vastaava kuin DNA-sekvensointi evoluutiolle)",
       "Teollisuuden rahoittamat tutkimukset eivät johdonmukaisesti löydä vaikutusta, luoden kiistanalaisen näyttömaiseman",
     ],
@@ -339,7 +339,7 @@ const COPY = {
     burdenBefore: "Perinteinen kehystys: 'Todista, että EMF aiheuttaa sairautta.' Tämä vaatii yhtä lopullista tutkimusta — mahdottoman korkea rima 18 kertaluokkaa kattavalle monivaiheiselle kausaaliketjulle.",
     burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on todennettu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä tarkka todennettu linkki on väärässä — ja selitettävä miksi sitä tukeva näyttö on virheellistä.",
     burdenSteps: [
-      { step: "1. Teoriaraja ilmaistu", detail: "Lindgrenin vuoden 2025 metriikka on premissi; BERM:n χ-sulkeuma ja geometriasta havaittavaan johtava L2-operaattori ovat ehdotettuja ja kalibroimattomia. [[ref:tang2024|Tang 2024]] on erillistä S4-näyttöä, ei sillan johtaminen." },
+      { step: "1. Teoriaraja ilmaistu", detail: "Lindgrenin vuoden 2025 metriikka on L0-premissi. Metriikan tilavuuslinearisaatio/geodeesipoikkeama antaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Proxyn, V_m:n tai kalvokoordinaatin kartoitus q=N(z):ksi ja biologiseksi vasteeksi on avoin L0→L2. [[ref:tang2024|Tang 2024]] on erillistä tuotua L3 S4-näyttöä." },
       { step: "2. Biokemia todennettu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
       { step: "3. Farmakologia konvergoi", detail: "Jokainen tehokas hoito kohdistuu Ca²⁺-kaskadin komponenttiin — etosuksimidi, gabapentiini, verapamiili, melatoniini, litium, bumetanidi" },
       { step: "4. Genetiikka vahvistaa", detail: "CACNA1C-genotyyppi säätelee EMF-vastetta ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII-mutaatiot tuottavat BERM:n ennustamat fenotyypit ([[ref:kury2017_camk2|Küry 2017]])" },
@@ -364,7 +364,7 @@ const COPY = {
     iarcQuestion: "Avainkysymys: miksi vuorokausirytmin häiriö vuorotyön kautta luokitellaan 2A:ksi, mutta vuorokausirytmin häiriö EMF:n kautta on vain 2B?",
 
     pemfTitle: "PEMF-paradoksi: Kun EMF parantaa",
-    pemfLead: "[[ref:pemf_bone_fda_review_2020|Pulssimainen sähkömagneettinen kenttähoito (PEMF) on FDA:n hyväksymä luunmurtumien luutumattomuuteen]]. BERM ehdottaa parametri­riippuvaista hormeesia yhdeksi tavaksi sovittaa terapeuttiset protokollat ja haittaraportit yhteen; kyse on testattavasta χ-sulkeumahypoteesista, ei Lindgrenin geometriasta johdetusta tuloksesta.",
+    pemfLead: "[[ref:pemf_bone_fda_review_2020|Pulssimainen sähkömagneettinen kenttähoito (PEMF) on FDA:n hyväksymä luunmurtumien luutumattomuuteen]]. BERM ehdottaa parametri­riippuvaista biologisen vasteen optimia yhdeksi tavaksi sovittaa terapeuttiset protokollat ja haittaraportit yhteen. Hypoteesi koskee vain tuotua L3 Ca²⁺-/päätepistevastetta; rajoitettu L1-χ_geo-muoto säilyy erillisenä johdettuna geometrisena tuloksena ja L0→L2-kuvaus avoimena.",
     pemfParadox: [
       "PEMF edistää luun kasvua, vähentää osteoklastiaktiivisuutta ja vähentää tulehdusta",
       "Tämä näyttää KUMOAVAN BERM:n: 'jos EMF on haitallinen, miksi PEMF parantaa?'",
@@ -372,15 +372,15 @@ const COPY = {
     pemfResolutionTitle: "BERM-ehdotus: parametririippuvainen hormeesi",
     pemfResolution: [
       "Ca²⁺-kanavat välittävät SEKÄ terapeuttisia ETTÄ haitallisia vaikutuksia",
-      "Kontrolloidut parametrit (taajuus, intensiteetti, kesto) → hyödyllinen Ca²⁺-transientti",
-      "Krooninen kontrolloimaton altistus → jatkuva Ca²⁺-ylikuormitus",
+      "Hypoteesi: kontrolloidut parametrit (taajuus, intensiteetti, kesto) → hyödyllinen Ca²⁺-transientti",
+      "Hypoteesi: krooninen kontrolloimaton altistus → jatkuva Ca²⁺-ylikuormitus",
       "Tämä on SAMA kuin millä tahansa lääkkeellä: terapeuttinen annos vs. toksinen annos",
     ],
     pemfConclusion: [
       "BERM EI ennusta 'kaikki EMF on haitallista'",
       "BERM ennustaa: lopputulos riippuu Ca²⁺-dynamiikasta (annos, ajoitus, solutyyppi)",
-      "PEMF-todentaminen: jos PEMF toimii Ca²⁺-kanavien KAUTTA, tämä VAHVISTAA, että EMF vaikuttaa biologiaan Ca²⁺-kanavien kautta — mikä on BERM:n ydinväite",
-      "Paradoksi liukenee: PEMF ei ole poikkeus BERM:stä, se on vahvistus",
+      "Jos PEMF toimii Ca²⁺-kanavien kautta, se tukee testatun protokollan tuotua L3-kanavakomponenttia; se ei validoi χ_geo:a eikä sulje L0→L2-askelta",
+      "Mitattu optimi tukisi parametri­riippuvaisen biologisen hormeesin hypoteesia, ei luokittelisi L1-johtoa uudelleen",
     ],
     zapffeTitle: "Zapffe-rekursio: Malli ennustaa oman hylkäämisensä",
     zapffeLead: "Peter Wessel Zapffe (1933) tunnisti neljä mekanismia, joilla tietoisuus tukahduttaa sietämätöntä tietoa: eristäminen (kompartmentalisointi), ankkurointi (arvofiksaatio), harhauttaminen (huomion siirtäminen), sublimaatio (esteettinen uudelleenkehystys). BERM ennustaa, että mallin vastaanotto noudattaa näitä mekanismeja — ei siksi, että yleisöt olisivat irrationaalisia, vaan koska EMF-heikentyneet kognitiiviset substraatit tuottavat nämä vasteet automaattisesti.",
@@ -452,7 +452,7 @@ const COPY = {
         level: "強い共鳴的一致",
         color: "green",
         examples: [
-          "理論前提（Lindgren 2025計量）↔ BERM χ閉包命題［L*、L2未解決］↔ Ca²⁺薬理学的証拠",
+          "Lindgren 2025前提 ↔ 制限されたL1導出χ_geo ↔ 未解決の生物学的L0→L2写像 ↔ 導入L3 Ca²⁺薬理学（来歴は別）",
           "遺伝学（[[ref:sousouri2025|CACNA1C、Sousouri 2025、ETH Zurich二重盲検]]） ↔ 実験的（[[ref:lopez_martin_2006|Lopez-Martin発作]]）",
           "疫学（[[ref:klimentidis2010|Klimentidis 8種の肥満、p=10⁻⁷]]） ↔ 病理学（SIDSの脳幹5-HT欠乏）",
           "比較生物学（センチネル種の減少） ↔ 臨床（新生児Q → ∞予測）",
@@ -535,7 +535,7 @@ const COPY = {
       "介入的証拠なし — EMF削減 → 健康改善を示すRCTなし",
       "Ca²⁺の普遍性が偽陽性リスクを生む — 一部の「収束」は自明的かもしれない",
       "途切れない鎖に2つの部分的リンクがある（出生前効果、疫学）",
-      "集団レベルの疫学は相関的であり因果的ではない",
+      "集団レベルの疫学は相関的であり因果的ではない。これは従来の説明にも同様に当てはまる。",
       "独立した検証方法なし（進化にとってのDNAシーケンシングに相当するもの）",
       "産業資金による研究は一貫して効果を見出さず、論争のある証拠の景観を作り出す",
     ],
@@ -550,7 +550,7 @@ const COPY = {
     burdenBefore: "従来の枠組み：「EMFが疾病を引き起こすことを証明せよ。」これは単一の決定的な研究を要求する — 18桁にわたる多段階因果チェーンにとって不可能に高い基準。",
     burdenAfter: "新しい枠組み：『鎖がどこで切れるかを示せ。』各リンクは独立に検証されている。モデルを退けるには、どの特定の検証済みリンクが誤りかを示し、その証拠がなぜ誤っているかを説明する。",
     burdenSteps: [
-      { step: "1. 理論境界を明示", detail: "Lindgren 2025計量は前提であり、BERM χ閉包と幾何学から観測量へのL2演算子は未校正の提案である。[[ref:tang2024|Tang 2024]]は別個のS4証拠であり、この橋の導出ではない。" },
+      { step: "1. 理論境界を明示", detail: "Lindgren 2025計量はL0前提である。計量体積の線形化／測地線偏差は符号付き方向応答と代数式χ_geo(q)=q/√(1+q²)をL1で与える。無次元・共線Lorentz→Euclid空間・スカラー射影でq=|Ā|を選ぶ操作はL2である。プロキシ、V_m、膜座標からq=N(z)、さらに生物応答への写像は未解決L0→L2である。[[ref:tang2024|Tang 2024]]は別個の導入L3 S4証拠である。" },
       { step: "2. 生化学が検証済み", detail: "VGCC → Ca²⁺ → CaM → CaMKII → 複数のカスケード — 基礎生化学、教科書レベル" },
       { step: "3. 薬理学が収束", detail: "すべての効果的な治療はCa²⁺カスケードの構成要素を標的にする — エトスクシミド、ガバペンチン、ベラパミル、メラトニン、リチウム、ブメタニド" },
       { step: "4. 遺伝学が確認", detail: "CACNA1C遺伝子型はEMF応答を調節する（[[ref:sousouri2025|Sousouri 2025]] RCT）。CaMKII変異はBERMが予測する表現型を生む（[[ref:kury2017_camk2|Küry 2017]]）" },
@@ -575,7 +575,7 @@ const COPY = {
     iarcQuestion: "重要な問いかけ：なぜ交代制勤務による概日リズムの乱れは2Aに分類されるのに、EMFによる概日リズムの乱れは2Bにとどまるのか？",
 
     pemfTitle: "PEMFのパラドックス：EMFが治療する時",
-    pemfLead: "[[ref:pemf_bone_fda_review_2020|PEMF療法は骨折偽関節に対してFDA承認されている]]。BERMは治療プロトコルと有害性報告を整合する候補としてパラメータ依存ホルミシスを提案する。これは検証可能なχ閉包仮説であり、Lindgren幾何学からの導出ではない。",
+    pemfLead: "[[ref:pemf_bone_fda_review_2020|PEMF療法は骨折偽関節に対してFDA承認されている]]。BERMは治療プロトコルと有害性報告を整合する候補として、パラメータ依存の生物応答最適点を提案する。この仮説が対象とするのは導入L3 Ca²⁺／エンドポイント応答のみであり、制限されたL1 χ_geoの形は別個に導出された幾何学的結果のままである。L0→L2写像は未解決である。",
     pemfParadox: [
       "PEMFは骨の成長を促進し、破骨細胞活性を低下させ、炎症を軽減する",
       "これはBERMと矛盾するように見える：「EMFが有害なら、なぜPEMFは治療するのか？」",
@@ -583,15 +583,15 @@ const COPY = {
     pemfResolutionTitle: "BERM命題：パラメータ依存ホルミシス",
     pemfResolution: [
       "Ca²⁺チャネルは治療的効果と有害な効果の両方を媒介する",
-      "制御されたパラメータ（周波数、強度、持続時間） → 有益なCa²⁺トランジェント",
-      "慢性的な制御されない曝露 → 持続的なCa²⁺過負荷",
+      "仮説：制御されたパラメータ（周波数、強度、持続時間） → 有益なCa²⁺トランジェント",
+      "仮説：慢性的な制御されない曝露 → 持続的なCa²⁺過負荷",
       "これは医薬品と同じ：治療用量 vs. 毒性用量",
     ],
     pemfConclusion: [
       "BERMは「すべてのEMFが有害」とは予測しない",
       "BERMの予測：結果はCa²⁺ダイナミクス（用量、タイミング、細胞タイプ）に依存する",
-      "PEMFがCa²⁺チャネルを介して作用するなら、EMFがCa²⁺チャネルを通じて生物学に影響するというBERMの核心主張を確認する",
-      "パラドックスは解消する。PEMFはBERMの例外ではなく、その確認である",
+      "PEMFがCa²⁺チャネルを介して作用するなら、検証したプロトコルの導入L3チャネル要素を支持するが、χ_geoを検証せずL0→L2を閉じない",
+      "最適点の測定はパラメータ依存の生物学的ホルミシス仮説を支持し得るが、L1導出を再分類しない",
     ],
     testLabel: "テスト",
     consequenceLabel: "結果",
@@ -629,7 +629,7 @@ const COPY = {
         level: "Consilience forte",
         color: "green",
         examples: [
-          "Prémisse théorique (métrique de Lindgren 2025) ↔ fermeture χ proposée par BERM [L*, L2 ouvert] ↔ preuves pharmacologiques Ca²⁺",
+          "Prémisse de Lindgren 2025 ↔ χ_geo restreinte dérivée en L1 ↔ application biologique L0→L2 ouverte ↔ pharmacologie Ca²⁺ L3 importée (provenances distinctes)",
           "Génétique ([[ref:sousouri2025|CACNA1C, Sousouri 2025, double aveugle ETH Zürich]]) ↔ Expérimental ([[ref:lopez_martin_2006|crises de Lopez-Martin]])",
           "Épidémiologie ([[ref:klimentidis2010|analyse de 8 espèces de Klimentidis, p=10⁻⁷]]) ↔ Pathologie (déficience en 5-HT du tronc cérébral dans le SIDS)",
           "Biologie comparative (déclin des espèces sentinelles) ↔ Clinique (prédiction néonatale Q → ∞)",
@@ -712,7 +712,7 @@ const COPY = {
       "Pas de preuve INTERVENTIONNELLE — pas d'ECR montrant réduction EMF → amélioration de la santé",
       "L'universalité du Ca²⁺ crée un risque de faux positifs — certaines « convergences » peuvent être triviales",
       "La chaîne ininterrompue a 2 maillons partiels (effets prénataux, épidémiologie)",
-      "L'épidémiologie au niveau de la population est corrélative, non causale",
+      "L'épidémiologie au niveau de la population est corrélative, non causale. Cela s'applique également aux explications conventionnelles.",
       "Pas de méthode de vérification indépendante (équivalent du séquençage ADN pour l'évolution)",
       "Les études financées par l'industrie ne trouvent systématiquement aucun effet, créant un paysage de preuves contesté",
     ],
@@ -727,7 +727,7 @@ const COPY = {
     burdenBefore: "Cadrage traditionnel : « Prouvez que les EMF causent des maladies. » Cela exige une seule étude définitive — un obstacle impossiblement élevé pour une chaîne causale multi-étapes couvrant 18 ordres de grandeur.",
     burdenAfter: "Nouveau cadrage : « Montrez où la chaîne se rompt. » Chaque maillon a été vérifié indépendamment. Pour rejeter le modèle, il faut identifier le maillon vérifié qui serait faux et expliquer pourquoi les preuves qui le soutiennent sont incorrectes.",
     burdenSteps: [
-      { step: "1. Frontière théorique explicite", detail: "La métrique de Lindgren (2025) est la prémisse ; la fermeture χ de BERM et l'opérateur L2 géométrie-observable restent proposés et non calibrés. [[ref:tang2024|Tang 2024]] est une preuve S4 distincte, pas une dérivation du pont." },
+      { step: "1. Frontière théorique explicite", detail: "La métrique de Lindgren (2025) est la prémisse L0. La linéarisation du volume métrique/la déviation géodésique donne la réponse directionnelle signée et la formule algébrique χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. Relier un proxy, V_m ou une coordonnée membranaire à q=N(z), puis à la biologie, reste ouvert en L0→L2. [[ref:tang2024|Tang 2024]] est une preuve S4 L3 importée distincte." },
       { step: "2. Biochimie vérifiée", detail: "VGCC → Ca²⁺ → CaM → CaMKII → cascades multiples — biochimie de base, niveau manuel" },
       { step: "3. La pharmacologie converge", detail: "Chaque traitement efficace cible un composant de la cascade Ca²⁺ — éthosuximide, gabapentine, vérapamil, mélatonine, lithium, bumétanide" },
       { step: "4. La génétique confirme", detail: "Le génotype CACNA1C module la réponse EMF ([[ref:sousouri2025|Sousouri 2025]], ECR). Les mutations CaMKII produisent les phénotypes prédits par BERM ([[ref:kury2017_camk2|Küry 2017]])" },
@@ -752,7 +752,7 @@ const COPY = {
     iarcQuestion: "Question clé : pourquoi la perturbation circadienne par le travail posté est-elle classée 2A, alors que la perturbation circadienne par les EMF n'est que 2B ?",
 
     pemfTitle: "Le paradoxe PEMF : quand les EMF guérissent",
-    pemfLead: "[[ref:pemf_bone_fda_review_2020|La thérapie PEMF est approuvée par la FDA pour la non-consolidation des fractures]]. BERM propose une hormèse dépendante des paramètres pour rapprocher protocoles thérapeutiques et rapports d'effets nocifs. C'est une hypothèse de fermeture χ testable, non dérivée de la géométrie de Lindgren.",
+    pemfLead: "[[ref:pemf_bone_fda_review_2020|La thérapie PEMF est approuvée par la FDA pour la non-consolidation des fractures]]. BERM propose un optimum de réponse biologique dépendant des paramètres pour rapprocher protocoles thérapeutiques et rapports d'effets nocifs. L'hypothèse concerne uniquement la réponse Ca²⁺/endpoint L3 importée ; la forme L1 restreinte χ_geo demeure un résultat géométrique dérivé séparément et l'application L0→L2 reste ouverte.",
     pemfParadox: [
       "Les PEMF favorisent la croissance osseuse, réduisent l'activité ostéoclastique et diminuent l'inflammation",
       "Cela semble CONTREDIRE BERM : « si les EMF sont nocifs, pourquoi les PEMF guérissent-ils ? »",
@@ -760,15 +760,15 @@ const COPY = {
     pemfResolutionTitle: "Proposition BERM : hormèse dépendante des paramètres",
     pemfResolution: [
       "Les canaux Ca²⁺ médient AUSSI BIEN les effets thérapeutiques QUE nocifs",
-      "Paramètres contrôlés (fréquence, intensité, durée) → transitoire Ca²⁺ bénéfique",
-      "Exposition chronique non contrôlée → surcharge Ca²⁺ soutenue",
+      "Hypothèse : paramètres contrôlés (fréquence, intensité, durée) → transitoire Ca²⁺ bénéfique",
+      "Hypothèse : exposition chronique non contrôlée → surcharge Ca²⁺ soutenue",
       "C'est la MÊME chose que pour tout médicament : dose thérapeutique vs. dose toxique",
     ],
     pemfConclusion: [
       "BERM NE prédit PAS « tous les EMF sont nocifs »",
       "BERM prédit : le résultat dépend de la dynamique du Ca²⁺ (dose, chronologie, type cellulaire)",
-      "Validation PEMF : si les PEMF agissent PAR les canaux Ca²⁺, cela CONFIRME que les EMF affectent la biologie par les canaux Ca²⁺ — l'affirmation centrale de BERM",
-      "Le paradoxe disparaît : les PEMF ne sont pas une exception à BERM, mais une confirmation",
+      "Si les PEMF agissent par les canaux Ca²⁺, cela soutient le composant L3 importé pour le protocole testé ; cela ne valide pas χ_geo et ne ferme pas L0→L2",
+      "Un optimum mesuré soutiendrait l'hypothèse d'hormèse biologique dépendante des paramètres sans requalifier la dérivation L1",
     ],
     testLabel: "Test",
     consequenceLabel: "Conséquence",
@@ -806,7 +806,7 @@ const COPY = {
         level: "강한 공명적 일치",
         color: "green",
         examples: [
-          "이론 전제(Lindgren 2025 계량) ↔ BERM χ 폐쇄 제안[L*, L2 미해결] ↔ Ca²⁺ 약리학 증거",
+          "Lindgren 2025 전제 ↔ 제한된 L1 도출 χ_geo ↔ 열린 생물학적 L0→L2 매핑 ↔ 도입된 L3 Ca²⁺ 약리학(서로 다른 출처)",
           "유전학 ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zurich 이중 맹검]]) ↔ 실험적 ([[ref:lopez_martin_2006|Lopez-Martin 발작]])",
           "역학 ([[ref:klimentidis2010|Klimentidis 8종 비만, p=10⁻⁷]]) ↔ 병리학 (SIDS 뇌간 5-HT 결핍)",
           "비교 생물학 (센티넬 종의 감소) ↔ 임상 (신생아 Q → ∞ 예측)",
@@ -889,9 +889,9 @@ const COPY = {
       "개입적 증거 없음 — EMF 감소 → 건강 개선을 보여주는 RCT 없음",
       "Ca²⁺의 보편성이 위양성 위험을 만든다 — 일부 '수렴'은 자명할 수 있다",
       "끊어지지 않는 사슬에 2개의 부분적 고리가 있다 (출생 전 효과, 역학)",
-      "집단 수준 역학은 상관적이지 인과적이지 않다",
+      "집단 수준 역학은 상관적이지 인과적이지 않다. 이는 기존 설명에도 동일하게 적용된다.",
       "독립적 검증 방법 없음 (진화에서의 DNA 시퀀싱에 상당하는 것)",
-      "산업 자금 연구는 일관되게 효과를 발견하지 않아 논란이 있는 증거 지형을 만든다",
+      "산업 자금 연구는 일관되게 효과를 발견하지 않아 비전통적인 증거 지형을 만든다",
     ],
 
     verdictTitle: "인식론적 평결",
@@ -904,7 +904,7 @@ const COPY = {
     burdenBefore: "전통적 틀: 'EMF가 질병을 일으킨다는 것을 증명하라.' 이것은 단일한 결정적 연구를 요구한다 — 18자릿수에 걸친 다단계 인과 사슬에 대해 불가능하게 높은 기준.",
     burdenAfter: "새로운 틀: '사슬이 어디서 끊기는지 보여라.' 각 고리는 독립적으로 검증되었다. 모델을 기각하려면 어떤 특정 검증 고리가 틀렸는지 밝히고 이를 지지하는 근거가 왜 잘못인지 설명해야 한다.",
     burdenSteps: [
-      { step: "1. 이론 경계 명시", detail: "Lindgren 2025 계량은 전제이고 BERM χ 폐쇄와 기하학-관측량 L2 연산자는 미보정 제안이다. [[ref:tang2024|Tang 2024]]는 별도의 S4 증거이지 이 연결의 도출이 아니다." },
+      { step: "1. 이론 경계 명시", detail: "Lindgren 2025 계량은 L0 전제다. 계량 부피 선형화/측지선 편차는 부호 있는 방향 반응과 대수식 χ_geo(q)=q/√(1+q²)를 L1에서 준다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2다. 프록시, V_m 또는 막 좌표를 q=N(z)로, 다시 생물학적 반응으로 매핑하는 것은 열린 L0→L2다. [[ref:tang2024|Tang 2024]]는 별도의 도입된 L3 S4 증거다." },
       { step: "2. 생화학 검증됨", detail: "VGCC → Ca²⁺ → CaM → CaMKII → 다중 캐스케이드 — 기초 생화학, 교과서 수준" },
       { step: "3. 약리학 수렴", detail: "모든 효과적인 치료는 Ca²⁺ 캐스케이드 구성 요소를 표적으로 한다 — 에토숙시미드, 가바펜틴, 베라파밀, 멜라토닌, 리튬, 부메타니드" },
       { step: "4. 유전학 확인", detail: "CACNA1C 유전형은 EMF 반응을 조절한다 ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII 돌연변이는 BERM이 예측한 표현형을 만든다 ([[ref:kury2017_camk2|Küry 2017]])" },
@@ -929,7 +929,7 @@ const COPY = {
     iarcQuestion: "핵심 질문: 왜 교대근무로 인한 일주기 교란은 2A로 분류되는데, EMF로 인한 일주기 교란은 2B에 머무는가?",
 
     pemfTitle: "PEMF 역설: EMF가 치유할 때",
-    pemfLead: "[[ref:pemf_bone_fda_review_2020|PEMF 치료는 골절 불유합에 FDA 승인을 받았다]]. BERM은 치료 프로토콜과 위해 보고를 조화시키는 후보로 매개변수 의존 호르메시스를 제안한다. 이는 검증 가능한 χ 폐쇄 가설이며 Lindgren 기하학에서 도출된 결과가 아니다.",
+    pemfLead: "[[ref:pemf_bone_fda_review_2020|PEMF 치료는 골절 불유합에 FDA 승인을 받았다]]. BERM은 치료 프로토콜과 위해 보고를 조화시키는 후보로 매개변수 의존 생물학적 반응 최적점을 제안한다. 이 가설은 도입된 L3 Ca²⁺/종점 반응에만 해당하며, 제한된 L1 χ_geo 형태는 별도로 도출된 기하학적 결과로 남는다. L0→L2 매핑은 열려 있다.",
     pemfParadox: [
       "PEMF는 골 성장을 촉진하고, 파골세포 활성을 감소시키며, 염증을 줄인다",
       "이것은 BERM과 모순되는 것처럼 보인다: 'EMF가 해롭다면, 왜 PEMF는 치유하는가?'",
@@ -937,15 +937,15 @@ const COPY = {
     pemfResolutionTitle: "BERM 제안: 매개변수 의존 호르메시스",
     pemfResolution: [
       "Ca²⁺ 채널은 치료적 효과와 유해한 효과를 모두 매개한다",
-      "제어된 파라미터 (주파수, 강도, 지속 시간) → 유익한 Ca²⁺ 일시적 변동",
-      "만성적 비제어 노출 → 지속적 Ca²⁺ 과부하",
+      "가설: 제어된 파라미터 (주파수, 강도, 지속 시간) → 유익한 Ca²⁺ 일시적 변동",
+      "가설: 만성적 비제어 노출 → 지속적 Ca²⁺ 과부하",
       "이것은 모든 약물과 동일하다: 치료 용량 vs. 독성 용량",
     ],
     pemfConclusion: [
       "BERM은 '모든 EMF가 유해하다'고 예측하지 않는다",
       "BERM의 예측: 결과는 Ca²⁺ 역학(용량, 타이밍, 세포 유형)에 따라 달라진다",
-      "PEMF가 Ca²⁺ 채널을 통해 작용한다면 EMF가 Ca²⁺ 채널을 통해 생물학에 영향을 준다는 BERM의 핵심 주장을 확인한다",
-      "역설은 해소된다. PEMF는 BERM의 예외가 아니라 확인이다",
+      "PEMF가 Ca²⁺ 채널을 통해 작용한다면 검정된 프로토콜의 도입된 L3 채널 구성요소를 지지하지만 χ_geo를 검증하거나 L0→L2를 닫지는 않는다",
+      "측정된 최적점은 매개변수 의존 생물학적 호르메시스 가설을 지지할 수 있지만 L1 도출을 재분류하지 않는다",
     ],
     testLabel: "테스트",
     consequenceLabel: "결과",

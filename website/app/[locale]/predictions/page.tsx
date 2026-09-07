@@ -13,6 +13,7 @@ import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { pickCopy } from "@/lib/i18n";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { DkcValidationRegistry } from "@/components/DkcValidationRegistry";
 
 const COPY = {
   en: {
@@ -348,7 +349,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -385,7 +386,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -513,7 +514,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -1031,7 +1032,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test: measure Ca²⁺ signaling in osteoblasts across PEMF frequency, intensity and duration. Prediction: optimal parameters correspond to a peak in BERM's proposed χ closure; this is not derived from Lindgren geometry and the L2 coupling remains open.",
+        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test: measure Ca²⁺ signaling in osteoblasts across PEMF frequency, intensity and duration. Prediction: a biological-response optimum exists in the protocol parameter space. The optimum hypothesis belongs only to the imported L3 Ca²⁺/endpoint response; the restricted L1 χ_geo form remains a separately derived geometric result. Mapping measured protocol variables through an explicit dimensionless coordinate and into response remains open at L0→L2.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -1654,7 +1655,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. This applies equally to conventional explanations.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -2181,7 +2182,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2-puutos x EMF -interaktio 54 maan regressiossa",
-        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista näyttöä — korrelaatio, ei kausaatio.",
+        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista näyttöä — korrelaatio, ei kausaatio. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
         timeline: "Testattavissa heti (olemassa oleva data + B2-tutkimukset ~30 maasta)",
         falsification: "Ei merkitsevää EMF x B2 -interaktiotermiä, tai interaktio on positiivinen",
       },
@@ -2218,7 +2219,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutidin teho korreloi ympäristön EMF-tason kanssa",
-        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on SPEKULATIIVINEN ennuste — mekanistisesti johdettu mutta kliinistä dataa ei vielä ole. Näyttötaso: L*.",
+        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on mekanistisesti johdettu, falsifioitava ennuste; kliininen testi joko vahvistaa tai kumoaa sen. Näyttötaso: L*.",
         timeline: "3-5 vuotta (olemassa olevien RCT:iden data-analyysi)",
         falsification: "Ei korrelaatiota EMF-ympäristön ja semaglutiditehon välillä",
       },
@@ -2346,7 +2347,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Kilpirauhashäiriöiden esiintyvyys korreloi matkapuhelimen yleistymisasteen kanssa kansallisesti",
-        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöesiintyvyyden (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio.",
+        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöesiintyvyyden (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
         type: "ekologinen",
         discriminating: false,
         timeline: "Testattavissa heti (olemassa olevat terveysrekisterit + ITU-data)",
@@ -2864,7 +2865,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF-terapian parametrit karttuvat Ca²⁺-hormeesikäyrälle",
-        description: "PEMF edistää luunkasvua tietyillä parametreilla, kun taas osassa kroonisen EMF:n tutkimuksia raportoidaan haittaa. BERM ehdottaa Ca²⁺-kanavahormeesia selitykseksi. Testi mittaa osteoblastien Ca²⁺-signalointia taajuuden, intensiteetin ja keston yli. Ennuste: optimi vastaa BERM:n ehdotetun χ-sulkeuman huippua; tulosta ei ole johdettu Lindgrenin geometriasta ja L2-kytkentä on avoin.",
+        description: "PEMF edistää luunkasvua tietyillä parametreilla, kun taas osassa kroonisen EMF:n tutkimuksia raportoidaan haittaa. BERM ehdottaa Ca²⁺-kanavahormeesia selitykseksi. Testi mittaa osteoblastien Ca²⁺-signalointia taajuuden, intensiteetin ja keston yli. Ennuste: protokollan parametriavaruudessa on biologisen vasteen optimi. Optimihypoteesi kuuluu vain tuotuun L3 Ca²⁺-/päätepistevasteeseen; rajoitettu L1-χ_geo-muoto säilyy erillisenä johdettuna geometrisena tuloksena. Mitattujen protokollamuuttujien kuvaaminen eksplisiittisen dimensiottoman koordinaatin kautta vasteeksi on avoin L0→L2-askel.",
         timeline: "Testattavissa 12 kuukaudessa (in vitro osteoblastien Ca²⁺-annosvaste)",
         falsification: "PEMF-vaikutukset eivät noudata hormeesikäyrää Ca²⁺-kanavien kautta",
       },
@@ -4305,7 +4306,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -4336,7 +4337,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -4445,7 +4446,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -4911,7 +4912,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF promotes bone growth at specific parameters while some chronic-EMF studies report harm. BERM proposes a Ca²⁺-channel hormesis explanation. Test the full parameter space. The predicted optimum belongs to BERM's proposed χ closure, is not derived from Lindgren geometry, and leaves L2 open.",
+        description: "PEMFは特定の条件で骨成長を促進し、一部の慢性EMF研究は有害性を報告する。BERMはCa²⁺チャネル・ホルミシスを候補説明として提案する。プロトコルの全パラメータ空間を検証する。予測される最適点の仮説は導入L3 Ca²⁺／エンドポイント応答だけに属し、制限されたL1 χ_geoの形は別個に導出された幾何学的結果のままである。測定プロトコル変数を明示的な無次元座標を介して応答へ写すL0→L2段階は未解決である。",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -5416,7 +5417,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. これは従来の説明にも同様に当てはまる。", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -6088,7 +6089,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -6119,7 +6120,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -6228,7 +6229,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -6694,7 +6695,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "Le PEMF favorise la croissance osseuse sous certains paramètres, tandis que certaines études d'EMF chroniques rapportent des effets nocifs. BERM propose une hormèse des canaux Ca²⁺. L'optimum prédit appartient à la fermeture χ proposée par BERM, n'est pas dérivé de la géométrie de Lindgren et laisse L2 ouvert.",
+        description: "Le PEMF favorise la croissance osseuse sous certains paramètres, tandis que certaines études d'EMF chroniques rapportent des effets nocifs. BERM propose une hormèse des canaux Ca²⁺. L'hypothèse d'optimum dans l'espace des paramètres appartient uniquement à la réponse Ca²⁺/endpoint L3 importée ; la forme L1 restreinte χ_geo demeure un résultat géométrique dérivé séparément. Relier les variables mesurées du protocole à la réponse via une coordonnée explicitement sans dimension reste une étape L0→L2 ouverte.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -7199,7 +7200,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. Cela s'applique tout autant aux explications conventionnelles.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -7871,7 +7872,7 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2 deficiency x EMF interaction in 54-country regression",
-        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation. This applies equally to conventional explanations.",
         timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
         falsification: "No significant EMF x B2 interaction term, or interaction is positive",
       },
@@ -7902,7 +7903,7 @@ const COPY = {
       {
         id: "METAB-3",
         title: "Semaglutide efficacy correlates with ambient EMF level",
-        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a novel, falsifiable prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
         timeline: "3-5 years (clinical data mining from existing RCTs)",
         falsification: "No correlation between EMF environment and semaglutide efficacy",
       },
@@ -8011,7 +8012,7 @@ const COPY = {
       {
         id: "MOD-6",
         title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
-        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation. This applies equally to conventional explanations.",
         type: "ecological",
         discriminating: false,
         timeline: "Testable immediately (existing health registry + ITU data)",
@@ -8477,7 +8478,7 @@ const COPY = {
       {
         id: "E-NEW-30",
         title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
-        description: "PEMF는 특정 매개변수에서 골 성장을 촉진하며 일부 만성 EMF 연구는 위해를 보고한다. BERM은 Ca²⁺ 채널 호르메시스를 제안한다. 예측 최적점은 BERM의 제안된 χ 폐쇄에 속하며 Lindgren 기하학에서 도출된 것이 아니고 L2는 열려 있다.",
+        description: "PEMF는 특정 매개변수에서 골 성장을 촉진하며 일부 만성 EMF 연구는 위해를 보고한다. BERM은 Ca²⁺ 채널 호르메시스를 후보 설명으로 제안한다. 프로토콜 매개변수 공간의 최적점 가설은 도입된 L3 Ca²⁺/종점 반응에만 속하며, 제한된 L1 χ_geo 형태는 별도로 도출된 기하학적 결과로 남는다. 측정된 프로토콜 변수를 명시적 무차원 좌표를 거쳐 반응으로 매핑하는 L0→L2 단계는 열려 있다.",
         timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
         falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
       },
@@ -8982,7 +8983,7 @@ const COPY = {
       { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
       { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
       { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by [[ref:sousouri2025|Sousouri 2025]] (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
-      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof. 이는 기존 설명에도 동일하게 적용됩니다.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
       { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
       { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
       { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
@@ -9054,6 +9055,8 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
+
+      <DkcValidationRegistry locale={locale} />
 
       {/* Prediction Dashboard Summary */}
       <section className="mb-12 max-w-4xl">

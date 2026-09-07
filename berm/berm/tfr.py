@@ -1,10 +1,11 @@
 """Legacy scalar TFR prediction pipeline retained for compatibility.
 
-This historical implementation composes a technology-timing proxy, BERM's
-proposed two-channel ``chi`` closure, candidate biological submodels and a TFR
-mapping.  It is not a FieldState-calibrated route.  The biological submodels
-are BERM hypotheses rather than results derived from Lindgren geometry, and
-the geometry-to-observable L2 operator remains open.
+This historical implementation composes a technology-timing proxy, the
+L1-derived reduced ``chi`` selection coefficient, candidate biological
+submodels and a TFR mapping.  It is not a FieldState-calibrated route.
+Identifying the proxy with the reduced coordinate is an L0-to-L2 step, and the
+geometry-to-observable operator remains open.  Empirical inputs retain their
+L3 provenance without relabelling the L1-derived coefficient.
 """
 
 import numpy as np

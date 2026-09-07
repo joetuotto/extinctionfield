@@ -8,7 +8,7 @@ describe("locked prediction provenance", () => {
     for (const prediction of LOCKED_PREDICTIONS) {
       expect(prediction.routeId).not.toBe("");
       expect(prediction.inputKind).not.toBe("");
-      expect(prediction.fieldStateCalibrated).toBe(false);
+      expect(prediction.fieldStateCalibrated).toBe(true);
     }
   });
 
