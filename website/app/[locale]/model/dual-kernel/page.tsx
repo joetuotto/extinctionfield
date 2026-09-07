@@ -4,6 +4,7 @@ import { Activity, ArrowRight } from "lucide-react";
 
 import { CautionBox } from "@/components/CautionBox";
 import { DkcExplorer } from "@/components/DkcExplorer";
+import { DkcPublicationGate } from "@/components/DkcPublicationGate";
 import { PageHeader } from "@/components/PageHeader";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { DKC_FRAMEWORK } from "@/lib/dkcFramework";
@@ -114,6 +115,9 @@ export default async function DualKernelPage({ params }: { params: Promise<{ loc
         </p>
         <PageHeader icon={Activity} title={d.title} subtitle={d.subtitle} />
         <CautionBox className="mt-8">{d.caution}</CautionBox>
+        <div className="mt-8">
+          <DkcPublicationGate locale={locale} />
+        </div>
 
         <section className="mt-14">
           <h2 className="text-xl font-semibold">1. {d.derivation}</h2>

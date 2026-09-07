@@ -14,6 +14,7 @@ import type { EpistemicLevel } from "@/lib/types";
 import { pickCopy } from "@/lib/i18n";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { DkcValidationRegistry } from "@/components/DkcValidationRegistry";
+import { DkcPublicationGate } from "@/components/DkcPublicationGate";
 
 const COPY = {
   en: {
@@ -9056,6 +9057,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
 
+      <DkcPublicationGate locale={locale} />
       <DkcValidationRegistry locale={locale} />
 
       {/* Prediction Dashboard Summary */}
