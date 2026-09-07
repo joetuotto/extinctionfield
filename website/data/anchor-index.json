@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T13:48:54.860Z",
+  "generatedAt": "2026-09-07T15:04:41.824Z",
   "anchors": [
     {
       "claimId": "claim.civilization.biocap-tfr-input",
@@ -24,7 +24,7 @@
     {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5119
+      "line": 5131
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
@@ -34,17 +34,17 @@
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4811
+      "line": 4819
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5379
+      "line": 5391
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5296
+      "line": 5308
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -54,12 +54,12 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5106
+      "line": 5118
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5292
+      "line": 5304
     }
   ]
 }

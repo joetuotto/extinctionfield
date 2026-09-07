@@ -14,6 +14,7 @@ import { ThresholdChart } from "@/components/ThresholdChart";
 import { ThreeBiologicalBands } from "@/components/ThreeBiologicalBands";
 import { TwoSusceptibilities } from "@/components/TwoSusceptibilities";
 import { MechanismCandidate } from "@/components/MechanismCandidate";
+import { FieldSignalStructure } from "@/components/FieldSignalStructure";
 import { SixFactorSummary } from "@/components/SixFactorSummary";
 import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram";
 import { CitationLink } from "@/components/CitationLink";
@@ -84,6 +85,8 @@ const t = {
     threeBandsTitle: "Three Biological Frequency Bands",
     threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
     threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    signalStructTitle: "Field Structure, Signal Calculation and Identifiability",
+    signalStructSub: "What the premise fixes, what survives to a receptor timescale, and what a power spectrum cannot tell you",
     mechTitle: "Mechanism Candidate: from the metric to Bessel amplitude windows",
     mechSub: "Conditional chain Lindgren → δg → bound ion → Bessel → amplitude; correction registry; six open tests",
     twoSuscTitle: "Two Susceptibility Functions",
@@ -1087,6 +1090,8 @@ const t = {
     threeBandsTitle: "Kolme biologista taajuuskaistaa",
     threeBandsSub: "ULF · ELF · RF — luonnolliset ja antropogeeniset lähteet kartoitettu BERM-poluille",
     threeBandsLead: "Biologiset järjestelmät vuorovaikuttavat sähkömagneettisten kenttien kanssa kolmella erillisellä taajuuskaistalla, joista kullakin on eri fysikaaliset mekanismit ja biologiset kohteet.",
+    signalStructTitle: "Kenttärakenne, signaalilaskenta ja identifioitavuus",
+    signalStructSub: "Mitä premissi kiinnittää, mikä säilyy vastaanottimen aikaskaalaan ja mitä tehospektri ei voi kertoa",
     mechTitle: "Mekanismikandidaatti: metriikasta Bessel-amplitudi-ikkunoihin",
     mechSub: "Ehdollinen ketju Lindgren → δg → sidottu ioni → Bessel → amplitudi; korjausrekisteri; kuusi avointa testiä",
     twoSuscTitle: "Kaksi herkkyysfunktiota",
@@ -2090,6 +2095,7 @@ const t = {
     threeBandsTitle: "Three Biological Frequency Bands",
     threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
     threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    signalStructTitle: "", signalStructSub: "",
     mechTitle: "", mechSub: "",
     twoSuscTitle: "Two Susceptibility Functions",
     twoSuscSub: "χ_geo(x) [L1 + L0/L2縮約] + χ_B 導入L3スピン応答",
@@ -2982,6 +2988,7 @@ const t = {
     threeBandsTitle: "Three Biological Frequency Bands",
     threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
     threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    signalStructTitle: "", signalStructSub: "",
     mechTitle: "", mechSub: "",
     twoSuscTitle: "Two Susceptibility Functions",
     twoSuscSub: "χ_geo(x) [L1 + réduction L0/L2] + χ_B réponse de spin L3 importée",
@@ -3874,6 +3881,7 @@ const t = {
     threeBandsTitle: "Three Biological Frequency Bands",
     threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
     threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    signalStructTitle: "", signalStructSub: "",
     mechTitle: "", mechSub: "",
     twoSuscTitle: "Two Susceptibility Functions",
     twoSuscSub: "χ_geo(x) [L1 + L0/L2 축약] + χ_B 도입 L3 스핀 반응",
@@ -4941,6 +4949,10 @@ export default async function ModelPage({
           {/* B3: From Biology to Civilization */}
           <CollapsibleSection id="mechanism-candidate" title={d.mechTitle} subtitle={d.mechSub}>
             <MechanismCandidate locale={locale} />
+          </CollapsibleSection>
+
+          <CollapsibleSection id="signal-structure" title={d.signalStructTitle} subtitle={d.signalStructSub}>
+            <FieldSignalStructure locale={locale} />
           </CollapsibleSection>
 
           <CollapsibleSection id="biology-to-civilization" title={d.bioCivTitle} subtitle={d.bioCivSub}>

@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1074,
-    "linkedReferences": 408
+    "totalReferences": 1098,
+    "linkedReferences": 427
   },
   "references": {
     "5g_hpa_axis": {
@@ -2208,13 +2208,13 @@
     },
     "catsper2024": {
       "id": "catsper2024",
-      "authors": "Various",
+      "authors": "Young S, Schiffer C, Wagner A, Patz J, Potapenko A, et al.",
       "year": 2024,
-      "title": "CatSper channel complex in human sperm fertilization",
-      "journal": "J Clin Invest",
+      "title": "Human fertilization in vivo and in vitro requires the CatSper channel to initiate sperm hyperactivation",
+      "journal": "Journal of Clinical Investigation 134(1):e173564",
       "type": null,
-      "linkStatus": "missing",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1172/jci173564"
     },
     "chinese_lockdown_cohort_41036143": {
       "id": "chinese_lockdown_cohort_41036143",
@@ -10745,6 +10745,246 @@
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1002/bem.10136"
+    },
+    "blackman1994_ipr_pc12": {
+      "id": "blackman1994_ipr_pc12",
+      "authors": "Blackman CF, Blanchard JP, Benane SG, House DE",
+      "year": 1994,
+      "title": "Empirical test of an ion parametric resonance model for magnetic field interactions with PC-12 cells",
+      "journal": "Bioelectromagnetics 15(3):239-260",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.2250150307"
+    },
+    "blackman1995_ipr_nerve": {
+      "id": "blackman1995_ipr_nerve",
+      "authors": "Blackman CF, Blanchard JP, Benane SG, House DE",
+      "year": 1995,
+      "title": "The ion parametric resonance model predicts magnetic field parameters that affect nerve cells",
+      "journal": "The FASEB Journal 9(7):547-551",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1096/fasebj.9.7.7737464"
+    },
+    "belyaev2009_umts_gsm_foci": {
+      "id": "belyaev2009_umts_gsm_foci",
+      "authors": "Belyaev IY, Markovà E, Hillert L, Malmgren LOG, Persson BRR",
+      "year": 2009,
+      "title": "Microwaves from UMTS/GSM mobile phones induce long-lasting inhibition of 53BP1/gamma-H2AX DNA repair foci in human lymphocytes",
+      "journal": "Bioelectromagnetics 30(2):129-141",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.20445"
+    },
+    "luukkonen2009_menadione_rf": {
+      "id": "luukkonen2009_menadione_rf",
+      "authors": "Luukkonen J, Hakulinen P, Mäki-Paakkanen J, Juutilainen J, Naarala J",
+      "year": 2009,
+      "title": "Enhancement of chemically induced reactive oxygen species production and DNA damage in human SH-SY5Y neuroblastoma cells by 872 MHz radiofrequency radiation",
+      "journal": "Mutation Research 662(1-2):54-58",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.mrfmmm.2008.12.005"
+    },
+    "sannino2023_lte_coexposure": {
+      "id": "sannino2023_lte_coexposure",
+      "authors": "Sannino A, Romeo S, Scarfì MR, Pinchera D, Schettino F, Alonzo M, et al.",
+      "year": 2023,
+      "title": "The effect of exposure to radiofrequency LTE signal and coexposure to mitomycin C in V79 cells",
+      "journal": "Bioelectromagnetics 45(3):97-109",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.22478"
+    },
+    "sannino2022_autophagy_adaptive": {
+      "id": "sannino2022_autophagy_adaptive",
+      "authors": "Sannino A, Scarfì MR, Dufossée M, Romeo S, Poeta L, Prouzet-Mauléon V, et al.",
+      "year": 2022,
+      "title": "Inhibition of Autophagy Negates Radiofrequency-Induced Adaptive Response in SH-SY5Y Neuroblastoma Cells",
+      "journal": "International Journal of Molecular Sciences 23(15):8414",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/ijms23158414"
+    },
+    "sannino2019_parp_adaptive": {
+      "id": "sannino2019_parp_adaptive",
+      "authors": "Sannino A, Zeni O, Romeo S, Lioi MB, Scarfì MR",
+      "year": 2019,
+      "title": "Treatment with 3-Aminobenzamide Negates the Radiofrequency-Induced Adaptive Response in Two Cell Models",
+      "journal": "International Journal of Environmental Research and Public Health 16(15):2768",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/ijerph16152768"
+    },
+    "zeni2021_bystander": {
+      "id": "zeni2021_bystander",
+      "authors": "Zeni O, Romeo S, Sannino A, Palumbo R, Scarfì MR",
+      "year": 2021,
+      "title": "Evidence of bystander effect induced by radiofrequency radiation in a human neuroblastoma cell line",
+      "journal": "Environmental Research 196:110935",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.envres.2021.110935"
+    },
+    "blackman1988_calcium_efflux": {
+      "id": "blackman1988_calcium_efflux",
+      "authors": "Blackman CF, Benane SG, Elliott DJ, House DE, Pollock MM",
+      "year": 1988,
+      "title": "Influence of electromagnetic fields on the efflux of calcium ions from brain tissue in vitro: a three-model analysis consistent with the frequency response up to 510 Hz",
+      "journal": "Bioelectromagnetics 9(3):215-227",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.2250090303"
+    },
+    "blackman1998_double_blind": {
+      "id": "blackman1998_double_blind",
+      "authors": "Blackman CF, Blanchard JP, Benane SG, House DE, Elder JA",
+      "year": 1998,
+      "title": "Double blind test of magnetic field effects on neurite outgrowth",
+      "journal": "Bioelectromagnetics 19(4):204-209",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/(sici)1521-186x(1998)19:4<204::aid-bem2>3.0.co;2-5"
+    },
+    "schuermann2020_passage": {
+      "id": "schuermann2020_passage",
+      "authors": "Schuermann D, Ziemann C, Barekati Z, Capstick M, Oertel A, et al.",
+      "year": 2020,
+      "title": "Assessment of Genotoxicity in Human Cells Exposed to Modulated Electromagnetic Fields of Wireless Communication Devices",
+      "journal": "Genes 11(4):347",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/genes11040347"
+    },
+    "panagopoulos2020_caffeine": {
+      "id": "panagopoulos2020_caffeine",
+      "authors": "Panagopoulos DJ",
+      "year": 2020,
+      "title": "Comparing chromosome damage induced by mobile telephony radiation and a high caffeine dose: effect of combination and exposure duration",
+      "journal": "General Physiology and Biophysics 39(6):531-548",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.4149/gpb_2020036"
+    },
+    "franzellitti2010_transient_dna": {
+      "id": "franzellitti2010_transient_dna",
+      "authors": "Franzellitti S, Valbonesi P, Ciancaglini N, Biondi C, Contin A, Bersani F, Fabbri E",
+      "year": 2010,
+      "title": "Transient DNA damage induced by high-frequency electromagnetic fields (GSM 1.8 GHz) in the human trophoblast HTR-8/SVneo cell line evaluated with the alkaline comet assay",
+      "journal": "Mutation Research 683(1-2):35-42",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.mrfmmm.2009.10.004"
+    },
+    "buckner2015_ttype": {
+      "id": "buckner2015_ttype",
+      "authors": "Buckner CA, Buckner AL, Koren SA, Persinger MA, Lafrenie RM",
+      "year": 2015,
+      "title": "Inhibition of cancer cell growth by exposure to a specific time-varying electromagnetic field involves T-type calcium channels",
+      "journal": "PLoS ONE 10(4):e0124136",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1371/journal.pone.0124136"
+    },
+    "kirson2004_ttfields": {
+      "id": "kirson2004_ttfields",
+      "authors": "Kirson ED, Gurvich Z, Schneiderman R, Dekel E, Itzhaki A, et al.",
+      "year": 2004,
+      "title": "Disruption of cancer cell replication by alternating electric fields",
+      "journal": "Cancer Research 64(9):3288-3295",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1158/0008-5472.can-04-0083"
+    },
+    "ozil2006_calcium_code": {
+      "id": "ozil2006_calcium_code",
+      "authors": "Ozil JP, Banrezes B, Tóth S, Pan H, Schultz RM",
+      "year": 2006,
+      "title": "Ca2+ oscillatory pattern in fertilized mouse eggs affects gene expression and development to term",
+      "journal": "Developmental Biology 300(2):534-544",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.ydbio.2006.08.041"
+    },
+    "zeng2006_noise_gap_junction": {
+      "id": "zeng2006_noise_gap_junction",
+      "authors": "Zeng Q, Ke X, Gao X, Fu Y, Lu D, Chiang H, Xu Z",
+      "year": 2006,
+      "title": "Noise magnetic fields abolish the gap junction intercellular communication suppression induced by 50 Hz magnetic fields",
+      "journal": "Bioelectromagnetics 27(4):274-279",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.20207"
+    },
+    "makinistian2019_coils": {
+      "id": "makinistian2019_coils",
+      "authors": "Makinistian L, Marková E, Belyaev I",
+      "year": 2019,
+      "title": "A high throughput screening system of coils for ELF magnetic fields experiments: proof of concept on the proliferation of cancer cell lines",
+      "journal": "BMC Cancer 19:188",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1186/s12885-019-5376-z"
+    },
+    "etsi_ts_145_002": {
+      "id": "etsi_ts_145_002",
+      "authors": "ETSI",
+      "year": 2022,
+      "title": "TS 145 002 V17.0.0 — GSM/EDGE Multiplexing and multiple access on the radio path",
+      "journal": "ETSI Technical Specification",
+      "type": "standard",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "etsi_ts_125_211": {
+      "id": "etsi_ts_125_211",
+      "authors": "ETSI",
+      "year": 2014,
+      "title": "TS 125 211 V12.0.0 — UMTS Physical channels and mapping of transport channels onto physical channels",
+      "journal": "ETSI Technical Specification",
+      "type": "standard",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "etsi_ts_136_211": {
+      "id": "etsi_ts_136_211",
+      "authors": "ETSI",
+      "year": 2018,
+      "title": "TS 136 211 V14.11.0 — LTE Physical channels and modulation",
+      "journal": "ETSI Technical Specification",
+      "type": "standard",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "etsi_ts_138_211": {
+      "id": "etsi_ts_138_211",
+      "authors": "ETSI",
+      "year": 2020,
+      "title": "TS 138 211 V16.2.0 — 5G NR Physical channels and modulation",
+      "journal": "ETSI Technical Specification",
+      "type": "standard",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "us9622187b2_sar_patent": {
+      "id": "us9622187b2_sar_patent",
+      "authors": "United States Patent and Trademark Office",
+      "year": 2017,
+      "title": "US9622187B2 — Transmission power control based on specific absorption rate history",
+      "journal": "US Patent",
+      "type": "patent",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "fcc_a3lsms901b": {
+      "id": "fcc_a3lsms901b",
+      "authors": "Federal Communications Commission",
+      "year": 2022,
+      "title": "FCC ID A3LSMS901B — Samsung SM-S901B equipment authorisation records",
+      "journal": "FCC Equipment Authorization",
+      "type": "government-data",
+      "linkStatus": "registered",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -11002,6 +11242,8 @@
     "pmid:36829585": "sundaram2023_150khz_female_organs",
     "doi:10.1186/s12889-023-14976-6": "uk_screen_time_2023",
     "doi:10.1001/jama.2023.2064": "verap_t1d_jama",
+    "doi:10.1172/jci173564": "catsper2024",
+    "pmid:38165034": "catsper2024",
     "doi:10.1186/s12985-024-02290-5": "covid_recovery_2024",
     "pmcid:PMC10804479": "covid_recovery_2024",
     "pmid:38263068": "covid_recovery_2024",
@@ -11648,6 +11890,38 @@
     "doi:10.1080/15368378.2020.1799386": "cecchetto2020_kv13",
     "doi:10.1016/j.bbrc.2021.12.096": "ermakov2022_planarian_amf",
     "doi:10.1002/bem.10136": "baureuskoch2003_vesicle_ipr",
-    "pmid:12929158": "baureuskoch2003_vesicle_ipr"
+    "pmid:12929158": "baureuskoch2003_vesicle_ipr",
+    "doi:10.1002/bem.2250150307": "blackman1994_ipr_pc12",
+    "doi:10.1096/fasebj.9.7.7737464": "blackman1995_ipr_nerve",
+    "doi:10.1002/bem.20445": "belyaev2009_umts_gsm_foci",
+    "doi:10.1016/j.mrfmmm.2008.12.005": "luukkonen2009_menadione_rf",
+    "pmid:19135463": "luukkonen2009_menadione_rf",
+    "doi:10.1002/bem.22478": "sannino2023_lte_coexposure",
+    "doi:10.3390/ijms23158414": "sannino2022_autophagy_adaptive",
+    "pmid:35955556": "sannino2022_autophagy_adaptive",
+    "doi:10.3390/ijerph16152768": "sannino2019_parp_adaptive",
+    "pmid:31382475": "sannino2019_parp_adaptive",
+    "doi:10.1016/j.envres.2021.110935": "zeni2021_bystander",
+    "pmid:33647301": "zeni2021_bystander",
+    "doi:10.1002/bem.2250090303": "blackman1988_calcium_efflux",
+    "pmid:3178897": "blackman1988_calcium_efflux",
+    "doi:10.1002/(sici)1521-186x(1998)19:4<204::aid-bem2>3.0.co;2-5": "blackman1998_double_blind",
+    "pmid:9581963": "blackman1998_double_blind",
+    "doi:10.3390/genes11040347": "schuermann2020_passage",
+    "pmid:32218170": "schuermann2020_passage",
+    "doi:10.4149/gpb_2020036": "panagopoulos2020_caffeine",
+    "pmid:33226362": "panagopoulos2020_caffeine",
+    "doi:10.1016/j.mrfmmm.2009.10.004": "franzellitti2010_transient_dna",
+    "pmid:19822160": "franzellitti2010_transient_dna",
+    "doi:10.1371/journal.pone.0124136": "buckner2015_ttype",
+    "pmid:25875081": "buckner2015_ttype",
+    "doi:10.1158/0008-5472.can-04-0083": "kirson2004_ttfields",
+    "pmid:15126372": "kirson2004_ttfields",
+    "doi:10.1016/j.ydbio.2006.08.041": "ozil2006_calcium_code",
+    "pmid:16996050": "ozil2006_calcium_code",
+    "doi:10.1002/bem.20207": "zeng2006_noise_gap_junction",
+    "pmid:16511880": "zeng2006_noise_gap_junction",
+    "doi:10.1186/s12885-019-5376-z": "makinistian2019_coils",
+    "pmid:30819144": "makinistian2019_coils"
   }
 }

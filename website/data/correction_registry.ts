@@ -189,3 +189,194 @@ export const CORRECTION_REGISTRY: CorrectionEntry[] = [
     note: { en: "Layer 3–4 transfer coefficients not estimated.", fi: "Kerros 3–4 siirtokertoimia ei arvioitu." },
   },
 ];
+
+/**
+ * Wording register (source document §7).
+ *
+ * The source document states of this table: "Ne eivät ole sivustolle tehtyjä
+ * muutoksia" — these are not changes made to the site. A check on 2026-09-07
+ * found none of the left-column claims on the site. The register is kept as
+ * documentation of the standard this research chain holds itself to: the
+ * superseded wording on the left is what the evidence does NOT support, and
+ * the right-hand wording is what it does.
+ *
+ * Several entries narrow the model rather than strengthening it. That is the
+ * point: the register exists because earlier formulations were too broad.
+ */
+export interface WordingEntry {
+  id: string;
+  /** The over-broad formulation the evidence does not support. */
+  superseded: LocalizedText;
+  /** The formulation now justified. */
+  justified: LocalizedText;
+  /** Finding numbers in the source document. */
+  findings: string;
+}
+
+export const WORDING_REGISTER: WordingEntry[] = [
+  {
+    id: "study_count",
+    superseded: { en: "530 studies confirm a reproductive effect.", fi: "530 tutkimusta vahvistaa lisääntymisvaikutusta." },
+    justified: {
+      en: "A re-analysed genotoxicity map of 530 publications locates technology and design differences.",
+      fi: "Uudelleenanalysoitu 530 julkaisun genotoksisuuskartta paikantaa teknologia- ja asetelmaeroja.",
+    },
+    findings: "01–03",
+  },
+  {
+    id: "umts_weak",
+    superseded: { en: "UMTS is biologically weak.", fi: "UMTS on biologisesti heikko." },
+    justified: {
+      en: "UMTS publications reported fewer DNA effects; differences in the real signal and in the endpoint have to be separated.",
+      fi: "UMTS-julkaisuissa raportoitiin vähemmän DNA-vaikutuksia; todellisen signaalin ja päätepisteen erot on eroteltava.",
+    },
+    findings: "02–04",
+  },
+  {
+    id: "chronic_animals",
+    superseded: { en: "Present-day animals do not respond because of prior exposure.", fi: "Nykyeläimet eivät reagoi aiemman altistuksen vuoksi." },
+    justified: {
+      en: "No general temporal attenuation was found; the effect of measured history needs a baseline-plus-additional-response test.",
+      fi: "Yleistä ajallista vaimenemista ei löytynyt; mitatun historian vaikutus tarvitsee lähtötaso–lisävaste-testin.",
+    },
+    findings: "05, 13, 50",
+  },
+  {
+    id: "background_amplifies",
+    superseded: { en: "The background makes the RF effect larger through cross products.", fi: "Tausta tekee RF-vaikutuksesta ristitulojen kautta suuremman." },
+    justified: {
+      en: "The cross products follow from the premise; their time average and the receptor's projection decide which driver survives.",
+      fi: "Ristitulot seuraavat premissistä; niiden aikakeskiarvo ja vastaanottimen projektio määräävät säilyvän ajurin.",
+    },
+    findings: "08–11",
+  },
+  {
+    id: "chi_saturation",
+    superseded: { en: "χ saturation removes the additional effect.", fi: "χ:n kyllästyminen poistaa lisävaikutuksen." },
+    justified: {
+      en: "The limit of the additional effect depends on whether the biology reads F, χ or another quantity.",
+      fi: "Lisävaikutuksen raja riippuu siitä, lukeeko biologia F:ää, χ:tä vai muuta suuretta.",
+    },
+    findings: "12",
+  },
+  {
+    id: "ipr_coefficient",
+    superseded: { en: "Lindgren leads directly to the IPR coefficient two.", fi: "Lindgren johtaa suoraan IPR:n kertoimen kaksi." },
+    justified: {
+      en: "Phase modulation yields the Bessel structure; the coupling and the AC/DC sensitivity ratio need a separate derivation.",
+      fi: "Vaihemodulaatio johtaa Bessel-rakenteen; kytkentä ja AC/DC-herkkyyssuhde tarvitsevat erillisen johdon.",
+    },
+    findings: "15–18",
+  },
+  {
+    id: "calmodulin_17_6",
+    superseded: { en: "17.6 ms is a confirmation measured from biophysics.", fi: "17,6 ms on biofysiikasta mitattu vahvistus." },
+    justified: {
+      en: "17.6 ms is a reverse-calculated compatibility; Park's roughly 20 ms is a chemical relaxation measured in a different experiment.",
+      fi: "17,6 ms on käänteislaskettu yhteensopivuus; Parkin noin 20 ms on eri kokeessa mitattu kemiallinen relaksaatio.",
+    },
+    findings: "19",
+  },
+  {
+    id: "resonance_25_4",
+    superseded: { en: "25.4 Hz is the calcium resonance of cells.", fi: "25,4 Hz on solujen kalsiumresonanssi." },
+    justified: {
+      en: "The peak is reported in a particular membrane-vesicle and static-field setup; transfer to radiofrequency-exposed cells is a test hypothesis.",
+      fi: "Huippu on raportoitu tietyssä kalvovesikkeli- ja tasakenttäasetelmassa; RF-solusiirto on testihypoteesi.",
+    },
+    findings: "20, 25",
+  },
+  {
+    id: "eight_percent",
+    superseded: { en: "8% modulation is enough for UMTS.", fi: "8 %:n modulaatio riittää UMTS:lle." },
+    justified: {
+      en: "7.997% concerns the power fundamental on the same carrier; the equivalent field AM is about 4.002%. Changing the carrier changes the condition.",
+      fi: "7,997 % koskee tehon perustaajuutta samalla kantajalla; vastaava kenttä-AM on noin 4,002 %. Kantajan vaihto muuttaa ehdon.",
+    },
+    findings: "26–27",
+  },
+  {
+    id: "spectrum_recovery",
+    superseded: { en: "The biological driver can be recovered from the RF spectrum.", fi: "RF-spektristä voi palauttaa biologisen ajurin." },
+    justified: {
+      en: "The RF power spectrum does not by itself identify the slow intensity spectrum; phase or time-trace information is needed.",
+      fi: "RF-tehospektri ei yksin yksilöi hidasta intensiteettispektriä; vaihe- tai aikajälkitieto tarvitaan.",
+    },
+    findings: "28",
+  },
+  {
+    id: "nr_window",
+    superseded: { en: "NR does not hit the response window.", fi: "NR ei osu vasteikkunaan." },
+    justified: {
+      en: "An exactly repeating 10 ms signal through a stable path produces no 25 Hz line. Other NR traffic is a different case.",
+      fi: "Täsmälleen toistuva 10 ms:n signaali vakaan siirtotien läpi ei tuota 25 Hz:n viivaa. Muu NR-liikenne on eri tapaus.",
+    },
+    findings: "29",
+  },
+  {
+    id: "umts_predicted",
+    superseded: { en: "The strong UMTS responses have now been predicted.", fi: "UMTS:n voimakkaat vasteet on nyt ennustettu." },
+    justified: {
+      en: "The ordering switch for ideal signals has been calculated; ordering tests on real experiments number zero.",
+      fi: "Ideaalisten signaalien järjestyksen vaihtuminen on laskettu; todellisten kokeiden järjestystestejä on tehty nolla.",
+    },
+    findings: "26, 31–33",
+  },
+  {
+    id: "twenty_hour_memory",
+    superseded: { en: "The 20-hour memory is chronic damage.", fi: "20 tunnin muisti on kroonista vauriota." },
+    justified: {
+      en: "In one UMTS setup a radiofrequency pre-treatment changed a later chemical response protectively across an interval of about 20 hours.",
+      fi: "Yhdessä UMTS-asetelmassa RF-esikäsittely muutti myöhempää kemiallista vastetta suojaavasti noin 20 tunnin välin yli.",
+    },
+    findings: "35",
+  },
+  {
+    id: "general_sensor",
+    superseded: { en: "ATG or CRY has been shown to be a general EMF sensor.", fi: "ATG tai CRY on osoitettu yleiseksi EMF-sensoriksi." },
+    justified: {
+      en: "The interventions locate necessary parts of the mechanism in defined cell models and exposure classes.",
+      fi: "Interventiot paikantavat välttämättömiä mekanismin osia määritellyissä solumalleissa ja altistusluokissa.",
+    },
+    findings: "36–40, 49",
+  },
+  {
+    id: "hsp70_mediates",
+    superseded: { en: "HSP70 mediates the bystander effect.", fi: "HSP70 välittää sivullisvaikutuksen." },
+    justified: {
+      en: "Protection transferred by culture medium has been reported; HSP70 is a candidate mediator.",
+      fi: "Kasvatusnesteen siirtämä suoja on raportoitu; HSP70 on välittäjäehdokas.",
+    },
+    findings: "38",
+  },
+  {
+    id: "field_free_sham",
+    superseded: { en: "A field-free sham is always best.", fi: "Kentätön sham on aina paras." },
+    justified: {
+      en: "The artificial exposure is removed while documenting the geomagnetic background; a hypomagnetic condition can itself change cell function.",
+      fi: "Keinotekoinen altiste poistetaan geomagneettista taustaa dokumentoiden; hypomagneettisuus voi itse muuttaa solutoimintaa.",
+    },
+    findings: "41",
+  },
+  {
+    id: "normal_semen",
+    superseded: {
+      en: "Normal semen parameters rule out a biological problem.",
+      fi: "Normaalit siemennesteparametrit sulkevat pois biologisen ongelman.",
+    },
+    justified: {
+      en: "Hyperactivation, CatSper function and fertilisation endpoints can differ from the baseline parameters.",
+      fi: "Hyperaktivaatio, CatSper-toiminta ja hedelmöityspäätepisteet voivat erota perustason parametreista.",
+    },
+    findings: "44–46",
+  },
+  {
+    id: "sentinels_locate",
+    superseded: { en: "Sentinels and drug responses locate the EMF cause.", fi: "Sentinellit ja lääkevasteet paikantavat EMF-syyn." },
+    justified: {
+      en: "They bound cultural explanations and cellular routes; EMF's share requires an exposure-specific contrast.",
+      fi: "Ne rajaavat kulttuurisia selityksiä ja solureittejä; EMF:n osuus vaatii altistekohtaisen kontrastin.",
+    },
+    findings: "48, 51–52",
+  },
+];
