@@ -7704,7 +7704,7 @@ export default async function ModelPage({
           </div>
 
           {/* 9-Hour Recovery Window */}
-          <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 space-y-3">
+          <div className="mb-14 rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 space-y-3">
             <h3 className="text-base font-bold text-foreground">
               {d.dnaRepairTitle}
             </h3>

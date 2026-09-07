@@ -251,15 +251,15 @@ export default async function TensorDerivationPage({ params }: { params: Promise
           <h2 className="text-xl font-semibold">{fi ? "Ehdolliset tensoritestit" : "Conditional tensor tests"}</h2>
           <div className="mt-5 grid gap-3 md:grid-cols-2">
             {DKC_FRAMEWORK.tensorTests.map((test) => (
-              <article key={test.id} className="rounded-xl border border-card-border bg-card-bg p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-sm font-semibold">
+              <article key={test.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-4">
+                <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
+                  <h3 className="min-w-0 text-sm font-semibold">
                     <span className="mr-2 font-mono-num text-xs text-accent">{test.id}</span>
                     {fi ? FI_TENSOR_TESTS[test.id] : test.name}
                   </h3>
-                  <span className="text-[9px] font-semibold uppercase tracking-wide text-foreground-muted">{test.status}</span>
+                  <span className="min-w-0 break-all text-[9px] font-semibold uppercase tracking-wide text-foreground-muted">{test.status}</span>
                 </div>
-                <p className="mt-3 break-words font-mono text-xs leading-relaxed text-foreground-muted">{test.formula}</p>
+                <p className="mt-3 break-all font-mono text-xs leading-relaxed text-foreground-muted">{test.formula}</p>
               </article>
             ))}
           </div>

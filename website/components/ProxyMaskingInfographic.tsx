@@ -248,7 +248,7 @@ export default function ProxyMaskingInfographic({ locale }: { locale: string }) 
 
   return (
     <section
-      className="w-full rounded-2xl border border-card-border p-4 sm:p-8"
+      className="w-full my-12 rounded-2xl border border-card-border p-4 sm:p-8"
       style={{ background: "var(--figure-bg)" }}
     >
       {/* Kicker + Title */}

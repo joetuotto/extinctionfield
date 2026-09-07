@@ -1258,7 +1258,7 @@ export default async function EpistemologyPage({
 
       {/* Zapffe Recursion */}
       {d.zapffeItems?.length > 0 && (
-      <section className="mb-12">
+      <section className="mt-14 border-t editorial-rule pt-6 mb-12">
         <h2 className="text-2xl font-bold mb-3">{d.zapffeTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.zapffeLead}</p>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">

@@ -58,7 +58,7 @@ export function DkcValidationRegistry({ locale }: { locale: string }) {
       </h3>
       <div className="mt-3 grid gap-3 md:grid-cols-2">
         {DKC_FRAMEWORK.predictions.map((prediction) => (
-          <article key={prediction.id} className="rounded-xl border border-card-border bg-card-bg p-4">
+          <article key={prediction.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-4">
             <div className="mb-2 flex items-center justify-between gap-3">
               <span className="font-mono-num text-xs font-semibold text-accent">{prediction.id}</span>
               <span className="text-[10px] uppercase tracking-wide text-foreground-muted">{prediction.timing}</span>
@@ -105,7 +105,7 @@ export function DkcValidationRegistry({ locale }: { locale: string }) {
       </p>
       <div className="mt-3 grid gap-3 md:grid-cols-2">
         {DKC_FRAMEWORK.verificationPoints.map((point) => (
-          <article key={point.id} className="rounded-xl border border-card-border bg-card-bg p-4">
+          <article key={point.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-4">
             <div className="mb-2 flex items-center justify-between gap-3">
               <span className="font-mono-num text-xs font-semibold text-accent">{point.id}</span>
               <span className="text-[10px] uppercase tracking-wide text-foreground-muted">
@@ -166,7 +166,7 @@ function RegistryField({
   return (
     <div>
       <dt className="font-semibold text-foreground-muted">{label}</dt>
-      <dd className={`mt-0.5 break-words leading-relaxed ${mono ? "font-mono" : ""}`}>
+      <dd className={`mt-0.5 leading-relaxed ${mono ? "break-all font-mono" : "break-words"}`}>
         {value}
       </dd>
     </div>
@@ -187,7 +187,7 @@ function ValidationList({
       <h3 className="text-sm font-semibold uppercase tracking-wide">{title}</h3>
       <div className="mt-3 space-y-3">
         {rows.map((row) => (
-          <article key={row.id} className="rounded-lg border border-card-border bg-card-bg p-4">
+          <article key={row.id} className="min-w-0 rounded-lg border border-card-border bg-card-bg p-4">
             <p className="text-sm font-medium">
               <span className="mr-2 font-mono-num text-xs text-accent">{row.id}</span>
               {row.test}

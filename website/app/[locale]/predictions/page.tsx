@@ -9302,7 +9302,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
           <div className="grid gap-4 max-w-4xl">
             {SENTINEL_IDS.map((p) => (
-              <article key={p.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <article key={p.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
@@ -9380,7 +9380,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.modulomePredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9439,7 +9439,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.cascadePredictions.map((cp) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9521,7 +9521,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.nutritionalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.nutritionalPredictions.map((np) => (
-            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={np.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9584,7 +9584,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl"><InlineReferenceText text={d.trpc1Lead} locale={locale} /></p>
         <div className="grid gap-4 max-w-4xl">
           {d.trpc1Predictions.map((tp) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9652,7 +9652,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.modIntLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.modIntPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9692,7 +9692,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
         <div className="grid gap-4 max-w-4xl">
           {d.sidsPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9729,7 +9729,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
         <div className="grid gap-4 max-w-4xl">
           {d.sidsResPredictions.map((srp) => (
-            <article key={srp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={srp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9763,7 +9763,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.neuroLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.neuroPredictions.map((np) => (
-            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={np.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9797,7 +9797,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.metalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.metalPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9826,7 +9826,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.mechLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.mechPredictions.map((mp) => (
-            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={mp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9855,7 +9855,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.suppLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.suppPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9884,7 +9884,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.finalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.finalPredictions.map((fp) => (
-            <article key={fp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={fp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9913,7 +9913,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.extLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.extPredictions.map((ep) => (
-            <article key={ep.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ep.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9942,7 +9942,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ultLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.ultPredictions.map((up) => (
-            <article key={up.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={up.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -9971,7 +9971,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ttypeLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.ttypePredictions.map((ttp) => (
-            <article key={ttp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ttp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10000,7 +10000,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.repLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.repPredictions.map((rp) => (
-            <article key={rp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={rp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10030,7 +10030,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.diffNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.diffPredictions.map((dp) => (
-            <article key={dp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={dp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10077,7 +10077,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.vgccNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.vgccPredictions.map((vp) => (
-            <article key={vp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={vp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10119,7 +10119,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.tTfrNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.tTfrPredictions.map((tp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10160,7 +10160,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.causalNote}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.causalPredictions.map((cp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10200,7 +10200,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.popLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.popPredictions.map((pp) => (
-            <article key={pp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={pp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10247,7 +10247,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.tPredLead}</p>
           <div className="grid gap-4 max-w-4xl">
             {d.tPredPredictions.map((tp: { id: string; title: string; description: string; falsification: string }) => (
-              <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                   <span className="font-mono-num text-xs text-red-500">{tp.id}</span>
                   <h3 className="font-semibold">{tp.title}</h3>
@@ -10272,7 +10272,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.societalLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.societalPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10300,7 +10300,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.techLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.techPredictions.map((tp) => (
-            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10329,7 +10329,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.layerLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.layerPredictions.map((lp) => (
-            <article key={lp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={lp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10362,7 +10362,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.investigationLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.investigationPredictions.map((ip) => (
-            <article key={ip.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ip.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10462,7 +10462,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
         <div className="grid gap-4 max-w-4xl">
           {d.sentinelPredPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10490,7 +10490,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.supplementLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.supplementPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10518,7 +10518,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.geneticLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.geneticPredictions.map((gp) => (
-            <article key={gp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={gp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10578,7 +10578,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.civLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.civPredictions.map((cp) => (
-            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={cp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10610,7 +10610,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         {d.actLead && <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.actLead}</p>}
         <div className="grid gap-4 max-w-4xl">
           {d.actPredictions.map((ap) => (
-            <article key={ap.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={ap.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -10642,7 +10642,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.spaceWeatherLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.spaceWeatherPredictions.map((sp) => (
-            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={sp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
