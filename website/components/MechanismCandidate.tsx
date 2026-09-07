@@ -133,9 +133,9 @@ const T = {
     ],
     outputs: "Ulostulot",
     outputRows: (w: ReturnType<typeof kochWorkedExample>) => [
-      ["u = 2πfτ", w.u.toFixed(5), "L1"],
-      ["λ(f,τ)", w.lambda.toFixed(5), "kandidaatti (c = γ)"],
-      ["s = λ·f_c/f", w.s.toFixed(5), "argumenttikerroin"],
+      ["u = 2πfτ", w.u.toFixed(5).replace(".", ","), "L1"],
+      ["λ(f,τ)", w.lambda.toFixed(5).replace(".", ","), "kandidaatti (c = γ)"],
+      ["s = λ·f_c/f", w.s.toFixed(5).replace(".", ","), "argumenttikerroin"],
       ["|s − 2| / 2", `${(w.coefficientMismatchVs2 * 100).toFixed(2).replace(".", ",")} %`, "kertoimien vertailu, ei datasovitus"],
       ["b_max (J₁:n ensimmäinen maksimi)", `${(w.b_max * 1e6).toFixed(1).replace(".", ",")} µT`, "L1 + ehdollinen"],
       ["b_null (J₁:n ensimmäinen nolla)", `${(w.b_null * 1e6).toFixed(1).replace(".", ",")} µT`, "L1 + ehdollinen"],
