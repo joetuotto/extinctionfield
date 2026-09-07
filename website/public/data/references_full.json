@@ -2,14 +2,14 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1098,
-    "verified_count": 422,
+    "total_references": 1103,
+    "verified_count": 429,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 427,
-    "unlinked_count": 671,
+    "linked_count": 433,
+    "unlinked_count": 670,
     "schema": "canonical-reference-registry-v1",
-    "alias_count": 40,
+    "alias_count": 44,
     "last_updated": "2026-09-07",
     "pathway_scheme": {
       "A": "VGCC/ROS (A_VGCC_ROS)",
@@ -7414,29 +7414,6 @@
       "pathway": [],
       "level": null,
       "type": "collection",
-      "finding": null,
-      "tags": [],
-      "pdf_section": null,
-      "pdf_number": null,
-      "verified": false,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
-    },
-    {
-      "id": "yap2025_cry2_trpc1",
-      "authors": "Yap JLY et al",
-      "year": 2025,
-      "title": "CRY2-TRPC1 complex mediates PEMF-induced calcium signaling and nuclear translocation",
-      "journal": "Cells 14(3):231",
-      "doi": null,
-      "pmid": null,
-      "pmcid": null,
-      "url": null,
-      "category": null,
-      "pathway": [],
-      "level": null,
-      "type": null,
       "finding": null,
       "tags": [],
       "pdf_section": null,
@@ -26251,11 +26228,11 @@
       "link_checked_at": "2026-08-28"
     },
     {
-      "id": "yap2025",
-      "authors": "Yap JLY, Tai YK, Franco-Obregón A et al.",
+      "id": "iversen2025",
+      "authors": "Iversen JN, Tai YK, Wu KY, Wong CJK, Lim HY, Franco-Obregón A",
       "year": 2025,
       "title": "Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis",
-      "journal": "Cells",
+      "journal": "Cells 14(3):231",
       "doi": "10.3390/cells14030231",
       "pmid": null,
       "pmcid": null,
@@ -26267,23 +26244,27 @@
       ],
       "level": "E",
       "type": "journal",
-      "finding": "RFK silencing (FAD depletion) attenuates PEMF responses and inhibits magnetic field directional selectivity. CRY2-TRPC1 physical interaction confirmed. Reveals A-C pathway coupling.",
+      "finding": "C2C12 myoblasts: CRY2 amount, the RFK/FAD system, field direction and light history all changed the pulsed-field response; RFK silencing (FAD depletion) and growth in the dark removed both responsiveness and magnetic directional selectivity. CRY2 forms a physical complex with TRPC1. The study is in muscle cells; applying it to the retina is a tissue-transfer hypothesis.",
       "tags": [
         "cry2",
         "trpc1",
         "fad",
         "rfk",
-        "magnetoreception",
-        "pathway_coupling",
-        "nutrition"
+        "light-history",
+        "field-direction",
+        "myoblast",
+        "modulome"
       ],
       "pdf_section": null,
       "pdf_number": null,
-      "verified": false,
+      "verified": true,
       "link_status": "verified",
       "link_source": "crossref_doi",
-      "aliases": [],
-      "link_checked_at": "2026-08-28"
+      "aliases": [
+        "yap2025",
+        "yap2025_cry2_trpc1"
+      ],
+      "link_checked_at": "2026-09-07"
     },
     {
       "id": "zandieh2025",
@@ -32025,38 +32006,6 @@
       "link_checked_at": "2026-09-07"
     },
     {
-      "id": "sannino2022_autophagy_adaptive",
-      "authors": "Sannino A, Scarfì MR, Dufossée M, Romeo S, Poeta L, Prouzet-Mauléon V, et al.",
-      "year": 2022,
-      "title": "Inhibition of Autophagy Negates Radiofrequency-Induced Adaptive Response in SH-SY5Y Neuroblastoma Cells",
-      "journal": "International Journal of Molecular Sciences 23(15):8414",
-      "doi": "10.3390/ijms23158414",
-      "pmid": "35955556",
-      "pmcid": null,
-      "url": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "A"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Pharmacological and genetic blockade of autophagy (including ATG5/ATG7) abolished the protective adaptive response to radiofrequency pre-exposure. This locates autophagy as a necessary component of the adaptive mechanism in this cell model; it does not identify autophagy as the field sensor, which may lie upstream.",
-      "tags": [
-        "autophagy",
-        "atg5",
-        "atg7",
-        "adaptive_response",
-        "necessary_component"
-      ],
-      "pdf_section": null,
-      "pdf_number": null,
-      "verified": true,
-      "link_status": "verified",
-      "link_source": "ncbi_pubmed_metadata",
-      "aliases": [],
-      "link_checked_at": "2026-09-07"
-    },
-    {
       "id": "sannino2019_parp_adaptive",
       "authors": "Sannino A, Zeni O, Romeo S, Lioi MB, Scarfì MR",
       "year": 2019,
@@ -32077,37 +32026,6 @@
         "parp",
         "3-aminobenzamide",
         "dna_repair",
-        "adaptive_response"
-      ],
-      "pdf_section": null,
-      "pdf_number": null,
-      "verified": true,
-      "link_status": "verified",
-      "link_source": "ncbi_pubmed_metadata",
-      "aliases": [],
-      "link_checked_at": "2026-09-07"
-    },
-    {
-      "id": "zeni2021_bystander",
-      "authors": "Zeni O, Romeo S, Sannino A, Palumbo R, Scarfì MR",
-      "year": 2021,
-      "title": "Evidence of bystander effect induced by radiofrequency radiation in a human neuroblastoma cell line",
-      "journal": "Environmental Research 196:110935",
-      "doi": "10.1016/j.envres.2021.110935",
-      "pmid": "33647301",
-      "pmcid": null,
-      "url": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "A"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Medium transferred from radiofrequency-exposed cells produced a protective response in unexposed cells, a bystander-type result. HSP70 is a candidate mediator; the transfer itself is the reported observation.",
-      "tags": [
-        "bystander",
-        "conditioned_medium",
-        "hsp70",
         "adaptive_response"
       ],
       "pdf_section": null,
@@ -32622,6 +32540,277 @@
       "link_status": "registered",
       "link_source": "fcc_filing",
       "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "kurth2020",
+      "authors": "Kurth F, Tai YK, Parate D, van Oostrum M, Schmid YRF, Toh SJ, Yap JLY, Wollscheid B, et al.",
+      "year": 2020,
+      "title": "Cell-Derived Vesicles as TRPC1 Channel Delivery Systems for the Recovery of Cellular Respiratory and Proliferative Capacities",
+      "journal": "Advanced Biosystems 4(11):2000146",
+      "doi": "10.1002/adbi.202000146",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Membrane vesicles prepared from C2C12 myoblasts responded to a 1.5 mT pulsed field with a calcium signal; vesicles from TRPC1-silenced cells did not. Vesicles from normal cells partly restored field-associated respiratory and growth responses in TRPC1-silenced recipient cells, so receptor function is partly transferable with the membrane structure and the acute local response did not require an intact source cell.",
+      "tags": [
+        "trpc1",
+        "vesicle",
+        "membrane-transfer",
+        "pemf",
+        "calcium",
+        "respiration",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "sannino2024",
+      "authors": "Sannino A, Allocca M, Scarfì MR, Romeo S, Zeni O",
+      "year": 2024,
+      "title": "Protective effect of radiofrequency exposure against menadione-induced oxidative DNA damage in human neuroblastoma cells: The role of exposure duration and investigation on key molecular targets",
+      "journal": "Bioelectromagnetics 45(8):365-374",
+      "doi": "10.1002/bem.22524",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "cellular_ros_dna",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Protection against a later chemical challenge was still present about 20 hours after the radiofrequency pre-exposure ended, and depended on exposure duration. Adaptation carries a measurable memory time.",
+      "tags": [
+        "adaptive-response",
+        "memory",
+        "oxidative-dna-damage",
+        "exposure-duration",
+        "rf",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "jeibmann2026",
+      "authors": "Jeibmann A, Qi M, Hellmich M, Godt A, Kottke T, Goett-Zink L",
+      "year": 2026,
+      "title": "The Human Circadian Clock Protein Cryptochrome-1 Responds to Photochemistry by Conformational Changes",
+      "journal": "Journal of the American Chemical Society 148(31):33217-33228",
+      "doi": "10.1021/jacs.6c06484",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Human CRY1 changed conformation as the flavin moved from the neutral radical to the fully reduced state, and the process involved the sequential absorption of two photons. The same total light dose can therefore leave a different molecular state when wavelength order and the delay between photons change. Magnetic modulation of this change is a separate test.",
+      "tags": [
+        "cry1",
+        "flavin",
+        "two-photon",
+        "conformational-change",
+        "light-history",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "wickramaratne2025",
+      "authors": "Wickramaratne AC, Rasmussen ES, Chelliah Y, Schuhmann F, Solov'yov IA, Mouritsen H, Green CB, Zoltowski BD, et al.",
+      "year": 2025,
+      "title": "Structure of European robin cryptochrome 1 reveals a role in circadian rhythms, not magnetoreception",
+      "journal": "iScience 28(12):114015",
+      "doi": "10.1016/j.isci.2025.114015",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "The robin CRY1 structure constrained physiological flavin binding and supported a clock-protein function. Cryptochrome subtypes differ enough that one shared sensitivity coefficient should not be applied across proteins.",
+      "tags": [
+        "cry1",
+        "robin",
+        "structure",
+        "flavin-binding",
+        "subtype-specificity",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "nakajima2015",
+      "authors": "Nakajima K, Zhu K, Sun YH, Hegyi B, Zeng Q, Murphy CJ, Small JV, Chen-Izu Y, et al.",
+      "year": 2015,
+      "title": "KCNJ15/Kir4.2 couples with polyamines to sense weak extracellular electric fields in galvanotaxis",
+      "journal": "Nature Communications 6(1):8532",
+      "doi": "10.1038/ncomms9532",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "A screen of ion-transport genes located direct-current field orientation (200 mV/mm) to KCNJ15/Kir4.2 acting with polyamines. Silencing KCNJ15 removed field-directed orientation while basic motility was retained: a cell can stay alive and motile while processing direction wrongly.",
+      "tags": [
+        "galvanotaxis",
+        "kcnj15",
+        "kir4.2",
+        "polyamines",
+        "directional-endpoint",
+        "polarity",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "sukumar2026",
+      "authors": "Sukumar VK, Tai YK, Iversen JN, Yeo O, Paul AP, Wu KY, Lim LHK, Franco-Obregón A",
+      "year": 2026,
+      "title": "Magnetic Reprogramming of Macrophages Stimulates Phagocytosis of Breast Cancer Cells via a TRPC1-STING Inflammatory Axis",
+      "journal": "Smart Medicine 5(3):e70038",
+      "doi": "10.1002/smmd.70038",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "A brief pulsed-field exposure changed macrophage function through a TRPC1-STING-NF-kB route; silencing or blocking TRPC1 removed the reported responses. Co-cultures read phagocytosis of cancer cells, so the signalling change is reported together with a named function.",
+      "tags": [
+        "trpc1",
+        "sting",
+        "nf-kb",
+        "macrophage",
+        "phagocytosis",
+        "immune-state",
+        "pemf",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "sannino2022_autophagy_adaptive",
+      "authors": "Sannino A, Scarfì MR, Dufossée M, Romeo S, Poeta L, Prouzet-Mauléon V, et al.",
+      "year": 2022,
+      "title": "Inhibition of Autophagy Negates Radiofrequency-Induced Adaptive Response in SH-SY5Y Neuroblastoma Cells",
+      "journal": "International Journal of Molecular Sciences 23(15):8414",
+      "doi": "10.3390/ijms23158414",
+      "pmid": "35955556",
+      "pmcid": null,
+      "url": null,
+      "category": "cellular_ros_dna",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Pharmacological and genetic blockade of autophagy (including ATG5/ATG7) abolished the protective adaptive response to radiofrequency pre-exposure. This locates autophagy as a necessary component of the adaptive mechanism in this cell model; it does not identify autophagy as the field sensor, which may lie upstream.",
+      "tags": [
+        "adaptive_response",
+        "atg5",
+        "atg7",
+        "autophagy",
+        "modulome",
+        "necessary_component"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed_metadata",
+      "aliases": [
+        "sannino2022"
+      ],
+      "link_checked_at": "2026-09-07"
+    },
+    {
+      "id": "zeni2021_bystander",
+      "authors": "Zeni O, Romeo S, Sannino A, Palumbo R, Scarfì MR",
+      "year": 2021,
+      "title": "Evidence of bystander effect induced by radiofrequency radiation in a human neuroblastoma cell line",
+      "journal": "Environmental Research 196:110935",
+      "doi": "10.1016/j.envres.2021.110935",
+      "pmid": "33647301",
+      "pmcid": null,
+      "url": null,
+      "category": "cellular_ros_dna",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Medium transferred from radiofrequency-exposed cells produced a protective response in unexposed cells, a bystander-type result. HSP70 is a candidate mediator; the transfer itself is the reported observation.",
+      "tags": [
+        "adaptive_response",
+        "bystander",
+        "conditioned_medium",
+        "hsp70",
+        "modulome"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed_metadata",
+      "aliases": [
+        "zeni2021"
+      ],
       "link_checked_at": "2026-09-07"
     }
   ]

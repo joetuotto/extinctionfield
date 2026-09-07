@@ -156,16 +156,20 @@ export const CORRECTION_REGISTRY: CorrectionEntry[] = [
     epistemicLevel: "NUMEERINEN YHTEENSOPIVUUS",
   },
   {
-    id: "blackman_r2_085",
-    claim: { en: "R² = 0.85", fi: "R² = 0,85" },
+    id: "blackman_ipr_fit",
+    claim: { en: "The IPR model's reported fit", fi: "IPR-mallin raportoitu sovitus" },
     status: "observation",
     description: {
-      en: "Fit statistic of Blackman's published extended model to the calcium-efflux data.",
-      fi: "Blackmanin julkaistun laajennetun mallin sovitusluku kalsiumefluksidataan.",
+      en: "In the 1995 report the predictive model's R² was about 0.70 and the refit 0.71. Adding the hydrogen component raised the figures, but the added component is not a parameter-free confirmation.",
+      fi: "Vuoden 1995 raportissa ennustemallin R² oli noin 0,70 ja uudelleensovituksen 0,71. Vetykomponentin lisääminen nosti lukuja, mutta lisätty komponentti ei ole parametrivapaa vahvistus.",
     },
     epistemicLevel: "HAVAINTO",
-    source: "Blackman et al.",
-    referenceIds: ["blackman1985"],
+    source: "new-findings document, finding 21",
+    referenceIds: ["blackman1994_ipr_pc12", "blackman1995_ipr_nerve", "blackman1998_double_blind"],
+    note: {
+      en: "Supersedes an earlier R² = 0.85 entry taken from the previous synthesis, which the 2026-09-07 source document does not support. The amplitude windows are a testable structure, not a free frequency list: J₁'s first maximum at argument 1.84118 and first null at 3.83171 correspond, at B₀ = 37 µT, to AC peak amplitudes of about 34.1 and 70.9 µT, against 33.7 and 70.2 µT from the relaxation candidate. Those are theory-to-theory comparisons on one parametrisation, not a new amplitude sweep.",
+      fi: "Korvaa aiemman R² = 0,85 -merkinnän, joka oli otettu edellisestä synteesistä eikä saa tukea 7.9.2026 lähdedokumentista. Amplitudi-ikkunat ovat testattava rakenne eivätkä vapaa taajuusluettelo: J₁:n ensimmäinen maksimi argumentilla 1,84118 ja ensimmäinen nollakohta 3,83171 vastaavat B₀ = 37 µT:ssa noin 34,1 ja 70,9 µT:n AC-huippuamplitudeja, kun relaksaatiokandidaatti antoi 33,7 ja 70,2 µT. Nämä ovat teoriavertailuja samalla parametrisaatiolla, eivät uusi amplitudipyyhkäisy.",
+    },
   },
   {
     id: "gap_165_hz",

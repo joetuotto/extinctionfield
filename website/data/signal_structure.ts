@@ -129,7 +129,7 @@ export const FIELD_STRUCTURE_RESULTS: SignalResult[] = [
       en: "Reversing a coil is not necessarily a clean sign flip of every local potential component: the induced electric field, cell orientation and geometry have to be checked too. The discriminating design reverses background and test exposure separately in pre-computed combinations, and in the radiofrequency case the carrier-averaging bound above applies as well.",
       fi: "Kelan kääntö ei välttämättä ole kaikkien paikallisten potentiaalikomponenttien puhdas etumerkin vaihto: indusoitu sähkökenttä, solujen orientaatio ja geometria on tarkistettava. Erottava asetelma kääntää taustan ja koealtisteen erikseen ennalta lasketuissa yhdistelmissä, ja RF-tapauksessa pätee lisäksi yllä oleva aikakeskiarvorajaus.",
     },
-    referenceIds: ["lindgren2025", "iversen2025_cry2_trpc1"],
+    referenceIds: ["lindgren2025", "iversen2025"],
   },
   {
     id: "f_vs_chi",

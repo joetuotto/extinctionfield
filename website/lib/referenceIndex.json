@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1098,
-    "linkedReferences": 427
+    "totalReferences": 1103,
+    "linkedReferences": 433
   },
   "references": {
     "5g_hpa_axis": {
@@ -2513,16 +2513,6 @@
       "title": "Collection of honey-bee stress-expression and behavior studies under electromagnetic exposure",
       "journal": null,
       "type": "collection",
-      "linkStatus": "missing",
-      "externalUrl": null
-    },
-    "yap2025_cry2_trpc1": {
-      "id": "yap2025_cry2_trpc1",
-      "authors": "Yap JLY et al",
-      "year": 2025,
-      "title": "CRY2-TRPC1 complex mediates PEMF-induced calcium signaling and nuclear translocation",
-      "journal": "Cells 14(3):231",
-      "type": null,
       "linkStatus": "missing",
       "externalUrl": null
     },
@@ -8896,12 +8886,12 @@
       "linkStatus": "pending",
       "externalUrl": null
     },
-    "yap2025": {
-      "id": "yap2025",
-      "authors": "Yap JLY, Tai YK, Franco-Obregón A et al.",
+    "iversen2025": {
+      "id": "iversen2025",
+      "authors": "Iversen JN, Tai YK, Wu KY, Wong CJK, Lim HY, Franco-Obregón A",
       "year": 2025,
       "title": "Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis",
-      "journal": "Cells",
+      "journal": "Cells 14(3):231",
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.3390/cells14030231"
@@ -10796,16 +10786,6 @@
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1002/bem.22478"
     },
-    "sannino2022_autophagy_adaptive": {
-      "id": "sannino2022_autophagy_adaptive",
-      "authors": "Sannino A, Scarfì MR, Dufossée M, Romeo S, Poeta L, Prouzet-Mauléon V, et al.",
-      "year": 2022,
-      "title": "Inhibition of Autophagy Negates Radiofrequency-Induced Adaptive Response in SH-SY5Y Neuroblastoma Cells",
-      "journal": "International Journal of Molecular Sciences 23(15):8414",
-      "type": "journal",
-      "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.3390/ijms23158414"
-    },
     "sannino2019_parp_adaptive": {
       "id": "sannino2019_parp_adaptive",
       "authors": "Sannino A, Zeni O, Romeo S, Lioi MB, Scarfì MR",
@@ -10815,16 +10795,6 @@
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.3390/ijerph16152768"
-    },
-    "zeni2021_bystander": {
-      "id": "zeni2021_bystander",
-      "authors": "Zeni O, Romeo S, Sannino A, Palumbo R, Scarfì MR",
-      "year": 2021,
-      "title": "Evidence of bystander effect induced by radiofrequency radiation in a human neuroblastoma cell line",
-      "journal": "Environmental Research 196:110935",
-      "type": "journal",
-      "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.envres.2021.110935"
     },
     "blackman1988_calcium_efflux": {
       "id": "blackman1988_calcium_efflux",
@@ -10985,6 +10955,86 @@
       "type": "government-data",
       "linkStatus": "registered",
       "externalUrl": null
+    },
+    "kurth2020": {
+      "id": "kurth2020",
+      "authors": "Kurth F, Tai YK, Parate D, van Oostrum M, Schmid YRF, Toh SJ, Yap JLY, Wollscheid B, et al.",
+      "year": 2020,
+      "title": "Cell-Derived Vesicles as TRPC1 Channel Delivery Systems for the Recovery of Cellular Respiratory and Proliferative Capacities",
+      "journal": "Advanced Biosystems 4(11):2000146",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/adbi.202000146"
+    },
+    "sannino2024": {
+      "id": "sannino2024",
+      "authors": "Sannino A, Allocca M, Scarfì MR, Romeo S, Zeni O",
+      "year": 2024,
+      "title": "Protective effect of radiofrequency exposure against menadione-induced oxidative DNA damage in human neuroblastoma cells: The role of exposure duration and investigation on key molecular targets",
+      "journal": "Bioelectromagnetics 45(8):365-374",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.22524"
+    },
+    "jeibmann2026": {
+      "id": "jeibmann2026",
+      "authors": "Jeibmann A, Qi M, Hellmich M, Godt A, Kottke T, Goett-Zink L",
+      "year": 2026,
+      "title": "The Human Circadian Clock Protein Cryptochrome-1 Responds to Photochemistry by Conformational Changes",
+      "journal": "Journal of the American Chemical Society 148(31):33217-33228",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1021/jacs.6c06484"
+    },
+    "wickramaratne2025": {
+      "id": "wickramaratne2025",
+      "authors": "Wickramaratne AC, Rasmussen ES, Chelliah Y, Schuhmann F, Solov'yov IA, Mouritsen H, Green CB, Zoltowski BD, et al.",
+      "year": 2025,
+      "title": "Structure of European robin cryptochrome 1 reveals a role in circadian rhythms, not magnetoreception",
+      "journal": "iScience 28(12):114015",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.isci.2025.114015"
+    },
+    "nakajima2015": {
+      "id": "nakajima2015",
+      "authors": "Nakajima K, Zhu K, Sun YH, Hegyi B, Zeng Q, Murphy CJ, Small JV, Chen-Izu Y, et al.",
+      "year": 2015,
+      "title": "KCNJ15/Kir4.2 couples with polyamines to sense weak extracellular electric fields in galvanotaxis",
+      "journal": "Nature Communications 6(1):8532",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/ncomms9532"
+    },
+    "sukumar2026": {
+      "id": "sukumar2026",
+      "authors": "Sukumar VK, Tai YK, Iversen JN, Yeo O, Paul AP, Wu KY, Lim LHK, Franco-Obregón A",
+      "year": 2026,
+      "title": "Magnetic Reprogramming of Macrophages Stimulates Phagocytosis of Breast Cancer Cells via a TRPC1-STING Inflammatory Axis",
+      "journal": "Smart Medicine 5(3):e70038",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/smmd.70038"
+    },
+    "sannino2022_autophagy_adaptive": {
+      "id": "sannino2022_autophagy_adaptive",
+      "authors": "Sannino A, Scarfì MR, Dufossée M, Romeo S, Poeta L, Prouzet-Mauléon V, et al.",
+      "year": 2022,
+      "title": "Inhibition of Autophagy Negates Radiofrequency-Induced Adaptive Response in SH-SY5Y Neuroblastoma Cells",
+      "journal": "International Journal of Molecular Sciences 23(15):8414",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/ijms23158414"
+    },
+    "zeni2021_bystander": {
+      "id": "zeni2021_bystander",
+      "authors": "Zeni O, Romeo S, Sannino A, Palumbo R, Scarfì MR",
+      "year": 2021,
+      "title": "Evidence of bystander effect induced by radiofrequency radiation in a human neuroblastoma cell line",
+      "journal": "Environmental Research 196:110935",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.envres.2021.110935"
     }
   },
   "aliases": {
@@ -11017,6 +11067,8 @@
     "therabionic_ttype_tdp": "therabionic-ebioMedicine-2019",
     "panagopoulos2021": "panagopoulos2025_ifo",
     "catsper_temp": "catsper-temp-2025",
+    "yap2025": "iversen2025",
+    "yap2025_cry2_trpc1": "iversen2025",
     "georgieva_263cities": "geomag_263",
     "pubmed2517054": "liu1989_radiation_hormesis",
     "pmc2440754": "eisenberg2008_drd4_ariaal",
@@ -11027,7 +11079,9 @@
     "pmc5911597": "zhou2018_ldr_tumor_inhibition",
     "pmc7794644": "vaiserman2021_ldr_hormetin",
     "nber35310": "myers2026_iphone_att",
-    "ssrn6957259": "hartley2026_india_4g"
+    "ssrn6957259": "hartley2026_india_4g",
+    "sannino2022": "sannino2022_autophagy_adaptive",
+    "zeni2021": "zeni2021_bystander"
   },
   "identifiers": {
     "doi:10.1007/s10517-023-05689-2": "5g_hpa_axis",
@@ -11748,7 +11802,7 @@
     "doi:10.1111/brv.70108": "krylov2025",
     "doi:10.1021/acschembio.4c00576": "majewska2025",
     "pmcid:PMC12491688": "sousouri2025_cacna1c",
-    "doi:10.3390/cells14030231": "yap2025",
+    "doi:10.3390/cells14030231": "iversen2025",
     "doi:10.1038/s41598-025-87235-w": "zandieh2025",
     "doi:10.1016/j.cell.2026.03.029": "kim2026_cell_gene_switch",
     "doi:10.1093/pnasnexus/pgag152": "rishabh2026",
@@ -11897,12 +11951,8 @@
     "doi:10.1016/j.mrfmmm.2008.12.005": "luukkonen2009_menadione_rf",
     "pmid:19135463": "luukkonen2009_menadione_rf",
     "doi:10.1002/bem.22478": "sannino2023_lte_coexposure",
-    "doi:10.3390/ijms23158414": "sannino2022_autophagy_adaptive",
-    "pmid:35955556": "sannino2022_autophagy_adaptive",
     "doi:10.3390/ijerph16152768": "sannino2019_parp_adaptive",
     "pmid:31382475": "sannino2019_parp_adaptive",
-    "doi:10.1016/j.envres.2021.110935": "zeni2021_bystander",
-    "pmid:33647301": "zeni2021_bystander",
     "doi:10.1002/bem.2250090303": "blackman1988_calcium_efflux",
     "pmid:3178897": "blackman1988_calcium_efflux",
     "doi:10.1002/(sici)1521-186x(1998)19:4<204::aid-bem2>3.0.co;2-5": "blackman1998_double_blind",
@@ -11922,6 +11972,16 @@
     "doi:10.1002/bem.20207": "zeng2006_noise_gap_junction",
     "pmid:16511880": "zeng2006_noise_gap_junction",
     "doi:10.1186/s12885-019-5376-z": "makinistian2019_coils",
-    "pmid:30819144": "makinistian2019_coils"
+    "pmid:30819144": "makinistian2019_coils",
+    "doi:10.1002/adbi.202000146": "kurth2020",
+    "doi:10.1002/bem.22524": "sannino2024",
+    "doi:10.1021/jacs.6c06484": "jeibmann2026",
+    "doi:10.1016/j.isci.2025.114015": "wickramaratne2025",
+    "doi:10.1038/ncomms9532": "nakajima2015",
+    "doi:10.1002/smmd.70038": "sukumar2026",
+    "doi:10.3390/ijms23158414": "sannino2022_autophagy_adaptive",
+    "pmid:35955556": "sannino2022_autophagy_adaptive",
+    "doi:10.1016/j.envres.2021.110935": "zeni2021_bystander",
+    "pmid:33647301": "zeni2021_bystander"
   }
 }
