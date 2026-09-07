@@ -1,5 +1,17 @@
 """Biological pathway models."""
 
+from berm.biology.coordination import (
+    COORDINATION_VERSION,
+    HormoneReceptivityState,
+    PhaseRelation,
+    RedoxFunctionalState,
+    ReproductiveCoordinationState,
+    advance_chemical_memory,
+    conditional_gate_success,
+    phase_coordination,
+    recovery_retention,
+    steady_pulse_memory,
+)
 from berm.biology.causal_registry import (
     CAUSAL_NODES,
     CausalNode,
@@ -47,11 +59,22 @@ from berm.biology.reproductive_state import (
     MaleReproductiveState,
     OrganMemoryState,
     evolve_organ_memory,
+    evolve_organ_memory_over_time,
     map_memory_to_capacity,
     mean_couple_capacity,
 )
 
 __all__ = [
+    "COORDINATION_VERSION",
+    "HormoneReceptivityState",
+    "PhaseRelation",
+    "RedoxFunctionalState",
+    "ReproductiveCoordinationState",
+    "advance_chemical_memory",
+    "conditional_gate_success",
+    "phase_coordination",
+    "recovery_retention",
+    "steady_pulse_memory",
     "CAUSAL_NODES",
     "CausalNode",
     "canonical_node_id",
@@ -83,6 +106,7 @@ __all__ = [
     "MaleReproductiveState",
     "OrganMemoryState",
     "evolve_organ_memory",
+    "evolve_organ_memory_over_time",
     "map_memory_to_capacity",
     "mean_couple_capacity",
 ]

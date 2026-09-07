@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T15:15:15.017Z",
+  "generatedAt": "2026-09-07T15:29:28.184Z",
   "anchors": [
     {
       "claimId": "claim.civilization.biocap-tfr-input",
@@ -22,29 +22,79 @@
       "line": 2705
     },
     {
+      "claimId": "claim.coordination.hormone-target-timing",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 157
+    },
+    {
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 160
+    },
+    {
+      "claimId": "claim.coordination.redox-clock",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 156
+    },
+    {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5131
+      "line": 5134
+    },
+    {
+      "claimId": "claim.couple.waiting-time-distribution",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 166
+    },
+    {
+      "claimId": "claim.cry.endocrine-gating",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 147
+    },
+    {
+      "claimId": "claim.encounter.network-propagation",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 170
+    },
+    {
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 175
     },
     {
       "claimId": "claim.melatonin.circadian-redox-mediator",
       "file": "app/[locale]/evidence/circadian/page.tsx",
-      "line": 899
+      "line": 902
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4819
+      "line": 4822
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5391
+      "line": 5394
+    },
+    {
+      "claimId": "claim.receptor.chemical-memory",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 151
+    },
+    {
+      "claimId": "claim.receptor.state-dependent-response",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 142
+    },
+    {
+      "claimId": "claim.reproduction.local-clock-gates",
+      "file": "app/[locale]/model/biological-coordination/page.tsx",
+      "line": 165
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5308
+      "line": 5311
     },
     {
       "claimId": "claim.sperm.multi-parameter-decline",
@@ -54,12 +104,12 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5118
+      "line": 5121
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5304
+      "line": 5307
     }
   ]
 }

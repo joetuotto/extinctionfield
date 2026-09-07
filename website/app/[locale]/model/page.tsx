@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import { pickCopy } from "@/lib/i18n";
 import Link from "next/link";
@@ -4788,6 +4789,8 @@ export default async function ModelPage({
 
         {/* Main content */}
         <div className="flex-1 min-w-0">
+          <BiologicalCoordinationContext locale={locale} context="model" />
+
           {/* B1: From Physics to Biology */}
           <CollapsibleSection id="physics-to-biology" title={d.physBioTitle} subtitle={d.physBioSub} defaultOpen>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">

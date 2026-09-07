@@ -100,12 +100,15 @@ const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 36 nodes", () => {
-    expect(nodeIds.size).toBe(36);
+  it("has 39 nodes including the biological coordination extension", () => {
+    expect(nodeIds.size).toBe(39);
+    for (const id of ["RECEPTOR_STATE_MEMORY", "CIRCADIAN_COORDINATION", "HORMONE_TARGET_RESPONSE"]) {
+      expect(nodeIds.has(id)).toBe(true);
+    }
   });
 
-  it("has 69 typed edges", () => {
-    expect(graph.edges.length).toBe(69);
+  it("has 83 typed edges", () => {
+    expect(graph.edges.length).toBe(83);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {

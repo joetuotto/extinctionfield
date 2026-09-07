@@ -99,6 +99,12 @@ def test_public_tensor_page_exposes_the_three_element_gate_and_source_boundary()
         in tensor_page
     )
     assert "Bianchi alone =/=> sourced Maxwell equation" in tensor_page
-    assert "The algebraic chi_geo(q)=q/sqrt(1+q^2) formula is L1" in scalar_api
-    assert "Lorentz-to-Euclidean spatial/scalar projection" in scalar_api
+    # The current contract distinguishes the Lorentz-signature derivative
+    # from the additional reduction used by the legacy scalar application.
+    assert 'CHI_EPISTEMIC_STATUS = "L1 + L0/L2 reduction"' in scalar_api
+    assert "Stage 1 [L1]: the volume-element directional derivative" in scalar_api
+    assert "signature is κ(A·u)/√(1+κA²). Stage 2 [L0/L2]" in scalar_api
+    assert "dimensionless, collinear Lorentz-to-Euclidean spatial/scalar reduction" in scalar_api
+    assert "selects q=|Abar|" in scalar_api
+    assert "evaluates χ_geo(q)=q/√(1+q²)" in scalar_api
     assert "Constructing q=N(z) remains an open L0→L2 step" in scalar_api

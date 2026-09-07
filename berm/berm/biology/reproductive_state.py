@@ -25,6 +25,11 @@ from dataclasses import dataclass, field
 import math
 from typing import Iterable, Mapping
 
+from berm.biology.coordination import (
+    ReproductiveCoordinationState,
+    recovery_retention,
+)
+
 
 REPRODUCTIVE_STATE_VERSION = "reproductive-state-v1"
 
@@ -273,6 +278,49 @@ def evolve_organ_memory(
     )
 
 
+def evolve_organ_memory_over_time(
+    previous: OrganMemoryState,
+    *,
+    elapsed_seconds: float,
+    reversible_recovery_seconds: float,
+    persistent_recovery_seconds: float | None,
+    reversible_increment: float,
+    persistent_increment: float,
+    parameter_ids: Iterable[str],
+    evidence_ids: Iterable[str] = (),
+) -> OrganMemoryState:
+    """Physical-time adapter to the existing organ-memory pathway.
+
+    Increments are supplied organ-load units and occur after the interval's
+    decay.  ``persistent_recovery_seconds=None`` declares permanent retention.
+    Recovery times and increments remain named assumptions: this adapter does
+    not turn a field measurement into an organ decrement.  Repeated parameter
+    and evidence IDs are retained once across successive time steps.
+    """
+    if not isinstance(previous, OrganMemoryState):
+        raise TypeError("previous must be an OrganMemoryState")
+    parameter_ids = _normalise_ids(parameter_ids, "parameter_id")
+    evidence_ids = _normalise_ids(evidence_ids, "evidence_id")
+    if not parameter_ids:
+        raise ValueError("parameter_ids must identify the recovery/increment assumptions")
+    r_retention = recovery_retention(
+        elapsed_seconds=elapsed_seconds, recovery_time_seconds=reversible_recovery_seconds
+    )
+    p_retention = (1.0 if persistent_recovery_seconds is None else recovery_retention(
+        elapsed_seconds=elapsed_seconds, recovery_time_seconds=persistent_recovery_seconds
+    ))
+    return evolve_organ_memory(
+        previous,
+        reversible_increment=reversible_increment,
+        persistent_increment=persistent_increment,
+        reversible_retention=r_retention,
+        persistent_retention=p_retention,
+        parameter_ids=tuple(value for value in parameter_ids if value not in previous.parameter_ids),
+        evidence_ids=tuple(value for value in evidence_ids if value not in previous.evidence_ids),
+        calibration_status=STRUCTURAL_ONLY,
+    )
+
+
 _BARRIER_ORGANS = frozenset({"BBB", "BTB", "PLACENTA", "RETINA", "NERVE"})
 
 
@@ -388,6 +436,7 @@ class FemaleReproductiveState:
     )
     calibration_status: str = STRUCTURAL_ONLY
     evidence_ids: tuple[str, ...] = ()
+    coordination: ReproductiveCoordinationState | None = None
 
     def __post_init__(self) -> None:
         for name in (
@@ -407,13 +456,32 @@ class FemaleReproductiveState:
                 "calibration_status must be STRUCTURAL_ONLY or ENDPOINT_CALIBRATED"
             )
         object.__setattr__(self, "evidence_ids", _normalise_ids(self.evidence_ids, "evidence_id"))
+        if self.coordination is not None:
+            if not isinstance(self.coordination, ReproductiveCoordinationState):
+                raise TypeError("coordination must be a ReproductiveCoordinationState")
+            if self.coordination.hormone_timing is not None and self.ovulatory_clock_gate != 1.0:
+                raise ValueError("coordination replaces ovulatory_clock_gate; leave the manual gate at 1")
+            if self.coordination.oocyte_redox is not None and self.oocyte_redox_quality != 1.0:
+                raise ValueError("coordination replaces oocyte_redox_quality; leave the manual gate at 1")
+
+    @property
+    def effective_clock_gate(self) -> float:
+        if self.coordination is not None and self.coordination.hormone_timing is not None:
+            return self.coordination.hormone_timing.timing_factor
+        return self.ovulatory_clock_gate
+
+    @property
+    def effective_oocyte_redox_quality(self) -> float:
+        if self.coordination is not None and self.coordination.oocyte_redox is not None:
+            return self.coordination.oocyte_redox.functional_factor
+        return self.oocyte_redox_quality
 
     @property
     def conception_capacity(self) -> float:
         return _product(
             self.ovarian_reserve,
-            self.oocyte_redox_quality,
-            self.ovulatory_clock_gate,
+            self.effective_oocyte_redox_quality,
+            self.effective_clock_gate,
         )
 
     @property
@@ -429,6 +497,8 @@ class FemaleReproductiveState:
 
     @property
     def combined_calibration_status(self) -> str:
+        if self.coordination is not None:
+            return STRUCTURAL_ONLY
         return _combine_statuses(
             self.calibration_status, self.placental_barrier_support.calibration_status
         )
@@ -522,6 +592,7 @@ __all__ = [
     "MaleReproductiveState",
     "OrganMemoryState",
     "evolve_organ_memory",
+    "evolve_organ_memory_over_time",
     "map_memory_to_capacity",
     "mean_couple_capacity",
 ]

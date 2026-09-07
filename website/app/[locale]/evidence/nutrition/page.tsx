@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import { Apple } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
@@ -414,6 +415,8 @@ export default async function NutritionPage({
       </Link>
 
       <PageHeader icon={Apple} title={d.title} subtitle={d.subtitle} />
+
+      <BiologicalCoordinationContext locale={locale} context="nutrition" />
 
       {/* Section 1: The Nutritional Gate */}
       <section className="mb-16">

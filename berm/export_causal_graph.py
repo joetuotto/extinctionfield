@@ -32,7 +32,19 @@ NEW_LABELS = {
         "ja": "幾何学から観測量への未解決の結合命題",
         "fr": "Proposition ouverte de couplage géométrie–observable",
         "ko": "기하학-관측량 간 개방형 결합 명제",
-    }
+    },
+    "RECEPTOR_STATE_MEMORY": {
+        "en": "Receptor chemical-state memory and recovery",
+        "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
+    },
+    "CIRCADIAN_COORDINATION": {
+        "en": "Tissue-specific circadian phase relationships and electrical timing",
+        "fi": "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus",
+    },
+    "HORMONE_TARGET_RESPONSE": {
+        "en": "Hormone signal, target readiness and phase-dependent response",
+        "fi": "Hormonisignaali, kohdekudoksen valmius ja vaiheesta riippuva vaste",
+    },
 }
 
 
@@ -92,6 +104,14 @@ def build_graph(existing: dict) -> dict:
             edge_number += 1
 
     ui_groups = dict(existing["ui_groups"])
+    mechanism_group = dict(ui_groups["mechanisms"])
+    mechanism_group["contains"] = list(dict.fromkeys([
+        *mechanism_group["contains"],
+        "RECEPTOR_STATE_MEMORY",
+        "CIRCADIAN_COORDINATION",
+        "HORMONE_TARGET_RESPONSE",
+    ]))
+    ui_groups["mechanisms"] = mechanism_group
     ui_groups.pop("fieldstate", None)
     ui_groups = {
         "legacy-proxy": {

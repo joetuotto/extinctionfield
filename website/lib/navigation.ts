@@ -69,6 +69,18 @@ export const NAV_ROUTES: NavRoute[] = [
         },
       },
       {
+        href: "/model/biological-coordination",
+        labels: { en: "Biological Coordination", fi: "Biologinen koordinaatio", ja: "Biological Coordination", fr: "Biological Coordination", ko: "Biological Coordination" },
+        icon: Activity,
+        descs: {
+          en: "Receptor state, tissue timing, memory and successful encounters",
+          fi: "Vastaanottajatila, kudosten ajoitus, muisti ja onnistuvat kohtaamiset",
+          ja: "Receptor state, tissue timing, memory and successful encounters",
+          fr: "Receptor state, tissue timing, memory and successful encounters",
+          ko: "Receptor state, tissue timing, memory and successful encounters",
+        },
+      },
+      {
         href: "/modulome",
         labels: { en: "Modulome", fi: "Modulomi", ja: "モジュローム", fr: "Modulome", ko: "모듈롬" },
         icon: Activity,

@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -351,6 +352,8 @@ export default async function CivilizationPage({
             </div>
           </div>
         </header>
+
+        <BiologicalCoordinationContext locale={locale} context="civilization" />
 
         {/* Lead */}
         <section className="mb-16 max-w-3xl">

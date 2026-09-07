@@ -39,6 +39,7 @@ from berm.biology.reproductive_state import (
 )
 from berm.architecture import CONDITIONAL_ASFR_ROUTE_ID
 from berm.data.wpp import AGE_GROUPS, asfr_to_tfr
+from berm.outcomes.reproductive_waiting import WaitingHorizonComparison
 
 
 CONDITIONAL_ASFR_VERSION = CONDITIONAL_ASFR_ROUTE_ID
@@ -84,6 +85,11 @@ class AgeSpecificConditionalInput:
     not country-average male and female factors.  Inputs need not be fully
     calibrated to inspect an explicit structural scenario; the resulting
     projection then remains labelled ``STRUCTURAL_ONLY``.
+
+    ``waiting_comparison`` explicitly substitutes a finite-window supported-
+    conception ratio for the linear couple-capacity ratio.  The comparison's
+    cohorts then supply biology; the two individual couple fields remain the
+    compatibility inputs and are not multiplied into the cohort result.
     """
 
     age_group: str
@@ -101,6 +107,7 @@ class AgeSpecificConditionalInput:
     demand_source_id: str = "UNSPECIFIED_DEMAND_SOURCE"
     tempo_source_id: str = "UNSPECIFIED_TEMPO_SOURCE"
     art_source_id: str = "UNSPECIFIED_ART_SOURCE"
+    waiting_comparison: WaitingHorizonComparison | None = None
 
     def __post_init__(self) -> None:
         if self.age_group not in AGE_GROUPS:
@@ -113,6 +120,8 @@ class AgeSpecificConditionalInput:
             raise TypeError("reference_couple must be a CoupleReproductiveState")
         if not isinstance(self.target_couple, CoupleReproductiveState):
             raise TypeError("target_couple must be a CoupleReproductiveState")
+        if self.waiting_comparison is not None and not isinstance(self.waiting_comparison, WaitingHorizonComparison):
+            raise TypeError("waiting_comparison must be a WaitingHorizonComparison")
         for name in (
             "reference_demand_opportunity",
             "target_demand_opportunity",
@@ -136,6 +145,8 @@ class AgeSpecificConditionalInput:
 
     @property
     def biological_ratio(self) -> float:
+        if self.waiting_comparison is not None:
+            return self.waiting_comparison.biological_ratio
         denominator = self.reference_couple.biological_capacity
         if denominator <= 0.0:
             raise ValueError(
@@ -170,6 +181,8 @@ class AgeSpecificConditionalInput:
 
     @property
     def calibration_status(self) -> str:
+        if self.waiting_comparison is not None:
+            return self.waiting_comparison.calibration_status
         return (
             ENDPOINT_CALIBRATED
             if (
@@ -263,16 +276,29 @@ class ConditionalASFRProjection:
                     "art_live_birth_delivery_ratio": group.art_live_birth_delivery_ratio,
                     "total_ratio": group.total_ratio,
                     "calibration_status": group.calibration_status,
-                    "field_state_status": {
+                    **({"field_state_status": {
                         "reference": group.reference_couple.field_state_status,
                         "target": group.target_couple.field_state_status,
-                    },
+                    }} if group.waiting_comparison is None else {}),
                     "sources": {
                         "asfr": group.asfr_source_id,
                         "demand": group.demand_source_id,
                         "tempo": group.tempo_source_id,
                         "art": group.art_source_id,
                     },
+                    **({
+                        "biological_mapping": group.waiting_comparison.as_dict(),
+                    } if group.waiting_comparison is not None else {}),
+                    **({
+                        "biological_coordination": {
+                            label: couple.female.coordination.as_dict()
+                            for label, couple in (("reference", group.reference_couple), ("target", group.target_couple))
+                            if couple.female.coordination is not None
+                        },
+                    } if group.waiting_comparison is None and (
+                        group.reference_couple.female.coordination is not None
+                        or group.target_couple.female.coordination is not None
+                    ) else {}),
                 }
                 for group in self.groups
             ],

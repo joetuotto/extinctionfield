@@ -16,6 +16,10 @@ silently converted into biological states or a TFR coefficient.
 See [the historical FieldState–ASFR v2 integration guide](berm/docs/fieldstate-asfr-v2.md)
 for the measurement interface, evidence boundaries and calibration plan.
 
+See [biological coordination and waiting-time integration](berm/docs/biological-coordination.md)
+for the executable tissue-timing, receptor-memory, redox-window and couple-distribution
+extensions, their source registry, and the reproducible website examples.
+
 See [the BERM–Eco biosähkömagnetiikan ja evolutiivisen lajittumisen
 research review](berm/docs/berm-eco-bioelectromagnetic-selection-review.md)
 for the parallel ecological test framework: FieldState → species-specific

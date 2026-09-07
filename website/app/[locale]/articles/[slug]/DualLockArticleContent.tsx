@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { StudyCitation } from "@/components/StudyCitation";
 
@@ -250,6 +251,8 @@ export function DualLockArticleContent({ locale }: { locale: string }) {
           ))}
         </section>
       ))}
+
+      <BiologicalCoordinationContext locale={locale} context="dualLock" />
 
       <footer className="mt-14 pt-8 border-t border-card-border">
         <h2 className="font-serif text-lg font-semibold mb-4">

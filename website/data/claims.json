@@ -887,6 +887,321 @@
         ]
       },
       "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
+    },
+    {
+      "id": "claim.cry.endocrine-gating",
+      "statement": {
+        "en": {
+          "text": "Mammalian CRY1/CRY2 regulate hormone-target responses through glucocorticoid-receptor repression and modulation of Gs/cAMP signalling. These mechanisms connect clock-protein state to endocrine and metabolic function.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Nisäkkään CRY1/CRY2 säätelevät hormonien kohdevasteita glukokortikoidireseptorin repression ja Gs/cAMP-signaloinnin kautta. Mekanismit yhdistävät kelloproteiinin tilan hormonaaliseen ja aineenvaihdunnalliseen toimintaan.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HORMONE_TARGET_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Direct CRY–GR and CRY–Gs/cAMP component mechanisms in the studied mammalian systems"
+        ],
+        "does_not_support": [
+          "An identified ambient-field effect size on mammalian CRY endocrine function"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.receptor.chemical-memory",
+      "statement": {
+        "en": {
+          "text": "Fast spin-dependent reaction selection can alter slower chemical-state populations in studied flavoproteins; redox-dependent conformational changes provide a further candidate signalling step. BERM represents these sequential timescales as receptor-state memory and recovery.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Nopea spinistä riippuva reaktiovalinta voi muuttaa hitaampien kemiallisten tilojen jakaumaa tutkituissa flavoproteiineissa. Redox-tilaan liittyvät rakennemuutokset tarjoavat seuraavan signalointivaiheen ehdokkaan. BERM kuvaa peräkkäisiä aikaskaaloja vastaanottimen muistina ja palautumisena.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Chemical accumulation and amplification in measured protein or model-chemical systems",
+          "Separate physical carriers for fast selection and slower memory"
+        ],
+        "does_not_support": [
+          "A universal protein-to-human transfer coefficient",
+          "Peer-reviewed confirmation of the Kish 2026 preprint"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.receptor.state-dependent-response",
+      "statement": {
+        "en": {
+          "text": "In defined magnetic-field experiments, clock phase, glucocorticoid pretreatment and redox background change the measured response. BERM therefore distinguishes receptor sensitivity, mediator change and the direction of functional change as state-dependent quantities.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Määritellyissä magneettikenttäkokeissa kellovaihe, glukokortikoidiesikäsittely ja redox-tausta muuttavat mitattua vastetta. BERM erottaa siksi vastaanottimen herkkyyden, välittäjän muutoksen ja toiminnallisen muutoksen suunnan tilasta riippuvina suureina.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Within-protocol state dependence and background-dependent redox effects"
+        ],
+        "does_not_support": [
+          "Identification of CRY as the demonstrated mediator of the Thoeni dexamethasone effect",
+          "Generalization of a laboratory field protocol to ambient exposure"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.coordination.redox-clock",
+      "statement": {
+        "en": {
+          "text": "Circadian redox state modulates neuronal membrane excitability, while persistent cellular oscillators can lose population amplitude through phase dispersion. BERM combines these component mechanisms in a tissue-phase coordination state that retains physiological phase offsets.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Vuorokautinen redox-tila säätelee hermosolujen sähköistä herkkyyttä, ja pysyvien solukellojen yhteinen amplitudi voi vaimentua niiden vaiheiden erkaantuessa. BERM yhdistää nämä osamekanismit kudosten koordinaatiotilaksi, joka säilyttää fysiologiset vaihe-erot.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "CIRCADIAN_COORDINATION"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Redox-to-excitability and cellular-to-population timing mechanisms"
+        ],
+        "does_not_support": [
+          "All tissues should peak simultaneously",
+          "A fitted universal coordination index"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.coordination.hormone-target-timing",
+      "statement": {
+        "en": {
+          "text": "Hormonal function depends on hormone availability, pulse structure and the receiving tissue state. Human mistimed-sleep data show altered glucocorticoid-signalling transcript timing alongside an unchanged plasma cortisol rhythm.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Hormonitoiminta riippuu hormonin saatavuudesta, pulssirakenteesta ja vastaanottavan kudoksen tilasta. Ihmisen väärin ajoitetun unen aineistossa glukokortikoidisignaloinnin transkriptien ajoitus muuttui plasman kortisolirytmin säilyessä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HORMONE_TARGET_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Separate measurement of hormone signal and target-network timing",
+          "Local hormone availability and pulse-dependent signalling"
+        ],
+        "does_not_support": [
+          "Archer 2014 and Archer 2022 are independent datasets",
+          "A field effect inferred from a sleep or hormone intervention"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.coordination.multiple-zeitgebers",
+      "statement": {
+        "en": {
+          "text": "Light-pulse timing and meal timing modify different circadian endpoints in controlled human studies. BERM represents light, meals and a separately specified field-receptor input as distinct influences on a tissue-phase network.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Valopulssien ja aterioiden ajoitus muuttaa eri vuorokausipäätepisteitä kontrolloiduissa ihmistutkimuksissa. BERM kuvaa valon, ateriat ja erikseen määritellyn kenttä–vastaanotin-sisääntulon kudosten vaiheverkon erillisinä vaikutuksina.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "CIRCADIAN_COORDINATION"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Endpoint-specific temporal integration",
+          "Different tissue phase shifts under the same timing intervention"
+        ],
+        "does_not_support": [
+          "Conversion of optical exposure into RF dose",
+          "Identical reception mechanisms for light, meals and electromagnetic field protocols"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.reproduction.local-clock-gates",
+      "statement": {
+        "en": {
+          "text": "Reproduction includes functional and timed local gates: CatSper-dependent human sperm hyperactivation, ovarian circadian sensitivity and steroidogenic clock support of implantation in mice. These anchors specify distinct stages of BERM couple capacity.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Lisääntymiseen kuuluu toiminnallisia ja ajallisia paikallisia portteja: ihmisen siittiön CatSper-riippuvainen hyperaktivaatio, munasarjan vuorokautinen herkkyys sekä steroidogeenisen kellon tuki hiiren implantaatiolle. Ankkurit täsmentävät BERM:n parikapasiteetin eri vaiheita.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "IMPLANTATION"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Local intervention-to-function links and stage-specific reproductive capacity"
+        ],
+        "does_not_support": [
+          "A field coefficient from a knockout or rescue experiment",
+          "Counting the same CatSper defect as independent failures at multiple stages"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.couple.waiting-time-distribution",
+      "statement": {
+        "en": {
+          "text": "With heterogeneous fixed per-cycle conception probabilities, conditioning on previous unsuccessful cycles enriches the remaining group for lower probabilities. BERM can propagate this waiting-time distribution into parity opportunities; human cohort evidence associates long time to pregnancy with smaller achieved family size.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun kiertokohtaiset raskauden alkamisen todennäköisyydet vaihtelevat parien välillä ja säilyvät pareilla vakioina, aiempiin epäonnistuneisiin kiertoihin ehdollistaminen painottaa jäljellä olevassa ryhmässä pienempiä todennäköisyyksiä. BERM voi siirtää odotusaikajakauman seuraavan lapsen saamisen mahdollisuuksiin; ihmisaineisto yhdistää pitkän raskausodotuksen pienempään toteutuneeseen perhekokoon.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "COUPLE_FECUNDABILITY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Exact conditional-selection identity under its fixed-probability assumptions",
+          "Cohort constraints on time-to-pregnancy and family-size mapping"
+        ],
+        "does_not_support": [
+          "A numerical EMF contribution to fertility decline",
+          "A proof that heterogeneity alone explains the empirical cohort curve"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.encounter.network-propagation",
+      "statement": {
+        "en": {
+          "text": "BERM models successful encounters through encounter frequency, functional success and temporal overlap, with subsequent interactions propagating changes through a network. Pollinator-removal and human cooperation experiments anchor separate examples of this aggregation principle.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM kuvaa onnistuvia kohtaamisia kohtaamistiheyden, toiminnallisen onnistumisen ja ajallisen yhteensopivuuden avulla; myöhemmät vuorovaikutukset välittävät muutoksia verkossa. Pölyttäjien poistokokeet ja ihmisen yhteistyökokeet ankkuroivat tämän aggregointiperiaatteen erillisiä toteutuksia.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ECOLOGICAL_ENCOUNTER"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Biological function can change through partners and network composition",
+          "A shared aggregation structure with distinct species-specific inputs"
+        ],
+        "does_not_support": [
+          "A universal ecological or social amplification factor",
+          "A field-to-institution effect estimated from laboratory cooperation"
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.geometry.multisource-receptor-coupling",
+      "statement": {
+        "en": {
+          "text": "Conditional on the 2025 Lindgren metric and an explicit state-dependent biological operator, tensor cross-products preserve background orientation, source phase and sum/difference-frequency structure. Chemical-compass and temporal-interference experiments anchor receptor geometry and multisource response examples in their own physical systems.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Vuoden 2025 Lindgrenin metriikan ja eksplisiittisen tilariippuvan biologisen operaattorin ehdolla tensorin ristitulot säilyttävät taustan orientaation, lähteiden vaiheet sekä summa- ja erotaajuusrakenteen. Kemiallisen kompassin ja temporal interference -kokeet ankkuroivat vastaanottimen geometriaa ja monilähteistä vastetta omissa fysikaalisissa järjestelmissään.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "L1 tensor expansion conditional on the Lindgren premise",
+          "An explicit L2 receiver operator and component-level physical analogues"
+        ],
+        "does_not_support": [
+          "Temporal interference proves the Lindgren metric",
+          "An ambient organ dose inferred from electrode stimulation"
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -1897,6 +2212,619 @@
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
       "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy."
+    },
+    {
+      "id": "er.coordination.lamia2011_cry_glucocorticoid",
+      "referenceId": "lamia2011_cry_glucocorticoid",
+      "claimId": "claim.cry.endocrine-gating",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Genetic, biochemical and transcriptional intervention",
+      "applicability": "Mouse embryonic fibroblasts and mouse liver/HPA physiology",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "CRY1/CRY2 interact with GR in a ligand-dependent manner and modify transcriptional hormone response; endocrine link, without a field intervention."
+    },
+    {
+      "id": "er.coordination.zhang2010_cry_camp",
+      "referenceId": "zhang2010_cry_camp",
+      "claimId": "claim.cry.endocrine-gating",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Biochemical reconstitution and mouse hepatic manipulation",
+      "applicability": "Mammalian liver signalling and db/db mouse metabolic endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "CRY inhibits glucagon/GPCR-mediated cAMP signalling through a Gs-related mechanism; evidence attaches to the endocrine receiver, not to magnetic sensitivity."
+    },
+    {
+      "id": "er.coordination.meng2026_spin_memory",
+      "referenceId": "meng2026_spin_memory",
+      "claimId": "claim.receptor.chemical-memory",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Optical detection and radiofrequency manipulation of photogenerated radical pairs",
+      "applicability": "Purified CraCry and engineered iLOV under specified light, static-field and RF protocols",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Protein preparations and engineered iLOV are distinct from mammalian endocrine CRY.",
+        "RF frequency and static background belong to the published protocol, not environmental calibration.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Fast spin selection is read through slower chemical-population changes; source data DOI 10.5281/zenodo.19829558. iLOV contrast belongs to its optimized laboratory protocol."
+    },
+    {
+      "id": "er.coordination.kattnig2016_chemical_amplification",
+      "referenceId": "kattnig2016_chemical_amplification",
+      "claimId": "claim.receptor.chemical-memory",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled photochemical reaction experiments",
+      "applicability": "Flavin-containing model systems under continuous photoexcitation",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Slow termination reactions amplify a primary magnetic-field effect, anchoring chemical integration after the spin step."
+    },
+    {
+      "id": "er.coordination.kish2026_cry4a_allostery",
+      "referenceId": "kish2026_cry4a_allostery",
+      "claimId": "claim.receptor.chemical-memory",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Redox-resolved hydrogen/deuterium-exchange mass spectrometry; preprint",
+      "applicability": "Purified European robin Cry4a redox states",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Preprint, not peer reviewed.",
+        "Redox-state structural measurements are not a direct magnetic-response experiment.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "arXiv:2604.19579v3, 24 April 2026. A distinct semiquinone conformational fingerprint is a candidate redox-to-structure bridge."
+    },
+    {
+      "id": "er.coordination.durant2017_bioelectric_memory",
+      "referenceId": "durant2017_bioelectric_memory",
+      "claimId": "claim.receptor.chemical-memory",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Transient bioelectric perturbation and repeated regeneration",
+      "applicability": "Planarian regeneration",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Planarian regenerative anatomy is a separate downstream memory example, not proof of the protein-to-human chain.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Persistent physiological memory after a transient intervention supplies a separate tissue-scale memory anchor."
+    },
+    {
+      "id": "er.coordination.thoeni2024_tnmr_clock",
+      "referenceId": "thoeni2024_tnmr_clock",
+      "claimId": "claim.receptor.state-dependent-response",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Timed field, oxygen and dexamethasone-preconditioning cell experiments",
+      "applicability": "NIH3T3 Per2:Luc mouse fibroblasts; six-hour tNMR protocol",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The specific molecular mediator of the DEX-dependent change was not established as CRY.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Time and DEX pretreatment alter which clock-response properties change. Protocol: 0.4 mT static field, 1–50 Hz sweep, approximately 17.8 kHz RF."
+    },
+    {
+      "id": "er.coordination.zhang2021",
+      "referenceId": "zhang2021",
+      "claimId": "claim.receptor.state-dependent-response",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Hypomagnetic exposure, redox manipulation and field restoration",
+      "applicability": "Adult male mice and hippocampal neurogenesis",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "The same ROS-modifying intervention has opposite functional directions in different magnetic/redox backgrounds; restoration and inhibitor experiments constrain the redox mediator."
+    },
+    {
+      "id": "er.coordination.wang2012_redox_scn",
+      "referenceId": "wang2012_redox_scn",
+      "claimId": "claim.coordination.redox-clock",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Redox intervention and electrophysiology across circadian phase",
+      "applicability": "Rodent suprachiasmatic nucleus neurons",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Redox state changes potassium-channel-related membrane excitability without requiring transcription as the immediate step."
+    },
+    {
+      "id": "er.coordination.naseri2019_redox_hippocampus",
+      "referenceId": "naseri2019_redox_hippocampus",
+      "claimId": "claim.coordination.redox-clock",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Circadian redox and membrane-excitability measurements",
+      "applicability": "Rodent hippocampal CA1 neurons",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "The phase relationship differs from the SCN example, motivating physiological relative phase offsets rather than simultaneous tissue peaks."
+    },
+    {
+      "id": "er.coordination.welsh2004_cellular_oscillators",
+      "referenceId": "welsh2004_cellular_oscillators",
+      "claimId": "claim.coordination.redox-clock",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Longitudinal single-cell bioluminescence imaging",
+      "applicability": "Individual cultured fibroblasts",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Persistent single-cell oscillations become desynchronized; tissue-level amplitude can change through phase dispersion."
+    },
+    {
+      "id": "er.coordination.anastassiou2011_ephaptic_coupling",
+      "referenceId": "anastassiou2011_ephaptic_coupling",
+      "claimId": "claim.coordination.redox-clock",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Extracellular-field intervention and neuronal electrophysiology",
+      "applicability": "Cortical neurons and tissue recordings",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Endogenous-scale extracellular fields influence spike timing, anchoring local electrical coordination."
+    },
+    {
+      "id": "er.coordination.archer2014_transcriptome",
+      "referenceId": "archer2014_transcriptome",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled human sleep-wake misalignment and blood-transcript time series",
+      "applicability": "Human blood transcriptome; GEO GSE48113",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Blood transcriptomics is not a direct all-organ clock measurement.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Rhythmic transcript prevalence and temporal expression change with sleep timing. Shared dataset family with Archer 2022; not an independent replication."
+    },
+    {
+      "id": "er.coordination.archer2022_glucocorticoid_timing",
+      "referenceId": "archer2022_glucocorticoid_timing",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Targeted reanalysis of controlled sleep-misalignment transcriptomics",
+      "applicability": "Human glucocorticoid-signalling transcripts and plasma cortisol; GEO GSE48113",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Reanalysis of shared data, not independent participant replication.",
+        "SP1 involvement includes bioinformatic and temporal association.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Same GSE48113 dataset family as Archer 2014. Preserved plasma cortisol rhythm accompanies changed signalling-transcript timing; count as mechanistic refinement of shared data."
+    },
+    {
+      "id": "er.coordination.belchetz1978_gnrh_pulses",
+      "referenceId": "belchetz1978_gnrh_pulses",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Continuous versus intermittent hormone delivery",
+      "applicability": "Rhesus monkey pituitary response",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "GnRH pulse structure changes downstream endocrine function."
+    },
+    {
+      "id": "er.coordination.stavreva2009_hormone_pulses",
+      "referenceId": "stavreva2009_hormone_pulses",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Pulsatile glucocorticoid delivery and transcription measurements",
+      "applicability": "Glucocorticoid-receptor signalling models",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Ultradian hormone pulses produce distinct receptor-mediated transcription dynamics."
+    },
+    {
+      "id": "er.coordination.coviello2005_intratesticular_testosterone",
+      "referenceId": "coviello2005_intratesticular_testosterone",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Randomized hormone-suppression and hCG-dose intervention",
+      "applicability": "Twenty-nine healthy men; serum and intratesticular testosterone",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Local testosterone availability and serum hormone concentration are separate physiological quantities; hCG preserves intratesticular support dose-dependently."
+    },
+    {
+      "id": "er.coordination.kalafatakis2018_cortisol_pulsatility",
+      "referenceId": "kalafatakis2018_cortisol_pulsatility",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Double-blind crossover hormone-pattern intervention",
+      "applicability": "Healthy men receiving different cortisol temporal patterns",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Controlled hormone-pattern differences altered emotional and cognitive responses; does not supply an exposure coefficient."
+    },
+    {
+      "id": "er.coordination.najjar2016_light_flashes",
+      "referenceId": "najjar2016_light_flashes",
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled one-hour light-flash schedules",
+      "applicability": "Thirty-nine humans; two-millisecond light flashes",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Optical retinal input; no RF dose conversion.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Circadian phase response depends on flash spacing, with different temporal profiles for acute melatonin and alertness endpoints."
+    },
+    {
+      "id": "er.coordination.wehrens2017_meal_timing",
+      "referenceId": "wehrens2017_meal_timing",
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Controlled five-hour meal-time shift",
+      "applicability": "Ten men; glucose, adipose PER2, melatonin and cortisol rhythms",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Meals shift peripheral endpoints by different amounts, anchoring a tissue-specific phase network."
+    },
+    {
+      "id": "er.coordination.chellappa2021_daytime_eating",
+      "referenceId": "chellappa2021_daytime_eating",
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Randomized daytime-only versus day/night eating during simulated night work",
+      "applicability": "Healthy adults in a controlled laboratory circadian protocol",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Daytime eating prevents measured glucose intolerance during the broader misalignment protocol; an intervention anchor for distinct temporal inputs."
+    },
+    {
+      "id": "er.coordination.scheer2009_circadian_misalignment",
+      "referenceId": "scheer2009_circadian_misalignment",
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Forced-desynchrony human laboratory intervention",
+      "applicability": "Ten adults on a 28-hour behavioural schedule",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Internal misalignment changes multiple metabolic and endocrine endpoints in the same participants."
+    },
+    {
+      "id": "er.coordination.catsper2024",
+      "referenceId": "catsper2024",
+      "claimId": "claim.reproduction.local-clock-gates",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Clinical sperm functional characterization and assisted-fertilization observations",
+      "applicability": "Men with CatSper deficiency and examined sperm",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "CatSper-dependent hyperactivation can fail despite routine semen measures within reference ranges; the functional gate is distinct from count."
+    },
+    {
+      "id": "er.coordination.sellix2010_ovarian_lh_clock",
+      "referenceId": "sellix2010_ovarian_lh_clock",
+      "claimId": "claim.reproduction.local-clock-gates",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Timed LH challenge after ovarian clock synchronization",
+      "applicability": "Rodent ovarian ovulatory response",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Ovarian responsiveness to LH depends on circadian timing."
+    },
+    {
+      "id": "er.coordination.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.reproduction.local-clock-gates",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "SF1-driven Bmal1 deletion, progesterone rescue and ovarian transplantation",
+      "applicability": "Female mice with steroidogenic-cell clock disruption",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Implantation failure is localized to ovarian steroidogenic clock support through hormone and ovary-transfer rescue. Ovulation and implantation are separate endpoints."
+    },
+    {
+      "id": "er.coordination.gnoth2003_time_to_pregnancy",
+      "referenceId": "gnoth2003_time_to_pregnancy",
+      "claimId": "claim.couple.waiting-time-distribution",
+      "relation": "supports",
+      "directness": "human_reproductive_endpoint",
+      "studyDesign": "Prospective natural-family-planning cohort and Kaplan–Meier time-to-pregnancy estimation",
+      "applicability": "346 women enrolled; reported total-group conception curve based on 340 women",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Selected couples using timed intercourse; not a general-population random sample.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Published cumulative probabilities constrain waiting-time shape. Within-block constant-probability equivalents are mathematical transformations of summaries, not observed per-cycle estimates."
+    },
+    {
+      "id": "er.coordination.joffe2009_ttp_family_size",
+      "referenceId": "joffe2009_ttp_family_size",
+      "claimId": "claim.couple.waiting-time-distribution",
+      "relation": "supports",
+      "directness": "human_population_association",
+      "studyDesign": "Observational analysis of four European datasets",
+      "applicability": "Reported time to pregnancy and final or near-final family size",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Behavioural contributions remain part of the measured association.",
+        "Odds ratios are not EMF coefficients.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "TTP at least twelve months is associated with lower parity progression and smaller achieved family size; below twelve months no association was observed."
+    },
+    {
+      "id": "er.coordination.brosi2013_pollination_network",
+      "referenceId": "brosi2013_pollination_network",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Local pollinator-species removal field experiment",
+      "applicability": "Bumblebee visitation networks and focal plant reproduction",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Removing one pollinator species changes remaining pollinators’ floral fidelity and plant seed production."
+    },
+    {
+      "id": "er.coordination.fowler2010_cooperation_cascades",
+      "referenceId": "fowler2010_cooperation_cascades",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "human_behavioural_intermediate",
+      "studyDesign": "Randomized changing-group public-goods experiments",
+      "applicability": "Human laboratory social networks",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The experimental network multiplier is not a universal societal constant.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Earlier partner contributions influence later contributions with new partners, anchoring propagation across interactions."
+    },
+    {
+      "id": "er.coordination.bensimon2018_sleep_social",
+      "referenceId": "bensimon2018_sleep_social",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "human_behavioural_intermediate",
+      "studyDesign": "Sleep-deprivation crossover and independent-observer assessments",
+      "applicability": "Eighteen experimental participants plus independent social observers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Sleep loss changes social approach and observer response, connecting biological state to both sides of an encounter."
+    },
+    {
+      "id": "er.coordination.bensimon2022_sleep_helping",
+      "referenceId": "bensimon2022_sleep_helping",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "human_behavioural_intermediate",
+      "studyDesign": "Sleep-deprivation crossover, daily follow-up and donation analysis",
+      "applicability": "Twenty-three analyzed crossover participants; distinct observational datasets",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Experimental helping scores change with sleep loss; 78% refers to the share of participants with a decrease, not the size of a decrease. Read with correction DOI 10.1371/journal.pbio.3002394."
+    },
+    {
+      "id": "er.coordination.knop2017_night_pollination",
+      "referenceId": "knop2017_night_pollination",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Artificial-light-at-night field experiment",
+      "applicability": "Nocturnal pollinator visitation and focal plant fruit set",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Optical input retains its own sensory mechanism.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Optical environmental input changes encounters and plant reproduction in the same experimental context."
+    },
+    {
+      "id": "er.coordination.mallinson2025_electric_pollution",
+      "referenceId": "mallinson2025_electric_pollution",
+      "claimId": "claim.encounter.network-propagation",
+      "relation": "supports",
+      "directness": "ecological_endpoint",
+      "studyDesign": "Local AC/DC electric-field manipulation",
+      "applicability": "Honeybee floral landing behaviour",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Landing behaviour is not a measured population growth coefficient.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Electric waveform and polarity alter floral landing; behavior is an encounter-stage endpoint."
+    },
+    {
+      "id": "er.coordination.kerpal2019_chemical_compass",
+      "referenceId": "kerpal2019_chemical_compass",
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Orientation and isotope manipulations in a chemical compass",
+      "applicability": "CPF model molecules at 120 kelvin",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Model chemistry at low temperature, not an organ measurement.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Orientation shifts the measured magnetic response pattern; isotope changes alter response dynamics. This anchors receiver orientation and chemistry as distinct variables."
+    },
+    {
+      "id": "er.coordination.violante2023_temporal_interference",
+      "referenceId": "violante2023_temporal_interference",
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Human electrode temporal-interference stimulation with imaging and task outcomes",
+      "applicability": "20-person imaging study and separate 21-person memory study",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Electrode stimulation uses established electrodynamics; no metric perturbation was measured.",
+        "Group maps are not raw individual effect estimates.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "2000/2005 Hz source geometry and current ratios change target-region response; NeuroVault collection 11908 provides six group imaging maps."
+    },
+    {
+      "id": "er.coordination.grossman2017_temporal_interference",
+      "referenceId": "grossman2017_temporal_interference",
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Electrode temporal-interference stimulation and neural readouts",
+      "applicability": "Mouse deep-brain stimulation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Electrode field protocols do not calibrate environmental RF coupling.",
+        "Component evidence; the geometry-to-biology L2 coupling and endpoint coefficients remain separately specified."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Experimental multisource targeting provides a prior receiver-and-envelope example."
+    },
+    {
+      "id": "er.coordination.lindgren2025",
+      "referenceId": "lindgren2025",
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "relation": "method",
+      "directness": "theoretical_premise",
+      "studyDesign": "Geometric electromagnetic theory and algebraic tensor expansion",
+      "applicability": "2025 metric ansatz in its declared coordinates and normalization",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The L1 tensor expansion is conditional on the stated metric premise.",
+        "The receptor kernel and observable mapping are separately declared L2 assumptions."
+      ],
+      "curatorId": "berm-research-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Use the 2025 metric with its Minkowski background; do not substitute the singular 2021 ansatz. With A=A_b+a the increment contains A_b⊗a+a⊗A_b+a⊗a."
     }
   ],
   "epistemic_assessments": [
@@ -2311,6 +3239,173 @@
       "assessorId": "berm-claims-agent",
       "assessedAt": "2026-09-02",
       "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.cry.endocrine-gating.v1",
+      "claimId": "claim.cry.endocrine-gating",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.lamia2011_cry_glucocorticoid",
+        "er.coordination.zhang2010_cry_camp"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.receptor.chemical-memory.v1",
+      "claimId": "claim.receptor.chemical-memory",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.meng2026_spin_memory",
+        "er.coordination.kattnig2016_chemical_amplification",
+        "er.coordination.kish2026_cry4a_allostery",
+        "er.coordination.durant2017_bioelectric_memory"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.receptor.state-dependent-response.v1",
+      "claimId": "claim.receptor.state-dependent-response",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.thoeni2024_tnmr_clock",
+        "er.coordination.zhang2021"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.coordination.redox-clock.v1",
+      "claimId": "claim.coordination.redox-clock",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.wang2012_redox_scn",
+        "er.coordination.naseri2019_redox_hippocampus",
+        "er.coordination.welsh2004_cellular_oscillators",
+        "er.coordination.anastassiou2011_ephaptic_coupling"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.coordination.hormone-target-timing.v1",
+      "claimId": "claim.coordination.hormone-target-timing",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.archer2014_transcriptome",
+        "er.coordination.archer2022_glucocorticoid_timing",
+        "er.coordination.belchetz1978_gnrh_pulses",
+        "er.coordination.stavreva2009_hormone_pulses",
+        "er.coordination.coviello2005_intratesticular_testosterone",
+        "er.coordination.kalafatakis2018_cortisol_pulsatility"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.coordination.multiple-zeitgebers.v1",
+      "claimId": "claim.coordination.multiple-zeitgebers",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.najjar2016_light_flashes",
+        "er.coordination.wehrens2017_meal_timing",
+        "er.coordination.chellappa2021_daytime_eating",
+        "er.coordination.scheer2009_circadian_misalignment"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.reproduction.local-clock-gates.v1",
+      "claimId": "claim.reproduction.local-clock-gates",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.catsper2024",
+        "er.coordination.sellix2010_ovarian_lh_clock",
+        "er.coordination.liu2014"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.couple.waiting-time-distribution.v1",
+      "claimId": "claim.couple.waiting-time-distribution",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.coordination.gnoth2003_time_to_pregnancy",
+        "er.coordination.joffe2009_ttp_family_size"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.encounter.network-propagation.v1",
+      "claimId": "claim.encounter.network-propagation",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.coordination.brosi2013_pollination_network",
+        "er.coordination.fowler2010_cooperation_cascades",
+        "er.coordination.bensimon2018_sleep_social",
+        "er.coordination.bensimon2022_sleep_helping",
+        "er.coordination.knop2017_night_pollination",
+        "er.coordination.mallinson2025_electric_pollution"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. "
+    },
+    {
+      "id": "ea.geometry.multisource-receptor-coupling.v1",
+      "claimId": "claim.geometry.multisource-receptor-coupling",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.coordination.lindgren2025",
+        "er.coordination.kerpal2019_chemical_compass",
+        "er.coordination.violante2023_temporal_interference",
+        "er.coordination.grossman2017_temporal_interference"
+      ],
+      "assessorId": "berm-research-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Component-specific evidence and an explicit BERM synthesis. Draft lifecycle; no population field-effect coefficient is inferred. L1 algebra is conditional on the 2025 premise; the biological operator remains an explicit L2 assumption."
     }
   ],
   "routes": [
@@ -2403,6 +3498,77 @@
       "direction": "supports",
       "alternativeCompatibility": "Does not distinguish between EMF and other biological causes of fecundability decline",
       "discriminatingPower": "Requires FieldState-stratified cohort comparison to isolate EMF contribution"
+    },
+    {
+      "id": "route.biological-coordination",
+      "name": {
+        "en": "Receiver memory → tissue timing → reproductive gates",
+        "fi": "Vastaanottimen muisti → kudosten ajoitus → lisääntymisen portit"
+      },
+      "description": {
+        "en": "A BERM synthesis linking an explicit geometry-to-receiver proposition to chemical memory, tissue-specific timing, endocrine response and reproductive waiting-time distributions. Each source supports its named component and studied system.",
+        "fi": "BERM-synteesi yhdistää eksplisiittisen geometria–vastaanotin-ehdotuksen kemialliseen muistiin, kudosten ajoitukseen, hormonivasteeseen ja lisääntymisen odotusaikajakaumiin. Kukin lähde tukee nimettyä osavaihetta omassa tutkitussa järjestelmässään."
+      },
+      "targetClaim": "claim.couple.waiting-time-distribution",
+      "routeClaims": [
+        "claim.cry.endocrine-gating",
+        "claim.receptor.chemical-memory",
+        "claim.receptor.state-dependent-response",
+        "claim.coordination.redox-clock",
+        "claim.coordination.hormone-target-timing",
+        "claim.coordination.multiple-zeitgebers",
+        "claim.reproduction.local-clock-gates",
+        "claim.couple.waiting-time-distribution",
+        "claim.geometry.multisource-receptor-coupling"
+      ],
+      "routeEvidence": [
+        "er.coordination.lindgren2025",
+        "er.coordination.lamia2011_cry_glucocorticoid",
+        "er.coordination.zhang2010_cry_camp",
+        "er.coordination.meng2026_spin_memory",
+        "er.coordination.kattnig2016_chemical_amplification",
+        "er.coordination.kish2026_cry4a_allostery",
+        "er.coordination.durant2017_bioelectric_memory",
+        "er.coordination.thoeni2024_tnmr_clock",
+        "er.coordination.zhang2021",
+        "er.coordination.wang2012_redox_scn",
+        "er.coordination.naseri2019_redox_hippocampus",
+        "er.coordination.welsh2004_cellular_oscillators",
+        "er.coordination.anastassiou2011_ephaptic_coupling",
+        "er.coordination.archer2014_transcriptome",
+        "er.coordination.archer2022_glucocorticoid_timing",
+        "er.coordination.belchetz1978_gnrh_pulses",
+        "er.coordination.stavreva2009_hormone_pulses",
+        "er.coordination.coviello2005_intratesticular_testosterone",
+        "er.coordination.kalafatakis2018_cortisol_pulsatility",
+        "er.coordination.najjar2016_light_flashes",
+        "er.coordination.wehrens2017_meal_timing",
+        "er.coordination.chellappa2021_daytime_eating",
+        "er.coordination.scheer2009_circadian_misalignment",
+        "er.coordination.catsper2024",
+        "er.coordination.sellix2010_ovarian_lh_clock",
+        "er.coordination.liu2014",
+        "er.coordination.gnoth2003_time_to_pregnancy",
+        "er.coordination.joffe2009_ttp_family_size",
+        "er.coordination.kerpal2019_chemical_compass",
+        "er.coordination.violante2023_temporal_interference",
+        "er.coordination.grossman2017_temporal_interference"
+      ],
+      "sharedAssumptions": [
+        "The Lindgren 2025 metric is used as a model premise.",
+        "A state-dependent geometry-to-biological-observable L2 operator is specified separately.",
+        "Cross-system transfer preserves named receptor, organ and species differences.",
+        "Fixed per-cycle probabilities are a declared waiting-time illustration, not a universal life-course law."
+      ],
+      "sharedDatasets": [
+        "GSE48113: Archer 2014 and Archer 2022 share the same human transcriptomic dataset family."
+      ],
+      "independenceGroup": "coordination-synthesis",
+      "independenceVerified": false,
+      "independenceNote": "This route deliberately integrates overlapping clock/redox/endocrine mechanisms. Archer 2014 and 2022 are one dataset family. It is not an independently replicated end-to-end field-to-fertility route.",
+      "direction": "supports",
+      "alternativeCompatibility": "The component experiments retain their optical, hormonal, chemical, field-protocol or behavioural inputs.",
+      "discriminatingPower": "Tissue phase, hormonal pretreatment, source geometry, recovery interval and waiting-time distribution are explicit component-level observables."
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Heart } from "lucide-react";
@@ -220,6 +221,8 @@ export default async function ReproductiveArcPage({ params }: { params: Promise<
       </p>
       <PageHeader icon={Heart} title={d.title} subtitle={d.subtitle} />
       <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
+
+      <BiologicalCoordinationContext locale={locale} context="reproduction" />
 
       <section className="mt-12">
         <h2 className="text-lg font-semibold mb-2">{d.arcTitle}</h2>

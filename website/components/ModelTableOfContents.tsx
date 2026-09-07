@@ -19,6 +19,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Lindgren physics",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "From physics to biology" },
         { id: "solar-biological", label: "Solar-biological connection" },
         { id: "three-biological-bands", label: "Three frequency bands" },
@@ -75,6 +76,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Lindgrenin fysiikka",
       sections: [
+        { id: "biological-coordination", label: "Biologinen koordinaatio" },
         { id: "physics-to-biology", label: "Fysiikasta biologiaan" },
         { id: "solar-biological", label: "Aurinko-biologinen yhteys" },
         { id: "three-biological-bands", label: "Kolme taajuuskaistaa" },
@@ -131,6 +133,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "リンドグレン物理学",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "物理学から生物学へ" },
         { id: "solar-biological", label: "太陽-生物学的接続" },
         { id: "three-biological-bands", label: "Three frequency bands" },
@@ -187,6 +190,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "Physique de Lindgren",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "De la physique à la biologie" },
         { id: "solar-biological", label: "Connexion solaire-biologique" },
         { id: "three-biological-bands", label: "Three frequency bands" },
@@ -243,6 +247,7 @@ const GROUPS: Record<string, TocGroup[]> = {
     {
       title: "린드그렌 물리학",
       sections: [
+        { id: "biological-coordination", label: "Biological coordination" },
         { id: "physics-to-biology", label: "물리학에서 생물학으로" },
         { id: "solar-biological", label: "태양-생물학적 연결" },
         { id: "three-biological-bands", label: "Three frequency bands" },

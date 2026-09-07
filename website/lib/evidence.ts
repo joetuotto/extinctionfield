@@ -752,6 +752,18 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "HPA–HPG endocrine intermediate",
     fi: "HPA–HPG-endokriininen välitila",
   },
+  RECEPTOR_STATE_MEMORY: {
+    en: "Receptor chemical-state memory and recovery",
+    fi: "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
+  },
+  CIRCADIAN_COORDINATION: {
+    en: "Tissue-specific circadian phase relationships and electrical timing",
+    fi: "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus",
+  },
+  HORMONE_TARGET_RESPONSE: {
+    en: "Hormone availability, receptor readiness and temporal response",
+    fi: "Hormonin saatavuus, reseptorivalmius ja ajallinen vaste",
+  },
   MALE_GERMLINE_RESERVE: {
     en: "Male germline reserve",
     fi: "Miehen ituradan varanto",
