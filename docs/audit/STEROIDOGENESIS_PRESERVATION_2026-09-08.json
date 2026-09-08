@@ -1,0 +1,996 @@
+{
+  "audit": "STEROIDOGENESIS_PRESERVATION_2026-09-08",
+  "checkedAtUtc": "2026-09-08T13:38:17.319684+00:00",
+  "baselineCommit": "7a155ee186ad1c8602a88e06eff43813141f50fc",
+  "releaseHeadAtCheck": "7a155ee186ad1c8602a88e06eff43813141f50fc",
+  "originalWorkspace": "/Volumes/kovalevy 3/extinctionfield",
+  "isolatedRelease": "/tmp/berm-steroidogenesis-release-20260908",
+  "snapshot": "/Volumes/kovalevy 3/berm-workspace-backups/steroidogenesis-20260908T125459Z",
+  "snapshotHead": "af25773cc096a3f8d1d5348f7445fa48a8dffea2",
+  "scopeNote": "Read-only preservation comparison against fixed 7a155ee and the supplied workspace snapshot. Later upstream commit 613edbf is outside this baseline audit. Original-workspace changes are observed differences; authorship is not inferred. Only the two requested report artifacts are written.",
+  "passed": true,
+  "registries": {
+    "references": {
+      "baselineCount": 1209,
+      "releaseCount": 1260,
+      "retainedCount": 1209,
+      "missingIds": [],
+      "duplicateReleaseIds": [],
+      "addedCount": 51,
+      "modifiedExistingRecords": [
+        {
+          "id": "harris2023",
+          "fields": [
+            "authors",
+            "doi",
+            "finding",
+            "journal",
+            "link_checked_at",
+            "link_source",
+            "link_status",
+            "pmcid",
+            "pmid",
+            "title",
+            "type",
+            "url",
+            "verified"
+          ]
+        },
+        {
+          "id": "iuliis2009",
+          "fields": [
+            "corrections"
+          ]
+        },
+        {
+          "id": "li2010_sperm_mf",
+          "fields": [
+            "authors",
+            "finding",
+            "pathway",
+            "pmid"
+          ]
+        },
+        {
+          "id": "stone2025_amish_demography",
+          "fields": [
+            "authors",
+            "category",
+            "doi",
+            "finding",
+            "link_source",
+            "link_status",
+            "pathway",
+            "tags",
+            "title",
+            "url",
+            "verified"
+          ]
+        }
+      ],
+      "allPriorIdsRetained": true
+    },
+    "claims": {
+      "baselineCount": 104,
+      "releaseCount": 110,
+      "retainedCount": 104,
+      "missingIds": [],
+      "duplicateReleaseIds": [],
+      "addedCount": 6,
+      "modifiedExistingRecords": [],
+      "allPriorIdsRetained": true
+    },
+    "evidence_relations": {
+      "baselineCount": 202,
+      "releaseCount": 268,
+      "retainedCount": 202,
+      "missingIds": [],
+      "duplicateReleaseIds": [],
+      "addedCount": 66,
+      "modifiedExistingRecords": [],
+      "allPriorIdsRetained": true
+    },
+    "epistemic_assessments": {
+      "baselineCount": 104,
+      "releaseCount": 110,
+      "retainedCount": 104,
+      "missingIds": [],
+      "duplicateReleaseIds": [],
+      "addedCount": 6,
+      "modifiedExistingRecords": [],
+      "allPriorIdsRetained": true
+    },
+    "routes": {
+      "baselineCount": 5,
+      "releaseCount": 5,
+      "retainedCount": 5,
+      "missingIds": [],
+      "duplicateReleaseIds": [],
+      "addedCount": 0,
+      "modifiedExistingRecords": [],
+      "allPriorIdsRetained": true
+    },
+    "referenceAliases": {
+      "baselineCount": 47,
+      "releaseCount": 47,
+      "missing": [],
+      "allPriorAliasesRetained": true
+    }
+  },
+  "releaseFiles": {
+    "baselineTrackedCount": 1116,
+    "missingTrackedPaths": [],
+    "pages": {
+      "baselineCount": 107,
+      "missingPaths": [],
+      "modifiedPaths": [
+        "website/app/[locale]/behavior/page.tsx",
+        "website/app/[locale]/biology/page.tsx",
+        "website/app/[locale]/civilization/page.tsx",
+        "website/app/[locale]/epistemology/page.tsx",
+        "website/app/[locale]/evidence/circadian/page.tsx",
+        "website/app/[locale]/evidence/page.tsx",
+        "website/app/[locale]/evidence/pharmacology/page.tsx",
+        "website/app/[locale]/evidence/testosterone/page.tsx",
+        "website/app/[locale]/evidence/timothy-experiment/page.tsx",
+        "website/app/[locale]/model/math/page.tsx",
+        "website/app/[locale]/model/page.tsx",
+        "website/app/[locale]/model/proxy-masking/page.tsx",
+        "website/app/[locale]/modulome/page.tsx",
+        "website/app/[locale]/modulome/pancreas/page.tsx",
+        "website/app/[locale]/modulome/testes/page.tsx",
+        "website/app/[locale]/predictions/page.tsx"
+      ],
+      "newPagePaths": [
+        "website/app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      ]
+    }
+  },
+  "numericAndPublicData": [
+    {
+      "group": "publicDataJsonExceptBibliography",
+      "count": 14,
+      "allByteIdentical": true,
+      "files": [
+        {
+          "path": "website/public/data/berm_cultural_energy_model.json",
+          "baselineSha256": "1dfed6556659b9b0988a97fc3aab05e2da986271e7cfa0a232df98e7333fb12d",
+          "releaseSha256": "1dfed6556659b9b0988a97fc3aab05e2da986271e7cfa0a232df98e7333fb12d",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/biological-coordination.json",
+          "baselineSha256": "99ae1567918168ad624309da9e0371995fee147ca435de8e36d2095581183311",
+          "releaseSha256": "99ae1567918168ad624309da9e0371995fee147ca435de8e36d2095581183311",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/civilization_indices.json",
+          "baselineSha256": "43d66311809108438ee8ed07f0b54e8c90feb09481f63af79019d8f4a6a6c129",
+          "releaseSha256": "43d66311809108438ee8ed07f0b54e8c90feb09481f63af79019d8f4a6a6c129",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/conditional-scenarios.json",
+          "baselineSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "releaseSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/dkc-framework.json",
+          "baselineSha256": "2e05ed41ac76ecaef750cfd7d3a200be7bdff257bb15246b7286a7d9f80aff8f",
+          "releaseSha256": "2e05ed41ac76ecaef750cfd7d3a200be7bdff257bb15246b7286a7d9f80aff8f",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/falsification_v19_1.json",
+          "baselineSha256": "3e4aee3ada427fbdb78af30e996fd7edbbff9ebad94d7555b446807e5203b236",
+          "releaseSha256": "3e4aee3ada427fbdb78af30e996fd7edbbff9ebad94d7555b446807e5203b236",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/geojson/ne_110m_countries.json",
+          "baselineSha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+          "releaseSha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/global_panel_summary.json",
+          "baselineSha256": "f0528f5d3c9173752f23fdc0207c8716792ea4561656553fd66c7896271fe35f",
+          "releaseSha256": "f0528f5d3c9173752f23fdc0207c8716792ea4561656553fd66c7896271fe35f",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/intervention-profiles.json",
+          "baselineSha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+          "releaseSha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/intervention-scenarios.json",
+          "baselineSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "releaseSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/map_data.json",
+          "baselineSha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4",
+          "releaseSha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/modulome-state.json",
+          "baselineSha256": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+          "releaseSha256": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/sentinel_registry.json",
+          "baselineSha256": "6bff0ee11d9f1bc5e46e19d081b547dbe1dc4d0bf771e2a6982bb33b4285a8f5",
+          "releaseSha256": "6bff0ee11d9f1bc5e46e19d081b547dbe1dc4d0bf771e2a6982bb33b4285a8f5",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/solar_bandpass.json",
+          "baselineSha256": "789b5d68a27466e12d17a6eefda82d04e8e1a6d88dd88b1f9d5291652be05da5",
+          "releaseSha256": "789b5d68a27466e12d17a6eefda82d04e8e1a6d88dd88b1f9d5291652be05da5",
+          "byteIdentical": true
+        }
+      ]
+    },
+    {
+      "group": "forecastPredictionScenarioJson",
+      "count": 7,
+      "allByteIdentical": true,
+      "files": [
+        {
+          "path": "data/predictions.json",
+          "baselineSha256": "255d6c96e28ed76f10eea46632076e85c7b2baf8507a5e9e36438666ac9bfd25",
+          "releaseSha256": "255d6c96e28ed76f10eea46632076e85c7b2baf8507a5e9e36438666ac9bfd25",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/data/conditional-scenario-explorer.json",
+          "baselineSha256": "cfe62ae8857680535aa6868a3a68d3fd715aa0b2dba7f4099059526fb93a35ab",
+          "releaseSha256": "cfe62ae8857680535aa6868a3a68d3fd715aa0b2dba7f4099059526fb93a35ab",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/data/conditional-scenarios.json",
+          "baselineSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "releaseSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/data/intervention-scenarios.json",
+          "baselineSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "releaseSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/lib/predictionSeries.json",
+          "baselineSha256": "38c53c84ce11b32bde6f60781aedbe682c4ef4222ff5a8a336b2a0351e0b6db9",
+          "releaseSha256": "38c53c84ce11b32bde6f60781aedbe682c4ef4222ff5a8a336b2a0351e0b6db9",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/conditional-scenarios.json",
+          "baselineSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "releaseSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+          "byteIdentical": true
+        },
+        {
+          "path": "website/public/data/intervention-scenarios.json",
+          "baselineSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "releaseSha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+          "byteIdentical": true
+        }
+      ]
+    },
+    {
+      "group": "existingModelResearchJson",
+      "count": 37,
+      "allByteIdentical": true,
+      "files": [
+        {
+          "path": "berm/data/berm/country_params.json",
+          "baselineSha256": "9a0720fba3d05bef956e457e4e9cf3fd3192e3a0f7267587f1c48a18de64635e",
+          "releaseSha256": "9a0720fba3d05bef956e457e4e9cf3fd3192e3a0f7267587f1c48a18de64635e",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/berm/map_data.json",
+          "baselineSha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4",
+          "releaseSha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/article_reference_migration.json",
+          "baselineSha256": "1702337ed877e5430ff34db92415ef0cda05d2359268f7d22b0cc23ccbf1784b",
+          "releaseSha256": "1702337ed877e5430ff34db92415ef0cda05d2359268f7d22b0cc23ccbf1784b",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/citation_link_overrides.json",
+          "baselineSha256": "1d185f23b28780cec9c4608a6461bee0f9e8ee09a8e468181f5e26f1bf80f7df",
+          "releaseSha256": "1d185f23b28780cec9c4608a6461bee0f9e8ee09a8e468181f5e26f1bf80f7df",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/citation_reference_migration.json",
+          "baselineSha256": "d810cb6a78e406d4864790da68d313588ff922899b82a3392eb702937ecde0c3",
+          "releaseSha256": "d810cb6a78e406d4864790da68d313588ff922899b82a3392eb702937ecde0c3",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/fieldstate_causal_evidence.json",
+          "baselineSha256": "f1ccdee0cbdd071aed55f35d80fa9f7b5f2aeefd41931fdb0c3811ad51d85df3",
+          "releaseSha256": "f1ccdee0cbdd071aed55f35d80fa9f7b5f2aeefd41931fdb0c3811ad51d85df3",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/fieldstate_evidence_constraints_v1.json",
+          "baselineSha256": "6ceb7e65b13983bf03bdfb7bdc17d4d498e35fc1417b8c396b817665269b20b6",
+          "releaseSha256": "6ceb7e65b13983bf03bdfb7bdc17d4d498e35fc1417b8c396b817665269b20b6",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/intervention_profiles_v1.json",
+          "baselineSha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+          "releaseSha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/legacy_evidence_qualification_v1.json",
+          "baselineSha256": "4815ff41982be6c4460a63404efc0a75163d88d0995b9040b703e822756a95bd",
+          "releaseSha256": "4815ff41982be6c4460a63404efc0a75163d88d0995b9040b703e822756a95bd",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/legacy_reference_migration_v1.json",
+          "baselineSha256": "858f8566a0f45b8fa6edecf5b656a059d100e3e607d287a6abf68ebb3c1f461f",
+          "releaseSha256": "858f8566a0f45b8fa6edecf5b656a059d100e3e607d287a6abf68ebb3c1f461f",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/evidence/reference_link_cache.json",
+          "baselineSha256": "d9e1cd231b3b53a975fd0b585a1a91f8c7f59b26b11f792b8d71e8af90344dbc",
+          "releaseSha256": "d9e1cd231b3b53a975fd0b585a1a91f8c7f59b26b11f792b8d71e8af90344dbc",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/global/cohort_tiers.json",
+          "baselineSha256": "303d8372813c995f39627466c4ff46ebd869eec4ee56a32c6c0fe37a62c3bfd9",
+          "releaseSha256": "303d8372813c995f39627466c4ff46ebd869eec4ee56a32c6c0fe37a62c3bfd9",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+          "baselineSha256": "223a2a318442cbe5257cc3a5d38032fdbfdefe38625799790ad721a8438550a2",
+          "releaseSha256": "223a2a318442cbe5257cc3a5d38032fdbfdefe38625799790ad721a8438550a2",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/defra_fangr_2026-08-19.manifest.json",
+          "baselineSha256": "0f407cc183e8c71ebed7a0e2f661c04ffd6c2c41e5efe365a354f8cde9f456d5",
+          "releaseSha256": "0f407cc183e8c71ebed7a0e2f661c04ffd6c2c41e5efe365a354f8cde9f456d5",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/fernandez_lopez_2022_sperm_move_v5_2026-08-19.manifest.json",
+          "baselineSha256": "2e21a1889ad831f25acbfbab37278eb5d823b10cde90dc49490c0fe4309b6939",
+          "releaseSha256": "2e21a1889ad831f25acbfbab37278eb5d823b10cde90dc49490c0fe4309b6939",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/fielding_goa_2026-08-19.manifest.json",
+          "baselineSha256": "1cf12be4f44981d1370f99ec6441389baf803d2dc64ecd2394391c2d8bcf2075",
+          "releaseSha256": "1cf12be4f44981d1370f99ec6441389baf803d2dc64ecd2394391c2d8bcf2075",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/ifce_sire_equine_breeding_2026-08-19.manifest.json",
+          "baselineSha256": "259170ea699d160b249b0cf2424ff8d38dd93963e289f739f119943ef69104d5",
+          "releaseSha256": "259170ea699d160b249b0cf2424ff8d38dd93963e289f739f119943ef69104d5",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/mustb_2026-08-19.manifest.json",
+          "baselineSha256": "d295ec0a1e92f62023875010d3cfafdb6ac25104943cab3a7696b7851a712bc8",
+          "releaseSha256": "d295ec0a1e92f62023875010d3cfafdb6ac25104943cab3a7696b7851a712bc8",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/sentinel_2025-08-18.manifest.json",
+          "baselineSha256": "b093ec2e17eb56038d451b4b4fb2a479006797965c9f52e7cf72aa308a26878a",
+          "releaseSha256": "b093ec2e17eb56038d451b4b4fb2a479006797965c9f52e7cf72aa308a26878a",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/testosterone_tfr_2026-08-31.manifest.json",
+          "baselineSha256": "ffcd9ee603f244870136581e09e771623ecfbd4efb39e4081126d0d1e1f48454",
+          "releaseSha256": "ffcd9ee603f244870136581e09e771623ecfbd4efb39e4081126d0d1e1f48454",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+          "baselineSha256": "a8a1b7221f0d920ed92ef6f904239cdaae18c2cfeec4b8fbc740beae1f82d878",
+          "releaseSha256": "a8a1b7221f0d920ed92ef6f904239cdaae18c2cfeec4b8fbc740beae1f82d878",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+          "baselineSha256": "1861547d6da681b84894f3ec1cc362f7c62f2ba7acb6da07069b05b475ba94cf",
+          "releaseSha256": "1861547d6da681b84894f3ec1cc362f7c62f2ba7acb6da07069b05b475ba94cf",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/raw/manifests/wpp2024_2026-08-19.manifest.json",
+          "baselineSha256": "a1540e9f66a4b738c7fd2f7703ce0bc304f69be3af1fb020201af2fd258be31b",
+          "releaseSha256": "a1540e9f66a4b738c7fd2f7703ce0bc304f69be3af1fb020201af2fd258be31b",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/anfr_fieldstate_feature_day.schema.json",
+          "baselineSha256": "4febc6b7e44bb04ed009e70ef72d0779ef11ef2bedebe564bc9db2ab78791699",
+          "releaseSha256": "4febc6b7e44bb04ed009e70ef72d0779ef11ef2bedebe564bc9db2ab78791699",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/canonical_observation.schema.json",
+          "baselineSha256": "e4b3e14f31bbce7d3e782e188bbfe4028444affc86e17d1be7f57ff55cb028df",
+          "releaseSha256": "e4b3e14f31bbce7d3e782e188bbfe4028444affc86e17d1be7f57ff55cb028df",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/fieldstate_observation.schema.json",
+          "baselineSha256": "a939383490993312427ed823951864f22610b3b8303d6b545b09259430be9f64",
+          "releaseSha256": "a939383490993312427ed823951864f22610b3b8303d6b545b09259430be9f64",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/ifce_sire_equine_breeding_benchmark.schema.json",
+          "baselineSha256": "e1090ebaaae5b780c40d8ddb2e582faba56a1deba8c5b6d6b7e165a3757bdf52",
+          "releaseSha256": "e1090ebaaae5b780c40d8ddb2e582faba56a1deba8c5b6d6b7e165a3757bdf52",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/measured_fieldstate_biology_panel.schema.json",
+          "baselineSha256": "0d6bdd3035f0eba3a475ee848d14a8282b7ae3323459a1d561eca7db1305fb4c",
+          "releaseSha256": "0d6bdd3035f0eba3a475ee848d14a8282b7ae3323459a1d561eca7db1305fb4c",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/parameter_registry.schema.json",
+          "baselineSha256": "a4143f9351c3811cf33491c30767165ea26c7f13bdb551d3560085801a24b870",
+          "releaseSha256": "a4143f9351c3811cf33491c30767165ea26c7f13bdb551d3560085801a24b870",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/seminology_boar_benchmark.schema.json",
+          "baselineSha256": "21906a0649195b0818098fb957a5069b5afafa47dcec9f6eb5961dc343850263",
+          "releaseSha256": "21906a0649195b0818098fb957a5069b5afafa47dcec9f6eb5961dc343850263",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/sentinel_hindcast_protocol.schema.json",
+          "baselineSha256": "ba16528151eda3449944cc7044974f60bf4d38cc8515b835ec5a2371afc9ad50",
+          "releaseSha256": "ba16528151eda3449944cc7044974f60bf4d38cc8515b835ec5a2371afc9ad50",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/schemas/source_registry.schema.json",
+          "baselineSha256": "17b4e0dc3de8bea6aaddb805f8f3356d85af1b5b546fdc2073e6d5eb73d626cf",
+          "releaseSha256": "17b4e0dc3de8bea6aaddb805f8f3356d85af1b5b546fdc2073e6d5eb73d626cf",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/sentinel/bird_index.json",
+          "baselineSha256": "ba7d1a1b8193bb0d4ece8abfe8665ffcbe4248ee51db838a41abf48fcb301693",
+          "releaseSha256": "ba7d1a1b8193bb0d4ece8abfe8665ffcbe4248ee51db838a41abf48fcb301693",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/sentinel/coloss_winter_loss.json",
+          "baselineSha256": "d4da6a2fab97f0b2aec2ad6f76f9ba7fe4a7bf31ffd5f8275ea4437a7b82603f",
+          "releaseSha256": "d4da6a2fab97f0b2aec2ad6f76f9ba7fe4a7bf31ffd5f8275ea4437a7b82603f",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/sentinel/lea2016_dog_sperm.json",
+          "baselineSha256": "55e26fa237af2b92fa5d2287c8952c3a15a08e36cad46649155f8db967f36db3",
+          "releaseSha256": "55e26fa237af2b92fa5d2287c8952c3a15a08e36cad46649155f8db967f36db3",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/sentinel/livestock_negative_control.json",
+          "baselineSha256": "a5cc766072a35b5fb4a7400c4b3a148235b6a063be2f304a16af4136d0658ef5",
+          "releaseSha256": "a5cc766072a35b5fb4a7400c4b3a148235b6a063be2f304a16af4136d0658ef5",
+          "byteIdentical": true
+        },
+        {
+          "path": "berm/data/sentinel/sperm_by_country.json",
+          "baselineSha256": "0dd28b648e4e02d8cbf38db67e3c94bab58e913ea3612d34824de39297cd1ea7",
+          "releaseSha256": "0dd28b648e4e02d8cbf38db67e3c94bab58e913ea3612d34824de39297cd1ea7",
+          "byteIdentical": true
+        }
+      ]
+    }
+  ],
+  "originalWorkspaceSnapshot": {
+    "snapshotPathCount": 1268,
+    "presentCount": 1268,
+    "unchangedByteCount": 1214,
+    "modifiedByteCount": 54,
+    "missingPaths": [],
+    "backupContentMismatchPaths": [],
+    "modifiedPathsWithinReleaseChangeSet": [
+      "berm/berm/biology/causal_registry.py",
+      "berm/berm/biology/cross_pathway_synthesis.py",
+      "berm/berm/modulome/__init__.py",
+      "berm/berm/modulome/state.py",
+      "berm/tests/test_cross_pathway_synthesis.py",
+      "berm/tests/test_model_architecture_contract.py",
+      "website/app/[locale]/behavior/page.tsx",
+      "website/app/[locale]/biology/page.tsx",
+      "website/app/[locale]/civilization/page.tsx",
+      "website/app/[locale]/epistemology/page.tsx",
+      "website/app/[locale]/evidence/circadian/page.tsx",
+      "website/app/[locale]/evidence/page.tsx",
+      "website/app/[locale]/evidence/pharmacology/page.tsx",
+      "website/app/[locale]/evidence/testosterone/page.tsx",
+      "website/app/[locale]/evidence/timothy-experiment/page.tsx",
+      "website/app/[locale]/model/math/page.tsx",
+      "website/app/[locale]/model/page.tsx",
+      "website/app/[locale]/model/proxy-masking/page.tsx",
+      "website/app/[locale]/modulome/page.tsx",
+      "website/app/[locale]/modulome/pancreas/page.tsx",
+      "website/app/[locale]/modulome/testes/page.tsx",
+      "website/app/[locale]/predictions/page.tsx",
+      "website/data/anchor-index.json",
+      "website/data/atlas-claim-bindings.json",
+      "website/data/causal-atlas-extensions.json",
+      "website/data/causal-graph.json",
+      "website/data/claims.json",
+      "website/data/model-architecture.json",
+      "website/lib/__tests__/claim-registry.test.ts",
+      "website/lib/__tests__/model-architecture.test.ts",
+      "website/lib/causalAtlasRegistry.ts",
+      "website/lib/navigation.ts",
+      "website/lib/referenceIndex.json",
+      "website/lib/referenceUsage.json",
+      "website/public/data/references_full.json"
+    ],
+    "modifiedPathsOutsideReleaseChangeSet": [
+      "docs/analysis/BERM_muutosdataselain_2026-09-08/README.md",
+      "docs/analysis/BERM_muutosdataselain_2026-09-08/implementation.md",
+      "docs/analysis/BERM_muutosdataselain_2026-09-08/technology_drivers/extract_primary_tables.py",
+      "docs/analysis/BERM_muutosdataselain_2026-09-08/technology_drivers/primary_extract.json",
+      "website/.gitignore",
+      "website/components/BermAtlasScenario.tsx",
+      "website/components/ChangeAtlas.tsx",
+      "website/components/ProxyMaskingLevels.tsx",
+      "website/components/ProxyMechanismEvidence.tsx",
+      "website/components/__tests__/ChangeAtlasIntegration.test.tsx",
+      "website/components/__tests__/ProxyExplanationsExplorer.test.tsx",
+      "website/data/technology-drivers.json",
+      "website/eslint.config.mjs",
+      "website/lib/__tests__/berm-technology-inputs.test.ts",
+      "website/lib/__tests__/technology-drivers-data.test.ts",
+      "website/lib/berm-technology-inputs.ts",
+      "website/lib/change-atlas-data.ts",
+      "website/next.config.ts",
+      "website/tsconfig.json"
+    ],
+    "sharedModifiedPathsWhoseOriginalBytesDifferFromRelease": [
+      "website/app/[locale]/evidence/testosterone/page.tsx",
+      "website/app/[locale]/model/page.tsx",
+      "website/app/[locale]/model/proxy-masking/page.tsx",
+      "website/data/anchor-index.json",
+      "website/lib/referenceUsage.json"
+    ],
+    "classificationNote": "Outside-release changes belong to separate or concurrent work for this audit, without assigning an author. Shared paths can contain both integration and concurrent changes. No original-workspace files were reverted or synchronized.",
+    "oldNumericAndPublicJsonCount": 20,
+    "oldNumericAndPublicJsonChangedPaths": [],
+    "changedFileHashes": [
+      {
+        "path": "berm/berm/biology/causal_registry.py",
+        "snapshotSha256": "989eb05ee3379eada8717e2f2ed4a89b563f1384be88f0175b31847b83c2493b",
+        "currentSha256": "76770636f78ef54336ebdff30818a2b39b287300864580ee8dbd4f19eb036298",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "berm/berm/biology/cross_pathway_synthesis.py",
+        "snapshotSha256": "51a6cd449801a7158c1882f868c6ab61091603625aace3280cab4d0921a6f8ec",
+        "currentSha256": "5d2574e64f87a83414c173fc6011d7d87fe952d227da23de2dd602e57089b279",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "berm/berm/modulome/__init__.py",
+        "snapshotSha256": "39e291e68779db5150992f255a678651e09d1262cd4359dd70831df2ac7cbb85",
+        "currentSha256": "bc418f231be86c83d63ad74e0c7443e47a1a6a6597841f2fef860b8015966dba",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "berm/berm/modulome/state.py",
+        "snapshotSha256": "066ba41027ed20e152bc7ae69855b9af285085cef0bf4d2a7d7a8d7007016fb0",
+        "currentSha256": "e2894ef0e186c6db248e54a8c00351cca6ae579291c1e610d3e4d4cf34145c7e",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "berm/tests/test_cross_pathway_synthesis.py",
+        "snapshotSha256": "bdc268970b17dc7b1aab85ed9584ac4e75c16c0fcdc32ed7321215ee27feba6a",
+        "currentSha256": "ef2f0ac3d917b3e66f5c877abb9ae0c9349df90554fa2d660108d849360f8124",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "berm/tests/test_model_architecture_contract.py",
+        "snapshotSha256": "2383f1019425eaa0a1d751b3c77fdc4a94d5f15e208cf015d76bf17a2c224c8a",
+        "currentSha256": "9a60105962bdfd665f370a4cc173ef7b86ce149b7ba206a34d1c4ecdaa927b66",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/README.md",
+        "snapshotSha256": "ab41b4061ddc49951dda663a05991db0b2b7f73d1cef17b06a83037e274c8c67",
+        "currentSha256": "6d237166e078f064d46eafd70c4e653a190418982921ba7d4d979d7701e88e75",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/implementation.md",
+        "snapshotSha256": "5db4ec31f317a2322190f981645bcf886f39c0811d1baad863e19b10f66baeab",
+        "currentSha256": "b2a93722b87b66b65d8e416f2e6e52b045cf72f9814006cdf758f675e9eb5410",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/technology_drivers/extract_primary_tables.py",
+        "snapshotSha256": "6ce2d0167f8112a0ad94c55e6e0072856b6ffb4c008e38f007cf30e96b1428ba",
+        "currentSha256": "0d3aba350639f2f26111909f22f4afb4c2eaf74f6952d6a476fee77d7c20904e",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/technology_drivers/primary_extract.json",
+        "snapshotSha256": "815d14dd8de6a4a20b7e5daf50a1243d5e94348d71dee476aadf757ec8396c54",
+        "currentSha256": "30afd227f8d8b54b3a5023317a4b44a09f8edd20dd1c4f64482b6adb7b5a496d",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/.gitignore",
+        "snapshotSha256": "b197e1f998b4fbd0c9a29dff941ff996aa73842c25fb75369cd41c8d7954ad17",
+        "currentSha256": "e14c322038482b65d896df422f54cbfeca5a96d6aca88e110c40b74b8adb31c2",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/app/[locale]/behavior/page.tsx",
+        "snapshotSha256": "16f9b8a4ee17fac1bc7e8d4a40ee6ef7dc1764cfcf7a6f5941c1a8ffca48f8e6",
+        "currentSha256": "48c48415f9e7962e3c4cdaac4ef9f5d55218e3c52a0f385f0639c9b200d42850",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/biology/page.tsx",
+        "snapshotSha256": "33d586e35c9971dafa73d80d68742a7ce518b8049585ca2a459f0cf8aae52c46",
+        "currentSha256": "21cadd3c01f43c5bfcc91e4f90bf1924163fb5025c441883faeb9085f74ac0de",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/civilization/page.tsx",
+        "snapshotSha256": "159b3ccec47a6d6317ebe9c108e63b0fc3841d0e1af24ff3a9a337beec74090f",
+        "currentSha256": "78f78f0cd54e64250219860b971a72161d47b19c8d0e09d56f6ecd8fb2ad67b7",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/epistemology/page.tsx",
+        "snapshotSha256": "b9705c7e039ae7daae3bf35fe9e0ea0a644b631983cc6c2a44bfa1ba1e861d72",
+        "currentSha256": "2cf73f96145fb316057a97851899e16bfa5b67aefa69fee2c035aee9e44fec70",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/evidence/circadian/page.tsx",
+        "snapshotSha256": "ff7a3e5676dbdb1e4411800d79a9cf5b41e76378b08a072091372243f589821c",
+        "currentSha256": "df91c5cea3d54781a7fa1aab5f3e210c5f3669c8277c815382759e5e8d92221a",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/evidence/page.tsx",
+        "snapshotSha256": "dc8bcb0f42815ca3cee0a185cd58d94977cd909d587ad0e7bf72275a5c4635f7",
+        "currentSha256": "dc55458899600d936e13edcbdb630698ed67b7b9e3901951add7bed48e09129c",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/evidence/pharmacology/page.tsx",
+        "snapshotSha256": "9599816916914e03928a36d143156e685e18912090c5aaba3086b5e93e98db81",
+        "currentSha256": "6d74c6961061a35db2011c2ddab58800deeec7ff9bae838c570419776587fece",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/evidence/testosterone/page.tsx",
+        "snapshotSha256": "00702c3b477e63cc8cb428a92443f555bebc5c6ae7b518e149ad062ced720f0b",
+        "currentSha256": "0a8958aff2197f3de4f91bd8eacf40d795b14dc1d1e9f1b65fc3c195c7db6d09",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/app/[locale]/evidence/timothy-experiment/page.tsx",
+        "snapshotSha256": "dee297d47391535cd0ad4d056a333161c4f2353bdba1fc0a5e4b5cf6ad3968d6",
+        "currentSha256": "65462bdefeab723e8e9bedecf6a87c6e28d84db5b417d7ea7efee90fafdce84a",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/model/math/page.tsx",
+        "snapshotSha256": "a93692984263ba6f4d6b3dc4c8a5985f4bc73b85cdf511b90ce94624bd4d5953",
+        "currentSha256": "6237f3e7f3179d53912221c0d554b4bb4825a7afd24075a08416e10bbceae07c",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/model/page.tsx",
+        "snapshotSha256": "b48b7af1a1bf4d0d6b22dc73d6f47cb46f224ac42497ae18ca3325a9916743b5",
+        "currentSha256": "74848f3fefe3b402c7b7bacc0f932cbba2918fec6748eb5edd1676a102edffb4",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/app/[locale]/model/proxy-masking/page.tsx",
+        "snapshotSha256": "ecaa1b7db597fb17f374e51d7d77baa7680c4e3aaf1f4ab84d67604520cfe6a8",
+        "currentSha256": "7b4ddf48312da2d6ed7d3b967c8a8a9e68f25417c17e9d109e330e810a02dbd2",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/app/[locale]/modulome/page.tsx",
+        "snapshotSha256": "2a895a49f789431dcc929cb29ba0ba4c2384bb788305a564ea66e3983caea8ee",
+        "currentSha256": "49118c3bb3f99ee2f4877aef8b37b32f02b948f3706c0cdd1766abc16197a5da",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/modulome/pancreas/page.tsx",
+        "snapshotSha256": "76a33aa78ae804ac28c2d15c54730cde866267012e878bd60d7ee27faceee6b8",
+        "currentSha256": "cd1d938d559ccd50e9a5a6ed5124293460e5add9da6fbe5586e0d44d5439c613",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/modulome/testes/page.tsx",
+        "snapshotSha256": "3a9e5c144bf7d9a6dcfc00f3c03ab239674fc3ef3719b4ff55f91a23dbe97b27",
+        "currentSha256": "c3888a6613c6cd62f361a12288233dc9683f151dd91b4cbdcf177762a462f574",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/app/[locale]/predictions/page.tsx",
+        "snapshotSha256": "c8886b27e361245d79539ff993f72f1201f58d7677c05e94269bae0da16608a0",
+        "currentSha256": "7a09f334718df18067cbd05131782eb77ff465fa2c9759be95e4920e4176474e",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/components/BermAtlasScenario.tsx",
+        "snapshotSha256": "6a97a59f0a769070a8c4b0699db39d72b7291008e63ff6662145edfde68b432a",
+        "currentSha256": "a7770d3166f5c38c45eb54331a8439f5aa42fe2a418e68160299ba2c2691a5e0",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/components/ChangeAtlas.tsx",
+        "snapshotSha256": "edea751e4f2eaf55e236f94ecc9a46e46b5860e3d33a9fbb63082138462d7475",
+        "currentSha256": "00e1934ccb66619e03ef9c6a7e3601989779717da369e8929061a650feb8b5db",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/components/ProxyMaskingLevels.tsx",
+        "snapshotSha256": "e590ff7b0e43b5b7f73a17e2e0692f63a99d588f65f8149e1512086f06606258",
+        "currentSha256": "eac7a59f3aadaf325a98404dcee29df7d65b28b9971f6fd1acc49302bb5141bb",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/components/ProxyMechanismEvidence.tsx",
+        "snapshotSha256": "2c6bd54ea69a7f3569a8ca3bcf5fcf056cb2d7f5a3567cc46916bed4c7400229",
+        "currentSha256": "368deb9b7ed5f8fa2d089dc5b5449ff9b2a64a379696e348cff4ad9aa917dee2",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/components/__tests__/ChangeAtlasIntegration.test.tsx",
+        "snapshotSha256": "ecc5e0edd7cb91e94570eb9eb9b11aec6aeb1e561850825162945fa49d853754",
+        "currentSha256": "f3bba74ab54dc0c7fc044091152edf51d1550eddb262e71cb2b9220e174e43f4",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/components/__tests__/ProxyExplanationsExplorer.test.tsx",
+        "snapshotSha256": "1924ecc798fe6d83bd1d334bd9f9350b92a0e00cf953c0dad8d41b84363f1f59",
+        "currentSha256": "53f4cbcea8899e939c21fc59273c110f259ba763ff94e89d29b2572ac1a0d507",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/data/anchor-index.json",
+        "snapshotSha256": "d585f44cd03bb09832b59d5fde75b93d3c62d4640e9970fad7a58491807c600e",
+        "currentSha256": "b1891ba27621279ba0253ad0369232212ef3f92dc5e045b49059af167b384754",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/data/atlas-claim-bindings.json",
+        "snapshotSha256": "c3ce49d210c8cb03428e026c59df2c5ab7bc2cb55ed0a0b0ef2a9a824e8100ad",
+        "currentSha256": "b8661e8ad1b99299dbf6525b37285d84172568a0d1b69d14ef7fab2f4b0d3f87",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/data/causal-atlas-extensions.json",
+        "snapshotSha256": "38f6c5bbd817b64063f707c4eb7ac64848ad74e2f29f0c124ef722e41e14bcb1",
+        "currentSha256": "fdb95e248f8d809525fb05aeb0ba8e739eeedd480d88fb870245dd24a13e1367",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/data/causal-graph.json",
+        "snapshotSha256": "eb6ecef2d64217e681aa8a8d2d69b2a78d71a788cc3f884d5065129a660b295c",
+        "currentSha256": "e7a350ff4538ab5213b2b6f343d6ff9798f95d07291fa2032026835b3b87746a",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/data/claims.json",
+        "snapshotSha256": "67732ec072db287b5573c7b97c9354c1c42005d9a8c3ff61488c99035bebbcd9",
+        "currentSha256": "e23a37570e3ef4fd40849e8bba6f488d4f9c80d03e6dd797966f63587447c5fd",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/data/model-architecture.json",
+        "snapshotSha256": "a5710683557290d3c4a1d05fca4105b5e461bc95926418874554e217b89bb35e",
+        "currentSha256": "0e15f6c9a41d9394b42c5e51132448cdc08a5577e6e9ee4ef05519bdb0e3b7e6",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/data/technology-drivers.json",
+        "snapshotSha256": "29acb92a9ab1bce5c6aa363ea3e48d50a86bed1ab10153e26c1d019a83f08a42",
+        "currentSha256": "5de4ffd8941cb6b2de982111d9a13ec205ed4adfde0ce474f2ce45ccc2a7b165",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/eslint.config.mjs",
+        "snapshotSha256": "0703879d52699a868f9bd2da89f20b67f56c0b70a93fc03cb3f8edb99d3b337b",
+        "currentSha256": "74c11d34600fd6e1b095faa5694aa2f58b5ba5fe8dfc893e143a90c11391d6f8",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/lib/__tests__/berm-technology-inputs.test.ts",
+        "snapshotSha256": "890445456d30be12fb30940daa0570388000187d65eb419aa491fe10ebe11d85",
+        "currentSha256": "d7c1ca5b3ff2c1ef2b5332048eca2ce1b419c5537f2c3ebac4c493cae5a5a835",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/lib/__tests__/claim-registry.test.ts",
+        "snapshotSha256": "d7ef8df16a50c45cea649c65835135767d8423aec2ceb958df8b16a6c4ee0f8f",
+        "currentSha256": "08c7fe4b61da58679642aef1fe9c98a9c812e2ecfb5f0f8b947235b29620e43f",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/lib/__tests__/model-architecture.test.ts",
+        "snapshotSha256": "029aaa960dbff96d2ce1e56b410f336709a89784332e9262f4b787b40733598c",
+        "currentSha256": "b361252c38a09a11a74c58f4082b58524d3c7cd66f891856975a4f18991525a1",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/lib/__tests__/technology-drivers-data.test.ts",
+        "snapshotSha256": "396b4b87be00be2493a24d256fb294dc3ed8c776dda14b5c37ea7ab157411430",
+        "currentSha256": "08b1f8edfa836d0c39eeb2ed827af0afeb474b1a6f8aec1b182ae831646ede5f",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/lib/berm-technology-inputs.ts",
+        "snapshotSha256": "92b309e971273095aaf5d7bf9614b8c5189218825fb142ca55e9e797001a7838",
+        "currentSha256": "6d89b7f86bbc5e13a2b9b1c40d1abf22a998cb1feb639096a5067713a1ac5ace",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/lib/causalAtlasRegistry.ts",
+        "snapshotSha256": "307680783230eda44eb4db425194172a1d2c294e6115111a8721139385f0c9eb",
+        "currentSha256": "b59fe00e1f5361dccb9c2e7105d091a47c876e79a1168cd857a2c12151ca22f3",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/lib/change-atlas-data.ts",
+        "snapshotSha256": "b9952c7facd2c7e9a4b496cf2b865d882948da5e056f39857750e39c459caa3d",
+        "currentSha256": "fec92a51e0a80f7594e5f418afc6de4d79b4d88768a26621ae091204d0ced0ad",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/lib/navigation.ts",
+        "snapshotSha256": "e831afdaa59e1e82ed3c79254561aaa0eda4070c1806dde7091cb0f5206863c4",
+        "currentSha256": "43fab06d428340edede7848c3ff5a673d7e8da8da890eb8e861d7d036595f9ef",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/lib/referenceIndex.json",
+        "snapshotSha256": "c3c3592eeba86c5cd76090753ea8aa4ce020b659c143d22fe08bcf7f89f97542",
+        "currentSha256": "8465457156c7f2b1fb1eb7f50ab0a7b5d02b5160c08467b7137d23a0d63f898b",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/lib/referenceUsage.json",
+        "snapshotSha256": "3ec7445d2c16380f15efdea3dfb490c9cddbb27a00b34b560b11dcb2271c3e03",
+        "currentSha256": "dedd8ce43e1bf0761388fc67d81a5c1551ebc4f807682e9057af815ad3f093b8",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/next.config.ts",
+        "snapshotSha256": "b8bb4c5807ec9a7cf8eb8e4479eac5a2db137e5c11cc71390f6d9bb6a39b5608",
+        "currentSha256": "bce092dd2bda916278505d1199f7865dda56466b47772a0100e0fcea9f5d3cb1",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      },
+      {
+        "path": "website/public/data/references_full.json",
+        "snapshotSha256": "08d8d072719c5b137664fcc19f78fcdf1659ae3a40076a839c43790f74982545",
+        "currentSha256": "1069cd4002095b133e28258f811c4d2aeca457e3e86c5c6e549efdc4f8c93f8a",
+        "inReleaseChangeSet": true,
+        "matchesReleaseBytes": true
+      },
+      {
+        "path": "website/tsconfig.json",
+        "snapshotSha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3",
+        "currentSha256": "4aca2ed97aaa6976c036de7cd78de59d4681a01ba5c062769624cf9cb5b27bc0",
+        "inReleaseChangeSet": false,
+        "matchesReleaseBytes": false
+      }
+    ]
+  },
+  "finalUpstreamMerge": {
+    "base": "613edbffd9684eeca885f5e0ca269cde86494962",
+    "missingPriorIds": [],
+    "changedPriorRecords": [],
+    "preservedCounts": {
+      "references": 1226,
+      "claims": 106,
+      "evidenceRelations": 211,
+      "assessments": 106,
+      "routes": 5
+    },
+    "finalCounts": {
+      "references": 1260,
+      "claims": 110,
+      "evidenceRelations": 268,
+      "assessments": 110,
+      "routes": 5
+    },
+    "publicSteroidogenesisSha256": "8938cb5abf9aeb81a9e4e5f5a39e6217a0fe98ea52513e089df1a8947fccbd5e"
+  }
+}

@@ -172,6 +172,7 @@
         "BARRIER_PLACENTA",
         "BARRIER_RETINA",
         "HPA_HPG",
+        "MALE_STEROIDOGENESIS",
         "MALE_SPERM",
         "OOCYTE_REDOX",
         "RECEPTOR_STATE_MEMORY",
@@ -552,6 +553,7 @@
       "layer": "reproductive",
       "parents": [
         "HPA_HPG",
+        "A_VGCC_ROS",
         "MELATONIN_REDOX",
         "MICROBIOME_OT",
         "HORMONE_TARGET_RESPONSE"
@@ -1212,443 +1214,449 @@
     {
       "id": "e23",
       "from": "A_VGCC_ROS",
-      "to": "MALE_SPERM",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e24",
       "from": "A_VGCC_ROS",
-      "to": "OOCYTE_REDOX",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e25",
       "from": "A_VGCC_ROS",
-      "to": "RECEPTOR_STATE_MEMORY",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e26",
       "from": "A_VGCC_ROS",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "RECEPTOR_STATE_MEMORY",
       "kind": "causal_model"
     },
     {
       "id": "e27",
-      "from": "B_RPM_CRY",
-      "to": "MELATONIN_REDOX",
+      "from": "A_VGCC_ROS",
+      "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
       "id": "e28",
       "from": "B_RPM_CRY",
-      "to": "HPA_HPG",
+      "to": "MELATONIN_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e29",
       "from": "B_RPM_CRY",
-      "to": "OVULATION_CLOCK",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e30",
       "from": "B_RPM_CRY",
-      "to": "OOCYTE_REDOX",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e31",
       "from": "B_RPM_CRY",
-      "to": "RECEPTOR_STATE_MEMORY",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e32",
       "from": "B_RPM_CRY",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "RECEPTOR_STATE_MEMORY",
       "kind": "causal_model"
     },
     {
       "id": "e33",
       "from": "B_RPM_CRY",
-      "to": "HORMONE_TARGET_RESPONSE",
+      "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
       "id": "e34",
-      "from": "MELATONIN_REDOX",
-      "to": "HPA_HPG",
+      "from": "B_RPM_CRY",
+      "to": "HORMONE_TARGET_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e35",
       "from": "MELATONIN_REDOX",
-      "to": "MALE_STEROIDOGENESIS",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e36",
       "from": "MELATONIN_REDOX",
-      "to": "MALE_SPERM",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e37",
       "from": "MELATONIN_REDOX",
-      "to": "OOCYTE_REDOX",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e38",
       "from": "MELATONIN_REDOX",
-      "to": "OVULATION_CLOCK",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e39",
       "from": "MELATONIN_REDOX",
-      "to": "IMPLANTATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e40",
       "from": "MELATONIN_REDOX",
-      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
       "id": "e41",
       "from": "MELATONIN_REDOX",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e42",
-      "from": "VMEM_MTOR",
-      "to": "BIOELECTRIC_DEVELOPMENT",
+      "from": "MELATONIN_REDOX",
+      "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
       "id": "e43",
       "from": "VMEM_MTOR",
-      "to": "OVARIAN_RESERVE",
+      "to": "BIOELECTRIC_DEVELOPMENT",
       "kind": "causal_model"
     },
     {
       "id": "e44",
       "from": "VMEM_MTOR",
-      "to": "MALE_GERMLINE_RESERVE",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e45",
-      "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "OVARIAN_RESERVE",
+      "from": "VMEM_MTOR",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e46",
       "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "MALE_GERMLINE_RESERVE",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e47",
-      "from": "HPA_HPG",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e48",
       "from": "HPA_HPG",
-      "to": "OVULATION_CLOCK",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e49",
       "from": "HPA_HPG",
-      "to": "IMPLANTATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e50",
       "from": "HPA_HPG",
-      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
       "id": "e51",
       "from": "HPA_HPG",
-      "to": "HORMONE_TARGET_RESPONSE",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e52",
-      "from": "MICROBIOME_OT",
-      "to": "HPA_HPG",
+      "from": "HPA_HPG",
+      "to": "HORMONE_TARGET_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e53",
       "from": "MICROBIOME_OT",
-      "to": "MALE_STEROIDOGENESIS",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e54",
+      "from": "MICROBIOME_OT",
+      "to": "MALE_STEROIDOGENESIS",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e55",
       "from": "BARRIER_BBB",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e55",
+      "id": "e56",
       "from": "BARRIER_BTB",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e56",
+      "id": "e57",
       "from": "BARRIER_BTB",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e57",
+      "id": "e58",
       "from": "BARRIER_PLACENTA",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e58",
+      "id": "e59",
       "from": "MALE_SPERM",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e59",
+      "id": "e60",
       "from": "MALE_GERMLINE_RESERVE",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e60",
+      "id": "e61",
       "from": "RECEPTOR_STATE_MEMORY",
       "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
-      "id": "e61",
-      "from": "RECEPTOR_STATE_MEMORY",
-      "to": "HORMONE_TARGET_RESPONSE",
-      "kind": "causal_model"
-    },
-    {
       "id": "e62",
-      "from": "CIRCADIAN_COORDINATION",
+      "from": "RECEPTOR_STATE_MEMORY",
       "to": "HORMONE_TARGET_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e63",
       "from": "CIRCADIAN_COORDINATION",
-      "to": "OVULATION_CLOCK",
+      "to": "HORMONE_TARGET_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e64",
-      "from": "HORMONE_TARGET_RESPONSE",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "CIRCADIAN_COORDINATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e65",
       "from": "HORMONE_TARGET_RESPONSE",
-      "to": "OVULATION_CLOCK",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e66",
       "from": "HORMONE_TARGET_RESPONSE",
-      "to": "IMPLANTATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e67",
-      "from": "MALE_STEROIDOGENESIS",
-      "to": "MALE_SPERM",
+      "from": "HORMONE_TARGET_RESPONSE",
+      "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
       "id": "e68",
       "from": "MALE_STEROIDOGENESIS",
-      "to": "ANDROGEN_BINDING_AVAILABILITY",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e69",
+      "from": "MALE_STEROIDOGENESIS",
+      "to": "ANDROGEN_BINDING_AVAILABILITY",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e70",
       "from": "ANDROGEN_BINDING_AVAILABILITY",
       "to": "ANDROGEN_RECEPTOR_SIGNAL",
       "kind": "causal_model"
     },
     {
-      "id": "e70",
+      "id": "e71",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e71",
+      "id": "e72",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
       "to": "BARRIER_BTB",
       "kind": "causal_model"
     },
     {
-      "id": "e72",
+      "id": "e73",
       "from": "ANDROGEN_RECEPTOR_SIGNAL",
       "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
-      "id": "e73",
+      "id": "e74",
       "from": "OVARIAN_RESERVE",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e74",
-      "from": "OVARIAN_RESERVE",
-      "to": "OVULATION_CLOCK",
-      "kind": "causal_model"
-    },
-    {
       "id": "e75",
-      "from": "OOCYTE_REDOX",
+      "from": "OVARIAN_RESERVE",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e76",
       "from": "OOCYTE_REDOX",
-      "to": "IMPLANTATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e77",
+      "from": "OOCYTE_REDOX",
+      "to": "IMPLANTATION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e78",
       "from": "OVULATION_CLOCK",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e78",
+      "id": "e79",
       "from": "IMPLANTATION",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e79",
+      "id": "e80",
       "from": "COUPLE_FECUNDABILITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e80",
+      "id": "e81",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e81",
+      "id": "e82",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e82",
+      "id": "e83",
       "from": "IF_MITOTIC_DISRUPTION",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
-      "id": "e83",
-      "from": "GPCR_ADENOSINE",
-      "to": "HPA_HPG",
-      "kind": "causal_model"
-    },
-    {
       "id": "e84",
       "from": "GPCR_ADENOSINE",
-      "to": "MICROBIOME_OT",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e85",
-      "from": "VAGUS_ANTIINFLAMMATORY",
-      "to": "HPA_HPG",
+      "from": "GPCR_ADENOSINE",
+      "to": "MICROBIOME_OT",
       "kind": "causal_model"
     },
     {
       "id": "e86",
       "from": "VAGUS_ANTIINFLAMMATORY",
-      "to": "MICROBIOME_OT",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e87",
+      "from": "VAGUS_ANTIINFLAMMATORY",
+      "to": "MICROBIOME_OT",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e88",
       "from": "ECOLOGICAL_ENCOUNTER",
       "to": "ECOLOGICAL_SELECTION",
       "kind": "causal_model"
     },
     {
-      "id": "e88",
+      "id": "e89",
       "from": "ECOLOGICAL_SELECTION",
       "to": "ECOLOGICAL_TRAIT_STATE",
       "kind": "causal_model"
     },
     {
-      "id": "e89",
+      "id": "e90",
       "from": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "to": "BIOBEHAVIORAL_WEIGHTING",
       "kind": "causal_model"
     },
     {
-      "id": "e90",
+      "id": "e91",
       "from": "BIOBEHAVIORAL_WEIGHTING",
       "to": "NARRATIVE_ATTRIBUTION",
       "kind": "causal_model"
     },
     {
-      "id": "e91",
+      "id": "e92",
       "from": "NARRATIVE_ATTRIBUTION",
       "to": "EPISTAPEGE_OBSERVABILITY_LOSS",
       "kind": "causal_model"
     },
     {
-      "id": "e92",
+      "id": "e93",
       "from": "EPISTAPEGE_OBSERVABILITY_LOSS",
       "to": "INSTITUTIONAL_MODEL_REUSE",
       "kind": "causal_model"
     },
     {
-      "id": "e93",
+      "id": "e94",
       "from": "DEMAND_OPPORTUNITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e94",
+      "id": "e95",
       "from": "TEMPO",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e95",
+      "id": "e96",
       "from": "ART_LIVE_BIRTH_DELIVERY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e96",
+      "id": "e97",
       "from": "ASFR",
       "to": "TFR",
       "kind": "causal_model"

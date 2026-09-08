@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import { TrendingDown } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
@@ -13,7 +14,7 @@ import { MathBlock } from "@/components/MathBlock";
 const COPY = {
   en: {
     title: "Testosterone: The Biological Clock",
-    subtitle: "Population testosterone has declined ~1.2%/year since the 1980s. This secular trend is age-independent, geographically widespread, and temporally correlated with TFR decline at an 8-year lag. The LH+T pattern points to hypothalamic suppression, not testicular damage.",
+    subtitle: "Population studies document secular testosterone declines in several cohorts. BERM links central hormonal regulation with local Leydig-cell calcium, redox, clock and cholesterol-supply mechanisms, then follows hormone availability and tissue response into reproductive function.",
     backLink: "← Back to Evidence",
     cautionText: "Testosterone secular decline is reported in several cohorts, but its magnitude and cause remain debated. Total-T assays also do not measure binding, free or intratesticular hormone, AR/ZIP9 function or post-receptor signalling. The T→TFR and LH patterns are hypothesis-generating; neither proves EMF causation.",
 
@@ -35,21 +36,21 @@ const COPY = {
     s3Title: "The LH–T diagnostic",
     s3Lead: "Santi et al. 2025 introduced a differential diagnostic based on simultaneous hormone trends:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypothalamic", detail: "Both hormones declining simultaneously means the pituitary is NOT compensating. The suppression originates above the testis — at the hypothalamus or higher. Consistent with EMF→melatonin→GnRH pathway.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testicular", detail: "T declining while LH rises means the pituitary IS compensating for testicular damage. Consistent with direct gonadal toxicity from EDCs (phthalates, BPA).", color: "amber" },
+      { pattern: "T↓ + LH↓ = Hypothalamic", detail: "Reduced central stimulation is compatible with this pattern; simultaneous local steroidogenic limitations can still be present.", color: "blue" },
+      { pattern: "T↓ + LH↑ = Testicular", detail: "Compensatory LH is compatible with limited testicular output. Calcium, redox, clock and substrate supply locate potential mechanisms; the hormone pattern alone does not identify their trigger.", color: "amber" },
     ],
     s3Observed: "Observed population pattern: T↓ + LH↓ (hypothalamic)",
-    s3Implication: "T↓ + LH↓ is compatible with central suppression, but it is not unique to EMF and cannot test binding or receptor-level androgen use. BERM therefore treats LH–T as one branch of a broader endocrine panel, not a mechanism verdict.",
+    s3Implication: "BERM includes both central regulation and local Leydig-cell capacity. T↓ with low or inappropriately normal LH is compatible with reduced central drive; it does not exclude concurrent calcium, redox, clock or cholesterol-supply limitations in the testis. A serum pair does not identify the environmental trigger or hormone use at the target.",
 
     s3bTitle: "Chemical vs EMF: the differential",
-    s3bLead: "EDCs and EMF both lower testosterone, but they leave different hormonal fingerprints:",
+    s3bLead: "The following historical comparison describes candidate exposure patterns. The integrated BERM mechanism allows central and local effects for either exposure class; the rows are hypotheses to assess with matched measurements.",
     s3bRows: [
-      { axis: "LH response", edc: "LH rises (compensatory)", emf: "LH falls (central suppression)" },
+      { axis: "LH response", edc: "Central/local state dependent", emf: "Central/local state dependent" },
       { axis: "Dose geography", edc: "Tracks chemical industry and agriculture", emf: "Tracks electrification and wireless density" },
       { axis: "Cross-species pattern", edc: "Aquatic species near discharge sites", emf: "Gradient across all domestication levels" },
       { axis: "Temporal onset", edc: "Post-1960 (mass plastics)", emf: "Post-1920 (electrification); accelerating post-1990 (wireless)" },
     ],
-    s3bConclusion: "Both mechanisms and common causes may contribute. LH–T helps localize feedback state, but it does not by itself identify EMF, exclude EDCs or measure SHBG, free T, AR/ZIP9 or post-receptor capacity.",
+    s3bConclusion: "The integrated mechanism adds a local EMF–steroidogenesis research branch to the central route. Chemical and physical perturbations can converge on shared calcium/redox and hormone-production machinery. Their contribution is separated by protocol, measured intermediate and timing; LH–T alone cannot assign it. SHBG, free T and receptor response remain further stages.",
 
     s4Title: "Cross-species gradient",
     s4Lead: "Seven species/population groups arranged by estimated cumulative EMF exposure show a dose-response relationship with reproductive decline:",
@@ -71,7 +72,7 @@ const COPY = {
   },
   fi: {
     title: "Testosteroni: Biologinen kello",
-    subtitle: "Väestön testosteronitaso on laskenut ~1,2 %/vuosi 1980-luvulta lähtien. Tämä pitkäaikaistrendi on iästä riippumaton, maantieteellisesti laaja-alainen ja ajallisesti korreloitu TFR:n laskun kanssa 8 vuoden viiveellä. LH+T-kaava osoittaa hypotalamuksen vaimentumiseen, ei kivesten vaurioon.",
+    subtitle: "Väestötutkimukset dokumentoivat testosteronin pitkäaikaista laskua useissa kohorteissa. BERM yhdistää keskisen hormonisäätelyn Leydig-solujen paikalliseen kalsium-, redox-, kello- ja kolesterolihuoltoon ja seuraa hormonin saatavuutta sekä kudosvastetta lisääntymistoimintaan.",
     backLink: "← Takaisin näyttöön",
     cautionText: "Testosteronin pitkäaikaislaskua raportoidaan useissa kohorteissa, mutta sen suuruudesta ja syystä kiistellään. Kokonais-T-mittaus ei myöskään mittaa sitoutumista, vapaata tai intratestikulaarista hormonia, AR-/ZIP9-toimintaa eikä reseptorin jälkeistä signalointia. T→TFR- ja LH-kuviot tuottavat hypoteeseja; kumpikaan ei todista EMF-kausaalisuutta.",
 
@@ -93,21 +94,21 @@ const COPY = {
     s3Title: "LH–T-diagnostiikka",
     s3Lead: "Santi ym. 2025 esittivät erotusdiagnostiikan samanaikaisten hormonitrendien perusteella:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypotalaaminen", detail: "Molempien hormonien samanaikainen lasku tarkoittaa, että aivolisake EI kompensoi. Suppressio syntyy kivesten yläpuolella — hypotalamuksessa tai ylempänä. Yhdenmukainen EMF→melatoniini→GnRH-polun kanssa.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testikulaarinen", detail: "T laskee mutta LH nousee, mikä tarkoittaa aivolisakkeen kompensoivan kivevauriota. Yhdenmukainen suoran gonadaalisen toksisuuden kanssa EDC:istä (ftalaatit, BPA).", color: "amber" },
+      { pattern: "T↓ + LH↓ = Hypotalaaminen", detail: "Vähäinen keskinen stimulaatio sopii tähän kuvioon; paikallisia steroidogeneesin rajoitteita voi esiintyä samanaikaisesti.", color: "blue" },
+      { pattern: "T↓ + LH↑ = Testikulaarinen", detail: "Kompensatorinen LH sopii rajalliseen kivestuotantoon. Kalsium, redox, kello ja substraattihuolto paikantavat mekanismiehdokkaita; hormonikuvio yksin ei yksilöi niiden laukaisijaa.", color: "amber" },
     ],
     s3Observed: "Havaittu väestökaava: T↓ + LH↓ (hypotalaaminen)",
-    s3Implication: "T↓ + LH↓ sopii sentraaliseen suppressioon, mutta ei ole EMF:lle yksilöllinen eikä testaa sitoutumista tai reseptoritason androgeeninkäyttöä. BERM käsittelee LH–T:tä yhtenä laajemman endokriinipaneelin haarana, ei mekanismituomiona.",
+    s3Implication: "BERM sisältää sekä keskisen säätelyn että Leydig-solun paikallisen kapasiteetin. Matala T yhdessä matalan tai tilanteeseen nähden normaalin LH:n kanssa sopii vähäiseen keskiseen ohjaukseen; se ei sulje pois samanaikaisia kiveksen kalsium-, redox-, kello- tai kolesterolihuollon rajoitteita. Seerumipari ei yksilöi ympäristötekijää eikä hormonin käyttöä kohdekudoksessa.",
 
     s3bTitle: "Kemikaali vs EMF: erotusdiagnostiikka",
-    s3bLead: "EDC:t ja EMF molemmat laskevat testosteronia, mutta ne jättävät erilaiset hormonaaliset sormenjäljet:",
+    s3bLead: "Seuraava historiallinen vertailu kuvaa ehdotettuja altistuskuvioita. Integroitu BERM sallii kummankin altistusluokan keskiset ja paikalliset vaikutukset; rivit ovat yhteensovitetuilla mittauksilla tarkasteltavia hypoteeseja.",
     s3bRows: [
-      { axis: "LH-vaste", edc: "LH nousee (kompensatorinen)", emf: "LH laskee (sentraalinen suppressio)" },
+      { axis: "LH-vaste", edc: "Riippuu keskisestä ja paikallisesta tilasta", emf: "Riippuu keskisestä ja paikallisesta tilasta" },
       { axis: "Annosmaantiede", edc: "Seuraa kemianteollisuutta ja maataloutta", emf: "Seuraa sähköistystä ja langattoman verkon tiheyttä" },
       { axis: "Lajien välinen kaava", edc: "Vesilajit päästölähteiden lähellä", emf: "Gradientti kaikilla domestikaatiotasoilla" },
       { axis: "Ajallinen alku", edc: "1960-luvun jälkeen (massamuovit)", emf: "1920-luvun jälkeen (sähköistys); kiihtyen 1990 jälkeen (langaton)" },
     ],
-    s3bConclusion: "Molemmat mekanismit ja yhteiset syyt voivat vaikuttaa. LH–T auttaa paikantamaan palautetilaa, mutta ei yksin tunnista EMF:ää, sulje pois EDC:itä eikä mittaa SHBG:tä, vapaata T:tä, AR/ZIP9:ää tai reseptorin jälkeistä kapasiteettia.",
+    s3bConclusion: "Integroitu mekanismi lisää keskisen reitin rinnalle paikallisen EMF–steroidogeneesin tutkimushaaran. Kemialliset ja fysikaaliset häiriöt voivat yhtyä samaan kalsium/redox- ja hormonituotantokoneistoon. Niiden osuus erotetaan protokollan, mitatun välivaiheen ja ajoituksen avulla; LH–T ei yksin määrää sitä. SHBG, vapaa T ja reseptorivaste ovat edelleen erillisiä vaiheita.",
 
     s4Title: "Lajien välinen gradientti",
     s4Lead: "Seitsemän lajia/populaatioryhmaa arvioidun kumulatiivisen EMF-altistuksen mukaan järjestettyinä osoittaa annosvastesuhdetta lisääntymisen laskuun:",
@@ -129,7 +130,7 @@ const COPY = {
   },
   ja: {
     title: "テストステロン：生物学的時計",
-    subtitle: "人口テストステロンは1980年代以降年約−1.2%で低下しています。この長期トレンドは年齢に依存せず、地理的に広範囲で、TFR低下と8年のラグで時間的に相関しています。LH+Tパターンは視床下部抑制を示し、精巣損傷ではありません。",
+    subtitle: "複数の集団研究はテストステロンの長期的低下を記録しています。BERMは中枢のホルモン調節とライディッヒ細胞のカルシウム、酸化還元、時計、コレステロール供給を結び、ホルモン利用可能性と組織応答から生殖機能まで追跡します。",
     backLink: "← エビデンスに戻る",
     cautionText: "テストステロンの長期的低下は確立されていますが、その原因は議論中です（肥満、EDC、生活習慣、EMF、または組み合わせ）。このページはT→TFRの時間的相関とLH診断をBERMと整合する証拠として提示します。どちらもEMFの因果関係を証明するものではありません。",
 
@@ -151,21 +152,21 @@ const COPY = {
     s3Title: "LH–T診断",
     s3Lead: "Santiら 2025年は同時ホルモントレンドに基づく鑑別診断を導入しました：",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = 視床下部性", detail: "両ホルモンの同時低下は下垂体が代償していないことを意味します。抑制は精巣の上位—視床下部以上—で発生。EMF→メラトニン→GnRH経路と整合。", color: "blue" },
-      { pattern: "T↓ + LH↑ = 精巣性", detail: "Tが低下しLHが上昇するのは、下垂体が精巣損傷を代償していることを意味します。EDC（フタル酸エステル、BPA）による直接的生殖腸毒性と整合。", color: "amber" },
+      { pattern: "T↓ + LH↓ = 視床下部性", detail: "中枢刺激低下に整合しますが、局所ステロイド産生の制約は併存し得ます。", color: "blue" },
+      { pattern: "T↓ + LH↑ = 精巣性", detail: "代償性LHは精巣産生の制約に整合します。カルシウム、酸化還元、時計、基質供給が機構候補を特定しますが、ホルモンパターンだけでは原因を決められません。", color: "amber" },
     ],
     s3Observed: "観察された人口パターン: T↓ + LH↓ (視床下部性)",
-    s3Implication: "観察されたパターンはEDC介在の精巣損傷が主要メカニズムであることと不整合で、代わりに視床下部レベルの抑制を示しています—EMFがメラトニンとクリプトクロムを介して作用するレベルです。",
+    s3Implication: "BERMは中枢調節とライディッヒ細胞の局所能力の両方を含みます。低いTと低値または不適切な正常値のLHは中枢刺激低下に整合しますが、精巣のカルシウム、酸化還元、時計、コレステロール供給の制約との併存を除外しません。血中の二つの値だけでは環境要因や標的でのホルモン利用を特定できません。",
 
     s3bTitle: "化学物質 vs EMF：鑑別診断",
-    s3bLead: "EDCとEMFはどちらもテストステロンを低下させますが、異なるホルモン的指紋を残します：",
+    s3bLead: "以下の歴史的比較は候補となる曝露パターンです。BERMは両曝露群の中枢・局所作用を許容し、各行は対応した測定で調べる仮説です。",
     s3bRows: [
-      { axis: "LH反応", edc: "LH上昇（代償性）", emf: "LH低下（中枢性抑制）" },
+      { axis: "LH反応", edc: "中枢・局所状態に依存", emf: "中枢・局所状態に依存" },
       { axis: "投与量地理学", edc: "化学工業と農業を追跡", emf: "電化と無線密度を追跡" },
       { axis: "種間パターン", edc: "排出地点近くの水生種", emf: "すべての家畜化レベルでグラディエント" },
       { axis: "時間的開始", edc: "1960年以降（大量プラスチック）", emf: "1920年以降（電化）；1990年以降加速（無線）" },
     ],
-    s3bConclusion: "両メカニズムが寄与している可能性が高い。LH-T鑑別診断が最も明確な識別子：観察された集団パターン（T↓ + LH↓）は視床下部性であり、EDCではなくEMFが主要因であることを示しています。",
+    s3bConclusion: "統合機構は中枢経路に加えて局所的な電磁場–ステロイド産生の研究経路を含みます。化学的・物理的摂動は共通のカルシウム、酸化還元、産生機構へ合流し得ます。寄与を分けるのは実験条件、中間測定、時間であり、LH–Tだけではありません。SHBG、遊離T、受容体応答はさらに別の段階です。",
 
     s4Title: "種間グラディエント",
     s4Lead: "推定累積EMF暴露で配列された7種/集団が生殖低下との用量反応関係を示しています：",
@@ -187,7 +188,7 @@ const COPY = {
   },
   fr: {
     title: "Testostérone : L'horloge biologique",
-    subtitle: "La testostérone de la population a diminué d'environ −1,2 %/an depuis les années 1980. Cette tendance séculaire est indépendante de l'âge, géographiquement répandue et temporellement corrélée avec la baisse du TFR avec un décalage de 8 ans.",
+    subtitle: "Des études de population documentent un déclin séculaire de la testostérone dans plusieurs cohortes. BERM relie la régulation hormonale centrale au calcium, au redox, à l’horloge et à l’approvisionnement en cholestérol des cellules de Leydig, puis suit la disponibilité hormonale et la réponse tissulaire jusqu’à la fonction reproductive.",
     backLink: "← Retour aux Évidences",
     cautionText: "Le déclin séculaire de la testostérone est établi, mais sa cause est débattue. Cette page présente la corrélation temporelle T→TFR et le diagnostic LH comme lignes d'évidence cohérentes avec BERM. Ni l'une ni l'autre ne prouve la causalité EMF.",
 
@@ -209,21 +210,21 @@ const COPY = {
     s3Title: "Diagnostic LH–T",
     s3Lead: "Santi et al. 2025 ont introduit un diagnostic différentiel basé sur les tendances hormonales simultanées :",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypothalamique", detail: "Le déclin simultané des deux hormones signifie que l'hypophyse ne compense PAS. Cohérent avec la voie EMF→mélatonine→GnRH.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testiculaire", detail: "Le déclin de T avec une augmentation de LH indique des dommages testiculaires. Cohérent avec la toxicité gonadique directe des EDC.", color: "amber" },
+      { pattern: "T↓ + LH↓ = Hypothalamique", detail: "Ce profil est compatible avec une stimulation centrale réduite ; des limites stéroïdogènes locales peuvent coexister.", color: "blue" },
+      { pattern: "T↓ + LH↑ = Testiculaire", detail: "Une LH compensatoire est compatible avec une production testiculaire limitée. Calcium, redox, horloge et substrat localisent des mécanismes possibles sans identifier le déclencheur par ce profil seul.", color: "amber" },
     ],
     s3Observed: "Schéma observé : T↓ + LH↓ (hypothalamique)",
-    s3Implication: "Le schéma observé est incompatible avec les dommages testiculaires médiés par les EDC et pointe vers une suppression au niveau hypothalamique.",
+    s3Implication: "BERM inclut la régulation centrale et la capacité locale des cellules de Leydig. Une T basse avec une LH basse ou inappropriément normale est compatible avec une stimulation centrale réduite, sans exclure des limites locales du calcium, du redox, de l’horloge ou du cholestérol. Deux valeurs sériques ne déterminent ni le déclencheur environnemental ni l’utilisation hormonale dans la cible.",
 
     s3bTitle: "Chimique vs EMF : le diagnostic différentiel",
-    s3bLead: "Les EDC et les EMF diminuent tous deux la testostérone, mais laissent des empreintes hormonales différentes :",
+    s3bLead: "Cette comparaison historique décrit des profils d’exposition candidats. BERM permet des effets centraux et locaux pour les deux classes ; ces lignes sont des hypothèses à examiner avec des mesures comparables.",
     s3bRows: [
-      { axis: "Réponse LH", edc: "LH augmente (compensatoire)", emf: "LH diminue (suppression centrale)" },
+      { axis: "Réponse LH", edc: "Selon l’état central et local", emf: "Selon l’état central et local" },
       { axis: "Géographie de dose", edc: "Suit l'industrie chimique et l'agriculture", emf: "Suit l'électrification et la densité sans fil" },
       { axis: "Schéma inter-espèces", edc: "Espèces aquatiques près des sites de rejet", emf: "Gradient à tous les niveaux de domestication" },
       { axis: "Début temporel", edc: "Après 1960 (plastiques de masse)", emf: "Après 1920 (électrification) ; accélération après 1990 (sans fil)" },
     ],
-    s3bConclusion: "Les deux mécanismes contribuent probablement. Le diagnostic différentiel LH-T est le discriminateur le plus net : le schéma observé (T↓ + LH↓) est hypothalamique, pointant vers les EMF comme facteur dominant.",
+    s3bConclusion: "L’intégration ajoute une branche locale champ–stéroïdogenèse à la voie centrale. Perturbations chimiques et physiques peuvent converger sur la même machinerie calcique, redox et hormonale. Leurs contributions se distinguent par protocole, intermédiaire mesuré et temporalité ; LH–T seul ne les attribue pas. SHBG, T libre et réponse du récepteur restent d’autres étapes.",
 
     s4Title: "Gradient inter-espèces",
     s4Lead: "Sept espèces/groupes de population classés par exposition EMF cumulée montrent une relation dose-réponse :",
@@ -245,7 +246,7 @@ const COPY = {
   },
   ko: {
     title: "테스토스테론: 생물학적 시계",
-    subtitle: "인구 테스토스테론은 1980년대 이후 연간 약 -1.2%로 감소했습니다. 이 장기 추세는 나이에 독립적이며 TFR 감소와 8년 시차로 시간적 상관관계를 보입니다.",
+    subtitle: "여러 인구 코호트는 테스토스테론의 장기적 감소를 기록합니다. BERM은 중추 호르몬 조절을 라이디히 세포의 칼슘, 산화환원, 시계 및 콜레스테롤 공급과 연결하고 호르몬 가용성과 조직 반응에서 생식 기능까지 추적합니다.",
     backLink: "← 증거로 돌아가기",
     cautionText: "테스토스테론의 장기적 감소는 확립되었지만 그 원인은 논의 중입니다. 이 페이지는 T→TFR 시간적 상관관계와 LH 진단을 BERM과 일치하는 증거로 제시합니다.",
 
@@ -267,21 +268,21 @@ const COPY = {
     s3Title: "LH–T 진단",
     s3Lead: "Santi 등 2025년은 동시 호르몬 추세에 기반한 감별 진단을 도입했습니다:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = 시상하부성", detail: "두 호르몬의 동시 감소는 뇌하수체가 보상하지 않음을 의미합니다. EMF→멜라토닌→GnRH 경로와 일치.", color: "blue" },
-      { pattern: "T↓ + LH↑ = 고환성", detail: "T 감소와 LH 증가는 고환 손상에 대한 보상을 의미합니다. EDC에 의한 직접적 생식선 독성과 일치.", color: "amber" },
+      { pattern: "T↓ + LH↓ = 시상하부성", detail: "중추 자극 감소와 일치하며 국소 스테로이드 생성 제한이 함께 있을 수 있습니다.", color: "blue" },
+      { pattern: "T↓ + LH↑ = 고환성", detail: "보상성 LH는 제한된 고환 생산과 일치합니다. 칼슘, 산화환원, 시계 및 기질 공급은 후보 기전을 특정하지만 호르몬 양상만으로 유발 요인을 결정하지 않습니다.", color: "amber" },
     ],
     s3Observed: "관찰된 인구 패턴: T↓ + LH↓ (시상하부성)",
-    s3Implication: "관찰된 패턴은 EDC 매개 고환 손상과 불일치하며 시상하부 수준의 억제를 가리킵니다.",
+    s3Implication: "BERM은 중추 조절과 라이디히 세포의 국소 능력을 모두 포함합니다. 낮은 T와 낮거나 부적절하게 정상인 LH는 중추 자극 감소와 일치하지만 칼슘, 산화환원, 시계 또는 콜레스테롤 공급 제한의 동시 존재를 배제하지 않습니다. 혈중 두 수치만으로 환경 요인이나 표적 호르몬 사용을 식별할 수 없습니다.",
 
     s3bTitle: "화학물질 vs EMF: 감별 진단",
-    s3bLead: "EDC와 EMF 모두 테스토스테론을 감소시키지만 다른 호르몬 지문을 남깁니다:",
+    s3bLead: "다음 역사적 비교는 후보 노출 양상입니다. BERM은 두 노출 범주의 중추 및 국소 효과를 모두 허용하며 각 행은 맞춘 측정으로 검토할 가설입니다.",
     s3bRows: [
-      { axis: "LH 반응", edc: "LH 상승 (보상적)", emf: "LH 하강 (중추성 억제)" },
+      { axis: "LH 반응", edc: "중추·국소 상태에 의존", emf: "중추·국소 상태에 의존" },
       { axis: "용량 지리학", edc: "화학 산업과 농업 추적", emf: "전기화와 무선 밀도 추적" },
       { axis: "종간 패턴", edc: "배출 지점 근처 수생 종", emf: "모든 가축화 수준에서 그래디언트" },
       { axis: "시간적 시작", edc: "1960년 이후 (대량 플라스틱)", emf: "1920년 이후 (전기화); 1990년 이후 가속 (무선)" },
     ],
-    s3bConclusion: "두 메커니즘 모두 기여할 가능성이 높습니다. LH-T 감별 진단이 가장 명확한 식별자: 관찰된 집단 패턴 (T↓ + LH↓)은 시상하부성으로, EDC가 아닌 EMF가 주요 요인임을 가리킵니다.",
+    s3bConclusion: "통합 기전은 중추 경로에 국소 전자기장–스테로이드 생성 연구 경로를 더합니다. 화학적·물리적 교란은 공통 칼슘, 산화환원 및 호르몬 생산 체계로 수렴할 수 있습니다. 기여도는 프로토콜, 중간 측정, 시점으로 구분하며 LH–T만으로 귀속하지 않습니다. SHBG, 유리 T, 수용체 반응은 별도 단계입니다.",
 
     s4Title: "종간 그래디언트",
     s4Lead: "추정 누적 EMF 노출로 배열된 7개 종/집단이 생식 감소와의 용량-반응 관계를 보여줍니다:",
@@ -321,6 +322,8 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
       </p>
 
       <PageHeader icon={TrendingDown} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
 
       <div className="mt-8">
         <CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox>

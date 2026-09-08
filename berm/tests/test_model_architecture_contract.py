@@ -211,7 +211,7 @@ def test_compositional_evidence_layer_is_berm_owned_and_cross_runtime() -> None:
 
     assert synthesis["role"] == "berm_compositional_evidence_layer"
     assert synthesis["fieldStateRole"] == "optional_physical_measurement_input_only"
-    assert len(synthesis["clusters"]) == 7
+    assert len(synthesis["clusters"]) == 8
     assert {item["id"] for item in synthesis["clusters"]} == {
         "joint-endocrine-gate",
         "cry-clock-hpg-serial-bridge",
@@ -220,6 +220,7 @@ def test_compositional_evidence_layer_is_berm_owned_and_cross_runtime() -> None:
         "vmem-calcium-mtor-interface",
         "conserved-cross-species-prior",
         "graded-susceptibility-continuum",
+        "calcium-redox-steroidogenesis",
     }
 
 

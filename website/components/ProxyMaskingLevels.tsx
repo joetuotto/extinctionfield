@@ -6,7 +6,7 @@ const COPY = {
     title: "Four places where the chain disappears from view",
     lead: "Masking occurs at different steps: in a dataset, in signal reception, in a person’s experience and in the way separate findings are explained. Following those steps makes the hidden mechanism concrete.",
     levels: [
-      { name: "Statistical masking", question: "Which variable gets the association?", text: "A correlated measure, an intermediate step or an unrecorded interaction absorbs part of the relationship being examined.", href: "#proxy-explanations" },
+      { name: "Statistical masking", question: "Which variable gets the association?", text: "A correlated measure, an intermediate step or an unrecorded interaction absorbs part of the relationship being examined. Unmeasured reserve × challenge is one concrete case.", href: "#proxy-explanations" },
       { name: "Sensory masking", question: "What does the organism receive?", text: "The cue is present, but its detection or biological significance changes with the receiving state.", href: "#receiver-state" },
       { name: "Phenomenological masking", question: "What does the change feel like?", text: "The person experiences motivation, fatigue or preference; the processes producing that experience are not directly visible to them.", href: "#experienced-reasons" },
       { name: "Epistemic masking", question: "How are the findings grouped?", text: "Related changes are assigned to separate explanatory categories. BERM brings their possible shared regulation into the same account.", href: "#syndrome-fragmentation" },
@@ -17,7 +17,7 @@ const COPY = {
     title: "Neljä kohtaa, joissa vaikutusketju peittyy",
     lead: "Peittyminen tapahtuu eri vaiheissa: aineistossa, signaalin vastaanotossa, ihmisen kokemuksessa ja siinä, miten erilliset havainnot selitetään. Näiden vaiheiden seuraaminen tekee piiloon jäävän mekanismin konkreettiseksi.",
     levels: [
-      { name: "Tilastollinen peittyminen", question: "Mille muuttujalle yhteys kirjautuu?", text: "Korreloiva mittari, biologinen välivaihe tai kirjaamatta jäänyt yhteisvaikutus ottaa osan tarkasteltavasta yhteydestä nimiinsä.", href: "#proxy-explanations" },
+      { name: "Tilastollinen peittyminen", question: "Mille muuttujalle yhteys kirjautuu?", text: "Korreloiva mittari, biologinen välivaihe tai kirjaamatta jäänyt yhteisvaikutus ottaa osan tarkasteltavasta yhteydestä nimiinsä. Mittaamaton varanto × haaste on yksi konkreettinen tapaus.", href: "#proxy-explanations" },
       { name: "Sensorinen peittyminen", question: "Mitä eliö vastaanottaa?", text: "Vihje on olemassa, mutta sen havaitseminen tai biologinen merkitys muuttuu vastaanottotilan mukana.", href: "#receiver-state" },
       { name: "Fenomenologinen peittyminen", question: "Miltä muutos tuntuu?", text: "Ihminen kokee motivaatiota, väsymystä tai mieltymyksen; kokemusta tuottavat prosessit eivät näy hänelle suoraan.", href: "#experienced-reasons" },
       { name: "Episteeminen peittyminen", question: "Miten havainnot ryhmitellään?", text: "Toisiinsa liittyvät muutokset saavat erilliset selitysluokat. BERM tuo niiden mahdollisen yhteisen säätelyn samaan tarkasteluun.", href: "#syndrome-fragmentation" },

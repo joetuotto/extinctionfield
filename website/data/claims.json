@@ -3481,6 +3481,178 @@
       "falsification_condition": null
     },
     {
+      "id": "claim.steroidogenesis.field-protocols",
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Field experiments identify different receiver routes and calcium directions under named protocols. These observations favour a state- and protocol-dependent receiver description. Houston adds temporal separation between a ROS readout and persistent DNA/motility endpoints during continued exposure, with preserved IVF endpoints. A current proxy, accumulated biological state and terminal function therefore need separate observables; one is not a universal substitute for another.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kenttäkokeet paikantavat eri vastaanottavia reittejä ja kalsiumin suuntia nimetyillä protokollilla. Havainnot tukevat tila- ja protokollariippuvaista vastaanottokuvausta. Houston lisää ajallisen eron ROS-mittarin ja jatkuvan altistuksen aikaisten DNA-/liikkuvuusmuutosten välillä IVF-päätepisteiden säilyessä. Hetkellinen proxy, kertynyt biologinen tila ja lopputoiminto tarvitsevat siis erilliset havaittavat suureet; mikään niistä ei yleisesti korvaa toista.",
+          "sourceRevision": 1
+        },
+        "fr": {
+          "text": "Les expériences de champ localisent différentes voies réceptrices et directions calciques sous protocoles nommés, motivant une description dépendante de l’état et du protocole. Houston ajoute une dissociation temporelle entre ROS et paramètres ADN/motilité pendant l’exposition continue, avec FIV préservée. Proxy instantané, état biologique accumulé et fonction terminale nécessitent donc des observables distincts.",
+          "sourceRevision": 1
+        },
+        "ko": {
+          "text": "장 실험은 명시된 프로토콜에서 서로 다른 수용 경로와 칼슘 변화 방향을 특정하여 상태·프로토콜 의존적 수용체 설명을 지지합니다. Houston은 지속 노출 중 ROS와 DNA/운동성 결과의 시간적 분리를 더하며 IVF 결과는 유지되었습니다. 현재 대리지표, 누적 생물학적 상태 및 최종 기능에는 각각의 관찰량이 필요합니다.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Named field protocols can affect calcium signalling, redox state or cellular/gamete endpoints in the measured systems.",
+          "Protocol, receiver, timing and intervention distinguish the supported response from a universal calcium-increase rule."
+        ],
+        "does_not_support": [
+          "A shared effect size across carrier frequencies, field geometries, tissues or exposure schedules.",
+          "Validation of Lindgren geometry or the open BERM L2 operator from compatible biology."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.steroidogenesis.component-convergence",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_STEROIDOGENESIS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "BERM joins separately constrained links into a local steroidogenic system: CaMKI–NUR77–StAR and RORα–BMAL1–StAR are distinct converging branches; LH/cAMP remains an independent input. Channel, gene and substrate-bypass experiments locate control points without requiring a prior central HPG change. The complete cross-study chain is a synthesis, not a single field experiment.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM yhdistää erikseen rajatut linkit paikalliseksi steroidogeeniseksi järjestelmäksi: CaMKI–NUR77–StAR ja RORα–BMAL1–StAR ovat erilliset kohtaavat haarat, ja LH/cAMP säilyy omana syötteenään. Kanava-, geeni- ja substraattiohituskokeet paikantavat säätelykohtia ilman edeltävää keskushermoston HPG-muutosta. Tutkimusten välinen kokonaisketju on synteesi, ei yksi kenttäkoe.",
+          "sourceRevision": 1
+        },
+        "fr": {
+          "text": "BERM compose les liens séparément contraints en système stéroïdogène local: CaMKI–NUR77–StAR et RORα–BMAL1–StAR sont deux branches convergentes distinctes, avec LH/AMPc comme entrée propre. Interventions sur canaux/gènes et contournement par substrat localisent les contrôles sans exiger un changement central HPG préalable. La chaîne interétudes est une synthèse, non une expérience de champ unique.",
+          "sourceRevision": 1
+        },
+        "ko": {
+          "text": "BERM은 개별적으로 제한된 연결을 국소 스테로이드 합성계로 통합합니다. CaMKI–NUR77–StAR와 RORα–BMAL1–StAR는 별도의 수렴 경로이며 LH/cAMP는 독립 입력입니다. 통로·유전자·기질 우회 실험은 중추 HPG 변화 없이도 제어점을 특정합니다. 연구 간 전체 연결은 하나의 장 실험이 아닌 종합 추론입니다.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Local calcium/CaMKI–NUR77 and RORα–BMAL1 branches converge on cholesterol/StAR/steroidogenic control.",
+          "Redox reserve, mitochondrial capacity and autophagy-supported cholesterol supply constrain cellular hormone production.",
+          "Direct genetic, pharmacological and human-tissue interventions support their own component links; their composition strengthens a conditional shared-state model."
+        ],
+        "does_not_support": [
+          "Treating CaMKI and CaMKII as the same enzyme or gene abundance as measured circadian phase.",
+          "Claiming that every source measured hormones or that all assembled links were tested in one experiment.",
+          "Using a gene-deletion coefficient as the dose coefficient of ordinary human field exposure."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.steroidogenesis.reserve-masking",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Miao supplies a protocol-specific TM3 glutathione-pool observation; Chen independently manipulated glutathione in MA-10 cells and demonstrated greater oxidant vulnerability despite preserved LH-stimulated progesterone before the extra oxidant. Darier cells likewise combine lower GSH with similar resting ROS and greater challenge sensitivity. BERM synthesizes biological reserve loss plus challenge dependence. It separately models whether the selected assay detects that state and whether attribution records its cause.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Miao tuo protokollakohtaisen TM3-glutationipoolihavainnon; Chen muokkasi glutationia MA-10-soluissa ja osoitti suuremman hapetinherkkyyden, vaikka LH-stimuloitu progesteronivaste säilyi ennen lisähapetinta. Darier-solut yhdistävät vastaavasti matalamman GSH:n, samankaltaisen lepo-ROS:n ja suuremman kuormitusherkkyyden. BERM syntetisoi biologisen varantovajeen ja kuormitusriippuvuuden. Erikseen mallinnetaan, havaitseeko valittu mittari tilan ja kirjautuuko sen syy oikein.",
+          "sourceRevision": 1
+        },
+        "fr": {
+          "text": "Miao apporte une observation du pool de glutathion des TM3 sous un protocole précis; Chen a manipulé le glutathion des MA-10 et montré une vulnérabilité oxydante accrue malgré une réponse de progestérone stimulée par LH préservée avant l’oxydant supplémentaire. Les cellules Darier associent aussi GSH réduit, ROS au repos comparables et sensibilité accrue. BERM synthétise perte de réserve et dépendance à la sollicitation, puis distingue détection par le test choisi et attribution de la cause.",
+          "sourceRevision": 1
+        },
+        "ko": {
+          "text": "Miao는 특정 TM3 프로토콜의 글루타티온 풀 관찰을 제공합니다. Chen은 MA-10 글루타티온을 조작하여 추가 산화제 전 LH 자극 프로게스테론 반응이 유지되어도 산화제 취약성이 커짐을 보였습니다. Darier 세포도 낮은 GSH, 유사한 휴식 ROS와 높은 부하 민감성을 함께 보입니다. BERM은 예비력 감소와 부하 의존성을 종합하며 검사 선택에 따른 탐지와 원인 귀속을 별도로 모델링합니다.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Biological reserve and challenge sensitivity can change while a routine output or instantaneous ROS assay remains preserved.",
+          "GSH, GSSG, their absolute free-equivalent pool and their ratio are different observables.",
+          "Biological functional reserve, detection/selection by an assay, and attribution/recording of cause are distinct stages of the proxy-masking synthesis.",
+          "ROS normalization during continued exposure does not by itself identify restoration of every downstream endpoint."
+        ],
+        "does_not_support": [
+          "Equating depleted reserve with merely crossing an assay detection threshold.",
+          "Assuming hidden damage whenever a normal result occurs, or generalizing irreversible harm from these studies.",
+          "Calling Chen’s preserved LH-stimulated progesterone result unstimulated basal hormone secretion.",
+          "Inferring glutathione synthesis flux from a concentration measurement alone."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.steroidogenesis.staged-integration",
+      "kind": "methodological",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_STEROIDOGENESIS"
+      },
+      "depends_on": [
+        "claim.steroidogenesis.component-convergence",
+        "claim.steroidogenesis.reserve-masking"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "The 2025 Lindgren premise g = η + A⊗A yields a tensor perturbation after A = A₀ + a; BERM’s scale convention κ is explicit. A geometry-to-receiver operator Ξ and biological mapping G remain required additional bridges. Component experiments constrain the downstream system F and measurement H; they do not estimate Ξ or validate geometry. This stage records measured variables, signs, timing, interventions and families. Existing datasets support later estimation; no field-to-human or TFR coefficient is assigned now.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Lindgrenin vuoden 2025 premissi g = η + A⊗A tuottaa tensoriperturbaation jaolla A = A₀ + a; BERM:n skaalakonventio κ nimetään erikseen. Geometriasta vastaanottoon tarvitaan edelleen lisäsillat Ξ ja biologinen kuvaus G. Komponenttikokeet rajaavat alavirran järjestelmää F ja mittausta H; ne eivät estimoi Ξ:tä tai validoi geometriaa. Tässä vaiheessa kirjataan mitatut suureet, suunnat, ajoitus, interventiot ja perheet. Olemassa olevat aineistot tukevat myöhempää estimointia; kenttä–ihminen- tai TFR-kerrointa ei nyt aseteta.",
+          "sourceRevision": 1
+        },
+        "fr": {
+          "text": "La prémisse Lindgren 2025 g = η + A⊗A donne une perturbation tensorielle après A = A₀ + a; la convention d’échelle κ de BERM est explicite. L’opérateur géométrie-récepteur Ξ et la correspondance biologique G restent des ponts supplémentaires requis. Les expériences de composants contraignent le système aval F et la mesure H, sans estimer Ξ ni valider la géométrie. Cette étape enregistre variables, signes, temporalité, interventions et familles. Aucun coefficient champ-humain ou ISF n’est attribué.",
+          "sourceRevision": 1
+        },
+        "ko": {
+          "text": "Lindgren 2025의 g = η + A⊗A 전제는 A = A₀ + a 분해 후 텐서 교란을 주며 BERM의 척도 관례 κ는 명시됩니다. 기하-수용체 연산자 Ξ와 생물학적 매핑 G는 추가 연결로 필요합니다. 구성요소 실험은 하류 계 F와 측정 H를 제한하지만 Ξ를 추정하거나 기하를 검증하지 않습니다. 이 단계는 변수, 방향, 시간, 개입 및 연구 계열을 기록하며 장-인간 또는 TFR 계수를 부여하지 않습니다.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Use existing intervention studies and public datasets now to specify structure, measured variables, signs and timing.",
+          "Retain BERM as the model owner and FieldState as a physical observation/estimation branch.",
+          "Keep the 2025 Lindgren premise, its tensor consequence, the added geometry-to-receiver bridge and imported biological constraints identifiable."
+        ],
+        "does_not_support": [
+          "Invented flux coefficients, a fitted human field response, or a population/TFR attribution in this structural stage.",
+          "A claim that new experiments are a prerequisite for integrating the available component evidence."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
       "id": "claim.proxy.demographic-route-composition",
       "kind": "proxy_interpretation",
       "lifecycle": "draft",
@@ -8699,6 +8871,1439 @@
       }
     },
     {
+      "id": "er.steroidogenesis.qin2018",
+      "referenceId": "qin2018_camki_rora",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Male mice; primary Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The verified abstract does not establish ionomycin rescue of testosterone or CaMKI-specific mediation by KN-93. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF reduced testosterone and CaMKI/RORα measures. Ionomycin restored measured calcium and CaMKI/RORα endpoints. Intervention/control: RF/sham; ionomycin and KN-93 interventions Research family qin-leydig: The 2018 and 2019 papers share authors and the Soochow/Suzhou research setting. They use different experimental protocols and are not identified as the same dataset. Count them as a shared research family, not independent laboratory replications.",
+      "provenance": {
+        "studyIds": [
+          "study.qin2018_camki_rora"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.qin2019",
+      "referenceId": "qin2019_ceo2_leydig",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Primary mouse Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Gene levels are not measured circadian phase. Technical duplicates are not independent biological replicates; pretreatment is not a selective ROS-pathway deletion. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF reduced testosterone, antioxidant measures and steroid/clock gene expression. CeO₂ pretreatment attenuated several changes and also had effects alone. Intervention/control: Exposure × CeO₂ pretreatment; 128 μg/ml for 24 h Research family qin-leydig: The 2018 and 2019 papers share authors and the Soochow/Suzhou research setting. They use different experimental protocols and are not identified as the same dataset. Count them as a shared research family, not independent laboratory replications.",
+      "provenance": {
+        "studyIds": [
+          "study.qin2019_ceo2_leydig"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.miao2025",
+      "referenceId": "miao2025_rf_metabolomics",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Mouse TM3 Leydig and GC-1 cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Schedules also differ in total exposure time. Testosterone, calcium mediation and glutathione synthesis flux were not demonstrated. TM3 is distinct from Chen’s MA-10 line. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Continuous RF reduced GSH, GSSG and several precursors in TM3 cells. GSH was not significantly changed in intermittent TM3 exposure or GC-1 cells. Intervention/control: Continuous/intermittent exposure; metabolomics and separate GSH assay Research family miao2025: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.miao2025_rf_metabolomics"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.houston2019",
+      "referenceId": "sci-rep-2019-sperm-ros",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Male mice; epididymal sperm",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Five weeks means ongoing exposure duration, not recovery after cessation. Endpoint sample sizes differ; no universal irreversible damage or fertility loss follows. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sperm mitochondrial ROS rose at weeks 1/3 and returned to baseline by week 5; DNA and motility endpoints remained altered. IVF and early embryo development were preserved. Intervention/control: Separate exposure-duration groups; oxidative, DNA, motility and IVF endpoints Research family newcastle-sperm-rf: De Iuliis 2009 and Houston 2019 share the broader Newcastle reproductive-research programme. Isolated human sperm and exposed mice are distinct preparations and datasets. The 2013 correction belongs to the 2009 publication, not a new replication.",
+      "provenance": {
+        "studyIds": [
+          "study.sci-rep-2019-sperm-ros"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.deiuliis2009",
+      "referenceId": "iuliis2009",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Isolated human spermatozoa",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The 2013 correction specifies three biological replicates. This is an isolated-sperm exposure, not a testosterone-mediated experiment. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF exposure altered oxidative, DNA, motility and viability endpoints in vitro, providing a direct gamete pathway independent of hormone production. Intervention/control: Dose series with sham and oxidative/DNA/function assays Research family newcastle-sperm-rf: De Iuliis 2009 and Houston 2019 share the broader Newcastle reproductive-research programme. Isolated human sperm and exposed mice are distinct preparations and datasets. The 2013 correction belongs to the 2009 publication, not a new replication.",
+      "provenance": {
+        "studyIds": [
+          "study.iuliis2009"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.buckner2015",
+      "referenceId": "buckner2015_ttype",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Cancer cell lines",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Different drug/channel routes mean duration was not isolated as the only causal variable. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A time-varying field produced calcium and growth responses sensitive to T-channel blockade; reversing the waveform changed the outcome. A drug comparison gave a shorter calcium response. Intervention/control: T-channel blockers; reversed waveform; Bay K8644 comparator Research family buckner2015: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.buckner2015_ttype"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.cui2014",
+      "referenceId": "cui2014_lte4",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "T-type calcium-channel cellular recordings",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Exposure reduced T-type calcium currents through an arachidonic-acid/LTE4 signalling route. Intervention/control: AA/LTE4 pathway blockade and LTE4 addition Research family cui2014: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.cui2014_lte4"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.jimenez2019",
+      "referenceId": "therabionic-ebioMedicine-2019",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Hepatocellular carcinoma models",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Tumour-specific AM-RF responses were linked to CaV3.2-dependent calcium influx and tumour differentiation. Intervention/control: Channel-target perturbations and matched modulation controls Research family amrf-oncology: Jimenez and Sharma 2019 share a research network including Pasche, Watabe and Blackman. Tumour models and experiment arms differ. Their papers supply distinct measurements but are not counted as independent laboratory confirmations.",
+      "provenance": {
+        "studyIds": [
+          "study.therabionic-ebioMedicine-2019"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.sharma2019",
+      "referenceId": "sharma2019_cacna1h_amrf",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Breast-cancer brain-metastasis models",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Shared research family with Jimenez. CaMKII here is distinct from Qin’s CaMKI. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "AM-RF suppression required CACNA1H/CaV3.2 in the studied models; calcium, CaMKII/p38 and transcriptional readouts linked the target to cell response. Intervention/control: Ethosuximide and CACNA1H knockdown; CACNA1G/I comparisons Research family amrf-oncology: Jimenez and Sharma 2019 share a research network including Pasche, Watabe and Blackman. Tumour models and experiment arms differ. Their papers supply distinct measurements but are not counted as independent laboratory confirmations.",
+      "provenance": {
+        "studyIds": [
+          "study.sharma2019_cacna1h_amrf"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.neuhaus2019",
+      "referenceId": "neuhaus2019_cav12_ttfields",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Human glioblastoma cell lines",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "TTFields changed calcium signalling with line-specific responses; extracellular calcium, blockers and CACNA1C knockdown localized channel involvement. Intervention/control: Fura-2; calcium removal; blockers; CACNA1C knockdown Research family neuhaus2019: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.neuhaus2019_cav12_ttfields"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.bertagna2025",
+      "referenceId": "bertagna2025",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Mouse hippocampal CA1 neurons",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The measured endpoint was membrane current; calcium concentration was not directly measured. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Field-associated membrane-current changes depended on RyR/SERCA interventions, implicating intracellular store cycling. Intervention/control: Electrophysiology with RyR/SERCA interventions Research family bertagna2025: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.bertagna2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.kim2026",
+      "referenceId": "kim2026_cell_gene_switch",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "relation": "supports",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Engineered cellular and in-vivo gene switch",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Original abstract and correction verified; the complete corrected pulse/figure dataset was not reanalysed. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "CRISPR screening identified CYB5B as necessary for the engineered field-responsive switch; rhythmic calcium signalling was distinguished from general influx. Intervention/control: CRISPR screen; engineered gene-expression endpoint Research family kim2026: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.kim2026_cell_gene_switch"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.meikle1991",
+      "referenceId": "meikle1991_calcium_cholesterol",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Calcium removal or verapamil reduced LH-stimulated testosterone. 22-hydroxycholesterol bypassed the calcium dependence, localizing a substrate-access step. Intervention/control: 3 h; verapamil 10 μM; 22-hydroxycholesterol 10 μM Research family meikle1991: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.meikle1991_calcium_cholesterol"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.manna1999",
+      "referenceId": "manna1999_calcium_star",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse mLTC-1 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "hCG increased calcium uptake; calcium potentiated StAR/progesterone responses over hours. Calcium alone did not reproduce the hormonal response. Intervention/control: hCG; chelation/verapamil; calcium and StAR time courses Research family manna1999: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.manna1999_calcium_star"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.martin2008",
+      "referenceId": "martin2008_camki_nur77",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "MA-10 and primary rat Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "CaMKI, CaMKII and CaMKIV are distinct. NUR77 is not RORα. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "CaMKI enhanced NUR77-dependent StAR transcription. NUR77 knockdown and promoter binding localized the transcriptional step. Intervention/control: NUR77 siRNA; ChIP; CaMKI/CaMKII/CaMKIV constructs Research family martin2008: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.martin2008_camki_nur77"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.pereira1988",
+      "referenceId": "pereira1988_calcium_camp",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Calcium ionophores inhibited hCG-induced cAMP formation and steroid output without changing cAMP degradation, identifying an inhibitory calcium branch. Intervention/control: Ionomycin/A23187; extracellular calcium removal Research family pereira1988: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.pereira1988_calcium_camp"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.pandey2010",
+      "referenceId": "pandey2010_calcium_star",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "L-type channel blockers increased StAR/progesterone under low dbcAMP stimulation while reducing the DAX-1 transcriptional brake; blockers alone did not do so. Intervention/control: 30 min nifedipine pretreatment; dbcAMP 0.05/0.1 mM; 6 h response Research family pandey2010: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.pandey2010_calcium_star"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.akashi2005",
+      "referenceId": "akashi2005_rora_bmal1",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Cell reporters and RORα-deficient mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RORα activated Bmal1 through two promoter elements; reducing RORα attenuated rhythmic expression. Intervention/control: Promoter analysis; RORα perturbation; staggerer mice Research family akashi2005: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.akashi2005_rora_bmal1"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.alvarez2008",
+      "referenceId": "alvarez2008_bmal1_testosterone",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Bmal1-knockout mice and cellular reporters",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Whole-animal effects include other HPG changes. Conflicting LH/FSH table headings are not used for numerical calibration. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Bmal1 loss reduced testosterone and StAR; BMAL1 increased StAR transcription in cells. Intervention/control: Whole-animal knockout; StAR promoter experiment Research family alvarez2008: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.alvarez2008_bmal1_testosterone"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.xiao2021",
+      "referenceId": "xiao2021_bmal1_leydig",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Primary goat Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "BMAL1 knockdown reduced steroidogenic gene expression and testosterone; overexpression increased selected genes and testosterone. Intervention/control: BMAL1 knockdown/overexpression; clock reporter; hCG/substrate comparisons Research family xiao2021: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.xiao2021_bmal1_leydig"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.chen2013",
+      "referenceId": "chen2013_bmal1_granulosa",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Rat luteinizing granulosa cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Bmal1 knockdown reduced clock amplitude, steroidogenic genes, progesterone and PGE₂ after LH-dependent rhythm induction. Intervention/control: Bmal1 siRNA; Per2-luciferase time series Research family chen2013: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2013_bmal1_granulosa"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.lin1995",
+      "referenceId": "lin1995_star",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Three unrelated patients with lipoid adrenal hyperplasia",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Human genetics is a component-level natural experiment, not an equivalent field dose. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "STAR mutations and nonfunctional protein linked adrenal and gonadal steroidogenic failure to the cholesterol-transfer component. Intervention/control: Human genotype and functional protein analysis Research family lin1995: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.lin1995_star"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.galano2021",
+      "referenceId": "galano2021_star_knockout",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "STAR knockout blocked hormone/cAMP-stimulated progesterone, whereas diffusible 22(R)-hydroxycholesterol restored production, separating transport from downstream enzymes. Intervention/control: Two CRISPR knockout lines; 50 μM 22(R)-hydroxycholesterol for 2 h Research family galano-star: The 2021 and 2022 publications share the MA-10/StAR programme and explicitly reuse transcriptome dataset GSE165392. The 2022 paper also studies mitochondrial function and StAR overexpression. Distinct interventions supply additional constraints, not an independent transcriptomic replication.",
+      "provenance": {
+        "studyIds": [
+          "study.galano2021_star_knockout"
+        ],
+        "datasetFamilyIds": [
+          "dataset.GSE165392"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.galano2022",
+      "referenceId": "galano2022_star_mitochondria",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "STAR-deficient cells showed altered mitochondrial structure/function; STAR overexpression did not simply rescue the phenotype and worsened processing. Intervention/control: STAR knockout and overexpression Research family galano-star: The 2021 and 2022 publications share the MA-10/StAR programme and explicitly reuse transcriptome dataset GSE165392. The 2022 paper also studies mitochondrial function and StAR overexpression. Distinct interventions supply additional constraints, not an independent transcriptomic replication.",
+      "provenance": {
+        "studyIds": [
+          "study.galano2022_star_mitochondria"
+        ],
+        "datasetFamilyIds": [
+          "dataset.GSE165392"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.bi2021",
+      "referenceId": "bi2021_stac3_star",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Human/rodent tissue; rat intervention; TM3 knockout",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "STAC3’s muscle calcium-channel role was not established as the Leydig-cell mechanism. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "STAC3 perturbation reduced mitochondrial potential, StAR processing and steroidogenic function. Intervention/control: Testicular knockdown and Stac3 knockout Research family bi2021: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.bi2021_stac3_star"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.python1995",
+      "referenceId": "python1995_calcium_steroidogenesis",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Bovine adrenal zona-glomerulosa cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Clamped calcium increased pregnenolone and aldosterone; a diffusible cholesterol analogue bypassed calcium dependence. Aldosterone EC50 was 303 nM in this system. Intervention/control: Ionomycin calcium clamp, 50–860 nM; substrate bypass Research family python1995: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.python1995_calcium_steroidogenesis"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.dekoninck1998",
+      "referenceId": "dekoninck1998_camkii_frequency",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Purified immobilized CaMKII",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This is CaMKII kinetics, not CaMKI kinetics or direct RF-carrier decoding. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Calcium/calmodulin pulse frequency and duration altered residual CaMKII activity, demonstrating biochemical temporal decoding. Intervention/control: Controlled biochemical pulse sequences Research family dekoninck1998: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.dekoninck1998_camkii_frequency"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.kon2014",
+      "referenceId": "kon2014_camkii_clock",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "CaMKII-mutant mice; SCN and cellular clocks",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "CaMKII supported CLOCK/BMAL1 interaction and coupling between circadian oscillators; mutation weakened rhythm and coordination. Intervention/control: Kinase-dead K42R mutation; SCN rhythm recording Research family kon2014: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.kon2014_camkii_clock"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.chen2010",
+      "referenceId": "chen2010_glutathione",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The preserved endpoint was LH-stimulated progesterone without the additional oxidant, not unstimulated basal secretion. MTT viability did not show a matching loss. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH depletion alone preserved LH-stimulated progesterone; a subsequent oxidant challenge then impaired production. BSO lowered GSH by over 80%, DEM by about 70%. Intervention/control: BSO 100 μM/24 h or DEM 100 μM/30 min; LH 100 ng/ml/2 h; t-BuOOH; GSH rescue and substrate bypasses Research family chen-midzak-leydig: Chen 2010 and Midzak 2007 share Haolin Chen, June Liu and Barry Zirkin and the Johns Hopkins reproductive-biology affiliation. They are distinct experiments within an overlapping research programme. Hales 2005 is assigned separately: its listed authors and University of Illinois Chicago affiliation differ.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2010_glutathione"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.hales2005",
+      "referenceId": "hales2005_mitochondria",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Mitochondrial perturbations separated ATP, membrane potential, calcium uptake, StAR protein and progesterone. Oligomycin reduced ATP and steroidogenesis without the same membrane-potential change. Intervention/control: cAMP; Ru360, oligomycin, CCCP and other targeted mitochondrial perturbations Research family hales-mitochondria: Hales 2005 lists University of Illinois Chicago and no authors shared with the particular Chen 2010 or Midzak 2007 papers. A related biological question or citation network does not make these papers an identical laboratory or dataset. A complete network-independence audit remains open.",
+      "provenance": {
+        "studyIds": [
+          "study.hales2005_mitochondria"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.midzak2007",
+      "referenceId": "midzak2007_steroidogenesis",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Primary Leydig cells from Brown Norway rats",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Myxothiazol reduced LH-stimulated testosterone but increased basal steroidogenesis. BAPTA-AM prevented the basal increase, separating stimulation states and calcium dependence. Intervention/control: Complex III inhibition; basal versus LH; BAPTA-AM and hydroxycholesterol bypass Research family chen-midzak-leydig: Chen 2010 and Midzak 2007 share Haolin Chen, June Liu and Barry Zirkin and the Johns Hopkins reproductive-biology affiliation. They are distinct experiments within an overlapping research programme. Hales 2005 is assigned separately: its listed authors and University of Illinois Chicago affiliation differ.",
+      "provenance": {
+        "studyIds": [
+          "study.midzak2007_steroidogenesis"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.llanos2015",
+      "referenceId": "llanos2015_ryr_insulin",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Male-rat islets and pancreatic β cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Glucose-linked ROS and RyR2 glutathionylation supported calcium release and insulin secretion; ryanodine or NAC reduced that response. Intervention/control: Glucose/H₂O₂; ryanodine/NAC; preserved carbachol comparator Research family llanos2015: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.llanos2015_ryr_insulin"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.santulli2015",
+      "referenceId": "santulli2015_ryr2",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "27 RYR2-CPVT patients, 27 controls; matched mutant mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Human-islet S107 assays measured channel complexes, not clinical recovery in the patients. Higher resting leak and lower useful stimulated calcium are distinct quantities. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RyR2 leak linked reduced ER stores to impaired stimulated mitochondrial calcium, ATP and insulin release. Store/channel rescue improved several steps in mice. Intervention/control: Two mouse mutations; S107 50 mg/kg/day for 4 weeks; acute 10 μM/4 h store assay Research family santulli2015: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.santulli2015_ryr2"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.adachi2004",
+      "referenceId": "adachi2004_serca_glutathiolation",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Purified SERCA, lipid vesicles and vascular preparations",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH-dependent reversible SERCA modification increased calcium uptake; Cys674 mutation or irreversible oxidation prevented this regulation. Intervention/control: Peroxynitrite/GSH; Cys674→Ser mutation; oxidized vascular tissue Research family adachi2004: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.adachi2004_serca_glutathiolation"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.harmon2026",
+      "referenceId": "harmon2026_darier",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "human_tissue_component",
+      "studyDesign": "human_tissue",
+      "applicability": "Four Darier-patient keratinocyte isolates and SERCA2-edited cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Reversible SERCA2 glutathionylation can be protective. This skin-cell mechanism does not measure steroid production or a field dose. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH reserve was about 40% lower despite similar resting ROS. Oxidant challenge exposed impaired adaptation and adhesion; selected interventions improved responses. Intervention/control: SERCA2 editing; menadione challenge; SERCA activators and NAC Research family harmon2026: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.harmon2026_darier"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.gao2018",
+      "referenceId": "gao2018_autophagy",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Steroidogenic-cell knockout mice; selected human testis biopsies",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Human biopsies are an association in azo/oligospermic patients; the genetic intervention is in mice. Local cholesterol differs from serum or whole-testis cholesterol. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Autophagy loss increased NHERF2, reduced SR-BI/cholesterol uptake and lowered testosterone. Nherf2 reduction partially restored uptake, connecting maintenance to substrate supply. Intervention/control: Atg5/Atg7 deletion; Nherf2 knockdown; patient-tissue comparison Research family gao2018: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.gao2018_autophagy"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.esmaeilian2023",
+      "referenceId": "esmaeilian2023_autophagy",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "human_tissue_component",
+      "studyDesign": "human_tissue",
+      "applicability": "Human ovary/testis explants and granulosa cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Interventions use surgical human tissue and cell preparations, not a human field-exposure experiment. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Autophagy/lipophagy inhibition and gene perturbation reduced sex-steroid production; lysosomal lipid-droplet use linked cholesterol supply to hormonal function. Intervention/control: Pharmacological blockade; ATG5/Beclin1 reduction; hCG stimulation Research family esmaeilian2023: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.esmaeilian2023_autophagy"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.lv2024",
+      "referenceId": "lv2024_mitophagy_steroidogenesis",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "High-fat-fed mice and palmitate-treated TM3 cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Steroidogenic protein recovery is not automatically a measured recovery of testosterone flux. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Mitochondrial fusion promotion improved ATP, mitophagy readouts and steroidogenic proteins; Mfn2 knockdown worsened several responses. Intervention/control: High-fat diet 10 weeks; palmitate 400 μM/24 h; M1 and Mfn2 interventions Research family lv2024: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.lv2024_mitophagy_steroidogenesis"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.mirovinyals2025",
+      "referenceId": "mirovinyals2025_golgi_glutathione",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Organelle-targeted glutathione sensors",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Compartment-specific sensors resolved a distinct Golgi redox environment, illustrating why whole-cell redox cannot replace organelle measurements. Intervention/control: Targeted sensors and compartmental calibration Research family mirovinyals2025: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.mirovinyals2025_golgi_glutathione"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.jones2000",
+      "referenceId": "jones2000_glutathione_redox",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Human plasma glutathione measurements",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH/GSSG concentrations and redox potential are distinct quantities; concentration scale matters alongside the ratio. Intervention/control: Biochemical plasma measurements and redox calculation Research family jones2000: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.jones2000_glutathione_redox"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.huang2026",
+      "referenceId": "huang2026_ccdc90b_leydig",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Mouse stem Leydig cells, organoids and Uox-knockout mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The intervention reduces CCDC90B; it is not overexpression. The in-vitro challenge is not assigned to ordinary population exposure. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "High uric acid altered mitochondrial calcium, ROS, energy and senescence; reducing CCDC90B improved selected renewal and testosterone endpoints. Intervention/control: Uric acid 2.944 mM in vitro; shRNA and AAV8-mediated CCDC90B reduction Research family huang2026: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.huang2026_ccdc90b_leydig"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.cunningham2016",
+      "referenceId": "cunningham2016_testosterone_sexual_function",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "clinical_intervention_component",
+      "studyDesign": "clinical_intervention",
+      "applicability": "470 men aged ≥65 with low testosterone and low sexual desire",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The age/hormone subgroup is not a reproductive-age population coefficient; the study is not a field experiment. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Randomized testosterone treatment improved sexual activity and desire, anchoring a hormone-to-behaviour transition in this defined human group. Intervention/control: Randomized placebo-controlled testosterone intervention Research family cunningham2016: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.cunningham2016_testosterone_sexual_function"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.qin2018",
+      "referenceId": "qin2018_camki_rora",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Male mice; primary Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The verified abstract does not establish ionomycin rescue of testosterone or CaMKI-specific mediation by KN-93. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF reduced testosterone and CaMKI/RORα measures. Ionomycin restored measured calcium and CaMKI/RORα endpoints. Intervention/control: RF/sham; ionomycin and KN-93 interventions Research family qin-leydig: The 2018 and 2019 papers share authors and the Soochow/Suzhou research setting. They use different experimental protocols and are not identified as the same dataset. Count them as a shared research family, not independent laboratory replications.",
+      "provenance": {
+        "studyIds": [
+          "study.qin2018_camki_rora"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.qin2019",
+      "referenceId": "qin2019_ceo2_leydig",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Primary mouse Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Gene levels are not measured circadian phase. Technical duplicates are not independent biological replicates; pretreatment is not a selective ROS-pathway deletion. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF reduced testosterone, antioxidant measures and steroid/clock gene expression. CeO₂ pretreatment attenuated several changes and also had effects alone. Intervention/control: Exposure × CeO₂ pretreatment; 128 μg/ml for 24 h Research family qin-leydig: The 2018 and 2019 papers share authors and the Soochow/Suzhou research setting. They use different experimental protocols and are not identified as the same dataset. Count them as a shared research family, not independent laboratory replications.",
+      "provenance": {
+        "studyIds": [
+          "study.qin2019_ceo2_leydig"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.martin2008",
+      "referenceId": "martin2008_camki_nur77",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "MA-10 and primary rat Leydig cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "CaMKI, CaMKII and CaMKIV are distinct. NUR77 is not RORα. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "CaMKI enhanced NUR77-dependent StAR transcription. NUR77 knockdown and promoter binding localized the transcriptional step. Intervention/control: NUR77 siRNA; ChIP; CaMKI/CaMKII/CaMKIV constructs Research family martin2008: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.martin2008_camki_nur77"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.miao2025",
+      "referenceId": "miao2025_rf_metabolomics",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "contextualizes",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Mouse TM3 Leydig and GC-1 cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Schedules also differ in total exposure time. Testosterone, calcium mediation and glutathione synthesis flux were not demonstrated. TM3 is distinct from Chen’s MA-10 line. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Continuous RF reduced GSH, GSSG and several precursors in TM3 cells. GSH was not significantly changed in intermittent TM3 exposure or GC-1 cells. Intervention/control: Continuous/intermittent exposure; metabolomics and separate GSH assay Research family miao2025: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.miao2025_rf_metabolomics"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.chen2010",
+      "referenceId": "chen2010_glutathione",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The preserved endpoint was LH-stimulated progesterone without the additional oxidant, not unstimulated basal secretion. MTT viability did not show a matching loss. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH depletion alone preserved LH-stimulated progesterone; a subsequent oxidant challenge then impaired production. BSO lowered GSH by over 80%, DEM by about 70%. Intervention/control: BSO 100 μM/24 h or DEM 100 μM/30 min; LH 100 ng/ml/2 h; t-BuOOH; GSH rescue and substrate bypasses Research family chen-midzak-leydig: Chen 2010 and Midzak 2007 share Haolin Chen, June Liu and Barry Zirkin and the Johns Hopkins reproductive-biology affiliation. They are distinct experiments within an overlapping research programme. Hales 2005 is assigned separately: its listed authors and University of Illinois Chicago affiliation differ.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2010_glutathione"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.gao2018",
+      "referenceId": "gao2018_autophagy",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Steroidogenic-cell knockout mice; selected human testis biopsies",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Human biopsies are an association in azo/oligospermic patients; the genetic intervention is in mice. Local cholesterol differs from serum or whole-testis cholesterol. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Autophagy loss increased NHERF2, reduced SR-BI/cholesterol uptake and lowered testosterone. Nherf2 reduction partially restored uptake, connecting maintenance to substrate supply. Intervention/control: Atg5/Atg7 deletion; Nherf2 knockdown; patient-tissue comparison Research family gao2018: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.gao2018_autophagy"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.esmaeilian2023",
+      "referenceId": "esmaeilian2023_autophagy",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "human_tissue_component",
+      "studyDesign": "human_tissue",
+      "applicability": "Human ovary/testis explants and granulosa cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Interventions use surgical human tissue and cell preparations, not a human field-exposure experiment. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Autophagy/lipophagy inhibition and gene perturbation reduced sex-steroid production; lysosomal lipid-droplet use linked cholesterol supply to hormonal function. Intervention/control: Pharmacological blockade; ATG5/Beclin1 reduction; hCG stimulation Research family esmaeilian2023: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.esmaeilian2023_autophagy"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.steroidogenesis.lin1995",
+      "referenceId": "lin1995_star",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "relation": "supports",
+      "directness": "genetic_component",
+      "studyDesign": "genetic",
+      "applicability": "Three unrelated patients with lipoid adrenal hyperplasia",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Human genetics is a component-level natural experiment, not an equivalent field dose. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "STAR mutations and nonfunctional protein linked adrenal and gonadal steroidogenic failure to the cholesterol-transfer component. Intervention/control: Human genotype and functional protein analysis Research family lin1995: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.lin1995_star"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.reserve.miao2025",
+      "referenceId": "miao2025_rf_metabolomics",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "relation": "contextualizes",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Mouse TM3 Leydig and GC-1 cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Schedules also differ in total exposure time. Testosterone, calcium mediation and glutathione synthesis flux were not demonstrated. TM3 is distinct from Chen’s MA-10 line. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Continuous RF reduced GSH, GSSG and several precursors in TM3 cells. GSH was not significantly changed in intermittent TM3 exposure or GC-1 cells. Intervention/control: Continuous/intermittent exposure; metabolomics and separate GSH assay Research family miao2025: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.miao2025_rf_metabolomics"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.reserve.chen2010",
+      "referenceId": "chen2010_glutathione",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "relation": "supports",
+      "directness": "pharmacological_component",
+      "studyDesign": "pharmacological",
+      "applicability": "Mouse MA-10 Leydig tumour cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The preserved endpoint was LH-stimulated progesterone without the additional oxidant, not unstimulated basal secretion. MTT viability did not show a matching loss. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH depletion alone preserved LH-stimulated progesterone; a subsequent oxidant challenge then impaired production. BSO lowered GSH by over 80%, DEM by about 70%. Intervention/control: BSO 100 μM/24 h or DEM 100 μM/30 min; LH 100 ng/ml/2 h; t-BuOOH; GSH rescue and substrate bypasses Research family chen-midzak-leydig: Chen 2010 and Midzak 2007 share Haolin Chen, June Liu and Barry Zirkin and the Johns Hopkins reproductive-biology affiliation. They are distinct experiments within an overlapping research programme. Hales 2005 is assigned separately: its listed authors and University of Illinois Chicago affiliation differ.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2010_glutathione"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.reserve.harmon2026",
+      "referenceId": "harmon2026_darier",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "relation": "supports",
+      "directness": "human_tissue_component",
+      "studyDesign": "human_tissue",
+      "applicability": "Four Darier-patient keratinocyte isolates and SERCA2-edited cells",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Reversible SERCA2 glutathionylation can be protective. This skin-cell mechanism does not measure steroid production or a field dose. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH reserve was about 40% lower despite similar resting ROS. Oxidant challenge exposed impaired adaptation and adhesion; selected interventions improved responses. Intervention/control: SERCA2 editing; menadione challenge; SERCA activators and NAC Research family harmon2026: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.harmon2026_darier"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.reserve.houston2019",
+      "referenceId": "sci-rep-2019-sperm-ros",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "relation": "contextualizes",
+      "directness": "field_experiment",
+      "studyDesign": "field_protocol",
+      "applicability": "Male mice; epididymal sperm",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Five weeks means ongoing exposure duration, not recovery after cessation. Endpoint sample sizes differ; no universal irreversible damage or fertility loss follows. The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sperm mitochondrial ROS rose at weeks 1/3 and returned to baseline by week 5; DNA and motility endpoints remained altered. IVF and early embryo development were preserved. Intervention/control: Separate exposure-duration groups; oxidative, DNA, motility and IVF endpoints Research family newcastle-sperm-rf: De Iuliis 2009 and Houston 2019 share the broader Newcastle reproductive-research programme. Isolated human sperm and exposed mice are distinct preparations and datasets. The 2013 correction belongs to the 2009 publication, not a new replication.",
+      "provenance": {
+        "studyIds": [
+          "study.sci-rep-2019-sperm-ros"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.reserve.jones2000",
+      "referenceId": "jones2000_glutathione_redox",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "relation": "contextualizes",
+      "directness": "biochemical_component",
+      "studyDesign": "biochemical",
+      "applicability": "Human plasma glutathione measurements",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The named component is supported in this system; human field-effect and population coefficients are separate open mappings.",
+        "The experimental link is evidence for its named system; cross-study composition is BERM synthesis, with geometry-to-receiver and quantitative human transfer still open."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "GSH/GSSG concentrations and redox potential are distinct quantities; concentration scale matters alongside the ratio. Intervention/control: Biochemical plasma measurements and redox calculation Research family jones2000: This grouping retains the publication identity. Independence from every other research programme has not been established. Compartments, assay repeats and multiple endpoints are not additional replications.",
+      "provenance": {
+        "studyIds": [
+          "study.jones2000_glutathione_redox"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.lindgren2025",
+      "referenceId": "lindgren2025",
+      "claimId": "claim.steroidogenesis.staged-integration",
+      "relation": "method",
+      "directness": "theoretical_premise",
+      "studyDesign": "theoretical_premise",
+      "applicability": "Published 2025 g = eta + A tensor A formulation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "This record supplies a premise or data resource for the stated method, not an experimental test of the entire BERM chain."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "The source supplies the 2025 premise. The tensor perturbation after A = A0 + a is algebraic; kappa is BERM’s explicit scaling convention. Geometry-to-receiver Xi and biological mapping G are additional BERM bridge propositions, not biological results of this publication.",
+      "provenance": {
+        "studyIds": [
+          "study.lindgren2025"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [
+          "premise.berm.lindgren-2025"
+        ],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.steroidogenesis.human-testis-atlas",
+      "referenceId": "cui2025_testis_atlas",
+      "claimId": "claim.steroidogenesis.staged-integration",
+      "relation": "method",
+      "directness": "observational_dataset",
+      "studyDesign": "observational_dataset",
+      "applicability": "Human testis cell types and ageing; public GSE254315",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "This record supplies a premise or data resource for the stated method, not an experimental test of the entire BERM chain."
+      ],
+      "curatorId": "berm-steroidogenesis-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Data availability supports cell-type localization and later harmonized analysis. Donor mapping and reused GSE182786/GSE215754 samples require reconciliation. No new reanalysis or field-exposure estimate is claimed.",
+      "provenance": {
+        "studyIds": [
+          "study.cui2025_testis_atlas"
+        ],
+        "datasetFamilyIds": [
+          "dataset.GSE254315",
+          "dataset.GSE182786",
+          "dataset.GSE215754"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
       "id": "er.proxy.demographic-route-composition.bongaarts2015_proximate_update",
       "referenceId": "bongaarts2015_proximate_update",
       "claimId": "claim.proxy.demographic-route-composition",
@@ -10430,6 +12035,115 @@
       "assessorId": "berm-proxy-evidence-integration",
       "assessedAt": "2026-09-08",
       "note": "Conditional composition with explicitly curated biological components; no calibrated L2 response or population attribution."
+    },
+    {
+      "id": "ea.steroidogenesis.field-protocols.v1",
+      "claimId": "claim.steroidogenesis.field-protocols",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.steroidogenesis.qin2018",
+        "er.steroidogenesis.qin2019",
+        "er.steroidogenesis.miao2025",
+        "er.steroidogenesis.houston2019",
+        "er.steroidogenesis.deiuliis2009",
+        "er.steroidogenesis.buckner2015",
+        "er.steroidogenesis.cui2014",
+        "er.steroidogenesis.jimenez2019",
+        "er.steroidogenesis.sharma2019",
+        "er.steroidogenesis.neuhaus2019",
+        "er.steroidogenesis.bertagna2025",
+        "er.steroidogenesis.kim2026"
+      ],
+      "assessorId": "berm-steroidogenesis-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft protocol-specific experimental evidence; M classifies mechanism evidence in the measured system, not the complete BERM route. Study-family overlap is retained in the canonical catalog. Numerical field-to-human and population transfer remain open; no flux coefficients or independent-replication count is inferred."
+    },
+    {
+      "id": "ea.steroidogenesis.component-convergence.v1",
+      "claimId": "claim.steroidogenesis.component-convergence",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.steroidogenesis.meikle1991",
+        "er.steroidogenesis.manna1999",
+        "er.steroidogenesis.martin2008",
+        "er.steroidogenesis.pereira1988",
+        "er.steroidogenesis.pandey2010",
+        "er.steroidogenesis.akashi2005",
+        "er.steroidogenesis.alvarez2008",
+        "er.steroidogenesis.xiao2021",
+        "er.steroidogenesis.chen2013",
+        "er.steroidogenesis.lin1995",
+        "er.steroidogenesis.galano2021",
+        "er.steroidogenesis.galano2022",
+        "er.steroidogenesis.bi2021",
+        "er.steroidogenesis.python1995",
+        "er.steroidogenesis.dekoninck1998",
+        "er.steroidogenesis.kon2014",
+        "er.steroidogenesis.chen2010",
+        "er.steroidogenesis.hales2005",
+        "er.steroidogenesis.midzak2007",
+        "er.steroidogenesis.llanos2015",
+        "er.steroidogenesis.santulli2015",
+        "er.steroidogenesis.adachi2004",
+        "er.steroidogenesis.harmon2026",
+        "er.steroidogenesis.gao2018",
+        "er.steroidogenesis.esmaeilian2023",
+        "er.steroidogenesis.lv2024",
+        "er.steroidogenesis.mirovinyals2025",
+        "er.steroidogenesis.jones2000",
+        "er.steroidogenesis.huang2026",
+        "er.steroidogenesis.cunningham2016",
+        "er.synthesis.steroidogenesis.qin2018",
+        "er.synthesis.steroidogenesis.qin2019",
+        "er.synthesis.steroidogenesis.martin2008",
+        "er.synthesis.steroidogenesis.miao2025",
+        "er.synthesis.steroidogenesis.chen2010",
+        "er.synthesis.steroidogenesis.gao2018",
+        "er.synthesis.steroidogenesis.esmaeilian2023",
+        "er.synthesis.steroidogenesis.lin1995"
+      ],
+      "assessorId": "berm-steroidogenesis-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft BERM synthesis of separately supported component links and explicit premises; L* identifies a composed candidate, not a numerical strength score. Study-family overlap is retained in the canonical catalog. Numerical field-to-human and population transfer remain open; no flux coefficients or independent-replication count is inferred."
+    },
+    {
+      "id": "ea.steroidogenesis.reserve-masking.v1",
+      "claimId": "claim.steroidogenesis.reserve-masking",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.steroidogenesis.reserve.miao2025",
+        "er.steroidogenesis.reserve.chen2010",
+        "er.steroidogenesis.reserve.harmon2026",
+        "er.steroidogenesis.reserve.houston2019",
+        "er.steroidogenesis.reserve.jones2000"
+      ],
+      "assessorId": "berm-steroidogenesis-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft BERM synthesis of separately supported component links and explicit premises; L* identifies a composed candidate, not a numerical strength score. Study-family overlap is retained in the canonical catalog. Numerical field-to-human and population transfer remain open; no flux coefficients or independent-replication count is inferred."
+    },
+    {
+      "id": "ea.steroidogenesis.staged-integration.v1",
+      "claimId": "claim.steroidogenesis.staged-integration",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.steroidogenesis.lindgren2025",
+        "er.steroidogenesis.human-testis-atlas"
+      ],
+      "assessorId": "berm-steroidogenesis-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft BERM synthesis of separately supported component links and explicit premises; L* identifies a composed candidate, not a numerical strength score. Study-family overlap is retained in the canonical catalog. Numerical field-to-human and population transfer remain open; no flux coefficients or independent-replication count is inferred."
     },
     {
       "id": "ea.proxy.demographic-route-composition.v1",

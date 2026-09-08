@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
@@ -20,9 +21,9 @@ const COPY = {
     s1p1:
       "The testes contain at least four distinct EMF-sensitive cellular compartments operating in parallel. Leydig cells use T-type calcium channels (Cav3) for testosterone biosynthesis via StAR protein (Xiang 2025). Spermatogonia require BOTH Cav1 (L-type) and Cav3 (T-type) channels for normal spermatogenesis (Ma 2026). Sertoli cells maintain the blood-testis barrier (BTB) using the same tight junction proteins (occludin, ZO-1) as the blood-brain barrier. Mature sperm use CatSper channels for capacitation and the acrosome reaction.",
     s1p2:
-      "This means EMF exposure attacks male reproductive function through multiple independent mechanisms simultaneously. Even if one mechanism is marginal, the convergence of several mechanisms on the same endpoint (reduced fertility) creates a robust effect that is difficult to attribute to any single pathway.",
+      "BERM joins these cellular compartments through their shared reproductive functions. Direct field experiments identify protocol-specific responses, while channel, gene and bypass experiments locate the biological machinery. Convergence is strongest when distinct interventions meet at the same measured intermediate; overlapping pathways are not counted as independent effects.",
     s1p3:
-      "The testes occupy a unique position in the BERM framework: they are the only organ where both VGCC-mediated ion channel disruption (pathway A) and biological barrier disruption (pathway C) converge on the same functional outcome.",
+      "The testis provides a convergence site for local calcium/redox signalling, circadian control, autophagic cholesterol supply, mitochondrial transport and barrier integrity. The new steroidogenic reserve branch makes those shared dependencies explicit before sperm output and couple fecundability.",
 
     /* 02 Channel Profile */
     s2Title: "Channel Profile",
@@ -57,12 +58,12 @@ const COPY = {
     s3Title: "Mechanism Chain: Two Parallel Attacks",
     s3Attack1Title: "Attack 1: Hormonal (Cav3 → testosterone)",
     s3Attack1:
-      "EMF → Schwan delta-Vm → Cav3 window current → Ca2+ dysregulation → StAR phosphorylation disruption → cholesterol transport impaired → testosterone ↓",
+      "Field protocol → measured calcium/redox response → CaMKI–NUR77–StAR and RORα–BMAL1, conditioned by mitochondrial and cholesterol-supply state → steroid output. The complete link is a BERM synthesis of field and component experiments; tissue transfer and magnitude remain explicit calibration tasks.",
     s3Attack2Title: "Attack 2: Barrier (BTB disruption)",
     s3Attack2:
       "EMF → MMP2 upregulation (Spock3-MMP2 axis) → occludin/ZO-1 degradation → BTB opening → spermatogenic microenvironment compromised → immune exposure of developing sperm → spermatogenesis disrupted",
     s3p1:
-      "These two attacks are independent mechanisms targeting the same organ. Attack 1 operates through Cav3 ion channels (pathway A). Attack 2 operates through biological barrier disruption (pathway F). They reinforce each other: testosterone is required for BTB maintenance (Sertoli cell function is testosterone-dependent), so Attack 1 weakens the defense against Attack 2.",
+      "The hormonal and barrier branches share a target organ and can interact: testosterone supports Sertoli-cell and barrier function, while local redox and substrate supply constrain steroidogenesis. BERM represents their coupling explicitly; it does not multiply overlapping bottlenecks as independent losses.",
     s3p2:
       "The result is a positive feedback loop: EMF → testosterone ↓ → BTB weakens → microenvironment exposed → spermatogenesis further disrupted → more damage with cumulative exposure.",
 
@@ -173,9 +174,9 @@ const COPY = {
     s1p1:
       "Kivekset sisältävät vähintään neljä erillistä EMF-herkkää soluosastoa jotka toimivat rinnakkain. Leydigin solut käyttävät T-tyypin kalsiumkanavia (Cav3) testosteronibiosynteesiin StAR-proteiinin kautta (Xiang 2025). Spermatogoniat vaativat SEKÄ Cav1- (L-tyyppi) että Cav3-kanavia (T-tyyppi) normaaliin spermatogeneesiin (Ma 2026). Sertolin solut ylläpitävät veri-kivesestettä (BTB) käyttäen samoja tight junction -proteiineja (okkludiini, ZO-1) kuin veri-aivoeste. Kypsät siittiöt käyttävät CatSper-kanavia kapasitaatioon ja akrosomireaktioon.",
     s1p2:
-      "Tämä tarkoittaa, että EMF-altistus hyökkää miehen lisääntymistoimintaa useilla riippumattomilla mekanismeilla samanaikaisesti. Vaikka yksittäinen mekanismi olisi marginaalinen, useiden mekanismien yhdentyminen samaan päätetapahtumaan (hedelmällisyyden heikkeneminen) luo robustin vaikutuksen jota on vaikea liittaa mihinkaan yksittäiseen polkuun.",
+      "BERM yhdistää nämä solun osastot niiden yhteisten lisääntymistoimintojen kautta. Suorat kenttäkokeet tunnistavat protokollakohtaisia vasteita, ja kanava-, geeni- ja ohituskokeet paikantavat biologisen koneiston. Konvergenssi on vahvinta, kun eri interventiot kohtaavat samassa mitatussa välivaiheessa; päällekkäisiä reittejä ei lasketa riippumattomiksi vaikutuksiksi.",
     s1p3:
-      "Kivekset ovat ainutlaatuisessa asemassa BERM-kehyksessä: ne ovat ainoa elin jossa sekä VGCC-valitteinen ionikanavahäiriö (polut A/B) että biologisen esteen häiriö (polku F) yhtyvät samaan toiminnalliseen lopputulokseen.",
+      "Kives yhdistää paikallisen kalsium/redox-signaloinnin, kellosäätelyn, autofagisen kolesterolihuollon, mitokondriokuljetuksen ja veri–kivesesteen eheyden. Uusi steroidogeneesin varantohaara tekee yhteiset riippuvuudet näkyviksi ennen siittiötoimintaa ja parin hedelmöittyvyyttä.",
 
     s2Title: "Kanavaprofiili",
     s2Channels: [
@@ -208,12 +209,12 @@ const COPY = {
     s3Title: "Mekanismiketju: kaksi rinnakkaista hyökkäystä",
     s3Attack1Title: "Hyökkäys 1: Hormonaalinen (Cav3 → testosteroni)",
     s3Attack1:
-      "EMF → Schwanin delta-Vm → Cav3-ikkunavirta → Ca2+-dysregulaatio → StAR-fosforylaation häiriö → kolesterolin kuljetus heikkenee → testosteroni ↓",
+      "Kenttäprotokolla → mitattu kalsium/redox-vaste → CaMKI–NUR77–StAR ja RORα–BMAL1, mitokondrioiden ja kolesterolihuollon tilan ehdollistamina → steroidituotanto. Koko yhteys on kenttä- ja komponenttikokeiden BERM-synteesi; kudossiirto ja suuruus ovat erikseen kalibroitavia.",
     s3Attack2Title: "Hyökkäys 2: Este (BTB-häiriö)",
     s3Attack2:
       "EMF → MMP2-ylisäätely (Spock3-MMP2-akseli) → okkludiini/ZO-1-degradaatio → BTB avautuu → spermatogeneettinen mikroympäristö vaarantuu → kehittyvät siittiöt altistuvat immuunijärjestelmälle → spermatogeneesi häiriintyy",
     s3p1:
-      "Nämä kaksi hyökkäystä ovat riippumattomia mekanismeja jotka kohdistuvat samaan elimeen. Hyökkäys 1 toimii Cav3-ionikanavien kautta (polku A). Hyökkäys 2 toimii biologisen esteen häiriön kautta (polku F). Ne vahvistavat toisiaan: testosteroni vaaditaan BTB:n ylläpitoon (Sertolin solujen toiminta on testosteroniriippuvaista), joten Hyökkäys 1 heikentää puolustusta Hyökkäystä 2 vastaan.",
+      "Hormoni- ja estehaara jakavat kohde-elimen ja voivat vaikuttaa toisiinsa: testosteroni tukee Sertoli-solujen ja veri–kivesesteen toimintaa, ja paikallinen redox-tila sekä substraattihuolto rajaavat steroidogeneesiä. BERM esittää kytkennän eksplisiittisesti eikä kerro päällekkäisiä pullonkauloja riippumattomiksi menetyksiksi.",
     s3p2:
       "Tuloksena on positiivinen takaisinkytkentäsilmukka: EMF → testosteroni ↓ → BTB heikkenee → mikroympäristö altistuu → spermatogeneesi häiriintyy edelleen → kumulatiivinen altistus lisää vahinkoa.",
 
@@ -321,9 +322,9 @@ const COPY = {
     s1p1:
       "精巣には少なくとも4つの異なるEMF感受性細胞区画が並列して存在する。ライディッヒ細胞はStARタンパク質を介したテストステロン生合成にT型カルシウムチャネル (Cav3) を使用する (Xiang 2025)。精原細胞は正常な精子形成にCav1 (L型) とCav3 (T型) の両チャネルを必要とする (Ma 2026)。セルトリ細胞は血液脳関門と同じタイトジャンクションタンパク質 (オクルディン、ZO-1) を使用して血液精巣関門 (BTB) を維持する。成熟精子はキャパシテーションと先体反応にCatSperチャネルを使用する。",
     s1p2:
-      "これはEMF曝露が複数の独立メカニズムで男性生殖機能を同時に攻撃することを意味する。単一のメカニズムが限界的であっても、同じエンドポイント (生殖能力の低下) への複数メカニズムの収束が、いかなる単一経路にも帰属しにくいロバストな効果を生む。",
+      "BERMは共通の生殖機能を通じて各細胞区画を結びます。電磁場実験は条件固有の応答を示し、チャネル、遺伝子、迂回実験は生物学的機構を特定します。異なる介入が同じ測定中間段階で合流するとき収束は強まり、重なる経路を独立した効果として数えません。",
     s1p3:
-      "精巣はBERMフレームワークにおいて独自の位置を占める：VGCC媒介イオンチャネル障害 (経路A/B) と生物学的バリア障害 (経路F) の両方が同じ機能的結果に収束する唯一の臓器である。",
+      "精巣では局所カルシウム・酸化還元、時計、オートファジーによるコレステロール供給、ミトコンドリア輸送、関門の健全性が合流します。新しい予備能経路は精子機能とカップルの受胎能へ至る共通依存関係を明示します。",
 
     s2Title: "チャネルプロファイル",
     s2Channels: [
@@ -356,12 +357,12 @@ const COPY = {
     s3Title: "メカニズムチェーン：2つの並列攻撃",
     s3Attack1Title: "攻撃1：ホルモン性 (Cav3 → テストステロン)",
     s3Attack1:
-      "EMF → Schwan delta-Vm → Cav3 window current → Ca2+ dysregulation → StAR phosphorylation disruption → cholesterol transport impaired → testosterone ↓",
+      "電磁場条件 → 測定されたカルシウム・酸化還元応答 → ミトコンドリアとコレステロール供給に条件づけられたCaMKI–NUR77–StARとRORα–BMAL1 → ステロイド産生。全体は電磁場・構成要素実験のBERM統合で、組織への移行と大きさは校正課題です。",
     s3Attack2Title: "攻撃2：バリア (BTB障害)",
     s3Attack2:
       "EMF → MMP2 upregulation (Spock3-MMP2 axis) → occludin/ZO-1 degradation → BTB opening → spermatogenic microenvironment compromised → immune exposure of developing sperm → spermatogenesis disrupted",
     s3p1:
-      "これら2つの攻撃は同じ臓器を標的とする独立メカニズムである。攻撃1はCav3イオンチャネルを介して作用 (経路A)。攻撃2は生物学的バリア障害を介して作用 (経路F)。両者は互いを強化する：テストステロンはBTB維持に必要であり (セルトリ細胞機能はテストステロン依存)、攻撃1は攻撃2に対する防御を弱める。",
+      "ホルモンと関門の経路は同じ臓器で相互作用し得ます。テストステロンはセルトリ細胞と関門を支え、局所酸化還元と基質供給はステロイド産生を制約します。BERMは結合を明示し、重なる律速段階を独立損失として乗算しません。",
     s3p2:
       "結果は正のフィードバックループである：EMF → テストステロン ↓ → BTB弱化 → 微小環境露出 → 精子形成がさらに障害 → 累積曝露でさらなる損傷。",
 
@@ -467,9 +468,9 @@ const COPY = {
     s1p1:
       "Les testicules contiennent au moins quatre compartiments cellulaires distincts sensibles aux EMF operant en parallele. Les cellules de Leydig utilisent des canaux calciques de type T (Cav3) pour la biosynthese de la testosterone via la proteine StAR (Xiang 2025). Les spermatogonies necessitent a la fois des canaux Cav1 (type L) et Cav3 (type T) pour une spermatogenese normale (Ma 2026). Les cellules de Sertoli maintiennent la barriere hemato-testiculaire (BTB) en utilisant les memes proteines de jonctions serrees (occludine, ZO-1) que la barriere hemato-encephalique. Les spermatozoides matures utilisent les canaux CatSper pour la capacitation et la reaction acrosomique.",
     s1p2:
-      "Cela signifie que l'exposition aux EMF attaque la fonction reproductive masculine par de multiples mecanismes independants simultanement. Meme si un mecanisme est marginal, la convergence de plusieurs mecanismes sur le meme point final (fertilite reduite) cree un effet robuste difficile a attribuer a une seule voie.",
+      "BERM relie ces compartiments par leurs fonctions reproductives communes. Les expériences de champ identifient des réponses propres au protocole ; canaux, gènes et contournements localisent la machinerie biologique. La convergence se renforce lorsque des interventions distinctes rejoignent un même intermédiaire mesuré, sans compter les voies communes comme effets indépendants.",
     s1p3:
-      "Les testicules occupent une position unique dans le cadre BERM : ils sont le seul organe ou la perturbation des canaux ioniques mediee par VGCC (voies A/B) et la perturbation de la barriere biologique (voie F) convergent sur le meme resultat fonctionnel.",
+      "Le testicule réunit signalisation calcique et redox locale, horloge, cholestérol fourni par l’autophagie, transport mitochondrial et intégrité de la barrière. La branche de réserve stéroïdogène explicite ces dépendances avant la fonction spermatique et la fécondabilité du couple.",
 
     s2Title: "Profil des canaux",
     s2Channels: [
@@ -502,12 +503,12 @@ const COPY = {
     s3Title: "Chaine mecanistique : deux attaques paralleles",
     s3Attack1Title: "Attaque 1 : Hormonale (Cav3 → testosterone)",
     s3Attack1:
-      "EMF → Schwan delta-Vm → Cav3 window current → Ca2+ dysregulation → StAR phosphorylation disruption → cholesterol transport impaired → testosterone ↓",
+      "Protocole de champ → réponse calcique/redox mesurée → CaMKI–NUR77–StAR et RORα–BMAL1, conditionnés par mitochondries et cholestérol → stéroïdes. La chaîne complète est une synthèse BERM ; transfert tissulaire et amplitude nécessitent une calibration.",
     s3Attack2Title: "Attaque 2 : Barriere (perturbation de la BTB)",
     s3Attack2:
       "EMF → MMP2 upregulation (Spock3-MMP2 axis) → occludin/ZO-1 degradation → BTB opening → spermatogenic microenvironment compromised → immune exposure of developing sperm → spermatogenesis disrupted",
     s3p1:
-      "Ces deux attaques sont des mecanismes independants ciblant le meme organe. L'attaque 1 opere via les canaux ioniques Cav3 (voie A). L'attaque 2 opere via la perturbation de la barriere biologique (voie F). Elles se renforcent mutuellement : la testosterone est requise pour le maintien de la BTB (la fonction des cellules de Sertoli est testosterone-dependante), donc l'attaque 1 affaiblit la defense contre l'attaque 2.",
+      "Les branches hormonale et de barrière partagent un organe et peuvent interagir : la testostérone soutient Sertoli et la barrière, tandis que redox local et substrat contraignent la stéroïdogenèse. BERM explicite ce couplage sans multiplier des goulots communs comme pertes indépendantes.",
     s3p2:
       "Le resultat est une boucle de retroaction positive : EMF → testosterone ↓ → BTB s'affaiblit → microenvironnement expose → spermatogenese encore plus perturbee → plus de dommages avec l'exposition cumulative.",
 
@@ -613,9 +614,9 @@ const COPY = {
     s1p1:
       "고환에는 최소 4개의 별개 EMF 감수성 세포 구획이 병렬로 존재한다. 라이디히 세포는 StAR 단백질을 통한 테스토스테론 생합성에 T형 칼슘 채널 (Cav3)을 사용한다 (Xiang 2025). 정원세포는 정상 정자형성에 Cav1 (L형)과 Cav3 (T형) 채널 모두를 필요로 한다 (Ma 2026). 세르톨리 세포는 혈액뇌장벽과 동일한 밀착연접 단백질 (오클루딘, ZO-1)을 사용하여 혈액고환장벽 (BTB)을 유지한다. 성숙 정자는 수정능 획득과 첨체반응에 CatSper 채널을 사용한다.",
     s1p2:
-      "이것은 EMF 노출이 다수의 독립적 메커니즘을 통해 남성 생식 기능을 동시에 공격함을 의미한다. 단일 메커니즘이 한계적이더라도 동일한 종점 (감소된 생식력)에 대한 여러 메커니즘의 수렴이 어떤 단일 경로에도 귀속하기 어려운 견고한 효과를 생성한다.",
+      "BERM은 공통 생식 기능을 통해 세포 구획을 연결합니다. 전자기장 실험은 프로토콜별 반응을 확인하고 채널, 유전자 및 우회 실험은 생물학적 기구를 특정합니다. 서로 다른 개입이 같은 측정 중간 단계에서 만날 때 수렴이 강화되며 중첩 경로를 독립 효과로 세지 않습니다.",
     s1p3:
-      "고환은 BERM 프레임워크에서 독특한 위치를 차지한다: VGCC 매개 이온 채널 교란 (경로 A/B)과 생물학적 장벽 교란 (경로 F) 모두가 동일한 기능적 결과에 수렴하는 유일한 기관이다.",
+      "고환에서는 국소 칼슘·산화환원, 시계, 자가포식 콜레스테롤 공급, 미토콘드리아 수송 및 장벽 무결성이 수렴합니다. 새로운 스테로이드 생성 예비능 경로는 정자 기능과 부부 수태능 이전의 공통 의존성을 명시합니다.",
 
     s2Title: "채널 프로파일",
     s2Channels: [
@@ -648,12 +649,12 @@ const COPY = {
     s3Title: "메커니즘 체인: 두 개의 병렬 공격",
     s3Attack1Title: "공격 1: 호르몬성 (Cav3 → 테스토스테론)",
     s3Attack1:
-      "EMF → Schwan delta-Vm → Cav3 window current → Ca2+ dysregulation → StAR phosphorylation disruption → cholesterol transport impaired → testosterone ↓",
+      "전자기장 프로토콜 → 측정된 칼슘·산화환원 반응 → 미토콘드리아와 콜레스테롤 공급 상태에 따른 CaMKI–NUR77–StAR 및 RORα–BMAL1 → 스테로이드 생산. 전체 연결은 BERM 종합이며 조직 이전과 크기는 보정 과제입니다.",
     s3Attack2Title: "공격 2: 장벽 (BTB 교란)",
     s3Attack2:
       "EMF → MMP2 upregulation (Spock3-MMP2 axis) → occludin/ZO-1 degradation → BTB opening → spermatogenic microenvironment compromised → immune exposure of developing sperm → spermatogenesis disrupted",
     s3p1:
-      "이 두 공격은 동일한 기관을 표적으로 하는 독립적 메커니즘이다. 공격 1은 Cav3 이온 채널을 통해 작용 (경로 A). 공격 2는 생물학적 장벽 교란을 통해 작용 (경로 F). 양자는 서로를 강화한다: 테스토스테론은 BTB 유지에 필요하며 (세르톨리 세포 기능은 테스토스테론 의존적), 따라서 공격 1이 공격 2에 대한 방어를 약화시킨다.",
+      "호르몬 및 장벽 경로는 같은 기관에서 상호작용할 수 있습니다. 테스토스테론은 세르톨리 세포와 장벽을 지원하고 국소 산화환원과 기질 공급은 스테로이드 생성을 제한합니다. BERM은 결합을 명시하고 공통 병목을 독립 손실로 곱하지 않습니다.",
     s3p2:
       "결과는 양의 피드백 루프이다: EMF → 테스토스테론 ↓ → BTB 약화 → 미세환경 노출 → 정자형성 추가 교란 → 누적 노출로 더 많은 손상.",
 
@@ -844,6 +845,8 @@ export default async function TestesPage({
       </Link>
 
       <PageHeader icon={ShieldAlert} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
 
       {/* 01 — Hero: Multiple EMF-Sensitive Components */}
       <section className="mb-16 border-t editorial-rule pt-6">

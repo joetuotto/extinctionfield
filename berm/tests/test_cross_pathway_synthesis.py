@@ -14,11 +14,12 @@ from berm.biology.cross_pathway_synthesis import (
 )
 
 
-def test_seven_registered_syntheses_are_unique_and_berm_owned() -> None:
+def test_registered_syntheses_are_unique_and_berm_owned() -> None:
     manifest = synthesis_manifest()
 
-    assert len(EVIDENCE_SYNTHESIS_CLUSTERS) == 7
-    assert len({item.id for item in EVIDENCE_SYNTHESIS_CLUSTERS}) == 7
+    assert len(EVIDENCE_SYNTHESIS_CLUSTERS) == 8
+    assert len({item.id for item in EVIDENCE_SYNTHESIS_CLUSTERS}) == 8
+    assert "calcium-redox-steroidogenesis" in {item.id for item in EVIDENCE_SYNTHESIS_CLUSTERS}
     assert manifest["role"] == "berm_compositional_evidence_layer"
     assert manifest["fieldStateRole"] == "optional_physical_measurement_input_only"
 

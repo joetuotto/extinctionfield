@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Dna } from "lucide-react";
@@ -358,6 +359,8 @@ export default async function TimothyPage({ params }: { params: Promise<{ locale
       </p>
 
       <PageHeader icon={Dna} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="interventions" />
 
       <CautionBox className="mt-8">{d.cautionText}</CautionBox>
 

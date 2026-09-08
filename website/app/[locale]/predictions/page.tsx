@@ -1,3 +1,4 @@
+import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Target, BookOpen, Building2, Sun, Zap } from "lucide-react";
@@ -9079,6 +9080,8 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisCalibrationNote locale={locale} />
 
       <DkcPublicationGate locale={locale} />
       <DkcValidationRegistry locale={locale} />

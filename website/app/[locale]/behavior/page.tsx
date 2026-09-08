@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import { Brain } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
@@ -114,6 +115,7 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
   return <ExplanationHub locale={locale} copy={COPY} {...d} icon={Brain} stage="behavior">
     <ExplanationSection {...d.contents[0]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-valuation">{d.valuationClaim}</ClaimRef></p>{p(d.valuation)}<ResearchConnection locale={locale} studies={d.valuationStudies} implication={d.valuationImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[1]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.sexual-motivation">{d.desireClaim}</ClaimRef></p>{p(d.desire)}<ResearchConnection locale={locale} studies={d.desireStudies} implication={d.desireImplication} /></ExplanationSection>
+    <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
     <ExplanationSection {...d.contents[2]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-learning">{d.learningClaim}</ClaimRef></p>{p(d.learning)}<ResearchConnection locale={locale} studies={d.learningStudies} implication={d.learningImplication} /><MathBlock tex={String.raw`L_{t+1}=\mathcal U(L_t,\mathrm{feedback};S_t)`} />{p(d.learningEquation)}</ExplanationSection>
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.reported-reasons">{d.reasonsClaim}</ClaimRef></p>{p(d.reasons)}<ResearchConnection locale={locale} studies={d.reasonsStudies} implication={d.reasonsImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[4]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.social-valuation">{d.socialClaim}</ClaimRef></p>{p(d.social)}<ResearchConnection locale={locale} studies={d.socialStudies} implication={d.socialImplication} /></ExplanationSection>

@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -413,6 +414,7 @@ export default async function CivilizationPage({
 
         <CivilizationReadingPath locale={locale} />
         <BiologicalCoordinationContext locale={locale} context="civilization" />
+        <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
 
         <section className="mb-16 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-6">
           <h2 className="text-lg font-semibold">{epistapege.title}</h2>

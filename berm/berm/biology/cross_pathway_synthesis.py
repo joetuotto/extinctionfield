@@ -215,6 +215,37 @@ EVIDENCE_SYNTHESIS_CLUSTERS = (
         ),
     ),
     EvidenceSynthesisCluster(
+        id="calcium-redox-steroidogenesis",
+        claim_id="claim.steroidogenesis.component-convergence",
+        title="Local calcium/redox reserve and clock converge on cholesterol-supported steroidogenesis",
+        path=("A_VGCC_ROS", "MALE_STEROIDOGENESIS", "ANDROGEN_BINDING_AVAILABILITY", "ANDROGEN_RECEPTOR_SIGNAL"),
+        relation_ids=(
+            "er.synthesis.steroidogenesis.qin2018",
+            "er.synthesis.steroidogenesis.qin2019",
+            "er.synthesis.steroidogenesis.martin2008",
+            "er.synthesis.steroidogenesis.miao2025",
+            "er.synthesis.steroidogenesis.chen2010",
+            "er.synthesis.steroidogenesis.gao2018",
+            "er.synthesis.steroidogenesis.esmaeilian2023",
+            "er.synthesis.steroidogenesis.lin1995",
+        ),
+        synthesis_class=COMPOSED_MECHANISTIC_CONVERGENCE,
+        gain=(
+            "Joins local field-protocol, genetic, pharmacological and human-tissue findings at "
+            "measured calcium/redox, cholesterol-supply and StAR control points. CaMKI/NUR77 and "
+            "RORalpha/BMAL1 remain distinct converging arms; absolute reserve, basal or stimulated "
+            "output, viable-cell count and serum concentration are separate quantities. "
+            "The composition adds no default kinetics or hormone-to-fertility multiplier."
+        ),
+        discriminator=(
+            "Existing hormone-stimulation, glutathione-depletion, oxidant-challenge and substrate-bypass "
+            "arms constrain different links. Preserve their system and stimulation labels; Chen's "
+            "un-challenged LH-stimulated progesterone remains preserved, and Midzak's basal and "
+            "LH-stimulated testosterone changes have opposite signs. Shared study families and "
+            "unmeasured tissue/endpoint transfer values stay explicit."
+        ),
+    ),
+    EvidenceSynthesisCluster(
         id="graded-susceptibility-continuum",
         claim_id="claim.synthesis.graded-susceptibility",
         title="Graded susceptibility rather than a binary EHS class",
@@ -309,7 +340,7 @@ def graded_susceptibility_probability(
 
 
 def synthesis_manifest() -> dict[str, object]:
-    """Return the cross-runtime description of the seven synthesis clusters."""
+    """Return the cross-runtime description of the registered synthesis clusters."""
 
     return {
         "id": EVIDENCE_SYNTHESIS_VERSION,

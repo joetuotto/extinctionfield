@@ -3,7 +3,8 @@
   "description": "Curated presentation bindings. Component claims retain their own targets and scope; a binding does not establish an entire atlas connection.",
   "nodes": {
     "mech_vgcc_ros": [
-      "claim.vgcc.ros-ca2-coupling"
+      "claim.vgcc.ros-ca2-coupling",
+      "claim.proxy.mechanistic-composition"
     ],
     "mech_cry_melatonin": [
       "claim.rpm.cry-magnetic-sensitivity",
@@ -63,7 +64,9 @@
       "claim.germline.persistent-reserve-loss"
     ],
     "male_steroidogenesis": [
-      "claim.steroidogenesis.leydig-output-decline"
+      "claim.steroidogenesis.leydig-output-decline",
+      "claim.steroidogenesis.field-protocols",
+      "claim.steroidogenesis.component-convergence"
     ],
     "ovarian_reserve": [
       "claim.ovarian.developmental-reserve-loss"
@@ -153,7 +156,8 @@
       "claim.receptor.membrane-orientation"
     ],
     "mech_ca_compartment_cycle": [
-      "claim.modulome.calcium-compartment-cycle"
+      "claim.modulome.calcium-compartment-cycle",
+      "claim.steroidogenesis.component-convergence"
     ],
     "mod_repair_capacity": [
       "claim.modulome.adaptation-memory",
@@ -170,7 +174,8 @@
     ],
     "mod_cell_history": [
       "claim.receptor.state-dependent-response",
-      "claim.modulome.adaptation-memory"
+      "claim.modulome.adaptation-memory",
+      "claim.steroidogenesis.reserve-masking"
     ],
     "mech_cry4a_binding_competition": [
       "claim.receptor.cry4a-gtalpha-binding",
@@ -197,7 +202,8 @@
       "claim.behavior.state-dependent-learning",
       "claim.behavior.social-valuation",
       "claim.behavior.biological-state-to-action",
-      "claim.proxy.sensory-receiver-state"
+      "claim.proxy.sensory-receiver-state",
+      "claim.proxy.behavioural-profile-integration"
     ],
     "biobehavioral_weighting": [
       "claim.cognition.biological-behavioural-weighting"
@@ -253,6 +259,15 @@
     "demo_encounters": [
       "claim.behavior.dyadic-propagation",
       "claim.behavior.biological-state-to-action"
+    ],
+    "mech_steroidogenic_reserve": [
+      "claim.steroidogenesis.component-convergence",
+      "claim.steroidogenesis.reserve-masking",
+      "claim.steroidogenesis.staged-integration"
+    ],
+    "tissue_testosterone": [
+      "claim.steroidogenesis.field-protocols",
+      "claim.steroidogenesis.component-convergence"
     ]
   },
   "edges": [
@@ -293,6 +308,62 @@
       "to": "implantation",
       "claimIds": [
         "claim.reproduction.local-clock-gates"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mech_ca_compartment_cycle",
+      "to": "mech_steroidogenic_reserve",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "circadian_coordination",
+      "to": "mech_steroidogenic_reserve",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mod_repair_capacity",
+      "to": "mech_steroidogenic_reserve",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mech_mitochondrial_ros",
+      "to": "mech_steroidogenic_reserve",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mech_steroidogenic_reserve",
+      "to": "male_steroidogenesis",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mech_steroidogenic_reserve",
+      "to": "tissue_testosterone",
+      "claimIds": [
+        "claim.steroidogenesis.component-convergence"
+      ],
+      "scope": "component"
+    },
+    {
+      "from": "mech_vgcc_ros",
+      "to": "male_steroidogenesis",
+      "claimIds": [
+        "claim.steroidogenesis.field-protocols"
       ],
       "scope": "component"
     }
