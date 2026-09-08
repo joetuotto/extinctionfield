@@ -841,8 +841,16 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     fi: "Alavirran selitysmuuttujien institutionaalinen uudelleenkäyttö",
   },
   DEMAND_OPPORTUNITY: {
-    en: "Family-formation demand and opportunity",
-    fi: "Perheenmuodostuksen kysyntä ja mahdollisuus",
+    en: "Reproductively exposed encounters and attempts",
+    fi: "Lisääntymiselle altistavat kohtaamiset ja yritykset",
+  },
+  REPRODUCTIVE_OPPORTUNITY: {
+    en: "External and interaction-conditioned reproductive opportunities",
+    fi: "Ulkoiset ja vuorovaikutuksessa muodostuvat lisääntymismahdollisuudet",
+  },
+  CAREGIVING_ALLOCATION: {
+    en: "Caregiving amount, recipient allocation and contact feedback",
+    fi: "Hoivan määrä, kohdentuminen ja kontaktipalaute",
   },
   TEMPO: {
     en: "Childbearing timing / tempo",

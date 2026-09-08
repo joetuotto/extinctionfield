@@ -60,6 +60,16 @@ describe("Atlas completeness against independent source inventories", () => {
 });
 
 describe("Shared subatlas structure", () => {
+  it("connects reproductive regulation across the reproduction and society views with time-indexed care feedback", () => {
+    expect(NODES.find(node => node.id === "reproductive_opportunity")?.epistemicLevel).toBe("C");
+    for (const id of ["caregiving_allocation", "reproductive_opportunity", "individual_behavioral_response"]) {
+      for (const view of ["reproduction", "society"] as const) {
+        expect(nodesForAtlas(view).some(node => node.id === id), `${view}: ${id}`).toBe(true);
+      }
+    }
+    expect(EDGES.find(edge => edge.from === "caregiving_allocation" && edge.to === "civil_social_transmission")?.relation).toBe("feedback");
+    expect(EDGES.find(edge => edge.from === "civil_social_transmission" && edge.to === "reproductive_opportunity")?.relation).toBe("feedback");
+  });
   it("keeps the whole atlas and exposes each channel in at least one focused view", () => {
     expect(nodesForAtlas("all").map(n => n.id)).toEqual(NODES.map(n => n.id));
     for (const n of NODES) expect(atlasesForNode(n.id).length, n.id).toBeGreaterThan(0);

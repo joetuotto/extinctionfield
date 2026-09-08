@@ -377,7 +377,20 @@ def test_export_covers_profiles_and_keeps_replay_provenance_separate_from_study_
     root = Path(__file__).resolve().parents[2]
     payload = json.loads((root / "website/data/intervention-scenarios.json").read_text())
     registry = json.loads((root / "berm/data/evidence/intervention_profiles_v1.json").read_text())
-    assert {s["profile_id"] for s in payload["scenarios"]} == {p["id"] for p in registry["profiles"]}
+    replayed = {s["profile_id"] for s in payload["scenarios"]}
+    evidence_only = payload["metadata"]["evidence_only_profiles"]
+    evidence_only_ids = {p["profile_id"] for p in evidence_only}
+    registered = {p["id"]: p for p in registry["profiles"]}
+    assert replayed | evidence_only_ids == set(registered)
+    assert not replayed & evidence_only_ids
+    assert len(evidence_only_ids) == len(evidence_only)
+    for profile in evidence_only:
+        assert all(profile["reason"][locale].strip() for locale in ("en", "fi"))
+        assert profile["reference_ids"] == registered[profile["profile_id"]]["referenceIds"]
+        assert profile["reference_ids"]
+    # The abstract-only MCU finding is retained without a fabricated protocol.
+    assert "mcu_receiver_state" in evidence_only_ids
+    assert "mcu_receiver_state" not in replayed
     assert payload["metadata"]["asfr_mapping"] is None
     assert payload["metadata"]["physical_identification_status"] == "OPEN"
     for s in payload["scenarios"]:

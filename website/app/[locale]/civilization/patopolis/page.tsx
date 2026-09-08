@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import Link from "next/link";
 import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, TrendingDown, Target } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
@@ -2935,6 +2936,8 @@ export default async function PatopolisPage({
           {d.s8body}
         </p>
       </section>
+
+      <ReproductiveRegulationIntegration locale={locale} context="patopolis" />
 
       {/* S8b: Cybernetic Feedback Loops */}
       <section className="mb-16">

@@ -29,9 +29,18 @@ describe("Shared atlas claim bindings", () => {
 
   it("keeps an uncurated channel distinct from a claim without study relations", () => {
     expect(atlasClaimCoverage([{ id: "lindgren_2025" }])).toMatchObject({ linkedNodes: 0, evidenceLinkedNodes: 0, claims: 0 });
-    expect(claimIdsForAtlasNode("demand_opportunity").length).toBeGreaterThan(0);
-    expect(claimIdsForAtlasNode("demand_opportunity").flatMap(getEvidenceForClaim)).toHaveLength(0);
-    expect(atlasClaimCoverage([{ id: "demand_opportunity" }])).toMatchObject({ linkedNodes: 1, evidenceLinkedNodes: 0 });
+    expect(claimIdsForAtlasNode("tissue_melatonin").length).toBeGreaterThan(0);
+    expect(claimIdsForAtlasNode("tissue_melatonin").flatMap(getEvidenceForClaim)).toHaveLength(0);
+    expect(atlasClaimCoverage([{ id: "tissue_melatonin" }])).toMatchObject({ linkedNodes: 1, evidenceLinkedNodes: 0 });
+  });
+
+  it("binds measured behavior-to-opportunity components without promoting field calibration", () => {
+    expect(claimIdsForAtlasNode("demand_opportunity")).toContain("claim.behavior.behaviour-to-opportunity");
+    const evidence = getEvidenceForClaim("claim.behavior.behaviour-to-opportunity");
+    expect(evidence.some(item => item.referenceId === "lei_south2021_sexual_activity")).toBe(true);
+    expect(evidence.some(item => item.referenceId === "herbenick2021_sexual_repertoire")).toBe(true);
+    expect(evidence.every(item => item.calibrationRole === "structural_only")).toBe(true);
+    expect(atlasClaimCoverage([{ id: "demand_opportunity" }])).toMatchObject({ linkedNodes: 1, evidenceLinkedNodes: 1 });
   });
 
   it("does not count reused claims again when several channels share them", () => {

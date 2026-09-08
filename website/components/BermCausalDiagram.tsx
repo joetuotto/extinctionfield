@@ -32,6 +32,10 @@ const STEROID_ROUTE = new Set([
   "CIRCADIAN_COORDINATION", "HPA_HPG", "HORMONE_TARGET_RESPONSE", "MALE_STEROIDOGENESIS",
   "ANDROGEN_BINDING_AVAILABILITY", "ANDROGEN_RECEPTOR_SIGNAL", "MALE_SPERM", "COUPLE_FECUNDABILITY", "ASFR", "TFR",
 ]);
+const REGULATION_ROUTE = new Set([
+  "HPA_HPG", "HORMONE_TARGET_RESPONSE", "ANDROGEN_RECEPTOR_SIGNAL", "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+  "REPRODUCTIVE_OPPORTUNITY", "DEMAND_OPPORTUNITY", "CAREGIVING_ALLOCATION", "COUPLE_FECUNDABILITY", "ASFR", "TFR",
+]);
 type Box = { x: number; y: number; w: number; h: number };
 type Geometry = { width: number; height: number; boxes: Record<string, Box> };
 const edgeName = (edge: ChainEdge, locale: string) => locale === "fi" ? edge.label : edge.label_en ?? edge.label;
@@ -97,7 +101,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
   const uid = useId().replaceAll(":", "");
   const [view, setView] = useState<"graph" | "edges">("graph");
   const [focus, setFocus] = useState("");
-  const [route, setRoute] = useState(false);
+  const [route, setRoute] = useState<"steroidogenesis" | "regulation" | null>(null);
   const [hover, setHover] = useState("");
   const [selected, setSelected] = useState<string | null>(null);
   const graphRef = useRef<HTMLDivElement>(null);
@@ -127,11 +131,11 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [locale, view]);
   const active = hover || focus;
-  const highlightedEdges = EDGES.map(edge => active ? edge.from === active || edge.to === active : route && STEROID_ROUTE.has(edge.from) && STEROID_ROUTE.has(edge.to));
+  const highlightedEdges = EDGES.map(edge => active ? edge.from === active || edge.to === active : Boolean(route && (route === "steroidogenesis" ? STEROID_ROUTE : REGULATION_ROUTE).has(edge.from) && (route === "steroidogenesis" ? STEROID_ROUTE : REGULATION_ROUTE).has(edge.to)));
   const highlightedNodes = new Set<string>();
   if (active) highlightedNodes.add(active);
   EDGES.forEach((edge, i) => { if (highlightedEdges[i]) { highlightedNodes.add(edge.from); highlightedNodes.add(edge.to); } });
-  const openNode = (id: string) => { setFocus(id); setRoute(false); setSelected(id); };
+  const openNode = (id: string) => { setFocus(id); setRoute(null); setSelected(id); };
   const selectedNode = selected ? NODE_MAP.get(selected) : undefined;
   return <section className={styles.root} aria-label={c.aria} lang={locale}>
     <div className={styles.controls}>
@@ -145,13 +149,15 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
       <p className={styles.hint}>{c.help} {c.stages}</p>
       {!["fi", "en"].includes(locale) && <p role="note" className={styles.hint}>{c.fallback}</p>}
       <div className={styles.focusControls}>
-        <label className={styles.selectLabel}>{c.select}<select className={styles.select} value={focus} onChange={e => { setFocus(e.target.value); setRoute(false); }}><option value="">{c.all}</option>{NODES.map(n => <option key={n.id} value={n.id}>{getCanonicalNodeLabel(n.id, locale)}</option>)}</select></label>
+        <label className={styles.selectLabel}>{c.select}<select className={styles.select} value={focus} onChange={e => { setFocus(e.target.value); setRoute(null); }}><option value="">{c.all}</option>{NODES.map(n => <option key={n.id} value={n.id}>{getCanonicalNodeLabel(n.id, locale)}</option>)}</select></label>
         <div className={styles.routeControls}>
-          <button type="button" className={styles.routeButton} aria-pressed={route} onClick={() => { setRoute(!route); setFocus(""); setHover(""); }}><GitBranch size={16} aria-hidden="true" />{c.route}</button>
-          {(focus || route) && <button type="button" className={styles.resetButton} onClick={() => { setFocus(""); setRoute(false); setHover(""); }}><RotateCcw size={14} aria-hidden="true" />{c.reset}</button>}
+          <button type="button" className={styles.routeButton} aria-pressed={route === "steroidogenesis"} onClick={() => { setRoute(route === "steroidogenesis" ? null : "steroidogenesis"); setFocus(""); setHover(""); }}><GitBranch size={16} aria-hidden="true" />{c.route}</button>
+          <button type="button" className={styles.routeButton} aria-pressed={route === "regulation"} onClick={() => { setRoute(route === "regulation" ? null : "regulation"); setFocus(""); setHover(""); }}><GitBranch size={16} aria-hidden="true" />{locale === "fi" ? "Lisääntymisen säätely" : "Reproductive regulation"}</button>
+          {(focus || route) && <button type="button" className={styles.resetButton} onClick={() => { setFocus(""); setRoute(null); setHover(""); }}><RotateCcw size={14} aria-hidden="true" />{c.reset}</button>}
         </div>
       </div>
       <div className={styles.integration}><span>{c.integration}</span><Link href={`/${locale}/biology/calcium-redox-steroidogenesis`}>{c.studies}<ArrowUpRight size={14} aria-hidden="true" /></Link></div>
+      <div className={styles.integration}><span>{locale === "fi" ? "Motivaatio, toteutuvat kohtaamiset, kapasiteetti ja hoivan kohdentuminen täydentävät lisääntymisen ja käyttäytymisen haaroja." : "Motivation, realised encounters, capacity and caregiving allocation connect the reproductive and behavioural branches."}</span><Link href={`/${locale}/behavior/reproductive-regulation#evidence-matrix`}>{c.studies}<ArrowUpRight size={14} aria-hidden="true" /></Link></div>
     </div>
     <div className={styles.legend}>{[...new Set(NODES.map(n => n.epistemicLevel))].map(level => <span key={level} style={{ "--node-color": CHAIN_EPISTEMIC_COLORS[level] } as CSSProperties}><b>{level}</b>{getChainEpistemicLabel(level, locale)}</span>)}</div>
     {view === "graph" ? <div ref={graphRef} className={styles.graph} data-testid="causal-graph">

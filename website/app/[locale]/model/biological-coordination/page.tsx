@@ -1,3 +1,4 @@
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
@@ -152,6 +153,7 @@ export default async function BiologicalCoordinationPage({ params }: { params: P
             <h2 className="editorial-section-heading">{d.cryTitle}</h2>
             <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.cry.endocrine-gating">{d.cryClaim}</ClaimRef></p>{paragraph(d.cryText)}
           </section>
+          <ReproductiveRegulationIntegration locale={locale} context="coordination" />
           <section className={sectionClass} id="biological-memory">
             <h2 className="editorial-section-heading">{d.memoryTitle}</h2>
             <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.receptor.chemical-memory">{d.memoryClaim}</ClaimRef></p>

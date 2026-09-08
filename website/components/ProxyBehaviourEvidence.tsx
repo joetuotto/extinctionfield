@@ -1,3 +1,4 @@
+import { ReproductiveRegulationAxes } from "@/components/ReproductiveRegulationAxes";
 import { ClaimRef } from "@/components/ClaimRef";
 import Link from "next/link";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
@@ -23,6 +24,7 @@ const COPY = {
     pewText: "In Pew’s 2024 survey, 57% of US adults aged 18–49 who had no children and considered future parenthood unlikely said simply not wanting children was a major reason. This selected group contained 770 respondents. The percentage describes their answers, not all childless adults. [[ref:pew2024_childless_reasons|Pew 2024]].",
     interpreterConclusion: "BERM connects physical and biological state to valuation, experienced motivation and the reason subsequently reported. The report describes one stage of that chain; it does not identify the upstream state. The Pew percentage is not a biological diagnosis.",
     behaviorLink: "Biological state, valuation and reported reasons",
+    measurementLink: "Compare the eight axes through shared measurements and studies",
     syndromeTitle: "Syndrome fragmentation: eight comparison axes",
     syndromeIntro: "A shared receiving state can express itself through several functions. If each outcome is analysed under a different social label, the joint pattern disappears. BERM uses the following cross-species mapping to keep those functions together.",
     mappingStatus: "BERM model mapping · component-specific evidence",
@@ -62,6 +64,7 @@ const COPY = {
     pewText: "Pew’n vuoden 2024 kyselyssä 57 % lapsettomista 18–49-vuotiaista yhdysvaltalaisista, jotka pitivät tulevaa vanhemmuuttaan epätodennäköisenä, nimesi merkittäväksi syyksi sen, ettei vain halua lapsia. Rajatussa ryhmässä oli 770 vastaajaa. Osuus kuvaa heidän vastauksiaan, ei kaikkia lapsettomia. [[ref:pew2024_childless_reasons|Pew 2024]].",
     interpreterConclusion: "BERM yhdistää fysikaalisen ja biologisen tilan arvottamiseen, koettuun motivaatioon sekä sen jälkeen kerrottuun syyhyn. Raportti kuvaa ketjun yhtä vaihetta; se ei yksilöi aiempaa tilaa. Pew’n prosenttiosuus ei ole biologinen diagnoosi.",
     behaviorLink: "Biologinen tila, arvottaminen ja kerrotut syyt",
+    measurementLink: "Vertaa kahdeksaa akselia yhteisten mittausten ja tutkimusten kautta",
     syndromeTitle: "Syndrooman fragmentaatio: kahdeksan vertailuakselia",
     syndromeIntro: "Yhteinen vastaanottotila voi ilmetä useassa toiminnossa. Jos kukin seuraus analysoidaan eri sosiaalisen nimikkeen alla, yhteinen kuvio katoaa. BERM käyttää seuraavaa lajienvälistä karttaa näiden toimintojen pitämiseksi samassa tarkastelussa.",
     mappingStatus: "BERM:n mallikartta · näyttö osamekanismeista",
@@ -149,5 +152,7 @@ export function ProxySyndromeEvidence({ locale }: Props) {
     </ol>
     <p className={TEXT}><InlineReferenceText text={c.syndromeEvidence} locale={locale} /></p>
     <p className={TEXT}>{c.syndromeConclusion}</p>
+    <details className="border-t border-card-border pt-4"><summary className="cursor-pointer text-sm font-semibold text-accent">{c.measurementLink}</summary><div className="mt-6"><ReproductiveRegulationAxes locale={locale} id="syndrome-shared-measures" /></div></details>
+    <Link href={`/${locale}/behavior/reproductive-regulation#eight-axes`} className="inline-block min-h-11 text-sm text-accent underline">{c.measurementLink} →</Link>
   </section>;
 }

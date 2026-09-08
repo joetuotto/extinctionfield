@@ -676,6 +676,11 @@ export const NAV_ROUTES: NavRoute[] = [
       labels: { en: "Desire, attachment and care", fi: "Halu, kiintymys ja hoiva", ja: "欲求、愛着、養育", fr: "Désir, attachement et soin", ko: "욕구, 애착 및 돌봄" },
     },
     {
+      href: "/behavior/reproductive-regulation", icon: Activity,
+      labels: { en: "Reproductive regulation", fi: "Lisääntymisen säätely", ja: "生殖の調節", fr: "Régulation de la reproduction", ko: "생식 조절" },
+      descs: { en: "Motivation, capacity, caregiving and their measured connections", fi: "Motivaatio, kapasiteetti, hoiva ja niiden mitatut yhteydet", ja: "動機、能力、養育と測定されたつながり", fr: "Motivation, capacité, soins et liens mesurés", ko: "동기, 능력, 돌봄과 측정된 연결" },
+    },
+    {
       href: "/behavior#learning", icon: ChartLine,
       labels: { en: "Time and learning", fi: "Aika ja oppiminen", ja: "時間と学習", fr: "Temps et apprentissage", ko: "시간과 학습" },
     },

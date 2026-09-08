@@ -26,6 +26,27 @@ MEASUREMENT_INPUTS = {
 }
 
 NEW_LABELS = {
+    "REPRODUCTIVE_OPPORTUNITY": {
+        "en": "External and interaction-conditioned reproductive opportunities",
+        "fi": "Ulkoiset ja vuorovaikutuksessa muodostuvat lisääntymismahdollisuudet",
+        "ja": "外的条件と相互作用に依存する生殖機会",
+        "fr": "Possibilités reproductives externes et conditionnées par les interactions",
+        "ko": "외부 조건과 상호작용에 따른 생식 기회",
+    },
+    "CAREGIVING_ALLOCATION": {
+        "en": "Caregiving amount, recipient allocation and contact feedback",
+        "fi": "Hoivan määrä, kohdentuminen ja kontaktipalaute",
+        "ja": "養育の量、対象への配分、接触のフィードバック",
+        "fr": "Quantité de soins, répartition entre destinataires et retour des contacts",
+        "ko": "돌봄의 양, 대상별 배분 및 접촉 피드백",
+    },
+    "DEMAND_OPPORTUNITY": {
+        "en": "Reproductively exposed encounters and attempts",
+        "fi": "Lisääntymiselle altistavat kohtaamiset ja yritykset",
+        "ja": "生殖につながり得る接触と試み",
+        "fr": "Rencontres exposant à la reproduction et tentatives",
+        "ko": "생식으로 이어질 수 있는 만남과 시도",
+    },
     "RECEPTOR_STATE_MEMORY": {
         "en": "Receptor chemical-state memory and recovery",
         "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
@@ -140,6 +161,9 @@ def build_graph(existing: dict) -> dict:
         current = dict(existing_nodes.get(source.id, {}))
         labels = dict(current.get("label", NEW_LABELS.get(source.id, {})))
         labels["en"] = source.label
+        if source.id == "DEMAND_OPPORTUNITY":
+            # This retained ID now names the composed encounter/attempt state.
+            labels.update(NEW_LABELS[source.id])
         if source.id == "TECHNOLOGY_TIMING_PROXY":
             labels["fi"] = "Kansallinen teknologian ajoitusproxy (legacy-v17-vertailu)"
         current.update(
@@ -157,18 +181,28 @@ def build_graph(existing: dict) -> dict:
         nodes[source.id] = current
 
     edges = []
+    existing_edges = {
+        (edge["from"], edge["to"]): edge["id"]
+        for edge in existing.get("edges", [])
+    }
+    used_ids = set(existing_edges.values())
     edge_number = 1
     for source in CAUSAL_NODES:
         for target in source.children:
+            edge_id = existing_edges.get((source.id, target))
+            if edge_id is None:
+                while f"e{edge_number:02d}" in used_ids:
+                    edge_number += 1
+                edge_id = f"e{edge_number:02d}"
+                used_ids.add(edge_id)
             edges.append(
                 {
-                    "id": f"e{edge_number:02d}",
+                    "id": edge_id,
                     "from": source.id,
                     "to": target,
                     "kind": _edge_kind(source.id, target),
                 }
             )
-            edge_number += 1
 
     ui_groups = dict(existing["ui_groups"])
     mechanism_group = dict(ui_groups["mechanisms"])
@@ -223,6 +257,7 @@ def build_graph(existing: dict) -> dict:
         "id": "civilization",
         "contains": [
             "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+            "CAREGIVING_ALLOCATION",
             "BIOBEHAVIORAL_WEIGHTING",
             "NARRATIVE_ATTRIBUTION",
             "EPISTAPEGE_OBSERVABILITY_LOSS",
@@ -230,10 +265,15 @@ def build_graph(existing: dict) -> dict:
         ],
         "ui_level": 5,
     }
+    demographic_group = dict(ui_groups["demographic-inputs"])
+    demographic_group["contains"] = list(dict.fromkeys([
+        "REPRODUCTIVE_OPPORTUNITY", *demographic_group["contains"],
+    ]))
+    ui_groups["demographic-inputs"] = demographic_group
 
     return {
         "$schema": existing.get("$schema", "./causal-graph.schema.json"),
-        "version": "2.0.0",
+        "version": "2.1.0",
         "nodes": nodes,
         "edges": edges,
         "ui_groups": ui_groups,

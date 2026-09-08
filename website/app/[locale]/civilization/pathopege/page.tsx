@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import Link from "next/link";
 import { ArrowRight, Zap, Shield, Heart } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
@@ -1388,6 +1389,8 @@ export default async function PathopegePage({
           </div>
         </div>
       </section>
+
+      <ReproductiveRegulationIntegration locale={locale} context="pathopege" />
 
       {/* Recovery Evidence */}
       {d.sRecoveryBody1 && (

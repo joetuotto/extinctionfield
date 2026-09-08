@@ -1,5 +1,17 @@
 """Biological pathway models."""
 
+from berm.biology.reproductive_regulation import (
+    REPRODUCTIVE_REGULATION_VERSION,
+    REGULATION_AXES,
+    CareRecipientAmount,
+    CaregivingAllocation,
+    ConditionalReproductiveBranch,
+    RegulationObservation,
+    ReproductiveRealization,
+    ReproductiveRegulationProfile,
+    compose_reproductive_realization,
+    reproductive_regulation_structure,
+)
 from berm.biology.combined_exposures import (
     COMBINED_EXPOSURES_VERSION,
     EXPOSURE_FACTORS,
@@ -79,6 +91,16 @@ from berm.biology.reproductive_state import (
 )
 
 __all__ = [
+    "REPRODUCTIVE_REGULATION_VERSION",
+    "REGULATION_AXES",
+    "CareRecipientAmount",
+    "CaregivingAllocation",
+    "ConditionalReproductiveBranch",
+    "RegulationObservation",
+    "ReproductiveRealization",
+    "ReproductiveRegulationProfile",
+    "compose_reproductive_realization",
+    "reproductive_regulation_structure",
     "COMBINED_EXPOSURES_VERSION",
     "EXPOSURE_FACTORS",
     "CombinedExposureContext",

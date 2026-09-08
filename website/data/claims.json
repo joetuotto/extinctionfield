@@ -3455,22 +3455,28 @@
         "type": "node",
         "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE"
       },
-      "depends_on": [],
+      "depends_on": [
+        "claim.reproduction.selective-regulation",
+        "claim.reproduction.caregiving-allocation",
+        "claim.behavior.behaviour-to-opportunity",
+        "claim.reproduction.social-feedback"
+      ],
       "supersedes": [],
       "statement": {
         "en": {
-          "text": "BERM groups caregiving, proximity, stress, sexual motivation, signalling, social feedback, hormonal state and effort as eight comparison axes through which shared biological state may affect several recorded outcomes. Separately supported human components motivate the integration; this is a model mapping rather than a measured diagnostic syndrome.",
-          "sourceRevision": 1
+          "text": "BERM groups caregiving, proximity, stress, sexual motivation, signalling, social feedback, hormonal state and effort as eight comparison axes. Animal suppression/release experiments, human hormone interventions and joint-outcome records support a selective, feedback-regulated biological architecture: motivation, caregiving, capacity and realized opportunities can change together or diverge predictably. The eight-axis integration is a conditional synthesis, not a diagnostic syndrome.",
+          "sourceRevision": 2
         },
         "fi": {
-          "text": "BERM kokoaa hoivan, läheisyyden, stressin, seksuaalisen motivaation, signaloinnin, sosiaalisen palautteen, hormonitilan ja vaivannäön kahdeksaksi vertailuakseliksi, joiden kautta yhteinen biologinen tila voi vaikuttaa useisiin kirjattuihin seurauksiin. Ihmisen osamekanismien näyttö perustelee yhdistämistä; kyse on mallin kartasta, ei mitatusta diagnostisesta oireyhtymästä.",
-          "sourceRevision": 1
+          "text": "BERM kokoaa hoivan, läheisyyden, stressin, seksuaalisen motivaation, signaloinnin, sosiaalisen palautteen, hormonitilan ja vaivannäön kahdeksaksi vertailuakseliksi. Eläinten suppressio-/vapautuskokeet, ihmisen hormoni-interventiot ja yhteisulostuloaineistot tukevat valikoivaa, palautteista biologista rakennetta: motivaatio, hoiva, kapasiteetti ja toteutuvat mahdollisuudet voivat muuttua yhdessä tai erkaantua ennustettavasti. Kahdeksan akselin integraatio on ehdollinen synteesi, ei diagnostinen oireyhtymä.",
+          "sourceRevision": 2
         }
       },
       "scope": {
         "supports": [
           "Explicit intermediate states between physical input, perception, valuation, individual behaviour and aggregate outcomes.",
-          "Retain together functions often studied under separate explanatory labels."
+          "Retain together functions often studied under separate explanatory labels.",
+          "Selective reproductive regulation, caregiving allocation, behavior-to-opportunity and delayed social feedback with separate study-family and dataset provenance."
         ],
         "does_not_support": [
           "Diagnosing biological suppression from childlessness, pet ownership, gender expression or political views.",
@@ -3794,6 +3800,134 @@
           "A calibrated geometry-to-tissue coupling or historical fertility attribution.",
           "An automatic positive gain for oral contraception, polyester, a body region or their combination.",
           "Counting the material-by-device interaction as a fourth independent input."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.reproduction.selective-regulation",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HORMONE_TARGET_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Reproductive activation, sexual interest and retained physiological reserve are coordinated but separable outputs of biological regulation.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Lisääntymisaktivaatio, seksuaalinen kiinnostus ja säilynyt fysiologinen reservi ovat biologisen säätelyn koordinoituja mutta erotettavia ulostuloja.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Protocol-specific component directions support the structure; they do not identify a common field dose or universal suppression score.",
+          "Conditional BERM composition of named measured components."
+        ],
+        "does_not_support": [
+          "Direct validation of Lindgren geometry or calibration of the open BERM L2 operator.",
+          "Diagnosing suppression from pet ownership, childlessness, living alone or a political view."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.reproduction.caregiving-allocation",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "CAREGIVING_ALLOCATION"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "A shared hormonal state can engage different receptor and circuit targets, preserving or increasing care while another reproductive output is restrained.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Yhteinen hormonitila voi vaikuttaa eri reseptori- ja piirikohteisiin, säilyttää tai lisätä hoivaa toisen lisääntymisulostulon vaimentuessa.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "PRL suppression and PRL-receptive care circuits are separate component experiments; pet ownership and childlessness are not suppression diagnoses.",
+          "Conditional BERM composition of named measured components."
+        ],
+        "does_not_support": [
+          "Direct validation of Lindgren geometry or calibration of the open BERM L2 operator.",
+          "Diagnosing suppression from pet ownership, childlessness, living alone or a political view."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.behaviour-to-opportunity",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "DEMAND_OPPORTUNITY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Biologically formed motivation and others’ responses help determine realized encounters and conception attempts, separately from the capacity to conceive.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Biologisesti muodostuva motivaatio ja toisten vasteet osallistuvat toteutuvien kohtaamisten ja raskausyritysten muodostumiseen erillään hedelmöittymiskapasiteetista.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Human joint-output and interaction data support the intermediate structure; the complete hormonal-to-birth route is a composition.",
+          "Conditional BERM composition of named measured components."
+        ],
+        "does_not_support": [
+          "Direct validation of Lindgren geometry or calibration of the open BERM L2 operator.",
+          "Diagnosing suppression from pet ownership, childlessness, living alone or a political view."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.reproduction.social-feedback",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "REPRODUCTIVE_OPPORTUNITY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Individual states change social cues and network opportunities; responses of other biological agents feed back into later reproductive timing.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Yksilön tila muuttaa sosiaalisia vihjeitä ja verkoston mahdollisuuksia; muiden biologisten toimijoiden vasteet palautuvat myöhempään lisääntymisajoitukseen.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Network associations provide timing constraints, not measured endocrine mediation or a calibrated civilization feedback coefficient.",
+          "Conditional BERM composition of named measured components."
+        ],
+        "does_not_support": [
+          "Direct validation of Lindgren geometry or calibration of the open BERM L2 operator.",
+          "Diagnosing suppression from pet ownership, childlessness, living alone or a political view."
         ]
       },
       "falsification_condition": null
@@ -6824,7 +6958,13 @@
         "studyIds": [],
         "datasetFamilyIds": [],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.walker-sleep-social"
+        ],
+        "datasetIds": [
+          "dataset.bensimon2018"
+        ]
       }
     },
     {
@@ -8010,10 +8150,16 @@
           "study.westbrook2020_dopamine_effort"
         ],
         "datasetFamilyIds": [
-          "dataset.radboud-da"
+          "dataset.westbrook2020_dopamine_effort"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "datasetIds": [
+          "dataset.westbrook2020_dopamine_effort"
+        ],
+        "studyFamilyIds": [
+          "family.radboud-dopamine"
+        ]
       }
     },
     {
@@ -8091,7 +8237,13 @@
           "dataset.finkelstein2013_gonadal_steroids"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.finkelstein-clamp"
+        ],
+        "datasetIds": [
+          "dataset.finkelstein2013"
+        ]
       }
     },
     {
@@ -8117,7 +8269,13 @@
           "dataset.mills2023_kisspeptin"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.kisspeptin-hsdd-men-2021"
+        ]
       }
     },
     {
@@ -8299,7 +8457,13 @@
           "dataset.weisman2012_oxytocin_dyad"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "datasetIds": [
+          "dataset.weisman2012"
+        ]
       }
     },
     {
@@ -8326,7 +8490,13 @@
           "dataset.khallaf2026_queen_odour"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.lewin-hart-molerat"
+        ],
+        "datasetIds": [
+          "dataset.khallaf2026"
+        ]
       }
     },
     {
@@ -8894,7 +9064,13 @@
           "dataset.weisman2012_oxytocin_dyad"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "datasetIds": [
+          "dataset.weisman2012"
+        ]
       }
     },
     {
@@ -8921,7 +9097,13 @@
           "dataset.mills2023_kisspeptin"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.kisspeptin-hsdd-men-2021"
+        ]
       }
     },
     {
@@ -8948,7 +9130,13 @@
           "dataset.gettler2011_fatherhood_testosterone"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "studyFamilyIds": [
+          "family.cebu"
+        ],
+        "datasetIds": [
+          "dataset.cebu-2005-2009"
+        ]
       }
     },
     {
@@ -8975,7 +9163,13 @@
           "dataset.westbrook2020_dopamine_effort"
         ],
         "premiseIds": [],
-        "status": "partial"
+        "status": "partial",
+        "datasetIds": [
+          "dataset.westbrook2020_dopamine_effort"
+        ],
+        "studyFamilyIds": [
+          "family.radboud-dopamine"
+        ]
       }
     },
     {
@@ -11355,6 +11549,1229 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.abbott1981_marmoset_ovarian",
+      "referenceId": "abbott1981_marmoset_ovarian",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "LH-RH, estrogen and TRH challenges",
+      "applicability": "Female common marmosets; ten peer groups",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A reproductive-axis brake is not equivalent to a universal elevated-stress-hormone state.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Subordinates had anovulation and reduced LH-RH responsiveness without high cortisol or hyperprolactinemia.",
+      "provenance": {
+        "studyIds": [
+          "study.abbott1981"
+        ],
+        "datasetFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "studyFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "datasetIds": [
+          "dataset.abbott1981"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.abbott1988_social_lh",
+      "referenceId": "abbott1988_social_lh",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Removal from subordination and reintroduction to subordinate groups",
+      "applicability": "Five subordinate female marmosets in the relocation sequence",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Four days describes the LH fall after renewed subordination, not a universal fertility-loss time.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Removal raised LH and estrogens before ovulation; renewed subordination lowered LH and stopped ovulation.",
+      "provenance": {
+        "studyIds": [
+          "study.abbott1988"
+        ],
+        "datasetFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "studyFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "datasetIds": [
+          "dataset.abbott1988"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.burmeister2005_social_genomic",
+      "referenceId": "burmeister2005_social_genomic",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Removal of the suppressing male before lights on",
+      "applicability": "Astatotilapia burtoni males; small genomic comparison",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The gene comparison used four ascending, three subordinate and three dominant fish; Egr-1 necessity was not tested.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Dominant behavior changed within 14 minutes and Egr-1 increased in the GnRH1-rich preoptic area.",
+      "provenance": {
+        "studyIds": [
+          "study.burmeister2005"
+        ],
+        "datasetFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "studyFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "datasetIds": [
+          "dataset.burmeister2005"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.maruska2011_pituitary_plasticity",
+      "referenceId": "maruska2011_pituitary_plasticity",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Social ascent with time-resolved endocrine measurements",
+      "applicability": "Astatotilapia burtoni social ascent",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Later 6–120-hour trajectories differ by endpoint; associated 11-ketotestosterone data reuse previously published animals.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Pituitary LHβ/FSHβ expression and circulating LH/FSH rose within 30 minutes.",
+      "provenance": {
+        "studyIds": [
+          "study.maruska2011"
+        ],
+        "datasetFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "studyFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "datasetIds": [
+          "dataset.maruska-social-ascent-shared"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.chen2011_visual_social",
+      "referenceId": "chen2011_visual_social",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Larger male visible across a watertight transparent barrier",
+      "applicability": "60 Astatotilapia burtoni males across three time points",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Visible behavior does not identify the full physiological state; testis-size differences were not significant.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Subordinate behavior persisted for seven days while several endocrine and gene differences were transient.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2011"
+        ],
+        "datasetFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "studyFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "datasetIds": [
+          "dataset.chen2011"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.kustan2011_reproductive_reserve",
+      "referenceId": "kustan2011_reproductive_reserve",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Release from social suppression and fertility testing",
+      "applicability": "Socially suppressed Astatotilapia burtoni males",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Suppressed reproductive activity did not mean loss of all gonadal reserve.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Males retained spermatogenesis and could fertilize within hours; motile-sperm proportion increased within 24 hours.",
+      "provenance": {
+        "studyIds": [
+          "study.kustan2011"
+        ],
+        "datasetFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "studyFamilyIds": [
+          "family.fernald-cichlid"
+        ],
+        "datasetIds": [
+          "dataset.kustan2011"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.peragine2017_rfrp_suppression",
+      "referenceId": "peragine2017_rfrp_suppression",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Central RFRP-3 infusion after removal from the colony",
+      "applicability": "Naked mole-rats, Heterocephalus glaber",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Testosterone differences were not significant; sufficiency of the administered peptide is not proof of endogenous necessity.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RFRP-3 blocked progesterone rise and reduced opposite-sex genital investigation while other exploration and locomotion were retained.",
+      "provenance": {
+        "studyIds": [
+          "study.peragine2017"
+        ],
+        "datasetFamilyIds": [
+          "family.holmes-molerat"
+        ],
+        "studyFamilyIds": [
+          "family.holmes-molerat"
+        ],
+        "datasetIds": [
+          "dataset.peragine2017"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.khallaf2026_queen_odour",
+      "referenceId": "khallaf2026_queen_odour",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Queen-enriched isopropyl myristate, colony bedding and withdrawal",
+      "applicability": "Naked mole-rat pairs and queenless colony",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A chemical cue experiment is not EMF dose equivalence; the colony withdrawal is not a multi-colony replication.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Odour treatment inhibited reproductive activation; pregnancies occurred only in clean controls (5/6 pairs). Withdrawal in a queenless colony permitted succession.",
+      "provenance": {
+        "studyIds": [
+          "study.khallaf2026"
+        ],
+        "datasetFamilyIds": [
+          "family.lewin-hart-molerat"
+        ],
+        "studyFamilyIds": [
+          "family.lewin-hart-molerat"
+        ],
+        "datasetIds": [
+          "dataset.khallaf2026"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.hart2024_molerat_suppression",
+      "referenceId": "hart2024_molerat_suppression",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "GnRH challenges, ovariectomy, handling and naloxone",
+      "applicability": "24 female naked mole-rats from 12 colonies",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Repeated assays share animals; some smaller-worker comparisons reuse earlier Faulkes data.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Findings did not support elevated cortisol or opioids as the primary general suppressive mechanism.",
+      "provenance": {
+        "studyIds": [
+          "study.hart2024"
+        ],
+        "datasetFamilyIds": [
+          "family.lewin-hart-molerat"
+        ],
+        "studyFamilyIds": [
+          "family.lewin-hart-molerat"
+        ],
+        "datasetIds": [
+          "dataset.hart2024"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.edwards2025_molerat_reproduction",
+      "referenceId": "edwards2025_molerat_reproduction",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Removal, pairing and longitudinal reproductive follow-up",
+      "applicability": "Naked mole-rat pairs after colony removal",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The 26-pair analysis includes the eight focal pairs plus 18 earlier Toor pairs. Nonbreeding within a year is not permanent damage.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Hormone metabolites rose after removal but early behavior did not predict breeding; 4/8 focal and 10/26 pooled pairs reproduced.",
+      "provenance": {
+        "studyIds": [
+          "study.edwards2025"
+        ],
+        "datasetFamilyIds": [
+          "family.holmes-molerat"
+        ],
+        "studyFamilyIds": [
+          "family.holmes-molerat"
+        ],
+        "datasetIds": [
+          "dataset.edwards2025-eight-pairs",
+          "dataset.toor2020-eighteen-pairs"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.sonigo2012_prolactin_kisspeptin",
+      "referenceId": "sonigo2012_prolactin_kisspeptin",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Chronic prolactin exposure and kisspeptin rescue",
+      "applicability": "Hyperprolactinemic female mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A localized endocrine rescue; not a human caregiving or environmental-field experiment.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Prolactin reduced kisspeptin expression and reproductive activity; kisspeptin restored ovarian cycling.",
+      "provenance": {
+        "studyIds": [
+          "study.sonigo2012"
+        ],
+        "datasetFamilyIds": [
+          "family.sonigo-prolactin"
+        ],
+        "studyFamilyIds": [
+          "family.sonigo-prolactin"
+        ],
+        "datasetIds": [
+          "dataset.sonigo2012"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.hoskova2022_hyperprolactin_kisspeptin",
+      "referenceId": "hoskova2022_hyperprolactin_kisspeptin",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Two 12-hour visits; repeated kisspeptin on the second visit",
+      "applicability": "11 women with hyperprolactinemia",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Use corrected version of record; the study did not demonstrate ovulation, pregnancy or caregiving change.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Kisspeptin increased LH pulse frequency while prolactin did not change significantly.",
+      "provenance": {
+        "studyIds": [
+          "study.hoskova2022"
+        ],
+        "datasetFamilyIds": [
+          "family.mgh-kisspeptin"
+        ],
+        "studyFamilyIds": [
+          "family.mgh-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.hoskova2022"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.finkelstein2013_gonadal_steroids",
+      "referenceId": "finkelstein2013_gonadal_steroids",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Gonadal suppression, randomized testosterone doses and aromatase inhibition",
+      "applicability": "400 healthy men aged 20–50 in two cohorts",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A causal hormone-to-function anchor, without calibrated environmental-field transfer.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Testosterone and estradiol contributed differently to sexual function and body-composition outcomes.",
+      "provenance": {
+        "studyIds": [
+          "study.finkelstein2013"
+        ],
+        "datasetFamilyIds": [
+          "family.finkelstein-clamp"
+        ],
+        "studyFamilyIds": [
+          "family.finkelstein-clamp"
+        ],
+        "datasetIds": [
+          "dataset.finkelstein2013"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.mills2023_kisspeptin",
+      "referenceId": "mills2023_kisspeptin",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Blinded kisspeptin versus placebo crossover",
+      "applicability": "37 randomized men with HSDD; 32 completed both visits",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Distinct neural, physiological and subjective endpoints; no measured child-desire or conception-attempt outcome.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sexual-stimulus brain processing and penile response changed during kisspeptin administration.",
+      "provenance": {
+        "studyIds": [
+          "study.mills2023"
+        ],
+        "datasetFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "studyFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.kisspeptin-hsdd-men-2021"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.selective-regulation.thurston2022_kisspeptin_women",
+      "referenceId": "thurston2022_kisspeptin_women",
+      "claimId": "claim.reproduction.selective-regulation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Kisspeptin–placebo crossover in the early follicular phase",
+      "applicability": "40 randomized women with HSDD; 32 completed both visits",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A neural response is not proof of a broad clinical desire or fertility improvement.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sexual and attraction-related neural processing changed; some responses covaried with sexual avoidance.",
+      "provenance": {
+        "studyIds": [
+          "study.thurston2022"
+        ],
+        "datasetFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "studyFamilyIds": [
+          "family.imperial-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.kisspeptin-hsdd-women-2020-2021"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.bell2014_meerkat_contraception",
+      "referenceId": "bell2014_meerkat_contraception",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Contraception versus saline in a crossover design",
+      "applicability": "Wild meerkats; 12 groups",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Group opportunities and pregnancy costs also changed; the experiment does not isolate intrinsic caregiving motivation.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Suppressing subordinate reproduction increased pup feeding and reduced dominant aggression and eviction.",
+      "provenance": {
+        "studyIds": [
+          "study.bell2014"
+        ],
+        "datasetFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "studyFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "datasetIds": [
+          "dataset.bell2014"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.watarai2018_queen_estrogen",
+      "referenceId": "watarai2018_queen_estrogen",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Pregnant queen feces or estrogen-supplemented fecal material",
+      "applicability": "Female naked mole-rat helpers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The endpoint was pup-cue responsiveness, not total caregiving or a demonstration that infertility automatically creates care.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Orally transferred estrogen increased preference for pup calls without the recipient’s own pregnancy.",
+      "provenance": {
+        "studyIds": [
+          "study.watarai2018"
+        ],
+        "datasetFamilyIds": [
+          "family.japan-molerat"
+        ],
+        "studyFamilyIds": [
+          "family.japan-molerat"
+        ],
+        "datasetIds": [
+          "dataset.watarai2018"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.sonigo2012_prolactin_kisspeptin",
+      "referenceId": "sonigo2012_prolactin_kisspeptin",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Chronic prolactin exposure and kisspeptin rescue",
+      "applicability": "Hyperprolactinemic female mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A localized endocrine rescue; not a human caregiving or environmental-field experiment.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Prolactin reduced kisspeptin expression and reproductive activity; kisspeptin restored ovarian cycling.",
+      "provenance": {
+        "studyIds": [
+          "study.sonigo2012"
+        ],
+        "datasetFamilyIds": [
+          "family.sonigo-prolactin"
+        ],
+        "studyFamilyIds": [
+          "family.sonigo-prolactin"
+        ],
+        "datasetIds": [
+          "dataset.sonigo2012"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.hoskova2022_hyperprolactin_kisspeptin",
+      "referenceId": "hoskova2022_hyperprolactin_kisspeptin",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Two 12-hour visits; repeated kisspeptin on the second visit",
+      "applicability": "11 women with hyperprolactinemia",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Use corrected version of record; the study did not demonstrate ovulation, pregnancy or caregiving change.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Kisspeptin increased LH pulse frequency while prolactin did not change significantly.",
+      "provenance": {
+        "studyIds": [
+          "study.hoskova2022"
+        ],
+        "datasetFamilyIds": [
+          "family.mgh-kisspeptin"
+        ],
+        "studyFamilyIds": [
+          "family.mgh-kisspeptin"
+        ],
+        "datasetIds": [
+          "dataset.hoskova2022"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.clarkson2026_prolactin_parental",
+      "referenceId": "clarkson2026_prolactin_parental",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Circuit activation and removal of prolactin action",
+      "applicability": "Prolactin-receptive mouse MPOA–VTA circuit",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The caregiving circuit and endocrine suppression studies are separate experiments joined by a shared hormone.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Activation increased pup contact in virgin females; removing prolactin action blocked the postpartum increase and linked the pathway to accumbens dopamine.",
+      "provenance": {
+        "studyIds": [
+          "study.clarkson2026"
+        ],
+        "datasetFamilyIds": [
+          "family.clarkson-prolactin"
+        ],
+        "studyFamilyIds": [
+          "family.clarkson-prolactin"
+        ],
+        "datasetIds": [
+          "dataset.clarkson2026"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.kohl2018_parental_circuits",
+      "referenceId": "kohl2018_parental_circuits",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Projection-specific optogenetic interventions",
+      "applicability": "Mouse MPOA galanin neurons and projections",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A structured caregiving programme is not one undifferentiated motivation variable.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Different projections controlled different components of parenting; recruited inputs depended on sex and reproductive state.",
+      "provenance": {
+        "studyIds": [
+          "study.kohl2018"
+        ],
+        "datasetFamilyIds": [
+          "family.kohl-parental"
+        ],
+        "studyFamilyIds": [
+          "family.kohl-parental"
+        ],
+        "datasetIds": [
+          "dataset.kohl2018"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.ammari2023_pregnancy_parental",
+      "referenceId": "ammari2023_pregnancy_parental",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Pregnancy-hormone and parental-circuit manipulation",
+      "applicability": "Pregnant and nonpregnant female mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Circuit history adds persistence to acute hormonal regulation; not evidence of permanent suppression.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Pregnancy hormones remodeled parental circuits and prepared caregiving before birth.",
+      "provenance": {
+        "studyIds": [
+          "study.ammari2023"
+        ],
+        "datasetFamilyIds": [
+          "family.kohl-parental"
+        ],
+        "studyFamilyIds": [
+          "family.kohl-parental"
+        ],
+        "datasetIds": [
+          "dataset.ammari2023"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.gettler2011_fatherhood_testosterone",
+      "referenceId": "gettler2011_fatherhood_testosterone",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Observed fatherhood transition, hormones and childcare",
+      "applicability": "624 Filipino men followed for 4.5 years",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Lower testosterone after successful reproduction is not synonymous with reproductive impairment.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Higher baseline testosterone preceded partnering and fatherhood; new fathers then had larger declines, associated with care.",
+      "provenance": {
+        "studyIds": [
+          "study.gettler2011"
+        ],
+        "datasetFamilyIds": [
+          "family.cebu"
+        ],
+        "studyFamilyIds": [
+          "family.cebu"
+        ],
+        "datasetIds": [
+          "dataset.cebu-2005-2009"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.weisman2012_oxytocin_dyad",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Paternal intranasal oxytocin–placebo crossover",
+      "applicability": "35 father–infant dyads; infants about five months old",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Dyadic transfer is measured; later papers reuse this cohort rather than providing independent replication.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Paternal physiology and social behavior changed alongside infant readiness for social engagement.",
+      "provenance": {
+        "studyIds": [
+          "study.weisman2012"
+        ],
+        "datasetFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "studyFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "datasetIds": [
+          "dataset.weisman2012"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.caregiving-allocation.nagasawa2015_dog_gaze",
+      "referenceId": "nagasawa2015_dog_gaze",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Mutual gaze observation and canine oxytocin–placebo intervention",
+      "applicability": "Dogs, human caregivers and hand-raised wolves",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No child-desire, human infertility or replacement-parenthood endpoint; urinary oxytocin is not a direct brain concentration.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Dog–human gaze related to urinary oxytocin; administered oxytocin increased female-dog gaze and owner response.",
+      "provenance": {
+        "studyIds": [
+          "study.nagasawa2015"
+        ],
+        "datasetFamilyIds": [
+          "family.nagasawa-dog"
+        ],
+        "studyFamilyIds": [
+          "family.nagasawa-dog"
+        ],
+        "datasetIds": [
+          "dataset.nagasawa2015"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.behaviour-to-opportunity.saltzman2004_marmoset_partner",
+      "referenceId": "saltzman2004_marmoset_partner",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Replace father with an unrelated male; remove and return father in controls",
+      "applicability": "Marmoset families: 11 replacement and seven control families",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Partner-directed behavior and ovarian readiness are linked but distinct gates.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Most daughters mated with the unfamiliar male; daughters conceived in 8/11 families, while ovulation reflected mother–daughter dominance.",
+      "provenance": {
+        "studyIds": [
+          "study.saltzman2004"
+        ],
+        "datasetFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "studyFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "datasetIds": [
+          "dataset.saltzman2004"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.behaviour-to-opportunity.gettler2013_fatherhood_sex",
+      "referenceId": "gettler2013_fatherhood_sex",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Joint longitudinal analysis of testosterone, fatherhood and sex",
+      "applicability": "433 Cebu men; 153 newly married fathers in the transition subgroup",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Shares participants with Gettler 2011; observational feedback does not identify a single upstream cause.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Among newly married fathers, a smaller testosterone decline was associated with more frequent partnered intercourse.",
+      "provenance": {
+        "studyIds": [
+          "study.gettler2013"
+        ],
+        "datasetFamilyIds": [
+          "family.cebu"
+        ],
+        "studyFamilyIds": [
+          "family.cebu"
+        ],
+        "datasetIds": [
+          "dataset.cebu-2005-2009"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.behaviour-to-opportunity.herbenick2021_sexual_repertoire",
+      "referenceId": "herbenick2021_sexual_repertoire",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Repeated cross-sections and latent classes of sexual behavior",
+      "applicability": "NSSHB ages 14–49; 4,155 in 2009 and 4,547 in 2018",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Question-specific denominators differ; adult 72.7% versus 72.5% solo activity was not a significant change.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Partnered behaviors declined; adolescent solo activity declined too, while adult solo masturbation was stable.",
+      "provenance": {
+        "studyIds": [
+          "study.herbenick2021"
+        ],
+        "datasetFamilyIds": [
+          "family.nsshb"
+        ],
+        "studyFamilyIds": [
+          "family.nsshb"
+        ],
+        "datasetIds": [
+          "dataset.nsshb-2009",
+          "dataset.nsshb-2018"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.behaviour-to-opportunity.lei_south2021_sexual_activity",
+      "referenceId": "lei_south2021_sexual_activity",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Longitudinal PSID-TAS mediation and within-person analysis",
+      "applicability": "3,213 US adults aged 18–23; fixed-effect subset 655",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Measured mediation is not demonstrated hormonal mediation or environmental-field attribution.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Relationship formation, alcohol, gaming and earnings jointly accounted statistically for about three quarters of the sexual-activity decline.",
+      "provenance": {
+        "studyIds": [
+          "study.lei_south2021"
+        ],
+        "datasetFamilyIds": [
+          "family.psid-tas"
+        ],
+        "studyFamilyIds": [
+          "family.psid-tas"
+        ],
+        "datasetIds": [
+          "dataset.psid-tas-2007-2017"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.behaviour-to-opportunity.bensimon2018_sleep_social",
+      "referenceId": "bensimon2018_sleep_social",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Sleep deprivation and social-distance judgments",
+      "applicability": "Human sleep-loss experiment and independent video observers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The interaction-opportunity bridge is measured; mate formation and reproduction are a further conditional continuation.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sleep loss increased distancing; other people perceived sleep-deprived individuals as less desirable interaction partners.",
+      "provenance": {
+        "studyIds": [
+          "study.bensimon2018"
+        ],
+        "datasetFamilyIds": [
+          "family.walker-sleep-social"
+        ],
+        "studyFamilyIds": [
+          "family.walker-sleep-social"
+        ],
+        "datasetIds": [
+          "dataset.bensimon2018"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.bell2014_meerkat_contraception",
+      "referenceId": "bell2014_meerkat_contraception",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Contraception versus saline in a crossover design",
+      "applicability": "Wild meerkats; 12 groups",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Group opportunities and pregnancy costs also changed; the experiment does not isolate intrinsic caregiving motivation.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Suppressing subordinate reproduction increased pup feeding and reduced dominant aggression and eviction.",
+      "provenance": {
+        "studyIds": [
+          "study.bell2014"
+        ],
+        "datasetFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "studyFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "datasetIds": [
+          "dataset.bell2014"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.young2006_meerkat_suppression",
+      "referenceId": "young2006_meerkat_suppression",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Natural eviction followed longitudinally; GnRH challenge",
+      "applicability": "Subordinate female meerkats",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Eviction was not randomized and cortisol mediation was not isolated by receptor blockade.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Eviction coincided with higher glucocorticoids, reduced pituitary response and poorer reproductive outcomes.",
+      "provenance": {
+        "studyIds": [
+          "study.young2006"
+        ],
+        "datasetFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "studyFamilyIds": [
+          "family.kalahari-meerkat"
+        ],
+        "datasetIds": [
+          "dataset.young2006"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.abbott1988_social_lh",
+      "referenceId": "abbott1988_social_lh",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Removal from subordination and reintroduction to subordinate groups",
+      "applicability": "Five subordinate female marmosets in the relocation sequence",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Four days describes the LH fall after renewed subordination, not a universal fertility-loss time.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Removal raised LH and estrogens before ovulation; renewed subordination lowered LH and stopped ovulation.",
+      "provenance": {
+        "studyIds": [
+          "study.abbott1988"
+        ],
+        "datasetFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "studyFamilyIds": [
+          "family.abbott-marmoset"
+        ],
+        "datasetIds": [
+          "dataset.abbott1988"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.weisman2012_oxytocin_dyad",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Paternal intranasal oxytocin–placebo crossover",
+      "applicability": "35 father–infant dyads; infants about five months old",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Dyadic transfer is measured; later papers reuse this cohort rather than providing independent replication.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Paternal physiology and social behavior changed alongside infant readiness for social engagement.",
+      "provenance": {
+        "studyIds": [
+          "study.weisman2012"
+        ],
+        "datasetFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "studyFamilyIds": [
+          "family.feldman-dyad"
+        ],
+        "datasetIds": [
+          "dataset.weisman2012"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.bensimon2018_sleep_social",
+      "referenceId": "bensimon2018_sleep_social",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Sleep deprivation and social-distance judgments",
+      "applicability": "Human sleep-loss experiment and independent video observers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The interaction-opportunity bridge is measured; mate formation and reproduction are a further conditional continuation.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Sleep loss increased distancing; other people perceived sleep-deprived individuals as less desirable interaction partners.",
+      "provenance": {
+        "studyIds": [
+          "study.bensimon2018"
+        ],
+        "datasetFamilyIds": [
+          "family.walker-sleep-social"
+        ],
+        "studyFamilyIds": [
+          "family.walker-sleep-social"
+        ],
+        "datasetIds": [
+          "dataset.bensimon2018"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.balbo2014_fertility_friends",
+      "referenceId": "balbo2014_fertility_friends",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Longitudinal observational network analysis",
+      "applicability": "Add Health friendship and parenthood records",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Selection and shared context require modelling; no hormonal mediator was measured.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A friend’s childbirth was followed by a time-limited, curved increase in parenthood-transition probability.",
+      "provenance": {
+        "studyIds": [
+          "study.balbo2014"
+        ],
+        "datasetFamilyIds": [
+          "family.add-health"
+        ],
+        "studyFamilyIds": [
+          "family.add-health"
+        ],
+        "datasetIds": [
+          "dataset.add-health-friend-fertility"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.reproduction.social-feedback.pink2014_fertility_coworkers",
+      "referenceId": "pink2014_fertility_coworkers",
+      "claimId": "claim.reproduction.social-feedback",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Linked employer–employee fertility histories",
+      "applicability": "33,119 women in 6,579 German firms",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Observational workplace propagation; not a neural or hormonal intervention.",
+        "Component evidence does not validate upstream field attribution or the complete cross-study synthesis."
+      ],
+      "curatorId": "berm-reproductive-regulation-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A coworker’s childbirth preceded an increased first-pregnancy transition that diminished over time.",
+      "provenance": {
+        "studyIds": [
+          "study.pink2014"
+        ],
+        "datasetFamilyIds": [
+          "family.german-workplace"
+        ],
+        "studyFamilyIds": [
+          "family.german-workplace"
+        ],
+        "datasetIds": [
+          "dataset.german-employer-employee-1993-2007"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -12940,7 +14357,7 @@
     {
       "id": "ea.proxy.behavioural-profile-integration.v1",
       "claimId": "claim.proxy.behavioural-profile-integration",
-      "revision": 1,
+      "revision": 2,
       "level": "L*",
       "compatibility": "incomplete",
       "origin": "emergent",
@@ -12948,11 +14365,48 @@
         "er.proxy.behavioural-profile-integration.weisman2012_oxytocin_dyad",
         "er.proxy.behavioural-profile-integration.mills2023_kisspeptin",
         "er.proxy.behavioural-profile-integration.gettler2011_fatherhood_testosterone",
-        "er.proxy.behavioural-profile-integration.westbrook2020_dopamine_effort"
+        "er.proxy.behavioural-profile-integration.westbrook2020_dopamine_effort",
+        "er.reproduction.selective-regulation.abbott1981_marmoset_ovarian",
+        "er.reproduction.selective-regulation.abbott1988_social_lh",
+        "er.reproduction.selective-regulation.burmeister2005_social_genomic",
+        "er.reproduction.selective-regulation.maruska2011_pituitary_plasticity",
+        "er.reproduction.selective-regulation.chen2011_visual_social",
+        "er.reproduction.selective-regulation.kustan2011_reproductive_reserve",
+        "er.reproduction.selective-regulation.peragine2017_rfrp_suppression",
+        "er.reproduction.selective-regulation.khallaf2026_queen_odour",
+        "er.reproduction.selective-regulation.hart2024_molerat_suppression",
+        "er.reproduction.selective-regulation.edwards2025_molerat_reproduction",
+        "er.reproduction.selective-regulation.sonigo2012_prolactin_kisspeptin",
+        "er.reproduction.selective-regulation.hoskova2022_hyperprolactin_kisspeptin",
+        "er.reproduction.selective-regulation.finkelstein2013_gonadal_steroids",
+        "er.reproduction.selective-regulation.mills2023_kisspeptin",
+        "er.reproduction.selective-regulation.thurston2022_kisspeptin_women",
+        "er.reproduction.caregiving-allocation.bell2014_meerkat_contraception",
+        "er.reproduction.caregiving-allocation.watarai2018_queen_estrogen",
+        "er.reproduction.caregiving-allocation.sonigo2012_prolactin_kisspeptin",
+        "er.reproduction.caregiving-allocation.hoskova2022_hyperprolactin_kisspeptin",
+        "er.reproduction.caregiving-allocation.clarkson2026_prolactin_parental",
+        "er.reproduction.caregiving-allocation.kohl2018_parental_circuits",
+        "er.reproduction.caregiving-allocation.ammari2023_pregnancy_parental",
+        "er.reproduction.caregiving-allocation.gettler2011_fatherhood_testosterone",
+        "er.reproduction.caregiving-allocation.weisman2012_oxytocin_dyad",
+        "er.reproduction.caregiving-allocation.nagasawa2015_dog_gaze",
+        "er.behavior.behaviour-to-opportunity.saltzman2004_marmoset_partner",
+        "er.behavior.behaviour-to-opportunity.gettler2013_fatherhood_sex",
+        "er.behavior.behaviour-to-opportunity.herbenick2021_sexual_repertoire",
+        "er.behavior.behaviour-to-opportunity.lei_south2021_sexual_activity",
+        "er.behavior.behaviour-to-opportunity.bensimon2018_sleep_social",
+        "er.reproduction.social-feedback.bell2014_meerkat_contraception",
+        "er.reproduction.social-feedback.young2006_meerkat_suppression",
+        "er.reproduction.social-feedback.abbott1988_social_lh",
+        "er.reproduction.social-feedback.weisman2012_oxytocin_dyad",
+        "er.reproduction.social-feedback.bensimon2018_sleep_social",
+        "er.reproduction.social-feedback.balbo2014_fertility_friends",
+        "er.reproduction.social-feedback.pink2014_fertility_coworkers"
       ],
       "assessorId": "berm-proxy-evidence-integration",
       "assessedAt": "2026-09-08",
-      "note": "Conditional composition with explicitly curated biological components; no calibrated L2 response or population attribution."
+      "note": "Expanded conditional synthesis using suppression/release experiments, receptor/circuit interventions, shared-person behavioral data and observational network timing. Separate families and datasets prevent counting reanalyses as independent replication; no field calibration is inferred."
     },
     {
       "id": "ea.steroidogenesis.field-protocols.v1",
@@ -13149,6 +14603,95 @@
       "assessorId": "berm-combined-exposures-integration",
       "assessedAt": "2026-09-08",
       "note": "Positive compositional inference from protocol-specific experiments and component studies. Shared cohorts and review/model sources retain their roles; input transfer, L2 coupling and human endpoint magnitude remain open."
+    },
+    {
+      "id": "ea.reproduction.selective-regulation.v1",
+      "claimId": "claim.reproduction.selective-regulation",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.reproduction.selective-regulation.abbott1981_marmoset_ovarian",
+        "er.reproduction.selective-regulation.abbott1988_social_lh",
+        "er.reproduction.selective-regulation.burmeister2005_social_genomic",
+        "er.reproduction.selective-regulation.maruska2011_pituitary_plasticity",
+        "er.reproduction.selective-regulation.chen2011_visual_social",
+        "er.reproduction.selective-regulation.kustan2011_reproductive_reserve",
+        "er.reproduction.selective-regulation.peragine2017_rfrp_suppression",
+        "er.reproduction.selective-regulation.khallaf2026_queen_odour",
+        "er.reproduction.selective-regulation.hart2024_molerat_suppression",
+        "er.reproduction.selective-regulation.edwards2025_molerat_reproduction",
+        "er.reproduction.selective-regulation.sonigo2012_prolactin_kisspeptin",
+        "er.reproduction.selective-regulation.hoskova2022_hyperprolactin_kisspeptin",
+        "er.reproduction.selective-regulation.finkelstein2013_gonadal_steroids",
+        "er.reproduction.selective-regulation.mills2023_kisspeptin",
+        "er.reproduction.selective-regulation.thurston2022_kisspeptin_women"
+      ],
+      "assessorId": "berm-reproductive-regulation-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional synthesis of separately identified component experiments and observations. Structure and protocol-specific directions are integrated; field and population calibration remain open."
+    },
+    {
+      "id": "ea.reproduction.caregiving-allocation.v1",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.reproduction.caregiving-allocation.bell2014_meerkat_contraception",
+        "er.reproduction.caregiving-allocation.watarai2018_queen_estrogen",
+        "er.reproduction.caregiving-allocation.sonigo2012_prolactin_kisspeptin",
+        "er.reproduction.caregiving-allocation.hoskova2022_hyperprolactin_kisspeptin",
+        "er.reproduction.caregiving-allocation.clarkson2026_prolactin_parental",
+        "er.reproduction.caregiving-allocation.kohl2018_parental_circuits",
+        "er.reproduction.caregiving-allocation.ammari2023_pregnancy_parental",
+        "er.reproduction.caregiving-allocation.gettler2011_fatherhood_testosterone",
+        "er.reproduction.caregiving-allocation.weisman2012_oxytocin_dyad",
+        "er.reproduction.caregiving-allocation.nagasawa2015_dog_gaze"
+      ],
+      "assessorId": "berm-reproductive-regulation-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional synthesis of separately identified component experiments and observations. Structure and protocol-specific directions are integrated; field and population calibration remain open."
+    },
+    {
+      "id": "ea.behavior.behaviour-to-opportunity.v1",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.behavior.behaviour-to-opportunity.saltzman2004_marmoset_partner",
+        "er.behavior.behaviour-to-opportunity.gettler2013_fatherhood_sex",
+        "er.behavior.behaviour-to-opportunity.herbenick2021_sexual_repertoire",
+        "er.behavior.behaviour-to-opportunity.lei_south2021_sexual_activity",
+        "er.behavior.behaviour-to-opportunity.bensimon2018_sleep_social"
+      ],
+      "assessorId": "berm-reproductive-regulation-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional synthesis of separately identified component experiments and observations. Structure and protocol-specific directions are integrated; field and population calibration remain open."
+    },
+    {
+      "id": "ea.reproduction.social-feedback.v1",
+      "claimId": "claim.reproduction.social-feedback",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.reproduction.social-feedback.bell2014_meerkat_contraception",
+        "er.reproduction.social-feedback.young2006_meerkat_suppression",
+        "er.reproduction.social-feedback.abbott1988_social_lh",
+        "er.reproduction.social-feedback.weisman2012_oxytocin_dyad",
+        "er.reproduction.social-feedback.bensimon2018_sleep_social",
+        "er.reproduction.social-feedback.balbo2014_fertility_friends",
+        "er.reproduction.social-feedback.pink2014_fertility_coworkers"
+      ],
+      "assessorId": "berm-reproductive-regulation-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional synthesis of separately identified component experiments and observations. Structure and protocol-specific directions are integrated; field and population calibration remain open."
     }
   ],
   "routes": [

@@ -7,6 +7,7 @@ import type {
 import type { ChainEdge, ChainNode, EpistemicLevel } from "@/lib/types";
 import { indexedReference } from "@/lib/referenceIndex";
 import { STEROIDOGENESIS } from "@/lib/steroidogenesis";
+import { REPRODUCTIVE_REGULATION } from "@/lib/reproductiveRegulation";
 
 const GRAPH = graphJson as CausalGraph;
 
@@ -53,6 +54,7 @@ const CALIBRATION_LABELS: Record<string, LocalizedStatus> = {
 export interface CanonicalNodeSupplement {
   description: DiagramText;
   studyIds: string[];
+  regulationStudyIds?: string[];
   claimIds: string[];
   links: { href: string; label: DiagramText }[];
 }
@@ -64,6 +66,10 @@ const steroidogenesisLink = {
 const reserveMaskingLink = {
   href: "/model/proxy-masking#redox-reserve-masking",
   label: { en: "Hidden reserve and proxy masking", fi: "Piilevä varanto ja proxy masking" },
+};
+const regulationLink = {
+  href: "/behavior/reproductive-regulation#three-branches",
+  label: { en: "Reproductive regulation: motivation, capacity and care", fi: "Lisääntymisen säätely: motivaatio, kapasiteetti ja hoiva" },
 };
 
 /** Presentation detail within canonical nodes, not additional causal edges or fitted states. */
@@ -97,12 +103,13 @@ export const CANONICAL_NODE_SUPPLEMENTS: Record<string, CanonicalNodeSupplement>
   },
   HORMONE_TARGET_RESPONSE: {
     description: {
-      en: "A hormone's effective response depends on signal timing, receptor availability and target readiness. The steroidogenesis refinement separates the hormone-producing cell's supply and reserve from downstream hormone binding and receptor use. Hormone concentration, synthesis capacity and the resulting behavioural response are therefore separate observables. Existing intervention evidence constrains individual transitions; the composed field-to-behaviour route remains BERM synthesis.",
-      fi: "Hormonin tehollinen vaste riippuu signaalin ajoituksesta, reseptorien saatavuudesta ja kohdekudoksen valmiudesta. Steroidogeneesin tarkennus erottaa hormonia tuottavan solun huollon ja varannon hormonin sitoutumisesta ja reseptorin välittämästä käytöstä. Hormonipitoisuus, synteesikyky ja toteutuva käyttäytymisvaste ovat siten eri havaintosuureita. Olemassa olevat interventiot rajaavat yksittäisiä siirtymiä; yhdistetty kentästä käyttäytymiseen ulottuva reitti on BERM:n synteesi.",
+      en: "A hormone's effective response depends on signal timing, receptor availability and target readiness. The steroidogenesis refinement separates the hormone-producing cell's supply and reserve from downstream hormone binding and receptor use. Prolactin–kisspeptin and prolactin-sensitive caregiving circuits add target-specific reproductive and parental responses to this structure. Hormone concentration, synthesis capacity and the resulting behavioural response are therefore separate observables. Existing intervention evidence constrains individual transitions; the composed field-to-behaviour route remains BERM synthesis.",
+      fi: "Hormonin tehollinen vaste riippuu signaalin ajoituksesta, reseptorien saatavuudesta ja kohdekudoksen valmiudesta. Steroidogeneesin tarkennus erottaa hormonia tuottavan solun huollon ja varannon hormonin sitoutumisesta ja reseptorin välittämästä käytöstä. Prolaktiini–kisspeptiini- ja prolaktiinille herkät hoivapiirit lisäävät rakenteeseen kohdekohtaiset lisääntymis- ja hoivavasteet. Hormonipitoisuus, synteesikyky ja toteutuva käyttäytymisvaste ovat siten eri havaintosuureita. Olemassa olevat interventiot rajaavat yksittäisiä siirtymiä; yhdistetty kentästä käyttäytymiseen ulottuva reitti on BERM:n synteesi.",
     },
     studyIds: ["chen2013", "cunningham2016"],
-    claimIds: ["claim.steroidogenesis.component-convergence", "claim.steroidogenesis.staged-integration"],
-    links: [steroidogenesisLink, { href: "/behavior", label: { en: "From biological state to behaviour", fi: "Biologisesta tilasta käyttäytymiseen" } }],
+    claimIds: ["claim.steroidogenesis.component-convergence", "claim.steroidogenesis.staged-integration", "claim.reproduction.selective-regulation", "claim.reproduction.caregiving-allocation"],
+    regulationStudyIds: ["study.sonigo2012", "study.hoskova2022", "study.clarkson2026"],
+    links: [steroidogenesisLink, regulationLink, { href: "/behavior", label: { en: "From biological state to behaviour", fi: "Biologisesta tilasta käyttäytymiseen" } }],
   },
   MALE_STEROIDOGENESIS: {
     description: {
@@ -112,6 +119,39 @@ export const CANONICAL_NODE_SUPPLEMENTS: Record<string, CanonicalNodeSupplement>
     studyIds: ["qin2018", "chen2010", "martin2008", "xiao2021", "midzak2007", "gao2018", "esmaeilian2023"],
     claimIds: ["claim.steroidogenesis.component-convergence", "claim.steroidogenesis.reserve-masking", "claim.steroidogenesis.staged-integration"],
     links: [steroidogenesisLink, reserveMaskingLink, { href: "/modulome/testes", label: { en: "Testicular system", fi: "Kiveksen järjestelmä" } }],
+  },
+  INDIVIDUAL_BEHAVIORAL_RESPONSE: {
+    description: {
+      en: "Biological state, social context and learning history jointly shape a profile of desire, approach, contact and effort. RFRP-3 manipulation supplies a selective reproductive-motivation anchor; human interventions identify specific hormone-sensitive sexual responses. Realised reproductive encounters connect these outputs to population outcomes. The reported reason remains another observable on the parallel Epistapege branch. BERM composes these measured dependencies conditionally; there is no universal suppression score or fitted hormone-to-TFR coefficient.",
+      fi: "Biologinen tila, sosiaalinen tilanne ja oppimishistoria muovaavat yhdessä halun, lähestymisen, kontaktin ja vaivannäön profiilia. RFRP-3-manipulaatio ankkuroi lisääntymismotivaation valikoivaa säätelyä; ihmisen interventiot paikantavat tiettyjä hormonille herkkiä seksuaalisia vasteita. Toteutuvat lisääntymiselle altistavat kohtaamiset yhdistävät ulostulot väestötuloksiin. Kerrottu syy säilyy erillisenä havaintona rinnakkaisessa Epistapege-haarassa. BERM yhdistää mitatut riippuvuudet ehdollisesti ilman yleistä suppressiopistettä tai sovitettua hormoni–TFR-kerrointa.",
+    },
+    studyIds: [], regulationStudyIds: ["study.peragine2017"],
+    claimIds: ["claim.reproduction.selective-regulation", "claim.behavior.behaviour-to-opportunity"],
+    links: [regulationLink, { href: "/model/proxy-masking#syndrome-fragmentation", label: { en: "The joint behavioural profile", fi: "Yhteinen käyttäytymisprofiili" } }],
+  },
+  REPRODUCTIVE_OPPORTUNITY: {
+    description: {
+      en: "Partner availability, resources, contraception and the other person's response constrain whether an approach becomes an encounter with reproductive potential. These conditions are distinct from motivation and physiological capacity. Social interaction can change opportunities at the next time step; the wider atlas shows that feedback. Published longitudinal and population studies constrain named social transitions, while the field-to-behaviour entry remains a conditional BERM synthesis.",
+      fi: "Kumppanien saatavuus, resurssit, ehkäisy ja toisen henkilön vaste rajaavat lähestymisen muuttumista lisääntymiselle altistavaksi kohtaamiseksi. Ehdot eroavat motivaatiosta ja fysiologisesta kapasiteetista. Sosiaalinen vuorovaikutus voi muuttaa mahdollisuuksia seuraavalla aika-askeleella; laaja atlas esittää tämän palautteen. Julkaistut pitkittäis- ja väestötutkimukset rajaavat nimettyjä sosiaalisia siirtymiä, kun taas kentästä käyttäytymiseen johtava alkuvaihe on BERM:n ehdollinen synteesi.",
+    },
+    studyIds: [], regulationStudyIds: ["study.lei_south2021", "study.balbo2014"],
+    claimIds: ["claim.reproduction.social-feedback"], links: [regulationLink],
+  },
+  CAREGIVING_ALLOCATION: {
+    description: {
+      en: "Care has an amount, a target and a contact history. Prolactin–kisspeptin experiments locate a reproductive-axis brake, while prolactin-sensitive MPOA–VTA circuitry supports offspring contact. Different receiving circuits allow reproductive suppression and maintained care to coexist. BERM joins these component results through the shared signal and target state, retaining life stage and time course. More care for one target does not automatically mean less care for another, and the target alone does not diagnose suppression.",
+      fi: "Hoivalla on määrä, kohde ja kontaktihistoria. Prolaktiini–kisspeptiini-kokeet paikantavat lisääntymisakselin jarrua, kun taas prolaktiinille herkkä MPOA–VTA-piiri tukee poikaskontaktia. Eri vastaanottavat piirit mahdollistavat lisääntymisen suppression ja säilyvän hoivan rinnakkaisuuden. BERM yhdistää komponenttitulokset yhteisen signaalin ja kohdetilan kautta säilyttäen elämänvaiheen ja aikakulun. Yhteen kohteeseen lisääntynyt hoiva ei automaattisesti vähennä toista, eikä kohde yksin diagnosoi suppressiota.",
+    },
+    studyIds: [], regulationStudyIds: ["study.sonigo2012", "study.clarkson2026", "study.gettler2013"],
+    claimIds: ["claim.reproduction.caregiving-allocation"], links: [regulationLink],
+  },
+  DEMAND_OPPORTUNITY: {
+    description: {
+      en: "The model retains this stable node ID for realised reproductive encounters and attempts. State-conditioned behaviour meets external opportunity and the other person's response. The event composition includes both pregnancy-intention and no-intention strata; zero intention does not imply zero births. Conception and survival to live birth are conditioned on the actual encounter and capacity rather than on a universal independent multiplier. This structural refinement adds no calibrated TFR coefficient.",
+      fi: "Malli säilyttää tämän pysyvän solmutunnisteen toteutuville lisääntymiselle altistaville kohtaamisille ja yrityksille. Tilariippuvainen käyttäytyminen kohtaa ulkoiset mahdollisuudet ja toisen vasteen. Tapahtumien koostaminen sisältää sekä raskausaikomuksen että sen puuttumisen ositteet; nolla aikomusta ei tarkoita nollaa syntymää. Hedelmöittyminen ja elävänä syntymiseen selviytyminen ehdollistetaan toteutuneelle kohtaamiselle ja kapasiteetille yleisen riippumattoman kertoimen sijaan. Rakenteellinen tarkennus ei lisää kalibroitua TFR-kerrointa.",
+    },
+    studyIds: [], regulationStudyIds: ["study.gettler2013", "study.lei_south2021"],
+    claimIds: ["claim.behavior.behaviour-to-opportunity"], links: [regulationLink],
   },
 };
 
@@ -133,7 +173,8 @@ export function getCanonicalNodeDescription(nodeId: string, locale: string): str
 }
 
 function nodeReferences(nodeId: string): ChainNode["keyReferences"] {
-  return (CANONICAL_NODE_SUPPLEMENTS[nodeId]?.studyIds ?? []).map((studyId) => {
+  const supplement = CANONICAL_NODE_SUPPLEMENTS[nodeId];
+  const steroidReferences = (supplement?.studyIds ?? []).map((studyId) => {
     const study = STEROIDOGENESIS.studies.find(item => item.id === studyId);
     if (!study) throw new Error(`Unregistered diagram study: ${studyId}`);
     const reference = indexedReference(study.referenceId);
@@ -148,6 +189,20 @@ function nodeReferences(nodeId: string): ChainNode["keyReferences"] {
       keyFinding_en: `${isField ? "Field experiment" : "Component experiment"}: ${study.finding.en} ${study.scope.en}`,
     };
   });
+  const regulationReferences = (supplement?.regulationStudyIds ?? []).map(studyId => {
+    const study = REPRODUCTIVE_REGULATION.studies.find(item => item.id === studyId);
+    if (!study) throw new Error(`Unregistered reproductive diagram study: ${studyId}`);
+    const reference = indexedReference(study.referenceId);
+    if (!reference) throw new Error(`Unregistered diagram reference: ${study.referenceId}`);
+    const observational = study.evidenceKind === "observational";
+    return {
+      referenceId: study.referenceId, authors: `${reference.authors} (${reference.year})`,
+      title: reference.title, journal: reference.journal ?? "",
+      keyFinding: `${observational ? "Havaintotutkimus" : "Komponenttikoe"}: ${study.finding.fi} ${study.scope.fi}`,
+      keyFinding_en: `${observational ? "Observational study" : "Component experiment"}: ${study.finding.en} ${study.scope.en}`,
+    };
+  });
+  return [...steroidReferences, ...regulationReferences];
 }
 
 function levelByNode(): Map<string, number> {

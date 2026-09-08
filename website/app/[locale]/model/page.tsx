@@ -1,4 +1,5 @@
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
@@ -5321,7 +5322,8 @@ export default async function ModelPage({
               <BermCausalDiagram locale={locale} />
             </div>
             <CombinedExposurePanel locale={locale} focus="model" />
-      <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
+            <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
+            <ReproductiveRegulationIntegration locale={locale} context="model" />
             <span id="ifo" />
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
               {cite(d.ifoVgicNote)}
@@ -7073,7 +7075,7 @@ export default async function ModelPage({
                         {c.values.map((v, vi) => (
                           <g key={vi}>
                             <circle cx={xVals[vi]} cy={baseY - v * scale} r="4" fill={c.color} fillOpacity="0.9">
-                              <title>{c.name} · {[2024, 2030, 2035][vi]}: {v}</title>
+                              <title>{`${c.name} · ${[2024, 2030, 2035][vi]}: ${v}`}</title>
                             </circle>
                           </g>
                         ))}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import Link from "next/link";
 import { BrainCircuit } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
@@ -458,6 +459,8 @@ export default async function CivilizationAboutPage({ params }: { params: Promis
             {d.modelLink} →
           </Link>
         </CollapsibleSection>
+
+        <ReproductiveRegulationIntegration locale={locale} context="epistapege" />
 
         <CollapsibleSection id="epistapege" title={d.blindnessTitle} subtitle={d.blindnessSub} defaultOpen>
           <div className="grid gap-4 md:grid-cols-3">

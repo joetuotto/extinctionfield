@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import Link from "next/link";
 import { ArrowRight, UserX, Shield, Brain, Heart, Users, Scale } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
@@ -507,6 +508,8 @@ export default async function PathopolitesPage({
           : {d.mechanismNote}
         </p>
       </div>
+
+      <ReproductiveRegulationIntegration locale={locale} context="pathopolites" />
 
       {/* Six Dimensions */}
       <section className="mb-16">

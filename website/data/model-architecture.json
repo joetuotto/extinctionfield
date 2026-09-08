@@ -383,5 +383,144 @@
       "fieldStateRole": "optional_physical_measurement_input_only",
       "evidenceBoundary": "Direct component findings constrain individual transitions; the complete biology-to-narrative-to-institution route is a composed BERM inference, not a Lindgren or FieldState result."
     }
+  },
+  "reproductiveRegulation": {
+    "id": "berm-reproductive-regulation-v1",
+    "modelOwner": "BERM",
+    "module": "berm.biology.reproductive_regulation",
+    "canonicalRoute": "/behavior/reproductive-regulation",
+    "role": "conditional_multiple_output_structure",
+    "calibrationStatus": "STRUCTURAL_ONLY",
+    "fieldStateRole": "optional_physical_measurement_input_only",
+    "requiresOpenL2Bridge": true,
+    "axes": [
+      {
+        "id": "caregiving",
+        "causalRole": "output"
+      },
+      {
+        "id": "proximity",
+        "causalRole": "output_and_context"
+      },
+      {
+        "id": "stress",
+        "causalRole": "biological_state_and_output"
+      },
+      {
+        "id": "sexual_motivation",
+        "causalRole": "output"
+      },
+      {
+        "id": "signalling",
+        "causalRole": "output_and_input"
+      },
+      {
+        "id": "social_feedback",
+        "causalRole": "next_time_context"
+      },
+      {
+        "id": "endocrine_state",
+        "causalRole": "biological_state"
+      },
+      {
+        "id": "effort_exploration",
+        "causalRole": "output"
+      }
+    ],
+    "context": [
+      "biological_state",
+      "social_context",
+      "learning_history",
+      "species",
+      "sex",
+      "life_stage",
+      "observation_window"
+    ],
+    "branches": {
+      "motivationAndRealization": [
+        "HORMONE_TARGET_RESPONSE",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "DEMAND_OPPORTUNITY",
+        "ASFR"
+      ],
+      "externalOpportunity": [
+        "REPRODUCTIVE_OPPORTUNITY",
+        "DEMAND_OPPORTUNITY"
+      ],
+      "capacity": [
+        "COUPLE_FECUNDABILITY",
+        "ASFR"
+      ],
+      "caregiving": [
+        "HORMONE_TARGET_RESPONSE",
+        "CAREGIVING_ALLOCATION"
+      ]
+    },
+    "componentInterfaces": [
+      {
+        "id": "prl-kisspeptin-lh",
+        "category": "imported_empirical_biology",
+        "target": "HORMONE_TARGET_RESPONSE",
+        "mechanism": "PRL-sensitive reproductive-axis response and kisspeptin/LH rescue in specified protocols",
+        "claimId": "claim.reproduction.selective-regulation"
+      },
+      {
+        "id": "prl-care-target-circuit",
+        "category": "imported_empirical_biology",
+        "target": "CAREGIVING_ALLOCATION",
+        "mechanism": "PRL-receptive MPOA–VTA–NAc care-contact circuitry; recipient and reproductive state retained",
+        "claimId": "claim.reproduction.caregiving-allocation"
+      }
+    ],
+    "jointInference": {
+      "category": "berm_proposed_conditional_mechanism",
+      "statement": "Shared state can alter reproductive-axis activity, motivation, capacity and care in different directions through distinct target circuits.",
+      "universalDirectionAssumed": false,
+      "jointHumanSyndromeValidated": false
+    },
+    "realizationPolicy": {
+      "operator": "sum_i P(I=i|S,X,L) P(E|I=i,S,X,L) P(C|E,I=i,S,X,L) P(B|C,E,I=i,S,X,L)",
+      "intentionStrata": [
+        "intention",
+        "no_intention"
+      ],
+      "unit": "probability_of_at_least_one_event_in_named_window",
+      "independenceAssumed": false,
+      "requiresMatchedContextAndWindow": true,
+      "preservesUnplannedPregnancies": true,
+      "opportunityIncludesExternalInputs": true,
+      "careAmountIsNotFertilityMultiplier": true
+    },
+    "feedback": {
+      "timeIndexed": true,
+      "canonicalDagCycleAdded": false,
+      "operators": [
+        "berm.interactions.social.advance_social_state",
+        "berm.interactions.social.advance_institution_stock",
+        "berm.civilization.epistapege.institutional_memory_update"
+      ],
+      "statement": "Care and reproductive contacts may alter later cues, partner responses and opportunities; institutions can retain their own memory. External resources remain explicit inputs.",
+      "epistapegeRemainsTerminalAt": "INSTITUTIONAL_MODEL_REUSE"
+    },
+    "claimIds": [
+      "claim.reproduction.selective-regulation",
+      "claim.reproduction.caregiving-allocation",
+      "claim.behavior.behaviour-to-opportunity",
+      "claim.reproduction.social-feedback"
+    ],
+    "openCalibration": [
+      "geometry_to_tissue_kernel",
+      "human_hormone_to_motivation_mapping",
+      "context_specific_target_direction_and_lag",
+      "matched_joint_profile_distribution",
+      "contact_feedback_strength",
+      "human_endpoint_mapping"
+    ],
+    "predictionPolicy": {
+      "newTfrCoefficient": false,
+      "modifiesArchivedForecasts": false,
+      "multipliesBehavioralFactorV21": false,
+      "localConditionalCompositionOnly": true
+    }
   }
 }

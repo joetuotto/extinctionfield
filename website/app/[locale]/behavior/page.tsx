@@ -1,3 +1,4 @@
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
@@ -46,6 +47,7 @@ const COPY = {
     equationMeaning: "This proposed BERM composition separates success probability p, experienced benefit B, effort E, harm H and external cost C. Their weights depend on biological state S; L denotes learning history. Choice probabilities depend on the resulting values V. Shared states constrain several outputs together; the expressions become quantitative only when their variables and coefficients are tied to a particular dataset.",
     reproduction: "For an intentional reproductive attempt, birth probability composes initiation, conception conditional on the attempt, and live birth conditional on conception. The chain uses conditional probabilities rather than an independence assumption. Total births also include pregnancies that begin without an intentional attempt. Pair distributions and the life-course calendar carry both branches into population outcomes.",
     links: [
+      { href: "/behavior/reproductive-regulation", title: "Reproductive regulation", description: "Motivation, physiological capacity and caregiving, joined through measured biological and social transitions." },
       { href: "/modulome/brain", title: "Brain mechanisms", description: "The receptor, electrical and chemical systems behind the behavioral continuation." },
       { href: "/model/biological-coordination", title: "State and coordination", description: "Hormone responsiveness, tissue timing and the history of the receiving system." },
       { href: "/evidence/reproductive-arc", title: "Reproductive transitions", description: "From functional gates to couples, waiting times and realised births." },
@@ -92,6 +94,7 @@ const COPY = {
     equationMeaning: "Ehdotettu BERM-yhdistelmä erottaa onnistumistodennäköisyyden p, koetun hyödyn B, vaivan E, haitan H ja ulkoisen kustannuksen C. Niiden painot riippuvat biologisesta tilasta S; L kuvaa oppimishistoriaa. Valinnan todennäköisyydet riippuvat syntyvistä arvoista V. Yhteiset tilat rajaavat useita ulostuloja yhdessä; esitys muuttuu määrälliseksi, kun muuttujat ja kertoimet sidotaan nimettyyn aineistoon.",
     reproduction: "Tarkoituksellisen lisääntymisyrityksen tapauksessa syntymän todennäköisyys yhdistää aloittamisen, hedelmöittymisen yrityksen ehdolla ja elävän syntymän hedelmöittymisen ehdolla. Ketju käyttää ehdollisia todennäköisyyksiä eikä oleta riippumattomuutta. Kaikki syntymät sisältävät lisäksi ilman tarkoituksellista yritystä alkaneet raskaudet. Parijakaumat ja elämänkulun kalenteri vievät molemmat haarat väestötuloksiin.",
     links: [
+      { href: "/behavior/reproductive-regulation", title: "Lisääntymisen säätely", description: "Motivaatio, fysiologinen kapasiteetti ja hoiva mitattujen biologisten ja sosiaalisten siirtymien kautta." },
       { href: "/modulome/brain", title: "Aivojen mekanismit", description: "Käyttäytymiseen jatkuvan ketjun vastaanottimet sekä sähköiset ja kemialliset järjestelmät." },
       { href: "/model/biological-coordination", title: "Tila ja koordinaatio", description: "Hormonien vaikuttavuus, kudosten ajoitus ja vastaanottavan järjestelmän historia." },
       { href: "/evidence/reproductive-arc", title: "Lisääntymisen siirtymät", description: "Toiminnallisista porteista pareihin, odotusaikoihin ja toteutuneisiin syntymiin." },
@@ -117,6 +120,7 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
   return <ExplanationHub locale={locale} copy={COPY} {...d} icon={Brain} stage="behavior">
     <ExplanationSection {...d.contents[0]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-valuation">{d.valuationClaim}</ClaimRef></p>{p(d.valuation)}<ResearchConnection locale={locale} studies={d.valuationStudies} implication={d.valuationImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[1]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.sexual-motivation">{d.desireClaim}</ClaimRef></p>{p(d.desire)}<ResearchConnection locale={locale} studies={d.desireStudies} implication={d.desireImplication} /></ExplanationSection>
+    <ReproductiveRegulationIntegration locale={locale} context="behavior" />
     <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
     <ExplanationSection {...d.contents[2]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-learning">{d.learningClaim}</ClaimRef></p>{p(d.learning)}<ResearchConnection locale={locale} studies={d.learningStudies} implication={d.learningImplication} /><MathBlock tex={String.raw`L_{t+1}=\mathcal U(L_t,\mathrm{feedback};S_t)`} />{p(d.learningEquation)}</ExplanationSection>
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.reported-reasons">{d.reasonsClaim}</ClaimRef></p>{p(d.reasons)}<ResearchConnection locale={locale} studies={d.reasonsStudies} implication={d.reasonsImplication} /></ExplanationSection>

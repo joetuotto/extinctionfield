@@ -1,3 +1,4 @@
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
@@ -211,6 +212,7 @@ export default async function ConvergencePage({ params }: { params: Promise<{ lo
         {[{ label: d.inputLabel, value: chain.input }, { label: d.interfaceLabel, value: chain.interface }, { label: d.outputLabel, value: chain.output }].map((item, i) => <li key={item.label} className="relative min-w-0"><p className="mb-2 flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-wider text-accent">{i > 0 && <ArrowRight size={11} aria-hidden="true" />}{item.label}</p><p className="text-sm font-medium leading-6">{item.value}</p></li>)}
       </ol>
       {p(chain.text)}<ResearchConnection locale={locale} studies={chain.studies} implication={chain.implication} />
+      {chain.id === "reproductive-motivation" && <ReproductiveRegulationIntegration locale={locale} context="convergence" />}
     </ExplanationSection>)}
     <ExplanationSection {...d.contents[8]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.biological-state-to-action">{d.parsimonyClaim}</ClaimRef></p>{p(d.parsimony)}<MathBlock tex={String.raw`\Delta\mathbf Y=J\Delta\mathbf S+\epsilon,\qquad\operatorname{rank}(J\Sigma_SJ^{\mathsf T})\leq k`} />{p(d.parsimonyMeaning)}</ExplanationSection>
     <ExplanationSection {...d.contents[9]}>{p(d.dataLead)}<div className="grid gap-4 sm:grid-cols-2">{d.datasets.map((dataset) => <a key={dataset.href} href={dataset.href} className="block rounded-lg border border-card-border p-5 transition-colors hover:border-accent/60 hover:bg-accent/5 focus-visible:outline-2 focus-visible:outline-accent"><h3 className="mb-2 text-base font-semibold">{dataset.title}</h3><p className="mb-4 text-sm leading-6 text-foreground-muted">{dataset.description}</p><p className="text-xs font-medium leading-5 text-accent">{dataset.access}</p></a>)}</div></ExplanationSection>

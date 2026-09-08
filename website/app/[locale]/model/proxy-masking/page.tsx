@@ -1,3 +1,4 @@
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { RedoxReserveMasking } from "@/components/RedoxReserveMasking";
 import type { Metadata } from "next";
@@ -422,9 +423,9 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {paragraph(d.proxies.definition)}
               <ProxyExplanationsExplorer locale={locale} />
               <CombinedExposurePanel locale={locale} focus="proxy" />
-      <RedoxReserveMasking locale={locale} />
               <ProxyMeasuredExposureEvidence locale={locale} />
               <ProxyInfrastructureEvidence locale={locale} />
+              <RedoxReserveMasking locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.proxies.sourcesTitle}</h3>{paragraph(d.proxies.sources)}</div>
               {context(d.proxies.context)}
               <a href="#demographic-explanations" className="inline-block text-sm text-accent underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{locale === "fi" ? "Miten tämä koskee väestötieteen 23 selitystä?" : "How does this apply to 23 demographic explanations?"}</a>
@@ -502,6 +503,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               <div className="flex flex-wrap gap-x-6 gap-y-4">{link("/behavior", d.reasons.link)}{link("/civilization/epistapege", d.reasons.epistapegeLink)}</div>
             </>)}
 
+            <ReproductiveRegulationIntegration locale={locale} context="proxy" />
             {section(9, <ProxySyndromeEvidence locale={locale} />)}
 
             {section(10, <ProxyDemographicEvidence locale={locale} />)}

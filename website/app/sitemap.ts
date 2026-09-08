@@ -31,6 +31,7 @@ const ROUTE_META: Record<string, RouteMeta> = {
   "/physics": { changeFrequency: "monthly", priority: 0.9 },
   "/biology": { changeFrequency: "monthly", priority: 0.9 },
   "/behavior": { changeFrequency: "monthly", priority: 0.9 },
+  "/behavior/reproductive-regulation": { changeFrequency: "monthly", priority: 0.8 },
   "/evidence/convergence": { changeFrequency: "weekly", priority: 0.9 },
   "/measurement/fieldstate": { changeFrequency: "monthly", priority: 0.8 },
   "/evidence": { changeFrequency: "weekly", priority: 0.9 },

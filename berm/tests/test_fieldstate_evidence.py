@@ -80,7 +80,14 @@ def test_asfr_keeps_biological_and_nonbiological_inputs_explicit() -> None:
         "TEMPO",
         "ART_LIVE_BIRTH_DELIVERY",
     )
-    assert get_causal_node("demand/opportunity").prediction_role == "explicit_nonbiological_input"
+    realization = get_causal_node("demand/opportunity")
+    assert realization.prediction_role == "conditional_demographic_state"
+    assert realization.parents == (
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE", "REPRODUCTIVE_OPPORTUNITY",
+    )
+    opportunity = get_causal_node("REPRODUCTIVE_OPPORTUNITY")
+    assert opportunity.parents == ()
+    assert opportunity.prediction_role == "external_context_input"
     assert get_causal_node("tempo").calibration_status == "requires_external_measurement"
 
 

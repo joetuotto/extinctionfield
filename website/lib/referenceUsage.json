@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 878,
-    "usageLocations": 2706
+    "referencesWithUsages": 903,
+    "usageLocations": 2808
   },
   "usage": {
     "delgado1969": [
@@ -2039,6 +2039,10 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
         "path": "/civilization",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -2321,6 +2325,10 @@
         "source": "app/[locale]/behavior/page.tsx"
       },
       {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
       },
@@ -2347,6 +2355,10 @@
         "source": "app/[locale]/behavior/page.tsx"
       },
       {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
       },
@@ -2361,6 +2373,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
       }
     ],
     "draper2018_inflammation_effort": [
@@ -2415,6 +2431,10 @@
       {
         "path": "/behavior",
         "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
       },
       {
         "path": "/biology",
@@ -2605,6 +2625,10 @@
         "source": "app/[locale]/behavior/page.tsx"
       },
       {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
       },
@@ -2633,6 +2657,272 @@
       {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
+      }
+    ],
+    "peragine2017_rfrp_suppression": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "app/[locale]/behavior/reproductive-regulation/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "abbott1988_social_lh": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "app/[locale]/behavior/reproductive-regulation/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "kohl2018_parental_circuits": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "app/[locale]/behavior/reproductive-regulation/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "ammari2023_pregnancy_parental": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "app/[locale]/behavior/reproductive-regulation/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "clarkson2026_prolactin_parental": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "lei_south2021_sexual_activity": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "khallaf2026_queen_odour": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "lundstrom2013_newborn_odor": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "balbo2014_fertility_friends": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "pink2014_fertility_coworkers": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "gettler2011_fatherhood_testosterone": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "gettler2013_fatherhood_sex": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      }
+    ],
+    "hoskova2022_hyperprolactin_kisspeptin": [
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ReproductiveRegulationAxes.tsx"
       }
     ],
     "santulli2015_ryr2": [
@@ -10147,24 +10437,6 @@
         "source": "data/claims.json"
       }
     ],
-    "khallaf2026_queen_odour": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/proxy-masking",
-        "source": "app/[locale]/model/proxy-masking/page.tsx"
-      }
-    ],
     "marlin2015_oxytocin_auditory": [
       {
         "path": "/evidence/pharmacology",
@@ -10383,24 +10655,6 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ProxyMechanismEvidence.tsx"
-      }
-    ],
-    "gettler2011_fatherhood_testosterone": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/proxy-masking",
-        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "sci-rep-2019-sperm-ros": [
@@ -10992,6 +11246,216 @@
       }
     ],
     "petri2017_static_review": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "abbott1981_marmoset_ovarian": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "burmeister2005_social_genomic": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "maruska2011_pituitary_plasticity": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "chen2011_visual_social": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kustan2011_reproductive_reserve": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "hart2024_molerat_suppression": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "edwards2025_molerat_reproduction": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "sonigo2012_prolactin_kisspeptin": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "thurston2022_kisspeptin_women": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bell2014_meerkat_contraception": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "watarai2018_queen_estrogen": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "nagasawa2015_dog_gaze": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "saltzman2004_marmoset_partner": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "herbenick2021_sexual_repertoire": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "young2006_meerkat_suppression": [
       {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
@@ -12343,12 +12807,6 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ProxyComparativeEvidence.tsx"
-      }
-    ],
-    "lundstrom2013_newborn_odor": [
-      {
-        "path": "/model/proxy-masking",
-        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "coan2006_handholding": [

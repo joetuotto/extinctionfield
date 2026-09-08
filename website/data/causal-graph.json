@@ -1,6 +1,6 @@
 {
   "$schema": "./causal-graph.schema.json",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "nodes": {
     "TECHNOLOGY_TIMING_PROXY": {
       "id": "TECHNOLOGY_TIMING_PROXY",
@@ -535,7 +535,9 @@
       "children": [
         "MALE_STEROIDOGENESIS",
         "OVULATION_CLOCK",
-        "IMPLANTATION"
+        "IMPLANTATION",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "CAREGIVING_ALLOCATION"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
@@ -878,10 +880,12 @@
       "parents": [
         "HPA_HPG",
         "MELATONIN_REDOX",
-        "ANDROGEN_RECEPTOR_SIGNAL"
+        "ANDROGEN_RECEPTOR_SIGNAL",
+        "HORMONE_TARGET_RESPONSE"
       ],
       "children": [
-        "BIOBEHAVIORAL_WEIGHTING"
+        "BIOBEHAVIORAL_WEIGHTING",
+        "DEMAND_OPPORTUNITY"
       ],
       "calibration_status": "requires_matched_measurement",
       "prediction_role": "intermediate",
@@ -889,6 +893,28 @@
         "individual behavioural response",
         "P(Y given z,x)",
         "state-dependent preference expression"
+      ]
+    },
+    "CAREGIVING_ALLOCATION": {
+      "id": "CAREGIVING_ALLOCATION",
+      "label": {
+        "en": "Caregiving amount, recipient allocation and contact feedback",
+        "fi": "Hoivan määrä, kohdentuminen ja kontaktipalaute",
+        "ja": "養育の量、対象への配分、接触のフィードバック",
+        "fr": "Quantité de soins, répartition entre destinataires et retour des contacts",
+        "ko": "돌봄의 양, 대상별 배분 및 접촉 피드백"
+      },
+      "layer": "civilization",
+      "parents": [
+        "HORMONE_TARGET_RESPONSE"
+      ],
+      "children": [],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "caregiving allocation",
+        "alloparental care",
+        "care recipient distribution"
       ]
     },
     "BIOBEHAVIORAL_WEIGHTING": {
@@ -984,22 +1010,50 @@
         "institutional model selection"
       ]
     },
-    "DEMAND_OPPORTUNITY": {
-      "id": "DEMAND_OPPORTUNITY",
+    "REPRODUCTIVE_OPPORTUNITY": {
+      "id": "REPRODUCTIVE_OPPORTUNITY",
       "label": {
-        "en": "Family-formation demand and opportunity state",
-        "fi": "Perheenmuodostuksen kysynnän ja mahdollisuuden tila"
+        "en": "External and interaction-conditioned reproductive opportunities",
+        "fi": "Ulkoiset ja vuorovaikutuksessa muodostuvat lisääntymismahdollisuudet",
+        "ja": "外的条件と相互作用に依存する生殖機会",
+        "fr": "Possibilités reproductives externes et conditionnées par les interactions",
+        "ko": "외부 조건과 상호작용에 따른 생식 기회"
       },
       "layer": "demography",
       "parents": [],
       "children": [
-        "ASFR"
+        "DEMAND_OPPORTUNITY"
       ],
       "calibration_status": "requires_external_measurement",
       "prediction_role": "input",
       "legacy_aliases": [
+        "external reproductive opportunity",
+        "partner response and access"
+      ]
+    },
+    "DEMAND_OPPORTUNITY": {
+      "id": "DEMAND_OPPORTUNITY",
+      "label": {
+        "en": "Reproductively exposed encounters and attempts",
+        "fi": "Lisääntymiselle altistavat kohtaamiset ja yritykset",
+        "ja": "生殖につながり得る接触と試み",
+        "fr": "Rencontres exposant à la reproduction et tentatives",
+        "ko": "생식으로 이어질 수 있는 만남과 시도"
+      },
+      "layer": "demography",
+      "parents": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "REPRODUCTIVE_OPPORTUNITY"
+      ],
+      "children": [
+        "ASFR"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
         "demand/opportunity",
-        "partnering and opportunity"
+        "partnering and opportunity",
+        "reproductive realization"
       ]
     },
     "TEMPO": {
@@ -1482,6 +1536,18 @@
       "kind": "causal_model"
     },
     {
+      "id": "e98",
+      "from": "HORMONE_TARGET_RESPONSE",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e99",
+      "from": "HORMONE_TARGET_RESPONSE",
+      "to": "CAREGIVING_ALLOCATION",
+      "kind": "causal_model"
+    },
+    {
       "id": "e68",
       "from": "MALE_STEROIDOGENESIS",
       "to": "MALE_SPERM",
@@ -1620,6 +1686,12 @@
       "kind": "causal_model"
     },
     {
+      "id": "e100",
+      "from": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "to": "DEMAND_OPPORTUNITY",
+      "kind": "causal_model"
+    },
+    {
       "id": "e91",
       "from": "BIOBEHAVIORAL_WEIGHTING",
       "to": "NARRATIVE_ATTRIBUTION",
@@ -1635,6 +1707,12 @@
       "id": "e93",
       "from": "EPISTAPEGE_OBSERVABILITY_LOSS",
       "to": "INSTITUTIONAL_MODEL_REUSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e101",
+      "from": "REPRODUCTIVE_OPPORTUNITY",
+      "to": "DEMAND_OPPORTUNITY",
       "kind": "causal_model"
     },
     {
@@ -1760,6 +1838,7 @@
     "demographic-inputs": {
       "id": "demographic-inputs",
       "contains": [
+        "REPRODUCTIVE_OPPORTUNITY",
         "DEMAND_OPPORTUNITY",
         "TEMPO",
         "ART_LIVE_BIRTH_DELIVERY"
@@ -1793,6 +1872,7 @@
       "id": "civilization",
       "contains": [
         "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "CAREGIVING_ALLOCATION",
         "BIOBEHAVIORAL_WEIGHTING",
         "NARRATIVE_ATTRIBUTION",
         "EPISTAPEGE_OBSERVABILITY_LOSS",

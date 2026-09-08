@@ -1,0 +1,3325 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "modelOwner": "BERM",
+  "updatedAt": "2026-09-08",
+  "stagePolicy": {
+    "phase": "structure_and_direction",
+    "summary": {
+      "en": "Integrate existing interventions and observations to identify shared states, selective response directions and feedback structure.",
+      "fi": "Yhdistä olemassa olevat interventiot ja havainnot yhteisten tilojen, valikoivien vastesuuntien ja palauterakenteen tunnistamiseksi."
+    },
+    "calibration": {
+      "en": "Human field dose, coupling signs and population coefficients remain open; numerical calibration follows structural integration.",
+      "fi": "Ihmisen kenttäannos, kytkennän etumerkit ja väestökertoimet ovat avoimia; määrällinen kalibrointi seuraa rakenneintegraatiota."
+    },
+    "fieldAttribution": "conditional_unresolved",
+    "newExperimentsRequired": false,
+    "quantitativeCalibration": "open"
+  },
+  "families": [
+    {
+      "id": "family.kalahari-meerkat",
+      "label": {
+        "en": "Kalahari meerkat studies",
+        "fi": "Kalaharin surikaattitutkimukset"
+      },
+      "description": {
+        "en": "Shared research system; contraception and eviction studies are different designs.",
+        "fi": "Yhteinen tutkimusjärjestelmä; kontraseptio ja karkotusseuranta ovat eri asetelmia."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.abbott-marmoset",
+      "label": {
+        "en": "Marmoset neuroendocrinology",
+        "fi": "Marmosettien neuroendokrinologia"
+      },
+      "description": {
+        "en": "Related research programme; repeated challenges and animals must not be counted as independent replications.",
+        "fi": "Saman tutkimuslinjan kokeet; toistetut haasteet ja eläimet eivät ole riippumattomia replikaatioita."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.fernald-cichlid",
+      "label": {
+        "en": "Cichlid social plasticity",
+        "fi": "Kirjoahventen sosiaalinen muovautuminen"
+      },
+      "description": {
+        "en": "Shared species and research programme; some hormonal assays reuse the same social-ascent animals.",
+        "fi": "Yhteinen laji ja tutkimusohjelma; osa hormonituloksista on samoista sosiaalisen nousun eläimistä."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.holmes-molerat",
+      "label": {
+        "en": "Mole-rat peptide and release studies",
+        "fi": "Paljaskoirarotan peptidi- ja vapautumistutkimukset"
+      },
+      "description": {
+        "en": "Distinct protocols within a related programme; the Edwards pooled cohort contains earlier Toor pairs.",
+        "fi": "Saman tutkimuslinjan eri protokollia; Edwardsin kooste sisältää aiemmat Toorin parit."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.japan-molerat",
+      "label": {
+        "en": "Mole-rat caregiving cues",
+        "fi": "Paljaskoirarotan hoivavihjeet"
+      },
+      "description": {
+        "en": "Estrogen transfer and pup-call responsiveness; separate from the RFRP programme.",
+        "fi": "Estrogeenin siirtyminen ja pentuäänivaste; eri linja kuin RFRP-tutkimus."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.lewin-hart-molerat",
+      "label": {
+        "en": "Mole-rat odour and endocrine studies",
+        "fi": "Paljaskoirarotan haju- ja hormonitutkimukset"
+      },
+      "description": {
+        "en": "Partly overlapping investigators; colony, individual and repeated-measure denominators differ.",
+        "fi": "Osin yhteiset tutkijat; kolonia-, yksilö- ja toistomittausnimittäjät eroavat."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.sonigo-prolactin",
+      "label": {
+        "en": "Prolactin–kisspeptin mouse studies",
+        "fi": "Hiiren prolaktiini–kisspeptiinitutkimukset"
+      },
+      "description": {
+        "en": "Suppression and rescue in a mouse endocrine model.",
+        "fi": "Suppressio ja palautus hiiren endokriinisessa mallissa."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.mgh-kisspeptin",
+      "label": {
+        "en": "Human hyperprolactinemia studies",
+        "fi": "Ihmisen hyperprolaktinemiakokeet"
+      },
+      "description": {
+        "en": "Within-person hormone pulse experiments; corrected publication is used.",
+        "fi": "Yksilön sisäiset hormonipulssikokeet; käytössä korjattu julkaisu."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.clarkson-prolactin",
+      "label": {
+        "en": "Prolactin-receptive caregiving circuits",
+        "fi": "Prolaktiinille vastaanottavat hoivapiirit"
+      },
+      "description": {
+        "en": "Receptor-specific mouse circuit interventions.",
+        "fi": "Reseptorispesifit hiiren hermopiiri-interventiot."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.kohl-parental",
+      "label": {
+        "en": "Parental circuit architecture",
+        "fi": "Hoivapiirien rakenne"
+      },
+      "description": {
+        "en": "Related circuit research lineage; projection and pregnancy-remodelling experiments are distinct.",
+        "fi": "Yhteinen hermopiirien tutkimuslinja; projektio- ja raskausmuovautumiskokeet ovat erillisiä."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.cebu",
+      "label": {
+        "en": "Cebu fatherhood cohort",
+        "fi": "Cebun isyyskohortti"
+      },
+      "description": {
+        "en": "The 2011 and 2013 reports share longitudinal participants and hormone measurements.",
+        "fi": "Vuosien 2011 ja 2013 julkaisut jakavat seurannan osallistujia ja hormonimittauksia."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.nsshb",
+      "label": {
+        "en": "National Survey of Sexual Health and Behavior",
+        "fi": "Seksuaaliterveyden ja -käyttäytymisen NSSHB"
+      },
+      "description": {
+        "en": "Repeated national cross-sections; behaviour-specific denominators and latent classes.",
+        "fi": "Toistuvat kansalliset poikkileikkaukset; käyttäytymiskohtaiset nimittäjät ja latenttiluokat."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.psid-tas",
+      "label": {
+        "en": "PSID transition to adulthood",
+        "fi": "PSID:n siirtymä aikuisuuteen"
+      },
+      "description": {
+        "en": "Repeated young-adult records; multiple publications may reuse the same cohort.",
+        "fi": "Nuorten aikuisten toistomittaukset; eri julkaisut voivat käyttää samaa kohorttia."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.add-health",
+      "label": {
+        "en": "Add Health friendship networks",
+        "fi": "Add Health -ystäväverkostot"
+      },
+      "description": {
+        "en": "Longitudinal friendships and parenthood transitions.",
+        "fi": "Ystävyyksien ja vanhemmuussiirtymien pitkittäisaineisto."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.german-workplace",
+      "label": {
+        "en": "German workplace fertility records",
+        "fi": "Saksan työpaikkojen lisääntymisrekisterit"
+      },
+      "description": {
+        "en": "Linked employer–employee observational data.",
+        "fi": "Yhdistetyt työnantaja–työntekijähavainnot."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.finkelstein-clamp",
+      "label": {
+        "en": "Gonadal steroid suppression and replacement",
+        "fi": "Sukupuolisteroidien vaimennus ja korvaus"
+      },
+      "description": {
+        "en": "Two controlled cohorts separate testosterone and estradiol contributions.",
+        "fi": "Kaksi kontrolloitua kohorttia erottaa testosteronin ja estradiolin osuuksia."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.imperial-kisspeptin",
+      "label": {
+        "en": "Kisspeptin and sexual processing",
+        "fi": "Kisspeptiini ja seksuaalinen prosessointi"
+      },
+      "description": {
+        "en": "Shared study programme with separate male and female participants.",
+        "fi": "Yhteinen tutkimusohjelma, erilliset mies- ja naisotannat."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.feldman-dyad",
+      "label": {
+        "en": "Father–infant hormonal interaction",
+        "fi": "Isän ja lapsen hormonaalinen vuorovaikutus"
+      },
+      "description": {
+        "en": "The 2012 dyad experiment underlies several subsequent analyses.",
+        "fi": "Vuoden 2012 parikoe toimii useiden myöhempien analyysien aineistona."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.walker-sleep-social",
+      "label": {
+        "en": "Sleep and social interaction",
+        "fi": "Uni ja sosiaalinen vuorovaikutus"
+      },
+      "description": {
+        "en": "Shared research programme with different experiments and outcomes.",
+        "fi": "Yhteinen tutkimusohjelma, erilaiset kokeet ja ulostulot."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.nagasawa-dog",
+      "label": {
+        "en": "Human–dog affiliative feedback",
+        "fi": "Ihmisen ja koiran kiintymyspalaute"
+      },
+      "description": {
+        "en": "Dog gaze and peripheral oxytocin; no human reproduction endpoint.",
+        "fi": "Koiran katse ja perifeerinen oksitosiini; ei ihmisen lisääntymispäätepistettä."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.nhanes",
+      "label": {
+        "en": "NHANES examination surveys",
+        "fi": "NHANES-terveystutkimukset"
+      },
+      "description": {
+        "en": "Cross-sectional examination and questionnaire linkage.",
+        "fi": "Poikkileikkaava kliinisen tutkimuksen ja kyselyjen yhdistäminen."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.nsfg",
+      "label": {
+        "en": "National Survey of Family Growth",
+        "fi": "NSFG-perheellistymiskysely"
+      },
+      "description": {
+        "en": "Repeated cross-sections, not repeated waves of the same people.",
+        "fi": "Toistuvat poikkileikkaukset, eivät samojen ihmisten seurantakierrokset."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.nshap",
+      "label": {
+        "en": "NSHAP aging and social life",
+        "fi": "NSHAP-ikääntymis- ja sosiaalisen elämän seuranta"
+      },
+      "description": {
+        "en": "Repeated social, sexual and biomarker measurements in older adults.",
+        "fi": "Iäkkäiden sosiaalisten, seksuaalisten ja biomarkkeriulostulojen seuranta."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.gss",
+      "label": {
+        "en": "General Social Survey",
+        "fi": "Yleinen sosiaalitutkimus GSS"
+      },
+      "description": {
+        "en": "National cross-sections and separately identified panels.",
+        "fi": "Kansalliset poikkileikkaukset ja erikseen määritellyt paneelit."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.mtf",
+      "label": {
+        "en": "Monitoring the Future",
+        "fi": "Nuorten Monitoring the Future -seuranta"
+      },
+      "description": {
+        "en": "Questionnaire forms and panel membership determine joint variable availability.",
+        "fi": "Lomake ja paneeliin kuuluminen määräävät yhteiset muuttujat."
+      },
+      "independenceVerified": false
+    },
+    {
+      "id": "family.pew-atp",
+      "label": {
+        "en": "Pew American Trends Panel",
+        "fi": "Pew American Trends -paneeli"
+      },
+      "description": {
+        "en": "Survey selections and questionnaire eligibility define denominators.",
+        "fi": "Vastaajien valinta ja kysymysten kelpoisuusehdot määrittävät nimittäjät."
+      },
+      "independenceVerified": false
+    }
+  ],
+  "variableLabels": {
+    "lh": {
+      "en": "LH and its pulse pattern",
+      "fi": "LH ja sen pulssirakenne"
+    },
+    "fsh": {
+      "en": "FSH",
+      "fi": "FSH"
+    },
+    "gnrh_response": {
+      "en": "Response to a GnRH challenge",
+      "fi": "GnRH-haasteen vaste"
+    },
+    "kisspeptin": {
+      "en": "Kisspeptin activity or expression",
+      "fi": "Kisspeptiinin toiminta tai ilmentyminen"
+    },
+    "prolactin": {
+      "en": "Prolactin",
+      "fi": "Prolaktiini"
+    },
+    "progesterone": {
+      "en": "Progesterone",
+      "fi": "Progesteroni"
+    },
+    "estradiol": {
+      "en": "Estradiol",
+      "fi": "Estradioli"
+    },
+    "testosterone": {
+      "en": "Testosterone",
+      "fi": "Testosteroni"
+    },
+    "shbg": {
+      "en": "Sex hormone-binding globulin",
+      "fi": "Sukupuolihormoneja sitova globuliini"
+    },
+    "cortisol": {
+      "en": "Cortisol or glucocorticoid metabolites",
+      "fi": "Kortisoli tai glukokortikoidimetaboliitit"
+    },
+    "oxytocin": {
+      "en": "Peripheral oxytocin",
+      "fi": "Perifeerinen oksitosiini"
+    },
+    "neural_response": {
+      "en": "Circuit activity or neural response",
+      "fi": "Hermopiirin toiminta tai aivovaste"
+    },
+    "gene_expression": {
+      "en": "Gene expression",
+      "fi": "Geenien ilmentyminen"
+    },
+    "sexual_interest": {
+      "en": "Sexually directed interest",
+      "fi": "Seksuaalisesti kohdentunut kiinnostus"
+    },
+    "sexual_activity": {
+      "en": "Reported sexual activity",
+      "fi": "Ilmoitettu seksuaalinen toiminta"
+    },
+    "solo_activity": {
+      "en": "Solo sexual activity",
+      "fi": "Yksin toteutuva seksuaalinen toiminta"
+    },
+    "partner_activity": {
+      "en": "Partnered sexual activity",
+      "fi": "Kumppanin kanssa toteutuva seksuaalinen toiminta"
+    },
+    "parental_care": {
+      "en": "Observed caregiving",
+      "fi": "Havaittu hoiva"
+    },
+    "pup_cue_response": {
+      "en": "Response to offspring cues",
+      "fi": "Vaste jälkeläisen vihjeisiin"
+    },
+    "social_contact": {
+      "en": "Social contact and approach",
+      "fi": "Sosiaalinen kontakti ja lähestyminen"
+    },
+    "partner_formation": {
+      "en": "Partner or relationship formation",
+      "fi": "Kumppanin tai parisuhteen muodostuminen"
+    },
+    "opportunity": {
+      "en": "Availability of reproductive interactions",
+      "fi": "Lisääntymiseen liittyvien kohtaamisten mahdollisuus"
+    },
+    "ovulation": {
+      "en": "Ovulation or ovarian cycle",
+      "fi": "Ovulaatio tai munasarjasykli"
+    },
+    "pregnancy": {
+      "en": "Pregnancy",
+      "fi": "Raskaus"
+    },
+    "fertilization": {
+      "en": "Fertilization competence",
+      "fi": "Hedelmöityskyky"
+    },
+    "sperm": {
+      "en": "Sperm production and motility",
+      "fi": "Siittiötuotanto ja liikkuvuus"
+    },
+    "dominance": {
+      "en": "Social status, eviction or aggression",
+      "fi": "Sosiaalinen asema, karkotus tai aggressio"
+    },
+    "locomotion": {
+      "en": "Locomotion and nonsexual exploration",
+      "fi": "Liikkuminen ja muu tutkimiskäyttäytyminen"
+    },
+    "social_network": {
+      "en": "Friendship or coworker network",
+      "fi": "Ystävä- tai työtoveriverkosto"
+    },
+    "parenthood": {
+      "en": "Parenthood transition",
+      "fi": "Siirtymä vanhemmuuteen"
+    },
+    "child_desire": {
+      "en": "Desire for children",
+      "fi": "Lapsitoive"
+    },
+    "child_intention": {
+      "en": "Intention or expectation of children",
+      "fi": "Lapsia koskeva aikomus tai odotus"
+    },
+    "norm_pressure": {
+      "en": "Reported normative pressure",
+      "fi": "Ilmoitettu normipaine"
+    },
+    "living_arrangement": {
+      "en": "Living arrangement",
+      "fi": "Asumisjärjestely"
+    },
+    "alcohol": {
+      "en": "Alcohol consumption",
+      "fi": "Alkoholin käyttö"
+    },
+    "gaming": {
+      "en": "Computer gaming",
+      "fi": "Tietokonepelaaminen"
+    },
+    "income": {
+      "en": "Employment and earnings",
+      "fi": "Työ ja ansiot"
+    },
+    "sleep": {
+      "en": "Sleep",
+      "fi": "Uni"
+    },
+    "social_distance": {
+      "en": "Social distance and others’ response",
+      "fi": "Sosiaalinen etäisyys ja toisten vaste"
+    },
+    "dopamine": {
+      "en": "Dopamine-related response",
+      "fi": "Dopamiiniin liittyvä vaste"
+    },
+    "body_composition": {
+      "en": "Body composition and strength",
+      "fi": "Kehon koostumus ja voima"
+    },
+    "behavior_profile": {
+      "en": "Joint behavioral profile",
+      "fi": "Käyttäytymisen yhteisprofiili"
+    },
+    "fertility_timing": {
+      "en": "Timing of fertility transitions",
+      "fi": "Lisääntymissiirtymien ajoitus"
+    },
+    "infant_response": {
+      "en": "Infant physiological and behavioral response",
+      "fi": "Lapsen fysiologinen ja käyttäytymisvaste"
+    },
+    "rfrp": {
+      "en": "RFRP-3 inhibitory signaling",
+      "fi": "RFRP-3:n estävä signalointi"
+    },
+    "eleven_ketotestosterone": {
+      "en": "11-ketotestosterone",
+      "fi": "11-ketotestosteroni"
+    },
+    "erectile_response": {
+      "en": "Erectile response or function",
+      "fi": "Erektiovaste tai -toiminta"
+    },
+    "reproductive_success": {
+      "en": "Observed reproductive success",
+      "fi": "Havaittu lisääntymisonnistuminen"
+    }
+  },
+  "studies": [
+    {
+      "id": "study.bell2014",
+      "referenceId": "bell2014_meerkat_contraception",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.kalahari-meerkat",
+      "datasetIds": [
+        "dataset.bell2014"
+      ],
+      "branches": [
+        "capacity",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Wild meerkats; 12 groups",
+        "fi": "Luonnonvaraiset surikaatit; 12 ryhmää"
+      },
+      "intervention": {
+        "en": "Contraception versus saline in a crossover design",
+        "fi": "Kontraseptio tai suolaliuos vaihtovuorokokeessa"
+      },
+      "finding": {
+        "en": "Suppressing subordinate reproduction increased pup feeding and reduced dominant aggression and eviction.",
+        "fi": "Avustajien lisääntymisen estäminen lisäsi penturuokintaa ja vähensi dominoivan aggressiota ja karkotuksia."
+      },
+      "scope": {
+        "en": "Group opportunities and pregnancy costs also changed; the experiment does not isolate intrinsic caregiving motivation.",
+        "fi": "Myös ryhmässä pysymisen mahdollisuudet ja raskauskustannukset muuttuivat; sisäistä hoivamotivaatiota ei eristetty."
+      },
+      "timeCourse": {
+        "en": "Two nine-month periods, 2009–2011; 59 dominant reproductive attempts",
+        "fi": "Kaksi yhdeksän kuukauden jaksoa 2009–2011; 59 dominoivan lisääntymisyritystä"
+      },
+      "measuredVariables": [
+        "pregnancy",
+        "dominance"
+      ],
+      "outcomes": [
+        "parental_care",
+        "opportunity"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.young2006",
+      "referenceId": "young2006_meerkat_suppression",
+      "evidenceKind": "observational",
+      "familyId": "family.kalahari-meerkat",
+      "datasetIds": [
+        "dataset.young2006"
+      ],
+      "branches": [
+        "capacity",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Subordinate female meerkats",
+        "fi": "Alisteiset naarassurikaatit"
+      },
+      "intervention": {
+        "en": "Natural eviction followed longitudinally; GnRH challenge",
+        "fi": "Luonnollisen karkotuksen seuranta ja GnRH-haaste"
+      },
+      "finding": {
+        "en": "Eviction coincided with higher glucocorticoids, reduced pituitary response and poorer reproductive outcomes.",
+        "fi": "Karkotukseen liittyi enemmän glukokortikoideja, heikompi aivolisäkevaste ja heikommat lisääntymistulokset."
+      },
+      "scope": {
+        "en": "Eviction was not randomized and cortisol mediation was not isolated by receptor blockade.",
+        "fi": "Karkotusta ei satunnaistettu eikä kortisolivälitystä eristetty reseptoriestolla."
+      },
+      "timeCourse": {
+        "en": "Eviction and return around dominant pregnancy",
+        "fi": "Karkotus ja paluu dominoivan raskauden ympärillä"
+      },
+      "measuredVariables": [
+        "cortisol",
+        "gnrh_response",
+        "dominance"
+      ],
+      "outcomes": [
+        "pregnancy",
+        "lh"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.abbott1981",
+      "referenceId": "abbott1981_marmoset_ovarian",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.abbott-marmoset",
+      "datasetIds": [
+        "dataset.abbott1981"
+      ],
+      "branches": [
+        "capacity"
+      ],
+      "system": {
+        "en": "Female common marmosets; ten peer groups",
+        "fi": "Naarasmarmosetit; kymmenen vertaisryhmää"
+      },
+      "intervention": {
+        "en": "LH-RH, estrogen and TRH challenges",
+        "fi": "LH-RH-, estrogeeni- ja TRH-haasteet"
+      },
+      "finding": {
+        "en": "Subordinates had anovulation and reduced LH-RH responsiveness without high cortisol or hyperprolactinemia.",
+        "fi": "Alisteiset olivat anovulatorisia ja niiden LH-RH-vaste oli heikompi ilman korkeaa kortisolia tai hyperprolaktinemiaa."
+      },
+      "scope": {
+        "en": "A reproductive-axis brake is not equivalent to a universal elevated-stress-hormone state.",
+        "fi": "Lisääntymisakselin jarru ei ole sama kuin yleinen kohonneen stressihormonin tila."
+      },
+      "timeCourse": {
+        "en": "Established social groups and acute hormone challenges",
+        "fi": "Vakiintuneet ryhmät ja akuutit hormonihaasteet"
+      },
+      "measuredVariables": [
+        "gnrh_response",
+        "cortisol",
+        "prolactin"
+      ],
+      "outcomes": [
+        "lh",
+        "ovulation"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.abbott1988",
+      "referenceId": "abbott1988_social_lh",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.abbott-marmoset",
+      "datasetIds": [
+        "dataset.abbott1988"
+      ],
+      "branches": [
+        "capacity",
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "Five subordinate female marmosets in the relocation sequence",
+        "fi": "Viisi alisteista naarasmarmosettia siirtoketjussa"
+      },
+      "intervention": {
+        "en": "Removal from subordination and reintroduction to subordinate groups",
+        "fi": "Irrotus alisteisuudesta ja palautus alisteiseen ryhmäasemaan"
+      },
+      "finding": {
+        "en": "Removal raised LH and estrogens before ovulation; renewed subordination lowered LH and stopped ovulation.",
+        "fi": "Irrotus nosti LH:ta ja estrogeeneja ennen ovulaatiota; uusi alisteisuus laski LH:ta ja ovulaatiot loppuivat."
+      },
+      "scope": {
+        "en": "Four days describes the LH fall after renewed subordination, not a universal fertility-loss time.",
+        "fi": "Neljä päivää koskee LH:n laskua uudessa alisteisuudessa, ei yleistä hedelmällisyyden katoamisaikaa."
+      },
+      "timeCourse": {
+        "en": "LH returned to low levels within four days of renewed subordination",
+        "fi": "LH palautui matalaksi neljässä päivässä uudessa alisteisuudessa"
+      },
+      "measuredVariables": [
+        "dominance",
+        "lh",
+        "estradiol"
+      ],
+      "outcomes": [
+        "ovulation",
+        "gnrh_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.saltzman2004",
+      "referenceId": "saltzman2004_marmoset_partner",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.abbott-marmoset",
+      "datasetIds": [
+        "dataset.saltzman2004"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "capacity"
+      ],
+      "system": {
+        "en": "Marmoset families: 11 replacement and seven control families",
+        "fi": "Marmosettiperheet: 11 vaihtoperhettä ja seitsemän kontrollia"
+      },
+      "intervention": {
+        "en": "Replace father with an unrelated male; remove and return father in controls",
+        "fi": "Isä vaihdettiin vieraaseen urokseen; kontrollissa isä poistettiin ja palautettiin"
+      },
+      "finding": {
+        "en": "Most daughters mated with the unfamiliar male; daughters conceived in 8/11 families, while ovulation reflected mother–daughter dominance.",
+        "fi": "Useimmat tyttäret parittelivat vieraan uroksen kanssa; 8/11 perheessä tytär raskautui, mutta ovulaatio liittyi emon ja tyttären dominanssiin."
+      },
+      "scope": {
+        "en": "Partner-directed behavior and ovarian readiness are linked but distinct gates.",
+        "fi": "Kumppanikäyttäytyminen ja munasarjojen valmius ovat yhteydessä mutta erillisiä portteja."
+      },
+      "timeCourse": {
+        "en": "Family reorganization and subsequent reproduction",
+        "fi": "Perheen uudelleenjärjestely ja sitä seuraava lisääntyminen"
+      },
+      "measuredVariables": [
+        "dominance",
+        "partner_activity",
+        "ovulation"
+      ],
+      "outcomes": [
+        "pregnancy",
+        "opportunity"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.burmeister2005",
+      "referenceId": "burmeister2005_social_genomic",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.fernald-cichlid",
+      "datasetIds": [
+        "dataset.burmeister2005"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "capacity"
+      ],
+      "system": {
+        "en": "Astatotilapia burtoni males; small genomic comparison",
+        "fi": "Astatotilapia burtoni -koiraat; pieni geenivastevertailu"
+      },
+      "intervention": {
+        "en": "Removal of the suppressing male before lights on",
+        "fi": "Alistavan koiraan poistaminen ennen valojen syttymistä"
+      },
+      "finding": {
+        "en": "Dominant behavior changed within 14 minutes and Egr-1 increased in the GnRH1-rich preoptic area.",
+        "fi": "Dominantti käyttäytyminen muuttui 14 minuutissa ja Egr-1 lisääntyi GnRH1-rikkaalla preoptisella alueella."
+      },
+      "scope": {
+        "en": "The gene comparison used four ascending, three subordinate and three dominant fish; Egr-1 necessity was not tested.",
+        "fi": "Geenivertailussa neljä nousevaa, kolme alisteista ja kolme dominoivaa kalaa; Egr-1:n välttämättömyyttä ei testattu."
+      },
+      "timeCourse": {
+        "en": "Minutes after social opportunity",
+        "fi": "Minuutteja sosiaalisen mahdollisuuden avauduttua"
+      },
+      "measuredVariables": [
+        "gene_expression",
+        "dominance"
+      ],
+      "outcomes": [
+        "sexual_interest",
+        "neural_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.maruska2011",
+      "referenceId": "maruska2011_pituitary_plasticity",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.fernald-cichlid",
+      "datasetIds": [
+        "dataset.maruska-social-ascent-shared"
+      ],
+      "branches": [
+        "capacity"
+      ],
+      "system": {
+        "en": "Astatotilapia burtoni social ascent",
+        "fi": "Astatotilapia burtoni -lajin sosiaalinen nousu"
+      },
+      "intervention": {
+        "en": "Social ascent with time-resolved endocrine measurements",
+        "fi": "Sosiaalinen nousu ja ajallisesti erotellut hormonimittaukset"
+      },
+      "finding": {
+        "en": "Pituitary LHβ/FSHβ expression and circulating LH/FSH rose within 30 minutes.",
+        "fi": "Aivolisäkkeen LHβ/FSHβ-ilmentyminen ja veren LH/FSH nousivat 30 minuutissa."
+      },
+      "scope": {
+        "en": "Later 6–120-hour trajectories differ by endpoint; associated 11-ketotestosterone data reuse previously published animals.",
+        "fi": "Myöhemmät 6–120 tunnin profiilit eroavat päätepisteittäin; 11-ketotestosteronitulokset käyttävät aiemmin julkaistuja eläimiä."
+      },
+      "timeCourse": {
+        "en": "30 minutes to 120 hours",
+        "fi": "30 minuutista 120 tuntiin"
+      },
+      "measuredVariables": [
+        "gene_expression",
+        "lh",
+        "fsh"
+      ],
+      "outcomes": [
+        "lh",
+        "fsh"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.chen2011",
+      "referenceId": "chen2011_visual_social",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.fernald-cichlid",
+      "datasetIds": [
+        "dataset.chen2011"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "capacity"
+      ],
+      "system": {
+        "en": "60 Astatotilapia burtoni males across three time points",
+        "fi": "60 Astatotilapia burtoni -koirasta kolmessa aikapisteessä"
+      },
+      "intervention": {
+        "en": "Larger male visible across a watertight transparent barrier",
+        "fi": "Suurempi koiras vesitiiviin läpinäkyvän esteen takana"
+      },
+      "finding": {
+        "en": "Subordinate behavior persisted for seven days while several endocrine and gene differences were transient.",
+        "fi": "Alisteinen käyttäytyminen säilyi seitsemän päivää, vaikka useat hormoni- ja geenierot olivat ohimeneviä."
+      },
+      "scope": {
+        "en": "Visible behavior does not identify the full physiological state; testis-size differences were not significant.",
+        "fi": "Näkyvä käyttäytyminen ei yksilöi koko fysiologista tilaa; kivesten kokoero ei ollut merkitsevä."
+      },
+      "timeCourse": {
+        "en": "One hour to seven days",
+        "fi": "Yhdestä tunnista seitsemään päivään"
+      },
+      "measuredVariables": [
+        "dominance",
+        "gene_expression",
+        "eleven_ketotestosterone"
+      ],
+      "outcomes": [
+        "behavior_profile"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.kustan2011",
+      "referenceId": "kustan2011_reproductive_reserve",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.fernald-cichlid",
+      "datasetIds": [
+        "dataset.kustan2011"
+      ],
+      "branches": [
+        "capacity",
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "Socially suppressed Astatotilapia burtoni males",
+        "fi": "Sosiaalisesti alistetut Astatotilapia burtoni -koiraat"
+      },
+      "intervention": {
+        "en": "Release from social suppression and fertility testing",
+        "fi": "Vapautus sosiaalisesta suppressiosta ja hedelmöityskyvyn mittaus"
+      },
+      "finding": {
+        "en": "Males retained spermatogenesis and could fertilize within hours; motile-sperm proportion increased within 24 hours.",
+        "fi": "Spermatogeneesi säilyi ja koiraat hedelmöittivät tuntien kuluessa; liikkuvien siittiöiden osuus kasvoi 24 tunnissa."
+      },
+      "scope": {
+        "en": "Suppressed reproductive activity did not mean loss of all gonadal reserve.",
+        "fi": "Vaimennettu lisääntymistoiminta ei tarkoittanut koko sukurauhasreservin menetystä."
+      },
+      "timeCourse": {
+        "en": "Four to five weeks of suppression; hours to one day after release",
+        "fi": "Neljän–viiden viikon suppressio; tunneista vuorokauteen vapautuksen jälkeen"
+      },
+      "measuredVariables": [
+        "sperm",
+        "dominance"
+      ],
+      "outcomes": [
+        "fertilization"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.peragine2017",
+      "referenceId": "peragine2017_rfrp_suppression",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.holmes-molerat",
+      "datasetIds": [
+        "dataset.peragine2017"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "capacity"
+      ],
+      "system": {
+        "en": "Naked mole-rats, Heterocephalus glaber",
+        "fi": "Paljaskoirarotta, Heterocephalus glaber"
+      },
+      "intervention": {
+        "en": "Central RFRP-3 infusion after removal from the colony",
+        "fi": "Keskushermoston RFRP-3-infuusio koloniasta irrotuksen jälkeen"
+      },
+      "finding": {
+        "en": "RFRP-3 blocked progesterone rise and reduced opposite-sex genital investigation while other exploration and locomotion were retained.",
+        "fi": "RFRP-3 esti progesteronin nousun ja vähensi vastakkaissukupuolen genitaalialueen tutkimista muun tutkimisen ja liikkumisen säilyessä."
+      },
+      "scope": {
+        "en": "Testosterone differences were not significant; sufficiency of the administered peptide is not proof of endogenous necessity.",
+        "fi": "Testosteronierot eivät olleet merkitseviä; annetun peptidin riittävyys ei osoita endogeenista välttämättömyyttä."
+      },
+      "timeCourse": {
+        "en": "Four weeks; hormone subset smaller than behavior sample",
+        "fi": "Neljä viikkoa; hormoniosajoukko käyttäytymisotosta pienempi"
+      },
+      "measuredVariables": [
+        "rfrp",
+        "progesterone",
+        "testosterone",
+        "locomotion"
+      ],
+      "outcomes": [
+        "sexual_interest",
+        "progesterone"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.watarai2018",
+      "referenceId": "watarai2018_queen_estrogen",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.japan-molerat",
+      "datasetIds": [
+        "dataset.watarai2018"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Female naked mole-rat helpers",
+        "fi": "Paljaskoirarotan naarasavustajat"
+      },
+      "intervention": {
+        "en": "Pregnant queen feces or estrogen-supplemented fecal material",
+        "fi": "Raskaana olevan kuningattaren uloste tai estrogeenilla täydennetty ulostemateriaali"
+      },
+      "finding": {
+        "en": "Orally transferred estrogen increased preference for pup calls without the recipient’s own pregnancy.",
+        "fi": "Suun kautta siirtynyt estrogeeni lisäsi pentuäänien suosimista ilman vastaanottajan omaa raskautta."
+      },
+      "scope": {
+        "en": "The endpoint was pup-cue responsiveness, not total caregiving or a demonstration that infertility automatically creates care.",
+        "fi": "Päätepiste oli pentuvihjevaste, ei kokonainen hoiva tai osoitus lapsettomuuden automaattisesta muuttumisesta hoivaksi."
+      },
+      "timeCourse": {
+        "en": "Queen reproductive state and experimentally changed helper exposure",
+        "fi": "Kuningattaren lisääntymisvaihe ja avustajan kokeellisesti muutettu altistus"
+      },
+      "measuredVariables": [
+        "estradiol"
+      ],
+      "outcomes": [
+        "pup_cue_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.khallaf2026",
+      "referenceId": "khallaf2026_queen_odour",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.lewin-hart-molerat",
+      "datasetIds": [
+        "dataset.khallaf2026"
+      ],
+      "branches": [
+        "capacity",
+        "motivation_realisation",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Naked mole-rat pairs and queenless colony",
+        "fi": "Paljaskoirarottaparit ja kuningattareton kolonia"
+      },
+      "intervention": {
+        "en": "Queen-enriched isopropyl myristate, colony bedding and withdrawal",
+        "fi": "Kuningattareen rikastunut isopropyylimyristaatti, kolonian kuivikkeet ja poistaminen"
+      },
+      "finding": {
+        "en": "Odour treatment inhibited reproductive activation; pregnancies occurred only in clean controls (5/6 pairs). Withdrawal in a queenless colony permitted succession.",
+        "fi": "Hajukäsittely esti lisääntymisaktivaatiota; raskauksia oli vain puhtaissa kontrolleissa (5/6 paria). Poistaminen kuningattarettomasta koloniasta salli vallanperimyksen."
+      },
+      "scope": {
+        "en": "A chemical cue experiment is not EMF dose equivalence; the colony withdrawal is not a multi-colony replication.",
+        "fi": "Kemiallisen vihjeen koe ei ole EMF-annosvastaavuus; kolonialta poistaminen ei ole usean kolonian replikaatio."
+      },
+      "timeCourse": {
+        "en": "18-week pair experiment; separate colony maintenance and withdrawal",
+        "fi": "18 viikon parikoe; erillinen kolonian ylläpito ja vieroitus"
+      },
+      "measuredVariables": [
+        "prolactin",
+        "progesterone",
+        "testosterone",
+        "dominance"
+      ],
+      "outcomes": [
+        "pregnancy",
+        "behavior_profile"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.hart2024",
+      "referenceId": "hart2024_molerat_suppression",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.lewin-hart-molerat",
+      "datasetIds": [
+        "dataset.hart2024"
+      ],
+      "branches": [
+        "capacity"
+      ],
+      "system": {
+        "en": "24 female naked mole-rats from 12 colonies",
+        "fi": "24 naaraspaljaskoirarottaa 12 koloniasta"
+      },
+      "intervention": {
+        "en": "GnRH challenges, ovariectomy, handling and naloxone",
+        "fi": "GnRH-haasteet, munasarjojen poisto, käsittely ja naloksoni"
+      },
+      "finding": {
+        "en": "Findings did not support elevated cortisol or opioids as the primary general suppressive mechanism.",
+        "fi": "Tulokset eivät tukeneet kohonnutta kortisolia tai opioideja ensisijaisena yleisenä suppressiomekanismina."
+      },
+      "scope": {
+        "en": "Repeated assays share animals; some smaller-worker comparisons reuse earlier Faulkes data.",
+        "fi": "Toistomittaukset käyttävät samoja eläimiä; osa pienempien työntekijöiden vertailuista käyttää aiempaa Faulkes-aineistoa."
+      },
+      "timeCourse": {
+        "en": "Acute and repeated endocrine challenges",
+        "fi": "Akuutit ja toistetut hormonihaasteet"
+      },
+      "measuredVariables": [
+        "cortisol",
+        "gnrh_response"
+      ],
+      "outcomes": [
+        "lh"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.edwards2025",
+      "referenceId": "edwards2025_molerat_reproduction",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.holmes-molerat",
+      "datasetIds": [
+        "dataset.edwards2025-eight-pairs",
+        "dataset.toor2020-eighteen-pairs"
+      ],
+      "branches": [
+        "capacity",
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "Naked mole-rat pairs after colony removal",
+        "fi": "Paljaskoirarottaparit koloniasta irrotuksen jälkeen"
+      },
+      "intervention": {
+        "en": "Removal, pairing and longitudinal reproductive follow-up",
+        "fi": "Irrotus, paritus ja lisääntymisen seuranta"
+      },
+      "finding": {
+        "en": "Hormone metabolites rose after removal but early behavior did not predict breeding; 4/8 focal and 10/26 pooled pairs reproduced.",
+        "fi": "Hormonimetaboliitit nousivat irrotuksen jälkeen, mutta varhainen käyttäytyminen ei ennustanut lisääntymistä; 4/8 alkuperäisparia ja 10/26 koottua paria lisääntyi."
+      },
+      "scope": {
+        "en": "The 26-pair analysis includes the eight focal pairs plus 18 earlier Toor pairs. Nonbreeding within a year is not permanent damage.",
+        "fi": "26 parin analyysi sisältää kahdeksan alkuperäisparia ja 18 aiempaa Toorin paria. Vuoden lisääntymättömyys ei osoita pysyvää vauriota."
+      },
+      "timeCourse": {
+        "en": "Early endocrine measurements and one-year reproductive follow-up",
+        "fi": "Varhaiset hormonimittaukset ja vuoden lisääntymisseuranta"
+      },
+      "measuredVariables": [
+        "estradiol",
+        "progesterone",
+        "cortisol",
+        "behavior_profile"
+      ],
+      "outcomes": [
+        "reproductive_success"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.sonigo2012",
+      "referenceId": "sonigo2012_prolactin_kisspeptin",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.sonigo-prolactin",
+      "datasetIds": [
+        "dataset.sonigo2012"
+      ],
+      "branches": [
+        "capacity"
+      ],
+      "system": {
+        "en": "Hyperprolactinemic female mice",
+        "fi": "Hyperprolaktineemiset naarashiiret"
+      },
+      "intervention": {
+        "en": "Chronic prolactin exposure and kisspeptin rescue",
+        "fi": "Pitkäkestoinen prolaktiinialtistus ja palautus kisspeptiinillä"
+      },
+      "finding": {
+        "en": "Prolactin reduced kisspeptin expression and reproductive activity; kisspeptin restored ovarian cycling.",
+        "fi": "Prolaktiini vähensi kisspeptiinin ilmentymistä ja lisääntymisakselin toimintaa; kisspeptiini palautti munasarjasyklin."
+      },
+      "scope": {
+        "en": "A localized endocrine rescue; not a human caregiving or environmental-field experiment.",
+        "fi": "Paikannettu endokriininen palautus; ei ihmisen hoiva- tai ympäristökenttäkoe."
+      },
+      "timeCourse": {
+        "en": "Chronic suppression followed by downstream stimulation",
+        "fi": "Pitkäkestoinen suppressio ja myöhemmän portin aktivointi"
+      },
+      "measuredVariables": [
+        "prolactin",
+        "kisspeptin",
+        "lh"
+      ],
+      "outcomes": [
+        "ovulation"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.hoskova2022",
+      "referenceId": "hoskova2022_hyperprolactin_kisspeptin",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.mgh-kisspeptin",
+      "datasetIds": [
+        "dataset.hoskova2022"
+      ],
+      "branches": [
+        "capacity"
+      ],
+      "system": {
+        "en": "11 women with hyperprolactinemia",
+        "fi": "11 hyperprolaktineemista naista"
+      },
+      "intervention": {
+        "en": "Two 12-hour visits; repeated kisspeptin on the second visit",
+        "fi": "Kaksi 12 tunnin käyntiä; toisella toistuva kisspeptiinin anto"
+      },
+      "finding": {
+        "en": "Kisspeptin increased LH pulse frequency while prolactin did not change significantly.",
+        "fi": "Kisspeptiini lisäsi LH-pulssien taajuutta ilman merkitsevää prolaktiinin muutosta."
+      },
+      "scope": {
+        "en": "Use corrected version of record; the study did not demonstrate ovulation, pregnancy or caregiving change.",
+        "fi": "Käytetään korjattua julkaisuversiota; koe ei osoittanut ovulaatiota, raskautta tai hoivamuutosta."
+      },
+      "timeCourse": {
+        "en": "Blood every ten minutes; ten hourly kisspeptin boluses",
+        "fi": "Verinäyte kymmenen minuutin välein; kymmenen tunnittaista kisspeptiiniannosta"
+      },
+      "measuredVariables": [
+        "prolactin",
+        "lh",
+        "estradiol"
+      ],
+      "outcomes": [
+        "lh"
+      ],
+      "correctionReferenceIds": [
+        "hoskova2022_correction"
+      ]
+    },
+    {
+      "id": "study.clarkson2026",
+      "referenceId": "clarkson2026_prolactin_parental",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.clarkson-prolactin",
+      "datasetIds": [
+        "dataset.clarkson2026"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Prolactin-receptive mouse MPOA–VTA circuit",
+        "fi": "Hiiren prolaktiinille vastaanottava MPOA–VTA-piiri"
+      },
+      "intervention": {
+        "en": "Circuit activation and removal of prolactin action",
+        "fi": "Piirin aktivointi ja prolaktiinivaikutuksen poistaminen"
+      },
+      "finding": {
+        "en": "Activation increased pup contact in virgin females; removing prolactin action blocked the postpartum increase and linked the pathway to accumbens dopamine.",
+        "fi": "Aktivointi lisäsi poikaskontaktia synnyttämättömillä naarailla; prolaktiinivaikutuksen poisto esti synnytyksen jälkeisen lisäyksen ja liitti reitin accumbensin dopamiiniin."
+      },
+      "scope": {
+        "en": "The caregiving circuit and endocrine suppression studies are separate experiments joined by a shared hormone.",
+        "fi": "Hoivapiiri- ja endokriiniset suppressiokokeet ovat erillisiä kokeita, joita yhdistää yhteinen hormoni."
+      },
+      "timeCourse": {
+        "en": "Virgin and postpartum states; published July 2026",
+        "fi": "Synnyttämätön ja synnytyksen jälkeinen tila; julkaistu heinäkuussa 2026"
+      },
+      "measuredVariables": [
+        "prolactin",
+        "neural_response",
+        "dopamine"
+      ],
+      "outcomes": [
+        "parental_care",
+        "pup_cue_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.kohl2018",
+      "referenceId": "kohl2018_parental_circuits",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.kohl-parental",
+      "datasetIds": [
+        "dataset.kohl2018"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Mouse MPOA galanin neurons and projections",
+        "fi": "Hiiren MPOA:n galaniinineuronit ja projektiot"
+      },
+      "intervention": {
+        "en": "Projection-specific optogenetic interventions",
+        "fi": "Projektiokohtaiset optogeneettiset interventiot"
+      },
+      "finding": {
+        "en": "Different projections controlled different components of parenting; recruited inputs depended on sex and reproductive state.",
+        "fi": "Eri projektiot ohjasivat hoivan eri osia; aktivoituvat syötteet riippuivat sukupuolesta ja lisääntymistilasta."
+      },
+      "scope": {
+        "en": "A structured caregiving programme is not one undifferentiated motivation variable.",
+        "fi": "Rakenteinen hoivaohjelma ei ole yksi erottelematon motivaatiomuuttuja."
+      },
+      "timeCourse": {
+        "en": "Acute circuit manipulation across biological states",
+        "fi": "Akuutti piirimanipulaatio eri biologisissa tiloissa"
+      },
+      "measuredVariables": [
+        "neural_response"
+      ],
+      "outcomes": [
+        "parental_care",
+        "pup_cue_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.ammari2023",
+      "referenceId": "ammari2023_pregnancy_parental",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.kohl-parental",
+      "datasetIds": [
+        "dataset.ammari2023"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Pregnant and nonpregnant female mice",
+        "fi": "Raskaana olevat ja ei-raskaana olevat naarashiiret"
+      },
+      "intervention": {
+        "en": "Pregnancy-hormone and parental-circuit manipulation",
+        "fi": "Raskaushormoni- ja hoivapiirimanipulaatio"
+      },
+      "finding": {
+        "en": "Pregnancy hormones remodeled parental circuits and prepared caregiving before birth.",
+        "fi": "Raskaushormonit muovasivat hoivapiirejä ja valmistivat hoivaa ennen syntymää."
+      },
+      "scope": {
+        "en": "Circuit history adds persistence to acute hormonal regulation; not evidence of permanent suppression.",
+        "fi": "Piirin historia lisää jatkuvuutta akuutin hormonisäätelyn rinnalle; ei näyttöä pysyvästä suppressiosta."
+      },
+      "timeCourse": {
+        "en": "Across pregnancy and parental transition",
+        "fi": "Raskauden ja vanhemmuussiirtymän aikana"
+      },
+      "measuredVariables": [
+        "estradiol",
+        "progesterone",
+        "neural_response"
+      ],
+      "outcomes": [
+        "parental_care"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.finkelstein2013",
+      "referenceId": "finkelstein2013_gonadal_steroids",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.finkelstein-clamp",
+      "datasetIds": [
+        "dataset.finkelstein2013"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "capacity"
+      ],
+      "system": {
+        "en": "400 healthy men aged 20–50 in two cohorts",
+        "fi": "400 tervettä 20–50-vuotiasta miestä kahdessa kohortissa"
+      },
+      "intervention": {
+        "en": "Gonadal suppression, randomized testosterone doses and aromatase inhibition",
+        "fi": "Gonadien vaimennus, satunnaistetut testosteroniannokset ja aromataasin esto"
+      },
+      "finding": {
+        "en": "Testosterone and estradiol contributed differently to sexual function and body-composition outcomes.",
+        "fi": "Testosteroni ja estradioli osallistuivat eri tavoin seksuaalisiin ja kehon koostumuksen ulostuloihin."
+      },
+      "scope": {
+        "en": "A causal hormone-to-function anchor, without calibrated environmental-field transfer.",
+        "fi": "Kausaalinen hormoni–toiminta-ankkuri ilman kalibroitua ympäristökentän siirtoa."
+      },
+      "timeCourse": {
+        "en": "16 weeks",
+        "fi": "16 viikkoa"
+      },
+      "measuredVariables": [
+        "testosterone",
+        "estradiol",
+        "body_composition"
+      ],
+      "outcomes": [
+        "sexual_interest",
+        "erectile_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.mills2023",
+      "referenceId": "mills2023_kisspeptin",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.imperial-kisspeptin",
+      "datasetIds": [
+        "dataset.kisspeptin-hsdd-men-2021"
+      ],
+      "branches": [
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "37 randomized men with HSDD; 32 completed both visits",
+        "fi": "37 satunnaistettua HSDD-miestä; 32 suoritti molemmat käynnit"
+      },
+      "intervention": {
+        "en": "Blinded kisspeptin versus placebo crossover",
+        "fi": "Sokkoutettu kisspeptiinin ja lumeen vaihtovuorokoe"
+      },
+      "finding": {
+        "en": "Sexual-stimulus brain processing and penile response changed during kisspeptin administration.",
+        "fi": "Seksuaalisten ärsykkeiden aivoprosessointi ja peniksen vaste muuttuivat kisspeptiinin annon aikana."
+      },
+      "scope": {
+        "en": "Distinct neural, physiological and subjective endpoints; no measured child-desire or conception-attempt outcome.",
+        "fi": "Erilliset neuraaliset, fysiologiset ja subjektiiviset päätepisteet; lapsitoivetta tai raskausyritystä ei mitattu."
+      },
+      "timeCourse": {
+        "en": "75-minute infusions in 2021",
+        "fi": "75 minuutin infuusiot vuonna 2021"
+      },
+      "measuredVariables": [
+        "neural_response"
+      ],
+      "outcomes": [
+        "sexual_interest",
+        "erectile_response"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.thurston2022",
+      "referenceId": "thurston2022_kisspeptin_women",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.imperial-kisspeptin",
+      "datasetIds": [
+        "dataset.kisspeptin-hsdd-women-2020-2021"
+      ],
+      "branches": [
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "40 randomized women with HSDD; 32 completed both visits",
+        "fi": "40 satunnaistettua HSDD-naista; 32 suoritti molemmat käynnit"
+      },
+      "intervention": {
+        "en": "Kisspeptin–placebo crossover in the early follicular phase",
+        "fi": "Kisspeptiini–lume-vaihtovuorokoe varhaisessa follikkelivaiheessa"
+      },
+      "finding": {
+        "en": "Sexual and attraction-related neural processing changed; some responses covaried with sexual avoidance.",
+        "fi": "Seksuaalinen ja vetovoimaan liittyvä neuraalinen prosessointi muuttui; osa vasteista yhteisvaihteli seksuaalisen välttämisen kanssa."
+      },
+      "scope": {
+        "en": "A neural response is not proof of a broad clinical desire or fertility improvement.",
+        "fi": "Aivovaste ei osoita laajaa kliinistä halun tai hedelmällisyyden paranemista."
+      },
+      "timeCourse": {
+        "en": "75 minutes; visits in cycle days 1–7, 2020–2021",
+        "fi": "75 minuuttia; käynnit kiertopäivinä 1–7 vuosina 2020–2021"
+      },
+      "measuredVariables": [
+        "neural_response"
+      ],
+      "outcomes": [
+        "sexual_interest"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.gettler2011",
+      "referenceId": "gettler2011_fatherhood_testosterone",
+      "evidenceKind": "observational",
+      "familyId": "family.cebu",
+      "datasetIds": [
+        "dataset.cebu-2005-2009"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "624 Filipino men followed for 4.5 years",
+        "fi": "624 filippiiniläismiestä 4,5 vuoden seurannassa"
+      },
+      "intervention": {
+        "en": "Observed fatherhood transition, hormones and childcare",
+        "fi": "Havaittu isyyssiirtymä, hormonit ja lastenhoito"
+      },
+      "finding": {
+        "en": "Higher baseline testosterone preceded partnering and fatherhood; new fathers then had larger declines, associated with care.",
+        "fi": "Korkeampi lähtötestosteroni edelsi parisuhdetta ja isyyttä; uusien isien suurempi lasku liittyi hoivaan."
+      },
+      "scope": {
+        "en": "Lower testosterone after successful reproduction is not synonymous with reproductive impairment.",
+        "fi": "Matalampi testosteroni onnistuneen lisääntymisen jälkeen ei ole sama kuin lisääntymishäiriö."
+      },
+      "timeCourse": {
+        "en": "2005–2009; morning and evening samples",
+        "fi": "2005–2009; aamu- ja iltanäytteet"
+      },
+      "measuredVariables": [
+        "testosterone",
+        "parenthood",
+        "parental_care"
+      ],
+      "outcomes": [
+        "parenthood",
+        "parental_care"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.gettler2013",
+      "referenceId": "gettler2013_fatherhood_sex",
+      "evidenceKind": "observational",
+      "familyId": "family.cebu",
+      "datasetIds": [
+        "dataset.cebu-2005-2009"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "433 Cebu men; 153 newly married fathers in the transition subgroup",
+        "fi": "433 Cebun miestä; siirtymäosaryhmässä 153 uutta naimisissa olevaa isää"
+      },
+      "intervention": {
+        "en": "Joint longitudinal analysis of testosterone, fatherhood and sex",
+        "fi": "Testosteronin, isyyden ja seksin yhteinen pitkittäisanalyysi"
+      },
+      "finding": {
+        "en": "Among newly married fathers, a smaller testosterone decline was associated with more frequent partnered intercourse.",
+        "fi": "Uusilla naimisissa olevilla isillä pienempi testosteronin lasku liittyi tiheämpään parisuhdeyhdyntään."
+      },
+      "scope": {
+        "en": "Shares participants with Gettler 2011; observational feedback does not identify a single upstream cause.",
+        "fi": "Osallistujia yhteisesti Gettler 2011:n kanssa; havaittu palaute ei yksilöi yhtä edeltävää syytä."
+      },
+      "timeCourse": {
+        "en": "4.5 years, 2005–2009",
+        "fi": "4,5 vuotta, 2005–2009"
+      },
+      "measuredVariables": [
+        "testosterone",
+        "parenthood"
+      ],
+      "outcomes": [
+        "partner_activity"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.weisman2012",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.feldman-dyad",
+      "datasetIds": [
+        "dataset.weisman2012"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "35 father–infant dyads; infants about five months old",
+        "fi": "35 isä–lapsiparia; lapset noin viiden kuukauden ikäisiä"
+      },
+      "intervention": {
+        "en": "Paternal intranasal oxytocin–placebo crossover",
+        "fi": "Isän intranasaalinen oksitosiini–lume-vaihtovuorokoe"
+      },
+      "finding": {
+        "en": "Paternal physiology and social behavior changed alongside infant readiness for social engagement.",
+        "fi": "Isän fysiologia ja sosiaalinen toiminta muuttuivat yhdessä lapsen vuorovaikutusvalmiuden kanssa."
+      },
+      "scope": {
+        "en": "Dyadic transfer is measured; later papers reuse this cohort rather than providing independent replication.",
+        "fi": "Parin sisäinen välittyminen mitattiin; myöhemmät julkaisut käyttävät tätä kohorttia riippumattoman replikaation sijasta."
+      },
+      "timeCourse": {
+        "en": "Within-person crossover and father–infant interaction",
+        "fi": "Yksilön sisäinen vaihtovuorokoe ja isä–lapsivuorovaikutus"
+      },
+      "measuredVariables": [
+        "oxytocin",
+        "parental_care"
+      ],
+      "outcomes": [
+        "infant_response",
+        "social_contact"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.herbenick2021",
+      "referenceId": "herbenick2021_sexual_repertoire",
+      "evidenceKind": "observational",
+      "familyId": "family.nsshb",
+      "datasetIds": [
+        "dataset.nsshb-2009",
+        "dataset.nsshb-2018"
+      ],
+      "branches": [
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "NSSHB ages 14–49; 4,155 in 2009 and 4,547 in 2018",
+        "fi": "NSSHB 14–49-vuotiaat; 4 155 vuonna 2009 ja 4 547 vuonna 2018"
+      },
+      "intervention": {
+        "en": "Repeated cross-sections and latent classes of sexual behavior",
+        "fi": "Seksuaalisen käyttäytymisen toistuvat poikkileikkaukset ja latenttiluokat"
+      },
+      "finding": {
+        "en": "Partnered behaviors declined; adolescent solo activity declined too, while adult solo masturbation was stable.",
+        "fi": "Kumppaniseksin muodot vähenivät; nuorilla myös yksintoiminta väheni, mutta aikuisten yksinmasturbaatio säilyi."
+      },
+      "scope": {
+        "en": "Question-specific denominators differ; adult 72.7% versus 72.5% solo activity was not a significant change.",
+        "fi": "Nimittäjät vaihtelevat kysymyksittäin; aikuisten yksintoiminnan 72,7 % ja 72,5 % eivät eronneet merkitsevästi."
+      },
+      "timeCourse": {
+        "en": "2009 and 2018; past-year behavior",
+        "fi": "2009 ja 2018; edellisen vuoden käyttäytyminen"
+      },
+      "measuredVariables": [
+        "solo_activity",
+        "partner_activity"
+      ],
+      "outcomes": [
+        "behavior_profile"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.lei_south2021",
+      "referenceId": "lei_south2021_sexual_activity",
+      "evidenceKind": "observational",
+      "familyId": "family.psid-tas",
+      "datasetIds": [
+        "dataset.psid-tas-2007-2017"
+      ],
+      "branches": [
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "3,213 US adults aged 18–23; fixed-effect subset 655",
+        "fi": "3 213 yhdysvaltalaista 18–23-vuotiasta; kiinteän vaikutuksen osajoukko 655"
+      },
+      "intervention": {
+        "en": "Longitudinal PSID-TAS mediation and within-person analysis",
+        "fi": "PSID-TAS-pitkittäisaineiston mediaatio ja yksilön sisäinen analyysi"
+      },
+      "finding": {
+        "en": "Relationship formation, alcohol, gaming and earnings jointly accounted statistically for about three quarters of the sexual-activity decline.",
+        "fi": "Parisuhteen muodostuminen, alkoholi, pelaaminen ja tulot selittivät tilastollisesti noin kolme neljäsosaa seksuaalisen toiminnan laskusta."
+      },
+      "scope": {
+        "en": "Measured mediation is not demonstrated hormonal mediation or environmental-field attribution.",
+        "fi": "Mitattu mediaatio ei osoita hormonivälitystä tai ympäristökentän syyvaikutusta."
+      },
+      "timeCourse": {
+        "en": "2007–2017",
+        "fi": "2007–2017"
+      },
+      "measuredVariables": [
+        "partner_formation",
+        "alcohol",
+        "gaming",
+        "income",
+        "living_arrangement"
+      ],
+      "outcomes": [
+        "sexual_activity",
+        "behavior_profile"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.bensimon2018",
+      "referenceId": "bensimon2018_sleep_social",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.walker-sleep-social",
+      "datasetIds": [
+        "dataset.bensimon2018"
+      ],
+      "branches": [
+        "motivation_realisation",
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Human sleep-loss experiment and independent video observers",
+        "fi": "Ihmisen univajekoe ja erilliset videoiden arvioijat"
+      },
+      "intervention": {
+        "en": "Sleep deprivation and social-distance judgments",
+        "fi": "Univaje ja sosiaalisen etäisyyden arviointi"
+      },
+      "finding": {
+        "en": "Sleep loss increased distancing; other people perceived sleep-deprived individuals as less desirable interaction partners.",
+        "fi": "Univaje lisäsi etäisyyttä; muut pitivät univajeisia vähemmän haluttavina vuorovaikutuskumppaneina."
+      },
+      "scope": {
+        "en": "The interaction-opportunity bridge is measured; mate formation and reproduction are a further conditional continuation.",
+        "fi": "Vuorovaikutusmahdollisuuden liitos mitattiin; pariutuminen ja lisääntyminen ovat ehdollinen jatko."
+      },
+      "timeCourse": {
+        "en": "Acute sleep manipulation and subsequent social response",
+        "fi": "Akuutti unimanipulaatio ja sitä seuraava sosiaalinen vaste"
+      },
+      "measuredVariables": [
+        "sleep",
+        "social_distance"
+      ],
+      "outcomes": [
+        "social_contact",
+        "opportunity"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.nagasawa2015",
+      "referenceId": "nagasawa2015_dog_gaze",
+      "evidenceKind": "component_experiment",
+      "familyId": "family.nagasawa-dog",
+      "datasetIds": [
+        "dataset.nagasawa2015"
+      ],
+      "branches": [
+        "care_feedback"
+      ],
+      "system": {
+        "en": "Dogs, human caregivers and hand-raised wolves",
+        "fi": "Koirat, ihmiset ja käsin kasvatetut sudet"
+      },
+      "intervention": {
+        "en": "Mutual gaze observation and canine oxytocin–placebo intervention",
+        "fi": "Katseen havainnointi ja koiran oksitosiini–lume-interventio"
+      },
+      "finding": {
+        "en": "Dog–human gaze related to urinary oxytocin; administered oxytocin increased female-dog gaze and owner response.",
+        "fi": "Koiran ja ihmisen katse liittyi virtsan oksitosiiniin; annettu oksitosiini lisäsi naaraskoiran katsetta ja omistajan vastetta."
+      },
+      "scope": {
+        "en": "No child-desire, human infertility or replacement-parenthood endpoint; urinary oxytocin is not a direct brain concentration.",
+        "fi": "Ei lapsitoiveen, ihmisen hedelmättömyyden tai korvaavan vanhemmuuden päätepistettä; virtsan oksitosiini ei ole suora aivopitoisuus."
+      },
+      "timeCourse": {
+        "en": "Thirty-minute interaction; corrected June 2015 article",
+        "fi": "30 minuutin vuorovaikutus; kesäkuussa 2015 korjattu artikkeli"
+      },
+      "measuredVariables": [
+        "oxytocin",
+        "social_contact"
+      ],
+      "outcomes": [
+        "social_contact"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.balbo2014",
+      "referenceId": "balbo2014_fertility_friends",
+      "evidenceKind": "observational",
+      "familyId": "family.add-health",
+      "datasetIds": [
+        "dataset.add-health-friend-fertility"
+      ],
+      "branches": [
+        "care_feedback",
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "Add Health friendship and parenthood records",
+        "fi": "Add Health -ystävä- ja vanhemmuustiedot"
+      },
+      "intervention": {
+        "en": "Longitudinal observational network analysis",
+        "fi": "Pitkittäinen verkostohavaintoanalyysi"
+      },
+      "finding": {
+        "en": "A friend’s childbirth was followed by a time-limited, curved increase in parenthood-transition probability.",
+        "fi": "Ystävän lapsen syntymää seurasi ajallisesti rajattu ja kaareva vanhemmuussiirtymän todennäköisyyden nousu."
+      },
+      "scope": {
+        "en": "Selection and shared context require modelling; no hormonal mediator was measured.",
+        "fi": "Valikoituminen ja yhteinen ympäristö vaativat mallinnusta; hormonivälittäjää ei mitattu."
+      },
+      "timeCourse": {
+        "en": "Lagged friendship and parenthood transitions",
+        "fi": "Viivästetyt ystävyys- ja vanhemmuussiirtymät"
+      },
+      "measuredVariables": [
+        "social_network",
+        "parenthood"
+      ],
+      "outcomes": [
+        "fertility_timing"
+      ],
+      "correctionReferenceIds": []
+    },
+    {
+      "id": "study.pink2014",
+      "referenceId": "pink2014_fertility_coworkers",
+      "evidenceKind": "observational",
+      "familyId": "family.german-workplace",
+      "datasetIds": [
+        "dataset.german-employer-employee-1993-2007"
+      ],
+      "branches": [
+        "care_feedback",
+        "motivation_realisation"
+      ],
+      "system": {
+        "en": "33,119 women in 6,579 German firms",
+        "fi": "33 119 naista 6 579 saksalaisyrityksessä"
+      },
+      "intervention": {
+        "en": "Linked employer–employee fertility histories",
+        "fi": "Yhdistetyt työnantaja–työntekijäaineiston lisääntymishistoriat"
+      },
+      "finding": {
+        "en": "A coworker’s childbirth preceded an increased first-pregnancy transition that diminished over time.",
+        "fi": "Työtoverin lapsen syntymä edelsi ensiraskaussiirtymän kasvua, joka hiipui ajassa."
+      },
+      "scope": {
+        "en": "Observational workplace propagation; not a neural or hormonal intervention.",
+        "fi": "Havaittu työpaikkavälittyminen; ei hermosto- tai hormoni-interventio."
+      },
+      "timeCourse": {
+        "en": "1993–2007; delayed and time-limited association",
+        "fi": "1993–2007; viivästetty ja ajallisesti rajattu yhteys"
+      },
+      "measuredVariables": [
+        "social_network",
+        "pregnancy"
+      ],
+      "outcomes": [
+        "fertility_timing"
+      ],
+      "correctionReferenceIds": []
+    }
+  ],
+  "syntheses": [
+    {
+      "id": "selective-regulation",
+      "claimId": "claim.reproduction.selective-regulation",
+      "nodeIds": [
+        "HORMONE_TARGET_RESPONSE",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "COUPLE_FECUNDABILITY"
+      ],
+      "title": {
+        "en": "Selective reproductive regulation",
+        "fi": "Valikoiva lisääntymisen säätely"
+      },
+      "statement": {
+        "en": "Reproductive activation, sexual interest and retained physiological reserve are coordinated but separable outputs of biological regulation.",
+        "fi": "Lisääntymisaktivaatio, seksuaalinen kiinnostus ja säilynyt fysiologinen reservi ovat biologisen säätelyn koordinoituja mutta erotettavia ulostuloja."
+      },
+      "scope": {
+        "en": "Protocol-specific component directions support the structure; they do not identify a common field dose or universal suppression score.",
+        "fi": "Protokollakohtaiset komponenttisuunnat tukevat rakennetta; ne eivät yksilöi yhteistä kenttäannosta tai yleistä suppressiopistemäärää."
+      },
+      "studyIds": [
+        "study.abbott1981",
+        "study.abbott1988",
+        "study.burmeister2005",
+        "study.maruska2011",
+        "study.chen2011",
+        "study.kustan2011",
+        "study.peragine2017",
+        "study.khallaf2026",
+        "study.hart2024",
+        "study.edwards2025",
+        "study.sonigo2012",
+        "study.hoskova2022",
+        "study.finkelstein2013",
+        "study.mills2023",
+        "study.thurston2022"
+      ],
+      "referenceIds": [
+        "abbott1981_marmoset_ovarian",
+        "abbott1988_social_lh",
+        "burmeister2005_social_genomic",
+        "maruska2011_pituitary_plasticity",
+        "chen2011_visual_social",
+        "kustan2011_reproductive_reserve",
+        "peragine2017_rfrp_suppression",
+        "khallaf2026_queen_odour",
+        "hart2024_molerat_suppression",
+        "edwards2025_molerat_reproduction",
+        "sonigo2012_prolactin_kisspeptin",
+        "hoskova2022_hyperprolactin_kisspeptin",
+        "finkelstein2013_gonadal_steroids",
+        "mills2023_kisspeptin",
+        "thurston2022_kisspeptin_women"
+      ],
+      "status": "conditional_synthesis"
+    },
+    {
+      "id": "caregiving-allocation",
+      "claimId": "claim.reproduction.caregiving-allocation",
+      "nodeIds": [
+        "HORMONE_TARGET_RESPONSE",
+        "CAREGIVING_ALLOCATION"
+      ],
+      "title": {
+        "en": "Caregiving and reproductive allocation",
+        "fi": "Hoiva ja lisääntymisen kohdentuminen"
+      },
+      "statement": {
+        "en": "A shared hormonal state can engage different receptor and circuit targets, preserving or increasing care while another reproductive output is restrained.",
+        "fi": "Yhteinen hormonitila voi vaikuttaa eri reseptori- ja piirikohteisiin, säilyttää tai lisätä hoivaa toisen lisääntymisulostulon vaimentuessa."
+      },
+      "scope": {
+        "en": "PRL suppression and PRL-receptive care circuits are separate component experiments; pet ownership and childlessness are not suppression diagnoses.",
+        "fi": "PRL-suppressio ja PRL:lle vastaanottavat hoivapiirit ovat erillisiä komponenttikokeita; lemmikinomistus ja lapsettomuus eivät ole suppressiodiagnooseja."
+      },
+      "studyIds": [
+        "study.bell2014",
+        "study.watarai2018",
+        "study.sonigo2012",
+        "study.hoskova2022",
+        "study.clarkson2026",
+        "study.kohl2018",
+        "study.ammari2023",
+        "study.gettler2011",
+        "study.weisman2012",
+        "study.nagasawa2015"
+      ],
+      "referenceIds": [
+        "bell2014_meerkat_contraception",
+        "watarai2018_queen_estrogen",
+        "sonigo2012_prolactin_kisspeptin",
+        "hoskova2022_hyperprolactin_kisspeptin",
+        "clarkson2026_prolactin_parental",
+        "kohl2018_parental_circuits",
+        "ammari2023_pregnancy_parental",
+        "gettler2011_fatherhood_testosterone",
+        "weisman2012_oxytocin_dyad",
+        "nagasawa2015_dog_gaze"
+      ],
+      "status": "conditional_synthesis"
+    },
+    {
+      "id": "behaviour-to-opportunity",
+      "claimId": "claim.behavior.behaviour-to-opportunity",
+      "nodeIds": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "REPRODUCTIVE_OPPORTUNITY",
+        "DEMAND_OPPORTUNITY"
+      ],
+      "title": {
+        "en": "From motivation to realized encounters",
+        "fi": "Motivaatiosta toteutuviin kohtaamisiin"
+      },
+      "statement": {
+        "en": "Biologically formed motivation and others’ responses help determine realized encounters and conception attempts, separately from the capacity to conceive.",
+        "fi": "Biologisesti muodostuva motivaatio ja toisten vasteet osallistuvat toteutuvien kohtaamisten ja raskausyritysten muodostumiseen erillään hedelmöittymiskapasiteetista."
+      },
+      "scope": {
+        "en": "Human joint-output and interaction data support the intermediate structure; the complete hormonal-to-birth route is a composition.",
+        "fi": "Ihmisen yhteisulostulo- ja vuorovaikutusaineistot tukevat välirakennetta; kokonainen hormoni–syntymäketju on kooste."
+      },
+      "studyIds": [
+        "study.saltzman2004",
+        "study.gettler2013",
+        "study.herbenick2021",
+        "study.lei_south2021",
+        "study.bensimon2018"
+      ],
+      "referenceIds": [
+        "saltzman2004_marmoset_partner",
+        "gettler2013_fatherhood_sex",
+        "herbenick2021_sexual_repertoire",
+        "lei_south2021_sexual_activity",
+        "bensimon2018_sleep_social"
+      ],
+      "status": "conditional_synthesis"
+    },
+    {
+      "id": "social-feedback",
+      "claimId": "claim.reproduction.social-feedback",
+      "nodeIds": [
+        "REPRODUCTIVE_OPPORTUNITY",
+        "CAREGIVING_ALLOCATION",
+        "DEMAND_OPPORTUNITY"
+      ],
+      "title": {
+        "en": "Social feedback and population timing",
+        "fi": "Sosiaalinen palaute ja väestöajoitus"
+      },
+      "statement": {
+        "en": "Individual states change social cues and network opportunities; responses of other biological agents feed back into later reproductive timing.",
+        "fi": "Yksilön tila muuttaa sosiaalisia vihjeitä ja verkoston mahdollisuuksia; muiden biologisten toimijoiden vasteet palautuvat myöhempään lisääntymisajoitukseen."
+      },
+      "scope": {
+        "en": "Network associations provide timing constraints, not measured endocrine mediation or a calibrated civilization feedback coefficient.",
+        "fi": "Verkostoyhteydet rajaavat ajoitusta, eivät mittaa hormonivälitystä tai kalibroitua sivilisaation palautekerrointa."
+      },
+      "studyIds": [
+        "study.bell2014",
+        "study.young2006",
+        "study.abbott1988",
+        "study.weisman2012",
+        "study.bensimon2018",
+        "study.balbo2014",
+        "study.pink2014"
+      ],
+      "referenceIds": [
+        "bell2014_meerkat_contraception",
+        "young2006_meerkat_suppression",
+        "abbott1988_social_lh",
+        "weisman2012_oxytocin_dyad",
+        "bensimon2018_sleep_social",
+        "balbo2014_fertility_friends",
+        "pink2014_fertility_coworkers"
+      ],
+      "status": "conditional_synthesis"
+    }
+  ],
+  "existingDatasets": [
+    {
+      "id": "dataset.bell2014",
+      "referenceId": "bell2014_meerkat_contraception",
+      "familyId": "family.kalahari-meerkat",
+      "title": {
+        "en": "Wild meerkats; 12 groups",
+        "fi": "Luonnonvaraiset surikaatit; 12 ryhmää"
+      },
+      "description": {
+        "en": "Contraception versus saline in a crossover design",
+        "fi": "Kontraseptio tai suolaliuos vaihtovuorokokeessa"
+      },
+      "scope": {
+        "en": "Group opportunities and pregnancy costs also changed; the experiment does not isolate intrinsic caregiving motivation.",
+        "fi": "Myös ryhmässä pysymisen mahdollisuudet ja raskauskustannukset muuttuivat; sisäistä hoivamotivaatiota ei eristetty."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1038/ncomms5499",
+      "years": "2009–2011",
+      "measuredVariables": [
+        "pregnancy",
+        "dominance",
+        "parental_care",
+        "opportunity"
+      ],
+      "studyIds": [
+        "study.bell2014"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.young2006",
+      "referenceId": "young2006_meerkat_suppression",
+      "familyId": "family.kalahari-meerkat",
+      "title": {
+        "en": "Subordinate female meerkats",
+        "fi": "Alisteiset naarassurikaatit"
+      },
+      "description": {
+        "en": "Natural eviction followed longitudinally; GnRH challenge",
+        "fi": "Luonnollisen karkotuksen seuranta ja GnRH-haaste"
+      },
+      "scope": {
+        "en": "Eviction was not randomized and cortisol mediation was not isolated by receptor blockade.",
+        "fi": "Karkotusta ei satunnaistettu eikä kortisolivälitystä eristetty reseptoriestolla."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1073/pnas.0510038103",
+      "years": "2006",
+      "measuredVariables": [
+        "cortisol",
+        "gnrh_response",
+        "dominance",
+        "pregnancy",
+        "lh"
+      ],
+      "studyIds": [
+        "study.young2006"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.abbott1981",
+      "referenceId": "abbott1981_marmoset_ovarian",
+      "familyId": "family.abbott-marmoset",
+      "title": {
+        "en": "Female common marmosets; ten peer groups",
+        "fi": "Naarasmarmosetit; kymmenen vertaisryhmää"
+      },
+      "description": {
+        "en": "LH-RH, estrogen and TRH challenges",
+        "fi": "LH-RH-, estrogeeni- ja TRH-haasteet"
+      },
+      "scope": {
+        "en": "A reproductive-axis brake is not equivalent to a universal elevated-stress-hormone state.",
+        "fi": "Lisääntymisakselin jarru ei ole sama kuin yleinen kohonneen stressihormonin tila."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1530/jrf.0.0630335",
+      "years": "1981",
+      "measuredVariables": [
+        "gnrh_response",
+        "cortisol",
+        "prolactin",
+        "lh",
+        "ovulation"
+      ],
+      "studyIds": [
+        "study.abbott1981"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.abbott1988",
+      "referenceId": "abbott1988_social_lh",
+      "familyId": "family.abbott-marmoset",
+      "title": {
+        "en": "Five subordinate female marmosets in the relocation sequence",
+        "fi": "Viisi alisteista naarasmarmosettia siirtoketjussa"
+      },
+      "description": {
+        "en": "Removal from subordination and reintroduction to subordinate groups",
+        "fi": "Irrotus alisteisuudesta ja palautus alisteiseen ryhmäasemaan"
+      },
+      "scope": {
+        "en": "Four days describes the LH fall after renewed subordination, not a universal fertility-loss time.",
+        "fi": "Neljä päivää koskee LH:n laskua uudessa alisteisuudessa, ei yleistä hedelmällisyyden katoamisaikaa."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1677/joe.0.1170329",
+      "years": "1988",
+      "measuredVariables": [
+        "dominance",
+        "lh",
+        "estradiol",
+        "ovulation",
+        "gnrh_response"
+      ],
+      "studyIds": [
+        "study.abbott1988"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.saltzman2004",
+      "referenceId": "saltzman2004_marmoset_partner",
+      "familyId": "family.abbott-marmoset",
+      "title": {
+        "en": "Marmoset families: 11 replacement and seven control families",
+        "fi": "Marmosettiperheet: 11 vaihtoperhettä ja seitsemän kontrollia"
+      },
+      "description": {
+        "en": "Replace father with an unrelated male; remove and return father in controls",
+        "fi": "Isä vaihdettiin vieraaseen urokseen; kontrollissa isä poistettiin ja palautettiin"
+      },
+      "scope": {
+        "en": "Partner-directed behavior and ovarian readiness are linked but distinct gates.",
+        "fi": "Kumppanikäyttäytyminen ja munasarjojen valmius ovat yhteydessä mutta erillisiä portteja."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1016/j.anbehav.2003.07.020",
+      "years": "2004",
+      "measuredVariables": [
+        "dominance",
+        "partner_activity",
+        "ovulation",
+        "pregnancy",
+        "opportunity"
+      ],
+      "studyIds": [
+        "study.saltzman2004"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.burmeister2005",
+      "referenceId": "burmeister2005_social_genomic",
+      "familyId": "family.fernald-cichlid",
+      "title": {
+        "en": "Astatotilapia burtoni males; small genomic comparison",
+        "fi": "Astatotilapia burtoni -koiraat; pieni geenivastevertailu"
+      },
+      "description": {
+        "en": "Removal of the suppressing male before lights on",
+        "fi": "Alistavan koiraan poistaminen ennen valojen syttymistä"
+      },
+      "scope": {
+        "en": "The gene comparison used four ascending, three subordinate and three dominant fish; Egr-1 necessity was not tested.",
+        "fi": "Geenivertailussa neljä nousevaa, kolme alisteista ja kolme dominoivaa kalaa; Egr-1:n välttämättömyyttä ei testattu."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1371/journal.pbio.0030363",
+      "years": "2005",
+      "measuredVariables": [
+        "gene_expression",
+        "dominance",
+        "sexual_interest",
+        "neural_response"
+      ],
+      "studyIds": [
+        "study.burmeister2005"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.maruska-social-ascent-shared",
+      "referenceId": "maruska2011_pituitary_plasticity",
+      "familyId": "family.fernald-cichlid",
+      "title": {
+        "en": "Astatotilapia burtoni social ascent",
+        "fi": "Astatotilapia burtoni -lajin sosiaalinen nousu"
+      },
+      "description": {
+        "en": "Social ascent with time-resolved endocrine measurements",
+        "fi": "Sosiaalinen nousu ja ajallisesti erotellut hormonimittaukset"
+      },
+      "scope": {
+        "en": "Later 6–120-hour trajectories differ by endpoint; associated 11-ketotestosterone data reuse previously published animals.",
+        "fi": "Myöhemmät 6–120 tunnin profiilit eroavat päätepisteittäin; 11-ketotestosteronitulokset käyttävät aiemmin julkaistuja eläimiä."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1210/en.2010-0875",
+      "years": "2011",
+      "measuredVariables": [
+        "gene_expression",
+        "lh",
+        "fsh"
+      ],
+      "studyIds": [
+        "study.maruska2011"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.chen2011",
+      "referenceId": "chen2011_visual_social",
+      "familyId": "family.fernald-cichlid",
+      "title": {
+        "en": "60 Astatotilapia burtoni males across three time points",
+        "fi": "60 Astatotilapia burtoni -koirasta kolmessa aikapisteessä"
+      },
+      "description": {
+        "en": "Larger male visible across a watertight transparent barrier",
+        "fi": "Suurempi koiras vesitiiviin läpinäkyvän esteen takana"
+      },
+      "scope": {
+        "en": "Visible behavior does not identify the full physiological state; testis-size differences were not significant.",
+        "fi": "Näkyvä käyttäytyminen ei yksilöi koko fysiologista tilaa; kivesten kokoero ei ollut merkitsevä."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1371/journal.pone.0020313",
+      "years": "2011",
+      "measuredVariables": [
+        "dominance",
+        "gene_expression",
+        "eleven_ketotestosterone",
+        "behavior_profile"
+      ],
+      "studyIds": [
+        "study.chen2011"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.kustan2011",
+      "referenceId": "kustan2011_reproductive_reserve",
+      "familyId": "family.fernald-cichlid",
+      "title": {
+        "en": "Socially suppressed Astatotilapia burtoni males",
+        "fi": "Sosiaalisesti alistetut Astatotilapia burtoni -koiraat"
+      },
+      "description": {
+        "en": "Release from social suppression and fertility testing",
+        "fi": "Vapautus sosiaalisesta suppressiosta ja hedelmöityskyvyn mittaus"
+      },
+      "scope": {
+        "en": "Suppressed reproductive activity did not mean loss of all gonadal reserve.",
+        "fi": "Vaimennettu lisääntymistoiminta ei tarkoittanut koko sukurauhasreservin menetystä."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1098/rspb.2011.0997",
+      "years": "2012",
+      "measuredVariables": [
+        "sperm",
+        "dominance",
+        "fertilization"
+      ],
+      "studyIds": [
+        "study.kustan2011"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.peragine2017",
+      "referenceId": "peragine2017_rfrp_suppression",
+      "familyId": "family.holmes-molerat",
+      "title": {
+        "en": "Naked mole-rats, Heterocephalus glaber",
+        "fi": "Paljaskoirarotta, Heterocephalus glaber"
+      },
+      "description": {
+        "en": "Central RFRP-3 infusion after removal from the colony",
+        "fi": "Keskushermoston RFRP-3-infuusio koloniasta irrotuksen jälkeen"
+      },
+      "scope": {
+        "en": "Testosterone differences were not significant; sufficiency of the administered peptide is not proof of endogenous necessity.",
+        "fi": "Testosteronierot eivät olleet merkitseviä; annetun peptidin riittävyys ei osoita endogeenista välttämättömyyttä."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1073/pnas.1616913114",
+      "years": "2017",
+      "measuredVariables": [
+        "rfrp",
+        "progesterone",
+        "testosterone",
+        "locomotion",
+        "sexual_interest"
+      ],
+      "studyIds": [
+        "study.peragine2017"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.watarai2018",
+      "referenceId": "watarai2018_queen_estrogen",
+      "familyId": "family.japan-molerat",
+      "title": {
+        "en": "Female naked mole-rat helpers",
+        "fi": "Paljaskoirarotan naarasavustajat"
+      },
+      "description": {
+        "en": "Pregnant queen feces or estrogen-supplemented fecal material",
+        "fi": "Raskaana olevan kuningattaren uloste tai estrogeenilla täydennetty ulostemateriaali"
+      },
+      "scope": {
+        "en": "The endpoint was pup-cue responsiveness, not total caregiving or a demonstration that infertility automatically creates care.",
+        "fi": "Päätepiste oli pentuvihjevaste, ei kokonainen hoiva tai osoitus lapsettomuuden automaattisesta muuttumisesta hoivaksi."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1073/pnas.1720530115",
+      "years": "2018",
+      "measuredVariables": [
+        "estradiol",
+        "pup_cue_response"
+      ],
+      "studyIds": [
+        "study.watarai2018"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.khallaf2026",
+      "referenceId": "khallaf2026_queen_odour",
+      "familyId": "family.lewin-hart-molerat",
+      "title": {
+        "en": "Naked mole-rat pairs and queenless colony",
+        "fi": "Paljaskoirarottaparit ja kuningattareton kolonia"
+      },
+      "description": {
+        "en": "Queen-enriched isopropyl myristate, colony bedding and withdrawal",
+        "fi": "Kuningattareen rikastunut isopropyylimyristaatti, kolonian kuivikkeet ja poistaminen"
+      },
+      "scope": {
+        "en": "A chemical cue experiment is not EMF dose equivalence; the colony withdrawal is not a multi-colony replication.",
+        "fi": "Kemiallisen vihjeen koe ei ole EMF-annosvastaavuus; kolonialta poistaminen ei ole usean kolonian replikaatio."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1038/s41586-026-10772-5",
+      "years": "2026",
+      "measuredVariables": [
+        "prolactin",
+        "progesterone",
+        "testosterone",
+        "dominance",
+        "pregnancy",
+        "behavior_profile"
+      ],
+      "studyIds": [
+        "study.khallaf2026"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.hart2024",
+      "referenceId": "hart2024_molerat_suppression",
+      "familyId": "family.lewin-hart-molerat",
+      "title": {
+        "en": "24 female naked mole-rats from 12 colonies",
+        "fi": "24 naaraspaljaskoirarottaa 12 koloniasta"
+      },
+      "description": {
+        "en": "GnRH challenges, ovariectomy, handling and naloxone",
+        "fi": "GnRH-haasteet, munasarjojen poisto, käsittely ja naloksoni"
+      },
+      "scope": {
+        "en": "Repeated assays share animals; some smaller-worker comparisons reuse earlier Faulkes data.",
+        "fi": "Toistomittaukset käyttävät samoja eläimiä; osa pienempien työntekijöiden vertailuista käyttää aiempaa Faulkes-aineistoa."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1111/jne.13444",
+      "years": "2024",
+      "measuredVariables": [
+        "cortisol",
+        "gnrh_response",
+        "lh"
+      ],
+      "studyIds": [
+        "study.hart2024"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.edwards2025-eight-pairs",
+      "referenceId": "edwards2025_molerat_reproduction",
+      "familyId": "family.holmes-molerat",
+      "title": {
+        "en": "Naked mole-rat pairs after colony removal",
+        "fi": "Paljaskoirarottaparit koloniasta irrotuksen jälkeen"
+      },
+      "description": {
+        "en": "Removal, pairing and longitudinal reproductive follow-up",
+        "fi": "Irrotus, paritus ja lisääntymisen seuranta"
+      },
+      "scope": {
+        "en": "The 26-pair analysis includes the eight focal pairs plus 18 earlier Toor pairs. Nonbreeding within a year is not permanent damage.",
+        "fi": "26 parin analyysi sisältää kahdeksan alkuperäisparia ja 18 aiempaa Toorin paria. Vuoden lisääntymättömyys ei osoita pysyvää vauriota."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1007/s42991-025-00528-5",
+      "years": "2025",
+      "measuredVariables": [
+        "estradiol",
+        "progesterone",
+        "cortisol",
+        "behavior_profile",
+        "reproductive_success"
+      ],
+      "studyIds": [
+        "study.edwards2025"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.toor2020-eighteen-pairs",
+      "referenceId": "edwards2025_molerat_reproduction",
+      "familyId": "family.holmes-molerat",
+      "title": {
+        "en": "Naked mole-rat pairs after colony removal",
+        "fi": "Paljaskoirarottaparit koloniasta irrotuksen jälkeen"
+      },
+      "description": {
+        "en": "Removal, pairing and longitudinal reproductive follow-up",
+        "fi": "Irrotus, paritus ja lisääntymisen seuranta"
+      },
+      "scope": {
+        "en": "The 26-pair analysis includes the eight focal pairs plus 18 earlier Toor pairs. Nonbreeding within a year is not permanent damage.",
+        "fi": "26 parin analyysi sisältää kahdeksan alkuperäisparia ja 18 aiempaa Toorin paria. Vuoden lisääntymättömyys ei osoita pysyvää vauriota."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1007/s42991-025-00528-5",
+      "years": "2025",
+      "measuredVariables": [
+        "estradiol",
+        "progesterone",
+        "cortisol",
+        "behavior_profile",
+        "reproductive_success"
+      ],
+      "studyIds": [
+        "study.edwards2025"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.sonigo2012",
+      "referenceId": "sonigo2012_prolactin_kisspeptin",
+      "familyId": "family.sonigo-prolactin",
+      "title": {
+        "en": "Hyperprolactinemic female mice",
+        "fi": "Hyperprolaktineemiset naarashiiret"
+      },
+      "description": {
+        "en": "Chronic prolactin exposure and kisspeptin rescue",
+        "fi": "Pitkäkestoinen prolaktiinialtistus ja palautus kisspeptiinillä"
+      },
+      "scope": {
+        "en": "A localized endocrine rescue; not a human caregiving or environmental-field experiment.",
+        "fi": "Paikannettu endokriininen palautus; ei ihmisen hoiva- tai ympäristökenttäkoe."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1172/JCI63937",
+      "years": "2012",
+      "measuredVariables": [
+        "prolactin",
+        "kisspeptin",
+        "lh",
+        "ovulation"
+      ],
+      "studyIds": [
+        "study.sonigo2012"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.hoskova2022",
+      "referenceId": "hoskova2022_hyperprolactin_kisspeptin",
+      "familyId": "family.mgh-kisspeptin",
+      "title": {
+        "en": "11 women with hyperprolactinemia",
+        "fi": "11 hyperprolaktineemista naista"
+      },
+      "description": {
+        "en": "Two 12-hour visits; repeated kisspeptin on the second visit",
+        "fi": "Kaksi 12 tunnin käyntiä; toisella toistuva kisspeptiinin anto"
+      },
+      "scope": {
+        "en": "Use corrected version of record; the study did not demonstrate ovulation, pregnancy or caregiving change.",
+        "fi": "Käytetään korjattua julkaisuversiota; koe ei osoittanut ovulaatiota, raskautta tai hoivamuutosta."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1210/clinem/dgac166",
+      "years": "2022",
+      "measuredVariables": [
+        "prolactin",
+        "lh",
+        "estradiol"
+      ],
+      "studyIds": [
+        "study.hoskova2022"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.clarkson2026",
+      "referenceId": "clarkson2026_prolactin_parental",
+      "familyId": "family.clarkson-prolactin",
+      "title": {
+        "en": "Prolactin-receptive mouse MPOA–VTA circuit",
+        "fi": "Hiiren prolaktiinille vastaanottava MPOA–VTA-piiri"
+      },
+      "description": {
+        "en": "Circuit activation and removal of prolactin action",
+        "fi": "Piirin aktivointi ja prolaktiinivaikutuksen poistaminen"
+      },
+      "scope": {
+        "en": "The caregiving circuit and endocrine suppression studies are separate experiments joined by a shared hormone.",
+        "fi": "Hoivapiiri- ja endokriiniset suppressiokokeet ovat erillisiä kokeita, joita yhdistää yhteinen hormoni."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1126/sciadv.ady6498",
+      "years": "2026",
+      "measuredVariables": [
+        "prolactin",
+        "neural_response",
+        "dopamine",
+        "parental_care",
+        "pup_cue_response"
+      ],
+      "studyIds": [
+        "study.clarkson2026"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.kohl2018",
+      "referenceId": "kohl2018_parental_circuits",
+      "familyId": "family.kohl-parental",
+      "title": {
+        "en": "Mouse MPOA galanin neurons and projections",
+        "fi": "Hiiren MPOA:n galaniinineuronit ja projektiot"
+      },
+      "description": {
+        "en": "Projection-specific optogenetic interventions",
+        "fi": "Projektiokohtaiset optogeneettiset interventiot"
+      },
+      "scope": {
+        "en": "A structured caregiving programme is not one undifferentiated motivation variable.",
+        "fi": "Rakenteinen hoivaohjelma ei ole yksi erottelematon motivaatiomuuttuja."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1038/s41586-018-0027-0",
+      "years": "2018",
+      "measuredVariables": [
+        "neural_response",
+        "parental_care",
+        "pup_cue_response"
+      ],
+      "studyIds": [
+        "study.kohl2018"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.ammari2023",
+      "referenceId": "ammari2023_pregnancy_parental",
+      "familyId": "family.kohl-parental",
+      "title": {
+        "en": "Pregnant and nonpregnant female mice",
+        "fi": "Raskaana olevat ja ei-raskaana olevat naarashiiret"
+      },
+      "description": {
+        "en": "Pregnancy-hormone and parental-circuit manipulation",
+        "fi": "Raskaushormoni- ja hoivapiirimanipulaatio"
+      },
+      "scope": {
+        "en": "Circuit history adds persistence to acute hormonal regulation; not evidence of permanent suppression.",
+        "fi": "Piirin historia lisää jatkuvuutta akuutin hormonisäätelyn rinnalle; ei näyttöä pysyvästä suppressiosta."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1126/science.adi0576",
+      "years": "2023",
+      "measuredVariables": [
+        "estradiol",
+        "progesterone",
+        "neural_response",
+        "parental_care"
+      ],
+      "studyIds": [
+        "study.ammari2023"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.finkelstein2013",
+      "referenceId": "finkelstein2013_gonadal_steroids",
+      "familyId": "family.finkelstein-clamp",
+      "title": {
+        "en": "400 healthy men aged 20–50 in two cohorts",
+        "fi": "400 tervettä 20–50-vuotiasta miestä kahdessa kohortissa"
+      },
+      "description": {
+        "en": "Gonadal suppression, randomized testosterone doses and aromatase inhibition",
+        "fi": "Gonadien vaimennus, satunnaistetut testosteroniannokset ja aromataasin esto"
+      },
+      "scope": {
+        "en": "A causal hormone-to-function anchor, without calibrated environmental-field transfer.",
+        "fi": "Kausaalinen hormoni–toiminta-ankkuri ilman kalibroitua ympäristökentän siirtoa."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1056/nejmoa1206168",
+      "years": "2013",
+      "measuredVariables": [
+        "testosterone",
+        "estradiol",
+        "body_composition",
+        "sexual_interest",
+        "erectile_response"
+      ],
+      "studyIds": [
+        "study.finkelstein2013"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.kisspeptin-hsdd-men-2021",
+      "referenceId": "mills2023_kisspeptin",
+      "familyId": "family.imperial-kisspeptin",
+      "title": {
+        "en": "37 randomized men with HSDD; 32 completed both visits",
+        "fi": "37 satunnaistettua HSDD-miestä; 32 suoritti molemmat käynnit"
+      },
+      "description": {
+        "en": "Blinded kisspeptin versus placebo crossover",
+        "fi": "Sokkoutettu kisspeptiinin ja lumeen vaihtovuorokoe"
+      },
+      "scope": {
+        "en": "Distinct neural, physiological and subjective endpoints; no measured child-desire or conception-attempt outcome.",
+        "fi": "Erilliset neuraaliset, fysiologiset ja subjektiiviset päätepisteet; lapsitoivetta tai raskausyritystä ei mitattu."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1001/jamanetworkopen.2022.54313",
+      "years": "2021",
+      "measuredVariables": [
+        "neural_response",
+        "sexual_interest",
+        "erectile_response"
+      ],
+      "studyIds": [
+        "study.mills2023"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.kisspeptin-hsdd-women-2020-2021",
+      "referenceId": "thurston2022_kisspeptin_women",
+      "familyId": "family.imperial-kisspeptin",
+      "title": {
+        "en": "40 randomized women with HSDD; 32 completed both visits",
+        "fi": "40 satunnaistettua HSDD-naista; 32 suoritti molemmat käynnit"
+      },
+      "description": {
+        "en": "Kisspeptin–placebo crossover in the early follicular phase",
+        "fi": "Kisspeptiini–lume-vaihtovuorokoe varhaisessa follikkelivaiheessa"
+      },
+      "scope": {
+        "en": "A neural response is not proof of a broad clinical desire or fertility improvement.",
+        "fi": "Aivovaste ei osoita laajaa kliinistä halun tai hedelmällisyyden paranemista."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1001/jamanetworkopen.2022.36131",
+      "years": "2020–2021",
+      "measuredVariables": [
+        "neural_response",
+        "sexual_interest"
+      ],
+      "studyIds": [
+        "study.thurston2022"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.cebu-2005-2009",
+      "referenceId": "gettler2011_fatherhood_testosterone",
+      "familyId": "family.cebu",
+      "title": {
+        "en": "Cebu fatherhood and testosterone follow-up",
+        "fi": "Cebun isyys- ja testosteroniseuranta"
+      },
+      "description": {
+        "en": "Shared 2005 and 2009 male cohort measurements",
+        "fi": "Yhteiset miesten kohorttimittaukset 2005 ja 2009"
+      },
+      "scope": {
+        "en": "The 624-person fatherhood report and 433-person sex report overlap; biomarkers are not assumed unrestricted.",
+        "fi": "624 henkilön isyysjulkaisu ja 433 henkilön seksijulkaisu ovat päällekkäisiä; biomarkkereita ei oleteta vapaasti saataviksi."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3182719/",
+      "years": "2005, 2009",
+      "measuredVariables": [
+        "testosterone",
+        "parenthood",
+        "parental_care",
+        "partner_activity"
+      ],
+      "studyIds": [
+        "study.gettler2011",
+        "study.gettler2013"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.weisman2012",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "familyId": "family.feldman-dyad",
+      "title": {
+        "en": "35 father–infant dyads; infants about five months old",
+        "fi": "35 isä–lapsiparia; lapset noin viiden kuukauden ikäisiä"
+      },
+      "description": {
+        "en": "Paternal intranasal oxytocin–placebo crossover",
+        "fi": "Isän intranasaalinen oksitosiini–lume-vaihtovuorokoe"
+      },
+      "scope": {
+        "en": "Dyadic transfer is measured; later papers reuse this cohort rather than providing independent replication.",
+        "fi": "Parin sisäinen välittyminen mitattiin; myöhemmät julkaisut käyttävät tätä kohorttia riippumattoman replikaation sijasta."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1016/j.biopsych.2012.06.011",
+      "years": "2012",
+      "measuredVariables": [
+        "oxytocin",
+        "parental_care",
+        "infant_response",
+        "social_contact"
+      ],
+      "studyIds": [
+        "study.weisman2012"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.nsshb-2009",
+      "referenceId": "herbenick2021_sexual_repertoire",
+      "familyId": "family.nsshb",
+      "title": {
+        "en": "NSSHB ages 14–49; 4,155 in 2009 and 4,547 in 2018",
+        "fi": "NSSHB 14–49-vuotiaat; 4 155 vuonna 2009 ja 4 547 vuonna 2018"
+      },
+      "description": {
+        "en": "Repeated cross-sections and latent classes of sexual behavior",
+        "fi": "Seksuaalisen käyttäytymisen toistuvat poikkileikkaukset ja latenttiluokat"
+      },
+      "scope": {
+        "en": "Question-specific denominators differ; adult 72.7% versus 72.5% solo activity was not a significant change.",
+        "fi": "Nimittäjät vaihtelevat kysymyksittäin; aikuisten yksintoiminnan 72,7 % ja 72,5 % eivät eronneet merkitsevästi."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1007/s10508-021-02125-2",
+      "years": "2009",
+      "measuredVariables": [
+        "solo_activity",
+        "partner_activity",
+        "behavior_profile"
+      ],
+      "studyIds": [
+        "study.herbenick2021"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.nsshb-2018",
+      "referenceId": "herbenick2021_sexual_repertoire",
+      "familyId": "family.nsshb",
+      "title": {
+        "en": "NSSHB ages 14–49; 4,155 in 2009 and 4,547 in 2018",
+        "fi": "NSSHB 14–49-vuotiaat; 4 155 vuonna 2009 ja 4 547 vuonna 2018"
+      },
+      "description": {
+        "en": "Repeated cross-sections and latent classes of sexual behavior",
+        "fi": "Seksuaalisen käyttäytymisen toistuvat poikkileikkaukset ja latenttiluokat"
+      },
+      "scope": {
+        "en": "Question-specific denominators differ; adult 72.7% versus 72.5% solo activity was not a significant change.",
+        "fi": "Nimittäjät vaihtelevat kysymyksittäin; aikuisten yksintoiminnan 72,7 % ja 72,5 % eivät eronneet merkitsevästi."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1007/s10508-021-02125-2",
+      "years": "2018",
+      "measuredVariables": [
+        "solo_activity",
+        "partner_activity",
+        "behavior_profile"
+      ],
+      "studyIds": [
+        "study.herbenick2021"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.psid-tas-2007-2017",
+      "referenceId": "psid_tas_public_data",
+      "familyId": "family.psid-tas",
+      "title": {
+        "en": "3,213 US adults aged 18–23; fixed-effect subset 655",
+        "fi": "3 213 yhdysvaltalaista 18–23-vuotiasta; kiinteän vaikutuksen osajoukko 655"
+      },
+      "description": {
+        "en": "Longitudinal PSID-TAS mediation and within-person analysis",
+        "fi": "PSID-TAS-pitkittäisaineiston mediaatio ja yksilön sisäinen analyysi"
+      },
+      "scope": {
+        "en": "Measured mediation is not demonstrated hormonal mediation or environmental-field attribution.",
+        "fi": "Mitattu mediaatio ei osoita hormonivälitystä tai ympäristökentän syyvaikutusta."
+      },
+      "access": {
+        "en": "Public data are free after registration; participant identifiers link waves.",
+        "fi": "Julkinen data on maksutonta rekisteröitymisen jälkeen; henkilötunnisteet yhdistävät kierrokset."
+      },
+      "url": "https://psidonline.isr.umich.edu/CDS/Guide/StudyDesign.aspx",
+      "years": "2007–2017",
+      "measuredVariables": [
+        "partner_formation",
+        "alcohol",
+        "gaming",
+        "income",
+        "living_arrangement",
+        "sexual_activity",
+        "behavior_profile"
+      ],
+      "studyIds": [
+        "study.lei_south2021"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.bensimon2018",
+      "referenceId": "bensimon2018_sleep_social",
+      "familyId": "family.walker-sleep-social",
+      "title": {
+        "en": "Human sleep-loss experiment and independent video observers",
+        "fi": "Ihmisen univajekoe ja erilliset videoiden arvioijat"
+      },
+      "description": {
+        "en": "Sleep deprivation and social-distance judgments",
+        "fi": "Univaje ja sosiaalisen etäisyyden arviointi"
+      },
+      "scope": {
+        "en": "The interaction-opportunity bridge is measured; mate formation and reproduction are a further conditional continuation.",
+        "fi": "Vuorovaikutusmahdollisuuden liitos mitattiin; pariutuminen ja lisääntyminen ovat ehdollinen jatko."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30108218/",
+      "years": "2018",
+      "measuredVariables": [
+        "sleep",
+        "social_distance",
+        "social_contact",
+        "opportunity"
+      ],
+      "studyIds": [
+        "study.bensimon2018"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.nagasawa2015",
+      "referenceId": "nagasawa2015_dog_gaze",
+      "familyId": "family.nagasawa-dog",
+      "title": {
+        "en": "Dogs, human caregivers and hand-raised wolves",
+        "fi": "Koirat, ihmiset ja käsin kasvatetut sudet"
+      },
+      "description": {
+        "en": "Mutual gaze observation and canine oxytocin–placebo intervention",
+        "fi": "Katseen havainnointi ja koiran oksitosiini–lume-interventio"
+      },
+      "scope": {
+        "en": "No child-desire, human infertility or replacement-parenthood endpoint; urinary oxytocin is not a direct brain concentration.",
+        "fi": "Ei lapsitoiveen, ihmisen hedelmättömyyden tai korvaavan vanhemmuuden päätepistettä; virtsan oksitosiini ei ole suora aivopitoisuus."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1126/science.1261022",
+      "years": "2015",
+      "measuredVariables": [
+        "oxytocin",
+        "social_contact"
+      ],
+      "studyIds": [
+        "study.nagasawa2015"
+      ],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.add-health-friend-fertility",
+      "referenceId": "balbo2014_fertility_friends",
+      "familyId": "family.add-health",
+      "title": {
+        "en": "Add Health friendship and parenthood records",
+        "fi": "Add Health -ystävä- ja vanhemmuustiedot"
+      },
+      "description": {
+        "en": "Longitudinal observational network analysis",
+        "fi": "Pitkittäinen verkostohavaintoanalyysi"
+      },
+      "scope": {
+        "en": "Selection and shared context require modelling; no hormonal mediator was measured.",
+        "fi": "Valikoituminen ja yhteinen ympäristö vaativat mallinnusta; hormonivälittäjää ei mitattu."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1177/0003122414531596",
+      "years": "2014",
+      "measuredVariables": [
+        "social_network",
+        "parenthood",
+        "fertility_timing"
+      ],
+      "studyIds": [
+        "study.balbo2014"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "publication"
+    },
+    {
+      "id": "dataset.german-employer-employee-1993-2007",
+      "referenceId": "pink2014_fertility_coworkers",
+      "familyId": "family.german-workplace",
+      "title": {
+        "en": "33,119 women in 6,579 German firms",
+        "fi": "33 119 naista 6 579 saksalaisyrityksessä"
+      },
+      "description": {
+        "en": "Linked employer–employee fertility histories",
+        "fi": "Yhdistetyt työnantaja–työntekijäaineiston lisääntymishistoriat"
+      },
+      "scope": {
+        "en": "Observational workplace propagation; not a neural or hormonal intervention.",
+        "fi": "Havaittu työpaikkavälittyminen; ei hermosto- tai hormoni-interventio."
+      },
+      "access": {
+        "en": "Published methods and results are available; unrestricted participant-level access is not asserted.",
+        "fi": "Julkaistut menetelmät ja tulokset ovat käytettävissä; henkilötason aineiston vapaata saatavuutta ei oleteta."
+      },
+      "url": "https://doi.org/10.1016/j.alcr.2013.12.001",
+      "years": "1993–2007",
+      "measuredVariables": [
+        "social_network",
+        "pregnancy",
+        "fertility_timing"
+      ],
+      "studyIds": [
+        "study.pink2014"
+      ],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.nhanes-2013-2014",
+      "referenceId": "nhanes2013_2014_hormones_data",
+      "familyId": "family.nhanes",
+      "title": {
+        "en": "NHANES hormones and behavior",
+        "fi": "NHANES: hormonit ja käyttäytyminen"
+      },
+      "description": {
+        "en": "Join TST_H, SXQ_H, RHQ_H, SLQ_H and DEMO_H by SEQN.",
+        "fi": "Yhdistä TST_H, SXQ_H, RHQ_H, SLQ_H ja DEMO_H SEQN-tunnisteella."
+      },
+      "scope": {
+        "en": "Use common age/assay eligibility and weights; assay conversion is needed for some cross-cycle testosterone comparisons.",
+        "fi": "Käytä yhteisiä ikä- ja mittausehtoja sekä painoja; osa kierrosten välisistä T-vertailuista vaatii menetelmämuunnoksen."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://wwwn.cdc.gov/nchs/data/nhanes/public/2013/datafiles/TST_H.htm",
+      "years": "2013–2014",
+      "measuredVariables": [
+        "testosterone",
+        "estradiol",
+        "shbg",
+        "sexual_activity",
+        "sleep",
+        "living_arrangement"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.nshap-waves1-2",
+      "referenceId": "nshap_wave1_public_data",
+      "familyId": "family.nshap",
+      "title": {
+        "en": "NSHAP biomarkers and social life",
+        "fi": "NSHAP: biomarkkerit ja sosiaalinen elämä"
+      },
+      "description": {
+        "en": "Repeated salivary sex hormones, sexual interest and social-network measurements.",
+        "fi": "Syljen sukupuolihormonien, seksuaalisen kiinnostuksen ja verkostojen toistomittaukset."
+      },
+      "scope": {
+        "en": "Wave 1 includes over 3,000 adults aged 57–85; public and restricted files differ.",
+        "fi": "Kierroksella 1 yli 3 000 iältään 57–85-vuotiasta; julkiset ja rajoitetut tiedostot eroavat."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://www.icpsr.umich.edu/web/NACDA/studies/20541",
+      "years": "2005–2006; 2010–2011",
+      "measuredVariables": [
+        "testosterone",
+        "estradiol",
+        "progesterone",
+        "sexual_interest",
+        "social_network"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": true,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.nsfg-2022-2023",
+      "referenceId": "nsfg2022_2023_public_data",
+      "familyId": "family.nsfg",
+      "title": {
+        "en": "NSFG intentions, activity and family history",
+        "fi": "NSFG: aikomukset, toiminta ja perhehistoria"
+      },
+      "description": {
+        "en": "9,957 respondents: 5,586 women and 4,371 men aged 15–49.",
+        "fi": "9 957 vastaajaa: 5 586 naista ja 4 371 miestä, 15–49 v."
+      },
+      "scope": {
+        "en": "Use both survey years and weights; historical comparisons often restrict to 15–44. No measured hormones.",
+        "fi": "Käytä molempia vuosia ja painoja; historiavertailu usein 15–44-vuotiaisiin. Ei mitattuja hormoneja."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://www.cdc.gov/nchs/nsfg/nsfg-2022-2023-puf.htm",
+      "years": "2022–2023",
+      "measuredVariables": [
+        "child_desire",
+        "child_intention",
+        "sexual_activity",
+        "parenthood",
+        "living_arrangement"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.gss-1972-2024",
+      "referenceId": "gss2024_public_data",
+      "familyId": "family.gss",
+      "title": {
+        "en": "GSS behavior and attitudes",
+        "fi": "GSS: käyttäytyminen ja asenteet"
+      },
+      "description": {
+        "en": "Sexual activity, family and selected attitudes in shared questionnaire records.",
+        "fi": "Seksuaalinen toiminta, perhe ja valitut asenteet yhteisissä vastauksissa."
+      },
+      "scope": {
+        "en": "Verify form overlap and the changed 2024 PARTNERS coding; cumulative cross-sections are not a single-person panel.",
+        "fi": "Tarkista lomakepäällekkäisyys ja vuoden 2024 PARTNERS-koodaus; kumulatiivinen poikkileikkaus ei ole yksilöpaneeli."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://gss.norc.org/get-the-data/stata.html",
+      "years": "1972–2024",
+      "measuredVariables": [
+        "sexual_activity",
+        "parenthood",
+        "norm_pressure"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.mtf-grade12-2024",
+      "referenceId": "mtf2024_grade12_public_data",
+      "familyId": "family.mtf",
+      "title": {
+        "en": "MTF youth behavior profiles",
+        "fi": "MTF: nuorten käyttäytymisprofiilit"
+      },
+      "description": {
+        "en": "6,895 grade-12 respondents with six randomized forms and a common core.",
+        "fi": "6 895 viimeisen lukioluokan vastaajaa, kuusi satunnaista lomaketta ja yhteinen ydin."
+      },
+      "scope": {
+        "en": "All variables are not measured in every respondent; school surveys and the separate adult panel differ.",
+        "fi": "Kaikkia muuttujia ei mitata kaikilta; koulukyselyt ja erillinen aikuispaneeli eroavat."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://www.icpsr.umich.edu/web/NAHDAP/studies/39444",
+      "years": "2024",
+      "measuredVariables": [
+        "sexual_activity",
+        "alcohol",
+        "behavior_profile"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    },
+    {
+      "id": "dataset.pew-atp147-2024",
+      "referenceId": "pew2024_atp147_childless_data",
+      "familyId": "family.pew-atp",
+      "title": {
+        "en": "Pew child expectations and social context",
+        "fi": "Pew: lapsiodotukset ja sosiaalinen ympäristö"
+      },
+      "description": {
+        "en": "Reported reasons, pressure, social ties and caregiving among selected adults without children.",
+        "fi": "Ilmoitetut syyt, paine, suhteet ja hoiva valituilla lapsettomilla aikuisilla."
+      },
+      "scope": {
+        "en": "The 57% reason statistic concerns 18–49-year-olds already expecting no future children, with multiple reasons permitted.",
+        "fi": "57 %:n syyluku koskee 18–49-vuotiaita, jotka jo pitivät tulevia lapsia epätodennäköisinä; useita syitä sallittiin."
+      },
+      "access": {
+        "en": "Official documentation and access route; account or restricted-data terms may apply.",
+        "fi": "Virallinen dokumentaatio ja käyttötie; tili tai rajoitetun aineiston ehdot voivat olla tarpeen."
+      },
+      "url": "https://www.pewresearch.org/dataset/american-trends-panel-wave-147/",
+      "years": "2024-04-29–2024-05-19",
+      "measuredVariables": [
+        "child_intention",
+        "norm_pressure",
+        "parental_care",
+        "social_network"
+      ],
+      "studyIds": [],
+      "individualLevel": true,
+      "longitudinal": false,
+      "yearBasis": "collection"
+    }
+  ]
+}

@@ -1,6 +1,18 @@
 {
   "schema_version": 1,
   "metadata": {
+    "evidence_only_profiles": [
+      {
+        "profile_id": "mcu_receiver_state",
+        "reason": {
+          "en": "The MCU/Ru360 intervention has no implemented synthetic protocol. Its drug concentration, treatment timing and matched four-arm means have not been curated. The observed component finding remains available as evidence without invented replay coefficients.",
+          "fi": "MCU/Ru360-interventiolle ei ole toteutettua synteettistä protokollaa. Lääkepitoisuutta, käsittelyn ajoitusta ja neljän koehaaran vertailukelpoisia keskiarvoja ei ole kuratoitu. Havaittu komponenttitulos säilyy näyttönä ilman keksittyjä toistokertoimia."
+        },
+        "reference_ids": [
+          "sun2023_ru360_rf_damage"
+        ]
+      }
+    ],
     "route": "berm-intervention-protocol-v1",
     "calibration_status": "STRUCTURAL_ONLY",
     "empirical_validation_status": "NOT_FITTED_OR_OUT_OF_SAMPLE_TESTED",

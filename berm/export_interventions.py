@@ -13,6 +13,24 @@ from berm.modulome.intervention_protocol import ROUTE, run_factorial_protocol
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUTS = (ROOT / "website/data/intervention-scenarios.json", ROOT / "website/public/data/intervention-scenarios.json")
 REGISTRY = ROOT / "berm/data/evidence/intervention_profiles_v1.json"
+# Evidence coverage does not imply that a synthetic protocol exists.  Keep
+# these profiles visible and fail for any undeclared coverage gap.
+EVIDENCE_ONLY_PROFILES = {
+    "mcu_receiver_state": {
+        "en": (
+            "The MCU/Ru360 intervention has no implemented synthetic protocol. "
+            "Its drug concentration, treatment timing and matched four-arm means "
+            "have not been curated. The observed component finding remains "
+            "available as evidence without invented replay coefficients."
+        ),
+        "fi": (
+            "MCU/Ru360-interventiolle ei ole toteutettua synteettistä protokollaa. "
+            "Lääkepitoisuutta, käsittelyn ajoitusta ja neljän koehaaran "
+            "vertailukelpoisia keskiarvoja ei ole kuratoitu. Havaittu "
+            "komponenttitulos säilyy näyttönä ilman keksittyjä toistokertoimia."
+        ),
+    },
+}
 LABELS = {
     "resting_bulk_ca": ("Calcium before measurement", "Ca ennen mittausta"),
     "bulk_ca_peak": ("Whole-cell calcium peak", "Koko solun Ca-huippu"),
@@ -68,6 +86,20 @@ def build_payload():
     records = registry.get("profiles", registry.get("intervention_profiles", [])) if isinstance(registry, dict) else registry
     profiles = {r["id"]: r for r in records}
     scenarios = example_scenarios()
+    replayed_ids = {scenario["profile_id"] for scenario in scenarios}
+    evidence_only_ids = set(EVIDENCE_ONLY_PROFILES) & set(profiles)
+    if replayed_ids & evidence_only_ids:
+        raise ValueError("evidence-only profiles must not receive a synthetic replay")
+    if replayed_ids | evidence_only_ids != set(profiles):
+        raise ValueError("every registered profile needs a replay or an explicit evidence-only reason")
+    evidence_only = [
+        {
+            "profile_id": profile_id,
+            "reason": deepcopy(EVIDENCE_ONLY_PROFILES[profile_id]),
+            "reference_ids": deepcopy(profiles[profile_id].get("referenceIds", [])),
+        }
+        for profile_id in sorted(evidence_only_ids)
+    ]
     for scenario in scenarios:
         result = run_factorial_protocol(scenario["protocol"])
         bridge_trace = {}
@@ -86,6 +118,7 @@ def build_payload():
         scenario["claim_ids"] = deepcopy(profile.get("claimIds", []))
         scenario["evidence_link_semantics"] = "Component-source links motivate the mechanism; synthetic coefficients are not fitted from these sources."
     return {"schema_version": 1, "metadata": {
+        "evidence_only_profiles": evidence_only,
         "route": ROUTE, "calibration_status": "STRUCTURAL_ONLY", "empirical_validation_status": "NOT_FITTED_OR_OUT_OF_SAMPLE_TESTED",
         "operator_form_status": "CONDITIONAL_FORMAL_OPERATOR", "physical_identification_status": "OPEN",
         "l1_geometry_status": "DERIVED_FROM_STATED_2025_PREMISE", "coupling_status": "CONDITIONAL_MINIMAL_MATTER_COUPLING",

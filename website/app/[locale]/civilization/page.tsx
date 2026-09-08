@@ -1,4 +1,5 @@
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -417,6 +418,7 @@ export default async function CivilizationPage({
         <div className="max-w-4xl"><EncounterWindowsIllustration locale={locale} variant="joint-action" compact /></div>
         <BiologicalCoordinationContext locale={locale} context="civilization" />
         <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
+        <ReproductiveRegulationIntegration locale={locale} context="civilization" />
 
         <section className="mb-16 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-6">
           <h2 className="text-lg font-semibold">{epistapege.title}</h2>

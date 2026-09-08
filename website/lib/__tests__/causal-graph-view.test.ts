@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import graph from "@/data/causal-graph.json";
 import claims from "@/data/claims.json";
 import { STEROIDOGENESIS } from "@/lib/steroidogenesis";
+import { REPRODUCTIVE_REGULATION } from "@/lib/reproductiveRegulation";
 import {
   CANONICAL_CAUSAL_EDGES,
   CANONICAL_CAUSAL_GRAPH_VERSION,
@@ -40,7 +41,7 @@ describe("rendered canonical causal graph", () => {
       expect(graph.nodes).toHaveProperty(nodeId);
       expect(supplement.claimIds.every(id => claimIds.has(id))).toBe(true);
       const node = CANONICAL_CAUSAL_NODES.find(item => item.id === nodeId)!;
-      expect(node.keyReferences).toHaveLength(supplement.studyIds.length);
+      expect(node.keyReferences).toHaveLength(supplement.studyIds.length + (supplement.regulationStudyIds?.length ?? 0));
       supplement.studyIds.forEach((studyId, index) => {
         const study = STEROIDOGENESIS.studies.find(item => item.id === studyId)!;
         const reference = node.keyReferences[index];
@@ -48,6 +49,14 @@ describe("rendered canonical causal graph", () => {
         expect(reference.keyFinding_en).toContain(study.finding.en);
         expect(reference.keyFinding_en).toContain(study.scope.en);
         expect(reference.keyFinding_en).toMatch(study.evidenceKind === "field_experiment" ? /^Field experiment:/ : /^Component experiment:/);
+      });
+      (supplement.regulationStudyIds ?? []).forEach((studyId, index) => {
+        const study = REPRODUCTIVE_REGULATION.studies.find(item => item.id === studyId)!;
+        const reference = node.keyReferences[supplement.studyIds.length + index];
+        expect(reference.referenceId).toBe(study.referenceId);
+        expect(reference.keyFinding_en).toContain(study.finding.en);
+        expect(reference.keyFinding_en).toContain(study.scope.en);
+        expect(reference.keyFinding_en).toMatch(study.evidenceKind === "observational" ? /^Observational study:/ : /^Component experiment:/);
       });
     }
   });
@@ -73,5 +82,20 @@ describe("rendered canonical causal graph", () => {
       expect(getCanonicalNodeLabel(node.id, "fi")).toBe(node.label.fi ?? node.label.en);
     }
     expect(getCanonicalNodeDescription("MALE_SPERM", "fi")).toContain("ei solmun tutkimusnäytön puuttumista");
+  });
+
+  it("retains capacity and the institutional terminal while connecting behaviour to encounters and care", () => {
+    const hasEdge = (from: string, to: string) => CANONICAL_CAUSAL_EDGES.some(edge => edge.from === from && edge.to === to);
+    expect(hasEdge("INDIVIDUAL_BEHAVIORAL_RESPONSE", "DEMAND_OPPORTUNITY")).toBe(true);
+    expect(hasEdge("REPRODUCTIVE_OPPORTUNITY", "DEMAND_OPPORTUNITY")).toBe(true);
+    expect(hasEdge("HORMONE_TARGET_RESPONSE", "CAREGIVING_ALLOCATION")).toBe(true);
+    expect(hasEdge("COUPLE_FECUNDABILITY", "ASFR")).toBe(true);
+    expect(CANONICAL_CAUSAL_EDGES.some(edge => edge.from === "INSTITUTIONAL_MODEL_REUSE")).toBe(false);
+    expect(getCanonicalNodeDescription("DEMAND_OPPORTUNITY", "en")).toContain("zero intention does not imply zero births");
+    for (const id of ["INDIVIDUAL_BEHAVIORAL_RESPONSE", "REPRODUCTIVE_OPPORTUNITY", "CAREGIVING_ALLOCATION", "DEMAND_OPPORTUNITY"]) {
+      const node = CANONICAL_CAUSAL_NODES.find(item => item.id === id)!;
+      expect(node.keyReferences.length).toBeGreaterThan(0);
+      expect(node.keyReferences.every(reference => !reference.keyFinding_en?.startsWith("Field experiment:"))).toBe(true);
+    }
   });
 });

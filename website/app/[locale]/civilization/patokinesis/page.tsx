@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import Link from "next/link";
 import { ArrowRight, Eye, EyeOff, Waves, Skull, Radio, Activity, Mic, Bug, Building2 } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
@@ -1017,6 +1018,8 @@ export default async function PatokinesiPage({
             </div>
           )}
         </section>
+
+        <ReproductiveRegulationIntegration locale={locale} context="patokinesis" />
 
         {/* S4: Behavioral sink */}
         <section className="mb-20">

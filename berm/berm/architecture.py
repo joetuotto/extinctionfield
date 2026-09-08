@@ -11,6 +11,7 @@ from __future__ import annotations
 from copy import deepcopy
 from berm.biology.cross_pathway_synthesis import synthesis_manifest
 from berm.biology.combined_exposures import combined_exposures_structure
+from berm.biology.reproductive_regulation import reproductive_regulation_structure
 
 
 PACKAGE_VERSION = "0.22.0"
@@ -287,6 +288,7 @@ def architecture_manifest() -> dict:
     """Return a defensive copy of the machine-readable architecture contract."""
 
     manifest = deepcopy(_ARCHITECTURE_MANIFEST)
+    manifest["reproductiveRegulation"] = reproductive_regulation_structure()
     combined = combined_exposures_structure()
     manifest["evidenceSynthesis"]["combinedExposures"] = {
         "structureVersion": combined["version"],
