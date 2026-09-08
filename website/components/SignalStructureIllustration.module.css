@@ -1,0 +1,22 @@
+.figure { margin: 1.5rem 0 0; padding: 1.1rem 0; border-block: 1px solid var(--card-border); min-width: 0; color: var(--foreground); }
+.kicker { margin: 0 0 .35rem; font-size: .7rem; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; color: var(--foreground-muted); }
+.title { margin: 0; font-size: 1rem; font-weight: 650; line-height: 1.4; }
+.control { display: grid; gap: .1rem; margin: 1rem 0 .4rem; max-width: 30rem; font-size: .8rem; }
+.control > span { display: flex; justify-content: space-between; gap: 1rem; }
+.control input { width: 100%; height: 2.75rem; accent-color: var(--accent); cursor: pointer; }
+.control input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.waves { display: grid; gap: .85rem; }
+.wave { min-width: 0; }
+.waveHeading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem .75rem; margin-bottom: .3rem; font-size: .78rem; line-height: 1.5; }
+.waveHeading > span { color: var(--foreground-muted); font-variant-numeric: tabular-nums; }
+.plot { display: block; width: 100%; height: 5.5rem; overflow: visible; }
+.axis { stroke: var(--chart-axis); vector-effect: non-scaling-stroke; }
+.period { stroke: var(--chart-grid); stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+.continuous, .pulsed { fill: none; stroke-width: 1.6; vector-effect: non-scaling-stroke; }
+.continuous { stroke: var(--chart-series-1); }
+.pulsed { stroke: var(--chart-series-4); }
+.timeAxis { display: flex; justify-content: space-between; margin-top: .15rem; font-size: .7rem; color: var(--foreground-muted); }
+.axisLabel, .formula { font-size: .72rem; line-height: 1.55; color: var(--foreground-muted); margin: .65rem 0 0; }
+.note, .boundary { margin: .7rem 0 0; font-size: .8rem; line-height: 1.6; }
+.boundary { color: var(--foreground-muted); }
+@media (max-width: 420px) { .waveHeading { display: grid; gap: 0; } }

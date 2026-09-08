@@ -1,4 +1,5 @@
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
+import { AnatomyIllustrationCell } from "@/components/AnatomyIllustration";
 import type { Metadata } from "next";
 import { Dna } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
@@ -101,6 +102,7 @@ export default async function BiologyPage({ params }: { params: Promise<{ locale
   return <ExplanationHub locale={locale} copy={COPY} {...d} icon={Dna} stage="biology">
     <ExplanationSection {...d.contents[0]}>{p(d.reception)}<ResearchConnection locale={locale} studies={d.receptionStudies} implication={d.receptionImplication} /></ExplanationSection>
     <SteroidogenesisIntegrationPanel locale={locale} />
+    <AnatomyIllustrationCell locale={locale} compact />
     <ExplanationSection {...d.contents[2]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.coordination.cry-steroid-feedback">{d.cryClaim}</ClaimRef></p>{p(d.cry)}<ResearchConnection locale={locale} studies={d.cryStudies} implication={d.cryImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.coordination.hormone-waveform">{d.timingClaim}</ClaimRef></p>{p(d.timing)}<ResearchConnection locale={locale} studies={d.timingStudies} implication={d.timingImplication} /><MathBlock tex={String.raw`\langle H R\rangle=H_0R_0+\frac{hr}{2}\cos\Delta\phi`} />{p(d.timingEquation)}</ExplanationSection>
     <ExplanationSection {...d.contents[4]}>{p(d.capacity)}<ResearchConnection locale={locale} studies={d.capacityStudies} implication={d.capacityImplication} /></ExplanationSection>

@@ -1,4 +1,5 @@
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
+import { HormoneCompartments } from "@/components/HormoneCompartments";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TrendingDown } from "lucide-react";
@@ -384,8 +385,9 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
             }, locale)}
           </ClaimRef>
         </p>
+        <HormoneCompartments locale={locale} />
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-border/50 p-5">
+          <div className="min-w-0 rounded-lg border border-border/50 p-5">
             <h3 className="font-medium mb-3">
               {pickCopy({ en: "1. Availability", fi: "1. Saatavuus", ja: "1. 利用可能性", fr: "1. Disponibilité", ko: "1. 가용성" }, locale)}
             </h3>
@@ -402,7 +404,7 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
               </ClaimRef>
             </p>
           </div>
-          <div className="rounded-lg border border-border/50 p-5">
+          <div className="min-w-0 rounded-lg border border-border/50 p-5">
             <h3 className="font-medium mb-3">
               {pickCopy({ en: "2. Reception and use", fi: "2. Vastaanotto ja käyttö", ja: "2. 受容と利用", fr: "2. Réception et utilisation", ko: "2. 수용과 사용" }, locale)}
             </h3>

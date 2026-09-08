@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FlaskConical } from "lucide-react";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { PageHeader } from "@/components/PageHeader";
+import { LaboratoryComparison } from "@/components/LaboratoryComparison";
 
 /* ── Five confounds card data ── */
 type Confound = {
@@ -657,6 +658,8 @@ export default async function ReplicationPage({
           </div>
         </article>
       </section>
+
+      <LaboratoryComparison locale={locale} />
 
       {/* ── Section 2: The Five Confounds ── */}
       <section className="mb-16 border-t editorial-rule pt-6">

@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { MathBlock } from "@/components/MathBlock";
 import { TechnologyHistoryExplorer } from "@/components/TechnologyHistoryExplorer";
+import { SourceEnvironmentIllustration } from "@/components/SourceEnvironmentIllustration";
 import { pickCopy } from "@/lib/i18n";
 import { technologyHistory } from "@/lib/technology-history";
 
@@ -106,6 +107,7 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
         <Link href={`/${locale}/explore?tab=atlas&view=fields&country=FIN`} className="text-accent hover:underline">{d.atlasFields} →</Link>
       </div>
     </section>
+    <SourceEnvironmentIllustration locale={locale} />
     <nav aria-label={d.guide} className="mb-12 rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
       <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-5">{d.guide}</p>
       <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{d.steps.map((step, i) => <li key={step.title} className="flex gap-3">

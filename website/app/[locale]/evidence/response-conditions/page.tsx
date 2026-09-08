@@ -7,6 +7,7 @@ import { StudyCitation } from "@/components/StudyCitation";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { pickCopy } from "@/lib/i18n";
+import { LaboratoryComparison } from "@/components/LaboratoryComparison";
 
 const SOURCES = [
   { year: 1991, author: "Litovitz et al.", condition: "Coherence time", result: "About 10 s of coherence produced the tested ornithine-decarboxylase response; shorter intervals weakened or removed it.", referenceId: "litovitz1991_coherence_time" },
@@ -145,6 +146,8 @@ export default async function ResponseConditionsPage({ params }: { params: Promi
           </div>
           <p className="text-sm leading-relaxed text-foreground-muted">{d.stateText}</p>
         </section>
+
+        <LaboratoryComparison locale={locale} compact />
 
         <section className="mb-12 grid gap-5 md:grid-cols-2">
           <article className="rounded-xl border border-card-border bg-card-bg p-6">

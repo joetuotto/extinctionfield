@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-08T14:43:39.138Z",
+  "generatedAt": "2026-09-08T15:54:09.600Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/evidence/testosterone/page.tsx",
-      "line": 394
+      "line": 396
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -14,7 +14,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/modulome/testes/page.tsx",
-      "line": 957
+      "line": 959
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -32,7 +32,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/evidence/testosterone/page.tsx",
-      "line": 377
+      "line": 378
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -42,7 +42,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/modulome/testes/page.tsx",
-      "line": 961
+      "line": 963
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -76,7 +76,7 @@
     {
       "claimId": "claim.behavior.biological-state-to-action",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 123
+      "line": 125
     },
     {
       "claimId": "claim.behavior.biological-state-to-action",
@@ -102,7 +102,7 @@
     {
       "claimId": "claim.behavior.dyadic-propagation",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 122
+      "line": 123
     },
     {
       "claimId": "claim.behavior.dyadic-propagation",
@@ -115,7 +115,7 @@
     {
       "claimId": "claim.behavior.reported-reasons",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 120
+      "line": 121
     },
     {
       "claimId": "claim.behavior.reported-reasons",
@@ -133,7 +133,7 @@
     {
       "claimId": "claim.behavior.sexual-motivation",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 117
+      "line": 118
     },
     {
       "claimId": "claim.behavior.sexual-motivation",
@@ -146,7 +146,7 @@
     {
       "claimId": "claim.behavior.social-valuation",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 121
+      "line": 122
     },
     {
       "claimId": "claim.behavior.social-valuation",
@@ -159,7 +159,7 @@
     {
       "claimId": "claim.behavior.state-dependent-learning",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 119
+      "line": 120
     },
     {
       "claimId": "claim.behavior.state-dependent-learning",
@@ -172,7 +172,7 @@
     {
       "claimId": "claim.behavior.state-dependent-valuation",
       "file": "app/[locale]/behavior/page.tsx",
-      "line": 116
+      "line": 117
     },
     {
       "claimId": "claim.behavior.state-dependent-valuation",
@@ -203,12 +203,12 @@
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/evidence/response-conditions/page.tsx",
-      "line": 139
+      "line": 140
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/evidence/response-conditions/page.tsx",
-      "line": 142
+      "line": 143
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
@@ -386,7 +386,7 @@
     {
       "claimId": "claim.coordination.cry-steroid-feedback",
       "file": "app/[locale]/biology/page.tsx",
-      "line": 104
+      "line": 106
     },
     {
       "claimId": "claim.coordination.cry-steroid-feedback",
@@ -422,7 +422,7 @@
     {
       "claimId": "claim.coordination.hormone-waveform",
       "file": "app/[locale]/biology/page.tsx",
-      "line": 105
+      "line": 107
     },
     {
       "claimId": "claim.coordination.hormone-waveform",

@@ -7,6 +7,7 @@ import { BermIcon } from "@/components/BermIcon";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { pickCopy } from "@/lib/i18n";
+import { EncounterWindowsIllustration } from "@/components/EncounterWindowsIllustration";
 
 const COPY = {
   en: {
@@ -462,6 +463,7 @@ export default async function EcologyPage({
                   <p key={pi}><InlineReferenceText text={p} locale={locale} /></p>
                 ))}
               </div>
+              {narrative.id === "plant-cry" && <EncounterWindowsIllustration locale={locale} variant="pollination" />}
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>

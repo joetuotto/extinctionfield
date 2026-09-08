@@ -5,6 +5,7 @@ import { ClaimRef } from "@/components/ClaimRef";
 import { ExplanationHub, ExplanationSection, ExplanationText, ResearchConnection } from "@/components/ExplanationHub";
 import { MathBlock } from "@/components/MathBlock";
 import { pickCopy } from "@/lib/i18n";
+import { EncounterWindowsIllustration } from "@/components/EncounterWindowsIllustration";
 
 const COPY = {
   en: {
@@ -120,6 +121,7 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.reported-reasons">{d.reasonsClaim}</ClaimRef></p>{p(d.reasons)}<ResearchConnection locale={locale} studies={d.reasonsStudies} implication={d.reasonsImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[4]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.social-valuation">{d.socialClaim}</ClaimRef></p>{p(d.social)}<ResearchConnection locale={locale} studies={d.socialStudies} implication={d.socialImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[5]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.dyadic-propagation">{d.jointClaim}</ClaimRef></p>{p(d.joint)}<ResearchConnection locale={locale} studies={d.jointStudies} implication={d.jointImplication} />
+      <EncounterWindowsIllustration locale={locale} variant="joint-action" />
       <div className="space-y-5 border-t editorial-rule pt-7"><h3 className="text-xl font-semibold">{d.synthesisTitle}</h3><p className="text-lg leading-8"><ClaimRef claimId="claim.behavior.biological-state-to-action">{d.synthesisClaim}</ClaimRef></p>
         <MathBlock tex={String.raw`V_j=p_j(S,L)B_j(S,L)-w_{E,j}(S)E_j-w_{H,j}(S)H_j-C_j`} />
         <MathBlock tex={String.raw`P(a=j)=\operatorname{softmax}_j\!\left(\beta(S)V_j\right)`} />{p(d.equationMeaning)}{p(d.reproduction)}

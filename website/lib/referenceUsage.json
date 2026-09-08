@@ -2,7 +2,7 @@
   "metadata": {
     "generated": "2026-09-08",
     "referencesWithUsages": 852,
-    "usageLocations": 2587
+    "usageLocations": 2599
   },
   "usage": {
     "delgado1969": [
@@ -2645,6 +2645,10 @@
     ],
     "lin1995_star": [
       {
+        "path": "/biology",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
         "path": "/biology/calcium-redox-steroidogenesis",
         "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
       },
@@ -2653,12 +2657,20 @@
         "source": "data/claims.json"
       },
       {
+        "path": "/evidence/testosterone",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "components/AnatomyIllustration.tsx"
       }
     ],
     "lindgren2025": [
@@ -2779,6 +2791,10 @@
     ],
     "esmaeilian2023_autophagy": [
       {
+        "path": "/biology",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
         "path": "/biology/calcium-redox-steroidogenesis",
         "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
       },
@@ -2787,12 +2803,20 @@
         "source": "data/claims.json"
       },
       {
+        "path": "/evidence/testosterone",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "components/AnatomyIllustration.tsx"
       }
     ],
     "cunningham2016_testosterone_sexual_function": [
@@ -2851,6 +2875,82 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ProxyMechanismEvidence.tsx"
+      }
+    ],
+    "degendt2004_sertoli_ar": [
+      {
+        "path": "/biology",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "app/[locale]/evidence/testosterone/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "martin2008_camki_nur77": [
+      {
+        "path": "/biology",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/AnatomyIllustration.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "components/AnatomyIllustration.tsx"
       }
     ],
     "sherrard2018": [
@@ -9135,44 +9235,6 @@
         "source": "components/MathematicsSections.tsx"
       }
     ],
-    "degendt2004_sertoli_ar": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/evidence/testosterone",
-        "source": "app/[locale]/evidence/testosterone/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "components/MathematicsSections.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/math",
-        "source": "components/MathematicsSections.tsx"
-      },
-      {
-        "path": "/model/proxy-masking",
-        "source": "components/ProxyMechanismEvidence.tsx"
-      },
-      {
-        "path": "/modulome/testes",
-        "source": "app/[locale]/modulome/testes/page.tsx"
-      }
-    ],
     "yu2023_zip9_rf_sertoli": [
       {
         "path": "/evidence/pharmacology",
@@ -10066,20 +10128,6 @@
       }
     ],
     "manna1999_calcium_star": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      }
-    ],
-    "martin2008_camki_nur77": [
       {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"

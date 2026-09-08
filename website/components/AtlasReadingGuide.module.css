@@ -1,0 +1,38 @@
+.guide { border-block: 1px solid var(--card-border); padding: .8rem 0; margin: 1rem 0; color: var(--foreground); min-width: 0; }
+.legend, .historyLegend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .74rem; line-height: 1.5; }
+.legend > span, .historyLegend > span { display: inline-flex; align-items: center; gap: .45rem; }
+.legend i, .historyLegend i { display: inline-block; width: 1.2rem; flex: 0 0 auto; }
+.legend .observation { width: .4rem; height: .4rem; border-radius: 50%; background: var(--foreground); }
+.fitted { border-top: 2px solid var(--foreground-muted); }
+.legend .cutoff { width: .5rem; height: 1rem; border-left: 1px dashed var(--foreground-muted); }
+.predicted { border-top: 2px dashed var(--foreground-muted); }
+.key { margin: .5rem 0 0; color: var(--foreground-muted); font-size: .75rem; line-height: 1.6; }
+.details { margin-top: .65rem; }
+.details > summary { cursor: pointer; padding: .3rem 0; font-size: .8rem; line-height: 1.5; font-weight: 550; }
+.details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.example { padding-top: .8rem; min-width: 0; }
+.kicker { margin: 0; font-size: .7rem; font-weight: 650; color: var(--foreground-muted); text-transform: uppercase; letter-spacing: .04em; }
+.intro { margin: .5rem 0 .75rem; font-size: .8rem; line-height: 1.6; }
+.earlySwatch { border-top: 2px solid var(--chart-series-1); }
+.lateSwatch { border-top: 2px dashed var(--chart-series-2); }
+.instruction { margin: .6rem 0 0; font-size: .72rem; color: var(--foreground-muted); line-height: 1.6; }
+.yearControl { display: grid; margin: .65rem 0; gap: .1rem; font-size: .78rem; max-width: 30rem; }
+.yearControl > span { display: flex; gap: 1rem; justify-content: space-between; }
+.yearControl input { width: 100%; height: 2.75rem; accent-color: var(--accent); cursor: pointer; }
+.yearControl input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lane { margin-top: .8rem; min-width: 0; }
+.laneHeading { display: flex; flex-wrap: wrap; gap: .25rem .75rem; justify-content: space-between; font-size: .78rem; }
+.laneHeading > span { color: var(--foreground-muted); font-size: .71rem; }
+.values { display: flex; flex-wrap: wrap; gap: .75rem; margin: .3rem 0; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.plot { width: 100%; height: auto; display: block; }
+.axis { stroke: var(--chart-axis); }
+.grid { stroke: var(--chart-grid); }
+.earlyCurve, .lateCurve { fill: none; stroke-width: 2; }
+.earlyCurve { stroke: var(--chart-series-1); }
+.lateCurve { stroke: var(--chart-series-2); stroke-dasharray: 5 4; }
+.cursor { stroke: var(--foreground); stroke-width: 1; stroke-dasharray: 2 3; }
+.ticks { position: relative; height: 1.15rem; color: var(--foreground-muted); font-size: .7rem; }
+.ticks > span { position: absolute; transform: translateX(-50%); }
+.scale { margin: .15rem 0 0; color: var(--foreground-muted); font-size: .7rem; }
+.assumptions, .boundary { margin: .8rem 0 0; font-size: .74rem; line-height: 1.65; color: var(--foreground-muted); }
+@media (max-width: 420px) { .laneHeading { display: grid; gap: .15rem; } .legend { gap: .35rem .75rem; } }

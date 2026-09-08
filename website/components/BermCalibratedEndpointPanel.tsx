@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { buildBermCalibratedAtlas } from "@/lib/berm-calibrated-atlas";
 import { useSearchParams } from "next/navigation";
 import { BERM_ENDPOINT_MODES, type BermEndpointMode } from "@/lib/berm-endpoint-scenario";
@@ -10,6 +11,7 @@ import { atlasText as text, atlasNumber as num, downloadAtlasBlob } from "@/lib/
 import { atlasCsvCell } from "@/lib/change-atlas-state";
 import { ChangeAtlasCharts, type ChangeAtlasPredictionOverlay } from "./ChangeAtlasCharts";
 import { BermInputHistoryChart } from "./BermInputHistoryChart";
+import { AtlasReadingGuide } from "./AtlasReadingGuide";
 import type { BermEndpointPanelProps } from "./BermEndpointPanel";
 import styles from "./ChangeAtlas.module.css";
 
@@ -31,8 +33,25 @@ const STATUS:Record<string,{fi:string;en:string}> = {
   "non-identifiable":{fi:"Aineisto sallii useita vastekertoimia",en:"The data permit multiple response gains"},
 };
 
+const subscribeHydration = () => () => {};
+const clientHydrationSnapshot = () => true;
+const serverHydrationSnapshot = () => false;
+
+/** The numerical optimizer and exp/pow may differ slightly between JS engines.
+ * Server HTML and the first hydration render therefore contain observations only.
+ * The complete calibrated presentation mounts after hydration, in one engine;
+ * neither the scientific values nor their exported metadata are rounded. */
+export function BermCalibratedEndpointPanel(props:BermEndpointPanelProps) {
+  const hydrated = useSyncExternalStore(subscribeHydration, clientHydrationSnapshot, serverHydrationSnapshot);
+  if (hydrated) return <BermCalibratedEndpointReady {...props} />;
+  return <section data-berm-calibration-pending>
+    <p role="status" className={styles.note}>{props.locale === "fi" ? "Ladataan BERM-laskentaa…" : "Loading BERM calculation…"}</p>
+    <ChangeAtlasCharts series={props.observations} locale={props.locale} yearDomain={[props.from,props.to]} selectedYear={props.year} onSelectYear={props.onYearChange} onOpenSource={props.onOpenSource} />
+  </section>;
+}
+
 /** The fit reference stays fixed when the reader changes the prediction's inputs. */
-export function BermCalibratedEndpointPanel({countryId,locale,from,to,year,observations,rawObservations,indexYear,onYearChange,onOpenSource}:BermEndpointPanelProps) {
+function BermCalibratedEndpointReady({countryId,locale,from,to,year,observations,rawObservations,indexYear,onYearChange,onOpenSource}:BermEndpointPanelProps) {
   const fi=locale==="fi", params=useSearchParams(), query=params.toString();
   const display=parseBermEndpointDisplay(params), selection=parseBermCalibrationDisplay(new URLSearchParams(query));
   const update=(patch:Record<string,string|null>)=>{
@@ -151,6 +170,7 @@ export function BermCalibratedEndpointPanel({countryId,locale,from,to,year,obser
         </div>)}
       </details>
     </>}
+    {display.enabled && <AtlasReadingGuide locale={locale} from={from} to={to} year={year} onYearChange={onYearChange} />}
     <ChangeAtlasCharts series={observations} locale={locale} yearDomain={[from,to]} selectedYear={year} onSelectYear={onYearChange} onOpenSource={onOpenSource} overlaysBySeriesId={overlays}/>
     {display.enabled&&result?.scenario&&<>
       <div className={styles.predictionModes}><label><input type="checkbox" checked={selection.showInputHistory} onChange={e=>update({ep_inputs:e.target.checked?"1":"0"})}/>{fi?"Näytä saman vuosivalinnan lähdeprojektio, vuosivaste ja kertymä":"Show source projection, annual response and retained history for the same years"}</label></div>

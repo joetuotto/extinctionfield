@@ -7,6 +7,7 @@ import { atlasNumber, atlasText, downloadAtlasBlob, visibleAtlasPoints } from "@
 import { atlasCsvCell } from "@/lib/change-atlas-state";
 import { fieldReconstruction, getReconstructionSources, getReconstructionTracks } from "@/lib/field-reconstruction";
 import { getTechnologyDriverCoverage } from "@/lib/technology-drivers-data";
+import { useTechnologyDisplay } from "@/lib/use-technology-display";
 import styles from "./TechnologyDriverPanel.module.css";
 
 export interface TechnologyDriverPanelProps {
@@ -178,11 +179,7 @@ export function TechnologyDriverPanel({ countryId, locale, from, to, year, onYea
   const c: Copy = locale === "fi" ? COPY.fi : COPY.en;
   const id = useId();
   const all = getChangeAtlasSeries(countryId).filter(s => s.datasetFamily === "technology");
-  const available = all.filter(series => visibleAtlasPoints(series, from, to).length);
-  const firstSeries = available[0] ?? all[0];
-  const defaultFamily = available.some(series => familyId(series) === "electric-grid") ? "electric-grid" : firstSeries ? familyId(firstSeries) : "electric-grid";
-  const [selectedFamily, setSelectedFamily] = useState(defaultFamily);
-  const [reconstruct, setReconstruct] = useState(false);
+  const { family: selectedFamily, interpolate: reconstruct, update: updateTechnologyDisplay } = useTechnologyDisplay();
   const [exported, setExported] = useState(false);
   const [width, setWidth] = useState(600);
   const container = useRef<HTMLDivElement>(null);
@@ -194,21 +191,8 @@ export function TechnologyDriverPanel({ countryId, locale, from, to, year, onYea
     if (typeof ResizeObserver === "undefined") return;
     const observer = new ResizeObserver(update); observer.observe(element); return () => observer.disconnect();
   }, []);
-  useEffect(() => {
-    const restore = () => {
-      const params = new URLSearchParams(window.location.search);
-      const requested = params.get("t_family");
-      const valid = requested === "all" || requested === "cellular-total" || requested === "unassigned" || fieldReconstruction.families.some(family => family.id === requested);
-      setSelectedFamily(valid && requested ? requested : defaultFamily);
-      setReconstruct(params.get("t_interpolate") === "1");
-    };
-    restore(); window.addEventListener("popstate", restore); return () => window.removeEventListener("popstate", restore);
-  }, [defaultFamily]);
   const updateDisplay = (family: string, interpolate: boolean) => {
-    setSelectedFamily(family); setReconstruct(interpolate); setExported(false);
-    const url = new URL(window.location.href);
-    url.searchParams.set("t_family", family); url.searchParams.set("t_interpolate", interpolate ? "1" : "0");
-    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    updateTechnologyDisplay({ family, interpolate }); setExported(false);
   };
   const families = [...fieldReconstruction.families.map(f => ({ id: f.id, title: atlasText(f.label, locale) })),
     ...[...new Set([...all.map(familyId), selectedFamily])].filter(value => value !== "all" && !fieldReconstruction.families.some(f => f.id === value)).map(value => ({ id: value, title: value === "cellular-total" ? c.mobileTotal : c.unassigned }))];

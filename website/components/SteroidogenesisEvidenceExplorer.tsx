@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowDown, ArrowRight, Check, FlaskConical, GitBranch, Layers, Radio } from "lucide-react";
 import { StudyCitation } from "@/components/StudyCitation";
+import { AnatomyIllustrationCell } from "@/components/AnatomyIllustration";
 import { pickCopy } from "@/lib/i18n";
 import { SteroidogenesisTranslationNotice } from "@/components/SteroidogenesisTranslationNotice";
 import { STEROIDOGENESIS, filterSteroidogenesisStudies, steroidogenesisStudyLabel, steroidogenesisStateLabel, steroidogenesisText as tx, type SteroidogenesisStudy } from "@/lib/steroidogenesis";
@@ -114,6 +115,7 @@ export function SteroidogenesisEvidenceExplorer({ locale }: { locale: string }) 
         <div className="mt-4 rounded-lg border border-card-border bg-background p-4"><a href="#study-explorer" onClick={() => branch("redox-reserve")} className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline">{d.reserve}<ArrowRight size={14} aria-hidden="true" /></a><p className="mt-2 text-sm leading-6 text-foreground-muted">{d.reserveNote}</p></div>
         <figcaption className="mt-4 text-xs leading-6 text-foreground-muted">{d.graphNote}</figcaption>
       </figure>
+      <AnatomyIllustrationCell locale={locale} selectedBranch={mechanism} onSelectBranch={branch} />
     </section>
 
     <section className="space-y-5 border-t editorial-rule pt-8">

@@ -1,6 +1,8 @@
 import "@testing-library/jest-dom/vitest";
 import type { ComponentProps } from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { hydrateRoot } from "react-dom/client";
+import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { csvParse } from "d3";
 import { BermEndpointPanel } from "../BermEndpointPanel";
@@ -12,6 +14,7 @@ import type { BermBiomarkerCalibrationProtocol } from "@/lib/berm-biomarker-cali
 import type { TechnologyScenarioInput } from "@/lib/berm-technology-inputs";
 import { downloadAtlasBlob } from "@/lib/change-atlas-display";
 import { indexedReference } from "@/lib/referenceIndex";
+import * as calibratedAtlas from "@/lib/berm-calibrated-atlas";
 
 // Actual observations, source adapter, fitter and charts; only router and download side effects are replaced.
 vi.mock("next/navigation", () => ({ useSearchParams: () => new URLSearchParams(window.location.search) }));
@@ -53,6 +56,49 @@ function readBlob(blob: Blob) {
 }
 
 describe("data-calibrated BERM endpoint integration", () => {
+  it("hydrates observations first and mounts full-precision browser calculations without cross-engine attributes", async () => {
+    const props = propsFor("FIN", undefined, { locale: "fi", year: 2023 });
+    const original = calibratedAtlas.buildBermCalibratedAtlas;
+    const query = new URLSearchParams(window.location.search).toString();
+    const browser = structuredClone(original(query, props.countryId, props.rawObservations))!;
+    // Represent WebKit's last-bit retention difference and a small optimizer
+    // difference. Both remain genuine numbers; presentation must not round them.
+    const history = browser.scenario!.history.at(-1)!;
+    history.accumulated = history.accumulated! + 1e-12;
+    const predicted = browser.calibrations[0].prediction.points.at(-1)!.channels.combined;
+    predicted.value = predicted.value! + 1e-8;
+    const calculate = vi.spyOn(calibratedAtlas, "buildBermCalibratedAtlas").mockImplementation(() => {
+      throw new Error("Calibration must not run during the server/initial hydration render");
+    });
+    const host = document.createElement("div"); document.body.appendChild(host);
+    const errors = vi.spyOn(console, "error").mockImplementation(() => {});
+    const recover = vi.fn();
+    let root: ReturnType<typeof hydrateRoot> | undefined;
+    try {
+      const server = renderToString(<BermEndpointPanel {...props} />);
+      expect(calculate).not.toHaveBeenCalled();
+      expect(server).toContain("data-berm-calibration-pending");
+      expect(server).toContain('data-series-id="fin-tfr"');
+      expect(server).not.toContain("data-berm-endpoint=");
+      expect(server).not.toContain("data-memory-example=");
+      host.innerHTML = server;
+      calculate.mockReturnValue(browser);
+      await act(async () => { root = hydrateRoot(host, <BermEndpointPanel {...props} />, { onRecoverableError: recover }); });
+      expect(calculate).toHaveBeenCalled();
+      expect(recover).not.toHaveBeenCalled();
+      expect(errors.mock.calls.filter(call => /hydrat|didn't match|did not match/i.test(String(call[0])))).toEqual([]);
+      expect(host.querySelector("[data-berm-calibration-pending]")).toBeNull();
+      const shown = metadata(host);
+      expect(shown.scenario.history.at(-1)!.accumulated).toBe(history.accumulated);
+      expect(shown.calibrations[0].prediction.points.at(-1)!.channels.combined.value).toBe(predicted.value);
+      expect(host.querySelector("[data-memory-example]")).toBeInTheDocument();
+      expect(host.querySelector('[data-prediction-line="fin-tfr:combined"]')).toBeInTheDocument();
+    } finally {
+      if (root) await act(async () => root!.unmount());
+      host.remove(); calculate.mockRestore(); errors.mockRestore();
+    }
+  });
+
   it("fits the actual Finnish median contrast beyond the old slider bound and holds out all TFR years after 2000", () => {
     const view = openPanel();
     const data = metadata(view.container), t = hormone(data);

@@ -1,0 +1,1358 @@
+{
+  "pages": [
+    {
+      "route": "/about/civilization",
+      "lines": 492,
+      "components": [
+        "ClaimRef",
+        "CollapsibleSection",
+        "InlineReferenceText",
+        "MathBlock",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/about/history",
+      "lines": 106,
+      "components": [
+        "PageHeader",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/about/measurement",
+      "lines": 348,
+      "components": [
+        "PageHeader"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/about/objections",
+      "lines": 1,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/about",
+      "lines": 474,
+      "components": [
+        "PageHeader",
+        "ModelReadingPath",
+        "ModelScopeIntro",
+        "ResearchReadingGuide"
+      ],
+      "inlineSvg": 0,
+      "images": 1
+    },
+    {
+      "route": "/about/replication",
+      "lines": 1,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/articles/[slug]",
+      "lines": 243,
+      "components": [
+        "BermIcon"
+      ],
+      "inlineSvg": 0,
+      "images": 1
+    },
+    {
+      "route": "/articles",
+      "lines": 138,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 1
+    },
+    {
+      "route": "/behavior",
+      "lines": 129,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "ClaimRef",
+        "ExplanationHub",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/biology/calcium-redox-steroidogenesis",
+      "lines": 166,
+      "components": [
+        "ClaimRef",
+        "InlineReferenceText",
+        "MathBlock",
+        "ModelReadingPath",
+        "PageHeader",
+        "TranslationNotice",
+        "SteroidogenesisEvidenceExplorer",
+        "SteroidogenesisTranslationNotice",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/biology",
+      "lines": 109,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "ClaimRef",
+        "ExplanationHub",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/civilization/epistapege",
+      "lines": 3,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/civilization",
+      "lines": 490,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "BiologicalCoordinationContext",
+        "ModelReadingPath",
+        "CivilizationReadingPath"
+      ],
+      "inlineSvg": 0,
+      "images": 1
+    },
+    {
+      "route": "/civilization/pathopege",
+      "lines": 1448,
+      "components": [
+        "TranslationNotice",
+        "CitationLink",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 2,
+      "images": 0
+    },
+    {
+      "route": "/civilization/pathopolites",
+      "lines": 721,
+      "components": [
+        "TranslationNotice",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/civilization/patokinesis",
+      "lines": 1408,
+      "components": [
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/civilization/patokratia",
+      "lines": 1233,
+      "components": [
+        "TranslationNotice",
+        "ClaimRef",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/civilization/patopolis",
+      "lines": 3433,
+      "components": [
+        "TranslationNotice",
+        "ClaimRef",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 4,
+      "images": 0
+    },
+    {
+      "route": "/civilization/patopoliteia",
+      "lines": 1207,
+      "components": [
+        "TranslationNotice",
+        "InlineReferenceText",
+        "BiocapCivilizationChart",
+        "MigrationGradientMap",
+        "BiomarkerRadar",
+        "BiocapTrajectory"
+      ],
+      "inlineSvg": 1,
+      "images": 0
+    },
+    {
+      "route": "/data",
+      "lines": 1151,
+      "components": [
+        "SteroidogenesisCalibrationNote",
+        "FieldStateStatus"
+      ],
+      "inlineSvg": 1,
+      "images": 0
+    },
+    {
+      "route": "/ecology",
+      "lines": 79,
+      "components": [
+        "PageHeader",
+        "NextPageLink",
+        "EcoTickHero",
+        "EcoStaticInterface"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/epistemology",
+      "lines": 1358,
+      "components": [
+        "SteroidogenesisCalibrationNote",
+        "PageHeader",
+        "CautionBox",
+        "InlineReferenceText",
+        "ResearchReadingGuide",
+        "AboutTabs"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/adhd-prototype",
+      "lines": 320,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/allergy-epidemic",
+      "lines": 322,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/amish-control",
+      "lines": 350,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/autism-prototype",
+      "lines": 362,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/bbb",
+      "lines": 738,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "BBBMechanismDiagram",
+        "CitationLink",
+        "StudyCitation",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/cascades",
+      "lines": 904,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "IonicHierarchyDiagram",
+        "DiseaseCascadeTimeline",
+        "StudyCitation",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/chronic-pain",
+      "lines": 300,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/circadian",
+      "lines": 1064,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "BiologicalCoordinationContext",
+        "PageHeader",
+        "EvidenceSynthesisBanner",
+        "BermIcon",
+        "BehavioralSuppression",
+        "CitationLink",
+        "InlineReferenceText",
+        "ClaimRef"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/convergence",
+      "lines": 217,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "ClaimRef",
+        "ExplanationHub",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/converging-patterns",
+      "lines": 311,
+      "components": [
+        "PageHeader",
+        "ClaimRef",
+        "StudyCitation",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/counter-evidence",
+      "lines": 303,
+      "components": [
+        "PageHeader",
+        "CautionBox"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/devices",
+      "lines": 530,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "TherapeuticFrequencyMap",
+        "CellSizeFrequencyMatrix",
+        "CitationLink",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/ecology",
+      "lines": 504,
+      "components": [
+        "PageHeader",
+        "EvidenceSynthesisBanner",
+        "BermIcon",
+        "CitationLink",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/epidemiology",
+      "lines": 588,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "ThreeChannelDiagram",
+        "RetrodictionCards",
+        "CitationLink",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/epigenetic-legacy",
+      "lines": 311,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/evolution",
+      "lines": 541,
+      "components": [
+        "PageHeader",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/eyes",
+      "lines": 606,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/four-neurodegenerations",
+      "lines": 600,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/gut-brain-axis",
+      "lines": 327,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/heavy-metal-synergy",
+      "lines": 889,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/heliobiology",
+      "lines": 493,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/hidden-thyroid",
+      "lines": 365,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/historical-convergence",
+      "lines": 492,
+      "components": [
+        "PageHeader"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/infant-vulnerability",
+      "lines": 2865,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "RecommendationBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/iss-hypomagnetic",
+      "lines": 478,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/klimentidis-explained",
+      "lines": 475,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/laschamp-reversal",
+      "lines": 324,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/lighting",
+      "lines": 649,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "LightingTransitionTimeline",
+        "CitationLink",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/magnetoreception",
+      "lines": 494,
+      "components": [
+        "PageHeader",
+        "BermIcon",
+        "DifferentialSusceptibility",
+        "CitationLink",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/natural-modulators",
+      "lines": 387,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/neurological-spectrum",
+      "lines": 2255,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/nutrition",
+      "lines": 651,
+      "components": [
+        "BiologicalCoordinationContext",
+        "PageHeader",
+        "StudyCitation",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence",
+      "lines": 3460,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "ResearchReadingGuide",
+        "PageHeader",
+        "CitationLink",
+        "StudyCitation",
+        "NextPageLink",
+        "StatisticalValidation",
+        "EvidenceClassification",
+        "HindcastValidation",
+        "ReferencesSummary",
+        "RetrodictionCards",
+        "DiseaseCascadeTimeline",
+        "DifferentialSusceptibility",
+        "InlineReferenceText",
+        "SolarStatCharts",
+        "EmpiricalSolarCharts"
+      ],
+      "inlineSvg": 6,
+      "images": 0
+    },
+    {
+      "route": "/evidence/pharmacology",
+      "lines": 1463,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "EvidenceSynthesisBanner",
+        "InterventionExplorer",
+        "DrugDiseaseCrossMap",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/populations",
+      "lines": 1301,
+      "components": [
+        "PageHeader",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/replication",
+      "lines": 954,
+      "components": [
+        "InlineReferenceText",
+        "PageHeader"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/reproductive-arc",
+      "lines": 280,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "BiologicalCoordinationContext",
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/reproductive-navigation",
+      "lines": 573,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText",
+        "ClaimRef",
+        "SpermJourneyVisualization"
+      ],
+      "inlineSvg": 1,
+      "images": 0
+    },
+    {
+      "route": "/evidence/response-conditions",
+      "lines": 196,
+      "components": [
+        "PageHeader",
+        "ClaimRef",
+        "StudyCitation",
+        "TranslationNotice",
+        "EvidenceSynthesisBanner"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/space-weather-biology",
+      "lines": 534,
+      "components": [
+        "PageHeader",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/superposition",
+      "lines": 342,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/technology",
+      "lines": 139,
+      "components": [
+        "PageHeader",
+        "TranslationNotice",
+        "MathBlock",
+        "TechnologyHistoryExplorer"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/testosterone",
+      "lines": 543,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "CrossSpeciesGradient",
+        "TemporalTtoTFR",
+        "ClaimRef",
+        "StudyCitation",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/timothy-experiment",
+      "lines": 461,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "CautionBox",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/triple-strikes",
+      "lines": 287,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/unbroken-chain",
+      "lines": 1799,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/vitamin-d-channel-blocker",
+      "lines": 311,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/evidence/walker-chain",
+      "lines": 224,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "DerivedPrediction",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/explore",
+      "lines": 70,
+      "components": [
+        "ExploreTabs",
+        "SteroidogenesisDataAccess",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/explorer",
+      "lines": 106,
+      "components": [
+        "ExplorerDashboard",
+        "WorldMap",
+        "SolarExplorer"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/map",
+      "lines": 125,
+      "components": [
+        "CausalAtlas",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/mathematics",
+      "lines": 70,
+      "components": [
+        "MathematicsSections"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/measurement/fieldstate/math",
+      "lines": 442,
+      "components": [
+        "PageHeader",
+        "NextPageLink",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/measurement/fieldstate",
+      "lines": 364,
+      "components": [
+        "PageHeader",
+        "NextPageLink",
+        "CausalChainDiagram"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/biological-coordination",
+      "lines": 204,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "InterventionExplorer",
+        "PageHeader",
+        "TranslationNotice",
+        "MathBlock",
+        "InlineReferenceText",
+        "ClaimRef",
+        "BiologicalCoordinationExplorer",
+        "ConditionalScenarioExplorer"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/comparison",
+      "lines": 170,
+      "components": [
+        "CautionBox",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/dual-kernel",
+      "lines": 243,
+      "components": [
+        "CautionBox",
+        "DkcExplorer",
+        "DkcPublicationGate",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/frequency-weights",
+      "lines": 120,
+      "components": [
+        "CautionBox",
+        "FrequencyWeightsExplorer",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/math",
+      "lines": 141,
+      "components": [
+        "SteroidogenesisCalibrationNote",
+        "PageHeader",
+        "NextPageLink",
+        "MathematicsSections"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model",
+      "lines": 8003,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "BiologicalCoordinationContext",
+        "BermCausalDiagram",
+        "ModelTableOfContents",
+        "MathematicsSections",
+        "ModulomeLayers",
+        "CollapsibleSection",
+        "VGCCGeneFamilyDiagram",
+        "ThresholdChart",
+        "ThreeBiologicalBands",
+        "TwoSusceptibilities",
+        "MechanismCandidate",
+        "FieldSignalStructure",
+        "BiologicalConstraints",
+        "SixFactorSummary",
+        "CaMKIIConvergenceDiagram",
+        "CitationLink",
+        "StudyCitation",
+        "InlineReferenceText",
+        "ClaimRef",
+        "ModelReadingPath",
+        "ModelScopeIntro",
+        "TechnologyHistoryExplorer"
+      ],
+      "inlineSvg": 14,
+      "images": 0
+    },
+    {
+      "route": "/model/proxy-masking",
+      "lines": 547,
+      "components": [
+        "RedoxReserveMasking",
+        "ClaimRef",
+        "InlineReferenceText",
+        "MathBlock",
+        "PageHeader",
+        "ProxyCausalVisuals",
+        "ProxyDemographicEvidence",
+        "ProxyInfrastructureEvidence",
+        "ProxyMeasuredExposureEvidence",
+        "ProxyMaskingLevels",
+        "ProxyMechanismEvidence",
+        "ProxyBehaviourEvidence",
+        "ProxyComparativeEvidence",
+        "ProxyBarrierEvidence",
+        "ProxyPremises",
+        "ProxyExplanationsExplorer",
+        "ProxyMaskingExplorers",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/q-factor",
+      "lines": 242,
+      "components": [
+        "PageHeader",
+        "CautionBox",
+        "QFactorSpectrum"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/model/tensor-derivation",
+      "lines": 308,
+      "components": [
+        "CautionBox",
+        "InlineReferenceText",
+        "PageHeader",
+        "TranslationNotice"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/adrenal",
+      "lines": 771,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/bat",
+      "lines": 802,
+      "components": [
+        "PageHeader",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/brain",
+      "lines": 1195,
+      "components": [
+        "PageHeader",
+        "EDCContext",
+        "DerivedPrediction",
+        "SevenChannelDiagram",
+        "VarianceModel",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/ear",
+      "lines": 798,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/eye",
+      "lines": 1132,
+      "components": [
+        "PageHeader",
+        "CitationLink",
+        "StudyCitation",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/heart",
+      "lines": 852,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/hippocampus",
+      "lines": 10,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/hypothalamus",
+      "lines": 746,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome",
+      "lines": 881,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "TranslationNotice",
+        "modulome/LayerStack",
+        "ModulomeLayers",
+        "modulome/StateTriad",
+        "modulome/CalciumCycle",
+        "modulome/StateWindow",
+        "modulome/PhotonSequence",
+        "modulome/PolarityResponse",
+        "modulome/FeedbackStability",
+        "modulome/MechanismCards"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/pain",
+      "lines": 710,
+      "components": [
+        "PageHeader",
+        "CitationLink",
+        "InlineReferenceText",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/pancreas",
+      "lines": 837,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/pituitary",
+      "lines": 854,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/testes",
+      "lines": 1227,
+      "components": [
+        "SteroidogenesisIntegrationPanel",
+        "PageHeader",
+        "CitationLink",
+        "ClaimRef",
+        "MathBlock",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/modulome/thyroid",
+      "lines": 752,
+      "components": [
+        "PageHeader",
+        "CitationLink"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/objections",
+      "lines": 1720,
+      "components": [
+        "PageHeader",
+        "NextPageLink",
+        "FindingCard",
+        "InlineReferenceText"
+      ],
+      "inlineSvg": 3,
+      "images": 0
+    },
+    {
+      "route": "/",
+      "lines": 364,
+      "components": [
+        "BermMasterInfographic",
+        "ProxyMaskingInfographic",
+        "SpeciesDeclineChart",
+        "TechnologyGradientChart",
+        "SimpleCausalChain"
+      ],
+      "inlineSvg": 0,
+      "images": 1
+    },
+    {
+      "route": "/physics",
+      "lines": 91,
+      "components": [
+        "ExplanationHub",
+        "MathBlock"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/predictions",
+      "lines": 10805,
+      "components": [
+        "SteroidogenesisCalibrationNote",
+        "PageHeader",
+        "NextPageLink",
+        "PredictionStatusBadge",
+        "PredictionTrack",
+        "FeedbackLoop",
+        "InlineReferenceText",
+        "DkcValidationRegistry",
+        "DkcPublicationGate"
+      ],
+      "inlineSvg": 10,
+      "images": 0
+    },
+    {
+      "route": "/references/[referenceId]",
+      "lines": 178,
+      "components": [],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/references",
+      "lines": 95,
+      "components": [
+        "PageHeader",
+        "NextPageLink",
+        "ReferenceDatabase"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/replication",
+      "lines": 307,
+      "components": [
+        "PageHeader"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/search",
+      "lines": 28,
+      "components": [
+        "SiteSearch"
+      ],
+      "inlineSvg": 0,
+      "images": 0
+    },
+    {
+      "route": "/sentinel",
+      "lines": 1093,
+      "components": [
+        "BermIcon",
+        "NextPageLink",
+        "FalsificationTestsV19",
+        "SentinelCascade",
+        "SentinelCascadeTimeline",
+        "NikeBBSScatter",
+        "PulseProfile",
+        "VarroaCascade",
+        "SpeciesSilhouetteInset",
+        "InlineReferenceText",
+        "DkcSentinelAllometry",
+        "StudyCitation"
+      ],
+      "inlineSvg": 0,
+      "images": 1
+    }
+  ],
+  "assets": [
+    "public/images/otto-juote.png",
+    "public/images/spengler-seasons.png",
+    "public/images/spengler-seasons.jpg",
+    "public/images/hero-fertilization.png",
+    "public/images/hero-fertilization.jpg",
+    "public/images/testosterone-molecule.png",
+    "public/images/sentinel-species-hero.jpg",
+    "public/images/eco-tick-fieldstate-hero.png",
+    "public/icons/bermicons-silhouette.svg",
+    "public/icons/silhouettes/berm-common-toad-silhouette.png",
+    "public/icons/silhouettes/berm-aphid-silhouette.png",
+    "public/icons/silhouettes/berm-honeybee-silhouette.png",
+    "public/icons/silhouettes/berm-bat-silhouette.png",
+    "public/icons/silhouettes/berm-reproduction-silhouette.png",
+    "public/icons/silhouettes/berm-rf-safety-silhouette.png",
+    "public/icons/silhouettes/berm-night-moth-silhouette.png",
+    "public/icons/silhouettes/berm-physics-silhouette.png",
+    "public/icons/silhouettes/berm-cellular-biology-silhouette.png",
+    "public/icons/silhouettes/berm-human-silhouette.png",
+    "public/icons/silhouettes/berm-institutional-history-silhouette.png",
+    "public/icons/silhouettes/berm-migratory-bird-silhouette.png",
+    "public/icons/silhouettes/berm-ixodes-tick-silhouette-transparent.png",
+    "public/icons/silhouettes/berm-ecology-silhouette.png",
+    "public/icons/silhouettes/berm-ixodes-tick-silhouette.png",
+    "public/icons/silhouettes/berm-signal-transduction-silhouette.png",
+    "public/icons/silhouettes/berm-neurobiology-silhouette.png",
+    "public/icons/silhouettes/berm-varroa-mite-silhouette.png",
+    "public/images/articles/implausibility-editorial-thumb.webp",
+    "public/images/articles/bee-og.webp",
+    "public/images/articles/dual-lock-editorial-og.webp",
+    "public/images/articles/implausibility-editorial-hero.webp",
+    "public/images/articles/bee-hero.webp",
+    "public/images/articles/spectrum-editorial-thumb.webp",
+    "public/images/articles/spectrum-editorial-hero.webp",
+    "public/images/articles/dual-lock-editorial-hero.webp",
+    "public/images/articles/dual-lock-editorial-thumb.webp",
+    "public/images/articles/spectrum-editorial-og.webp",
+    "public/images/articles/implausibility-editorial-og.webp",
+    "public/images/articles/bee-thumb.webp"
+  ]
+}

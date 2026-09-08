@@ -7,6 +7,7 @@ import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio, BrainCircuit }
 import { pickCopy } from "@/lib/i18n";
 import { ModelReadingPath } from "@/components/ModelReadingPath";
 import { CivilizationReadingPath, getCivilizationReadingCopy } from "@/components/CivilizationReadingPath";
+import { EncounterWindowsIllustration } from "@/components/EncounterWindowsIllustration";
 
 const COPY = {
   en: {
@@ -413,6 +414,7 @@ export default async function CivilizationPage({
         </section>
 
         <CivilizationReadingPath locale={locale} />
+        <div className="max-w-4xl"><EncounterWindowsIllustration locale={locale} variant="joint-action" compact /></div>
         <BiologicalCoordinationContext locale={locale} context="civilization" />
         <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
 

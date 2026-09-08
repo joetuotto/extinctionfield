@@ -5,6 +5,7 @@ import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
 import CausalChainDiagram from "@/components/CausalChainDiagram";
+import { SignalStructureIllustration } from "@/components/SignalStructureIllustration";
 
 type Copy = {
   title: string;
@@ -306,6 +307,7 @@ export default async function FieldStateMeasurementPage({
           <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
             {d.pulseText.map((p) => <p key={p}>{p}</p>)}
           </div>
+          <SignalStructureIllustration locale={locale} />
         </section>
 
         <section id="static-interface" className="border-t border-card-border pt-6">

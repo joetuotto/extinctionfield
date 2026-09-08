@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Radio } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { LaboratoryComparison } from "@/components/LaboratoryComparison";
 
 type ProtocolSection = {
   title: string;
@@ -325,6 +326,7 @@ export default async function MeasurementPage({
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
               {section.text.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
+            {index === 1 && <LaboratoryComparison locale={locale} compact />}
             {section.steps && (
               <div className="mt-5 space-y-3 border-t border-card-border pt-4">
                 {section.steps.map((step) => (

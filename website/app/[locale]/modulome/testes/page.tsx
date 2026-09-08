@@ -1,4 +1,5 @@
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
+import { AnatomyIllustrationTestes } from "@/components/AnatomyIllustration";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
@@ -862,6 +863,7 @@ export default async function TestesPage({
             <p>{d.s1p2}</p>
             <p>{d.s1p3}</p>
           </div>
+          <AnatomyIllustrationTestes locale={locale} />
         </article>
       </section>
 

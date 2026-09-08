@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Atom } from "lucide-react";
 import { ExplanationHub, ExplanationSection, ExplanationText } from "@/components/ExplanationHub";
 import { MathBlock } from "@/components/MathBlock";
+import { SignalStructureIllustration } from "@/components/SignalStructureIllustration";
 import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
@@ -85,7 +86,7 @@ export default async function PhysicsPage({ params }: { params: Promise<{ locale
     <ExplanationSection {...d.contents[0]}>{p(d.premise)}<MathBlock tex={String.raw`g_{\mu\nu}=\eta_{\mu\nu}+A_\mu A_\nu`} />{p(d.premiseMeaning)}</ExplanationSection>
     <ExplanationSection {...d.contents[1]}>{p(d.cross)}<MathBlock tex={String.raw`A=A_b+a,\qquad\delta g_{\mu\nu}=A_{b,\mu}a_\nu+a_\mu A_{b,\nu}+a_\mu a_\nu`} />{p(d.crossMeaning)}</ExplanationSection>
     <ExplanationSection {...d.contents[2]}>{p(d.receiver)}<MathBlock tex={String.raw`z_r(t)=\int_0^\infty K_r^{\mu\nu}(\tau;S_r(t))\,\delta g_{\mu\nu}(t-\tau)\,d\tau`} />{p(d.receiverMeaning)}<div className="rounded-lg border border-accent/30 bg-accent/5 p-5"><h3 className="mb-3 text-base font-semibold">{d.bridgeTitle}</h3>{p(d.bridge)}<Link href={`/${locale}/mathematics#l2-response`} className="mt-4 inline-block text-sm text-accent hover:underline">{d.formalLink}</Link></div></ExplanationSection>
-    <ExplanationSection {...d.contents[3]}>{p(d.structure)}<MathBlock tex={String.raw`\delta g(+a)-\delta g(-a)=2(A_b\otimes a+a\otimes A_b)`} /><MathBlock tex={String.raw`\delta g(+a)+\delta g(-a)=2a\otimes a`} />{p(d.structureMeaning)}</ExplanationSection>
+    <ExplanationSection {...d.contents[3]}>{p(d.structure)}<MathBlock tex={String.raw`\delta g(+a)-\delta g(-a)=2(A_b\otimes a+a\otimes A_b)`} /><MathBlock tex={String.raw`\delta g(+a)+\delta g(-a)=2a\otimes a`} />{p(d.structureMeaning)}<SignalStructureIllustration locale={locale} /></ExplanationSection>
     <ExplanationSection {...d.contents[4]}>{p(d.measurement)}{p(d.protocols)}{p(d.consequence)}</ExplanationSection>
   </ExplanationHub>;
 }
