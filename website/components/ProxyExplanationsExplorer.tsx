@@ -8,21 +8,21 @@ import { PROXY_EXPLANATIONS } from "@/lib/proxyExplanationsData";
 const COPY = {
   en: {
     select: "Explore an explanatory variable",
-    hint: "Select a variable to see why it can track the changing field environment, what it may conceal, and what BERM adds to the explanation.",
+    hint: "Select a variable to see the reasons for shared change, the part it explains and the longer causal chain that BERM identifies.",
     correlation: "Why can they change together?",
-    masking: "What can remain hidden?",
+    masking: "What does this explanation leave unresolved?",
     contribution: "What does the BERM explanation add?",
     evidence: "Connection to the evidence",
-    scope: "The relationships below describe proposed causal roles. They are not a claim that every variable has a measured correlation with EMF, or that their independent effects disappear.",
+    scope: "This analysis follows the BERM premises stated above. Each variable’s causal role, the basis for shared change and the relevant empirical evidence are presented separately.",
   },
   fi: {
     select: "Tutki proxiselittäjää",
-    hint: "Valitse selittäjä: näet, miksi se voi seurata kenttäympäristön muutosta, mitä sen taakse voi jäädä ja mitä BERM lisää selitykseen.",
+    hint: "Valitse selittäjä: näet yhteisen muutoksen syyt, selityksen kattaman osuuden ja BERM:n avaaman pidemmän vaikutusketjun.",
     correlation: "Miksi ne voivat muuttua yhdessä?",
-    masking: "Mikä voi jäädä piiloon?",
+    masking: "Minkä tämä selitys jättää avaamatta?",
     contribution: "Mitä BERM lisää selitykseen?",
     evidence: "Yhteys tutkimusnäyttöön",
-    scope: "Alla kuvataan muuttujien ehdotettuja kausaalisia rooleja. Kaikille ei oleteta mitattua EMF-korrelaatiota, eivätkä muuttujien omat vaikutukset katoa.",
+    scope: "Tarkastelu seuraa yllä esitettyjä BERM-premissejä. Muuttujan rooli on erotettu yhteiskehityksen perusteesta ja sitä koskevasta tutkimusnäytöstä.",
   },
 };
 

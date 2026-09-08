@@ -14,6 +14,6 @@ it("changes the causal explanation and renders the selected evidence as canonica
   expect(container.querySelector('[data-reference-id="birks2021_modeled_rf_dose"] a')).toHaveAttribute("href", "https://doi.org/10.1016/j.envres.2020.110505");
   expect(container.textContent).not.toContain("[[ref:");
   fireEvent.click(within(options).getByRole("button", { name: "Diagnostiikka ja tilastointi" }));
-  expect(screen.getByText(/kirjaaminen itsessään ei ole biologinen syy/)).toBeInTheDocument();
+  expect(screen.getByText(/Se ei itsessään selitä fysiologista muutosta/)).toBeInTheDocument();
   expect(container.querySelector('[data-reference-id="birks2021_modeled_rf_dose"]')).not.toBeInTheDocument();
 });

@@ -30,7 +30,7 @@ describe("proxy causal figures preserve server-rendered content", () => {
         expect(description.childNodes).toHaveLength(1);
         expect(description.firstChild?.nodeType).toBe(Node.TEXT_NODE);
       }
-      fireEvent.click(within(container).getByRole("button", { name: locale === "fi" ? "Paljasta oletettu EMF-haara" : "Reveal the proposed EMF branch" }));
+      fireEvent.click(within(container).getByRole("button", { name: locale === "fi" ? "Näytä BERM:n kenttähaara" : "Show BERM’s field pathway" }));
       expect(container.querySelector('[data-curve="field"]')).toBeInTheDocument();
       fireEvent.click(within(container).getByRole("button", { name: locale === "fi" ? "BERM:n yhdistävä rakenne" : "BERM’s connecting structure" }));
       expect(container.querySelector('[data-feedback="later-environment"]')).toBeInTheDocument();
@@ -48,7 +48,7 @@ describe("ProxyMaskingCurveExplorer", () => {
     const outcome = document.querySelector('[data-curve="outcome"]')!.getAttribute("points");
     const proxy = document.querySelector('[data-curve="proxy"]')!.getAttribute("points");
     expect(document.querySelector('[data-curve="field"]')).toBeNull();
-    const reveal = screen.getByRole("button", { name: "Paljasta oletettu EMF-haara" });
+    const reveal = screen.getByRole("button", { name: "Näytä BERM:n kenttähaara" });
     fireEvent.click(reveal);
     expect(reveal).toHaveAttribute("aria-pressed", "true");
     expect(document.querySelector('[data-curve="field"]')).toBeInTheDocument();
@@ -61,7 +61,7 @@ describe("ProxyMaskingCurveExplorer", () => {
 
   it("distinguishes parallel branches from a causal intermediate step while preserving the plotted relationship", () => {
     render(<ProxyMaskingCurveExplorer locale="en" />);
-    fireEvent.click(screen.getByRole("button", { name: "Reveal the proposed EMF branch" }));
+    fireEvent.click(screen.getByRole("button", { name: "Show BERM’s field pathway" }));
     const outcome = document.querySelector('[data-curve="outcome"]')!.getAttribute("points");
     const proxyBranch = screen.getByRole("group", { name: "Proxy branch" });
     const fieldBranch = screen.getByRole("group", { name: "Field branch" });
@@ -93,12 +93,12 @@ describe("ExplanatoryLevelsDiagram", () => {
     expect(screen.getByText(/ei kaikkien seurausten sovittamista yhdellä vapaalla kertoimella/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Erilliset lähiselitykset" }));
     expect(document.querySelector("[data-feedback]")).toBeNull();
-    expect(screen.getByText(/Lähiselitykset voivat säilyä hyödyllisinä/)).toBeInTheDocument();
+    expect(screen.getByText(/Kukin lähiselitys kattaa oman vaiheensa/)).toBeInTheDocument();
   });
 
   it.each(["ja", "fr", "ko"])("uses complete English fallback for %s", (locale) => {
     render(<><ProxyMaskingCurveExplorer locale={locale} /><ExplanatoryLevelsDiagram locale={locale} /></>);
-    expect(screen.getByRole("button", { name: "Reveal the proposed EMF branch" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Show BERM’s field pathway" })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "BERM’s connecting structure" }));
     expect(screen.getByRole("heading", { name: "Lindgren 2025: geometry" })).toBeInTheDocument();
     expect(document.querySelectorAll("p:empty, h3:empty, h4:empty, button:empty")).toHaveLength(0);

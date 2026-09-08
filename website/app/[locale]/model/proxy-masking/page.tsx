@@ -7,6 +7,8 @@ import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { MathBlock } from "@/components/MathBlock";
 import { PageHeader } from "@/components/PageHeader";
 import { ExplanatoryLevelsDiagram, ProxyMaskingCurveExplorer } from "@/components/ProxyCausalVisuals";
+import { ProxyBarrierEvidence } from "@/components/ProxyBarrierEvidence";
+import { ProxyPremises, ProxyDeductions } from "@/components/ProxyPremises";
 import { ProxyExplanationsExplorer } from "@/components/ProxyExplanationsExplorer";
 import {
   ActivityProxyChart,
@@ -19,26 +21,26 @@ import { locales, pickCopy } from "@/lib/i18n";
 const COPY = {
   en: {
     title: "Proxy masking: how an underlying effect becomes hidden",
-    subtitle: "Why a useful explanation can describe the middle of a causal chain — and how BERM connects the chain back to physical conditions and biological responsiveness.",
+    subtitle: "Why a correlated measure or a real contributing cause does not explain the whole causal chain — and what follows from BERM’s premises.",
     back: "Model overview",
     kicker: "BERM · Understanding the explanation",
     intro: "An animal gains weight. It eats more, so increased food intake explains the weight gain. But why did its appetite change? Food intake can be both a real cause of weight gain and an intermediate step in a longer biological process. An explanation can be correct while leaving the beginning of the chain unresolved.",
     definition: "A proxy is an indirect measure: something we can observe in place of a harder-to-measure process. Here, masking means that an earlier effect becomes hard to recognise behind a correlated measure, an intermediate biological change or the way the outcome is recorded.",
-    proposal: "BERM proposes an explanation that begins earlier in the chain: a changing electromagnetic environment could alter biological receiving states and thereby affect regulation, behaviour and population outcomes. Diet, stress or lifestyle can then name different stages or conditions of that chain. The proposed advantage is to connect those stages through a shared material account that also applies to organisms without human institutions.",
-    proposalLabel: "The model’s central question",
-    centralQuestion: "Does the observed explanation identify the beginning of the process, or one of its later stages?",
+    proposal: "BERM places the electromagnetic field upstream of receiving biology, regulation and behaviour. In this model, diet, stress and lifestyle describe later stages or conditions of the same chain. They explain parts of an outcome while leaving the origin of the biological change unidentified. BERM connects these parts to an explicit physical starting point.",
+    proposalLabel: "The central conclusion",
+    centralQuestion: "A real contributing cause does not, by itself, explain the origin or the full extent of the effect.",
     reading: "On this page",
     readingHint: "Follow the explanation from a familiar example to biological mechanisms, comparisons and the model’s synthesis.",
     sections: [
       "An explanation within a longer chain",
-      "Why the proxy can look like the explanation",
+      "A correlation does not identify the causal path",
       "The same cue, a different receiver",
       "When exposures act together",
       "When compensation preserves function",
       "What other species reveal",
       "What a group label contains",
       "From biological state to a reported reason",
-      "Why BERM seeks a shared explanation",
+      "Why the shared causal structure explains more",
       "How BERM joins the evidence",
     ],
     contextLabel: "Why this matters",
@@ -48,34 +50,29 @@ const COPY = {
     detailLabel: "Read the underlying evidence",
     first: {
       lead: "Before interpreting a correlation, ask what role each variable plays. The same word — such as lifestyle — can refer to an environmental input, a behavioural consequence or a broad label that combines many processes.",
-      roles: [
-        { title: "A correlated measure", text: "Technology use, urbanisation or income may track a changing environment. A strong association alone does not establish which part of that environment produces the response." },
-        { title: "An intermediate step", text: "A change in sleep, appetite or activity can transmit an earlier effect. Statistically holding that intermediate step fixed can remove part of the very pathway being examined." },
-        { title: "A condition of the response", text: "Light history, a chemical exposure or the state of a tissue may determine whether another input has a visible effect. Averaging across those conditions can conceal different responses." },
-      ],
       context: "Industrialisation changed several parts of the material environment together. Historical trends therefore have to be separated into local exposures, receiving states and measured outcomes. A national technology indicator is an indirect measure of that environment; it is not an organism’s local field dose.",
-      graphLead: "A proxy can follow an outcome closely even when the explanation begins elsewhere. Reveal the proposed field contribution in the curves below, then compare a common environmental change with a biological intermediate step.",
+      graphLead: "The proxy follows the outcome, but the curve does not identify the causal path. Reveal BERM’s field branch below and compare a shared environmental change with an effect transmitted through a biological intermediate.",
     },
     proxies: {
-      lead: "Prosperity, urban living, screen use, diet and family planning are different kinds of explanatory variables. BERM asks how each connects to the physical environment and to the process producing the outcome. Some travel with technological change; others could transmit a biological effect or change how it is recorded.",
+      lead: "Prosperity, urban living, screen use, diet and family planning do not answer the same causal question. BERM locates each variable in the chain: a shared environmental change, a biological intermediate, an interaction or a recording process. Treating all of them as self-contained explanations hides these differences.",
       definition: "A correlated proxy shares variation with an exposure. A mediator carries part of a causal effect. A modifier changes the response to an exposure. Keeping these roles distinct makes the claim of masking concrete.",
       sourcesTitle: "A familiar label can conceal different physical exposures",
       sources: "A screen-use measure can combine optical light, RF exposure, posture and content. Personal RF exposure correlated more closely with local measurements and combined models than self-ratings or transmitter distance. In children and adolescents, modelled tissue dose depended on device use and network technology. Screen time alone therefore does not specify RF dose: the field contribution needs its own exposure description. [[ref:frei2010_exposure_proxies|Frei 2010]]; [[ref:birks2021_modeled_rf_dose|Birks 2021]].",
-      context: "The stronger BERM explanation names what connects the variables: shared infrastructure, a receiving process, a biological intermediate or a measurement rule. Correlation is the starting observation; the specified connection supplies the explanation.",
+      context: "BERM names the connection: shared infrastructure, a receiving process, a biological intermediate or a measurement rule. A regression coefficient summarises an association. The causal structure explains how that association is produced and which part remains unidentified by the proxy.",
     },
     parsimony: {
-      lead: "Why might EMF be a more comprehensive explanatory starting point than any single proxy? In BERM, the proposed advantage is a continuous material route across species and scales. Parsimony means reusing defined processes and assumptions across observations, so that each endpoint does not require a new independent starting story.",
+      lead: "Within BERM’s premises, the field-and-receiver account explains more than a single proxy because it connects the origin of the change to its later consequences across biological levels. Parsimony comes from reusing the same specified processes: each observed endpoint does not require an independent starting explanation.",
       points: [
-        { title: "Across species", text: "An electromagnetic environment can form part of the material conditions of humans, laboratory animals, birds and insects. Human family-planning institutions alone do not cover that whole scope. Species comparisons motivate looking for shared material routes; chemical exposure, light, temperature and habitat can also cross species boundaries. [[ref:klimentidis2010|Klimentidis 2010]]; [[ref:engels2014|Engels 2014]]." },
-        { title: "Across biological levels", text: "A receiving-state model can link a molecular or sensory response to hormonal regulation and behaviour. Appetite and food intake then become consecutive parts of an explanation. Sensory and pharmacological interventions constrain particular links in this structure. [[ref:marlin2015_oxytocin_auditory|Marlin 2015]]; [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]." },
+        { title: "Across species", text: "The electromagnetic environment is part of the material conditions of humans, laboratory animals, birds and insects. Human family-planning institutions alone do not cover that whole scope. Species comparisons motivate looking for shared material routes; chemical exposure, light, temperature and habitat can also cross species boundaries. [[ref:klimentidis2010|Klimentidis 2010]]; [[ref:engels2014|Engels 2014]]." },
+        { title: "Across biological levels", text: "BERM links a molecular or sensory response to hormonal regulation and behaviour through receiving state. Appetite and food intake then become consecutive parts of an explanation. Sensory and pharmacological interventions constrain particular links in this structure. [[ref:marlin2015_oxytocin_auditory|Marlin 2015]]; [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]." },
         { title: "Across different conditions", text: "Light history, reproductive phase and receptor state provide named reasons for differences in a response. Reusing these specified conditions is more informative than adding a separate unexplained exception for each observation. [[ref:hammad2020_dark_cryptochrome|Hammad 2020]]; [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]." },
         { title: "Across measurement levels", text: "A community label, a report of exercise and a daily step count can describe different parts of the same material setting. BERM asks which process each measure captures, and then connects exposure, response and recorded outcome. [[ref:katz2012_amish_activity|Katz 2012]]; [[ref:stein2016_amish_immunity|Stein 2016]]." },
       ],
       comparisonTitle: "What makes the explanation better?",
       aggregationTitle: "From individual responses to population outcomes",
-      aggregation: "In BERM’s proposed chain, a biological shift changes the distribution of responses across individuals. Birth counts then accumulate through partnership, attempts at conception, conception probabilities and pregnancy outcomes within age groups and time intervals. Ecological outcomes similarly combine individual foraging, survival and reproduction. This makes the steps between the receiving state and the population measure explicit.",
-      comparison: "Within BERM’s premises, the gain is explanatory depth: the field-and-receiver account asks why proximal causes change, connects them across levels and keeps species-specific biology explicit. Empirical superiority would additionally require that a specified version explains the observations better than alternatives relative to its assumptions and free parameters. The component studies establish parts of the chain; they do not yet demonstrate that comparison for the full model.",
-      economy: "The common term EMF is not enough on its own. The explanatory economy must come from reusing defined exposure bands, receiving processes and aggregation rules. Optical, ELF, IF and RF inputs retain their distinct doses and mechanisms within the shared BERM structure.",
+      aggregation: "In BERM’s chain, a biological shift changes the distribution of responses across individuals. Birth counts accumulate through partnership, attempts at conception, conception probabilities and pregnancy outcomes within age groups and time intervals. Ecological outcomes likewise combine individual foraging, survival and reproduction. These are the explicit steps between receiving state and population measure.",
+      comparison: "The advantage is the coverage of the causal structure: BERM explains why proximate causes change, how they interact and how their effects accumulate across levels. A model ending at income, food intake or a diagnostic label leaves these connections outside its explanation. This is a conclusion about the explanatory structure under the stated premises; the empirical strength of each link is assessed from its own evidence.",
+      economy: "The shared structure retains the distinct doses and receiving mechanisms of optical, ELF, IF and RF exposures. Explanatory economy comes from reusing those defined mechanisms and aggregation rules across observations.",
     },
     receiver: {
       lead: "Organisms constantly use environmental cues: a scent, a call, the timing of light or a flower’s electrical properties. A cue has an effect when a receiving system detects it and gives it biological significance. That receiving system changes with physiology and experience.",
@@ -93,12 +90,12 @@ const COPY = {
         { title: "A biological history", text: "Earlier light exposure changes circadian phase, hormonal signalling and protein expression." },
       ],
       lightStudies: "In Arabidopsis, magnetic enhancement of a cryptochrome response occurred when the field was applied during dark intervals following blue light. In mouse muscle cells, dark culture weakened a response to a pulsed magnetic field, as did CRY2 or riboflavin-kinase knockdown. These studies identify light history and molecular state within their own exposure protocols. [[ref:hammad2020_dark_cryptochrome|Hammad 2020]]; [[ref:iversen2025|Iversen 2025]].",
-      fieldBridge: "For the sensory branch, an ELF study found that oestrogen-receptor expression in the rat olfactory bulb changed differently across reproductive-cycle phases. A separate cell experiment measured altered MT1-associated hormonal signalling. BERM uses these as candidate links between field exposure and responsiveness; neither study directly measured an EMF-induced loss of oxytocin-dependent caregiving. [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]; [[ref:girgert2010_mt1_signaling|Girgert 2010]].",
+      fieldBridge: "An ELF study found different changes in oestrogen-receptor expression across reproductive-cycle phases in the rat olfactory bulb. A separate cell experiment measured altered MT1-associated hormonal signalling. In BERM, these measurements constrain the link between field input and receiving state; the sensory interventions above constrain the next link from that state to behaviour. [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]; [[ref:girgert2010_mt1_signaling|Girgert 2010]].",
     },
     mixtures: {
       lead: "An exposure can be measured accurately while an important part of its action remains hidden. The amount outside a cell, the amount entering it and the cell’s response to that amount are different quantities.",
       claim: "Chemical exposure, transport into the cell and receiving state can jointly shape an outcome; a single exposure measure may leave a co-condition unrecorded.",
-      internalDose: "In a cadmium experiment, calcium-channel agonists and antagonists changed cellular uptake and toxicity. This pharmacological result shows why the same external concentration need not mean the same internal dose. The experiment itself contained no field exposure. A separate mouse study directly combined a 50 Hz magnetic field with lead and measured antioxidant and membrane responses. These supply different parts of the proposed chain. [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]; [[ref:liu2002_elf_lead|Liu 2002]].",
+      internalDose: "In a cadmium experiment, calcium-channel agonists and antagonists changed cellular uptake and toxicity. This pharmacological result shows why the same external concentration need not mean the same internal dose. The experiment itself contained no field exposure. A separate mouse study directly combined a 50 Hz magnetic field with lead and measured antioxidant and membrane responses. These interventions locate different parts of the chain: transport, internal dose and the response to combined exposure. [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]; [[ref:liu2002_elf_lead|Liu 2002]].",
       context: "If the field condition is shared by nearly everyone in a study while chemical exposure varies, a measured chemical effect can include a field-dependent contribution. The chemical remains a real cause. What can be missed is the condition that changes its effect. The sign and size of that interaction depend on the particular chemical, tissue and protocol.",
       flowerTitle: "A chemical effect can travel through an electrical cue",
       flower: "Fertiliser treatment changed floral electrical cues and reduced bumblebee foraging. Chemical exposure and electrical signalling were parts of the same studied process. This is a concrete example of how identifying the chemical does not finish the explanation of how the behavioural effect occurs. It does not establish an external RF cause for that process. [[ref:hunting2022_floral_electric_cues|Hunting 2022]].",
@@ -178,26 +175,26 @@ const COPY = {
   },
   fi: {
     title: "Proxy masking: vaikutuksen peittyminen",
-    subtitle: "Miksi toimiva selitys voi kuvata vaikutusketjun keskivaihetta — ja miten BERM yhdistää ketjun fysikaalisiin olosuhteisiin ja biologiseen vastaanottavuuteen.",
+    subtitle: "Miksi korreloiva mittari tai todellinen osasyy ei selitä koko vaikutusketjua — ja mitä tästä seuraa BERM:n premisseillä.",
     back: "Mallin yleiskatsaus",
     kicker: "BERM · Selityksen rakenne",
     intro: "Eläimen paino nousee. Se syö enemmän, joten lisääntynyt syöminen selittää painon nousua. Mutta miksi ruokahalu muuttui? Syöminen voi olla sekä painon nousun todellinen syy että pidemmän biologisen prosessin välivaihe. Selitys voi olla oikea, vaikka ketjun alku jäisi avoimeksi.",
     definition: "Proxy tarkoittaa välillistä mittaria: havaittavaa asiaa, jonka avulla kuvataan vaikeammin mitattavaa ilmiötä. Peittymisellä tarkoitetaan tässä sitä, että aikaisempaa vaikutusta on vaikea tunnistaa korreloivan mittarin, biologisen välivaiheen tai tuloksen kirjaamistavan takaa.",
-    proposal: "BERM ehdottaa aikaisemmasta vaiheesta alkavaa selitystä: muuttuva sähkömagneettinen ympäristö voisi muuttaa biologisten vastaanottajien tilaa ja sen kautta säätelyä, käyttäytymistä ja väestössä näkyviä seurauksia. Ruokavalio, stressi tai elämäntapa voivat silloin nimetä saman ketjun eri vaiheita tai ehtoja. Mallin tavoittelema etu on yhdistää ne yhteiseen materiaaliseen selitykseen, joka ulottuu myös eliöihin ilman ihmisten instituutioita.",
-    proposalLabel: "Mallin keskeinen kysymys",
-    centralQuestion: "Tunnistaako havaittu selitys prosessin alun vai yhden sen myöhemmistä vaiheista?",
+    proposal: "BERM sijoittaa sähkömagneettisen kentän vastaanottavan biologian, säätelyn ja käyttäytymisen edelle. Tässä mallissa ruokavalio, stressi ja elämäntapa kuvaavat saman ketjun myöhempiä vaiheita tai ehtoja. Ne selittävät osia lopputuloksesta ja jättävät biologisen muutoksen alkuperän tunnistamatta. BERM yhdistää nämä osat eksplisiittiseen fysikaaliseen lähtökohtaan.",
+    proposalLabel: "Keskeinen johtopäätös",
+    centralQuestion: "Todellinen osasyy ei yksin selitä vaikutuksen alkuperää eikä sen koko suuruutta.",
     reading: "Tällä sivulla",
     readingHint: "Lukupolku etenee tutusta esimerkistä biologisiin mekanismeihin, vertailuaineistoihin ja mallin synteesiin.",
     sections: [
       "Selitys pidemmän ketjun sisällä",
-      "Miksi proksi näyttää selitykseltä?",
+      "Korrelaatio ei nimeä vaikutusreittiä",
       "Sama vihje, erilainen vastaanottaja",
       "Kun altisteet vaikuttavat yhdessä",
       "Kun kompensaatio säilyttää toiminnan",
       "Mitä muut lajit paljastavat?",
       "Mitä ryhmänimi sisältää?",
       "Biologisesta tilasta koettuun syyhyn",
-      "Miksi BERM tavoittelee yhteistä selitystä?",
+      "Miksi yhteinen syyrakenne selittää enemmän",
       "Miten BERM yhdistää näytön?",
     ],
     contextLabel: "Miksi tämä on olennaista?",
@@ -206,35 +203,30 @@ const COPY = {
     measuredLabel: "Mitattu osatekijä",
     detailLabel: "Tutustu taustalla olevaan näyttöön",
     first: {
-      lead: "Ennen yhteyden tulkitsemista on hyvä kysyä, mikä tehtävä kullakin muuttujalla on. Sama sana, kuten elämäntapa, voi tarkoittaa ympäristöstä tulevaa syötettä, käyttäytymisen seurausta tai laajaa luokkaa, joka kokoaa useita prosesseja yhteen.",
-      roles: [
-        { title: "Korreloiva mittari", text: "Teknologian käyttö, kaupungistuminen tai tulot voivat seurata ympäristön muuttumista. Vahva yhteys ei yksin kerro, mikä osa ympäristöstä tuottaa vasteen." },
-        { title: "Vaikutuksen välivaihe", text: "Unen, ruokahalun tai aktiivisuuden muutos voi välittää aikaisempaa vaikutusta. Jos välivaihe pidetään analyysissä vakiona, osa tarkasteltavasta vaikutusketjusta voi samalla poistua." },
-        { title: "Vasteen ehto", text: "Valohistoria, kemiallinen altistus tai kudoksen tila voi määrätä, näkyykö toisen syötteen vaikutus. Erilaisten tilanteiden keskiarvo voi peittää toisistaan poikkeavia vasteita." },
-      ],
+      lead: "Yhteyden tulkinta alkaa kunkin muuttujan tehtävästä. Sama sana, kuten elämäntapa, voi tarkoittaa ympäristöstä tulevaa syötettä, käyttäytymisen seurausta tai laajaa luokkaa, joka kokoaa useita prosesseja yhteen.",
       context: "Teollistumisen aikana materiaalisen ympäristön monet osat ovat muuttuneet yhdessä. Historialliset kehityskulut on siksi avattava paikallisiksi altistuksiksi, vastaanottajatiloiksi ja mitatuiksi seurauksiksi. Kansallinen teknologiaindikaattori kuvaa ympäristöä välillisesti; se ei ole organismin paikallinen kenttäannos.",
-      graphLead: "Proksi voi seurata lopputulosta tarkasti, vaikka selitys alkaisi muualta. Näytä alla olevista käyristä oletettu kenttähaara ja vertaa yhteistä ympäristömuutosta biologisen välivaiheen kautta kulkevaan vaikutukseen.",
+      graphLead: "Proksi seuraa lopputulosta, mutta käyrä ei nimeä vaikutusreittiä. Näytä alta BERM:n kenttähaara ja vertaa yhteistä ympäristömuutosta biologisen välivaiheen kautta kulkevaan vaikutukseen.",
     },
     proxies: {
-      lead: "Vauraus, kaupunkielämä, ruutujen käyttö, ruokavalio ja perhesuunnittelu ovat erilaisia selittäjiä. BERM kysyy, miten kukin liittyy fysikaaliseen ympäristöön ja tuloksen tuottavaan prosessiin. Osa kulkee teknologisen muutoksen mukana; osa voi välittää biologista vaikutusta tai muuttaa sen kirjaamistapaa.",
+      lead: "Vauraus, kaupunkielämä, ruutujen käyttö, ruokavalio ja perhesuunnittelu eivät vastaa samaan kausaaliseen kysymykseen. BERM sijoittaa kunkin muuttujan ketjuun: yhteiseen ympäristömuutokseen, biologiseen välivaiheeseen, yhteisvaikutukseen tai kirjaamisprosessiin. Niiden käsittely itsenäisinä kokonaisselityksinä peittää nämä erot.",
       definition: "Korreloiva proksi jakaa vaihtelua altistuksen kanssa. Välittäjä kuljettaa osan syyvaikutuksesta. Vasteen muokkaaja muuttaa sitä, miten altistus vaikuttaa. Näiden roolien erottaminen tekee peittymisestä täsmällisen väitteen.",
       sourcesTitle: "Sama tuttu nimike voi sisältää eri altistuksia",
       sources: "Ruutuaikaan voi sisältyä optista valoa, RF-altistusta, asentokuormitusta ja mediasisältöä. Henkilökohtaista RF-altistusta kuvasivat paremmin paikallismittaukset ja yhdistetyt mallit kuin oma arvio tai etäisyys kiinteään lähettimeen. Lasten ja nuorten mallinnettu kudosannos puolestaan riippui laitteen käyttötavasta ja verkkotekniikasta. Ruutuaika ei siis yksin määritä RF-annosta: kenttähaara tarvitsee oman altistuskuvauksensa. [[ref:frei2010_exposure_proxies|Frei 2010]]; [[ref:birks2021_modeled_rf_dose|Birks 2021]].",
-      context: "Vahvempi BERM-selitys nimeää muuttujia yhdistävän tekijän: yhteisen infrastruktuurin, vastaanottoprosessin, biologisen välivaiheen tai mittaussäännön. Korrelaatio on lähtöhavainto; määritelty yhteys antaa sille selityksen.",
+      context: "BERM nimeää yhteyden: yhteisen infrastruktuurin, vastaanottoprosessin, biologisen välivaiheen tai mittaussäännön. Regressiokerroin tiivistää yhteyden. Kausaalinen rakenne selittää, miten yhteys muodostuu ja minkä osan proksi jättää tunnistamatta.",
     },
     parsimony: {
-      lead: "Miksi EMF voisi tarjota yksittäistä proksia kattavamman selityksen lähtökohdan? BERM:n perustelu on materiaalisen vaikutusketjun jatkuvuus lajista ja tarkastelutasosta toiseen. Parsimonia tarkoittaa selityksen taloudellisuutta: samoja määriteltyjä prosesseja ja oletuksia käytetään useisiin havaintoihin, jolloin jokainen lopputulos ei tarvitse uutta erillistä alkusyytä.",
+      lead: "BERM:n premisseillä kentän ja vastaanottajan yhteinen tarkastelu selittää yksittäistä proksia enemmän, koska se yhdistää muutoksen alkuperän sen myöhempiin seurauksiin biologisten tasojen läpi. Parsimonia syntyy samojen määriteltyjen prosessien uudelleenkäytöstä: jokainen havaittu lopputulos ei tarvitse erillistä alkuselitystä.",
       points: [
-        { title: "Lajirajojen yli", text: "Sähkömagneettinen ympäristö voi kuulua ihmisten, koe-eläinten, lintujen ja hyönteisten materiaalisiin olosuhteisiin. Pelkät ihmisten perhesuunnittelun instituutiot eivät kata tätä kokonaisuutta. Lajivertailut perustelevat yhteisten materiaalisten reittien etsimistä; myös kemikaalit, valo, lämpötila ja elinympäristö voivat vaikuttaa eri lajeihin. [[ref:klimentidis2010|Klimentidis 2010]]; [[ref:engels2014|Engels 2014]]." },
-        { title: "Biologisten tasojen läpi", text: "Vastaanottotilan kautta kulkeva malli voi yhdistää molekyyli- tai aistivasteen hormonaaliseen säätelyyn ja käyttäytymiseen. Ruokahalu ja syöty määrä sijoittuvat silloin selityksen peräkkäisiksi osiksi. Sensoriset ja farmakologiset interventiot rajaavat tämän rakenteen yksittäisiä liitoksia. [[ref:marlin2015_oxytocin_auditory|Marlin 2015]]; [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]." },
+        { title: "Lajirajojen yli", text: "Sähkömagneettinen ympäristö kuuluu ihmisten, koe-eläinten, lintujen ja hyönteisten materiaalisiin olosuhteisiin. Pelkät ihmisten perhesuunnittelun instituutiot eivät kata tätä kokonaisuutta. Lajivertailut perustelevat yhteisten materiaalisten reittien etsimistä; myös kemikaalit, valo, lämpötila ja elinympäristö voivat vaikuttaa eri lajeihin. [[ref:klimentidis2010|Klimentidis 2010]]; [[ref:engels2014|Engels 2014]]." },
+        { title: "Biologisten tasojen läpi", text: "BERM yhdistää vastaanottotilan kautta molekyyli- tai aistivasteen hormonaaliseen säätelyyn ja käyttäytymiseen. Ruokahalu ja syöty määrä sijoittuvat silloin selityksen peräkkäisiksi osiksi. Sensoriset ja farmakologiset interventiot rajaavat tämän rakenteen yksittäisiä liitoksia. [[ref:marlin2015_oxytocin_auditory|Marlin 2015]]; [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]." },
         { title: "Erilaisten olosuhteiden välillä", text: "Valohistoria, lisääntymiskierron vaihe ja reseptoritila antavat nimettyjä syitä vasteiden eroille. Samojen määriteltyjen ehtojen käyttö kokoaa havaintoja yhteen ja vähentää tarvetta erillisille selittämättömille poikkeuksille. [[ref:hammad2020_dark_cryptochrome|Hammad 2020]]; [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]." },
         { title: "Mittarista biologiseen prosessiin", text: "Yhteisönimi, ilmoitettu terveysliikunta ja päivittäiset askeleet voivat kuvata saman materiaalisen ympäristön eri puolia. BERM kysyy, minkä prosessin kukin mittari tavoittaa, ja yhdistää sen jälkeen altistuksen, vasteen ja kirjatun lopputuloksen. [[ref:katz2012_amish_activity|Katz 2012]]; [[ref:stein2016_amish_immunity|Stein 2016]]." },
       ],
       comparisonTitle: "Missä mielessä selitys on parempi?",
       aggregationTitle: "Yksilövasteesta väestön seuraukseen",
-      aggregation: "BERM:n ehdottamassa ketjussa biologinen muutos siirtää yksilövasteiden jakaumaa. Syntymien määrä kertyy tämän jälkeen parisuhteiden, raskausyritysten, hedelmöittymistodennäköisyyksien ja raskauksien lopputulosten kautta ikäryhmissä ja eri ajanjaksoina. Ekologiset seuraukset kokoavat vastaavasti yksilöiden ravinnonhakua, selviytymistä ja lisääntymistä. Näin vastaanottotilan ja väestömittarin väliset vaiheet tulevat näkyviin.",
-      comparison: "BERM:n premisseistä käsin etu on selityksen syvyys: kentän ja vastaanottajan yhteinen tarkastelu kysyy, miksi lähisyyt muuttuvat, yhdistää ne eri tasojen läpi ja säilyttää lajien biologiset erot näkyvissä. Empiirinen paremmuus edellyttäisi lisäksi, että määritelty malliversio selittää havainnot vaihtoehtoja paremmin suhteessa oletuksiinsa ja vapaisiin parametreihinsa. Osatutkimukset osoittavat ketjun osia; koko mallin osalta tätä vertailua ei ole vielä osoitettu.",
-      economy: "Yhteinen EMF-nimike ei yksin tee selityksestä taloudellista. Taloudellisuuden pitää syntyä määriteltyjen taajuusalueiden, vastaanottoprosessien ja havaintoja kokoavien sääntöjen uudelleenkäytöstä. Optinen säteily sekä ELF-, IF- ja RF-altistukset säilyttävät omat annoksensa ja mekanisminsa BERM:n yhteisessä rakenteessa.",
+      aggregation: "BERM:n ketjussa biologinen muutos siirtää yksilövasteiden jakaumaa. Syntymien määrä kertyy parisuhteiden, raskausyritysten, hedelmöittymistodennäköisyyksien ja raskauksien lopputulosten kautta ikäryhmissä ja eri ajanjaksoina. Ekologiset seuraukset kokoavat vastaavasti yksilöiden ravinnonhakua, selviytymistä ja lisääntymistä. Nämä ovat vastaanottotilan ja väestömittarin väliset eksplisiittiset vaiheet.",
+      comparison: "Etu on syyrakenteen kattavuus: BERM selittää, miksi lähisyyt muuttuvat, miten ne vaikuttavat yhdessä ja miten niiden seuraukset kertyvät eri tasoilla. Tulotasoon, syötyyn määrään tai diagnoosinimeen päättyvä malli jättää nämä yhteydet selityksensä ulkopuolelle. Tämä on ilmoitetuista premisseistä seuraava rakenteellinen johtopäätös; kunkin liitoksen empiirinen vahvuus arvioidaan sen omasta näytöstä.",
+      economy: "Yhteinen rakenne säilyttää optisen säteilyn sekä ELF-, IF- ja RF-altistusten erilliset annokset ja vastaanottomekanismit. Selityksen taloudellisuus syntyy näiden määriteltyjen mekanismien ja kokoamissääntöjen käytöstä useiden havaintojen yhteydessä.",
     },
     receiver: {
       lead: "Eliöt käyttävät jatkuvasti ympäristön vihjeitä: hajua, ääntä, valon ajoitusta tai kukan sähköisiä ominaisuuksia. Vihje vaikuttaa, kun vastaanottava järjestelmä havaitsee sen ja antaa sille biologisen merkityksen. Vastaanottava järjestelmä muuttuu fysiologian ja kokemusten mukana.",
@@ -252,12 +244,12 @@ const COPY = {
         { title: "Biologinen historia", text: "Aikaisempi valoaltistus muuttaa vuorokausivaihetta, hormonisignalointia ja proteiinien ilmentymistä." },
       ],
       lightStudies: "Lituruoholla (Arabidopsis) kryptokromivaste voimistui, kun magneettikenttä annettiin sinivaloa seuranneiden pimeäjaksojen aikana. Hiiren lihassoluissa pimeässä kasvatus heikensi vastetta pulssimagneettikenttään, samoin CRY2:n tai riboflaviinikinaasin vaimentaminen. Tutkimukset tunnistavat valohistorian ja molekyylitilan merkitystä omissa altistusprotokollissaan. [[ref:hammad2020_dark_cryptochrome|Hammad 2020]]; [[ref:iversen2025|Iversen 2025]].",
-      fieldBridge: "Sensorista haaraa täydentävässä ELF-kokeessa rotan hajukäämin estrogeenireseptorin ilmentymä muuttui eri tavoin lisääntymiskierron eri vaiheissa. Erillinen solukoe mittasi MT1-reseptoriin liittyvän hormonisignaloinnin muutosta. BERM käyttää näitä ehdokkaina kentän ja vastaanottavuuden väliseen liitokseen; kumpikaan ei suoraan mitannut EMF:n aiheuttamaa oksitosiinivälitteisen hoivan heikkenemistä. [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]; [[ref:girgert2010_mt1_signaling|Girgert 2010]].",
+      fieldBridge: "ELF-kokeessa rotan hajukäämin estrogeenireseptorin ilmentymä muuttui eri tavoin lisääntymiskierron eri vaiheissa. Erillinen solukoe mittasi MT1-reseptoriin liittyvän hormonisignaloinnin muutosta. BERM:ssä nämä mittaukset rajaavat kenttäsyötteen ja vastaanottotilan liitosta; edellä kuvatut sensoriset interventiot rajaavat seuraavaa liitosta vastaanottotilasta käyttäytymiseen. [[ref:reyesguerrero2010_olfactory_estrogen|Reyes-Guerrero 2010]]; [[ref:girgert2010_mt1_signaling|Girgert 2010]].",
     },
     mixtures: {
       lead: "Altistus voidaan mitata tarkasti, vaikka osa sen vaikutustavasta jäisi piiloon. Solun ulkopuolinen määrä, soluun pääsevä määrä ja solun vaste tähän määrään ovat eri suureita.",
       claim: "Kemiallinen altistus, soluun kulkeutuminen ja vastaanottajan tila voivat yhdessä muovata lopputulosta. Yksi altistusmittari voi jättää yhteisehdon kirjaamatta.",
-      internalDose: "Kadmiumkokeessa kalsiumkanavien aktivoijat ja salpaajat muuttivat soluunottoa ja toksisuutta. Farmakologinen tulos osoittaa, miksi sama ulkoinen pitoisuus ei takaa samaa sisäistä annosta. Koe oli kentätön. Erillisessä hiiritutkimuksessa yhdistettiin suoraan 50 Hz:n magneettikenttä ja lyijy sekä mitattiin antioksidantti- ja kalvovasteita. Tutkimukset tuovat eri osat ehdotettuun ketjuun. [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]; [[ref:liu2002_elf_lead|Liu 2002]].",
+      internalDose: "Kadmiumkokeessa kalsiumkanavien aktivoijat ja salpaajat muuttivat soluunottoa ja toksisuutta. Farmakologinen tulos osoittaa, miksi sama ulkoinen pitoisuus ei takaa samaa sisäistä annosta. Koe oli kentätön. Erillisessä hiiritutkimuksessa yhdistettiin suoraan 50 Hz:n magneettikenttä ja lyijy sekä mitattiin antioksidantti- ja kalvovasteita. Interventiot paikantavat ketjun eri osia: kuljetusta, sisäistä annosta ja yhteisaltistuksen vastetta. [[ref:hinkle1987_cadmium_uptake|Hinkle 1987]]; [[ref:liu2002_elf_lead|Liu 2002]].",
       context: "Jos kenttäolosuhde on tutkimuksessa lähes kaikille yhteinen mutta kemiallinen altistus vaihtelee, kemikaalille mitattu vaikutus voi sisältää kentästä riippuvan osuuden. Kemikaali on edelleen todellinen syy. Piiloon voi jäädä sen vaikutusta muuttava ehto. Yhteisvaikutuksen suunta ja suuruus riippuvat kyseisestä kemikaalista, kudoksesta ja protokollasta.",
       flowerTitle: "Kemiallinen vaikutus voi kulkea sähköisen vihjeen kautta",
       flower: "Lannoitekäsittely muutti kukkien sähköisiä vihjeitä ja vähensi kimalaisten ravinnonhakua. Kemiallinen altistus ja sähköinen viestintä kuuluivat samaan tutkittuun prosessiin. Kemikaalin tunnistaminen ei siis vielä päättänyt selitystä siitä, miten käyttäytymisvaikutus syntyi. Tulos ei tunnista tämän prosessin ulkoista RF-syytä. [[ref:hunting2022_floral_electric_cues|Hunting 2022]].",
@@ -398,9 +390,10 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
           <div className="min-w-0 space-y-12 sm:space-y-16">
             {section(0, <>
               {paragraph(d.first.lead)}
-              <dl className="divide-y divide-card-border border-y border-card-border">{d.first.roles.map((role, index) => <div key={role.title} className="grid gap-2 py-5 sm:grid-cols-[160px_minmax(0,1fr)] sm:gap-5"><dt className="text-sm font-semibold"><span className="mr-2 text-accent" aria-hidden="true">{index + 1}.</span>{role.title}</dt><dd className="text-sm leading-relaxed text-foreground-muted">{role.text}</dd></div>)}</dl>
+              <ProxyPremises locale={locale} />
               {paragraph(d.first.graphLead)}
               <ProxyMaskingCurveExplorer locale={locale} />
+              <ProxyDeductions locale={locale} />
               {context(d.first.context)}
             </>)}
 
@@ -434,6 +427,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {paragraph(d.mixtures.internalDose)}
               <InteractionExplorer locale={locale} />
               {context(d.mixtures.context)}
+              <ProxyBarrierEvidence locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.mixtures.flowerTitle}</h3>{paragraph(d.mixtures.flower)}</div>
               {link("/evidence/heavy-metal-synergy", d.mixtures.link)}
             </>)}

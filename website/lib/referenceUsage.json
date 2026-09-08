@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 785,
-    "usageLocations": 2396
+    "referencesWithUsages": 790,
+    "usageLocations": 2401
   },
   "usage": {
     "delgado1969": [
@@ -11019,6 +11019,36 @@
       {
         "path": "/model/proxy-masking",
         "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "neubauer1990_rf_endothelial_uptake": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBarrierEvidence.tsx"
+      }
+    ],
+    "nittby2009_gsm_bbb": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBarrierEvidence.tsx"
+      }
+    ],
+    "kerper1992_methylmercury_bbb": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBarrierEvidence.tsx"
+      }
+    ],
+    "zhu2026_rf_chromium_dna": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBarrierEvidence.tsx"
+      }
+    ],
+    "cosquer2005": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBarrierEvidence.tsx"
       }
     ],
     "glomerulosa_cav32_aldosterone": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T11:38:10.434Z",
+  "generatedAt": "2026-09-08T12:06:28.116Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -120,7 +120,7 @@
     {
       "claimId": "claim.behavior.reported-reasons",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 475
+      "line": 469
     },
     {
       "claimId": "claim.behavior.reported-reasons",
@@ -966,7 +966,7 @@
     {
       "claimId": "claim.proxy.chemical-field-conditions",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 433
+      "line": 426
     },
     {
       "claimId": "claim.proxy.chemical-field-conditions",
@@ -979,7 +979,7 @@
     {
       "claimId": "claim.proxy.comparative-mediator-question",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 451
+      "line": 445
     },
     {
       "claimId": "claim.proxy.comparative-mediator-question",
@@ -992,7 +992,7 @@
     {
       "claimId": "claim.proxy.compensated-endpoint",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 443
+      "line": 437
     },
     {
       "claimId": "claim.proxy.compensated-endpoint",
@@ -1005,7 +1005,7 @@
     {
       "claimId": "claim.proxy.environmental-group-interpretation",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 465
+      "line": 459
     },
     {
       "claimId": "claim.proxy.environmental-group-interpretation",
@@ -1036,7 +1036,7 @@
     {
       "claimId": "claim.proxy.sensory-receiver-state",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 417
+      "line": 410
     },
     {
       "claimId": "claim.proxy.sensory-receiver-state",
