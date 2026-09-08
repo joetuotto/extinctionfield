@@ -1,0 +1,82 @@
+[
+  {
+    "file": "website/lib/__tests__/atlas-coverage.test.ts",
+    "conflicts": 2,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/__tests__/atlas-evidence.test.ts",
+    "conflicts": 2,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/__tests__/claim-independence.test.ts",
+    "conflicts": 1,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/__tests__/claim-registry.test.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/__tests__/navigation.test.ts",
+    "conflicts": 4,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/causalAtlasData.ts",
+    "conflicts": 3,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/causalAtlasRegistry.ts",
+    "conflicts": 11,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/causalMapData.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/claims/types.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/evidence.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/evolutionData.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/modelArchitecture.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/modulome/layers.ts",
+    "conflicts": 1,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/modulome/organDetailData.ts",
+    "conflicts": 0,
+    "merged_equals_published": true
+  },
+  {
+    "file": "website/lib/modulome/stateModel.ts",
+    "conflicts": 1,
+    "merged_equals_published": false
+  },
+  {
+    "file": "website/lib/navigation.ts",
+    "conflicts": 2,
+    "merged_equals_published": false
+  }
+]

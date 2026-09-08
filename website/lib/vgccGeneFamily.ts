@@ -225,11 +225,11 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
     ],
     evidenceLevel: "E",
     emfRelevance: {
-      en: "PRIMARY EMF TRANSDUCER. Bifurcation at resting potential. TheraBionic FDA approval CONFIRMS non-thermal EMF → Cav3.2 → Ca²⁺ at SAR 100–1000× below mobile phone levels.",
-      fi: "PRIMAARINEN EMF-TRANSDUKTORI. Bifurkaatio lepopotentiaalissa. TheraBionic FDA-hyväksyntä VAHVISTAA ei-termisen EMF → Cav3.2 → Ca²⁺ SAR-tasoilla 100–1000× alle matkapuhelimen.",
-      ja: "一次EMFトランスデューサー。静止電位での分岐。TheraBionic FDA承認が非熱的EMF → Cav3.2 → Ca²⁺をSAR 100〜1000倍携帯電話レベル以下で確認。",
-      fr: "TRANSDUCTEUR EMF PRIMAIRE. Bifurcation au potentiel de repos. L'approbation FDA de TheraBionic CONFIRME EMF non thermique → Cav3.2 → Ca²⁺ à un DAS 100–1000× inférieur aux niveaux des téléphones portables.",
-      ko: "1차 EMF 변환기. 휴지 전위에서의 분기. TheraBionic FDA 승인이 비열적 EMF → Cav3.2 → Ca²⁺를 SAR 100-1000배 휴대전화 수준 이하에서 확인.",
+      en: "Candidate EMF transducer at resting-potential window current. TheraBionic supplies protocol-specific Cav3.2 component evidence in HCC; environmental and reproductive transfer is uncalibrated.",
+      fi: "EMF-transduserikandidaatti lepopotentiaalin ikkunavirrassa. TheraBionic antaa protokollikohtaista Cav3.2-komponenttinäyttöä HCC:ssä; ympäristö- ja lisääntymissiirtoa ei ole kalibroitu.",
+      ja: "静止電位ウィンドウ電流における候補EMF変換器。TheraBionicはHCCでプロトコル固有のCav3.2構成要素証拠を提供するが、環境・生殖への移行は未校正。",
+      fr: "Transducteur EMF candidat au courant de fenêtre de repos. TheraBionic fournit une preuve composante Cav3.2 propre au protocole CHC; le transfert environnemental et reproductif n'est pas calibré.",
+      ko: "휴지 전위 윈도 전류의 후보 EMF 변환기. TheraBionic은 HCC에서 프로토콜별 Cav3.2 구성요소 근거를 제공하지만 환경·생식 전이는 보정되지 않았다.",
     },
     keyRefs: [
       "therabionic-ebioMedicine-2019",

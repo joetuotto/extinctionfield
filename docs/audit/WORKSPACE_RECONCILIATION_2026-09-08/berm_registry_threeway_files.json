@@ -1,0 +1,506 @@
+[
+  {
+    "path": "berm/data/evidence/intervention_profiles_v1.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/anfr_autonomous_probes_site_time.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/anfr_autonomous_probes_summary.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/fangr_uk_breed_population_annual.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/fangr_uk_breed_population_annual_summary.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/ifce_sire_equid_breeding_panel.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/ifce_sire_equid_breeding_panel_summary.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/mustb_apiary_site_context.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/mustb_botanical_survey_polygon_context.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/mustb_spatial_context_availability.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/sentinel_readiness.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/sentinel_species_region_year.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/sentinel_species_region_year_summary.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/testosterone_secular/usa_t_timeseries.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/testosterone_tfr/joined_country_data.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/testosterone_tfr/model_coefficients.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/veterinary_sentinel_species_site_time.csv",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/processed/veterinary_sentinel_species_site_time_summary.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/country_metadata.json",
+    "classification": "original-only delta",
+    "wExists": true,
+    "pExists": false,
+    "bExists": false
+  },
+  {
+    "path": "website/data/anchor-index.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/data/atlas-claim-bindings.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/data/causal-atlas-extensions.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/data/causal-graph.json",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/data/causal-graph.schema.json",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/data/claims.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/data/intervention-profiles.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/data/intervention-scenarios.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/data/model-architecture.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/data/modulome-state.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/atlas-coverage.test.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/atlas-evidence.test.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/causal-chain-separation.test.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/__tests__/causal-graph-view.test.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/__tests__/claim-independence.test.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/claim-registry.test.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/__tests__/fixtures/navigation-main-2026-09-08.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/interventions.test.ts",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/legacy-mathematics-route.test.tsx",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/lindgren-page-content.test.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/__tests__/model-architecture.test.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/__tests__/navigation.test.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/__tests__/pharmacology-page-content.test.ts",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/causalAtlasData.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/causalAtlasRegistry.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/causalChainV2Data.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/causalGraphView.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/causalMapData.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/claims/types.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/evidence.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/evolutionData.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/interpreterPredictions.ts",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/interventionAtlas.ts",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/interventions.ts",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/legacyEvidence.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/model/lindgren.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/modelArchitecture.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/modulome/layers.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/modulome/organDetailData.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/modulome/organs.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/modulome/stateModel.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/lib/navigation.ts",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/orphanedFindings.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/referenceIndex.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/referenceUsage.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/lib/vgccGeneFamily.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/public/data/berm_cultural_energy_model.json",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/public/data/civilization_indices.json",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/public/data/intervention-profiles.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/public/data/intervention-scenarios.json",
+    "classification": "published-only delta",
+    "wExists": false,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/public/data/modulome-state.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": false
+  },
+  {
+    "path": "website/public/data/references_full.json",
+    "classification": "both changed",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  },
+  {
+    "path": "website/vitest.config.ts",
+    "classification": "published-only delta",
+    "wExists": true,
+    "pExists": true,
+    "bExists": true
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "commit": "92f9307df8d5b4cc26d9ccfdeef234a72732e8be",
+  "main_push": "succeeded-fast-forward",
+  "deploymentId": "dpl_HW8F97ALyGsijhVZ1nb5SGSBbPzs",
+  "deploymentUrl": "https://extinctionfield-4uiw7seff-otto-juotes-projects.vercel.app",
+  "state": "READY",
+  "originalWorktreePreserved": {
+    "comparedPaths": 955,
+    "changedPaths": []
+  },
+  "localValidation": {
+    "pythonTests": 2122,
+    "websiteTests": 446,
+    "prerenderedRoutes": 542,
+    "httpTargets": 1909,
+    "internalLinks": 15174,
+    "anchors": 3272,
+    "sourceIdentities": 1191,
+    "dataFiles": 17,
+    "exceptions": 0
+  },
+  "publicAliasVerified": "https://www.extinctionfield.com",
+  "verifiedAt": "2026-09-08T05:31:14.337798+00:00",
+  "liveValidation": {
+    "result": "pass",
+    "completedAt": "2026-09-08T05:34:01.291525+00:00",
+    "httpTargets": 1909,
+    "htmlPages": 1892,
+    "internalLinks": 15174,
+    "anchors": 3272,
+    "newHubRoutes": 20,
+    "sourceIdentities": 1191,
+    "sourceDetailPages": 1307,
+    "dataFiles": 17,
+    "exceptions": 0
+  }
+}

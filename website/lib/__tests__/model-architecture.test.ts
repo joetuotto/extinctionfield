@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   CONDITIONAL_ASFR_ROUTE_ID,
+  BRIDGE_COMPONENTS,
+  MODULOME_ASFR_ROUTE_ID,
   DKC_CANDIDATE_ROUTE_ID,
   FIELDSTATE_CANONICAL_ROUTE,
   FIELDSTATE_SPEC_VERSION,
@@ -21,6 +23,13 @@ describe("BERM / FieldState architecture contract", () => {
     );
     expect(MODEL_ARCHITECTURE.measurementModules.fieldState.isModelAlias).toBe(false);
     expect(MODEL_ARCHITECTURE.measurementModules.fieldState.isCausalRoot).toBe(false);
+    expect(MODEL_ARCHITECTURE.measurementModules.fieldState.publishesLockedForecasts).toBe(false);
+    expect(MODEL_ARCHITECTURE.measurementModules.fieldState.canonicalRoute).toBe(
+      "/measurement/fieldstate",
+    );
+    expect(MODEL_ARCHITECTURE.theory.fieldStateRole).toBe(
+      "optional_measurement_input_only",
+    );
   });
 
   it("names independent version and route namespaces", () => {
@@ -34,7 +43,26 @@ describe("BERM / FieldState architecture contract", () => {
 
   it("does not overstate the missing Lindgren-to-observable bridge", () => {
     expect(MODEL_ARCHITECTURE.theory.formulation).toBe("2025-weyl-gme");
-    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatus).toBe("open");
+    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatus).toBe("conditional_formal_operator");
+    expect(MODEL_ARCHITECTURE.theory.l2BridgeStatusScope).toBe("operator_form_only");
+    expect(BRIDGE_COMPONENTS.geometry.status).toBe("L1_DERIVED");
+    expect(BRIDGE_COMPONENTS.responseOperator.status).toBe("CONDITIONAL_FORMAL_OPERATOR");
+    expect(BRIDGE_COMPONENTS.responseOperator.assumptions).toEqual([
+      "minimal_matter_metric_coupling", "retarded_response_expansion",
+    ]);
+    expect(BRIDGE_COMPONENTS.physicalIdentification.status).toBe("OPEN");
+    expect(BRIDGE_COMPONENTS.tissueKernel.status).toBe("CALLER_SUPPLIED_UNCALIBRATED");
+    expect(BRIDGE_COMPONENTS.endpointCalibration.status).toBe("OPEN");
+    expect(MODEL_ARCHITECTURE.theory.calibrationStatus).toBe("open");
+    expect(MODEL_ARCHITECTURE.routes.prediction.fieldStateCalibrated).toBe(false);
+    expect(MODEL_ARCHITECTURE.routes.conditionalAsfr.acceptsFieldStateObservations).toBe(false);
+    expect(MODULOME_ASFR_ROUTE_ID).toBe("berm-modulome-conditional-asfr-v1");
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.preservesArchivedV17).toBe(true);
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.fieldStateCalibrated).toBe(false);
+    expect(MODEL_ARCHITECTURE.routes.modulomeAsfr.publishesLockedForecasts).toBe(false);
+  });
+
+  it("keeps the formal derivation gate and the DKC candidate route explicit", () => {
     expect(MODEL_ARCHITECTURE.theory.epistemicStatusPolicy).toBe(
       "componentwise_no_weakest_link_collapse",
     );
@@ -85,8 +113,6 @@ describe("BERM / FieldState architecture contract", () => {
       "weyl_semimetricity_and_connection",
       "bianchi_contracted_identity_and_homogeneous_df",
     ]);
-    expect(MODEL_ARCHITECTURE.routes.prediction.fieldStateCalibrated).toBe(true);
-    expect(MODEL_ARCHITECTURE.routes.conditionalAsfr.acceptsFieldStateObservations).toBe(false);
     expect(MODEL_ARCHITECTURE.routes.lindgrenDkc.fieldStateCalibrated).toBe(true);
     expect(MODEL_ARCHITECTURE.routes.lindgrenDkc.fieldStateCalibrationScope).toBe(
       "CALIBRATION_PIPELINE_IMPLEMENTED_AND_PRODUCES_VALUES",
@@ -99,5 +125,25 @@ describe("BERM / FieldState architecture contract", () => {
     expect(MODEL_ARCHITECTURE.routes.lindgrenDkc.publishesLockedForecasts).toBe(true);
     expect(MODEL_ARCHITECTURE.routes.lindgrenDkc.calculationEnabled).toBe(true);
     expect(MODEL_ARCHITECTURE.routes.lindgrenDkc.candidateOutputsEnabled).toBe(true);
+  });
+
+  it("keeps Epistapege as an open qualitative BERM extension", () => {
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.canonicalRoute).toBe(
+      "/civilization/epistapege",
+    );
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.status).toBe(
+      "open_testable_extension",
+    );
+    expect(MODEL_ARCHITECTURE.civilizationExtensions.epistapege.publishesNumericPredictions).toBe(false);
+  });
+
+  it("registers seven BERM-owned compositional evidence syntheses", () => {
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.role).toBe(
+      "berm_compositional_evidence_layer",
+    );
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.fieldStateRole).toBe(
+      "optional_physical_measurement_input_only",
+    );
+    expect(MODEL_ARCHITECTURE.evidenceSynthesis.clusters).toHaveLength(7);
   });
 });

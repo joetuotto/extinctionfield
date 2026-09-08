@@ -10,9 +10,11 @@ does not change archived v16/v17 predictions.
 The relevant Lindgren 2025 premise is `g = eta + kappa A tensor A`. Substituting
 `A = A_bio + a` gives
 `delta_g = kappa (A_bio tensor a + a tensor A_bio + a tensor a)`.
-This tensor expansion is an L1 algebraic consequence. A contraction or coupling
-operator mapping that geometry into a measured biological endpoint remains
-**OPEN L2**. The interaction operators below are imported, conditional L3/L4
+This tensor expansion is an L1 algebraic consequence. The conditional formal
+response operator is implemented in `physics/lindgren_response.py`, assuming
+minimal matter-metric coupling and response theory. Its physical coupling
+scale, gauge prescription, tissue-specific kernel and endpoint calibration
+remain **OPEN L2**. The interaction operators below are imported, conditional L3/L4
 aggregation hypotheses. Their algebra does not derive or validate that bridge.
 FieldState records may inform upstream estimates or the ecological context;
 the measurement record itself is not the biological cause.
@@ -62,6 +64,12 @@ Actions are nonnegative absolute amounts during the declared interval, not
 signed deviations. Mapping a social deviation to action amounts requires a
 separate baseline and endpoint mapping. The result distinguishes retained
 stock, new contribution and withdrawal. Infeasible withdrawals raise an error.
+
+The separate `civilization.epistapege.institutional_memory_update` operator
+updates a normalised probability-like memory by
+`I_next = retention I + (1-retention) P`. It is retained alongside the stock
+model: a probability average and a stock measured in declared units are
+different outcomes and cannot be substituted for each other.
 
 ### Ecological encounters
 

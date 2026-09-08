@@ -1,0 +1,479 @@
+{
+  "audit": "Final registry preservation, independent read-only checks",
+  "time_utc": "2026-09-08T08:23:58.002188+00:00",
+  "workspace": "/Volumes/kovalevy 3/extinctionfield",
+  "base_commit": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+  "original_snapshot_commit": "afe40cecc5fbc600b98e13b53bac8f07f3e272cf",
+  "published_snapshot_commit": "644cba650601dc79d8edd2960276a9a8a76d4c9c",
+  "status": "PASS",
+  "errors": [],
+  "canonical_file_equality": {
+    "website/public/data/references_full.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "6ecdf400ef08b2051fc5cd67434cb08b6fadb4c4a0add1359600cdeb02ff3d0d"
+    },
+    "website/data/claims.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "b43e008e52b1a0a637ed4b357fef68a1c5f3aa1f37d6ac51c62a4da39a9e39db"
+    },
+    "website/data/causal-graph.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "eb6ecef2d64217e681aa8a8d2d69b2a78d71a788cc3f884d5065129a660b295c"
+    },
+    "website/data/causal-graph.schema.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "39dfe9413995c48b44c23df80ebfd1e48c8414400150e6ea266ecfed0d2171dc"
+    },
+    "website/data/atlas-claim-bindings.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "0b54fed7f58dd931312607558e5780b5e648942fc019f4782227fbc6a84b009f"
+    },
+    "website/data/causal-atlas-extensions.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "38f6c5bbd817b64063f707c4eb7ac64848ad74e2f29f0c124ef722e41e14bcb1"
+    },
+    "website/data/model-architecture.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "a5710683557290d3c4a1d05fca4105b5e461bc95926418874554e217b89bb35e"
+    },
+    "website/data/modulome-state.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f"
+    },
+    "website/lib/legacyEvidence.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "e9a4b19be4bcd24858ea08270c692c4d7caa035f5605dc9e081521d7b706b97c"
+    },
+    "website/data/intervention-profiles.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537"
+    },
+    "website/data/intervention-scenarios.json": {
+      "semantic_equal_published_snapshot": true,
+      "sha256_current": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28"
+    }
+  },
+  "record_sets": {
+    "references": {
+      "final_count": 1191,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 1156,
+          "missing_ids": [],
+          "same_full_record": 1141,
+          "advanced_same_id_records": 15,
+          "new_final_ids": [
+            "bakker2020_physiology_politics_replication",
+            "berman1990_multilab_embryo",
+            "bertagna2022_serca",
+            "burch2000_personal_mf_melatonin",
+            "burd2026_engineered_radical_pair",
+            "cajochen2005_melatonin",
+            "cui2014_lte4",
+            "degendt2004_sertoli_ar",
+            "delgado1969",
+            "di2021_static_field_testosterone",
+            "gazzaniga2000",
+            "gazzaniga2011",
+            "ghione2005_eeg_pain",
+            "grassi2004_channels",
+            "hirota2012_kl001",
+            "iversen2024_light_magnetic",
+            "kavaliers1986_calcium_morphine",
+            "kubo1957_linear_response",
+            "kunda1990",
+            "laurent2016_shbg_bioactivity",
+            "litovitz1991_coherence_time",
+            "liu2002_elf_lead",
+            "liu2014_mt2",
+            "lymangrover1983_acth_steroidogenesis",
+            "mollerlokken2012_mri_hormones",
+            "nangle2013_kl001",
+            "narinx2022_free_testosterone",
+            "nisbett_wilson1977",
+            "rosenspire2005_metabolic_phase",
+            "rubin2010_ieiemf_provocation",
+            "sanguinetti1984_photoreversal",
+            "tooby1992",
+            "ubeda1983_pulse_shape",
+            "yu2023_zip9_rf_sertoli",
+            "zapffe1933"
+          ]
+        },
+        "published": {
+          "source_count": 1191,
+          "missing_ids": [],
+          "same_full_record": 1191,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "claims": {
+      "final_count": 99,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 64,
+          "missing_ids": [],
+          "same_full_record": 61,
+          "advanced_same_id_records": 3,
+          "new_final_ids": [
+            "claim.androgen.binding-availability",
+            "claim.androgen.receptor-use-capacity",
+            "claim.bridge.conditional-response-operator",
+            "claim.bridge.state-conditioned-kernel",
+            "claim.civilization.asymmetric-evidence-threshold",
+            "claim.civilization.epistapege-observability-loss",
+            "claim.cognition.biological-behavioural-weighting",
+            "claim.cognition.reported-reason-downstream",
+            "claim.cognition.state-dependent-behaviour",
+            "claim.geometry.quadratic-mixing",
+            "claim.geometry.rank-one-coordinate",
+            "claim.pharmacology.channel-density",
+            "claim.pharmacology.channel-density-store-history-conditional",
+            "claim.pharmacology.channel-selectivity-conditional",
+            "claim.pharmacology.channel-specific-response",
+            "claim.pharmacology.coq10-protocol",
+            "claim.pharmacology.coq10-response-conditional",
+            "claim.pharmacology.cry-fad-competition-conditional",
+            "claim.pharmacology.cry-ligand-occupancy",
+            "claim.pharmacology.drug-photochemistry-conditional",
+            "claim.pharmacology.lipid-ttype-inhibition",
+            "claim.pharmacology.lipid-ttype-inhibition-conditional",
+            "claim.pharmacology.local-ltype-erk",
+            "claim.pharmacology.local-ltype-erk-conditional",
+            "claim.pharmacology.mt2-brake-conditional",
+            "claim.pharmacology.mt2-evoked-feedback",
+            "claim.pharmacology.probe-photoreversal",
+            "claim.pharmacology.serca-pretreatment",
+            "claim.synthesis.cross-species-transfer-prior",
+            "claim.synthesis.cry-clock-hpg-chain",
+            "claim.synthesis.graded-susceptibility",
+            "claim.synthesis.joint-endocrine-gate",
+            "claim.synthesis.protocol-state-heterogeneity",
+            "claim.synthesis.target-intervention-triangulation",
+            "claim.synthesis.vmem-calcium-interface"
+          ]
+        },
+        "published": {
+          "source_count": 99,
+          "missing_ids": [],
+          "same_full_record": 99,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "evidence_relations": {
+      "final_count": 186,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 131,
+          "missing_ids": [],
+          "same_full_record": 131,
+          "advanced_same_id_records": 0,
+          "new_final_ids": [
+            "er.androgen.degendt2004",
+            "er.androgen.laurent2016",
+            "er.androgen.mollerlokken2012",
+            "er.androgen.narinx2022",
+            "er.androgen.yu2023",
+            "er.bridge.berman1990",
+            "er.bridge.blackman1990",
+            "er.bridge.blackman1991",
+            "er.bridge.kubo1957",
+            "er.bridge.litovitz1991",
+            "er.bridge.lymangrover1983",
+            "er.bridge.rosenspire2005",
+            "er.bridge.ubeda1983",
+            "er.cognition.alogaily2025",
+            "er.cognition.bakker2020",
+            "er.cognition.delgado1969",
+            "er.cognition.gazzaniga2000",
+            "er.cognition.kunda1990",
+            "er.cognition.narinx2022",
+            "er.cognition.nisbett-wilson1977",
+            "er.cognition.oxley2008",
+            "er.cognition.soares-cunha2016",
+            "er.geometry.lindgren2025",
+            "er.pharmacology.channel-density-grassi2004-channels",
+            "er.pharmacology.channel-specific-response-buckner2015-ttype",
+            "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019",
+            "er.pharmacology.coq10-protocol-bektas2026",
+            "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+            "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001",
+            "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4",
+            "er.pharmacology.local-ltype-erk-bhatt2012-glp1",
+            "er.pharmacology.mt2-evoked-feedback-liu2014-mt2",
+            "er.pharmacology.mt2-light-context",
+            "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal",
+            "er.pharmacology.serca-pretreatment-bertagna2022-serca",
+            "er.synthesis.cross-species.hallmann2017",
+            "er.synthesis.cross-species.ritz2004",
+            "er.synthesis.cross-species.rosenberg2019",
+            "er.synthesis.cross-species.wan2021",
+            "er.synthesis.cross-species.yoshii2009",
+            "er.synthesis.cry-clock.cao2015",
+            "er.synthesis.cry-clock.liu2014",
+            "er.synthesis.cry-clock.sherrard2018",
+            "er.synthesis.cry-clock.yoshii2009",
+            "er.synthesis.joint-endocrine.mehta2010",
+            "er.synthesis.joint-endocrine.narinx2022",
+            "er.synthesis.pharmacology.ccb1994",
+            "er.synthesis.pharmacology.pall2013",
+            "er.synthesis.pharmacology.sirolimus2008",
+            "er.synthesis.susceptibility.belpomme2022",
+            "er.synthesis.susceptibility.mccarty2011",
+            "er.synthesis.susceptibility.rubin2010",
+            "er.synthesis.vmem.brown2016",
+            "er.synthesis.vmem.sempou2022",
+            "er.synthesis.vmem.zandieh2025"
+          ]
+        },
+        "published": {
+          "source_count": 186,
+          "missing_ids": [],
+          "same_full_record": 186,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "epistemic_assessments": {
+      "final_count": 99,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 64,
+          "missing_ids": [],
+          "same_full_record": 63,
+          "advanced_same_id_records": 1,
+          "new_final_ids": [
+            "ea.androgen.binding.v1",
+            "ea.androgen.receptor.v1",
+            "ea.bridge.conditional.v1",
+            "ea.bridge.state-conditioned.v1",
+            "ea.civilization.asymmetric-evidence-threshold.v1",
+            "ea.civilization.epistapege-observability-loss.v1",
+            "ea.cognition.biological-behavioural-weighting.v1",
+            "ea.cognition.reported-reason-downstream.v1",
+            "ea.cognition.state-dependent-behaviour.v1",
+            "ea.geometry.mixing.v1",
+            "ea.geometry.rank-one.v1",
+            "ea.pharmacology.channel-density-store-history-conditional.v1",
+            "ea.pharmacology.channel-density.v1",
+            "ea.pharmacology.channel-selectivity-conditional.v1",
+            "ea.pharmacology.channel-specific-response.v1",
+            "ea.pharmacology.coq10-protocol.v1",
+            "ea.pharmacology.coq10-response-conditional.v1",
+            "ea.pharmacology.cry-fad-competition-conditional.v1",
+            "ea.pharmacology.cry-ligand-occupancy.v1",
+            "ea.pharmacology.drug-photochemistry-conditional.v1",
+            "ea.pharmacology.lipid-ttype-inhibition-conditional.v1",
+            "ea.pharmacology.lipid-ttype-inhibition.v1",
+            "ea.pharmacology.local-ltype-erk-conditional.v1",
+            "ea.pharmacology.local-ltype-erk.v1",
+            "ea.pharmacology.mt2-brake-conditional.v1",
+            "ea.pharmacology.mt2-evoked-feedback.v1",
+            "ea.pharmacology.probe-photoreversal.v1",
+            "ea.pharmacology.serca-pretreatment.v1",
+            "ea.synthesis.cross-species-transfer-prior.v1",
+            "ea.synthesis.cry-clock-hpg-chain.v1",
+            "ea.synthesis.graded-susceptibility.v1",
+            "ea.synthesis.joint-endocrine-gate.v1",
+            "ea.synthesis.protocol-state-heterogeneity.v1",
+            "ea.synthesis.target-intervention-triangulation.v1",
+            "ea.synthesis.vmem-calcium-interface.v1"
+          ]
+        },
+        "published": {
+          "source_count": 99,
+          "missing_ids": [],
+          "same_full_record": 99,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "routes": {
+      "final_count": 5,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 5,
+          "missing_ids": [],
+          "same_full_record": 4,
+          "advanced_same_id_records": 1,
+          "new_final_ids": []
+        },
+        "published": {
+          "source_count": 5,
+          "missing_ids": [],
+          "same_full_record": 5,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "graph_nodes": {
+      "final_count": 47,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 39,
+          "missing_ids": [],
+          "same_full_record": 28,
+          "advanced_same_id_records": 11,
+          "new_final_ids": [
+            "ANDROGEN_BINDING_AVAILABILITY",
+            "ANDROGEN_RECEPTOR_SIGNAL",
+            "BIOBEHAVIORAL_WEIGHTING",
+            "EPISTAPEGE_OBSERVABILITY_LOSS",
+            "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+            "INSTITUTIONAL_MODEL_REUSE",
+            "LINDGREN_METRIC_DRIVE",
+            "NARRATIVE_ATTRIBUTION"
+          ]
+        },
+        "published": {
+          "source_count": 47,
+          "missing_ids": [],
+          "same_full_record": 47,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "graph_edges": {
+      "final_count": 96,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 83,
+          "missing_ids": [],
+          "same_full_record": 5,
+          "advanced_same_id_records": 78,
+          "new_final_ids": [
+            "e84",
+            "e85",
+            "e86",
+            "e87",
+            "e88",
+            "e89",
+            "e90",
+            "e91",
+            "e92",
+            "e93",
+            "e94",
+            "e95",
+            "e96"
+          ]
+        },
+        "published": {
+          "source_count": 96,
+          "missing_ids": [],
+          "same_full_record": 96,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    },
+    "legacy_evidence": {
+      "final_count": 150,
+      "duplicates_final": 0,
+      "comparisons": {
+        "original": {
+          "source_count": 150,
+          "missing_ids": [],
+          "same_full_record": 147,
+          "advanced_same_id_records": 3,
+          "new_final_ids": []
+        },
+        "published": {
+          "source_count": 150,
+          "missing_ids": [],
+          "same_full_record": 150,
+          "advanced_same_id_records": 0,
+          "new_final_ids": []
+        }
+      },
+      "original_changed_fields_not_preserved": []
+    }
+  },
+  "atlas_binding_preservation": {
+    "final_node_keys": 68,
+    "final_edges": 5,
+    "final_unique_bindings": 116,
+    "comparisons": {
+      "original": {
+        "source_unique_bindings": 70,
+        "missing_bindings": [],
+        "added_bindings": 46
+      },
+      "published": {
+        "source_unique_bindings": 116,
+        "missing_bindings": [],
+        "added_bindings": 0
+      }
+    }
+  },
+  "graph_and_registry_consistency": {
+    "graph_edges_match_parent_adjacency": true,
+    "graph_edges_match_child_adjacency": true,
+    "missing_original_graph_endpoint_pairs": [],
+    "dangling_graph_edge_endpoints": [],
+    "edge_kinds": {
+      "inference_input": 5,
+      "derived_geometry": 1,
+      "conditional_response": 10,
+      "causal_model": 80
+    },
+    "unresolved_registry_references": [],
+    "registered_claims_bound_in_atlas": 99,
+    "unbound_claim_ids": []
+  },
+  "generated_mirrors": {
+    "website/data/modulome-state.json": {
+      "mirrors": [
+        "website/public/data/modulome-state.json"
+      ],
+      "semantic_equal": true
+    },
+    "website/data/conditional-scenarios.json": {
+      "mirrors": [
+        "website/public/data/conditional-scenarios.json"
+      ],
+      "semantic_equal": true
+    },
+    "website/data/intervention-profiles.json": {
+      "mirrors": [
+        "website/public/data/intervention-profiles.json",
+        "berm/data/evidence/intervention_profiles_v1.json"
+      ],
+      "semantic_equal": true
+    },
+    "website/data/intervention-scenarios.json": {
+      "mirrors": [
+        "website/public/data/intervention-scenarios.json"
+      ],
+      "semantic_equal": true
+    }
+  },
+  "scope_notes": [
+    "No model or website test suite rerun by this audit. Root runs full suites and build.",
+    "Published records may refine fields that were unchanged from the common base in the original; all original edits relative to base are checked separately.",
+    "Canonical equality uses parsed JSON; ordering/formatting of object keys does not affect preservation.",
+    "Runtime atlas rendering and interface behavior are outside this read-only JSON consistency check.",
+    "Ignored-data preservation is covered separately by root: 287 original-only data files / 1.09GB archived, 341 files / 1.56GB hash protected."
+  ]
+}

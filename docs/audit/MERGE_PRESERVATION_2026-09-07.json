@@ -1,0 +1,67 @@
+{
+  "claims": {
+    "snapshot": 55,
+    "incoming": 56,
+    "merged": 73,
+    "missing": [
+      [],
+      []
+    ],
+    "exact_union": true
+  },
+  "evidence_relations": {
+    "snapshot": 115,
+    "incoming": 136,
+    "merged": 158,
+    "missing": [
+      [],
+      []
+    ],
+    "exact_union": true
+  },
+  "epistemic_assessments": {
+    "snapshot": 55,
+    "incoming": 56,
+    "merged": 73,
+    "missing": [
+      [],
+      []
+    ],
+    "exact_union": true
+  },
+  "routes": {
+    "snapshot": 4,
+    "incoming": 4,
+    "merged": 4,
+    "missing": [
+      [],
+      []
+    ],
+    "exact_union": true
+  },
+  "references": {
+    "snapshot": 1137,
+    "incoming": 1161,
+    "merged": 1164,
+    "missing": [
+      [],
+      []
+    ],
+    "exact_union": true
+  },
+  "0dc5188b0983955d9a2ed4e8b24bf45819985cdf": {
+    "files": 902,
+    "missing": []
+  },
+  "f971a29ebddb6df1a01376861a2421ef2c488753": {
+    "files": 835,
+    "missing": []
+  },
+  "live_worktree": {
+    "checked_files": 902,
+    "changed_files": [],
+    "live_head_unchanged": true,
+    "stash_unchanged": true,
+    "index_unchanged": true
+  }
+}

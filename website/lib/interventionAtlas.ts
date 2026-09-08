@@ -1,0 +1,55 @@
+import { getIntervention, type InterventionId, type InterventionText } from "./interventions";
+import type { CausalMapEdge, CausalMapNode } from "./causalAtlasRegistry";
+
+export interface InterventionEffect {
+  profileId: InterventionId;
+  sign: "increase" | "decrease" | "context_dependent";
+  evidence: "study" | "conditional";
+  context: InterventionText;
+}
+const paths = ["website/data/intervention-profiles.json", "berm/berm/modulome/intervention_protocol.py"];
+const definitions: [string, InterventionId, string, string][] = [
+  ["mech_mt2_store_brake", "mt2_brake", "MT2: evoked calcium and sodium-current brake", "MT2: evokoitu kalsium ja natriumvirran jarru"],
+  ["mech_local_ltype_erk", "local_ltype_erk", "Local L-channel calcium and ERK", "Paikallinen L-kanavan kalsium ja ERK"],
+  ["mech_channel_selectivity", "channel_selectivity", "L/T-channel and CaV3.2 selectivity", "L/T-kanavien ja CaV3.2:n valikoivuus"],
+  ["mech_aa_lte4_inhibition", "lipid_ttype_inhibition", "AA/LTE4-mediated T-channel inhibition", "AA/LTE4-välitteinen T-kanavan inhibitio"],
+  ["mech_channel_density", "channel_density_store_history", "Slow channel-density change", "Hidas kanavamäärän muutos"],
+  ["mech_serca_pretreatment", "channel_density_store_history", "SERCA pretreatment and releasable stores", "SERCA-esikäsittely ja vapautettavat varastot"],
+  ["mech_cry_ligand_occupancy", "cry_fad_competition", "CRY amount and FAD-pocket occupancy", "CRY-määrä ja FAD-taskun sitoutumistila"],
+  ["mod_drug_photochemistry", "drug_photochemistry", "Light-dependent active drug fraction", "Valosta riippuva aktiivinen lääkeosuus"],
+  ["mech_coq10_response", "coq10_response", "CoQ10: unresolved site of protection", "CoQ10: suojavaikutuksen avoin paikka"],
+];
+export const INTERVENTION_NODES: CausalMapNode[] = definitions.map(([id, profileId, en, fi]) => {
+  const profile = getIntervention(profileId)!;
+  return { id, level: id.startsWith("mod_") ? 1 : 2, label: { en, fi }, epistemicLevel: "M", sourcePaths: paths,
+    subatlases: profileId === "coq10_response" ? ["cell", "health", "reproduction"] : ["cell", "health"],
+    searchAliases: [profileId, ...profile.interventionTargets, ...profile.endpointIds],
+    provenance: { en: "Imported component evidence under the named protocol. The proposed BERM response remains conditional; the physical kernel and human endpoint transfer are open.", fi: "Tuotu komponenttinäyttö nimetyn protokollan ehdoilla. Ehdotettu BERM-vaste on ehdollinen; fysikaalinen vasteydin ja siirto ihmisen päätepisteeseen ovat avoimia." },
+    detail: { en: { mechanism: `${profile.observed.en} ${profile.mechanism.en}`, prediction: profile.prediction.en }, fi: { mechanism: `${profile.observed.fi} ${profile.mechanism.fi}`, prediction: profile.prediction.fi }, keyRefs: profile.referenceIds, link: `/evidence/pharmacology?profile=${profileId}#intervention-explorer` },
+  };
+});
+function connection(from: string, to: string, profileId: InterventionId, sign: InterventionEffect["sign"], evidence: InterventionEffect["evidence"], en: string, fi: string, relation: CausalMapEdge["relation"] = "modulates"): CausalMapEdge {
+  return { from, to, relation, sourcePaths: paths, interventionEffects: [{ profileId, sign, evidence, context: { en, fi } }] };
+}
+export const INTERVENTION_EDGES: CausalMapEdge[] = [
+  connection("berm_l2_bridge", "mech_mt2_store_brake", "mt2_brake", "context_dependent", "conditional", "Retarded tensor response → signed sodium-current / ER-release ports. MT2 modifies the biological feedback; no field-induced drug term is assumed.", "Viivästetty tensorivaste → etumerkilliset natriumvirta-/ER-vapautusportit. MT2 muuntaa biologista palautetta; kentän aiheuttamaa lääketermiä ei oleteta.", "bridge"),
+  connection("berm_l2_bridge", "mech_local_ltype_erk", "local_ltype_erk", "context_dependent", "conditional", "A specified L-channel gating port converts the tensor response to local calcium and ERK; gain, sign and tissue kernel require identification.", "Nimetty L-kanavan portitusportti vie tensorivasteen paikalliseen kalsiumiin ja ERK:hon; vahvistus, etumerkki ja kudosydin on tunnistettava.", "bridge"),
+  connection("berm_l2_bridge", "mech_channel_selectivity", "channel_selectivity", "context_dependent", "conditional", "Separate signed L- and T-channel gating ports receive the same metric perturbation through independently specified kernels.", "Erilliset etumerkilliset L- ja T-kanavaportit vastaanottavat saman metriikkahäiriön erikseen määriteltyjen ytimien kautta.", "bridge"),
+  connection("berm_l2_bridge", "mech_aa_lte4_inhibition", "lipid_ttype_inhibition", "context_dependent", "conditional", "Tensor response → signed AA-production port → LTE4 → T-current inhibition. The AA/LTE4 experiment constrains the downstream branch, not the physical coupling sign.", "Tensorivaste → etumerkillinen AA-tuotantoportti → LTE4 → T-virran inhibitio. AA/LTE4-koe rajaa alavirran haaraa, ei fysikaalisen kytkennän etumerkkiä.", "bridge"),
+  connection("berm_l2_bridge", "mech_channel_density", "channel_density_store_history", "context_dependent", "conditional", "A signed channel-synthesis port changes slow channel abundance separately from fast gating; field-to-synthesis gain remains uncalibrated.", "Etumerkillinen kanavasynteesiportti muuttaa hidasta kanavamäärää erillään nopeasta portituksesta; kentästä synteesiin vievä vahvistus on kalibroimaton.", "bridge"),
+  connection("berm_l2_bridge", "mech_serca_pretreatment", "channel_density_store_history", "context_dependent", "conditional", "A signed ER-release port acts on stores whose baseline is changed by SERCA pretreatment. Depletion does not identify the physical kernel or imply priming.", "Etumerkillinen ER-vapautusportti vaikuttaa varastoihin, joiden lähtötilan SERCA-esikäsittely muuttaa. Ehtyminen ei tunnista fysikaalista ydintä eikä osoita esiviritystä.", "bridge"),
+  connection("berm_l2_bridge", "mech_cry_ligand_occupancy", "cry_fad_competition", "context_dependent", "conditional", "The named CRY-response port is multiplied by subtype-specific protein amount and photoyield, with FAD occupancy counted once; magnetic response remains to be tested.", "Nimetty CRY-vasteportti kerrotaan alatyyppikohtaisella proteiinimäärällä ja fototuotolla, FAD-sitoutuminen kerran huomioiden; magneettivaste on testattava.", "bridge"),
+  connection("berm_l2_bridge", "mech_coq10_response", "coq10_response", "context_dependent", "conditional", "Signed calcium ports feed mitochondrial load; alternative CoQ10 effects on input, production or repair must be compared under the same kernel.", "Etumerkilliset kalsiumportit syöttävät mitokondriokuormaa; CoQ10:n vaihtoehtoisia vaikutuksia syötteeseen, tuotantoon ja korjaukseen verrataan samalla ytimellä.", "bridge"),
+  connection("tissue_melatonin", "mech_mt2_store_brake", "mt2_brake", "context_dependent", "conditional", "Physiological melatonin → experimental MT2 engagement requires dose and timing calibration.", "Fysiologinen melatoniini → kokeellinen MT2-aktivaatio tarvitsee annos- ja ajoituskalibroinnin."),
+  connection("mech_mt2_store_brake", "mech_ca_compartment_cycle", "mt2_brake", "increase", "study", "Liu protocol: evoked calcium increased while the sodium-current response was restrained; resting calcium did not rise.", "Liun protokolla: evokoitu kalsium suureni samalla kun natriumvirtavaste hillittyi; lepokalsium ei noussut."),
+  connection("mech_vgcc_ros", "mech_local_ltype_erk", "local_ltype_erk", "increase", "study", "MIN6 L-channel calcium supported ERK signaling; local coupling was inferred from buffer kinetics. No field intervention.", "MIN6-solujen L-kanavan kalsium tuki ERK-signalointia; paikallisuus pääteltiin puskurikinetiikasta. Ei kenttäinterventiota."),
+  connection("mech_channel_selectivity", "mech_ttype_bifurcation", "channel_selectivity", "decrease", "study", "Channel blockade or CaV3.2 depletion constrains the tested T-channel route; independent L-channel transmission is a separate target.", "Kanavasalpaus tai CaV3.2-vaimennus rajaa testattua T-kanavareittiä; riippumaton L-kanavavälitys on erillinen kohde."),
+  connection("mech_aa_lte4_inhibition", "mech_ttype_bifurcation", "lipid_ttype_inhibition", "decrease", "study", "Cui: 50 Hz, 0.2 mT; AA/LTE4 signaling inhibited T-current. Exogenous LTE4 mimicked inhibition.", "Cui: 50 Hz, 0,2 mT; AA/LTE4-signalointi inhiboi T-virtaa. Ulkoinen LTE4 jäljitteli inhibitiota."),
+  connection("mech_channel_density", "mech_vgcc_ros", "channel_density_store_history", "increase", "study", "Grassi: 24–72 h increased Ba-current density and channel protein without a detected single-channel gating change.", "Grassi: 24–72 h kasvatti Ba-virran tiheyttä ja kanavaproteiinia ilman havaittua yksittäiskanavan portitusmuutosta."),
+  connection("mech_serca_pretreatment", "mech_ca_compartment_cycle", "channel_density_store_history", "context_dependent", "study", "Bertagna: thapsigargin before baseline raised resting Fluo-4 and removed the field increment; store depletion and indicator range need separate controls.", "Bertagna: thapsigargiini ennen lähtömittausta nosti lepo-Fluo-4:ää ja poisti kentän lisävasteen; varaston ehtyminen ja mittausalue tarvitsevat erilliset kontrollit."),
+  connection("mech_cry_ligand_occupancy", "mod_cry_photostate", "cry_fad_competition", "context_dependent", "conditional", "KL001 stabilizes CRY and competes at the FAD pocket. A resulting field-response sign requires cellular occupancy and kinetics; it was not measured.", "KL001 stabiloi CRY:tä ja kilpailee FAD-taskussa. Kenttävasteen suunta edellyttää solun sitoutumisastetta ja kinetiikkaa; sitä ei mitattu."),
+  connection("optical_light", "mod_drug_photochemistry", "drug_photochemistry", "decrease", "study", "320–450 nm reversed nifedipine/nisoldipine blockade in Purkinje fibres; reduced effective blockade is probe- and protocol-specific.", "320–450 nm purki nifedipiini-/nisoldipiinisalpausta Purkinjen säikeissä; tehollisen salpauksen väheneminen on koetin- ja protokollakohtaista."),
+  connection("mod_drug_photochemistry", "mech_vgcc_ros", "drug_photochemistry", "increase", "study", "Photoreversal restores blocked channel current in the tested drug/light protocol; no CRY or field interaction was established.", "Salpauksen valopurkautuminen palauttaa kanavavirtaa testatussa lääke-/valoprotokollassa; CRY- tai kenttäinteraktiota ei osoitettu."),
+  connection("mech_coq10_response", "tissue_sperm", "coq10_response", "context_dependent", "study", "GSM-modulated 3.5 GHz, 28 rats: partial hormonal/redox/histological protection; early calcium and functional fertility were not resolved.", "GSM-moduloitu 3,5 GHz, 28 rottaa: osittainen hormoni-/redox-/histologiasuoja; varhaista kalsiumia ja toiminnallista hedelmällisyyttä ei selvitetty."),
+  connection("mech_coq10_response", "mod_repair_capacity", "coq10_response", "context_dependent", "conditional", "Protection may change production or repair; the CoQ10 repair rate is unmeasured.", "Suoja voi muuttaa tuotantoa tai korjausta; CoQ10:n korjausnopeutta ei mitattu."),
+];

@@ -83,7 +83,7 @@ const COPY = {
     total: "Total",
     strongestEvidence: "Strongest evidence",
     explanation:
-      "BERM scores higher overall than both tobacco (at the time of the Surgeon General's report) and bisphenol A (at the time regulatory action began). Its strongest areas are biological plausibility (the mechanism is known at atomic resolution and FDA-validated) and analogy (four independent parallel lines of evidence). Its weakest area is specificity — but this is a predicted feature of calcium biology, not a model failure.",
+      "In this internal scoring, BERM scores higher overall than tobacco at the time of the Surgeon General's report and bisphenol A when regulatory action began. Its strongest areas are component-level biological plausibility and analogy. Atomic structures and the protocol-specific TheraBionic HDE constrain parts of the route; they do not validate BERM's environmental geometry-to-tissue mechanism. Specificity remains a material weakness because calcium participates in many pathways.",
     disclaimer:
       "These scores represent our assessment. Readers are encouraged to evaluate each criterion independently.",
     cta: "Read the full Bradford Hill analysis",
@@ -99,7 +99,7 @@ const COPY = {
     total: "Yhteensä",
     strongestEvidence: "Vahvin todiste",
     explanation:
-      "BERM saa korkeamman kokonaispistemäärän kuin tupakka (Surgeon Generalin raportin aikaan) ja bisfenoli A (regulatorisen toiminnan alkaessa). Sen vahvimmat alueet ovat biologinen uskottavuus (mekanismi tunnetaan atomitasolla ja on FDA-validoitu) ja analogia (neljä itsenäistä rinnakkaista todistelinjaa). Sen heikoin alue on kohdentuvuus — mutta tämä on kalsiumbiologian ennustettu ominaisuus, ei mallin epäonnistuminen.",
+      "Tässä sisäisessä pisteytyksessä BERM saa korkeamman kokonaispistemäärän kuin tupakka Surgeon Generalin raportin aikaan ja bisfenoli A regulatorisen toiminnan alkaessa. Vahvimmat alueet ovat komponenttitason biologinen uskottavuus ja analogia. Atomirakenteet ja protokollakohtainen TheraBionic-HDE rajaavat ketjun osia; ne eivät validoi BERM:n ympäristöaltistuksesta kudokseen johtavaa mekanismia. Kohdentuvuus on olennainen heikkous, koska kalsium osallistuu moniin reitteihin.",
     disclaimer:
       "Nämä pisteet ovat meidän arviomme. Lukijoita kannustetaan arvioimaan jokainen kriteeri itsenäisesti.",
     cta: "Lue koko Bradford Hill -analyysi",
@@ -115,7 +115,7 @@ const COPY = {
     total: "合計",
     strongestEvidence: "最も強い証拠",
     explanation:
-      "BERMは、タバコ（公衆衛生局長官報告書の時点）とビスフェノールA（規制措置開始時点）の両方よりも高い総合スコアを獲得しています。最も強い分野は生物学的妥当性（メカニズムが原子分解能で既知でありFDA検証済み）と類推（4つの独立した並行証拠ライン）です。最も弱い分野は特異性ですが、これはカルシウム生物学の予測された特徴であり、モデルの失敗ではありません。",
+      "この内部評価では、BERMは当時のタバコおよびビスフェノールAより高く採点される。強い部分は構成要素レベルの生物学的妥当性と類推である。原子構造とプロトコル固有のTheraBionic HDEは経路の一部を制約するが、BERMの環境場から組織への機構全体を検証しない。カルシウムが多くの経路に関与するため、特異性は実質的な弱点として残る。",
     disclaimer:
       "これらのスコアは当方の評価です。読者には各基準を独立して評価されることをお勧めします。",
     cta: "ブラッドフォード・ヒル分析の全文を読む",
@@ -131,7 +131,7 @@ const COPY = {
     total: "Total",
     strongestEvidence: "Preuve la plus forte",
     explanation:
-      "Le BERM obtient un score global plus élevé que le tabac (au moment du rapport du Surgeon General) et le bisphénol A (au début des mesures réglementaires). Ses domaines les plus forts sont la plausibilité biologique (le mécanisme est connu à résolution atomique et validé par la FDA) et l'analogie (quatre lignes de preuves parallèles indépendantes). Son domaine le plus faible est la spécificité — mais il s'agit d'une caractéristique prédite de la biologie du calcium, et non d'un échec du modèle.",
+      "Dans cette notation interne, le BERM obtient un score global supérieur à celui du tabac à l'époque du rapport du Surgeon General et du bisphénol A au début de l'action réglementaire. Ses points forts sont la plausibilité biologique au niveau des composants et l'analogie. Les structures atomiques et la HDE TheraBionic propre au protocole contraignent certaines parties de la voie; elles ne valident pas le mécanisme environnement–tissu du BERM. La spécificité reste une faiblesse importante, car le calcium intervient dans de nombreuses voies.",
     disclaimer:
       "Ces scores représentent notre évaluation. Les lecteurs sont encouragés à évaluer chaque critère indépendamment.",
     cta: "Lire l'analyse complète de Bradford Hill",
@@ -147,7 +147,7 @@ const COPY = {
     total: "합계",
     strongestEvidence: "가장 강력한 증거",
     explanation:
-      "BERM은 담배(공중보건국장 보고서 시점)와 비스페놀 A(규제 조치 시작 시점) 모두보다 높은 종합 점수를 받았습니다. 가장 강한 영역은 생물학적 타당성(메커니즘이 원자 수준 해상도로 알려져 있고 FDA 검증됨)과 유추(4개의 독립적 병렬 증거 라인)입니다. 가장 약한 영역은 특이성이지만, 이는 칼슘 생물학의 예측된 특성이며 모델의 실패가 아닙니다.",
+      "이 내부 평가에서 BERM은 당시의 담배 및 비스페놀 A보다 높은 점수를 받는다. 강점은 구성요소 수준의 생물학적 개연성과 유추이다. 원자 구조와 프로토콜별 TheraBionic HDE는 경로 일부를 제약하지만 BERM의 환경장-조직 메커니즘 전체를 검증하지 않는다. 칼슘이 많은 경로에 관여하므로 특이성은 실질적인 약점으로 남는다.",
     disclaimer:
       "이 점수는 당사의 평가입니다. 독자들이 각 기준을 독립적으로 평가하시기를 권합니다.",
     cta: "브래드포드 힐 분석 전문 읽기",

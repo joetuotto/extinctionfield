@@ -55,7 +55,7 @@ export function ExplanationHub({ locale, copy, title, subtitle, lead, icon, stag
           </div>)}
         </div>
         <div className="grid items-start gap-10 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-14">
-          <nav aria-label={d.onPage} className="lg:sticky lg:top-28">
+          <nav aria-label={d.onPage} className="lg:sticky lg:top-[calc(var(--site-header-height,4rem)+1rem)] lg:max-h-[calc(100dvh-var(--site-header-height,4rem)-2rem)] lg:overflow-y-auto lg:overscroll-contain">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-foreground-muted">{d.onPage}</p>
             <ol className="grid gap-1 border-l border-card-border text-sm sm:grid-cols-2 lg:grid-cols-1">
               {contents.map((item, i) => <li key={item.id}><a href={`#${item.id}`} className="block px-4 py-2 leading-5 text-foreground-muted transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"><span className="mr-2 text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>{item.title}</a></li>)}

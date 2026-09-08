@@ -63,14 +63,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "5G-frequency testicular evidence ([[ref:bektas2026|Bektas]] 2026)",
+        title: "CoQ10 and a defined 3.5 GHz rat protocol",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] et al. (2026, Bioelectromagnetics, bem.70043) provide the first 5G-frequency-specific testicular data: rats exposed to 3.5 GHz RF radiation (the 5G core frequency) showed testicular and oxidative damage, with decreased testis antioxidant capacity. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility. This operates directly on the Level 5A→6 edge (ROS → sperm cascade) and extends the oxidative stress evidence base ([[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95%) to the 5G frequency range.",
-          "The tissue-specific nature of this damage is underscored by contemporaneous high-quality null results in skin cells: [[ref:meyer2026|Meyer]] et al. (2026, Bioelectromagnetics, bem.70046) found no cell viability change, DNA damage, or micronucleus formation in HaCaT keratinocytes at 50 Hz, 200 µT (blinded sham-controlled, WST-1, alkaline comet assay, micronucleus/CREST); [[ref:haidar2025_5g_skin_null|Haidar]] et al. (2025, Scientific Reports) found no effect on basal ROS or DNA damage in fibroblasts and keratinocytes at 5G-modulated 3.5 GHz (SAR 0.08 and 4 W/kg, 20–48h). Same or similar frequencies, different tissues and outcomes motivate an imported L3 function χ_tissue based on VGIC density, mitochondrial ROS capacity and Ca²⁺ stores. They do not validate χ_geo or identify its open L0→L2 map; tissue specificity and insufficient effect both remain open.",
+          "[[ref:bektas2026|Bektas 2026]] studied 28 rats in four groups with a GSM-modulated 3.5 GHz signal, 2 h/day for 30 days. CoQ10 attenuated some hormonal, testicular and redox changes. This was not a 5G NR waveform. Early calcium responses and repair time constants were not measured, so the result does not isolate a downstream repair site or demonstrate complete reversal of established damage.",
+          "[[ref:meyer2026|Meyer 2026]] found null viability/DNA outcomes in HaCaT cells at 50 Hz, 200 µT, while [[ref:haidar2025_5g_skin_null|Haidar 2025]] found null basal-ROS/DNA outcomes in skin cells with a 5G-modulated 3.5 GHz protocol. Their tissues, endpoints and waveforms differ from Bektas. A shared carrier frequency does not make GSM modulation equivalent to 5G NR. Matched protocols are needed to separate tissue dependence from protocol dependence.",
           "Important: Lab baseline bias is symmetric. It does not only explain negative results — it also means that positive results underestimate the true effect size. When a study finds that RF exposure increases ROS by 30% compared to sham controls, the actual increase relative to a truly unexposed baseline may be larger, because sham controls are themselves partially exposed. This systematic underestimation affects all in vitro EMF research, not selectively.",
         ],
         studies: [
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → testicular ROS damage; CoQ10 ameliorates. First 5G-frequency testicular data." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM-modulated 3.5 GHz; CoQ10 attenuated some rat endpoints. Not a 5G NR protocol; the intervention site and recovery time remain unmeasured." },
           { citation: "Meyer et al. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz, 200 µT, HaCaT keratinocytes: no viability change, no DNA damage. Blinded sham-controlled." },
           { citation: "Haidar et al. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "5G-modulated 3.5 GHz, fibroblasts + keratinocytes: no ROS, no DNA damage (CPD). High-quality null." },
         ],
@@ -140,14 +140,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "5G-taajuustarkka testisnäyttö ([[ref:bektas2026|Bektas]] 2026)",
+        title: "CoQ10 ja määritelty 3,5 GHz:n rottaprotokolla",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuustarkan testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin palautuvuuden. Tämä toimii suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin näyttöpohjan ([[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
-          "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: [[ref:meyer2026|Meyer]] ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa; [[ref:haidar2025_5g_skin_null|Haidar]] ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä. Eri kudokset ja tulokset motivoivat tuotua L3-funktiota χ_tissue, joka perustuu VGIC-tiheyteen, mitokondrioiden ROS-kapasiteettiin ja Ca²⁺-varastoihin. Ne eivät validoi χ_geoa tai identifioi sen avointa L0→L2-kuvausta; kudosspesifisyys ja riittämätön vaikutus pysyvät molemmat avoimina.",
+          "[[ref:bektas2026|Bektas 2026]] tutki 28 rottaa neljässä ryhmässä GSM-moduloidulla 3,5 GHz:n signaalilla, 2 h/päivä 30 päivän ajan. CoQ10 lievensi osaa hormonaalisista, kiveksen ja redox-tilan muutoksista. Kyse ei ollut 5G NR -aaltomuodosta. Varhaista kalsiumvastetta ja korjauksen aikavakiota ei mitattu, joten tulos ei yksilöi alavirran korjauskohtaa eikä osoita jo syntyneen vaurion täydellistä palautumista.",
+          "[[ref:meyer2026|Meyer 2026]] havaitsi nollatuloksia HaCaT-solujen elinvoimassa/DNA:ssa 50 Hz:n ja 200 µT:n kentässä, ja [[ref:haidar2025_5g_skin_null|Haidar 2025]] ihosolujen perus-ROS:ssa/DNA:ssa 5G-moduloidulla 3,5 GHz:n protokollalla. Kudokset, päätepisteet ja aaltomuodot eroavat Bektasista. Yhteinen kantoaaltotaajuus ei tee GSM-modulaatiosta 5G NR:ää vastaavaa. Kudos- ja protokollariippuvuus erotetaan yhteensovitetuilla kokeilla.",
           "Tärkeää: Laboratorion lähtötasovinouma on symmetrinen. Se ei selitä ainoastaan negatiivisia tuloksia — se tarkoittaa myös, että positiiviset tulokset aliarvioivat todellista vaikutuskokoa. Kun tutkimus havaitsee RF-altistuksen nostavan ROS:ia 30 % sham-kontrolleihin verrattuna, todellinen nousu altistamattomaan lähtötasoon nähden voi olla suurempi, koska sham-kontrollit ovat itsekin osittain altistuneet. Tämä systemaattinen aliarviointi koskee kaikkea in vitro EMF-tutkimusta, ei valikoivasti.",
         ],
         studies: [
-          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuustarkka testisdata." },
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM-moduloitu 3,5 GHz; CoQ10 lievensi osaa rotan päätepisteistä. Ei 5G NR -protokolla; vaikutuskohta ja palautumisaika jäivät mittaamatta." },
           { citation: "Meyer ym. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz, 200 µT, HaCaT-keratinosyytit: ei elinvoimaisuusmuutosta, ei DNA-vauriota. Sokkoutettu sham-kontrolloitu." },
           { citation: "Haidar ym. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "5G-moduloitu 3,5 GHz, fibroblastit + keratinosyytit: ei ROS:ia, ei DNA-vauriota (CPD). Laadukas nollatulos." },
         ],
@@ -217,14 +217,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "5G周波数精巣エビデンス（[[ref:bektas2026|Bektas]] 2026）",
+        title: "CoQ10と定義された3.5 GHzラット実験",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] et al.（2026年、Bioelectromagnetics、bem.70043）は最初の5G周波数特異的精巣データを提供する：3.5 GHz RF放射（5Gのコア周波数）に曝露されたラットは精巣および酸化的損傷を示し精巣の抗酸化能力が低下した。CoQ10補充は損傷を改善しメカニズムの可逆性を実証した。これはレベル5A→6のエッジ（ROS → 精子カスケード）に直接作用し酸化ストレスのエビデンスベース（[[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95%）を5G周波数範囲に拡張する。",
-          "皮膚細胞における同時期の高品質なヌル結果は組織差を示唆する。[[ref:meyer2026|Meyer]] et al.（2026）と[[ref:haidar2025_5g_skin_null|Haidar]] et al.（2025）の異なる組織・結果は、VGIC密度、ミトコンドリアROS能力、Ca²⁺ストアに基づく導入L3関数χ_tissueを動機づける。しかしχ_geoを検証せず、未解決L0→L2写像も同定しない。組織特異性と効果不足の両方を開いておく。",
+          "[[ref:bektas2026|Bektas 2026]]は28匹のラットを4群に分け、GSM変調3.5 GHz信号を1日2時間、30日間使用した。CoQ10は一部のホルモン、精巣、酸化還元変化を軽減した。5G NR波形ではない。初期Ca応答や修復時定数は測定しておらず、下流の修復部位や既存損傷の完全回復は特定できない。",
+          "[[ref:meyer2026|Meyer 2026]]は50 Hz、200 µTのHaCaT細胞で生存性/DNAのヌル結果を、[[ref:haidar2025_5g_skin_null|Haidar 2025]]は5G変調3.5 GHzの皮膚細胞で基礎ROS/DNAのヌル結果を報告した。組織、指標、波形がBektasと異なり、同じ搬送波でもGSM変調は5G NRと同等ではない。組織依存とプロトコル依存を分けるには条件を一致させる必要がある。",
           "重要：実験室ベースラインバイアスは対称的である。これは陰性結果のみを説明するのではない — 陽性結果も真の効果量を過小評価することを意味する。研究がRF曝露がシャム対照と比較してROSを30%増加させることを発見した場合、真に未曝露のベースラインに対する実際の増加はより大きい可能性がある。シャム対照自体が部分的に曝露されているからである。この体系的な過小評価はすべてのin vitro EMF研究に影響し選択的ではない。",
         ],
         studies: [
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → 精巣ROS損傷; CoQ10が改善。最初の5G周波数精巣データ。" },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM変調3.5 GHz、ラットの一部指標をCoQ10が軽減。5G NRではなく、作用部位と回復時間は未測定。" },
           { citation: "Meyer et al. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz、200 µT、HaCaTケラチノサイト：生存率変化なし、DNA損傷なし。盲検シャム対照。" },
           { citation: "Haidar et al. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "5G変調3.5 GHz、線維芽細胞+ケラチノサイト：ROSなし、DNA損傷なし（CPD）。高品質ヌル結果。" },
         ],
@@ -294,14 +294,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "Preuves testiculaires a frequence 5G ([[ref:bektas2026|Bektas]] 2026)",
+        title: "CoQ10 et protocole défini à 3,5 GHz chez le rat",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] et al. (2026, Bioelectromagnetics, bem.70043) fournissent les premieres donnees testiculaires specifiques a la frequence 5G : des rats exposes a un rayonnement RF de 3,5 GHz (la frequence centrale du 5G) ont montre des dommages testiculaires et oxydatifs, avec une capacite antioxydante testiculaire diminuee. La supplementation en CoQ10 a ameliore les dommages, demontrant la reversibilite du mecanisme. Cela opere directement sur l'arete Niveau 5A→6 (ROS → cascade spermatique) et etend la base de preuves du stress oxydatif ([[ref:yakymenko2016|Yakymenko]] 2016 : 93/100 ; [[ref:panagopoulos2025|Panagopoulos 2025]] : 95 %) a la gamme de frequences 5G.",
-          "Les résultats nuls contemporains dans les cellules cutanées ([[ref:meyer2026|Meyer]] et al. 2026 ; [[ref:haidar2025_5g_skin_null|Haidar]] et al. 2025) motivent une fonction tissulaire L3 importée χ_tissue fondée sur la densité VGIC, la capacité ROS mitochondriale et les réserves de Ca²⁺. Ils ne valident pas χ_geo et n’identifient pas son application L0→L2 ouverte ; spécificité tissulaire et effet insuffisant restent tous deux possibles.",
+          "[[ref:bektas2026|Bektas 2026]] étudie 28 rats en quatre groupes avec un signal de 3,5 GHz à modulation GSM, 2 h/jour pendant 30 jours. Le CoQ10 atténue certaines modifications hormonales, testiculaires et redox. Il ne s’agit pas d’une forme d’onde 5G NR. La réponse calcique précoce et les constantes de réparation n’ont pas été mesurées : le résultat n’isole pas un site de réparation en aval et ne démontre pas la réversion complète de lésions établies.",
+          "[[ref:meyer2026|Meyer 2026]] rapporte des résultats nuls de viabilité/ADN dans HaCaT à 50 Hz, 200 µT ; [[ref:haidar2025_5g_skin_null|Haidar 2025]], des résultats nuls de ROS basal/ADN dans la peau à 3,5 GHz modulé 5G. Tissus, critères et ondes diffèrent de Bektas. Une porteuse commune ne rend pas GSM équivalent à 5G NR. Des protocoles appariés doivent séparer les effets du tissu et du protocole.",
           "Important : le biais de base de laboratoire est symetrique. Il n'explique pas uniquement les resultats negatifs — il signifie aussi que les resultats positifs sous-estiment la taille reelle de l'effet. Lorsqu'une etude constate que l'exposition RF augmente le ROS de 30 % par rapport aux controles sham, l'augmentation reelle par rapport a une base veritablement non exposee peut etre plus importante, car les controles sham sont eux-memes partiellement exposes. Cette sous-estimation systematique affecte toute la recherche EMF in vitro, et non selectivement.",
         ],
         studies: [
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → dommages ROS testiculaires ; CoQ10 ameliore. Premieres donnees testiculaires a frequence 5G." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz à modulation GSM ; certains effets chez le rat sont atténués par CoQ10. Pas de protocole 5G NR ; site d’action et temps de récupération non mesurés." },
           { citation: "Meyer et al. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz, 200 µT, keratinocytes HaCaT : pas de changement de viabilite, pas de dommage a l'ADN. Sham-controle en aveugle." },
           { citation: "Haidar et al. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "3,5 GHz module 5G, fibroblastes + keratinocytes : pas de ROS, pas de dommage a l'ADN (CPD). Resultat nul de haute qualite." },
         ],
@@ -371,14 +371,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "5G 주파수 고환 근거([[ref:bektas2026|Bektas]] 2026)",
+        title: "CoQ10과 정의된 3.5 GHz 쥐 프로토콜",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] et al.(2026, Bioelectromagnetics, bem.70043)은 최초의 5G 주파수 특이적 고환 데이터를 제공한다: 3.5 GHz RF 방사(5G 핵심 주파수)에 노출된 쥐는 고환 및 산화적 손상을 보였으며 고환 항산화 능력이 감소했다. CoQ10 보충이 손상을 개선하여 메커니즘 가역성을 입증했다. 이는 레벨 5A→6 엣지(ROS → 정자 캐스케이드)에 직접 작용하며 산화 스트레스 근거 기반([[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95%)을 5G 주파수 범위로 확장한다.",
-          "피부세포의 동시대 고품질 영 결과([[ref:meyer2026|Meyer]] et al. 2026; [[ref:haidar2025_5g_skin_null|Haidar]] et al. 2025)는 VGIC 밀도, 미토콘드리아 ROS 용량, Ca²⁺ 저장에 근거한 도입된 L3 조직 함수 χ_tissue를 제안한다. 그러나 χ_geo를 검증하거나 열린 L0→L2 매핑을 식별하지 않는다. 조직 특이성과 불충분한 효과 가능성은 모두 열려 있다.",
+          "[[ref:bektas2026|Bektas 2026]]는 쥐 28마리를 네 군으로 나누어 GSM 변조 3.5 GHz 신호를 하루 2시간씩 30일 사용했다. CoQ10은 일부 호르몬·고환·산화환원 변화를 완화했다. 5G NR 파형은 아니었다. 초기 칼슘 반응과 복구 시상수는 측정하지 않아 하류 복구 지점을 특정하거나 이미 생긴 손상의 완전한 회복을 입증하지 않는다.",
+          "[[ref:meyer2026|Meyer 2026]]는 50 Hz, 200 µT의 HaCaT에서 생존/DNA 무효 결과를, [[ref:haidar2025_5g_skin_null|Haidar 2025]]는 5G 변조 3.5 GHz 피부세포에서 기저 ROS/DNA 무효 결과를 보고했다. 조직·지표·파형이 Bektas와 다르다. 같은 반송파라도 GSM 변조와 5G NR은 같지 않으며 조직과 프로토콜 의존성을 구별하려면 조건을 맞춘 실험이 필요하다.",
           "중요: 실험실 기준선 편향은 대칭적이다. 이는 음성 결과만 설명하는 것이 아니다 — 양성 결과도 실제 효과 크기를 과소평가함을 의미한다. 연구가 RF 노출이 샴 대조에 비해 ROS를 30% 증가시켰다고 발견했을 때, 진정한 비노출 기준선에 대한 실제 증가는 더 클 수 있다. 샴 대조 자체가 부분적으로 노출되어 있기 때문이다. 이 체계적 과소평가는 모든 in vitro EMF 연구에 영향을 미치며 선택적이지 않다.",
         ],
         studies: [
-          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3.5 GHz → 고환 ROS 손상; CoQ10이 개선. 최초의 5G 주파수 고환 데이터." },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "GSM 변조 3.5 GHz에서 일부 쥐 지표를 CoQ10이 완화했다. 5G NR 프로토콜이 아니며 작용 지점과 회복 시간은 미측정이다." },
           { citation: "Meyer et al. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz, 200 µT, HaCaT 각질세포: 생존율 변화 없음, DNA 손상 없음. 맹검 샴 대조." },
           { citation: "Haidar et al. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "5G 변조 3.5 GHz, 섬유아세포+각질세포: ROS 없음, DNA 손상 없음(CPD). 고품질 영 결과." },
         ],

@@ -1,0 +1,752 @@
+[
+  {
+    "path": "website/app/[locale]/about/civilization/page.tsx",
+    "working_bytes": 0,
+    "published_bytes": 42698,
+    "class": "published_only_file"
+  },
+  {
+    "path": "website/app/[locale]/about/page.tsx",
+    "working_bytes": 34250,
+    "published_bytes": 34486,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx",
+    "working_bytes": 53710,
+    "published_bytes": 53581,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/biology/page.tsx",
+    "working_bytes": 21684,
+    "published_bytes": 21831,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/civilization/epistapege/page.tsx",
+    "working_bytes": 0,
+    "published_bytes": 207,
+    "class": "published_only_file"
+  },
+  {
+    "path": "website/app/[locale]/civilization/page.tsx",
+    "working_bytes": 27953,
+    "published_bytes": 32831,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/civilization/patokratia/page.tsx",
+    "working_bytes": 118816,
+    "published_bytes": 120000,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/epistemology/page.tsx",
+    "working_bytes": 117957,
+    "published_bytes": 117493,
+    "class": "clean_merge_unique_original"
+  },
+  {
+    "path": "website/app/[locale]/evidence/cascades/page.tsx",
+    "working_bytes": 110300,
+    "published_bytes": 110337,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/circadian/page.tsx",
+    "working_bytes": 144334,
+    "published_bytes": 142734,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/convergence/page.tsx",
+    "working_bytes": 38104,
+    "published_bytes": 38550,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/evidence/converging-patterns/page.tsx",
+    "working_bytes": 0,
+    "published_bytes": 21676,
+    "class": "published_only_file"
+  },
+  {
+    "path": "website/app/[locale]/evidence/ecology/page.tsx",
+    "working_bytes": 80825,
+    "published_bytes": 80956,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/evidence/epidemiology/page.tsx",
+    "working_bytes": 69287,
+    "published_bytes": 67507,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/evolution/page.tsx",
+    "working_bytes": 34550,
+    "published_bytes": 32586,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/infant-vulnerability/page.tsx",
+    "working_bytes": 158417,
+    "published_bytes": 159959,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/page.tsx",
+    "working_bytes": 343194,
+    "published_bytes": 344556,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/evidence/pharmacology/page.tsx",
+    "working_bytes": 160526,
+    "published_bytes": 166092,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/evidence/replication/page.tsx",
+    "working_bytes": 58581,
+    "published_bytes": 58243,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/evidence/reproductive-arc/page.tsx",
+    "working_bytes": 24768,
+    "published_bytes": 25597,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/response-conditions/page.tsx",
+    "working_bytes": 0,
+    "published_bytes": 17891,
+    "class": "published_only_file"
+  },
+  {
+    "path": "website/app/[locale]/evidence/superposition/page.tsx",
+    "working_bytes": 32253,
+    "published_bytes": 31988,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/testosterone/page.tsx",
+    "working_bytes": 33382,
+    "published_bytes": 40971,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/evidence/triple-strikes/page.tsx",
+    "working_bytes": 32095,
+    "published_bytes": 32342,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/evidence/unbroken-chain/page.tsx",
+    "working_bytes": 252014,
+    "published_bytes": 250172,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/map/page.tsx",
+    "working_bytes": 7400,
+    "published_bytes": 7493,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/mathematics/page.tsx",
+    "working_bytes": 326262,
+    "published_bytes": 1920,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/measurement/fieldstate/math/page.tsx",
+    "working_bytes": 30104,
+    "published_bytes": 29238,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/measurement/fieldstate/page.tsx",
+    "working_bytes": 32020,
+    "published_bytes": 32826,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/model/biological-coordination/page.tsx",
+    "working_bytes": 30887,
+    "published_bytes": 31012,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/model/math/page.tsx",
+    "working_bytes": 7377,
+    "published_bytes": 7378,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/model/page.tsx",
+    "working_bytes": 834048,
+    "published_bytes": 863282,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/modulome/brain/page.tsx",
+    "working_bytes": 72648,
+    "published_bytes": 72783,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/modulome/eye/page.tsx",
+    "working_bytes": 66882,
+    "published_bytes": 66957,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/modulome/pituitary/page.tsx",
+    "working_bytes": 47043,
+    "published_bytes": 47248,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/modulome/testes/page.tsx",
+    "working_bytes": 71782,
+    "published_bytes": 81500,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/navigation.tsx",
+    "working_bytes": 15655,
+    "published_bytes": 14223,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/objections/page.tsx",
+    "working_bytes": 156965,
+    "published_bytes": 160504,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/page.tsx",
+    "working_bytes": 25870,
+    "published_bytes": 26081,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/[locale]/physics/page.tsx",
+    "working_bytes": 14938,
+    "published_bytes": 15802,
+    "class": "conflict"
+  },
+  {
+    "path": "website/app/[locale]/predictions/page.tsx",
+    "working_bytes": 1026037,
+    "published_bytes": 1031746,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/app/[locale]/replication/page.tsx",
+    "working_bytes": 23716,
+    "published_bytes": 24092,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/app/globals.css",
+    "working_bytes": 16467,
+    "published_bytes": 16715,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/BradfordHillCard.tsx",
+    "working_bytes": 18019,
+    "published_bytes": 18078,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/CausalAtlas.tsx",
+    "working_bytes": 19914,
+    "published_bytes": 22329,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/CausalChainDiagram.tsx",
+    "working_bytes": 22237,
+    "published_bytes": 22311,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/CivilizationReadingPath.tsx",
+    "working_bytes": 12683,
+    "published_bytes": 13105,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/DifferentialSusceptibility.tsx",
+    "working_bytes": 19039,
+    "published_bytes": 17865,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/DrugDiseaseCrossMap.tsx",
+    "working_bytes": 9659,
+    "published_bytes": 3501,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/EcoCausalVisuals.tsx",
+    "working_bytes": 27151,
+    "published_bytes": 27181,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/EcoStaticInterface.tsx",
+    "working_bytes": 138546,
+    "published_bytes": 139436,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/components/EvidenceSynthesisBanner.tsx",
+    "working_bytes": 0,
+    "published_bytes": 1140,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/ExplanationHub.tsx",
+    "working_bytes": 8100,
+    "published_bytes": 8242,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/InterventionExplorer.tsx",
+    "working_bytes": 0,
+    "published_bytes": 12737,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/InterventionModels.tsx",
+    "working_bytes": 0,
+    "published_bytes": 12046,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/MathematicsSections.tsx",
+    "working_bytes": 0,
+    "published_bytes": 346792,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/ModelTableOfContents.tsx",
+    "working_bytes": 14958,
+    "published_bytes": 18800,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/ModulomeLayers.tsx",
+    "working_bytes": 10110,
+    "published_bytes": 10102,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/RetrodictionCards.tsx",
+    "working_bytes": 46931,
+    "published_bytes": 44330,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/SolarExplorer.tsx",
+    "working_bytes": 21592,
+    "published_bytes": 21815,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/TheraBionicProof.tsx",
+    "working_bytes": 11007,
+    "published_bytes": 8456,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/TwoSusceptibilities.tsx",
+    "working_bytes": 16621,
+    "published_bytes": 15488,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/__tests__/CausalAtlas.test.tsx",
+    "working_bytes": 5120,
+    "published_bytes": 7807,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/__tests__/CausalMapDestinations.test.tsx",
+    "working_bytes": 0,
+    "published_bytes": 3234,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/__tests__/InterventionExplorer.test.tsx",
+    "working_bytes": 0,
+    "published_bytes": 5309,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/__tests__/InterventionModels.test.tsx",
+    "working_bytes": 0,
+    "published_bytes": 4284,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/__tests__/ModelTableOfContents.test.tsx",
+    "working_bytes": 0,
+    "published_bytes": 9172,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/components/__tests__/Navigation.test.tsx",
+    "working_bytes": 10482,
+    "published_bytes": 17960,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/atlas/AtlasDetail.tsx",
+    "working_bytes": 9737,
+    "published_bytes": 11037,
+    "class": "conflict"
+  },
+  {
+    "path": "website/components/modulome/MechanismCards.tsx",
+    "working_bytes": 6840,
+    "published_bytes": 7811,
+    "class": "conflict"
+  },
+  {
+    "path": "website/data/anchor-index.json",
+    "working_bytes": 20782,
+    "published_bytes": 36694,
+    "class": "conflict"
+  },
+  {
+    "path": "website/data/atlas-claim-bindings.json",
+    "working_bytes": 5921,
+    "published_bytes": 8962,
+    "class": "conflict"
+  },
+  {
+    "path": "website/data/causal-atlas-extensions.json",
+    "working_bytes": 289080,
+    "published_bytes": 298950,
+    "class": "conflict"
+  },
+  {
+    "path": "website/data/causal-graph.json",
+    "working_bytes": 36602,
+    "published_bytes": 47558,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/data/causal-graph.schema.json",
+    "working_bytes": 3165,
+    "published_bytes": 3206,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/data/claims.json",
+    "working_bytes": 289940,
+    "published_bytes": 425953,
+    "class": "conflict"
+  },
+  {
+    "path": "website/data/intervention-profiles.json",
+    "working_bytes": 0,
+    "published_bytes": 41493,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/data/intervention-scenarios.json",
+    "working_bytes": 0,
+    "published_bytes": 5731349,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/data/model-architecture.json",
+    "working_bytes": 6065,
+    "published_bytes": 12998,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/data/modulome-state.json",
+    "working_bytes": 75206,
+    "published_bytes": 75937,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/__tests__/atlas-coverage.test.ts",
+    "working_bytes": 5785,
+    "published_bytes": 5884,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/__tests__/atlas-evidence.test.ts",
+    "working_bytes": 3133,
+    "published_bytes": 3855,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/__tests__/causal-chain-separation.test.ts",
+    "working_bytes": 2897,
+    "published_bytes": 3007,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/causal-graph-view.test.ts",
+    "working_bytes": 1214,
+    "published_bytes": 1219,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/claim-independence.test.ts",
+    "working_bytes": 6303,
+    "published_bytes": 7994,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/__tests__/claim-registry.test.ts",
+    "working_bytes": 10986,
+    "published_bytes": 11947,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/__tests__/fixtures/navigation-main-2026-09-08.json",
+    "working_bytes": 0,
+    "published_bytes": 1443,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/interventions.test.ts",
+    "working_bytes": 0,
+    "published_bytes": 7304,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/legacy-mathematics-route.test.tsx",
+    "working_bytes": 0,
+    "published_bytes": 1691,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/lindgren-page-content.test.ts",
+    "working_bytes": 1339,
+    "published_bytes": 6255,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/model-architecture.test.ts",
+    "working_bytes": 4932,
+    "published_bytes": 7278,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/__tests__/navigation.test.ts",
+    "working_bytes": 6066,
+    "published_bytes": 7943,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/__tests__/pharmacology-page-content.test.ts",
+    "working_bytes": 0,
+    "published_bytes": 9142,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/causalAtlasData.ts",
+    "working_bytes": 11620,
+    "published_bytes": 12422,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/causalAtlasRegistry.ts",
+    "working_bytes": 32572,
+    "published_bytes": 38653,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/causalChainV2Data.ts",
+    "working_bytes": 33724,
+    "published_bytes": 34330,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/causalGraphView.ts",
+    "working_bytes": 4523,
+    "published_bytes": 4838,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/causalMapData.ts",
+    "working_bytes": 84759,
+    "published_bytes": 85948,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/claims/types.ts",
+    "working_bytes": 6590,
+    "published_bytes": 6616,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/evidence.ts",
+    "working_bytes": 44802,
+    "published_bytes": 46116,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/evolutionData.ts",
+    "working_bytes": 84214,
+    "published_bytes": 82152,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/interpreterPredictions.ts",
+    "working_bytes": 0,
+    "published_bytes": 8991,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/interventionAtlas.ts",
+    "working_bytes": 0,
+    "published_bytes": 11166,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/interventions.ts",
+    "working_bytes": 0,
+    "published_bytes": 10720,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/legacyEvidence.json",
+    "working_bytes": 113896,
+    "published_bytes": 114403,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/model/lindgren.ts",
+    "working_bytes": 3193,
+    "published_bytes": 3359,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/modelArchitecture.ts",
+    "working_bytes": 638,
+    "published_bytes": 705,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/modulome/layers.ts",
+    "working_bytes": 44476,
+    "published_bytes": 45615,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/modulome/organDetailData.ts",
+    "working_bytes": 10866,
+    "published_bytes": 11216,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/lib/modulome/organs.ts",
+    "working_bytes": 11890,
+    "published_bytes": 11943,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/modulome/stateModel.ts",
+    "working_bytes": 6312,
+    "published_bytes": 6366,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/navigation.ts",
+    "working_bytes": 33806,
+    "published_bytes": 35404,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/orphanedFindings.ts",
+    "working_bytes": 10836,
+    "published_bytes": 10521,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/lib/referenceIndex.json",
+    "working_bytes": 480200,
+    "published_bytes": 501177,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/referenceUsage.json",
+    "working_bytes": 222247,
+    "published_bytes": 267292,
+    "class": "conflict"
+  },
+  {
+    "path": "website/lib/vgccGeneFamily.ts",
+    "working_bytes": 12129,
+    "published_bytes": 12155,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/proxy.ts",
+    "working_bytes": 1472,
+    "published_bytes": 1477,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/public/data/berm_cultural_energy_model.json",
+    "working_bytes": 24539,
+    "published_bytes": 24539,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/public/data/civilization_indices.json",
+    "working_bytes": 25853,
+    "published_bytes": 25853,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/public/data/intervention-profiles.json",
+    "working_bytes": 0,
+    "published_bytes": 41493,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/public/data/intervention-scenarios.json",
+    "working_bytes": 0,
+    "published_bytes": 5731349,
+    "class": "only_published_change"
+  },
+  {
+    "path": "website/public/data/modulome-state.json",
+    "working_bytes": 75206,
+    "published_bytes": 75937,
+    "class": "conflict"
+  },
+  {
+    "path": "website/public/data/references_full.json",
+    "working_bytes": 1044098,
+    "published_bytes": 1088166,
+    "class": "conflict"
+  },
+  {
+    "path": "website/scripts/validate-registry.mjs",
+    "working_bytes": 26026,
+    "published_bytes": 28023,
+    "class": "published_contains_original"
+  },
+  {
+    "path": "website/vitest.config.ts",
+    "working_bytes": 276,
+    "published_bytes": 368,
+    "class": "only_published_change"
+  }
+]

@@ -6,6 +6,8 @@
 
 **Ehdollinen laskentareitti:** `berm-conditional-asfr-v1`.
 
+**Ehdollinen L2-tila:** BERM johtaa formaalin metriikka–havaittava-vasteoperaattorin minimaalisen materiakytkennän ja vastefunktion ehdoilla. Fysikaalinen mittakaava, gauge-resepti, kudosytimet ja ihmispäätepisteiden kalibraatio ovat avoimia.
+
 **L1-raja:** geometrisen kertoimen abstrakti kaava
 \(\chi_{\mathrm{geo}}(x)=x/\sqrt{1+x^2}\) ja sen algebralliset ominaisuudet
 säilyvät L1-tuloksina. Lorentz-signatuurissa tilavuuselementin yleinen
@@ -21,7 +23,7 @@ kytkentöjä. Myöhemmät empiiriset L3-komponentit arvioidaan
 komponenttikohtaisesti: L2-/L3-jatko ei alenna abstraktin
 \(\chi_{\mathrm{geo}}\)-kaavan L1-statusta.
 
-BERM on varsinainen selitys-, johtamis- ja ennustemalli. Tämä ohje kuvaa, miten FieldState-havainto voidaan tulevaisuudessa tuoda BERM:n avoimelle mittausrajalle ja miten erikseen annetut biologiset paritilat voidaan viedä ehdollisesti ASFR:ään ja TFR:ään. Se ei johda biologisia tiloja FieldStatesta.
+BERM on varsinainen selitys-, johtamis- ja ennustemalli. Tämä ohje kuvaa, miten FieldState-havainto voidaan tulevaisuudessa tuoda BERM:n ehdolliselle mittausrajalle ja miten erikseen annetut biologiset paritilat voidaan viedä ehdollisesti ASFR:ään ja TFR:ään. Se ei johda biologisia tiloja FieldStatesta eikä sisällä kudosvasteen kalibrointia.
 
 Käytännössä muutos on seuraava:
 
@@ -47,7 +49,7 @@ Koko v2-reitin vartijoiden ja tulkintojen läpikäynti on
 flowchart LR
   G["BERM / Lindgren 2025\ng = eta + A A"]
   FS["Valinnainen FieldState-havainto\nvektori + vaihe + PSD + aika"]
-  L["AVOIN L2\ngeometria / mittaus → biologinen havaittava"]
+  L["EHDOLLINEN L2\nδ<O> = ∫Xi δg; Xi avoin"]
   A["Vmem/VGCC - Ca2+ - mitoROS\n(legacy A)"]
   B["RPM/CRY - clock/redox\n(legacy B)"]
   R["Melatoniini/redox\n(legacy C joissakin v16-artefakteissa)"]
@@ -65,10 +67,10 @@ flowchart LR
   DU["Kysyntä/mahdollisuus + tempo + ART/live-birth"]
   G --> L
   FS -. mittausrajoite .-> L
-  L -. ehdotettu kytkentä .-> A
-  L -. ehdotettu kytkentä .-> B
-  L -. ehdotettu kytkentä .-> V
-  L -. ehdotettu kytkentä .-> X
+  L -. ehdollinen vaste .-> A
+  L -. ehdollinen vaste .-> B
+  L -. ehdollinen vaste .-> V
+  L -. ehdollinen vaste .-> X
   B --> R
   A --> BTB
   A --> O

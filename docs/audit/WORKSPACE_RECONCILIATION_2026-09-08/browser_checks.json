@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "Local production build in original workspace; current browser viewport, Home, primary navigation, dropdown, Escape, scroll, Timothy, atlas and intervention filter",
+  "checks": [
+    {
+      "header": {
+        "height": 65,
+        "top": 0
+      },
+      "items": [
+        {
+          "text": "Etusivu",
+          "visible": true
+        },
+        {
+          "text": "Malli",
+          "visible": true
+        },
+        {
+          "text": "Fysiikka",
+          "visible": true
+        },
+        {
+          "text": "Biologia",
+          "visible": true
+        },
+        {
+          "text": "Käyttäytyminen",
+          "visible": true
+        },
+        {
+          "text": "Sivilisaatio",
+          "visible": true
+        },
+        {
+          "text": "Näyttö",
+          "visible": true
+        },
+        {
+          "text": "Tietoa",
+          "visible": true
+        }
+      ],
+      "overflow": false,
+      "step": "model-navigation",
+      "url": "http://127.0.0.1:3012/fi/model",
+      "viewport": {
+        "height": 720,
+        "width": 1280
+      }
+    },
+    {
+      "insideViewport": true,
+      "links": 18,
+      "step": "evidence-dropdown"
+    },
+    {
+      "closed": true,
+      "step": "escape-closes-dropdown"
+    },
+    {
+      "heading": "Biologisen kapasiteetin maailmanlaajuinen heikkeneminen",
+      "homeCurrent": "page",
+      "step": "home-link",
+      "url": "http://127.0.0.1:3012/fi"
+    },
+    {
+      "headerTop": 0,
+      "scrollY": 700,
+      "step": "header-after-scroll"
+    },
+    {
+      "heading": "Timothyn oireyhtymä: Luonnon CACNA1C-kokeilu",
+      "step": "timothy-navigation",
+      "url": "http://127.0.0.1:3012/fi/evidence/timothy-experiment"
+    },
+    {
+      "heading": "BERM-hypoteesiatlas",
+      "status": "251 / 251 kanavaa näkyvissä · 611 yhteyttä",
+      "step": "atlas-navigation",
+      "url": "http://127.0.0.1:3012/fi/map"
+    },
+    {
+      "selection": "Kaikki kahdeksan koeprofiilia",
+      "status": "21 / 251 kanavaa näkyvissä · 30 yhteyttä",
+      "step": "atlas-intervention-filter",
+      "url": "http://127.0.0.1:3012/fi/map?profile=all"
+    }
+  ]
+}

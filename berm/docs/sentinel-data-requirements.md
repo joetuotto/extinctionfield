@@ -4,7 +4,7 @@ Versio: 2026-08-19
 Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10) ·
 [`data-gap-register.md`](data-gap-register.md) (G-3, G-5, G-6, G-7) ·
 [`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila) ·
-[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (BERM:n ehdollisen mittaus → avoin L2 → sentinelli → ihmisbiologia → ASFR/TFR -ketjun lukitus ja holdout)
+[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (BERM:n ehdollisen mittaus → johdettu L2-muoto / avoin kudoskalibrointi → sentinelli → ihmisbiologia → ASFR/TFR -ketjun lukitus ja holdout)
 
 **Tämä dokumentti erottaa kaksi tehtävää, joita ei saa sekoittaa.**
 

@@ -19,8 +19,8 @@ const t: Record<string, Copy> = {
     subtitle:
       "A preregistered way to test whether measured laboratory field conditions moderate a defined biological experiment — without assuming that they explain the wider replication literature.",
     introduction: [
-      "This protocol treats laboratory FieldState as a measurable potential moderator that requires a direct, blinded comparison.",
-      "Its goal is modest and discriminating: establish whether a documented difference in physical FieldState changes a pre-specified endpoint under otherwise matched experimental conditions.",
+      "This protocol uses a laboratory FieldState record to describe the physical conditions of a direct, blinded comparison. The candidate moderator is the measured field condition, not the record itself.",
+      "Its goal is modest and discriminating: establish whether a documented difference in measured physical field conditions changes a pre-specified endpoint under otherwise matched experimental conditions.",
     ],
     sections: [
       {
@@ -68,8 +68,8 @@ const t: Record<string, Copy> = {
     subtitle:
       "Ennakkorekisteröity tapa testata, moderovatko mitatut laboratorio-olosuhteet määriteltyä biologista koetta — olettamatta, että ne selittäisivät laajemman replikaatiokirjallisuuden.",
     introduction: [
-      "Protokolla käsittelee laboratorion FieldStatea mitattavana mahdollisena moderaattorina, joka vaatii suoran, sokkoutetun vertailun.",
-      "Tavoite on rajattu ja erottava: selvitetään, muuttaako dokumentoitu fysikaalinen FieldState-ero ennalta määriteltyä päätepistettä muilta osin vastaavissa koeolosuhteissa.",
+      "Protokolla käyttää laboratorion FieldState-tietuetta suoran, sokkoutetun vertailun fysikaalisten olosuhteiden kuvaamiseen. Ehdokasmoderaattori on mitattu kenttätila, ei sitä kuvaava tietue.",
+      "Tavoite on rajattu ja erottava: selvitetään, muuttaako dokumentoitu ero mitatuissa fysikaalisissa kenttäolosuhteissa ennalta määriteltyä päätepistettä muilta osin vastaavissa koeolosuhteissa.",
     ],
     sections: [
       {
@@ -117,8 +117,8 @@ const t: Record<string, Copy> = {
     subtitle:
       "測定された実験室の場の条件が定義された生物学的実験を修飾するかどうかをテストするための事前登録された方法 — より広範な再現性の文献を説明すると仮定することなく。",
     introduction: [
-      "このプロトコルは、実験室のFieldStateを直接的な盲検比較を必要とする測定可能な潜在的修飾因子として扱います。",
-      "その目標は控えめで弁別的です：文書化された物理的FieldStateの違いが、他の条件が一致した実験条件下で事前に指定されたエンドポイントを変化させるかどうかを確立すること。",
+      "このプロトコルは、実験室のFieldState記録を用いて、直接的な盲検比較の物理条件を記述する。候補修飾因子は測定された場条件であり、記録自体ではない。",
+      "その目標は限定的かつ弁別的である：測定された物理的場条件の文書化された差が、他の条件を一致させた実験で事前指定エンドポイントを変化させるかを確立する。",
     ],
     sections: [
       {
@@ -166,8 +166,8 @@ const t: Record<string, Copy> = {
     subtitle:
       "Une méthode pré-enregistrée pour tester si les conditions de champ mesurées en laboratoire modèrent une expérience biologique définie — sans supposer qu'elles expliquent la littérature de réplication plus large.",
     introduction: [
-      "Ce protocole traite le FieldState de laboratoire comme un modérateur potentiel mesurable nécessitant une comparaison directe en aveugle.",
-      "Son objectif est modeste et discriminant : établir si une différence documentée dans le FieldState physique modifie un endpoint pré-spécifié dans des conditions expérimentales par ailleurs appariées.",
+      "Ce protocole utilise un enregistrement FieldState de laboratoire pour décrire les conditions physiques d'une comparaison directe en aveugle. Le modérateur candidat est la condition de champ mesurée, non l'enregistrement lui-même.",
+      "Son objectif est limité et discriminant : établir si une différence documentée entre des conditions physiques de champ mesurées modifie un endpoint pré-spécifié dans des conditions expérimentales par ailleurs appariées.",
     ],
     sections: [
       {
@@ -215,8 +215,8 @@ const t: Record<string, Copy> = {
     subtitle:
       "측정된 실험실 장 조건이 정의된 생물학적 실험을 조절하는지 테스트하기 위한 사전 등록된 방법 — 더 넓은 재현성 문헌을 설명한다고 가정하지 않고.",
     introduction: [
-      "이 프로토콜은 실험실 FieldState를 직접적인 맹검 비교가 필요한 측정 가능한 잠재적 조절 인자로 취급합니다.",
-      "그 목표는 겸손하고 변별적입니다: 문서화된 물리적 FieldState 차이가 다른 조건이 일치된 실험 조건에서 사전 지정된 엔드포인트를 변화시키는지 확립하는 것.",
+      "이 프로토콜은 실험실 FieldState 기록을 사용해 직접 맹검 비교의 물리적 조건을 기술한다. 후보 조절 인자는 측정된 장 조건이지 기록 자체가 아니다.",
+      "목표는 제한적이고 변별적이다: 다른 조건을 일치시킨 실험에서 측정된 물리적 장 조건의 문서화된 차이가 사전 지정 종점을 변화시키는지 확립한다.",
     ],
     sections: [
       {

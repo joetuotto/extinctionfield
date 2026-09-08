@@ -128,7 +128,7 @@
           "Sperm decline alone explains the full fertility drop"
         ]
       },
-      "falsification_condition": "Pre-registered endpoint-specific studies fail to support the proposed pathway after a FieldState-to-response mapping has been independently specified and calibrated"
+      "falsification_condition": "Pre-registered endpoint-specific studies fail to support the proposed pathway after BERM's L2 mapping from FieldState-compatible physical measurements to response has been independently specified and calibrated"
     },
     {
       "id": "claim.couple.fecundability-convergence",
@@ -160,18 +160,18 @@
           "All fertility decline is biologically mediated — demand, tempo, and ART are separate inputs"
         ]
       },
-      "falsification_condition": "Prospective cohort with FieldState measurement shows no association between couple-level FieldState exposure and time-to-pregnancy after controlling for behavioral factors"
+      "falsification_condition": "A prospective cohort with FieldState-compatible physical measurements shows no association between the preregistered BERM exposure estimate and time-to-pregnancy after controlling for behavioral factors"
     },
     {
       "id": "claim.proxy.lindgren-selection",
       "statement": {
         "en": {
-          "text": "The 2025 Lindgren geodesic-deviation chain yields the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through an explicit dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is an L2 reduction. BERM v17 instead declares a candidate proxy normalization q=N(z_proxy); choosing and calibrating N and mapping the result to biology remain an open L0→L2 step. The result is not a FieldState measurement or an optimized biological coupling.",
-          "sourceRevision": 1
+          "text": "BERM v17 uses a two-channel technology-timing proxy whose χ shape matches the normalized rank-one inverse-metric coordinate χ_geo. The algebraic χ_geo(q)=q/√(1+q²) and signed geometric response are distinct from choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection. The proxy instead declares q=N(z_proxy); selecting and calibrating N and the tissue response is additional identification work. The proxy is not a FieldState measurement, an optimized biological coupling or a Lindgren-derived tissue response.",
+          "sourceRevision": 3
         },
         "fi": {
-          "text": "Vuoden 2025 Lindgrenin geodeesipoikkeamaketju tuottaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta eksplisiittisen dimensiottoman, kollineaarisen Lorentz→Euklidisen spatiaalisen/skalaari-projektion kautta on L2-reduktio. BERM v17 ilmoittaa sen sijaan ehdokasnormalisoinnin q=N(z_proxy); N:n valinta ja kalibrointi sekä biologinen kartoitus ovat avoin L0→L2-askel. Tulos ei ole FieldState-mittaus eikä optimoitu biologinen kytkentä.",
-          "sourceRevision": 1
+          "text": "BERM v17 käyttää kaksikanavaista teknologia-ajoitusproxyä, jonka χ-muoto vastaa normalisoitua käänteisen rank-one-metriikan koordinaattia χ_geo. Algebrallinen χ_geo(q)=q/√(1+q²) ja etumerkillinen geometrinen vaste ovat eri asia kuin koordinaatin q=|Ā| valinta dimensiottoman, kollineaarisen Lorentz→Euklidisen spatiaalisen/skalaari-projektion kautta. Proxy ilmoittaa sen sijaan q=N(z_proxy); N:n valinta ja kalibrointi sekä kudosvaste ovat erillistä identifiointityötä. Proxy ei ole FieldState-mittaus, optimoitu biologinen kytkentä eikä Lindgrenistä johdettu kudosvaste.",
+          "sourceRevision": 3
         }
       },
       "kind": "proxy_interpretation",
@@ -187,10 +187,201 @@
           "The proxy provides a reproducible timing input for the archived BERM v17 comparison route"
         ],
         "does_not_support": [
-          "The proxy measures FieldState, identifies a biological coupling mode, or closes the open L2 operator"
+          "The proxy measures FieldState, identifies a biological coupling mode, or calibrates the conditional L2 response kernel"
         ]
       },
       "falsification_condition": "The pre-specified two-channel timing proxy fails its registered out-of-sample BERM v17 comparisons or is outperformed by pre-registered alternatives across independent datasets"
+    },
+    {
+      "id": "claim.geometry.rank-one-coordinate",
+      "statement": {
+        "en": {
+          "text": "For the 2025 ansatz g = η + κA⊗A and an explicitly normalized positive-norm mode ρ² = κA², the rank-one inverse metric contains the bounded coefficient ρ²/(1+ρ²); defining χ_geo = ρ/√(1+ρ²) is therefore a derived geometric coordinate, not a biological susceptibility.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Vuoden 2025 ansatzille g = η + κA⊗A ja eksplisiittisesti normalisoidulle positiivinormiselle moodille ρ² = κA² käänteinen rank-one-metriikka sisältää rajatun kertoimen ρ²/(1+ρ²); määritelmä χ_geo = ρ/√(1+ρ²) on siten johdettu geometrinen koordinaatti, ei biologinen herkkyys.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "LINDGREN_METRIC_DRIVE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A dimensionless bounded geometry coordinate after the stated norm and normalization choices"
+        ],
+        "does_not_support": [
+          "A universal tissue gain, dose-response curve, membrane field scale or receptor effect"
+        ]
+      },
+      "falsification_condition": "The rank-one inverse identity or the stated normalization is algebraically invalid for the selected positive-norm mode."
+    },
+    {
+      "id": "claim.geometry.quadratic-mixing",
+      "statement": {
+        "en": {
+          "text": "The exact BERM decomposition δg = κ(Ā⊗a + a⊗Ā + a⊗a) contains a quadratic self-term. For an amplitude-modulated carrier or two tones, that term algebraically generates DC, envelope and difference-frequency components before any biological mechanism is assumed.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Tarkka BERM-hajotelma δg = κ(Ā⊗a + a⊗Ā + a⊗a) sisältää neliöllisen itseistermin. Amplitudimoduloidulle kantoaallolle tai kahdelle taajuudelle tämä termi synnyttää algebrallisesti DC-, verhokäyrä- ja erotustaajuuskomponentit ennen biologisen mekanismin olettamista.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "LINDGREN_METRIC_DRIVE"
+      },
+      "depends_on": [
+        "claim.geometry.rank-one-coordinate"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A theory-internal route by which high-frequency waveforms can contain low-frequency metric-drive components"
+        ],
+        "does_not_support": [
+          "That the generated term is large enough to affect a tissue or that a tissue detects it"
+        ]
+      },
+      "falsification_condition": "The stated waveform expansion fails to produce the registered DC, envelope and difference-frequency coefficients."
+    },
+    {
+      "id": "claim.bridge.conditional-response-operator",
+      "statement": {
+        "en": {
+          "text": "Conditional on minimal matter–metric coupling and response theory, BERM maps the Lindgren metric perturbation to an observable with δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + higher-order response. This derives the operator form but not its tissue kernel Ξ_i, physical scale, gauge prescription or human endpoint coefficient.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Ehdolla, että materia kytkeytyy metriikkaan minimaalisesti ja vastefunktioteoria pätee, BERM kuvaa Lindgrenin metriikkahäiriön havaittavaan suureeseen muodossa δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + korkeamman kertaluvun vaste. Tämä johtaa operaattorin muodon mutta ei kudosydintä Ξ_i, fysikaalista mittakaavaa, gauge-reseptiä tai ihmispäätepisteen kerrointa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [
+        "claim.geometry.quadratic-mixing"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A conditional, falsifiable geometry-to-observable response architecture"
+        ],
+        "does_not_support": [
+          "A calibrated causal effect of an environmental field on any human endpoint"
+        ]
+      },
+      "falsification_condition": "A registered tissue observable cannot be represented by linear or higher-order causal response kernels under the stated matter-coupling premises."
+    },
+    {
+      "id": "claim.bridge.state-conditioned-kernel",
+      "statement": {
+        "en": {
+          "text": "BERM represents the open tissue mapping as a retarded state-conditioned kernel u_i(t) = ∫K_i^{μν}(τ;S_i(t−τ))δg_{μν}(t−τ)dτ. Primary studies constrain orientation, coherence, waveform, biological phase, developmental window, receptor or agonist state, redox state, temperature trajectory and exposure history as candidate arguments rather than one scalar dose; organ transfer and the kernel coefficients remain open.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM esittää avoimen kudoskuvauksen viiveellisenä ja tilariippuvaisena ytimenä u_i(t) = ∫K_i^{μν}(τ;S_i(t−τ))δg_{μν}(t−τ)dτ. Primääritutkimukset rajaavat orientaation, koherenssin, aaltomuodon, biologisen vaiheen, kehitysikkunan, reseptori- tai agonistitilan, redox-tilan, lämpötilahistorian ja altistushistorian kandidaattiargumenteiksi yhden annosskalaarin sijaan; elinsiirto ja ydinkertoimet jäävät avoimiksi.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A preregistered factorial kernel in which state and protocol variables can predict positive, null or negative endpoint responses",
+          "Explicit lag and null-region estimation instead of post-hoc exception handling"
+        ],
+        "does_not_support": [
+          "That the cited responses were caused by the Lindgren metric perturbation",
+          "A universal sign, threshold, tissue coefficient or human population effect"
+        ]
+      },
+      "falsification_condition": "Across preregistered matched protocols, orientation, coherence, waveform, biological phase, temperature trajectory and state interactions fail to improve out-of-sample endpoint prediction over a scalar exposure model."
+    },
+    {
+      "id": "claim.androgen.binding-availability",
+      "statement": {
+        "en": {
+          "text": "Total testosterone does not uniquely determine tissue androgen exposure: SHBG and albumin binding transform total concentration into a free or bioavailable fraction, while intratesticular concentration is a separate compartment. BERM therefore keeps production and availability as separate state variables.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kokonais-testosteroni ei yksikäsitteisesti määrää kudoksen androgeenialtistusta: SHBG- ja albumiinisitoutuminen muuntavat kokonaispitoisuuden vapaaksi tai biologisesti saatavaksi osuudeksi, ja intratestikulaarinen pitoisuus on erillinen kompartimentti. BERM pitää siksi tuotannon ja saatavuuden erillisinä tilamuuttujina.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ANDROGEN_BINDING_AVAILABILITY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Free testosterone, SHBG, albumin and compartment-specific androgen measurements alongside total testosterone"
+        ],
+        "does_not_support": [
+          "That EMF changes SHBG or free testosterone in humans"
+        ]
+      },
+      "falsification_condition": "Matched measurements show that total testosterone alone predicts every tissue androgen endpoint with no added information from binding or compartment state."
+    },
+    {
+      "id": "claim.androgen.receptor-use-capacity",
+      "statement": {
+        "en": {
+          "text": "Androgen action is a serial capacity chain: free or intratesticular ligand availability × receptor occupancy and abundance (classical AR and tissue-specific membrane routes such as ZIP9) × post-receptor transmission. Thus hormone-use capacity can fall without a proportional fall in measured total testosterone.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Androgeenivaikutus on sarjallinen kapasiteettiketju: vapaan tai intratestikulaarisen ligandin saatavuus × reseptorimiehitys ja -määrä (klassinen AR sekä kudoskohtaiset kalvoreitit kuten ZIP9) × reseptorin jälkeinen välitys. Siksi hormoninkäyttökapasiteetti voi laskea ilman suhteellista laskua mitatussa kokonais-testosteronissa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ANDROGEN_RECEPTOR_SIGNAL"
+      },
+      "depends_on": [
+        "claim.androgen.binding-availability",
+        "claim.bridge.conditional-response-operator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "An androgen-effective-capacity state with separately observable ligand, AR, ZIP9 and downstream components"
+        ],
+        "does_not_support": [
+          "A universal EMF-to-AR coefficient or extrapolation of one rat RF protocol to human population effects"
+        ]
+      },
+      "falsification_condition": "Prospective receptor-level measurements show unchanged tissue response whenever total testosterone is unchanged, across altered binding, receptor abundance and post-receptor states."
     },
     {
       "id": "claim.tfr.multi-input-decomposition",
@@ -891,6 +1082,425 @@
         ]
       },
       "falsification_condition": "Demand-directed policy raises age-specific fertility beyond the ceiling implied by independently measured biological capacity."
+    },
+    {
+      "id": "claim.cognition.state-dependent-behaviour",
+      "statement": {
+        "en": {
+          "text": "BERM proposes an individual response function P(Y_i=p|z_i,x_i) in which measured endocrine, receptor-use, circadian and neural state z_i interacts with social context x_i. A biological intervention can therefore change preference expression in one stratum while producing a null result in another without implying a universal ideological direction.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ehdottaa yksilövastefunktiota P(Y_i=p|z_i,x_i), jossa mitattu endokriininen, reseptorinkäyttöön liittyvä, vuorokausirytminen ja neuraalinen tila z_i vuorovaikuttaa sosiaalisen kontekstin x_i kanssa. Biologinen interventio voi siksi muuttaa preferenssin ilmaisua yhdessä ositteessa ja tuottaa nollatuloksen toisessa ilman universaalia ideologista suuntaa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      },
+      "depends_on": [
+        "claim.androgen.receptor-use-capacity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Biological-state × social-context interaction tests on later behaviour",
+          "Subgroup-specific causal effects and genuine null strata"
+        ],
+        "does_not_support": [
+          "A universal mapping from testosterone or another biomarker to left-right ideology",
+          "Inferring an individual's biological state from a political choice"
+        ]
+      },
+      "falsification_condition": "Preregistered biological interventions and measured states repeatedly fail to alter any later behavioural probability or state-by-context interaction after baseline behaviour is controlled."
+    },
+    {
+      "id": "claim.cognition.biological-behavioural-weighting",
+      "statement": {
+        "en": {
+          "text": "BERM proposes that measured endocrine, receptor-use, circadian and neural states can shift the population distribution of motivation, threat weighting, bonding and effort without every individual changing identically.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ehdottaa, että mitatut endokriiniset, reseptorinkäyttöön liittyvät, vuorokausirytmiset ja neuraaliset tilat voivat siirtää motivaation, uhkapainotuksen, kiintymyksen ja ponnistelun populaatiojakaumaa ilman, että jokainen yksilö muuttuu samoin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BIOBEHAVIORAL_WEIGHTING"
+      },
+      "depends_on": [
+        "claim.cognition.state-dependent-behaviour",
+        "claim.androgen.receptor-use-capacity",
+        "claim.melatonin.circadian-redox-mediator"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A distributional biology-to-behaviour transition can be tested with joint biomarkers and later behaviour",
+          "Forward aggregation P_t(Y=p) = ∫P(Y=p|z,x)f_t(z,x) dz dx without reverse ecological inference"
+        ],
+        "does_not_support": [
+          "A deterministic diagnosis from political behaviour to an individual's hormone state",
+          "A claim that one hormone explains all political variation"
+        ]
+      },
+      "falsification_condition": "Preregistered biological states fail to improve out-of-sample prediction of later behavioural weighting after baseline behaviour and socioeconomic variables are controlled."
+    },
+    {
+      "id": "claim.cognition.reported-reason-downstream",
+      "statement": {
+        "en": {
+          "text": "Within BERM's three-level architecture, a stated cultural or economic reason can be a sincere downstream measurement of a latent biological-behavioural state. A survey report alone therefore cannot identify whether Level 2 or Level 3 initiated the observed behaviour.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM:n kolmitasoisessa arkkitehtuurissa ilmoitettu kulttuurinen tai taloudellinen syy voi olla vilpitön alavirran mittaus latentista biologis-behavioraalisesta tilasta. Kyselyraportti ei siksi yksin tunnista, käynnistikö havaitun käyttäytymisen Taso 2 vai Taso 3.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "NARRATIVE_ATTRIBUTION"
+      },
+      "depends_on": [
+        "claim.cognition.biological-behavioural-weighting"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Reported reasons and latent biological state must be measured separately before their causal order is assigned",
+          "A longitudinal biomarker-behaviour-report design can discriminate Level 2 from Level 3"
+        ],
+        "does_not_support": [
+          "Every stated fertility reason is biologically generated",
+          "Cultural and economic variables have no independent causal effect",
+          "Political behaviour diagnoses an individual's hormone state"
+        ]
+      },
+      "falsification_condition": "Preregistered biological states add no temporal or out-of-sample information about later behaviour or stated reasons beyond prior reports and socioeconomic variables, and the null result replicates independently."
+    },
+    {
+      "id": "claim.civilization.epistapege-observability-loss",
+      "statement": {
+        "en": {
+          "text": "Epistapege is BERM's proposed observability transition: when an upstream biological state is absent from the data model, a repeatedly measured downstream narrative can be precise as a report while remaining causally incomplete.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Epistapege on BERM:n ehdottama havaittavuussiirtymä: kun biologinen ylävirran tila puuttuu datamallista, toistuvasti mitattu alavirran narratiivi voi olla raporttina tarkka mutta kausaalisesti vajaa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "EPISTAPEGE_OBSERVABILITY_LOSS"
+      },
+      "depends_on": [
+        "claim.cognition.reported-reason-downstream"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Latent state and reported reason must be measured separately",
+          "Repeated self-report does not by itself establish causal priority"
+        ],
+        "does_not_support": [
+          "That cultural explanations are false",
+          "That the complete BERM civilization route is already observed"
+        ]
+      },
+      "falsification_condition": "Joint longitudinal measurement shows that the upstream biological state adds no temporal, predictive or intervention information beyond the reported reason."
+    },
+    {
+      "id": "claim.civilization.asymmetric-evidence-threshold",
+      "statement": {
+        "en": {
+          "text": "BERM predicts that otherwise matched explanations will face different evidential thresholds when one preserves conscious agency and the other assigns part of behaviour to a latent physiological antecedent.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM ennustaa, että muuten samanlaiset selitykset kohtaavat eri evidenssikynnyksen, kun toinen säilyttää tietoisen toimijuuden ja toinen sijoittaa osan käyttäytymisestä latenttiin fysiologiseen edeltäjään.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INSTITUTIONAL_MODEL_REUSE"
+      },
+      "depends_on": [
+        "claim.civilization.epistapege-observability-loss"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A matched-framing experiment with reviewer confidence, sample-size demand and replication requirement as outcomes"
+        ],
+        "does_not_support": [
+          "A universal conspiracy or intentional suppression",
+          "That every institution applies the asymmetry"
+        ]
+      },
+      "falsification_condition": "Matched abstracts with identical methods and effect sizes receive equivalent evidential demands regardless of biological-versus-cultural causal framing."
+    },
+    {
+      "id": "claim.synthesis.joint-endocrine-gate",
+      "statement": {
+        "en": {
+          "text": "BERM treats testosterone-linked response as jointly gated by cortisol and receptor-use state: the HPA and HPG axes therefore form an interaction surface rather than two additive one-hormone effects.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM käsittelee testosteroniin liittyvän vasteen kortisolin ja reseptorinkäyttötilan yhdessä portittamana: HPA- ja HPG-akselit muodostavat siten vuorovaikutuspinnan eivätkä kahta additiivista yhden hormonin vaikutusta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      },
+      "depends_on": [
+        "claim.hpg.circadian-steroidogenic-gate",
+        "claim.androgen.receptor-use-capacity",
+        "claim.cognition.state-dependent-behaviour"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A preregistered T × cortisol × receptor-use interaction model",
+          "Aggregate behaviour must integrate the joint endocrine-state distribution rather than mean testosterone alone"
+        ],
+        "does_not_support": [
+          "A context-free ideological direction",
+          "Inferring an individual's hormone state from political behaviour"
+        ]
+      },
+      "falsification_condition": "The registered interaction model repeatedly fails to improve out-of-sample behavioural prediction over matched main-effects-only models."
+    },
+    {
+      "id": "claim.synthesis.cry-clock-hpg-chain",
+      "statement": {
+        "en": {
+          "text": "Independent CRY magnetic-sensitivity, CRY-dependent redox and clock-gated reproductive-endocrine findings converge on the BERM serial route CRY/RPM → clock/redox → HPA–HPG timing.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Riippumattomat CRY:n magneettiherkkyyttä, CRY-riippuvaista redoxia ja kellon portittamaa lisääntymisendokrinologiaa koskevat löydökset konvergoivat BERM:n sarjareitille CRY/RPM → kello/redox → HPA–HPG-ajoitus.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HPA_HPG"
+      },
+      "depends_on": [
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.melatonin.circadian-redox-mediator",
+        "claim.hpg.circadian-steroidogenic-gate"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A coherent serial circadian-endocrine BERM route",
+          "Light, magnetic configuration, CRY state and biological phase as jointly informative test variables"
+        ],
+        "does_not_support": [
+          "That every CRY response is reproductive",
+          "A universal human effect size"
+        ]
+      },
+      "falsification_condition": "A factorial field × light × CRY intervention produces no ordered clock/redox or HPG mediation in independently replicated systems."
+    },
+    {
+      "id": "claim.synthesis.target-intervention-triangulation",
+      "statement": {
+        "en": {
+          "text": "Calcium-channel and mTOR-directed interventions converge on the same reproductive control points used by BERM, strengthening the causal relevance of the VGCC/Vmem/mTOR branch through independent target perturbation.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kalsiumkanaviin ja mTOR:iin kohdistuvat interventiot konvergoivat samoihin BERM:n käyttämiin lisääntymisen säätöpisteisiin ja vahvistavat VGCC/Vmem/mTOR-haaran kausaalista relevanssia riippumattomalla kohdeperturbaatiolla.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [
+        "claim.vgcc.ros-ca2-coupling",
+        "claim.vmem.membrane-potential-growth-gate",
+        "claim.sperm.multi-parameter-decline"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The proposed calcium and mTOR intermediates can materially control sperm and fertility endpoints",
+          "Target-specific rescue and phenocopy as high-information BERM tests"
+        ],
+        "does_not_support": [
+          "That all drugs phenocopy the direction or waveform of an EMF response",
+          "Clinical treatment recommendations"
+        ]
+      },
+      "falsification_condition": "Target-specific rescue and phenocopy experiments fail to reproduce the mediator order predicted by the registered BERM branch."
+    },
+    {
+      "id": "claim.synthesis.protocol-state-heterogeneity",
+      "statement": {
+        "en": {
+          "text": "Coherence, orientation, temperature trajectory, biological phase and laboratory context produce structured response heterogeneity; BERM therefore models positive, null and sign-changing results as observations of one state-conditioned response family.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Koherenssi, suunta, lämpötilahistoria, biologinen vaihe ja laboratoriokonteksti tuottavat rakenteista vasteheterogeenisuutta; BERM mallintaa siksi positiiviset, nolla- ja etumerkkiä vaihtavat tulokset saman tilariippuvaisen vasteperheen havaintoina.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [
+        "claim.bridge.state-conditioned-kernel"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Protocol differences can contain mechanistic information rather than random noise",
+          "A state-conditioned kernel should be compared against scalar intensity models"
+        ],
+        "does_not_support": [
+          "Declaring every null result a false negative",
+          "A fixed sign across endpoints"
+        ]
+      },
+      "falsification_condition": "Registered protocol and state variables fail to improve held-out cross-laboratory prediction over scalar intensity and study-label models."
+    },
+    {
+      "id": "claim.synthesis.vmem-calcium-interface",
+      "statement": {
+        "en": {
+          "text": "Membrane potential is an active BERM state variable: Vmem controls calcium/mTOR-linked cell-fate transitions, while abnormal human sperm Vmem is associated with impaired fertilization, joining bioelectric state to reproductive capacity.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kalvopotentiaali on BERM:n aktiivinen tilamuuttuja: Vmem ohjaa Ca²⁺/mTOR-välitteisiä solukohtalosiirtymiä, ja poikkeava ihmisen siittiön Vmem liittyy heikentyneeseen hedelmöitymiseen, mikä yhdistää biosähköisen tilan lisääntymiskapasiteettiin.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "VMEM_MTOR"
+      },
+      "depends_on": [
+        "claim.vmem.membrane-potential-growth-gate",
+        "claim.sperm.multi-parameter-decline"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Vmem, calcium and mTOR should be measured jointly as a mechanistic state",
+          "Human sperm membrane state is a functionally relevant endpoint"
+        ],
+        "does_not_support": [
+          "Treating a pluripotent-cell result as a spermatogonial experiment",
+          "A calibrated environmental exposure coefficient"
+        ]
+      },
+      "falsification_condition": "Manipulating membrane potential changes neither calcium/mTOR state nor reproductive-cell function across matched intervention studies."
+    },
+    {
+      "id": "claim.synthesis.cross-species-transfer-prior",
+      "statement": {
+        "en": {
+          "text": "Conserved CRY-dependent field sensing makes cross-species comparison a mechanistically informed BERM prior: species and life stages that rely on field-sensitive navigation, timing or reproduction should respond differently from matched negative controls.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Säilynyt CRY-riippuvainen kenttäaistimus tekee lajienvälisestä vertailusta mekanistisesti informoidun BERM-priorin: kenttäherkkään navigaatioon, ajoitukseen tai lisääntymiseen nojaavien lajien ja elinvaiheiden tulisi reagoida eri tavoin kuin sovitettujen negatiivisten kontrollien.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ECOLOGICAL_ENCOUNTER"
+      },
+      "depends_on": [
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.ecology.field-mediated-encounter"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Receptor dependence and life-stage exposure can order cross-species susceptibility hypotheses",
+          "Ecological decline series can serve as endpoints in a registered comparative design"
+        ],
+        "does_not_support": [
+          "Attributing aggregate insect or bird decline to EMF without exposure comparison",
+          "A universal body-size law"
+        ]
+      },
+      "falsification_condition": "Registered receptor dependence and life-stage exposure provide no reproducible cross-species discrimination relative to matched negative controls."
+    },
+    {
+      "id": "claim.synthesis.graded-susceptibility",
+      "statement": {
+        "en": {
+          "text": "BERM represents electromagnetic susceptibility as a continuous latent distribution over tissue, receptor, redox, circadian and exposure-history states; a binary EHS label can therefore mix responders and non-responders and attenuate an otherwise reproducible tail response.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM esittää sähkömagneettisen herkkyyden jatkuvana latenttina jakaumana kudos-, reseptori-, redox-, vuorokausi- ja altistushistoriatilojen yli; binäärinen EHS-luokka voi siten sekoittaa vasteelliset ja vasteettomat ja vaimentaa muuten toistuvan jakauman häntävasteen.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [
+        "claim.bridge.state-conditioned-kernel"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Continuous susceptibility estimation and repeated within-person protocols",
+          "Negative group-average provocation results constrain the response distribution instead of forcing it to zero"
+        ],
+        "does_not_support": [
+          "Assuming every self-identified case has the same biological mechanism",
+          "Diagnosing susceptibility from symptoms alone"
+        ]
+      },
+      "falsification_condition": "Repeated blinded within-person trials with individually calibrated transitions and objective endpoints fail to recover stable response functions beyond chance."
     },
     {
       "id": "claim.cry.endocrine-gating",
@@ -1754,6 +2364,598 @@
       "falsification_condition": "The named component result fails in a matched replication with the relevant exposure and intervention controls."
     },
     {
+      "id": "claim.pharmacology.mt2-evoked-feedback",
+      "statement": {
+        "en": {
+          "text": "Melatonin reduced the field-associated sodium-current increase while enhancing depolarization-evoked calcium, without increasing resting calcium. MT2 pharmacology and store-release intervention bounded the route.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Melatoniini pienensi kenttään liittyvää natriumvirran kasvua ja suurensi depolarisaation Ca-vastetta nostamatta lepo-Ca:ta. MT2-farmakologia ja varastovapautuksen interventio rajasivat reittiä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Cell-culture micromolar melatonin is not a calibrated physiological tissue dose.",
+          "The human light experiment did not test a field–MT2 interaction or identify a local CRY sensor.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.local-ltype-erk",
+      "statement": {
+        "en": {
+          "text": "In MIN6 cells, Bay K8644 activated ERK without a detectable bulk-Ca rise. BAPTA blocked this signal more than EGTA. GLP-1 ERK at 5 min was partly EGTA-sensitive; the 30 min response was not.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "MIN6-soluissa Bay K8644 aktivoi ERK:n ilman havaittavaa koko solun Ca-nousua. BAPTA esti signaalia EGTA:a enemmän. GLP-1:n ERK-vaste oli 5 minuutissa osittain EGTA-herkkä, mutta 30 minuutissa ei.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This is a non-field component experiment; the field prediction is a synthesis.",
+          "Microdomain localization is inferred from buffer kinetics, not directly imaged; β-cell ERK does not calibrate fertility or clinical GLP-1 benefit.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.channel-specific-response",
+      "statement": {
+        "en": {
+          "text": "T-type blockers suppressed Thomas-field calcium and growth effects; L-type blockers did not. Bay K8644 gave a similar but shorter Ca peak without the same growth inhibition. In a separate AM-RF HCC protocol, CACNA1H knockdown removed the growth effect.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "T-tyypin salpaajat estivät Thomas-kentän kalsium- ja kasvuvaikutuksia, L-tyypin salpaajat eivät. Bay K8644 tuotti samansuuruusluokkaisen mutta lyhyemmän Ca-huipun ilman samaa kasvun estoa. Erillisessä AM-RF-maksasyöpäsolukokeessa CACNA1H-vaimennus poisti kasvuvaikutuksen.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+          "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.lipid-ttype-inhibition",
+      "statement": {
+        "en": {
+          "text": "A 50 Hz exposure inhibited T-type channels with increased AA/LTE4. Interventions preventing mediator increases removed inhibition, and added LTE4 reproduced it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "50 Hz:n altistus esti T-kanavia ja lisäsi AA/LTE4:ää. Välittäjäaineiden nousun estävät interventiot poistivat inhibition, ja lisätty LTE4 jäljitteli sitä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "The observed inhibitory route does not determine the response sign of every cell or identify the initial physical coupling.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.channel-density",
+      "statement": {
+        "en": {
+          "text": "Prolonged 50 Hz exposure in GH3/IMR32 cells increased whole-cell Ba-current density and membrane channel protein without a detected change in single L/N-channel gating.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Pitkittynyt 50 Hz:n altistus GH3-/IMR32-soluissa kasvatti koko solun Ba-virran tiheyttä ja kalvon kanavaproteiinia ilman havaittua yksittäisten L-/N-kanavien portitusmuutosta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+          "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.serca-pretreatment",
+      "statement": {
+        "en": {
+          "text": "In the reported HEK293 protocol, thapsigargin present before baseline increased resting Fluo-4 signal and removed the subsequent field–sham difference.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Raportoidussa HEK293-protokollassa ennen lähtömittausta lisätty thapsigargiini nosti lepo-Fluo-4-signaalia ja poisti myöhemmän kenttä–sham-eron.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+          "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.cry-ligand-occupancy",
+      "statement": {
+        "en": {
+          "text": "KL001 stabilized CRY and lengthened circadian period while reducing reporter amplitude. Biochemical competition and a CRY2 structure located binding at the FAD pocket.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "KL001 stabiloi CRY:tä ja pidensi vuorokausijaksoa pienentäen reporterin amplitudia. Biokemiallinen kilpailu ja CRY2-rakenne paikansivat sitoutumisen FAD-taskuun.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+          "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.probe-photoreversal",
+      "statement": {
+        "en": {
+          "text": "Light rapidly reversed nifedipine and nisoldipine channel blockade in Purkinje fibres, especially at 320–450 nm. The compared nicardipine, nitrendipine and D600 blocks did not behave the same way in that protocol.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Valo purki nopeasti nifedipiinin ja nisoldipiinin kanavasalpausta Purkinjen säikeissä, erityisesti 320–450 nm:ssa. Verratut nikardipiini-, nitrendipiini- ja D600-salpaukset eivät käyttäytyneet samoin kyseisessä protokollassa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "methodological",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This study does not establish a CRY mechanism, a field interaction or universal photostability of other blockers.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.coq10-protocol",
+      "statement": {
+        "en": {
+          "text": "CoQ10 attenuated some hormonal, oxidative and testicular tissue changes in a 28-rat, four-group study using GSM-modulated 3.5 GHz. Early calcium responses and repair kinetics were not separated.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "CoQ10 lievensi osaa hormoni-, oksidatiivisista ja kiveksen kudosmuutoksista 28 rotan neliryhmäkokeessa, jossa käytettiin GSM-moduloitua 3,5 GHz:n signaalia. Varhaista kalsiumvastetta ja korjauskinetiikkaa ei eroteltu.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named intermediate/endpoints and interventions within the reported study protocol."
+        ],
+        "does_not_support": [
+          "This is GSM-modulated 3.5 GHz evidence, not a 5G NR waveform experiment.",
+          "No measured human fertility coefficient, complete functional restoration or CoQ10 repair time constant follows from this experiment.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "A matched replication with the named protocol, baseline, intervention and endpoint controls fails to reproduce the stated component relationship."
+    },
+    {
+      "id": "claim.pharmacology.mt2-brake-conditional",
+      "statement": {
+        "en": {
+          "text": "Given a specified L2 input to this cell pathway, greater MT2 activation can reduce the sodium-current response through stronger evoked store feedback. If physiological melatonin engages this brake, evening-light suppression of melatonin may change the field interaction; MT2 blockade should occlude that component.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun nimetty L2-syöte kytketään tähän solureittiin, MT2-aktivaatio voi pienentää natriumvirtavastetta vahvistamalla evokoitua varastopalautetta. Jos fysiologinen melatoniini aktivoi jarrun, iltavalon melatoniinivaikutus voi muuttaa kenttäinteraktiota; MT2-salpauksen pitäisi poistaa kyseinen komponentti.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MELATONIN_REDOX"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.mt2-evoked-feedback"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.local-ltype-erk-conditional",
+      "statement": {
+        "en": {
+          "text": "If the conditional BERM input acts on the same local channel pathway, ERK can change while a bulk-Ca measurement remains negative. Fast and slow buffers should differ through binding kinetics and measurement time, not through a drug-specific output multiplier.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Jos BERM:n ehdollinen syöte vaikuttaa samaan paikalliseen kanavareittiin, ERK voi muuttua koko solun Ca-mittauksen jäädessä negatiiviseksi. Nopean ja hitaan puskurin eron tulee syntyä sitoutumiskinetiikasta ja mittausajasta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.local-ltype-erk"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.channel-selectivity-conditional",
+      "statement": {
+        "en": {
+          "text": "Under a specified channel-targeted L2 bridge, deleting CaV3.2 should remove its contribution while preserving an independent L-channel pathway. Matching only the calcium peak need not match the endpoint.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun L2-silta kohdistetaan nimettyyn kanavareittiin, CaV3.2:n poiston tulee poistaa sen osuus ja säilyttää riippumaton L-kanavareitti. Pelkän Ca-huipun sovittaminen ei välttämättä sovita päätepistettä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.channel-specific-response"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.lipid-ttype-inhibition-conditional",
+      "statement": {
+        "en": {
+          "text": "Given an explicit L2 input to lipid production, measured lipid state should predict the direction and latency of the channel-current change. Lipid-pathway blockade should remove this component without deleting independent channel inputs.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kun L2-syöte kohdistetaan eksplisiittisesti lipidituotantoon, mitatun lipiditilan tulee ennustaa kanavavirtamuutoksen suuntaa ja viivettä. Lipidireitin salpauksen tulee poistaa tämä komponentti säilyttäen riippumattomat kanavasyötteet.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.lipid-ttype-inhibition"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.channel-density-store-history-conditional",
+      "statement": {
+        "en": {
+          "text": "A density change can increase total current while single-channel gating is unchanged. For a store-dependent L2 realization, depleted releasable stores can reduce a challenge response despite an elevated baseline; an independent membrane-input component should remain.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kanavamäärän muutos voi kasvattaa kokonaisvirtaa yksittäiskanavan portittumisen pysyessä samana. Varastosta riippuvassa L2-toteutumassa vapautettavan varaston ehtyminen voi pienentää haastevastetta kohonneesta lähtötasosta huolimatta; riippumattoman kalvosyötteen osuuden tulee säilyä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.channel-density",
+        "claim.pharmacology.serca-pretreatment"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.cry-fad-competition-conditional",
+      "statement": {
+        "en": {
+          "text": "If a specified BERM response requires reactive CRY-bound FAD, ligand competition and slower protein stabilization can affect capacity in different directions. Short and long pretreatment should distinguish these processes; the resulting field-response sign depends on measured occupancy and kinetics.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Jos nimetty BERM-vaste edellyttää CRY:hen sitoutunutta reaktiivista FAD:ia, ligandikilpailu ja hitaampi proteiinin stabiloituminen voivat vaikuttaa kapasiteettiin eri suuntiin. Lyhyen ja pitkän esikäsittelyn tulee erotella prosessit; kenttävasteen suunta riippuu mitatusta sitoutumisasteesta ja kinetiikasta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "B_RPM_CRY"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.cry-ligand-occupancy"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.drug-photochemistry-conditional",
+      "statement": {
+        "en": {
+          "text": "In a light–field–drug experiment, cell-free illumination of the drug can change the drug-dependent field contrast without changing the cell photostate. Matched probe potency and a genetic intervention help distinguish this from a receiver-light effect.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Valo–kenttä–lääkekokeessa lääkkeen soluton esivalaistus voi muuttaa lääkkeestä riippuvaa kenttäkontrastia muuttamatta solun fototilaa. Toiminnaltaan sovitetut koettimet ja geneettinen interventio auttavat erottamaan tämän vastaanottimen valovaikutuksesta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.probe-photoreversal"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.pharmacology.coq10-response-conditional",
+      "statement": {
+        "en": {
+          "text": "With the same specified physical input, compare drug effects on early calcium, redox production and recovery. Protection located after calcium should leave the early field contrast intact; an input-stage effect should change it.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Samalla nimetyllä fysikaalisella syötteellä verrataan lääkkeen vaikutusta varhaiseen kalsiumiin, redox-tuotantoon ja palautumiseen. Kalsiumin jälkeiseen vaiheeseen sijoittuvan suojan tulee säilyttää varhainen kenttäkontrasti; alkuvälityksen vaikutuksen tulee muuttaa sitä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "prediction",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "MALE_SPERM"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.pharmacology.coq10-protocol"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "A falsifiable conditional prediction under the named L2 port, biological state dynamics and measurement model."
+        ],
+        "does_not_support": [
+          "An observed field response in a study that did not apply a field.",
+          "A Lindgren-specific validation from downstream pharmacology alone.",
+          "Numerical calibration from illustrative scenario parameters.",
+          "No identification of the physical gauge, scale or tissue-response kernel.",
+          "No calibrated transfer to human fertility or ASFR/TFR."
+        ]
+      },
+      "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
       "id": "claim.coordination.cry-steroid-feedback",
       "statement": {
         "en": {
@@ -2044,6 +3246,324 @@
     }
   ],
   "evidence_relations": [
+    {
+      "id": "er.geometry.lindgren2025",
+      "referenceId": "lindgren2025",
+      "claimId": "claim.geometry.rank-one-coordinate",
+      "relation": "method",
+      "directness": "theory_premise",
+      "studyDesign": "mathematical_theory",
+      "applicability": "theory_internal",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Does not provide a biological response kernel or endpoint calibration"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "The inverse-metric coordinate and perturbation expansion are BERM derivations from the registered 2025 premise.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.kubo1957",
+      "referenceId": "kubo1957_linear_response",
+      "claimId": "claim.bridge.conditional-response-operator",
+      "relation": "method",
+      "directness": "formal_response_method",
+      "studyDesign": "mathematical_theory",
+      "applicability": "general_response_system",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Does not identify the BERM tissue kernel or establish minimal metric coupling in a biological endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the response-kernel formalism, not the missing tissue-specific coefficient.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.litovitz1991",
+      "referenceId": "litovitz1991_coherence_time",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "cell_experiment",
+      "applicability": "L929_cells_55_65_hz_protocol",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "One cell model and endpoint",
+        "Does not identify a Lindgren coupling or human threshold"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains temporal coherence as an argument of a candidate response kernel.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.rosenspire2005",
+      "referenceId": "rosenspire2005_metabolic_phase",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "single_cell_experiment",
+      "applicability": "human_neutrophil_metabolic_oscillation",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cellular redox endpoint",
+        "No endocrine or population calibration"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains endogenous phase and response sign as kernel arguments.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.ubeda1983",
+      "referenceId": "ubeda1983_pulse_shape",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "embryo_experiment",
+      "applicability": "chick_embryo_first_48_hours",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Developmental avian model",
+        "Does not transfer a coefficient to adult human tissue"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains waveform, intensity window and developmental timing.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.blackman1990",
+      "referenceId": "blackman1990",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "in_vitro_and_in_vivo_experiment",
+      "applicability": "brain_tissue_calcium_release_protocol",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Protocol-specific calcium endpoint",
+        "Compatible with non-BERM mechanisms"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains AC/DC relative orientation rather than scalar field magnitude alone.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.blackman1991",
+      "referenceId": "blackman1991",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "brain_tissue_experiment",
+      "applicability": "temperature_conditioned_calcium_release",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "In-vitro brain tissue endpoint",
+        "Requires independent replication under registered trajectories"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains temperature level and trajectory as response-state variables.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.lymangrover1983",
+      "referenceId": "lymangrover1983_acth_steroidogenesis",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "supports",
+      "directness": "direct_component",
+      "studyDesign": "adrenal_tissue_experiment",
+      "applicability": "rat_adrenal_ACTH_challenge",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "High electric-field protocol",
+        "Does not establish an environmental or reproductive coefficient"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains agonist state and intensity window in one endocrine tissue.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.bridge.berman1990",
+      "referenceId": "berman1990_multilab_embryo",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "contextualizes",
+      "directness": "multilaboratory_component",
+      "studyDesign": "six_laboratory_replication",
+      "applicability": "chick_embryo_protocol",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Laboratory interaction does not identify which omitted state variable caused heterogeneity"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports modelling protocol and laboratory state explicitly rather than averaging it away.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.androgen.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.androgen.binding-availability",
+      "relation": "supports",
+      "directness": "mechanism_review",
+      "studyDesign": "review",
+      "applicability": "human_and_experimental",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Free-hormone models and assays retain method-dependent uncertainty"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.androgen.laurent2016",
+      "referenceId": "laurent2016_shbg_bioactivity",
+      "claimId": "claim.androgen.binding-availability",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "experimental_animal",
+      "applicability": "mouse_model",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Species differences in SHBG physiology prevent direct numerical transfer to humans"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.androgen.degendt2004",
+      "referenceId": "degendt2004_sertoli_ar",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "relation": "supports",
+      "directness": "receptor_causal_intervention",
+      "studyDesign": "cell_selective_knockout",
+      "applicability": "mouse_model",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Knockout establishes receptor necessity in mice, not an environmental human effect size"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": null,
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.androgen.yu2023",
+      "referenceId": "yu2023_zip9_rf_sertoli",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "experimental_animal_and_primary_cells",
+      "applicability": "rat_sertoli_model",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Single 2605 MHz protocol",
+        "Rat and isolated-cell evidence",
+        "Short-term sperm endpoints were unchanged"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports ZIP9 as a measurable response branch while preserving the study's short-term null sperm result.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.androgen.mollerlokken2012",
+      "referenceId": "mollerlokken2012_mri_hormones",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "relation": "contextualizes",
+      "directness": "human_hormone_endpoint",
+      "studyDesign": "randomized_crossover_trial",
+      "applicability": "healthy_adult_men_single_mri",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "N=24",
+        "Single acute MRI protocol",
+        "Did not measure AR, ZIP9 or downstream tissue response"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Registers a human null region for one acute MRI protocol and measured serum endpoints; it is not a receptor-capacity test.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
     {
       "id": "er.vgcc.pall2013",
       "referenceId": "pall2013_v2",
@@ -3381,6 +4901,685 @@
       "curatorId": "berm-claims-agent",
       "curatedAt": "2026-09-02",
       "curatorNote": "Derived 2026-09-02 from bounded evidence record WPP_WB_BERM_COHORT_ASFR_2026; draft, needs author review. Record finding: Reports an age-cohort contrast consistent with the developmental-memory premise while retaining mobile subscriptions as a timing proxy.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.delgado1969",
+      "referenceId": "delgado1969",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Clinical brain-stimulation observations",
+      "applicability": "Dissociation between externally induced motor response and the subject's accessible verbal account",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Clinical stimulation context",
+        "The author leaves movement-versus-experience ordering unresolved",
+        "No fertility, hormone or population endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports only the limited-access component of the BERM composition; the source is registered but not yet author-verified in the bibliography.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.gazzaniga2000",
+      "referenceId": "gazzaniga2000",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of split-brain experimental and clinical research",
+      "applicability": "Interpreter construction under restricted interhemispheric information access",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Split-brain populations are neurologically unusual",
+        "Does not measure endocrine mediation",
+        "No fertility or aggregate political endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the interpreter component, not the full fertility application; the source is registered but not yet author-verified in the bibliography.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.nisbett-wilson1977",
+      "referenceId": "nisbett_wilson1977",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of experimental verbal-report and attribution research",
+      "applicability": "Limits of introspective access to processes producing judgments and behaviour",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "General verbal-report literature",
+        "Does not identify a hormone-to-report path",
+        "No fertility or population endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the measurement boundary that a verbal report need not expose its complete causal antecedents; the source is registered but not yet author-verified.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.kunda1990",
+      "referenceId": "kunda1990",
+      "claimId": "claim.civilization.asymmetric-evidence-threshold",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of motivated-reasoning research",
+      "applicability": "Candidate selection pressure on causal explanations and evidence thresholds",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Does not establish the proposed biological-versus-cultural asymmetry",
+        "Does not test BERM",
+        "Requires a matched-framing experiment for this application"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides an empirical component for the evidence-threshold prediction, not validation of Epistapege; the source is registered but not yet author-verified.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.alogaily2025",
+      "referenceId": "alogaily2025_testosterone_politics",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "supports",
+      "directness": "human_causal_intervention",
+      "studyDesign": "randomized_double_blind_placebo_controlled_experiment",
+      "applicability": "healthy_men_political_preference_expression",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "N=136 total and the reported political effect was limited to weakly affiliated Democrats",
+        "No effect in strongly affiliated Democrats or Republicans",
+        "Does not identify an EMF upstream cause or a population election coefficient"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Directly supports a hormone-state × affiliation-context effect on preference expression, not a universal ideological direction.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.bakker2020",
+      "referenceId": "bakker2020_physiology_politics_replication",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "challenges",
+      "directness": "direct_replication_and_conceptual_replications",
+      "studyDesign": "preregistered_replication_program",
+      "applicability": "physiological_threat_response_and_political_orientation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Tests threat physiology rather than endocrine intervention",
+        "Does not rule out other biological state-by-context effects"
+      ],
+      "curatorId": "berm-kernel-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Rejects treating the original Oxley association as a general physiology-to-ideology law and narrows BERM to preregistered state- and endpoint-specific mappings.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "relation": "contextualizes",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Review of SHBG binding and free-testosterone physiology",
+      "applicability": "Separates circulating total hormone concentration from biologically available androgen state",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Does not measure motivation or reported fertility reasons",
+        "Does not estimate an EMF-to-SHBG coefficient",
+        "Provides a biological-state decomposition rather than the narrative link"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supports the distinction between assayed total hormone and androgen-effective state used in the BERM composition.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.soares-cunha2016",
+      "referenceId": "soares_cunha2016_d2_motivation",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "supports",
+      "directness": "mechanistic_intermediate",
+      "studyDesign": "Optogenetic animal experiment",
+      "applicability": "Demonstrates a neural control point capable of changing motivational drive",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Animal experiment",
+        "No endocrine or fertility endpoint",
+        "Does not measure narrative attribution"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies direct component evidence for biological control of motivational weighting, not the complete interpreter route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.cognition.oxley2008",
+      "referenceId": "oxley2008_physiological_traits",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "relation": "contextualizes",
+      "directness": "downstream_association",
+      "studyDesign": "Human psychophysiological association study",
+      "applicability": "Connects measured physiological threat sensitivity with political-attitude variation",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Small sample",
+        "Association does not establish causal direction",
+        "No fertility, hormone or aggregate political endpoint"
+      ],
+      "curatorId": "berm-integration-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Narrows the biology-to-politics bridge to an observed individual-level association; aggregate inference remains open.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.joint-endocrine.mehta2010",
+      "referenceId": "mehta2010_dual_hormone",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "relation": "supports",
+      "directness": "direct_human_interaction",
+      "studyDesign": "two_human_behavioural_studies",
+      "applicability": "testosterone_by_cortisol_gating_of_dominance",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Behavioural endpoint rather than fertility",
+        "Does not include EMF exposure or receptor-state measurement"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Directly supports a joint HPA × HPG interaction term and rejects a main-effect-only testosterone mapping.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.joint-endocrine.narinx2022",
+      "referenceId": "narinx2022_free_testosterone",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "relation": "contextualizes",
+      "directness": "human_endocrine_state",
+      "studyDesign": "human_endocrine_study",
+      "applicability": "free_and_bound_androgen_state",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No cortisol interaction",
+        "No behavioural or exposure endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Constrains the androgen-state input that is jointly gated by HPA state.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cry-clock.yoshii2009",
+      "referenceId": "yoshii2009",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "direct_receptor_clock_component",
+      "studyDesign": "genetic_animal_experiment",
+      "applicability": "drosophila_cry_dependent_circadian_magnetosensitivity",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Drosophila clock",
+        "No mammalian reproductive endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Links magnetic configuration to the circadian clock through CRY dependence.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cry-clock.sherrard2018",
+      "referenceId": "sherrard2018",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "direct_receptor_redox_component",
+      "studyDesign": "human_and_mouse_cell_experiment",
+      "applicability": "human_CRY_expression_and_intracellular_ROS",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell systems",
+        "No HPG or fertility endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Adds a CRY-dependent redox arm in mammalian cells to the receptor-clock evidence.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cry-clock.cao2015",
+      "referenceId": "cao2015",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "reproductive_endocrine_component",
+      "studyDesign": "controlled_animal_experiment",
+      "applicability": "rat_hormone_and_antioxidant_rhythm_endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Rat model",
+        "Single exposure protocol"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Connects circadian/redox state to reproductive endocrine outcomes in the composed route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cry-clock.liu2014",
+      "referenceId": "liu2014",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "relation": "supports",
+      "directness": "clock_reproductive_component",
+      "studyDesign": "cell_specific_genetic_animal_experiment",
+      "applicability": "mouse_ovarian_clock_and_steroidogenic_support",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Genetic mouse model",
+        "No field exposure"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Establishes that the local clock is functionally upstream of reproductive steroidogenic support.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.pharmacology.pall2013",
+      "referenceId": "pall2013_v2",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "mechanistic_intervention_synthesis",
+      "studyDesign": "mechanistic_review",
+      "applicability": "VGCC_blocker_sensitive_EMF_components",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Review of heterogeneous protocols",
+        "Does not isolate one reproductive system"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the exposure-side pharmacological intervention line.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.pharmacology.ccb1994",
+      "referenceId": "ccb_fertility",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "human_reproductive_target_intervention",
+      "studyDesign": "human_case_comparison_plus_in_vitro_intervention",
+      "applicability": "calcium_antagonism_and_sperm_fertilization_potential",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Small clinical comparison",
+        "Drug membrane effects need not match an exposure waveform"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Shows that calcium-channel pharmacology can move a human sperm fertilization control point.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.pharmacology.sirolimus2008",
+      "referenceId": "rapamycin_fertility",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "relation": "supports",
+      "directness": "human_reproductive_target_intervention",
+      "studyDesign": "clinical_observational_comparison",
+      "applicability": "mTOR_inhibition_and_male_fertility",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Transplant population",
+        "Treatment allocation was not randomized for fertility"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Independently anchors mTOR as a human spermatogenic control point.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.vmem.sempou2022",
+      "referenceId": "sempou2022",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_vmem_cell_fate_component",
+      "studyDesign": "pluripotent_cell_experiment",
+      "applicability": "Vmem_calcium_mTOR_cell_fate_control",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Pluripotent-cell model",
+        "Not a spermatogonial or exposure experiment"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Establishes the general Vmem→calcium/mTOR→fate control segment used in the composition.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.vmem.brown2016",
+      "referenceId": "brown2016",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_human_reproductive_endpoint",
+      "studyDesign": "human_patch_clamp_and_IVF_association",
+      "applicability": "sperm_membrane_potential_and_fertilization_rate",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Association within a clinical sample",
+        "Cause of conductance abnormalities unresolved"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Anchors the bioelectric state to a human fertilization endpoint.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.vmem.zandieh2025",
+      "referenceId": "zandieh2025",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "relation": "supports",
+      "directness": "direct_vmem_field_component",
+      "studyDesign": "cell_experiment_with_dynamical_model",
+      "applicability": "field_conditioned_membrane_potential_dynamics",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cancer cell lines",
+        "High millitesla fields",
+        "No reproductive endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies the field-to-Vmem component that joins Sempou and Brown in the BERM route.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cross-species.ritz2004",
+      "referenceId": "ritz2004",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_animal_field_sensing",
+      "studyDesign": "controlled_animal_orientation_experiment",
+      "applicability": "avian_magnetic_compass",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Avian navigation endpoint",
+        "No population trend endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Anchors field-configuration sensitivity in a receptor-relevant ecological function.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cross-species.yoshii2009",
+      "referenceId": "yoshii2009",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_genetic_receptor_test",
+      "studyDesign": "genetic_animal_experiment",
+      "applicability": "insect_CRY_clock_magnetosensitivity",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Drosophila",
+        "Clock phenotype rather than fitness"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides genetic receptor dependence for the cross-species prior.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cross-species.wan2021",
+      "referenceId": "wan2021_cryptochrome_monarch",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "supports",
+      "directness": "direct_genetic_receptor_test",
+      "studyDesign": "controlled_insect_orientation_experiment",
+      "applicability": "monarch_CRY1_inclination_magnetosensing",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Insect navigation",
+        "No reproductive endpoint"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Independent species replication of CRY-dependent magnetic sensing strengthens conserved target logic.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cross-species.hallmann2017",
+      "referenceId": "hallmann2017_v2",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "contextualizes",
+      "directness": "ecological_population_endpoint",
+      "studyDesign": "longitudinal_observational_series",
+      "applicability": "flying_insect_biomass_decline",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No EMF exposure variable",
+        "Cannot attribute the decline mechanism"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies a population endpoint for the receptor-stratified comparative test.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.cross-species.rosenberg2019",
+      "referenceId": "rosenberg2019",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "relation": "contextualizes",
+      "directness": "ecological_population_endpoint",
+      "studyDesign": "continental_population_synthesis",
+      "applicability": "North_American_avifauna_decline",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No EMF exposure variable",
+        "Multiple established and candidate decline drivers"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Provides a second cross-taxon endpoint to test after receptor and exposure stratification.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.susceptibility.mccarty2011",
+      "referenceId": "mccarty2011",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "supports",
+      "directness": "individual_transition_sensitive_provocation",
+      "studyDesign": "blinded_single_case_experiment",
+      "applicability": "individualized_60_Hz_transition_response",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Single participant",
+        "Selected exposure pattern",
+        "No population prevalence estimate"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Motivates within-person threshold and transition parameters rather than a universal group response.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.susceptibility.belpomme2022",
+      "referenceId": "belpomme2022",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "contextualizes",
+      "directness": "clinical_biomarker_overview",
+      "studyDesign": "narrative_overview_and_medical_assessment",
+      "applicability": "self_identified_EHS_clinical_population",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Not a blinded exposure experiment",
+        "Biomarkers are not specific to EMF",
+        "Selection and comparison groups limit causal attribution"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Supplies candidate objective stratification variables for a continuous susceptibility model.",
+      "provenance": {
+        "studyIds": [],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synthesis.susceptibility.rubin2010",
+      "referenceId": "rubin2010_ieiemf_provocation",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "relation": "challenges",
+      "directness": "systematic_group_provocation",
+      "studyDesign": "systematic_review_of_blinded_experiments",
+      "applicability": "acute_self_reported_symptoms_in_IEI_EMF_groups",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Primarily acute protocols",
+        "Group labels can mix latent response states",
+        "Subjective symptoms dominate many studies"
+      ],
+      "curatorId": "berm-synthesis-2026-09-03",
+      "curatedAt": "2026-09-03",
+      "curatorNote": "Strongly constrains any broad acute group-response claim; BERM's remaining hypothesis is narrower, continuous and within-person testable.",
       "provenance": {
         "studyIds": [],
         "datasetFamilyIds": [],
@@ -4812,6 +7011,328 @@
       }
     },
     {
+      "id": "er.pharmacology.mt2-evoked-feedback-liu2014-mt2",
+      "referenceId": "liu2014_mt2",
+      "claimId": "claim.pharmacology.mt2-evoked-feedback",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "Rat cerebellar granule cells; 50 Hz / 1 mT / 60 min with melatonin and MT2/store interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell-culture micromolar melatonin is not a calibrated physiological tissue dose.",
+        "The human light experiment did not test a field–MT2 interaction or identify a local CRY sensor.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.liu2014_mt2"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.local-ltype-erk-bhatt2012-glp1",
+      "referenceId": "bhatt2012_glp1",
+      "claimId": "claim.pharmacology.local-ltype-erk",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Mouse MIN6 β-cells; GLP-1/glucose, Bay K8644, BAPTA/EGTA and L-channel interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This is a non-field component experiment; the field prediction is a synthesis.",
+        "Microdomain localization is inferred from buffer kinetics, not directly imaged; β-cell ERK does not calibrate fertility or clinical GLP-1 benefit.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bhatt2012_glp1"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-specific-response-buckner2015-ttype",
+      "referenceId": "buckner2015_ttype",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "Malignant and non-malignant cells; Thomas 25→6 Hz time-varying pattern; T/L blockers",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+        "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.buckner2015_ttype"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019",
+      "referenceId": "therabionic-ebioMedicine-2019",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HCC cell systems; 27.12 MHz AM RF with HCC-specific versus random modulation; channel interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Blockers have multiple targets; genetic and pharmacological evidence are different constraints.",
+        "A necessary mediator is not automatically the first field sensor. Distinct waveforms and cell systems require separate parameterizations.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.therabionic-ebioMedicine-2019"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4",
+      "referenceId": "cui2014_lte4",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HEK293 expressed T channels; mouse cortical neurons; 50 Hz; CaV3.2 at 0.2 mT; lipid-pathway interventions",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The observed inhibitory route does not determine the response sign of every cell or identify the initial physical coupling.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.cui2014_lte4"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.channel-density-grassi2004-channels",
+      "referenceId": "grassi2004_channels",
+      "claimId": "claim.pharmacology.channel-density",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "GH3 and IMR32 cells; 50 Hz, 24–72 h",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+        "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.grassi2004_channels"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.serca-pretreatment-bertagna2022-serca",
+      "referenceId": "bertagna2022_serca",
+      "claimId": "claim.pharmacology.serca-pretreatment",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "HEK293; Phone RF; 10 µM thapsigargin before baseline; incomplete dosimetry",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Bertagna used a phone source without sufficient culture dosimetry; device SAR is not cell-culture SAR.",
+        "Store depletion and indicator measurement range need separate controls. Neither experiment identifies multigenerational exposure memory.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bertagna2022_serca"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+      "referenceId": "hirota2012_kl001",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Cellular clock and biochemical CRY assays; KL001; excess FAD competition in pull-down",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+        "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.hirota2012_kl001"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001",
+      "referenceId": "nangle2013_kl001",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Mouse CRY2 PHR structural construct; KL001 complex structure",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Endogenous cellular FAD displacement and magnetic-response change were not measured.",
+        "CRY subtype, clock output and free-flavin routes are separate; existing photoyield already includes FAD occupancy.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: full_text. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.nangle2013_kl001"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal",
+      "referenceId": "sanguinetti1984_photoreversal",
+      "claimId": "claim.pharmacology.probe-photoreversal",
+      "relation": "method",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Non-field component intervention or structural/biochemical experiment",
+      "applicability": "Cardiac Purkinje fibres; Dihydropyridine blockade and 320–450 nm light",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This study does not establish a CRY mechanism, a field interaction or universal photostability of other blockers.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.sanguinetti1984_photoreversal"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.coq10-protocol-bektas2026",
+      "referenceId": "bektas2026",
+      "claimId": "claim.pharmacology.coq10-protocol",
+      "relation": "supports",
+      "directness": "protocol_bounded_intervention",
+      "studyDesign": "Field/sham and targeted interventions",
+      "applicability": "28 male Wistar rats, four groups; GSM-modulated 3.5 GHz; 2 h/day × 30 days; CoQ10 10 mg/kg/day i.p.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "This is GSM-modulated 3.5 GHz evidence, not a 5G NR waveform experiment.",
+        "No measured human fertility coefficient, complete functional restoration or CoQ10 repair time constant follows from this experiment.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Manually curated against the primary study. Source coverage: abstract. Constrains the named biological component; does not validate the upstream metric-to-tissue identification.",
+      "provenance": {
+        "studyIds": [
+          "study.bektas2026"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.pharmacology.mt2-light-context",
+      "referenceId": "cajochen2005_melatonin",
+      "claimId": "claim.pharmacology.mt2-brake-conditional",
+      "relation": "contextualizes",
+      "directness": "human_light_component",
+      "studyDesign": "Controlled human evening-light experiment without field intervention",
+      "applicability": "Humans; 2 h evening 460/550 nm, matched photon flux",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No field–MT2 interaction was tested.",
+        "The physiological melatonin-to-cellular-MT2 dose bridge remains open.",
+        "No identification of the physical gauge, scale or tissue-response kernel.",
+        "No calibrated transfer to human fertility or ASFR/TFR."
+      ],
+      "curatorId": "berm-pharmacology-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "This supplies the light-to-melatonin component only. It does not establish a CRY sensor or the full light–field chain.",
+      "provenance": {
+        "studyIds": [
+          "study.cajochen2005_melatonin"
+        ],
+        "datasetFamilyIds": [],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
       "id": "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
       "referenceId": "lamia2011_cry_glucocorticoid",
       "claimId": "claim.coordination.cry-steroid-feedback",
@@ -5230,6 +7751,99 @@
   ],
   "epistemic_assessments": [
     {
+      "id": "ea.geometry.rank-one.v1",
+      "claimId": "claim.geometry.rank-one-coordinate",
+      "revision": 1,
+      "level": "L",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.geometry.lindgren2025"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Algebraically derived under the displayed norm, sign and normalization conditions; no biological interpretation is included."
+    },
+    {
+      "id": "ea.geometry.mixing.v1",
+      "claimId": "claim.geometry.quadratic-mixing",
+      "revision": 1,
+      "level": "L",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.geometry.lindgren2025"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Exact waveform algebra within the stated ansatz; amplitude and tissue detectability remain open."
+    },
+    {
+      "id": "ea.bridge.conditional.v1",
+      "claimId": "claim.bridge.conditional-response-operator",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.bridge.kubo1957"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Formal operator derived conditionally; gauge choice, scale, tissue kernels and endpoint calibration are unresolved."
+    },
+    {
+      "id": "ea.bridge.state-conditioned.v1",
+      "claimId": "claim.bridge.state-conditioned-kernel",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.bridge.litovitz1991",
+        "er.bridge.rosenspire2005",
+        "er.bridge.ubeda1983",
+        "er.bridge.blackman1990",
+        "er.bridge.blackman1991",
+        "er.bridge.lymangrover1983",
+        "er.bridge.berman1990",
+        "er.androgen.mollerlokken2012"
+      ],
+      "assessorId": "berm-kernel-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Component studies constrain kernel arguments, lag families and protocol-specific null regions. They do not identify delta-g as the cause or calibrate a human endpoint."
+    },
+    {
+      "id": "ea.androgen.binding.v1",
+      "claimId": "claim.androgen.binding-availability",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.androgen.narinx2022",
+        "er.androgen.laurent2016"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Imported endocrine physiology justifies the state decomposition but does not establish EMF causation."
+    },
+    {
+      "id": "ea.androgen.receptor.v1",
+      "claimId": "claim.androgen.receptor-use-capacity",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.androgen.degendt2004",
+        "er.androgen.yu2023"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Link-by-link synthesis: receptor necessity is established in animal tissue and one RF model implicates ZIP9. Human chronic receptor-level calibration remains open."
+    },
+    {
       "id": "ea.vgcc.v1",
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "revision": 1,
@@ -5300,14 +7914,14 @@
     {
       "id": "ea.proxy.v1",
       "claimId": "claim.proxy.lindgren-selection",
-      "revision": 1,
+      "revision": 2,
       "level": "L*",
       "compatibility": "current",
       "origin": "derived",
       "basis": [],
       "assessorId": "otto",
       "assessedAt": "2026-09-01",
-      "note": "Proxy formulation is model-internal; external validation requires independent replication"
+      "note": "The bounded shape now has a geometric derivation after explicit normalization; its technology-proxy weighting and any tissue response remain model-internal and uncalibrated."
     },
     {
       "id": "ea.tfr.v1",
@@ -5641,6 +8255,198 @@
       "assessorId": "berm-claims-agent",
       "assessedAt": "2026-09-02",
       "note": "Derived 2026-09-02 from the civilization-level model specification; no bounded evidence record attached; draft, needs author review."
+    },
+    {
+      "id": "ea.cognition.state-dependent-behaviour.v1",
+      "claimId": "claim.cognition.state-dependent-behaviour",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.cognition.alogaily2025",
+        "er.cognition.bakker2020",
+        "er.cognition.soares-cunha2016",
+        "er.cognition.oxley2008"
+      ],
+      "assessorId": "berm-kernel-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Alogaily supplies a subgroup-specific hormonal intervention result; Soares-Cunha supplies an experimental motivational control point. Bakker's preregistered replication program rejects a general threat-physiology ideology law, so the BERM mapping remains state-, context- and endpoint-specific."
+    },
+    {
+      "id": "ea.cognition.biological-behavioural-weighting.v1",
+      "claimId": "claim.cognition.biological-behavioural-weighting",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.narinx2022"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The forward aggregation operator is a mathematical population mixture over individual state-by-context probabilities. Narinx constrains one latent endocrine-state component; the aggregate political coefficient and electromagnetic upstream route remain open."
+    },
+    {
+      "id": "ea.cognition.reported-reason-downstream.v1",
+      "claimId": "claim.cognition.reported-reason-downstream",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.delgado1969",
+        "er.cognition.gazzaniga2000",
+        "er.cognition.nisbett-wilson1977"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The cited literature supports limited causal access and motivated explanation as components. The fertility and institutional application is a BERM-derived testable candidate, not a direct finding of those sources."
+    },
+    {
+      "id": "ea.civilization.epistapege-observability-loss.v1",
+      "claimId": "claim.civilization.epistapege-observability-loss",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.delgado1969",
+        "er.cognition.gazzaniga2000",
+        "er.cognition.nisbett-wilson1977"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Limited causal access is directly supported as a component. Loss of observability across survey and institutional levels is a composed BERM inference requiring one joint longitudinal protocol."
+    },
+    {
+      "id": "ea.civilization.asymmetric-evidence-threshold.v1",
+      "claimId": "claim.civilization.asymmetric-evidence-threshold",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.cognition.kunda1990"
+      ],
+      "assessorId": "berm-integration-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Motivated reasoning supplies a component mechanism. The predicted biological-versus-cultural evidence-threshold asymmetry needs a matched-framing experiment."
+    },
+    {
+      "id": "ea.synthesis.joint-endocrine-gate.v1",
+      "claimId": "claim.synthesis.joint-endocrine-gate",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.joint-endocrine.mehta2010",
+        "er.synthesis.joint-endocrine.narinx2022"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The T × cortisol interaction is directly observed for human dominance-related behaviour; BERM extends it by adding measured receptor-use state and population aggregation."
+    },
+    {
+      "id": "ea.synthesis.cry-clock-hpg-chain.v1",
+      "claimId": "claim.synthesis.cry-clock-hpg-chain",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.cry-clock.yoshii2009",
+        "er.synthesis.cry-clock.sherrard2018",
+        "er.synthesis.cry-clock.cao2015",
+        "er.synthesis.cry-clock.liu2014"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Independent receptor, redox, clock and reproductive-endocrine components align in the registered direction, materially strengthening the serial BERM route."
+    },
+    {
+      "id": "ea.synthesis.target-intervention-triangulation.v1",
+      "claimId": "claim.synthesis.target-intervention-triangulation",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.pharmacology.pall2013",
+        "er.synthesis.pharmacology.ccb1994",
+        "er.synthesis.pharmacology.sirolimus2008"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Exposure-side blocker evidence and independent human reproductive target interventions converge on adjacent BERM control points."
+    },
+    {
+      "id": "ea.synthesis.protocol-state-heterogeneity.v1",
+      "claimId": "claim.synthesis.protocol-state-heterogeneity",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.bridge.litovitz1991",
+        "er.bridge.blackman1990",
+        "er.bridge.blackman1991",
+        "er.bridge.berman1990"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Repeated condition-sensitive findings make structured heterogeneity part of the model's positive empirical content."
+    },
+    {
+      "id": "ea.synthesis.vmem-calcium-interface.v1",
+      "claimId": "claim.synthesis.vmem-calcium-interface",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.vmem.sempou2022",
+        "er.synthesis.vmem.brown2016",
+        "er.synthesis.vmem.zandieh2025"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Field-conditioned Vmem, Vmem-controlled calcium/mTOR fate transitions and human sperm fertilization associations form a coherent cross-system bridge."
+    },
+    {
+      "id": "ea.synthesis.cross-species-transfer-prior.v1",
+      "claimId": "claim.synthesis.cross-species-transfer-prior",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.cross-species.ritz2004",
+        "er.synthesis.cross-species.yoshii2009",
+        "er.synthesis.cross-species.wan2021",
+        "er.synthesis.cross-species.hallmann2017",
+        "er.synthesis.cross-species.rosenberg2019"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "Genetic and behavioural receptor evidence supplies the transfer prior; ecological trend series supply endpoints for a future receptor-stratified test."
+    },
+    {
+      "id": "ea.synthesis.graded-susceptibility.v1",
+      "claimId": "claim.synthesis.graded-susceptibility",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "emergent",
+      "basis": [
+        "er.synthesis.susceptibility.mccarty2011",
+        "er.synthesis.susceptibility.belpomme2022",
+        "er.synthesis.susceptibility.rubin2010"
+      ],
+      "assessorId": "berm-synthesis-2026-09-03",
+      "assessedAt": "2026-09-03",
+      "note": "The positive individualized result, candidate biomarker strata and negative group-level review jointly identify a narrow continuous-mixture hypothesis instead of a binary universal syndrome claim."
     },
     {
       "id": "ea.cry.endocrine-gating.v1",
@@ -6052,6 +8858,230 @@
       "note": "Protocol-bounded component; no cross-system endpoint calibration."
     },
     {
+      "id": "ea.pharmacology.mt2-evoked-feedback.v1",
+      "claimId": "claim.pharmacology.mt2-evoked-feedback",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.mt2-evoked-feedback-liu2014-mt2"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.local-ltype-erk.v1",
+      "claimId": "claim.pharmacology.local-ltype-erk",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.local-ltype-erk-bhatt2012-glp1"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.channel-specific-response.v1",
+      "claimId": "claim.pharmacology.channel-specific-response",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.channel-specific-response-buckner2015-ttype",
+        "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.lipid-ttype-inhibition.v1",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.channel-density.v1",
+      "claimId": "claim.pharmacology.channel-density",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.channel-density-grassi2004-channels"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.serca-pretreatment.v1",
+      "claimId": "claim.pharmacology.serca-pretreatment",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.serca-pretreatment-bertagna2022-serca"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.cry-ligand-occupancy.v1",
+      "claimId": "claim.pharmacology.cry-ligand-occupancy",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+        "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.probe-photoreversal.v1",
+      "claimId": "claim.pharmacology.probe-photoreversal",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.coq10-protocol.v1",
+      "claimId": "claim.pharmacology.coq10-protocol",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "imported",
+      "basis": [
+        "er.pharmacology.coq10-protocol-bektas2026"
+      ],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Protocol-bounded imported component evidence. Physical-kernel and cross-system endpoint identification remain open."
+    },
+    {
+      "id": "ea.pharmacology.mt2-brake-conditional.v1",
+      "claimId": "claim.pharmacology.mt2-brake-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.local-ltype-erk-conditional.v1",
+      "claimId": "claim.pharmacology.local-ltype-erk-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.channel-selectivity-conditional.v1",
+      "claimId": "claim.pharmacology.channel-selectivity-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.lipid-ttype-inhibition-conditional.v1",
+      "claimId": "claim.pharmacology.lipid-ttype-inhibition-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.channel-density-store-history-conditional.v1",
+      "claimId": "claim.pharmacology.channel-density-store-history-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.cry-fad-competition-conditional.v1",
+      "claimId": "claim.pharmacology.cry-fad-competition-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.drug-photochemistry-conditional.v1",
+      "claimId": "claim.pharmacology.drug-photochemistry-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.pharmacology.coq10-response-conditional.v1",
+      "claimId": "claim.pharmacology.coq10-response-conditional",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [],
+      "assessorId": "berm-pharmacology-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
       "id": "ea.coordination.cry-steroid-feedback.v1",
       "claimId": "claim.coordination.cry-steroid-feedback",
       "revision": 1,
@@ -6314,7 +9344,7 @@
       "independenceNote": null,
       "direction": "supports",
       "alternativeCompatibility": "Does not distinguish between EMF and other biological causes of fecundability decline",
-      "discriminatingPower": "Requires FieldState-stratified cohort comparison to isolate EMF contribution",
+      "discriminatingPower": "Requires cohort comparison stratified by FieldState-compatible physical measurements and a preregistered BERM exposure mapping to isolate an EMF contribution",
       "independenceAudit": {
         "studyIds": [],
         "datasetFamilyIds": [],

@@ -263,20 +263,20 @@ function ChainCitationText({
 
 const COPY = {
   en: {
-    title: "The Unbroken Chain: Photon → Population",
+    title: "The Evidence Chain: Photon → Population",
     subtitle:
-      "Iterative convergence verification tested 57 scales of BERM's mechanistic chain across 47 verified layers (VK1–VK31, VK41–VK56). Result: 17 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
+      "This register compares 57 component claims across 47 layers of BERM (VK1–VK31, VK41–VK56). It identifies 17 proposed feedback loops and the open bridges that prevent the components from constituting one verified photon-to-population mechanism.",
     backLink: "← Back to Evidence",
 
     cautionText:
-      "This page registers link-specific checks of BERM's proposed mechanistic chain against published evidence. Provenance is componentwise: an open L2 or imported L3 link does not demote an earlier L1 derivation, while the empirical whole-chain claim remains conditional until its open links are tested. Partial support and untested predictions are marked explicitly.",
+      "This page audits BERM's proposed chain against published evidence. A confirmed row means that the named component is supported in its stated system; it does not automatically confirm either neighbouring cross-scale transition. Partial and open bridges determine the status of the complete route.",
 
-    chainTitle: "The verified continuum",
+    chainTitle: "Component evidence and open bridges",
     chainLead:
-      "BERM proposes a continuous causal chain from photon absorption to population-level health effects. Each intermediate layer is listed with its own derivation, identification and evidence status; the open L0→L2 mappings are not presented as independently verified.",
+      "BERM proposes a continuous causal chain from physical input to population outcomes. The table tests its components separately and must not be read as direct verification of the complete route.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Metric premise → biological observable", evidence: "Lindgren 2025 ansatz; L1 χ_geo formula; L2 projection/bridge open", status: "partial", detail: "Metric-volume linearization/geodesic deviation gives the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. Mapping a proxy, V_m or membrane coordinate to q=N(z), and then to biology, remains open at L0→L2; downstream mechanisms are imported L3 components." },
-      { scale: "10⁻¹⁰ m", link: "Metric → S4 voltage sensor", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Metric distortion acts on the S4 helix voltage sensor of VGCCs. Tang 2024 demonstrated direct S4 conformational change from EMF at non-thermal intensities." },
+      { scale: "10⁻¹⁵ m", link: "Metric premise → biological observable", evidence: "Lindgren 2025 ansatz; derived χ_geo; conditional response operator", status: "partial", detail: "The inverse rank-one metric yields χ_geo for a normalized positive-norm mode. Under explicit matter–metric and linear-response assumptions, BERM also derives the operator form. The tissue kernel, sign, lag and endpoint calibration remain open, so the biological response is not yet established." },
+      { scale: "10⁻¹⁰ m", link: "Candidate field response at an S4 voltage sensor", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Tang 2024 provides protocol-specific S4 conformational evidence. It supports an S4 response component but does not derive tissue coupling from Lindgren geometry or calibrate BERM's L2 kernel." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC opens", evidence: "Panagopoulos 2025 IFO, Trus 2024 non-ionotropic", status: "confirmed", detail: "S4 conformational change triggers VGCC gating. Panagopoulos 2025 provides the mechanistic model; Trus 2024 demonstrates non-ionotropic (non-thermal) activation pathway." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ permeation", evidence: "Marchetti 2013, Cd→Cav3.1 radiolabeled", status: "confirmed", detail: "Open VGCCs allow Ca²⁺ influx — but also toxic metals. Cd²⁺ permeates through Cav3.1 (confirmed with ¹⁰⁹Cd²⁺ radiolabel). Pb²⁺ mimics Ca²⁺ at calmodulin binding sites." },
       { scale: "10⁻⁸ m", link: "Ca²⁺ → CaM → CaMKII", evidence: "Basic biochemistry (textbook)", status: "confirmed", detail: "Ca²⁺ binds calmodulin → activates CaMKII via Thr286 autophosphorylation. This is the convergence point: all upstream signals funnel through CaMKII." },
@@ -301,7 +301,7 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14: Cortisol↑ → hippocampal atrophy", evidence: "Sapolsky 2009: dendritic retraction + neurogenesis↓; cortisol→AD (Frontiers 2026)", status: "confirmed", detail: "Chronic cortisol causes hippocampal dendritic retraction, neurogenesis cessation, and volume loss. Hippocampus is HPA negative feedback center — its damage removes cortisol braking → cortisol↑↑ (loop S6). Accelerates Alzheimer's progression." },
       { scale: "10⁻⁵ m", link: "VK15: EMF → Leydig → StAR↓ → T↓", evidence: "Multiple: RF → Leydig morphology changes, StAR↓, T↓ dose-dependently", status: "confirmed", detail: "EMF reduces StAR protein in Leydig cells — the rate-limiting step in steroidogenesis. Molecular mechanism behind population-wide T↓ independent of obesity, confirmed by Mazur's weight-stable data." },
       { scale: "10⁻⁵ m", link: "VK16: EMF → VGCC → Ca²⁺ → mast cell degranulation", evidence: "Johansson 2000: EMF → mast cell changes; cardiac mast cells → arrhythmias (PMC6896164)", status: "confirmed", detail: "Ca²⁺ triggers mast cell degranulation. EMF → VGCC → Ca²⁺ → mast cell releases histamine + IL-1β + tryptase. Skin biopsies from display users show changes. Cardiac mast cells → arrhythmias. IL-1β from mast cells → KCC2↓ → GABA excitatory longer." },
-      { scale: "10⁻⁶ m", link: "VK17: RF → sperm calcium/motility; functional transfer to be tested", evidence: "2100 MHz: ESHRE abstract, 50 male rats, 1 h/day for 28 days; calcium/motility differences, no significant mating/live-birth difference", status: "partial", detail: "The in-vivo Wistar-Albino rat study included amlodipine 1 mg/kg and reported calcium/motility differences. CatSper gene analysis was unfinished. It does not identify a human sperm response, selective CatSper blockade or premature activation. BERM tests current → calcium timing/ATP → hyperactivation → fertilization as separate transitions." },
+      { scale: "10⁻⁶ m", link: "VK17: RF → sperm calcium/motility; functional transfer to be tested", evidence: "2100 MHz: ESHRE abstract, 50 male rats, 1 h/day for 28 days; calcium/motility differences, no significant mating/live-birth difference", status: "partial", detail: "The in-vivo Wistar-Albino rat study included amlodipine 1 mg/kg and reported calcium/motility differences. CatSper gene analysis was unfinished. It does not identify a human sperm response, selective CatSper blockade or premature activation. BERM tests current → calcium timing/ATP → hyperactivation → fertilization as separate transitions. Direct RF gating of human CatSper and heavy-metal × field reproductive synergy remain separate matched experiments." },
       { scale: "10⁻⁵ m", link: "VK18: SCN Ca²⁺ oscillation = circadian clock", evidence: "PMC6170461: SCN neurons oscillate in Ca²⁺ with circadian rhythm", status: "confirmed", detail: "SCN neurons oscillate in Ca²⁺ concentration with circadian rhythm — Ca²⁺ oscillations ARE the physical basis of the circadian clock. EMF disrupts Ca²⁺ → EMF disrupts the clock itself. SCN is the master pacemaker that synchronizes hypothalamic and peripheral clocks." },
       { scale: "10⁻⁷ m", link: "VK19: Inflammation → DA↓ → motivation loss", evidence: "Berridge: NAcc DA = 'wanting'; IFN-α → striatal DA↓ → anhedonia (PMC9718669)", status: "confirmed", detail: "Nucleus accumbens dopamine mediates 'wanting' (motivation) but not 'liking' (pleasure). Inflammation (IFN-α) reduces striatal dopamine causing anhedonia, reversed by L-DOPA. Low tonic DA increases phasic response → screens feel more rewarding with low baseline DA. EMF→inflammation→DA↓→addiction vulnerability." },
       { scale: "10⁻⁶ m", link: "VK20: Cav1.2 → OPC differentiation → myelination", evidence: "PMC6916379: Cav1.2 KO → hypomyelination; SMF → Cav1.2↑ in OPCs (Sci Rep 2017)", status: "confirmed", detail: "Cav1.2 (L-type VGCC) is essential for oligodendrocyte precursor cell differentiation and myelination. Cav1.2 knockout causes hypomyelination. Static magnetic field increases Cav1.2/Cav1.3 expression in OPCs. EMF-induced Cav1.2 dysregulation → myelination timing disruption in developing brain." },
@@ -311,7 +311,7 @@ const COPY = {
       { scale: "10⁻⁵ m", link: "VK24: Per2 → gut barrier → LPS → neuroinflammation", evidence: "Per2 KO → gut barrier↓ → LPS → hippocampal neurogenesis↓ → depression (PMC12631932)", status: "confirmed", detail: "Per2 knockout in gut epithelium disrupts barrier function → LPS enters bloodstream → neuroinflammation → hippocampal neurogenesis↓ → depression. Circadian disruption alters gut microbiome (Ruminococcus↑, Lactobacillus↓, LPS-synthesis genes↑). Dual barrier principle: BBB + gut barrier share ZO-1, occludin, claudins." },
       { scale: "10⁰ m", link: "VK25: Sleep↓ → T↓ → Walker chain closed", evidence: "JAMA 2011: 5h sleep → T -10-15%; meta-analysis confirms (PMID:34801825)", status: "confirmed", detail: "One week of 5h sleep reduces testosterone by 10-15%, equivalent to 10-15 years of aging. The Walker chain is now closed: EMF→melatonin↓→sleep↓→T↓→neuroprotection↓→more EMF damage. Sleep restriction + EMF predicted to produce superadditive T decline (>25% combined vs ~15% sleep alone)." },
       { scale: "10⁻⁵ m", link: "VK26: EMF → HPT axis → Dio2/Dio3↓ → hidden hypothyroidism", evidence: "PMC11507962: LTE → Dio2/Dio3↓ in hypothalamus; PMID:35963949: FT3↓ + FT4↑ in ELF workers", status: "confirmed", detail: "EMF reduces Dio2 and Dio3 deiodinase enzymes in the hypothalamus. T4→T3 conversion is impaired → blood T4 appears normal but tissues lack active T3. Standard thyroid tests (TSH, T4) miss this hidden deficiency. FT3/FT4 ratio is the diagnostic key." },
-      { scale: "10⁻⁸ m", link: "VK27: EMF → epigenetics → transgenerational inheritance", evidence: "ScienceDirect 2024: DNMT1 + HDAC + DICER1; PMC4538330: sperm methylation dose-dependent", status: "confirmed", detail: "EMF alters three epigenetic mechanisms: DNA methylation (DNMT1), histone modification (HDAC), and microRNA biogenesis (DICER1/DGCR8). In sperm: 50 Hz ELF produces bidirectional dose-dependent methylation changes (↓ at 1 mT, ↑ at 3 mT). DDT transgenerational model provides template for F3 persistence." },
+      { scale: "10⁻⁸ m", link: "VK27: EMF → epigenetic components → proposed F3 persistence", evidence: "Exposure-associated epigenetic changes and non-EMF F3 inheritance are separate components", status: "partial", detail: "EMF studies report epigenetic endpoints, while toxicant models establish that some germline changes can persist to F3. Their composition does not demonstrate an EMF-induced F3 phenotype; that direct multigeneration experiment remains open." },
       { scale: "10⁻⁷ m", link: "VK28: EMF → ROS → telomeres → aging spiral", evidence: "PMID:36582083: radiation → ROS → telomere damage; mel → telomerase + SIRT1 (Front Aging Neurosci 2022)", status: "confirmed", detail: "EMF→ROS damages telomeres (G-rich sequences are especially vulnerable). Simultaneously EMF→melatonin↓ removes telomerase + SIRT1 protection. Depression = 281 bp shorter telomeres = 7 years accelerated aging. Melatonin is the key anti-aging molecule: it activates telomerase, upregulates SIRT1, and reduces ROS." },
       { scale: "10⁻⁸ m", link: "VK29: EMF → oxytocin Ca²⁺ disruption → social bond↓", evidence: "PMC3197583: OXT release requires N-type + L-type VGCCs; eNeuro 2025: PVN Ca²⁺ → OXT", status: "confirmed", detail: "Oxytocin somatodendritic release requires Ca²⁺ influx through both N-type and L-type VGCCs. EMF disrupts VGCC function → OXT release disrupted. L-type is especially important in neonates. Insulin→OXT via Ca²⁺ links metabolic and social systems. Quad lock: T↓×F↑×DA↓×OXT↓ = complete social-reproductive collapse." },
       { scale: "10⁻⁵ m", link: "VK30: ELF-priming → α2δ-1↑ → chronic pain WITHOUT neuropathy", evidence: "PMID:16764990: α2δ-1 overexpression alone → pain; Br J Pharmacol 2018: gabapentin blocks α2δ-1", status: "confirmed", detail: "ELF-priming (VK4) upregulates VGCC expression including α2δ-1. α2δ-1 overexpression alone produces neuropathic pain behavior WITHOUT nerve injury. Gabapentinoids (gabapentin, pregabalin) target exactly α2δ-1. The chronic pain epidemic is consistent with population-wide ELF-priming of α2δ-1." },
@@ -334,7 +334,7 @@ const COPY = {
       { scale: "10³ m", link: "VK56: Amish = BERM's closest control group (confirmed with reservations)", evidence: "STAT 2025: obesity -89%, T2D -75%; Anderson & Potts 2022: 126-study review; massive lifestyle confounders", status: "partial", detail: "Old Order Amish have dramatically lower rates of every BERM-predicted condition. However, massive confounders (diet, exercise, smoking, community) prevent direct attribution. Cross-validated by Klimentidis (animals gaining weight on controlled diets, p=10⁻⁷) and Mazur (weight-stable T↓). The Amish-Mennonite EMF gradient test would be the critical discriminator." },
     ],
     chainHeaders: { scale: "Scale", link: "Chain link", evidence: "Evidence", status: "Status" },
-    chainSummary: "This chain organizes component findings and explicit BERM bridge hypotheses across scales. The full geometry-to-population route is a conditional synthesis: source-specific interventions anchor individual links, while receiving, tissue and aggregation operators carry the remaining assumptions. A confirmed component does not establish the entire chain.",
+    chainSummary: "This register organizes direct components, composed convergence and explicit BERM bridge hypotheses across scales. Source-specific interventions anchor individual links; reception, tissue and aggregation operators retain their assumptions. Direct RF → human CatSper, unexposed-F3 inheritance, organ transfer and endpoint-specific tissue-kernel calibration remain distinct tests. A confirmed component does not establish the full geometry-to-population route.",
 
     feedbackTitle: "Seventeen positive feedback loops",
     feedbackLead:
@@ -469,7 +469,7 @@ const COPY = {
         level: "Strong consilience",
         desc: "Independent evidence lines converge",
         examples: [
-          "Lindgren premise ↔ restricted L1 χ_geo derivation ↔ open L0→L2 biological mapping ↔ imported L3 Ca²⁺ pharmacology (distinct provenance)",
+          "Theory premise ([[ref:lindgren2025|Lindgren 2025]]) ↔ derived χ_geo and conditional L2 operator [tissue kernel open] ↔ pharmacological Ca²⁺ evidence",
           "Genetics (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Experimental ([[ref:lopez_martin_2006|López-Martín seizures]])",
           "Epidemiology ([[ref:klimentidis2010|Klimentidis 8 species]]) ↔ Pathology (SIDS 5-HT deficiency)",
         ],
@@ -554,20 +554,20 @@ const COPY = {
   },
 
   fi: {
-    title: "Katkeamaton ketju: Fotoni → Populaatio",
+    title: "Evidenssiketju: Fotoni → Populaatio",
     subtitle:
-      "Iteratiivinen yhdentymisen todentaminen testasi 57 skaalaa BERM:n mekanistisesta ketjusta 47 todennetun kerroksen (VK1–VK31, VK41–VK56) yli. Tulos: 17 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
+      "Rekisteri vertaa 57 komponenttiväitettä BERM:n 47 kerroksessa (VK1–VK31, VK41–VK56). Se tunnistaa 17 ehdotettua takaisinkytkentäsilmukkaa sekä avoimet sillat, joiden vuoksi komponentit eivät vielä muodosta yhtä todennettua fotonista populaatioon ulottuvaa mekanismia.",
     backLink: "← Takaisin näyttöön",
 
     cautionText:
-      "Tämä sivu rekisteröi BERM:n ehdotetun mekanistisen ketjun linkkikohtaiset tarkistukset julkaistua näyttöä vasten. Provenienssi on komponenttikohtainen: avoin L2- tai tuotu L3-linkki ei alenna aiempaa L1-johtoa, mutta koko ketjun empiirinen väite pysyy ehdollisena, kunnes avoimet linkit on testattu. Osittainen tuki ja testaamattomat ennusteet merkitään näkyvästi.",
+      "Sivu auditoi BERM:n ehdotettua ketjua julkaistua näyttöä vasten. Vahvistettu rivi tarkoittaa, että nimetty komponentti saa tukea ilmoitetussa järjestelmässä; se ei automaattisesti vahvista viereisiä skaalasiirtymiä. Koko reitin tilan määräävät osittaiset ja avoimet sillat.",
 
-    chainTitle: "Todennettu jatkumo",
+    chainTitle: "Komponenttinäyttö ja avoimet sillat",
     chainLead:
-      "BERM ehdottaa jatkuvaa kausaaliketjua fotonin absorptiosta väestötason terveysvaikutuksiin. Jokainen välikerros esitetään omalla johto-, identifikaatio- ja evidenssistatuksellaan; avoimia L0→L2-kuvauksia ei nimetä itsenäisesti todennetuiksi.",
+      "BERM ehdottaa jatkuvaa kausaaliketjua fysikaalisesta syötteestä väestötuloksiin. Taulukko testaa sen komponentteja erikseen eikä ole koko reitin suora varmennus.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Metriikkapremissi → biologinen havaittava", evidence: "Lindgrenin 2025 ansatz; L1 χ_geo-kaava; L2-projektio/silta avoin", status: "partial", detail: "Metriikan tilavuuslinearisaatio/geodeesipoikkeama antaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Proxyn, V_m:n tai kalvokoordinaatin kartoitus q=N(z):ksi ja biologiseksi vasteeksi on avoin L0→L2; jatkomekanismit ovat tuotuja L3-komponentteja." },
-      { scale: "10⁻¹⁰ m", link: "Metriikka → S4-jänniteanturi", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Metriikkahäiriö vaikuttaa VGCC:iden S4-heliksin jänniteanturiin. Tang 2024 osoitti suoran S4-konformaatiomuutoksen EMF:stä ei-termisillä intensiteeteillä." },
+      { scale: "10⁻¹⁵ m", link: "Metriikkapremissi → biologinen havaittava", evidence: "Lindgrenin 2025 ansatz; johdettu χ_geo; ehdollinen vasteoperaattori", status: "partial", detail: "Rank-one-käänteismetriikka antaa χ_geo:n normalisoidulle positiivinormiselle moodille. Eksplisiittisillä aine–metriikka- ja lineaarivasteoletuksilla BERM johtaa myös operaattorimuodon. Kudosydin, etumerkki, viive ja päätepistekalibrointi ovat avoimia, joten biologista vastetta ei ole vielä osoitettu." },
+      { scale: "10⁻¹⁰ m", link: "Kandidaatti-kenttävaste S4-jänniteanturissa", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Tang 2024 antaa protokollakohtaista S4-konformaationäyttöä. Se tukee S4-vastekomponenttia, mutta ei johda kudoskytkentää Lindgrenin geometriasta eikä kalibroi BERM:n L2-ydintä." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC avautuu", evidence: "Panagopoulos 2025 IFO, Trus 2024 ei-ionotrooppinen", status: "confirmed", detail: "S4-konformaatiomuutos laukaisee VGCC:n avautumisen. Panagopoulos 2025 tarjoaa mekanistisen mallin; Trus 2024 osoittaa ei-ionotrooppisen (ei-termisen) aktivaatioreitin." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ läpäisy", evidence: "Marchetti 2013, Cd→Cav3.1 radioleimattu", status: "confirmed", detail: "Avoimet VGCC:t sallivat Ca²⁺-sisäänvirtauksen — mutta myös myrkyllisten metallien. Cd²⁺ läpäisee Cav3.1:n läpi (vahvistettu ¹⁰⁹Cd²⁺-radioleimauksella). Pb²⁺ matkii Ca²⁺:ia kalmoduliinin sitoutumispaikoissa." },
       { scale: "10⁻⁸ m", link: "Ca²⁺ → CaM → CaMKII", evidence: "Perusbiokemia (oppikirja)", status: "confirmed", detail: "Ca²⁺ sitoutuu kalmoduliiniin → aktivoi CaMKII:n Thr286-autofosforylaation kautta. Tämä on yhdentymispiste: kaikki ylävirran signaalit kanavoituvat CaMKII:n kautta." },
@@ -592,7 +592,7 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14: Kortisoli↑ → hippokampuksen atrofia", evidence: "Sapolsky 2009: dendriittien vetäytyminen + neurogeneesi↓; kortisoli→AD (Frontiers 2026)", status: "confirmed", detail: "Krooninen kortisoli aiheuttaa hippokampuksen dendriittien vetäytymisen, neurogeneesin loppumisen ja volyymin pienenemisen. Hippokampus on HPA:n negatiivinen palautekeskus — sen vaurioituminen poistaa kortisolijarrun → kortisoli↑↑ (silmukka S6). Nopeuttaa Alzheimerin etenemistä." },
       { scale: "10⁻⁵ m", link: "VK15: EMF → Leydig → StAR↓ → T↓", evidence: "Useita: RF → Leydig-morfologiamuutokset, StAR↓, T↓ annosriippuvaisesti", status: "confirmed", detail: "EMF vähentää StAR-proteiinia Leydig-soluissa — steroidogeneesin nopeutta rajoittava vaihe. Molekulaarinen mekanismi väestötason T↓:n takana painosta riippumatta, vahvistettu Mazurin painovakaalla datalla." },
       { scale: "10⁻⁵ m", link: "VK16: EMF → VGCC → Ca²⁺ → syöttösolujen degranulaatio", evidence: "Johansson 2000: EMF → syöttösolumuutokset ihossa; kardiaaliset syöttösolut → rytmihäiriöt (PMC6896164)", status: "confirmed", detail: "Ca²⁺ laukaisee syöttösolujen degranulaation. EMF → VGCC → Ca²⁺ → syöttösolu vapauttaa histamiinia + IL-1β + tryptaasia. Näyttöpäätealtistettujen iho-biopsiat osoittavat muutoksia. Kardiaaliset syöttösolut → rytmihäiriöt. IL-1β syöttösoluista → KCC2↓ → GABA eksitatorinen pidempään." },
-      { scale: "10⁻⁶ m", link: "VK17: RF → siittiön kalsium/liikkuvuus; toiminnallinen siirto testattava", evidence: "2100 MHz: ESHRE-abstrakti, 50 urosrottaa, 1 h/päivä 28 päivän ajan; kalsium-/liikkuvuuserot, ei merkitsevää parittelu-/elävänä syntymisen eroa", status: "partial", detail: "In vivo -Wistar-Albino-rottakokeessa käytettiin amlodipiinia 1 mg/kg ja raportoitiin kalsium-/liikkuvuuseroja. CatSper-geenianalyysi oli kesken. Koe ei tunnista ihmissiittiövastetta, selektiivistä CatSper-salpausta tai ennenaikaista aktivaatiota. BERM testaa virran → kalsiumin ajoituksen/ATP:n → hyperaktivaation → hedelmöityksen erillisinä siirtyminä." },
+      { scale: "10⁻⁶ m", link: "VK17: RF → siittiön kalsium/liikkuvuus; toiminnallinen siirto testattava", evidence: "2100 MHz: ESHRE-abstrakti, 50 urosrottaa, 1 h/päivä 28 päivän ajan; kalsium-/liikkuvuuserot, ei merkitsevää parittelu-/elävänä syntymisen eroa", status: "partial", detail: "In vivo -Wistar-Albino-rottakokeessa käytettiin amlodipiinia 1 mg/kg ja raportoitiin kalsium-/liikkuvuuseroja. CatSper-geenianalyysi oli kesken. Koe ei tunnista ihmissiittiövastetta, selektiivistä CatSper-salpausta tai ennenaikaista aktivaatiota. BERM testaa virran → kalsiumin ajoituksen/ATP:n → hyperaktivaation → hedelmöityksen erillisinä siirtyminä. Ihmisen CatSperin suora RF-portitus ja raskasmetalli × kenttä -lisääntymissynergia ovat edelleen erillisiä sovitettuja kokeita." },
       { scale: "10⁻⁵ m", link: "VK18: SCN Ca²⁺ -oskillaatio = sirkadiaaninen kello", evidence: "PMC6170461: SCN-neuronit oskilloivat Ca²⁺:ssa vuorokausirytmillä", status: "confirmed", detail: "SCN-neuronit oskilloivat Ca²⁺-pitoisuudessa vuorokausirytmillä — Ca²⁺-vaihtelut OVAT sirkadiaanisen kellon fysikaalinen perusta. EMF häiritsee Ca²⁺:ta → EMF häiritsee itse kelloa. SCN on pääkello joka tahdistaa hypotalamuksen ja periferiset kellot." },
       { scale: "10⁻⁷ m", link: "VK19: Tulehdus → DA↓ → motivaation menetys", evidence: "Berridge: NAcc DA = 'wanting'; IFN-α → striataalinen DA↓ → anhedonia (PMC9718669)", status: "confirmed", detail: "Accumbens-tumakkeen dopamiini välittää 'wantingin' (motivaation) mutta ei 'likingiä' (mielihyvää). Tulehdus (IFN-α) vähentää striataalista dopamiinia aiheuttaen anhedoniaa, palautettavissa L-DOPAlla. Matala tooninen DA kasvattaa faasista vastetta → ruudut tuntuvat palkitsevammilta matalalla DA-tasolla. EMF→tulehdus→DA↓→riippuvuusalttius." },
       { scale: "10⁻⁶ m", link: "VK20: Cav1.2 → OPC-erilaistuminen → myelinaatio", evidence: "PMC6916379: Cav1.2 KO → hypomyelinaatio; SMF → Cav1.2↑ OPC:issä (Sci Rep 2017)", status: "confirmed", detail: "Cav1.2 (L-tyypin VGCC) on välttämätön oligodendrosyyttiprogenitorisolujen erilaistumiselle ja myelinaatiolle. Cav1.2-poistogeeni aiheuttaa hypomyelinaation. Staattinen magneettikenttä kasvattaa Cav1.2/Cav1.3-ekspressiota OPC:issä. EMF-aiheutettu Cav1.2-häiriö → myelinaation ajoitushäiriö kehittyvissä aivoissa." },
@@ -602,7 +602,7 @@ const COPY = {
       { scale: "10⁻⁵ m", link: "VK24: Per2 → suoliston este → LPS → neurotulehdus", evidence: "Per2 KO → suoliston este↓ → LPS → hippokampaalinen neurogeneesi↓ → masennus (PMC12631932)", status: "confirmed", detail: "Per2-poistogeeni suoliston epitheelissä häiritsee esterakennetta → LPS pääsee verenkiertoon → neurotulehdus → hippokampuksen neurogeneesi↓ → masennus. Sirkadiaanisen rytmin häiriö muuttaa suolistomikrobiomia (Ruminococcus↑, Lactobacillus↓, LPS-synteesigeenit↑). Kaksoisestemekanismi: BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit." },
       { scale: "10⁰ m", link: "VK25: Uni↓ → T↓ → Walkerin ketju suljettu", evidence: "JAMA 2011: 5h uni → T -10-15 %; meta-analyysi vahvistaa (PMID:34801825)", status: "confirmed", detail: "Viikko 5h unta vähentää testosteronia 10-15 %, vastaten 10-15 vuoden ikääntymistä. Walkerin ketju on nyt suljettu: EMF→melatoniini↓→uni↓→T↓→neuroprotektio↓→enemmän EMF-vaurioita. Unirajoituksen + EMF:n ennustetaan tuottavan superadditiivisen T-laskun (>25 % yhdistettynä vs ~15 % uni yksin)." },
       { scale: "10⁻⁵ m", link: "VK26: EMF → HPT-akseli → Dio2/Dio3↓ → piilevä hypotyreoosi", evidence: "PMC11507962: LTE → Dio2/Dio3↓ hypotalamuksessa; PMID:35963949: FT3↓ + FT4↑ ELF-työntekijöillä", status: "confirmed", detail: "EMF vähentää Dio2- ja Dio3-dejodinaasientsyymejä hypotalamuksessa. T4→T3-muunnos on heikentynyt → veren T4 näyttää normaalilta mutta kudokset eivät saa aktiivista T3:a. Normaalit kilpirauhaustestit (TSH, T4) ohittavat tämän piilevän puutteen. FT3/FT4-suhde on diagnostinen avain." },
-      { scale: "10⁻⁸ m", link: "VK27: EMF → epigenetiikka → ylisukupolvinen periytyminen", evidence: "ScienceDirect 2024: DNMT1 + HDAC + DICER1; PMC4538330: siittiöiden metylaatio annosriippuvainen", status: "confirmed", detail: "EMF muuttaa kolmea epigeneettistä mekanismia: DNA-metylaatio (DNMT1), histonimodifikaatio (HDAC) ja mikroRNA-biogeneesi (DICER1/DGCR8). Siittiöissä: 50 Hz ELF tuottaa kaksisuuntaisia annosriippuvaisia metylaatiomuutoksia (↓ 1 mT:ssä, ↑ 3 mT:ssä). DDT:n ylisukupolvinen malli tarjoaa mallin F3-säilymiselle." },
+      { scale: "10⁻⁸ m", link: "VK27: EMF → epigeneettiset komponentit → ehdotettu F3-säilyminen", evidence: "Altistukseen liittyvät epigeneettiset muutokset ja ei-EMF F3-periytyminen ovat erillisiä komponentteja", status: "partial", detail: "EMF-tutkimukset raportoivat epigeneettisiä päätepisteitä ja toksikanttimallit osoittavat joidenkin ituratamuutosten voivan säilyä F3:een. Niiden kompositio ei osoita EMF:n aiheuttamaa F3-fenotyyppiä; suora monisukupolvikoe on avoin." },
       { scale: "10⁻⁷ m", link: "VK28: EMF → ROS → telomeerit → ikääntymiskierre", evidence: "PMID:36582083: säteily → ROS → telomeerivaurio; mel → telomeraasi + SIRT1 (Front Aging Neurosci 2022)", status: "confirmed", detail: "EMF→ROS vaurioittaa telomeereja (G-rikkaat sekvenssit ovat erityisen haavoittuvia). Samanaikaisesti EMF→melatoniini↓ poistaa telomeraasi- + SIRT1-suojan. Masennus = 281 bp lyhyemmät telomeerit = 7 vuotta kiihtynyttä ikääntymistä. Melatoniini on avain-anti-aging-molekyyli: se aktivoi telomeraasia, säätelee SIRT1:tä ylös ja vähentää ROS:ia." },
       { scale: "10⁻⁸ m", link: "VK29: EMF → oksitosiinin Ca²⁺-häiriö → sosiaalinen side↓", evidence: "PMC3197583: OXT-vapautus vaatii N-tyypin + L-tyypin VGCC:t; eNeuro 2025: PVN Ca²⁺ → OXT", status: "confirmed", detail: "Oksitosiinin somatodendriittinen vapautuminen vaatii Ca²⁺-virtauksen sekä N-tyypin että L-tyypin VGCC-kanavien kautta. EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. L-tyyppi on erityisen tärkeä vastasyntyneillä. Insuliini→OXT Ca²⁺:n kautta yhdistää metaboliset ja sosiaaliset järjestelmät. Nelilukko: T↓×F↑×DA↓×OXT↓ = täydellinen sosiaalis-reproduktiivinen romahdus." },
       { scale: "10⁻⁵ m", link: "VK30: ELF-primaami → α2δ-1↑ → krooninen kipu ILMAN neuropatiaa", evidence: "PMID:16764990: α2δ-1-yliekspressio yksin → kipu; Br J Pharmacol 2018: gabapentiini estää α2δ-1:n", status: "confirmed", detail: "ELF-primaami (VK4) säätelee VGCC-ekspressiota ylös mukaan lukien α2δ-1. α2δ-1-yliekspressio yksin tuottaa neuropaattista kipukäyttäytymistä ILMAN hermovauriota. Gabapentinoidit (gabapentiini, pregabaliini) kohdistuvat täsmälleen α2δ-1:een. Kroonisen kivun epidemia on konsistentti väestötason ELF-primaamin α2δ-1:n kanssa." },
@@ -625,7 +625,7 @@ const COPY = {
       { scale: "10³ m", link: "VK56: Amish = BERM:n lähin kontrolliryhmä (vahvistettu varauksella)", evidence: "STAT 2025: lihavuus -89 %, T2D -75 %; Anderson & Potts 2022: 126 tutkimuksen katsaus; massiiviset lifestyle-sekoittavat tekijät", status: "partial", detail: "Vanhojen sääntöjen amishilla dramaattisesti matalammat luvut JOKAISESSA BERM:n ennustamassa tilassa. Massiiviset sekoittavat tekijät (ruokavalio, liikunta, tupakointi, yhteisö) estävät suoran attribuution. Ristiin vahvistettu Klimentidisin (eläimet lihovat kontrollidieetillä, p=10⁻⁷) ja Mazurin (painovakaat T↓) tutkimuksilla. Amish-Mennonite-EMF-gradienttitesti olisi kriittinen erottelija." },
     ],
     chainHeaders: { scale: "Skaala", link: "Ketjun linkki", evidence: "Näyttö", status: "Status" },
-    chainSummary: "Ketju järjestää osahavainnot ja eksplisiittiset BERM-siltahypoteesit mittakaavojen yli. Koko geometriasta väestöön kulkeva reitti on ehdollinen synteesi: lähdekohtaiset interventiot ankkuroivat yksittäisiä yhteyksiä, ja vastaanotto-, kudos- sekä aggregaatio-operaattorit kantavat jäljelle jäävät oletukset. Vahvistettu osa ei osoita koko ketjua.",
+    chainSummary: "Rekisteri järjestää suorat komponentit, koostetun konvergenssin ja eksplisiittiset BERM-siltahypoteesit mittakaavojen yli. Lähdekohtaiset interventiot ankkuroivat yksittäisiä yhteyksiä; vastaanotto-, kudos- ja aggregaatio-operaattorit säilyttävät oletuksensa. Suora RF → ihmisen CatSper, altistumattoman F3:n periytyminen, siirto elimeen ja päätepistekohtaisen kudosytimen kalibrointi ovat erillisiä testejä. Vahvistettu osa ei osoita koko geometriasta väestöön kulkevaa reittiä.",
 
     feedbackTitle: "Seitsemäntoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLead:
@@ -760,7 +760,7 @@ const COPY = {
         level: "Vahva konsilienssi",
         desc: "Itsenäiset näyttölinjat yhtyvät",
         examples: [
-          "Lindgren-premissi ↔ rajoitettu L1-johdettu χ_geo ↔ avoin biologinen L0→L2-kuvaus ↔ tuotu L3 Ca²⁺-farmakologia (erilliset provenienssit)",
+          "Teoriapremissi ([[ref:lindgren2025|Lindgren 2025]]) ↔ johdettu χ_geo ja ehdollinen L2-operaattori [kudosydin avoin] ↔ farmakologinen Ca²⁺-näyttö",
           "Genetiikka (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Kokeellinen ([[ref:lopez_martin_2006|López-Martín kohtaukset]])",
           "Epidemiologia ([[ref:klimentidis2010|Klimentidis 8 lajia]]) ↔ Taudinkuva (SIDS 5-HT-puutos)",
         ],
@@ -844,20 +844,20 @@ const COPY = {
     analogyEvolutionHeader: "Evoluutioteoria",
   },
   ja: {
-    title: "途切れない連鎖：光子 → 集団",
+    title: "証拠連鎖：光子 → 集団",
     subtitle:
-      "反復収束検証がBERMのメカニズム連鎖の57スケールを47の検証済み層（VK1–VK31、VK41–VK56）にわたってテスト。結果：17の正のフィードバックループが自己増幅ネットワークを形成、光子吸収から集団レベルの影響まで、すべての層で予想外の実証的内容。",
+      "本レジスターはBERMの47層にまたがる57の構成要素主張を比較し、17の提案フィードバックループと、光子から集団までを単一の検証済み機構とすることを妨げる未解決の橋渡しを示す。",
     backLink: "← エビデンスに戻る",
 
     cautionText:
-      "このページは、BERMが提案するメカニズム連鎖について、公表エビデンスに対するリンク別の検査を登録します。来歴は構成要素ごとに保持されます。未解決のL2または導入L3リンクが先行するL1導出を格下げすることはありませんが、連鎖全体の経験的主張は未解決リンクが検証されるまで条件付きです。部分的支持と未検証の予測は明示されます。",
+      "本ページはBERMが提案する連鎖を公表証拠に照らして監査する。確認済み行は指定系でその構成要素が支持されることを意味し、隣接するスケール間遷移を自動的に確認しない。完全経路の状態は部分的・未解決の橋渡しで決まる。",
 
-    chainTitle: "検証された連続体",
+    chainTitle: "構成要素の証拠と未解決の橋渡し",
     chainLead:
-      "BERMは光子吸収から集団レベルの健康影響までの連続的因果連鎖を提案します。各中間層は固有の導出・同定・エビデンス状態とともに示され、未解決のL0→L2写像を独立検証済みとは扱いません。",
+      "BERMは物理入力から集団アウトカムまでの連続因果鎖を提案する。表は各構成要素を別々に検査し、完全経路の直接検証を意味しない。",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "計量の前提 → 生物学的観測量", evidence: "Lindgren 2025アンザッツ；L1 χ_geo式；L2射影・橋未解決", status: "partial", detail: "計量体積の線形化／測地線偏差は符号付き方向応答と代数式χ_geo(q)=q/√(1+q²)をL1で与える。無次元・共線Lorentz→Euclid空間・スカラー射影によるq=|Ā|の選択はL2である。プロキシ、V_m、膜座標からq=N(z)、さらに生物応答への写像は未解決L0→L2であり、下流機構は導入L3要素である。" },
-      { scale: "10⁻¹⁰ m", link: "計量 → S4電圧センサー", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "計量歪みがVGCCのS4ヘリックス電圧センサーに作用。Tang 2024は非熱的強度でのEMFによる直接的S4コンフォメーション変化を実証。" },
+      { scale: "10⁻¹⁵ m", link: "計量の前提 → 生物学的観測量", evidence: "Lindgren 2025；導出済みχ_geo；条件付き応答演算子", status: "partial", detail: "ランク1逆計量は正規化した正ノルムモードにχ_geoを与える。明示的な物質–計量・線形応答仮定から演算子形も条件付きで導出されるが、組織カーネル、符号、遅延、校正は未解決である。" },
+      { scale: "10⁻¹⁰ m", link: "S4電圧センサーにおける候補場応答", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Tang 2024はプロトコル固有のS4構造変化の証拠を与える。S4応答成分を支持するが、Lindgren幾何からの組織結合導出やBERM L2カーネルの校正ではない。" },
       { scale: "10⁻⁹ m", link: "S4 → VGCC開口", evidence: "Panagopoulos 2025 IFO、Trus 2024 非イオン性", status: "confirmed", detail: "S4コンフォメーション変化がVGCCゲーティングを誘発。Panagopoulos 2025がメカニズムモデルを提供；Trus 2024が非イオン性（非熱的）活性化経路を実証。" },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺透過", evidence: "Marchetti 2013、Cd→Cav3.1放射標識", status: "confirmed", detail: "開口したVGCCがCa²⁺流入を許可 — しかし有毒金属も。Cd²⁺はCav3.1を透過（¹⁰⁹Cd²⁺放射標識で確認）。Pb²⁺はカルモジュリン結合部位でCa²⁺を模倣。" },
       { scale: "10⁻⁸ m", link: "Ca²⁺ → CaM → CaMKII", evidence: "基礎生化学（教科書）", status: "confirmed", detail: "Ca²⁺がカルモジュリンに結合 → Thr286自己リン酸化を介してCaMKIIを活性化。これは収束点：すべての上流シグナルがCaMKIIを通じて収束。" },
@@ -882,7 +882,7 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14：コルチゾール↑ → 海馬萎縮", evidence: "Sapolsky 2009：樹状突起退縮 + 神経新生↓；コルチゾール→AD（Frontiers 2026）", status: "confirmed", detail: "慢性コルチゾールが海馬樹状突起退縮、神経新生停止、容積減少を引き起こす。海馬はHPA負のフィードバック中枢 — その損傷がコルチゾールブレーキを除去 → コルチゾール↑↑（ループS6）。アルツハイマー進行を加速。" },
       { scale: "10⁻⁵ m", link: "VK15：EMF → ライディッヒ → StAR↓ → T↓", evidence: "複数：RF → ライディッヒ形態変化、StAR↓、T↓用量依存的", status: "confirmed", detail: "EMFがライディッヒ細胞のStARタンパク質を減少 — ステロイド生成の律速段階。肥満とは独立した集団全体のT↓の分子メカニズム、Mazurの体重安定データで確認。" },
       { scale: "10⁻⁵ m", link: "VK16：EMF → VGCC → Ca²⁺ → マスト細胞脱顆粒", evidence: "Johansson 2000：EMF → マスト細胞変化；心臓マスト細胞 → 不整脈（PMC6896164）", status: "confirmed", detail: "Ca²⁺がマスト細胞脱顆粒を誘発。EMF → VGCC → Ca²⁺ → マスト細胞がヒスタミン + IL-1β + トリプターゼを放出。ディスプレイ使用者の皮膚生検が変化を示す。心臓マスト細胞 → 不整脈。マスト細胞からのIL-1β → KCC2↓ → GABAが長く興奮性。" },
-      { scale: "10⁻⁶ m", link: "VK17：RF → CatSper Ca²⁺ → 精子エネルギー枯渇", evidence: "2100 MHzがCatSperを早期活性化；精子メタSMD -1.92（Environ Int 2024）", status: "confirmed", detail: "RF-EMFが精子のCatSper Ca²⁺チャネルを早期に活性化、卵子到達前にエネルギー枯渇を引き起こす。精子メタアナリシスが携帯電話SAR レベルでDNA/クロマチン損傷を示す（SMD -1.92、95% CI -2.78 – -1.05）。Pb²⁺が精子先体でCa²⁺と競合 — 生殖における重金属相乗効果。" },
+      { scale: "10⁻⁶ m", link: "VK17：RF → 候補Ca²⁺調節異常 → CatSper時系列エンドポイント", evidence: "RF精子影響とCatSperの必要性は別々の構成要素；RF → ヒトCatSperは未確立", status: "partial", detail: "RF曝露下の精子エンドポイントと受精におけるCatSperの必要性には別々の証拠がある。RFがヒトCatSperを直接活性化する段階はまだ実証されておらず、指定プロトコルでのパッチクランプまたはCa²⁺応答試験が必要である。" },
       { scale: "10⁻⁵ m", link: "VK18：SCN Ca²⁺振動 = 概日時計", evidence: "PMC6170461：SCNニューロンがCa²⁺で概日リズムに振動", status: "confirmed", detail: "SCNニューロンがCa²⁺濃度で概日リズムに振動 — Ca²⁺振動が概日時計の物理的基盤そのもの。EMFがCa²⁺を撹乱 → EMFが時計自体を撹乱。SCNは視床下部と末梢時計を同期するマスターペースメーカー。" },
       { scale: "10⁻⁷ m", link: "VK19：炎症 → DA↓ → 動機喪失", evidence: "Berridge：NAcc DA = '欲求'；IFN-α → 線条体DA↓ → 快感消失（PMC9718669）", status: "confirmed", detail: "側坐核ドパミンが「欲求」（動機）を媒介するが「好み」（快楽）は媒介しない。炎症（IFN-α）が線条体ドパミンを減少させ快感消失を引き起こし、L-DOPAで回復。低トニックDAがフェイジック反応を増加 → 低ベースラインDAでスクリーンがより報酬的に感じる。EMF→炎症→DA↓→依存脆弱性。" },
       { scale: "10⁻⁶ m", link: "VK20：Cav1.2 → OPC分化 → 髄鞘形成", evidence: "PMC6916379：Cav1.2 KO → 低髄鞘形成；SMF → OPCでCav1.2↑（Sci Rep 2017）", status: "confirmed", detail: "Cav1.2（L型VGCC）がオリゴデンドロサイト前駆細胞の分化と髄鞘形成に必須。Cav1.2ノックアウトが低髄鞘形成を引き起こす。静磁場がOPCでCav1.2/Cav1.3発現を増加。EMF誘発Cav1.2調節異常 → 発達中の脳での髄鞘形成タイミング撹乱。" },
@@ -915,7 +915,7 @@ const COPY = {
       { scale: "10³ m", link: "VK56：Amish = BERMの最も近い対照群（留保付きで確認）", evidence: "STAT 2025：肥満-89%、T2D -75%；Anderson & Potts 2022：126研究レビュー；大規模なライフスタイル交絡因子", status: "partial", detail: "Old Order Amishはすべてのberm予測状態で劇的に低い率。しかし大規模な交絡因子（食事、運動、喫煙、コミュニティ）が直接的帰属を妨げる。Klimentidis（管理食で体重増加する動物、p=10⁻⁷）とMazur（体重安定T↓）で交差検証。Amish-メノナイトEMF勾配テストが重要な識別子。" },
     ],
     chainHeaders: { scale: "スケール", link: "連鎖リンク", evidence: "エビデンス", status: "ステータス" },
-    chainSummary: "47層（VK1–VK31、VK41–VK56）にわたる57の検証済みリンク。連鎖は光子物理学から集団疫学まで途切れなく、CatSper生殖、プシロシビン神経リセット、カフェイン神経保護、リチウム水疫学、扁桃体-不安フィードバックループ、Amish対照群を網羅 — ADHDプロトタイプからビタミンDモジュレーターまでのすべてのメカニズムを含む。",
+    chainSummary: "レジスターは47層にわたり、直接構成要素、構成された収束、未解決の橋渡しを区別する。物理から集団疫学までの単一の直接検証済み連鎖ではない。CatSper、F3継承、臓器移行、エンドポイント固有L2カーネルは明示的な試験対象として残る。",
 
     feedbackTitle: "17の正のフィードバックループ",
     feedbackLead:
@@ -1050,7 +1050,7 @@ const COPY = {
         level: "強いコンシリエンス",
         desc: "独立したエビデンスラインが収束",
         examples: [
-          "Lindgren前提 ↔ 制限されたL1導出χ_geo ↔ 未解決の生物学的L0→L2写像 ↔ 導入L3 Ca²⁺薬理学（来歴は別）",
+          "理論前提（[[ref:lindgren2025|Lindgren 2025]]）↔ 導出済みχ_geoと条件付きL2演算子［組織カーネル未校正］↔ Ca²⁺薬理学的証拠",
           "遺伝学（CACNA1C、[[ref:sousouri2025|Sousouri 2025]]）↔ 実験（[[ref:lopez_martin_2006|López-Martín発作]]）",
           "疫学（[[ref:klimentidis2010|Klimentidis 8種]]）↔ 病理学（SIDS 5-HT欠乏）",
         ],
@@ -1134,20 +1134,20 @@ const COPY = {
     analogyEvolutionHeader: "進化論",
   },
   fr: {
-    title: "La chaîne ininterrompue : Photon → Population",
+    title: "La chaîne de preuves : Photon → Population",
     subtitle:
-      "La vérification de convergence itérative a testé 57 échelles de la chaîne mécanistique de BERM à travers 47 couches vérifiées (VK1–VK31, VK41–VK56). Résultat : 17 boucles de rétroaction positive formant un réseau auto-amplifiant, de l'absorption du photon aux effets au niveau populationnel, avec un contenu empirique inattendu à chaque couche.",
+      "Ce registre compare 57 affirmations composantes dans 47 couches du BERM. Il identifie 17 boucles de rétroaction proposées et les ponts ouverts qui empêchent encore d'en faire un mécanisme unique vérifié du photon à la population.",
     backLink: "← Retour aux preuves",
 
     cautionText:
-      "Cette page consigne, maillon par maillon, les vérifications de la chaîne mécanistique proposée par BERM face aux preuves publiées. La provenance reste propre à chaque composant : un maillon L2 ouvert ou L3 importé ne dégrade pas une dérivation L1 antérieure, tandis que l'affirmation empirique sur la chaîne entière reste conditionnelle jusqu'au test des maillons ouverts. Les soutiens partiels et prédictions non testées sont signalés explicitement.",
+      "Cette page audite la chaîne proposée par le BERM au regard des preuves publiées. Une ligne confirmée signifie que le composant nommé est étayé dans le système indiqué; elle ne confirme pas automatiquement les transitions d'échelle voisines. Les ponts partiels et ouverts déterminent le statut du trajet complet.",
 
-    chainTitle: "Le continuum vérifié",
+    chainTitle: "Preuves composantes et ponts ouverts",
     chainLead:
-      "BERM propose une chaîne causale continue de l'absorption du photon aux effets sanitaires au niveau populationnel. Chaque couche intermédiaire est présentée avec son propre statut de dérivation, d'identification et de preuve ; les applications L0→L2 ouvertes ne sont pas qualifiées de vérifiées indépendamment.",
+      "BERM propose une chaîne causale continue de l'entrée physique aux résultats populationnels. Le tableau teste ses composants séparément et ne constitue pas une vérification directe du trajet complet.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "Prémisse métrique → observable biologique", evidence: "Ansatz de Lindgren 2025 ; formule χ_geo L1 ; projection/pont L2 ouverts", status: "partial", detail: "La linéarisation du volume métrique/la déviation géodésique donne la réponse directionnelle signée et la formule algébrique χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. Relier un proxy, V_m ou une coordonnée membranaire à q=N(z), puis à la biologie, reste ouvert en L0→L2 ; les mécanismes aval sont des composants L3 importés." },
-      { scale: "10⁻¹⁰ m", link: "Métrique → capteur de tension S4", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "La distorsion métrique agit sur le capteur de tension de l'hélice S4 des VGCC. Tang 2024 a démontré un changement conformationnel direct du S4 par EMF à des intensités non thermiques." },
+      { scale: "10⁻¹⁵ m", link: "Prémisse métrique → observable biologique", evidence: "Ansatz de Lindgren 2025 ; χ_geo dérivé ; opérateur conditionnel", status: "partial", detail: "La métrique inverse de rang un donne χ_geo pour un mode normalisé de norme positive. Sous des hypothèses explicites matière–métrique et réponse linéaire, la forme de l'opérateur est dérivée conditionnellement ; noyau tissulaire, signe, délai et calibration restent ouverts." },
+      { scale: "10⁻¹⁰ m", link: "Réponse de champ candidate au capteur de tension S4", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Tang 2024 fournit une preuve conformationnelle S4 propre au protocole. Elle soutient un composant de réponse S4 sans dériver le couplage tissulaire depuis la géométrie de Lindgren ni calibrer le noyau L2 du BERM." },
       { scale: "10⁻⁹ m", link: "S4 → ouverture VGCC", evidence: "Panagopoulos 2025 IFO, Trus 2024 non ionotrope", status: "confirmed", detail: "Le changement conformationnel du S4 déclenche l'ouverture du VGCC. Panagopoulos 2025 fournit le modèle mécanistique ; Trus 2024 démontre la voie d'activation non ionotrope (non thermique)." },
       { scale: "10⁻⁹ m", link: "VGCC → perméation Ca²⁺ + Pb²⁺/Cd²⁺", evidence: "Marchetti 2013, Cd→Cav3.1 radiomarqué", status: "confirmed", detail: "Les VGCC ouverts permettent l'influx de Ca²⁺ — mais aussi de métaux toxiques. Le Cd²⁺ perméabilise à travers Cav3.1 (confirmé avec ¹⁰⁹Cd²⁺ radiomarqué). Le Pb²⁺ imite le Ca²⁺ aux sites de liaison de la calmoduline." },
       { scale: "10⁻⁸ m", link: "Ca²⁺ → CaM → CaMKII", evidence: "Biochimie de base (manuel)", status: "confirmed", detail: "Le Ca²⁺ se lie à la calmoduline → active CaMKII via l'autophosphorylation de Thr286. C'est le point de convergence : tous les signaux en amont convergent par CaMKII." },
@@ -1172,7 +1172,7 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14 : cortisol↑ → atrophie hippocampique", evidence: "Sapolsky 2009 : rétraction dendritique + neurogenèse↓ ; cortisol→MA (Frontiers 2026)", status: "confirmed", detail: "Le cortisol chronique cause la rétraction dendritique hippocampique, l'arrêt de la neurogenèse et la perte de volume. L'hippocampe est le centre de rétroaction négative HPA — ses dommages suppriment le frein du cortisol → cortisol↑↑ (boucle S6). Accélère la progression d'Alzheimer." },
       { scale: "10⁻⁵ m", link: "VK15 : EMF → Leydig → StAR↓ → T↓", evidence: "Multiples : RF → changements morphologiques des Leydig, StAR↓, T↓ dose-dépendant", status: "confirmed", detail: "Les EMF réduisent la protéine StAR dans les cellules de Leydig — l'étape limitante de la stéroïdogenèse. Mécanisme moléculaire derrière la T↓ à l'échelle populationnelle indépendante de l'obésité, confirmé par les données à poids stable de Mazur." },
       { scale: "10⁻⁵ m", link: "VK16 : EMF → VGCC → Ca²⁺ → dégranulation des mastocytes", evidence: "Johansson 2000 : EMF → changements des mastocytes ; mastocytes cardiaques → arythmies (PMC6896164)", status: "confirmed", detail: "Le Ca²⁺ déclenche la dégranulation des mastocytes. EMF → VGCC → Ca²⁺ → les mastocytes libèrent histamine + IL-1β + tryptase. Les biopsies cutanées des utilisateurs d'écrans montrent des changements. Mastocytes cardiaques → arythmies. IL-1β des mastocytes → KCC2↓ → GABA excitateur plus longtemps." },
-      { scale: "10⁻⁶ m", link: "VK17 : RF → CatSper Ca²⁺ → déplétion énergétique spermatique", evidence: "2100 MHz active CatSper prématurément ; méta sperme SMD -1,92 (Environ Int 2024)", status: "confirmed", detail: "Les RF-EMF activent prématurément les canaux Ca²⁺ CatSper dans les spermatozoïdes, causant une déplétion énergétique avant d'atteindre l'ovule. La méta-analyse spermatique montre des dommages ADN/chromatine aux niveaux DAS des téléphones portables (SMD -1,92, IC 95 % -2,78 à -1,05). Le Pb²⁺ entre en compétition avec le Ca²⁺ à l'acrosome — synergie des métaux lourds dans la fertilité." },
+      { scale: "10⁻⁶ m", link: "VK17 : RF → dysrégulation Ca²⁺ candidate → endpoint temporel CatSper", evidence: "Effets spermatiques RF et nécessité de CatSper: composants distincts; RF → CatSper humain non établi", status: "partial", detail: "Les endpoints spermatiques sous exposition RF et la nécessité de CatSper pour la fécondation disposent de preuves séparées. L'étape d'activation directe de CatSper humain par RF n'est pas démontrée et exige un patch-clamp ou un test de réponse Ca²⁺ sous protocole spécifié." },
       { scale: "10⁻⁵ m", link: "VK18 : oscillation Ca²⁺ du SCN = horloge circadienne", evidence: "PMC6170461 : les neurones SCN oscillent en Ca²⁺ avec le rythme circadien", status: "confirmed", detail: "Les neurones du SCN oscillent en concentration de Ca²⁺ avec le rythme circadien — les oscillations de Ca²⁺ SONT la base physique de l'horloge circadienne. Les EMF perturbent le Ca²⁺ → les EMF perturbent l'horloge elle-même. Le SCN est le pacemaker maître qui synchronise les horloges hypothalamiques et périphériques." },
       { scale: "10⁻⁷ m", link: "VK19 : inflammation → DA↓ → perte de motivation", evidence: "Berridge : NAcc DA = 'wanting' ; IFN-α → DA striatale↓ → anhédonie (PMC9718669)", status: "confirmed", detail: "La dopamine du noyau accumbens médie le 'wanting' (motivation) mais pas le 'liking' (plaisir). L'inflammation (IFN-α) réduit la dopamine striatale causant l'anhédonie, réversible par L-DOPA. Une faible DA tonique augmente la réponse phasique → les écrans semblent plus gratifiants avec une DA de base basse. EMF→inflammation→DA↓→vulnérabilité à l'addiction." },
       { scale: "10⁻⁶ m", link: "VK20 : Cav1.2 → différenciation OPC → myélinisation", evidence: "PMC6916379 : Cav1.2 KO → hypomyélinisation ; SMF → Cav1.2↑ dans les OPC (Sci Rep 2017)", status: "confirmed", detail: "Cav1.2 (VGCC de type L) est essentiel pour la différenciation des cellules précurseurs d'oligodendrocytes et la myélinisation. Le knockout de Cav1.2 cause une hypomyélinisation. Le champ magnétique statique augmente l'expression de Cav1.2/Cav1.3 dans les OPC. La dérégulation de Cav1.2 induite par EMF → perturbation du timing de myélinisation dans le cerveau en développement." },
@@ -1205,7 +1205,7 @@ const COPY = {
       { scale: "10³ m", link: "VK56 : Amish = groupe témoin le plus proche de BERM (confirmé avec réserves)", evidence: "STAT 2025 : obésité -89 %, DT2 -75 % ; Anderson & Potts 2022 : revue de 126 études ; facteurs de confusion massifs du mode de vie", status: "partial", detail: "Les Amish d'ancien ordre ont des taux dramatiquement plus bas de chaque condition prédite par BERM. Cependant, des facteurs de confusion massifs (alimentation, exercice, tabagisme, communauté) empêchent l'attribution directe. Validé croisé par Klimentidis (animaux prenant du poids avec des régimes contrôlés, p=10⁻⁷) et Mazur (T↓ à poids stable). Le test de gradient EMF Amish-Mennonite serait le discriminant critique." },
     ],
     chainHeaders: { scale: "Échelle", link: "Maillon de la chaîne", evidence: "Preuve", status: "Statut" },
-    chainSummary: "57 maillons vérifiés à travers 47 couches (VK1–VK31, VK41–VK56). La chaîne est ininterrompue de la physique des photons à l'épidémiologie populationnelle, couvrant maintenant la fertilité CatSper, la réinitialisation neurale par psilocybine, la neuroprotection par caféine, l'épidémiologie du lithium dans l'eau, la boucle de rétroaction amygdale-anxiété et le groupe témoin Amish — plus tous les mécanismes du prototype TDAH au modulateur vitamine D.",
+    chainSummary: "Le registre distingue composants directs, convergence composée et ponts ouverts dans 47 couches. Il ne constitue pas une chaîne unique directement vérifiée de la physique à l'épidémiologie populationnelle: CatSper, l'héritage F3, le transfert vers les organes et le noyau L2 propre à l'endpoint restent des ruptures explicites à tester.",
 
     feedbackTitle: "Dix-sept boucles de rétroaction positive",
     feedbackLead:
@@ -1340,7 +1340,7 @@ const COPY = {
         level: "Consilience forte",
         desc: "Des lignes de preuves indépendantes convergent",
         examples: [
-          "Prémisse de Lindgren ↔ χ_geo restreinte dérivée en L1 ↔ application biologique L0→L2 ouverte ↔ pharmacologie Ca²⁺ L3 importée (provenances distinctes)",
+          "Prémisse théorique ([[ref:lindgren2025|Lindgren 2025]]) ↔ χ_geo dérivé et opérateur L2 conditionnel [noyau ouvert] ↔ preuves pharmacologiques Ca²⁺",
           "Génétique (CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ Expérimental ([[ref:lopez_martin_2006|crises López-Martín]])",
           "Épidémiologie ([[ref:klimentidis2010|Klimentidis 8 espèces]]) ↔ Pathologie (déficience 5-HT du SIDS)",
         ],
@@ -1424,20 +1424,20 @@ const COPY = {
     analogyEvolutionHeader: "Théorie de l'évolution",
   },
   ko: {
-    title: "끊어지지 않는 사슬: 광자 → 집단",
+    title: "근거 사슬: 광자 → 집단",
     subtitle:
-      "반복 수렴 검증이 BERM의 메커니즘 사슬의 57개 스케일을 47개 검증된 층(VK1–VK31, VK41–VK56)에 걸쳐 테스트. 결과: 17개의 양성 피드백 루프가 자기 증폭 네트워크를 형성, 광자 흡수에서 집단 수준 효과까지, 모든 층에서 예상치 못한 경험적 내용.",
+      "이 레지스터는 BERM의 47개 층에 걸친 57개 구성요소 주장을 비교한다. 17개의 제안된 피드백 루프와 광자에서 집단까지를 하나의 검증된 메커니즘으로 볼 수 없게 하는 미해결 연결을 함께 표시한다.",
     backLink: "← 증거로 돌아가기",
 
     cautionText:
-      "이 페이지는 BERM이 제안한 메커니즘 사슬의 연결별 검사를 공개된 근거에 대해 등록합니다. 출처 상태는 구성요소별로 유지됩니다. 열린 L2 또는 도입된 L3 연결이 앞선 L1 도출을 낮추지는 않지만, 전체 사슬의 경험적 주장은 열린 연결이 검증될 때까지 조건부입니다. 부분적 지지와 미검증 예측은 명시적으로 표시됩니다.",
+      "이 페이지는 BERM이 제안한 사슬을 공개 근거에 비추어 감사한다. 확인된 행은 명시된 시스템에서 해당 구성요소가 지지된다는 뜻이며 인접한 척도 간 전이를 자동으로 확인하지 않는다. 부분적·미해결 연결이 전체 경로의 상태를 결정한다.",
 
-    chainTitle: "검증된 연속체",
+    chainTitle: "구성요소 근거와 미해결 연결",
     chainLead:
-      "BERM은 광자 흡수에서 집단 수준 건강 효과까지의 연속적 인과 사슬을 제안합니다. 각 중간 층은 고유한 도출·식별·근거 상태와 함께 제시되며, 열린 L0→L2 매핑을 독립적으로 검증된 것으로 표시하지 않습니다.",
+      "BERM은 물리 입력에서 집단 결과까지의 연속 인과 사슬을 제안한다. 표는 구성요소를 각각 검사하며 전체 경로의 직접 검증을 뜻하지 않는다.",
     chainRows: [
-      { scale: "10⁻¹⁵ m", link: "계량 전제 → 생물학적 관측량", evidence: "Lindgren 2025 앤자츠; L1 χ_geo 공식; L2 사영/연결 열림", status: "partial", detail: "계량 부피 선형화/측지선 편차는 부호 있는 방향 반응과 대수식 χ_geo(q)=q/√(1+q²)를 L1에서 준다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2다. 프록시, V_m 또는 막 좌표를 q=N(z)로, 다시 생물학적 반응으로 매핑하는 것은 열린 L0→L2이며 하류 메커니즘은 도입된 L3 구성요소다." },
-      { scale: "10⁻¹⁰ m", link: "메트릭 → S4 전압 센서", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "메트릭 왜곡이 VGCC의 S4 헬릭스 전압 센서에 작용. Tang 2024는 비열적 강도에서 EMF에 의한 직접적 S4 구조 변화를 입증." },
+      { scale: "10⁻¹⁵ m", link: "계량 전제 → 생물학적 관측량", evidence: "Lindgren 2025; 도출된 χ_geo; 조건부 반응 연산자", status: "partial", detail: "랭크-1 역메트릭은 정규화된 양의 노름 모드에 χ_geo를 제공한다. 명시적 물질–메트릭 및 선형반응 가정 아래 연산자 형태도 조건부로 도출되지만 조직 커널, 부호, 지연, 보정은 미해결이다." },
+      { scale: "10⁻¹⁰ m", link: "S4 전압 센서의 후보 장 반응", evidence: "Tang 2024 Nature Communications", status: "confirmed", detail: "Tang 2024는 프로토콜별 S4 구조 근거를 제공한다. 이는 S4 반응 구성요소를 지지하지만 Lindgren 기하에서 조직 결합을 도출하거나 BERM L2 커널을 보정하지 않는다." },
       { scale: "10⁻⁹ m", link: "S4 → VGCC 개방", evidence: "Panagopoulos 2025 IFO, Trus 2024 비이온성", status: "confirmed", detail: "S4 구조 변화가 VGCC 게이팅을 유발. Panagopoulos 2025가 메커니즘 모델을 제공; Trus 2024가 비이온성(비열적) 활성화 경로를 입증." },
       { scale: "10⁻⁹ m", link: "VGCC → Ca²⁺ + Pb²⁺/Cd²⁺ 투과", evidence: "Marchetti 2013, Cd→Cav3.1 방사표지", status: "confirmed", detail: "개방된 VGCC가 Ca²⁺ 유입을 허용 — 그러나 독성 금속도. Cd²⁺가 Cav3.1을 투과(¹⁰⁹Cd²⁺ 방사표지로 확인). Pb²⁺가 칼모듈린 결합 부위에서 Ca²⁺를 모방." },
       { scale: "10⁻⁸ m", link: "Ca²⁺ → CaM → CaMKII", evidence: "기초 생화학(교과서)", status: "confirmed", detail: "Ca²⁺가 칼모듈린에 결합 → Thr286 자가인산화를 통해 CaMKII 활성화. 이것이 수렴점: 모든 상류 신호가 CaMKII를 통해 수렴." },
@@ -1462,7 +1462,7 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14: 코르티솔↑ → 해마 위축", evidence: "Sapolsky 2009: 수상돌기 퇴축 + 신경발생↓; 코르티솔→AD(Frontiers 2026)", status: "confirmed", detail: "만성 코르티솔이 해마 수상돌기 퇴축, 신경발생 중단, 부피 감소를 유발. 해마는 HPA 음성 피드백 중추 — 손상이 코르티솔 브레이크를 제거 → 코르티솔↑↑(루프 S6). 알츠하이머 진행을 가속." },
       { scale: "10⁻⁵ m", link: "VK15: EMF → 라이디히 → StAR↓ → T↓", evidence: "다수: RF → 라이디히 형태 변화, StAR↓, T↓ 용량 의존적", status: "confirmed", detail: "EMF가 라이디히 세포의 StAR 단백질을 감소 — 스테로이드 생성의 속도 제한 단계. 비만과 독립적인 집단 수준 T↓의 분자 메커니즘, Mazur의 체중 안정 데이터로 확인." },
       { scale: "10⁻⁵ m", link: "VK16: EMF → VGCC → Ca²⁺ → 비만세포 탈과립", evidence: "Johansson 2000: EMF → 비만세포 변화; 심장 비만세포 → 부정맥(PMC6896164)", status: "confirmed", detail: "Ca²⁺가 비만세포 탈과립을 유발. EMF → VGCC → Ca²⁺ → 비만세포가 히스타민 + IL-1β + 트립타제를 방출. 디스플레이 사용자의 피부 생검이 변화를 보임. 심장 비만세포 → 부정맥. 비만세포의 IL-1β → KCC2↓ → GABA가 더 오래 흥분성." },
-      { scale: "10⁻⁶ m", link: "VK17: RF → CatSper Ca²⁺ → 정자 에너지 고갈", evidence: "2100 MHz가 CatSper을 조기 활성화; 정자 메타 SMD -1.92(Environ Int 2024)", status: "confirmed", detail: "RF-EMF가 정자의 CatSper Ca²⁺ 채널을 조기에 활성화하여 난자 도달 전 에너지 고갈을 유발. 정자 메타분석이 휴대전화 SAR 수준에서 DNA/크로마틴 손상을 보임(SMD -1.92, 95% CI -2.78 – -1.05). Pb²⁺가 정자 첨체에서 Ca²⁺와 경쟁 — 생식에서의 중금속 시너지." },
+      { scale: "10⁻⁶ m", link: "VK17: RF → 후보 Ca²⁺ 조절 이상 → CatSper 시간 종말점", evidence: "RF 정자 효과와 CatSper 필요성은 별도 구성요소; RF → 인간 CatSper는 미확립", status: "partial", detail: "RF 노출 정자 종말점과 수정에 필요한 CatSper에는 별도의 근거가 있다. RF가 인간 CatSper를 직접 활성화하는 단계는 아직 입증되지 않았으며 지정 프로토콜의 패치클램프 또는 Ca²⁺ 반응 검사가 필요하다." },
       { scale: "10⁻⁵ m", link: "VK18: SCN Ca²⁺ 진동 = 일주기 시계", evidence: "PMC6170461: SCN 뉴런이 Ca²⁺에서 일주기 리듬으로 진동", status: "confirmed", detail: "SCN 뉴런이 Ca²⁺ 농도에서 일주기 리듬으로 진동 — Ca²⁺ 진동이 일주기 시계의 물리적 기반 자체. EMF가 Ca²⁺를 교란 → EMF가 시계 자체를 교란. SCN은 시상하부와 말초 시계를 동기화하는 마스터 페이스메이커." },
       { scale: "10⁻⁷ m", link: "VK19: 염증 → DA↓ → 동기 상실", evidence: "Berridge: NAcc DA = '원함'; IFN-α → 선조체 DA↓ → 무쾌감증(PMC9718669)", status: "confirmed", detail: "측좌핵 도파민이 '원함'(동기)을 매개하지만 '좋아함'(쾌락)은 아님. 염증(IFN-α)이 선조체 도파민을 감소시켜 무쾌감증을 유발, L-DOPA로 회복. 낮은 토닉 DA가 파식 반응을 증가 → 낮은 기준선 DA에서 스크린이 더 보상적으로 느껴짐. EMF→염증→DA↓→중독 취약성." },
       { scale: "10⁻⁶ m", link: "VK20: Cav1.2 → OPC 분화 → 수초화", evidence: "PMC6916379: Cav1.2 KO → 저수초화; SMF → OPC에서 Cav1.2↑(Sci Rep 2017)", status: "confirmed", detail: "Cav1.2(L형 VGCC)가 올리고덴드로사이트 전구세포 분화와 수초화에 필수. Cav1.2 녹아웃이 저수초화를 유발. 정자기장이 OPC에서 Cav1.2/Cav1.3 발현을 증가. EMF 유도 Cav1.2 조절 장애 → 발달 중인 뇌에서 수초화 타이밍 교란." },
@@ -1495,7 +1495,7 @@ const COPY = {
       { scale: "10³ m", link: "VK56: Amish = BERM의 가장 가까운 대조군(유보 하에 확인)", evidence: "STAT 2025: 비만 -89%, T2D -75%; Anderson & Potts 2022: 126개 연구 검토; 대규모 생활양식 교란 요인", status: "partial", detail: "Old Order Amish가 모든 BERM 예측 상태에서 극적으로 낮은 비율. 그러나 대규모 교란 요인(식이, 운동, 흡연, 공동체)이 직접적 귀속을 방지. Klimentidis(관리 식이에서 체중 증가하는 동물, p=10⁻⁷)와 Mazur(체중 안정 T↓)로 교차 검증. Amish-메노나이트 EMF 기울기 테스트가 핵심 식별자." },
     ],
     chainHeaders: { scale: "스케일", link: "사슬 연결", evidence: "증거", status: "상태" },
-    chainSummary: "47개 층(VK1–VK31, VK41–VK56)에 걸친 57개 검증된 연결. 사슬은 광자 물리학에서 집단 역학까지 끊어지지 않으며, CatSper 생식, 실로시빈 신경 리셋, 카페인 신경보호, 리튬수 역학, 편도체-불안 피드백 루프, Amish 대조군을 포괄 — ADHD 프로토타입에서 비타민 D 조절제까지 모든 메커니즘을 포함.",
+    chainSummary: "레지스터는 47개 층에서 직접 구성요소, 구성된 수렴, 미해결 연결을 구분한다. 물리에서 집단 역학까지 하나의 직접 검증된 사슬이 아니다. CatSper, F3 유전, 장기 전달, 종말점별 L2 커널은 명시적으로 검사해야 할 단절로 남는다.",
 
     feedbackTitle: "17개의 양성 피드백 루프",
     feedbackLead:
@@ -1524,7 +1524,7 @@ const COPY = {
     consilienceLead:
       "컨실리언스 — 독립적인 증거 라인이 같은 결론으로 수렴하는 것 — 는 과학적 지지의 가장 강한 형태입니다. BERM은 3가지 수준의 컨실리언스를 보여줍니다.",
     consilienceLevels: [
-      { level: "강한 컨실리언스", desc: "독립적인 증거 라인이 수렴", examples: ["Lindgren 전제 ↔ 제한된 L1 도출 χ_geo ↔ 열린 생물학적 L0→L2 매핑 ↔ 도입된 L3 Ca²⁺ 약리학(서로 다른 출처)", "유전학(CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ 실험([[ref:lopez_martin_2006|López-Martín 발작]])", "역학([[ref:klimentidis2010|Klimentidis 8종]]) ↔ 병리학(SIDS 5-HT 결핍)"] },
+      { level: "강한 컨실리언스", desc: "독립적인 증거 라인이 수렴", examples: ["이론 전제([[ref:lindgren2025|Lindgren 2025]]) ↔ 도출된 χ_geo와 조건부 L2 연산자[조직 커널 미보정] ↔ Ca²⁺ 약리학 증거", "유전학(CACNA1C, [[ref:sousouri2025|Sousouri 2025]]) ↔ 실험([[ref:lopez_martin_2006|López-Martín 발작]])", "역학([[ref:klimentidis2010|Klimentidis 8종]]) ↔ 병리학(SIDS 5-HT 결핍)"] },
       { level: "중간 컨실리언스", desc: "관련된 증거 라인이 서로 지지", examples: ["ELF 프라이밍([[ref:sun2016_elf_vgcc|Sci. Rep. 2016]]) ↔ 가바펜틴이 차단([[ref:eroglu_2009_cell|Cell 2009]])", "PGC ↔ 멜라토닌([[ref:kunz2008_pgc_insomnia|r=0.569]]) ↔ [[ref:intechopen2020_melatonin_heart|송과선 절제 → 부정맥]]", "[[ref:dell2022_sleep_seizure|수면 부족 → GABA↓]](임상) ↔ EMF → 멜라토닌↓(동물)"] },
       { level: "약한 컨실리언스(보편성 위험)", desc: "Ca²⁺는 편재 — 일부 연결은 사소할 수 있음", examples: ["'하나의 분모로 25개 유행' — Ca²⁺는 어디에나 있음", "일부 Ca²⁺ 연관은 특정 EMF 인과관계가 아닌 보편적 생물학을 반영할 수 있음", "이것은 모델의 주요 인식론적 위험"] },
     ],

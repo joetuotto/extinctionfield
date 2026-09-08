@@ -7,7 +7,7 @@ ASFR change?  It deliberately does not call the proxy a physical FieldState,
 fit an EMF coefficient, or change the v2 outcome model.
 
 It is a proxy-only diagnostic that can inform the design of a future matched
-FieldState panel.  It is not a FieldState-derived biological bridge, so its
+FieldState panel.  It is not obtained from FieldState and supplies no biological bridge, so its
 output always carries ``PROXY_ONLY`` status.
 """
 
@@ -145,10 +145,11 @@ def build_cohort_asfr_signature(
     target_year: int = 2023,
     countries: set[str] | None = None,
 ) -> CohortASFRSignatureResult:
-    """Compute the FieldState-derived timing-proxy cohort signature.
+    """Compute the national timing-proxy cohort signature.
 
     The output is a diagnostic to compare against a measurement-ready v2
-    FieldState panel later; it must never be fed into ``RegisteredOrganIncrement``.
+    FieldState panel later.  It is neither derived from FieldState nor a
+    biological bridge and must never be fed into ``RegisteredOrganIncrement``.
     """
     candidate_countries = set(mobile_proxy_by_country_year)
     candidate_countries &= {country for country, _ in asfr_by_country_year}

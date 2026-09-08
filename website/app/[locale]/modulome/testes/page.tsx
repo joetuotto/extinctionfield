@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CitationLink } from "@/components/CitationLink";
+import { ClaimRef } from "@/components/ClaimRef";
+import { MathBlock } from "@/components/MathBlock";
+import { StudyCitation } from "@/components/StudyCitation";
 import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
@@ -93,9 +96,9 @@ const COPY = {
     ],
 
     /* 05 Lindgren Analysis */
-    s5Title: "BERM candidate susceptibility analysis — L2 open",
+    s5Title: "BERM candidate susceptibility analysis — response form derived conditionally, tissue calibration open",
     s5p1:
-      "BERM proposes a testicular susceptibility analysis in which the blood-testis barrier (BTB) could create positive feedback. This is a conditional biological hypothesis beyond the open L2 bridge:",
+      "Under the explicit minimal matter–metric coupling assumption, BERM now has a conditional geometry-to-response operator. Its tissue kernel, sign, lag and dose-response remain uncalibrated. The testicular susceptibility analysis below is therefore a conditional biological closure, not a measured consequence of Lindgren geometry:",
     s5Criteria: [
       "chi_barrier (BTB) — uses same TJ proteins as BBB. EMF opens BTB → spermatogenic microenvironment exposed → more damage",
       "chi_channel — Cav3 in Leydig cells at bifurcation. Cav1+Cav3 dual requirement in spermatogonia doubles vulnerability surface",
@@ -242,9 +245,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM:n herkkyyden ehdokasanalyysi — L2 avoin",
+    s5Title: "BERM:n herkkyyden ehdokasanalyysi — vastemuoto ehdollisesti johdettu, kudoskalibrointi avoin",
     s5p1:
-      "BERM ehdottaa kivesten herkkyysanalyysia, jossa veri-kiveseste (BTB) voisi muodostaa positiivisen takaisinkytkennän. Tämä on avoimen L2-sillan jälkeinen ehdollinen biologinen hypoteesi:",
+      "Kun minimaalinen aine–metriikka-kytkentä oletetaan eksplisiittisesti, BERM:llä on nyt ehdollinen geometriasta vasteeseen johtava operaattori. Sen kudosydin, etumerkki, viive ja annosvaste ovat kalibroimatta. Alla oleva kivesten herkkyysanalyysi on siksi ehdollinen biologinen sulkeuma, ei Lindgrenin geometrian mitattu seuraus:",
     s5Criteria: [
       "chi_barrier (BTB) — käyttää samoja TJ-proteiineja kuin BBB. EMF avaa BTB:n → spermatogeneettinen mikroympäristö altistuu → enemmän vahinkoa",
       "chi_channel — Cav3 Leydigin soluissa bifurkaatiossa. Cav1+Cav3-kaksoisvaatimus spermatogonioissa kaksinkertaistaa haavoittuvuuspinta-alan",
@@ -390,9 +393,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM感受性候補解析 — L2未解決",
+    s5Title: "BERM感受性候補解析 — 条件付きL2演算子、組織校正は未完了",
     s5p1:
-      "BERMは血液精巣関門が正のフィードバックを生み得る精巣感受性を提案する。これは未解決L2橋より下流の条件付き生物仮説である：",
+      "BERMは血液精巣関門が正のフィードバックを生み得る精巣感受性を提案する。これは条件付きL2演算子より下流にあり、組織カーネル校正を要する生物仮説である：",
     s5Criteria: [
       "chi_barrier (BTB) — BBBと同じTJタンパク質を使用。EMFがBTBを開く → 精子形成微小環境が露出 → さらなる損傷",
       "chi_channel — 分岐点のライディッヒ細胞Cav3。精原細胞のCav1+Cav3二重要件が脆弱性表面を倍増",
@@ -536,9 +539,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Analyse candidate de susceptibilité BERM — L2 ouvert",
+    s5Title: "Analyse candidate de susceptibilité BERM — opérateur L2 conditionnel, calibration tissulaire ouverte",
     s5p1:
-      "BERM propose une susceptibilité testiculaire où la barrière hémato-testiculaire pourrait créer une rétroaction positive. C'est une hypothèse biologique conditionnelle en aval du pont L2 ouvert :",
+      "BERM propose une susceptibilité testiculaire où la barrière hémato-testiculaire pourrait créer une rétroaction positive. Cette hypothèse biologique se situe en aval de l’opérateur L2 conditionnel et exige une calibration du noyau tissulaire :",
     s5Criteria: [
       "chi_barrier (BTB) — utilise les memes proteines TJ que la BHE. Les EMF ouvrent la BTB → microenvironnement spermatogenique expose → plus de dommages",
       "chi_channel — Cav3 dans les cellules de Leydig a la bifurcation. La double exigence Cav1+Cav3 dans les spermatogonies double la surface de vulnerabilite",
@@ -682,9 +685,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM 감수성 후보 분석 — L2 미해결",
+    s5Title: "BERM 감수성 후보 분석 — 조건부 L2 연산자, 조직 보정 미완료",
     s5p1:
-      "BERM은 혈액고환장벽이 양의 되먹임을 만들 수 있는 고환 감수성을 제안한다. 이는 열린 L2 연결 이후의 조건부 생물학 가설이다:",
+      "BERM은 혈액고환장벽이 양의 되먹임을 만들 수 있는 고환 감수성을 제안한다. 이는 조건부 L2 연산자 이후에 있으며 조직 커널 보정이 필요한 생물학 가설이다:",
     s5Criteria: [
       "chi_barrier (BTB) — BBB와 동일한 TJ 단백질 사용. EMF가 BTB를 열면 → 정자형성 미세환경 노출 → 더 많은 손상",
       "chi_channel — 분기점의 라이디히 세포 Cav3. 정원세포의 Cav1+Cav3 이중 요건이 취약성 표면을 두 배로",
@@ -748,6 +751,59 @@ const COPY = {
   },
 };
 
+const ANDROGEN_COPY = {
+  en: {
+    title: "A third gate: androgen availability and use",
+    lead:
+      "A serum total-testosterone value does not close the androgen pathway. BERM therefore separates production from binding availability, receptor occupancy and post-receptor gain. A change can lower tissue-level androgen capacity even when total testosterone changes little.",
+    binding:
+      "With albumin treated as a weak binding reservoir and SHBG as a high-affinity reservoir, free testosterone T_f is obtained from the mass-balance equation rather than inferred from total testosterone alone:",
+    capacity:
+      "Androgen-effective capacity (AEC) is the tissue-facing state variable. AR and membrane ZIP9 are kept as separate receptor routes, followed by endpoint-specific post-receptor gains:",
+    evidence:
+      "The decomposition is anchored in established binding and receptor biology: free testosterone depends on SHBG/albumin binding; Sertoli-cell AR is necessary for spermatogenesis; and RF exposure has been reported to alter ZIP9-related Sertoli-cell signalling in vitro. A small randomized MRI crossover study in 24 men found no immediate or 11-day serum hormone change, so BERM does not assign a default EMF→SHBG, EMF→AR or EMF→ZIP9 coefficient.",
+    status:
+      "Derived model closure, not a measured human exposure coefficient. The discriminating test is to measure total T, SHBG, albumin, calculated or equilibrium-dialysis free T, AR/ZIP9 endpoints and semen/BTB outcomes in the same exposure protocol.",
+  },
+  fi: {
+    title: "Kolmas portti: androgeenien saatavuus ja käyttö",
+    lead:
+      "Seerumin kokonais-testosteroni ei sulje androgeenireittiä. BERM erottaa siksi tuotannon, sitoutumissaatavuuden, reseptorimiehityksen ja reseptorin jälkeisen vahvistuksen. Muutos voi alentaa kudostason androgeenikapasiteettia, vaikka kokonais-testosteroni muuttuisi vain vähän.",
+    binding:
+      "Kun albumiinia käsitellään heikkona ja SHBG:tä korkea-affiniteettisena sitoutumisvarastona, vapaa testosteroni T_f ratkaistaan massatasapainosta eikä päätellä vain kokonais-testosteronista:",
+    capacity:
+      "Androgeenivaikutuksen kapasiteetti (AEC) on kudokseen kohdistuva tilamuuttuja. AR ja kalvon ZIP9 pidetään erillisinä reseptorireitteinä, joita seuraavat päätepistekohtaiset reseptorin jälkeiset vahvistukset:",
+    evidence:
+      "Jaottelu nojaa vakiintuneeseen sitoutumis- ja reseptoribiologiaan: vapaa testosteroni riippuu SHBG-/albumiinisitoutumisesta, Sertolin solun AR on spermatogeneesille välttämätön ja RF-altistuksen on raportoitu muuttavan ZIP9:ään liittyvää Sertolin solun signalointia in vitro. Pienessä satunnaistetussa MRI-vaihtovuorotutkimuksessa 24 miehellä ei havaittu välitöntä eikä 11 päivän seerumihormonimuutosta, joten BERM ei aseta oletusarvoista EMF→SHBG-, EMF→AR- tai EMF→ZIP9-kerrointa.",
+    status:
+      "Johdettu mallisulkeuma, ei mitattu ihmisen altistuskerroin. Erotteleva testi mittaa samassa altistusprotokollassa kokonais-T:n, SHBG:n, albumiinin, lasketun tai tasapainodialyysillä mitatun vapaan T:n, AR/ZIP9-päätepisteet sekä siemenneste-/BTB-tulokset.",
+  },
+  ja: {
+    title: "第3のゲート：アンドロゲンの利用可能性と使用",
+    lead: "血清総テストステロンだけではアンドロゲン経路は閉じない。BERMは産生、結合による利用可能性、受容体占有、受容体後増幅を分離する。総テストステロンの変化が小さくても、組織レベルのアンドロゲン容量は低下し得る。",
+    binding: "アルブミンを低親和性、SHBGを高親和性の結合リザーバーとして、遊離テストステロン T_f は総テストステロンだけで推定せず質量収支から解く：",
+    capacity: "アンドロゲン有効容量（AEC）は組織側の状態変数であり、ARと膜ZIP9経路および受容体後ゲインを分離する：",
+    evidence: "この分解は結合・受容体生物学に基づくが、ヒト曝露係数は未校正である。24人の小規模無作為MRIクロスオーバー試験では即時または11日後の血清ホルモン変化は認められなかった。",
+    status: "導出されたモデル閉包であり、測定済みのヒト曝露係数ではない。総T、SHBG、アルブミン、遊離T、AR/ZIP9、精液・BTB評価を同一プロトコルで測定する必要がある。",
+  },
+  fr: {
+    title: "Troisième porte : disponibilité et utilisation des androgènes",
+    lead: "La testostérone totale sérique ne clôt pas la voie androgénique. BERM sépare la production, la disponibilité liée, l’occupation des récepteurs et le gain post-récepteur. La capacité androgénique tissulaire peut donc diminuer malgré une faible variation de la testostérone totale.",
+    binding: "En traitant l’albumine comme réservoir de faible affinité et la SHBG comme réservoir de forte affinité, la testostérone libre T_f est résolue par bilan de masse :",
+    capacity: "La capacité androgénique effective (AEC) est la variable tissulaire ; les voies AR et ZIP9 membranaire ainsi que les gains post-récepteurs restent séparés :",
+    evidence: "Cette décomposition repose sur la biologie de liaison et des récepteurs, mais les coefficients d’exposition humaine ne sont pas calibrés. Un petit essai croisé randomisé d’IRM chez 24 hommes n’a trouvé aucun changement hormonal sérique immédiat ou à 11 jours.",
+    status: "Fermeture de modèle dérivée, et non coefficient d’exposition humain mesuré. Un même protocole doit mesurer T totale, SHBG, albumine, T libre, AR/ZIP9 et les résultats spermatiques/BTB.",
+  },
+  ko: {
+    title: "세 번째 관문: 안드로겐 가용성과 사용",
+    lead: "혈청 총 테스토스테론만으로 안드로겐 경로가 닫히지 않는다. BERM은 생산, 결합 가용성, 수용체 점유, 수용체 후 이득을 분리한다. 총 테스토스테론 변화가 작아도 조직 수준 안드로겐 용량은 감소할 수 있다.",
+    binding: "알부민을 저친화성, SHBG를 고친화성 결합 저장고로 두고 유리 테스토스테론 T_f를 질량균형으로 푼다:",
+    capacity: "안드로겐 유효 용량(AEC)은 조직 측 상태변수이며 AR, 막 ZIP9, 수용체 후 이득을 분리한다:",
+    evidence: "이 분해는 결합 및 수용체 생물학에 근거하지만 인체 노출 계수는 보정되지 않았다. 24명 대상 소규모 무작위 MRI 교차시험에서는 즉시 또는 11일 후 혈청 호르몬 변화가 없었다.",
+    status: "도출된 모델 폐쇄이며 측정된 인체 노출 계수가 아니다. 동일 프로토콜에서 총 T, SHBG, 알부민, 유리 T, AR/ZIP9, 정액 및 BTB 결과를 측정해야 한다.",
+  },
+} as const;
+
 const LEVEL_BADGE: Record<string, string> = {
   E: "bg-green-500/10 text-green-600 dark:text-green-400",
   M: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
@@ -776,6 +832,7 @@ export default async function TestesPage({
 }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const androgen = pickCopy(ANDROGEN_COPY, locale);
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -882,6 +939,37 @@ export default async function TestesPage({
           </p>
           <p>{d.s3p2}</p>
         </div>
+      </section>
+
+      {/* 03b — Androgen availability and use */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h3 className="text-lg font-semibold mb-4">
+          <span className="font-mono-num text-xs text-accent mr-2">03b</span>
+          {androgen.title}
+        </h3>
+        <p className="editorial-rail mb-5 text-[0.95rem] leading-relaxed text-foreground max-w-4xl">
+          {androgen.lead}
+        </p>
+        <div className="grid gap-5 lg:grid-cols-2 mb-5">
+          <ClaimRef claimId="claim.androgen.binding-availability" className="rounded-lg border border-card-border bg-card p-5">
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">{androgen.binding}</p>
+            <MathBlock tex={String.raw`T_{tot}=T_f+\frac{A\,T_f}{K_A+T_f}+\frac{S\,T_f}{K_S+T_f}`} />
+          </ClaimRef>
+          <ClaimRef claimId="claim.androgen.receptor-use-capacity" className="rounded-lg border border-card-border bg-card p-5">
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">{androgen.capacity}</p>
+            <MathBlock tex={String.raw`\theta_r=\frac{T_f}{K_{d,r}+T_f},\qquad AEC=T_f\left(g_{AR}\theta_{AR}+g_{ZIP9}\theta_{ZIP9}\right)`} />
+          </ClaimRef>
+        </div>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-3">
+          {androgen.evidence}{" "}
+          <StudyCitation referenceId="narinx2022_free_testosterone" locale={locale} label="Narinx et al. 2022" />;{" "}
+          <StudyCitation referenceId="degendt2004_sertoli_ar" locale={locale} label="De Gendt et al. 2004" />;{" "}
+          <StudyCitation referenceId="yu2023_zip9_rf_sertoli" locale={locale} label="Yu et al. 2023" />;{" "}
+          <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale} label="Møllerløkken et al. 2012" />.
+        </p>
+        <p className="text-xs text-foreground-muted border-l-2 border-amber-500/60 pl-3 max-w-4xl">
+          {androgen.status}
+        </p>
       </section>
 
       {/* 04 — Evidence */}

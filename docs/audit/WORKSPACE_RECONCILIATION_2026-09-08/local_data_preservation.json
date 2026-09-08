@@ -1,0 +1,1707 @@
+[
+  {
+    "path": ".vercel/.env.development.local",
+    "bytes": 1287,
+    "sha256": "1c5a6c1131f6cd95be2cf5913a97f450a77d399ef1e7aaec1936dcf1f7274871"
+  },
+  {
+    "path": ".vercel/.env.production.local",
+    "bytes": 1792,
+    "sha256": "be3c00022a162e45c270d78d18f4f5afd918793b712fbb7f6bc569d98e5d4445"
+  },
+  {
+    "path": ".vercel/README.txt",
+    "bytes": 520,
+    "sha256": "f5d1ed0f5032ae128931f46459b5faa1af6319fc2dfb3e7a5fe54a84bf93dbd6"
+  },
+  {
+    "path": ".vercel/output/builds.json",
+    "bytes": 621,
+    "sha256": "983d384a73e0b629ea8e8c84a8f32be98657b3a3d8178c6445d24423f408ac71"
+  },
+  {
+    "path": ".vercel/output/config.json",
+    "bytes": 28305,
+    "sha256": "887004d41d15249ca64a14dbee3ca6a961ab733bdbdac3a3e1ce06938e85592d"
+  },
+  {
+    "path": ".vercel/output/diagnostics/build-diagnostics.json",
+    "bytes": 93,
+    "sha256": "e4932338188cf0fbd08fb45f8b04421b523d0b2d9b90f197b5ad2e24fec94306"
+  },
+  {
+    "path": ".vercel/output/diagnostics/cli_traces.json",
+    "bytes": 3584,
+    "sha256": "0821d056a625827f5fcf516b3c1cda5d99a05bf7dfe6019b79ddb6e0e35aec31"
+  },
+  {
+    "path": ".vercel/output/diagnostics/framework.json",
+    "bytes": 37,
+    "sha256": "7288466fae0f8ede896171848660162adbe0686cc68cacdd671d2ee577afce11"
+  },
+  {
+    "path": ".vercel/output/diagnostics/route-bundle-stats.json",
+    "bytes": 29349,
+    "sha256": "817e5223b271bb45c5f465c61d150c4dac7ca6bab7dd31445fdbe7497e8e6d09"
+  },
+  {
+    "path": ".vercel/output/diagnostics/trace",
+    "bytes": 22812,
+    "sha256": "c29819836591143163715275dba31f3d0009e9a23aa0761855184fd931cc50da"
+  },
+  {
+    "path": ".vercel/output/diagnostics/trace-build",
+    "bytes": 1520,
+    "sha256": "3d3f2bf6839389bea02617b42f5b358efa0cbf91eb302e141455b010bdd3c1e5"
+  },
+  {
+    "path": ".vercel/output/diagnostics/turbopack",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/about/history.func/.vc-config.json",
+    "bytes": 76081,
+    "sha256": "888bd931381f0c709be5a822237682d8214eacbcfd119ceb9ed13c67a9b70642"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/about/history.func/website/.next/routes-manifest.json",
+    "bytes": 9595,
+    "sha256": "03d24d48923b50d9271b95e77f8fcc1708634fb14a7938a174b521e2ad430aed"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/about/history.func/website/.next/server/app-paths-manifest.json",
+    "bytes": 3457,
+    "sha256": "de0bfa91a5948fe17c4a542be0f3bfca1a016500c77ba84c741693a642934f8b"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/about/history.func/website/.next/server/pages-manifest.json",
+    "bytes": 50,
+    "sha256": "f9df4e5ced207325e1086b0a3c27dd9b43ea8ef40be377cb6dbfe1baa80545f2"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/about/history.func/website/___next_launcher.cjs",
+    "bytes": 9261,
+    "sha256": "d78f667b5727bb728911df9bac8f533c8a10ddf95e60fba38a33979dac5e8728"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].func/.vc-config.json",
+    "bytes": 26874,
+    "sha256": "7b70a66fc9d403c687b9f0c78ba3d70ac97168782eb7702a0e6595613515b0c2"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].func/website/.next/routes-manifest.json",
+    "bytes": 1682,
+    "sha256": "95abd2cbde2d3b1f27604b80a27e102dde98548ad036509a679cc993e279a736"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].func/website/.next/server/app-paths-manifest.json",
+    "bytes": 309,
+    "sha256": "de279a82c0bbba8fb6eed54665397fa7bec276dcdfd9fbc097386a004576e7a8"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].func/website/.next/server/pages-manifest.json",
+    "bytes": 50,
+    "sha256": "f9df4e5ced207325e1086b0a3c27dd9b43ea8ef40be377cb6dbfe1baa80545f2"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].func/website/___next_launcher.cjs",
+    "bytes": 9261,
+    "sha256": "d78f667b5727bb728911df9bac8f533c8a10ddf95e60fba38a33979dac5e8728"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].prerender-config.json",
+    "bytes": 709,
+    "sha256": "96c466d2a0a5f4c190cdd59bdfc80ecee88a2aecd275193326dece918b5b3ccf"
+  },
+  {
+    "path": ".vercel/output/functions/[locale]/articles/[slug].rsc.prerender-config.json",
+    "bytes": 709,
+    "sha256": "96c466d2a0a5f4c190cdd59bdfc80ecee88a2aecd275193326dece918b5b3ccf"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.prerender-config.json",
+    "bytes": 977,
+    "sha256": "44ae85dd5210de9652bde43af53d685b12a96c532a38e782ff439af75bb63f28"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.prerender-fallback.html",
+    "bytes": 9203,
+    "sha256": "7c53c35b855fbffde0ef35e665524f71831d73467e9e7e7ed52c78f56d3676ea"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.rsc.prerender-config.json",
+    "bytes": 996,
+    "sha256": "f9c1d98df637ca5a54ebb94abfb6e383481115c5d957e6ac22e2f9cc8410c98e"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.rsc.prerender-fallback.rsc",
+    "bytes": 4945,
+    "sha256": "267ee9731f5d73d3f4c43f2c834d763eda2406dd6f3890241c53890e0e589662"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 827,
+    "sha256": "232900c740f1c945839c4dcf8758fc1875d88d347fa574215c263a821bd59235"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 4649,
+    "sha256": "58363119660ffe1f91498af7fe5e2a67bbc699654576609e5146a7bdc597b2c9"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 824,
+    "sha256": "e09dd4c001fa3ef99b5f4b7cf9fa5bb77e0700ad95ab1930b1b0593f4c9dc251"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 4945,
+    "sha256": "267ee9731f5d73d3f4c43f2c834d763eda2406dd6f3890241c53890e0e589662"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 824,
+    "sha256": "100f3729a3bc66c4c8bee87b78808ee5dfc7fd86a4a6e300d91ff0ff1f2ea5e4"
+  },
+  {
+    "path": ".vercel/output/functions/_global-error.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 195,
+    "sha256": "84a2daeabf2ffe8bb1cc3cb19522c52d2d7fa0ef89d6ca5fc952248ef6502a98"
+  },
+  {
+    "path": ".vercel/output/functions/_middleware.func/.vc-config.json",
+    "bytes": 14255,
+    "sha256": "dc64213d50088bc9d6f2ed9204d3a1b31bf0e1875831357aed9fd90661fe22a9"
+  },
+  {
+    "path": ".vercel/output/functions/_middleware.func/website/___next_launcher.cjs",
+    "bytes": 10925,
+    "sha256": "fc8684320bb3f18d83779445f4e2a875c6f2f446101af9a76a901aaa5ea70a4d"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.prerender-config.json",
+    "bytes": 965,
+    "sha256": "eea4eb5536a35b7a9084900dfe46b10fa2d0e2a364360a978c542b90bd9c0084"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.prerender-fallback.html",
+    "bytes": 9963,
+    "sha256": "311a4d5e166036c9935c71cf1c8b076e8bca427dfdc00759241401dd683eb02a"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.rsc.prerender-config.json",
+    "bytes": 984,
+    "sha256": "62a4b1110c8efcb8e7dedad918cc9d0732eaa9399f9399d2eb3695a1121c8445"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.rsc.prerender-fallback.rsc",
+    "bytes": 6043,
+    "sha256": "e87e6a14efb00c6b57e5c913f4c886fe509ccb1a09447d53511faaaf21b1d498"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 815,
+    "sha256": "197ef5419029b3e42d5ac1ea0cf5145e99f86c53d16ac3d294277bb28673bacd"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 6043,
+    "sha256": "e87e6a14efb00c6b57e5c913f4c886fe509ccb1a09447d53511faaaf21b1d498"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_not-found/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 818,
+    "sha256": "a30044ec437a0acbf8125b2ad36ac00f5f3582854595708d5b2ea8215b82d239"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_not-found/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 5306,
+    "sha256": "2b4539bce10f98715f018cc8d4426ca5eb7d4b864604631689cc5e5433a3a9fc"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 815,
+    "sha256": "89ab595f9ae43efd00463fdcbe2a2d238b65bebaf51848ef2781cc683e7495ee"
+  },
+  {
+    "path": ".vercel/output/functions/_not-found.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 327,
+    "sha256": "0bcea2f19cadf894220b37c0b4bee8e8313b904500c40b2a59ca97ca8c17e827"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.prerender-config.json",
+    "bytes": 1067,
+    "sha256": "91cab536b5ede302ccad039d11ceab85c0ff467b68ea5b4be906480befbaec12"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.prerender-fallback.html",
+    "bytes": 67563,
+    "sha256": "66b2b9add9cbe80c622131050bcb9466ada10d15d2a73460ad391ada996b700a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.rsc.prerender-config.json",
+    "bytes": 1065,
+    "sha256": "92c9db59992f15d400ea5c8e328669395bccb886525934d57bb37ace739d066f"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.rsc.prerender-fallback.rsc",
+    "bytes": 30817,
+    "sha256": "00da21ee2b2160cbfd3d23046a93940b8b7e9801d240633fc838dbd660679b7c"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 905,
+    "sha256": "0d153d2bc6255ca59b82496381f94dc8f47ebcc3be291453cd2b38975c1fc9d5"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 29271,
+    "sha256": "802438792b916893362880db8d554b21b002b82b98a655a5f45a45693ed34f6a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 902,
+    "sha256": "c1f748d1d8d39ae026a4af44fcc4f953e5c2d5dabcfb4d4be05267769af73faf"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 30817,
+    "sha256": "00da21ee2b2160cbfd3d23046a93940b8b7e9801d240633fc838dbd660679b7c"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 902,
+    "sha256": "5193763663ecd6bb166db6c03b2bf1bd458b7563297309180317598f0ac633b9"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/bees.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 764,
+    "sha256": "f4036471a97fb7da77276bbd816763ff2acce54b3ac95ea05adfc9dfe2d9c67f"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.prerender-config.json",
+    "bytes": 1087,
+    "sha256": "544b96ba3674ffc9591361e20c55df6e6615c19f0ea5876eadce7570127ab65b"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.prerender-fallback.html",
+    "bytes": 62091,
+    "sha256": "419c49884993cada89098ccc4fc33c0bffcb4c128747a12130ab9733661a0d5e"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.rsc.prerender-config.json",
+    "bytes": 1085,
+    "sha256": "cfd1c085efff44cd371317f550bdbbde0daa1d5023b54671290dd49dfaa89de7"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.rsc.prerender-fallback.rsc",
+    "bytes": 27903,
+    "sha256": "42cf19adcc1b57ef3649a5fefcecc14054b28e9a75bc0742372c47c57c8aad87"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 915,
+    "sha256": "a1ca22b82511bb382fa327859ea1dc5cd80969166493d91e4573530c81f98f0a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 26439,
+    "sha256": "6dd96dd6f59bb3352c1dedc3a0cbdd88dc7f02511dd35c76dab8070a13e67442"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 912,
+    "sha256": "68a5fb3192ebc202cdaf2b38ecf70c519852e226b80ca0967e9d9f15ac41b025"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 27903,
+    "sha256": "42cf19adcc1b57ef3649a5fefcecc14054b28e9a75bc0742372c47c57c8aad87"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 912,
+    "sha256": "321d14c7db7b350504c75e22c48dba2a700d6f515a42321058570adae09c90b3"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/implausibility.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 774,
+    "sha256": "f28e4b5e95a601f7bcc737ee7cc9d46da1be47c3e997486eaf6d2a4f9b08ebb0"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.prerender-config.json",
+    "bytes": 1075,
+    "sha256": "15157fb5cd5d4e66d8d70bc96ff12fa14ce11ca0758a9d9dab197d56b23cb43d"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.prerender-fallback.html",
+    "bytes": 61555,
+    "sha256": "bf2f85640a94202397677fca233e536bdc41a000f552c8000def10d4d609da77"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.rsc.prerender-config.json",
+    "bytes": 1073,
+    "sha256": "c1c6ab384bf575f4e0363c4cb4ab4cb8bea985b5af70b98a335820aeb341fc3a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.rsc.prerender-fallback.rsc",
+    "bytes": 27636,
+    "sha256": "5486de26a5206668fc9b02384639ea3df4c53ada5458f032f73e06e011809fa1"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 909,
+    "sha256": "8cbfa9b101cbd34dc249cf14eae06891089fc5f352e44bf7b8633e2417d6448a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 26164,
+    "sha256": "9b9b197cbf91ef05c177ad34c573d02b78585889aba640e51c33af2abdb72566"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 906,
+    "sha256": "5bf29fde495dd455a1d2fc34453a750957a8365bd96a111d1ae16b4f7ba6840a"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 27636,
+    "sha256": "5486de26a5206668fc9b02384639ea3df4c53ada5458f032f73e06e011809fa1"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 906,
+    "sha256": "66c5bdc8a37e17dba1f85fa50458e4dcee3e83c14a4aa03c79b0eed9cd81a3ac"
+  },
+  {
+    "path": ".vercel/output/functions/en/articles/spectrum.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 768,
+    "sha256": "7a58d9a87565788043e77979c45363e5fca86a2826dcff6ba98a840f9c69870d"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.prerender-config.json",
+    "bytes": 1067,
+    "sha256": "fa3843c0bb7ee46145a6cde1a7d22aa25d9a0f83d0452afe784f52332a14eb63"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.prerender-fallback.html",
+    "bytes": 70478,
+    "sha256": "87e4047cebbc28d4afdeceeaf4bc3213c49a4b035b2430bfb62042f80a24aca6"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.rsc.prerender-config.json",
+    "bytes": 1065,
+    "sha256": "625f1de1297d1b968200a7227172a0111eff629b9dfece99e46caefb7c5937da"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.rsc.prerender-fallback.rsc",
+    "bytes": 32283,
+    "sha256": "d207d8da3751ad4b31526a6ee2364107c36ff0566d21aef63dc2d21c8cc9f5b0"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 905,
+    "sha256": "db8313c271b1ac6cc760128424d2362c686b1c9cc0dce8cf08f9d7150532fc59"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 30737,
+    "sha256": "2bf3150c27d6fa375ff4014029fc4aedd98c8cb325561102a4b291b926745f70"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 902,
+    "sha256": "44a9efdf77d864ffeddb5fe5521728a2fc869e79574c9dae63b791e49a18178f"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 32283,
+    "sha256": "d207d8da3751ad4b31526a6ee2364107c36ff0566d21aef63dc2d21c8cc9f5b0"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 902,
+    "sha256": "30012f907c00a0928268944b65026203c39c1bc8c393bc07f870a92c08d50d3d"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/bees.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 764,
+    "sha256": "eb9189947fd59a23d16ac418757168a8fdd29b12ccdd543f361fab4bfdb76d59"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.prerender-config.json",
+    "bytes": 1087,
+    "sha256": "926f00205d5789de918f1ccec9832b69c9dd540a8686fe6589f9883718ce06f4"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.prerender-fallback.html",
+    "bytes": 61922,
+    "sha256": "440b32831ea412a18a51cf382df4d865c219c29e3e9d6f2ff5cb9b3adae53050"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.rsc.prerender-config.json",
+    "bytes": 1085,
+    "sha256": "34fa5fc7196a3cb85332154264218c6fafade5a71a91a1ea09ed490e65387909"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.rsc.prerender-fallback.rsc",
+    "bytes": 27996,
+    "sha256": "7393b3bf09e25782560a43113b29c4aedfee6216f032de7ba86f530b4256b01b"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 915,
+    "sha256": "c7f20e53e6e4e3f5e8a11c61ddd6a07bd82c0c3b6b28d0493f7a5c5f1c080091"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 26532,
+    "sha256": "5c151569b9648a74f9ed203eda33233e249007f0ae9dc527a28559b75fecfb90"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 912,
+    "sha256": "81ae6463021af08a1dac7fbef159f0d73161620b4d91e3ab975069b74bf8aed3"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 27996,
+    "sha256": "7393b3bf09e25782560a43113b29c4aedfee6216f032de7ba86f530b4256b01b"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 912,
+    "sha256": "0c3ca04865a2b12833839ebadea9a9e7513fb8a489500189a413b808e6207752"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/implausibility.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 774,
+    "sha256": "b9a9a2187646f88085a895b397e5a8e212caff133c7fad182596ecfdb26e95c9"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.prerender-config.json",
+    "bytes": 1075,
+    "sha256": "9fb5b497c7f43b010a4069b2f96c8e38a9f365f86098a3b6a0cfaf9e46076efe"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.prerender-fallback.html",
+    "bytes": 59532,
+    "sha256": "b82e728ff7c137c2ab8b4cc8782dd8ed5f03e209837e495e745fd184dbb1fdf5"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.rsc.prerender-config.json",
+    "bytes": 1073,
+    "sha256": "c49c206017aa0555314ba8a7921e3ec9af7942b40b226c96baa53da4b3b867ad"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.rsc.prerender-fallback.rsc",
+    "bytes": 26642,
+    "sha256": "96573d2ee657b8fccbeb8ede1b49d60c572c2669b920d1c0f36dcf891746436c"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-config.json",
+    "bytes": 909,
+    "sha256": "e08a1de240e53756ca2ead0683a76079f4b498c19afa87751ac47e4b2b6ee1d3"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/$d$locale/articles/$d$slug/__PAGE__.segment.rsc.prerender-fallback.rsc",
+    "bytes": 25170,
+    "sha256": "b040199aa3c9f950e2ef0050099051d37a0b76bbf402b5f114d0f74cc6359376"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/_full.segment.rsc.prerender-config.json",
+    "bytes": 906,
+    "sha256": "51cde9aa7a1907269d81615475019ae524e9d6d1eb0c86d329ebebbe5c060508"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/_full.segment.rsc.prerender-fallback.rsc",
+    "bytes": 26642,
+    "sha256": "96573d2ee657b8fccbeb8ede1b49d60c572c2669b920d1c0f36dcf891746436c"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/_tree.segment.rsc.prerender-config.json",
+    "bytes": 906,
+    "sha256": "d07b37beb87ea3e8416fe9e4b93aa001badc234e8c316d950052f9e88d415b3c"
+  },
+  {
+    "path": ".vercel/output/functions/fi/articles/spectrum.segments/_tree.segment.rsc.prerender-fallback.rsc",
+    "bytes": 768,
+    "sha256": "cb43865450bc270ee49ab57516c8a932a1a5a2691b2c31528a53b4a2a022589a"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.func/.vc-config.json",
+    "bytes": 25435,
+    "sha256": "8228df7e843f4dffd350aa886ec2a81541ff36030c847f4f4cc09ee721f4ddd8"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.func/website/.next/routes-manifest.json",
+    "bytes": 1567,
+    "sha256": "2eee0ece63db663d53aa874c8078b24c226fcd61ff30d356a980e60b8a92a079"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.func/website/.next/server/app-paths-manifest.json",
+    "bytes": 237,
+    "sha256": "1d95c9423240ba26101a6590a7c3df809883eb0853777f8cb9e065ad091eec56"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.func/website/.next/server/pages-manifest.json",
+    "bytes": 50,
+    "sha256": "f9df4e5ced207325e1086b0a3c27dd9b43ea8ef40be377cb6dbfe1baa80545f2"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.func/website/___next_launcher.cjs",
+    "bytes": 9261,
+    "sha256": "d78f667b5727bb728911df9bac8f533c8a10ddf95e60fba38a33979dac5e8728"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.prerender-config.json",
+    "bytes": 1004,
+    "sha256": "0df1af5afdfdba06c02c864ea59ba98b3fcb63a28f4ae3ca3bed935e5be844d8"
+  },
+  {
+    "path": ".vercel/output/functions/robots.txt.prerender-fallback.body",
+    "bytes": 73,
+    "sha256": "8c75c1882ae204620487ea68a617f357f862aa769fe78d57e03b5d1378f11174"
+  },
+  {
+    "path": ".vercel/output/functions/sitemap.xml.prerender-config.json",
+    "bytes": 1018,
+    "sha256": "8421423abbe508ab494cd5a7295c1627fdae4b4e536a6ee331b17d29f024a984"
+  },
+  {
+    "path": ".vercel/output/functions/sitemap.xml.prerender-fallback.body",
+    "bytes": 7832,
+    "sha256": "fa2152c9fa94ff8fedb6f35b29e1b3bf4d44d83109eff4816c76f202638cc7ee"
+  },
+  {
+    "path": ".vercel/output/static/404.html",
+    "bytes": 9963,
+    "sha256": "311a4d5e166036c9935c71cf1c8b076e8bca427dfdc00759241401dd683eb02a"
+  },
+  {
+    "path": ".vercel/output/static/404.rsc.json",
+    "bytes": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": ".vercel/output/static/404.segments/_tree.segment.rsc.json",
+    "bytes": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": ".vercel/output/static/500.html",
+    "bytes": 9203,
+    "sha256": "7c53c35b855fbffde0ef35e665524f71831d73467e9e7e7ed52c78f56d3676ea"
+  },
+  {
+    "path": ".vercel/output/static/500.rsc.json",
+    "bytes": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": ".vercel/output/static/500.segments/_tree.segment.rsc.json",
+    "bytes": 2,
+    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": ".vercel/output/static/_next/__private/trace",
+    "bytes": 23830,
+    "sha256": "ac8a926a77caaff029ab42631a0ae89fb1a96344a1bd7c83ec525291fbdaed61"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/070mste4n7_e4.js",
+    "bytes": 1150,
+    "sha256": "fdc5dbcc28caa5348e3ac4532ab887bdd6f56a1c9441fa790efa478faf557546"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0_6e6esngys6w.js",
+    "bytes": 5598,
+    "sha256": "ef60b88a79fed1074a8a4bd346b0622b6a8211ee3bb28909b01857341ec7fe59"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0a4cqp4kx5l0a.js",
+    "bytes": 11162,
+    "sha256": "c95b3ca6bc2bdea2f8925403824d94677891f0589dc985e608a2bfd1aec15ada"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0adpn97d6hkxk.js",
+    "bytes": 14790,
+    "sha256": "46d0462a181e7982bceb464a3c9ee3f3eea20a50a4197fb84111b774fd77d49e"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0cz1d0mv5g_q7.js",
+    "bytes": 112594,
+    "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0ejm7q97-p8bh.js",
+    "bytes": 92463,
+    "sha256": "8e33bb23b20d37f27e8dfc3f9c106c646f919f6f6b48cf6214e1a5ba061c23f1"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0fwnyl61r5xrm.js",
+    "bytes": 753,
+    "sha256": "5ce55992cda4decfa2007342894ed0c555809e045baf21ff534197b82530fcdc"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0j2rgm12jkl5_.js",
+    "bytes": 11281,
+    "sha256": "349013fd4bd24c9b84300509daad0df130744afe28f274626608c35a50691655"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0kjsqp132iicy.js",
+    "bytes": 25563,
+    "sha256": "b2f7dc87a5ab5551df0b5a36c2089af97fc1f7f5a73e4e8a7f32d42e124980ca"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0r-54k2np97rl.js",
+    "bytes": 3396,
+    "sha256": "410d616fe166dd71b142ffeb6587cadf47d425d547a26b0e9d9b4085097dc3ab"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/0t0ogy1xfn5dy.js",
+    "bytes": 220604,
+    "sha256": "b2f5a4c25768994f3e23988cc2a9d79052c975d7bae305ce30224a9052f268ce"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/10oa9bmcd-kwe.js",
+    "bytes": 14385,
+    "sha256": "670c6ca0057f742791a149c6c82493a9982ee27cd1db8f1baca9a94f3bd39fc7"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/14pi_x6zri_jz.js",
+    "bytes": 26939,
+    "sha256": "60232b2e549aa01069a7936d0379ab8cc087a419c465947556437042a3d2be40"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/14ur9agouky3u.js",
+    "bytes": 8870,
+    "sha256": "9d3b40b2ad62eb4b99926366f4cd9f21cb141796252ea591652c263710aaeae3"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1b_aurb-mgekt.js",
+    "bytes": 228916,
+    "sha256": "3b83c548a16329be129f0c70752d23db6253f4c45d4d582e55e67c9f50ce36ee"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1c7k2-2a31bts.js",
+    "bytes": 12544,
+    "sha256": "0dbb774217f6db56ce24a6c0344f590e4cde9a63883a490223e663c61c0c2268"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1dw7zfqp-eudk.js",
+    "bytes": 141539,
+    "sha256": "f863b305f0fc109a5b535db7b8dc3f7582abc43f427c0b68deae063d92b56822"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1gtdow8ilv4x7.js",
+    "bytes": 14025,
+    "sha256": "90fa609f3e627cad9bd1ec7119b9436c82dc9e04985325ddce01ae5355ab363a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1ik76c5zeurzx.js",
+    "bytes": 26694,
+    "sha256": "f48f01d0b95895d6ab783317b86fbeadf32236a03b352197532fc243d5849d92"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1ix59xuhq-q14.css",
+    "bytes": 15413,
+    "sha256": "b0cb7bd6fec5951c9c8f5808821438206604b1629a912c96009ac427f38e7d69"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1j_mkezxfz25h.js",
+    "bytes": 160800,
+    "sha256": "f305985c15212c990a66a63513b03be86bf05fea048f208a032100ba3551d1f8"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1juq22fp3_fp4.js",
+    "bytes": 1647,
+    "sha256": "df8f1d657f8e8070fcbe8174c3d668752851885a43673eb8097712009c84d3c2"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1xxxgpj8mtn0g.js",
+    "bytes": 35509,
+    "sha256": "b60354b77083ee4deb840b223ec7faf1049e02a55e09b550153e7165bb9b7a88"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/1yuv3ndd3ri9v.js",
+    "bytes": 51029,
+    "sha256": "65cb974aeb59292f9fb246e67d0ffc0af871c303ac92891ede2426b1ca6ad17a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2-ppnbe_z24u6.js",
+    "bytes": 262981,
+    "sha256": "f11fa43dd827ea6ca3c8402236c9c404de54885783076d65429904780f672aee"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/24i7di6xk8ehp.js",
+    "bytes": 7565,
+    "sha256": "e6fa676e30ac1258eaf0e5206c8e1af4419a84a07ee0a8045d853d2860e38b14"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/29qqjrv4j7nzj.js",
+    "bytes": 7114,
+    "sha256": "c2aec354489986eab7c450973a8aecc8517425f01e46a4855da468c280284956"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2hxc-gmx5ilvp.js",
+    "bytes": 27695,
+    "sha256": "8f4b7f35ae8dd9432079feaada91d0fbc7e7d60232002df5c472eaad08f469d2"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2ks-j2qxt643j.js",
+    "bytes": 948,
+    "sha256": "8db726e8444528570301105fcbe400c8d9bd73cb4e4bd62fd4a26e9985d28535"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2kv-y79zoh58b.js",
+    "bytes": 34027,
+    "sha256": "455d6d182660073c2b2222173ea2b09c7896351c3f45d053603d8e12eb4346cd"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2o23tuqhzqg-d.js",
+    "bytes": 81224,
+    "sha256": "4fa726a45f71316b53ab49130399a4e1b5bfb6bfe14cd1f19f162853ad060841"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2vari0-vrdneo.js",
+    "bytes": 4458,
+    "sha256": "9bc372e89cd97891d8a9dcec1ff2b685dd09bb2e0908d43aa96123213cdae19b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2yxexoduejmrk.css",
+    "bytes": 25283,
+    "sha256": "2ec739bae73f0f6ab98b01928b37a427ae1df8c3e0a37e4acffe7aeb82502d1b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/2z81j8_1bm62h.js",
+    "bytes": 23612,
+    "sha256": "5f18b5d575c3ed609c3ae77da30b1c0ce27964176dcc295b6fa499303d2919e9"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/30kwso1dvchcu.js",
+    "bytes": 1019,
+    "sha256": "60638cf0261e0e615f5924a049af860155e995061112a965f770658ec4008079"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/348psn3-ap7s-.js",
+    "bytes": 2579,
+    "sha256": "ee14ed24f6edaf70ba83264e6521b5b571bfb452ca304c5e2c931921f1b955ae"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/3d05kzpbee5_u.js",
+    "bytes": 28379,
+    "sha256": "75118754f5e82cef00cd845957e80b623436dfd821ccd94f00b4fb04a5a06072"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/3knnb9av8w4s6.js",
+    "bytes": 46315,
+    "sha256": "d97d55a60e5254ae70a5dd2f37d024fec7d522bc53fbfe316aeb072ad89e5a3c"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/3t6cgzyp-qa5i.css",
+    "bytes": 96472,
+    "sha256": "7355fe32f1607c7c872a437d8239f4eaa90b41e8091aecdd95b0c628fbd84d46"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/41lhtl4_jeomp.js",
+    "bytes": 50882,
+    "sha256": "b8e72a841092c465a44b16fe3579155bbe0347372926e8cc671210aff0c87c10"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/45bwz_f2lfpei.js",
+    "bytes": 27237,
+    "sha256": "64f5ce3c6750ce0cff41c898a933300829d3173da72698f9ffb619a66da7fc1f"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/chunks/turbopack-0b4cfn6zxviwq.js",
+    "bytes": 9652,
+    "sha256": "d5b68f2b37136c90c1a260754e43fd099a6dbc60c0703b341d72d1a0f16cb596"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/iVv85UJNMBx2NSUxloaaN/_buildManifest.js",
+    "bytes": 219,
+    "sha256": "9476e0afd3f9da68a64e6ec58631191fd3eaca62c9f5a377e7517fe9a89e59ea"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/iVv85UJNMBx2NSUxloaaN/_clientMiddlewareManifest.js",
+    "bytes": 325,
+    "sha256": "382f38777b3ae8615ae522d085312f10b14731f438eff473b1f4f3c1a809c5bb"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/iVv85UJNMBx2NSUxloaaN/_ssgManifest.js",
+    "bytes": 122,
+    "sha256": "d1812cf77cd8c0c24171e232b7cba63338edf868197d59e85a26094e244eb19a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/1bffadaabf893a1e-s.3-6t-g6q0vh0a.woff2",
+    "bytes": 85272,
+    "sha256": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/20aee433927f7d4b-s.3x137p1ifayze.woff2",
+    "bytes": 18108,
+    "sha256": "a8b6177cdab70eb3a8f5263ee6f7e1a6ef5037779e08ee91981953327da76f5d"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/256e1f7f180674ba-s.1x971o6gwfy6w.woff2",
+    "bytes": 36500,
+    "sha256": "6a62d50272a315544c8604118cef69e66bbe09be6de1c9c7766371433e6907e0"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/292081311a6a8abc-s.1t-2a-g4m3ypx.woff2",
+    "bytes": 42056,
+    "sha256": "1ed39fb3055e4573ff8cdfb790a13b6a085fd288e3f81915907e3679b3c9391b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/2bbe8d2671613f1f-s.0k62hbripvv8p.woff2",
+    "bytes": 10280,
+    "sha256": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/2c55a0e60120577a-s.0-dom-5bn10r2.woff2",
+    "bytes": 25844,
+    "sha256": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/5476f68d60460930-s.2uwcyprjm3xu3.woff2",
+    "bytes": 19044,
+    "sha256": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/68d403cf9f2c68c5-s.p.20at88_q9f_kt.woff2",
+    "bytes": 50924,
+    "sha256": "286e05e5e444f44e50724df445808458dea58507e9805bba012b3b12d08ca122"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/753b6407f468151f-s.1veyi_qwtij86.woff2",
+    "bytes": 13440,
+    "sha256": "e7e85bbd5b5736a08db0f4e5fb9d54e3396da82bf43c57b5496c71444ebe7269"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+    "bytes": 48432,
+    "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/9c72aa0f40e4eef8-s.1y4-pdgsjb-pw.woff2",
+    "bytes": 18744,
+    "sha256": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_AMS-Regular.10y3kupq4t663.woff",
+    "bytes": 33516,
+    "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_AMS-Regular.25ieegmnh38ts.woff2",
+    "bytes": 28076,
+    "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_AMS-Regular.418dr7cz3fo2x.ttf",
+    "bytes": 63632,
+    "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Bold.06b-ya9t43ioz.woff2",
+    "bytes": 6912,
+    "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Bold.2vmk2hva4ctha.woff",
+    "bytes": 7716,
+    "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Bold.40ltxhe834pns.ttf",
+    "bytes": 12368,
+    "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Regular.07-7u27-nhn_r.ttf",
+    "bytes": 12344,
+    "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Regular.2eph4dlhid_m9.woff2",
+    "bytes": 6908,
+    "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Caligraphic-Regular.3gxeetazf831f.woff",
+    "bytes": 7656,
+    "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Bold.19yqa_tc9d_gx.ttf",
+    "bytes": 19584,
+    "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Bold.1alcy76__wdj2.woff",
+    "bytes": 13296,
+    "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Bold.2sasz-d-jtw8y.woff2",
+    "bytes": 11348,
+    "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Regular.110oo81prr9n5.woff",
+    "bytes": 13208,
+    "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Regular.2d10y4xmjvzlf.woff2",
+    "bytes": 11316,
+    "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Fraktur-Regular.2qhy34r6a05dn.ttf",
+    "bytes": 19572,
+    "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Bold.0us_n0tnxlxu7.ttf",
+    "bytes": 51336,
+    "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Bold.0v1esh257kqpe.woff",
+    "bytes": 29912,
+    "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Bold.3-rowy8o6_4ky.woff2",
+    "bytes": 25324,
+    "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-BoldItalic.13355ck5zr48q.woff",
+    "bytes": 19412,
+    "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-BoldItalic.14r2naom8mrec.woff2",
+    "bytes": 16780,
+    "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-BoldItalic.3x_u9cepaced0.ttf",
+    "bytes": 32968,
+    "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Italic.0afv392dj4w59.woff",
+    "bytes": 19676,
+    "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Italic.0lig0v9j0700p.woff2",
+    "bytes": 16988,
+    "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Italic.2hkw3230mfwcv.ttf",
+    "bytes": 33580,
+    "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Regular.0symfa7dqj6jd.ttf",
+    "bytes": 53580,
+    "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Regular.15u8r3b2y7fv4.woff",
+    "bytes": 30772,
+    "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Main-Regular.1ryvsdzh2w1_e.woff2",
+    "bytes": 26272,
+    "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-BoldItalic.0y5w36a5aq__2.ttf",
+    "bytes": 31196,
+    "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-BoldItalic.12pl58orkw9rg.woff",
+    "bytes": 18668,
+    "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-BoldItalic.1oopuu636h4il.woff2",
+    "bytes": 16400,
+    "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-Italic.0w0b1ugh62cfr.woff",
+    "bytes": 18748,
+    "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-Italic.2vkekfblmz5nb.ttf",
+    "bytes": 31308,
+    "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Math-Italic.32405s1aq8vas.woff2",
+    "bytes": 16440,
+    "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Bold.0h3wi2z_eouyg.woff2",
+    "bytes": 12216,
+    "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Bold.1ovw5p-yjp56g.woff",
+    "bytes": 14408,
+    "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Bold.2d03q85pwxpti.ttf",
+    "bytes": 24504,
+    "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Italic.0wkjc4dm2kcit.woff2",
+    "bytes": 12028,
+    "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Italic.1qavw__2zz8gk.woff",
+    "bytes": 14112,
+    "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Italic.3i-q087b23-m8.ttf",
+    "bytes": 22364,
+    "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Regular.1i4afx8nk8n4r.woff",
+    "bytes": 12316,
+    "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Regular.2peiewu59z3d-.woff2",
+    "bytes": 10344,
+    "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_SansSerif-Regular.31pbu25feko_c.ttf",
+    "bytes": 19436,
+    "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Script-Regular.11h14300o9pd0.woff2",
+    "bytes": 9644,
+    "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Script-Regular.28p_x7iz71ofe.ttf",
+    "bytes": 16648,
+    "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Script-Regular.3110jb9c-bxna.woff",
+    "bytes": 10588,
+    "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size1-Regular.03lhvx36ekcou.woff2",
+    "bytes": 5468,
+    "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size1-Regular.1slf4bh0hc6vm.woff",
+    "bytes": 6496,
+    "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size1-Regular.1y57-ck23ey8c.ttf",
+    "bytes": 12228,
+    "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size2-Regular.0-kwyvx03omo8.woff",
+    "bytes": 6188,
+    "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size2-Regular.14s5gg-puz6h-.woff2",
+    "bytes": 5208,
+    "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size2-Regular.2u0s-b07k2o9m.ttf",
+    "bytes": 11508,
+    "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size3-Regular.04o9a_02gu_e8.woff",
+    "bytes": 4420,
+    "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size3-Regular.1n1rgzz84z8r9.woff2",
+    "bytes": 3624,
+    "sha256": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size3-Regular.1pkn-dge4q0fv.ttf",
+    "bytes": 7588,
+    "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size4-Regular.2sgotkdv3dcyv.woff2",
+    "bytes": 4928,
+    "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size4-Regular.2uelkfk2yna5e.ttf",
+    "bytes": 10364,
+    "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Size4-Regular.3p2r1l7xmebxv.woff",
+    "bytes": 5980,
+    "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Typewriter-Regular.11gr2d2wuwz77.woff2",
+    "bytes": 13568,
+    "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Typewriter-Regular.12f8myjij3617.woff",
+    "bytes": 16028,
+    "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/KaTeX_Typewriter-Regular.3nee9kjfy6nm8.ttf",
+    "bytes": 27556,
+    "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/ad66f9afd8947f86-s.3lvt2whj97whp.woff2",
+    "bytes": 11272,
+    "sha256": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/be3bf58b83159894-s.1ri8jgkzoo1l-.woff2",
+    "bytes": 20084,
+    "sha256": "e54d56073d0ce917a445bc344cf272e1e6937be0ad416f5c0a24841511f74730"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/media/favicon.2vob68tjqpejf.ico",
+    "bytes": 25931,
+    "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+  },
+  {
+    "path": ".vercel/output/static/_next/static/not-found.txt",
+    "bytes": 9,
+    "sha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  },
+  {
+    "path": ".vercel/output/static/data/csli_results.json",
+    "bytes": 930,
+    "sha256": "b12aba34973642ddff2111bd1302b49d613092827b46312c5e9a2d59d846e098"
+  },
+  {
+    "path": ".vercel/output/static/data/explorer.json",
+    "bytes": 1315232,
+    "sha256": "2599f662aae726acce894c6e7943eae984df8acd87e2d511ae77af1d7235aa67"
+  },
+  {
+    "path": ".vercel/output/static/data/falsification_v19_1.json",
+    "bytes": 9279,
+    "sha256": "3e4aee3ada427fbdb78af30e996fd7edbbff9ebad94d7555b446807e5203b236"
+  },
+  {
+    "path": ".vercel/output/static/data/geojson/ne_110m_countries.json",
+    "bytes": 838726,
+    "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+  },
+  {
+    "path": ".vercel/output/static/data/global_panel.csv",
+    "bytes": 3457189,
+    "sha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8"
+  },
+  {
+    "path": ".vercel/output/static/data/global_panel_summary.json",
+    "bytes": 3579,
+    "sha256": "f0528f5d3c9173752f23fdc0207c8716792ea4561656553fd66c7896271fe35f"
+  },
+  {
+    "path": ".vercel/output/static/data/housing.json",
+    "bytes": 2941,
+    "sha256": "71cc98a59a509a40a3a1d0066024397225251da1f5bed6d5bfd279df292f7dcc"
+  },
+  {
+    "path": ".vercel/output/static/data/map_data.json",
+    "bytes": 376547,
+    "sha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4"
+  },
+  {
+    "path": ".vercel/output/static/data/references_full.json",
+    "bytes": 484193,
+    "sha256": "d0944618e67cdd22e470e344491225b0f01a8d930f52ee7a4d88dbf5d18c1d55"
+  },
+  {
+    "path": ".vercel/output/static/data/rolling_backtest.json",
+    "bytes": 6982587,
+    "sha256": "06b3210ef554b6efb6fa9ab02a53866c701feef9151d6ece6209829c22be2303"
+  },
+  {
+    "path": ".vercel/output/static/data/sentinel_readiness.json",
+    "bytes": 5808,
+    "sha256": "1a733bc9b83015723b2db7df7dddc895fde42058048386a042f4905613d783bd"
+  },
+  {
+    "path": ".vercel/output/static/favicon.ico",
+    "bytes": 2710,
+    "sha256": "0633c588c415a07b54f82365415d5085f4f12f374be4eaf26a04e092e35357ad"
+  },
+  {
+    "path": ".vercel/output/static/images/articles/bee-hero.webp",
+    "bytes": 106534,
+    "sha256": "5f4ef164ba8e533034e2077b0a16dc7f31575491527aa03c67e2d5fc2846f0fb"
+  },
+  {
+    "path": ".vercel/output/static/images/articles/bee-og.webp",
+    "bytes": 73150,
+    "sha256": "e6e94f87a3f3eced7dfcfc4f60663ffa2a87e592476b9d7f034686f6bd05861f"
+  },
+  {
+    "path": ".vercel/output/static/images/articles/bee-thumb.webp",
+    "bytes": 26280,
+    "sha256": "196e10144efbaf05a3d9478ee10a7a8ea7d7e98a1430840230dfcf1ab63fbe65"
+  },
+  {
+    "path": ".vercel/output/static/images/eco-tick-fieldstate-hero.png",
+    "bytes": 1788862,
+    "sha256": "b548c7b7f2a37c0c32015beb6f44710f41c9b9458a2f3d2c3aafadb77275e4a5"
+  },
+  {
+    "path": ".vercel/output/static/images/otto-juote.png",
+    "bytes": 1967491,
+    "sha256": "7c510f49fb96f9fd151c7bdba0c8acbbe80b86c9974e4fda860178b9548113fc"
+  },
+  {
+    "path": ".vercel/project.json",
+    "bytes": 410,
+    "sha256": "f54ba3313cad8d0250259f7acf28f7550d779e1280d94783a8b207107ade1e26"
+  },
+  {
+    "path": "berm/data/__pycache__/parse_all.cpython-313.pyc",
+    "bytes": 15584,
+    "sha256": "2f659fd29b729c53a7b5cf313a80e44ee758e957cedc416594e3b3ce97eb6509"
+  },
+  {
+    "path": "berm/data/global/all_countries_panel.json",
+    "bytes": 76249708,
+    "sha256": "4a68f9eaac06f0ec2d9d70814cb41c67f37e1f69d86100bdc985f1618caffa4c"
+  },
+  {
+    "path": "berm/data/processed/anfr_autonomous_probes_site_time.csv",
+    "bytes": 868229903,
+    "sha256": "59cc17bf1ba8caf5572797859f3384885f58d5ab1a4bf2ab01a2a695c8edbc90"
+  },
+  {
+    "path": "berm/data/processed/anfr_autonomous_probes_summary.json",
+    "bytes": 1608,
+    "sha256": "f4e4de293e2b47be44e62ce231b3f1aa32ae9fe2bcb2331e1af71544ac9c6a73"
+  },
+  {
+    "path": "berm/data/processed/broadband_by_country_year.csv",
+    "bytes": 135432,
+    "sha256": "4e994aa6ff60edee9edbea749bbcc279f7df96df264f9c8244e99b4d4b604733"
+  },
+  {
+    "path": "berm/data/processed/fangr_uk_breed_population_annual.csv",
+    "bytes": 21396766,
+    "sha256": "ce6c27a52071afe3a67baeecc043caa97ea4dcbf341b5a729d75caf66fa025c8"
+  },
+  {
+    "path": "berm/data/processed/fangr_uk_breed_population_annual_summary.json",
+    "bytes": 1627,
+    "sha256": "29f387495844cf7aeecc2d73cd365fe76de064ec7cb0566b2a075ddadbd76166"
+  },
+  {
+    "path": "berm/data/processed/fertility_asfr_region_age_year.csv",
+    "bytes": 53613036,
+    "sha256": "698a0b8905be3a116bc922abc3e2e9c6175fe68d477a2e0bac98863bfed9d55b"
+  },
+  {
+    "path": "berm/data/processed/fertility_tfr_region_year.csv",
+    "bytes": 7227518,
+    "sha256": "52d50eb55fddd23ce57e8cf004414ef2b3a4667e3df12d7a7d84aa5e29d6e291"
+  },
+  {
+    "path": "berm/data/processed/ifce_sire_equid_breeding_panel.csv",
+    "bytes": 176959957,
+    "sha256": "dea973beebd32faf7beee6781f7f1fdfe9d36cd28e01176c1db2fe2b2c3d7ef8"
+  },
+  {
+    "path": "berm/data/processed/ifce_sire_equid_breeding_panel_summary.json",
+    "bytes": 4640,
+    "sha256": "aa3e6d1182cd68bd502d55466a8e63cb66e654fcef9e4582bbb64e43fb626fd1"
+  },
+  {
+    "path": "berm/data/processed/internet_by_country_year.csv",
+    "bytes": 129150,
+    "sha256": "aabb306c6298cd8d76213c82473680049075a92f20ddf0c5ae62c250daae5289"
+  },
+  {
+    "path": "berm/data/processed/led_market_share.json",
+    "bytes": 2871,
+    "sha256": "96a7bff9e63773c9a98e47f89146f97932c022e4999a9769e55a03e1b9d0cdae"
+  },
+  {
+    "path": "berm/data/processed/mobile_by_country_year.csv",
+    "bytes": 263093,
+    "sha256": "c2f0bdb8d0983a6a2674f092bd72db52eef45624728141d400f1321bc7152a9c"
+  },
+  {
+    "path": "berm/data/processed/mustb_apiary_site_context.csv",
+    "bytes": 2989,
+    "sha256": "4a06d4ba4ace84f2d97d5f0e30453fb526c53aafed60245d9a32696bdaa39103"
+  },
+  {
+    "path": "berm/data/processed/mustb_botanical_survey_polygon_context.csv",
+    "bytes": 209359,
+    "sha256": "fdbb292670c007230e1e514e2fa894f6c9a74cb12cb1cdcf76b355da2a31147d"
+  },
+  {
+    "path": "berm/data/processed/mustb_spatial_context_availability.json",
+    "bytes": 3917,
+    "sha256": "ebaed7f2d9bdbe6fea354fcaa9af44bc076840767c65a0118b91661403878c87"
+  },
+  {
+    "path": "berm/data/processed/sentinel_readiness.json",
+    "bytes": 5808,
+    "sha256": "1a733bc9b83015723b2db7df7dddc895fde42058048386a042f4905613d783bd"
+  },
+  {
+    "path": "berm/data/processed/sentinel_species_region_year.csv",
+    "bytes": 708266,
+    "sha256": "f1df7b6366bad1ba8e04d3823c51eed2a7e9eb89a0e83f16d21833f21fd3fbc8"
+  },
+  {
+    "path": "berm/data/processed/sentinel_species_region_year_summary.json",
+    "bytes": 4218,
+    "sha256": "4010fa7d7b33add9e182ef8162341b9a284dafeb2e03e162244671708743c26e"
+  },
+  {
+    "path": "berm/data/processed/testosterone_secular/usa_t_timeseries.csv",
+    "bytes": 1109,
+    "sha256": "24103f9401a98e31f8c2cfd664b2258d704fb55f21a9ab6009329f359a032134"
+  },
+  {
+    "path": "berm/data/processed/testosterone_tfr/joined_country_data.csv",
+    "bytes": 19133,
+    "sha256": "953e02d0e411a030bd657e3833dfc7a2451cadff1498bb4b094ed9e5aab55235"
+  },
+  {
+    "path": "berm/data/processed/testosterone_tfr/model_coefficients.csv",
+    "bytes": 7144,
+    "sha256": "f5c000f704b3c1ea40d1ce9fac3b955561aaf0d89b0b04bbc9a8c03bc927e8f5"
+  },
+  {
+    "path": "berm/data/processed/tfr_by_country_year.csv",
+    "bytes": 279382,
+    "sha256": "fee93f7e02bf92f0d1ec388a01bb9c9ff37585154bab89b13ada5ee82ad6c5ed"
+  },
+  {
+    "path": "berm/data/processed/urban_by_country_year.csv",
+    "bytes": 437241,
+    "sha256": "2d18c57343c8843622a59bc7b9e11890e3284c8fc386d58db7c1b2ecd5acf1a0"
+  },
+  {
+    "path": "berm/data/processed/veterinary_sentinel_species_site_time.csv",
+    "bytes": 2221202,
+    "sha256": "ec935ac0a4c1a75e2c13ff405078a30e16d25ac35e84e41de830535ae47e696e"
+  },
+  {
+    "path": "berm/data/processed/veterinary_sentinel_species_site_time_summary.json",
+    "bytes": 2841,
+    "sha256": "036c0aaa898a6f9a03ec7b51dce04ab307b4a9d6bb514014197cd68b6864fb4a"
+  },
+  {
+    "path": "berm/data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+    "bytes": 16557272,
+    "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc"
+  },
+  {
+    "path": "berm/data/raw/WPP2024_Fertility_by_Age5.csv.gz",
+    "bytes": 82864610,
+    "sha256": "c0d3b5b7e992902df3be1980cfa86c440c1cd673ecec9d4826142a03aece04ec"
+  },
+  {
+    "path": "berm/data/raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv",
+    "bytes": 1894718,
+    "sha256": "08a3e6aac3e7a86d9abc25fd7cd810d3be64f53c0820c78f7173b9e3968fda1e"
+  },
+  {
+    "path": "berm/data/raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv",
+    "bytes": 1244722,
+    "sha256": "a651734efd4aba317e761c852faa065383da2566b7219bb4f19b6a0fea658f2b"
+  },
+  {
+    "path": "berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv",
+    "bytes": 1786419,
+    "sha256": "1aadfd6f416df96c156d35df33d5e727ed8722c200155beec36d89a828fbcb4e"
+  },
+  {
+    "path": "berm/data/raw/equine/ifce_sire_2026-08-19/naissances.csv",
+    "bytes": 1878614,
+    "sha256": "7973df461f7c41ef96cec60c87a456b2ec2eff70095824d5e918c4a34aa7c1a3"
+  },
+  {
+    "path": "berm/data/raw/pollinator_hub/mustb_2026-08-19/must-b.zip",
+    "bytes": 2676001,
+    "sha256": "e1af5754bea1e5dcbc0d93f7b5a5ce73a62c6cf3276e70d0444419aecbda364f"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json",
+    "bytes": 5326,
+    "sha256": "26dbf20ffbe0ca1443e4eff819876b7f0350ff9d3e2b2fb418c55e03aa77af2d"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0000000.json",
+    "bytes": 10910263,
+    "sha256": "2aa70112e634bc5df8fcaa2392e94f09b11a1c32f6602a8d0f9213594f0bbb8f"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0100000.json",
+    "bytes": 11257954,
+    "sha256": "c20f567e430d34d07a9cc38fb1748a4e733175e129ef523f92a5098d4cd361ba"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0200000.json",
+    "bytes": 11486767,
+    "sha256": "30b83561275ecb737ed210b121a3a3551bb67565fc2cbd126831a4567bb765d0"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0300000.json",
+    "bytes": 11248043,
+    "sha256": "55306050ed1fe36acc24f475ba07038e5d1c8f0a3e246460c56182e2c02b82b0"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json",
+    "bytes": 11164135,
+    "sha256": "4b1899c4dd2665c25e92d4a82683e1b368a262d2bc806c3be8a25f3c18041425"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0500000.json",
+    "bytes": 11149420,
+    "sha256": "30337ec6a055b56b5d980714045b8e4594eb3bafe0265d991a3c0f1d936c4371"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0600000.json",
+    "bytes": 11162257,
+    "sha256": "6931e17fe123a05df51ad0c03facfbca7fb630ddfeeec1a5522f1da5430be631"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0700000.json",
+    "bytes": 11163237,
+    "sha256": "218604ae2ea400fac31cb5416467c6ebb605c2f6f568708420487daa70667a40"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0800000.json",
+    "bytes": 11187642,
+    "sha256": "ef2131813c85081dd7616845e8cf666d4bae0c6fe6d3124270428f428a97e099"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0900000.json",
+    "bytes": 11173665,
+    "sha256": "e76fe0e3a99eb387d1fcdb122f5253401acbf56a569c9fe33d8a888b6df9a75a"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1000000.json",
+    "bytes": 11364413,
+    "sha256": "70c23d4570963bcbe11f1dd6a049a266550c15b11d27be115bc6b659ca7d6cd6"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1100000.json",
+    "bytes": 11400455,
+    "sha256": "b3893f1583c82f9513c81ad3ccc209280afec763e7cfdef66c4dd72416a401b9"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1200000.json",
+    "bytes": 11395834,
+    "sha256": "d5919d9b2ceb2e2b98a14de1eed84506e46a828243343137e753a7fa240751d0"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1300000.json",
+    "bytes": 11448810,
+    "sha256": "d776ecd92a48e30c08723d8d61a6df180653d3617f63edf0793fbaf088665a4a"
+  },
+  {
+    "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1400000.json",
+    "bytes": 8466133,
+    "sha256": "ee67d12a1fbceff846bcca6f448f06245d0f78b968e7638b69ab3ba95197c822"
+  },
+  {
+    "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+    "bytes": 175313,
+    "sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc"
+  },
+  {
+    "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json",
+    "bytes": 1836,
+    "sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb"
+  },
+  {
+    "path": "berm/data/raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+    "bytes": 6954,
+    "sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195"
+  },
+  {
+    "path": "berm/data/raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+    "bytes": 411740,
+    "sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1"
+  },
+  {
+    "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv",
+    "bytes": 16023,
+    "sha256": "2fab5d6a49e15aba781598f80a4b39817683fa1b6f369336d935777d7a70b348"
+  },
+  {
+    "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv",
+    "bytes": 5045129,
+    "sha256": "68c3bd13659f521b9e02c1f26639826d21a5e3c93d564aaf910095261660fd38"
+  },
+  {
+    "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt",
+    "bytes": 6434,
+    "sha256": "40fe649f23590f982388d9e53f52a436329fce3f12358384e84ba13fbd2d9f50"
+  },
+  {
+    "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv",
+    "bytes": 124604,
+    "sha256": "610e2c1ab8c33c4c00354208fb83ac1034d1f493aec7ece9366d81c4c63a6c7d"
+  },
+  {
+    "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv",
+    "bytes": 142932,
+    "sha256": "399bb1435723c214a6053f1ff498525f419f091727111517ba01fdc67a0f221a"
+  },
+  {
+    "path": "berm/data/raw/wb_broadband.json",
+    "bytes": 4075720,
+    "sha256": "dabc23dbbc04657536cfc250629dfb06ac638189e13020409febb15d50e7504d"
+  },
+  {
+    "path": "berm/data/raw/wb_internet.json",
+    "bytes": 4081411,
+    "sha256": "f7b4a426f3d0454a36f65104fdebb703bdaa3a60ce552a4107e7148d3a1cdb87"
+  },
+  {
+    "path": "berm/data/raw/wb_mobile.json",
+    "bytes": 4088470,
+    "sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c"
+  },
+  {
+    "path": "berm/data/raw/wb_tfr.json",
+    "bytes": 3955489,
+    "sha256": "157c57ed365004282819b2022a4bc04bd4442558459b322335cfef4b73f62384"
+  },
+  {
+    "path": "berm/data/raw/wb_urban.json",
+    "bytes": 4160580,
+    "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/broadband_per_100.json",
+    "bytes": 4075988,
+    "sha256": "5917b10d80a8cc09eaca2e9ce11a72adcecbe27996687e0a859f86571f85c161"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/contraception_pct.json",
+    "bytes": 4402834,
+    "sha256": "e53baed865fcc552de4b5ca3eae8bde07efc685762f656eb432a9de208b2ec08"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/country_metadata.json",
+    "bytes": 113750,
+    "sha256": "29460bd5b53d1ff450fd6a9b65aaaacf9302cffbc849040156d231b8e27bdac5"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/gdp_ppp_per_capita.json",
+    "bytes": 4152820,
+    "sha256": "5ecbcbb7c3936574f7e0af3d2462af9384a1a0297f49ef64c25497c9c2d3d7ec"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/internet_pct.json",
+    "bytes": 4081677,
+    "sha256": "cb3bf2eb941f78a3fa619e45740c05301f1ee0b14ce229876aa459f55d8068d5"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/mobile_per_100.json",
+    "bytes": 4088728,
+    "sha256": "429a6497eefbc5ec016d7a86740fa8e57fc49f4ede9db65bacb97962e61d6c1b"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/population.json",
+    "bytes": 3512611,
+    "sha256": "736d07297ee93e097232613fa2a5165efaef554c0a0af9ba13ad8de5495d827f"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/tfr.json",
+    "bytes": 3955749,
+    "sha256": "8e31f75e4da67a59fbe61aee4191bb3650eb6cc9ee82484e97b5b40153032b38"
+  },
+  {
+    "path": "berm/data/raw/world_bank/wb_global_2026-08-19/urban_pct.json",
+    "bytes": 4160855,
+    "sha256": "de76819c3eadecfc2a1abd18d4f38d5d27d2f92d33863a594907981f2a7defe7"
+  },
+  {
+    "path": "data/.DS_Store",
+    "bytes": 6148,
+    "sha256": "2c180053e36c92a69b26fda9fd7a949b5400d8411884d420c0dc2a3c4c47b1bc"
+  },
+  {
+    "path": "website/.vercel/.env.development.local",
+    "bytes": 1287,
+    "sha256": "fd479f860b49aca1121844baf34d3eeb882e2499a89d28f59269da0a0948abfd"
+  },
+  {
+    "path": "website/.vercel/README.txt",
+    "bytes": 520,
+    "sha256": "f5d1ed0f5032ae128931f46459b5faa1af6319fc2dfb3e7a5fe54a84bf93dbd6"
+  },
+  {
+    "path": "website/.vercel/output/builds.json",
+    "bytes": 1509,
+    "sha256": "5f5951d6167573b0401245ff8e8c980c4b24c22f781d8d9f7f4d5a63593834bf"
+  },
+  {
+    "path": "website/.vercel/output/config.json",
+    "bytes": 19,
+    "sha256": "106c597cc2ca58f81c25dc28953112df373dae0bc0c5bb168377c67b62e8e1c6"
+  },
+  {
+    "path": "website/.vercel/output/diagnostics/cli_traces.json",
+    "bytes": 2632,
+    "sha256": "5c0cd16113338e78ff9d2812ebc366aae3862d0d55fee799519b700300067160"
+  },
+  {
+    "path": "website/.vercel/project.json",
+    "bytes": 410,
+    "sha256": "f54ba3313cad8d0250259f7acf28f7550d779e1280d94783a8b207107ade1e26"
+  },
+  {
+    "path": "website/.vercel/project.json.bak",
+    "bytes": 112,
+    "sha256": "6fa7543bfae4325a759278277b584a6c98e5883b829cf0f53875e8328324326a"
+  }
+]

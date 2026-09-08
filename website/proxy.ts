@@ -6,7 +6,7 @@ const defaultLocale = "en";
 const REDIRECTS: Record<string, string> = {
   "/explorer": "/explore",
   "/data": "/explore",
-  "/mathematics": "/model",
+  "/mathematics": "/model/math",
   "/objections": "/about/objections",
 };
 

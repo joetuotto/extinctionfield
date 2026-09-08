@@ -4,10 +4,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ReactFlow, ReactFlowProvider, Background, Controls, MiniMap, useReactFlow, MarkerType, type Node, type Edge, type NodeTypes } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { List, Map, Search, Route, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
-import { NODES, EDGES, ALL_STAGES, SUBATLASES, STEPPER_PATHS, LEVEL_TO_STAGE, EVIDENCE_COLORS, EVIDENCE_LABELS, RELATION_LABELS, computeLayout, computeBands, nodesForAtlas, filterAtlasNodes, t, type AtlasId, type CausalMapNode, type Locale, type Stage, type EpistemicLevel } from "@/lib/causalAtlasData";
+import { NODES, EDGES, ALL_STAGES, SUBATLASES, STEPPER_PATHS, LEVEL_TO_STAGE, EVIDENCE_COLORS, EVIDENCE_LABELS, RELATION_LABELS, computeLayout, computeBands, nodesForAtlas, nodesForIntervention, filterAtlasNodes, t, type AtlasId, type CausalMapNode, type Locale, type Stage, type EpistemicLevel } from "@/lib/causalAtlasData";
 import AtlasNode from "./atlas/AtlasNode";
 import { AtlasDetail } from "./atlas/AtlasDetail";
 import { atlasClaimCoverage } from "@/lib/atlasEvidence";
+import Link from "next/link";
+import { INTERVENTIONS, getIntervention, interventionHref, interventionText } from "@/lib/interventions";
 
 const COPY = {
   en: { subatlas: "Choose a subatlas", search: "Search channels", placeholder: "Name, mechanism or model ID…", stage: "Stage", evidence: "Evidence type", all: "All", graph: "Map", list: "List", guided: "Guided route", clear: "Clear filters", empty: "No channels match these filters.", searchAll: "Search the complete atlas", visible: "channels shown", edges: "connections", instruction: "Select a channel for its mechanism, sources and connections. Scroll to zoom; drag to pan.", route: "Choose a route", previous: "Previous step", next: "Next step", scope: "Shared nodes connect the subatlases. Each node has one description across all views.", language: "Channel descriptions are available in English and Finnish.", relations: "Connection types", navigate: "Open channel", overview: "Explore", step: "Step" },
@@ -53,6 +55,7 @@ export function CausalAtlas({ locale }: { locale: string }) {
   const lang: Locale = locale === "fi" ? "fi" : "en";
   const copy = copyFor(locale);
   const [atlasId, setAtlasId] = useState<AtlasId>("all");
+  const [profileId, setProfileId] = useState("");
   const [view, setView] = useState<"graph" | "list">("graph");
   const [mode, setMode] = useState<"explore" | "guided">("explore");
   const [pathKey, setPathKey] = useState("main");
@@ -72,7 +75,10 @@ export function CausalAtlas({ locale }: { locale: string }) {
       const id = p.get("atlas") as AtlasId;
       const chosen = SUBATLASES.some(a => a.id === id) ? id : "all";
       const node = NODES.find(n => n.id === p.get("node"));
-      setAtlasId(node && !nodesForAtlas(chosen).some(n => n.id === node.id) ? "all" : chosen);
+      const requestedProfile = p.get("profile");
+      const profile = requestedProfile === "all" || getIntervention(requestedProfile) ? requestedProfile! : "";
+      setProfileId(node && profile && !nodesForIntervention(profile).some(n => n.id === node.id) ? "" : profile);
+      setAtlasId(profile || (node && !nodesForAtlas(chosen).some(n => n.id === node.id)) ? "all" : chosen);
       setSelectedId(node?.id ?? null);
       setMode("explore"); setQuery(""); setStage("all"); setEvidence("all");
       const requestedView = p.get("view");
@@ -85,12 +91,12 @@ export function CausalAtlas({ locale }: { locale: string }) {
   const updateUrl = useCallback((values: Record<string, string | null>) => {
     const url = new URL(window.location.href);
     for (const [key, value] of Object.entries(values)) { if (value) url.searchParams.set(key, value); else url.searchParams.delete(key); }
-    window.history.replaceState(window.history.state, "", url);
+    window.history.replaceState(null, "", url);
   }, []);
   const clearFilters = () => { setQuery(""); setStage("all"); setEvidence("all"); };
   const changeAtlas = (id: AtlasId) => {
-    setAtlasId(id); setMode("explore"); clearFilters(); setSelectedId(null);
-    updateUrl({ atlas: id === "all" ? null : id, node: null });
+    setAtlasId(id); setProfileId(""); setMode("explore"); clearFilters(); setSelectedId(null);
+    updateUrl({ atlas: id === "all" ? null : id, node: null, profile: null });
   };
   const openNode = useCallback((id: string, element?: HTMLElement) => {
     if (!NODES.some(n => n.id === id)) return;
@@ -100,10 +106,11 @@ export function CausalAtlas({ locale }: { locale: string }) {
   }, [updateUrl]);
   const closeDetails = useCallback(() => { setSelectedId(null); updateUrl({ node: null }); }, [updateUrl]);
   const followConnection = (id: string) => {
+    if (profileId && !nodesForIntervention(profileId).some(n => n.id === id)) { setProfileId(""); updateUrl({ profile: null }); }
     if (!nodesForAtlas(atlasId).some(n => n.id === id)) { setAtlasId("all"); updateUrl({ atlas: null }); }
     setMode("explore"); clearFilters(); openNode(id);
   };
-  const visible = useMemo(() => mode === "guided" ? path.ids.map(id => NODES.find(n => n.id === id)!) : filterAtlasNodes(nodesForAtlas(atlasId), query, stage, evidence), [atlasId, query, stage, evidence, mode, path]);
+  const visible = useMemo(() => mode === "guided" ? path.ids.map(id => NODES.find(n => n.id === id)!) : filterAtlasNodes(profileId ? nodesForIntervention(profileId) : nodesForAtlas(atlasId), query, stage, evidence), [atlasId, profileId, query, stage, evidence, mode, path]);
   const edgeCount = useMemo(() => { const ids = new Set(visible.map(n => n.id)); return EDGES.filter(e => ids.has(e.from) && ids.has(e.to)).length; }, [visible]);
   const hasFilters = query !== "" || stage !== "all" || evidence !== "all";
   const claimCoverage = useMemo(() => atlasClaimCoverage(visible), [visible]);
@@ -120,6 +127,13 @@ export function CausalAtlas({ locale }: { locale: string }) {
         </label>
         <div><h2 className="text-base font-semibold">{t(atlas.title, lang)}</h2><p className="mt-1 text-sm leading-relaxed text-[var(--atlas-text-dim)]">{t(atlas.description, lang)}</p></div>
       </div>
+      <div className="space-y-2 rounded-lg border border-[var(--border)] p-3" data-testid="atlas-intervention-filter">
+        <label className="block text-xs font-semibold">{lang === "fi" ? "Farmakologiset kokeet yli aliatlasten" : "Pharmacological experiments across subatlases"}<select className={`${controlClass} mt-1 block w-full`} value={profileId} onChange={event => { const id = event.target.value; setProfileId(id); setAtlasId("all"); setMode("explore"); clearFilters(); setSelectedId(null); updateUrl({ profile: id || null, atlas: null, node: null }); }}>
+          <option value="">{lang === "fi" ? "Ei koerajausta" : "No experiment filter"}</option><option value="all">{lang === "fi" ? "Kaikki kahdeksan koeprofiilia" : "All eight experimental profiles"}</option>{INTERVENTIONS.profiles.map(profile => <option key={profile.id} value={profile.id}>{interventionText(profile.title, locale)}</option>)}
+        </select></label>
+        {profileId && <p className="text-xs leading-relaxed text-[var(--atlas-text-dim)]">{lang === "fi" ? "Näkymä säilyttää profiilin nimetyt kanavat ja premissiketjun yhteisestä kartasta. Yhteyden vaikutussuunta ja koerajaus näkyvät kanavan tiedoissa." : "This view retains the profile’s named channels and premise chain from the shared graph. Connection signs and experimental scope appear in channel details."}</p>}
+        {getIntervention(profileId) && <Link className="inline-flex min-h-11 items-center text-xs text-blue-400 hover:underline" href={interventionHref(locale, profileId)}>{lang === "fi" ? "Avaa koeprofiili ja päätepisteet" : "Open the experiment and endpoints"} →</Link>}
+      </div>
       <p className="text-xs text-[var(--atlas-text-dim)]">{copy.scope}{locale !== "en" && locale !== "fi" ? ` ${copy.language}` : ""}</p>
       <details className="rounded-lg border border-[var(--border)] px-3 text-xs text-[var(--atlas-text-dim)]" data-testid="atlas-claim-coverage">
         <summary className="min-h-11 cursor-pointer content-center">{lang === "fi" ? "Miten tämän näkymän näyttö on jäsennetty?" : "How is the evidence in this view organized?"}</summary>
@@ -132,6 +146,7 @@ export function CausalAtlas({ locale }: { locale: string }) {
         <button type="button" className={controlClass} aria-pressed={view === "graph"} onClick={() => { setView("graph"); updateUrl({ view: "graph" }); }}><Map className="mr-1 inline" size={15} />{copy.graph}</button>
         <button type="button" className={controlClass} aria-pressed={view === "list"} onClick={() => { setView("list"); updateUrl({ view: "list" }); }}><List className="mr-1 inline" size={15} />{copy.list}</button>
         <button type="button" className={controlClass} aria-pressed={mode === "guided"} onClick={() => { if (mode === "guided") { setMode("explore"); } else {
+          setProfileId(""); updateUrl({ profile: null });
           const key = Object.keys(STEPPER_PATHS).find(k => STEPPER_PATHS[k].atlasId === atlasId) ?? "main";
           setPathKey(key); setAtlasId(STEPPER_PATHS[key].atlasId); updateUrl({ atlas: STEPPER_PATHS[key].atlasId }); setMode("guided");
         } clearFilters(); setStep(0); closeDetails(); }}><Route className="mr-1 inline" size={15} />{copy.guided}</button>

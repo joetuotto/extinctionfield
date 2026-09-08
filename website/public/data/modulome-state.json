@@ -30,6 +30,11 @@
       "implementingModules": [
         "berm.modulome.membrane"
       ],
+      "interventionProfileIds": [
+        "local_ltype_erk",
+        "channel_selectivity",
+        "lipid_ttype_inhibition"
+      ],
       "exposure": {
         "en": "Pulsed magnetic field, 1.5 mT, brief exposure of a cell-free vesicle preparation at controlled temperature.",
         "fi": "Pulssimagneettikenttä, 1,5 mT, lyhyt altistus soluvapaalle vesikkelivalmisteelle säädetyssä lämpötilassa."
@@ -79,6 +84,11 @@
       "epistemicLevel": "E",
       "implementingModules": [
         "berm.modulome.calcium"
+      ],
+      "interventionProfileIds": [
+        "mt2_brake",
+        "local_ltype_erk",
+        "channel_density_store_history"
       ],
       "exposure": {
         "en": "50 Hz magnetic field at 1 mT applied to hippocampal neurons.",
@@ -131,6 +141,10 @@
       "implementingModules": [
         "berm.modulome.state"
       ],
+      "interventionProfileIds": [
+        "channel_density_store_history",
+        "coq10_response"
+      ],
       "exposure": {
         "en": "Radiofrequency pre-exposure followed by a separate chemical challenge; exposure duration varied between arms.",
         "fi": "Radiotaajuinen esikäsittely ja sen jälkeen erillinen kemiallinen haaste; altistuksen kesto vaihteli koehaaroittain."
@@ -182,6 +196,10 @@
       "implementingModules": [
         "berm.modulome.photostate"
       ],
+      "interventionProfileIds": [
+        "cry_fad_competition",
+        "drug_photochemistry"
+      ],
       "exposure": {
         "en": "Pulsed magnetic field with field direction varied, on cells whose light history was controlled; separately, defined illumination of purified human CRY1.",
         "fi": "Pulssimagneettikenttä kentän suunta vaihdellen soluilla, joiden valohistoria oli hallittu; erikseen määritelty valaistus puhdistetulle ihmisen CRY1:lle."
@@ -232,6 +250,9 @@
       "epistemicLevel": "E",
       "implementingModules": [
         "berm.modulome.photostate"
+      ],
+      "interventionProfileIds": [
+        "cry_fad_competition"
       ],
       "exposure": {
         "en": "Structural and spectroscopic characterisation rather than a field exposure.",
@@ -285,6 +306,7 @@
       "implementingModules": [
         "berm.modulome.polarity"
       ],
+      "interventionProfileIds": [],
       "exposure": {
         "en": "Direct-current electric field of 200 mV/mm in the gene screen; comparable local fields in the wound-healing experiments.",
         "fi": "Tasakenttä 200 mV/mm geeniseulonnassa; vastaavat paikalliset kentät haavan paranemisen kokeissa."
@@ -335,6 +357,7 @@
       "implementingModules": [
         "berm.modulome.tissue"
       ],
+      "interventionProfileIds": [],
       "exposure": {
         "en": "Radiofrequency exposure of donor cells; recipient cells were not exposed.",
         "fi": "Radiotaajuinen altistus luovuttajasoluille; vastaanottajasoluja ei altistettu."
@@ -385,6 +408,7 @@
       "implementingModules": [
         "berm.modulome.tissue"
       ],
+      "interventionProfileIds": [],
       "exposure": {
         "en": "Brief pulsed electromagnetic exposure of macrophages, with co-culture conditions defined.",
         "fi": "Lyhyt pulssisähkömagneettinen altistus makrofageille määritellyissä yhteisviljelyolosuhteissa."
@@ -435,6 +459,7 @@
       "implementingModules": [
         "berm.modulome.state"
       ],
+      "interventionProfileIds": [],
       "exposure": {
         "en": "Controlled radiofrequency exposure during sleep in a randomised human study.",
         "fi": "Hallittu radiotaajuinen altistus unen aikana satunnaistetussa ihmistutkimuksessa."
@@ -486,6 +511,7 @@
       "implementingModules": [
         "berm.modulome.photostate"
       ],
+      "interventionProfileIds": [],
       "exposure": {
         "en": "Identical illumination of two small groups, with the retinal light dose itself not measured.",
         "fi": "Identtinen valaistus kahdelle pienelle ryhmälle, ilman että verkkokalvon valoannosta itseään mitattiin."

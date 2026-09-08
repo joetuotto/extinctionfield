@@ -15,11 +15,11 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     label: "Lindgren geometry",
     sublabel: "metric + variation + Weyl + Bianchi",
     epistemicLevel: "L",
-    title: "Three-premise Maxwell derivation",
+    title: "Metric variation and Maxwell derivation gates",
     mechanism:
-      "The source-free Maxwell equation ∇μF^μν = 0 follows from Lindgren's metric through the variational principle, the Weyl condition and the Bianchi identity. The Bianchi identity is necessary but not sufficient: it supplies dF = 0 and is not a shortcut to the sourced equation ∇μF^μν = J^ν.",
+      "Lindgren's metric and the variational principle define the geometric problem. The full Einstein–Hilbert variation, the declared Weyl connection and the Bianchi identity must be checked separately. The Bianchi identity supplies dF = 0 for F = dA and is necessary but not sufficient for Maxwell dynamics. Neither ∇μF^μν = 0 nor ∇μF^μν = J^ν is established merely by the contracted geometric identity or a frozen principal-symbol diagnostic.",
     quantitative:
-      "gμν = ημν + κAμAν\nS = ∫√(−g) R d⁴x; δS/δAμ = 0\n∇μgαβ = 0  [Weyl condition]\ndF = 0  [Bianchi identity]",
+      "gμν = ημν + κAμAν\nS = ∫√(−g) R d⁴x; δS/δAμ = 0  [full variation]\nWeyl compatibility: check the declared connection separately\ndF = 0 for F = dA  [homogeneous identity]",
     keyReferences: [
       {
         referenceId: "lindgren2025",
@@ -27,9 +27,9 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
         title: "Electromagnetism as a purely geometric theory",
         journal: "Journal of Physics: Conference Series 2987, 012001",
         keyFinding:
-          "Maxwellin johto käyttää yhdessä kolmea L0-premissiä: Lindgrenin metriikkaa, variaatioperiaatetta ja Weyl-ehtoa; Bianchi-identiteetti on välttämätön mutta ei yksin riittävä.",
+          "Lindgrenin metriikka, täysi variaatioperiaate, ilmoitetun yhteyden Weyl-ehto ja Bianchi-identiteetti tarkistetaan erikseen. Homogeeninen dF = 0 ei yksin osoita lähteetöntä tai lähteellistä Maxwell-dynamiikkaa.",
         keyFinding_en:
-          "The Maxwell derivation jointly uses three L0 premises: Lindgren's metric, the variational principle and the Weyl condition; the Bianchi identity is necessary but not sufficient by itself.",
+          "Lindgren's metric, the full variational principle, the declared connection's Weyl condition and the Bianchi identity require separate checks. The homogeneous identity dF = 0 alone does not establish source-free or sourced Maxwell dynamics.",
       },
     ],
     falsificationCondition:
@@ -169,13 +169,13 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   {
     id: "l2-bridge",
     level: 2,
-    label: "Open L2 bridge",
-    sublabel: "geometry → observable coupling",
+    label: "Conditional L2 response operator",
+    sublabel: "formal operator · tissue kernel open",
     epistemicLevel: "L*",
-    title: "Coupling operator not yet derived",
+    title: "Operator form derived; tissue calibration open",
     mechanism:
-      "BERM has not yet derived an operator that maps Lindgren geometry or a FieldState observation to SHBG, androgen-receptor activity, receptor-proximal signalling or any other biological state. The downstream branches are conditional BERM propositions or imported biological mechanisms, not consequences derived from FieldState.",
-    quantitative: "K_L2 : measurement / geometry → biological observable  [OPEN]",
+      "Conditional on minimal matter–metric coupling and response theory, BERM maps the exact Lindgren metric perturbation with δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + higher orders. The gauge prescription, scale, tissue kernels and endpoint coefficients remain open. Downstream biology is not derived from FieldState or supplied by Lindgren.",
+    quantitative: "δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + O(δg²)  [CONDITIONAL; Ξ OPEN]",
     keyReferences: [],
     falsificationCondition:
       "A proposed L2 operator must be rejected or revised if preregistered matched exposure–endpoint data fail its directional, spectral, temporal or dose predictions.",
@@ -188,7 +188,7 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     epistemicLevel: "M",
     title: "Separate, testable mediator branches",
     mechanism:
-      "BERM proposes separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. Until L2 is resolved, no FieldState observation is treated as having generated these states. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
+      "BERM proposes separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. Until a matching Ξ_i is calibrated, no FieldState observation is treated as having generated these states. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
     keyReferences: [
       {
         referenceId: "sherrard2018",
@@ -255,11 +255,11 @@ export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
     id: "male",
     level: 5,
     label: "Male reproductive state",
-    sublabel: "BTB · germline · steroidogenesis · sperm",
+    sublabel: "BTB · germline · androgen production · availability · AR/ZIP9 · sperm",
     epistemicLevel: "M",
     title: "Male organ-specific capacity",
     mechanism:
-      "Male capacity separates germline reserve, BTB, steroidogenesis, sperm output, function and DNA integrity. Acute sperm redox is not conflated with slow spermatogenesis or BTB memory.",
+      "Male capacity separates germline reserve, BTB, androgen production, SHBG/albumin and free or intratesticular availability, AR/ZIP9 and post-receptor use capacity, sperm output, function and DNA integrity. Acute sperm redox is not conflated with slow spermatogenesis or BTB memory.",
     keyReferences: [
       {
         referenceId: "iuliis2009",
@@ -461,11 +461,11 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
       "Reduktio hylätään, jos ilmoitetut dimensiottomuus-, kollineaarisuus- ja positiivisen spatiaalisen itseisarvon ehdot eivät tuota skalaarikerrointa Lorentz-signatuurin suunnatusta derivaatasta.",
   },
   "l2-bridge": {
-    label: "Avoin L2-silta",
-    sublabel: "geometria → havaittava suure",
-    title: "Kytkentäoperaattoria ei ole vielä johdettu",
+    label: "Ehdollinen L2-vasteoperaattori",
+    sublabel: "formaali operaattori · kudosydin avoin",
+    title: "Operaattorin muoto on johdettu; kudoskalibraatio avoin",
     mechanism:
-      "BERM ei ole vielä johtanut operaattoria, joka kuvaisi Lindgren-geometrian tai FieldState-havainnon SHBG:hen, androgeenireseptorin aktiivisuuteen, reseptoriläheiseen signalointiin tai muuhun biologiseen tilaan. Jatkohaarat ovat ehdollisia BERM-propositioita tai muualta tuotua biologiaa, eivät FieldStatesta johdettuja seurauksia.",
+      "Ehdolla, että materiaalla on minimaalinen metriikkakytkentä ja vastefunktioteoria pätee, BERM kuvaa tarkan Lindgren-häiriön muodossa δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν} + korkeammat kertaluvut. Gauge, mittakaava, kudosytimet ja endpoint-kertoimet ovat avoimia. Jatkohaarat eivät ole FieldStatesta tai Lindgrenistä johdettua biologiaa.",
     falsificationCondition:
       "Ehdotettu L2-operaattori on hylättävä tai korjattava, jos esirekisteröity kohdistettu altistus–päätepistedata ei vastaa sen suunta-, spektri-, aika- tai annosennusteita.",
   },
@@ -474,7 +474,7 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
     sublabel: "CRY · melatoniini · Ca²⁺/ROS · Vmem/mTOR · HPA · mikrobiomi/OT",
     title: "Erilliset välittäjähaarat",
     mechanism:
-      "BERM ehdottaa erillisiä, testattavia välitiloja: RPM/CRY–redox, melatoniini/redox, Ca²⁺/mitokondrio–ROS, Vmem/mTOR–kehitysmuisti, kello-/HPA–HPG sekä legacy-mikrobiomi/oksitosiini. Ennen L2-sillan ratkaisemista FieldState-havainnon ei katsota synnyttäneen näitä tiloja. Ne eivät ole yksi additiivinen vaikutus; RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
+      "BERM ehdottaa erillisiä, testattavia välitiloja: RPM/CRY–redox, melatoniini/redox, Ca²⁺/mitokondrio–ROS, Vmem/mTOR–kehitysmuisti, kello-/HPA–HPG sekä legacy-mikrobiomi/oksitosiini. Ennen vastaavan Ξ_i-ytimen kalibrointia FieldState-havainnon ei katsota synnyttäneen näitä tiloja. RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
   },
   btb: {
     label: "Veri–kiveseste (BTB)",
@@ -492,10 +492,10 @@ const FI_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
   },
   male: {
     label: "Miehen lisääntymistila",
-    sublabel: "BTB · iturata · steroidogeneesi · siittiö",
+    sublabel: "BTB · iturata · tuotanto · saatavuus · AR/ZIP9 · siittiö",
     title: "Miehen elinkohtainen kapasiteetti",
     mechanism:
-      "Miehen kapasiteetti erottaa ituradan varannon, BTB:n, steroidogeneesin, siittiötuoton, toiminnan ja DNA-eheyden. Nopeaa spermaredox-haaraa ei sekoiteta hitaaseen spermatogeneesi- tai BTB-muistiin.",
+      "Miehen kapasiteetti erottaa ituradan varannon, BTB:n, androgeenituotannon, SHBG-/albumiinisitoutumisen ja vapaan tai intratestikulaarisen saatavuuden, AR-/ZIP9- ja reseptorin jälkeisen käyttökapasiteetin sekä siittiötuoton, toiminnan ja DNA-eheyden.",
   },
   female: {
     label: "Naisen lisääntymistila",

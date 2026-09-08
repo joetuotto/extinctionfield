@@ -25,7 +25,7 @@ const COPY = {
     fTitle: "Fertility triple strike",
     fLead: "Sperm function, hormone production and central regulation form coupled reproductive gates. Their shared inputs and feedback must be represented before composing an outcome.",
     fRoutes: [
-      { route: "Sperm (VK17)", path: "Measured RF protocol → calcium/motility response → separately tested hyperactivation and fertilization", evidence: "[[ref:catsper_2021|ESHRE 2021 abstract]]: 50 male rats, 2100 MHz 1 h/day for 28 days; no significant mating/live-birth difference; CatSper gene analysis unfinished", status: "partial" },
+      { route: "Sperm (VK17)", path: "Measured RF protocol → calcium/motility response → separately tested hyperactivation and fertilization", evidence: "[[ref:catsper_2021|ESHRE 2021 abstract]]: 50 male rats, 2100 MHz 1 h/day for 28 days; no significant mating/live-birth difference; CatSper gene analysis unfinished Sperm effects and human CatSper necessity are separate components; direct RF → human CatSper is unestablished.", status: "partial" },
       { route: "Gonadal (VK15)", path: "EMF → StAR↓ → testosterone↓ → spermatogenesis↓ + Sertoli cell support↓", evidence: "Dose-dependent T↓ confirmed across multiple studies", status: "confirmed" },
       { route: "Central (VK22)", path: "Cortisol↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadal function↓", evidence: "GnIH gene silencing RESTORED fertility in stressed animals", status: "confirmed" },
     ],
@@ -65,7 +65,7 @@ const COPY = {
     fTitle: "Hedelmällisyyden kolmoisisku",
     fLead: "Siittiön toiminto, hormonituotanto ja keskussäätely muodostavat kytkettyjä lisääntymisportteja. Niiden yhteiset syötteet ja palautteet on kuvattava ennen tuloksen yhdistämistä.",
     fRoutes: [
-      { route: "Siittiö (VK17)", path: "Mitattu RF-koe → kalsium-/liikkuvuusvaste → erikseen testattu hyperaktivaatio ja hedelmöitys", evidence: "[[ref:catsper_2021|ESHRE 2021 -abstrakti]]: 50 urosrottaa, 2100 MHz 1 h/päivä 28 päivän ajan; ei merkitsevää parittelu-/elävänä syntymisen eroa; CatSper-geenianalyysi kesken", status: "partial" },
+      { route: "Siittiö (VK17)", path: "Mitattu RF-koe → kalsium-/liikkuvuusvaste → erikseen testattu hyperaktivaatio ja hedelmöitys", evidence: "[[ref:catsper_2021|ESHRE 2021 -abstrakti]]: 50 urosrottaa, 2100 MHz 1 h/päivä 28 päivän ajan; ei merkitsevää parittelu-/elävänä syntymisen eroa; CatSper-geenianalyysi kesken Siittiövaikutukset ja ihmisen CatSperin välttämättömyys ovat erillisiä komponentteja; suora RF → ihmisen CatSper on osoittamatta.", status: "partial" },
       { route: "Gonadaalinen (VK15)", path: "EMF → StAR↓ → testosteroni↓ → spermatogeneesi↓ + Sertoli-solun tuki↓", evidence: "Annosriippuvainen T↓ vahvistettu useissa tutkimuksissa", status: "confirmed" },
       { route: "Sentraalinen (VK22)", path: "Kortisoli↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadaalinen toiminta↓", evidence: "GnIH-geenin hiljennys PALAUTTI hedelmällisyyden stressatuissa eläimissä", status: "confirmed" },
     ],
@@ -105,7 +105,7 @@ const COPY = {
     fTitle: "生殖能力の三重打撃",
     fLead: "生殖能力障害への三つの独立した経路 — 精子機能、ホルモン産生、中枢調節 — が同時に攻撃する。",
     fRoutes: [
-      { route: "精子 (VK17)", path: "RF → CatSper Ca²⁺ activation → premature acrosome reaction → energy depletion before reaching egg", evidence: "2100 MHzがCatSperを活性化; 精子メタ SMD -1.92（携帯電話SAR水準）", status: "confirmed" },
+      { route: "精子 (VK17)", path: "RF → 候補Ca²⁺調節異常 → CatSperタイミング終点 → 受精障害", evidence: "精子影響とCatSper必須性は別の構成要素であり、RF → ヒトCatSperは未確立", status: "partial" },
       { route: "性腺性 (VK15)", path: "EMF → StAR↓ → testosterone↓ → spermatogenesis↓ + Sertoli cell support↓", evidence: "用量依存的T↓が複数の研究で確認", status: "confirmed" },
       { route: "中枢性 (VK22)", path: "Cortisol↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadal function↓", evidence: "GnIH遺伝子サイレンシングがストレス動物の生殖能力を回復", status: "confirmed" },
     ],
@@ -145,7 +145,7 @@ const COPY = {
     fTitle: "Triple frappe sur la fertilité",
     fLead: "Trois voies indépendantes vers l'altération de la fertilité — fonction spermatique, production hormonale et régulation centrale — attaquant simultanément.",
     fRoutes: [
-      { route: "Spermatozoïdes (VK17)", path: "RF → CatSper Ca²⁺ activation → premature acrosome reaction → energy depletion before reaching egg", evidence: "2100 MHz active CatSper ; méta sperme SMD -1,92 aux niveaux SAR du téléphone portable", status: "confirmed" },
+      { route: "Spermatozoïdes (VK17)", path: "RF → dysrégulation Ca²⁺ candidate → endpoint temporel CatSper → fécondation altérée", evidence: "Effets spermatiques et nécessité de CatSper sont des composantes distinctes; RF → CatSper humain reste non établi", status: "partial" },
       { route: "Gonadique (VK15)", path: "EMF → StAR↓ → testosterone↓ → spermatogenesis↓ + Sertoli cell support↓", evidence: "T↓ dose-dépendant confirmé dans de multiples études", status: "confirmed" },
       { route: "Centrale (VK22)", path: "Cortisol↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadal function↓", evidence: "Le silençage du gène GnIH a RESTAURÉ la fertilité chez les animaux stressés", status: "confirmed" },
     ],
@@ -185,7 +185,7 @@ const COPY = {
     fTitle: "생식력 삼중 타격",
     fLead: "생식력 장애를 향한 세 가지 독립적 경로 — 정자 기능, 호르몬 생산, 중추 조절 — 이 동시에 공격한다.",
     fRoutes: [
-      { route: "정자 (VK17)", path: "RF → CatSper Ca²⁺ activation → premature acrosome reaction → energy depletion before reaching egg", evidence: "2100 MHz가 CatSper를 활성화; 정자 메타 SMD -1.92 (휴대전화 SAR 수준)", status: "confirmed" },
+      { route: "정자 (VK17)", path: "RF → 후보 Ca²⁺ 조절 이상 → CatSper 타이밍 종점 → 수정 저하", evidence: "정자 효과와 CatSper 필요성은 별도 구성요소이며 RF → 인간 CatSper는 미확립", status: "partial" },
       { route: "생식선성 (VK15)", path: "EMF → StAR↓ → testosterone↓ → spermatogenesis↓ + Sertoli cell support↓", evidence: "용량 의존적 T↓가 다수의 연구에서 확인", status: "confirmed" },
       { route: "중추성 (VK22)", path: "Cortisol↑ → GnIH↑ → GnRH↓ → LH/FSH↓ → gonadal function↓", evidence: "GnIH 유전자 사일런싱이 스트레스 동물의 생식력을 회복", status: "confirmed" },
     ],

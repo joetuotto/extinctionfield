@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { NODES } from "@/lib/causalAtlasData";
+import { NODES, nodesForIntervention } from "@/lib/causalAtlasData";
 import { CausalAtlas } from "../CausalAtlas";
 const flow = vi.hoisted(() => ({ fitView: vi.fn() }));
 vi.mock("@xyflow/react", () => ({
@@ -15,7 +15,7 @@ beforeEach(() => {
   window.history.replaceState({}, "", "/fi/map");
   Object.defineProperty(window, "innerWidth", { configurable: true, value: 390 });
 });
-afterEach(cleanup);
+afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
 describe("Complete, responsive atlas exploration", () => {
   it("exposes every channel in the mobile list and searches named source channels", () => {
@@ -78,5 +78,35 @@ describe("Complete, responsive atlas exploration", () => {
     expect(screen.getByRole("combobox", { name: "Valitse aliatlas" })).toHaveValue("all");
     expect(screen.queryByRole("button", { name: "Sulje tiedot" })).not.toBeInTheDocument();
     expect(within(screen.getByTestId("atlas-list")).getAllByRole("button")).toHaveLength(NODES.length);
+  });
+  it("opens a profile across subatlases with scoped signs and a reciprocal experiment link", () => {
+    window.history.replaceState({}, "", "/fi/map?atlas=ecology&profile=lipid_ttype_inhibition&node=mech_aa_lte4_inhibition");
+    render(<CausalAtlas locale="fi" />);
+    expect(screen.getByRole("combobox", { name: "Valitse aliatlas" })).toHaveValue("all");
+    expect(within(screen.getByTestId("atlas-list")).getAllByRole("button")).toHaveLength(nodesForIntervention("lipid_ttype_inhibition").length);
+    const detail = screen.getByRole("complementary", { name: /AA\/LTE4/ });
+    expect(within(detail).getAllByTestId("atlas-intervention-effect").map(item => item.textContent).join(" ")).toMatch(/Ehdollinen synteesi.*Tutkimuksen komponentti/);
+    expect(within(detail).getByRole("link", { name: /AA.*→/ })).toHaveAttribute("href", "/fi/evidence/pharmacology?profile=lipid_ttype_inhibition#intervention-explorer");
+    fireEvent.click(screen.getByRole("button", { name: "Sulje tiedot" }));
+    fireEvent.change(screen.getByRole("combobox", { name: "Valitse aliatlas" }), { target: { value: "ecology" } });
+    expect(screen.getByRole("combobox", { name: "Farmakologiset kokeet yli aliatlasten" })).toHaveValue("");
+    expect(window.location.search).not.toContain("profile=");
+  });
+  it("does not leave a hidden profile filter behind when entering a guide", () => {
+    render(<CausalAtlas locale="fi" />);
+    fireEvent.change(screen.getByRole("combobox", { name: "Farmakologiset kokeet yli aliatlasten" }), { target: { value: "coq10_response" } });
+    expect(screen.getByRole("status")).toHaveTextContent(`${nodesForIntervention("coq10_response").length} /`);
+    fireEvent.click(screen.getByRole("button", { name: "Opastettu reitti" }));
+    expect(window.location.search).not.toContain("profile=");
+    expect(screen.getByRole("combobox", { name: "Farmakologiset kokeet yli aliatlasten" })).toHaveValue("");
+  });
+  it("uses a public history update when the current entry belongs to Next", () => {
+    window.history.replaceState({ __NA: true, __PRIVATE_NEXTJS_INTERNALS_TREE: ["fixture"] }, "", "/fi/map");
+    const replace = vi.spyOn(window.history, "replaceState");
+    render(<CausalAtlas locale="fi" />);
+    fireEvent.change(screen.getByRole("combobox", { name: "Farmakologiset kokeet yli aliatlasten" }), { target: { value: "coq10_response" } });
+    expect(replace).toHaveBeenLastCalledWith(null, "", expect.any(URL));
+    expect(screen.getByRole("status")).toHaveTextContent(`${nodesForIntervention("coq10_response").length} /`);
+    expect(window.location.search).toContain("profile=coq10_response");
   });
 });

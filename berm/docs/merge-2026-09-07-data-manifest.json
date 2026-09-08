@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "purpose": "Local integration-test input hydration; not an evidence or calibration upgrade",
+  "source_snapshot": "0dc5188 plus locally held ignored data",
+  "files": [
+    {
+      "path": "berm/data/global/all_countries_panel.json",
+      "bytes": 76249708,
+      "sha256": "4a68f9eaac06f0ec2d9d70814cb41c67f37e1f69d86100bdc985f1618caffa4c",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/anfr_autonomous_probes_summary.json",
+      "bytes": 1608,
+      "sha256": "f4e4de293e2b47be44e62ce231b3f1aa32ae9fe2bcb2331e1af71544ac9c6a73",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/broadband_by_country_year.csv",
+      "bytes": 135432,
+      "sha256": "4e994aa6ff60edee9edbea749bbcc279f7df96df264f9c8244e99b4d4b604733",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/fangr_uk_breed_population_annual_summary.json",
+      "bytes": 1627,
+      "sha256": "29f387495844cf7aeecc2d73cd365fe76de064ec7cb0566b2a075ddadbd76166",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/fertility_asfr_region_age_year.csv",
+      "bytes": 53613036,
+      "sha256": "698a0b8905be3a116bc922abc3e2e9c6175fe68d477a2e0bac98863bfed9d55b",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/fertility_tfr_region_year.csv",
+      "bytes": 7227518,
+      "sha256": "52d50eb55fddd23ce57e8cf004414ef2b3a4667e3df12d7a7d84aa5e29d6e291",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/ifce_sire_equid_breeding_panel_summary.json",
+      "bytes": 4640,
+      "sha256": "aa3e6d1182cd68bd502d55466a8e63cb66e654fcef9e4582bbb64e43fb626fd1",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/internet_by_country_year.csv",
+      "bytes": 129150,
+      "sha256": "aabb306c6298cd8d76213c82473680049075a92f20ddf0c5ae62c250daae5289",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/led_market_share.json",
+      "bytes": 2871,
+      "sha256": "96a7bff9e63773c9a98e47f89146f97932c022e4999a9769e55a03e1b9d0cdae",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/mobile_by_country_year.csv",
+      "bytes": 263093,
+      "sha256": "c2f0bdb8d0983a6a2674f092bd72db52eef45624728141d400f1321bc7152a9c",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/mustb_apiary_site_context.csv",
+      "bytes": 2989,
+      "sha256": "4a06d4ba4ace84f2d97d5f0e30453fb526c53aafed60245d9a32696bdaa39103",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/mustb_botanical_survey_polygon_context.csv",
+      "bytes": 209359,
+      "sha256": "fdbb292670c007230e1e514e2fa894f6c9a74cb12cb1cdcf76b355da2a31147d",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/mustb_spatial_context_availability.json",
+      "bytes": 3917,
+      "sha256": "ebaed7f2d9bdbe6fea354fcaa9af44bc076840767c65a0118b91661403878c87",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/sentinel_readiness.json",
+      "bytes": 5808,
+      "sha256": "1a733bc9b83015723b2db7df7dddc895fde42058048386a042f4905613d783bd",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/sentinel_species_region_year.csv",
+      "bytes": 708266,
+      "sha256": "f1df7b6366bad1ba8e04d3823c51eed2a7e9eb89a0e83f16d21833f21fd3fbc8",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/sentinel_species_region_year_summary.json",
+      "bytes": 4218,
+      "sha256": "4010fa7d7b33add9e182ef8162341b9a284dafeb2e03e162244671708743c26e",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/testosterone_secular/usa_t_timeseries.csv",
+      "bytes": 1109,
+      "sha256": "24103f9401a98e31f8c2cfd664b2258d704fb55f21a9ab6009329f359a032134",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/testosterone_tfr/joined_country_data.csv",
+      "bytes": 19133,
+      "sha256": "953e02d0e411a030bd657e3833dfc7a2451cadff1498bb4b094ed9e5aab55235",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/testosterone_tfr/model_coefficients.csv",
+      "bytes": 7144,
+      "sha256": "f5c000f704b3c1ea40d1ce9fac3b955561aaf0d89b0b04bbc9a8c03bc927e8f5",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/tfr_by_country_year.csv",
+      "bytes": 279382,
+      "sha256": "fee93f7e02bf92f0d1ec388a01bb9c9ff37585154bab89b13ada5ee82ad6c5ed",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/urban_by_country_year.csv",
+      "bytes": 437241,
+      "sha256": "2d18c57343c8843622a59bc7b9e11890e3284c8fc386d58db7c1b2ecd5acf1a0",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/veterinary_sentinel_species_site_time.csv",
+      "bytes": 2221202,
+      "sha256": "ec935ac0a4c1a75e2c13ff405078a30e16d25ac35e84e41de830535ae47e696e",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/processed/veterinary_sentinel_species_site_time_summary.json",
+      "bytes": 2841,
+      "sha256": "036c0aaa898a6f9a03ec7b51dce04ab307b4a9d6bb514014197cd68b6864fb4a",
+      "role": "reproducible_derived_input"
+    },
+    {
+      "path": "berm/data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "bytes": 16557272,
+      "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/WPP2024_Fertility_by_Age5.csv.gz",
+      "bytes": 82864610,
+      "sha256": "c0d3b5b7e992902df3be1980cfa86c440c1cd673ecec9d4826142a03aece04ec",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv",
+      "bytes": 1894718,
+      "sha256": "08a3e6aac3e7a86d9abc25fd7cd810d3be64f53c0820c78f7173b9e3968fda1e",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv",
+      "bytes": 1244722,
+      "sha256": "a651734efd4aba317e761c852faa065383da2566b7219bb4f19b6a0fea658f2b",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv",
+      "bytes": 1786419,
+      "sha256": "1aadfd6f416df96c156d35df33d5e727ed8722c200155beec36d89a828fbcb4e",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/equine/ifce_sire_2026-08-19/naissances.csv",
+      "bytes": 1878614,
+      "sha256": "7973df461f7c41ef96cec60c87a456b2ec2eff70095824d5e918c4a34aa7c1a3",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/pollinator_hub/mustb_2026-08-19/must-b.zip",
+      "bytes": 2676001,
+      "sha256": "e1af5754bea1e5dcbc0d93f7b5a5ce73a62c6cf3276e70d0444419aecbda364f",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json",
+      "bytes": 5326,
+      "sha256": "26dbf20ffbe0ca1443e4eff819876b7f0350ff9d3e2b2fb418c55e03aa77af2d",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0000000.json",
+      "bytes": 10910263,
+      "sha256": "2aa70112e634bc5df8fcaa2392e94f09b11a1c32f6602a8d0f9213594f0bbb8f",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0100000.json",
+      "bytes": 11257954,
+      "sha256": "c20f567e430d34d07a9cc38fb1748a4e733175e129ef523f92a5098d4cd361ba",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0200000.json",
+      "bytes": 11486767,
+      "sha256": "30b83561275ecb737ed210b121a3a3551bb67565fc2cbd126831a4567bb765d0",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0300000.json",
+      "bytes": 11248043,
+      "sha256": "55306050ed1fe36acc24f475ba07038e5d1c8f0a3e246460c56182e2c02b82b0",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json",
+      "bytes": 11164135,
+      "sha256": "4b1899c4dd2665c25e92d4a82683e1b368a262d2bc806c3be8a25f3c18041425",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0500000.json",
+      "bytes": 11149420,
+      "sha256": "30337ec6a055b56b5d980714045b8e4594eb3bafe0265d991a3c0f1d936c4371",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0600000.json",
+      "bytes": 11162257,
+      "sha256": "6931e17fe123a05df51ad0c03facfbca7fb630ddfeeec1a5522f1da5430be631",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0700000.json",
+      "bytes": 11163237,
+      "sha256": "218604ae2ea400fac31cb5416467c6ebb605c2f6f568708420487daa70667a40",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0800000.json",
+      "bytes": 11187642,
+      "sha256": "ef2131813c85081dd7616845e8cf666d4bae0c6fe6d3124270428f428a97e099",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0900000.json",
+      "bytes": 11173665,
+      "sha256": "e76fe0e3a99eb387d1fcdb122f5253401acbf56a569c9fe33d8a888b6df9a75a",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1000000.json",
+      "bytes": 11364413,
+      "sha256": "70c23d4570963bcbe11f1dd6a049a266550c15b11d27be115bc6b659ca7d6cd6",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1100000.json",
+      "bytes": 11400455,
+      "sha256": "b3893f1583c82f9513c81ad3ccc209280afec763e7cfdef66c4dd72416a401b9",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1200000.json",
+      "bytes": 11395834,
+      "sha256": "d5919d9b2ceb2e2b98a14de1eed84506e46a828243343137e753a7fa240751d0",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1300000.json",
+      "bytes": 11448810,
+      "sha256": "d776ecd92a48e30c08723d8d61a6df180653d3617f63edf0793fbaf088665a4a",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1400000.json",
+      "bytes": 8466133,
+      "sha256": "ee67d12a1fbceff846bcca6f448f06245d0f78b968e7638b69ab3ba95197c822",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+      "bytes": 175313,
+      "sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json",
+      "bytes": 1836,
+      "sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+      "bytes": 6954,
+      "sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+      "bytes": 411740,
+      "sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv",
+      "bytes": 16023,
+      "sha256": "2fab5d6a49e15aba781598f80a4b39817683fa1b6f369336d935777d7a70b348",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv",
+      "bytes": 5045129,
+      "sha256": "68c3bd13659f521b9e02c1f26639826d21a5e3c93d564aaf910095261660fd38",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt",
+      "bytes": 6434,
+      "sha256": "40fe649f23590f982388d9e53f52a436329fce3f12358384e84ba13fbd2d9f50",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv",
+      "bytes": 124604,
+      "sha256": "610e2c1ab8c33c4c00354208fb83ac1034d1f493aec7ece9366d81c4c63a6c7d",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv",
+      "bytes": 142932,
+      "sha256": "399bb1435723c214a6053f1ff498525f419f091727111517ba01fdc67a0f221a",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/wb_broadband.json",
+      "bytes": 4075720,
+      "sha256": "dabc23dbbc04657536cfc250629dfb06ac638189e13020409febb15d50e7504d",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/wb_internet.json",
+      "bytes": 4081411,
+      "sha256": "f7b4a426f3d0454a36f65104fdebb703bdaa3a60ce552a4107e7148d3a1cdb87",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/wb_mobile.json",
+      "bytes": 4088470,
+      "sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/wb_tfr.json",
+      "bytes": 3955489,
+      "sha256": "157c57ed365004282819b2022a4bc04bd4442558459b322335cfef4b73f62384",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/wb_urban.json",
+      "bytes": 4160580,
+      "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/broadband_per_100.json",
+      "bytes": 4075988,
+      "sha256": "5917b10d80a8cc09eaca2e9ce11a72adcecbe27996687e0a859f86571f85c161",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/contraception_pct.json",
+      "bytes": 4402834,
+      "sha256": "e53baed865fcc552de4b5ca3eae8bde07efc685762f656eb432a9de208b2ec08",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/country_metadata.json",
+      "bytes": 113750,
+      "sha256": "29460bd5b53d1ff450fd6a9b65aaaacf9302cffbc849040156d231b8e27bdac5",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/gdp_ppp_per_capita.json",
+      "bytes": 4152820,
+      "sha256": "5ecbcbb7c3936574f7e0af3d2462af9384a1a0297f49ef64c25497c9c2d3d7ec",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/internet_pct.json",
+      "bytes": 4081677,
+      "sha256": "cb3bf2eb941f78a3fa619e45740c05301f1ee0b14ce229876aa459f55d8068d5",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/mobile_per_100.json",
+      "bytes": 4088728,
+      "sha256": "429a6497eefbc5ec016d7a86740fa8e57fc49f4ede9db65bacb97962e61d6c1b",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/population.json",
+      "bytes": 3512611,
+      "sha256": "736d07297ee93e097232613fa2a5165efaef554c0a0af9ba13ad8de5495d827f",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/tfr.json",
+      "bytes": 3955749,
+      "sha256": "8e31f75e4da67a59fbe61aee4191bb3650eb6cc9ee82484e97b5b40153032b38",
+      "role": "acquired_raw_input"
+    },
+    {
+      "path": "berm/data/raw/world_bank/wb_global_2026-08-19/urban_pct.json",
+      "bytes": 4160855,
+      "sha256": "de76819c3eadecfc2a1abd18d4f38d5d27d2f92d33863a594907981f2a7defe7",
+      "role": "acquired_raw_input"
+    }
+  ],
+  "excluded_rebuildable_large_outputs": [
+    "berm/data/processed/anfr_autonomous_probes_site_time.csv",
+    "berm/data/processed/fangr_uk_breed_population_annual.csv",
+    "berm/data/processed/ifce_sire_equid_breeding_panel.csv"
+  ]
+}

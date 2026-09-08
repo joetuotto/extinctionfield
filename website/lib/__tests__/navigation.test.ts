@@ -9,6 +9,7 @@ import {
   isNavPageCurrent,
 } from "../navigation";
 import baseline from "./fixtures/navigation-before-levels.json";
+import currentMain from "./fixtures/navigation-main-2026-09-08.json";
 
 const locales = ["en", "fi", "ja", "fr", "ko"] as const;
 const destinations = NAV_ROUTES.flatMap((section) => [section.href, ...(section.children ?? []).map((child) => child.href)]);
@@ -31,6 +32,27 @@ describe("explanation-level navigation", () => {
     const reachable = new Set([getHomeRoute("en").href, ...destinations]);
     expect(baseline.hrefs).toHaveLength(38);
     expect(baseline.hrefs.filter((href) => !reachable.has(href))).toEqual([]);
+  });
+
+  it("also preserves every current-main destination when integrating the explanation-level branch", () => {
+    const reachable = new Set([getHomeRoute("en").href, ...destinations]);
+    expect(currentMain.hrefs).toHaveLength(40);
+    expect(currentMain.hrefs.filter((href) => !reachable.has(href))).toEqual([]);
+    expect(currentMain.hrefs.filter((href) => !baseline.hrefs.includes(href))).toEqual([
+      "/civilization/epistapege", "/evidence/response-conditions",
+    ]);
+  });
+
+  it("keeps main's updated descriptions and its new destinations in their corresponding sections", () => {
+    const sections = getNavRoutes("fi");
+    expect(sections.find((section) => section.href === "/physics")?.children?.find((child) => child.href === "/model/math")?.desc)
+      .toBe("Lindgren-premissi, johdettu geometria, ehdollinen L2-vaste ja avoin kalibrointi");
+    expect(sections.find((section) => section.href === "/civilization")?.children?.[0].desc)
+      .toBe("Seitsemänvaiheinen lukupolku, mukaan lukien Epistapegen havaittavuushaara");
+    expect(sections.find((section) => section.href === "/civilization")?.children?.find((child) => child.href === "/civilization/epistapege"))
+      .toMatchObject({ label: "Epistapege", desc: "episteme + pege — kausaalisen havaittavuuden rakenteellinen menetys" });
+    expect(sections.find((section) => section.href === "/evidence/convergence")?.children?.find((child) => child.href === "/evidence/response-conditions"))
+      .toMatchObject({ label: "Vaste-ehdot", desc: "Vaihe, koherenssi, ajoitus, reseptoritila ja kanavavuorovaikutukset" });
   });
 
   it("preserves every About tab and adds epistemology without renaming its URL", () => {
@@ -66,7 +88,7 @@ describe("explanation-level navigation", () => {
 
   it("orders civilization essays from individuals and interactions toward institutions", () => {
     expect(NAV_ROUTES.find((section) => section.href === "/civilization")?.children?.map((child) => child.href)).toEqual([
-      "/civilization", "/civilization/pathopege", "/civilization/pathopolites", "/civilization/patokinesis",
+      "/civilization", "/civilization/pathopege", "/civilization/pathopolites", "/civilization/epistapege", "/civilization/patokinesis",
       "/civilization/patopolis", "/civilization/patokratia", "/civilization/patopoliteia",
     ]);
   });
@@ -81,7 +103,10 @@ describe("single section ownership", () => {
     ["/model/q-factor", "/biology"], ["/model/dual-kernel", "/biology"],
     ["/modulome/brain", "/biology"], ["/sentinel", "/biology"],
     ["/behavior", "/behavior"], ["/civilization/pathopolites", "/civilization"],
+    ["/civilization/epistapege", "/civilization"],
     ["/evidence", "/evidence/convergence"], ["/evidence/convergence", "/evidence/convergence"],
+    ["/evidence/response-conditions", "/evidence/convergence"],
+    ["/evidence/converging-patterns", "/evidence/convergence"],
     ["/evidence/testosterone", "/evidence/convergence"], ["/measurement/fieldstate/math", "/evidence/convergence"],
     ["/model/comparison", "/evidence/convergence"], ["/explore", "/evidence/convergence"],
     ["/data", "/evidence/convergence"], ["/predictions", "/evidence/convergence"],

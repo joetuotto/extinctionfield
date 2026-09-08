@@ -22,7 +22,7 @@ const LAYER_COLORS: Record<string, string> = {
 const COPY = {
   en: {
     title: "EMF Modulome: Twelve Layers of Biological Susceptibility",
-    lead: "The modulome maps electromagnetic susceptibility from molecular spin physics to population-level patterns. Each layer moderates the open L2 biological application of the L1-derived χ coefficient; it does not alter χ's geometric derivation. Twelve layers, twelve target organs, four independent routes to fertility decline.",
+    lead: "The modulome maps electromagnetic susceptibility from molecular spin physics to population-level patterns. Each layer moderates the open L2 biological application of the L1-derived χ coefficient; it does not alter χ's geometric derivation. Twelve layers, twelve target organs, four candidate routes to fertility decline.",
     layer: "Layer",
     chiModulator: "L2 χ-application moderator",
     keyComponents: "Key components",
@@ -32,7 +32,7 @@ const COPY = {
   },
   fi: {
     title: "EMF-modulomi: kaksitoista biologisen herkkyyden tasoa",
-    lead: "Modulomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros säätelee L1-johdetun χ-kertoimen avointa biologista L2-sovellusta, ei χ:n geometrista johtoa. Kaksitoista kerrosta, kaksitoista kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
+    lead: "Modulomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros säätelee L1-johdetun χ-kertoimen avointa biologista L2-sovellusta, ei χ:n geometrista johtoa. Kaksitoista kerrosta, kaksitoista kohde-elintä, neljä ehdotettua reittiä fertiliteetin laskuun.",
     layer: "Kerros",
     chiModulator: "L2-χ-sovelluksen modulaattori",
     keyComponents: "Avainkomponentit",
@@ -42,7 +42,7 @@ const COPY = {
   },
   ja: {
     title: "EMF Modulome: 生体感受性の12層",
-    lead: "Modulomeは分子スピン物理から集団レベルのパターンまで電磁感受性をマッピングします。各層はL1で導出されたχ係数の未解決なL2生物学的応用を調整し、χの幾何学的導出自体は変えません。12の層、12の標的臓器、受胎能低下への4つの独立経路。",
+    lead: "Modulomeは分子スピン物理から集団レベルのパターンまで電磁感受性をマッピングします。各層はL1で導出されたχ係数の未解決なL2生物学的応用を調整し、χの幾何学的導出自体は変えません。12の層、12の標的臓器、受胎能低下への4つの候補経路。",
     layer: "層",
     chiModulator: "L2 χ応用の変調因子",
     keyComponents: "主要構成要素",
@@ -52,7 +52,7 @@ const COPY = {
   },
   fr: {
     title: "EMF Modulome : douze couches de susceptibilité biologique",
-    lead: "Le modulome cartographie la susceptibilité électromagnétique de la physique du spin moléculaire aux schémas populationnels. Chaque couche module l'application biologique L2 ouverte du coefficient χ dérivé au niveau L1, sans modifier sa dérivation géométrique. Douze couches, douze organes cibles, quatre voies indépendantes de déclin de la fertilité.",
+    lead: "Le modulome cartographie la susceptibilité électromagnétique de la physique du spin moléculaire aux schémas populationnels. Chaque couche module l'application biologique L2 ouverte du coefficient χ dérivé au niveau L1, sans modifier sa dérivation géométrique. Douze couches, douze organes cibles, quatre voies candidates de déclin de la fertilité.",
     layer: "Couche",
     chiModulator: "Modulateur de l'application L2 de χ",
     keyComponents: "Composants clés",
@@ -62,7 +62,7 @@ const COPY = {
   },
   ko: {
     title: "EMF Modulome: 생물학적 감수성의 12개 층",
-    lead: "Modulome은 분자 스핀 물리학에서 집단 수준 패턴까지 전자기 감수성을 매핑합니다. 각 층은 L1에서 도출된 χ 계수의 열린 L2 생물학적 적용을 조절하며 χ의 기하학적 도출 자체는 바꾸지 않습니다. 12개의 층, 12개의 표적 장기, 수태능 감소로 향하는 4개의 독립 경로.",
+    lead: "Modulome은 분자 스핀 물리학에서 집단 수준 패턴까지 전자기 감수성을 매핑합니다. 각 층은 L1에서 도출된 χ 계수의 열린 L2 생물학적 적용을 조절하며 χ의 기하학적 도출 자체는 바꾸지 않습니다. 12개의 층, 12개의 표적 장기, 수태능 감소로 향하는 4개의 후보 경로.",
     layer: "층",
     chiModulator: "L2 χ 적용 조절인자",
     keyComponents: "주요 구성요소",

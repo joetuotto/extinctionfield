@@ -94,12 +94,12 @@ export const NODES: CausalMapNode[] = [
     color: "#3B82F6", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "BERM treats membrane-potential perturbation by 50/60 Hz fields and harmonics as a candidate route. The relevant field-to-membrane transfer belongs to the open L2 coupling problem and must be calibrated for the system and exposure.",
+        mechanism: "BERM treats membrane-potential perturbation by 50/60 Hz fields and harmonics as a candidate route. Its formal L2 response has a defined operator shape, but the relevant field-to-membrane tissue kernel must be calibrated for the system and exposure.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Electricity consumption per capita correlates with autoimmune diseases",
       },
       fi: {
-        mechanism: "BERM käsittelee 50/60 Hz:n kenttien ja harmonisten taajuuksien kalvopotentiaalimodulaatiota ehdokasreittinä. Kentästä kalvolle johtuva siirto kuuluu avoimeen L2-kytkentäongelmaan ja on kalibroitava järjestelmä- ja altistuskohtaisesti.",
+        mechanism: "BERM käsittelee 50/60 Hz:n kenttien ja harmonisten taajuuksien kalvopotentiaalimodulaatiota ehdokasreittinä. L2-vastemuodolla on ehdollinen operaattorirakenne, mutta kentästä kalvolle johtuva kudosydin on kalibroitava järjestelmä- ja altistuskohtaisesti.",
         fdaDevice: "PEMF (PMA 1979), TMS (510k 2008), tDCS (PMA 2025), VNS (510k 2017), DBS (PMA 1997), SCS (PMA)",
         prediction: "Sähkönkulutus/cap korreloi autoimmuunisairauksien kanssa",
       },
@@ -175,15 +175,15 @@ export const NODES: CausalMapNode[] = [
   // ── LEVEL 1: Modulation layers (12) ──
   {
     id: "mod_geometry", level: 1,
-    label: { en: "1. L1 χ_geo / open L2 coupling", fi: "1. L1 χ_geo / avoin L2-kytkentä" },
-    sublabel: { en: "Derived geometric shape; observable mapping open", fi: "Johdettu geometrinen muoto; havaintokuvaus avoin" },
+    label: { en: "1. Conditional L2 response", fi: "1. Ehdollinen L2-vaste" },
+    sublabel: { en: "derived δg + response kernel Ξ", fi: "johdettu δg + vasteydin Ξ" },
     color: "#8B5CF6", epistemicLevel: "L",
     detail: {
       en: {
-        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + κA_μA_ν is the L0 premise. Metric-volume linearization/geodesic deviation yields a signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is an L2 reduction. A raw V/m value, proxy, V_m or membrane coordinate cannot be inserted directly; an operator mapping it to q=N(z) and then to biology has yet to be derived and remains open at L0→L2. Downstream mechanisms are imported L3 components.",
+        mechanism: "Lindgren's 2025 ansatz g_μν = η_μν + κA_μA_ν is the theory premise. BERM derives the exact δg and, conditional on minimal matter coupling and response theory, δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν}+…. Gauge, scale, tissue kernel Ξ_i and endpoint calibration remain open. Metric-volume linearization/geodesic deviation yields a signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1; choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is an L2 reduction. A raw V/m value, proxy, V_m or membrane coordinate cannot be inserted directly; the identification mapping one to q=N(z) remains open at L0→L2, and downstream mechanisms are imported L3 components.",
       },
       fi: {
-        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + κA_μA_ν on L0-premissi. Metriikan tilavuuslinearisaatio/geodeesipoikkeama tuottaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2-reduktio. Raakaa V/m-arvoa, proxyä, V_m:ää tai kalvokoordinaattia ei voi syöttää suoraan; operaattoria sen kartoittamiseksi q=N(z):ksi ja biologiseksi vasteeksi ei ole vielä johdettu, joten L0→L2-askel pysyy avoimena. Jatkomekanismit ovat tuotuja L3-komponentteja.",
+        mechanism: "Lindgrenin vuoden 2025 ansatz g_μν = η_μν + κA_μA_ν on teoriapremissi. BERM johtaa tarkan δg:n ja ehdollisesti minimaaliselle materiakytkennälle sekä vasteteorialle muodon δ⟨O_i⟩ = ∫Ξ_i^{μν}δg_{μν}+…. Gauge, mittakaava, kudosydin Ξ_i ja päätepistekalibraatio ovat avoimia. Metriikan tilavuuslinearisaatio/geodeesipoikkeama tuottaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla; koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2-reduktio. Raakaa V/m-arvoa, proxyä, V_m:ää tai kalvokoordinaattia ei voi syöttää suoraan; tunnistus q=N(z):ksi pysyy avoimena L0→L2-askeleena, ja jatkomekanismit ovat tuotuja L3-komponentteja.",
       },
       bermPathway: "Geometric foundation",
       keyRefs: ["lindgren2025"],
@@ -395,9 +395,9 @@ export const NODES: CausalMapNode[] = [
     label: { en: "T-type Cav3 bifurcation", fi: "T-tyypin Cav3 bifurkaatio" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM bridge. They do not yet derive or close the geometry-to-observable L2 coupling operator. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
-      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen siltamekanismin. Ne eivät vielä johda tai sulje geometriasta havaittavaan suureeseen johtavaa L2-kytkentäoperaattoria. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
-      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/measurement/fieldstate/math#s16",
+      en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM tissue kernel. The formal L2 operator shape is conditional; Cav3 transfer, sign, lag and calibration are not derived by geometry. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen kudosytimen. Formaali L2-operaattorimuoto on ehdollinen; geometria ei johda Cav3-siirtoa, etumerkkiä, viivettä eikä kalibrointia. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
+      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/model#vgcc-sensitivity",
     },
   },
   {
@@ -520,7 +520,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Biological effect is non-linear: Ca²⁺ efflux from brain tissue occurs at specific intensity windows (0.1–1.0 mW/cm²) but NOT at higher or lower levels. Explains why ICNIRP's linear SAR model does not detect effects and why replication studies may fail." },
       fi: { mechanism: "Biologinen vaikutus ei-lineaarinen: Ca²⁺-effluksi aivokudoksesta tapahtuu tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm²) mutta EI korkeammilla tai matalammilla tasoilla. Selittää miksi ICNIRP:n lineaarinen SAR-malli ei havaitse vaikutuksia ja miksi replikaatiotutkimukset voivat epäonnistua." },
-      bermPathway: "Non-linear dose-response", keyRefs: ["adey1976_calcium_window"], link: "/objections#dose-response",
+      bermPathway: "Non-linear dose-response", keyRefs: ["adey1976_calcium_window"], link: "/about/objections#dose-response",
     },
   },
   {
@@ -711,10 +711,10 @@ export const NODES: CausalMapNode[] = [
   },
 
   // ── LEVEL 3: Tissue effects (10) ──
-  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production. Bektas et al. 2026: 3.5 GHz (5G) → testicular ROS + oxidative damage; CoQ10 rescue demonstrates reversibility." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa. Bektas ym. 2026: 3,5 GHz (5G) → testis-ROS + oksidatiivinen vaurio; CoQ10-interventio osoittaa reversiibeliuden." }, keyRefs: ["bektas2026"], link: "/evidence/lighting#sperm" } },
+  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Redox, germ-cell and Leydig-cell states are distinct contributors to reproductive function. Bektas 2026 used GSM-modulated 3.5 GHz in 28 male rats: CoQ10 partially attenuated hormonal, oxidative and testicular histological changes. The study did not establish a 5G NR response, early calcium mediation, restored functional fertility or a repair time constant." }, fi: { mechanism: "Redox-, itusolu- ja Leydig-solutilat ovat erillisiä lisääntymistoiminnan tekijöitä. Bektas 2026 käytti GSM-moduloitua 3,5 GHz:n signaalia 28 urosrotalla: CoQ10 lievensi osaa hormoni-, oksidatiivisista ja kiveksen histologisista muutoksista. Koe ei osoittanut 5G NR -vastetta, varhaista kalsiumvälitystä, palautunutta toiminnallista hedelmällisyyttä tai korjausaikavakiota." }, keyRefs: ["bektas2026"], link: "/evidence/lighting#sperm" } },
   { id: "tissue_ovarian", level: 3, label: { en: "Ovulation / oocyte quality ↓", fi: "Ovulaatio/munasolun laatu ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Oocyte meiotic spindle is disrupted, granulosa cell apoptosis increases." }, fi: { mechanism: "Munasolun meioottinen kara häiriintyy, granuloosasolujen apoptoosi lisääntyy." }, link: "/evidence/circadian#ovarian" } },
   { id: "tissue_testosterone", level: 3, label: { en: "Testosterone ↓", fi: "Testosteroni ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Leydig cell steroidogenesis disruption: StAR protein expression decreases → testosterone synthesis declines." }, fi: { mechanism: "Leydig-solujen steroidogeneesin häiriö: StAR-proteiinin ilmentyminen alenee → testosteronisyntesi vähenee." }, link: "/evidence/circadian#testosterone" } },
-  { id: "tissue_melatonin", level: 3, label: { en: "Melatonin ↓", fi: "Melatoniini ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Pineal gland melatonin synthesis decreases via CRY/RPM disruption and display device blue light." }, fi: { mechanism: "Pinealirauhasen melatoniinisyntesi alenee CRY/RPM-häiriön ja näyttölaitteiden sinisen valon kautta." }, link: "/evidence/circadian#melatonin" } },
+  { id: "tissue_melatonin", level: 3, label: { en: "Melatonin ↓", fi: "Melatoniini ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Retinal light input can alter circadian timing and melatonin secretion. A local CRY/flavin field response is a separate conditional route. Experimental MT2 engagement can increase evoked calcium while restraining sodium-current changes; the transfer from physiological melatonin to that cellular protocol requires dose and timing calibration." }, fi: { mechanism: "Verkkokalvon valosyöte voi muuttaa vuorokausiajoitusta ja melatoniinieritystä. Paikallinen CRY-/flaviinivaste kenttään on erillinen ehdollinen reitti. Kokeellinen MT2-aktivaatio voi suurentaa evokoitua kalsiumia hilliten natriumvirtamuutosta; siirto fysiologisesta melatoniinista soluprotokollaan tarvitsee annos- ja ajoituskalibroinnin." }, link: "/evidence/circadian#melatonin" } },
   { id: "tissue_nk_cells", level: 3, label: { en: "NK cells ↓ (−70%)", fi: "NK-solut ↓ (−70%)" }, epistemicLevel: "E", detail: { en: { mechanism: "Natural killer cells decline. Melatonin normally stimulates NK cell activity." }, fi: { mechanism: "Luonnolliset tappajasolut vähenevät. Melatoniini normaalisti stimuloi NK-aktiivisuutta." }, link: "/evidence/circadian#nk-cells" } },
   { id: "tissue_insulin", level: 3, label: { en: "Insulin sensitivity ↓", fi: "Insuliiniherkkyys ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency disrupts pancreatic β-cell rhythm → insulin resistance." }, fi: { mechanism: "Melatoniinin puute häiritsee haiman β-solujen rytmiä → insuliiniresistenssi." }, link: "/evidence/cascades#insulin" } },
   { id: "tissue_cortisol", level: 3, label: { en: "Cortisol ↑ (chronic)", fi: "Kortisoli ↑ (krooninen)" }, epistemicLevel: "E", detail: { en: { mechanism: "HPA axis hyperactivation: circadian disruption + vagal tone decrease → chronic cortisol." }, fi: { mechanism: "HPA-akselin yliaktivaatio: sirkadiaaninen häiriö + vagaalisen tonuksen lasku → krooninen kortisoli." }, link: "/evidence/circadian#cortisol" } },
@@ -753,7 +753,7 @@ export const NODES: CausalMapNode[] = [
   { id: "disease_cancer", level: 4, label: { en: "7. Young-onset cancer", fi: "7. Nuorten syöpä" }, sublabel: { en: "Latency: 10–25 years", fi: "Viive: 10-25 vuotta" }, color: "#A85A5A", cascadeOrder: 7, epistemicLevel: "E", detail: { en: { mechanism: "NK cell decline + ROS damage + mitotic disruption + immunosuppression → cancer risk." }, fi: { mechanism: "NK-solujen lasku + ROS-vaurio + mitoottinen häiriö + immunosuppressio → syöpäriski." }, link: "/evidence/cascades#cancer" } },
 
   // ── LEVEL 5: Demographic cascade (4) ──
-  { id: "demo_biocap", level: 5, label: { en: "Biological capacity ↓", fi: "Biologinen kapasiteetti ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Combined effect of spermatogenesis, ovulation, and hormonal disruptions lowers biological reproductive capacity." }, fi: { mechanism: "Spermatogeneesin, ovulaation ja hormonaalisten häiriöiden yhteisvaikutus alentaa biologista lisääntymiskapasiteettia." }, link: "/model#biocap" } },
+  { id: "demo_biocap", level: 5, label: { en: "Biological capacity ↓", fi: "Biologinen kapasiteetti ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Combined effect of spermatogenesis, ovulation, and hormonal disruptions lowers biological reproductive capacity." }, fi: { mechanism: "Spermatogeneesin, ovulaation ja hormonaalisten häiriöiden yhteisvaikutus alentaa biologista lisääntymiskapasiteettia." }, link: "/model/math#biocap" } },
   { id: "demo_behavior", level: 5, label: { en: "Reproductive motivation ↓", fi: "Lisääntymismotivaatio ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Testosterone and oxytocin decline + depression + sleep disorders → approach behavior and libido decrease." }, fi: { mechanism: "Testosteronin ja oksitosiinin lasku + masennus + unihäiriöt → lähestymiskäyttäytyminen ja libido laskevat." }, link: "/evidence/circadian#qbs" } },
   { id: "demo_asfr", level: 5, label: { en: "ASFR ↓ (age-specific)", fi: "ASFR ↓ (ikäkohtainen)" }, epistemicLevel: "E", detail: { en: { mechanism: "Decline in biological capacity and motivation produces age-specific fertility rate (ASFR) decline." }, fi: { mechanism: "Biologisen kapasiteetin ja motivaation lasku tuottaa ikäkohtaisen hedelmällisyysluvun (ASFR) laskun." }, link: "/model#asfr" } },
   { id: "demo_tfr", level: 5, label: { en: "TFR ↓ (total)", fi: "TFR ↓ (kokonais)" }, sublabel: { en: "5.0 → 2.2 globally", fi: "5.0 → 2.2 globaalisti" }, epistemicLevel: "E", detail: { en: { mechanism: "Sum of ASFRs across age groups = total fertility rate (TFR). Global trend: 5.0 → 2.2." }, fi: { mechanism: "ASFR-lukujen summa yli ikäryhmien = kokonaishedelmällisyysluku (TFR). Globaali trendi: 5.0 → 2.2." }, link: "/explore" } },
@@ -830,7 +830,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mod_ion" },
 
   // Modulation layers → mechanisms
-  { from: "mod_geometry", to: "mod_ion", label: "BERM coupling proposition; L2 open" },
+  { from: "mod_geometry", to: "mod_ion", label: "conditional operator; tissue kernel open" },
   { from: "mod_ion", to: "mech_vgcc_ros" },
   { from: "mod_ion", to: "mech_ifo_linear" },
   { from: "mod_ion", to: "mech_gpcr" },
@@ -848,7 +848,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_rf", to: "mech_vgcc_genotype" },
 
   // T-type bifurcation: Schwan → Cav3 → testosterone/sperm
-  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "candidate transfer; L2 open" },
+  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "candidate tissue transfer; calibration open" },
   { from: "mech_ttype_bifurcation", to: "tissue_testosterone", label: "Ca²⁺ → StAR → testosterone (Xiang 2025)" },
   { from: "mech_ttype_bifurcation", to: "tissue_sperm", label: "Ca²⁺ → spermatocyte dev (Ma 2026)" },
 

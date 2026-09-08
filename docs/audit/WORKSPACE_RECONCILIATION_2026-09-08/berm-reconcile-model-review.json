@@ -1,0 +1,380 @@
+[
+  {
+    "path": "berm/berm/__init__.py",
+    "kind": "divergent",
+    "base": 4973,
+    "original": 5127,
+    "published": 5672
+  },
+  {
+    "path": "berm/berm/architecture.py",
+    "kind": "divergent",
+    "base": 8267,
+    "original": 8796,
+    "published": 12792
+  },
+  {
+    "path": "berm/berm/biology/androgen_capacity.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 8178
+  },
+  {
+    "path": "berm/berm/biology/causal_registry.py",
+    "kind": "published_only",
+    "base": 18991,
+    "original": 18991,
+    "published": 22773
+  },
+  {
+    "path": "berm/berm/biology/cross_pathway_synthesis.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 13805
+  },
+  {
+    "path": "berm/berm/biology/reproductive_state.py",
+    "kind": "published_only",
+    "base": 23716,
+    "original": 23716,
+    "published": 23934
+  },
+  {
+    "path": "berm/berm/civilization/__init__.py",
+    "kind": "published_only",
+    "base": 5247,
+    "original": 5247,
+    "published": 5603
+  },
+  {
+    "path": "berm/berm/civilization/epistapege.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 6243
+  },
+  {
+    "path": "berm/berm/diagnostics/lab_baseline.py",
+    "kind": "published_only",
+    "base": 12744,
+    "original": 12744,
+    "published": 12892
+  },
+  {
+    "path": "berm/berm/eco/differential_susceptibility.py",
+    "kind": "published_only",
+    "base": 3197,
+    "original": 3197,
+    "published": 3285
+  },
+  {
+    "path": "berm/berm/evidence_registry.py",
+    "kind": "published_only",
+    "base": 14230,
+    "original": 14230,
+    "published": 14269
+  },
+  {
+    "path": "berm/berm/exposure/lindgren.py",
+    "kind": "published_only",
+    "base": 2105,
+    "original": 2105,
+    "published": 2192
+  },
+  {
+    "path": "berm/berm/model_modulome_asfr.py",
+    "kind": "divergent",
+    "base": null,
+    "original": 9324,
+    "published": 11375
+  },
+  {
+    "path": "berm/berm/modulome/cards.py",
+    "kind": "divergent",
+    "base": null,
+    "original": 32421,
+    "published": 33132
+  },
+  {
+    "path": "berm/berm/modulome/conditional_inputs.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 8205
+  },
+  {
+    "path": "berm/berm/modulome/intervention_examples.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 18733
+  },
+  {
+    "path": "berm/berm/modulome/intervention_protocol.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 38243
+  },
+  {
+    "path": "berm/berm/modulome/reproductive_bridge.py",
+    "kind": "divergent",
+    "base": null,
+    "original": 17608,
+    "published": 17681
+  },
+  {
+    "path": "berm/berm/physics/field_state.py",
+    "kind": "published_only",
+    "base": 23591,
+    "original": 23591,
+    "published": 24071
+  },
+  {
+    "path": "berm/berm/physics/lindgren_response.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 13462
+  },
+  {
+    "path": "berm/berm/tfr.py",
+    "kind": "published_only",
+    "base": 5694,
+    "original": 5694,
+    "published": 5831
+  },
+  {
+    "path": "berm/berm/v16.py",
+    "kind": "divergent",
+    "base": 84865,
+    "original": 85144,
+    "published": 85777
+  },
+  {
+    "path": "berm/berm/validation/evidence_constrained_hindcast.py",
+    "kind": "published_only",
+    "base": 42738,
+    "original": 42738,
+    "published": 42850
+  },
+  {
+    "path": "berm/berm/validation/fieldstate_cohort_signature.py",
+    "kind": "published_only",
+    "base": 9662,
+    "original": 9662,
+    "published": 9740
+  },
+  {
+    "path": "berm/data/evidence/intervention_profiles_v1.json",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 41493
+  },
+  {
+    "path": "berm/docs/berm-conditional-response-and-androgen-capacity.md",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 8358
+  },
+  {
+    "path": "berm/docs/berm-eco-bioelectromagnetic-selection-review.md",
+    "kind": "published_only",
+    "base": 36873,
+    "original": 36873,
+    "published": 36955
+  },
+  {
+    "path": "berm/docs/berm-lindgren-first-source-map-v2.md",
+    "kind": "published_only",
+    "base": 69852,
+    "original": 69852,
+    "published": 70540
+  },
+  {
+    "path": "berm/docs/berm-lindgren-first-source-map.md",
+    "kind": "published_only",
+    "base": 35979,
+    "original": 35979,
+    "published": 36153
+  },
+  {
+    "path": "berm/docs/berm-state-conditioned-multiscale-closure.md",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 5523
+  },
+  {
+    "path": "berm/docs/cognitive-narrative-integration.md",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 6648
+  },
+  {
+    "path": "berm/docs/conditional-modulome-route.md",
+    "kind": "divergent",
+    "base": null,
+    "original": 8409,
+    "published": 11235
+  },
+  {
+    "path": "berm/docs/data-gap-register.md",
+    "kind": "published_only",
+    "base": 12282,
+    "original": 12282,
+    "published": 12803
+  },
+  {
+    "path": "berm/docs/fieldstate-asfr-v2.md",
+    "kind": "published_only",
+    "base": 21262,
+    "original": 21262,
+    "published": 21531
+  },
+  {
+    "path": "berm/docs/interaction-operators.md",
+    "kind": "divergent",
+    "base": null,
+    "original": 7305,
+    "published": 7795
+  },
+  {
+    "path": "berm/docs/intervention-protocol-v1.md",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 11671
+  },
+  {
+    "path": "berm/docs/merge-2026-09-07-data-manifest.json",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 16881
+  },
+  {
+    "path": "berm/docs/pharmacology-conditional-derivation.md",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 7689
+  },
+  {
+    "path": "berm/docs/sentinel-data-requirements.md",
+    "kind": "published_only",
+    "base": 13607,
+    "original": 13607,
+    "published": 13641
+  },
+  {
+    "path": "berm/export_architecture.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 505
+  },
+  {
+    "path": "berm/export_causal_graph.py",
+    "kind": "published_only",
+    "base": 5277,
+    "original": 5277,
+    "published": 10659
+  },
+  {
+    "path": "berm/export_intervention_profiles.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 4133
+  },
+  {
+    "path": "berm/export_interventions.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 8888
+  },
+  {
+    "path": "berm/tests/test_androgen_capacity.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 3399
+  },
+  {
+    "path": "berm/tests/test_conditional_input_adapters.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 7223
+  },
+  {
+    "path": "berm/tests/test_cross_pathway_synthesis.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 2051
+  },
+  {
+    "path": "berm/tests/test_epistapege.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 1519
+  },
+  {
+    "path": "berm/tests/test_field_state.py",
+    "kind": "published_only",
+    "base": 8375,
+    "original": 8375,
+    "published": 8840
+  },
+  {
+    "path": "berm/tests/test_intervention_protocol.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 21435
+  },
+  {
+    "path": "berm/tests/test_intervention_registry.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 4495
+  },
+  {
+    "path": "berm/tests/test_lindgren_response.py",
+    "kind": "published_only",
+    "base": null,
+    "original": null,
+    "published": 5529
+  },
+  {
+    "path": "berm/tests/test_measured_fieldstate_biology.py",
+    "kind": "published_only",
+    "base": 27338,
+    "original": 27338,
+    "published": 27379
+  },
+  {
+    "path": "berm/tests/test_model_architecture_contract.py",
+    "kind": "published_only",
+    "base": 6295,
+    "original": 6295,
+    "published": 11123
+  },
+  {
+    "path": "berm/tests/test_v19_three_channel.py",
+    "kind": "published_only",
+    "base": 15468,
+    "original": 15468,
+    "published": 15485
+  }
+]

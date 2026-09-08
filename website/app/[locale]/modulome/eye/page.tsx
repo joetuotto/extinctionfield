@@ -102,9 +102,9 @@ const COPY = {
     ],
 
     /* 05 Lindgren Analysis */
-    s5Title: "BERM candidate susceptibility analysis — L2 open",
+    s5Title: "BERM candidate susceptibility analysis — conditional L2 operator, tissue calibration open",
     s5p1:
-      "BERM proposes six candidate criteria for ocular EMF sensitivity and an imported L3 response function χ_eye with three moderators. χ_eye is distinct from the restricted L1 coefficient χ_geo(x); its inputs, weights and biological interpretation remain testable beyond the open L2 bridge:",
+      "BERM proposes six candidate criteria for ocular EMF sensitivity and a χ_eye closure with three moderators. These are testable tissue-kernel propositions downstream of the conditional L2 operator, not criteria derived by Lindgren geometry:",
     s5Criteria: [
       "Iris pigmentation — recorded as measured retinal light dose, not as a transmission multiplier",
       "FAD/B2 status — three effects kept apart: the receptor (CRY stability and radical pair formation), clock-protein regulation, and the rest of cellular metabolism through FAD-dependent enzymes. No single protective or sensitising sign follows from them",
@@ -265,7 +265,7 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM:n herkkyyden ehdokasanalyysi — L2 avoin",
+    s5Title: "BERM:n herkkyyden ehdokasanalyysi — ehdollinen L2-operaattori, kudoskalibrointi avoin",
     s5p1:
       "BERM ehdottaa kuutta silmän EMF-herkkyyden ehdokaskriteeriä ja kolmen moderaattorin tuotua L3-vastefunktiota χ_eye. χ_eye on eri suure kuin rajoitettu L1-kerroin χ_geo(x); sen syötteet, painot ja biologinen tulkinta pysyvät testattavina avoimen L2-sillan jälkeen:",
     s5Criteria: [
@@ -426,9 +426,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM感受性候補解析 — L2未解決",
+    s5Title: "BERM感受性候補解析 — 条件付きL2演算子、組織校正は未完了",
     s5p1:
-      "BERMは眼のEMF感受性について6つの候補基準と3つの修飾因子を持つ導入L3応答関数χ_eyeを提案する。χ_eyeは制限されたL1係数χ_geo(x)とは別物であり、その入力・重み・生物学的解釈は未解決L2橋の下流で検証される：",
+      "BERMは眼のEMF感受性について6つの候補基準と3つの修飾因子をもつχ_eye閉包を提案する。これは条件付きL2演算子より下流の組織カーネル検証命題であり、Lindgren幾何学が導出した基準ではない：",
     s5Criteria: [
       "虹彩色素沈着 — 透過倍率ではなく、測定された網膜光量として記録する",
       "FAD/B2状態 — 三つの作用を分けて扱う：受容体（CRYの安定性とラジカルペア形成）、時計タンパク質の調節、そしてFAD依存酵素を介した細胞のその他の代謝。ここから単一の保護的あるいは感作的な符号は導かれない",
@@ -587,9 +587,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "Analyse candidate de susceptibilité BERM — L2 ouvert",
+    s5Title: "Analyse candidate de susceptibilité BERM — opérateur L2 conditionnel, calibration tissulaire ouverte",
     s5p1:
-      "BERM propose six critères candidats de sensibilité oculaire aux CEM et une fonction de réponse χ_eye L3 importée à trois modérateurs. χ_eye est distincte du coefficient L1 restreint χ_geo(x) ; ses entrées, poids et interprétation biologique restent testables en aval du pont L2 ouvert :",
+      "BERM propose six critères candidats de sensibilité oculaire aux CEM et une fermeture χ_eye à trois modérateurs. Ce sont des propositions de noyau tissulaire testables en aval de l’opérateur L2 conditionnel, non des critères dérivés par la géométrie de Lindgren :",
     s5Criteria: [
       "Pigmentation de l'iris — consignée comme dose lumineuse rétinienne mesurée, non comme un multiplicateur de transmission",
       "Statut FAD/B2 — trois effets tenus séparés : le récepteur (stabilité de CRY et formation de paires de radicaux), la régulation des protéines d'horloge, et le reste du métabolisme cellulaire via les enzymes dépendantes du FAD. Aucun signe protecteur ou sensibilisant unique n'en découle",
@@ -748,9 +748,9 @@ const COPY = {
       },
     ],
 
-    s5Title: "BERM 감수성 후보 분석 — L2 미해결",
+    s5Title: "BERM 감수성 후보 분석 — 조건부 L2 연산자, 조직 보정 미완료",
     s5p1:
-      "BERM은 안구 EMF 감수성에 대해 6개 후보 기준과 3개 조절인자를 가진 도입 L3 반응 함수 χ_eye를 제안한다. χ_eye는 제한된 L1 계수 χ_geo(x)와 별개이며 입력·가중치·생물학적 해석은 열린 L2 연결 이후 검정 대상이다:",
+      "BERM은 안구 EMF 감수성에 대해 6개 후보 기준과 3개 조절인자를 가진 χ_eye 폐쇄를 제안한다. 이는 조건부 L2 연산자 이후의 조직 커널 검증 명제이지 Lindgren 기하학이 도출한 기준이 아니다:",
     s5Criteria: [
       "홍채 색소침착 — 투과 배율이 아니라 측정된 망막 광량으로 기록",
       "FAD/B2 상태 — 세 가지 효과를 분리해 다룬다: 수용체(CRY 안정성과 라디칼쌍 형성), 시계 단백질 조절, 그리고 FAD 의존 효소를 통한 세포의 나머지 대사. 여기서 하나의 보호적 또는 감작적 부호는 따라 나오지 않는다",

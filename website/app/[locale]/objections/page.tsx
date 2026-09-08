@@ -11,7 +11,7 @@ import {
   findingsInGroup,
 } from "@/lib/findingsClassification";
 
-type Objection = { question: string; response: readonly string[]; boundary: string };
+type Objection = { id?: string; question: string; response: readonly string[]; boundary: string };
 type DiscriminatingTest = {
   id: string;
   name: string;
@@ -227,6 +227,7 @@ const t: Record<string, Copy> = {
         boundary: "This is a regulatory-gap argument, not a health claim. If LED driver emissions at environmental distances produce no measurable IFO-VGIC response in controlled experiments, the IF-channel concern is empirically resolved.",
       },
       {
+        id: "dose-response",
         question: "There is no dose-response relationship",
         response: [
           "The [[ref:adey1976_calcium_window|Adey-Blackman calcium window, documented since 1976]], shows that EMF biological effects do not follow a linear dose-response. Calcium efflux from cat brain tissue occurred at specific intensity windows (0.1–1.0 mW/cm² at 450 MHz amplitude-modulated at 16 Hz) but NOT at higher or lower levels. This 'window effect' means the ICNIRP approach — setting a threshold above which effects occur — is structurally wrong. Effects occur in windows, not above thresholds.",
@@ -271,7 +272,7 @@ const t: Record<string, Copy> = {
           "In 1995, [[ref:lai1995_dna_breaks|Lai and Singh]] found DNA strand breaks from 2450 MHz radiation. Industry funded counter-studies and pressured their university. The mechanism was later identified: oxidative stress via VGCC-mediated calcium influx, confirmed by melatonin's protective effect.",
           "In 2026, [[ref:kim2026_cell_gene_switch|Kim et al.'s Cell paper]] was called 'incredibly implausible' by physicist [[ref:york2026_kim_commentary|Andrew York]]. The paper used CRISPR screening to identify Cyb5b as an EMF sensor and demonstrated reversible gene expression control in transgenic mice.",
           "The pattern is consistent: data is strong, mechanism is unknown, critics declare impossibility. Then the mechanism is found. The 'implausibility argument' is not science — it is an argument from ignorance.",
-          "Metric-volume linearization/geodesic deviation gives the signed directional response and the algebraic χ_geo(q)=q/√(1+q²) formula at L1. Choosing q=|Ā| through a dimensionless, collinear Lorentz-to-Euclidean spatial/scalar projection is L2. The formula does not map an external measurement to biology: raw V/m, a proxy, V_m or a membrane coordinate needs an open L0→L2 map q=N(z), and photon-sensor or membrane mechanisms remain imported L3 candidates.",
+          "BERM offers a testable physical proposal rather than a completed solution. For a normalized positive-norm mode, χ_geo follows from the inverse rank-one metric; under explicit matter–metric and linear-response assumptions, a conditional response-operator form also follows. These derivations do not supply the ion-channel or tissue kernel, its sign, lag or calibration. The photon-sensor analogy motivates sensitivity experiments but cannot substitute for those measurements.",
         ],
         boundary: "Lindgren's interpretation is theoretical and not yet independently validated. The empirical findings ([[ref:adey1976_calcium_window|Adey]], [[ref:lai1995_dna_breaks|Lai]], Pall, [[ref:sousouri2025|Sousouri]], [[ref:kim2026_cell_gene_switch|Kim]]) stand independently of the theoretical framework.",
       },
@@ -492,6 +493,7 @@ const t: Record<string, Copy> = {
         boundary: "Tämä on sääntelyn aukko -argumentti, ei terveysväite. Jos LED-ajuriemissiot ympäristöetäisyyksillä eivät tuota mitattavaa IFO-VGIC-vastetta kontrolloiduissa kokeissa, IF-kanavahuoli on empiirisesti ratkaistu.",
       },
       {
+        id: "dose-response",
         question: "Annos-vastetta ei ole",
         response: [
           "[[ref:adey1976_calcium_window|Adeyn-Blackmanin kalsiumikkuna, dokumentoitu vuodesta 1976]], osoittaa, ettei EMF:n biologiset vaikutukset noudata lineaarista annos-vastetta. Kalsiumin ulosvirtausta kissan aivokudoksesta tapahtui tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm² taajuudella 450 MHz amplitudimoduloituna 16 Hz:llä) mutta EI korkeammilla tai matalammilla tasoilla. Tämä 'ikkunailmiö' tarkoittaa, että ICNIRP:n lähestymistapa — kynnysarvon asettaminen jonka yläpuolella vaikutuksia esiintyy — on rakenteellisesti väärä. Vaikutuksia esiintyy ikkunoissa, ei kynnysarvojen yläpuolella.",
@@ -536,7 +538,7 @@ const t: Record<string, Copy> = {
           "Vuonna 1995 [[ref:lai1995_dna_breaks|Lai ja Singh]] havaitsivat DNA-katkoksia 2450 MHz säteilystä. Teollisuus rahoitti vastatutkimuksia ja painosti heidän yliopistoaan. Mekanismi tunnistettiin myöhemmin: oksidatiivinen stressi VGCC-välitteisen kalsiumtulvan kautta, vahvistettu melatoniinin suojavaikutuksella.",
           "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym:n Cell-artikkelia]] kutsuttiin 'incredibly implausible' fyysikko [[ref:york2026_kim_commentary|Andrew Yorkin]] toimesta. Artikkeli käytti CRISPR-seulontaa Cyb5b:n tunnistamiseksi EMF-sensoriksi ja osoitti palautuvan geeniekspression kontrollin transgeenisissä hiirissä.",
           "Kaava on johdonmukainen: data on vahvaa, mekanismi on tuntematon, kriitikot julistavat mahdottomuuden. Sitten mekanismi löytyy. 'Epäuskottavuusargumentti' ei ole tiedettä — se on argumentti tietämättömyydestä.",
-          "Metriikan tilavuuslinearisaatio/geodeesipoikkeama antaa etumerkillisen suunnatun vasteen ja algebrallisen χ_geo(q)=q/√(1+q²)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla, kollineaarisella Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2. Kaava ei kartoita ulkoista mittausta biologiaan: raaka V/m-arvo, proxy, V_m tai kalvokoordinaatti tarvitsee avoimen L0→L2-kartan q=N(z), ja fotonisensori- sekä kalvomekanismit pysyvät tuotuina L3-ehdokkaina.",
+          "BERM tarjoaa testattavan fysikaalisen ehdotuksen, ei valmista ratkaisua. χ_geo johdetaan normalisoidun positiivinormisen moodin käänteismetriikasta, ja eksplisiittisillä aine–metriikka- sekä lineaarivasteoletuksilla saadaan ehdollinen formaali operaattori. Nämä eivät anna ionikanavan kudosydintä, etumerkkiä, viivettä tai kalibrointia. Fotonisensorivertaus motivoi kokeita mutta ei korvaa mittauksia.",
         ],
         boundary: "Lindgrenin tulkinta on teoreettinen eikä sitä ole vielä riippumattomasti validoitu. Empiiriset havainnot ([[ref:adey1976_calcium_window|Adey]], [[ref:lai1995_dna_breaks|Lai]], Pall, [[ref:sousouri2025|Sousouri]], [[ref:kim2026_cell_gene_switch|Kim]]) ovat olemassa riippumatta teoreettisesta kehyksestä.",
       },
@@ -757,6 +759,7 @@ const t: Record<string, Copy> = {
         boundary: "これは規制ギャップの論拠であり、健康主張ではない。",
       },
       {
+        id: "dose-response",
         question: "用量反応関係がない",
         response: [
           "[[ref:adey1976_calcium_window|1976年以来文書化されているAdey-Blackmanカルシウムウィンドウ]]は、EMFの生物学的効果が線形用量反応に従わないことを示している。この「ウィンドウ効果」はICNIRPのアプローチが構造的に間違っていることを意味する。",
@@ -800,7 +803,7 @@ const t: Record<string, Copy> = {
           "1995年、[[ref:lai1995_dna_breaks|LaiとSingh]]は2450 MHz放射からDNA鎖切断を発見した。",
           "2026年、[[ref:kim2026_cell_gene_switch|Kim et al.のCell論文]]は物理学者[[ref:york2026_kim_commentary|Andrew York]]に「信じられないほど非現実的」と呼ばれた。",
           "パターンは一貫している：データは強力、メカニズムは未知、批評家は不可能性を宣言する。その後メカニズムが見つかる。",
-          "計量体積の線形化／測地線偏差は符号付き方向応答と代数式χ_geo(q)=q/√(1+q²)をL1で与える。無次元・共線Lorentz→Euclid空間・スカラー射影でq=|Ā|を選ぶ操作はL2である。式自体は外部測定を生物応答へ写さない。生のV/m値、プロキシ、V_m、膜座標には未解決L0→L2写像q=N(z)が必要で、光子センサーと膜機構は導入L3候補のままである。",
+          "χ_geoは正規化した正ノルムモードの逆計量から導出され、明示的な物質–計量・線形応答仮定から条件付き形式演算子が得られる。ただしイオンチャネルの組織カーネル、符号、遅延、校正は与えない。光子センサーの類推は実験を動機づけるが測定の代わりにはならない。",
         ],
         boundary: "Lindgrenの解釈は理論的であり、まだ独立的に検証されていない。経験的知見は理論的フレームワークとは独立に存在する。",
       },
@@ -1025,6 +1028,7 @@ const t: Record<string, Copy> = {
         boundary: "C’est un argument de lacune réglementaire, pas une affirmation sanitaire.",
       },
       {
+        id: "dose-response",
         question: "Il n’y a pas de relation dose-réponse",
         response: [
           "[[ref:adey1976_calcium_window|La fenêtre calcique d’Adey-Blackman, documentée depuis 1976]], montre que les effets biologiques EMF ne suivent pas une dose-réponse linéaire. L’approche ICNIRP est structurellement erronée.",
@@ -1068,7 +1072,7 @@ const t: Record<string, Copy> = {
           "En 1995, [[ref:lai1995_dna_breaks|Lai et Singh]] ont trouvé des cassures de brins d’ADN.",
           "En 2026, [[ref:kim2026_cell_gene_switch|l’article Cell de Kim et al.]] a été qualifié d’« incroyablement invraisemblable » par le physicien [[ref:york2026_kim_commentary|Andrew York]].",
           "Le schéma est cohérent : les données sont fortes, le mécanisme est inconnu, les critiques déclarent l’impossibilité. Puis le mécanisme est trouvé.",
-          "La linéarisation du volume métrique/la déviation géodésique donne la réponse directionnelle signée et la formule algébrique χ_geo(q)=q/√(1+q²) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension et colinéaire de Lorentz vers Euclide est L2. La formule ne relie pas une mesure externe à la biologie : une valeur brute en V/m, un proxy, V_m ou une coordonnée membranaire exige l’application L0→L2 ouverte q=N(z), et les mécanismes photorécepteurs ou membranaires restent L3 importés.",
+          "χ_geo est dérivé de la métrique inverse pour un mode normalisé de norme positive, et un opérateur formel conditionnel suit d'hypothèses explicites matière–métrique et réponse linéaire. Cela ne fournit ni noyau de canal ionique, ni signe, délai ou calibration. L'analogie photonique motive des expériences, pas un coefficient.",
         ],
         boundary: "L’interprétation de Lindgren est théorique et pas encore validée indépendamment. Les résultats empiriques persistent indépendamment du cadre théorique.",
       },
@@ -1293,6 +1297,7 @@ const t: Record<string, Copy> = {
         boundary: "이것은 규제 격차 논거이지, 건강 주장이 아니다.",
       },
       {
+        id: "dose-response",
         question: "용량-반응 관계가 없다",
         response: [
           "[[ref:adey1976_calcium_window|1976년부터 문서화된 Adey-Blackman 칼슘 윈도우]]는 EMF 생물학적 효과가 선형 용량-반응을 따르지 않음을 보여준다. ICNIRP 접근법이 구조적으로 잘못되었음을 의미한다.",
@@ -1336,7 +1341,7 @@ const t: Record<string, Copy> = {
           "1995년, [[ref:lai1995_dna_breaks|Lai와 Singh]]은 2450 MHz 방사로부터 DNA 가닥 절단을 발견했다.",
           "2026년, [[ref:kim2026_cell_gene_switch|Kim et al.의 Cell 논문]]은 물리학자 [[ref:york2026_kim_commentary|Andrew York]]에 의해 '믿을 수 없을 정도로 비현실적'이라 불렸다.",
           "패턴은 일관적이다: 데이터는 강력하고, 메커니즘은 미지이며, 비평가들은 불가능성을 선언한다. 그 후 메커니즘이 발견된다.",
-          "계량 부피 선형화/측지선 편차는 부호 있는 방향 반응과 대수식 χ_geo(q)=q/√(1+q²)를 L1에서 준다. 무차원·공선 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2다. 공식 자체는 외부 측정을 생물학으로 매핑하지 않는다. 원시 V/m 값, 프록시, V_m 또는 막 좌표에는 열린 L0→L2 사상 q=N(z)가 필요하고 광자 센서와 막 메커니즘은 도입된 L3 후보로 남는다.",
+          "χ_geo는 정규화된 양의 노름 모드의 역메트릭에서 도출되며 명시적 물질–메트릭 및 선형반응 가정에서 조건부 형식 연산자가 따른다. 이는 이온채널 조직 커널, 부호, 지연 또는 보정을 제공하지 않는다. 광자 센서 비유는 실험을 동기화하지만 측정을 대신하지 못한다.",
         ],
         boundary: "Lindgren의 해석은 이론적이며 아직 독립적으로 검증되지 않았다.",
       },
@@ -1408,6 +1413,27 @@ const t: Record<string, Copy> = {
   },
 };
 
+const INTERPRETER_OBJECTION = {
+  en: {
+    question: "Does the interpreter extension make contrary evidence self-sealing?",
+    response: [
+      "No. The direct evidence establishes a bounded proposition: a verbal explanation can be coherent while the speaker lacks access to all causal antecedents ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). It does not establish that a particular fertility explanation is biologically generated. [E]",
+      "BERM adds a composed and falsifiable application. It predicts that preregistered biological states will improve temporal and out-of-sample prediction of later behaviour and later stated reasons beyond prior reports and socioeconomic variables. It also predicts a framing-dependent evidence threshold in matched-review experiments and an ordered biological → behavioural → report response to a valid upstream intervention. [L*]",
+      "Disagreement with BERM is not evidence of cognitive immunology. If those discriminating predictions fail in adequately powered independent replications, the fertility application and Epistapege extension are rejected."
+    ],
+    boundary: "The interpreter literature supports the possibility of causal misattribution. Only joint biomarker–behaviour–report data can establish its prevalence and effect size in fertility or political behaviour. FieldState can measure a physical input but does not supply the cognitive inference.",
+  },
+  fi: {
+    question: "Tekeekö tulkkilaajennus vastakkaisesta näytöstä itseään suojaavan?",
+    response: [
+      "Ei. Suora näyttö osoittaa rajatun väitteen: sanallinen selitys voi olla koherentti, vaikka puhujalla ei ole pääsyä kaikkiin kausaalisiin edeltäjiin ([[ref:delgado1969|Delgado 1969]]; [[ref:gazzaniga2000|Gazzaniga 2000]]; [[ref:nisbett_wilson1977|Nisbett & Wilson 1977]]). Se ei osoita, että jokin tietty hedelmällisyysselitys olisi biologisesti tuotettu. [E]",
+      "BERM lisää koostetun ja falsifioitavan sovelluksen. Se ennustaa, että ennakkorekisteröidyt biologiset tilat parantavat myöhemmän käyttäytymisen ja myöhemmin ilmoitettujen syiden ajallista ja otoksen ulkopuolista ennustetta aiempien raporttien ja sosioekonomisten muuttujien lisäksi. Se ennustaa myös kehystyksestä riippuvan evidenssikynnyksen yhteensovitetuissa arviointikokeissa sekä järjestetyn biologinen → behavioraalinen → raportti -vasteen validiin edeltävään interventioon. [L*]",
+      "Eriävä kanta BERM:stä ei ole näyttö kognitiivisesta immunologiasta. Jos erottavat ennusteet epäonnistuvat riittävän voimallisissa riippumattomissa replikaatioissa, hedelmällisyyssovellus ja Epistapege-laajennus hylätään."
+    ],
+    boundary: "Tulkkikirjallisuus tukee kausaalisen väärinattribuution mahdollisuutta. Vain yhdistetty biomarkkeri–käyttäytyminen–raportti-aineisto voi osoittaa sen yleisyyden ja efektikoon hedelmällisyydessä tai poliittisessa käyttäytymisessä. FieldState voi mitata fysikaalisen syötteen mutta ei tuota kognitiivista päätelmää.",
+  },
+} as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -1425,6 +1451,7 @@ export default async function ObjectionsPage({
 }) {
   const { locale } = await params;
   const d = pickCopy(t, locale);
+  const interpreterObjection = pickCopy(INTERPRETER_OBJECTION, locale);
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -1641,7 +1668,7 @@ export default async function ObjectionsPage({
         <h2 className="editorial-section-heading border-t editorial-rule pt-6">{d.questionsTitle}</h2>
 
         {d.objections.map((objection, index) => (
-          <section key={objection.question} id={objection.question === "There is no dose-response relationship" || objection.question === "Annos-vastetta ei ole" ? "dose-response" : undefined} className="rounded-xl border border-card-border bg-card-bg p-5">
+          <section key={objection.question} id={objection.id} className="rounded-xl border border-card-border bg-card-bg p-5">
             <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
             <h2 className="mt-2 text-lg font-semibold">{objection.question}</h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
@@ -1662,6 +1689,19 @@ export default async function ObjectionsPage({
             </p>
           </section>
         ))}
+
+        <section className="rounded-xl border border-card-border bg-card-bg p-5">
+          <p className="font-mono-num text-xs text-accent">INTERP</p>
+          <h2 className="mt-2 text-lg font-semibold">{interpreterObjection.question}</h2>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
+            {interpreterObjection.response.map((paragraph) => (
+              <p key={paragraph}><InlineReferenceText text={paragraph} locale={locale} /></p>
+            ))}
+          </div>
+          <p className="mt-4 rounded-lg border border-status-partial/35 bg-status-partial/5 p-3 text-xs leading-relaxed text-foreground-muted">
+            {interpreterObjection.boundary}
+          </p>
+        </section>
 
         <section className="rounded-xl border border-accent/25 bg-accent/5 p-5">
           <h2 className="text-lg font-semibold">{d.closingTitle}</h2>

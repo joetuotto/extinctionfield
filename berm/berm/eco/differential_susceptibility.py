@@ -3,7 +3,8 @@
 DIAGNOSTIC ONLY — does not modify the TFR pipeline.
 
 Calculates relative fitness advantage of parasites over hosts in the
-changed FieldState, based on species-specific modulome profiles.
+changed physical field environment, based on BERM's species-specific candidate
+modulome profiles.  FieldState is only the optional measurement representation.
 """
 
 SPECIES_MODULOME_PROFILES = {
@@ -74,7 +75,7 @@ SPECIES_MODULOME_PROFILES = {
 
 
 def differential_susceptibility(host: str, parasite: str) -> dict:
-    """Calculate relative advantage of parasite over host in changed FieldState."""
+    """Calculate a BERM scenario for a changed physical field environment."""
     h = SPECIES_MODULOME_PROFILES[host]
     p = SPECIES_MODULOME_PROFILES[parasite]
 

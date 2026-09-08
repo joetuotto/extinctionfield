@@ -14,8 +14,10 @@ from berm.architecture import MODULOME_ASFR_ROUTE_ID
 from berm.biology.coordination import HormoneReceptivityState
 from berm.biology.reproductive_state import CoupleReproductiveState, FemaleReproductiveState, MaleReproductiveState
 from berm.data.wpp import AGE_GROUPS
-from berm.modulome._common import STRUCTURAL_ONLY, finite, nonempty, nonnegative
+from berm.modulome._common import STRUCTURAL_ONLY, finite, nonempty, nonnegative, normalise_ids
 from berm.modulome.calcium import CalciumCompartments, CalciumKinetics
+from berm.biology.androgen_capacity import HormoneBindingState, ReceptorPathway
+from berm.modulome.conditional_inputs import AndrogenOrganInput, retarded_driver_from_mapping
 from berm.modulome.membrane import MembraneMachinery
 from berm.modulome.state import CellStateVector, StateKinetics
 from berm.modulome.reproductive_bridge import (
@@ -44,12 +46,24 @@ def _keys(value, allowed, name):
 def _arm(raw):
     raw = _record(raw, "arm")
     _keys(raw, {"protocol", "endpoint", "base_couple", "hormone_timing", "timing_parameter_ids",
-                "timing_evidence_ids", "implantation", "spectral"}, "arm")
+                "timing_evidence_ids", "implantation", "spectral", "androgen", "retarded_response"}, "arm")
     config = _record(raw["protocol"], "protocol")
     for key, cls in (("initial_state", CellStateVector), ("membrane", MembraneMachinery),
                      ("initial_calcium", CalciumCompartments), ("state_kinetics", StateKinetics),
                      ("calcium_kinetics", CalciumKinetics)):
         config[key] = cls(**_record(config[key], key))
+    retarded_result = None
+    if "retarded_response" in raw:
+        if "driver" in config or "spectral" in raw:
+            raise ValueError("retarded_response supplies the driver; omit protocol.driver and spectral")
+        retarded_result = retarded_driver_from_mapping(raw["retarded_response"])
+        if retarded_result["transfer"]["driver_units"] != config["driver_units"]:
+            raise ValueError("retarded transfer driver_units must match protocol.driver_units")
+        config["driver"] = retarded_result["driver"]
+        # Validate collections before concatenation so strings cannot become IDs.
+        config["coupling_parameter_ids"] = tuple(dict.fromkeys((
+            *normalise_ids(config["coupling_parameter_ids"], "coupling_parameter_ids"),
+            *retarded_result["parameter_ids"])))
     protocol = CellProtocol(**config)
     spectral_result = None
     if "spectral" in raw:
@@ -88,6 +102,19 @@ def _arm(raw):
         base_couple=couple, protocol=protocol, endpoint=FunctionalEndpointMapping(**raw["endpoint"]),
         hormone_timing=timing, timing_parameter_ids=raw.get("timing_parameter_ids", ()),
         timing_evidence_ids=raw.get("timing_evidence_ids", ()), implantation=implantation)
+    if "androgen" in raw:
+        value = _record(raw["androgen"], "androgen")
+        value["binding"] = HormoneBindingState(**_record(value["binding"], "binding"))
+        value["pathways"] = tuple(ReceptorPathway(**_record(pathway, "pathway")) for pathway in value["pathways"])
+        mapped, androgen = AndrogenOrganInput(**value).apply(mapped)
+        result.update({"androgen": androgen, "conception_capacity": mapped.conception_capacity,
+                       "live_birth_support": mapped.live_birth_support,
+                       "biological_capacity": mapped.biological_capacity})
+        result["parameter_ids"] = list(dict.fromkeys((*result["parameter_ids"], *androgen["parameter_ids"])))
+        result["evidence_ids"] = list(dict.fromkeys((*result["evidence_ids"], *androgen["evidence_ids"])))
+    if retarded_result is not None:
+        result["retarded_response"] = retarded_result
+        result["evidence_ids"] = list(dict.fromkeys((*result["evidence_ids"], *retarded_result["evidence_ids"])))
     if spectral_result is not None:
         result["spectral_window"] = spectral_result
         result["evidence_ids"] = list(dict.fromkeys((*result["evidence_ids"], *driver.evidence_ids, *window.evidence_ids)))

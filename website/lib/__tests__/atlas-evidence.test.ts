@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import bindings from "@/data/atlas-claim-bindings.json";
-import { getClaim, getEvidenceForClaim } from "@/lib/claims";
+import { claims, getClaim, getEvidenceForClaim } from "@/lib/claims";
 import { NODES, EDGES, MODULOME_CARD_MAP } from "@/lib/causalAtlasData";
 import { atlasClaimCoverage, atlasClaims, claimIdsForAtlasNode } from "@/lib/atlasEvidence";
 
@@ -53,5 +53,14 @@ describe("Shared atlas claim bindings", () => {
   it("preserves association and interaction assessments in atlas filtering", () => {
     expect(NODES.find(node => node.id === "card_iris_optical_exposure")?.epistemicLevel).toBe("C");
     expect(NODES.find(node => node.id === "card_genotype_exposure_interaction")?.epistemicLevel).toBe("M|C");
+  });
+
+  it("exposes the merged physics, androgen and behavioural claims alongside the component claims", () => {
+    const bound = new Set(Object.values(bindings.nodes).flat());
+    for (const claim of claims) expect(bound.has(claim.id), claim.id).toBe(true);
+    expect(claimIdsForAtlasNode("berm_l2_bridge")).toContain("claim.bridge.conditional-response-operator");
+    expect(claimIdsForAtlasNode("lindgren_metric_drive")).toContain("claim.geometry.quadratic-mixing");
+    expect(claimIdsForAtlasNode("androgen_receptor_signal")).toContain("claim.androgen.receptor-use-capacity");
+    expect(claimIdsForAtlasNode("epistapege_observability_loss")).toContain("claim.civilization.epistapege-observability-loss");
   });
 });

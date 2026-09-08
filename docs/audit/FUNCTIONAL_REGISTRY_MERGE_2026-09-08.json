@@ -1,0 +1,113 @@
+{
+  "publishedCommit": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+  "method": "Apply only navigation delta against its captured baseline onto the published main registry. Preserve every published entry; add Ben Simon correction relationship.",
+  "results": {
+    "claims": {
+      "baseCount": 55,
+      "navigationCount": 64,
+      "publishedCount": 90,
+      "mergedCount": 99,
+      "appliedNavigationIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform",
+        "claim.behavior.state-dependent-valuation",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.social-valuation",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.biological-state-to-action"
+      ],
+      "publishedIdsRemoved": [],
+      "publishedIdsChanged": []
+    },
+    "evidence_relations": {
+      "baseCount": 115,
+      "navigationCount": 131,
+      "publishedCount": 170,
+      "mergedCount": 186,
+      "appliedNavigationIds": [
+        "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+        "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+        "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock",
+        "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility",
+        "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+        "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+        "er.behavior.state-dependent-valuation.draper2018_inflammation_effort",
+        "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+        "er.behavior.sexual-motivation.mills2023_kisspeptin",
+        "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+        "er.behavior.state-dependent-learning.lim2026_sleep_learning",
+        "er.behavior.reported-reasons.johansson2005_choice_blindness",
+        "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness",
+        "er.behavior.social-valuation.crockett2015_harm_aversion",
+        "er.behavior.social-valuation.strang2017_nutrition_decisions",
+        "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad"
+      ],
+      "publishedIdsRemoved": [],
+      "publishedIdsChanged": []
+    },
+    "epistemic_assessments": {
+      "baseCount": 55,
+      "navigationCount": 64,
+      "publishedCount": 90,
+      "mergedCount": 99,
+      "appliedNavigationIds": [
+        "ea.coordination.cry-steroid-feedback.v1",
+        "ea.coordination.hormone-waveform.v1",
+        "ea.behavior.state-dependent-valuation.v1",
+        "ea.behavior.sexual-motivation.v1",
+        "ea.behavior.state-dependent-learning.v1",
+        "ea.behavior.reported-reasons.v1",
+        "ea.behavior.social-valuation.v1",
+        "ea.behavior.dyadic-propagation.v1",
+        "ea.behavior.biological-state-to-action.v1"
+      ],
+      "publishedIdsRemoved": [],
+      "publishedIdsChanged": []
+    },
+    "routes": {
+      "baseCount": 4,
+      "navigationCount": 5,
+      "publishedCount": 4,
+      "mergedCount": 5,
+      "appliedNavigationIds": [
+        "route.biological-state-to-action"
+      ],
+      "publishedIdsRemoved": [],
+      "publishedIdsChanged": []
+    },
+    "references": {
+      "baseCount": 1137,
+      "navigationCount": 1156,
+      "publishedCount": 1172,
+      "mergedCount": 1191,
+      "appliedNavigationIds": [
+        "bensimon2022_sleep_helping",
+        "manella2026_cry2_steroid_clock",
+        "rizzini2019_cry_cop1",
+        "dufor2019_cry_magnetic_repair",
+        "bradlaugh2023_cry_fad",
+        "fogle2015_cry_redox",
+        "finkelstein2013_gonadal_steroids",
+        "mills2023_kisspeptin",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "jurgelis2022_sleep_effort",
+        "draper2018_inflammation_effort",
+        "crockett2015_harm_aversion",
+        "strang2017_nutrition_decisions",
+        "johansson2005_choice_blindness",
+        "eisenegger2010_testosterone_fairness",
+        "weisman2012_oxytocin_dyad",
+        "lim2026_sleep_learning",
+        "paluck2016_network_conflict",
+        "bensimon2023_sleep_helping_correction"
+      ],
+      "publishedIdsRemoved": [],
+      "publishedIdsChanged": [
+        "bensimon2022_sleep_helping"
+      ]
+    }
+  }
+}

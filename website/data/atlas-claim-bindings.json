@@ -14,7 +14,8 @@
     ],
     "tissue_sperm": [
       "claim.sperm.multi-parameter-decline",
-      "claim.sperm.rf-rat-endpoints"
+      "claim.sperm.rf-rat-endpoints",
+      "claim.synthesis.target-intervention-triangulation"
     ],
     "demo_biocap": [
       "claim.couple.fecundability-convergence",
@@ -42,13 +43,15 @@
       "claim.efield.polarity-dependent-response"
     ],
     "vmem_mtor": [
-      "claim.vmem.membrane-potential-growth-gate"
+      "claim.vmem.membrane-potential-growth-gate",
+      "claim.synthesis.vmem-calcium-interface"
     ],
     "developmental_memory": [
       "claim.development.exposure-window-memory"
     ],
     "hpa_hpg": [
-      "claim.hpg.circadian-steroidogenic-gate"
+      "claim.hpg.circadian-steroidogenic-gate",
+      "claim.synthesis.cry-clock-hpg-chain"
     ],
     "tissue_bbb": [
       "claim.bbb.redox-tight-junction"
@@ -77,7 +80,8 @@
     ],
     "eco_encounter": [
       "claim.ecology.field-mediated-encounter",
-      "claim.encounter.network-propagation"
+      "claim.encounter.network-propagation",
+      "claim.synthesis.cross-species-transfer-prior"
     ],
     "demo_asfr": [
       "claim.asfr.cohort-signature"
@@ -87,7 +91,9 @@
     ],
     "hormone_target": [
       "claim.cry.endocrine-gating",
-      "claim.coordination.hormone-target-timing"
+      "claim.coordination.hormone-target-timing",
+      "claim.coordination.cry-steroid-feedback",
+      "claim.coordination.hormone-waveform"
     ],
     "receptor_memory": [
       "claim.receptor.chemical-memory",
@@ -98,7 +104,11 @@
       "claim.coordination.multiple-zeitgebers"
     ],
     "berm_l2_bridge": [
-      "claim.geometry.multisource-receptor-coupling"
+      "claim.geometry.multisource-receptor-coupling",
+      "claim.bridge.conditional-response-operator",
+      "claim.bridge.state-conditioned-kernel",
+      "claim.synthesis.protocol-state-heterogeneity",
+      "claim.synthesis.graded-susceptibility"
     ],
     "demo_waiting_distribution": [
       "claim.couple.waiting-time-distribution"
@@ -166,6 +176,78 @@
     ],
     "mod_cyb5b": [
       "claim.receptor.gene-switch-protocol"
+    ],
+    "lindgren_metric_drive": [
+      "claim.geometry.rank-one-coordinate",
+      "claim.geometry.quadratic-mixing"
+    ],
+    "androgen_binding_availability": [
+      "claim.androgen.binding-availability"
+    ],
+    "androgen_receptor_signal": [
+      "claim.androgen.receptor-use-capacity"
+    ],
+    "individual_behavioral_response": [
+      "claim.cognition.state-dependent-behaviour",
+      "claim.synthesis.joint-endocrine-gate",
+      "claim.behavior.state-dependent-valuation",
+      "claim.behavior.sexual-motivation",
+      "claim.behavior.state-dependent-learning",
+      "claim.behavior.social-valuation",
+      "claim.behavior.biological-state-to-action"
+    ],
+    "biobehavioral_weighting": [
+      "claim.cognition.biological-behavioural-weighting"
+    ],
+    "narrative_attribution": [
+      "claim.cognition.reported-reason-downstream",
+      "claim.behavior.reported-reasons"
+    ],
+    "epistapege_observability_loss": [
+      "claim.civilization.epistapege-observability-loss"
+    ],
+    "institutional_model_reuse": [
+      "claim.civilization.asymmetric-evidence-threshold"
+    ],
+    "mech_mt2_store_brake": [
+      "claim.pharmacology.mt2-evoked-feedback",
+      "claim.pharmacology.mt2-brake-conditional"
+    ],
+    "mech_local_ltype_erk": [
+      "claim.pharmacology.local-ltype-erk",
+      "claim.pharmacology.local-ltype-erk-conditional"
+    ],
+    "mech_channel_selectivity": [
+      "claim.pharmacology.channel-specific-response",
+      "claim.pharmacology.channel-selectivity-conditional"
+    ],
+    "mech_aa_lte4_inhibition": [
+      "claim.pharmacology.lipid-ttype-inhibition",
+      "claim.pharmacology.lipid-ttype-inhibition-conditional"
+    ],
+    "mech_channel_density": [
+      "claim.pharmacology.channel-density",
+      "claim.pharmacology.channel-density-store-history-conditional"
+    ],
+    "mech_serca_pretreatment": [
+      "claim.pharmacology.serca-pretreatment",
+      "claim.pharmacology.channel-density-store-history-conditional"
+    ],
+    "mech_cry_ligand_occupancy": [
+      "claim.pharmacology.cry-ligand-occupancy",
+      "claim.pharmacology.cry-fad-competition-conditional"
+    ],
+    "mod_drug_photochemistry": [
+      "claim.pharmacology.probe-photoreversal",
+      "claim.pharmacology.drug-photochemistry-conditional"
+    ],
+    "mech_coq10_response": [
+      "claim.pharmacology.coq10-protocol",
+      "claim.pharmacology.coq10-response-conditional"
+    ],
+    "demo_encounters": [
+      "claim.behavior.dyadic-propagation",
+      "claim.behavior.biological-state-to-action"
     ]
   },
   "edges": [

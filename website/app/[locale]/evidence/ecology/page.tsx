@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TreePine } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { EvidenceSynthesisBanner } from "@/components/EvidenceSynthesisBanner";
 import { BermIcon } from "@/components/BermIcon";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
@@ -422,6 +423,8 @@ export default async function EcologyPage({
 
       <PageHeader icon={TreePine} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="ecology" size={28} className="text-accent" />} />
       <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
+
+      <EvidenceSynthesisBanner locale={locale} />
 
       {/* Narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

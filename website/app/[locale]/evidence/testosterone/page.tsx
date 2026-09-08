@@ -6,13 +6,16 @@ import { DerivedPrediction } from "@/components/DerivedPrediction";
 import { CrossSpeciesGradient } from "@/components/CrossSpeciesGradient";
 import { TemporalTtoTFR } from "@/components/TemporalTtoTFR";
 import { pickCopy } from "@/lib/i18n";
+import { ClaimRef } from "@/components/ClaimRef";
+import { StudyCitation } from "@/components/StudyCitation";
+import { MathBlock } from "@/components/MathBlock";
 
 const COPY = {
   en: {
     title: "Testosterone: The Biological Clock",
     subtitle: "Population testosterone has declined ~1.2%/year since the 1980s. This secular trend is age-independent, geographically widespread, and temporally correlated with TFR decline at an 8-year lag. The LH+T pattern points to hypothalamic suppression, not testicular damage.",
     backLink: "← Back to Evidence",
-    cautionText: "Testosterone secular decline is established, but its cause is debated (obesity, EDCs, lifestyle, EMF, or a combination). This page presents the T→TFR temporal correlation and the LH diagnostic as evidence lines consistent with BERM. Neither proves EMF causation.",
+    cautionText: "Testosterone secular decline is reported in several cohorts, but its magnitude and cause remain debated. Total-T assays also do not measure binding, free or intratesticular hormone, AR/ZIP9 function or post-receptor signalling. The T→TFR and LH patterns are hypothesis-generating; neither proves EMF causation.",
 
     s1Title: "The secular decline",
     s1Lead: "Three independent datasets document the same pattern in US males:",
@@ -36,7 +39,7 @@ const COPY = {
       { pattern: "T↓ + LH↑ = Testicular", detail: "T declining while LH rises means the pituitary IS compensating for testicular damage. Consistent with direct gonadal toxicity from EDCs (phthalates, BPA).", color: "amber" },
     ],
     s3Observed: "Observed population pattern: T↓ + LH↓ (hypothalamic)",
-    s3Implication: "The observed pattern is inconsistent with EDC-mediated testicular damage as the primary mechanism and instead points to hypothalamic-level suppression — the level where EMF acts via melatonin and cryptochrome.",
+    s3Implication: "T↓ + LH↓ is compatible with central suppression, but it is not unique to EMF and cannot test binding or receptor-level androgen use. BERM therefore treats LH–T as one branch of a broader endocrine panel, not a mechanism verdict.",
 
     s3bTitle: "Chemical vs EMF: the differential",
     s3bLead: "EDCs and EMF both lower testosterone, but they leave different hormonal fingerprints:",
@@ -46,7 +49,7 @@ const COPY = {
       { axis: "Cross-species pattern", edc: "Aquatic species near discharge sites", emf: "Gradient across all domestication levels" },
       { axis: "Temporal onset", edc: "Post-1960 (mass plastics)", emf: "Post-1920 (electrification); accelerating post-1990 (wireless)" },
     ],
-    s3bConclusion: "Both mechanisms likely contribute. The LH-T differential diagnostic is the cleanest discriminator: the observed population pattern (T↓ + LH↓) is hypothalamic, pointing to EMF as the dominant driver, not EDCs.",
+    s3bConclusion: "Both mechanisms and common causes may contribute. LH–T helps localize feedback state, but it does not by itself identify EMF, exclude EDCs or measure SHBG, free T, AR/ZIP9 or post-receptor capacity.",
 
     s4Title: "Cross-species gradient",
     s4Lead: "Seven species/population groups arranged by estimated cumulative EMF exposure show a dose-response relationship with reproductive decline:",
@@ -70,7 +73,7 @@ const COPY = {
     title: "Testosteroni: Biologinen kello",
     subtitle: "Väestön testosteronitaso on laskenut ~1,2 %/vuosi 1980-luvulta lähtien. Tämä pitkäaikaistrendi on iästä riippumaton, maantieteellisesti laaja-alainen ja ajallisesti korreloitu TFR:n laskun kanssa 8 vuoden viiveellä. LH+T-kaava osoittaa hypotalamuksen vaimentumiseen, ei kivesten vaurioon.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "Testosteronin pitkäaikaislasku on vakiintunut, mutta sen syystä käydään keskustelua (lihavuus, EDC:t, elämäntavat, EMF tai yhdistelmä). Tämä sivu esittää T→TFR-ajallisen korrelaation ja LH-diagnostiikan BERM:n kanssa yhteensopivina todistelinjoina. Kumpikaan ei todista EMF-kausaalisuutta.",
+    cautionText: "Testosteronin pitkäaikaislaskua raportoidaan useissa kohorteissa, mutta sen suuruudesta ja syystä kiistellään. Kokonais-T-mittaus ei myöskään mittaa sitoutumista, vapaata tai intratestikulaarista hormonia, AR-/ZIP9-toimintaa eikä reseptorin jälkeistä signalointia. T→TFR- ja LH-kuviot tuottavat hypoteeseja; kumpikaan ei todista EMF-kausaalisuutta.",
 
     s1Title: "Pitkäaikaislasku",
     s1Lead: "Kolme riippumatonta aineistoa dokumentoivat saman kaavan yhdysvaltalaismiehillä:",
@@ -94,7 +97,7 @@ const COPY = {
       { pattern: "T↓ + LH↑ = Testikulaarinen", detail: "T laskee mutta LH nousee, mikä tarkoittaa aivolisakkeen kompensoivan kivevauriota. Yhdenmukainen suoran gonadaalisen toksisuuden kanssa EDC:istä (ftalaatit, BPA).", color: "amber" },
     ],
     s3Observed: "Havaittu väestökaava: T↓ + LH↓ (hypotalaaminen)",
-    s3Implication: "Havaittu kaava on epäyhdenmukainen EDC-välitteisen kivevaurion kanssa ensisijaisena mekanismina ja osoittaa sen sijaan hypotalamustason vaimentumiseen — tasolle, jossa EMF vaikuttaa melatoniinin ja kryptokromin kautta.",
+    s3Implication: "T↓ + LH↓ sopii sentraaliseen suppressioon, mutta ei ole EMF:lle yksilöllinen eikä testaa sitoutumista tai reseptoritason androgeeninkäyttöä. BERM käsittelee LH–T:tä yhtenä laajemman endokriinipaneelin haarana, ei mekanismituomiona.",
 
     s3bTitle: "Kemikaali vs EMF: erotusdiagnostiikka",
     s3bLead: "EDC:t ja EMF molemmat laskevat testosteronia, mutta ne jättävät erilaiset hormonaaliset sormenjäljet:",
@@ -104,7 +107,7 @@ const COPY = {
       { axis: "Lajien välinen kaava", edc: "Vesilajit päästölähteiden lähellä", emf: "Gradientti kaikilla domestikaatiotasoilla" },
       { axis: "Ajallinen alku", edc: "1960-luvun jälkeen (massamuovit)", emf: "1920-luvun jälkeen (sähköistys); kiihtyen 1990 jälkeen (langaton)" },
     ],
-    s3bConclusion: "Molemmat mekanismit todennäköisesti vaikuttavat. LH-T-erotusdiagnostiikka on puhtain erottelija: havaittu väestökaava (T↓ + LH↓) on hypotalaaminen, mikä osoittaa EMF:iin hallitsevana tekijänä, ei EDC:ihin.",
+    s3bConclusion: "Molemmat mekanismit ja yhteiset syyt voivat vaikuttaa. LH–T auttaa paikantamaan palautetilaa, mutta ei yksin tunnista EMF:ää, sulje pois EDC:itä eikä mittaa SHBG:tä, vapaata T:tä, AR/ZIP9:ää tai reseptorin jälkeistä kapasiteettia.",
 
     s4Title: "Lajien välinen gradientti",
     s4Lead: "Seitsemän lajia/populaatioryhmaa arvioidun kumulatiivisen EMF-altistuksen mukaan järjestettyinä osoittaa annosvastesuhdetta lisääntymisen laskuun:",
@@ -337,6 +340,78 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
         </div>
         <div className="mt-6 rounded-lg bg-accent/5 border border-accent/20 p-4 text-center">
           <p className="text-lg font-mono font-semibold">{d.s1Stat}</p>
+        </div>
+      </section>
+
+      <section className="mt-14 border-t editorial-rule pt-6">
+        <h2 className="text-2xl font-semibold mb-4">
+          {pickCopy({
+            en: "What a total-testosterone assay can miss",
+            fi: "Mitä kokonais-testosteronimittaus voi jättää piiloon",
+            ja: "総テストステロン測定で見落とし得るもの",
+            fr: "Ce qu’un dosage de testostérone totale peut manquer",
+            ko: "총 테스토스테론 검사에서 놓칠 수 있는 것",
+          }, locale)}
+        </h2>
+        <p className="text-foreground-muted mb-6 leading-relaxed">
+          <ClaimRef claimId="claim.androgen.receptor-use-capacity">
+            {pickCopy({
+              en: "Hormone concentration and hormone action are different observables. BERM now follows the entire serial chain, so a stable total-T value cannot by itself rule out altered binding, delivery, receptor function or downstream signal use.",
+              fi: "Hormonipitoisuus ja hormonivaikutus ovat eri havaittavia suureita. BERM seuraa nyt koko sarjallista ketjua, joten vakaa kokonais-T-arvo ei yksin sulje pois muuttunutta sitoutumista, kuljetusta, reseptoritoimintaa tai alavirran signaalinkäyttöä.",
+              ja: "ホルモン濃度と作用は別の観測量です。BERMは直列連鎖全体を追跡するため、総Tが不変でも結合、送達、受容体、下流シグナルの変化を除外できません。",
+              fr: "La concentration hormonale et l’action hormonale sont des observables distincts. Une T totale stable n’exclut donc pas une altération de la liaison, de la distribution, des récepteurs ou de la signalisation aval.",
+              ko: "호르몬 농도와 작용은 서로 다른 관측량입니다. 총 T가 안정적이어도 결합, 전달, 수용체 기능 또는 하류 신호 사용 변화를 배제할 수 없습니다.",
+            }, locale)}
+          </ClaimRef>
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-border/50 p-5">
+            <h3 className="font-medium mb-3">
+              {pickCopy({ en: "1. Availability", fi: "1. Saatavuus", ja: "1. 利用可能性", fr: "1. Disponibilité", ko: "1. 가용성" }, locale)}
+            </h3>
+            <MathBlock tex="T_{\mathrm{tot}}=T_f+B_{\mathrm{SHBG}}\frac{T_f}{K_{\mathrm{SHBG}}+T_f}+B_{\mathrm{Alb}}\frac{T_f}{K_{\mathrm{Alb}}+T_f}" />
+            <p className="mt-3 text-xs text-foreground-muted leading-relaxed">
+              <ClaimRef claimId="claim.androgen.binding-availability">
+                {pickCopy({
+                  en: "SHBG and albumin change free-hormone availability at the same total concentration; intratesticular T is a separate compartment.",
+                  fi: "SHBG ja albumiini muuttavat vapaan hormonin saatavuutta samalla kokonaispitoisuudella; intratestikulaarinen T on erillinen kompartimentti.",
+                  ja: "SHBGとアルブミンは同じ総濃度でも遊離ホルモン量を変え、精巣内Tは別区画です。",
+                  fr: "La SHBG et l’albumine modifient la fraction libre à T totale identique; la T intratesticulaire est un compartiment distinct.",
+                  ko: "SHBG와 알부민은 같은 총 농도에서도 유리 호르몬을 바꾸며 고환내 T는 별도 구획입니다.",
+                }, locale)}
+              </ClaimRef>
+            </p>
+          </div>
+          <div className="rounded-lg border border-border/50 p-5">
+            <h3 className="font-medium mb-3">
+              {pickCopy({ en: "2. Reception and use", fi: "2. Vastaanotto ja käyttö", ja: "2. 受容と利用", fr: "2. Réception et utilisation", ko: "2. 수용과 사용" }, locale)}
+            </h3>
+            <MathBlock tex="S_r=R_r\frac{T_f}{K_{d,r}+T_f}G_r,\qquad \mathrm{AEC}=\frac{\sum_r w_rS_r}{\sum_r w_r}" />
+            <p className="mt-3 text-xs text-foreground-muted leading-relaxed">
+              {pickCopy({
+                en: "AR or ZIP9 abundance, affinity and post-receptor gain can change tissue action without a proportional serum total-T change.",
+                fi: "AR:n tai ZIP9:n määrä, affiniteetti ja reseptorin jälkeinen vahvistus voivat muuttaa kudosvaikutusta ilman suhteellista seerumin kokonais-T-muutosta.",
+                ja: "AR/ZIP9量、親和性、受容体後利得は、血清総Tの比例変化なしに組織作用を変え得ます。",
+                fr: "L’abondance d’AR ou ZIP9, leur affinité et le gain post-récepteur peuvent modifier l’action tissulaire sans changement proportionnel de T totale.",
+                ko: "AR 또는 ZIP9 양, 친화도, 수용체 후 이득은 혈청 총 T의 비례 변화 없이 조직 작용을 바꿀 수 있습니다.",
+              }, locale)}
+            </p>
+          </div>
+        </div>
+        <div className="mt-5 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            {pickCopy({
+              en: "Evidence boundary: SHBG/free-T physiology and Sertoli-cell AR necessity are established components. A 2605 MHz rat/Sertoli study directly implicated ZIP9 but did not show short-term sperm impairment; a randomized acute MRI study found no testosterone or SHBG change in 24 men. Human chronic EMF→androgen-use calibration remains open.",
+              fi: "Näyttöraja: SHBG-/vapaa-T-fysiologia ja Sertoli-solun AR:n välttämättömyys ovat vakiintuneita osia. 2605 MHz:n rotta-/Sertoli-tutkimus liitti ZIP9:n suoraan vasteeseen, mutta ei osoittanut lyhyen aikavälin siittiöhaittaa; satunnaistettu akuutti MRI-tutkimus ei löytänyt testosteroni- tai SHBG-muutosta 24 miehellä. Ihmisen krooninen EMF→androgeeninkäyttökalibraatio on avoin.",
+              ja: "証拠境界：SHBG/遊離T生理とSertoli細胞ARの必要性は確立した構成要素です。2605 MHzラット研究はZIP9を示しましたが短期精子障害はなく、24人の急性MRI試験ではT/SHBG変化がありませんでした。慢性ヒト校正は未解決です。",
+              fr: "Limite des preuves : la physiologie SHBG/T libre et la nécessité de l’AR des cellules de Sertoli sont établies. Une étude rat/Sertoli à 2605 MHz implique ZIP9 sans atteinte spermatique à court terme; un essai IRM aigu chez 24 hommes n’a trouvé aucun changement de T ou SHBG. La calibration humaine chronique reste ouverte.",
+              ko: "근거 경계: SHBG/유리 T 생리와 Sertoli 세포 AR 필요성은 확립된 구성 요소입니다. 2605 MHz 쥐 연구는 ZIP9를 연결했지만 단기 정자 손상은 없었고, 24명 급성 MRI 시험은 T/SHBG 변화를 찾지 못했습니다. 만성 인체 보정은 열려 있습니다.",
+            }, locale)}
+            {" "}<StudyCitation referenceId="narinx2022_free_testosterone" locale={locale} />{" · "}
+            <StudyCitation referenceId="degendt2004_sertoli_ar" locale={locale} />{" · "}
+            <StudyCitation referenceId="yu2023_zip9_rf_sertoli" locale={locale} />{" · "}
+            <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale} />
+          </p>
         </div>
       </section>
 

@@ -9,6 +9,7 @@ import { pickCopy } from "@/lib/i18n";
 import { StudyCitation } from "@/components/StudyCitation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { AtlasClaims } from "./AtlasClaims";
+import { interventionsForNode, interventionHref, interventionText, getIntervention } from "@/lib/interventions";
 
 interface Props {
   node: CausalMapNode;
@@ -74,7 +75,7 @@ export function AtlasDetail({ node, locale, onClose, originRef, onNavigate, onAt
       ref={asideRef}
       role="complementary"
       aria-labelledby="atlas-detail-title"
-      className="fixed right-3 top-20 bottom-3 w-[400px] max-w-[calc(100vw-24px)] bg-[var(--background)] border-l border-[var(--border)] z-50 overflow-y-auto shadow-2xl"
+      className="fixed right-3 top-[calc(var(--site-header-height,4rem)+1rem)] bottom-3 w-[400px] max-w-[calc(100vw-24px)] bg-[var(--background)] border-l border-[var(--border)] z-40 overflow-y-auto shadow-2xl"
     >
       <div className="sticky top-0 bg-[var(--background)] border-b border-[var(--border)] p-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
@@ -142,6 +143,7 @@ export function AtlasDetail({ node, locale, onClose, originRef, onNavigate, onAt
           </Section>
         )}
 
+        {interventionsForNode(node.id).length > 0 && <Section title={lang === "fi" ? "Liittyvät koeprofiilit" : "Related experimental profiles"}><ul className="space-y-2">{interventionsForNode(node.id).map(profile => <li key={profile.id}><Link className="inline-flex min-h-11 items-center text-xs text-blue-400 hover:underline" href={interventionHref(locale, profile.id)}>{interventionText(profile.title, locale)} →</Link></li>)}</ul></Section>}
         <AtlasClaims key={node.id} claimIds={node.claimIds ?? []} locale={locale} />
 
         {node.detail?.keyRefs && node.detail.keyRefs.length > 0 && (
@@ -163,7 +165,7 @@ export function AtlasDetail({ node, locale, onClose, originRef, onNavigate, onAt
           return <Section key={direction} title={pickCopy(SECTION_LABELS[direction], locale)}><ul className="space-y-2">{connections.map(e => {
             const targetId = direction === "incoming" ? e.from : e.to;
             const target = NODES.find(n => n.id === targetId)!;
-            return <li key={`${e.from}->${e.to}`}><button className="min-h-11 w-full rounded border border-[var(--border)] p-2 text-left text-xs hover:border-blue-400" onClick={() => onNavigate?.(targetId)}><span className="block text-blue-400">{direction === "incoming" ? "← " : "→ "}{t(target.label, lang)}</span><span className="mt-1 block text-[var(--atlas-text-dim)]">{t(RELATION_LABELS[e.relation], lang)}</span></button>{Boolean(e.claimIds?.length) && <details className="mt-1 rounded border border-[var(--border)] px-2"><summary className="min-h-11 cursor-pointer content-center text-xs text-blue-400">{pickCopy(SECTION_LABELS.connectionClaims, locale)}</summary><div className="pb-2"><AtlasClaims claimIds={e.claimIds!} locale={locale} compact /></div></details>}</li>;
+            return <li key={`${e.from}->${e.to}`}><button className="min-h-11 w-full rounded border border-[var(--border)] p-2 text-left text-xs hover:border-blue-400" onClick={() => onNavigate?.(targetId)}><span className="block text-blue-400">{direction === "incoming" ? "← " : "→ "}{t(target.label, lang)}</span><span className="mt-1 block text-[var(--atlas-text-dim)]">{t(RELATION_LABELS[e.relation], lang)}</span></button>{e.interventionEffects?.map(effect => <div key={effect.profileId} className="mt-1 rounded border border-[var(--border)] p-2 text-xs" data-testid="atlas-intervention-effect"><p className="font-medium">{effect.sign === "increase" ? "↑ " : effect.sign === "decrease" ? "↓ " : "↕ "}{getIntervention(effect.profileId) ? interventionText(getIntervention(effect.profileId)!.title, locale) : effect.profileId} · {effect.evidence === "study" ? (lang === "fi" ? "Tutkimuksen komponentti" : "Study component") : (lang === "fi" ? "Ehdollinen synteesi" : "Conditional synthesis")}</p><p className="mt-1 leading-relaxed text-[var(--atlas-text-dim)]">{interventionText(effect.context, locale)}</p></div>)}{Boolean(e.claimIds?.length) && <details className="mt-1 rounded border border-[var(--border)] px-2"><summary className="min-h-11 cursor-pointer content-center text-xs text-blue-400">{pickCopy(SECTION_LABELS.connectionClaims, locale)}</summary><div className="pb-2"><AtlasClaims claimIds={e.claimIds!} locale={locale} compact /></div></details>}</li>;
           })}</ul></Section>;
         })}
 

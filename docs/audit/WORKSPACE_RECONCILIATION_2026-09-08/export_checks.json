@@ -1,0 +1,58 @@
+[
+  {
+    "command": [
+      "python3",
+      "berm/export_architecture.py"
+    ],
+    "exit_code": 0,
+    "seconds": 2.51,
+    "output": "Wrote /Volumes/kovalevy 3/extinctionfield/website/data/model-architecture.json\n"
+  },
+  {
+    "command": [
+      "python3",
+      "berm/export_causal_graph.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.86,
+    "output": "Wrote /Volumes/kovalevy 3/extinctionfield/website/data/causal-graph.json: 47 nodes, 96 typed edges, 15 UI groups\n"
+  },
+  {
+    "command": [
+      "python3",
+      "berm/export_modulome.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8,
+    "output": "wrote website/data/modulome-state.json\nwrote website/public/data/modulome-state.json\n"
+  },
+  {
+    "command": [
+      "python3",
+      "berm/export_intervention_profiles.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.03,
+    "output": "Validated and exported 8 intervention profiles\n"
+  },
+  {
+    "command": [
+      "python3",
+      "berm/export_interventions.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 2.63,
+    "output": ""
+  },
+  {
+    "command": [
+      "python3",
+      "berm/export_conditional_scenarios.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.78,
+    "output": ""
+  }
+]

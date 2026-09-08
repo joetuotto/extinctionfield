@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "audit": "PHARMACOLOGY_PRESERVATION_2026-09-07",
+  "created_at": "2026-09-07T19:29:23.555293+00:00",
+  "integration_worktree": "/Users/ottojuote/.berm-integration-wt-20260907",
+  "baseline_commit": "6d79066887b178d40e43af5ba8868fed69594a85",
+  "current_head": "6d79066887b178d40e43af5ba8868fed69594a85",
+  "comparison_target": "Current integration working tree, including staged and unstaged source files; no source changes made by this audit.",
+  "registry_sections": {
+    "claims": {
+      "baseline_count": 73,
+      "current_count": 90,
+      "old_ids_preserved": true,
+      "old_objects_exactly_preserved": true,
+      "missing_old_ids": [],
+      "changed_old_ids": [],
+      "added_ids": [
+        "claim.pharmacology.channel-density",
+        "claim.pharmacology.channel-density-store-history-conditional",
+        "claim.pharmacology.channel-selectivity-conditional",
+        "claim.pharmacology.channel-specific-response",
+        "claim.pharmacology.coq10-protocol",
+        "claim.pharmacology.coq10-response-conditional",
+        "claim.pharmacology.cry-fad-competition-conditional",
+        "claim.pharmacology.cry-ligand-occupancy",
+        "claim.pharmacology.drug-photochemistry-conditional",
+        "claim.pharmacology.lipid-ttype-inhibition",
+        "claim.pharmacology.lipid-ttype-inhibition-conditional",
+        "claim.pharmacology.local-ltype-erk",
+        "claim.pharmacology.local-ltype-erk-conditional",
+        "claim.pharmacology.mt2-brake-conditional",
+        "claim.pharmacology.mt2-evoked-feedback",
+        "claim.pharmacology.probe-photoreversal",
+        "claim.pharmacology.serca-pretreatment"
+      ]
+    },
+    "evidence_relations": {
+      "baseline_count": 158,
+      "current_count": 170,
+      "old_ids_preserved": true,
+      "old_objects_exactly_preserved": true,
+      "missing_old_ids": [],
+      "changed_old_ids": [],
+      "added_ids": [
+        "er.pharmacology.channel-density-grassi2004-channels",
+        "er.pharmacology.channel-specific-response-buckner2015-ttype",
+        "er.pharmacology.channel-specific-response-therabionic-ebiomedicine-2019",
+        "er.pharmacology.coq10-protocol-bektas2026",
+        "er.pharmacology.cry-ligand-occupancy-hirota2012-kl001",
+        "er.pharmacology.cry-ligand-occupancy-nangle2013-kl001",
+        "er.pharmacology.lipid-ttype-inhibition-cui2014-lte4",
+        "er.pharmacology.local-ltype-erk-bhatt2012-glp1",
+        "er.pharmacology.mt2-evoked-feedback-liu2014-mt2",
+        "er.pharmacology.mt2-light-context",
+        "er.pharmacology.probe-photoreversal-sanguinetti1984-photoreversal",
+        "er.pharmacology.serca-pretreatment-bertagna2022-serca"
+      ]
+    },
+    "epistemic_assessments": {
+      "baseline_count": 73,
+      "current_count": 90,
+      "old_ids_preserved": true,
+      "old_objects_exactly_preserved": true,
+      "missing_old_ids": [],
+      "changed_old_ids": [],
+      "added_ids": [
+        "ea.pharmacology.channel-density-store-history-conditional.v1",
+        "ea.pharmacology.channel-density.v1",
+        "ea.pharmacology.channel-selectivity-conditional.v1",
+        "ea.pharmacology.channel-specific-response.v1",
+        "ea.pharmacology.coq10-protocol.v1",
+        "ea.pharmacology.coq10-response-conditional.v1",
+        "ea.pharmacology.cry-fad-competition-conditional.v1",
+        "ea.pharmacology.cry-ligand-occupancy.v1",
+        "ea.pharmacology.drug-photochemistry-conditional.v1",
+        "ea.pharmacology.lipid-ttype-inhibition-conditional.v1",
+        "ea.pharmacology.lipid-ttype-inhibition.v1",
+        "ea.pharmacology.local-ltype-erk-conditional.v1",
+        "ea.pharmacology.local-ltype-erk.v1",
+        "ea.pharmacology.mt2-brake-conditional.v1",
+        "ea.pharmacology.mt2-evoked-feedback.v1",
+        "ea.pharmacology.probe-photoreversal.v1",
+        "ea.pharmacology.serca-pretreatment.v1"
+      ]
+    },
+    "routes": {
+      "baseline_count": 4,
+      "current_count": 4,
+      "old_ids_preserved": true,
+      "old_objects_exactly_preserved": true,
+      "missing_old_ids": [],
+      "changed_old_ids": [],
+      "added_ids": []
+    }
+  },
+  "references": {
+    "baseline_count": 1164,
+    "current_count": 1172,
+    "old_ids_preserved": true,
+    "missing_old_ids": [],
+    "added_ids": [
+      "bertagna2022_serca",
+      "cajochen2005_melatonin",
+      "cui2014_lte4",
+      "grassi2004_channels",
+      "hirota2012_kl001",
+      "liu2014_mt2",
+      "nangle2013_kl001",
+      "sanguinetti1984_photoreversal"
+    ],
+    "comparison_scope": "Canonical reference IDs are preserved; existing metadata may be deliberately corrected."
+  },
+  "v16": {
+    "path": "berm/berm/v16.py",
+    "executable_ast_identical_ignoring_docstrings": true,
+    "comparison_method": "Python AST comparison excluding module/class/function/async-function leading docstrings and source location attributes; executable string expressions remain included.",
+    "baseline_source_sha256": "4fa3ab0f7dd1e84d87525f0446649705b2d664b8bd33fbd8eef4881a869bbac8",
+    "current_source_sha256": "cdf7dbfce69902fdb3e4085b7611f3c80d7beb2fa1501dd2977746d92182cacd",
+    "baseline_executable_ast_sha256": "c7a7ea69e61bebbcf2a42835cc111dffbf32f9c7cdcf1ffb9ea0ab677835e407",
+    "current_executable_ast_sha256": "c7a7ea69e61bebbcf2a42835cc111dffbf32f9c7cdcf1ffb9ea0ab677835e407"
+  },
+  "data_public_mirrors": [
+    {
+      "source": "website/data/intervention-profiles.json",
+      "public_mirror": "website/public/data/intervention-profiles.json",
+      "source_sha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+      "public_sha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+      "byte_identical": true
+    },
+    {
+      "source": "website/data/intervention-scenarios.json",
+      "public_mirror": "website/public/data/intervention-scenarios.json",
+      "source_sha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+      "public_sha256": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+      "byte_identical": true
+    },
+    {
+      "source": "website/data/modulome-state.json",
+      "public_mirror": "website/public/data/modulome-state.json",
+      "source_sha256": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+      "public_sha256": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+      "byte_identical": true
+    }
+  ],
+  "python_intervention_registry_mirror": {
+    "path": "berm/data/evidence/intervention_profiles_v1.json",
+    "sha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+    "canonical_sha256": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+    "byte_identical": true
+  },
+  "prior_tracked_paths": {
+    "baseline_tracked_path_count": 931,
+    "present_path_count": 931,
+    "all_prior_tracked_paths_exist": true,
+    "missing_paths": [],
+    "comparison_method": "git ls-tree -r -z --name-only BASE, decoded without Git filename quoting; filesystem lexists includes symlinks."
+  },
+  "original_worktree": {
+    "path": "/Volumes/kovalevy 3/extinctionfield",
+    "baseline_manifest": "/Users/ottojuote/.berm-merge-backups/20260907-210324/manifest.json",
+    "manifest_sha256": "2a97a6a248a0134acc76081f59ca626329b1f522406244a8a222106311e62732",
+    "manifest_captured_at": "2026-09-07T18:03:25.536713+00:00",
+    "head": {
+      "baseline": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+      "current": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+      "unchanged": true
+    },
+    "stash_top": {
+      "baseline": "942aac480506d5998cc4c08a9956c41af84a1ad0",
+      "current": "942aac480506d5998cc4c08a9956c41af84a1ad0",
+      "unchanged": true
+    },
+    "index": {
+      "backup": "/Users/ottojuote/.berm-merge-backups/20260907-210324/original.index",
+      "current_path": "/Volumes/kovalevy 3/extinctionfield/.git/index",
+      "backup_sha256": "28a824d00cfb81e40294f80a0d409bb47bb7b930d341c913f31e76f30bc8aa2f",
+      "current_sha256": "28a824d00cfb81e40294f80a0d409bb47bb7b930d341c913f31e76f30bc8aa2f",
+      "byte_identical": true
+    },
+    "snapshot_comparison": {
+      "manifest_path_count": 902,
+      "unchanged_regular_file_count": 886,
+      "symlink_checks": [
+        {
+          "path": ".claude/session_primer.md",
+          "baseline_target": "../docs/protocol/SESSION_PRIMER.md",
+          "current_target": "../docs/protocol/SESSION_PRIMER.md",
+          "unchanged": true
+        }
+      ],
+      "changed_file_count": 15,
+      "changed_files": [
+        {
+          "path": "website/app/[locale]/about/page.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "5b86bf0a0d5ba587f7976a879715f2a9383377cfeaf958376db08809dbe00f9c",
+          "current_sha256": "e7bc0a51d1d85fa8ab54ae2f2076e3503514edc10c1bb8da164d331ab541974f"
+        },
+        {
+          "path": "website/app/[locale]/civilization/page.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "19180673a5e4995abac2430ddb232a13dc3d15ade23406cfb520cc854f3ba7ff",
+          "current_sha256": "796e7b6177ae30007b61a0b6126e3e7c1421e114f7d2be696bd82f89ea26694a"
+        },
+        {
+          "path": "website/app/[locale]/epistemology/page.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "27aef6e342c80cb3fffb7d09aa4ea77554f3b480ab31b47781fb673e24854f67",
+          "current_sha256": "7a9987c3654be9bf7fce776b8c9b6ae10677fa4c42cdf4f6ffbe8af6d7744d53"
+        },
+        {
+          "path": "website/app/[locale]/evidence/page.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "bb9d2e8f016dec7451091e03231cdb9c40a4231de6bc090faea591cffe17265b",
+          "current_sha256": "80ea170dbf958bf8d24b8ea1f79a3df27eafd5e4fc6ca93c3a66ff3a7c53c654"
+        },
+        {
+          "path": "website/app/[locale]/model/page.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "8faab95b7a4736fc4b153ed600fadb1b5ae125e83ded57bd6637a24ec4bf2e81",
+          "current_sha256": "dcd7ad592248a6ee26dc89c0f424b66ce3d5cca99bfaabaa532800da08718ddc"
+        },
+        {
+          "path": "website/app/[locale]/navigation.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "1141665de0627b0bbebbd37a056222769b7b2a31d4732aa4057f5af9db001e48",
+          "current_sha256": "ad9e1a05f41805603aee7d79c073c4967b2b3cbfcd6c4caa9c57746cfd24bab7"
+        },
+        {
+          "path": "website/app/sitemap.ts",
+          "kind": "file_content_changed",
+          "baseline_sha256": "351adad9cc61e7406670a1c2574c184dfbad289833ef86ff49bf3c1802dc33cd",
+          "current_sha256": "c51e1bb384bd55cf6ac257e16dbfc572e7258d32a50880ec30a0b92784533e0d"
+        },
+        {
+          "path": "website/components/AboutTabs.tsx",
+          "kind": "file_content_changed",
+          "baseline_sha256": "27a234d6214e555500570b1d727211bb250186274196fdee5187a0715ab523ef",
+          "current_sha256": "455800b3f08cd3b2eedf8f92dfab665ac6a55515573ed30fb89c7cb25fd5a531"
+        },
+        {
+          "path": "website/data/anchor-index.json",
+          "kind": "file_content_changed",
+          "baseline_sha256": "362c42f1c4732c998ffcd76359a11e82ef07f9bf14f7d3f52b74ae6c7c47cf96",
+          "current_sha256": "e0f57dcc85c69be07156665b9e8749f993b86d0ef4011c5b1a4ec3b52c1c954c"
+        },
+        {
+          "path": "website/data/claims.json",
+          "kind": "file_content_changed",
+          "baseline_sha256": "5ac649e659497683d29585420651154caa397298646ea4d4daba19658e67503c",
+          "current_sha256": "189f2b6259bd714e4516f911c41df6b174e9a7f5a25bc52ec2fbf20e57272108"
+        },
+        {
+          "path": "website/lib/navigation.ts",
+          "kind": "file_content_changed",
+          "baseline_sha256": "68391f54f781f9b3fd95feb81765224f798ceaba67dfe6a8cb6510ffb6cdf225",
+          "current_sha256": "031541dcba406562936e999cebefb9bd80892ed97ff53f492e21220fbff7c5f2"
+        },
+        {
+          "path": "website/lib/referenceIndex.json",
+          "kind": "file_content_changed",
+          "baseline_sha256": "7e8db7833a7b5039fbb8aa0928048cc37b01b87393e4ab52bb5df7102b8cee55",
+          "current_sha256": "24a434797246b758b35f1b4a0030b4efa0bf2705e5b3ce269fea37efe7b149fe"
+        },
+        {
+          "path": "website/lib/referenceUsage.json",
+          "kind": "file_content_changed",
+          "baseline_sha256": "77b0f403a44d9f5227008eab9e4e922d69881872c76665cc2d3aa08f99cbe99a",
+          "current_sha256": "2bb0fb2c885249078d5df51d9e0950d9c413158ac4c3f8627d4942cc6b512f5f"
+        },
+        {
+          "path": "website/public/data/references_full.json",
+          "kind": "file_content_changed",
+          "baseline_sha256": "2046be1405e85023c7b70dca1870482abeea47118b5f2bb456684ec8283aa339",
+          "current_sha256": "b4001de998105af9aa52206e5c53b71c97555ebf8ab34a84406dfc2a8199ae75"
+        },
+        {
+          "path": "website/scripts/validate-references.mjs",
+          "kind": "file_content_changed",
+          "baseline_sha256": "e497185e15a2bae71e181fa3c0525bea048ed82dfcbe963da90462ed050fc3a5",
+          "current_sha256": "4a0c79972a45119d860c8714824375687e5a4b8ff4aa02dfe97cddb7f649be88"
+        }
+      ],
+      "missing_paths": [],
+      "mode_changes": [],
+      "all_manifest_files_unchanged": false,
+      "interpretation": "Informational comparison with the earlier merge backup. The original worktree contains concurrent changes from another task as reported by the coordinating agent; this audit does not attribute those changes to this integration. It does not assert that all 902 manifest paths are unchanged."
+    },
+    "write_scope": "This pharmacology integration and this audit write only in the isolated integration worktree. This audit performs read-only checks on the original worktree and backup."
+  },
+  "preservation_checks_passed": true,
+  "informational_original_worktree_differences_excluded_from_preservation_pass": true
+}

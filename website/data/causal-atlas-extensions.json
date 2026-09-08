@@ -984,10 +984,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Temperature is a separate local transfer and control variable; sperm function and CatSper gating can respond to tissue temperature. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator."
+          "mechanism": "Temperature is a separate local transfer and control variable; sperm function and CatSper gating can respond to tissue temperature. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open."
         },
         "fi": {
-          "mechanism": "Lämpötila on erillinen paikallinen siirtosuure ja kontrollimuuttuja; siittiötoiminta ja CatSper-portitus voivat reagoida kudoslämpötilaan. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+          "mechanism": "Lämpötila on erillinen paikallinen siirtosuure ja kontrollimuuttuja; siittiötoiminta ja CatSper-portitus voivat reagoida kudoslämpötilaan. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
         },
         "link": "/evidence/reproductive-navigation",
         "keyRefs": []
@@ -996,8 +996,8 @@
         "website/app/[locale]/evidence/reproductive-navigation/page.tsx"
       ],
       "provenance": {
-        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator.",
-        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open.",
+        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
       },
       "subatlases": [
         "physics"
@@ -1013,10 +1013,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The site proposes natural ELF timing cues and their masking by urban noise as a distinct space-weather/circadian hypothesis. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator."
+          "mechanism": "The site proposes natural ELF timing cues and their masking by urban noise as a distinct space-weather/circadian hypothesis. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open."
         },
         "fi": {
-          "mechanism": "Sivusto ehdottaa luonnollisia ELF-ajoitusvihjeitä ja niiden peittymistä kaupunkikohinaan erilliseksi avaruussää–vuorokausirytmihypoteesiksi. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+          "mechanism": "Sivusto ehdottaa luonnollisia ELF-ajoitusvihjeitä ja niiden peittymistä kaupunkikohinaan erilliseksi avaruussää–vuorokausirytmihypoteesiksi. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
         },
         "link": "/evidence/space-weather-biology",
         "keyRefs": []
@@ -1025,8 +1025,8 @@
         "website/app/[locale]/evidence/space-weather-biology/page.tsx"
       ],
       "provenance": {
-        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator.",
-        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open.",
+        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
       },
       "subatlases": [
         "physics"
@@ -1042,10 +1042,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Natural ULF/Pc1 time structure is associated with cardiac and autonomic measurements in the site’s heliobiology literature. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator."
+          "mechanism": "Natural ULF/Pc1 time structure is associated with cardiac and autonomic measurements in the site’s heliobiology literature. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open."
         },
         "fi": {
-          "mechanism": "Luonnollinen ULF/Pc1-ajallinen rakenne liittyy sivuston heliobiologisessa kirjallisuudessa sydämen ja autonomisen hermoston mittauksiin. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+          "mechanism": "Luonnollinen ULF/Pc1-ajallinen rakenne liittyy sivuston heliobiologisessa kirjallisuudessa sydämen ja autonomisen hermoston mittauksiin. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
         },
         "link": "/evidence/space-weather-biology",
         "keyRefs": []
@@ -1054,8 +1054,8 @@
         "website/app/[locale]/evidence/space-weather-biology/page.tsx"
       ],
       "provenance": {
-        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator.",
-        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open.",
+        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
       },
       "subatlases": [
         "physics"
@@ -1071,10 +1071,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Geomagnetically induced currents can change transformer operating states and grid harmonics; the indoor exposure and health transfer require measurements. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator."
+          "mechanism": "Geomagnetically induced currents can change transformer operating states and grid harmonics; the indoor exposure and health transfer require measurements. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open."
         },
         "fi": {
-          "mechanism": "Geomagneettisesti indusoidut virrat voivat muuttaa muuntajien toimintatilaa ja verkon harmonisia; sisäaltistus ja terveysvaste vaativat mittaukset. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+          "mechanism": "Geomagneettisesti indusoidut virrat voivat muuttaa muuntajien toimintatilaa ja verkon harmonisia; sisäaltistus ja terveysvaste vaativat mittaukset. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
         },
         "link": "/evidence/space-weather-biology",
         "keyRefs": []
@@ -1083,8 +1083,8 @@
         "website/app/[locale]/evidence/space-weather-biology/page.tsx"
       ],
       "provenance": {
-        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator.",
-        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open.",
+        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
       },
       "subatlases": [
         "physics"
@@ -1100,10 +1100,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Building materials, source placement, grounding, distance and time indoors can modify local field structure and recovery opportunities. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator."
+          "mechanism": "Building materials, source placement, grounding, distance and time indoors can modify local field structure and recovery opportunities. Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open."
         },
         "fi": {
-          "mechanism": "Rakennusmateriaalit, lähdesijoittelu, maadoitus, etäisyys ja sisälläoloaika voivat muuttaa paikallista kenttärakennetta ja palautumismahdollisuutta. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+          "mechanism": "Rakennusmateriaalit, lähdesijoittelu, maadoitus, etäisyys ja sisälläoloaika voivat muuttaa paikallista kenttärakennetta ja palautumismahdollisuutta. Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
         },
         "link": "/civilization/patopolis",
         "keyRefs": []
@@ -1112,8 +1112,8 @@
         "website/app/[locale]/civilization/patopolis/page.tsx"
       ],
       "provenance": {
-        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation still passes through the explicit open L2 operator.",
-        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta kulkee edelleen eksplisiittisen avoimen L2-operaattorin kautta."
+        "en": "Physical structure or a source/measurement context, not an identified biological dose coefficient. Any geometry-to-biology interpretation uses the conditional L2 operator under additional matter-coupling and response premises; gauge, physical scale and tissue calibration remain open.",
+        "fi": "Fysikaalinen rakenne tai lähde-/mittauskonteksti, ei tunnistettu biologinen annoskerroin. Geometrian biologinen tulkinta käyttää ehdollista L2-operaattoria materia- ja vastepremissien lisäehdoilla; gauge, fysikaalinen mittakaava ja kudoskalibrointi ovat avoimia."
       },
       "subatlases": [
         "cell"
@@ -1303,10 +1303,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The website proposes that sustained ELF exposure can alter channel expression and hence the response to a later RF/IF input. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The website proposes that sustained ELF exposure can alter channel expression and hence the response to a later RF/IF input. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Sivusto ehdottaa jatkuvan ELF-altistuksen muuttavan kanavailmentymistä ja siten myöhemmän RF/IF-syötteen vastetta. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Sivusto ehdottaa jatkuvan ELF-altistuksen muuttavan kanavailmentymistä ja siten myöhemmän RF/IF-syötteen vastetta. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/technology",
         "keyRefs": []
@@ -1315,8 +1315,8 @@
         "website/app/[locale]/evidence/technology/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1361,10 +1361,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Calcium timing and CaMKII regulation connect channel activity to neurotransmission, channel sensitivity, β-cell identity and thermogenesis in the proposed synthesis. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Calcium timing and CaMKII regulation connect channel activity to neurotransmission, channel sensitivity, β-cell identity and thermogenesis in the proposed synthesis. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Kalsiumin ajoitus ja CaMKII-säätely yhdistävät ehdotetussa synteesissä kanavatoiminnan välittäjäaineisiin, kanavaherkkyyteen, beetasoluidentiteettiin ja lämmöntuottoon. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Kalsiumin ajoitus ja CaMKII-säätely yhdistävät ehdotetussa synteesissä kanavatoiminnan välittäjäaineisiin, kanavaherkkyyteen, beetasoluidentiteettiin ja lämmöntuottoon. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/technology",
         "keyRefs": []
@@ -1373,8 +1373,8 @@
         "website/app/[locale]/evidence/technology/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1390,10 +1390,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "KCC2/NKCC1 chloride balance, inflammation and developmental timing set GABA’s functional sign and network damping; the environmental chain is a hypothesis. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "KCC2/NKCC1 chloride balance, inflammation and developmental timing set GABA’s functional sign and network damping; the environmental chain is a hypothesis. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "KCC2/NKCC1-kloriditasapaino, tulehdus ja kehitysajoitus määrittävät GABA:n toiminnallista suuntaa ja verkoston vaimennusta; ympäristöketju on hypoteesi. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "KCC2/NKCC1-kloriditasapaino, tulehdus ja kehitysajoitus määrittävät GABA:n toiminnallista suuntaa ja verkoston vaimennusta; ympäristöketju on hypoteesi. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/autism-prototype",
         "keyRefs": []
@@ -1402,8 +1402,8 @@
         "website/app/[locale]/evidence/autism-prototype/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1419,10 +1419,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The site proposes a calcium/redox–mineralisation branch that can reduce melatonin capacity on a slower timescale than acute circadian effects. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The site proposes a calcium/redox–mineralisation branch that can reduce melatonin capacity on a slower timescale than acute circadian effects. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Sivusto ehdottaa kalsium/redox–mineralisaatiohaaraa, joka voi vähentää melatoniinikapasiteettia akuutteja vuorokausivaikutuksia hitaammin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Sivusto ehdottaa kalsium/redox–mineralisaatiohaaraa, joka voi vähentää melatoniinikapasiteettia akuutteja vuorokausivaikutuksia hitaammin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/heavy-metal-synergy",
         "keyRefs": []
@@ -1431,8 +1431,8 @@
         "website/app/[locale]/evidence/heavy-metal-synergy/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1448,10 +1448,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Calcium-dependent mast-cell secretion, calcineurin–NFAT regulation, cortisol-related immune balance and barrier-derived signals form distinct converging immune routes. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Calcium-dependent mast-cell secretion, calcineurin–NFAT regulation, cortisol-related immune balance and barrier-derived signals form distinct converging immune routes. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Kalsiumriippuvainen syöttösolueritys, kalsineuriini–NFAT-säätely, kortisoliin liittyvä immuunitasapaino ja estekudoksista tulevat signaalit muodostavat erillisiä yhtyviä immuunireittejä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Kalsiumriippuvainen syöttösolueritys, kalsineuriini–NFAT-säätely, kortisoliin liittyvä immuunitasapaino ja estekudoksista tulevat signaalit muodostavat erillisiä yhtyviä immuunireittejä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/allergy-epidemic",
         "keyRefs": []
@@ -1460,8 +1460,8 @@
         "website/app/[locale]/evidence/allergy-epidemic/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1506,10 +1506,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The proposed ageing branch connects redox damage, melatonin-dependent protective functions, telomere maintenance and inflammatory senescent-cell signalling. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The proposed ageing branch connects redox damage, melatonin-dependent protective functions, telomere maintenance and inflammatory senescent-cell signalling. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Ehdotettu vanhenemishaara yhdistää redox-vaurion, melatoniiniin liittyvät suojaavat toiminnot, telomeeriylläpidon ja vanhentuneiden solujen tulehdussignaloinnin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Ehdotettu vanhenemishaara yhdistää redox-vaurion, melatoniiniin liittyvät suojaavat toiminnot, telomeeriylläpidon ja vanhentuneiden solujen tulehdussignaloinnin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/unbroken-chain",
         "keyRefs": []
@@ -1518,8 +1518,8 @@
         "website/app/[locale]/evidence/unbroken-chain/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "cell"
@@ -1535,10 +1535,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "CaMKII, VTA calcium channels, inflammation and androgen response can feed dopamine-related motivation and reward pathways. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "CaMKII, VTA calcium channels, inflammation and androgen response can feed dopamine-related motivation and reward pathways. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "CaMKII, VTA:n kalsiumkanavat, tulehdus ja androgeenivaste voivat liittyä dopamiinivälitteisiin motivaatio- ja palkkioreitteihin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "CaMKII, VTA:n kalsiumkanavat, tulehdus ja androgeenivaste voivat liittyä dopamiinivälitteisiin motivaatio- ja palkkioreitteihin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/civilization/pathopege",
         "keyRefs": []
@@ -1547,8 +1547,8 @@
         "website/app/[locale]/civilization/pathopege/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1564,10 +1564,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "CaMKII–TPH2 regulation and gut-dependent tryptophan availability link to central serotonin, while gut serotonin is a distinct pool. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "CaMKII–TPH2 regulation and gut-dependent tryptophan availability link to central serotonin, while gut serotonin is a distinct pool. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "CaMKII–TPH2-säätely ja suolistosta riippuva tryptofaanin saatavuus liittyvät keskushermoston serotoniiniin; suoliston serotoniini muodostaa erillisen varaston. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "CaMKII–TPH2-säätely ja suolistosta riippuva tryptofaanin saatavuus liittyvät keskushermoston serotoniiniin; suoliston serotoniini muodostaa erillisen varaston. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/unbroken-chain",
         "keyRefs": []
@@ -1576,8 +1576,8 @@
         "website/app/[locale]/evidence/unbroken-chain/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1593,10 +1593,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Vagal/microbiome inputs, calcium-dependent release and receptor state connect endocrine physiology to attachment and social interaction. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Vagal/microbiome inputs, calcium-dependent release and receptor state connect endocrine physiology to attachment and social interaction. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Vagus-/mikrobiomisyötteet, kalsiumriippuvainen eritys ja reseptoritila yhdistävät hormonifysiologian kiintymiseen ja sosiaaliseen vuorovaikutukseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Vagus-/mikrobiomisyötteet, kalsiumriippuvainen eritys ja reseptoritila yhdistävät hormonifysiologian kiintymiseen ja sosiaaliseen vuorovaikutukseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/civilization/pathopege",
         "keyRefs": []
@@ -1605,8 +1605,8 @@
         "website/app/[locale]/civilization/pathopege/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1622,10 +1622,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Calcium/redox state, cortisol, androgen support and BDNF participate in neurogenesis, memory and the hippocampal feedback to the stress axis. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Calcium/redox state, cortisol, androgen support and BDNF participate in neurogenesis, memory and the hippocampal feedback to the stress axis. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Kalsium/redox-tila, kortisoli, androgeenituki ja BDNF osallistuvat neurogeneesiin, muistiin ja hippokampuksen stressiakselipalautteeseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Kalsium/redox-tila, kortisoli, androgeenituki ja BDNF osallistuvat neurogeneesiin, muistiin ja hippokampuksen stressiakselipalautteeseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/hippocampus",
         "keyRefs": []
@@ -1634,8 +1634,8 @@
         "website/app/[locale]/modulome/hippocampus/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1651,10 +1651,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The site separates amygdala stress-related structural persistence from hippocampal responses, creating a candidate anxiety feedback route. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The site separates amygdala stress-related structural persistence from hippocampal responses, creating a candidate anxiety feedback route. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Sivusto erottaa mantelitumakkeen stressiin liittyvän rakenteellisen pysyvyyden hippokampuksen vasteista; tästä muodostuu ahdistuksen palautereittiehdokas. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Sivusto erottaa mantelitumakkeen stressiin liittyvän rakenteellisen pysyvyyden hippokampuksen vasteista; tästä muodostuu ahdistuksen palautereittiehdokas. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/unbroken-chain",
         "keyRefs": []
@@ -1663,8 +1663,8 @@
         "website/app/[locale]/evidence/unbroken-chain/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1680,10 +1680,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Pituitary TSH regulation and tissue Dio2/Dio3-dependent T4/T3 metabolism remain separate endocrine routes. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Pituitary TSH regulation and tissue Dio2/Dio3-dependent T4/T3 metabolism remain separate endocrine routes. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Aivolisäkkeen TSH-säätely ja kudosten Dio2/Dio3-riippuvainen T4/T3-aineenvaihdunta ovat erillisiä hormonireittejä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Aivolisäkkeen TSH-säätely ja kudosten Dio2/Dio3-riippuvainen T4/T3-aineenvaihdunta ovat erillisiä hormonireittejä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/hidden-thyroid",
         "keyRefs": []
@@ -1692,8 +1692,8 @@
         "website/app/[locale]/evidence/hidden-thyroid/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1709,10 +1709,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Adrenal Cav3.2-dependent aldosterone regulation joins salt balance and blood-pressure control separately from the cortisol arm. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Adrenal Cav3.2-dependent aldosterone regulation joins salt balance and blood-pressure control separately from the cortisol arm. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Lisämunuaisen Cav3.2-riippuvainen aldosteronisäätely liittyy suolatasapainoon ja verenpaineen säätelyyn erillään kortisolihaarasta. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Lisämunuaisen Cav3.2-riippuvainen aldosteronisäätely liittyy suolatasapainoon ja verenpaineen säätelyyn erillään kortisolihaarasta. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/adrenal",
         "keyRefs": []
@@ -1721,8 +1721,8 @@
         "website/app/[locale]/modulome/adrenal/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1738,10 +1738,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "ARC glial calcium signalling, AgRP/NPY neurons and metabolic sensing form a proposed feeding route. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "ARC glial calcium signalling, AgRP/NPY neurons and metabolic sensing form a proposed feeding route. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "ARC-alueen gliasolujen kalsiumsignalointi, AgRP/NPY-neuronit ja metabolinen aistiminen muodostavat ehdotetun ravinnonottoreitin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "ARC-alueen gliasolujen kalsiumsignalointi, AgRP/NPY-neuronit ja metabolinen aistiminen muodostavat ehdotetun ravinnonottoreitin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/hypothalamus",
         "keyRefs": []
@@ -1750,8 +1750,8 @@
         "website/app/[locale]/modulome/hypothalamus/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1767,10 +1767,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "UCP1-dependent thermogenesis and SERCA/RyR calcium cycling provide two distinct routes into energy expenditure and metabolic state. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "UCP1-dependent thermogenesis and SERCA/RyR calcium cycling provide two distinct routes into energy expenditure and metabolic state. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "UCP1-riippuvainen lämmöntuotto ja SERCA/RyR-kalsiumkierto tarjoavat kaksi erillistä reittiä energiankulutukseen ja metaboliseen tilaan. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "UCP1-riippuvainen lämmöntuotto ja SERCA/RyR-kalsiumkierto tarjoavat kaksi erillistä reittiä energiankulutukseen ja metaboliseen tilaan. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/bat",
         "keyRefs": []
@@ -1779,8 +1779,8 @@
         "website/app/[locale]/modulome/bat/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1796,10 +1796,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Cav1.3-mediated hair-cell transmission and inflammatory context form the site’s hearing/tinnitus pathway. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Cav1.3-mediated hair-cell transmission and inflammatory context form the site’s hearing/tinnitus pathway. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Cav1.3-välitteinen karvasolujen viestintä ja tulehduskonteksti muodostavat sivuston kuulo-/tinnitusreitin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Cav1.3-välitteinen karvasolujen viestintä ja tulehduskonteksti muodostavat sivuston kuulo-/tinnitusreitin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/ear",
         "keyRefs": []
@@ -1808,8 +1808,8 @@
         "website/app/[locale]/modulome/ear/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1825,10 +1825,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Cav3.2 and α2δ-related sensitisation link to pain signalling, with sex- and state-dependent response hypotheses. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Cav3.2 and α2δ-related sensitisation link to pain signalling, with sex- and state-dependent response hypotheses. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Cav3.2 ja α2δ:aan liittyvä herkistyminen yhdistyvät kipusignalointiin sukupuolesta ja tilasta riippuvina vastehypoteeseina. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Cav3.2 ja α2δ:aan liittyvä herkistyminen yhdistyvät kipusignalointiin sukupuolesta ja tilasta riippuvina vastehypoteeseina. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/pain",
         "keyRefs": []
@@ -1837,8 +1837,8 @@
         "website/app/[locale]/modulome/pain/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -1854,10 +1854,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The site proposes convergence of retinal dopamine, circadian timing and barrier function on ocular-growth and vision endpoints. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The site proposes convergence of retinal dopamine, circadian timing and barrier function on ocular-growth and vision endpoints. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Sivusto ehdottaa verkkokalvon dopamiinin, vuorokausiajoituksen ja estetoiminnan yhtymistä silmän kasvun ja näön päätepisteisiin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Sivusto ehdottaa verkkokalvon dopamiinin, vuorokausiajoituksen ja estetoiminnan yhtymistä silmän kasvun ja näön päätepisteisiin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/eye",
         "keyRefs": []
@@ -1866,8 +1866,8 @@
         "website/app/[locale]/modulome/eye/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2145,10 +2145,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Network damping, spreading depolarisation and developmental calcium clearance are proposed to distinguish seizure, migraine, SUDEP and infant-vulnerability endpoints. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Network damping, spreading depolarisation and developmental calcium clearance are proposed to distinguish seizure, migraine, SUDEP and infant-vulnerability endpoints. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Verkostovaimennuksen, leviävän depolarisaation ja kehityksellisen kalsiumpuhdistuman ehdotetaan erottavan kohtaus-, migreeni-, SUDEP- ja imeväishaavoittuvuuden päätepisteitä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Verkostovaimennuksen, leviävän depolarisaation ja kehityksellisen kalsiumpuhdistuman ehdotetaan erottavan kohtaus-, migreeni-, SUDEP- ja imeväishaavoittuvuuden päätepisteitä. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/neurological-spectrum",
         "keyRefs": []
@@ -2159,8 +2159,8 @@
         "website/app/[locale]/model/q-factor/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2176,10 +2176,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The site separates hippocampal/Alzheimer, OPC/myelin/MS, nigral dopamine/Parkinson and low-buffering motor-neuron/ALS mechanisms. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The site separates hippocampal/Alzheimer, OPC/myelin/MS, nigral dopamine/Parkinson and low-buffering motor-neuron/ALS mechanisms. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Sivusto erottaa hippokampus/Alzheimer-, OPC/myeliini/MS-, nigraalinen dopamiini/Parkinson- ja heikosti puskuroiva motoneuroni/ALS-mekanismit. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Sivusto erottaa hippokampus/Alzheimer-, OPC/myeliini/MS-, nigraalinen dopamiini/Parkinson- ja heikosti puskuroiva motoneuroni/ALS-mekanismit. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/four-neurodegenerations",
         "keyRefs": []
@@ -2188,8 +2188,8 @@
         "website/app/[locale]/evidence/four-neurodegenerations/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2205,10 +2205,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Central and peripheral sensitisation are connected to sleep, stress and inflammatory feedback in the proposed chronic-pain route. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Central and peripheral sensitisation are connected to sleep, stress and inflammatory feedback in the proposed chronic-pain route. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Keskushermoston ja ääreishermoston herkistyminen yhdistyy ehdotetussa kipureitissä uneen, stressiin ja tulehduspalautteeseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Keskushermoston ja ääreishermoston herkistyminen yhdistyy ehdotetussa kipureitissä uneen, stressiin ja tulehduspalautteeseen. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/chronic-pain",
         "keyRefs": []
@@ -2217,8 +2217,8 @@
         "website/app/[locale]/evidence/chronic-pain/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2234,10 +2234,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The proposed cardiovascular branch distinguishes pacemaking/HRV, Cav1.2 repolarisation, adrenal aldosterone and vascular calcium effects. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The proposed cardiovascular branch distinguishes pacemaking/HRV, Cav1.2 repolarisation, adrenal aldosterone and vascular calcium effects. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Ehdotettu sydän- ja verisuonihaara erottaa tahdistuksen/HRV:n, Cav1.2-repolarisaation, lisämunuaisen aldosteronin ja verisuonten kalsiumvaikutukset. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Ehdotettu sydän- ja verisuonihaara erottaa tahdistuksen/HRV:n, Cav1.2-repolarisaation, lisämunuaisen aldosteronin ja verisuonten kalsiumvaikutukset. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/heart",
         "keyRefs": []
@@ -2246,8 +2246,8 @@
         "website/app/[locale]/modulome/heart/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2263,10 +2263,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Auditory-synapse and excitability endpoints are distinct from the atlas’s general sleep and neurodevelopment categories. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Auditory-synapse and excitability endpoints are distinct from the atlas’s general sleep and neurodevelopment categories. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Kuulosynapsien ja ärtyvyyden päätepisteet ovat erillisiä atlaksen yleisistä uni- ja neurokehitysluokista. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Kuulosynapsien ja ärtyvyyden päätepisteet ovat erillisiä atlaksen yleisistä uni- ja neurokehitysluokista. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/ear",
         "keyRefs": []
@@ -2275,8 +2275,8 @@
         "website/app/[locale]/modulome/ear/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2292,10 +2292,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Ocular growth, retinal function and barrier state require their own endpoint-specific calibration. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Ocular growth, retinal function and barrier state require their own endpoint-specific calibration. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Silmän kasvu, verkkokalvotoiminta ja estotila edellyttävät kukin omaa päätepistekohtaista kalibrointiaan. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Silmän kasvu, verkkokalvotoiminta ja estotila edellyttävät kukin omaa päätepistekohtaista kalibrointiaan. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/modulome/eye",
         "keyRefs": []
@@ -2304,8 +2304,8 @@
         "website/app/[locale]/modulome/eye/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2321,10 +2321,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "The proposed allergy branch combines mast-cell calcium, endocrine context and gut/barrier inflammatory inputs. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "The proposed allergy branch combines mast-cell calcium, endocrine context and gut/barrier inflammatory inputs. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Ehdotettu allergiahaara yhdistää syöttösolujen kalsiumin, hormonaalisen kontekstin ja suolisto-/estekudosten tulehdussyötteet. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Ehdotettu allergiahaara yhdistää syöttösolujen kalsiumin, hormonaalisen kontekstin ja suolisto-/estekudosten tulehdussyötteet. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/allergy-epidemic",
         "keyRefs": []
@@ -2333,8 +2333,8 @@
         "website/app/[locale]/evidence/allergy-epidemic/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "health"
@@ -2350,10 +2350,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Insulin, theca-cell androgen output, granulosa-cell steroid conversion and pituitary LH/FSH timing form the site’s four-organ PCOS hypothesis. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Insulin, theca-cell androgen output, granulosa-cell steroid conversion and pituitary LH/FSH timing form the site’s four-organ PCOS hypothesis. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Insuliini, teekasolujen androgeenituotto, granuloosasolujen steroidimuunto ja aivolisäkkeen LH/FSH-ajoitus muodostavat sivuston neljän elimen PCOS-hypoteesin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Insuliini, teekasolujen androgeenituotto, granuloosasolujen steroidimuunto ja aivolisäkkeen LH/FSH-ajoitus muodostavat sivuston neljän elimen PCOS-hypoteesin. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/model",
         "keyRefs": []
@@ -2362,8 +2362,8 @@
         "website/app/[locale]/model/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "reproduction"
@@ -2379,10 +2379,10 @@
       "epistemicLevel": "L*",
       "detail": {
         "en": {
-          "mechanism": "Progesterone/estrogen-dependent uterine excitability, vascular calcium and placental redox state distinguish delivery timing and pregnancy vascular complications. Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation."
+          "mechanism": "Progesterone/estrogen-dependent uterine excitability, vascular calcium and placental redox state distinguish delivery timing and pregnancy vascular complications. Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation."
         },
         "fi": {
-          "mechanism": "Progesteroni-/estrogeeniriippuvainen kohdun ärtyvyys, verisuonikalsium ja istukan redox-tila erottavat synnytysajoituksen ja raskauden verisuonikomplikaatiot. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+          "mechanism": "Progesteroni-/estrogeeniriippuvainen kohdun ärtyvyys, verisuonikalsium ja istukan redox-tila erottavat synnytysajoituksen ja raskauden verisuonikomplikaatiot. Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
         },
         "link": "/evidence/reproductive-arc",
         "keyRefs": []
@@ -2391,8 +2391,8 @@
         "website/app/[locale]/evidence/reproductive-arc/page.tsx"
       ],
       "provenance": {
-        "en": "Imported biological components and a conditional BERM synthesis. The geometry-to-observable L2 coupling and the complete environmental route remain open; a component result does not establish population causation.",
-        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. Geometriasta havaittavaan johtava L2-kytkentä ja koko ympäristöreitti ovat avoimia; osatulos ei osoita väestötason syy-yhteyttä."
+        "en": "Imported biological components and a conditional BERM synthesis. The L2 operator form is conditional on added matter-coupling and response premises; its gauge, scale, tissue kernel and full environmental calibration remain open. A component result does not establish population causation.",
+        "fi": "Tuotuja biologisia osamekanismeja ja ehdollinen BERM-synteesi. L2-operaattorimuoto on ehdollinen lisätyille materia- ja vastepremisseille; sen gauge, mittakaava, kudosydin ja koko ympäristöreitin kalibrointi ovat avoimia. Osatulos ei osoita väestötason syy-yhteyttä."
       },
       "subatlases": [
         "reproduction"

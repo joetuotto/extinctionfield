@@ -20,7 +20,7 @@ interface CausalGraphFile {
     id: string;
     from: string;
     to: string;
-    kind: "inference_input" | "proposed_bridge" | "causal_model";
+    kind: "inference_input" | "derived_geometry" | "conditional_response" | "causal_model";
   }[];
   ui_groups: Record<string, { id: string; contains: string[] }>;
 }
@@ -77,6 +77,14 @@ interface AnchorIndexFile {
   anchors: { claimId: string; file: string; line: number }[];
 }
 
+interface EvidenceSynthesisManifest {
+  evidenceSynthesis: {
+    role: string;
+    fieldStateRole: string;
+    clusters: { claimId: string; relationIds: string[] }[];
+  };
+}
+
 /** Nodes that carry at least one claim — mirrors getNodeCoverage() in lib/claims. */
 function coveredNodeIds(graphFile: CausalGraphFile, claimsData: ClaimsFile): Set<string> {
   const nodeIds = new Set(Object.keys(graphFile.nodes));
@@ -96,19 +104,17 @@ function loadJSON<T>(filename: string): T {
 const graph = loadJSON<CausalGraphFile>("causal-graph.json");
 const claims = loadJSON<ClaimsFile>("claims.json");
 const anchorIndex = loadJSON<AnchorIndexFile>("anchor-index.json");
+const architecture = loadJSON<EvidenceSynthesisManifest>("model-architecture.json");
 
 describe("causal-graph.json", () => {
   const nodeIds = new Set(Object.keys(graph.nodes));
 
-  it("has 39 nodes including the biological coordination extension", () => {
-    expect(nodeIds.size).toBe(39);
-    for (const id of ["RECEPTOR_STATE_MEMORY", "CIRCADIAN_COORDINATION", "HORMONE_TARGET_RESPONSE"]) {
-      expect(nodeIds.has(id)).toBe(true);
-    }
+  it("has 47 nodes", () => {
+    expect(nodeIds.size).toBe(47);
   });
 
-  it("has 83 typed edges", () => {
-    expect(graph.edges.length).toBe(83);
+  it("has 96 typed edges", () => {
+    expect(graph.edges.length).toBe(96);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {
@@ -145,7 +151,7 @@ describe("causal-graph.json", () => {
         expect(edge.kind).toBe("inference_input");
       }
       if (edge.from === "BERM_L2_BRIDGE") {
-        expect(edge.kind).toBe("proposed_bridge");
+        expect(edge.kind).toBe("conditional_response");
       }
     }
   });
@@ -256,6 +262,25 @@ describe("claims.json", () => {
     for (const claim of claims.claims) {
       for (const dep of claim.depends_on) {
         expect(claimIds.has(dep)).toBe(true);
+      }
+    }
+  });
+});
+
+describe("BERM compositional evidence synthesis", () => {
+  it("registers all seven synthesis clusters as BERM-owned claims and relations", () => {
+    const claimIds = new Set(claims.claims.map((claim) => claim.id));
+    const relationIds = new Set(claims.evidence_relations.map((relation) => relation.id));
+    const synthesis = architecture.evidenceSynthesis;
+
+    expect(synthesis.role).toBe("berm_compositional_evidence_layer");
+    expect(synthesis.fieldStateRole).toBe("optional_physical_measurement_input_only");
+    expect(synthesis.clusters).toHaveLength(7);
+    for (const cluster of synthesis.clusters) {
+      expect(claimIds.has(cluster.claimId)).toBe(true);
+      expect(cluster.relationIds.length).toBeGreaterThan(0);
+      for (const relationId of cluster.relationIds) {
+        expect(relationIds.has(relationId)).toBe(true);
       }
     }
   });

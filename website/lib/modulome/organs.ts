@@ -31,7 +31,7 @@ export const ORGAN_PROFILES: OrganProfile[] = [
     color: "#3B82F6",
     level: "M|C",
     subpage: "/modulome/eye",
-    summaryEn: "CRY1 + CRY2 + dual-band candidate convergence. 6/6 BERM criteria proposed; L2 open.",
+    summaryEn: "CRY1 + CRY2 + dual-band candidate convergence. Six BERM tissue-response criteria proposed; L2 operator conditional and calibration open.",
     summaryFi: "CRY1 + CRY2 + kaksikaistan yhdentyminen. 6/6 Lindgren-kriteeriä.",
     summaryJa: "CRY1 + CRY2 + 二重帯域収束。6/6リンドグレン基準。",
     summaryFr: "CRY1 + CRY2 + convergence double bande. 6/6 critères de Lindgren.",

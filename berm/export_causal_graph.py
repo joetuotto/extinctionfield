@@ -26,24 +26,89 @@ MEASUREMENT_INPUTS = {
 }
 
 NEW_LABELS = {
-    "BERM_L2_BRIDGE": {
-        "en": "Open geometry-to-observable coupling proposition",
-        "fi": "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
-        "ja": "幾何学から観測量への未解決の結合命題",
-        "fr": "Proposition ouverte de couplage géométrie–observable",
-        "ko": "기하학-관측량 간 개방형 결합 명제",
-    },
     "RECEPTOR_STATE_MEMORY": {
         "en": "Receptor chemical-state memory and recovery",
         "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
+        "ja": "受容体の化学的状態記憶と回復",
+        "fr": "Mémoire de l'état chimique du récepteur et récupération",
+        "ko": "수용체 화학적 상태 기억과 회복",
     },
     "CIRCADIAN_COORDINATION": {
         "en": "Tissue-specific circadian phase relationships and electrical timing",
         "fi": "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus",
+        "ja": "組織別の概日位相関係と電気的タイミング",
+        "fr": "Relations de phase circadienne par tissu et synchronisation électrique",
+        "ko": "조직별 일주기 위상 관계와 전기적 타이밍",
     },
     "HORMONE_TARGET_RESPONSE": {
         "en": "Hormone signal, target readiness and phase-dependent response",
         "fi": "Hormonisignaali, kohdekudoksen valmius ja vaiheesta riippuva vaste",
+        "ja": "ホルモン信号、標的の準備状態、位相依存的応答",
+        "fr": "Signal hormonal, disponibilité de la cible et réponse dépendante de la phase",
+        "ko": "호르몬 신호, 표적 준비 상태 및 위상 의존적 반응",
+    },
+    "LINDGREN_METRIC_DRIVE": {
+        "en": "Lindgren 2025 metric perturbation and quadratic mixing drive",
+        "fi": "Lindgren 2025 -metriikkahäiriö ja neliöllinen sekoitusajuri",
+        "ja": "Lindgren 2025 計量摂動と二次混合駆動",
+        "fr": "Perturbation métrique et mélange quadratique de Lindgren 2025",
+        "ko": "Lindgren 2025 계량 섭동 및 이차 혼합 구동",
+    },
+    "BERM_L2_BRIDGE": {
+        "en": "Conditional metric-to-observable response operator",
+        "fi": "Ehdollinen metriikasta havaittavaan johtava vasteoperaattori",
+        "ja": "計量から観測量への条件付き応答演算子",
+        "fr": "Opérateur conditionnel de réponse métrique–observable",
+        "ko": "계량-관측량 조건부 응답 연산자",
+    },
+    "ANDROGEN_BINDING_AVAILABILITY": {
+        "en": "SHBG/albumin binding and free or intratesticular androgen availability",
+        "fi": "SHBG-/albumiinisitoutuminen sekä vapaan tai intratestikulaarisen androgeenin saatavuus",
+        "ja": "SHBG・アルブミン結合と遊離・精巣内アンドロゲン利用可能性",
+        "fr": "Liaison SHBG/albumine et disponibilité androgénique libre ou intratesticulaire",
+        "ko": "SHBG/알부민 결합 및 유리·고환내 안드로겐 가용성",
+    },
+    "ANDROGEN_RECEPTOR_SIGNAL": {
+        "en": "AR/ZIP9 occupancy and post-receptor androgen-use capacity",
+        "fi": "AR-/ZIP9-miehitys ja reseptorin jälkeinen androgeeninkäyttökapasiteetti",
+        "ja": "AR/ZIP9占有率と受容体後アンドロゲン利用能力",
+        "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
+        "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력",
+    },
+    "INDIVIDUAL_BEHAVIORAL_RESPONSE": {
+        "en": "State-conditioned individual behavioural response probability",
+        "fi": "Tilariippuvainen yksilön käyttäytymisvasteen todennäköisyys",
+        "ja": "状態依存の個人行動反応確率",
+        "fr": "Probabilité individuelle de réponse comportementale conditionnée par l’état",
+        "ko": "상태 조건부 개인 행동 반응 확률",
+    },
+    "BIOBEHAVIORAL_WEIGHTING": {
+        "en": "Population mixture of state-conditioned behavioural probabilities",
+        "fi": "Tilariippuvaisten käyttäytymistodennäköisyyksien populaatiosekoitus",
+        "ja": "状態依存の行動確率の集団混合",
+        "fr": "Mélange populationnel de probabilités comportementales conditionnées par l’état",
+        "ko": "상태 조건부 행동 확률의 모집단 혼합",
+    },
+    "NARRATIVE_ATTRIBUTION": {
+        "en": "Accessible narrative attribution of a partly latent behavioural state",
+        "fi": "Osittain latentin käyttäytymistilan saavutettava narratiiviattribuutio",
+        "ja": "部分的に潜在的な行動状態のアクセス可能な物語的帰属",
+        "fr": "Attribution narrative accessible d’un état comportemental partiellement latent",
+        "ko": "부분적으로 잠재된 행동 상태의 접근 가능한 서사적 귀인",
+    },
+    "EPISTAPEGE_OBSERVABILITY_LOSS": {
+        "en": "Epistapege: upstream biological state omitted from the explanatory data model",
+        "fi": "Epistapege: biologinen ylävirran tila puuttuu selittävästä datamallista",
+        "ja": "エピスタペゲ：説明データモデルから上流の生物学的状態が欠落",
+        "fr": "Epistapege : état biologique amont omis du modèle explicatif",
+        "ko": "에피스타페게: 설명 데이터 모델에서 상류 생물학적 상태 누락",
+    },
+    "INSTITUTIONAL_MODEL_REUSE": {
+        "en": "Institutional reuse of downstream reports as initiating explanatory variables",
+        "fi": "Alavirran raporttien institutionaalinen uudelleenkäyttö alkavina selitysmuuttujina",
+        "ja": "下流の報告を開始説明変数として制度的に再利用",
+        "fr": "Réutilisation institutionnelle des rapports aval comme variables explicatives initiales",
+        "ko": "하류 보고를 시작 설명 변수로 제도적으로 재사용",
     },
 }
 
@@ -61,8 +126,10 @@ def _web_prediction_role(role: str) -> str:
 def _edge_kind(source: str, target: str) -> str:
     if source in MEASUREMENT_INPUTS and target == "BERM_L2_BRIDGE":
         return "inference_input"
+    if source == "LINDGREN_METRIC_DRIVE" and target == "BERM_L2_BRIDGE":
+        return "derived_geometry"
     if source == "BERM_L2_BRIDGE":
-        return "proposed_bridge"
+        return "conditional_response"
     return "causal_model"
 
 
@@ -129,12 +196,39 @@ def build_graph(existing: dict) -> dict:
             ],
             "ui_level": 0,
         },
+        "berm-theory": {
+            "id": "berm-theory",
+            "contains": ["LINDGREN_METRIC_DRIVE"],
+            "ui_level": 0,
+        },
         "berm-l2": {
             "id": "berm-l2",
             "contains": ["BERM_L2_BRIDGE"],
             "ui_level": 1,
         },
         **ui_groups,
+    }
+    ui_groups["male"] = {
+        "id": "male",
+        "contains": [
+            "MALE_SPERM",
+            "MALE_GERMLINE_RESERVE",
+            "MALE_STEROIDOGENESIS",
+            "ANDROGEN_BINDING_AVAILABILITY",
+            "ANDROGEN_RECEPTOR_SIGNAL",
+        ],
+        "ui_level": 4,
+    }
+    ui_groups["civilization"] = {
+        "id": "civilization",
+        "contains": [
+            "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+            "BIOBEHAVIORAL_WEIGHTING",
+            "NARRATIVE_ATTRIBUTION",
+            "EPISTAPEGE_OBSERVABILITY_LOSS",
+            "INSTITUTIONAL_MODEL_REUSE",
+        ],
+        "ui_level": 5,
     }
 
     return {

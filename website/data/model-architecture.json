@@ -1,8 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "package": {
     "name": "berm",
-    "version": "0.19.0",
+    "version": "0.22.0",
     "role": "implementation_release"
   },
   "model": {
@@ -14,8 +14,58 @@
   "theory": {
     "formulation": "2025-weyl-gme",
     "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
-    "l2BridgeStatus": "open",
-    "l2BridgeMeaning": "The explicit Lorentz-to-spatial scalar reduction is L2: the directed derivative maps through |A_bar| to chi(|A_bar|), while the chi formula itself always remains L1. The geometry-to-observable coupling operator has not been derived. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations. Their empirical provenance does not erase or relabel any L1-derived component in the same chain.",
+    "l2BridgeStatus": "conditional_formal_operator",
+    "l2BridgeStatusScope": "operator_form_only",
+    "bridgeComponents": {
+      "geometry": {
+        "status": "L1_DERIVED",
+        "scope": "exact_delta_metric_given_the_2025_ansatz"
+      },
+      "responseOperator": {
+        "status": "CONDITIONAL_FORMAL_OPERATOR",
+        "assumptions": [
+          "minimal_matter_metric_coupling",
+          "retarded_response_expansion"
+        ],
+        "scope": "operator_form_not_an_identified_tissue_kernel"
+      },
+      "physicalIdentification": {
+        "status": "OPEN",
+        "unresolved": [
+          "gauge_prescription",
+          "physical_coupling_scale"
+        ]
+      },
+      "tissueKernel": {
+        "status": "CALLER_SUPPLIED_UNCALIBRATED",
+        "scope": "organ_state_direction_units_and_lag_are_explicit_inputs"
+      },
+      "endpointCalibration": {
+        "status": "OPEN",
+        "scope": "the_composed_human_endpoint_chain"
+      }
+    },
+    "l2BridgeMeaning": "Conditional on minimal matter-metric coupling and response theory, BERM derives the formal geometry-to-observable operator. Its gauge prescription, physical scale, tissue response kernels and human endpoint calibration remain open; downstream biology is not a Lindgren-derived result. The Lorentz-to-spatial scalar reduction that maps the directed derivative through |A_bar| to chi(|A_bar|) is L2, while the chi formula itself always remains L1. Downstream mechanisms are conditional BERM bridge propositions or imported biological realizations; their empirical provenance does not erase or relabel any L1-derived component in the same chain.",
+    "derivedGeometry": "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)",
+    "responseOperator": "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response",
+    "stateConditionedResponse": "u_i(t) = integral K_i^{mu nu}(tau; S_i(t-tau)) delta_g_mu_nu(t-tau) d tau",
+    "responseStateArguments": [
+      "orientation",
+      "coherence",
+      "waveform",
+      "circadian_phase",
+      "metabolic_phase",
+      "developmental_window",
+      "receptor_or_agonist_state",
+      "redox_state",
+      "temperature_trajectory",
+      "organ_transfer",
+      "exposure_history"
+    ],
+    "responseEvidenceRole": "Component studies constrain arguments, null regions and lag families of the open tissue kernel; they do not validate the Lindgren premise or calibrate a human endpoint coefficient.",
+    "geometricCoordinate": "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, for an explicitly normalized positive-norm mode",
+    "calibrationStatus": "open",
+    "fieldStateRole": "optional_measurement_input_only",
     "epistemicStatusPolicy": "componentwise_no_weakest_link_collapse",
     "derivedStatusPreserved": true,
     "formalDerivation": {
@@ -88,20 +138,20 @@
       "modelVersion": "v17",
       "role": "archived_comparison_prediction",
       "inputKind": "national_technology_timing_proxy",
-      "fieldStateCalibrated": true
+      "fieldStateCalibrated": false
     },
     "diagnostic": {
       "id": "berm-v19.1-three-channel-diagnostic",
       "modelVersion": "v19.1",
       "role": "cross_sectional_diagnostic",
-      "publishesLockedForecasts": true
+      "publishesLockedForecasts": false
     },
     "conditionalAsfr": {
       "id": "berm-conditional-asfr-v1",
       "role": "conditional_scenario_calculator",
       "acceptsFieldStateObservations": false,
       "requiresExternallySuppliedBiologicalStates": true,
-      "publishesLockedForecasts": true
+      "publishesLockedForecasts": false
     },
     "lindgrenDkc": {
       "id": "berm-lindgren-dkc-candidate-v1",
@@ -124,8 +174,140 @@
       "role": "measurement_observation_estimation",
       "isModelAlias": false,
       "isCausalRoot": false,
-      "publishesLockedForecasts": true,
+      "publishesLockedForecasts": false,
       "canonicalRoute": "/measurement/fieldstate"
+    }
+  },
+  "evidenceSynthesis": {
+    "id": "berm-cross-pathway-synthesis-v1",
+    "role": "berm_compositional_evidence_layer",
+    "rule": "Independent compatible component findings strengthen a shared BERM causal path; the joint inference is registered separately from end-to-end coefficient calibration.",
+    "fieldStateRole": "optional_physical_measurement_input_only",
+    "clusters": [
+      {
+        "id": "joint-endocrine-gate",
+        "claimId": "claim.synthesis.joint-endocrine-gate",
+        "path": [
+          "HPA_HPG",
+          "ANDROGEN_RECEPTOR_SIGNAL",
+          "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+        ],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.joint-endocrine.mehta2010",
+          "er.synthesis.joint-endocrine.narinx2022"
+        ]
+      },
+      {
+        "id": "cry-clock-hpg-serial-bridge",
+        "claimId": "claim.synthesis.cry-clock-hpg-chain",
+        "path": [
+          "B_RPM_CRY",
+          "MELATONIN_REDOX",
+          "HPA_HPG"
+        ],
+        "synthesisClass": "DIRECT_COMPONENT_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.cry-clock.yoshii2009",
+          "er.synthesis.cry-clock.sherrard2018",
+          "er.synthesis.cry-clock.cao2015",
+          "er.synthesis.cry-clock.liu2014"
+        ]
+      },
+      {
+        "id": "pharmacological-target-triangulation",
+        "claimId": "claim.synthesis.target-intervention-triangulation",
+        "path": [
+          "A_VGCC_ROS",
+          "VMEM_MTOR",
+          "MALE_SPERM"
+        ],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.pharmacology.pall2013",
+          "er.synthesis.pharmacology.ccb1994",
+          "er.synthesis.pharmacology.sirolimus2008"
+        ]
+      },
+      {
+        "id": "protocol-state-heterogeneity",
+        "claimId": "claim.synthesis.protocol-state-heterogeneity",
+        "path": [
+          "BERM_L2_BRIDGE"
+        ],
+        "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
+        "relationIds": [
+          "er.bridge.litovitz1991",
+          "er.bridge.blackman1990",
+          "er.bridge.blackman1991",
+          "er.bridge.berman1990"
+        ]
+      },
+      {
+        "id": "vmem-calcium-mtor-interface",
+        "claimId": "claim.synthesis.vmem-calcium-interface",
+        "path": [
+          "A_VGCC_ROS",
+          "VMEM_MTOR",
+          "MALE_SPERM"
+        ],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.vmem.sempou2022",
+          "er.synthesis.vmem.brown2016",
+          "er.synthesis.vmem.zandieh2025"
+        ]
+      },
+      {
+        "id": "conserved-cross-species-prior",
+        "claimId": "claim.synthesis.cross-species-transfer-prior",
+        "path": [
+          "B_RPM_CRY",
+          "ECOLOGICAL_ENCOUNTER",
+          "ECOLOGICAL_SELECTION"
+        ],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.cross-species.ritz2004",
+          "er.synthesis.cross-species.yoshii2009",
+          "er.synthesis.cross-species.wan2021",
+          "er.synthesis.cross-species.hallmann2017",
+          "er.synthesis.cross-species.rosenberg2019"
+        ]
+      },
+      {
+        "id": "graded-susceptibility-continuum",
+        "claimId": "claim.synthesis.graded-susceptibility",
+        "path": [
+          "BERM_L2_BRIDGE",
+          "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+        ],
+        "synthesisClass": "STATE_HETEROGENEITY_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.susceptibility.mccarty2011",
+          "er.synthesis.susceptibility.belpomme2022",
+          "er.synthesis.susceptibility.rubin2010"
+        ]
+      }
+    ]
+  },
+  "civilizationExtensions": {
+    "forwardAggregation": {
+      "id": "berm-forward-aggregation-v1",
+      "role": "individual_probability_to_population_distribution",
+      "operator": "P_t(Y=p) = integral P(Y=p | z,x) f_t(z,x) dz dx",
+      "reverseEcologicalInferenceAllowed": false,
+      "institutionalMemory": "I_(t+1) = retention I_t + (1-retention) P_t",
+      "calibrationStatus": "open"
+    },
+    "epistapege": {
+      "id": "berm-epistapege-v1",
+      "role": "qualitative_observability_hypothesis",
+      "status": "open_testable_extension",
+      "canonicalRoute": "/civilization/epistapege",
+      "publishesNumericPredictions": false,
+      "fieldStateRole": "optional_physical_measurement_input_only",
+      "evidenceBoundary": "Direct component findings constrain individual transitions; the complete biology-to-narrative-to-institution route is a composed BERM inference, not a Lindgren or FieldState result."
     }
   }
 }

@@ -11,6 +11,7 @@ import { atlasBindingAnchors } from "./atlas-anchors.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, "../data");
+const WEBSITE_DIR = resolve(__dirname, "..");
 
 let errors = 0;
 let warnings = 0;
@@ -73,7 +74,7 @@ for (const edge of graph.edges) {
   if (!nodeIds.has(edge.to)) {
     error(`Edge ${edge.id}: "to" node "${edge.to}" does not exist`);
   }
-  if (!["inference_input", "proposed_bridge", "causal_model"].includes(edge.kind)) {
+  if (!["inference_input", "derived_geometry", "conditional_response", "causal_model"].includes(edge.kind)) {
     error(`Edge ${edge.id}: invalid kind "${edge.kind}"`);
   }
 }
@@ -178,7 +179,7 @@ for (const id of nodeIds) {
 
 // ── 7. Layer validity ──────────────────────────────────
 console.log("7. Checking layer values...");
-const validLayers = new Set(["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography"]);
+const validLayers = new Set(["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography", "civilization"]);
 for (const [id, node] of Object.entries(graph.nodes)) {
   if (!validLayers.has(node.layer)) {
     error(`Node ${id}: invalid layer "${node.layer}"`);
@@ -477,17 +478,30 @@ const lindgrenDkcRoute = architecture.routes?.lindgrenDkc;
 if (architecture.model?.id !== "berm") {
   error("Architecture manifest must identify BERM as the model");
 }
+if (architecture.model?.role !== "explanatory_derivational_prediction_model") {
+  error("BERM must remain the explanatory, derivational and prediction model");
+}
 if (fieldStateModule?.role !== "measurement_observation_estimation") {
   error("FieldState must be a measurement/observation/estimation module");
 }
 if (fieldStateModule?.isModelAlias !== false || fieldStateModule?.isCausalRoot !== false) {
   error("FieldState must not be a model alias or causal root");
 }
-if (architecture.theory?.l2BridgeStatus !== "open") {
-  error("The geometry-to-observable L2 bridge must remain explicitly open");
+if (fieldStateModule?.canonicalRoute !== "/measurement/fieldstate") {
+  error("FieldState must remain under the canonical measurement route");
 }
-if (architecture.routes?.prediction?.fieldStateCalibrated !== true) {
-  error("The published v17 prediction route must declare fieldStateCalibrated=true");
+if (fieldStateModule?.publishesLockedForecasts !== false ||
+    architecture.theory?.fieldStateRole !== "optional_measurement_input_only") {
+  error("FieldState must remain an optional measurement input and publish no locked forecasts");
+}
+if (architecture.theory?.l2BridgeStatus !== "conditional_formal_operator") {
+  error("The geometry-to-observable L2 bridge must expose the conditional formal operator");
+}
+if (architecture.theory?.calibrationStatus !== "open") {
+  error("The L2 tissue kernels and endpoint calibration must remain explicitly open");
+}
+if (architecture.routes?.prediction?.fieldStateCalibrated !== false) {
+  error("The published v17 prediction route must not be marked FieldState-calibrated");
 }
 if (architecture.routes?.conditionalAsfr?.acceptsFieldStateObservations !== false) {
   error("The conditional ASFR calculator must not claim to accept FieldState observations");
@@ -529,6 +543,32 @@ if (
   error("The Lindgren-DKC residual gate must use per-residual scale-aware tolerances");
 }
 
+const publicBoundarySources = [
+  "app/[locale]/model/page.tsx",
+  "app/[locale]/mathematics/page.tsx",
+  "components/MathematicsSections.tsx",
+  "app/[locale]/evidence/evolution/page.tsx",
+  "components/SolarExplorer.tsx",
+].map((relativePath) => ({
+  relativePath,
+  source: readFileSync(resolve(WEBSITE_DIR, relativePath), "utf-8"),
+}));
+const forbiddenBoundaryPhrases = [
+  "Geomagnetic field creates the χ(Ā) substrate",
+  'symbol: "χ(λ)"',
+  'title: "χ(Ā) [VGCC]"',
+  'title: "χ_B [CRY/RPM]"',
+  "χ_tissue candidate",
+  "FieldState-derived timing-proxy",
+];
+for (const { relativePath, source } of publicBoundarySources) {
+  for (const phrase of forbiddenBoundaryPhrases) {
+    if (source.includes(phrase)) {
+      error(`${relativePath}: obsolete BERM/FieldState conflation remains: ${phrase}`);
+    }
+  }
+}
+
 const measurementInputs = new Set([
   "TECHNOLOGY_TIMING_PROXY",
   "FIELDSTATE_VECTOR",
@@ -539,14 +579,21 @@ const measurementInputs = new Set([
 if (!nodeIds.has("BERM_L2_BRIDGE")) {
   error("Graph is missing the explicit BERM_L2_BRIDGE node");
 }
+if (!nodeIds.has("LINDGREN_METRIC_DRIVE")) {
+  error("Graph is missing the explicit Lindgren theory-premise node");
+}
 for (const edge of graph.edges) {
   if (measurementInputs.has(edge.from)) {
     if (edge.to !== "BERM_L2_BRIDGE" || edge.kind !== "inference_input") {
       error(`${edge.from} may enter BERM only through an inference_input edge to BERM_L2_BRIDGE`);
     }
   }
-  if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "proposed_bridge") {
-    error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled proposed_bridge`);
+  if (edge.from === "LINDGREN_METRIC_DRIVE" &&
+      (edge.to !== "BERM_L2_BRIDGE" || edge.kind !== "derived_geometry")) {
+    error(`LINDGREN_METRIC_DRIVE edge ${edge.id} must be derived_geometry into BERM_L2_BRIDGE`);
+  }
+  if (edge.from === "BERM_L2_BRIDGE" && edge.kind !== "conditional_response") {
+    error(`BERM_L2_BRIDGE edge ${edge.id} must be labelled conditional_response`);
   }
 }
 

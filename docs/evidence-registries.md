@@ -36,7 +36,7 @@ Lähde: `berm/data/evidence/fieldstate_causal_evidence.json` (`registry_version:
 
 - **v17** = sivuston julkinen mallimäärittely ja lukittujen maakohtaisten ennusteiden lähde: `berm/berm/config.py` `LOCKED_PREDICTIONS` (`model_version` v17.0/v17.1, lukittu 2026-08-18). Skalaarimalli: kansallinen altistusskalaari → polkupainot → TFR.
 - **v2** = `fieldstate-asfr-v2`, FieldState-mittausmäärittely ja tulkintakerros (`berm/docs/fieldstate-asfr-v2.md`). Rekisteri A on tämän määrittelyn näyttörekisteri. v2 ei tuota maakohtaisia ennusteita ilman ulkoisia syötteitä (`berm/berm/model_fieldstate_asfr.py`).
-- Python-paketti on 0.19.x/v19. Versiot ovat itsenäisiä julkaisusyklejä (`berm/berm/__init__.py`), eivät eri malleja.
+- Python-paketti on 0.20.x. Versiot ovat itsenäisiä julkaisusyklejä (`berm/berm/__init__.py`), eivät eri malleja. 0.20 lisää ehdollisen Lindgren–BERM-vasteoperaattorin ja androgeenien efektiivisen kapasiteetin hajotelman muuttamatta lukittuja v17-maaprediktioita.
 
 ## 3. Migraatiopolku B → C
 

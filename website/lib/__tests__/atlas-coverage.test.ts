@@ -17,14 +17,15 @@ describe("Atlas completeness against independent source inventories", () => {
       expect(NODES.find(n => n.id === atlasId)?.modelIds, modelId).toContain(modelId);
     }
   });
-  it("preserves every model edge, with its measurement and open-bridge direction", () => {
+  it("preserves every model edge and its inference, derivation or conditional-response role", () => {
     for (const e of graph.edges) {
       const from = MODEL_NODE_MAP[e.from as keyof typeof MODEL_NODE_MAP];
       const to = MODEL_NODE_MAP[e.to as keyof typeof MODEL_NODE_MAP];
       const actual = EDGES.find(e => e.from === from && e.to === to);
       expect(actual, `${from}->${to}`).toBeDefined();
       if (e.kind === "inference_input") expect(actual?.relation).toBe("inference");
-      if (e.kind === "proposed_bridge") expect(actual?.relation).toBe("bridge");
+      if (e.kind === "conditional_response") expect(actual?.relation).toBe("bridge");
+      if (e.kind === "derived_geometry") expect(actual?.relation).toBe("derived");
     }
   });
   it("covers every reviewed model and website channel, and every modulome card", () => {

@@ -1,0 +1,320 @@
+[
+  {
+    "path": "website/app/[locale]/about/civilization/page.tsx",
+    "oldKeys": 0,
+    "publishedKeys": 81,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/about/page.tsx",
+    "oldKeys": 120,
+    "publishedKeys": 120,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx",
+    "oldKeys": 25,
+    "publishedKeys": 25,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/biology/page.tsx",
+    "oldKeys": 62,
+    "publishedKeys": 62,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.incoming",
+      "COPY.fi.incoming"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/civilization/epistapege/page.tsx",
+    "oldKeys": 0,
+    "publishedKeys": 0,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/civilization/page.tsx",
+    "oldKeys": 197,
+    "publishedKeys": 224,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/civilization/patokratia/page.tsx",
+    "oldKeys": 387,
+    "publishedKeys": 389,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/epistemology/page.tsx",
+    "oldKeys": 332,
+    "publishedKeys": 337,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/cascades/page.tsx",
+    "oldKeys": 415,
+    "publishedKeys": 415,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/circadian/page.tsx",
+    "oldKeys": 245,
+    "publishedKeys": 245,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/convergence/page.tsx",
+    "oldKeys": 74,
+    "publishedKeys": 74,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.gate",
+      "COPY.fi.gate"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/evidence/converging-patterns/page.tsx",
+    "oldKeys": 0,
+    "publishedKeys": 79,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/ecology/page.tsx",
+    "oldKeys": 70,
+    "publishedKeys": 70,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/epidemiology/page.tsx",
+    "oldKeys": 60,
+    "publishedKeys": 60,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/evolution/page.tsx",
+    "oldKeys": 180,
+    "publishedKeys": 180,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/infant-vulnerability/page.tsx",
+    "oldKeys": 510,
+    "publishedKeys": 510,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/page.tsx",
+    "oldKeys": 1337,
+    "publishedKeys": 1345,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.catsperP1",
+      "COPY.fi.catsperP1"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/evidence/pharmacology/page.tsx",
+    "oldKeys": 111,
+    "publishedKeys": 111,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.subtitle",
+      "COPY.fi.subtitle"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/evidence/replication/page.tsx",
+    "oldKeys": 269,
+    "publishedKeys": 269,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/reproductive-arc/page.tsx",
+    "oldKeys": 95,
+    "publishedKeys": 95,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/response-conditions/page.tsx",
+    "oldKeys": 0,
+    "publishedKeys": 65,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/superposition/page.tsx",
+    "oldKeys": 125,
+    "publishedKeys": 125,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/testosterone/page.tsx",
+    "oldKeys": 175,
+    "publishedKeys": 180,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/triple-strikes/page.tsx",
+    "oldKeys": 159,
+    "publishedKeys": 159,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/evidence/unbroken-chain/page.tsx",
+    "oldKeys": 296,
+    "publishedKeys": 296,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.chainSummary",
+      "COPY.fi.chainSummary"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/map/page.tsx",
+    "oldKeys": 25,
+    "publishedKeys": 25,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.boundary",
+      "COPY.fi.boundary"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/mathematics/page.tsx",
+    "oldKeys": 1447,
+    "publishedKeys": 1443,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [],
+    "relocatedTo": "website/components/MathematicsSections.tsx"
+  },
+  {
+    "path": "website/app/[locale]/measurement/fieldstate/math/page.tsx",
+    "oldKeys": 70,
+    "publishedKeys": 70,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/measurement/fieldstate/page.tsx",
+    "oldKeys": 95,
+    "publishedKeys": 95,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/model/biological-coordination/page.tsx",
+    "oldKeys": 88,
+    "publishedKeys": 88,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/model/math/page.tsx",
+    "oldKeys": 50,
+    "publishedKeys": 50,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/model/page.tsx",
+    "oldKeys": 3772,
+    "publishedKeys": 3806,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/modulome/brain/page.tsx",
+    "oldKeys": 290,
+    "publishedKeys": 290,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/modulome/eye/page.tsx",
+    "oldKeys": 258,
+    "publishedKeys": 258,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/modulome/pituitary/page.tsx",
+    "oldKeys": 212,
+    "publishedKeys": 212,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/modulome/testes/page.tsx",
+    "oldKeys": 305,
+    "publishedKeys": 335,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/navigation.tsx",
+    "oldKeys": 15,
+    "publishedKeys": 17,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/objections/page.tsx",
+    "oldKeys": 271,
+    "publishedKeys": 280,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/page.tsx",
+    "oldKeys": 83,
+    "publishedKeys": 85,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/physics/page.tsx",
+    "oldKeys": 52,
+    "publishedKeys": 54,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": [
+      "COPY.en.receiver",
+      "COPY.en.bridge",
+      "COPY.fi.receiver",
+      "COPY.fi.bridge"
+    ]
+  },
+  {
+    "path": "website/app/[locale]/predictions/page.tsx",
+    "oldKeys": 2258,
+    "publishedKeys": 2272,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  },
+  {
+    "path": "website/app/[locale]/replication/page.tsx",
+    "oldKeys": 25,
+    "publishedKeys": 25,
+    "lostKeys": [],
+    "divergentOriginalModifiedKeys": []
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "comparison": "hashes captured before this repair validation sequence versus final successful build after atlas-link repairs",
+  "buildLog": "/tmp/berm-navigation-repair-build-release-20260908.log",
+  "files": [
+    {
+      "file": "website/lib/referenceIndex.json",
+      "before": "09877230c573f61c20a998f5d1c0fab5c2c4146cb5ac3c17abc857193da5bcf4",
+      "after": "09877230c573f61c20a998f5d1c0fab5c2c4146cb5ac3c17abc857193da5bcf4",
+      "changed": false
+    },
+    {
+      "file": "website/lib/referenceUsage.json",
+      "before": "025ed45d84e1110dc719912b14bb6683f53e54b1bc6f19819e2c481a7d6043e1",
+      "after": "1d3e0129a9cda3c62d89e9658d3179c54712991d381d50f5a422bc38317bec36",
+      "changed": true
+    },
+    {
+      "file": "website/data/anchor-index.json",
+      "before": "aea25c8f66398556be06179d9da37d9f1a6e4fa9ff216e9f44af5abcf370f366",
+      "after": "698d58db29e0a46f5cf247d53b1ee6f4211d5ba279785b1244eeeec37e618920",
+      "changed": true
+    },
+    {
+      "file": "website/data/causal-graph.json",
+      "before": "eb6ecef2d64217e681aa8a8d2d69b2a78d71a788cc3f884d5065129a660b295c",
+      "after": "eb6ecef2d64217e681aa8a8d2d69b2a78d71a788cc3f884d5065129a660b295c",
+      "changed": false
+    },
+    {
+      "file": "website/data/model-architecture.json",
+      "before": "a5710683557290d3c4a1d05fca4105b5e461bc95926418874554e217b89bb35e",
+      "after": "a5710683557290d3c4a1d05fca4105b5e461bc95926418874554e217b89bb35e",
+      "changed": false
+    },
+    {
+      "file": "website/next-env.d.ts",
+      "before": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc",
+      "after": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+      "changed": true
+    }
+  ]
+}

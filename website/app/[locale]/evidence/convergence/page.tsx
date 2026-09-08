@@ -20,7 +20,7 @@ const COPY = {
       { title: "Where does the proposition come from?", text: "An identified premise, an algebraic consequence, an explicit bridge, a mechanism measured elsewhere, or a synthesis of connected relationships." },
       { title: "What does the study supply?", text: "The structure of a mechanism, direction, magnitude, timing, receiver dependence, or an aggregate constraint. Species, protocol and dataset family remain attached to the result." },
     ],
-    gate: "L0 is g = η + A⊗A. L1 follows by A = Ab + a: δg = Ab⊗a + a⊗Ab + a⊗a. L2 names the receiving operator z = ∫K(S):δg. This last coupling remains open. The studies below establish or constrain L3 biological realizations and L4 downstream relationships; their composition carries the explanation forward conditional on that explicit bridge. [[ref:lindgren2025|Lindgren 2025]].",
+    gate: "L0 is g = η + A⊗A. L1 follows by A = Ab + a: δg = Ab⊗a + a⊗Ab + a⊗a. At L2, BERM conditionally derives a formal response operator under minimal matter–metric coupling and causal response theory; z = ∫K(S):δg is a receptor-specific temporal representation. Gauge, scale, tissue kernels, sign, lag and endpoint calibration remain open. The studies below establish or constrain L3 biological realizations and L4 downstream relationships; their composition continues through this explicit bridge. [[ref:lindgren2025|Lindgren 2025]]; [[ref:kubo1957_linear_response|Kubo 1957]].",
     physicsLink: "Read the physical derivation and coupling →",
     inputLabel: "Upstream quantity", interfaceLabel: "Shared interface", outputLabel: "Downstream output",
     chains: [
@@ -109,7 +109,7 @@ const COPY = {
       { title: "Mistä väite on peräisin?", text: "Yksilöity premissi, algebrallinen seuraus, eksplisiittinen kytkentä, muualla mitattu mekanismi tai yhdistyvistä suhteista koottu synteesi." },
       { title: "Mitä tutkimus antaa?", text: "Mekanismin rakenteen, suunnan, suuruuden, ajoituksen, vastaanotintilan riippuvuuden tai aggregaatin rajoitteen. Laji, protokolla ja aineistoperhe säilyvät tuloksen yhteydessä." },
     ],
-    gate: "L0 on g = η + A⊗A. L1 seuraa jaosta A = Ab + a: δg = Ab⊗a + a⊗Ab + a⊗a. L2 nimeää vastaanotto-operaattorin z = ∫K(S):δg. Tämä viimeinen kytkentä on avoin. Alla olevat tutkimukset osoittavat tai rajaavat L3:n biologisia toteutuksia ja L4:n myöhempiä yhteyksiä; niiden yhdistelmä jatkaa selitystä eksplisiittisen kytkennän ehdolla. [[ref:lindgren2025|Lindgren 2025]].",
+    gate: "L0 on g = η + A⊗A. L1 seuraa jaosta A = Ab + a: δg = Ab⊗a + a⊗Ab + a⊗a. L2:ssa BERM johtaa formaalin vasteoperaattorin ehdollisesti minimaalisella materia–metriikka-kytkennällä ja kausaalisella vastefunktioteorialla; z = ∫K(S):δg on vastaanotinkohtainen ajallinen esitys. Gauge, mittakaava, kudosytimet, merkki, viive ja päätepistekalibraatio ovat avoimia. Alla olevat tutkimukset osoittavat tai rajaavat L3:n biologisia toteutuksia ja L4:n myöhempiä yhteyksiä; niiden yhdistelmä jatkaa tämän eksplisiittisen kytkennän kautta. [[ref:lindgren2025|Lindgren 2025]]; [[ref:kubo1957_linear_response|Kubo 1957]].",
     physicsLink: "Lue fysikaalinen johto ja kytkentä →",
     inputLabel: "Edeltävä suure", interfaceLabel: "Yhteinen rajapinta", outputLabel: "Seuraava ulostulo",
     chains: [

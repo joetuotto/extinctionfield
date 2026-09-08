@@ -1,0 +1,20 @@
+[
+  {
+    "archive": "original-working-changes.tar.gz",
+    "verified_files": 224,
+    "errors": [],
+    "seconds": 0.05
+  },
+  {
+    "archive": "published-working-changes.tar.gz",
+    "verified_files": 8,
+    "errors": [],
+    "seconds": 0.01
+  },
+  {
+    "archive": "original-only-local-data.tar.gz",
+    "verified_files": 287,
+    "errors": [],
+    "seconds": 0.84
+  }
+]

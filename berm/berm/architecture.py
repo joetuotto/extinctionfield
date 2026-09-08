@@ -9,9 +9,10 @@ another or use FieldState as an alias for the model.
 from __future__ import annotations
 
 from copy import deepcopy
+from berm.biology.cross_pathway_synthesis import synthesis_manifest
 
 
-PACKAGE_VERSION = "0.19.0"
+PACKAGE_VERSION = "0.22.0"
 MODEL_ID = "berm"
 MODEL_NAME = "Bio-Electromagnetic Reproductive Model"
 PUBLIC_MODEL_VERSION = "v17"
@@ -25,12 +26,14 @@ DKC_CANDIDATE_ROUTE_ID = "berm-lindgren-dkc-candidate-v1"
 FIELDSTATE_MODULE_ID = "fieldstate"
 FIELDSTATE_SPEC_VERSION = "v2"
 
+EPISTAPEGE_EXTENSION_ID = "berm-epistapege-v1"
+
 LINDGREN_FORMULATION = "2025-weyl-gme"
-L2_BRIDGE_STATUS = "open"
+L2_BRIDGE_STATUS = "conditional_formal_operator"
 
 
 _ARCHITECTURE_MANIFEST = {
-    "schemaVersion": 1,
+    "schemaVersion": 2,
     "package": {
         "name": "berm",
         "version": PACKAGE_VERSION,
@@ -46,15 +49,76 @@ _ARCHITECTURE_MANIFEST = {
         "formulation": LINDGREN_FORMULATION,
         "premise": "g_mu_nu = eta_mu_nu + kappa A_mu A_nu",
         "l2BridgeStatus": L2_BRIDGE_STATUS,
+        "l2BridgeStatusScope": "operator_form_only",
+        "bridgeComponents": {
+            "geometry": {
+                "status": "L1_DERIVED",
+                "scope": "exact_delta_metric_given_the_2025_ansatz",
+            },
+            "responseOperator": {
+                "status": "CONDITIONAL_FORMAL_OPERATOR",
+                "assumptions": ["minimal_matter_metric_coupling", "retarded_response_expansion"],
+                "scope": "operator_form_not_an_identified_tissue_kernel",
+            },
+            "physicalIdentification": {
+                "status": "OPEN",
+                "unresolved": ["gauge_prescription", "physical_coupling_scale"],
+            },
+            "tissueKernel": {
+                "status": "CALLER_SUPPLIED_UNCALIBRATED",
+                "scope": "organ_state_direction_units_and_lag_are_explicit_inputs",
+            },
+            "endpointCalibration": {
+                "status": "OPEN",
+                "scope": "the_composed_human_endpoint_chain",
+            },
+        },
         "l2BridgeMeaning": (
-            "The explicit Lorentz-to-spatial scalar reduction is L2: the directed "
-            "derivative maps through |A_bar| to chi(|A_bar|), while the chi formula "
-            "itself always remains L1. The geometry-to-observable coupling operator "
-            "has not been derived. "
-            "Downstream mechanisms are conditional BERM bridge propositions or "
-            "imported biological realizations. Their empirical provenance does not "
-            "erase or relabel any L1-derived component in the same chain."
+            "Conditional on minimal matter-metric coupling and response theory, "
+            "BERM derives the formal geometry-to-observable operator. Its gauge "
+            "prescription, physical scale, tissue response kernels and human "
+            "endpoint calibration remain open; downstream biology is not a "
+            "Lindgren-derived result. The Lorentz-to-spatial scalar reduction "
+            "that maps the directed derivative through |A_bar| to chi(|A_bar|) "
+            "is L2, while the chi formula itself always remains L1. Downstream "
+            "mechanisms are conditional BERM bridge propositions or imported "
+            "biological realizations; their empirical provenance does not erase "
+            "or relabel any L1-derived component in the same chain."
         ),
+        "derivedGeometry": (
+            "delta_g = kappa(A_background tensor a + a tensor A_background + a tensor a)"
+        ),
+        "responseOperator": (
+            "delta<O_i> = integral Xi_i^{mu nu} delta_g_mu_nu + higher_order_response"
+        ),
+        "stateConditionedResponse": (
+            "u_i(t) = integral K_i^{mu nu}(tau; S_i(t-tau)) "
+            "delta_g_mu_nu(t-tau) d tau"
+        ),
+        "responseStateArguments": [
+            "orientation",
+            "coherence",
+            "waveform",
+            "circadian_phase",
+            "metabolic_phase",
+            "developmental_window",
+            "receptor_or_agonist_state",
+            "redox_state",
+            "temperature_trajectory",
+            "organ_transfer",
+            "exposure_history",
+        ],
+        "responseEvidenceRole": (
+            "Component studies constrain arguments, null regions and lag families of the "
+            "open tissue kernel; they do not validate the Lindgren premise or calibrate "
+            "a human endpoint coefficient."
+        ),
+        "geometricCoordinate": (
+            "chi_geo(rho) = rho / sqrt(1 + rho^2), rho^2 = kappa A^2, "
+            "for an explicitly normalized positive-norm mode"
+        ),
+        "calibrationStatus": "open",
+        "fieldStateRole": "optional_measurement_input_only",
         "epistemicStatusPolicy": "componentwise_no_weakest_link_collapse",
         "derivedStatusPreserved": True,
         "formalDerivation": {
@@ -145,20 +209,20 @@ _ARCHITECTURE_MANIFEST = {
             "modelVersion": PUBLIC_MODEL_VERSION,
             "role": "archived_comparison_prediction",
             "inputKind": "national_technology_timing_proxy",
-            "fieldStateCalibrated": True,
+            "fieldStateCalibrated": False,
         },
         "diagnostic": {
             "id": DIAGNOSTIC_ROUTE_ID,
             "modelVersion": "v19.1",
             "role": "cross_sectional_diagnostic",
-            "publishesLockedForecasts": True,
+            "publishesLockedForecasts": False,
         },
         "conditionalAsfr": {
             "id": CONDITIONAL_ASFR_ROUTE_ID,
             "role": "conditional_scenario_calculator",
             "acceptsFieldStateObservations": False,
             "requiresExternallySuppliedBiologicalStates": True,
-            "publishesLockedForecasts": True,
+            "publishesLockedForecasts": False,
         },
         "lindgrenDkc": {
             "id": DKC_CANDIDATE_ROUTE_ID,
@@ -185,8 +249,34 @@ _ARCHITECTURE_MANIFEST = {
             "role": "measurement_observation_estimation",
             "isModelAlias": False,
             "isCausalRoot": False,
-            "publishesLockedForecasts": True,
+            "publishesLockedForecasts": False,
             "canonicalRoute": "/measurement/fieldstate",
+        }
+    },
+    "evidenceSynthesis": synthesis_manifest(),
+    "civilizationExtensions": {
+        "forwardAggregation": {
+            "id": "berm-forward-aggregation-v1",
+            "role": "individual_probability_to_population_distribution",
+            "operator": "P_t(Y=p) = integral P(Y=p | z,x) f_t(z,x) dz dx",
+            "reverseEcologicalInferenceAllowed": False,
+            "institutionalMemory": (
+                "I_(t+1) = retention I_t + (1-retention) P_t"
+            ),
+            "calibrationStatus": "open",
+        },
+        "epistapege": {
+            "id": EPISTAPEGE_EXTENSION_ID,
+            "role": "qualitative_observability_hypothesis",
+            "status": "open_testable_extension",
+            "canonicalRoute": "/civilization/epistapege",
+            "publishesNumericPredictions": False,
+            "fieldStateRole": "optional_physical_measurement_input_only",
+            "evidenceBoundary": (
+                "Direct component findings constrain individual transitions; "
+                "the complete biology-to-narrative-to-institution route is a "
+                "composed BERM inference, not a Lindgren or FieldState result."
+            ),
         }
     },
 }
@@ -203,6 +293,7 @@ __all__ = [
     "MODULOME_ASFR_ROUTE_ID",
     "DKC_CANDIDATE_ROUTE_ID",
     "DIAGNOSTIC_ROUTE_ID",
+    "EPISTAPEGE_EXTENSION_ID",
     "FIELDSTATE_MODULE_ID",
     "FIELDSTATE_SPEC_VERSION",
     "L2_BRIDGE_STATUS",

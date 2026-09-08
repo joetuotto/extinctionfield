@@ -94,10 +94,33 @@
         "electric-field waveform"
       ]
     },
+    "LINDGREN_METRIC_DRIVE": {
+      "id": "LINDGREN_METRIC_DRIVE",
+      "label": {
+        "en": "Lindgren 2025 metric perturbation and quadratic mixing drive",
+        "fi": "Lindgren 2025 -metriikkahäiriö ja neliöllinen sekoitusajuri",
+        "ja": "Lindgren 2025 計量摂動と二次混合駆動",
+        "fr": "Perturbation métrique et mélange quadratique de Lindgren 2025",
+        "ko": "Lindgren 2025 계량 섭동 및 이차 혼합 구동"
+      },
+      "layer": "physics",
+      "parents": [],
+      "children": [
+        "BERM_L2_BRIDGE"
+      ],
+      "calibration_status": "structural_only",
+      "prediction_role": "input",
+      "legacy_aliases": [
+        "g = eta + kappa A tensor A",
+        "delta g",
+        "chi_geo",
+        "quadratic envelope mixing"
+      ]
+    },
     "BERM_L2_BRIDGE": {
       "id": "BERM_L2_BRIDGE",
       "label": {
-        "en": "Open geometry-to-observable coupling proposition",
+        "en": "Conditional metric-to-observable response operator",
         "fi": "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
         "ja": "幾何学から観測量への未解決の結合命題",
         "fr": "Proposition ouverte de couplage géométrie–observable",
@@ -105,6 +128,7 @@
       },
       "layer": "physics",
       "parents": [
+        "LINDGREN_METRIC_DRIVE",
         "TECHNOLOGY_TIMING_PROXY",
         "FIELDSTATE_VECTOR",
         "FIELDSTATE_ENVELOPE",
@@ -120,14 +144,15 @@
         "IF_MITOTIC_DISRUPTION",
         "GPCR_ADENOSINE",
         "VAGUS_ANTIINFLAMMATORY",
+        "ANDROGEN_RECEPTOR_SIGNAL",
         "ECOLOGICAL_ENCOUNTER"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "geometry-to-biology operator",
-        "L2 bridge",
-        "open coupling operator"
+        "L2 response operator",
+        "conditional response kernel"
       ]
     },
     "A_VGCC_ROS": {
@@ -202,6 +227,7 @@
         "OOCYTE_REDOX",
         "OVULATION_CLOCK",
         "IMPLANTATION",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
         "CIRCADIAN_COORDINATION"
       ],
       "calibration_status": "structural_only",
@@ -277,84 +303,13 @@
         "MALE_STEROIDOGENESIS",
         "OVULATION_CLOCK",
         "IMPLANTATION",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
         "HORMONE_TARGET_RESPONSE"
       ],
       "calibration_status": "structural_only",
       "prediction_role": "input",
       "legacy_aliases": [
         "HPA/HPG"
-      ]
-    },
-    "RECEPTOR_STATE_MEMORY": {
-      "id": "RECEPTOR_STATE_MEMORY",
-      "label": {
-        "en": "Receptor chemical-state memory and recovery",
-        "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen"
-      },
-      "layer": "mechanism",
-      "parents": [
-        "A_VGCC_ROS",
-        "B_RPM_CRY"
-      ],
-      "children": [
-        "CIRCADIAN_COORDINATION",
-        "HORMONE_TARGET_RESPONSE"
-      ],
-      "calibration_status": "structural_only",
-      "prediction_role": "input",
-      "legacy_aliases": [
-        "chemical integration",
-        "receptor recovery",
-        "receptor state memory"
-      ]
-    },
-    "CIRCADIAN_COORDINATION": {
-      "id": "CIRCADIAN_COORDINATION",
-      "label": {
-        "en": "Tissue-specific circadian phase relationships and electrical timing",
-        "fi": "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus"
-      },
-      "layer": "mechanism",
-      "parents": [
-        "A_VGCC_ROS",
-        "B_RPM_CRY",
-        "MELATONIN_REDOX",
-        "RECEPTOR_STATE_MEMORY"
-      ],
-      "children": [
-        "HORMONE_TARGET_RESPONSE",
-        "OVULATION_CLOCK"
-      ],
-      "calibration_status": "structural_only",
-      "prediction_role": "input",
-      "legacy_aliases": [
-        "tissue phase network",
-        "circadian coordination"
-      ]
-    },
-    "HORMONE_TARGET_RESPONSE": {
-      "id": "HORMONE_TARGET_RESPONSE",
-      "label": {
-        "en": "Hormone signal, target readiness and phase-dependent response",
-        "fi": "Hormonisignaali, kohdekudoksen valmius ja vaiheesta riippuva vaste"
-      },
-      "layer": "mechanism",
-      "parents": [
-        "B_RPM_CRY",
-        "HPA_HPG",
-        "RECEPTOR_STATE_MEMORY",
-        "CIRCADIAN_COORDINATION"
-      ],
-      "children": [
-        "MALE_STEROIDOGENESIS",
-        "OVULATION_CLOCK",
-        "IMPLANTATION"
-      ],
-      "calibration_status": "structural_only",
-      "prediction_role": "input",
-      "legacy_aliases": [
-        "hormone target timing",
-        "CRY endocrine gating"
       ]
     },
     "MICROBIOME_OT": {
@@ -409,7 +364,8 @@
       },
       "layer": "barrier",
       "parents": [
-        "A_VGCC_ROS"
+        "A_VGCC_ROS",
+        "ANDROGEN_RECEPTOR_SIGNAL"
       ],
       "children": [
         "MALE_SPERM",
@@ -471,6 +427,7 @@
         "BARRIER_BTB",
         "MALE_GERMLINE_RESERVE",
         "MALE_STEROIDOGENESIS",
+        "ANDROGEN_RECEPTOR_SIGNAL",
         "IF_MITOTIC_DISRUPTION"
       ],
       "children": [
@@ -505,10 +462,91 @@
         "male reserve"
       ]
     },
+    "RECEPTOR_STATE_MEMORY": {
+      "id": "RECEPTOR_STATE_MEMORY",
+      "label": {
+        "en": "Receptor chemical-state memory and recovery",
+        "fi": "Vastaanottimen kemiallisen tilan muisti ja palautuminen",
+        "ja": "受容体の化学的状態記憶と回復",
+        "fr": "Mémoire de l'état chimique du récepteur et récupération",
+        "ko": "수용체 화학적 상태 기억과 회복"
+      },
+      "layer": "mechanism",
+      "parents": [
+        "A_VGCC_ROS",
+        "B_RPM_CRY"
+      ],
+      "children": [
+        "CIRCADIAN_COORDINATION",
+        "HORMONE_TARGET_RESPONSE"
+      ],
+      "calibration_status": "structural_only",
+      "prediction_role": "input",
+      "legacy_aliases": [
+        "chemical integration",
+        "receptor recovery",
+        "receptor state memory"
+      ]
+    },
+    "CIRCADIAN_COORDINATION": {
+      "id": "CIRCADIAN_COORDINATION",
+      "label": {
+        "en": "Tissue-specific circadian phase relationships and electrical timing",
+        "fi": "Kudosten vuorokausivaiheiden suhteet ja sähköinen ajoitus",
+        "ja": "組織別の概日位相関係と電気的タイミング",
+        "fr": "Relations de phase circadienne par tissu et synchronisation électrique",
+        "ko": "조직별 일주기 위상 관계와 전기적 타이밍"
+      },
+      "layer": "mechanism",
+      "parents": [
+        "A_VGCC_ROS",
+        "B_RPM_CRY",
+        "MELATONIN_REDOX",
+        "RECEPTOR_STATE_MEMORY"
+      ],
+      "children": [
+        "HORMONE_TARGET_RESPONSE",
+        "OVULATION_CLOCK"
+      ],
+      "calibration_status": "structural_only",
+      "prediction_role": "input",
+      "legacy_aliases": [
+        "tissue phase network",
+        "circadian coordination"
+      ]
+    },
+    "HORMONE_TARGET_RESPONSE": {
+      "id": "HORMONE_TARGET_RESPONSE",
+      "label": {
+        "en": "Hormone signal, target readiness and phase-dependent response",
+        "fi": "Hormonisignaali, kohdekudoksen valmius ja vaiheesta riippuva vaste",
+        "ja": "ホルモン信号、標的の準備状態、位相依存的応答",
+        "fr": "Signal hormonal, disponibilité de la cible et réponse dépendante de la phase",
+        "ko": "호르몬 신호, 표적 준비 상태 및 위상 의존적 반응"
+      },
+      "layer": "mechanism",
+      "parents": [
+        "B_RPM_CRY",
+        "HPA_HPG",
+        "RECEPTOR_STATE_MEMORY",
+        "CIRCADIAN_COORDINATION"
+      ],
+      "children": [
+        "MALE_STEROIDOGENESIS",
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
+      "calibration_status": "structural_only",
+      "prediction_role": "input",
+      "legacy_aliases": [
+        "hormone target timing",
+        "CRY endocrine gating"
+      ]
+    },
     "MALE_STEROIDOGENESIS": {
       "id": "MALE_STEROIDOGENESIS",
       "label": {
-        "en": "Leydig/HPG steroidogenic support",
+        "en": "Leydig/HPG androgen production support",
         "fi": "Leydigin solujen/HPG steroidogeeninen tuki"
       },
       "layer": "reproductive",
@@ -519,12 +557,67 @@
         "HORMONE_TARGET_RESPONSE"
       ],
       "children": [
-        "MALE_SPERM"
+        "MALE_SPERM",
+        "ANDROGEN_BINDING_AVAILABILITY"
       ],
       "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "Leydig"
+      ]
+    },
+    "ANDROGEN_BINDING_AVAILABILITY": {
+      "id": "ANDROGEN_BINDING_AVAILABILITY",
+      "label": {
+        "en": "SHBG/albumin binding and free or intratesticular androgen availability",
+        "fi": "SHBG-/albumiinisitoutuminen sekä vapaan tai intratestikulaarisen androgeenin saatavuus",
+        "ja": "SHBG・アルブミン結合と遊離・精巣内アンドロゲン利用可能性",
+        "fr": "Liaison SHBG/albumine et disponibilité androgénique libre ou intratesticulaire",
+        "ko": "SHBG/알부민 결합 및 유리·고환내 안드로겐 가용성"
+      },
+      "layer": "reproductive",
+      "parents": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "children": [
+        "ANDROGEN_RECEPTOR_SIGNAL"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "free testosterone",
+        "SHBG",
+        "albumin",
+        "androgen availability"
+      ]
+    },
+    "ANDROGEN_RECEPTOR_SIGNAL": {
+      "id": "ANDROGEN_RECEPTOR_SIGNAL",
+      "label": {
+        "en": "AR/ZIP9 occupancy and post-receptor androgen-use capacity",
+        "fi": "AR-/ZIP9-miehitys ja reseptorin jälkeinen androgeeninkäyttökapasiteetti",
+        "ja": "AR/ZIP9占有率と受容体後アンドロゲン利用能力",
+        "fr": "Occupation AR/ZIP9 et capacité d’utilisation post-récepteur des androgènes",
+        "ko": "AR/ZIP9 점유율 및 수용체 후 안드로겐 사용 능력"
+      },
+      "layer": "reproductive",
+      "parents": [
+        "ANDROGEN_BINDING_AVAILABILITY",
+        "BERM_L2_BRIDGE"
+      ],
+      "children": [
+        "MALE_SPERM",
+        "BARRIER_BTB",
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "androgen effective capacity",
+        "AEC",
+        "androgen receptor",
+        "ZIP9",
+        "post-receptor signalling"
       ]
     },
     "OVARIAN_RESERVE": {
@@ -748,14 +841,14 @@
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "natural selection",
-        "FieldState selection",
+        "measured-field selection",
         "relative abundance"
       ]
     },
     "ECOLOGICAL_TRAIT_STATE": {
       "id": "ECOLOGICAL_TRAIT_STATE",
       "label": {
-        "en": "Time-indexed heritable trait distribution under FieldState-dependent selection",
+        "en": "Time-indexed heritable trait distribution under selection associated with measured physical field conditions",
         "fi": "Aikaindeksoitu periytyvä piirrejakauma FieldState-riippuvaisen valinnan alla"
       },
       "layer": "ecology",
@@ -767,7 +860,126 @@
       "prediction_role": "intermediate",
       "legacy_aliases": [
         "evolutionary trait distribution",
-        "heritable FieldState response"
+        "heritable measured-field response"
+      ]
+    },
+    "INDIVIDUAL_BEHAVIORAL_RESPONSE": {
+      "id": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "label": {
+        "en": "State-conditioned individual behavioural response probability",
+        "fi": "Tilariippuvainen yksilön käyttäytymisvasteen todennäköisyys",
+        "ja": "状態依存の個人行動反応確率",
+        "fr": "Probabilité individuelle de réponse comportementale conditionnée par l’état",
+        "ko": "상태 조건부 개인 행동 반응 확률"
+      },
+      "layer": "civilization",
+      "parents": [
+        "HPA_HPG",
+        "MELATONIN_REDOX",
+        "ANDROGEN_RECEPTOR_SIGNAL"
+      ],
+      "children": [
+        "BIOBEHAVIORAL_WEIGHTING"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "individual behavioural response",
+        "P(Y given z,x)",
+        "state-dependent preference expression"
+      ]
+    },
+    "BIOBEHAVIORAL_WEIGHTING": {
+      "id": "BIOBEHAVIORAL_WEIGHTING",
+      "label": {
+        "en": "Population mixture of state-conditioned behavioural probabilities",
+        "fi": "Biologisesti rajoittuneen käyttäytymispainotuksen populaatiojakauma",
+        "ja": "生物学的に制約された行動重み付けの集団分布",
+        "fr": "Distribution populationnelle de la pondération comportementale biologiquement contrainte",
+        "ko": "생물학적으로 제약된 행동 가중치의 집단 분포"
+      },
+      "layer": "civilization",
+      "parents": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      ],
+      "children": [
+        "NARRATIVE_ATTRIBUTION"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "biological behavioural weighting",
+        "latent motivation state",
+        "forward individual-to-aggregate composition"
+      ]
+    },
+    "NARRATIVE_ATTRIBUTION": {
+      "id": "NARRATIVE_ATTRIBUTION",
+      "label": {
+        "en": "Accessible narrative attribution of a partly latent behavioural state",
+        "fi": "Osittain latentin käyttäytymistilan saavutettava narratiiviattribuutio",
+        "ja": "部分的に潜在的な行動状態のアクセス可能な物語的帰属",
+        "fr": "Attribution narrative accessible d’un état comportemental partiellement latent",
+        "ko": "부분적으로 잠재된 행동 상태의 접근 가능한 서사적 귀인"
+      },
+      "layer": "civilization",
+      "parents": [
+        "BIOBEHAVIORAL_WEIGHTING"
+      ],
+      "children": [
+        "EPISTAPEGE_OBSERVABILITY_LOSS"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "interpreter",
+        "reported reason",
+        "causal attribution"
+      ]
+    },
+    "EPISTAPEGE_OBSERVABILITY_LOSS": {
+      "id": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "label": {
+        "en": "Epistapege: upstream biological state omitted from the explanatory data model",
+        "fi": "Epistapege: biologinen ylävirran tila puuttuu selittävästä datamallista",
+        "ja": "エピスタペゲ：説明データモデルから上流の生物学的状態が欠落",
+        "fr": "Epistapege : état biologique amont omis du modèle explicatif",
+        "ko": "에피스타페게: 설명 데이터 모델에서 상류 생물학적 상태 누락"
+      },
+      "layer": "civilization",
+      "parents": [
+        "NARRATIVE_ATTRIBUTION"
+      ],
+      "children": [
+        "INSTITUTIONAL_MODEL_REUSE"
+      ],
+      "calibration_status": "requires_matched_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "Epistapege",
+        "structural non-detection",
+        "observability loss"
+      ]
+    },
+    "INSTITUTIONAL_MODEL_REUSE": {
+      "id": "INSTITUTIONAL_MODEL_REUSE",
+      "label": {
+        "en": "Institutional reuse of downstream reports as initiating explanatory variables",
+        "fi": "Alavirran raporttien institutionaalinen uudelleenkäyttö alkavina selitysmuuttujina",
+        "ja": "下流の報告を開始説明変数として制度的に再利用",
+        "fr": "Réutilisation institutionnelle des rapports aval comme variables explicatives initiales",
+        "ko": "하류 보고를 시작 설명 변수로 제도적으로 재사용"
+      },
+      "layer": "civilization",
+      "parents": [
+        "EPISTAPEGE_OBSERVABILITY_LOSS"
+      ],
+      "children": [],
+      "calibration_status": "requires_external_measurement",
+      "prediction_role": "intermediate",
+      "legacy_aliases": [
+        "theory reuse",
+        "institutional model selection"
       ]
     },
     "DEMAND_OPPORTUNITY": {
@@ -897,468 +1109,546 @@
     },
     {
       "id": "e06",
-      "from": "BERM_L2_BRIDGE",
-      "to": "A_VGCC_ROS",
-      "kind": "proposed_bridge"
+      "from": "LINDGREN_METRIC_DRIVE",
+      "to": "BERM_L2_BRIDGE",
+      "kind": "derived_geometry"
     },
     {
       "id": "e07",
       "from": "BERM_L2_BRIDGE",
-      "to": "B_RPM_CRY",
-      "kind": "proposed_bridge"
+      "to": "A_VGCC_ROS",
+      "kind": "conditional_response"
     },
     {
       "id": "e08",
       "from": "BERM_L2_BRIDGE",
-      "to": "VMEM_MTOR",
-      "kind": "proposed_bridge"
+      "to": "B_RPM_CRY",
+      "kind": "conditional_response"
     },
     {
       "id": "e09",
       "from": "BERM_L2_BRIDGE",
-      "to": "HPA_HPG",
-      "kind": "proposed_bridge"
+      "to": "VMEM_MTOR",
+      "kind": "conditional_response"
     },
     {
       "id": "e10",
       "from": "BERM_L2_BRIDGE",
-      "to": "MICROBIOME_OT",
-      "kind": "proposed_bridge"
+      "to": "HPA_HPG",
+      "kind": "conditional_response"
     },
     {
       "id": "e11",
       "from": "BERM_L2_BRIDGE",
-      "to": "IF_MITOTIC_DISRUPTION",
-      "kind": "proposed_bridge"
+      "to": "MICROBIOME_OT",
+      "kind": "conditional_response"
     },
     {
       "id": "e12",
       "from": "BERM_L2_BRIDGE",
-      "to": "GPCR_ADENOSINE",
-      "kind": "proposed_bridge"
+      "to": "IF_MITOTIC_DISRUPTION",
+      "kind": "conditional_response"
     },
     {
       "id": "e13",
       "from": "BERM_L2_BRIDGE",
-      "to": "VAGUS_ANTIINFLAMMATORY",
-      "kind": "proposed_bridge"
+      "to": "GPCR_ADENOSINE",
+      "kind": "conditional_response"
     },
     {
       "id": "e14",
       "from": "BERM_L2_BRIDGE",
-      "to": "ECOLOGICAL_ENCOUNTER",
-      "kind": "proposed_bridge"
+      "to": "VAGUS_ANTIINFLAMMATORY",
+      "kind": "conditional_response"
     },
     {
       "id": "e15",
-      "from": "A_VGCC_ROS",
-      "to": "VMEM_MTOR",
-      "kind": "causal_model"
+      "from": "BERM_L2_BRIDGE",
+      "to": "ANDROGEN_RECEPTOR_SIGNAL",
+      "kind": "conditional_response"
     },
     {
       "id": "e16",
-      "from": "A_VGCC_ROS",
-      "to": "BARRIER_BBB",
-      "kind": "causal_model"
+      "from": "BERM_L2_BRIDGE",
+      "to": "ECOLOGICAL_ENCOUNTER",
+      "kind": "conditional_response"
     },
     {
       "id": "e17",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_BTB",
+      "to": "VMEM_MTOR",
       "kind": "causal_model"
     },
     {
       "id": "e18",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_PLACENTA",
+      "to": "BARRIER_BBB",
       "kind": "causal_model"
     },
     {
       "id": "e19",
       "from": "A_VGCC_ROS",
-      "to": "BARRIER_RETINA",
+      "to": "BARRIER_BTB",
       "kind": "causal_model"
     },
     {
       "id": "e20",
       "from": "A_VGCC_ROS",
-      "to": "HPA_HPG",
+      "to": "BARRIER_PLACENTA",
       "kind": "causal_model"
     },
     {
       "id": "e21",
       "from": "A_VGCC_ROS",
-      "to": "MALE_SPERM",
+      "to": "BARRIER_RETINA",
       "kind": "causal_model"
     },
     {
       "id": "e22",
       "from": "A_VGCC_ROS",
-      "to": "OOCYTE_REDOX",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e23",
       "from": "A_VGCC_ROS",
-      "to": "RECEPTOR_STATE_MEMORY",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e24",
       "from": "A_VGCC_ROS",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e25",
-      "from": "B_RPM_CRY",
-      "to": "MELATONIN_REDOX",
+      "from": "A_VGCC_ROS",
+      "to": "RECEPTOR_STATE_MEMORY",
       "kind": "causal_model"
     },
     {
       "id": "e26",
-      "from": "B_RPM_CRY",
-      "to": "HPA_HPG",
+      "from": "A_VGCC_ROS",
+      "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
       "id": "e27",
       "from": "B_RPM_CRY",
-      "to": "OVULATION_CLOCK",
+      "to": "MELATONIN_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e28",
       "from": "B_RPM_CRY",
-      "to": "OOCYTE_REDOX",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e29",
       "from": "B_RPM_CRY",
-      "to": "RECEPTOR_STATE_MEMORY",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e30",
       "from": "B_RPM_CRY",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e31",
       "from": "B_RPM_CRY",
-      "to": "HORMONE_TARGET_RESPONSE",
+      "to": "RECEPTOR_STATE_MEMORY",
       "kind": "causal_model"
     },
     {
       "id": "e32",
-      "from": "MELATONIN_REDOX",
-      "to": "HPA_HPG",
+      "from": "B_RPM_CRY",
+      "to": "CIRCADIAN_COORDINATION",
       "kind": "causal_model"
     },
     {
       "id": "e33",
-      "from": "MELATONIN_REDOX",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "B_RPM_CRY",
+      "to": "HORMONE_TARGET_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e34",
       "from": "MELATONIN_REDOX",
-      "to": "MALE_SPERM",
+      "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
       "id": "e35",
       "from": "MELATONIN_REDOX",
-      "to": "OOCYTE_REDOX",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e36",
       "from": "MELATONIN_REDOX",
-      "to": "OVULATION_CLOCK",
+      "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
       "id": "e37",
       "from": "MELATONIN_REDOX",
-      "to": "IMPLANTATION",
+      "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e38",
       "from": "MELATONIN_REDOX",
-      "to": "CIRCADIAN_COORDINATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e39",
+      "from": "MELATONIN_REDOX",
+      "to": "IMPLANTATION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e40",
+      "from": "MELATONIN_REDOX",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e41",
+      "from": "MELATONIN_REDOX",
+      "to": "CIRCADIAN_COORDINATION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e42",
       "from": "VMEM_MTOR",
       "to": "BIOELECTRIC_DEVELOPMENT",
       "kind": "causal_model"
     },
     {
-      "id": "e40",
-      "from": "VMEM_MTOR",
-      "to": "OVARIAN_RESERVE",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e41",
-      "from": "VMEM_MTOR",
-      "to": "MALE_GERMLINE_RESERVE",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e42",
-      "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "OVARIAN_RESERVE",
-      "kind": "causal_model"
-    },
-    {
       "id": "e43",
-      "from": "BIOELECTRIC_DEVELOPMENT",
-      "to": "MALE_GERMLINE_RESERVE",
+      "from": "VMEM_MTOR",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e44",
-      "from": "HPA_HPG",
-      "to": "MALE_STEROIDOGENESIS",
+      "from": "VMEM_MTOR",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e45",
-      "from": "HPA_HPG",
-      "to": "OVULATION_CLOCK",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "OVARIAN_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e46",
-      "from": "HPA_HPG",
-      "to": "IMPLANTATION",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
       "id": "e47",
       "from": "HPA_HPG",
-      "to": "HORMONE_TARGET_RESPONSE",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e48",
-      "from": "RECEPTOR_STATE_MEMORY",
-      "to": "CIRCADIAN_COORDINATION",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e49",
-      "from": "RECEPTOR_STATE_MEMORY",
-      "to": "HORMONE_TARGET_RESPONSE",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e50",
-      "from": "CIRCADIAN_COORDINATION",
-      "to": "HORMONE_TARGET_RESPONSE",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e51",
-      "from": "CIRCADIAN_COORDINATION",
-      "to": "OVULATION_CLOCK",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e52",
-      "from": "HORMONE_TARGET_RESPONSE",
       "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
-      "id": "e53",
-      "from": "HORMONE_TARGET_RESPONSE",
+      "id": "e48",
+      "from": "HPA_HPG",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
-      "id": "e54",
-      "from": "HORMONE_TARGET_RESPONSE",
+      "id": "e49",
+      "from": "HPA_HPG",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e55",
+      "id": "e50",
+      "from": "HPA_HPG",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e51",
+      "from": "HPA_HPG",
+      "to": "HORMONE_TARGET_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e52",
       "from": "MICROBIOME_OT",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e56",
+      "id": "e53",
       "from": "MICROBIOME_OT",
       "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
-      "id": "e57",
+      "id": "e54",
       "from": "BARRIER_BBB",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e58",
+      "id": "e55",
       "from": "BARRIER_BTB",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
-      "id": "e59",
+      "id": "e56",
       "from": "BARRIER_BTB",
       "to": "MALE_GERMLINE_RESERVE",
       "kind": "causal_model"
     },
     {
-      "id": "e60",
+      "id": "e57",
       "from": "BARRIER_PLACENTA",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e61",
+      "id": "e58",
       "from": "MALE_SPERM",
       "to": "COUPLE_FECUNDABILITY",
       "kind": "causal_model"
     },
     {
-      "id": "e62",
+      "id": "e59",
       "from": "MALE_GERMLINE_RESERVE",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
+      "id": "e60",
+      "from": "RECEPTOR_STATE_MEMORY",
+      "to": "CIRCADIAN_COORDINATION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e61",
+      "from": "RECEPTOR_STATE_MEMORY",
+      "to": "HORMONE_TARGET_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e62",
+      "from": "CIRCADIAN_COORDINATION",
+      "to": "HORMONE_TARGET_RESPONSE",
+      "kind": "causal_model"
+    },
+    {
       "id": "e63",
-      "from": "MALE_STEROIDOGENESIS",
-      "to": "MALE_SPERM",
+      "from": "CIRCADIAN_COORDINATION",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e64",
-      "from": "OVARIAN_RESERVE",
-      "to": "OOCYTE_REDOX",
+      "from": "HORMONE_TARGET_RESPONSE",
+      "to": "MALE_STEROIDOGENESIS",
       "kind": "causal_model"
     },
     {
       "id": "e65",
-      "from": "OVARIAN_RESERVE",
+      "from": "HORMONE_TARGET_RESPONSE",
       "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e66",
-      "from": "OOCYTE_REDOX",
-      "to": "OVULATION_CLOCK",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e67",
-      "from": "OOCYTE_REDOX",
+      "from": "HORMONE_TARGET_RESPONSE",
       "to": "IMPLANTATION",
       "kind": "causal_model"
     },
     {
-      "id": "e68",
-      "from": "OVULATION_CLOCK",
-      "to": "COUPLE_FECUNDABILITY",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e69",
-      "from": "IMPLANTATION",
-      "to": "COUPLE_FECUNDABILITY",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e70",
-      "from": "COUPLE_FECUNDABILITY",
-      "to": "ASFR",
-      "kind": "causal_model"
-    },
-    {
-      "id": "e71",
-      "from": "IF_MITOTIC_DISRUPTION",
+      "id": "e67",
+      "from": "MALE_STEROIDOGENESIS",
       "to": "MALE_SPERM",
       "kind": "causal_model"
     },
     {
+      "id": "e68",
+      "from": "MALE_STEROIDOGENESIS",
+      "to": "ANDROGEN_BINDING_AVAILABILITY",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e69",
+      "from": "ANDROGEN_BINDING_AVAILABILITY",
+      "to": "ANDROGEN_RECEPTOR_SIGNAL",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e70",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "MALE_SPERM",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e71",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "BARRIER_BTB",
+      "kind": "causal_model"
+    },
+    {
       "id": "e72",
-      "from": "IF_MITOTIC_DISRUPTION",
-      "to": "MALE_GERMLINE_RESERVE",
+      "from": "ANDROGEN_RECEPTOR_SIGNAL",
+      "to": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
       "kind": "causal_model"
     },
     {
       "id": "e73",
-      "from": "IF_MITOTIC_DISRUPTION",
+      "from": "OVARIAN_RESERVE",
       "to": "OOCYTE_REDOX",
       "kind": "causal_model"
     },
     {
       "id": "e74",
-      "from": "GPCR_ADENOSINE",
-      "to": "HPA_HPG",
+      "from": "OVARIAN_RESERVE",
+      "to": "OVULATION_CLOCK",
       "kind": "causal_model"
     },
     {
       "id": "e75",
+      "from": "OOCYTE_REDOX",
+      "to": "OVULATION_CLOCK",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e76",
+      "from": "OOCYTE_REDOX",
+      "to": "IMPLANTATION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e77",
+      "from": "OVULATION_CLOCK",
+      "to": "COUPLE_FECUNDABILITY",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e78",
+      "from": "IMPLANTATION",
+      "to": "COUPLE_FECUNDABILITY",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e79",
+      "from": "COUPLE_FECUNDABILITY",
+      "to": "ASFR",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e80",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "MALE_SPERM",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e81",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "MALE_GERMLINE_RESERVE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e82",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "OOCYTE_REDOX",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e83",
+      "from": "GPCR_ADENOSINE",
+      "to": "HPA_HPG",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e84",
       "from": "GPCR_ADENOSINE",
       "to": "MICROBIOME_OT",
       "kind": "causal_model"
     },
     {
-      "id": "e76",
+      "id": "e85",
       "from": "VAGUS_ANTIINFLAMMATORY",
       "to": "HPA_HPG",
       "kind": "causal_model"
     },
     {
-      "id": "e77",
+      "id": "e86",
       "from": "VAGUS_ANTIINFLAMMATORY",
       "to": "MICROBIOME_OT",
       "kind": "causal_model"
     },
     {
-      "id": "e78",
+      "id": "e87",
       "from": "ECOLOGICAL_ENCOUNTER",
       "to": "ECOLOGICAL_SELECTION",
       "kind": "causal_model"
     },
     {
-      "id": "e79",
+      "id": "e88",
       "from": "ECOLOGICAL_SELECTION",
       "to": "ECOLOGICAL_TRAIT_STATE",
       "kind": "causal_model"
     },
     {
-      "id": "e80",
+      "id": "e89",
+      "from": "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+      "to": "BIOBEHAVIORAL_WEIGHTING",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e90",
+      "from": "BIOBEHAVIORAL_WEIGHTING",
+      "to": "NARRATIVE_ATTRIBUTION",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e91",
+      "from": "NARRATIVE_ATTRIBUTION",
+      "to": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e92",
+      "from": "EPISTAPEGE_OBSERVABILITY_LOSS",
+      "to": "INSTITUTIONAL_MODEL_REUSE",
+      "kind": "causal_model"
+    },
+    {
+      "id": "e93",
       "from": "DEMAND_OPPORTUNITY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e81",
+      "id": "e94",
       "from": "TEMPO",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e82",
+      "id": "e95",
       "from": "ART_LIVE_BIRTH_DELIVERY",
       "to": "ASFR",
       "kind": "causal_model"
     },
     {
-      "id": "e83",
+      "id": "e96",
       "from": "ASFR",
       "to": "TFR",
       "kind": "causal_model"
@@ -1379,6 +1669,13 @@
         "FIELDSTATE_ENVELOPE",
         "STATIC_TRIBO_INTERFACE",
         "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      ],
+      "ui_level": 0
+    },
+    "berm-theory": {
+      "id": "berm-theory",
+      "contains": [
+        "LINDGREN_METRIC_DRIVE"
       ],
       "ui_level": 0
     },
@@ -1429,7 +1726,9 @@
       "contains": [
         "MALE_SPERM",
         "MALE_GERMLINE_RESERVE",
-        "MALE_STEROIDOGENESIS"
+        "MALE_STEROIDOGENESIS",
+        "ANDROGEN_BINDING_AVAILABILITY",
+        "ANDROGEN_RECEPTOR_SIGNAL"
       ],
       "ui_level": 4
     },
@@ -1481,6 +1780,17 @@
         "TFR"
       ],
       "ui_level": 7
+    },
+    "civilization": {
+      "id": "civilization",
+      "contains": [
+        "INDIVIDUAL_BEHAVIORAL_RESPONSE",
+        "BIOBEHAVIORAL_WEIGHTING",
+        "NARRATIVE_ATTRIBUTION",
+        "EPISTAPEGE_OBSERVABILITY_LOSS",
+        "INSTITUTIONAL_MODEL_REUSE"
+      ],
+      "ui_level": 5
     }
   }
 }

@@ -37,7 +37,7 @@ const COUNTRY_GEOMAG: CountryGeomag[] = [
   { code: "BRA", name: "Brazil", geomag_lat: -15.0, field_uT: 24.0, blue_eye_frac: 0.08, lactose_tol_frac: 0.45 },
 ];
 
-/* ── chi_B computation (matches v17_chi_B) ─────────────────── */
+/* ── Archived v17 magnetic scenario coordinate ─────────────── */
 
 const GAMMA_E = 28.025e9; // Hz/T, electron gyromagnetic ratio
 
@@ -54,23 +54,23 @@ function dualPeakFactor(geomag_lat: number): number {
   return 1.0;
 }
 
-function computeChiB(field_uT: number, geomag_lat: number): number {
+function computeV17MagneticScenario(field_uT: number, geomag_lat: number): number {
   const dpf = dualPeakFactor(geomag_lat);
   return Math.min(1.0, Math.max(0.0, (field_uT / 65.0) * (0.3 + 0.7 * dpf)));
 }
 
 /* ── Northern Package components ─────────────────────────────── */
 
-function computeChiOptical(blue_eye_frac: number): number {
+function candidateOpticalProxy(blue_eye_frac: number): number {
   return blue_eye_frac;
 }
 
-function computeChiMolecular(lactose_tol_frac: number): number {
+function candidateNutritionalProxy(lactose_tol_frac: number): number {
   // Lactose tolerance -> B2 -> FAD coupling
   return lactose_tol_frac;
 }
 
-function computeChiGeomagnetic(geomag_lat: number, field_uT: number): number {
+function candidateGeomagneticProxy(geomag_lat: number, field_uT: number): number {
   // Normalize: higher absolute geomagnetic latitude + stronger field = stronger coupling
   const latNorm = Math.abs(geomag_lat) / 90;
   const fieldNorm = field_uT / 65; // 65 uT is approximate max
@@ -82,93 +82,93 @@ function computeChiGeomagnetic(geomag_lat: number, field_uT: number): number {
 const COPY = {
   en: {
     title: "Solar Cycle Explorer",
-    subtitle: "Geomagnetic coupling, Larmor resonance, and the Northern Package hypothesis across populations.",
+    subtitle: "Archived v17 magnetic coordinate and uncalibrated Northern Package scenario inputs—not FieldState measurements or biological gain.",
     selectCountry: "Select country",
     geomagLat: "Geomagnetic latitude",
     fieldStrength: "Total field strength",
     blueEye: "Blue eye fraction",
     lactoseTol: "Lactose tolerance",
-    chiB: "Computed chi_B",
+    chiB: "v17 magnetic scenario",
     larmorFreq: "Larmor frequency",
     northernPackage: "Northern Package",
-    chiOptical: "chi_optical (blue eye)",
-    chiMolecular: "chi_molecular (lactose)",
-    chiGeomagnetic: "chi_geomagnetic (field)",
-    product: "Product (NP score)",
-    barChartTitle: "Northern Package component breakdown",
-    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), where B is the local geomagnetic field strength and the dual-peak factor encodes latitude-dependent solar-cycle sensitivity (v17 formula). The Larmor frequency uses the electron gyromagnetic ratio (28.025 GHz/T). The Northern Package score is the product of three independent coupling channels.",
+    chiOptical: "m_opt scenario (eye-colour proxy)",
+    chiMolecular: "m_mol scenario (lactase proxy)",
+    chiGeomagnetic: "m_geo scenario (field proxy)",
+    product: "Scenario product (not calibrated)",
+    barChartTitle: "Northern Package scenario inputs",
+    note: "The magnetic coordinate is the archived v17 formula (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor). Larmor frequency is physical, but the latitude factor, eye-colour fraction, lactase-persistence fraction and their product are scenario proxies. They are not χ_geo, FieldState measurements, tissue susceptibility or fitted fertility coefficients.",
   },
   fi: {
     title: "Aurinkosykli",
-    subtitle: "Geomagneettinen kytkenta, Larmor-resonanssi ja pohjoinen paketti -hypoteesi populaatioissa.",
+    subtitle: "Arkistoitu v17-magneettikoordinaatti ja kalibroimattomat Pohjoinen paketti -skenaariosyötteet — eivät FieldState-mittauksia tai biologista vahvistusta.",
     selectCountry: "Valitse maa",
     geomagLat: "Geomagneettinen leveysaste",
     fieldStrength: "Kokonaiskenttavoimakkuus",
     blueEye: "Sinisten silmien osuus",
     lactoseTol: "Laktoosinsietokyky",
-    chiB: "Laskettu chi_B",
+    chiB: "v17-magneettiskenaario",
     larmorFreq: "Larmor-taajuus",
     northernPackage: "Pohjoinen paketti",
-    chiOptical: "chi_optinen (sinisilma)",
-    chiMolecular: "chi_molekulaarinen (laktoosi)",
-    chiGeomagnetic: "chi_geomagneettinen (kentta)",
-    product: "Tulo (NP-pistemäärä)",
-    barChartTitle: "Pohjoisen paketin osatekijat",
-    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), jossa B on paikallinen geomagneettisen kentän voimakkuus ja kaksoishuipputekijä koodaa leveysasteesta riippuvan aurinkosykliherkkyden (v17-kaava). Larmor-taajuus käyttää elektronin gyromagneettista suhdetta (28,025 GHz/T). Pohjoisen paketin pistemäärä on kolmen itsenäisen kytkentäkanavan tulo.",
+    chiOptical: "m_opt-skenaario (silmienväriproxy)",
+    chiMolecular: "m_mol-skenaario (laktaasiproxy)",
+    chiGeomagnetic: "m_geo-skenaario (kenttäproxy)",
+    product: "Skenaariotulo (ei kalibroitu)",
+    barChartTitle: "Pohjoisen paketin skenaariosyötteet",
+    note: "Magneettikoordinaatti käyttää arkistoitua v17-kaavaa. Larmor-taajuus on fysikaalinen, mutta leveysastetekijä, silmien väriosuus, laktaasin pysyvyysosuus ja niiden tulo ovat skenaarioproxeja. Ne eivät ole χ_geo, FieldState-mittauksia, kudosherkkyyttä tai sovitettuja hedelmällisyyskertoimia.",
   },
   ja: {
     title: "太陽周期エクスプローラー",
-    subtitle: "地磁気結合、ラーモア共鳴、および集団間の北方パッケージ仮説。",
+    subtitle: "アーカイブv17磁気座標と未校正の北方パッケージ・シナリオ入力。FieldState測定や生物利得ではありません。",
     selectCountry: "国を選択",
     geomagLat: "地磁気緯度",
     fieldStrength: "全磁場強度",
     blueEye: "青い目の割合",
     lactoseTol: "乳糖耐性",
-    chiB: "計算chi_B",
+    chiB: "v17磁気シナリオ",
     larmorFreq: "ラーモア周波数",
     northernPackage: "北方パッケージ",
-    chiOptical: "chi_光学 (青い目)",
-    chiMolecular: "chi_分子 (乳糖)",
-    chiGeomagnetic: "chi_地磁気 (磁場)",
-    product: "積 (NPスコア)",
-    barChartTitle: "北方パッケージ構成要素の内訳",
-    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor)、Bは地域の地磁気場強度、二重ピーク因子は緯度依存の太陽周期感受性を符号化(v17式)。ラーモア周波数は電子のジャイロ磁気比(28.025 GHz/T)を使用。北方パッケージスコアは3つの独立した結合チャネルの積。",
+    chiOptical: "m_optシナリオ (眼色proxy)",
+    chiMolecular: "m_molシナリオ (ラクターゼproxy)",
+    chiGeomagnetic: "m_geoシナリオ (磁場proxy)",
+    product: "シナリオ積 (未校正)",
+    barChartTitle: "北方パッケージ・シナリオ入力",
+    note: "磁気座標はアーカイブv17式を使います。ラーモア周波数は物理量ですが、緯度係数、眼色、ラクターゼ持続とその積はシナリオproxyであり、χ_geo、FieldState測定、組織感受性、出生係数ではありません。",
   },
   fr: {
     title: "Explorateur du cycle solaire",
-    subtitle: "Couplage geomagnetique, resonance de Larmor et hypothese du paquet nordique a travers les populations.",
+    subtitle: "Coordonnée magnétique v17 archivée et entrées de scénario non calibrées — ni mesures FieldState ni gain biologique.",
     selectCountry: "Selectionner un pays",
     geomagLat: "Latitude geomagnetique",
     fieldStrength: "Intensite du champ total",
     blueEye: "Fraction yeux bleus",
     lactoseTol: "Tolerance au lactose",
-    chiB: "chi_B calcule",
+    chiB: "scénario magnétique v17",
     larmorFreq: "Frequence de Larmor",
     northernPackage: "Paquet nordique",
-    chiOptical: "chi_optique (yeux bleus)",
-    chiMolecular: "chi_moleculaire (lactose)",
-    chiGeomagnetic: "chi_geomagnetique (champ)",
-    product: "Produit (score NP)",
-    barChartTitle: "Decomposition des composantes du paquet nordique",
-    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), ou B est l'intensite du champ geomagnetique local et le facteur de double pic code la sensibilite au cycle solaire dependante de la latitude (formule v17). La frequence de Larmor utilise le rapport gyromagnetique de l'electron (28,025 GHz/T). Le score du paquet nordique est le produit de trois canaux de couplage independants.",
+    chiOptical: "scénario m_opt (proxy yeux)",
+    chiMolecular: "scénario m_mol (proxy lactase)",
+    chiGeomagnetic: "scénario m_geo (proxy champ)",
+    product: "Produit de scénario (non calibré)",
+    barChartTitle: "Entrées du scénario du paquet nordique",
+    note: "La coordonnée magnétique utilise la formule v17 archivée. La fréquence de Larmor est physique, mais latitude, couleur des yeux, persistance de la lactase et leur produit sont des proxies : ni χ_geo, ni mesures FieldState, ni susceptibilité tissulaire, ni coefficients de fertilité.",
   },
   ko: {
     title: "태양 주기 탐색기",
-    subtitle: "지자기 결합, 라모어 공명, 그리고 집단 간 북방 패키지 가설.",
+    subtitle: "보관된 v17 자기 좌표와 미보정 북방 패키지 시나리오 입력 — FieldState 측정이나 생물학적 이득이 아닙니다.",
     selectCountry: "국가 선택",
     geomagLat: "지자기 위도",
     fieldStrength: "전체 자기장 강도",
     blueEye: "파란 눈 비율",
     lactoseTol: "유당 내성",
-    chiB: "계산된 chi_B",
+    chiB: "v17 자기 시나리오",
     larmorFreq: "라모어 주파수",
     northernPackage: "북방 패키지",
-    chiOptical: "chi_광학 (파란 눈)",
-    chiMolecular: "chi_분자 (유당)",
-    chiGeomagnetic: "chi_지자기 (자기장)",
-    product: "곱 (NP 점수)",
-    barChartTitle: "북방 패키지 구성 요소 분석",
-    note: "chi_B = (B / 65 μT) × (0.3 + 0.7 × dual_peak_factor), 여기서 B는 지역 지자기장 강도이고 이중 피크 인자는 위도 의존적 태양 주기 감수성을 인코딩합니다 (v17 공식). 라모어 주파수는 전자 자이로자기 비율(28.025 GHz/T)을 사용합니다. 북방 패키지 점수는 세 가지 독립적 결합 채널의 곱.",
+    chiOptical: "m_opt 시나리오 (눈 색 프록시)",
+    chiMolecular: "m_mol 시나리오 (락타아제 프록시)",
+    chiGeomagnetic: "m_geo 시나리오 (장 프록시)",
+    product: "시나리오 곱 (미보정)",
+    barChartTitle: "북방 패키지 시나리오 입력",
+    note: "자기 좌표는 보관된 v17 공식을 사용합니다. 라모어 주파수는 물리량이지만 위도 계수, 눈 색, 락타아제 지속성과 그 곱은 시나리오 프록시입니다. χ_geo, FieldState 측정, 조직 감수성 또는 적합 출산 계수가 아닙니다.",
   },
 } as const;
 
@@ -341,10 +341,10 @@ export function SolarExplorer({ locale }: { locale: string }) {
 
   const computed = useMemo(() => {
     const larmor = larmorFreqMHz(country.field_uT);
-    const chiB = computeChiB(country.field_uT, country.geomag_lat);
-    const chiOpt = computeChiOptical(country.blue_eye_frac);
-    const chiMol = computeChiMolecular(country.lactose_tol_frac);
-    const chiGeo = computeChiGeomagnetic(country.geomag_lat, country.field_uT);
+    const chiB = computeV17MagneticScenario(country.field_uT, country.geomag_lat);
+    const chiOpt = candidateOpticalProxy(country.blue_eye_frac);
+    const chiMol = candidateNutritionalProxy(country.lactose_tol_frac);
+    const chiGeo = candidateGeomagneticProxy(country.geomag_lat, country.field_uT);
     const product = chiOpt * chiMol * chiGeo;
     return { larmor, chiB, chiOpt, chiMol, chiGeo, product };
   }, [country]);

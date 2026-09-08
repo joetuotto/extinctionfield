@@ -307,7 +307,7 @@ const COPY = {
     ihFinding4: "Li⁺ perméabilise le VGSC, remplace Na⁺ : mécanisme ionique, non chimique",
     ihFinding5: "Kétamine : premier ECR. Le NMDA est un canal ionique, effet en quelques heures",
     ihFinding6: "L'ECT déclenche une dépolarisation corticale envahissante (CSD) : réinitialisation ionique totale",
-    ihEpistemic: "Niveau épistémique : mécanisme ionique du lithium [E] (données [[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]). Convergence Ca²⁺/CACNA1C des psychédéliques [E] ([[ref:sousouri2025|Sousouri 2025]]). Mécanisme CSD de l'ECT [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Prédiction hiérarchique [M|C] (BERM ; opérateur L2 ouvert).",
+    ihEpistemic: "Niveau épistémique : mécanisme ionique du lithium [E] (données [[ref:elmallakh2004_lithium_ion|El-Mallakh/Bhansali]]). Convergence Ca²⁺/CACNA1C des psychédéliques [E] ([[ref:sousouri2025|Sousouri 2025]]). Mécanisme CSD de l'ECT [E] ([[ref:rosenthal2025_ect_csd|Rosenthal 2025]]). Prédiction hiérarchique [M|C] (BERM ; opérateur L2 conditionnel, noyau tissulaire non calibré).",
     // Section 2: Skin Battery
     sbHeading: "La batterie cutanée — système sensoriel bioélectrique dermique",
     sbP1: "La peau n'est pas une barrière passive mais un réseau sensoriel bioélectrique actif. L'épiderme maintient un potentiel transépithélial continu (TEP, 10–60 mV) via Na⁺/K⁺-ATPase — littéralement une batterie qui génère un champ électrique à travers la peau. Lorsque la peau est blessée, le TEP s'effondre et génère un champ électrique latéral (100–200 mV/mm) qui guide l'électrotaxie des kératinocytes et des fibroblastes. Ce signal électrique est le premier signal de guérison — AVANT les signaux biochimiques.",

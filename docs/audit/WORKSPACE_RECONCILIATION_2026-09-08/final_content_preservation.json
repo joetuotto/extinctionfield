@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "protected_local_files_checked": 341,
+  "local_data_changes": [],
+  "original_only_audit_files_checked": 23,
+  "original_audit_changes": [],
+  "symlink_targets_checked": 1,
+  "published_snapshot_content_differences": [
+    {
+      "path": "website/data/anchor-index.json",
+      "difference": "generatedAt timestamp only"
+    }
+  ],
+  "unresolved_conflicts": []
+}

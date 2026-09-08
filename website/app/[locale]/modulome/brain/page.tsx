@@ -36,7 +36,7 @@ const COPY = {
       "[[ref:pall2022-ad|Pall 2022]]: 18 types of evidence for EMF → VGCC → Ca²⁺ → Alzheimer's. 34% brain cell death in 4 weeks of EMF exposure in rats — partially blocked by L-type blocker amlodipine (DHP, Cav1.2-selective; low T-type affinity — PMC4657039). Note: amlodipine does NOT block T-type channels — its efficacy here indicates L-type (Cav1.2) involvement alongside the dominant T-type pathway. BBB opening → amyloid entry.",
 
     /* 03 Chi Analysis */
-    chiAnalysis: "BERM named L3 response candidates — L2 open",
+    chiAnalysis: "BERM tissue-response analysis — conditional L2 operator, calibration open",
     chiAnalysisText:
       "Double hit candidate: Cav3.2/Ca²⁺ and BBB/Aβ branches converge on the hippocampus, with age represented by the separately named imported L3 modifier χ_mito. χ_mito is not the L1 χ_geo coefficient, and its L2 input mapping remains open.",
 
@@ -200,7 +200,7 @@ const COPY = {
       "[[ref:pall2022-ad|Pall 2022]]: 18 tyyppistä näyttöä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — osittain estetty L-tyypin salpaajalla amlodipiinilla (DHP, Cav1.2-selektiivinen; matala T-tyypin affiniteetti — PMC4657039). Huom: amlodipiini EI salpaa T-tyypin kanavia — sen teho tässä osoittaa L-tyypin (Cav1.2) osallisuuden dominoivan T-tyypin reitin rinnalla. BBB:n avautuminen → amyloidin pääsy.",
 
     /* 03 Chi-analyysi */
-    chiAnalysis: "BERM:n nimetyt L3-vaste-ehdokkaat — L2 avoin",
+    chiAnalysis: "BERM:n kudosvasteanalyysi — ehdollinen L2-operaattori, kalibrointi avoin",
     chiAnalysisText:
       "Kaksoisosumaehdokkaassa Cav3.2/Ca²⁺- ja BBB/Aβ-haarat yhtyvät hippokampuksessa, ja ikää kuvaa erikseen nimetty tuotu L3-muunnin χ_mito. χ_mito ei ole L1-kerroin χ_geo, ja sen L2-syötekuvaus on avoin.",
 
@@ -360,7 +360,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]]：EMF → VGCC → Ca²⁺ → アルツハイマー病の連鎖を示す18種類のエビデンス。ラットにおける4週間のEMF曝露で34%の脳細胞死——L型チャネル遮断薬amlodipine（DHP、Cav1.2選択的；T型親和性低）で部分的に阻止。注：amlodipineはT型チャネルを遮断しない——ここでの有効性は、優位なT型経路と並行するL型（Cav1.2）の関与を示す。BBB開放 → アミロイド流入。",
 
-    chiAnalysis: "BERMの名称付きL3応答候補 — L2未解決",
+    chiAnalysis: "BERM組織応答解析 — 条件付きL2演算子、校正未完了",
     chiAnalysisText:
       "二重打撃候補ではCav3.2/Ca²⁺とBBB/Aβの枝が海馬へ収束し、加齢は別名の導入L3修飾子χ_mitoで表す。χ_mitoはL1係数χ_geoではなく、そのL2入力写像は未解決である。",
 
@@ -510,7 +510,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]] : 18 types de preuves pour la chaine CEM → VGCC → Ca²⁺ → Alzheimer. 34 % de mort cellulaire cerebrale en 4 semaines d'exposition CEM chez le rat — partiellement bloquee par le bloqueur L-type amlodipine (DHP, selectif Cav1.2 ; faible affinite T-type). Note : l'amlodipine ne bloque PAS les canaux T-type — son efficacite ici indique l'implication du type L (Cav1.2) en parallele de la voie T-type dominante. Ouverture de la BHE → entree d'amyloide.",
 
-    chiAnalysis: "Candidats L3 nommés de réponse BERM — L2 ouvert",
+    chiAnalysis: "Analyse de réponse tissulaire BERM — opérateur L2 conditionnel, calibration ouverte",
     chiAnalysisText:
       "Dans le candidat à double impact, les branches Cav3.2/Ca²⁺ et BHE/Aβ convergent vers l'hippocampe ; l'âge est représenté par le modificateur L3 importé et nommé χ_mito. χ_mito n'est pas le coefficient L1 χ_geo et son entrée L2 reste ouverte.",
 
@@ -660,7 +660,7 @@ const COPY = {
     emfEvidenceText:
       "[[ref:pall2022-ad|Pall 2022]]: EMF → VGCC → Ca²⁺ → 알츠하이머병 연쇄에 대한 18가지 유형의 근거. 쥐에서 4주간 EMF 노출 시 34% 뇌세포 사멸 — L형 차단제 amlodipine(DHP, Cav1.2 선택적; 낮은 T형 친화성)으로 부분 차단. 주의: amlodipine은 T형 채널을 차단하지 않음 — 여기서의 효능은 지배적 T형 경로와 병행하는 L형(Cav1.2) 관여를 시사. BBB 개방 → 아밀로이드 유입.",
 
-    chiAnalysis: "BERM 명명된 L3 반응 후보 — L2 미해결",
+    chiAnalysis: "BERM 조직 반응 분석 — 조건부 L2 연산자, 보정 미완료",
     chiAnalysisText:
       "이중 타격 후보에서 Cav3.2/Ca²⁺와 BBB/Aβ 가지가 해마에 수렴하고 노화는 별도 명칭의 도입 L3 조절자 χ_mito로 표현된다. χ_mito는 L1 계수 χ_geo가 아니며 L2 입력 매핑은 열려 있다.",
 

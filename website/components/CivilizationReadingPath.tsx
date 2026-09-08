@@ -12,8 +12,8 @@ const COPY = {
       { title: "Institutions and governance", text: "Repeated decisions and interactions become recruitment, norms, resource allocation and rules. These stored patterns coordinate later behavior and change the opportunities individuals encounter." },
       { title: "Civilization through time", text: "Cohorts, accumulated knowledge, infrastructure and institutional capacity carry effects beyond a single biological episode. Technology and settlement then reshape the material and electromagnetic conditions entering the next cycle." },
     ],
-    behavior: "Previous: biology, motivation and action", applications: "Six applications of the explanation", applicationsLead: "These essays examine overlapping parts of the chain. Start with the biological basis, then follow individuals, interaction, communities, governance and the longer historical trajectory.",
-    essays: { pathopege: "Biological basis", pathopolites: "The individual and civic behavior", patokinesis: "Mate choice and social propagation", patopolis: "Communities and population change", patokratia: "Institutions and governance", patopoliteia: "Civilization and long-term history" },
+    behavior: "Previous: biology, motivation and action", applications: "Seven applications of the explanation", applicationsLead: "These essays examine overlapping parts of the chain. Start with the biological basis, then follow individuals, their observations, interaction, communities, governance and the longer historical trajectory.",
+    essays: { pathopege: "Biological basis", pathopolites: "The individual and civic behavior", epistapege: "Observation, explanation and structural non-detection", patokinesis: "Mate choice and social propagation", patopolis: "Communities and population change", patokratia: "Institutions and governance", patopoliteia: "Civilization and long-term history" },
   },
   fi: {
     title: "Miten yksilön biologiasta muodostuu yhteinen kehitys",
@@ -25,8 +25,8 @@ const COPY = {
       { title: "Instituutiot ja hallinto", text: "Toistuvat päätökset ja vuorovaikutukset muuttuvat rekrytoinniksi, normeiksi, resurssien jaoksi ja säännöiksi. Nämä varastoituneet toimintatavat ohjaavat myöhempää käyttäytymistä ja muuttavat yksilöiden mahdollisuuksia." },
       { title: "Sivilisaation ajallinen kehitys", text: "Sukupolvet, kertynyt tieto, infrastruktuuri ja instituutioiden toimintakyky kantavat vaikutuksia yksittäistä biologista jaksoa pidemmälle. Teknologia ja asutus muovaavat seuraavan kierroksen materiaalisia ja sähkömagneettisia olosuhteita." },
     ],
-    behavior: "Edellinen taso: biologia, motivaatio ja toiminta", applications: "Kuusi selityksen sovellusta", applicationsLead: "Esseet tarkastelevat osin samoja ketjun vaiheita. Aloita biologisesta perustasta ja etene yksilöihin, vuorovaikutukseen, yhteisöihin, hallintoon ja pitkään historiaan.",
-    essays: { pathopege: "Biologinen perusta", pathopolites: "Yksilö ja kansalaistoiminta", patokinesis: "Parinvalinta ja sosiaalinen leviäminen", patopolis: "Yhteisöt ja väestökehitys", patokratia: "Instituutiot ja hallinto", patopoliteia: "Sivilisaatio ja pitkä historia" },
+    behavior: "Edellinen taso: biologia, motivaatio ja toiminta", applications: "Seitsemän selityksen sovellusta", applicationsLead: "Esseet tarkastelevat osin samoja ketjun vaiheita. Aloita biologisesta perustasta ja etene yksilöihin, heidän havaintoihinsa, vuorovaikutukseen, yhteisöihin, hallintoon ja pitkään historiaan.",
+    essays: { pathopege: "Biologinen perusta", pathopolites: "Yksilö ja kansalaistoiminta", epistapege: "Havainto, selitys ja rakenteellinen havaitsemattomuus", patokinesis: "Parinvalinta ja sosiaalinen leviäminen", patopolis: "Yhteisöt ja väestökehitys", patokratia: "Instituutiot ja hallinto", patopoliteia: "Sivilisaatio ja pitkä historia" },
   },
   ja: {
     title: "個人の生物学から集団の動態へ",
@@ -38,8 +38,8 @@ const COPY = {
       { title: "制度と統治", text: "繰り返される決定と相互作用は、採用、規範、資源配分、規則になります。蓄積した行動様式は後の行動を調整し、個人が直面する機会を変えます。" },
       { title: "文明の時間的変化", text: "世代、蓄積された知識、インフラ、制度の能力が、単一の生物学的エピソードを超えて効果を保ちます。技術と居住形態が次の周期の物質的・電磁的条件を形作ります。" },
     ],
-    behavior: "前の水準：生物学、動機、行動", applications: "説明の六つの応用", applicationsLead: "各論考は、連鎖の重なり合う部分を扱います。生物学的基盤から、個人、相互作用、共同体、統治、長期的な歴史へ進みます。",
-    essays: { pathopege: "生物学的基盤", pathopolites: "個人と市民の行動", patokinesis: "配偶者選択と社会的伝播", patopolis: "共同体と人口変化", patokratia: "制度と統治", patopoliteia: "文明と長期的な歴史" },
+    behavior: "前の水準：生物学、動機、行動", applications: "説明の七つの応用", applicationsLead: "各論考は、連鎖の重なり合う部分を扱います。生物学的基盤から、個人、その観測、相互作用、共同体、統治、長期的な歴史へ進みます。",
+    essays: { pathopege: "生物学的基盤", pathopolites: "個人と市民の行動", epistapege: "観測、説明、構造的な非検出", patokinesis: "配偶者選択と社会的伝播", patopolis: "共同体と人口変化", patokratia: "制度と統治", patopoliteia: "文明と長期的な歴史" },
   },
   fr: {
     title: "De la biologie individuelle aux dynamiques collectives",
@@ -51,8 +51,8 @@ const COPY = {
       { title: "Institutions et gouvernance", text: "Les décisions et interactions répétées deviennent recrutement, normes, allocation des ressources et règles. Ces pratiques accumulées coordonnent les comportements ultérieurs et modifient les possibilités offertes aux individus." },
       { title: "La civilisation dans le temps", text: "Les générations, les connaissances accumulées, les infrastructures et la capacité institutionnelle prolongent les effets au-delà d’un épisode biologique. Technologie et peuplement remodèlent les conditions matérielles et électromagnétiques du cycle suivant." },
     ],
-    behavior: "Niveau précédent : biologie, motivation et action", applications: "Six applications de l’explication", applicationsLead: "Ces essais examinent des parties qui se recoupent. Partez de la base biologique, puis suivez les individus, l’interaction, les communautés, la gouvernance et la trajectoire historique.",
-    essays: { pathopege: "Base biologique", pathopolites: "L’individu et le comportement civique", patokinesis: "Choix du partenaire et propagation sociale", patopolis: "Communautés et évolution démographique", patokratia: "Institutions et gouvernance", patopoliteia: "Civilisation et histoire longue" },
+    behavior: "Niveau précédent : biologie, motivation et action", applications: "Sept applications de l’explication", applicationsLead: "Ces essais examinent des parties qui se recoupent. Partez de la base biologique, puis suivez les individus, leurs observations, l’interaction, les communautés, la gouvernance et la trajectoire historique.",
+    essays: { pathopege: "Base biologique", pathopolites: "L’individu et le comportement civique", epistapege: "Observation, explication et non-détection structurelle", patokinesis: "Choix du partenaire et propagation sociale", patopolis: "Communautés et évolution démographique", patokratia: "Institutions et gouvernance", patopoliteia: "Civilisation et histoire longue" },
   },
   ko: {
     title: "개인의 생물학에서 집단 역학으로",
@@ -64,8 +64,8 @@ const COPY = {
       { title: "제도와 통치", text: "반복되는 결정과 상호작용은 채용, 규범, 자원 배분과 규칙이 됩니다. 축적된 행동 방식은 이후 행동을 조정하고 개인에게 주어진 기회를 바꿉니다." },
       { title: "시간에 따른 문명 변화", text: "세대, 축적된 지식, 인프라와 제도의 역량은 단일 생물학적 사건보다 오래 효과를 유지합니다. 기술과 거주 형태는 다음 주기의 물질적·전자기적 조건을 형성합니다." },
     ],
-    behavior: "이전 수준: 생물학, 동기와 행동", applications: "설명의 여섯 가지 응용", applicationsLead: "각 글은 사슬의 겹치는 부분을 다룹니다. 생물학적 기반에서 시작해 개인, 상호작용, 공동체, 통치와 장기 역사로 이어집니다.",
-    essays: { pathopege: "생물학적 기반", pathopolites: "개인과 시민 행동", patokinesis: "배우자 선택과 사회적 전파", patopolis: "공동체와 인구 변화", patokratia: "제도와 통치", patopoliteia: "문명과 장기 역사" },
+    behavior: "이전 수준: 생물학, 동기와 행동", applications: "설명의 일곱 가지 응용", applicationsLead: "각 글은 사슬의 겹치는 부분을 다룹니다. 생물학적 기반에서 시작해 개인, 그들의 관찰, 상호작용, 공동체, 통치와 장기 역사로 이어집니다.",
+    essays: { pathopege: "생물학적 기반", pathopolites: "개인과 시민 행동", epistapege: "관찰, 설명과 구조적 비탐지", patokinesis: "배우자 선택과 사회적 전파", patopolis: "공동체와 인구 변화", patokratia: "제도와 통치", patopoliteia: "문명과 장기 역사" },
   },
 };
 

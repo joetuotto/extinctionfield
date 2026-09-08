@@ -284,7 +284,7 @@ BERM–Eco saa tukea erityisesti, jos havaitaan:
 
 BERM–Eco vahvistaa erityisesti mallin rakenteellisia premissejä:
 
-1. **FieldState on oikea biologinen syöte.** Luonnon sähkö- ja magneettiaistit vahvistavat, että vektori, spektri, geometria, tausta ja aika ovat biologisesti merkityksellisiä.
+1. **Fysikaalinen kenttäympäristö on BERM:n ehdokassyöte.** Luonnon sähkö- ja magneettiaistit tukevat vektorin, spektrin, geometrian, taustan ja ajan mittaamista. FieldState on vain tämän mittaushaara; biologinen vaste kuuluu BERM:n avoimeen vasteytimeen.
 
 2. **Lajikohtainen ja kudoskohtainen siirtofunktio on välttämätön.** Sama kenttä ei muutu samalla tavalla kaikkien eliöiden tai elinten vasteeksi.
 

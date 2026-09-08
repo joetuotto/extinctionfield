@@ -1,0 +1,974 @@
+Initial main run — local research inputs absent
+
+........................................................................ [  3%]
+........................................................................ [  6%]
+........................................................................ [ 10%]
+...........................................................FFFF......... [ 13%]
+........................................................................ [ 16%]
+........................sssssssssssssssssssssssssssssssssssssssssss..... [ 20%]
+........................................................................ [ 23%]
+.......................................................................F [ 27%]
+............................FFFFFFF.........FF..s....................... [ 30%]
+.....F..F.................................FFFF.......................... [ 33%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 44%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 54%]
+.................s...................................................... [ 57%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+.........................F....F......................................... [ 78%]
+................................................................FFFF.... [ 81%]
+........................................................................ [ 84%]
+........................................................................ [ 88%]
+........................................................................ [ 91%]
+........................................................................ [ 95%]
+...................................................................s.... [ 98%]
+....ssssssssssssssssssssssssssss                                         [100%]
+=================================== FAILURES ===================================
+____ TestCurrentSourcesAreBlocked.test_current_raw_loaders_remain_readable _____
+
+self = <tests.test_csli.TestCurrentSourcesAreBlocked object at 0x112450550>
+
+    def test_current_raw_loaders_remain_readable(self):
+        assert load_bee_data()
+        assert load_bird_data()
+        assert load_sperm_data()
+>       assert load_emf_data()
+               ^^^^^^^^^^^^^^^
+
+tests/test_csli.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_emf_data() -> dict[str, dict[int, float]]:
+        """Load mobile subscriptions per 100 as EMF proxy."""
+        import csv
+    
+        path = DATA_DIR / "processed" / "mobile_by_country_year.csv"
+        result: dict[str, dict[int, float]] = {}
+>       with open(path) as f:
+             ^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+berm/stats/csli.py:119: FileNotFoundError
+_ TestCurrentSourcesAreBlocked.test_bare_current_sources_cannot_produce_lag_weights _
+
+self = <tests.test_csli.TestCurrentSourcesAreBlocked object at 0x112450690>
+
+    def test_bare_current_sources_cannot_produce_lag_weights(self):
+>       result = estimate_lag_kernel(load_bee_data(), load_emf_data())
+                                                      ^^^^^^^^^^^^^^^
+
+tests/test_csli.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_emf_data() -> dict[str, dict[int, float]]:
+        """Load mobile subscriptions per 100 as EMF proxy."""
+        import csv
+    
+        path = DATA_DIR / "processed" / "mobile_by_country_year.csv"
+        result: dict[str, dict[int, float]] = {}
+>       with open(path) as f:
+             ^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+berm/stats/csli.py:119: FileNotFoundError
+_ TestCurrentSourcesAreBlocked.test_current_cross_species_and_invariance_are_blocked _
+
+self = <tests.test_csli.TestCurrentSourcesAreBlocked object at 0x1123afce0>
+
+    def test_current_cross_species_and_invariance_are_blocked(self):
+        sentinel = {
+            "bees": load_bee_data(),
+            "birds": load_bird_data(),
+            "human_sperm": load_sperm_data(),
+        }
+>       comparison = cross_species_lag_comparison(sentinel, load_emf_data())
+                                                            ^^^^^^^^^^^^^^^
+
+tests/test_csli.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_emf_data() -> dict[str, dict[int, float]]:
+        """Load mobile subscriptions per 100 as EMF proxy."""
+        import csv
+    
+        path = DATA_DIR / "processed" / "mobile_by_country_year.csv"
+        result: dict[str, dict[int, float]] = {}
+>       with open(path) as f:
+             ^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+berm/stats/csli.py:119: FileNotFoundError
+_ TestCurrentSourcesAreBlocked.test_current_common_shock_and_prospective_paths_are_retired _
+
+self = <tests.test_csli.TestCurrentSourcesAreBlocked object at 0x1123af820>
+
+    def test_current_common_shock_and_prospective_paths_are_retired(self):
+        shock = latent_common_shock(
+            {"bees": load_bee_data(), "birds": load_bird_data()},
+>           load_emf_data(),
+            ^^^^^^^^^^^^^^^
+            load_tfr_data(),
+        )
+
+tests/test_csli.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_emf_data() -> dict[str, dict[int, float]]:
+        """Load mobile subscriptions per 100 as EMF proxy."""
+        import csv
+    
+        path = DATA_DIR / "processed" / "mobile_by_country_year.csv"
+        result: dict[str, dict[int, float]] = {}
+>       with open(path) as f:
+             ^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+berm/stats/csli.py:119: FileNotFoundError
+_ test_historical_asfr_pattern_is_evaluated_only_after_the_upstream_specification _
+
+    def test_historical_asfr_pattern_is_evaluated_only_after_the_upstream_specification() -> None:
+        specification = default_evidence_constrained_hindcast_specification()
+>       evaluations = evaluate_historical_signatures(specification.historical_signature_windows)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_constrained_hindcast.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/evidence_constrained_hindcast.py:488: in evaluate_historical_signatures
+    mobile, asfr = load_processed_signature_inputs(data_dir)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/fieldstate_cohort_signature.py:220: in load_processed_signature_inputs
+    with (root / "mobile_by_country_year.csv").open(encoding="utf-8", newline="") as handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = ''
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+______ test_known_country_includes_existing_military_and_broadcast_layers ______
+
+    def test_known_country_includes_existing_military_and_broadcast_layers():
+        result = exposure_from_data("USA", 1975)
+    
+        assert result["country_iso3"] == "USA"
+        assert result["berm_country"] == "USA"
+        assert result["military_ambient"] == pytest.approx(military_ambient("USA", 1975))
+        assert result["broadcast_ambient"] == pytest.approx(broadcast_ambient("USA", 1975))
+>       assert result["available"] is True
+E       assert False is True
+
+tests/test_external_exposure.py:90: AssertionError
+_______ test_unknown_country_is_graceful_and_reports_unavailable_inputs ________
+
+    def test_unknown_country_is_graceful_and_reports_unavailable_inputs():
+        result = exposure_from_data("Atlantis", 2000)
+    
+        assert result["total"] is None
+        assert result["available"] is False
+        assert result["country_iso3"] is None
+        assert result["military_ambient"] is None
+>       assert result["input_status"]["mobile"]["status"] == "unavailable_country"
+E       AssertionError: assert 'unavailable_source' == 'unavailable_country'
+E         
+E         - unavailable_country
+E         ?             ^  -- ^
+E         + unavailable_source
+E         ?             ^   ^^
+
+tests/test_external_exposure.py:103: AssertionError
+_____________________ TestT1LedDID.test_runs_without_error _____________________
+
+self = <tests.test_falsification_v19_1.TestT1LedDID object at 0x112936490>
+
+    def test_runs_without_error(self):
+        from berm.validation.falsification_v19_1 import run_t1_led_did
+>       result = run_t1_led_did()
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+___________________ TestT1LedDID.test_uses_all_eu_countries ____________________
+
+self = <tests.test_falsification_v19_1.TestT1LedDID object at 0x112936210>
+
+    def test_uses_all_eu_countries(self):
+        from berm.validation.falsification_v19_1 import run_t1_led_did
+>       result = run_t1_led_did()
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+___________________ TestT1LedDID.test_uses_control_countries ___________________
+
+self = <tests.test_falsification_v19_1.TestT1LedDID object at 0x1129c4c30>
+
+    def test_uses_control_countries(self):
+        from berm.validation.falsification_v19_1 import run_t1_led_did
+>       result = run_t1_led_did()
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+_______________________ TestT1LedDID.test_did_is_numeric _______________________
+
+self = <tests.test_falsification_v19_1.TestT1LedDID object at 0x1129c5350>
+
+    def test_did_is_numeric(self):
+        from berm.validation.falsification_v19_1 import run_t1_led_did
+>       result = run_t1_led_did()
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+____________________ TestT1LedDID.test_falsified_is_boolean ____________________
+
+self = <tests.test_falsification_v19_1.TestT1LedDID object at 0x112968830>
+
+    def test_falsified_is_boolean(self):
+        from berm.validation.falsification_v19_1 import run_t1_led_did
+>       result = run_t1_led_did()
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+___________________ TestRunAll.test_run_all_returns_summary ____________________
+
+self = <tests.test_falsification_v19_1.TestRunAll object at 0x112936d50>
+
+    def test_run_all_returns_summary(self):
+        from berm.validation.falsification_v19_1 import run_all_available
+>       summary = run_all_available()
+                  ^^^^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:443: in run_all_available
+    results["T1"] = run_t1_led_did()
+                    ^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+_____________________ TestRunAll.test_pending_tests_listed _____________________
+
+self = <tests.test_falsification_v19_1.TestRunAll object at 0x112936e90>
+
+    def test_pending_tests_listed(self):
+        from berm.validation.falsification_v19_1 import run_all_available
+>       summary = run_all_available()
+                  ^^^^^^^^^^^^^^^^^^^
+
+tests/test_falsification_v19_1.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/falsification_v19_1.py:443: in run_all_available
+    results["T1"] = run_t1_led_did()
+                    ^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:180: in run_t1_led_did
+    series = _load_wpp_tfr_series(iso3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/falsification_v19_1.py:158: in _load_wpp_tfr_series
+    row = load_tfr(iso3, y)
+          ^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:360: in load_tfr
+    hit = _tfr_index().get((geography, year))
+          ^^^^^^^^^^^^
+berm/data/wpp.py:302: in _tfr_index
+    with _require(OUT_TFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_tfr_region_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+___ test_wpp_facade_uses_observed_reference_asfr_without_v16_exposure_curve ____
+
+    def test_wpp_facade_uses_observed_reference_asfr_without_v16_exposure_curve() -> None:
+        couple = _couple()
+        by_age = {group: couple for group in AGE_GROUPS}
+    
+>       result = project_wpp_fieldstate_asfr(
+            geography_id="FIN",
+            year=2023,
+            reference_year=2023,
+            reference_couples=by_age,
+            target_couples=by_age,
+        )
+
+tests/test_fieldstate_asfr_v2.py:248: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/model_fieldstate_asfr.py:207: in project_wpp_fieldstate_asfr
+    return project_wpp_conditional_asfr(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/model_fieldstate_asfr.py:110: in project_wpp_conditional_asfr
+    reference = wpp.load_asfr(geography_id, reference_year)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/data/wpp.py:317: in load_asfr
+    groups = _asfr_index().get((geography, year))
+             ^^^^^^^^^^^^^
+berm/data/wpp.py:289: in _asfr_index
+    with _require(OUT_ASFR).open(newline="", encoding="utf-8") as fh:
+         ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_asfr_region_age_year.csv')
+
+    def _require(path: Path) -> Path:
+        if not path.exists():
+>           raise FileNotFoundError(
+                f"{path} not found. Run `python -m berm.data.wpp ingest` first."
+            )
+E           FileNotFoundError: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/fertility_asfr_region_age_year.csv not found. Run `python -m berm.data.wpp ingest` first.
+
+berm/data/wpp.py:280: FileNotFoundError
+______ test_processed_panel_reproduces_descriptive_all_country_signature _______
+
+    def test_processed_panel_reproduces_descriptive_all_country_signature() -> None:
+>       result = run_processed_cohort_asfr_signature()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_fieldstate_cohort_signature.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/validation/fieldstate_cohort_signature.py:240: in run_processed_cohort_asfr_signature
+    mobile, asfr = load_processed_signature_inputs(data_dir)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+berm/validation/fieldstate_cohort_signature.py:220: in load_processed_signature_inputs
+    with (root / "mobile_by_country_year.csv").open(encoding="utf-8", newline="") as handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = ''
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/processed/mobile_by_country_year.csv'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+_______ test_raw_release_is_manifest_locked_and_has_expected_dimensions ________
+
+    def test_raw_release_is_manifest_locked_and_has_expected_dimensions():
+>       result = validate_raw_inputs()
+                 ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ifce_sire_equine_benchmark.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/ifce_sire_equine_benchmark.py:487: in validate_raw_inputs
+    tables, raw_info = _checked_raw_tables(data_dir=data_dir, manifest_path=manifest_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[dict[str, list[dict[str, str]]], dict[str, Any]]:
+        """Load exact raw CSVs only after manifest, byte, header and count checks."""
+    
+        manifest = _load_manifest(manifest_path)
+        if manifest.get("license") != SOURCE_LICENSE:
+            raise ValueError("IFCE/SIRE manifest licence does not match the pinned source licence")
+        entries = _manifest_entries(manifest)
+        tables: dict[str, list[dict[str, str]]] = {}
+        files: dict[str, dict[str, Any]] = {}
+        for spec in RAW_TABLE_SPECS:
+            path = _release_dir(data_dir) / spec.filename
+            relative_path = _data_relative(path, data_dir)
+            entry = entries.get(relative_path)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative_path}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative_path}")
+            if entry.get("source_url") != spec.source_url:
+                raise ValueError(f"manifest source_url mismatch for {relative_path}")
+            if entry.get("landing_page") != spec.landing_page:
+                raise ValueError(f"manifest landing_page mismatch for {relative_path}")
+            if entry.get("source_encoding") != SOURCE_ENCODING:
+                raise ValueError(f"manifest source_encoding mismatch for {relative_path}")
+            if entry.get("raw_data_rows") != spec.expected_rows:
+                raise ValueError(f"manifest raw_data_rows mismatch for {relative_path}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held IFCE/SIRE source artefact is missing: {path}; download the "
+                    "exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held IFCE/SIRE source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv; download the exact manifest release before building the benchmark
+
+berm/data/ifce_sire_equine_benchmark.py:366: FileNotFoundError
+________ test_panel_preserves_source_fields_and_keeps_metrics_unjoined _________
+
+    def test_panel_preserves_source_fields_and_keeps_metrics_unjoined():
+>       rows = normalize_equid_breeding_panel()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ifce_sire_equine_benchmark.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/ifce_sire_equine_benchmark.py:583: in normalize_equid_breeding_panel
+    tables, raw_info = _checked_raw_tables(data_dir=data_dir, manifest_path=manifest_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[dict[str, list[dict[str, str]]], dict[str, Any]]:
+        """Load exact raw CSVs only after manifest, byte, header and count checks."""
+    
+        manifest = _load_manifest(manifest_path)
+        if manifest.get("license") != SOURCE_LICENSE:
+            raise ValueError("IFCE/SIRE manifest licence does not match the pinned source licence")
+        entries = _manifest_entries(manifest)
+        tables: dict[str, list[dict[str, str]]] = {}
+        files: dict[str, dict[str, Any]] = {}
+        for spec in RAW_TABLE_SPECS:
+            path = _release_dir(data_dir) / spec.filename
+            relative_path = _data_relative(path, data_dir)
+            entry = entries.get(relative_path)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative_path}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative_path}")
+            if entry.get("source_url") != spec.source_url:
+                raise ValueError(f"manifest source_url mismatch for {relative_path}")
+            if entry.get("landing_page") != spec.landing_page:
+                raise ValueError(f"manifest landing_page mismatch for {relative_path}")
+            if entry.get("source_encoding") != SOURCE_ENCODING:
+                raise ValueError(f"manifest source_encoding mismatch for {relative_path}")
+            if entry.get("raw_data_rows") != spec.expected_rows:
+                raise ValueError(f"manifest raw_data_rows mismatch for {relative_path}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held IFCE/SIRE source artefact is missing: {path}; download the "
+                    "exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held IFCE/SIRE source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv; download the exact manifest release before building the benchmark
+
+berm/data/ifce_sire_equine_benchmark.py:366: FileNotFoundError
+____________ test_build_and_write_are_deterministic_and_fail_closed ____________
+
+tmp_path = PosixPath('/private/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/pytest-of-ottojuote/pytest-103/test_build_and_write_are_deter0')
+
+    def test_build_and_write_are_deterministic_and_fail_closed(tmp_path):
+        raw_paths = [RAW_DIR / spec.filename for spec in RAW_TABLE_SPECS]
+>       before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in raw_paths}
+                                       ^^^^^^^^^^^^^^^^^
+
+tests/test_ifce_sire_equine_benchmark.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+_______ test_corrupt_manifest_checksum_is_rejected_before_normalization ________
+
+tmp_path = PosixPath('/private/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/pytest-of-ottojuote/pytest-103/test_corrupt_manifest_checksum0')
+
+    def test_corrupt_manifest_checksum_is_rejected_before_normalization(tmp_path):
+        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        manifest["files"][0]["sha256"] = "0" * 64
+        corrupt_manifest = tmp_path / "corrupt.manifest.json"
+        corrupt_manifest.write_text(json.dumps(manifest), encoding="utf-8")
+        with pytest.raises(ValueError, match="raw checksum mismatch"):
+>           validate_raw_inputs(manifest_path=corrupt_manifest)
+
+tests/test_ifce_sire_equine_benchmark.py:204: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/ifce_sire_equine_benchmark.py:487: in validate_raw_inputs
+    tables, raw_info = _checked_raw_tables(data_dir=data_dir, manifest_path=manifest_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[dict[str, list[dict[str, str]]], dict[str, Any]]:
+        """Load exact raw CSVs only after manifest, byte, header and count checks."""
+    
+        manifest = _load_manifest(manifest_path)
+        if manifest.get("license") != SOURCE_LICENSE:
+            raise ValueError("IFCE/SIRE manifest licence does not match the pinned source licence")
+        entries = _manifest_entries(manifest)
+        tables: dict[str, list[dict[str, str]]] = {}
+        files: dict[str, dict[str, Any]] = {}
+        for spec in RAW_TABLE_SPECS:
+            path = _release_dir(data_dir) / spec.filename
+            relative_path = _data_relative(path, data_dir)
+            entry = entries.get(relative_path)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative_path}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative_path}")
+            if entry.get("source_url") != spec.source_url:
+                raise ValueError(f"manifest source_url mismatch for {relative_path}")
+            if entry.get("landing_page") != spec.landing_page:
+                raise ValueError(f"manifest landing_page mismatch for {relative_path}")
+            if entry.get("source_encoding") != SOURCE_ENCODING:
+                raise ValueError(f"manifest source_encoding mismatch for {relative_path}")
+            if entry.get("raw_data_rows") != spec.expected_rows:
+                raise ValueError(f"manifest raw_data_rows mismatch for {relative_path}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held IFCE/SIRE source artefact is missing: {path}; download the "
+                    "exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held IFCE/SIRE source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv; download the exact manifest release before building the benchmark
+
+berm/data/ifce_sire_equine_benchmark.py:366: FileNotFoundError
+________________ TestManifests.test_every_manifest_file_exists _________________
+
+self = <tests.test_provenance.TestManifests object at 0x113d51450>
+
+    def test_every_manifest_file_exists(self):
+        missing = [
+            f["path"] for m in manifests() for f in m["files"]
+            if not (DATA / f["path"]).exists()
+        ]
+>       assert not missing, f"manifest lists files that are absent: {missing}"
+E       AssertionError: manifest lists files that are absent: ['raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0000000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0100000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0200000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0300000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0500000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0600000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0700000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0800000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0900000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1000000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1100000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1200000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1300000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1400000.json', 'raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv', 'raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv', 'raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv', 'raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt', 'raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv', 'raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv', 'raw/equine/ifce_sire_2026-08-19/juments_saillies.csv', 'raw/equine/ifce_sire_2026-08-19/naissances.csv', 'raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv', 'raw/pollinator_hub/mustb_2026-08-19/must-b.zip', 'raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv', 'raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv', 'raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json', 'raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json', 'raw/wb_tfr.json', 'raw/wb_mobile.json', 'raw/wb_internet.json', 'raw/wb_broadband.json', 'raw/wb_urban.json', 'raw/world_bank/wb_global_2026-08-19/tfr.json', 'raw/world_bank/wb_global_2026-08-19/population.json', 'raw/world_bank/wb_global_2026-08-19/urban_pct.json', 'raw/world_bank/wb_global_2026-08-19/mobile_per_100.json', 'raw/world_bank/wb_global_2026-08-19/broadband_per_100.json', 'raw/world_bank/wb_global_2026-08-19/internet_pct.json', 'raw/world_bank/wb_global_2026-08-19/gdp_ppp_per_capita.json', 'raw/world_bank/wb_global_2026-08-19/contraception_pct.json', 'raw/WPP2024_Fertility_by_Age5.csv.gz', 'raw/WPP2024_Demographic_Indicators_Medium.csv.gz']
+E       assert not ['raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_...s_2026-08-19/records_offset_0300000.json', 'raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json', ...]
+
+tests/test_provenance.py:134: AssertionError
+_ TestHeldVersusClaimed.test_sources_marked_open_with_a_filename_are_actually_on_disk _
+
+self = <tests.test_provenance.TestHeldVersusClaimed object at 0x113d51590>
+
+    def test_sources_marked_open_with_a_filename_are_actually_on_disk(self):
+        missing = []
+        for sid, r in load_source_registry().items():
+            if r.access_status != "OPEN" or not r.original_filename:
+                continue
+            hits = list(DATA.rglob(r.original_filename))
+            if not hits:
+                missing.append((sid, r.original_filename))
+>       assert not missing, f"registry claims files we do not have: {missing}"
+E       AssertionError: registry claims files we do not have: [('WB_SP_DYN_TFRT_IN', 'wb_tfr.json'), ('WB_IT_CEL_SETS_P2', 'wb_mobile.json'), ('WB_IT_NET_USER_ZS', 'wb_internet.json'), ('WB_IT_NET_BBND_P2', 'wb_broadband.json'), ('WB_SP_URB_TOTL_IN_ZS', 'wb_urban.json'), ('WB_SP_POP_TOTL', 'population.json'), ('WB_NY_GDP_PCAP_PP_CD', 'gdp_ppp_per_capita.json'), ('WB_SP_DYN_CONU_ZS', 'contraception_pct.json'), ('UN_WPP_2024_ASFR', 'WPP2024_Fertility_by_Age5.csv.gz'), ('UN_WPP_2024_TFR', 'WPP2024_Demographic_Indicators_Medium.csv.gz'), ('EUPH_MUSTB_2019_2020', 'must-b.zip'), ('FERNANDEZ_LOPEZ_2022_BOAR_BENCHMARK', 'sperm_data.csv'), ('DEFRA_FANGR_BREED_INVENTORY', 'fangr_timeseries_20260514.csv'), ('IFCE_SIRE_EQUINE_BREEDING_PANEL', 'juments_saillies.csv'), ('WPR_TESTOSTERONE_COUNTRY_COMPILATION_2026', 'testosterone_by_country.csv'), ('OWID_EMBER_ELECTRICITY_DEMAND_PER_CAPITA', 'owid_per_capita_electricity_demand.csv'), ('OWID_EMBER_ELECTRICITY_DEMAND_PER_CAPITA_METADATA', 'owid_per_capita_electricity_demand.metadata.json'), ('WB_SH_STA_BASS_ZS', 'wb_basic_sanitation_2018_2023.json')]
+E       assert not [('WB_SP_DYN_TFRT_IN', 'wb_tfr.json'), ('WB_IT_CEL_SETS_P2', 'wb_mobile.json'), ('WB_IT_NET_USER_ZS', 'wb_internet.jso..._BBND_P2', 'wb_broadband.json'), ('WB_SP_URB_TOTL_IN_ZS', 'wb_urban.json'), ('WB_SP_POP_TOTL', 'population.json'), ...]
+
+tests/test_provenance.py:184: AssertionError
+_________ test_raw_release_is_manifest_locked_with_expected_dimensions _________
+
+    def test_raw_release_is_manifest_locked_with_expected_dimensions():
+>       result = validate_raw_inputs()
+                 ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_seminology_benchmark.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/seminology_benchmark.py:482: in validate_raw_inputs
+    fertility_rows, sperm_rows, raw_info = _checked_raw_tables(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any]]:
+        """Load exact raw CSVs only after every manifest check has passed."""
+    
+        manifest = _load_manifest(manifest_path)
+        entries = _manifest_entries(manifest)
+        release_dir = _release_dir(data_dir)
+        selected: dict[str, dict[str, Any]] = {}
+        for filename, expected_header in (
+            (FERTILITY_FILENAME, RAW_FERTILITY_HEADER),
+            (SPERM_FILENAME, RAW_SPERM_HEADER),
+        ):
+            path = release_dir / filename
+            relative = _data_relative(path, data_dir)
+            entry = entries.get(relative)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held Fernández-López source artefact is missing: {path}; "
+                    "download the exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held Fernández-López source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv; download the exact manifest release before building the benchmark
+
+berm/data/seminology_benchmark.py:330: FileNotFoundError
+_____ test_events_preserve_direct_observations_and_refuse_sentinel_status ______
+
+    def test_events_preserve_direct_observations_and_refuse_sentinel_status():
+>       rows = normalize_insemination_events()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_seminology_benchmark.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/seminology_benchmark.py:603: in normalize_insemination_events
+    fertility_rows, sperm_rows, raw_info = _checked_raw_tables(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any]]:
+        """Load exact raw CSVs only after every manifest check has passed."""
+    
+        manifest = _load_manifest(manifest_path)
+        entries = _manifest_entries(manifest)
+        release_dir = _release_dir(data_dir)
+        selected: dict[str, dict[str, Any]] = {}
+        for filename, expected_header in (
+            (FERTILITY_FILENAME, RAW_FERTILITY_HEADER),
+            (SPERM_FILENAME, RAW_SPERM_HEADER),
+        ):
+            path = release_dir / filename
+            relative = _data_relative(path, data_dir)
+            entry = entries.get(relative)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held Fernández-López source artefact is missing: {path}; "
+                    "download the exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held Fernández-López source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv; download the exact manifest release before building the benchmark
+
+berm/data/seminology_benchmark.py:330: FileNotFoundError
+___ test_ejaculate_summary_retains_nonmotile_cells_and_unmatched_ejaculates ____
+
+    def test_ejaculate_summary_retains_nonmotile_cells_and_unmatched_ejaculates():
+>       rows = summarize_ejaculates()
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_seminology_benchmark.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+berm/data/seminology_benchmark.py:747: in summarize_ejaculates
+    fertility_rows, sperm_rows, raw_info = _checked_raw_tables(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _checked_raw_tables(
+        *,
+        data_dir: Path,
+        manifest_path: Path,
+    ) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any]]:
+        """Load exact raw CSVs only after every manifest check has passed."""
+    
+        manifest = _load_manifest(manifest_path)
+        entries = _manifest_entries(manifest)
+        release_dir = _release_dir(data_dir)
+        selected: dict[str, dict[str, Any]] = {}
+        for filename, expected_header in (
+            (FERTILITY_FILENAME, RAW_FERTILITY_HEADER),
+            (SPERM_FILENAME, RAW_SPERM_HEADER),
+        ):
+            path = release_dir / filename
+            relative = _data_relative(path, data_dir)
+            entry = entries.get(relative)
+            if entry is None:
+                raise ValueError(f"manifest has no entry for {relative}")
+            if entry.get("source_id") != SOURCE_ID:
+                raise ValueError(f"manifest source_id mismatch for {relative}")
+            if not path.exists():
+>               raise FileNotFoundError(
+                    f"held Fernández-López source artefact is missing: {path}; "
+                    "download the exact manifest release before building the benchmark"
+                )
+E               FileNotFoundError: held Fernández-López source artefact is missing: /Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv; download the exact manifest release before building the benchmark
+
+berm/data/seminology_benchmark.py:330: FileNotFoundError
+_____ test_build_and_write_are_deterministic_preserve_raw_and_fail_closed ______
+
+tmp_path = PosixPath('/private/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/pytest-of-ottojuote/pytest-103/test_build_and_write_are_deter1')
+
+    def test_build_and_write_are_deterministic_preserve_raw_and_fail_closed(tmp_path):
+        raw_paths = [RAW_DIR / FERTILITY_FILENAME, RAW_DIR / SPERM_FILENAME]
+>       before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in raw_paths}
+                                       ^^^^^^^^^^^^^^^^^
+
+tests/test_seminology_benchmark.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/ottojuote/.berm-navigation-repair-20260908/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+------ generated xml file: /tmp/berm-main-functional-model-2026-09-08.xml ------
+=========================== short test summary info ============================
+FAILED tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_raw_loaders_remain_readable
+FAILED tests/test_csli.py::TestCurrentSourcesAreBlocked::test_bare_current_sources_cannot_produce_lag_weights
+FAILED tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_cross_species_and_invariance_are_blocked
+FAILED tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_common_shock_and_prospective_paths_are_retired
+FAILED tests/test_evidence_constrained_hindcast.py::test_historical_asfr_pattern_is_evaluated_only_after_the_upstream_specification
+FAILED tests/test_external_exposure.py::test_known_country_includes_existing_military_and_broadcast_layers
+FAILED tests/test_external_exposure.py::test_unknown_country_is_graceful_and_reports_unavailable_inputs
+FAILED tests/test_falsification_v19_1.py::TestT1LedDID::test_runs_without_error
+FAILED tests/test_falsification_v19_1.py::TestT1LedDID::test_uses_all_eu_countries
+FAILED tests/test_falsification_v19_1.py::TestT1LedDID::test_uses_control_countries
+FAILED tests/test_falsification_v19_1.py::TestT1LedDID::test_did_is_numeric
+FAILED tests/test_falsification_v19_1.py::TestT1LedDID::test_falsified_is_boolean
+FAILED tests/test_falsification_v19_1.py::TestRunAll::test_run_all_returns_summary
+FAILED tests/test_falsification_v19_1.py::TestRunAll::test_pending_tests_listed
+FAILED tests/test_fieldstate_asfr_v2.py::test_wpp_facade_uses_observed_reference_asfr_without_v16_exposure_curve
+FAILED tests/test_fieldstate_cohort_signature.py::test_processed_panel_reproduces_descriptive_all_country_signature
+FAILED tests/test_ifce_sire_equine_benchmark.py::test_raw_release_is_manifest_locked_and_has_expected_dimensions
+FAILED tests/test_ifce_sire_equine_benchmark.py::test_panel_preserves_source_fields_and_keeps_metrics_unjoined
+FAILED tests/test_ifce_sire_equine_benchmark.py::test_build_and_write_are_deterministic_and_fail_closed
+FAILED tests/test_ifce_sire_equine_benchmark.py::test_corrupt_manifest_checksum_is_rejected_before_normalization
+FAILED tests/test_provenance.py::TestManifests::test_every_manifest_file_exists
+FAILED tests/test_provenance.py::TestHeldVersusClaimed::test_sources_marked_open_with_a_filename_are_actually_on_disk
+FAILED tests/test_seminology_benchmark.py::test_raw_release_is_manifest_locked_with_expected_dimensions
+FAILED tests/test_seminology_benchmark.py::test_events_preserve_direct_observations_and_refuse_sentinel_status
+FAILED tests/test_seminology_benchmark.py::test_ejaculate_summary_retains_nonmotile_cells_and_unmatched_ejaculates
+FAILED tests/test_seminology_benchmark.py::test_build_and_write_are_deterministic_preserve_raw_and_fail_closed
+26 failed, 2020 passed, 74 skipped, 2 deselected in 64.79s (0:01:04)
+
+
+Retry — exact 26 failed + 74 skipped node IDs after byte-exact input provisioning
+
+Retrying exactly 100 previously failed/skipped node IDs
+........................................................................ [ 72%]
+............................                                             [100%]
+--------- generated xml file: /tmp/berm-main-data-retry-2026-09-08.xml ---------
+100 passed in 68.53s (0:01:08)
+
+
+Final full non-slow run — all required local inputs available
+
+........................................................................ [  3%]
+........................................................................ [  6%]
+........................................................................ [ 10%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 20%]
+........................................................................ [ 23%]
+........................................................................ [ 27%]
+........................................................................ [ 30%]
+........................................................................ [ 33%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 44%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 54%]
+........................................................................ [ 57%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 71%]
+........................................................................ [ 74%]
+........................................................................ [ 78%]
+........................................................................ [ 81%]
+........................................................................ [ 84%]
+........................................................................ [ 88%]
+........................................................................ [ 91%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+................................                                         [100%]
+---- generated xml file: /tmp/berm-main-functional-complete-2026-09-08.xml -----
+2120 passed, 2 deselected in 136.82s (0:02:16)
+
+
+Exporter CLI checks: export_intervention_profiles.py --check; export_interventions.py --check; export_conditional_scenarios.py --check. All returned exit code 0. Conditional scenario and predict CLI: 8/8 complete JSON outputs equal public scenario results.

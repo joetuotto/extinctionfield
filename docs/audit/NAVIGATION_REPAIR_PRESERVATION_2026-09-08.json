@@ -1,0 +1,44 @@
+{
+  "baseline": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+  "checks": [
+    {
+      "check": "all main claims unchanged",
+      "count": 90,
+      "passed": true
+    },
+    {
+      "check": "all main evidence_relations unchanged",
+      "count": 170,
+      "passed": true
+    },
+    {
+      "check": "all main epistemic_assessments unchanged",
+      "count": 90,
+      "passed": true
+    },
+    {
+      "check": "all main routes unchanged",
+      "count": 4,
+      "passed": true
+    },
+    {
+      "check": "main atlas node bindings retained",
+      "count": 67,
+      "passed": true
+    },
+    {
+      "check": "main atlas edges unchanged",
+      "count": 1,
+      "passed": true
+    },
+    {
+      "check": "all main public data except merged bibliography byte-identical",
+      "count": 16,
+      "passed": true
+    },
+    {
+      "check": "tracked model, Python tests and research data unchanged",
+      "passed": true
+    }
+  ]
+}

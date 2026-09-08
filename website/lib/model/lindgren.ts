@@ -7,7 +7,10 @@
  * condition and the Bianchi identity. Bianchi is necessary but cannot by
  * itself produce the sourced equation div(F)=J.
  *
- * The geometric coefficient chi_geo is exposed through the legacy `chi` API.
+ * The same bounded shape is a derived normalized rank-one inverse-metric
+ * coordinate; its use here remains a legacy proxy weighting, not a biological
+ * response. The geometric coefficient chi_geo is exposed through the legacy
+ * `chi` API.
  * Its applied status is [L1 + L0/L2 reduction]: the Lorentz-signature
  * directional derivative is L1, while selecting q=|Abar| requires an explicit
  * dimensionless, collinear Lorentz-to-Euclidean spatial/scalar reduction.

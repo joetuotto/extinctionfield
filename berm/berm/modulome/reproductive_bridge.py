@@ -1,7 +1,8 @@
 """Conditional composition of measured/supplied cell mechanisms and organ gates.
 
 No electromagnetic dose is inferred here. A caller registers a LOCAL BIOLOGICAL
-DRIVER and every transfer coefficient. The geometry-to-driver L2 operator remains
+DRIVER and every transfer coefficient. A conditional formal response operator
+exists; its physical scale and tissue-specific geometry-to-driver map remain
 open. The new composition is STRUCTURAL_ONLY even when a component is calibrated.
 It does not modify the archived v17 coefficients or forecasts.
 """

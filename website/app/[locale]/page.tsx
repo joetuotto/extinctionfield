@@ -88,6 +88,7 @@ const COPY_EN = {
   ctaEvidence: "Explore the evidence",
   ctaModel: "See the mechanism",
   ctaCivilization: "Read the civilization essay",
+  ctaEpistapege: "Epistapege: why the problem remains unseen",
 
   falsTitle: "FALSIFICATION STATUS",
   falsRan: "ran",
@@ -136,6 +137,7 @@ const COPY_FI = {
   ctaEvidence: "Tutustu näyttöön",
   ctaModel: "Katso mekanismi",
   ctaCivilization: "Lue sivilisaatioessee",
+  ctaEpistapege: "Epistapege: miksi ongelma jää havaitsematta",
 
   falsTitle: "FALSIFIKAATIOTILANNE",
   falsRan: "ajettu",
@@ -313,6 +315,7 @@ export default async function Home({
             { href: `${prefix}/evidence`, label: d.ctaEvidence },
             { href: `${prefix}/model`, label: d.ctaModel },
             { href: `${prefix}/civilization`, label: d.ctaCivilization },
+            { href: `${prefix}/civilization/epistapege`, label: d.ctaEpistapege },
           ].map((link) => (
             <Link
               key={link.href}
@@ -334,7 +337,7 @@ export default async function Home({
               <h2 className="editorial-kicker text-accent">{d.falsTitle}</h2>
             </div>
             <Link
-              href={`${prefix}/mathematics#falsification`}
+              href={`${prefix}/model/math#falsification`}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
             >
               {d.falsCta} <ArrowRight size={14} />

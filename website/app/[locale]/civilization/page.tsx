@@ -2,7 +2,7 @@ import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinati
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio } from "lucide-react";
+import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio, BrainCircuit } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { ModelReadingPath } from "@/components/ModelReadingPath";
 import { CivilizationReadingPath, getCivilizationReadingCopy } from "@/components/CivilizationReadingPath";
@@ -18,12 +18,17 @@ const COPY = {
       "This section derives that proposed propagation inside BERM and identifies the empirical links required to test it, from hormone–behaviour experiments to population-level distributions and civilizational outcomes.",
     readingGuide: "Reading path",
     readingGuideDesc:
-      "The argument builds in six stages. Each page is self-contained but the causal chain runs left to right.",
+      "The argument builds in seven stages. Each page is self-contained but the causal chain runs left to right.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source of the disease",
     pathopegeDesc:
       "The root mechanism: EMF disrupts cryptochrome/melatonin signalling and voltage-gated calcium channels, triggering sex-specific hormonal cascades. The Triple Lock in men. The cortisol-oxytocin-ovarian triad in women. The shared pathway, the diverging consequences.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — source of structural non-detection",
+    epistapegeDesc:
+      "The observability branch: a latent biological state shifts behavioural weighting, an accessible narrative is recorded in its place, and institutions reuse that downstream report as an initiating variable. Component evidence constrains the transitions; the complete route remains an open BERM composition.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — the pathological city",
@@ -56,8 +61,8 @@ const COPY = {
     predictionsLink: "See all predictions",
     readMore: "Read",
     epistemicTitle: "Epistemic note",
-    epistemicBody: "This is a BERM derivation, not a FieldState result. Peer-reviewed findings constrain several separate hormone–behaviour links, but the geometry-to-observable L2 bridge and multiple population-scale effect mappings remain open. The full multiscale chain is therefore a model hypothesis, not an established mechanism.",
-    epistemicBody2: "Within the reductionist hypothesis, a shift in the population distribution of biological states may generate a shift in aggregate political behaviour without claiming that every individual changes identically. The inference is one-way and distributional: a group-level political outcome alone cannot be used to diagnose an individual’s hormone state.",
+    epistemicBody: "This is a BERM derivation, not a FieldState result. BERM derives a conditional formal L2 response operator under stated coupling assumptions, but its tissue kernel, sign, lag and calibration — and multiple population-scale mappings — remain open. The full multiscale chain is therefore a model hypothesis, not an established mechanism.",
+    epistemicBody2: "The biological state is not reduced to serum total-hormone concentration: BERM separately tracks production, SHBG/albumin availability, free hormone, AR/ZIP9 occupancy and post-receptor gain as androgen-effective capacity. Within the reductionist hypothesis, a shift in the population distribution of such states may shift aggregate political behaviour without every individual changing identically. The inference is one-way and distributional: a group outcome alone cannot diagnose an individual’s hormone state.",
   },
   fi: {
     title: "Sivilisaatio",
@@ -69,12 +74,17 @@ const COPY = {
       "Tämä osio johtaa ehdotetun etenemisen BERM:n sisällä ja nimeää sen testaamiseen tarvittavat empiiriset lenkit hormonien ja käyttäytymisen kokeista populaatiojakaumiin ja sivilisaatiotuloksiin.",
     readingGuide: "Lukupolku",
     readingGuideDesc:
-      "Argumentti rakentuu kuudessa vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
+      "Argumentti rakentuu seitsemässä vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — sairauden lähde",
     pathopegeDesc:
       "Juurimekanismi: EMF häiritsee kryptokromi/melatoniinisignalointia ja jänniteohjattuja kalsiumkanavia ja käynnistää sukupuolispesifiset hormonaaliset kaskaadit. Kolmoislukon mekanismi miehillä. Kortisoli-oksitosiini-ovariaalitriade naisilla. Yhteinen reitti, eriävät seuraukset.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — rakenteellisen havaitsemattomuuden lähde",
+    epistapegeDesc:
+      "Havaittavuushaara: latentti biologinen tila siirtää käyttäytymisen painotusta, sen tilalle kirjataan saavutettava narratiivi ja instituutiot käyttävät tätä alavirran raporttia alkavana muuttujana. Komponenttinäyttö rajaa siirtymiä; koko reitti on avoin BERM-kompositio.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — patologinen kaupunki",
@@ -107,8 +117,8 @@ const COPY = {
     predictionsLink: "Katso kaikki ennusteet",
     readMore: "Lue",
     epistemicTitle: "Episteeminen huomautus",
-    epistemicBody: "Tämä on BERM-johdanto, ei FieldState-tulos. Vertaisarvioitu näyttö rajaa useita erillisiä hormoni–käyttäytymislenkkejä, mutta geometriasta havaittavaan suureeseen johtava L2-silta ja useat populaatiotason vaikutuskuvaukset ovat avoimia. Koko monitasoinen ketju on siksi mallihypoteesi, ei todennettu mekanismi.",
-    epistemicBody2: "Reduktionistisen hypoteesin sisällä biologisten tilojen populaatiojakauman siirtymä voi tuottaa muutoksen poliittisen käyttäytymisen aggregaattijakaumaan ilman oletusta, että jokainen yksilö muuttuu samoin. Päättely on yksisuuntainen ja jakaumatasoinen: ryhmätason poliittisesta tuloksesta ei yksin voi diagnosoida yksilön hormonitilaa.",
+    epistemicBody: "Tämä on BERM-johdanto, ei FieldState-tulos. BERM johtaa ehdollisen formaalin L2-vasteoperaattorin lausutuilla kytkentäoletuksilla, mutta sen kudosydin, etumerkki, viive ja kalibrointi sekä useat populaatiotason kuvaukset ovat avoimia. Koko monitasoinen ketju on siksi mallihypoteesi, ei todennettu mekanismi.",
+    epistemicBody2: "Biologista tilaa ei palauteta pelkkään seerumin kokonaishormonipitoisuuteen: BERM erottaa tuotannon, SHBG-/albumiinisaatavuuden, vapaan hormonin, AR/ZIP9-miehityksen ja reseptorin jälkeisen vahvistuksen androgeenivaikutuksen kapasiteetiksi. Reduktionistisen hypoteesin sisällä tällaisten tilojen populaatiojakauman siirtymä voi muuttaa poliittisen käyttäytymisen aggregaattijakaumaa ilman, että jokainen yksilö muuttuu samoin. Päättely on yksisuuntainen: ryhmätulos ei yksin diagnosoi yksilön hormonitilaa.",
   },
   ja: {
     title: "文明",
@@ -120,12 +130,17 @@ const COPY = {
       "本節はBERM内でその伝播を導出し、ホルモン–行動実験から集団分布と文明結果まで、検証に必要なリンクを示します。",
     readingGuide: "読書経路",
     readingGuideDesc:
-      "議論は6段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
+      "議論は7段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
 
     pathopege: "パトペゲ",
     pathopegeGreek: "pathos + pege — 病の源",
     pathopegeDesc:
       "根本メカニズム：EMFが電位依存性カルシウムチャネルを乱し、性特異的なホルモンカスケードを引き起こす。",
+
+    epistapege: "エピスタペゲ",
+    epistapegeGreek: "episteme + pege — 構造的非検出の源",
+    epistapegeDesc:
+      "潜在的な生物状態から行動の重み付け、アクセス可能な物語、制度的な説明変数の再利用へ進む観測可能性の枝。完全な経路は未検証のBERM構成である。",
 
     patopolis: "パトポリス",
     patopolisGreek: "pathos + polis — 病理的都市",
@@ -158,8 +173,8 @@ const COPY = {
     predictionsLink: "すべての予測を見る",
     readMore: "読む",
     epistemicTitle: "認識論的注記",
-    epistemicBody: "これはBERMの導出であり、FieldStateの結果ではありません。複数のホルモン–行動リンクには研究上の制約がありますが、幾何学から観測量へのL2ブリッジと複数の集団効果写像は未解決です。多尺度連鎖全体はモデル仮説であり、確立した機構ではありません。",
-    epistemicBody2: "仮説内では生物状態の集団分布変化から政治行動の集約分布変化を導けますが、全個人が同じように変わるとは仮定しません。逆に、集団政治結果だけから個人のホルモン状態を診断することはできません。",
+    epistemicBody: "これはBERMの導出であり、FieldStateの結果ではありません。BERMは明示した結合仮定の下で条件付き形式L2演算子を導出しますが、組織カーネル、符号、遅延、校正および複数の集団効果写像は未解決です。多尺度連鎖全体はモデル仮説であり、確立した機構ではありません。",
+    epistemicBody2: "生物状態は血清総ホルモンだけではなく、産生、SHBG/アルブミン利用可能性、遊離ホルモン、AR/ZIP9占有、受容体後ゲインを分離した有効容量として扱います。その集団分布から政治行動の集約分布変化を導けますが、集団結果だけから個人のホルモン状態を診断することはできません。",
   },
   fr: {
     title: "Civilisation",
@@ -171,12 +186,17 @@ const COPY = {
       "Cette section dérive cette propagation proposée dans BERM et identifie les liens empiriques nécessaires pour la tester, des expériences hormone–comportement aux distributions populationnelles et aux résultats civilisationnels.",
     readingGuide: "Parcours de lecture",
     readingGuideDesc:
-      "L'argument se construit en six etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
+      "L'argument se construit en sept etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source de la maladie",
     pathopegeDesc:
       "Le mecanisme racine : les CEM perturbent les canaux calciques voltage-dependants, declenchant des cascades hormonales specifiques au sexe.",
+
+    epistapege: "Epistapege",
+    epistapegeGreek: "episteme + pege — source de non-détection structurelle",
+    epistapegeDesc:
+      "La branche d’observabilité reliant un état biologique latent, une pondération comportementale, un récit accessible et sa réutilisation institutionnelle. La route complète reste une composition BERM ouverte.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — la cite pathologique",
@@ -209,8 +229,8 @@ const COPY = {
     predictionsLink: "Voir toutes les predictions",
     readMore: "Lire",
     epistemicTitle: "Note épistémique",
-    epistemicBody: "Il s’agit d’une dérivation BERM, pas d’un résultat FieldState. Plusieurs liens hormone–comportement sont contraints par la littérature, mais le pont L2 géométrie–observable et plusieurs mappages d’effets populationnels restent ouverts. La chaîne multi-échelle complète est une hypothèse du modèle, non un mécanisme établi.",
-    epistemicBody2: "Dans l’hypothèse réductionniste, un déplacement de la distribution populationnelle des états biologiques peut produire un déplacement du comportement politique agrégé sans supposer que chaque individu change pareillement. Le résultat politique du groupe ne permet pas, à lui seul, de diagnostiquer l’état hormonal d’un individu.",
+    epistemicBody: "Il s’agit d’une dérivation BERM, pas d’un résultat FieldState. BERM dérive un opérateur L2 formel conditionnel sous des hypothèses de couplage explicites, mais le noyau tissulaire, le signe, le délai, la calibration et plusieurs mappages populationnels restent ouverts. La chaîne complète est une hypothèse du modèle, non un mécanisme établi.",
+    epistemicBody2: "L’état biologique ne se réduit pas à l’hormone totale sérique : BERM sépare production, disponibilité SHBG/albumine, hormone libre, occupation AR/ZIP9 et gain post-récepteur en capacité androgénique effective. La distribution de ces états peut déplacer le comportement politique agrégé sans que chaque individu change pareillement ; un résultat de groupe ne diagnostique pas l’état hormonal individuel.",
   },
   ko: {
     title: "문명",
@@ -222,12 +242,17 @@ const COPY = {
       "이 절은 BERM 안에서 제안된 전파를 도출하고 호르몬–행동 실험부터 집단 분포와 문명 결과까지 검증에 필요한 연결을 제시합니다.",
     readingGuide: "독서 경로",
     readingGuideDesc:
-      "논증은 6단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
+      "논증은 7단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
 
     pathopege: "파토페게",
     pathopegeGreek: "pathos + pege — 질병의 근원",
     pathopegeDesc:
       "근본 메커니즘: EMF가 전압 의존성 칼슘 채널을 교란하여 성별 특이적 호르몬 캐스케이드를 유발합니다.",
+
+    epistapege: "에피스타페게",
+    epistapegeGreek: "episteme + pege — 구조적 비탐지의 원천",
+    epistapegeDesc:
+      "잠재 생물학적 상태에서 행동 가중치, 접근 가능한 서사, 제도적 설명 변수 재사용으로 이어지는 관측 가능성의 분기. 전체 경로는 열린 BERM 구성이다.",
 
     patopolis: "파토폴리스",
     patopolisGreek: "pathos + polis — 병리적 도시",
@@ -260,10 +285,25 @@ const COPY = {
     predictionsLink: "모든 예측 보기",
     readMore: "읽기",
     epistemicTitle: "인식론적 주석",
-    epistemicBody: "이는 FieldState 결과가 아니라 BERM 도출입니다. 여러 호르몬–행동 연결은 연구로 제약되지만 기하학–관측량 L2 브리지와 여러 집단 효과 매핑은 열려 있습니다. 전체 다중 규모 사슬은 모델 가설이지 확립된 메커니즘이 아닙니다.",
-    epistemicBody2: "환원주의 가설 안에서 생물학적 상태의 집단 분포 이동은 모든 개인이 동일하게 변한다고 가정하지 않고도 집계 정치 행동의 이동을 만들 수 있습니다. 반대로 집단 정치 결과만으로 개인의 호르몬 상태를 진단할 수 없습니다.",
+    epistemicBody: "이는 FieldState 결과가 아니라 BERM 도출입니다. BERM은 명시적 결합 가정 아래 조건부 형식 L2 연산자를 도출하지만 조직 커널, 부호, 지연, 보정과 여러 집단 효과 매핑은 미해결입니다. 전체 다중 규모 사슬은 모델 가설이지 확립된 메커니즘이 아닙니다.",
+    epistemicBody2: "생물학적 상태는 혈청 총호르몬만으로 환원하지 않고 생산, SHBG/알부민 가용성, 유리 호르몬, AR/ZIP9 점유, 수용체 후 이득을 안드로겐 유효 용량으로 분리합니다. 이런 상태의 집단 분포는 개인 모두가 똑같이 변하지 않아도 집계 정치 행동을 이동시킬 수 있지만, 집단 결과만으로 개인 호르몬 상태를 진단할 수 없습니다.",
   },
 };
+
+const EPISTAPEGE_SUMMARY_COPY = {
+  en: {
+    title: "Epistapege: the observation layer",
+    text: "BERM adds an epistemic transition to the civilization branch. A biological state can alter behaviour before it is available to introspection; the resulting explanation is then measured as an independent cultural or economic variable. Repetition can make that report distribution precise without recovering its omitted upstream cause. This proposed transition is Epistapege [L*].",
+    sequence: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    link: "Read the composed derivation and rejection tests",
+  },
+  fi: {
+    title: "Epistapege: havaintokerros",
+    text: "BERM lisää sivilisaatiohaaraan episteemisen siirtymän. Biologinen tila voi muuttaa käyttäytymistä ennen kuin tila on introspektiivisesti saavutettavissa; syntyvä selitys mitataan tämän jälkeen itsenäisenä kulttuurisena tai taloudellisena muuttujana. Toisto voi tarkentaa raporttijakaumaa palauttamatta sen pois jätettyä edeltävää syytä. Tämä ehdotettu siirtymä on Epistapege [L*].",
+    sequence: "Pathopege → Epistapege → Pathorea → Pathostasis → Patopoliteia",
+    link: "Lue koostettu johto ja hylkäystestit",
+  },
+} as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -303,6 +343,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const PAGES = [
   { key: "pathopege", href: "pathopege", icon: Zap, color: "amber" },
   { key: "pathopolites", href: "pathopolites", icon: UserX, color: "rose" },
+  { key: "epistapege", href: "epistapege", icon: BrainCircuit, color: "indigo" },
   { key: "patokinesis", href: "patokinesis", icon: Radio, color: "teal" },
   { key: "patopolis", href: "patopolis", icon: Building2, color: "blue" },
   { key: "patokratia", href: "patokratia", icon: Shield, color: "red" },
@@ -316,6 +357,7 @@ const COLORS: Record<string, { border: string; bg: string; text: string; icon: s
   purple: { border: "border-purple-500/30", bg: "bg-purple-500/5", text: "text-purple-500", icon: "text-purple-500" },
   rose: { border: "border-rose-500/30", bg: "bg-rose-500/5", text: "text-rose-500", icon: "text-rose-500" },
   teal: { border: "border-teal-500/30", bg: "bg-teal-500/5", text: "text-teal-500", icon: "text-teal-500" },
+  indigo: { border: "border-indigo-500/30", bg: "bg-indigo-500/5", text: "text-indigo-500", icon: "text-indigo-500" },
 };
 
 export default async function CivilizationPage({
@@ -325,6 +367,7 @@ export default async function CivilizationPage({
 }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const epistapege = pickCopy(EPISTAPEGE_SUMMARY_COPY, locale);
   const reading = getCivilizationReadingCopy(locale);
 
   return (
@@ -370,6 +413,17 @@ export default async function CivilizationPage({
 
         <CivilizationReadingPath locale={locale} />
         <BiologicalCoordinationContext locale={locale} context="civilization" />
+
+        <section className="mb-16 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-6">
+          <h2 className="text-lg font-semibold">{epistapege.title}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{epistapege.text}</p>
+          <p className="mt-4 overflow-x-auto rounded-lg border border-card-border bg-background p-4 text-center font-mono-num text-xs font-semibold tracking-wide">
+            {epistapege.sequence}
+          </p>
+          <Link href={`/${locale}/civilization/epistapege#epistapege`} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+            {epistapege.link} →
+          </Link>
+        </section>
 
         {/* Reading path */}
         <section className="mb-20">

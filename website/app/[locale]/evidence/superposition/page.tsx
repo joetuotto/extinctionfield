@@ -14,7 +14,7 @@ const COPY = {
     cautionText: "The superposition violation evidence comes primarily from ELF combination studies. Extension to RF combinations and to the geometric interpretation is BERM's synthesis (M-level), not established consensus.",
 
     s1Title: "The principle",
-    s1Lead: "In standard electromagnetism, fields obey superposition. Lindgren's geodesic-deviation chain gives the signed directional response and the χ(q) formula at L1. Selecting q=|Ā| through a dimensionless Lorentz-to-Euclidean spatial/scalar projection is L2, and identifying a measured biological background with q remains open at L0→L2; geometry alone does not establish a non-additive biological response:",
+    s1Lead: "In standard electromagnetism, fields obey superposition. Lindgren's ansatz changes the geometric description. Its quadratic term produces exact mixing terms, and a response-operator form follows conditionally under explicit matter–metric and linear-response assumptions. Biological detectability and non-additive endpoint response still depend on an uncalibrated tissue kernel:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "This means the biological effect of two simultaneous EMF sources cannot be predicted from their individual effects alone. The interaction term — the part that superposition misses — is often larger than either individual effect.",
 
@@ -60,7 +60,7 @@ const COPY = {
     cautionText: "Superpositiorikkomuksen näyttö tulee pääasiassa ELF-yhdistelmätutkimuksista. Laajennus RF-yhdistelmiin ja geometriseen tulkintaan on BERMin synteesi (M-taso), ei vakiintunut konsensus.",
 
     s1Title: "Periaate",
-    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota. Lindgrenin geodeesipoikkeamaketju antaa etumerkillisen suunnatun vasteen ja χ(q)-kaavan L1-tasolla. Koordinaatin q=|Ā| valinta dimensiottomalla Lorentz→Euklidisella spatiaalinen/skalaari-projektiolla on L2, ja mitatun biologisen taustan samaistaminen q:hun on avoin L0→L2-askel; geometria yksin ei osoita ei-additiivista biologista vastetta:",
+    s1Lead: "Standardisähkömagnetismissa kentät noudattavat superpositiota. Lindgrenin ansatz muuttaa geometrista kuvausta: sen neliöllinen termi tuottaa täsmälliset sekoitustermit, ja eksplisiittisillä aine–metriikka- ja lineaarivasteoletuksilla seuraa ehdollinen vasteoperaattorimuoto. Biologinen havaittavuus ja päätepisteen ei-additiivisuus riippuvat silti kalibroimattomasta kudosytimestä:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Tämä tarkoittaa, että kahden samanaikaisen EMF-lähteen biologista vaikutusta ei voida ennustaa pelkästään niiden yksittäisistä vaikutuksista. Vuorovaikutustermi — osa, jonka superpositio ohittaa — on usein suurempi kuin kumpikin yksittäinen vaikutus.",
 
@@ -106,7 +106,7 @@ const COPY = {
     cautionText: "重ね合わせ破れの証拠は主にELF組み合わせ研究からのものです。RF組み合わせおよび幾何学的解釈への拡張はBERMの統合（Mレベル）であり、確立されたコンセンサスではありません。",
 
     s1Title: "原理",
-    s1Lead: "標準電磁気学では場は重ね合わせに従う。Lindgrenの測地線偏差連鎖は符号付き方向応答とχ(q)式をL1で与える。無次元Lorentz→Euclid空間・スカラー射影でq=|Ā|を選ぶ操作はL2で、測定された生物学的背景をqへ同定することは未解決L0→L2である。幾何学だけでは非加算的生物応答は確立されない：",
+    s1Lead: "標準電磁気学では場は重ね合わせに従う。Lindgrenアンザッツの二次項は厳密な混合項を生み、明示的な物質–計量・線形応答仮定から条件付き応答演算子形が得られる。生物学的検出と非加算的エンドポイントは未校正の組織カーネルに依存する：",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "これは、2つの同時EMFソースの生物学的効果を個別の効果のみから予測できないことを意味します。相互作用項 — 重ね合わせが見逃す部分 — は、個別の効果よりも大きいことが多いです。",
 
@@ -152,7 +152,7 @@ const COPY = {
     cautionText: "Les preuves de violation de superposition proviennent principalement d'études de combinaison ELF. L'extension aux combinaisons RF et à l'interprétation géométrique est la synthèse de BERM (niveau M), pas un consensus établi.",
 
     s1Title: "Le principe",
-    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition. La chaîne de déviation géodésique de Lindgren donne la réponse directionnelle signée et la formule χ(q) en L1. Choisir q=|Ā| par une projection spatiale/scalarie sans dimension de Lorentz vers Euclide est L2, et identifier un fond biologique mesuré à q reste ouvert en L0→L2 ; la géométrie seule n’établit pas une réponse biologique non additive :",
+    s1Lead: "En électromagnétisme standard, les champs obéissent à la superposition. Le terme quadratique de l'ansatz de Lindgren produit des termes de mélange exacts et une forme d'opérateur conditionnelle suit d'hypothèses explicites matière–métrique et réponse linéaire. La détection biologique et la non-additivité dépendent d'un noyau tissulaire non calibré :",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "Cela signifie que l'effet biologique de deux sources EMF simultanées ne peut pas être prédit à partir de leurs effets individuels seuls. Le terme d'interaction — la partie que la superposition manque — est souvent plus grand que chaque effet individuel.",
 
@@ -198,7 +198,7 @@ const COPY = {
     cautionText: "중첩 위반 증거는 주로 ELF 조합 연구에서 비롯됩니다. RF 조합 및 기하학적 해석으로의 확장은 BERM의 종합(M 수준)이며, 확립된 합의가 아닙니다.",
 
     s1Title: "원리",
-    s1Lead: "표준 전자기학에서 장은 중첩을 따른다. Lindgren 측지선 편차 연쇄는 부호 있는 방향 반응과 χ(q) 공식을 L1에서 준다. 무차원 Lorentz→Euclid 공간·스칼라 사영으로 q=|Ā|를 선택하는 것은 L2이고 측정된 생물학적 배경을 q와 동일시하는 것은 열린 L0→L2다. 기하학만으로 비가산 생물 반응이 확립되지는 않는다:",
+    s1Lead: "표준 전자기학에서 장은 중첩을 따른다. Lindgren 가정의 이차항은 정확한 혼합항을 만들고 명시적 물질–메트릭 및 선형반응 가정에서 조건부 반응 연산자 형태가 따른다. 생물학적 검출과 비가산 종점 반응은 미보정 조직 커널에 달려 있다:",
     s1Formula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     s1Explain: "이는 두 개의 동시 EMF 소스의 생물학적 효과를 개별 효과만으로 예측할 수 없음을 의미합니다. 상호 작용 항 — 중첩이 놓치는 부분 — 은 종종 어느 한 개별 효과보다 큽니다.",
 
