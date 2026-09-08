@@ -11,6 +11,7 @@ const COPY = {
     hint: "Select a variable to see the reasons for shared change, the part it explains and the longer causal chain that BERM identifies.",
     correlation: "Why can they change together?",
     masking: "What does this explanation leave unresolved?",
+    insufficiency: "Why this is not a complete explanation",
     contribution: "What does the BERM explanation add?",
     evidence: "Connection to the evidence",
     scope: "This analysis follows the BERM premises stated above. Each variable’s causal role, the basis for shared change and the relevant empirical evidence are presented separately.",
@@ -20,6 +21,7 @@ const COPY = {
     hint: "Valitse selittäjä: näet yhteisen muutoksen syyt, selityksen kattaman osuuden ja BERM:n avaaman pidemmän vaikutusketjun.",
     correlation: "Miksi ne voivat muuttua yhdessä?",
     masking: "Minkä tämä selitys jättää avaamatta?",
+    insufficiency: "Miksi tämä ei riitä",
     contribution: "Mitä BERM lisää selitykseen?",
     evidence: "Yhteys tutkimusnäyttöön",
     scope: "Tarkastelu seuraa yllä esitettyjä BERM-premissejä. Muuttujan rooli on erotettu yhteiskehityksen perusteesta ja sitä koskevasta tutkimusnäytöstä.",
@@ -35,6 +37,7 @@ export function ProxyExplanationsExplorer({ locale }: { locale: string }) {
   const rows = [
     [c.correlation, entry.correlation],
     [c.masking, entry.masking],
+    [c.insufficiency, entry.insufficiency],
     [c.contribution, entry.contribution],
   ];
 

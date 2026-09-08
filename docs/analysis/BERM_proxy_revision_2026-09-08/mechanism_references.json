@@ -1,0 +1,116 @@
+{
+  "references": [
+    {
+      "id": "yap2019_trpc1_mitohormesis",
+      "authors": "Yap JLY, Tai YK, Fröhlich J, Fong CHH, Yin JN, Foo ZL, Ramanan S, Beyer C, Toh SJ, Casarosa M, Bharathy N, Kala MP, Egli M, Taneja R, Lee CN, Franco-Obregón A",
+      "year": 2019,
+      "title": "Ambient and supplemental magnetic fields promote myogenesis via a TRPC1-mitochondrial axis: evidence of a magnetic mitohormetic mechanism",
+      "journal": "The FASEB Journal 33(11):12853–12872",
+      "doi": "10.1096/fj.201900057R",
+      "pmid": "31518158",
+      "pmcid": "PMC6902701",
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": [
+        "TRPC1",
+        "PEMF",
+        "myogenesis",
+        "calcium",
+        "mitochondria"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "curated_primary_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-08"
+    },
+    {
+      "id": "qin2019_ceo2_leydig",
+      "authors": "Qin F, Shen T, Cao H, Qian J, Zou D, Ye M, Pei H",
+      "year": 2019,
+      "title": "CeO2NPs relieve radiofrequency radiation, improve testosterone synthesis, and clock gene expression in Leydig cells by enhancing antioxidation",
+      "journal": "International Journal of Nanomedicine 14:4601–4611",
+      "doi": "10.2147/IJN.S206561",
+      "pmid": "31296989",
+      "pmcid": "PMC6598754",
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": [
+        "RF",
+        "Leydig cells",
+        "testosterone",
+        "cerium oxide",
+        "redox"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "curated_primary_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-08"
+    },
+    {
+      "id": "iuliis2013_correction",
+      "authors": "De Iuliis GN, Newey RJ, King BV, Aitken RJ",
+      "year": 2013,
+      "title": "Correction: Mobile Phone Radiation Induces Reactive Oxygen Species Production and DNA Damage in Human Spermatozoa In Vitro",
+      "journal": "PLoS ONE 8(3)",
+      "doi": "10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b",
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b",
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": [
+        "correction",
+        "human sperm",
+        "biological replicates"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "curated_primary_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-08",
+      "correctionOf": "iuliis2009"
+    }
+  ],
+  "existing_reference_audit": [
+    {
+      "referenceId": "pall2013_v2",
+      "finding": "Original review reports 23 blocker studies, not 26/26; response blockade does not establish universal primary sensing or the full fertility chain.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3780531/"
+    },
+    {
+      "referenceId": "yakymenko2016",
+      "finding": "93/100 counts reviewed publications reporting oxidative effects; it does not itself establish VGCC-to-Ca-to-ROS mediation or independent replication. Print year is 2016, online 2015.",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26151230/"
+    },
+    {
+      "referenceId": "iuliis2009",
+      "finding": "Correction 2013: Figures 1–5 use 3 biological replicates, not 4. Corrected Fig1D ROS fraction 28±1% exposed vs5±1% control, p=.0056. No RF-plus-pharmacological-rescue arm.",
+      "source": "https://journals.plos.org/plosone/article?id=10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b"
+    },
+    {
+      "referenceId": "adams2014",
+      "finding": "10 studies/1492 samples overall. Motility random-effects MD−8.1 percentage points,95%CI−13.1 to−3.2. Vitality−9.1pp,CI−18.4 to+0.2. Mixed in-vitro and observational designs; morphology not meta-analysed.",
+      "source": "https://doi.org/10.1016/j.envint.2014.04.015"
+    }
+  ],
+  "verification": "Primary bibliographic records verified 2026-09-08. Yap ROS/SKF/antioxidant section verified from publisher-indexed full-text excerpt; complete publisher page returned403 and PMC XML404. Qin full primary text; De Iuliis correction full primary page. No canonical bibliography edits by this agent."
+}

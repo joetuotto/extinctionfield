@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T12:06:28.116Z",
+  "generatedAt": "2026-09-08T13:19:22.820Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -120,7 +120,7 @@
     {
       "claimId": "claim.behavior.reported-reasons",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 469
+      "line": 489
     },
     {
       "claimId": "claim.behavior.reported-reasons",
@@ -964,9 +964,14 @@
       "nodeId": "mech_serca_pretreatment"
     },
     {
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "file": "components/ProxyBehaviourEvidence.tsx",
+      "line": 135
+    },
+    {
       "claimId": "claim.proxy.chemical-field-conditions",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 426
+      "line": 444
     },
     {
       "claimId": "claim.proxy.chemical-field-conditions",
@@ -979,7 +984,7 @@
     {
       "claimId": "claim.proxy.comparative-mediator-question",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 445
+      "line": 463
     },
     {
       "claimId": "claim.proxy.comparative-mediator-question",
@@ -992,7 +997,7 @@
     {
       "claimId": "claim.proxy.compensated-endpoint",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 437
+      "line": 455
     },
     {
       "claimId": "claim.proxy.compensated-endpoint",
@@ -1005,7 +1010,7 @@
     {
       "claimId": "claim.proxy.environmental-group-interpretation",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 459
+      "line": 479
     },
     {
       "claimId": "claim.proxy.environmental-group-interpretation",
@@ -1034,9 +1039,14 @@
       "nodeId": "legacy_proxy"
     },
     {
+      "claimId": "claim.proxy.mechanistic-composition",
+      "file": "components/ProxyMechanismEvidence.tsx",
+      "line": 94
+    },
+    {
       "claimId": "claim.proxy.sensory-receiver-state",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 410
+      "line": 427
     },
     {
       "claimId": "claim.proxy.sensory-receiver-state",

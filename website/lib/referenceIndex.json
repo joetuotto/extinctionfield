@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1209,
-    "linkedReferences": 541
+    "totalReferences": 1226,
+    "linkedReferences": 560
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -2751,13 +2751,13 @@
     },
     "stone2025_amish_demography": {
       "id": "stone2025_amish_demography",
-      "authors": "Stone LE, Anderson CM, Thiehoff A",
+      "authors": "Stone L, Anderson C, Thiehoff S",
       "year": 2025,
-      "title": "Amish Demography: Fertility, Mortality, and Population Growth",
+      "title": "Amish fertility in the United States: Comparative evidence from the American Community Survey and Amish population registries",
       "journal": "Demographic Research",
       "type": "epidemiological",
-      "linkStatus": "registered",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.4054/DemRes.2025.52.26"
     },
     "blackman1985_calcium_windows": {
       "id": "blackman1985_calcium_windows",
@@ -7827,7 +7827,10 @@
       "journal": "PLoS ONE",
       "type": "journal",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1371/journal.pone.0006446"
+      "externalUrl": "https://doi.org/10.1371/journal.pone.0006446",
+      "corrections": [
+        "iuliis2013_correction"
+      ]
     },
     "kurth2020": {
       "id": "kurth2020",
@@ -8274,7 +8277,7 @@
     },
     "li2010_sperm_mf": {
       "id": "li2010_sperm_mf",
-      "authors": "Li DK",
+      "authors": "Li DK, Yan B, Li Z, Gao E, Miao M, Gong D, Weng X, Ferber JR, Yuan W",
       "year": 2010,
       "title": "Exposure to magnetic fields and the risk of poor sperm quality",
       "journal": "Reproductive Toxicology",
@@ -8544,13 +8547,13 @@
     },
     "harris2023": {
       "id": "harris2023",
-      "authors": "Harris CP et al.",
+      "authors": "Harris IT, Maddock C, Farnworth M, Nankervis K, Perrett J, Pyatt AZ, Blanchard RN",
       "year": 2023,
-      "title": "Temporal trends in stallion semen quality",
-      "journal": null,
-      "type": "epidemiological",
-      "linkStatus": "registered",
-      "externalUrl": null
+      "title": "Temporal trends in equine sperm progressive motility: a systematic review and meta-regression",
+      "journal": "Reproduction",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1530/REP-22-0490"
     },
     "a2d1_pain": {
       "id": "a2d1_pain",
@@ -12107,6 +12110,177 @@
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1016/j.bbrc.2026.153360"
+    },
+    "berlinguer2017_stallion_reac": {
+      "id": "berlinguer2017_stallion_reac",
+      "authors": "Berlinguer F, Pasciu V, Succu S, Cossu I, Caggiu S, Addis D, Castagna A, Fontani V, Rinaldi S, Sanna Passino E",
+      "year": 2017,
+      "title": "REAC technology as optimizer of stallion spermatozoa liquid storage",
+      "journal": "Reproductive Biology and Endocrinology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1186/s12958-017-0229-6"
+    },
+    "coan2006_handholding": {
+      "id": "coan2006_handholding",
+      "authors": "Coan JA, Schaefer HS, Davidson RJ",
+      "year": 2006,
+      "title": "Lending a hand: social regulation of the neural response to threat",
+      "journal": "Psychological Science",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/j.1467-9280.2006.01832.x"
+    },
+    "desmurget2009_movement_intention": {
+      "id": "desmurget2009_movement_intention",
+      "authors": "Desmurget M, Reilly KT, Richard N, Szathmari A, Mottolese C, Sirigu A",
+      "year": 2009,
+      "title": "Movement intention after parietal cortex stimulation in humans",
+      "journal": "Science",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1169896"
+    },
+    "dhillo2007_kisspeptin_cycle": {
+      "id": "dhillo2007_kisspeptin_cycle",
+      "authors": "Dhillo WS, Chaudhri OB, Thompson EL, Murphy KG, Patterson M, Ramachandran R, Nijher GK, Amber V, Kokkinos A, Donaldson M, Ghatei MA, Bloom SR",
+      "year": 2007,
+      "title": "Kisspeptin-54 stimulates gonadotropin release most potently during the preovulatory phase of the menstrual cycle in women",
+      "journal": "The Journal of Clinical Endocrinology & Metabolism",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1210/jc.2007-1116"
+    },
+    "dong2022_dog_phone_semen": {
+      "id": "dong2022_dog_phone_semen",
+      "authors": "Dong VNK, Tantisuwat L, Setthawong P, Tharasanit T, Sutayatram S, Kijtawornrat A",
+      "year": 2022,
+      "title": "The Preliminary Chronic Effects of Electromagnetic Radiation from Mobile Phones on Heart Rate Variability, Cardiac Function, Blood Profiles, and Semen Quality in Healthy Dogs",
+      "journal": "Veterinary Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/vetsci9050201"
+    },
+    "gettler2011_fatherhood_testosterone": {
+      "id": "gettler2011_fatherhood_testosterone",
+      "authors": "Gettler LT, McDade TW, Feranil AB, Kuzawa CW",
+      "year": 2011,
+      "title": "Longitudinal evidence that fatherhood decreases testosterone in human males",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.1105403108"
+    },
+    "hayes2010_atrazine_frogs": {
+      "id": "hayes2010_atrazine_frogs",
+      "authors": "Hayes TB et al.",
+      "year": 2010,
+      "title": "Atrazine induces complete feminization and chemical castration in male African clawed frogs (Xenopus laevis)",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.0909519107"
+    },
+    "ineichen2024_translation": {
+      "id": "ineichen2024_translation",
+      "authors": "Ineichen BV, Furrer E, Grüninger SL, Zürrer WE, Macleod MR",
+      "year": 2024,
+      "title": "Analysis of animal-to-human translation shows that only 5% of animal-tested therapeutic interventions obtain regulatory approval for human applications",
+      "journal": "PLOS Biology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1371/journal.pbio.3002667"
+    },
+    "iorio2011_sperm_mitochondria": {
+      "id": "iorio2011_sperm_mitochondria",
+      "authors": "Iorio R, Delle Monache S, Bennato F, Di Bartolomeo C, Scrimaglio R, Cinque B, Colonna RC",
+      "year": 2011,
+      "title": "Involvement of mitochondrial activity in mediating ELF-EMF stimulatory effect on human sperm motility",
+      "journal": "Bioelectromagnetics 32(1):15–27",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.20602"
+    },
+    "iuliis2013_correction": {
+      "id": "iuliis2013_correction",
+      "authors": "De Iuliis GN, Newey RJ, King BV, Aitken RJ",
+      "year": 2013,
+      "title": "Correction: Mobile Phone Radiation Induces Reactive Oxygen Species Production and DNA Damage in Human Spermatozoa In Vitro",
+      "journal": "PLoS ONE 8(3)",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b",
+      "correctionOf": "iuliis2009"
+    },
+    "lundstrom2013_newborn_odor": {
+      "id": "lundstrom2013_newborn_odor",
+      "authors": "Lundström JN, Mathe A, Schaal B, Frasnelli J, Nitzsche K, Gerber J, Hummel T",
+      "year": 2013,
+      "title": "Maternal status regulates cortical responses to the body odor of newborns",
+      "journal": "Frontiers in Psychology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3389/fpsyg.2013.00597"
+    },
+    "olson2000_toxicity_concordance": {
+      "id": "olson2000_toxicity_concordance",
+      "authors": "Olson H et al.",
+      "year": 2000,
+      "title": "Concordance of the toxicity of pharmaceuticals in humans and in animals",
+      "journal": "Regulatory Toxicology and Pharmacology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1006/rtph.2000.1399"
+    },
+    "pew2024_childless_reasons": {
+      "id": "pew2024_childless_reasons",
+      "authors": "Pew Research Center",
+      "year": 2024,
+      "title": "Reasons adults give for not having children",
+      "journal": null,
+      "type": "report",
+      "linkStatus": "verified",
+      "externalUrl": "https://www.pewresearch.org/social-trends/2024/07/25/reasons-adults-give-for-not-having-children/"
+    },
+    "qin2019_ceo2_leydig": {
+      "id": "qin2019_ceo2_leydig",
+      "authors": "Qin F, Shen T, Cao H, Qian J, Zou D, Ye M, Pei H",
+      "year": 2019,
+      "title": "CeO2NPs relieve radiofrequency radiation, improve testosterone synthesis, and clock gene expression in Leydig cells by enhancing antioxidation",
+      "journal": "International Journal of Nanomedicine 14:4601–4611",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.2147/IJN.S206561"
+    },
+    "rahban2023_phone_semen": {
+      "id": "rahban2023_phone_semen",
+      "authors": "Rahban R, Senn A, Nef S, Röösli M",
+      "year": 2023,
+      "title": "Association between self-reported mobile phone use and the semen quality of young men",
+      "journal": "Fertility and Sterility 120(6):1181–1192",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.fertnstert.2023.09.009"
+    },
+    "sumner2019_human_dog_sperm": {
+      "id": "sumner2019_human_dog_sperm",
+      "authors": "Sumner RN, Tomlinson M, Craigon J, England GCW, Lea RG",
+      "year": 2019,
+      "title": "Independent and combined effects of diethylhexyl phthalate and polychlorinated biphenyl 153 on sperm quality in the human and dog",
+      "journal": "Scientific Reports",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41598-019-39913-9"
+    },
+    "yap2019_trpc1_mitohormesis": {
+      "id": "yap2019_trpc1_mitohormesis",
+      "authors": "Yap JLY, Tai YK, Fröhlich J, Fong CHH, Yin JN, Foo ZL, Ramanan S, Beyer C, Toh SJ, Casarosa M, Bharathy N, Kala MP, Egli M, Taneja R, Lee CN, Franco-Obregón A",
+      "year": 2019,
+      "title": "Ambient and supplemental magnetic fields promote myogenesis via a TRPC1-mitochondrial axis: evidence of a magnetic mitohormetic mechanism",
+      "journal": "The FASEB Journal 33(11):12853–12872",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1096/fj.201900057R"
     }
   },
   "aliases": {
@@ -12398,6 +12572,7 @@
     "pmid:3091191": "kavaliers1986_calcium_morphine",
     "doi:10.1093/humupd/dmx022": "levine2017_v2",
     "doi:10.1093/gerona/glab138": "j-gerontol-2021-tsimane-brain",
+    "doi:10.4054/demres.2025.52.26": "stone2025_amish_demography",
     "doi:10.1002/bem.2250060402": "blackman1985_calcium_windows",
     "doi:10.3390/antiox15060778": "antioxidants-2026-global-decline",
     "doi:10.1081/jbc-120039350": "panagopoulos2004",
@@ -12897,6 +13072,7 @@
     "doi:10.7554/elife.06315": "scholl2015_cacna1h",
     "doi:10.1016/j.cub.2013.02.007": "currbiol2013_rheo",
     "doi:10.1016/j.reprotox.2009.09.004": "li2010_sperm_mf",
+    "pmid:19910156": "li2010_sperm_mf",
     "doi:10.1097/md.0000000000043598": "shiftwork_mets2025",
     "pmcid:PMC11817702": "pmc11817702_2025_rfk_pemf",
     "doi:10.1088/1361-6560/ae6e17": "iop2026_bbb_scoping_review",
@@ -12921,6 +13097,9 @@
     "doi:10.1021/acs.chemrev.5c00178": "gerhards2025",
     "doi:10.1016/j.scitotenv.2015.02.077": "balmori2015",
     "doi:10.1016/j.cobeha.2015.04.008": "mehta2015",
+    "doi:10.1530/rep-22-0490": "harris2023",
+    "pmcid:PMC10235923": "harris2023",
+    "pmid:37000597": "harris2023",
     "doi:10.1016/j.pain.2006.04.022": "a2d1_pain",
     "pmcid:PMC1635965": "a2d1_pain",
     "pmid:16764990": "a2d1_pain",
@@ -13337,6 +13516,41 @@
     "doi:10.1152/ajpregu.1992.262.5.r761": "kerper1992_methylmercury_bbb",
     "pmid:1590471": "kerper1992_methylmercury_bbb",
     "doi:10.1016/j.bbrc.2026.153360": "zhu2026_rf_chromium_dna",
-    "pmid:41619510": "zhu2026_rf_chromium_dna"
+    "pmid:41619510": "zhu2026_rf_chromium_dna",
+    "doi:10.1186/s12958-017-0229-6": "berlinguer2017_stallion_reac",
+    "pmcid:PMC5299698": "berlinguer2017_stallion_reac",
+    "pmid:28179013": "berlinguer2017_stallion_reac",
+    "doi:10.1111/j.1467-9280.2006.01832.x": "coan2006_handholding",
+    "pmid:17201784": "coan2006_handholding",
+    "doi:10.1126/science.1169896": "desmurget2009_movement_intention",
+    "pmid:19423830": "desmurget2009_movement_intention",
+    "doi:10.1210/jc.2007-1116": "dhillo2007_kisspeptin_cycle",
+    "pmid:17635940": "dhillo2007_kisspeptin_cycle",
+    "doi:10.3390/vetsci9050201": "dong2022_dog_phone_semen",
+    "pmcid:PMC9147188": "dong2022_dog_phone_semen",
+    "pmid:35622729": "dong2022_dog_phone_semen",
+    "doi:10.1073/pnas.1105403108": "gettler2011_fatherhood_testosterone",
+    "pmcid:PMC3182719": "gettler2011_fatherhood_testosterone",
+    "pmid:21911391": "gettler2011_fatherhood_testosterone",
+    "doi:10.1073/pnas.0909519107": "hayes2010_atrazine_frogs",
+    "pmcid:PMC2842049": "hayes2010_atrazine_frogs",
+    "pmid:20194757": "hayes2010_atrazine_frogs",
+    "doi:10.1371/journal.pbio.3002667": "ineichen2024_translation",
+    "doi:10.1002/bem.20602": "iorio2011_sperm_mitochondria",
+    "pmid:20690107": "iorio2011_sperm_mitochondria",
+    "doi:10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b": "iuliis2013_correction",
+    "doi:10.3389/fpsyg.2013.00597": "lundstrom2013_newborn_odor",
+    "doi:10.1006/rtph.2000.1399": "olson2000_toxicity_concordance",
+    "pmid:11029269": "olson2000_toxicity_concordance",
+    "doi:10.2147/ijn.s206561": "qin2019_ceo2_leydig",
+    "pmcid:PMC6598754": "qin2019_ceo2_leydig",
+    "pmid:31296989": "qin2019_ceo2_leydig",
+    "doi:10.1016/j.fertnstert.2023.09.009": "rahban2023_phone_semen",
+    "pmid:37921737": "rahban2023_phone_semen",
+    "doi:10.1038/s41598-019-39913-9": "sumner2019_human_dog_sperm",
+    "pmcid:PMC6399337": "sumner2019_human_dog_sperm",
+    "doi:10.1096/fj.201900057r": "yap2019_trpc1_mitohormesis",
+    "pmcid:PMC6902701": "yap2019_trpc1_mitohormesis",
+    "pmid:31518158": "yap2019_trpc1_mitohormesis"
   }
 }

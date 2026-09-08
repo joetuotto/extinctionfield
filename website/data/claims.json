@@ -3413,6 +3413,72 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.mechanistic-composition",
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "A_VGCC_ROS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "BERM composes field-dependent receiving state, calcium and redox signalling, hormone reception and reproductive function from named component interventions. The composition explains how downstream measurements can omit an upstream condition; it retains distinct tissues, protocols and a direct sperm branch.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM kokoaa kentästä riippuvan vastaanottotilan, kalsium- ja redox-signaloinnin, hormonivastaanoton ja lisääntymistoiminnan nimetyistä osainterventioista. Kooste selittää, miten myöhemmän vaiheen mittaus voi jättää aiemman ehdon pois; kudokset, protokollat ja suora siittiöhaara säilyvät erillisinä.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Component dependencies constrained by channel antagonism, gene knockdown, antioxidant treatment and receptor deletion.",
+          "Conditional composition of direct sperm responses and endocrine routes."
+        ],
+        "does_not_support": [
+          "Validation of Lindgren geometry or the open BERM L2 coupling.",
+          "A single experimentally completed field-to-population-fertility chain.",
+          "Universal harm, dose equivalence, or an independent replication probability from review publication counts."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.behavioural-profile-integration",
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "BERM groups caregiving, proximity, stress, sexual motivation, signalling, social feedback, hormonal state and effort as eight comparison axes through which shared biological state may affect several recorded outcomes. Separately supported human components motivate the integration; this is a model mapping rather than a measured diagnostic syndrome.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM kokoaa hoivan, läheisyyden, stressin, seksuaalisen motivaation, signaloinnin, sosiaalisen palautteen, hormonitilan ja vaivannäön kahdeksaksi vertailuakseliksi, joiden kautta yhteinen biologinen tila voi vaikuttaa useisiin kirjattuihin seurauksiin. Ihmisen osamekanismien näyttö perustelee yhdistämistä; kyse on mallin kartasta, ei mitatusta diagnostisesta oireyhtymästä.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Explicit intermediate states between physical input, perception, valuation, individual behaviour and aggregate outcomes.",
+          "Retain together functions often studied under separate explanatory labels."
+        ],
+        "does_not_support": [
+          "Diagnosing biological suppression from childlessness, pet ownership, gender expression or political views.",
+          "An independently validated eight-variable population syndrome.",
+          "Causal EMF attribution from the Pew survey or proof of the open L2 bridge."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -8350,6 +8416,249 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.proxy.mechanistic-composition.therabionic-ebioMedicine-2019",
+      "referenceId": "therabionic-ebioMedicine-2019",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human hepatocellular carcinoma cell RF exposure, channel antagonist and CACNA1H knockdown",
+      "applicability": "Specified amplitude-modulated27.12MHz cell protocol",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "CaV3.2 dependence constrains cellular response; does not establish universal primary reception.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.therabionic-ebioMedicine-2019"
+        ],
+        "datasetFamilyIds": [
+          "dataset.therabionic-ebioMedicine-2019"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.mechanistic-composition.yap2019_trpc1_mitohormesis",
+      "referenceId": "yap2019_trpc1_mitohormesis",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Myoblast pulsed-field exposure with channel blockers, TRPC1 knockdown and antioxidants",
+      "applicability": "1.5mT pulsed exposure and myogenic outcomes",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Growth-promoting responses constrain a calcium-redox dependency; sign cannot be transferred to reproductive impairment.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.yap2019_trpc1_mitohormesis"
+        ],
+        "datasetFamilyIds": [
+          "dataset.yap2019_trpc1_mitohormesis"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.mechanistic-composition.qin2019_ceo2_leydig",
+      "referenceId": "qin2019_ceo2_leydig",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Mouse Leydig cell RF exposure with CeO2 pretreatment",
+      "applicability": "1800MHz, reported mean SAR0.116W/kg,1–4h",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Nanoparticles themselves change responses; intervention does not isolate a single ROS target.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.qin2019_ceo2_leydig"
+        ],
+        "datasetFamilyIds": [
+          "dataset.qin2019_ceo2_leydig"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.mechanistic-composition.degendt2004_sertoli_ar",
+      "referenceId": "degendt2004_sertoli_ar",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Sertoli-cell-specific androgen receptor knockout",
+      "applicability": "Mouse spermatogenesis and meiosis",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Field-free hormone-reception intervention.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.degendt2004_sertoli_ar"
+        ],
+        "datasetFamilyIds": [
+          "dataset.degendt2004_sertoli_ar"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.mechanistic-composition.iuliis2009",
+      "referenceId": "iuliis2009",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Isolated human sperm RF dose experiment",
+      "applicability": "1.8GHz,16h; ROS,DNA and functional assays",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Three biological replicates after2013correction; no pharmacological rescue and no population endpoint.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.iuliis2009"
+        ],
+        "datasetFamilyIds": [
+          "dataset.iuliis2009"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.behavioural-profile-integration.weisman2012_oxytocin_dyad",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Placebo-controlled oxytocin crossover in fathers",
+      "applicability": "Father-infant interaction",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A caregiving response is distinct from reproductive motivation or fertility.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.weisman2012_oxytocin_dyad"
+        ],
+        "datasetFamilyIds": [
+          "dataset.weisman2012_oxytocin_dyad"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.behavioural-profile-integration.mills2023_kisspeptin",
+      "referenceId": "mills2023_kisspeptin",
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Kisspeptin intervention and sexual response",
+      "applicability": "Human sexual motivation endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Does not identify an environmental field cause.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.mills2023_kisspeptin"
+        ],
+        "datasetFamilyIds": [
+          "dataset.mills2023_kisspeptin"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.behavioural-profile-integration.gettler2011_fatherhood_testosterone",
+      "referenceId": "gettler2011_fatherhood_testosterone",
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Longitudinal study of fatherhood and testosterone",
+      "applicability": "Paternal adaptation",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Hormone reduction is not synonymous with reproductive impairment.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.gettler2011_fatherhood_testosterone"
+        ],
+        "datasetFamilyIds": [
+          "dataset.gettler2011_fatherhood_testosterone"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.behavioural-profile-integration.westbrook2020_dopamine_effort",
+      "referenceId": "westbrook2020_dopamine_effort",
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Dopaminergic intervention and effort decisions",
+      "applicability": "Human effort valuation",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Task outcome does not establish secular behavioural trends or an EMF mechanism.",
+        "Component evidence does not validate Lindgren geometry or BERM L2 coupling."
+      ],
+      "curatorId": "berm-proxy-evidence-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Supports the named component of the conditional synthesis.",
+      "provenance": {
+        "studyIds": [
+          "study.westbrook2020_dopamine_effort"
+        ],
+        "datasetFamilyIds": [
+          "dataset.westbrook2020_dopamine_effort"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -9913,6 +10222,41 @@
       "assessorId": "berm-proxy-masking-integration",
       "assessedAt": "2026-09-08",
       "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
+    },
+    {
+      "id": "ea.proxy.mechanistic-composition.v1",
+      "claimId": "claim.proxy.mechanistic-composition",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.mechanistic-composition.therabionic-ebioMedicine-2019",
+        "er.proxy.mechanistic-composition.yap2019_trpc1_mitohormesis",
+        "er.proxy.mechanistic-composition.qin2019_ceo2_leydig",
+        "er.proxy.mechanistic-composition.degendt2004_sertoli_ar",
+        "er.proxy.mechanistic-composition.iuliis2009"
+      ],
+      "assessorId": "berm-proxy-evidence-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional composition with explicitly curated biological components; no calibrated L2 response or population attribution."
+    },
+    {
+      "id": "ea.proxy.behavioural-profile-integration.v1",
+      "claimId": "claim.proxy.behavioural-profile-integration",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.behavioural-profile-integration.weisman2012_oxytocin_dyad",
+        "er.proxy.behavioural-profile-integration.mills2023_kisspeptin",
+        "er.proxy.behavioural-profile-integration.gettler2011_fatherhood_testosterone",
+        "er.proxy.behavioural-profile-integration.westbrook2020_dopamine_effort"
+      ],
+      "assessorId": "berm-proxy-evidence-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional composition with explicitly curated biological components; no calibrated L2 response or population attribution."
     }
   ],
   "routes": [
