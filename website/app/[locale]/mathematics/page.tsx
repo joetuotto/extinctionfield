@@ -21,7 +21,7 @@ function SectionNav({
   sections: { id: string; num: string; label: string }[];
 }) {
   return (
-    <nav className="hidden lg:block sticky top-20 w-48 shrink-0 self-start">
+    <nav className="hidden lg:block sticky top-[calc(var(--site-header-height,4rem)+1rem)] w-48 shrink-0 self-start">
       <ul className="space-y-1.5 text-sm border-l border-card-border pl-3">
         {sections.map((s) => (
           <li key={s.id}>

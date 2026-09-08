@@ -75,7 +75,7 @@ export function AtlasDetail({ node, locale, onClose, originRef, onNavigate, onAt
       ref={asideRef}
       role="complementary"
       aria-labelledby="atlas-detail-title"
-      className="fixed right-3 top-20 bottom-3 w-[400px] max-w-[calc(100vw-24px)] bg-[var(--background)] border-l border-[var(--border)] z-50 overflow-y-auto shadow-2xl"
+      className="fixed right-3 top-[calc(var(--site-header-height,4rem)+1rem)] bottom-3 w-[400px] max-w-[calc(100vw-24px)] bg-[var(--background)] border-l border-[var(--border)] z-40 overflow-y-auto shadow-2xl"
     >
       <div className="sticky top-0 bg-[var(--background)] border-b border-[var(--border)] p-4 flex items-start justify-between gap-3">
         <div className="min-w-0">

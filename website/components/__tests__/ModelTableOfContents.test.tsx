@@ -14,16 +14,31 @@ import ModelPage from "../../app/[locale]/model/page";
 vi.mock("next/link", () => ({ default: ({ children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => <a {...props}>{children}</a> }));
 
 const observed: Element[] = [];
+const observers: { options?: IntersectionObserverInit; disconnect: ReturnType<typeof vi.fn> }[] = [];
+const resized: Element[] = [];
+const disconnectResize = vi.fn();
 let observerCallback: IntersectionObserverCallback;
+let resizeCallback: ResizeObserverCallback;
 beforeEach(() => {
   observed.length = 0;
+  observers.length = 0;
+  resized.length = 0;
+  disconnectResize.mockClear();
   vi.stubGlobal("IntersectionObserver", class {
-    constructor(callback: IntersectionObserverCallback) { observerCallback = callback; }
+    disconnect = vi.fn();
+    constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
+      observerCallback = callback;
+      observers.push({ options, disconnect: this.disconnect });
+    }
     observe(element: Element) { observed.push(element); }
-    disconnect() { /* no browser observer in jsdom */ }
+  });
+  vi.stubGlobal("ResizeObserver", class {
+    constructor(callback: ResizeObserverCallback) { resizeCallback = callback; }
+    observe(element: Element) { resized.push(element); }
+    disconnect = disconnectResize;
   });
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 function documentFor(element: ReactElement) {
   return new DOMParser().parseFromString(renderToStaticMarkup(element), "text/html");
@@ -37,6 +52,41 @@ const repairedIds = [
 const locales = ["en", "fi", "ja", "fr", "ko"];
 
 describe("model contents follows the sections that explain each topic", () => {
+  it("moves the visible-section boundary when the header wraps and releases both observers", () => {
+    const headerView = render(<nav data-site-header />);
+    const header = headerView.container.querySelector("nav")!;
+    let height = 64;
+    vi.spyOn(header, "getBoundingClientRect").mockImplementation(() => new DOMRect(0, 0, 1000, height));
+    const view = render(<><section id="modulome" /><ModelTableOfContents locale="en" /></>);
+    expect(resized).toEqual([header]);
+    expect(observers[0].options).toMatchObject({ rootMargin: "-80px 0px -60% 0px" });
+
+    height = 144;
+    act(() => resizeCallback([], {} as ResizeObserver));
+    expect(observers).toHaveLength(2);
+    expect(observers[0].disconnect).toHaveBeenCalledOnce();
+    expect(observers[1].options).toMatchObject({ rootMargin: "-160px 0px -60% 0px" });
+    expect(observed.filter((element) => element.id === "modulome")).toHaveLength(2);
+    act(() => resizeCallback([], {} as ResizeObserver));
+    expect(observers).toHaveLength(2);
+
+    height = 64;
+    act(() => window.dispatchEvent(new Event("resize")));
+    expect(observers[2].options).toMatchObject({ rootMargin: "-80px 0px -60% 0px" });
+    view.unmount();
+    expect(observers[2].disconnect).toHaveBeenCalledOnce();
+    expect(disconnectResize).toHaveBeenCalledOnce();
+    height = 144;
+    act(() => window.dispatchEvent(new Event("resize")));
+    expect(observers).toHaveLength(3);
+  });
+
+  it("uses the original 64-pixel header fallback when no measured header is available", () => {
+    render(<ModelTableOfContents locale="en" />);
+    expect(observers[0].options).toMatchObject({ rootMargin: "-80px 0px -60% 0px" });
+    expect(resized).toEqual([]);
+  });
+
   it.each(locales)("resolves all moved topics to actual rendered destination sections in %s", async (locale) => {
     const params = { params: Promise.resolve({ locale }) };
     const documents = {

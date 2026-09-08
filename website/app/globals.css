@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-@layer base {
-  /* Keep section links visible below the sticky 4rem navigation bar. */
-  main [id] {
-    scroll-margin-top: 5rem;
-  }
+/* Navigation can wrap onto multiple rows. Its measured height also overrides
+   the older fixed scroll-margin utilities on individual article sections. */
+main[id],
+main [id] {
+  scroll-margin-top: calc(var(--site-header-height, 4rem) + 1rem);
 }
 
 /* Decorative silhouettes inherit the exact surface behind them. */

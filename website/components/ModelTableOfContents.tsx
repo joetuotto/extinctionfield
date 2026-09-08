@@ -358,25 +358,44 @@ export function ModelTableOfContents({ locale }: { locale: string }) {
       .map((section) => getModelTocDestination(section.id, locale))
       .filter((destination) => destination.isLocal)
       .map((destination) => destination.targetId)))];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActiveId(visible[0].target.id);
-      },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 },
-    );
-
-    allIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-    return () => observer.disconnect();
+    const header = document.querySelector<HTMLElement>("[data-site-header]");
+    let observer: IntersectionObserver | undefined;
+    let currentOffset = -1;
+    function updateObserver() {
+      const headerHeight = Math.ceil(header?.getBoundingClientRect().height ?? 0) || 64;
+      const gap = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      const offset = headerHeight + gap;
+      if (offset === currentOffset) return;
+      currentOffset = offset;
+      observer?.disconnect();
+      // Match the measured header plus the one-rem gap used by section links.
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          if (visible[0]) setActiveId(visible[0].target.id);
+        },
+        { rootMargin: `-${offset}px 0px -60% 0px`, threshold: 0 },
+      );
+      allIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer?.observe(element);
+      });
+    }
+    updateObserver();
+    const resizeObserver = header && typeof ResizeObserver !== "undefined" ? new ResizeObserver(updateObserver) : undefined;
+    if (header) resizeObserver?.observe(header);
+    window.addEventListener("resize", updateObserver);
+    return () => {
+      observer?.disconnect();
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", updateObserver);
+    };
   }, [groups, locale]);
 
   return (
-    <nav aria-label={pickCopy(NAV_LABEL, locale)} className="hidden lg:block sticky top-20 w-56 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
+    <nav aria-label={pickCopy(NAV_LABEL, locale)} className="hidden lg:block sticky top-[calc(var(--site-header-height,4rem)+1rem)] w-56 shrink-0 self-start max-h-[calc(100dvh-var(--site-header-height,4rem)-2rem)] overflow-y-auto">
       {groups.map((group) => (
         <div key={group.title} className="mb-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted/60 mb-2">{group.title}</p>

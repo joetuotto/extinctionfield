@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect, useId, type KeyboardEvent } from "react";
+import { useState, useRef, useEffect, useLayoutEffect, useId, type KeyboardEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -109,7 +109,7 @@ function NavDropdown({
   return (
     <li
       ref={ref}
-      className="relative"
+      className="static xl:relative"
       data-nav-section={link.href}
       data-active={active || undefined}
       onKeyDown={handleKeyDown}
@@ -117,10 +117,12 @@ function NavDropdown({
         if (!event.currentTarget.contains(event.relatedTarget)) close();
       }}
       onMouseEnter={() => {
+        if (!window.matchMedia("(hover: hover) and (min-width: 1280px)").matches) return;
         clearTimeout(hoverTimeout.current);
         hoverTimeout.current = setTimeout(() => onOpenChange(true), 80);
       }}
       onMouseLeave={() => {
+        if (!window.matchMedia("(hover: hover) and (min-width: 1280px)").matches) return;
         clearTimeout(hoverTimeout.current);
         if (!ref.current?.contains(document.activeElement)) {
           hoverTimeout.current = setTimeout(() => onOpenChange(false), 200);
@@ -138,10 +140,10 @@ function NavDropdown({
         aria-expanded={open}
         aria-controls={`${id}-links`}
         className={`inline-flex min-h-9 shrink-0 items-center gap-1 whitespace-nowrap rounded-sm text-[0.8125rem] tracking-[0.005em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent 2xl:gap-1.5 2xl:text-[0.875rem] ${
-          active ? "text-accent font-medium nav-active-link" : "text-foreground-muted hover:text-foreground"
+          active ? "text-accent font-medium" : "text-foreground-muted hover:text-foreground"
         }`}
       >
-        <Icon size={14} strokeWidth={active ? 2.2 : 1.8} aria-hidden="true" />
+        <Icon size={14} className="hidden xl:block" strokeWidth={active ? 2.2 : 1.8} aria-hidden="true" />
         {link.label}
         <ChevronDown size={12} className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
@@ -150,7 +152,7 @@ function NavDropdown({
         id={`${id}-links`}
         aria-labelledby={`${id}-trigger`}
         hidden={!open}
-        className={`absolute top-full mt-2 max-h-[calc(100dvh-5.5rem)] w-80 max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain rounded-xl border border-card-border bg-background py-2 shadow-xl shadow-black/20 ${alignRight ? "right-0" : "left-0"}`}
+        className={`absolute top-full left-3 right-3 mt-1 max-h-[calc(100dvh-var(--site-header-height,4rem)-1rem)] overflow-y-auto overscroll-contain rounded-xl border border-card-border bg-background py-2 shadow-xl shadow-black/20 xl:mt-2 xl:w-80 xl:max-w-[calc(100vw-2rem)] ${alignRight ? "xl:left-auto xl:right-0" : "xl:left-0 xl:right-auto"}`}
       >
         {link.children?.map((child) => {
           const current = isNavPageCurrent(pathname, child.href);
@@ -182,98 +184,88 @@ function NavDropdown({
   );
 }
 
-function MobileAccordion({ link, locale, pathname, active, onNavigate }: SectionProps & { onNavigate: () => void }) {
-  const [expanded, setExpanded] = useState(active);
-  const id = useId();
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const Icon = link.icon;
-  return (
-    <li
-      data-nav-section={link.href}
-      data-active={active || undefined}
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && expanded) {
-          event.preventDefault();
-          event.stopPropagation();
-          setExpanded(false);
-          triggerRef.current?.focus();
-        }
-      }}
-    >
-      <button
-        ref={triggerRef}
-        id={`${id}-trigger`}
-        type="button"
-        onClick={() => setExpanded(!expanded)}
-        aria-expanded={expanded}
-        aria-controls={`${id}-links`}
-        className={`flex min-h-11 w-full items-center justify-between rounded-sm py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-accent ${active ? "text-accent font-medium" : "text-foreground-muted"}`}
-      >
-        <span className="inline-flex items-center gap-2.5">
-          <Icon size={16} strokeWidth={active ? 2.2 : 1.8} aria-hidden="true" />
-          {link.label}
-        </span>
-        <ChevronDown size={14} className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`} aria-hidden="true" />
-      </button>
-      <ul id={`${id}-links`} aria-labelledby={`${id}-trigger`} hidden={!expanded} className="pl-7 pb-2 space-y-1">
-        {link.children?.map((child) => {
-          const current = isNavPageCurrent(pathname, child.href);
-          const ChildIcon = child.icon;
-          return (
-            <li key={child.href}>
-              <Link
-                href={`/${locale}${child.href}`}
-                onClick={onNavigate}
-                aria-current={current ? "page" : undefined}
-                className={`flex min-h-11 items-center gap-2 rounded-sm py-1.5 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-accent ${current ? "text-accent font-medium" : "text-foreground-muted hover:text-foreground"}`}
-              >
-                <ChildIcon size={14} className="shrink-0" strokeWidth={current ? 2.2 : 1.8} aria-hidden="true" />
-                {child.label}
-                {child.badge && <span className="text-[0.65rem] px-1.5 py-0.5 rounded-full bg-accent/10 text-accent font-semibold leading-none">{child.badge}</span>}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </li>
-  );
-}
-
 function NavigationContent({ locale, pathname }: { locale: string; pathname: string }) {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
-  const mobileTriggerRef = useRef<HTMLButtonElement>(null);
-  const mobilePanelRef = useRef<HTMLDivElement>(null);
-  const mobileFocusRequest = useRef(false);
-  const mobileId = useId();
   const links = getNavRoutes(locale);
   const home = getHomeRoute(locale);
+  const HomeIcon = home.icon;
   const activeSection = getActiveNavSection(pathname);
+  const homeCurrent = isNavPageCurrent(pathname, "");
   const navCopy = pickCopy(NAV_COPY, locale);
 
-  useEffect(() => {
-    if (menuOpen && mobileFocusRequest.current) {
-      mobilePanelRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
-      mobileFocusRequest.current = false;
-    }
-  }, [menuOpen]);
+  useLayoutEffect(() => {
+    const header = navRef.current;
+    if (!header) return;
+    const updateHeaderHeight = () => {
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      if (height > 0) document.documentElement.style.setProperty("--site-header-height", `${height}px`);
+    };
+    updateHeaderHeight();
+    const observer = typeof ResizeObserver === "undefined" ? undefined : new ResizeObserver(updateHeaderHeight);
+    observer?.observe(header);
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("resize", updateHeaderHeight);
+      document.documentElement.style.removeProperty("--site-header-height");
+    };
+  }, []);
 
   useEffect(() => {
-    if (!menuOpen) return;
-    function handleOutside(event: PointerEvent) {
-      if (!navRef.current?.contains(event.target as Node)) setMenuOpen(false);
+    const initialUrl = window.location.href;
+    let targetId: string;
+    try {
+      targetId = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      return;
     }
-    document.addEventListener("pointerdown", handleOutside);
-    return () => document.removeEventListener("pointerdown", handleOutside);
-  }, [menuOpen]);
+    if (!targetId) return;
+
+    let cancelled = false;
+    let frame: number | undefined;
+    const interactions = ["wheel", "touchstart", "pointerdown", "keydown"] as const;
+    const detach = () => {
+      interactions.forEach((event) => document.removeEventListener(event, cancel));
+      window.removeEventListener("hashchange", cancel);
+      document.removeEventListener("DOMContentLoaded", scheduleCheck);
+    };
+    function cancel() {
+      cancelled = true;
+      if (frame !== undefined) window.cancelAnimationFrame(frame);
+      detach();
+    }
+    function scheduleCheck() {
+      if (cancelled) return;
+      frame = window.requestAnimationFrame(() => {
+        detach();
+        if (cancelled || window.location.href !== initialUrl) return;
+        const target = document.getElementById(targetId);
+        const header = navRef.current;
+        if (!target || !header) return;
+        const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+        const rem = Number.parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+        const top = target.getBoundingClientRect().top;
+        // Correct only a native fragment jump still obscured by the measured
+        // header. Resizes and a reader's later scrolling never revisit the hash.
+        if (headerHeight > 0 && top >= 0 && top < headerHeight + rem) {
+          target.scrollIntoView({ block: "start", behavior: "instant" });
+        }
+      });
+    }
+    interactions.forEach((event) => document.addEventListener(event, cancel, { passive: true }));
+    window.addEventListener("hashchange", cancel);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", scheduleCheck, { once: true });
+    } else {
+      scheduleCheck();
+    }
+    return cancel;
+  }, []);
 
   useEffect(() => {
     const breakpoint = window.matchMedia("(min-width: 1280px)");
-    const closeMenus = () => {
-      setMenuOpen(false);
-      setOpenSection(null);
-    };
+    const closeMenus = () => setOpenSection(null);
     breakpoint.addEventListener("change", closeMenus);
     return () => breakpoint.removeEventListener("change", closeMenus);
   }, []);
@@ -281,79 +273,50 @@ function NavigationContent({ locale, pathname }: { locale: string; pathname: str
   return (
     <nav
       ref={navRef}
+      data-site-header=""
       aria-label={navCopy.mainNav}
       className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md"
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && menuOpen) {
-          event.preventDefault();
-          setMenuOpen(false);
-          mobileTriggerRef.current?.focus();
-        }
-      }}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          setMenuOpen(false);
-          setOpenSection(null);
-        }
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpenSection(null);
       }}
     >
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4 sm:gap-8 sm:px-6 xl:max-w-7xl xl:gap-4 xl:px-4 2xl:gap-8 2xl:px-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 px-4 sm:px-6 xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-x-4 xl:px-4 2xl:gap-x-6 2xl:px-6">
         <Link
           href={`/${locale}`}
           aria-label={`Extinction Field — ${home.label}`}
-          aria-current={isNavPageCurrent(pathname, "") ? "page" : undefined}
-          onClick={() => { setMenuOpen(false); setOpenSection(null); }}
-          className="shrink-0 rounded-sm text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          aria-current={homeCurrent ? "page" : undefined}
+          onClick={() => setOpenSection(null)}
+          className="col-start-1 row-start-1 inline-flex min-h-14 shrink-0 items-center rounded-sm text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent xl:min-h-16"
         >Extinction Field</Link>
-        <div className="hidden min-w-0 items-center gap-3 xl:flex 2xl:gap-5" data-navigation="desktop">
-          <ul className="flex min-w-0 items-center gap-3 2xl:gap-6">
-            {links.map((link, index) => (
-              <NavDropdown
-                key={link.href}
-                link={link}
-                locale={locale}
-                pathname={pathname}
-                active={activeSection === link.href}
-                open={openSection === link.href}
-                onOpenChange={(open) => setOpenSection((current) => open ? link.href : current === link.href ? null : current)}
-                alignRight={index >= links.length - 2}
-              />
-            ))}
-          </ul>
-          <div className="ml-1 flex shrink-0 items-center gap-1.5 border-l border-border pl-3 2xl:ml-2 2xl:gap-2 2xl:pl-4">
-            <LanguageSwitcher locale={locale} />
-            <ThemeToggle />
-          </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+        <ul className="col-span-2 col-start-1 row-start-2 flex min-w-0 flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-border py-2 sm:gap-x-3 xl:col-span-1 xl:col-start-2 xl:row-start-1 xl:justify-center xl:border-t-0 xl:py-0 2xl:gap-x-5" data-navigation="primary">
+          <li>
+            <Link
+              href={`/${locale}`}
+              aria-current={homeCurrent ? "page" : undefined}
+              onClick={() => setOpenSection(null)}
+              className={`inline-flex min-h-9 items-center gap-1 whitespace-nowrap rounded-sm text-[0.8125rem] tracking-[0.005em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent 2xl:text-[0.875rem] ${homeCurrent ? "text-accent font-medium" : "text-foreground-muted hover:text-foreground"}`}
+            >
+              <HomeIcon size={14} className="hidden xl:block" aria-hidden="true" />
+              {home.label}
+            </Link>
+          </li>
+          {links.map((link, index) => (
+            <NavDropdown
+              key={link.href}
+              link={link}
+              locale={locale}
+              pathname={pathname}
+              active={activeSection === link.href}
+              open={openSection === link.href}
+              onOpenChange={(open) => setOpenSection((current) => open ? link.href : current === link.href ? null : current)}
+              alignRight={index >= links.length - 2}
+            />
+          ))}
+        </ul>
+        <div className="col-start-2 row-start-1 flex shrink-0 items-center justify-self-end gap-1.5 xl:col-start-3 xl:border-l xl:border-border xl:pl-3 2xl:gap-2 2xl:pl-4">
           <LanguageSwitcher locale={locale} />
           <ThemeToggle />
-          <button
-            ref={mobileTriggerRef}
-            type="button"
-            className="p-2 rounded-sm text-foreground-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-accent"
-            onClick={() => setMenuOpen(!menuOpen)}
-            onKeyDown={(event) => {
-              if (event.key === "ArrowDown") {
-                event.preventDefault();
-                if (menuOpen) mobilePanelRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
-                else { mobileFocusRequest.current = true; setMenuOpen(true); }
-              }
-            }}
-            aria-label={menuOpen ? navCopy.closeMenu : navCopy.openMenu}
-            aria-expanded={menuOpen}
-            aria-controls={mobileId}
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-              {menuOpen ? <><line x1="4" y1="4" x2="16" y2="16" /><line x1="16" y1="4" x2="4" y2="16" /></> : <><line x1="3" y1="5" x2="17" y2="5" /><line x1="3" y1="10" x2="17" y2="10" /><line x1="3" y1="15" x2="17" y2="15" /></>}
-            </svg>
-          </button>
         </div>
-      </div>
-      <div id={mobileId} ref={mobilePanelRef} hidden={!menuOpen} className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background xl:hidden" data-navigation="mobile">
-        {menuOpen && <ul className="px-6 py-4 space-y-1">
-          {links.map((link) => <MobileAccordion key={link.href} link={link} locale={locale} pathname={pathname} active={activeSection === link.href} onNavigate={() => setMenuOpen(false)} />)}
-        </ul>}
       </div>
     </nav>
   );

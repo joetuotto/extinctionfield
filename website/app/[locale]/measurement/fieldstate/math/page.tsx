@@ -369,7 +369,7 @@ export async function generateMetadata({
 
 function SectionNavigation({ sections }: { sections: Copy["nav"] }) {
   return (
-    <nav className="hidden lg:block sticky top-20 w-52 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
+    <nav className="hidden lg:block sticky top-[calc(var(--site-header-height,4rem)+1rem)] w-52 shrink-0 self-start max-h-[calc(100dvh-var(--site-header-height,4rem)-2rem)] overflow-y-auto">
       <ul className="space-y-1 text-sm border-l border-card-border pl-3">
         {sections.map((section) => (
           <li key={section.id}>
