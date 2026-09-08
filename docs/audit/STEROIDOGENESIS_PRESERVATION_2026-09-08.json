@@ -972,5 +972,25 @@
         "matchesReleaseBytes": false
       }
     ]
+  },
+  "finalUpstreamMerge": {
+    "base": "613edbffd9684eeca885f5e0ca269cde86494962",
+    "missingPriorIds": [],
+    "changedPriorRecords": [],
+    "preservedCounts": {
+      "references": 1226,
+      "claims": 106,
+      "evidenceRelations": 211,
+      "assessments": 106,
+      "routes": 5
+    },
+    "finalCounts": {
+      "references": 1260,
+      "claims": 110,
+      "evidenceRelations": 268,
+      "assessments": 110,
+      "routes": 5
+    },
+    "publicSteroidogenesisSha256": "8938cb5abf9aeb81a9e4e5f5a39e6217a0fe98ea52513e089df1a8947fccbd5e"
   }
 }

@@ -51,3 +51,7 @@ Julkaisun muutosjoukon ulkopuolella muuttuneet 19 aiempaa työtilatiedostoa luet
 - `website/tsconfig.json`
 
 Koneellinen raportti sisältää muuttuneiden tiedostojen tiivisteet ja kaikki tarkistetut numeeriset tiedostot. Uusia työtilapolkuja ei lasketa 1268 aiemman polun säilymiseksi; kaikki aiemmat polut tarkistetaan erikseen. Auditointi ei muuta tai palauta työtilan muuta sisältöä.
+
+## Lopullisen yhdistämisen lisätarkistus
+
+Julkaisukopioon yhdistettiin myös `613edbf`. Kaikki sen 1 226 lähdetietuetta, 106 väitettä, 211 lähdesuhdetta, 106 epistemistä arviota ja viisi reittiä säilyvät sisällöltään muuttumattomina. Lopulliset määrät ovat 1 260 lähdettä, 110 väitettä, 268 lähdesuhdetta, 110 arviota ja viisi reittiä. Uusimman päähaaran proxy masking -sisällöt ja tämän työn varanto-osio ovat mukana rinnakkain.
