@@ -38,3 +38,16 @@ The old development tab showed a connection error after the intentional developm
 ## Final link-fix build
 
 The final build passed 446 website tests and all 542 rendered-page checks. Browser spot checks confirmed the real Japanese `/ja/about/objections#dose-response` content at ~80px below the header and Finnish `/fi/model#vgcc-sensitivity` at its existing Cav3/window-current description. No browser console errors were recorded. The final local HTTP audit covers all remaining localized equivalents and biological-capacity targets.
+
+## Published version
+
+Verified public alias `https://www.extinctionfield.com` belongs to READY deployment `dpl_HW8F97ALyGsijhVZ1nb5SGSBbPzs`, built from main commit `92f9307df8d5b4cc26d9ccfdeef234a72732e8be`.
+
+- Public convergence hub renders the seven ordered main groups and the restored explanatory content.
+- Evidence dropdown retains response conditions and the newer pharmacology entry.
+- Pharmacology calculation examples load; selecting sodium current renders the expected synthetic four-arm values (1 / 1.44 / 1 / 1.2907). Footer displays 1191 registered sources.
+- At 390×844, public mobile navigation opens all seven groups; About → Epistemology loads the intended page and closes the menu. No horizontal page overflow.
+- The public legacy mathematics route preserves a release-check query and fragment while redirecting to `/fi/model/math#falsification`. The real heading is visible at ~80px below the sticky navigation.
+- Public browser console logs contain no errors for these interactions. The temporary viewport override was reset.
+
+The comprehensive public HTTP/source/anchor/data audit is recorded separately in `NAVIGATION_REPAIR_PRODUCTION_HTTP_2026-09-08.md`.

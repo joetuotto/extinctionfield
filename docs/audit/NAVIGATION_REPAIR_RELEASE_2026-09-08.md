@@ -32,4 +32,10 @@ The current registry validator reports 14 existing DKC candidate warnings and ze
 
 ## Publication status
 
-The first local production HTTP audit checked 1909 targets and identified the three atlas link families described above (13 broken localized anchors). Its attention-required report is preserved separately. Their fixes passed real-content checks in all five locales; the final full build and HTTP audit both passed. The website suite passed 446/446 tests; 542 rendered routes were clean. The final HTTP run passed all 1909 targets, 15174 internal links, 3272 anchors, 20 hubs, 1191 source identities and 17 data-file hashes with zero exceptions. Validated source is ready for publication. Publication path: commit the repaired source on top of current main and push without rewriting history, so subsequent main deployments contain the navigation changes. The final deployment and live checks will be recorded here after publication.
+**Published and verified.** Commit `92f9307df8d5b4cc26d9ccfdeef234a72732e8be` was pushed as a fast-forward to main. Vercel built READY production deployment `dpl_HW8F97ALyGsijhVZ1nb5SGSBbPzs`; `https://www.extinctionfield.com` was verified to point to it.
+
+The full public audit completed at 2026-09-08 05:34:01 UTC (08:34 EEST): all 1909 HTTP targets, 1892 HTML pages, 20 new localized hub routes, 15174 internal links, 3272 anchors, 1191 source identities and 17 data hashes passed with zero exceptions. Public browser checks passed for desktop/mobile navigation, the restored convergence page, About/Epistemology, pharmacology calculation examples and the repaired mathematics redirect.
+
+See `NAVIGATION_REPAIR_PRODUCTION_HTTP_2026-09-08.md` and its JSON for the exact live results. The initial public failure and intermediate local findings remain in separate historical reports. Publication proof files were written after the source commit; no subsequent source change or second deployment was necessary.
+
+The original worktree `/Volumes/kovalevy 3/extinctionfield` remains on its original dirty branch. All 955 snapshotted source paths were unchanged by this repair. The published source is in main and in `/Users/ottojuote/.berm-navigation-repair-20260908`; this avoids overwriting ongoing work in the original checkout.

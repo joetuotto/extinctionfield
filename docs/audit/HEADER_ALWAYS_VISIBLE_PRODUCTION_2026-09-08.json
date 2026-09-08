@@ -1,0 +1,268 @@
+{
+  "verifiedAt": "2026-09-08 07:28:49 UTC",
+  "commit": "0840703960d8c044d4224c0fd6e1d963f5ac5a3a",
+  "deploymentId": "dpl_BK18NdLJeHArw5BnSMtmJFC4sP9r",
+  "deploymentUrl": "https://extinctionfield-3bh8bogd4-otto-juotes-projects.vercel.app",
+  "readyState": "READY",
+  "publicAlias": "https://www.extinctionfield.com",
+  "layouts": [
+    {
+      "label": "LIVE FI897 model",
+      "height": 110,
+      "items": [
+        {
+          "text": "Etusivu",
+          "visible": true
+        },
+        {
+          "text": "Malli",
+          "visible": true
+        },
+        {
+          "text": "Fysiikka",
+          "visible": true
+        },
+        {
+          "text": "Biologia",
+          "visible": true
+        },
+        {
+          "text": "Käyttäytyminen",
+          "visible": true
+        },
+        {
+          "text": "Sivilisaatio",
+          "visible": true
+        },
+        {
+          "text": "Näyttö",
+          "visible": true
+        },
+        {
+          "text": "Tietoa",
+          "visible": true
+        }
+      ],
+      "overflow": false,
+      "rows": [
+        65
+      ],
+      "top": 0,
+      "url": "https://www.extinctionfield.com/fi/model",
+      "viewport": [
+        897,
+        812
+      ]
+    },
+    {
+      "label": "LIVE FI897 after scroll",
+      "burger": false,
+      "cssHeight": "110px",
+      "header": {
+        "bottom": 110,
+        "height": 110,
+        "top": 0
+      },
+      "items": [
+        {
+          "bottom": 101,
+          "label": "Etusivu",
+          "right": 69.21875,
+          "visible": true,
+          "x": 24,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Malli",
+          "right": 126.6171875,
+          "visible": true,
+          "x": 81.21875,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Fysiikka",
+          "right": 204.4140625,
+          "visible": true,
+          "x": 138.6171875,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Biologia",
+          "right": 281.75,
+          "visible": true,
+          "x": 216.4140625,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Käyttäytyminen",
+          "right": 406.46875,
+          "visible": true,
+          "x": 293.75,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Sivilisaatio",
+          "right": 500.1484375,
+          "visible": true,
+          "x": 418.46875,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Näyttö",
+          "right": 569.1171875,
+          "visible": true,
+          "x": 512.1484375,
+          "y": 65
+        },
+        {
+          "bottom": 101,
+          "label": "Tietoa",
+          "right": 635.9765625,
+          "visible": true,
+          "x": 581.1171875,
+          "y": 65
+        }
+      ],
+      "overflow": false,
+      "scrollY": 1200,
+      "url": "https://www.extinctionfield.com/fi/model",
+      "viewport": [
+        897,
+        812
+      ]
+    },
+    {
+      "label": "LIVE FI390 model",
+      "height": 150,
+      "items": [
+        {
+          "text": "Etusivu",
+          "visible": true
+        },
+        {
+          "text": "Malli",
+          "visible": true
+        },
+        {
+          "text": "Fysiikka",
+          "visible": true
+        },
+        {
+          "text": "Biologia",
+          "visible": true
+        },
+        {
+          "text": "Käyttäytyminen",
+          "visible": true
+        },
+        {
+          "text": "Sivilisaatio",
+          "visible": true
+        },
+        {
+          "text": "Näyttö",
+          "visible": true
+        },
+        {
+          "text": "Tietoa",
+          "visible": true
+        }
+      ],
+      "overflow": false,
+      "rows": [
+        65,
+        105
+      ],
+      "top": 0,
+      "url": "https://www.extinctionfield.com/fi/model#solar-biological",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "label": "LIVE FI390 behavior",
+      "height": 150,
+      "items": [
+        {
+          "text": "Etusivu",
+          "visible": true
+        },
+        {
+          "text": "Malli",
+          "visible": true
+        },
+        {
+          "text": "Fysiikka",
+          "visible": true
+        },
+        {
+          "text": "Biologia",
+          "visible": true
+        },
+        {
+          "text": "Käyttäytyminen",
+          "visible": true
+        },
+        {
+          "text": "Sivilisaatio",
+          "visible": true
+        },
+        {
+          "text": "Näyttö",
+          "visible": true
+        },
+        {
+          "text": "Tietoa",
+          "visible": true
+        }
+      ],
+      "overflow": false,
+      "rows": [
+        65,
+        105
+      ],
+      "top": 0,
+      "url": "https://www.extinctionfield.com/fi/behavior#reasons",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "label": "LIVE FI390 fresh model",
+      "headerBottom": 150,
+      "margin": "166px",
+      "targetTop": 166.1484375,
+      "url": "https://www.extinctionfield.com/fi/model#solar-biological",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "label": "LIVE FI390 fresh behavior",
+      "headerBottom": 150,
+      "margin": "166px",
+      "targetTop": 165.8046875,
+      "url": "https://www.extinctionfield.com/fi/behavior#reasons",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "home": {
+    "heading": "Biologisen kapasiteetin maailmanlaajuinen heikkeneminen",
+    "home": "page",
+    "url": "https://www.extinctionfield.com/fi"
+  }
+}
