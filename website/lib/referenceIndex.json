@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1203,
-    "linkedReferences": 534
+    "totalReferences": 1205,
+    "linkedReferences": 536
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -12047,6 +12047,26 @@
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1039/C9PP00469F"
+    },
+    "frei2010_exposure_proxies": {
+      "id": "frei2010_exposure_proxies",
+      "authors": "Frei P, Mohler E, Bürgi A, Fröhlich J, Neubauer G, Braun-Fahrländer C, Röösli M; QUALIFEX Team",
+      "year": 2010,
+      "title": "Classification of personal exposure to radio frequency electromagnetic fields (RF-EMF) for epidemiological research: Evaluation of different exposure assessment methods",
+      "journal": "Environment International 36(7):714–720",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.envint.2010.05.005"
+    },
+    "birks2021_modeled_rf_dose": {
+      "id": "birks2021_modeled_rf_dose",
+      "authors": "Birks LE et al.",
+      "year": 2021,
+      "title": "Radiofrequency electromagnetic fields from mobile communication: Description of modeled dose in brain regions and the body in European children and adolescents",
+      "journal": "Environmental Research 193:110505",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.envres.2020.110505"
     }
   },
   "aliases": {
@@ -13263,6 +13283,10 @@
     "pmcid:PMC8387235": "carcea2021_maternal_learning",
     "pmid:34381215": "carcea2021_maternal_learning",
     "doi:10.1039/c9pp00469f": "hammad2020_dark_cryptochrome",
-    "pmid:32065192": "hammad2020_dark_cryptochrome"
+    "pmid:32065192": "hammad2020_dark_cryptochrome",
+    "doi:10.1016/j.envint.2010.05.005": "frei2010_exposure_proxies",
+    "pmid:20538340": "frei2010_exposure_proxies",
+    "doi:10.1016/j.envres.2020.110505": "birks2021_modeled_rf_dose",
+    "pmid:33245886": "birks2021_modeled_rf_dose"
   }
 }

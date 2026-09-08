@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 783,
-    "usageLocations": 2392
+    "referencesWithUsages": 785,
+    "usageLocations": 2396
   },
   "usage": {
     "delgado1969": [
@@ -7239,6 +7239,10 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
       }
     ],
     "duraccio2021_blue_light_filter": [
@@ -7749,6 +7753,10 @@
       {
         "path": "/evidence/epidemiology",
         "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
       }
     ],
     "delong2010_plosone": [
@@ -10993,6 +11001,18 @@
       {
         "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "frei2010_exposure_proxies": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "birks2021_modeled_rf_dose": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
       }
     ],
     "davies2023_coral_light": [
