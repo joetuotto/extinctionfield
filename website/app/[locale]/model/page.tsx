@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
@@ -5319,7 +5320,8 @@ export default async function ModelPage({
             <div className="overflow-x-auto">
               <BermCausalDiagram locale={locale} />
             </div>
-            <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
+            <CombinedExposurePanel locale={locale} focus="model" />
+      <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
             <span id="ifo" />
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
               {cite(d.ifoVgicNote)}

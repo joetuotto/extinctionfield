@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -213,5 +214,6 @@ export default async function ConvergencePage({ params }: { params: Promise<{ lo
     </ExplanationSection>)}
     <ExplanationSection {...d.contents[8]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.biological-state-to-action">{d.parsimonyClaim}</ClaimRef></p>{p(d.parsimony)}<MathBlock tex={String.raw`\Delta\mathbf Y=J\Delta\mathbf S+\epsilon,\qquad\operatorname{rank}(J\Sigma_SJ^{\mathsf T})\leq k`} />{p(d.parsimonyMeaning)}</ExplanationSection>
     <ExplanationSection {...d.contents[9]}>{p(d.dataLead)}<div className="grid gap-4 sm:grid-cols-2">{d.datasets.map((dataset) => <a key={dataset.href} href={dataset.href} className="block rounded-lg border border-card-border p-5 transition-colors hover:border-accent/60 hover:bg-accent/5 focus-visible:outline-2 focus-visible:outline-accent"><h3 className="mb-2 text-base font-semibold">{dataset.title}</h3><p className="mb-4 text-sm leading-6 text-foreground-muted">{dataset.description}</p><p className="text-xs font-medium leading-5 text-accent">{dataset.access}</p></a>)}</div></ExplanationSection>
-  </ExplanationHub>;
+  <CombinedExposurePanel locale={locale} focus="model" />
+      </ExplanationHub>;
 }

@@ -54,13 +54,13 @@ export const DEMOGRAPHIC_THEORIES: DemographicTheory[] = [
     fi: {
       title: "Ehkäisy ja lisääntymisen säätely",
       observation: "Ehkäisy muuttaa suoraan raskauden todennäköisyyttä. Bongaartsin kehys erottaa lisääntymistä välittävät tekijät niiden taustalla olevista syistä.",
-      derivation: "BERM kysyy lisäksi, mikä tuottaa lastenhankinnan ajoitusta ja ehkäisyn käyttöä ohjaavan tilan. Välineen kausaalinen teho ja sen käytön alkuperä ovat kaksi eri selitystehtävää.",
+      derivation: "BERM kysyy lisäksi, mikä tuottaa lastenhankinnan ajoitusta ja ehkäisyn käyttöä ohjaavan tilan. Välineen kausaalinen teho ja sen käytön alkuperä ovat kaksi eri selitystehtävää. Yhdistelmäehkäisy muuttaa lisäksi farmakologista vastaanottotilaa: esimerkiksi SHBG:n muutos kuuluu hormonin saatavuuteen ja muiden syötteiden vaikutusehtoihin. [[ref:panzer2006_shbg|Panzer 2006]].",
       evidence: "Japanin perhesuunnittelukyselyissä kondomi ja muut menetelmät näkyvät jo 1950-luvulla. Tietyn välineen saatavuus ja koko lisääntymisen säätely on siksi erotettava toisistaan. [[ref:bongaarts1978_proximate_determinants|Bongaarts 1978]]; [[ref:bongaarts2015_proximate_update|Bongaarts 2015]]; [[ref:japan_ipss2006_contraceptive_methods|IPSS, taulukko 4–25]].",
     },
     en: {
       title: "Contraception and reproductive control",
       observation: "Contraception directly changes pregnancy probability. Bongaarts’s framework distinguishes the proximate determinants of reproduction from their background causes.",
-      derivation: "BERM additionally asks what produces the state guiding timing and contraceptive use. A method’s causal efficacy and the origin of its use are different explanatory tasks.",
+      derivation: "BERM additionally asks what produces the state guiding timing and contraceptive use. A method’s causal efficacy and the origin of its use are different explanatory tasks. Combined contraception also changes pharmacological receiving state: an SHBG change enters hormone availability and the conditions under which other inputs act. [[ref:panzer2006_shbg|Panzer 2006]].",
       evidence: "Japan’s family-planning surveys document condoms and other methods in the 1950s. Availability of one particular method must therefore be distinguished from reproductive control as a whole. [[ref:bongaarts1978_proximate_determinants|Bongaarts 1978]]; [[ref:bongaarts2015_proximate_update|Bongaarts 2015]]; [[ref:japan_ipss2006_contraceptive_methods|IPSS, Table 4–25]].",
     },
   },

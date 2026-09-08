@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Zap } from "lucide-react";
@@ -517,6 +518,8 @@ export default async function DevicesPage({ params }: { params: Promise<{ locale
           ))}
         </div>
       </section>
+
+      <CombinedExposurePanel locale={locale} focus="materials" />
 
       {/* See also navigation */}
       <div className="mt-14 rounded-lg border border-card-border bg-card-bg p-5">

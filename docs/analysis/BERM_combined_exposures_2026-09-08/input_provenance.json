@@ -1,0 +1,8 @@
+{
+  "attachmentId": "0b7b7067-2c32-4336-86f5-04aad072b9dd",
+  "sha256": "c67aad7c8086bdf272707b498a1180c158c8764f7577b66cb34298d6091de681",
+  "supersedesAttachmentId": "98e3bb8c-260b-47ba-8590-43e3e73a9157",
+  "integratedAt": "2026-09-08",
+  "model": "BERM",
+  "sourceAudit": "pharma_sources.md and material_sources.md"
+}

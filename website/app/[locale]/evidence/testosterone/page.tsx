@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { HormoneCompartments } from "@/components/HormoneCompartments";
 import type { Metadata } from "next";
@@ -337,6 +338,7 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
 
       <PageHeader icon={TrendingDown} title={d.title} subtitle={d.subtitle} />
 
+      <CombinedExposurePanel locale={locale} focus="hormones" />
       <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
 
       <div className="mt-8">

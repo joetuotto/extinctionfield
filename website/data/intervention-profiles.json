@@ -878,6 +878,114 @@
           "fieldDrug": null
         }
       }
+    },
+    {
+      "id": "mcu_receiver_state",
+      "title": {
+        "en": "Mitochondrial calcium uptake and RF response",
+        "fi": "Mitokondrion kalsiuminotto ja RF-vaste"
+      },
+      "mechanism": {
+        "en": "Mitochondrial calcium uptake is part of the receiving cell’s state. Inhibiting MCU changes calcium handling and may alter the support available for responding to a field exposure; buffering and energy supply are candidate contributors, not separately identified mechanisms in the verified abstract.",
+        "fi": "Mitokondrion kalsiuminotto on osa vastaanottavan solun tilaa. MCU:n esto muuttaa kalsiumin käsittelyä ja voi vaikuttaa kenttäaltistuksen vasteeseen käytettävissä olevaan tukeen; puskurointi ja energiahuolto ovat ehdokkaita, joita tarkistetussa abstraktissa ei erotella omiksi mekanismeikseen."
+      },
+      "observed": {
+        "en": "In mouse embryonic fibroblasts exposed to 1800 MHz RF for 15 minutes, inhibiting mitochondrial calcium uptake with Ru360 enhanced DNA damage and apoptosis. The study reported no significant effects on cell cycle, proliferation or viability. MCU inhibition increased impairment in this protocol; this was not a rescue experiment.",
+        "fi": "Hiiren alkion fibroblasteissa 15 minuutin altistus 1800 MHz:n RF-kentälle tuotti Ru360:lla estetyn mitokondrion kalsiuminoton yhteydessä suuremman DNA-vaurion ja apoptoosin. Tutkimus ei raportoinut merkitseviä vaikutuksia solusykliin, proliferaatioon tai elinkykyyn. MCU:n esto lisäsi haittaa tässä protokollassa; kyseessä ei ollut suojaava interventio."
+      },
+      "prediction": {
+        "en": "Conditional interpretation of the measured component: a pharmacologically changed calcium-compartment state can modify the downstream response to RF. BERM places this state dependence in its biological response dynamics after the open L2 operator. This supplies a concrete component for composing joint exposures, without a new numerical forecast or a measured contraceptive interaction.",
+        "fi": "Mitatun komponentin ehdollinen tulkinta: lääkkeellä muutettu kalsiumin osastotila voi muuntaa RF-altistuksen alavirran vastetta. BERM sijoittaa tämän tilariippuvuuden biologiseen vastedynamiikkaansa avoimen L2-operaattorin jälkeen. Näin saadaan konkreettinen osamekanismi yhteisaltistusten koostamiseen ilman uutta numeerista ennustetta tai mitattua ehkäisylääkeinteraktiota."
+      },
+      "limitations": [
+        {
+          "en": "The primary abstract was verified. SAR, signal waveform, Ru360 concentration and the exact order and duration of drug treatment were not verified; no exposure dose or treatment coefficient is inferred.",
+          "fi": "Alkuperäistutkimuksen abstrakti on tarkistettu. SAR, signaalin aaltomuoto, Ru360-pitoisuus sekä lääkekäsittelyn tarkka järjestys ja kesto ovat varmistamatta; altistusannosta tai lääkekerrointa ei päätellä."
+        },
+        {
+          "en": "This is a fibroblast RF–MCU intervention, not an experiment with combined oral contraceptives or a human fertility endpoint. It does not validate Lindgren-derived geometry or calibrate BERM’s tissue response operator.",
+          "fi": "Kyseessä on fibroblastien RF–MCU-interventio, ei yhdistelmäehkäisykoe tai ihmisen hedelmällisyyspäätepiste. Se ei validoi Lindgrenistä johdettua geometriaa eikä kalibroi BERM:n kudosvasteoperaattoria."
+        },
+        {
+          "en": "Matched quantitative means for all four experimental conditions have not been curated. The reported enhancement is retained as a study finding, without assigning an interaction effect size.",
+          "fi": "Kaikkien neljän koe-ehdon vertailukelpoisia numeerisia keskiarvoja ei ole kuratoitu. Raportoitu voimistuminen säilytetään tutkimustuloksena määrittämättä interaktion vaikutuskokoa."
+        },
+        {
+          "en": "The atlas includes the existing calcium/ROS input branch as BERM context. The Ru360 experiment does not identify an upstream VGCC entry mechanism.",
+          "fi": "Atlas näyttää olemassa olevan kalsium/ROS-syötehaaran BERM-kontekstina. Ru360-koe ei tunnista edeltävää VGCC-sisääntulomekanismia."
+        }
+      ],
+      "protocol": {
+        "system": {
+          "en": "Mouse embryonic fibroblasts (MEFs).",
+          "fi": "Hiiren alkion fibroblastit (MEF-solut)."
+        },
+        "field": {
+          "en": "1800 MHz RF, 15 minutes. SAR and waveform were not verified in the accessible primary abstract.",
+          "fi": "1800 MHz:n RF, 15 minuuttia. SAR ja aaltomuoto eivät varmistuneet saatavilla olevasta alkuperäisabstraktista."
+        },
+        "light": {
+          "en": "No light–field interaction is described in the verified abstract.",
+          "fi": "Tarkistettu abstrakti ei kuvaa valo–kenttä-interaktiota."
+        },
+        "drugTiming": {
+          "en": "Ru360 inhibition of mitochondrial calcium uptake combined with RF exposure. Concentration, pretreatment interval and washout were not verified.",
+          "fi": "Mitokondrion kalsiuminoton esto Ru360:lla yhdistettynä RF-altistukseen. Pitoisuus, esikäsittelyväli ja poispesu ovat varmistamatta."
+        },
+        "measurement": {
+          "en": "DNA damage and apoptosis; cell cycle, proliferation and viability also assessed. No matched numerical four-arm contrast is available in this profile.",
+          "fi": "DNA-vaurio ja apoptoosi; myös solusykli, proliferaatio ja elinkyky arvioitiin. Profiiliin ei ole saatavilla vertailukelpoista numeerista neljän haaran kontrastia."
+        }
+      },
+      "studies": [
+        {
+          "id": "study.sun2023_ru360_rf_damage",
+          "referenceId": "sun2023_ru360_rf_damage",
+          "fieldTested": true,
+          "sourceCoverage": "abstract",
+          "system": "Mouse embryonic fibroblasts (MEFs)",
+          "protocol": "1800 MHz RF for 15 minutes with Ru360 MCU inhibition; SAR, waveform, Ru360 concentration and exact treatment sequence not verified from the abstract.",
+          "endpoint": "DNA damage and apoptosis enhanced with MCU inhibition; no significant effects reported on cell cycle, proliferation or viability."
+        }
+      ],
+      "referenceIds": [
+        "sun2023_ru360_rf_damage"
+      ],
+      "studyIds": [
+        "study.sun2023_ru360_rf_damage"
+      ],
+      "interventionTargets": [
+        "MCU",
+        "Ru360",
+        "mitochondria",
+        "calcium"
+      ],
+      "endpointIds": [
+        "dna_damage",
+        "apoptosis",
+        "cell_viability"
+      ],
+      "atlasNodeIds": [
+        "mech_ca_compartment_cycle",
+        "mech_vgcc_ros"
+      ],
+      "claimIds": [
+        "claim.synergy.state-conditioned-coexposure"
+      ],
+      "modelStatus": "STRUCTURAL_ONLY",
+      "contrast": {
+        "status": "not_calculable_from_curated_data",
+        "reason": {
+          "en": "Matched raw endpoint means and uncertainty for sham, RF, Ru360 and RF plus Ru360 have not been curated. No numerical interaction or synthetic scenario is assigned to this profile.",
+          "fi": "Lume-, RF-, Ru360- ja RF+Ru360-haarojen vertailukelpoisia päätepistekeskiarvoja ja epävarmuuksia ei ole kuratoitu. Profiilille ei anneta numeerista interaktiota tai synteettistä laskentaesimerkkiä."
+        },
+        "arms": {
+          "sham": null,
+          "field": null,
+          "drug": null,
+          "fieldDrug": null
+        }
+      }
     }
   ]
 }

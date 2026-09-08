@@ -170,7 +170,7 @@ export const PROXY_EXPLANATIONS: readonly {
       masking: "Birth timing combines intentions, constraints, partnership and biological capacity. Education or contraceptive access alone does not distinguish practical decisions from changes in motivation or reproductive capacity.",
       insufficiency: "RF exposure changed oxidative and functional endpoints in human sperm studied outside the body. Contraceptive choices and education cannot generate this response inside an isolated cell sample; population fertility also includes those choices and other biological steps. [[ref:iuliis2009|De Iuliis 2009]].",
       contribution: "BERM separates deliberate reproductive control and practical opportunities from receiving state, motivation and reproductive physiology. These are distinct causal parts of the same outcome; naming one does not explain the others.",
-      evidence: "This entry describes the structure of BERM’s integration. Contraceptive action and practical constraints are included as causes, alongside the model’s biological pathway.",
+      evidence: "The pharmacological state of combined contraception specifies reception: SHBG findings locate binding, and the estrogen channel experiment locates calcium signalling. BERM joins these stages to field-response conditions by formulation and tissue. [[ref:panzer2006_shbg|Panzer 2006]]; [[ref:sarkar2008_estrogen_channels|Sarkar 2008]].",
     },
     fi: {
       label: "Ehkäisy, koulutus ja ajoitus",
@@ -179,7 +179,7 @@ export const PROXY_EXPLANATIONS: readonly {
       masking: "Syntymien ajoitus kokoaa aikomukset, rajoitteet, parisuhteet ja biologisen kapasiteetin. Koulutus tai ehkäisyn saatavuus ei yksin erottele käytännön päätöksiä motivaation tai lisääntymiskyvyn muutoksista.",
       insufficiency: "RF-altistus muutti elimistön ulkopuolella tutkittujen ihmisen siittiöiden oksidatiivisia ja toiminnallisia päätemuuttujia. Ehkäisypäätökset ja koulutus eivät tuota tätä vastetta eristetyssä solunäytteessä; väestön syntyvyyteen kuuluvat myös nämä päätökset ja muut biologiset vaiheet. [[ref:iuliis2009|De Iuliis 2009]].",
       contribution: "BERM erottaa tietoisen lisääntymisen säätelyn ja käytännön mahdollisuudet vastaanottotilasta, motivaatiosta ja lisääntymisfysiologiasta. Ne ovat saman lopputuloksen erillisiä kausaalisia osia; yhden nimeäminen ei selitä muita.",
-      evidence: "Tässä kuvataan BERM:n kokoamisen rakennetta. Ehkäisyn vaikutus ja käytännön rajoitteet sisältyvät syihin mallin biologisen reitin rinnalla.",
+      evidence: "Yhdistelmäehkäisyn farmakologinen tila täsmentää vastaanottoa: SHBG-havainto paikantaa sitoutumisen, ja estrogeenin kanavakoe kalsiumsignaloinnin. BERM yhdistää nämä vaiheet kenttävasteen ehtoihin valmisteen ja kudoksen mukaan. [[ref:panzer2006_shbg|Panzer 2006]]; [[ref:sarkar2008_estrogen_channels|Sarkar 2008]].",
     },
   },
   {

@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
@@ -222,6 +223,7 @@ export default async function ReproductiveArcPage({ params }: { params: Promise<
       </p>
       <PageHeader icon={Heart} title={d.title} subtitle={d.subtitle} />
 
+      <CombinedExposurePanel locale={locale} focus="hormones" />
       <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
       <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
 

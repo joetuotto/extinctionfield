@@ -1,0 +1,164 @@
+{
+  "version": "berm-combined-exposures-v1",
+  "model": "BERM",
+  "status": "STRUCTURAL_ONLY",
+  "factors": [
+    {
+      "id": "contraceptive_state",
+      "role": "named_drug_and_receiver_context",
+      "coordinates": [
+        "ingredient",
+        "drug_class",
+        "dose",
+        "dose_units",
+        "route",
+        "schedule",
+        "timing"
+      ]
+    },
+    {
+      "id": "material_interface",
+      "role": "physical_interface_and_transfer_context",
+      "coordinates": [
+        "material_pair",
+        "geometry",
+        "humidity",
+        "contact",
+        "motion",
+        "grounding"
+      ]
+    },
+    {
+      "id": "rf_device_protocol",
+      "role": "named_physical_input_protocol",
+      "coordinates": [
+        "spectrum",
+        "modulation",
+        "timing",
+        "electric_field",
+        "sar"
+      ]
+    }
+  ],
+  "interactions": {
+    "materialByRF": {
+      "factors": [
+        "material_interface",
+        "rf_device_protocol"
+      ],
+      "independentFactor": false
+    },
+    "drugByRF": {
+      "factors": [
+        "contraceptive_state",
+        "rf_device_protocol"
+      ],
+      "independentFactor": false
+    },
+    "sign": null,
+    "magnitude": null
+  },
+  "layers": [
+    {
+      "id": "L0",
+      "category": "lindgren_geometry",
+      "status": "primary_premise",
+      "formula": "g = eta + A tensor A",
+      "version": "Lindgren-Kovacs-Liukkonen 2025"
+    },
+    {
+      "id": "L1",
+      "category": "lindgren_geometry",
+      "status": "derived_with_explicit_BERM_scale",
+      "formula": "delta_g = kappa(A0 tensor a + a tensor A0 + a tensor a)",
+      "multiInput": "a = sum(a_p); cross terms require a declared temporal averaging operator"
+    },
+    {
+      "id": "L2",
+      "category": "berm_conditional_mechanism",
+      "status": "open_calibration",
+      "formula": "r_i(t) = Xi_i[S_i(history)](delta_g)",
+      "owner": "BERM"
+    },
+    {
+      "id": "L3_L4",
+      "category": "imported_empirical_biology",
+      "status": "component_evidence",
+      "composition": "shared calcium/redox state -> production; binding and clearance retained separately"
+    }
+  ],
+  "existingModules": {
+    "physicalInterface": "berm.physics.static_tribo_interface.StaticTriboelectricInterface",
+    "receiverState": "berm.modulome.state.CellStateVector",
+    "production": "berm.modulome.steroidogenesis.SteroidogenesisObservation",
+    "binding": "berm.biology.androgen_capacity.HormoneBindingState",
+    "contrast": "berm.biology.cross_pathway_synthesis.additive_interaction_contrast",
+    "publicEntryPoint": "berm.biology.combined_exposures_structure"
+  },
+  "hormoneStages": {
+    "production": "output per viable cell in a named stimulation and redox context",
+    "binding": "mass-action free testosterone from supplied consistent concentrations and constants",
+    "clearance": "separately observed volume/time; concentration is not production",
+    "sharedState": "one receiver/calcium/redox context, not a product of duplicate mechanism gains",
+    "capacityPolicy": {
+      "currentImplementation": "retain measurements and matched-context comparisons",
+      "targetNode": "MALE_STEROIDOGENESIS",
+      "existingCapacityGate": "steroidogenic_support",
+      "newCapacityMultiplier": null,
+      "doubleCountingRule": "When androgen-effective capacity already includes testosterone supply, steroidogenic_support stays neutral; no duplicate production multiplier.",
+      "historicalForecastsChanged": false
+    }
+  },
+  "measurementContract": {
+    "quantities": {
+      "potential_difference": "V",
+      "electric_field": "V/m",
+      "sar": "W/kg",
+      "chemical_permeability": "m/s",
+      "chemical_permeability_ratio": "1"
+    },
+    "conversionPolicy": "No automatic V-to-E, E-to-SAR or chemical-permeability-to-field conversion",
+    "fieldStateRole": "optional_physical_measurement_input_only",
+    "permeabilityScope": "named chemical, assay, timing and comparator; never a universal organ gain"
+  },
+  "contrastContract": {
+    "function": "berm.biology.matched_interaction_contrast",
+    "formula": "Y11 - Y10 - Y01 + Y00",
+    "factorCount": 3,
+    "contrastedFactors": 2,
+    "match": [
+      "third_factor",
+      "endpoint",
+      "units",
+      "compartment",
+      "timing",
+      "matching_context_id",
+      "evidence_kind"
+    ],
+    "interpretationKind": "descriptive_additive_mean_contrast",
+    "missingMean": null,
+    "synergyStatus": null,
+    "statisticalSignificance": null
+  },
+  "claimIds": [
+    "claim.synergy.state-conditioned-coexposure",
+    "claim.synergy.contraceptive-receiver-state",
+    "claim.synergy.material-device-transfer"
+  ],
+  "openCalibration": {
+    "gaugePrescription": null,
+    "physicalScale": null,
+    "tissueKernel": null,
+    "responseSign": null,
+    "responseLag": null,
+    "drugStateTransfer": null,
+    "materialToTissueTransfer": null,
+    "humanEndpointTransfer": null
+  },
+  "predictionPolicy": {
+    "historicalForecastsChanged": false,
+    "newCapacityMultiplier": null,
+    "automaticGains": null,
+    "fourthIndependentFactor": false
+  }
+}

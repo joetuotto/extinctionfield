@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { AnatomyIllustrationCell } from "@/components/AnatomyIllustration";
 import type { Metadata } from "next";
@@ -107,5 +108,6 @@ export default async function BiologyPage({ params }: { params: Promise<{ locale
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.coordination.hormone-waveform">{d.timingClaim}</ClaimRef></p>{p(d.timing)}<ResearchConnection locale={locale} studies={d.timingStudies} implication={d.timingImplication} /><MathBlock tex={String.raw`\langle H R\rangle=H_0R_0+\frac{hr}{2}\cos\Delta\phi`} />{p(d.timingEquation)}</ExplanationSection>
     <ExplanationSection {...d.contents[4]}>{p(d.capacity)}<ResearchConnection locale={locale} studies={d.capacityStudies} implication={d.capacityImplication} /></ExplanationSection>
     <ExplanationSection {...d.contents[5]}>{p(d.ecology)}<ResearchConnection locale={locale} studies={d.ecologyStudies} implication={d.ecologyImplication} /></ExplanationSection>
-  </ExplanationHub>;
+  <CombinedExposurePanel locale={locale} focus="model" />
+      </ExplanationHub>;
 }

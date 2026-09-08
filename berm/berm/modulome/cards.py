@@ -217,7 +217,7 @@ MECHANISM_CARDS: tuple[MechanismCard, ...] = (
         reference_ids=("bertagna2025",),
         epistemic_level="E",
         implementing_modules=("berm.modulome.calcium",),
-        intervention_profile_ids=("mt2_brake", "local_ltype_erk", "channel_density_store_history"),
+        intervention_profile_ids=("mt2_brake", "local_ltype_erk", "channel_density_store_history", "mcu_receiver_state"),
     ),
     MechanismCard(
         card_id="card.adaptation-memory",

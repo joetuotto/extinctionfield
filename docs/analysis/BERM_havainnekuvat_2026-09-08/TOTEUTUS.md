@@ -65,4 +65,12 @@ Tuotantokoostamisen tarkistuksiin kuuluvat TypeScript, tiukka ESLint, viite- ja 
 
 Selainkatselmus sisältää vaalean ja tumman teeman, työpöydän sekä 390 pikselin mobiiliesikatselun. Ympäristön maa/vuosi, anatomian haara, laboratoriovertailu, signaalin säätö, yhteinen vuosikohdistin ja ajoitusesimerkin nollapäällekkäisyys kokeiltiin sivuilla. Hormonisivun kaavakorttien leveyskorjaus varmistettiin tuotantoversiossa. Sivuston kaikkia vanhoja taulukoita ei uudistettu tässä työssä; esimerkiksi testes-sivulla on edelleen kuvapaneelin ulkopuolinen leveä viitetaulukko.
 
-Tämä on erillisen toteutushaaran paikallinen esikatselu. Sivuston julkista versiota tai main-haaraa ei päivitetty tämän toteutuksen yhteydessä.
+Kokonaisuus valmistui ensin erilliseen toteutushaaraan ja paikalliseen esikatseluun. Main-julkaisu valmisteltiin käyttäjän tämän jälkeen antaman julkaisupyynnön perusteella.
+
+## Main-julkaisun yhdistäminen
+
+Kuvituscommit `dc1b6e4` yhdistettiin mainin päivitykseen `97d33e0`, joka sisältää yhteisaltistuksia ja lajien välistä materiaalinäyttöä käsittelevät lisäykset. Molempien töiden sivuintegraatiot säilyivät. Viitekäyttö- ja ankkurihakemistot generoitiin uudelleen yhdistetyistä lähteistä.
+
+Yhdistetyn version testi paikansi mainista yhden puuttuvan atlas-kytkennän: `claim.synergy.contraceptive-receiver-state`. Se liitettiin väitteen oman `ANDROGEN_BINDING_AVAILABILITY`-kohteen mukaiseen `androgen_binding_availability`-solmuun. Väite ja sen merkitys säilyivät; kaikkien 114 väitteen atlas-kytkennät ovat nyt mukana.
+
+Korjauksen jälkeinen koko sivuston testi: **948/948 testiä, 81 testitiedostoa**.

@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import { InterventionExplorer } from "@/components/InterventionExplorer";
@@ -191,7 +192,8 @@ export default async function BiologicalCoordinationPage({ params }: { params: P
               </a>)}
             </div>
           </section>
-          <nav aria-label={d.connections} className="border-t editorial-rule pt-7">
+          <CombinedExposurePanel locale={locale} focus="pharmacology" />
+      <nav aria-label={d.connections} className="border-t editorial-rule pt-7">
             <h2 className="editorial-section-heading mb-4">{d.connections}</h2>
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               {["/evidence/nutrition", "/evidence/circadian", "/evidence/reproductive-arc", "/model/dual-kernel", "/civilization"].map((href, index) => <Link key={href} href={`/${locale}${href}`} className="text-sm text-accent hover:underline">{d.links[index]} →</Link>)}

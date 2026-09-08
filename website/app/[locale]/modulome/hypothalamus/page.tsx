@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Brain } from "lucide-react";
@@ -741,6 +742,7 @@ export default async function HypothalamusPage({
           </Link>
         </div>
       </section>
-    </div>
+<CombinedExposurePanel locale={locale} focus="pharmacology" />
+          </div>
   );
 }

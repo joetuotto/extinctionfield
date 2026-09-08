@@ -26,7 +26,7 @@ def test_all_requested_mechanisms_are_linked_from_existing_cards(registry):
     assert ids == {
         'mt2_brake', 'local_ltype_erk', 'channel_selectivity',
         'lipid_ttype_inhibition', 'channel_density_store_history',
-        'cry_fad_competition', 'drug_photochemistry', 'coq10_response',
+        'cry_fad_competition', 'drug_photochemistry', 'coq10_response', 'mcu_receiver_state',
     }
     linked = {p for card in MECHANISM_CARDS for p in card.intervention_profile_ids}
     assert linked == ids
@@ -53,6 +53,25 @@ def test_predictions_depend_on_bridge_and_components_but_do_not_validate_bridge(
     claims = {c['id']:c for c in data['claims']}
     assessments = {a['claimId']:a for a in data['epistemic_assessments']}
     for p in registry['profiles']:
+        if p['id'] == 'mcu_receiver_state':
+            # Measured component plus conditional synthesis, without a new forecast.
+            assert p['claimIds'] == ['claim.synergy.state-conditioned-coexposure']
+            interpretation = claims[p['claimIds'][0]]
+            assert interpretation['kind'] == 'model_derived'
+            assert set(interpretation['depends_on']) == {
+                'claim.bridge.conditional-response-operator',
+                'claim.synthesis.protocol-state-heterogeneity',
+            }
+            assert assessments[interpretation['id']]['origin'] == 'emergent'
+            assert assessments[interpretation['id']]['level'] == 'L*'
+            assert p['studies'] == [{
+                **p['studies'][0],
+                'id': 'study.sun2023_ru360_rf_damage',
+                'referenceId': 'sun2023_ru360_rf_damage',
+                'fieldTested': True,
+                'sourceCoverage': 'abstract',
+            }]
+            continue
         components = {c for c in p['claimIds'] if claims[c]['kind'] != 'prediction'}
         predictions = [claims[c] for c in p['claimIds'] if claims[c]['kind'] == 'prediction']
         assert len(predictions) == 1

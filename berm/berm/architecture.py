@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 from berm.biology.cross_pathway_synthesis import synthesis_manifest
+from berm.biology.combined_exposures import combined_exposures_structure
 
 
 PACKAGE_VERSION = "0.22.0"
@@ -285,7 +286,25 @@ _ARCHITECTURE_MANIFEST = {
 def architecture_manifest() -> dict:
     """Return a defensive copy of the machine-readable architecture contract."""
 
-    return deepcopy(_ARCHITECTURE_MANIFEST)
+    manifest = deepcopy(_ARCHITECTURE_MANIFEST)
+    combined = combined_exposures_structure()
+    manifest["evidenceSynthesis"]["combinedExposures"] = {
+        "structureVersion": combined["version"],
+        "modelOwner": "BERM",
+        "canonicalRoute": "/evidence/combined-exposures",
+        "module": "berm.biology.combined_exposures",
+        "inputFactors": [factor["id"] for factor in combined["factors"]],
+        "fieldStateRole": "optional_physical_measurement_input_only",
+        "compositionPolicy": (
+            "Physical source and material transfer precede the state-conditioned BERM L2 operator. "
+            "Shared calcium/redox state is propagated once; production, clearance and binding remain distinct."
+        ),
+        "contrastPolicy": combined["contrastContract"],
+        "claimIds": combined["claimIds"],
+        "openCalibration": combined["openCalibration"],
+        "predictionPolicy": combined["predictionPolicy"],
+    }
+    return manifest
 
 
 __all__ = [

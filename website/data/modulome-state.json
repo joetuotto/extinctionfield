@@ -88,7 +88,8 @@
       "interventionProfileIds": [
         "mt2_brake",
         "local_ltype_erk",
-        "channel_density_store_history"
+        "channel_density_store_history",
+        "mcu_receiver_state"
       ],
       "exposure": {
         "en": "50 Hz magnetic field at 1 mT applied to hippocampal neurons.",

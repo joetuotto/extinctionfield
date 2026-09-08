@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { AnatomyIllustrationTestes } from "@/components/AnatomyIllustration";
 import type { Metadata } from "next";
@@ -847,6 +848,7 @@ export default async function TestesPage({
 
       <PageHeader icon={ShieldAlert} title={d.title} subtitle={d.subtitle} />
 
+      <CombinedExposurePanel locale={locale} focus="materials" />
       <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
 
       {/* 01 — Hero: Multiple EMF-Sensitive Components */}

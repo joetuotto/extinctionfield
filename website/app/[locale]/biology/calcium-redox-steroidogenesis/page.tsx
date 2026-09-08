@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Activity, ArrowRight } from "lucide-react";
@@ -141,6 +142,8 @@ export default async function CalciumRedoxSteroidogenesisPage({ params }: { para
         <div className="mt-4 space-y-4">{p(d.premise)}<MathBlock tex={String.raw`\Delta g_{\mu\nu}=\kappa\left(A_{0\mu}a_\nu+a_\mu A_{0\nu}+a_\mu a_\nu\right),\qquad r_i=\Xi_i[S](\Delta g)`} /><Link href={`/${locale}/model/tensor-derivation`} className="inline-flex min-h-11 items-center gap-2 text-sm text-accent hover:underline">{d.derivationLink}<ArrowRight size={15} aria-hidden="true" /></Link></div>
       </details>
       <SteroidogenesisEvidenceExplorer locale={locale} />
+      <CombinedExposurePanel locale={locale} focus="pharmacology" />
+
       <section id="redox-reserve" className="mt-14 scroll-mt-28 space-y-5 border-t editorial-rule pt-8">
         <h2 className="editorial-section-heading">{d.reserveTitle}</h2>{p(d.reserve)}{p(d.reserveMeasure)}
         <p className="border-l-2 border-accent pl-4 text-base leading-7"><ClaimRef claimId="claim.steroidogenesis.reserve-masking">{d.reserveImplication}</ClaimRef></p>

@@ -1,5 +1,19 @@
 """Biological pathway models."""
 
+from berm.biology.combined_exposures import (
+    COMBINED_EXPOSURES_VERSION,
+    EXPOSURE_FACTORS,
+    CombinedExposureContext,
+    ExposureTiming,
+    FactorialEndpointObservation,
+    HormoneClearanceObservation,
+    MedicationAgent,
+    MedicationContext,
+    ProtocolMeasurement,
+    RFDeviceProtocol,
+    combined_exposures_structure,
+    matched_interaction_contrast,
+)
 from berm.biology.coordination import (
     COORDINATION_VERSION,
     HormoneReceptivityState,
@@ -65,6 +79,18 @@ from berm.biology.reproductive_state import (
 )
 
 __all__ = [
+    "COMBINED_EXPOSURES_VERSION",
+    "EXPOSURE_FACTORS",
+    "CombinedExposureContext",
+    "ExposureTiming",
+    "FactorialEndpointObservation",
+    "HormoneClearanceObservation",
+    "MedicationAgent",
+    "MedicationContext",
+    "ProtocolMeasurement",
+    "RFDeviceProtocol",
+    "combined_exposures_structure",
+    "matched_interaction_contrast",
     "COORDINATION_VERSION",
     "HormoneReceptivityState",
     "PhaseRelation",

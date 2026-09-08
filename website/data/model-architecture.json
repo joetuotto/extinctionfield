@@ -310,7 +310,60 @@
           "er.synthesis.susceptibility.rubin2010"
         ]
       }
-    ]
+    ],
+    "combinedExposures": {
+      "structureVersion": "berm-combined-exposures-v1",
+      "modelOwner": "BERM",
+      "canonicalRoute": "/evidence/combined-exposures",
+      "module": "berm.biology.combined_exposures",
+      "inputFactors": [
+        "contraceptive_state",
+        "material_interface",
+        "rf_device_protocol"
+      ],
+      "fieldStateRole": "optional_physical_measurement_input_only",
+      "compositionPolicy": "Physical source and material transfer precede the state-conditioned BERM L2 operator. Shared calcium/redox state is propagated once; production, clearance and binding remain distinct.",
+      "contrastPolicy": {
+        "function": "berm.biology.matched_interaction_contrast",
+        "formula": "Y11 - Y10 - Y01 + Y00",
+        "factorCount": 3,
+        "contrastedFactors": 2,
+        "match": [
+          "third_factor",
+          "endpoint",
+          "units",
+          "compartment",
+          "timing",
+          "matching_context_id",
+          "evidence_kind"
+        ],
+        "interpretationKind": "descriptive_additive_mean_contrast",
+        "missingMean": null,
+        "synergyStatus": null,
+        "statisticalSignificance": null
+      },
+      "claimIds": [
+        "claim.synergy.state-conditioned-coexposure",
+        "claim.synergy.contraceptive-receiver-state",
+        "claim.synergy.material-device-transfer"
+      ],
+      "openCalibration": {
+        "gaugePrescription": null,
+        "physicalScale": null,
+        "tissueKernel": null,
+        "responseSign": null,
+        "responseLag": null,
+        "drugStateTransfer": null,
+        "materialToTissueTransfer": null,
+        "humanEndpointTransfer": null
+      },
+      "predictionPolicy": {
+        "historicalForecastsChanged": false,
+        "newCapacityMultiplier": null,
+        "automaticGains": null,
+        "fourthIndependentFactor": false
+      }
+    }
   },
   "civilizationExtensions": {
     "forwardAggregation": {

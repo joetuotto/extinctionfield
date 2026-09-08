@@ -39,7 +39,8 @@
       "claim.envelope.frequency-dependent-response"
     ],
     "fieldstate_static": [
-      "claim.tribo.material-dependent-interface"
+      "claim.tribo.material-dependent-interface",
+      "claim.synergy.material-device-transfer"
     ],
     "fieldstate_electric": [
       "claim.efield.polarity-dependent-response"
@@ -158,7 +159,8 @@
     ],
     "mech_ca_compartment_cycle": [
       "claim.modulome.calcium-compartment-cycle",
-      "claim.steroidogenesis.component-convergence"
+      "claim.steroidogenesis.component-convergence",
+      "claim.synergy.state-conditioned-coexposure"
     ],
     "mod_repair_capacity": [
       "claim.modulome.adaptation-memory",
@@ -190,7 +192,8 @@
       "claim.geometry.quadratic-mixing"
     ],
     "androgen_binding_availability": [
-      "claim.androgen.binding-availability"
+      "claim.androgen.binding-availability",
+      "claim.synergy.contraceptive-receiver-state"
     ],
     "androgen_receptor_signal": [
       "claim.androgen.receptor-use-capacity"
