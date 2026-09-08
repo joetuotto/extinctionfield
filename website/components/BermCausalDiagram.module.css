@@ -1,0 +1,60 @@
+.root { width: 100%; min-width: 0; color: var(--foreground); }
+.toolbar { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; }
+.control { border: 1px solid var(--card-border); background: var(--card-bg); border-radius: .6rem; padding: .65rem .85rem; font-size: .85rem; cursor: pointer; text-align: left; }
+.control[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, var(--card-bg)); }
+.control:focus-visible, .node:focus-visible, .edgeButton:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.summary { margin: 1rem 0 .5rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .85rem; }
+.hint { font-size: .83rem; line-height: 1.65; color: var(--foreground-muted); margin-bottom: 1rem; }
+.selectLabel { display: grid; gap: .4rem; font-size: .8rem; margin: 1rem 0; max-width: 100%; }
+.select { width: 100%; min-width: 0; max-width: 42rem; padding: .6rem; border: 1px solid var(--card-border); border-radius: .5rem; background: var(--card-bg); color: var(--foreground); }
+.integration { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: baseline; margin: 1rem 0; padding: .85rem 1rem; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 5%, var(--card-bg)); font-size: .83rem; line-height: 1.65; }
+.integration a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .75rem; line-height: 1.5; color: var(--foreground-muted); margin: 1rem 0; }
+.legend span { display: inline-flex; gap: .4rem; align-items: center; }
+.legend b { font-family: ui-monospace, monospace; font-size: .7rem; }
+.graph { position: relative; isolation: isolate; padding: .5rem 28px 1rem; border: 1px solid var(--card-border); border-radius: 1rem; background: var(--card-bg); overflow: clip; }
+.wires { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.band { margin: 0 0 2.5rem; }
+.band:last-child { margin-bottom: 0; }
+.bandHeader { position: relative; display: flex; align-items: baseline; gap: .75rem; background: var(--card-bg); padding: 1.1rem 0 .85rem; border-bottom: 1px solid var(--card-border); margin-bottom: 1rem; }
+.number { color: var(--accent); font: 600 .8rem ui-monospace, monospace; flex-shrink: 0; }
+.bandHeader h4 { font-size: .97rem; font-weight: 650; line-height: 1.5; margin: 0; flex: 1; }
+.count { font-size: .7rem; color: var(--foreground-muted); white-space: nowrap; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr)); gap: 1.15rem 1rem; align-items: stretch; }
+.node { display: flex; flex-direction: column; width: 100%; min-width: 0; text-align: left; padding: .9rem 1rem; border: 1px solid var(--card-border); border-left: 3px solid var(--node-color); border-radius: .65rem; background: var(--card-bg); color: var(--foreground); box-shadow: 0 2px 5px #00000005; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+.node:hover, .node[data-highlighted="true"] { border-color: var(--node-color); box-shadow: 0 0 0 2px color-mix(in srgb, var(--node-color) 18%, transparent); }
+.nodeTop { display: flex; align-items: center; justify-content: space-between; gap: .5rem; font-size: .68rem; color: var(--foreground-muted); margin-bottom: .5rem; }
+.badge { color: var(--node-color); font-weight: 750; font-family: ui-monospace, monospace; }
+.nodeTitle { font-size: .86rem; font-weight: 630; line-height: 1.55; overflow-wrap: anywhere; hyphens: auto; }
+.nodeStatus { font-size: .72rem; line-height: 1.5; color: var(--foreground-muted); margin-top: .6rem; padding-top: .55rem; border-top: 1px solid var(--card-border); }
+.nodeTag { font-size: .73rem; font-weight: 550; color: var(--accent); margin-top: .5rem; line-height: 1.5; }
+.edgeList { display: grid; gap: .75rem; padding: 0; list-style: none; }
+.edgeRow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: .5rem 1rem; padding: 1rem; border: 1px solid var(--card-border); border-radius: .65rem; background: var(--card-bg); }
+.edgeRow[data-highlighted="true"] { border-color: var(--accent); }
+.edgeButton { min-width: 0; text-align: left; color: var(--foreground); font-size: .85rem; line-height: 1.6; overflow-wrap: anywhere; cursor: pointer; }
+.edgeButton:hover { color: var(--accent); text-decoration: underline; }
+.edgeKind { grid-column: 1 / -1; font-size: .75rem; color: var(--foreground-muted); }
+.dialog { width: min(720px, calc(100vw - 24px)); max-height: 86dvh; padding: 0; margin: auto; border: 1px solid var(--card-border); border-radius: 1rem; background: var(--card-bg); color: var(--foreground); box-shadow: 0 20px 100px #0003; }
+.dialog::backdrop { background: #10182066; backdrop-filter: blur(3px); }
+.dialogHeader { position: sticky; top: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.2rem 1.4rem; border-bottom: 1px solid var(--card-border); background: var(--card-bg); z-index: 1; }
+.dialogHeader h4 { margin: .5rem 0 0; font-size: 1.2rem; line-height: 1.5; overflow-wrap: anywhere; }
+.dialogBody { padding: 1.4rem; display: grid; gap: 1.4rem; font-size: .87rem; line-height: 1.8; }
+.dialogBody h5 { font-weight: 650; font-size: .88rem; margin-bottom: .5rem; }
+.dialogBody a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.dialogBody pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .75rem; line-height: 1.8; padding: 1rem; background: var(--background-secondary); border-radius: .5rem; }
+.relations { display: grid; gap: .7rem; list-style: none; padding: 0; }
+.relations li { border-left: 2px solid var(--card-border); padding-left: .8rem; }
+.relations small { display: block; font-size: .73rem; color: var(--foreground-muted); }
+.references { display: grid; gap: 1rem; list-style: none; padding: 0; }
+.references p { margin-top: .25rem; }
+@media (max-width: 480px) {
+  .graph { padding-inline: 17px; }
+  .grid { gap: 1rem; }
+  .bandHeader { flex-wrap: wrap; gap: .35rem .6rem; }
+  .bandHeader h4 { flex-basis: calc(100% - 3rem); }
+  .count { margin-left: 2rem; }
+  .edgeRow { grid-template-columns: 1fr; }
+  .edgeKind { grid-column: 1; }
+  .dialogHeader, .dialogBody { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .node { transition: none; } }

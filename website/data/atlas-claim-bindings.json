@@ -27,6 +27,7 @@
       "claim.proxy.lindgren-selection"
     ],
     "demo_tfr": [
+      "claim.proxy.demographic-route-composition",
       "claim.tfr.multi-input-decomposition",
       "claim.civilization.tfr-multiplicative-decomposition",
       "claim.civilization.biocap-tfr-input"

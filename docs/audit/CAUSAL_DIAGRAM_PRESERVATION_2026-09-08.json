@@ -1,0 +1,21 @@
+{
+  "baseCommit": "fc80d61d6ef837da550195b6949117fb2ac97314",
+  "nodesPreserved": 47,
+  "directedEdgesPreserved": 97,
+  "uiGroupsPreserved": 15,
+  "nodeMetadataChanges": [
+    "BERM_L2_BRIDGE: translated labels only"
+  ],
+  "unchangedResearchFiles": {
+    "website/data/claims.json": "46c62d6bb426e38962d98616d9e2ac48374c8bc1cda36831d62a9b85a909081b",
+    "website/data/model-architecture.json": "0e15f6c9a41d9394b42c5e51132448cdc08a5577e6e9ee4ef05519bdb0e3b7e6",
+    "website/data/steroidogenesis.json": "8938cb5abf9aeb81a9e4e5f5a39e6217a0fe98ea52513e089df1a8947fccbd5e",
+    "website/public/data/references_full.json": "5475ff6a1ee16c537f9c7846b774fc9caa471dd4bfed2775de9a5adb48103294",
+    "website/data/causal-atlas-extensions.json": "fdb95e248f8d809525fb05aeb0ba8e739eeedd480d88fb870245dd24a13e1367"
+  },
+  "atlasBindingAddition": {
+    "node": "demo_tfr",
+    "claim": "claim.proxy.demographic-route-composition"
+  },
+  "originalBackup": "/Volumes/kovalevy 3/berm-workspace-backups/causal-diagram-20260908T1420"
+}

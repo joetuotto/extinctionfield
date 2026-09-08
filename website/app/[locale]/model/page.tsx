@@ -4774,14 +4774,14 @@ const EVIDENCE_SYNTHESIS_CLUSTERS = [
 const EVIDENCE_SYNTHESIS_COPY = {
   en: {
     title: "Converging evidence strengthens the biological middle",
-    subtitle: "Seven independent cross-source syntheses inside BERM",
+    subtitle: "Cross-source evidence synthesis within BERM",
     lead: "BERM composes component results when they identify the same mediator, point in a compatible direction and use independent methods. Their convergence constrains the route more strongly than isolated citations while preserving the distinction between a component result and a fully calibrated endpoint coefficient.",
     rule: "same mediator + compatible direction + independent method + predicted moderator → stronger causal-route constraint",
     link: "Open the full evidence synthesis",
   },
   fi: {
     title: "Konvergoiva evidenssi vahvistaa biologista keskiosaa",
-    subtitle: "Seitsemän riippumatonta lähteidenvälistä synteesiä BERM:n sisällä",
+    subtitle: "Lähteidenvälinen evidenssisynteesi BERM:n sisällä",
     lead: "BERM yhdistää komponenttitulokset, kun ne tunnistavat saman välittäjän, osoittavat yhteensopivaan suuntaan ja käyttävät riippumattomia menetelmiä. Niiden konvergenssi rajaa reittiä vahvemmin kuin irralliset viitteet samalla kun komponenttitulos erotetaan täysin kalibroidusta päätepistekertoimesta.",
     rule: "sama välittäjä + yhteensopiva suunta + riippumaton menetelmä + ennustettu moderaattori → vahvempi kausaalireitin rajoite",
     link: "Avaa koko evidenssisynteesi",
@@ -5320,7 +5320,7 @@ export default async function ModelPage({
               </p>
             </div>
             <div className="overflow-x-auto">
-              <BermCausalDiagram locale={locale_key} />
+              <BermCausalDiagram locale={locale} />
             </div>
             <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
             <span id="ifo" />

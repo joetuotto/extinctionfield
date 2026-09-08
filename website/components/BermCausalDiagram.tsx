@@ -1,605 +1,175 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef, useEffect } from "react";
-import type { ChainNode, EpistemicLevel } from "@/lib/types";
+import { useEffect, useId, useMemo, useRef, useState, type CSSProperties } from "react";
+import Link from "next/link";
+import type { ChainEdge, ChainNode } from "@/lib/types";
 import {
   CANONICAL_CAUSAL_EDGES as EDGES,
   CANONICAL_CAUSAL_NODES as NODES,
+  CANONICAL_NODE_SUPPLEMENTS,
+  getCanonicalCalibrationLabel,
   getCanonicalLevelTitle,
+  getCanonicalNodeLabel,
 } from "@/lib/causalGraphView";
-import { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
-import { DetailPanel } from "./DetailPanel";
+import { CHAIN_EPISTEMIC_COLORS, getChainEpistemicLabel } from "@/lib/epistemicConstants";
 import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "./StudyCitation";
+import { InlineReferenceText } from "./InlineReferenceText";
+import styles from "./BermCausalDiagram.module.css";
 
-type DiagramLocale = "en" | "fi";
-
-const DIAGRAM_COPY = {
-  en: {
-    ariaLabel: "BERM causal chain diagram",
-    clickHint: "→ click for details",
-    legendE: "Empirically established",
-    legendMC: "Mechanism + association",
-    legendM: "Mathematical consequence",
-    legendC: "Candidate",
-    legendL: "Premise (not validated)",
-  },
-  fi: {
-    ariaLabel: "BERM-kausaaliketjukaavio",
-    clickHint: "→ klikkaa tiedot",
-    legendE: "Empiirisesti todennettu",
-    legendMC: "Mekanismi + assosiaatio",
-    legendM: "Matemaattinen seuraus",
-    legendC: "Kandidaatti",
-    legendL: "Premissi (ei validoitu)",
-  },
-  ja: {
-    ariaLabel: "BERM因果連鎖図",
-    clickHint: "→ クリックで詳細",
-    legendE: "経験的に確立",
-    legendMC: "メカニズム + 関連性",
-    legendM: "数学的帰結",
-    legendC: "候補",
-    legendL: "前提(未検証)",
-  },
-  fr: {
-    ariaLabel: "Diagramme de chaine causale BERM",
-    clickHint: "→ cliquer pour details",
-    legendE: "Empiriquement etabli",
-    legendMC: "Mecanisme + association",
-    legendM: "Consequence mathematique",
-    legendC: "Candidat",
-    legendL: "Premisse (non validee)",
-  },
-  ko: {
-    ariaLabel: "BERM 인과 사슬 다이어그램",
-    clickHint: "→ 클릭하여 상세 보기",
-    legendE: "경험적으로 확립됨",
-    legendMC: "메커니즘 + 연관성",
-    legendM: "수학적 귀결",
-    legendC: "후보",
-    legendL: "전제 (미검증)",
-  },
-} as const;
-
-const NODE_H = 72;
-const NODE_RX = 12;
-const LEVEL_GAP = 52;
-const LEVEL_LABEL_W = 140;
-const FEEDBACK_MARGIN = 60;
-const NODE_GAP = 14;
-const MAX_NODE_W = 240;
-const MIN_NODE_W = 140;
-const ABS_MAX_PER_ROW = 5;
-const ROW_INNER_GAP = 10;
-const BAND_PAD_Y = 14;
-const BAND_PAD_X = 8;
-
-const EPISTEMIC_LABELS: Record<string, string> = {
-  E: "E",
-  "M|C": "M|C",
-  M: "M",
-  C: "C",
-  "L*": "L*",
-  L: "L",
+const COPY = {
+  fi: { aria: "BERM-kausaaliketjukaavio", graph: "Kaavio", edges: "Kaikki yhteydet", route: "Kalsium, redox ja hormonituotanto", reset: "Nollaa korostus", select: "Korosta solmun yhteydet", all: "Kaikki solmut", nodes: "solmua", connections: "suunnattua yhteyttä", help: "Valitse solmu nähdäksesi sen mekanismin, lähteet sekä tulo- ja lähtöyhteydet. Korostus auttaa seuraamaan yhteyksiä; kaikki solmut pysyvät näkyvissä.", integration: "Kalsium–redox-varanto, kello ja StAR tarkentavat nykyistä hormonituotannon haaraa.", studies: "Tutkimukset ja koetyypit", incoming: "Tuloyhteydet", outgoing: "Lähtöyhteydet", none: "Ei rekisteröityjä yhteyksiä tähän suuntaan.", mechanism: "Mekanismi ja mallirooli", references: "Tutkimusankkurit", close: "Sulje tiedot", detail: "Avaa solmun tiedot", calibration: "Kalibrointi", quantitative: "Muodollinen yhteys", condition: "Malliin tallennettu tarkistusehto", atlas: "Avaa laajassa kausaaliatlaksessa", context: "Tutki kokonaisuutta", fallback: "Solmujen kuvaukset ovat tässä näkymässä englanniksi.", tag: "Ca²⁺ · glutationivaranto · StAR", stages: "Tasot jäsentävät mallia; yhteydet voivat ohittaa tasoja ja yhdistää saman tason solmuja." },
+  en: { aria: "BERM causal chain diagram", graph: "Diagram", edges: "All connections", route: "Calcium, redox and hormone production", reset: "Clear highlight", select: "Highlight a node’s connections", all: "All nodes", nodes: "nodes", connections: "directed connections", help: "Select a node to inspect its mechanism, sources, incoming and outgoing connections. Highlighting helps trace connections while every node stays visible.", integration: "Calcium–redox reserve, the clock and StAR refine the existing hormone production branch.", studies: "Studies and experiment types", incoming: "Incoming connections", outgoing: "Outgoing connections", none: "No registered connections in this direction.", mechanism: "Mechanism and model role", references: "Research anchors", close: "Close details", detail: "Open node details", calibration: "Calibration", quantitative: "Formal relationship", condition: "Recorded model check", atlas: "Open in the full causal atlas", context: "Explore the context", fallback: "Node descriptions are shown in English in this view.", tag: "Ca²⁺ · glutathione reserve · StAR", stages: "Levels organize the model; connections may skip levels or join nodes within a level." },
+  ja: { aria: "BERM因果連鎖図", graph: "図", edges: "すべての接続", route: "カルシウム、酸化還元とホルモン産生", reset: "強調を解除", select: "ノードの接続を強調", all: "すべてのノード", nodes: "ノード", connections: "有向接続", help: "ノードを選ぶと、機構、出典、入力と出力の接続を確認できます。強調してもすべてのノードは表示されます。", integration: "カルシウム・酸化還元予備能、時計とStARが既存のホルモン産生経路を詳しく説明します。", studies: "研究と実験の種類", incoming: "入力接続", outgoing: "出力接続", none: "この方向に登録された接続はありません。", mechanism: "機構とモデル内の役割", references: "研究上の根拠", close: "詳細を閉じる", detail: "ノードの詳細を開く", calibration: "校正", quantitative: "形式的関係", condition: "記録されたモデル検証条件", atlas: "全体の因果アトラスで開く", context: "関連情報を見る", fallback: "この表示ではノードの説明は英語です。", tag: "Ca²⁺ · グルタチオン予備能 · StAR", stages: "階層はモデルを整理します。接続は階層を飛び越えたり、同じ階層内を結ぶこともあります。" },
+  fr: { aria: "Diagramme causal BERM", graph: "Diagramme", edges: "Toutes les connexions", route: "Calcium, état redox et production hormonale", reset: "Effacer la sélection", select: "Surligner les connexions d’un nœud", all: "Tous les nœuds", nodes: "nœuds", connections: "connexions orientées", help: "Sélectionnez un nœud pour consulter son mécanisme, ses sources et ses connexions entrantes et sortantes. Tous les nœuds restent visibles pendant le surlignage.", integration: "La réserve calcium–redox, l’horloge et StAR précisent la branche existante de production hormonale.", studies: "Études et types d’expériences", incoming: "Connexions entrantes", outgoing: "Connexions sortantes", none: "Aucune connexion enregistrée dans ce sens.", mechanism: "Mécanisme et rôle dans le modèle", references: "Ancrages expérimentaux", close: "Fermer les détails", detail: "Ouvrir les détails du nœud", calibration: "Calibration", quantitative: "Relation formelle", condition: "Condition de vérification enregistrée", atlas: "Ouvrir dans l’atlas causal complet", context: "Explorer le contexte", fallback: "Les descriptions des nœuds sont affichées en anglais dans cette vue.", tag: "Ca²⁺ · réserve de glutathion · StAR", stages: "Les niveaux organisent le modèle ; les connexions peuvent sauter des niveaux ou relier des nœuds du même niveau." },
+  ko: { aria: "BERM 인과 사슬 도표", graph: "도표", edges: "모든 연결", route: "칼슘, 산화환원과 호르몬 생산", reset: "강조 해제", select: "노드의 연결 강조", all: "모든 노드", nodes: "노드", connections: "방향 연결", help: "노드를 선택하면 기전, 출처 및 들어오고 나가는 연결을 확인할 수 있습니다. 강조 중에도 모든 노드가 표시됩니다.", integration: "칼슘·산화환원 예비력, 생체시계와 StAR가 기존 호르몬 생산 경로를 구체화합니다.", studies: "연구와 실험 유형", incoming: "들어오는 연결", outgoing: "나가는 연결", none: "이 방향으로 등록된 연결이 없습니다.", mechanism: "기전과 모델 내 역할", references: "연구 근거", close: "상세 닫기", detail: "노드 상세 열기", calibration: "보정", quantitative: "형식적 관계", condition: "기록된 모델 검증 조건", atlas: "전체 인과 지도에서 열기", context: "관련 내용 살펴보기", fallback: "이 보기에서는 노드 설명이 영어로 표시됩니다.", tag: "Ca²⁺ · 글루타티온 예비력 · StAR", stages: "단계는 모델을 정리합니다. 연결은 단계를 건너뛰거나 같은 단계의 노드를 연결할 수 있습니다." },
 };
 
-function wrapSvgLabel(value: string, maxChars: number, maxLines = 2): string[] {
-  const words = value
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .flatMap((word) => {
-      if (word.length <= maxChars) return [word];
+const NODE_MAP = new Map(NODES.map(node => [node.id, node]));
+const STEROID_ROUTE = new Set([
+  "LINDGREN_METRIC_DRIVE", "BERM_L2_BRIDGE", "A_VGCC_ROS", "RECEPTOR_STATE_MEMORY",
+  "CIRCADIAN_COORDINATION", "HPA_HPG", "HORMONE_TARGET_RESPONSE", "MALE_STEROIDOGENESIS",
+  "ANDROGEN_BINDING_AVAILABILITY", "ANDROGEN_RECEPTOR_SIGNAL", "MALE_SPERM", "COUPLE_FECUNDABILITY", "ASFR", "TFR",
+]);
+type Box = { x: number; y: number; w: number; h: number };
+type Geometry = { width: number; height: number; boxes: Record<string, Box> };
+const edgeName = (edge: ChainEdge, locale: string) => locale === "fi" ? edge.label : edge.label_en ?? edge.label;
+const localized = (fi: string | undefined, en: string | undefined, locale: string) => (locale === "fi" ? fi : en ?? fi) ?? "";
 
-      const hyphen = word.indexOf("-");
-      if (hyphen > 0) {
-        const first = word.slice(0, hyphen + 1);
-        const second = word.slice(hyphen + 1);
-        if (first.length <= maxChars && second.length <= maxChars) {
-          return [first, second];
-        }
-      }
+// Route through the outer gutters, so long-range connections do not cross card text.
+function connectionPath(a: Box, b: Box, index: number, width: number) {
+  const sameRow = Math.abs(a.y - b.y) < 5;
+  if (sameRow && Math.abs(a.x - b.x) < Math.max(a.w, b.w) + 40) {
+    const right = a.x < b.x;
+    return `M ${right ? a.x + a.w : a.x} ${a.y + a.h / 2} L ${right ? b.x : b.x + b.w} ${b.y + b.h / 2}`;
+  }
+  const left = (a.x + b.x) / 2 < width / 2;
+  const lane = left ? 6 + (index % 5) * 3 : width - 6 - (index % 5) * 3;
+  const ax = left ? a.x : a.x + a.w;
+  const bx = left ? b.x : b.x + b.w;
+  const ay = a.y + a.h / 2, by = b.y + b.h / 2;
+  return `M ${ax} ${ay} C ${lane} ${ay} ${lane} ${ay} ${lane} ${ay + Math.sign(by - ay) * 12} L ${lane} ${by - Math.sign(by - ay) * 12} C ${lane} ${by} ${lane} ${by} ${bx} ${by}`;
+}
 
-      return [`${word.slice(0, Math.max(1, maxChars - 1))}\u2026`];
-    });
-  const lines: string[] = [];
-  let current = "";
-
-  for (const word of words) {
-    const candidate = current ? `${current} ${word}` : word;
-    if (candidate.length <= maxChars || !current) {
-      current = candidate;
-      continue;
+function NodeDetails({ node, locale, onSelect, onClose }: { node: ChainNode; locale: string; onSelect: (id: string) => void; onClose: () => void }) {
+  const c = pickCopy(COPY, locale);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+  useEffect(() => { dialog.current?.showModal(); }, []);
+  useEffect(() => {
+    if (dialog.current?.open) {
+      dialog.current.scrollTop = 0;
+      closeButton.current?.focus();
     }
-    lines.push(current);
-    current = word;
-  }
-  if (current) lines.push(current);
-
-  if (lines.length <= maxLines) return lines;
-  const visible = lines.slice(0, maxLines);
-  const remainder = lines.slice(maxLines - 1).join(" ");
-  visible[maxLines - 1] = `${remainder.slice(0, Math.max(1, maxChars - 1)).trimEnd()}…`;
-  return visible;
-}
-
-function truncateSvgLabel(value: string, maxChars: number): string {
-  return value.length <= maxChars ? value : `${value.slice(0, Math.max(1, maxChars - 1)).trimEnd()}…`;
-}
-
-interface LayoutNode extends ChainNode {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-}
-
-interface LevelBand {
-  level: number;
-  title: string;
-  top: number;
-  bottom: number;
-  color: string;
-}
-
-function computeLayout(
-  nodes: ChainNode[],
-  canvasW: number,
-  locale: DiagramLocale = "fi",
-): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
-  const levels = new Map<number, ChainNode[]>();
-  for (const n of nodes) {
-    if (!levels.has(n.level)) levels.set(n.level, []);
-    levels.get(n.level)!.push(n);
-  }
-
-  const sortedLevels = [...levels.keys()].sort((a, b) => a - b);
-  const layoutNodes: LayoutNode[] = [];
-  const bands: LevelBand[] = [];
-  const usableW = canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN;
-  const maxPerRow = Math.min(ABS_MAX_PER_ROW, Math.max(1, Math.floor((usableW + NODE_GAP) / (MIN_NODE_W + NODE_GAP))));
-  let currentY = 24;
-
-  for (const lvl of sortedLevels) {
-    const nodesInLevel = levels.get(lvl)!;
-    const count = nodesInLevel.length;
-    const h = NODE_H;
-    const numRows = Math.ceil(count / maxPerRow);
-    const bandTop = currentY - BAND_PAD_Y;
-
-    // Dominant epistemic color for the band
-    const colorCounts = new Map<string, number>();
-    for (const n of nodesInLevel) {
-      colorCounts.set(n.epistemicLevel, (colorCounts.get(n.epistemicLevel) ?? 0) + 1);
-    }
-    let dominant: EpistemicLevel = nodesInLevel[0].epistemicLevel;
-    let maxCount = 0;
-    for (const [lvlKey, cnt] of colorCounts) {
-      if (cnt > maxCount) { dominant = lvlKey as EpistemicLevel; maxCount = cnt; }
-    }
-
-    for (let row = 0; row < numRows; row++) {
-      const rowStart = row * maxPerRow;
-      const rowEnd = Math.min(rowStart + maxPerRow, count);
-      const rowCount = rowEnd - rowStart;
-      const totalGaps = (rowCount - 1) * NODE_GAP;
-      const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
-      const rowW = rowCount * nodeW + totalGaps;
-      const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
-
-      for (let i = 0; i < rowCount; i++) {
-        layoutNodes.push({
-          ...nodesInLevel[rowStart + i],
-          x: startX + i * (nodeW + NODE_GAP),
-          y: currentY,
-          w: nodeW,
-          h,
-        });
-      }
-      currentY += h + (row < numRows - 1 ? ROW_INNER_GAP : 0);
-    }
-
-    const bandBottom = currentY + BAND_PAD_Y;
-    bands.push({
-      level: lvl,
-      title: getCanonicalLevelTitle(lvl, locale),
-      top: bandTop,
-      bottom: bandBottom,
-      color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",
-    });
-    currentY = bandBottom + LEVEL_GAP;
-  }
-
-  return { layoutNodes, canvasH: currentY + 40, bands };
-}
-
-function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
-  if (wrapLeft) {
-    const fy = from.y + from.h / 2;
-    const ty = to.y + to.h / 2;
-    const x = FEEDBACK_MARGIN / 2 + 10;
-    return `M ${from.x} ${fy} L ${x} ${fy} L ${x} ${ty} L ${to.x} ${ty}`;
-  }
-
-  if (from.level === to.level) {
-    const x1 = from.x + from.w;
-    const y1 = from.y + from.h / 2;
-    const x2 = to.x;
-    const y2 = to.y + to.h / 2;
-    const cpx = (x1 + x2) / 2;
-    return `M ${x1} ${y1} Q ${cpx} ${y1} ${x2} ${y2}`;
-  }
-
-  const x1 = from.x + from.w / 2;
-  const y1 = from.y + from.h;
-  const x2 = to.x + to.w / 2;
-  const y2 = to.y;
-  const dy = y2 - y1;
-  return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
+  }, [node.id]);
+  const supplement = CANONICAL_NODE_SUPPLEMENTS[node.id];
+  return <dialog ref={dialog} className={styles.dialog} aria-labelledby={titleId} onClose={onClose}>
+    <div className={styles.dialogHeader}>
+      <div><span className={styles.hint}>{getChainEpistemicLabel(node.epistemicLevel, locale)}</span><h4 id={titleId}>{getCanonicalNodeLabel(node.id, locale)}</h4></div>
+      <button ref={closeButton} type="button" className={styles.control} onClick={() => dialog.current?.close()} aria-label={c.close}>×</button>
+    </div>
+    <div className={styles.dialogBody}>
+      <section><h5>{c.mechanism}</h5><p><InlineReferenceText text={localized(node.mechanism, node.mechanism_en, locale)} locale={locale} /></p></section>
+      <p><strong>{c.calibration}: </strong>{getCanonicalCalibrationLabel(node.id, locale)}</p>
+      {node.quantitative && <section><h5>{c.quantitative}</h5><pre>{localized(node.quantitative, node.quantitative_en, locale)}</pre></section>}
+      {(["incoming", "outgoing"] as const).map(direction => {
+        const edges = EDGES.filter(edge => direction === "incoming" ? edge.to === node.id : edge.from === node.id);
+        return <section key={direction}><h5>{c[direction]} ({edges.length})</h5>{edges.length ? <ul className={styles.relations}>{edges.map(edge => {
+          const id = direction === "incoming" ? edge.from : edge.to;
+          return <li key={`${edge.from}-${edge.to}`}><button type="button" className={styles.edgeButton} onClick={() => onSelect(id)}>{direction === "incoming" ? "← " : "→ "}{getCanonicalNodeLabel(id, locale)}</button><small>{edgeName(edge, locale)}</small></li>;
+        })}</ul> : <p>{c.none}</p>}</section>;
+      })}
+      {node.keyReferences.length > 0 && <section><h5>{c.references}</h5><ul className={styles.references}>{node.keyReferences.map(ref => <li key={ref.referenceId}>
+        <StudyCitation referenceId={ref.referenceId!} locale={locale} label={ref.authors} />
+        <p>{ref.title}</p><p className={styles.hint}>{localized(ref.keyFinding, ref.keyFinding_en, locale)}</p>
+      </li>)}</ul></section>}
+      {supplement && <section><h5>{c.context}</h5><ul className={styles.references}>{supplement.links.map(link => <li key={link.href}><Link href={`/${locale}${link.href}`}>{localized(link.label.fi, link.label.en, locale)} →</Link></li>)}</ul></section>}
+      {node.falsificationCondition && <details><summary>{c.condition}</summary><p>{localized(node.falsificationCondition, node.falsificationCondition_en, locale)}</p></details>}
+      <Link href={`/${locale}/map?node=${node.id}`}>{c.atlas} →</Link>
+    </div>
+  </dialog>;
 }
 
 export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }) {
-  const l: DiagramLocale = locale === "fi" ? "fi" : "en";
-  const fi = locale === "fi";
-  const dc = pickCopy(DIAGRAM_COPY, locale);
-  const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
-  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(900);
-
+  const c = pickCopy(COPY, locale);
+  const uid = useId().replaceAll(":", "");
+  const [view, setView] = useState<"graph" | "edges">("graph");
+  const [focus, setFocus] = useState("");
+  const [route, setRoute] = useState(false);
+  const [hover, setHover] = useState("");
+  const [selected, setSelected] = useState<string | null>(null);
+  const graphRef = useRef<HTMLDivElement>(null);
+  const nodeRefs = useRef(new Map<string, HTMLButtonElement>());
+  const [geometry, setGeometry] = useState<Geometry>({ width: 0, height: 0, boxes: {} });
+  const groups = useMemo(() => [...new Set(NODES.map(n => n.level))].sort((a, b) => a - b).map(level => ({
+    level, nodes: NODES.filter(n => n.level === level).sort((a, b) => a.id === "LINDGREN_METRIC_DRIVE" ? -1 : b.id === "LINDGREN_METRIC_DRIVE" ? 1 : 0),
+  })), []);
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver((entries) => {
-      const w = entries[0]?.contentRect.width;
-      if (w && w > 0) setContainerW(Math.max(600, Math.min(1600, w)));
-    });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-
-  const canvasW = containerW;
-  const { layoutNodes, canvasH, bands } = useMemo(
-    () => computeLayout(NODES, canvasW, l),
-    [canvasW, l],
-  );
-
-  const nodeMap = useMemo(() => {
-    const m = new Map<string, LayoutNode>();
-    for (const n of layoutNodes) m.set(n.id, n);
-    return m;
-  }, [layoutNodes]);
-
-  const connectedEdges = useMemo(() => {
-    if (!hoveredNode) return new Set<number>();
-    const s = new Set<number>();
-    EDGES.forEach((e, i) => {
-      if (e.from === hoveredNode || e.to === hoveredNode) s.add(i);
-    });
-    return s;
-  }, [hoveredNode]);
-
-  const handleNodeClick = useCallback((node: ChainNode) => {
-    setSelectedNode(node);
-  }, []);
-
-  const legendItems: [EpistemicLevel, string][] = [
-    ["E", dc.legendE],
-    ["M|C", dc.legendMC],
-    ["M", dc.legendM],
-    ["C", dc.legendC],
-    ["L*", dc.legendL],
-  ];
-
-  return (
-    <>
-      <div ref={containerRef} className="chart-scroll w-full">
-        <svg
-          viewBox={`0 0 ${canvasW} ${canvasH}`}
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label={dc.ariaLabel}
-          className="chart-svg"
-          style={{ width: "100%", height: "auto", minWidth: 600 }}
-        >
-          <defs>
-            <marker
-              id="chain-arrow"
-              viewBox="0 0 10 7"
-              refX="10"
-              refY="3.5"
-              markerWidth="8"
-              markerHeight="6"
-              orient="auto-start-reverse"
-            >
-              <path d="M 0 0 L 10 3.5 L 0 7 z" fill="var(--foreground-muted)" />
-            </marker>
-            {Object.entries(EPISTEMIC_COLORS).map(([key, color]) => (
-              <marker
-                key={key}
-                id={`chain-arrow-${key.replace("|", "_")}`}
-                viewBox="0 0 10 7"
-                refX="10"
-                refY="3.5"
-                markerWidth="8"
-                markerHeight="6"
-                orient="auto-start-reverse"
-              >
-                <path d="M 0 0 L 10 3.5 L 0 7 z" fill={color} />
-              </marker>
-            ))}
-          </defs>
-
-          {/* Background */}
-          <rect
-            x="0"
-            y="0"
-            width={canvasW}
-            height={canvasH}
-            fill="var(--card-bg)"
-            rx="12"
-          />
-
-          {/* Level bands */}
-          {bands.map((band) => (
-            <g key={`band-${band.level}`}>
-              {/* Band background */}
-              <rect
-                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
-                y={band.top}
-                width={canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
-                height={band.bottom - band.top}
-                rx="8"
-                fill={`${band.color}08`}
-                stroke={`${band.color}18`}
-                strokeWidth="1"
-              />
-              {/* Left accent bar */}
-              <rect
-                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
-                y={band.top}
-                width="4"
-                height={band.bottom - band.top}
-                rx="2"
-                fill={`${band.color}30`}
-              />
-              {/* Level number */}
-              <text
-                x={22}
-                y={band.top + (band.bottom - band.top) / 2 - 8}
-                fill={`${band.color}90`}
-                fontSize="22"
-                fontWeight="800"
-                dominantBaseline="middle"
-                fontFamily="ui-monospace, monospace"
-              >
-                {band.level}
-              </text>
-              {/* Level title */}
-              <text
-                x={22}
-                y={band.top + (band.bottom - band.top) / 2 + 12}
-                fill="var(--foreground-muted)"
-                fontSize="11"
-                fontWeight="600"
-                dominantBaseline="middle"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-              >
-                {band.title}
-              </text>
-            </g>
-          ))}
-
-          {/* Edges */}
-          {EDGES.map((edge, edgeIdx) => {
-            const from = nodeMap.get(edge.from);
-            const to = nodeMap.get(edge.to);
-            if (!from || !to) return null;
-
-            const wrapLeft =
-              (edge.from === "device_adoption" && edge.to === "ambient") ||
-              from.level > to.level;
-            const color = EPISTEMIC_COLORS[edge.epistemicLevel];
-            const isConnected = connectedEdges.has(edgeIdx);
-            const isPrimary = edge.priority === "primary";
-            const markerId = `chain-arrow-${edge.epistemicLevel.replace("|", "_")}`;
-
-            let opacity: number;
-            let strokeW: number;
-            let strokeColor: string;
-
-            if (hoveredNode) {
-              if (isConnected) {
-                opacity = 1;
-                strokeW = 2.5;
-                strokeColor = color;
-              } else {
-                opacity = 0.08;
-                strokeW = 1;
-                strokeColor = "var(--foreground-muted)";
-              }
-            } else if (isPrimary) {
-              opacity = 0.7;
-              strokeW = 2;
-              strokeColor = color;
-            } else {
-              opacity = 0.18;
-              strokeW = 1;
-              strokeColor = "var(--foreground-muted)";
-            }
-
-            return (
-              <g key={`${edge.from}-${edge.to}`} opacity={opacity}>
-                <path
-                  d={edgePath(from, to, wrapLeft)}
-                  fill="none"
-                  stroke={strokeColor}
-                  strokeWidth={strokeW}
-                  strokeDasharray={wrapLeft ? "8 4" : undefined}
-                  markerEnd={
-                    isConnected || isPrimary
-                      ? `url(#${markerId})`
-                      : "url(#chain-arrow)"
-                  }
-                />
-                {edge.label && !wrapLeft && isConnected && (
-                  <text
-                    x={
-                      from.level === to.level
-                        ? (from.x + from.w + to.x) / 2
-                        : (from.x + from.w / 2 + to.x + to.w / 2) / 2
-                    }
-                    y={
-                      from.level === to.level
-                        ? from.y + from.h / 2 - 10
-                        : (from.y + from.h + to.y) / 2
-                    }
-                    fill={color}
-                    fontSize={10}
-                    fontWeight="500"
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                  >
-                    {(!fi && edge.label_en) || edge.label}
-                  </text>
-                )}
-              </g>
-            );
-          })}
-
-          {/* Nodes */}
-          {layoutNodes.map((n) => {
-            const color = EPISTEMIC_COLORS[n.epistemicLevel];
-            const isHovered = hoveredNode === n.id;
-            const isSelected = selectedNode?.id === n.id;
-            const label = (!fi && n.label_en) || n.label;
-            const sublabel = (!fi && n.sublabel_en) || n.sublabel;
-            const maxLabelChars = Math.max(11, Math.floor((n.w - 28) / 7.1));
-            const labelLines = wrapSvgLabel(label, maxLabelChars, 2);
-            const labelStartY = sublabel
-              ? n.y + 34 - ((labelLines.length - 1) * 15) / 2
-              : n.y + n.h / 2 + 4 - ((labelLines.length - 1) * 15) / 2;
-            return (
-              <g
-                key={n.id}
-                tabIndex={0}
-                role="button"
-                style={{ cursor: "pointer" }}
-                onClick={() => handleNodeClick(n)}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleNodeClick(n); } }}
-                onMouseEnter={() => setHoveredNode(n.id)}
-                onMouseLeave={() => setHoveredNode(null)}
-                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}
-              >
-                <title>{sublabel ? `${label} — ${sublabel}` : label}</title>
-                {/* Node background */}
-                <rect
-                  x={n.x}
-                  y={n.y}
-                  width={n.w}
-                  height={n.h}
-                  rx={NODE_RX}
-                  ry={NODE_RX}
-                  fill={`${color}${isHovered ? "18" : "0C"}`}
-                  stroke={color}
-                  strokeWidth={isSelected ? 3 : isHovered ? 2.5 : 1.5}
-                />
-                {/* Epistemic badge */}
-                <rect
-                  x={n.x + n.w - 36}
-                  y={n.y + 8}
-                  width={28}
-                  height={18}
-                  rx={4}
-                  fill={`${color}25`}
-                />
-                <text
-                  x={n.x + n.w - 22}
-                  y={n.y + 17}
-                  fill={color}
-                  fontSize={9}
-                  fontWeight="700"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fontFamily="ui-monospace, monospace"
-                >
-                  {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
-                </text>
-                <g>
-                  {/* Label */}
-                  {labelLines.map((line, lineIndex) => (
-                    <text
-                      key={`${n.id}-label-${lineIndex}`}
-                      x={n.x + 14}
-                      y={labelStartY + lineIndex * 15}
-                      fill="var(--foreground)"
-                      fontSize={12.5}
-                      fontWeight="600"
-                      dominantBaseline="middle"
-                    >
-                      {line}
-                    </text>
-                  ))}
-                  {/* Sublabel */}
-                  {sublabel && (
-                    <text
-                      x={n.x + 14}
-                      y={n.y + 59}
-                      fill="var(--foreground-muted)"
-                      fontSize={9.5}
-                      dominantBaseline="middle"
-                      fontFamily="ui-monospace, SFMono-Regular, monospace"
-                    >
-                      {truncateSvgLabel(sublabel, Math.max(13, Math.floor((n.w - 28) / 5.7)))}
-                    </text>
-                  )}
-                  {/* Click hint on hover */}
-                  {isHovered && (
-                    <text
-                      x={n.x + 14}
-                      y={n.y + n.h - 8}
-                      fill="var(--foreground-muted)"
-                      fontSize={9}
-                      dominantBaseline="auto"
-                      fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                    >
-                      {dc.clickHint}
-                    </text>
-                  )}
-                </g>
-              </g>
-            );
-          })}
-
-        </svg>
-      </div>
-
-      <ul className="chart-legend mt-3" aria-label={fi ? "Episteeminen selite" : "Epistemic legend"}>
-        {legendItems.map(([level, label]) => {
-          const color = EPISTEMIC_COLORS[level];
-          return (
-            <li key={level} className="chart-key">
-              <span
-                aria-hidden="true"
-                className="inline-flex h-4 min-w-4 items-center justify-center rounded px-1 font-mono-num text-[9px] font-bold"
-                style={{ backgroundColor: `${color}20`, color, boxShadow: `inset 0 0 0 1px ${color}` }}
-              >
-                {level}
-              </span>
-              {label}
-            </li>
-          );
+    const graph = graphRef.current;
+    if (!graph) return;
+    let frame = 0;
+    const measure = () => {
+      const base = graph.getBoundingClientRect();
+      const boxes: Record<string, Box> = {};
+      for (const [id, el] of nodeRefs.current) {
+        const r = el.getBoundingClientRect();
+        boxes[id] = { x: r.left - base.left, y: r.top - base.top, w: r.width, h: r.height };
+      }
+      const next = { width: base.width, height: base.height, boxes };
+      setGeometry(prev => JSON.stringify(prev) === JSON.stringify(next) ? prev : next);
+    };
+    const observer = new ResizeObserver(() => { cancelAnimationFrame(frame); frame = requestAnimationFrame(measure); });
+    observer.observe(graph);
+    nodeRefs.current.forEach(el => observer.observe(el));
+    frame = requestAnimationFrame(measure);
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, [locale, view]);
+  const active = hover || focus;
+  const highlightedEdges = EDGES.map(edge => active ? edge.from === active || edge.to === active : route && STEROID_ROUTE.has(edge.from) && STEROID_ROUTE.has(edge.to));
+  const highlightedNodes = new Set<string>();
+  if (active) highlightedNodes.add(active);
+  EDGES.forEach((edge, i) => { if (highlightedEdges[i]) { highlightedNodes.add(edge.from); highlightedNodes.add(edge.to); } });
+  const openNode = (id: string) => { setFocus(id); setRoute(false); setSelected(id); };
+  const selectedNode = selected ? NODE_MAP.get(selected) : undefined;
+  return <section className={styles.root} aria-label={c.aria} lang={locale}>
+    <div className={styles.toolbar}>
+      <button type="button" className={styles.control} aria-pressed={view === "graph"} onClick={() => setView("graph")}>{c.graph}</button>
+      <button type="button" className={styles.control} aria-pressed={view === "edges"} onClick={() => setView("edges")}>{c.edges}</button>
+      <button type="button" className={styles.control} aria-pressed={route} onClick={() => { setRoute(!route); setFocus(""); setHover(""); }}>{c.route}</button>
+      {(focus || route) && <button type="button" className={styles.control} onClick={() => { setFocus(""); setRoute(false); setHover(""); }}>{c.reset}</button>}
+    </div>
+    <div className={styles.summary}><strong>{NODES.length} {c.nodes}</strong><span>{EDGES.length} {c.connections}</span></div>
+    <p className={styles.hint}>{c.help} {c.stages}</p>
+    {!["fi", "en"].includes(locale) && <p role="note" className={styles.hint}>{c.fallback}</p>}
+    <label className={styles.selectLabel}>{c.select}<select className={styles.select} value={focus} onChange={e => { setFocus(e.target.value); setRoute(false); }}><option value="">{c.all}</option>{NODES.map(n => <option key={n.id} value={n.id}>{getCanonicalNodeLabel(n.id, locale)}</option>)}</select></label>
+    <div className={styles.integration}><span>{c.integration}</span><Link href={`/${locale}/biology/calcium-redox-steroidogenesis`}>{c.studies} →</Link></div>
+    <div className={styles.legend}>{[...new Set(NODES.map(n => n.epistemicLevel))].map(level => <span key={level}><b style={{ color: CHAIN_EPISTEMIC_COLORS[level] }}>{level}</b>{getChainEpistemicLabel(level, locale)}</span>)}</div>
+    {view === "graph" ? <div ref={graphRef} className={styles.graph} data-testid="causal-graph">
+      <svg className={styles.wires} aria-hidden="true" viewBox={`0 0 ${geometry.width || 1} ${geometry.height || 1}`} preserveAspectRatio="none">
+        <defs><marker id={`${uid}-arrow`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="context-stroke" /></marker></defs>
+        {EDGES.map((edge, i) => {
+          const a = geometry.boxes[edge.from], b = geometry.boxes[edge.to];
+          if (!a || !b) return null;
+          const highlighted = highlightedEdges[i];
+          return <path key={`${edge.from}-${edge.to}`} data-edge={`${edge.from}->${edge.to}`} d={connectionPath(a, b, i, geometry.width)} fill="none" stroke={highlighted ? "var(--accent)" : "var(--foreground-muted)"} strokeWidth={highlighted ? 2 : 1} opacity={highlighted ? .85 : active || route ? .035 : .18} strokeDasharray={edge.priority === "primary" && edge.epistemicLevel === "L*" ? "5 4" : undefined} markerEnd={`url(#${uid}-arrow)`} />;
         })}
-      </ul>
-
-      {selectedNode && (
-        <DetailPanel
-          node={selectedNode}
-          onClose={() => setSelectedNode(null)}
-          locale={l}
-        />
-      )}
-    </>
-  );
+      </svg>
+      {groups.map(group => <section className={styles.band} key={group.level} aria-label={getCanonicalLevelTitle(group.level, locale)}>
+        <div className={styles.bandHeader}><span className={styles.number}>{String(group.level).padStart(2, "0")}</span><h4>{getCanonicalLevelTitle(group.level, locale)}</h4><span className={styles.count}>{group.nodes.length} {c.nodes}</span></div>
+        <div className={styles.grid}>{group.nodes.map(node => {
+          const incoming = EDGES.filter(e => e.to === node.id).length, outgoing = EDGES.filter(e => e.from === node.id).length;
+          return <button type="button" className={styles.node} key={node.id} data-testid="causal-node" data-node-id={node.id} data-highlighted={highlightedNodes.has(node.id)} style={{ "--node-color": CHAIN_EPISTEMIC_COLORS[node.epistemicLevel] } as CSSProperties} ref={el => { if (el) nodeRefs.current.set(node.id, el); else nodeRefs.current.delete(node.id); }} aria-label={getCanonicalNodeLabel(node.id, locale)} aria-haspopup="dialog" onClick={() => openNode(node.id)} onMouseEnter={() => setHover(node.id)} onMouseLeave={() => setHover("")} onFocus={() => setHover(node.id)} onBlur={() => setHover("")}>
+            <span className={styles.nodeTop}><span className={styles.badge} title={getChainEpistemicLabel(node.epistemicLevel, locale)}>{node.epistemicLevel}</span><span aria-label={`${c.incoming}: ${incoming}; ${c.outgoing}: ${outgoing}`}>↙ {incoming} · ↗ {outgoing}</span></span>
+            <span className={styles.nodeTitle}>{getCanonicalNodeLabel(node.id, locale)}</span>
+            {node.id === "MALE_STEROIDOGENESIS" && <span className={styles.nodeTag}>{c.tag}</span>}
+            <span className={styles.nodeStatus}>{getCanonicalCalibrationLabel(node.id, locale)}</span>
+          </button>;
+        })}</div>
+      </section>)}
+    </div> : <ol className={styles.edgeList}>{EDGES.map((edge, i) => <li className={styles.edgeRow} key={`${edge.from}-${edge.to}`} data-testid="causal-edge-row" data-highlighted={highlightedEdges[i]}>
+      <button type="button" className={styles.edgeButton} onClick={() => openNode(edge.from)}>{getCanonicalNodeLabel(edge.from, locale)}</button><span aria-hidden="true">→</span><button type="button" className={styles.edgeButton} onClick={() => openNode(edge.to)}>{getCanonicalNodeLabel(edge.to, locale)}</button><span className={styles.edgeKind}>{edgeName(edge, locale)}</span>
+    </li>)}</ol>}
+    {selectedNode && <NodeDetails node={selectedNode} locale={locale} onSelect={openNode} onClose={() => setSelected(null)} />}
+  </section>;
 }

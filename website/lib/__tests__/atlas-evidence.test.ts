@@ -29,9 +29,9 @@ describe("Shared atlas claim bindings", () => {
 
   it("keeps an uncurated channel distinct from a claim without study relations", () => {
     expect(atlasClaimCoverage([{ id: "lindgren_2025" }])).toMatchObject({ linkedNodes: 0, evidenceLinkedNodes: 0, claims: 0 });
-    expect(claimIdsForAtlasNode("demo_tfr").length).toBeGreaterThan(0);
-    expect(claimIdsForAtlasNode("demo_tfr").flatMap(getEvidenceForClaim)).toHaveLength(0);
-    expect(atlasClaimCoverage([{ id: "demo_tfr" }])).toMatchObject({ linkedNodes: 1, evidenceLinkedNodes: 0 });
+    expect(claimIdsForAtlasNode("demand_opportunity").length).toBeGreaterThan(0);
+    expect(claimIdsForAtlasNode("demand_opportunity").flatMap(getEvidenceForClaim)).toHaveLength(0);
+    expect(atlasClaimCoverage([{ id: "demand_opportunity" }])).toMatchObject({ linkedNodes: 1, evidenceLinkedNodes: 0 });
   });
 
   it("does not count reused claims again when several channels share them", () => {
@@ -59,6 +59,7 @@ describe("Shared atlas claim bindings", () => {
     const bound = new Set(Object.values(bindings.nodes).flat());
     for (const claim of claims) expect(bound.has(claim.id), claim.id).toBe(true);
     expect(claimIdsForAtlasNode("berm_l2_bridge")).toContain("claim.bridge.conditional-response-operator");
+    expect(claimIdsForAtlasNode("demo_tfr")).toContain("claim.proxy.demographic-route-composition");
     expect(claimIdsForAtlasNode("lindgren_metric_drive")).toContain("claim.geometry.quadratic-mixing");
     expect(claimIdsForAtlasNode("androgen_receptor_signal")).toContain("claim.androgen.receptor-use-capacity");
     expect(claimIdsForAtlasNode("epistapege_observability_loss")).toContain("claim.civilization.epistapege-observability-loss");

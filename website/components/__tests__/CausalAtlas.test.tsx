@@ -51,6 +51,17 @@ describe("Complete, responsive atlas exploration", () => {
     fireEvent.keyDown(document, { key: "Escape" });
     expect(origin).toHaveFocus();
   });
+  it.each([
+    ["MALE_STEROIDOGENESIS", "male_steroidogenesis"],
+    ["LINDGREN_METRIC_DRIVE", "lindgren_metric_drive"],
+  ])("opens canonical model deep link %s in its existing atlas node", (modelId, atlasId) => {
+    window.history.replaceState({}, "", `/fi/map?node=${modelId}`);
+    render(<CausalAtlas locale="fi" />);
+    const node = NODES.find(item => item.id === atlasId)!;
+    expect(node.modelIds).toContain(modelId);
+    expect(screen.getByRole("complementary", { name: node.label.fi })).toBeInTheDocument();
+    expect(within(screen.getByTestId("atlas-list")).getByRole("button", { name: name => name.includes(node.label.fi) })).toHaveAttribute("aria-expanded", "true");
+  });
   it("does not carry hidden filters into a guide and advances along real nodes", () => {
     render(<CausalAtlas locale="fi" />);
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "does-not-exist" } });

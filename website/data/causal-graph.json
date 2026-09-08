@@ -121,10 +121,10 @@
       "id": "BERM_L2_BRIDGE",
       "label": {
         "en": "Conditional metric-to-observable response operator",
-        "fi": "Avoin geometriasta havaittavaan vasteeseen johtava kytkentäehdotus",
-        "ja": "幾何学から観測量への未解決の結合命題",
-        "fr": "Proposition ouverte de couplage géométrie–observable",
-        "ko": "기하학-관측량 간 개방형 결합 명제"
+        "fi": "Ehdollinen metriikasta havaittavaan johtava vasteoperaattori",
+        "ja": "計量から観測量への条件付き応答演算子",
+        "fr": "Opérateur conditionnel de réponse métrique–observable",
+        "ko": "계량-관측량 조건부 응답 연산자"
       },
       "layer": "physics",
       "parents": [

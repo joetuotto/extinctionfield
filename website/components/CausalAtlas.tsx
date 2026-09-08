@@ -74,7 +74,9 @@ export function CausalAtlas({ locale }: { locale: string }) {
       const p = new URLSearchParams(window.location.search);
       const id = p.get("atlas") as AtlasId;
       const chosen = SUBATLASES.some(a => a.id === id) ? id : "all";
-      const node = NODES.find(n => n.id === p.get("node"));
+      const requestedNode = p.get("node");
+      const node = NODES.find(n => n.id === requestedNode)
+        ?? (requestedNode ? NODES.find(n => n.modelIds?.includes(requestedNode)) : undefined);
       const requestedProfile = p.get("profile");
       const profile = requestedProfile === "all" || getIntervention(requestedProfile) ? requestedProfile! : "";
       setProfileId(node && profile && !nodesForIntervention(profile).some(n => n.id === node.id) ? "" : profile);
