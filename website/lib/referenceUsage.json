@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 790,
-    "usageLocations": 2401
+    "referencesWithUsages": 827,
+    "usageLocations": 2532
   },
   "usage": {
     "delgado1969": [
@@ -2581,6 +2581,248 @@
       {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
+      }
+    ],
+    "santulli2015_ryr2": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "harmon2026_darier": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "lin1995_star": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "lindgren2025": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      },
+      {
+        "path": "/model/tensor-derivation",
+        "source": "app/[locale]/model/tensor-derivation/page.tsx"
+      },
+      {
+        "path": "/physics",
+        "source": "app/[locale]/physics/page.tsx"
+      }
+    ],
+    "miao2025_rf_metabolomics": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/RedoxReserveMasking.tsx"
+      }
+    ],
+    "chen2010_glutathione": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/RedoxReserveMasking.tsx"
+      }
+    ],
+    "gao2018_autophagy": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "esmaeilian2023_autophagy": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "cunningham2016_testosterone_sexual_function": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "qin2018_camki_rora": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "components/SteroidogenesisEvidenceExplorer.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "qin2019_ceo2_leydig": [
+      {
+        "path": "/biology/calcium-redox-steroidogenesis",
+        "source": "components/SteroidogenesisEvidenceExplorer.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "sherrard2018": [
@@ -7251,56 +7493,6 @@
         "source": "app/[locale]/evidence/circadian/page.tsx"
       }
     ],
-    "lindgren2025": [
-      {
-        "path": "/evidence/convergence",
-        "source": "app/[locale]/evidence/convergence/page.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/mathematics",
-        "source": "components/MathematicsSections.tsx"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "components/MathematicsSections.tsx"
-      },
-      {
-        "path": "/model/proxy-masking",
-        "source": "app/[locale]/model/proxy-masking/page.tsx"
-      },
-      {
-        "path": "/model/tensor-derivation",
-        "source": "app/[locale]/model/tensor-derivation/page.tsx"
-      },
-      {
-        "path": "/physics",
-        "source": "app/[locale]/physics/page.tsx"
-      }
-    ],
     "kubo1957_linear_response": [
       {
         "path": "/evidence/convergence",
@@ -9717,6 +9909,424 @@
         "source": "app/[locale]/model/proxy-masking/page.tsx"
       }
     ],
+    "yap2019_trpc1_mitohormesis": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "gettler2011_fatherhood_testosterone": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "sci-rep-2019-sperm-ros": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/RedoxReserveMasking.tsx"
+      }
+    ],
+    "sharma2019_cacna1h_amrf": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "neuhaus2019_cav12_ttfields": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "meikle1991_calcium_cholesterol": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "manna1999_calcium_star": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "martin2008_camki_nur77": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "pereira1988_calcium_camp": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "pandey2010_calcium_star": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "akashi2005_rora_bmal1": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "alvarez2008_bmal1_testosterone": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "xiao2021_bmal1_leydig": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "chen2013_bmal1_granulosa": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "galano2021_star_knockout": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "galano2022_star_mitochondria": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bi2021_stac3_star": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "python1995_calcium_steroidogenesis": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "dekoninck1998_camkii_frequency": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kon2014_camkii_clock": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "hales2005_mitochondria": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "midzak2007_steroidogenesis": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "llanos2015_ryr_insulin": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "adachi2004_serca_glutathiolation": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "lv2024_mitophagy_steroidogenesis": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "mirovinyals2025_golgi_glutathione": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "jones2000_glutathione_redox": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "huang2026_ccdc90b_leydig": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "cui2025_testis_atlas": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
     "lancet-2017-tsimane-heart": [
       {
         "path": "/evidence/populations",
@@ -9873,12 +10483,6 @@
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       }
     ],
-    "sci-rep-2019-sperm-ros": [
-      {
-        "path": "/evidence/reproductive-navigation",
-        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
-      }
-    ],
     "burch2000_personal_mf_melatonin": [
       {
         "path": "/evidence/response-conditions",
@@ -9982,12 +10586,6 @@
       }
     ],
     "panagopoulos2019_dna": [
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      }
-    ],
-    "neuhaus2019_cav12_ttfields": [
       {
         "path": "/evidence/technology",
         "source": "app/[locale]/evidence/technology/page.tsx"

@@ -276,6 +276,27 @@
         ]
       },
       {
+        "id": "calcium-redox-steroidogenesis",
+        "claimId": "claim.steroidogenesis.component-convergence",
+        "path": [
+          "A_VGCC_ROS",
+          "MALE_STEROIDOGENESIS",
+          "ANDROGEN_BINDING_AVAILABILITY",
+          "ANDROGEN_RECEPTOR_SIGNAL"
+        ],
+        "synthesisClass": "COMPOSED_MECHANISTIC_CONVERGENCE",
+        "relationIds": [
+          "er.synthesis.steroidogenesis.qin2018",
+          "er.synthesis.steroidogenesis.qin2019",
+          "er.synthesis.steroidogenesis.martin2008",
+          "er.synthesis.steroidogenesis.miao2025",
+          "er.synthesis.steroidogenesis.chen2010",
+          "er.synthesis.steroidogenesis.gao2018",
+          "er.synthesis.steroidogenesis.esmaeilian2023",
+          "er.synthesis.steroidogenesis.lin1995"
+        ]
+      },
+      {
         "id": "graded-susceptibility-continuum",
         "claimId": "claim.synthesis.graded-susceptibility",
         "path": [

@@ -32,6 +32,7 @@ coefficients and their provenance.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import math
 from typing import Mapping
 
 from berm.modulome._common import (
@@ -39,6 +40,7 @@ from berm.modulome._common import (
     STRUCTURAL_ONLY,
     check_calibration_status,
     combine_statuses,
+    finite,
     nonempty,
     nonnegative,
     normalise_ids,
@@ -49,6 +51,7 @@ from berm.modulome._common import (
 __all__ = [
     "AttenuationAttribution",
     "CellStateVector",
+    "GlutathionePool",
     "ILLUSTRATIVE_STATE_KINETICS",
     "STATE_MEASUREMENT_VOCABULARY",
     "StateKinetics",
@@ -76,11 +79,82 @@ STATE_MEASUREMENT_VOCABULARY: Mapping[str, str] = {
     "dna_repair_rate": "repair_capacity",
     "challenge_tolerance": "repair_capacity",
     "glutathione_ratio": "repair_capacity",
+    "glutathione_gsh": "repair_capacity",
+    "glutathione_gssg": "repair_capacity",
+    "glutathione_equivalent_pool": "repair_capacity",
     # damage load (D)
     "dna_damage": "damage_load",
     "barrier_permeability": "damage_load",
     "functional_deficit": "damage_load",
 }
+
+
+GLUTATHIONE_ABSOLUTE_MEASUREMENTS = frozenset({
+    "glutathione_gsh", "glutathione_gssg", "glutathione_equivalent_pool",
+})
+
+
+@dataclass(frozen=True)
+class GlutathionePool:
+    """Free GSH and GSSG measured in the same compartment and absolute unit.
+
+    ``equivalent_pool = gsh + 2*gssg`` counts free glutathione equivalents.
+    Oxidation of two GSH molecules to one GSSG conserves that pool.  A ratio
+    alone cannot supply this record, a synthesis flux, or a damage estimate.
+    Protein-bound glutathione is outside this free-pool measurement.
+    """
+
+    gsh: float
+    gssg: float
+    units: str
+    compartment: str
+    source_ids: tuple[str, ...]
+    basis: str = "measured"
+
+    def __post_init__(self) -> None:
+        for name in ("gsh", "gssg"):
+            object.__setattr__(self, name, nonnegative(name, getattr(self, name)))
+        allowed_units = {
+            "mol/L", "mmol/L", "umol/L", "µmol/L", "nmol/L",
+            "nmol/mg protein", "nmol/10^6 viable cells", "pmol/viable cell",
+        }
+        if self.units not in allowed_units:
+            raise ValueError("glutathione units must name an absolute concentration or normalized amount")
+        object.__setattr__(self, "compartment", nonempty("compartment", self.compartment))
+        ids = normalise_ids(self.source_ids, "source_id")
+        if not ids:
+            raise ValueError("source_ids must identify the pool measurement or illustration")
+        object.__setattr__(self, "source_ids", ids)
+        if self.basis not in {"measured", "illustrative"}:
+            raise ValueError("basis must be measured or illustrative")
+        finite("glutathione equivalent pool", self.equivalent_pool)
+
+    @property
+    def equivalent_pool(self) -> float:
+        return finite("glutathione equivalent pool", self.gsh + 2 * self.gssg)
+
+    @property
+    def ratio(self) -> float | None:
+        """GSH/GSSG; None when the denominator is zero, rather than infinity."""
+        if self.gssg == 0:
+            return None
+        return finite("glutathione ratio", self.gsh / self.gssg)
+
+    def as_measurements(self) -> dict[str, float]:
+        result = {
+            "glutathione_gsh": self.gsh,
+            "glutathione_gssg": self.gssg,
+            "glutathione_equivalent_pool": self.equivalent_pool,
+        }
+        if self.ratio is not None:
+            result["glutathione_ratio"] = self.ratio
+        return result
+
+    def as_dict(self) -> dict:
+        return {"gsh": self.gsh, "gssg": self.gssg, "equivalentPool": self.equivalent_pool,
+                "ratio": self.ratio, "units": self.units, "compartment": self.compartment,
+                "sourceIds": list(self.source_ids), "basis": self.basis,
+                "poolScope": "free glutathione equivalents; excludes protein-bound glutathione"}
 
 
 @dataclass(frozen=True)
@@ -98,6 +172,7 @@ class CellStateVector:
     calibration_status: str = STRUCTURAL_ONLY
     parameter_ids: tuple[str, ...] = ()
     evidence_ids: tuple[str, ...] = ()
+    glutathione_pool: GlutathionePool | None = None
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "state_id", nonempty("state_id", self.state_id))
@@ -112,7 +187,20 @@ class CellStateVector:
         object.__setattr__(
             self, "damage_load", nonnegative("damage_load", self.damage_load)
         )
-        frozen = read_only_measurements("measurements", self.measurements)
+        measurements = dict(read_only_measurements("measurements", self.measurements))
+        if self.glutathione_pool is not None:
+            if not isinstance(self.glutathione_pool, GlutathionePool):
+                raise TypeError("glutathione_pool must be a GlutathionePool")
+            derived = self.glutathione_pool.as_measurements()
+            for key, value in derived.items():
+                if key in measurements and not math.isclose(measurements[key], value, rel_tol=1e-9, abs_tol=0):
+                    raise ValueError(f"{key} conflicts with the declared glutathione pool")
+            if self.glutathione_pool.ratio is None and "glutathione_ratio" in measurements:
+                raise ValueError("glutathione_ratio is undefined when GSSG is zero")
+            measurements.update(derived)
+        elif GLUTATHIONE_ABSOLUTE_MEASUREMENTS.intersection(measurements):
+            raise ValueError("absolute glutathione measurements require a pool with units, compartment and sources")
+        frozen = read_only_measurements("measurements", measurements)
         for key, _ in frozen:
             if key not in STATE_MEASUREMENT_VOCABULARY:
                 known = ", ".join(sorted(STATE_MEASUREMENT_VOCABULARY))
@@ -243,6 +331,7 @@ def advance_cell_state(
     state_id: str | None = None,
     measurements: Mapping[str, float] | None = None,
     exposure_id: str | None = None,
+    glutathione_pool: GlutathionePool | None = None,
 ) -> CellStateVector:
     """Advance (s, A, D) by one registered interval."""
     if not isinstance(previous, CellStateVector):
@@ -276,12 +365,17 @@ def advance_cell_state(
             + kinetics.readiness_recovery * (kinetics.readiness_baseline - s),
         ),
     )
+    next_measurements = previous.measurements if measurements is None else measurements
+    if glutathione_pool is not None and measurements is None:
+        next_measurements = {key: value for key, value in previous.measurements.items()
+                             if key not in GLUTATHIONE_ABSOLUTE_MEASUREMENTS and key != "glutathione_ratio"}
     return CellStateVector(
         state_id=state_id or previous.state_id,
         receptor_readiness=next_readiness,
         repair_capacity=next_repair,
         damage_load=next_damage,
-        measurements=previous.measurements if measurements is None else measurements,
+        measurements=next_measurements,
+        glutathione_pool=previous.glutathione_pool if glutathione_pool is None else glutathione_pool,
         passage_number=previous.passage_number,
         differentiation_state=previous.differentiation_state,
         prior_exposure_ids=(

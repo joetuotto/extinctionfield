@@ -2889,6 +2889,50 @@
         },
         "link": "/model/biological-coordination"
       }
+    },
+    {
+      "id": "mech_steroidogenic_reserve",
+      "level": 2,
+      "label": {
+        "en": "Steroidogenic supply and reserve",
+        "fi": "Steroidogeneesin huolto ja varanto"
+      },
+      "epistemicLevel": "L*",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ],
+      "detail": {
+        "en": {
+          "mechanism": "CaMKI–NUR77–StAR and RORα–BMAL1 converge on mitochondrial cholesterol transport. Redox reserve, autophagic cholesterol supply and mitochondrial capacity condition steroid output. Field experiments and component perturbations are displayed separately; the joined chain is BERM synthesis. Preserved hormone output can coexist with measured reserve depletion before an additional challenge."
+        },
+        "fi": {
+          "mechanism": "CaMKI–NUR77–StAR ja RORα–BMAL1 yhtyvät mitokondrion kolesterolikuljetukseen. Redox-varanto, autofaginen kolesterolihuolto ja mitokondriokapasiteetti ehdollistavat steroidituotantoa. Kenttäkokeet ja komponentti-interventiot esitetään erikseen; yhdistetty ketju on BERM-synteesi. Hormonituotanto voi säilyä mitatusta varantovajeesta huolimatta ennen lisähaastetta."
+        },
+        "link": "/biology/calcium-redox-steroidogenesis",
+        "keyRefs": [
+          "qin2018_camki_rora",
+          "qin2019_ceo2_leydig",
+          "martin2008_camki_nur77",
+          "chen2010_glutathione",
+          "gao2018_autophagy",
+          "esmaeilian2023_autophagy"
+        ]
+      },
+      "provenance": {
+        "en": "Structure and protocol-specific directions; no fitted glutathione fluxes or new TFR multiplier. Shared research families remain explicit.",
+        "fi": "Rakenne ja protokollakohtaiset vaikutussuunnat; ei sovitettuja glutationivirtoja eikä uutta TFR-kerrointa. Yhteiset tutkimusperheet ilmoitetaan."
+      },
+      "searchAliases": [
+        "GSH",
+        "GSSG",
+        "StAR",
+        "NUR77",
+        "CaMKI",
+        "Leydig",
+        "redox reserve",
+        "steroidogenesis"
+      ]
     }
   ],
   "edges": [
@@ -5850,6 +5894,60 @@
       "sourcePaths": [
         "website/data/claims.json",
         "docs/analysis/BERM_2026-09-07_physics_steelman.md"
+      ]
+    },
+    {
+      "from": "mech_ca_compartment_cycle",
+      "to": "mech_steroidogenic_reserve",
+      "relation": "causal",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ]
+    },
+    {
+      "from": "circadian_coordination",
+      "to": "mech_steroidogenic_reserve",
+      "relation": "causal",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ]
+    },
+    {
+      "from": "mod_repair_capacity",
+      "to": "mech_steroidogenic_reserve",
+      "relation": "modulates",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ]
+    },
+    {
+      "from": "mech_mitochondrial_ros",
+      "to": "mech_steroidogenic_reserve",
+      "relation": "modulates",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ]
+    },
+    {
+      "from": "mech_steroidogenic_reserve",
+      "to": "MALE_STEROIDOGENESIS",
+      "relation": "causal",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
+      ]
+    },
+    {
+      "from": "mech_steroidogenic_reserve",
+      "to": "tissue_testosterone",
+      "relation": "causal",
+      "sourcePaths": [
+        "berm/berm/modulome/steroidogenesis.py",
+        "berm/data/evidence/steroidogenesis_v1.json"
       ]
     }
   ],

@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import { pickCopy } from "@/lib/i18n";
@@ -5321,6 +5322,7 @@ export default async function ModelPage({
             <div className="overflow-x-auto">
               <BermCausalDiagram locale={locale_key} />
             </div>
+            <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
             <span id="ifo" />
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
               {cite(d.ifoVgicNote)}

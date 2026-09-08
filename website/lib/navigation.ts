@@ -578,6 +578,19 @@ export const ABOUT_ROUTES: NavRoute[] = [
   },
 ];
 
+const STEROIDOGENESIS_ROUTE: NavRoute = {
+  href: "/biology/calcium-redox-steroidogenesis",
+  icon: Activity,
+  labels: { en: "Calcium, redox and hormones", fi: "Kalsium, redox ja hormonit", ja: "カルシウム・酸化還元・ホルモン", fr: "Calcium, redox et hormones", ko: "칼슘·산화환원·호르몬" },
+  descs: {
+    en: "Field experiments, cellular reserves and the cholesterol–StAR bottleneck",
+    fi: "Kenttäkokeet, solun varannot ja kolesteroli–StAR-pullonkaula",
+    ja: "電磁場実験、細胞予備能、コレステロール–StARの律速段階",
+    fr: "Expériences de champ, réserves cellulaires et étape cholestérol–StAR",
+    ko: "전자기장 실험, 세포 예비능, 콜레스테롤–StAR 병목",
+  },
+};
+
 export const NAV_ROUTES: NavRoute[] = [
   {
     href: "/model", icon: GitBranch,
@@ -618,6 +631,7 @@ export const NAV_ROUTES: NavRoute[] = [
         },
       },
       existingRoute("/modulome"),
+      STEROIDOGENESIS_ROUTE,
       existingRoute("/model/biological-coordination"),
       existingRoute("/model#vgcc-gene-family"),
       existingRoute("/model#camkii-convergence"),
@@ -700,6 +714,7 @@ export const NAV_ROUTES: NavRoute[] = [
         labels: { en: "Evidence register", fi: "Näyttörekisteri", ja: "エビデンスレジスター", fr: "Registre des preuves", ko: "증거 레지스터" },
       },
       existingRoute("/evidence/response-conditions"),
+      { ...STEROIDOGENESIS_ROUTE, href: `${STEROIDOGENESIS_ROUTE.href}#study-explorer`, icon: FlaskConical },
       existingRoute("/evidence/pharmacology"),
       existingRoute("/evidence/timothy-experiment"),
       existingRoute("/evidence/populations"),

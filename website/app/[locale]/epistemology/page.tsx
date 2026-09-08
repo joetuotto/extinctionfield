@@ -1,3 +1,4 @@
+import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale } from "lucide-react";
@@ -1007,6 +1008,8 @@ export default async function EpistemologyPage({
     <div className="max-w-4xl mx-auto px-6 py-12 sm:py-20">
       <AboutTabs locale={locale} />
       <PageHeader icon={Scale} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisCalibrationNote locale={locale} />
       <div className="-mt-8 mb-10">
         <Link href={`/${locale}/civilization/epistapege`} className="text-sm font-medium text-accent hover:underline">
           {d.epistapegeLink} →

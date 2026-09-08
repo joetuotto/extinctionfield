@@ -164,6 +164,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
             "BARRIER_PLACENTA",
             "BARRIER_RETINA",
             "HPA_HPG",
+            "MALE_STEROIDOGENESIS",
             "MALE_SPERM",
             "OOCYTE_REDOX",
             "RECEPTOR_STATE_MEMORY",
@@ -372,6 +373,7 @@ CAUSAL_NODES: tuple[CausalNode, ...] = (
         ("Leydig",),
         (
             "HPA_HPG",
+            "A_VGCC_ROS",
             "MELATONIN_REDOX",
             "MICROBIOME_OT",
             "HORMONE_TARGET_RESPONSE",

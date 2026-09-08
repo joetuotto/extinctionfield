@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -836,6 +837,8 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
       </Link>
 
       <PageHeader icon={Moon} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="neurobiology" size={28} className="text-accent" />} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="clock" />
 
       <EvidenceSynthesisBanner locale={locale} />
 

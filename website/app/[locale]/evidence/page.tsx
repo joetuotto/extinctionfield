@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -2142,6 +2143,8 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
 
       <ResearchReadingGuide locale={locale} context="evidence" />
 

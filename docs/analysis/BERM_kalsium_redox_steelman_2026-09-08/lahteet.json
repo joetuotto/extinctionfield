@@ -1,0 +1,941 @@
+{
+  "date": "2026-09-08",
+  "workspace_head": "af25773",
+  "scope": "Source inventory for the mechanism synthesis; not a systematic review or an independent replication count. Exact DOI matching tests bibliographic identity, not evidential quality. Registry absence is exact DOI absence, not proof that the idea or an alias is absent.",
+  "sources": [
+    {
+      "doi": "10.1002/j.1939-4640.1991.tb00236.x",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Extracellular calcium and luteinizing hormone effects on 22-hydroxycholesterol used for testosterone production in mouse Leydig cells.",
+      "authors": "Meikle AW, Liu XH, Stringham JD.",
+      "year": "1991",
+      "pmid": "2050582",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1002/jcp.30334",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Circadian clock gene BMAL1 controls testosterone production by regulating steroidogenesis-related gene transcription in goat Leydig cells.",
+      "authors": "Xiao Y, Zhao L, Li W, Wang X, Ma T, Yang L, Gao L, Li C, Zhang M, Yang D, Zhang J, Jiang H, Zhao H, Wang Y, Chao HW, Wang A, Jin Y, Chen H.",
+      "year": "2021",
+      "pmid": "33598947",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1007/s00441-020-03312-8",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Testicular STAC3 regulates Leydig cell steroidogenesis through potentiating mitochondrial membrane potential and StAR processing.",
+      "authors": "Bi X, Liu J, Xu S, Wang Y, Wu X.",
+      "year": "2021",
+      "pmid": "33409656",
+      "pmcid": "PMC8016781",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ceca.2013.11.002",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "cui2014_lte4"
+      ],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Exposure to extremely low-frequency electromagnetic fields inhibits T-type calcium channels via AA/LTE4 signaling pathway.",
+      "authors": "Cui Y, Liu X, Yang T, Mei YA, Hu C.",
+      "year": "2014",
+      "pmid": "24360572",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.cell.2026.03.029",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "kim2026_cell_gene_switch"
+      ],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression.",
+      "authors": "Kim J, Hwang Y, Kim S, Kwon D, Park J, Cho B, An S, Kang S, Kim Y, Kim S, Lengner CJ, Kim S, Kwon Y, Sung JS, Kim J.",
+      "year": "2026",
+      "pmid": "41985457",
+      "pmcid": null,
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.cell.2026.06.020",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "kim2026_cell_gene_switch_correction"
+      ],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "correction",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression.",
+      "authors": "Kim J, Hwang Y, Kim S, Kwon D, Park J, Cho B, An S, Kang S, Kim Y, Kim S, Lengner CJ, Kim S, Kwon Y, Sung JS, Kim J.",
+      "year": "2026",
+      "pmid": "42372722",
+      "pmcid": null,
+      "publication_types": [
+        "Published Erratum"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ebiom.2019.05.034",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "therabionic-ebioMedicine-2019"
+      ],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Tumour-specific amplitude-modulated radiofrequency electromagnetic fields induce differentiation of hepatocellular carcinoma via targeting Ca&lt;sub&gt;v&lt;/sub&gt;3.2 T-type voltage-gated calcium channels and Ca&lt;sup&gt;2+&lt;/sup&gt; influx.",
+      "authors": "Jimenez H, Wang M, Zimmerman JW, Pennison MJ, Sharma S, Surratt T, Xu ZX, Brezovich I, Absher D, Myers RM, DeYoung B, Caudell DL, Chen D, Lo HW, Lin HK, Godwin DW, Olivier M, Ghanekar A, Chen K, Miller LD, Gong Y, Capstick M, D'Agostino RB, Munden R, Merle P, Barbault A, Blackstock AW, Bonkovsky HL, Yang GY, Jin G, Liu L, Zhang W, Watabe K, Blackman CF, Pasche BC.",
+      "year": "2019",
+      "pmid": "31160272",
+      "pmcid": "PMC6604666",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ebiom.2019.05.038",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Ca&lt;sup&gt;2+&lt;/sup&gt; and CACNA1H mediate targeted suppression of breast cancer brain metastasis by AM RF EMF.",
+      "authors": "Sharma S, Wu SY, Jimenez H, Xing F, Zhu D, Liu Y, Wu K, Tyagi A, Zhao D, Lo HW, Metheny-Barlow L, Sun P, Bourland JD, Chan MD, Thomas A, Barbault A, D'Agostino RB, Whitlow CT, Kirchner V, Blackman C, Pasche B, Watabe K.",
+      "year": "2019",
+      "pmid": "31129098",
+      "pmcid": "PMC6604768",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.jlr.2024.100639",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Dysregulation of mitochondrial dynamics and mitophagy are involved in high-fat diet-induced steroidogenesis inhibition.",
+      "authors": "Lv ZM, Liu C, Wang P, Chen YH.",
+      "year": "2024",
+      "pmid": "39236859",
+      "pmcid": "PMC11467671",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.mce.2010.02.034",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Effect of glutathione redox state on Leydig cell susceptibility to acute oxidative stress.",
+      "authors": "Chen H, Zhou L, Lin CY, Beattie MC, Liu J, Zirkin BR.",
+      "year": "2010",
+      "pmid": "20206230",
+      "pmcid": "PMC2875365",
+      "publication_types": [
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1016/j.redox.2025.103560",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Characterization of the glutathione redox state in the Golgi apparatus.",
+      "authors": "Miró-Vinyals C, Emmert S, Grammbitter G, Jud A, Kockmann T, Rivera-Fuentes P.",
+      "year": "2025",
+      "pmid": "39986117",
+      "pmcid": "PMC11904595",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/j.reprotox.2018.08.014",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "1800 MHz radiofrequency fields inhibits testosterone production via CaMKI /RORα pathway.",
+      "authors": "Qin F, Cao H, Yuan H, Guo W, Pei H, Cao Y, Tong J.",
+      "year": "2018",
+      "pmid": "30125682",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1016/S0891-5849(99)00275-0",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Redox state of glutathione in human plasma.",
+      "authors": "Jones DP, Carlson JL, Mody VC, Cai J, Lynn MJ, Sternberg P.",
+      "year": "2000",
+      "pmid": "10719244",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1038/nm1119",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "S-Glutathiolation by peroxynitrite activates SERCA during arterial relaxation by nitric oxide.",
+      "authors": "Adachi T, Weisbrod RM, Pimentel DR, Ying J, Sharov VS, Schöneich C, Cohen RA.",
+      "year": "2004",
+      "pmid": "15489859",
+      "pmcid": null,
+      "publication_types": [
+        "Comparative Study",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1038/nsmb925",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "The orphan nuclear receptor RORalpha regulates circadian transcription of the mammalian core-clock Bmal1.",
+      "authors": "Akashi M, Takumi T.",
+      "year": "2005",
+      "pmid": "15821743",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1038/s41419-023-05864-3",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Autophagy regulates sex steroid hormone synthesis through lysosomal degradation of lipid droplets in human ovary and testis.",
+      "authors": "Esmaeilian Y, Hela F, Bildik G, İltumur E, Yusufoglu S, Yildiz CS, Yakin K, Kordan Y, Oktem O.",
+      "year": "2023",
+      "pmid": "37236920",
+      "pmcid": "PMC10220221",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1038/s41598-019-53983-9",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [
+        "sci-rep-2019-sperm-ros"
+      ],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Whole-body exposures to radiofrequency-electromagnetic energy can cause DNA damage in mouse spermatozoa via an oxidative mechanism.",
+      "authors": "Houston BJ, Nixon B, McEwan KE, Martin JH, King BV, Aitken RJ, De Iuliis GN.",
+      "year": "2019",
+      "pmid": "31767903",
+      "pmcid": "PMC6877509",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1038/s43587-025-00824-2",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Single-cell transcriptomic atlas of the human testis across the reproductive lifespan.",
+      "authors": "Cui L, Nie X, Guo Y, Ren P, Guo Y, Wang X, Li R, Hotaling JM, Cairns BR, Guo J.",
+      "year": "2025",
+      "pmid": "40033047",
+      "pmcid": "PMC12003174",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1042/bj3050569",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "The site of action of Ca2+ in the activation of steroidogenesis: studies in Ca(2+)-clamped bovine adrenal zona-glomerulosa cells.",
+      "authors": "Python CP, Laban OP, Rossier MF, Vallotton MB, Capponi AM.",
+      "year": "1995",
+      "pmid": "7832775",
+      "pmcid": "PMC1136400",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1083/jcb.201710078",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Autophagy regulates testosterone synthesis by facilitating cholesterol uptake in Leydig cells.",
+      "authors": "Gao F, Li G, Liu C, Gao H, Wang H, Liu W, Chen M, Shang Y, Wang L, Shi J, Xia W, Jiao J, Gao F, Li J, Chen L, Li W.",
+      "year": "2018",
+      "pmid": "29618492",
+      "pmcid": "PMC5987723",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1088/1742-6596/2987/1/012001",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "INTEGRAATIOSUUNNITELMA.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [
+        "lindgren2025"
+      ],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "theoretical_premise",
+      "metadata_check": "exact_doi_match_crossref",
+      "title": "Electromagnetism as a purely geometric theory",
+      "publication_types": [
+        "journal-article"
+      ]
+    },
+    {
+      "doi": "10.1101/gad.237511.114",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "CaMKII is essential for the cellular clock and coupling between morning and evening behavioral rhythms.",
+      "authors": "Kon N, Yoshikawa T, Honma S, Yamagata Y, Yoshitane H, Shimizu K, Sugiyama Y, Hara C, Kameshita I, Honma K, Fukada Y.",
+      "year": "2014",
+      "pmid": "24831701",
+      "pmcid": "PMC4035538",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1111/cpr.70237",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "High Uric Acid Promotes Stem Leydig Cell Senescence by CCDC90B Mediates Mitochondrial Quality Control Imbalance.",
+      "authors": "Huang J, Wang A, Li X, Huang P, Zeng K, Sun L, Li M, Chen Y, Wang J.",
+      "year": "2026",
+      "pmid": "42242294",
+      "pmcid": "PMC13325638",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1111/nyas.15386",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "bertagna2025"
+      ],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Electromagnetic fields modulate neuronal membrane ionic currents through altered cellular calcium homeostasis.",
+      "authors": "Bertagna F, Ahmad S, Lewis R, Silva SRP, McFadden J, Huang CL, Matthews HR, Jeevaratnam K.",
+      "year": "2025",
+      "pmid": "40568874",
+      "pmcid": "PMC12412718",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1126/sciadv.aee1599",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Failed metabolic adaptation to stress contributes to epidermal cell adhesion defects in Darier disease.",
+      "authors": "Harmon RM, McCarthy EF, Krol A, Shetti A, Braun J, DiDominicis RJ, Godsel L, Ren Z, Perez White BE, Cohen-Barak E, Dodiuk-Gad R, Gudjonsson JE, Paller AS, Simpson CL, Weinberg S, Dahl R, Goyal Y, Prakriya M, Green KJ.",
+      "year": "2026",
+      "pmid": "42555718",
+      "pmcid": "PMC13440392",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1126/science.279.5348.227",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Sensitivity of CaM kinase II to the frequency of Ca2+ oscillations.",
+      "authors": "De Koninck P, Schulman H.",
+      "year": "1998",
+      "pmid": "9422695",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1126/science.7892608",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Role of steroidogenic acute regulatory protein in adrenal and gonadal steroidogenesis.",
+      "authors": "Lin D, Sugawara T, Strauss JF, Clark BJ, Stocco DM, Saenger P, Rogol A, Miller WL.",
+      "year": "1995",
+      "pmid": "7892608",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1152/ajpcell.00008.2013",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Downregulation of core clock gene Bmal1 attenuates expression of progesterone and prostaglandin biosynthesis-related genes in rat luteinizing granulosa cells.",
+      "authors": "Chen H, Zhao L, Kumazawa M, Yamauchi N, Shigeyoshi Y, Hashimoto S, Hattori MA.",
+      "year": "2013",
+      "pmid": "23596172",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1172/JCI79273",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Calcium release channel RyR2 regulates insulin release and glucose homeostasis.",
+      "authors": "Santulli G, Pagano G, Sardu C, Xie W, Reiken S, D'Ascia SL, Cannone M, Marziliano N, Trimarco B, Guise TA, Lacampagne A, Marks AR.",
+      "year": "2015",
+      "pmid": "25844899",
+      "pmcid": "PMC4463204",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1177/0748730407311254",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "The circadian clock protein BMAL1 is necessary for fertility and proper testosterone production in mice.",
+      "authors": "Alvarez JD, Hansen A, Ord T, Bebas P, Chappell PE, Giebultowicz JM, Williams C, Moss S, Sehgal A.",
+      "year": "2008",
+      "pmid": "18258755",
+      "pmcid": "PMC2862364",
+      "publication_types": [
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1196/annals.1336.014",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Mitochondrial function in Leydig cell steroidogenesis.",
+      "authors": "Hales DB, Allen JA, Shankara T, Janus P, Buck S, Diemer T, Hales KH.",
+      "year": "2005",
+      "pmid": "16469751",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1210/en.2006-1488",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Effect of myxothiazol on Leydig cell steroidogenesis: inhibition of luteinizing hormone-mediated testosterone synthesis but stimulation of basal steroidogenesis.",
+      "authors": "Midzak AS, Liu J, Zirkin BR, Chen H.",
+      "year": "2007",
+      "pmid": "17332065",
+      "pmcid": null,
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1210/endo-122-5-2232",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Ca+2 is an inhibitor of adenylate cyclase in MA-10 Leydig tumor cells.",
+      "authors": "Pereira ME, Segaloff DL, Ascoli M.",
+      "year": "1988",
+      "pmid": "2834186",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1210/endo.140.4.6650",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Functional assessment of the calcium messenger system in cultured mouse Leydig tumor cells: regulation of human chorionic gonadotropin-induced expression of the steroidogenic acute regulatory protein.",
+      "authors": "Manna PR, Pakarinen P, El-Hefnawy T, Huhtaniemi IT.",
+      "year": "1999",
+      "pmid": "10098511",
+      "pmcid": null,
+      "publication_types": [
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1210/endocr/bqac091",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Role of Constitutive STAR in Mitochondrial Structure and Function in MA-10 Leydig Cells.",
+      "authors": "Galano M, Papadopoulos V.",
+      "year": "2022",
+      "pmid": "35704520",
+      "pmcid": null,
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1210/jc.2016-1645",
+      "documents": [
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Testosterone Treatment and Sexual Function in Older Men With Low Testosterone Levels.",
+      "authors": "Cunningham GR, Stephens-Shields AJ, Rosen RC, Wang C, Bhasin S, Matsumoto AM, Parsons JK, Gill TM, Molitch ME, Farrar JT, Cella D, Barrett-Connor E, Cauley JA, Cifelli D, Crandall JP, Ensrud KE, Gallagher L, Zeldow B, Lewis CE, Pahor M, Swerdloff RS, Hou X, Anton S, Basaria S, Diem SJ, Tabatabaie V, Ellenberg SS, Snyder PJ.",
+      "year": "2016",
+      "pmid": "27355400",
+      "pmcid": "PMC4971331",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, U.S. Gov't, Non-P.H.S.",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.1210/me.2007-0370",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "The orphan nuclear receptor NUR77 regulates hormone-induced StAR transcription in Leydig cells through cooperation with Ca2+/calmodulin-dependent protein kinase I.",
+      "authors": "Martin LJ, Boucher N, Brousseau C, Tremblay JJ.",
+      "year": "2008",
+      "pmid": "18599618",
+      "pmcid": "PMC5419457",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "correction",
+      "metadata_check": "exact_doi_match_crossref",
+      "title": "Correction: Mobile Phone Radiation Induces Reactive Oxygen Species Production and DNA Damage in Human Spermatozoa In Vitro",
+      "publication_types": [
+        "journal-article"
+      ]
+    },
+    {
+      "doi": "10.1371/journal.pone.0006446",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "iuliis2009"
+      ],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Mobile phone radiation induces reactive oxygen species production and DNA damage in human spermatozoa in vitro.",
+      "authors": "De Iuliis GN, Newey RJ, King BV, Aitken RJ.",
+      "year": "2009",
+      "pmid": "19649291",
+      "pmcid": "PMC2714176",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1371/journal.pone.0124136",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [
+        "buckner2015_ttype"
+      ],
+      "present_in_prior_pharmacology_synthesis": true,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Inhibition of cancer cell growth by exposure to a specific time-varying electromagnetic field involves T-type calcium channels.",
+      "authors": "Buckner CA, Buckner AL, Koren SA, Persinger MA, Lafrenie RM.",
+      "year": "2015",
+      "pmid": "25875081",
+      "pmcid": "PMC4397079",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1371/journal.pone.0129238",
+      "documents": [
+        "REDOX_VARANTO_JA_MUISTI.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Glucose-Dependent Insulin Secretion in Pancreatic β-Cell Islets from Male Rats Requires Ca2+ Release via ROS-Stimulated Ryanodine Receptors.",
+      "authors": "Llanos P, Contreras-Ferrat A, Barrientos G, Valencia M, Mears D, Hidalgo C.",
+      "year": "2015",
+      "pmid": "26046640",
+      "pmcid": "PMC4457734",
+      "publication_types": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.1677/JOE-09-0206",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Blocking L-type calcium channels reduced the threshold of cAMP-induced steroidogenic acute regulatory gene expression in MA-10 mouse Leydig cells.",
+      "authors": "Pandey AK, Li W, Yin X, Stocco DM, Grammas P, Wang X.",
+      "year": "2010",
+      "pmid": "19822634",
+      "pmcid": "PMC2791179",
+      "publication_types": [
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    {
+      "doi": "10.2147/IJN.S206561",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "CeO<sub>2</sub>NPs relieve radiofrequency radiation, improve testosterone synthesis, and clock gene expression in Leydig cells by enhancing antioxidation.",
+      "authors": "Qin F, Shen T, Cao H, Qian J, Zou D, Ye M, Pei H.",
+      "year": "2019",
+      "pmid": "31296989",
+      "pmcid": "PMC6598754",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.3389/fpubh.2025.1623701",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md",
+        "REDOX_VARANTO_JA_MUISTI.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Differential metabolic responses of mouse Leydig and spermatogonia cells to radiofrequency electromagnetic field exposure.",
+      "authors": "Miao X, Lin Y, Guo J, Lin J, Gao P, Zhang W, Zeng L, Guo G, Li J.",
+      "year": "2025",
+      "pmid": "41048265",
+      "pmcid": "PMC12493145",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.3390/cancers11010110",
+      "documents": [
+        "KENTTA_KALSIUM_OSAKOKEET.md"
+      ],
+      "canonical_reference_ids": [
+        "neuhaus2019_cav12_ttfields"
+      ],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "field_protocol_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Alternating Electric Fields (TTFields) Activate Ca<sub>v</sub>1.2 Channels in Human Glioblastoma Cells.",
+      "authors": "Neuhaus E, Zirjacks L, Ganser K, Klumpp L, Schüler U, Zips D, Eckert F, Huber SM.",
+      "year": "2019",
+      "pmid": "30669316",
+      "pmcid": "PMC6356873",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    {
+      "doi": "10.3390/ijms22042021",
+      "documents": [
+        "KALSIUM_KELLO_HORMONIT.md",
+        "README.md"
+      ],
+      "canonical_reference_ids": [],
+      "present_in_prior_pharmacology_synthesis": false,
+      "role": "biological_component_or_dataset_study",
+      "metadata_check": "exact_doi_match_europe_pmc",
+      "title": "Role of Constitutive STAR in Leydig Cells.",
+      "authors": "Galano M, Li Y, Li L, Sottas C, Papadopoulos V.",
+      "year": "2021",
+      "pmid": "33670702",
+      "pmcid": "PMC7922663",
+      "publication_types": [
+        "research-article",
+        "Journal Article"
+      ]
+    }
+  ]
+}

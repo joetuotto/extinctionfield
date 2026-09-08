@@ -113,8 +113,8 @@ describe("causal-graph.json", () => {
     expect(nodeIds.size).toBe(47);
   });
 
-  it("has 96 typed edges", () => {
-    expect(graph.edges.length).toBe(96);
+  it("has 97 typed edges", () => {
+    expect(graph.edges.length).toBe(97);
   });
 
   it("node IDs are SCREAMING_SNAKE_CASE", () => {
@@ -268,14 +268,14 @@ describe("claims.json", () => {
 });
 
 describe("BERM compositional evidence synthesis", () => {
-  it("registers all seven synthesis clusters as BERM-owned claims and relations", () => {
+  it("registers all eight synthesis clusters as BERM-owned claims and relations", () => {
     const claimIds = new Set(claims.claims.map((claim) => claim.id));
     const relationIds = new Set(claims.evidence_relations.map((relation) => relation.id));
     const synthesis = architecture.evidenceSynthesis;
 
     expect(synthesis.role).toBe("berm_compositional_evidence_layer");
     expect(synthesis.fieldStateRole).toBe("optional_physical_measurement_input_only");
-    expect(synthesis.clusters).toHaveLength(7);
+    expect(synthesis.clusters).toHaveLength(8);
     for (const cluster of synthesis.clusters) {
       expect(claimIds.has(cluster.claimId)).toBe(true);
       expect(cluster.relationIds.length).toBeGreaterThan(0);

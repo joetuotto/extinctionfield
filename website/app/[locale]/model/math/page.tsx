@@ -1,3 +1,4 @@
+import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Sigma, Layers } from "lucide-react";
@@ -113,6 +114,8 @@ export default async function MathPage({
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Sigma} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisCalibrationNote locale={locale} />
 
       <nav className="mb-10 flex flex-wrap gap-3 text-sm">
         <Link href={`/${locale}/model`} className="text-accent hover:underline">{d.modelLink}</Link>
