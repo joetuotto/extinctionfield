@@ -1,221 +1,67 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 
-const COMMUNITIES = [
-  { id: "amish", tfr: 6.5, tech: 0.05 },
-  { id: "haredi", tfr: 6.4, tech: 0.10 },
-  { id: "old_mennonite", tfr: 5.5, tech: 0.18 },
-  { id: "modern_mennonite", tfr: 2.8, tech: 0.40 },
-  { id: "mormon", tfr: 2.5, tech: 0.55 },
-  { id: "usa", tfr: 1.62, tech: 0.80 },
-  { id: "finland", tfr: 1.26, tech: 0.90 },
-  { id: "korea", tfr: 0.72, tech: 1.00 },
-];
-
 const COPY = {
   en: {
-    caption:
-      "Same country, same healthcare, same economy. Different technology — different fertility.",
-    amish: "Amish",
-    haredi: "Haredi",
-    old_mennonite: "Old Mennonite",
-    modern_mennonite: "Mod. Mennonite",
-    mormon: "Mormon",
-    usa: "USA",
-    finland: "Finland",
-    korea: "S. Korea",
-    xLabel: "Technology adoption →",
-    yLabel: "TFR",
+    title: "How to compare technology and fertility",
+    status: "BERM hypothesis · comparison design",
+    intro: "A biological explanation becomes more informative when measured field histories are compared within the same population and period.",
+    comparisons: [
+      { title: "Before and after", detail: "Follow the same population across a documented installation or removal, with a comparable population where the technology did not change." },
+      { title: "Different rollout dates", detail: "Compare regions and birth cohorts using local operating histories, measured fields and the same fertility measure." },
+      { title: "Different technology practices", detail: "Community comparisons need measured exposure and adjustment for family formation, contraception, selection and other living conditions." },
+    ],
+    prediction: "Conditional BERM prediction: if a field change alters reproductive biology, its timing and the affected cohorts should help explain later fertility differences. The response direction, size and lag require calibration.",
+    note: "This is a study design, not a fitted technology–fertility relationship. A national fertility rate and a community’s family size are different measures.",
+    sources: "Explore source histories",
+    communities: "Community evidence and limitations",
   },
   fi: {
-    caption:
-      "Sama maa, sama terveydenhuolto, sama talous. Eri teknologia — eri hedelmällisyys.",
-    amish: "Amissit",
-    haredi: "Haredi",
-    old_mennonite: "Vanhat mennoniitit",
-    modern_mennonite: "Mod. mennoniitit",
-    mormon: "Mormonit",
-    usa: "USA",
-    finland: "Suomi",
-    korea: "Etelä-Korea",
-    xLabel: "Teknologian omaksuminen →",
-    yLabel: "TFR",
+    title: "Miten teknologiaa ja hedelmällisyyttä verrataan",
+    status: "BERM-hypoteesi · vertailuasetelma",
+    intro: "Biologisen selityksen arvio tarkentuu, kun mitattuja kenttähistorioita verrataan samassa väestössä ja samana ajanjaksona.",
+    comparisons: [
+      { title: "Ennen ja jälkeen", detail: "Seurataan samaa väestöä dokumentoidun asennuksen tai poiston yli ja rinnalla vertailuväestöä, jonka teknologia ei muuttunut." },
+      { title: "Eri käyttöönottoajat", detail: "Verrataan alueita ja syntymäkohortteja paikallisten käyttöaikojen, kenttämittausten ja saman hedelmällisyysmittarin avulla." },
+      { title: "Erilaiset teknologiakäytännöt", detail: "Yhteisövertailu tarvitsee mitatun altistuksen sekä perheenmuodostuksen, ehkäisyn, valikoitumisen ja muiden elinolojen huomioinnin." },
+    ],
+    prediction: "BERM:n ehdollinen ennuste: jos kenttämuutos muuttaa lisääntymisbiologiaa, muutoksen ajoituksen ja altistuneiden kohorttien pitäisi auttaa selittämään myöhempiä hedelmällisyyseroja. Vasteen suunta, koko ja viive tarvitsevat kalibroinnin.",
+    note: "Tämä on tutkimusasetelma, ei sovitettu teknologia–hedelmällisyysyhteys. Kansallinen kokonaishedelmällisyysluku ja yhteisön lapsiluku ovat eri mittareita.",
+    sources: "Tutki lähteiden historiaa",
+    communities: "Yhteisövertailujen näyttö ja rajat",
   },
 };
 
-const W = 600;
-const H = 360;
-const PAD = { top: 20, right: 30, bottom: 50, left: 50 };
-const plotW = W - PAD.left - PAD.right;
-const plotH = H - PAD.top - PAD.bottom;
-
-const maxTFR = 7;
-
-function xScale(tech: number): number {
-  return PAD.left + tech * plotW;
-}
-function yScale(tfr: number): number {
-  return PAD.top + plotH - (tfr / maxTFR) * plotH;
-}
-
+/** A qualitative comparison design. No numerical adoption score is implied. */
 export function TechnologyGradientChart({ locale }: { locale: Locale }) {
   const d = pickCopy(COPY, locale);
 
-  const labels: Record<string, string> = {
-    amish: d.amish,
-    haredi: d.haredi,
-    old_mennonite: d.old_mennonite,
-    modern_mennonite: d.modern_mennonite,
-    mormon: d.mormon,
-    usa: d.usa,
-    finland: d.finland,
-    korea: d.korea,
-  };
-
-  const labelOffsets: Record<string, number> = {
-    amish: -20,
-    haredi: 20,
-  };
-
-  const sorted = [...COMMUNITIES].sort((a, b) => a.tech - b.tech);
-  const curvePath = sorted
-    .map((c, i) => `${i === 0 ? "M" : "L"}${xScale(c.tech).toFixed(1)},${yScale(c.tfr).toFixed(1)}`)
-    .join(" ");
-
   return (
-    <figure className="data-figure my-12">
-      <div className="chart-scroll p-1">
-        <svg
-          viewBox={`0 0 ${W} ${H}`}
-          className="w-full min-w-[560px] max-w-[600px] mx-auto"
-          role="img"
-          aria-label="Technology adoption vs fertility rate"
-        >
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((v) => (
-            <g key={v}>
-              <line
-                x1={PAD.left}
-                y1={yScale(v)}
-                x2={PAD.left + plotW}
-                y2={yScale(v)}
-                stroke="currentColor"
-                strokeOpacity={0.06}
-              />
-              <text
-                x={PAD.left - 8}
-                y={yScale(v) + 4}
-                textAnchor="end"
-                className="fill-foreground-muted"
-                fontSize={11}
-                fontFamily="var(--font-mono, monospace)"
-              >
-                {v}
-              </text>
-            </g>
+    <figure className="data-figure my-12" aria-label={d.title}>
+      <div className="space-y-5 p-5 sm:p-7">
+        <div>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-accent">{d.status}</p>
+          <h3 className="text-lg font-semibold">{d.title}</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-foreground-muted">{d.intro}</p>
+        </div>
+        <ol className="grid gap-3 md:grid-cols-3">
+          {d.comparisons.map((comparison, index) => (
+            <li key={comparison.title} className="rounded-xl border border-card-border bg-card-bg/60 p-4">
+              <span className="font-mono text-xs text-accent" aria-hidden="true">0{index + 1}</span>
+              <h4 className="mt-2 text-sm font-semibold">{comparison.title}</h4>
+              <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{comparison.detail}</p>
+            </li>
           ))}
-
-          <path
-            d={curvePath}
-            fill="none"
-            stroke="var(--color-accent, #3b82f6)"
-            strokeWidth={1.5}
-            strokeDasharray="4 3"
-            strokeOpacity={0.4}
-          />
-
-          {COMMUNITIES.map((c) => {
-            const cx = xScale(c.tech);
-            const cy = yScale(c.tfr);
-            const above = c.tfr > 3;
-            const labelOffset = labelOffsets[c.id] ?? 0;
-            return (
-              <g key={c.id}>
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r={5}
-                  fill="var(--color-accent, #3b82f6)"
-                  fillOpacity={0.85}
-                />
-                {labelOffset !== 0 && (
-                  <line
-                    x1={cx}
-                    y1={cy - 6}
-                    x2={cx + labelOffset}
-                    y2={cy - 10}
-                    stroke="var(--color-accent, #3b82f6)"
-                    strokeWidth={0.8}
-                    strokeOpacity={0.4}
-                  />
-                )}
-                <text
-                  x={cx + labelOffset}
-                  y={above ? cy - 10 : cy + 16}
-                  textAnchor="middle"
-                  fontSize={10}
-                  className="fill-foreground"
-                  fontWeight={500}
-                >
-                  {labels[c.id]}
-                </text>
-                <text
-                  x={cx + labelOffset}
-                  y={above ? cy - 22 : cy + 27}
-                  textAnchor="middle"
-                  fontSize={9}
-                  className="fill-foreground-muted"
-                  fontFamily="var(--font-mono, monospace)"
-                >
-                  {c.tfr.toFixed(1)}
-                </text>
-              </g>
-            );
-          })}
-
-          <text
-            x={PAD.left + plotW / 2}
-            y={H - 8}
-            textAnchor="middle"
-            fontSize={11}
-            className="fill-foreground-muted"
-          >
-            {d.xLabel}
-          </text>
-          <text
-            x={12}
-            y={PAD.top + plotH / 2}
-            textAnchor="middle"
-            fontSize={11}
-            className="fill-foreground-muted"
-            transform={`rotate(-90, 12, ${PAD.top + plotH / 2})`}
-          >
-            {d.yLabel}
-          </text>
-
-          <line
-            x1={PAD.left}
-            y1={yScale(2.1)}
-            x2={PAD.left + plotW}
-            y2={yScale(2.1)}
-            stroke="var(--color-status-refuted, #ef4444)"
-            strokeWidth={1}
-            strokeDasharray="6 3"
-            strokeOpacity={0.5}
-          />
-          <text
-            x={PAD.left + plotW + 2}
-            y={yScale(2.1) - 4}
-            fontSize={9}
-            fill="var(--color-status-refuted, #ef4444)"
-            opacity={0.7}
-          >
-            2.1
-          </text>
-        </svg>
+        </ol>
+        <p className="border-l-2 border-accent/50 pl-4 text-sm leading-relaxed">{d.prediction}</p>
+        <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-accent">
+          <Link href={`/${locale}/evidence/technology`} className="inline-flex items-center gap-1.5">{d.sources}<ArrowRight size={13} /></Link>
+          <Link href={`/${locale}/evidence/amish-control`} className="inline-flex items-center gap-1.5">{d.communities}<ArrowRight size={13} /></Link>
+        </div>
       </div>
-      <figcaption className="data-figure__note text-center mt-2 italic">
-        {d.caption}
-      </figcaption>
+      <figcaption className="data-figure__note px-5 pb-5 text-xs leading-relaxed sm:px-7">{d.note}</figcaption>
     </figure>
   );
 }

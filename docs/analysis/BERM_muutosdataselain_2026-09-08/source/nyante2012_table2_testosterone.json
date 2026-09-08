@@ -1,0 +1,41 @@
+{
+  "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137971/",
+  "publisherUrl": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2605.2011.01230.x",
+  "doi": "10.1111/j.1365-2605.2011.01230.x",
+  "retrievedAt": "2026-09-08",
+  "extraction": "Numeric Table 2 testosterone row parsed from primary PMC author manuscript HTML; sample sizes from Table 1. Full HTML was not redistributed.",
+  "originalHtmlSha256": "07c71e20159083cb5edf091ef45b70fee8c88fbdc586f48ed98d26f8fab8abfc",
+  "row": [
+    "Testosterone (ng/ml)",
+    "5.37",
+    "5.20, 5.53",
+    "5.34",
+    "5.16, 5.52",
+    "−0.03",
+    "0.75"
+  ],
+  "periods": [
+    [
+      1988,
+      1991
+    ],
+    [
+      1999,
+      2004
+    ]
+  ],
+  "sampleSizes": [
+    1413,
+    902
+  ],
+  "adjustment": [
+    "age",
+    "race/ethnicity",
+    "BMI",
+    "waist circumference",
+    "smoking",
+    "alcohol use"
+  ],
+  "estimateType": "survey-weighted adjusted arithmetic mean",
+  "confidenceLevel": 0.95
+}

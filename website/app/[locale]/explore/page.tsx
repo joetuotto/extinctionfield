@@ -4,17 +4,18 @@ import { SteroidogenesisDataAccess } from "@/components/SteroidogenesisDataAcces
 import { PageHeader } from "@/components/PageHeader";
 import { Map } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
+import { TranslationNotice } from "@/components/TranslationNotice";
 
 const COPY = {
   en: {
-    title: "Data",
-    subtitle: "TFR series, country-level charts, and sentinel indicators in one place.",
-    metaDesc: "Explore BERM model data: TFR series, country-level charts, and sentinel indicators.",
+    title: "Change atlas",
+    subtitle: "Five countries. A shared timeline. From technological environments to biological change.",
+    metaDesc: "Explore historical field environments, fertility, hormones, health and sentinel species through source-based timelines and conditional BERM scenarios.",
   },
   fi: {
-    title: "Data",
-    subtitle: "TFR-sarjat, maakohtaiset kaaviot ja sentinelli-indikaattorit yhdessä paikassa.",
-    metaDesc: "Tutki BERM-mallin dataa: TFR-sarjat, maakohtaiset kaaviot ja sentinelli-indikaattorit.",
+    title: "Muutosatlas",
+    subtitle: "Viisi maata. Yhteinen aikajana. Teknologisesta ympäristöstä biologiseen muutokseen.",
+    metaDesc: "Tutki kenttäympäristön historiaa, syntyvyyttä, hormoneja, sairauksia ja sentinellilajeja lähteistettyjen aikasarjojen ja ehdollisten BERM-skenaarioiden avulla.",
   },
   ja: {
     title: "データ",
@@ -55,7 +56,8 @@ export default async function ExplorePage({
   const d = pickCopy(COPY, locale);
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <TranslationNotice copy={{ en: COPY.en, fi: COPY.fi }} locale={locale} />
       <PageHeader
         icon={Map}
         title={d.title}

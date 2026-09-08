@@ -1,0 +1,2299 @@
+{
+  "edition": "2026-09-08",
+  "countries": {
+    "USA": {
+      "name": "Yhdysvallat",
+      "series": [
+        {
+          "id": "mobile",
+          "label": "Mobiililiittymät",
+          "source": {
+            "title": "ITU / World Bank, IT.CEL.SETS.P2",
+            "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+            "type": "Teknologian levinneisyys",
+            "unit": "liittymää / 100 as.",
+            "scope": "Liittymien määrä suhteessa väestöön. Teknologian ajoitusmittari; ei käyttäjämäärä tai paikallinen kenttämittaus."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 0.0,
+              "period": "1980"
+            },
+            {
+              "year": 1984,
+              "value": 0.039352779,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 0.14468149,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 0.28706876,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 0.513170208,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 0.854125086,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 1.432490449,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 2.129545117,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 3.004111275,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 4.323596882,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 6.186519908,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 9.202002036,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 12.71760532,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 16.37381226,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 20.30588082,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 25.09083926,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 30.82116044,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 38.8931449211963,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 45.2019710071462,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 49.3931508029532,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 55.4096280855899,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 63.1242068595345,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 68.8835039746019,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 76.8586480652849,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 82.5922706237223,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 85.680465188068,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 89.0461412720864,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 91.6593077558393,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 94.682964660635,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 96.1284261999864,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 97.0595305732914,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 99.839569071329,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 101.831958781319,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 102.751864866695,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 102.380562632686,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 103.935307364,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 105.32074052965,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 103.855170008567,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 106.324514306135,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 108.785640656159,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 112.410910606372,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Teknologinen ympäristö"
+        },
+        {
+          "id": "diabetes",
+          "label": "Diabeteksen yleisyys",
+          "kind": "period",
+          "role": "Metabolinen terveys",
+          "source": {
+            "title": "CDC / NCHS, Data Brief 516, taulukko 5",
+            "url": "https://www.cdc.gov/nchs/products/databriefs/db516.htm#table5",
+            "type": "Otantatutkimuksen estimaatti · 95 % LV",
+            "unit": "% aikuisista",
+            "scope": "USA:n vähintään 20-vuotias siviiliväestö laitosten ulkopuolella; raskaana olevat suljettu pois. Suora ikävakiointi USA:n vuoden 2000 väestöön: 20–39, 40–59 ja 60+. Alkuperäiset tutkimusjaksot; janat ovat julkaistuja 95 prosentin luottamusvälejä."
+          },
+          "points": [
+            {
+              "period": "1999–2000",
+              "startYear": 1999,
+              "endYear": 2000,
+              "value": 9.7,
+              "lower": 7.6,
+              "upper": 12.1,
+              "standardError": 1.0,
+              "n": 1739,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 1999.5
+            },
+            {
+              "period": "2001–2002",
+              "startYear": 2001,
+              "endYear": 2002,
+              "value": 11.5,
+              "lower": 9.3,
+              "upper": 13.9,
+              "standardError": 1.0,
+              "n": 2078,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2001.5
+            },
+            {
+              "period": "2003–2004",
+              "startYear": 2003,
+              "endYear": 2004,
+              "value": 11.2,
+              "lower": 9.2,
+              "upper": 13.4,
+              "standardError": 0.9,
+              "n": 1874,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2003.5
+            },
+            {
+              "period": "2005–2006",
+              "startYear": 2005,
+              "endYear": 2006,
+              "value": 11.6,
+              "lower": 9.7,
+              "upper": 13.8,
+              "standardError": 0.9,
+              "n": 1824,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2005.5
+            },
+            {
+              "period": "2007–2008",
+              "startYear": 2007,
+              "endYear": 2008,
+              "value": 12.7,
+              "lower": 10.8,
+              "upper": 14.8,
+              "standardError": 0.9,
+              "n": 2329,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2007.5
+            },
+            {
+              "period": "2009–2010",
+              "startYear": 2009,
+              "endYear": 2010,
+              "value": 12.6,
+              "lower": 10.5,
+              "upper": 14.9,
+              "standardError": 0.9,
+              "n": 2585,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2009.5
+            },
+            {
+              "period": "2011–2012",
+              "startYear": 2011,
+              "endYear": 2012,
+              "value": 12.5,
+              "lower": 9.9,
+              "upper": 15.5,
+              "standardError": 1.2,
+              "n": 2287,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2011.5
+            },
+            {
+              "period": "2013–2014",
+              "startYear": 2013,
+              "endYear": 2014,
+              "value": 13.0,
+              "lower": 11.3,
+              "upper": 15.0,
+              "standardError": 0.8,
+              "n": 2368,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2013.5
+            },
+            {
+              "period": "2015–2016",
+              "startYear": 2015,
+              "endYear": 2016,
+              "value": 14.9,
+              "lower": 12.7,
+              "upper": 17.3,
+              "standardError": 1.0,
+              "n": 2244,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2015.5
+            },
+            {
+              "period": "2017–March 2020",
+              "startYear": 2017,
+              "endYear": 2020,
+              "value": 14.8,
+              "lower": 13.1,
+              "upper": 16.7,
+              "standardError": 0.8,
+              "n": 3757,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2018.5
+            },
+            {
+              "period": "August 2021–August 2023",
+              "startYear": 2021,
+              "endYear": 2023,
+              "value": 14.3,
+              "lower": 12.1,
+              "upper": 16.7,
+              "standardError": 1.0,
+              "n": 2938,
+              "sourceId": "cdc_nhanes_db516_table5",
+              "observationType": "survey_estimate",
+              "imputed": false,
+              "year": 2022.0
+            }
+          ]
+        },
+        {
+          "id": "tfr",
+          "label": "Kokonaishedelmällisyys",
+          "source": {
+            "title": "UN World Population Prospects 2024",
+            "url": "https://population.un.org/wpp/",
+            "type": "UN:n väestöestimaatti",
+            "unit": "lasta / nainen",
+            "scope": "Periodi-TFR; UN WPP 2024, ESTIMATE-vuodet. Ei kohortin lopullinen lapsiluku."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 1.8611,
+              "period": "1980"
+            },
+            {
+              "year": 1981,
+              "value": 1.8471,
+              "period": "1981"
+            },
+            {
+              "year": 1982,
+              "value": 1.855,
+              "period": "1982"
+            },
+            {
+              "year": 1983,
+              "value": 1.8271,
+              "period": "1983"
+            },
+            {
+              "year": 1984,
+              "value": 1.8267,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 1.8545,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 1.8525,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 1.8852,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 1.942,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 2.0139,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 2.0719,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 2.0588,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 2.0394,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 2.0101,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 1.988,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 1.965,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 1.9603,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 1.9558,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 1.9799,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 1.9904,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 2.0301,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 2.0108,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 2.0028,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 2.025,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 2.0314,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 2.0402,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 2.087,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 2.0962,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 2.0528,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 1.9867,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 1.9156,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 1.8794,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 1.8618,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 1.8396,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 1.8483,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 1.8322,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 1.8041,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 1.7532,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 1.7146,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 1.6839,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 1.6156,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 1.6339,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 1.665,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 1.6236,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Väestötason päätepiste"
+        }
+      ],
+      "events": [
+        {
+          "id": "fcc-uwb-2002",
+          "year": 2002,
+          "endYear": null,
+          "label": "UWB-laitteiden sääntely",
+          "title": "FCC sallii UWB-laiteluokkia",
+          "detail": "FCC:n ensimmäinen päätös hyväksyttiin 14.2.2002. Sääntelykehys ei osoita kaikkien laitteiden välitöntä käyttöönottoa.",
+          "url": "https://docs.fcc.gov/public/attachments/FCC-02-48A1.pdf"
+        },
+        {
+          "id": "loran-us-closure-2010",
+          "year": 2010,
+          "endYear": null,
+          "label": "LORAN-C suljetaan",
+          "title": "USA:n LORAN-C-lähetykset päättyvät vaiheittain",
+          "detail": "Kotimaiset signaalit päättyivät 8.2.2010. USCG:n Venäjän–USA:n ja Kanadan ketjujen lähetykset päättyivät 1. ja 3.8. Tämä ei ole maailmanlaajuinen sulkeminen.",
+          "url": "https://navcen.uscg.gov/sites/default/files/pdf/2010_FRP_FINAL_Signed.pdf"
+        },
+        {
+          "id": "lighting-policy-us-2023",
+          "year": 2023,
+          "endYear": null,
+          "label": "Lamppujen vaatimukset",
+          "title": "USA: soveltamisalaan kuuluvien yleislamppujen 45 lm/W -myyntivaatimuksen täysi valvonta 1. elokuuta alkaen",
+          "detail": "DOE:n vuoden 2025 lausunto ajoittaa myyntivaatimuksen täyden valvonnan jälkikäteen 1.8.2023. Vaatimus koskee soveltamisalan tuotteita, ei kaikkien asennettujen lamppujen vaihtoa samana päivänä.",
+          "url": "https://www.energy.gov/sites/default/files/2025-05/Enforcement%20Policy%20Statement%20-%20GSLs%20Marketed%20Exclusively%20for%20the%20Health%20and%20Care%20of%20Reptiles%20Amphibians%20and%20Other%20Small%20Animals.pdf"
+        }
+      ]
+    },
+    "FIN": {
+      "name": "Suomi",
+      "series": [
+        {
+          "id": "mobile",
+          "label": "Mobiililiittymät",
+          "source": {
+            "title": "ITU / World Bank, IT.CEL.SETS.P2",
+            "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+            "type": "Teknologian levinneisyys",
+            "unit": "liittymää / 100 as.",
+            "scope": "Liittymien määrä suhteessa väestöön. Teknologian ajoitusmittari; ei käyttäjämäärä tai paikallinen kenttämittaus."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 0.491315051,
+              "period": "1980"
+            },
+            {
+              "year": 1981,
+              "value": 0.589141447,
+              "period": "1981"
+            },
+            {
+              "year": 1982,
+              "value": 0.701905441,
+              "period": "1982"
+            },
+            {
+              "year": 1983,
+              "value": 0.869611241,
+              "period": "1983"
+            },
+            {
+              "year": 1984,
+              "value": 1.065397067,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 1.379775304,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 1.734384239,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 2.146314325,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 2.793051012,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 3.827817408,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 5.171356119,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 6.365103571,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 7.655924957,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 9.65486751,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 13.27633542,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 20.34333586,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 29.30898832,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 42.07389889,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 55.22384208,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 63.37118775,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 72.0339932637868,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 80.485935638422,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 86.851880552542,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 91.0640126377458,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 95.4066334770936,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 100.455921199859,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 107.666807120897,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 114.961871609523,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 128.543485621291,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 144.225654334936,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 156.432080695834,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 165.916854869706,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 172.147209506663,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 136.259014207069,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 139.198825856641,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 134.974123663686,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 131.382780978293,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 129.983392624641,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 129.629119305202,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 129.487723024493,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 128.761294644181,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 129.036333202492,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 128.023293416281,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 127.47302579722,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Teknologinen ympäristö"
+        },
+        {
+          "id": "tfr",
+          "label": "Kokonaishedelmällisyys",
+          "source": {
+            "title": "UN World Population Prospects 2024",
+            "url": "https://population.un.org/wpp/",
+            "type": "UN:n väestöestimaatti",
+            "unit": "lasta / nainen",
+            "scope": "Periodi-TFR; UN WPP 2024, ESTIMATE-vuodet. Ei kohortin lopullinen lapsiluku."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 1.6301,
+              "period": "1980"
+            },
+            {
+              "year": 1981,
+              "value": 1.6454,
+              "period": "1981"
+            },
+            {
+              "year": 1982,
+              "value": 1.7103,
+              "period": "1982"
+            },
+            {
+              "year": 1983,
+              "value": 1.7301,
+              "period": "1983"
+            },
+            {
+              "year": 1984,
+              "value": 1.692,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 1.6402,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 1.5967,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 1.5919,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 1.6854,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 1.7084,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 1.776,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 1.7939,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 1.8399,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 1.8148,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 1.8395,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 1.8052,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 1.7719,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 1.7418,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 1.7019,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 1.7294,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 1.7256,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 1.7218,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 1.7175,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 1.7562,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 1.7945,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 1.8006,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 1.8322,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 1.8277,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 1.8429,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 1.8599,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 1.8629,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 1.8257,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 1.7971,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 1.7455,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 1.7064,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 1.6454,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 1.5649,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 1.4873,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 1.4072,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 1.3507,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 1.3739,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 1.4609,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 1.318,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 1.2803,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Väestötason päätepiste"
+        }
+      ],
+      "events": [
+        {
+          "id": "finland-2g-1991",
+          "year": 1991,
+          "endYear": null,
+          "label": "2G-palvelu alkaa",
+          "title": "Digitaalinen 2G-palvelu Suomessa",
+          "detail": "ITU nimeää Suomen digitaalisen 2G-avauksen vuonna 1991. Se ei vaihda kaikkia analogisia päätelaitteita heti.",
+          "url": "https://www.itu.int/en/history/Pages/ITUsHistory-page-7.aspx"
+        },
+        {
+          "id": "finland-amr-2009-2013",
+          "year": 2009,
+          "endYear": 2013,
+          "label": "AMR-asennusaalto",
+          "title": "Suomen ensimmäisen AMR-sukupolven pääaalto",
+          "detail": "TEM nimeää vuodet 2009–2013 pääasennusaalloksi. Tuntimittaus kuvaa tiedon rekisteröintiä, ei tunnittaista RF-aaltomuotoa.",
+          "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/c1a29bed-8cdb-40ba-a4ae-52d693a8ff9e/content"
+        },
+        {
+          "id": "finland-3g-closure",
+          "year": 2023,
+          "endYear": 2024,
+          "label": "3G-verkkoja suljetaan",
+          "title": "Manner-Suomen 3G-sulkemiset",
+          "detail": "Operaattorit sulkivat Manner-Suomen 3G-verkot 2023–2024. Korvaavat kaistat, peitto ja päätelaiteteho kirjataan poistuneen palvelun rinnalle.",
+          "url": "https://www.traficom.fi/fi/uutiset/traficom-puuttuu-3g-verkkojen-alasajon-epakohtiin-yhdessa-teleyritysten-kanssa"
+        }
+      ]
+    },
+    "GBR": {
+      "name": "Yhdistynyt kuningaskunta",
+      "series": [
+        {
+          "id": "mobile",
+          "label": "Mobiililiittymät",
+          "source": {
+            "title": "ITU / World Bank, IT.CEL.SETS.P2",
+            "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+            "type": "Teknologian levinneisyys",
+            "unit": "liittymää / 100 as.",
+            "scope": "Liittymien määrä suhteessa väestöön. Teknologian ajoitusmittari; ei käyttäjämäärä tai paikallinen kenttämittaus."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 0.0,
+              "period": "1980"
+            },
+            {
+              "year": 1981,
+              "value": 0.0,
+              "period": "1981"
+            },
+            {
+              "year": 1982,
+              "value": 0.0,
+              "period": "1982"
+            },
+            {
+              "year": 1983,
+              "value": 0.0,
+              "period": "1983"
+            },
+            {
+              "year": 1984,
+              "value": 0.0,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 0.088272091,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 0.229188337,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 0.510326887,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 0.983272981,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 1.708245688,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 1.947196982,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 2.196673629,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 2.620448471,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 3.934258199,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 6.818272277,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 9.901172035,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 12.48025391,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 15.17763081,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 25.45932146,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 46.36293399,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 73.5759542700689,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 78.064582616846,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 82.6794913595582,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 90.698548663637,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 99.198849485824,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 108.045990346443,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 114.785700646085,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 119.988923530842,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 120.819267888243,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 122.357496035675,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 121.780844361683,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 121.49766447536,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 122.465231814068,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 122.184696024755,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 120.958261038047,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 121.211739725133,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 119.786558760596,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 119.206737402819,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 118.184381927412,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 120.250108782533,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 117.304850715261,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 117.887430294308,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 119.833999505569,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 122.781542240418,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Teknologinen ympäristö"
+        },
+        {
+          "id": "ukbms-uk-84",
+          "label": "Neitoperhonen",
+          "role": "Sentinellilajin runsaus",
+          "kind": "annual",
+          "source": {
+            "title": "UKBMS / EIDC, collated indices 2024",
+            "url": "https://catalogue.ceh.ac.uk/id/a70d8b0b-0ef5-484e-8195-42bcfd818229",
+            "type": "Seurantaan perustuva runsausestimaatti",
+            "unit": "indeksi, 1976 = 100",
+            "scope": "UK:n valtakunnallinen lajikohtainen seuranta. Indeksi = 100 × 10^(log10-arvo − vuoden 1976 log10-arvo). Epävarmuusvälejä ei annettu lähteessä. Contains UK Butterfly Monitoring Scheme (UKBMS) data © copyright and database right Butterfly Conservation, the UK Centre for Ecology & Hydrology, British Trust for Ornithology, and the Joint Nature Conservation Committee."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "period": "1980",
+              "value": 117.489755,
+              "nSites": 85,
+              "sourceCsvRow": 3784
+            },
+            {
+              "year": 1981,
+              "period": "1981",
+              "value": 95.499259,
+              "nSites": 88,
+              "sourceCsvRow": 3785
+            },
+            {
+              "year": 1982,
+              "period": "1982",
+              "value": 257.039578,
+              "nSites": 93,
+              "sourceCsvRow": 3786
+            },
+            {
+              "year": 1983,
+              "period": "1983",
+              "value": 158.489319,
+              "nSites": 105,
+              "sourceCsvRow": 3787
+            },
+            {
+              "year": 1984,
+              "period": "1984",
+              "value": 213.796209,
+              "nSites": 115,
+              "sourceCsvRow": 3788
+            },
+            {
+              "year": 1985,
+              "period": "1985",
+              "value": 218.776162,
+              "nSites": 124,
+              "sourceCsvRow": 3789
+            },
+            {
+              "year": 1986,
+              "period": "1986",
+              "value": 112.201845,
+              "nSites": 132,
+              "sourceCsvRow": 3790
+            },
+            {
+              "year": 1987,
+              "period": "1987",
+              "value": 131.825674,
+              "nSites": 154,
+              "sourceCsvRow": 3791
+            },
+            {
+              "year": 1988,
+              "period": "1988",
+              "value": 138.038426,
+              "nSites": 175,
+              "sourceCsvRow": 3792
+            },
+            {
+              "year": 1989,
+              "period": "1989",
+              "value": 141.253754,
+              "nSites": 207,
+              "sourceCsvRow": 3793
+            },
+            {
+              "year": 1990,
+              "period": "1990",
+              "value": 144.543977,
+              "nSites": 234,
+              "sourceCsvRow": 3794
+            },
+            {
+              "year": 1991,
+              "period": "1991",
+              "value": 194.98446,
+              "nSites": 263,
+              "sourceCsvRow": 3795
+            },
+            {
+              "year": 1992,
+              "period": "1992",
+              "value": 363.078055,
+              "nSites": 288,
+              "sourceCsvRow": 3796
+            },
+            {
+              "year": 1993,
+              "period": "1993",
+              "value": 194.98446,
+              "nSites": 323,
+              "sourceCsvRow": 3797
+            },
+            {
+              "year": 1994,
+              "period": "1994",
+              "value": 134.896288,
+              "nSites": 347,
+              "sourceCsvRow": 3798
+            },
+            {
+              "year": 1995,
+              "period": "1995",
+              "value": 162.18101,
+              "nSites": 412,
+              "sourceCsvRow": 3799
+            },
+            {
+              "year": 1996,
+              "period": "1996",
+              "value": 301.995172,
+              "nSites": 449,
+              "sourceCsvRow": 3800
+            },
+            {
+              "year": 1997,
+              "period": "1997",
+              "value": 263.026799,
+              "nSites": 482,
+              "sourceCsvRow": 3801
+            },
+            {
+              "year": 1998,
+              "period": "1998",
+              "value": 194.98446,
+              "nSites": 490,
+              "sourceCsvRow": 3802
+            },
+            {
+              "year": 1999,
+              "period": "1999",
+              "value": 173.780083,
+              "nSites": 517,
+              "sourceCsvRow": 3803
+            },
+            {
+              "year": 2000,
+              "period": "2000",
+              "value": 218.776162,
+              "nSites": 567,
+              "sourceCsvRow": 3804
+            },
+            {
+              "year": 2001,
+              "period": "2001",
+              "value": 234.422882,
+              "nSites": 529,
+              "sourceCsvRow": 3805
+            },
+            {
+              "year": 2002,
+              "period": "2002",
+              "value": 169.824365,
+              "nSites": 638,
+              "sourceCsvRow": 3806
+            },
+            {
+              "year": 2003,
+              "period": "2003",
+              "value": 144.543977,
+              "nSites": 710,
+              "sourceCsvRow": 3807
+            },
+            {
+              "year": 2004,
+              "period": "2004",
+              "value": 131.825674,
+              "nSites": 738,
+              "sourceCsvRow": 3808
+            },
+            {
+              "year": 2005,
+              "period": "2005",
+              "value": 141.253754,
+              "nSites": 763,
+              "sourceCsvRow": 3809
+            },
+            {
+              "year": 2006,
+              "period": "2006",
+              "value": 134.896288,
+              "nSites": 839,
+              "sourceCsvRow": 3810
+            },
+            {
+              "year": 2007,
+              "period": "2007",
+              "value": 181.970086,
+              "nSites": 1079,
+              "sourceCsvRow": 3811
+            },
+            {
+              "year": 2008,
+              "period": "2008",
+              "value": 131.825674,
+              "nSites": 1056,
+              "sourceCsvRow": 3812
+            },
+            {
+              "year": 2009,
+              "period": "2009",
+              "value": 199.526231,
+              "nSites": 1622,
+              "sourceCsvRow": 3813
+            },
+            {
+              "year": 2010,
+              "period": "2010",
+              "value": 151.356125,
+              "nSites": 1598,
+              "sourceCsvRow": 3814
+            },
+            {
+              "year": 2011,
+              "period": "2011",
+              "value": 95.499259,
+              "nSites": 1631,
+              "sourceCsvRow": 3815
+            },
+            {
+              "year": 2012,
+              "period": "2012",
+              "value": 83.176377,
+              "nSites": 1671,
+              "sourceCsvRow": 3816
+            },
+            {
+              "year": 2013,
+              "period": "2013",
+              "value": 251.188643,
+              "nSites": 1866,
+              "sourceCsvRow": 3817
+            },
+            {
+              "year": 2014,
+              "period": "2014",
+              "value": 257.039578,
+              "nSites": 1964,
+              "sourceCsvRow": 3818
+            },
+            {
+              "year": 2015,
+              "period": "2015",
+              "value": 204.173794,
+              "nSites": 2083,
+              "sourceCsvRow": 3819
+            },
+            {
+              "year": 2016,
+              "period": "2016",
+              "value": 104.712855,
+              "nSites": 2163,
+              "sourceCsvRow": 3820
+            },
+            {
+              "year": 2017,
+              "period": "2017",
+              "value": 112.201845,
+              "nSites": 2313,
+              "sourceCsvRow": 3821
+            },
+            {
+              "year": 2018,
+              "period": "2018",
+              "value": 85.113804,
+              "nSites": 2456,
+              "sourceCsvRow": 3822
+            },
+            {
+              "year": 2019,
+              "period": "2019",
+              "value": 186.208714,
+              "nSites": 2593,
+              "sourceCsvRow": 3823
+            },
+            {
+              "year": 2020,
+              "period": "2020",
+              "value": 245.470892,
+              "nSites": 2159,
+              "sourceCsvRow": 3824
+            },
+            {
+              "year": 2021,
+              "period": "2021",
+              "value": 165.958691,
+              "nSites": 2600,
+              "sourceCsvRow": 3825
+            },
+            {
+              "year": 2022,
+              "period": "2022",
+              "value": 117.489755,
+              "nSites": 2804,
+              "sourceCsvRow": 3826
+            },
+            {
+              "year": 2023,
+              "period": "2023",
+              "value": 177.827941,
+              "nSites": 2878,
+              "sourceCsvRow": 3827
+            }
+          ]
+        },
+        {
+          "id": "ukbms-uk-2",
+          "label": "Nokkosperhonen",
+          "role": "Sentinellilajin runsaus",
+          "kind": "annual",
+          "source": {
+            "title": "UKBMS / EIDC, collated indices 2024",
+            "url": "https://catalogue.ceh.ac.uk/id/a70d8b0b-0ef5-484e-8195-42bcfd818229",
+            "type": "Seurantaan perustuva runsausestimaatti",
+            "unit": "indeksi, 1976 = 100",
+            "scope": "UK:n valtakunnallinen lajikohtainen seuranta. Indeksi = 100 × 10^(log10-arvo − vuoden 1976 log10-arvo). Epävarmuusvälejä ei annettu lähteessä. Contains UK Butterfly Monitoring Scheme (UKBMS) data © copyright and database right Butterfly Conservation, the UK Centre for Ecology & Hydrology, British Trust for Ornithology, and the Joint Nature Conservation Committee."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "period": "1980",
+              "value": 107.151931,
+              "nSites": 89,
+              "sourceCsvRow": 3833
+            },
+            {
+              "year": 1981,
+              "period": "1981",
+              "value": 61.6595,
+              "nSites": 92,
+              "sourceCsvRow": 3834
+            },
+            {
+              "year": 1982,
+              "period": "1982",
+              "value": 354.813389,
+              "nSites": 96,
+              "sourceCsvRow": 3835
+            },
+            {
+              "year": 1983,
+              "period": "1983",
+              "value": 89.125094,
+              "nSites": 108,
+              "sourceCsvRow": 3836
+            },
+            {
+              "year": 1984,
+              "period": "1984",
+              "value": 301.995172,
+              "nSites": 117,
+              "sourceCsvRow": 3837
+            },
+            {
+              "year": 1985,
+              "period": "1985",
+              "value": 112.201845,
+              "nSites": 128,
+              "sourceCsvRow": 3838
+            },
+            {
+              "year": 1986,
+              "period": "1986",
+              "value": 53.70318,
+              "nSites": 135,
+              "sourceCsvRow": 3839
+            },
+            {
+              "year": 1987,
+              "period": "1987",
+              "value": 177.827941,
+              "nSites": 158,
+              "sourceCsvRow": 3840
+            },
+            {
+              "year": 1988,
+              "period": "1988",
+              "value": 91.201084,
+              "nSites": 179,
+              "sourceCsvRow": 3841
+            },
+            {
+              "year": 1989,
+              "period": "1989",
+              "value": 117.489755,
+              "nSites": 212,
+              "sourceCsvRow": 3842
+            },
+            {
+              "year": 1990,
+              "period": "1990",
+              "value": 109.64782,
+              "nSites": 240,
+              "sourceCsvRow": 3843
+            },
+            {
+              "year": 1991,
+              "period": "1991",
+              "value": 190.546072,
+              "nSites": 266,
+              "sourceCsvRow": 3844
+            },
+            {
+              "year": 1992,
+              "period": "1992",
+              "value": 223.872114,
+              "nSites": 294,
+              "sourceCsvRow": 3845
+            },
+            {
+              "year": 1993,
+              "period": "1993",
+              "value": 57.543994,
+              "nSites": 324,
+              "sourceCsvRow": 3846
+            },
+            {
+              "year": 1994,
+              "period": "1994",
+              "value": 69.183097,
+              "nSites": 353,
+              "sourceCsvRow": 3847
+            },
+            {
+              "year": 1995,
+              "period": "1995",
+              "value": 131.825674,
+              "nSites": 420,
+              "sourceCsvRow": 3848
+            },
+            {
+              "year": 1996,
+              "period": "1996",
+              "value": 144.543977,
+              "nSites": 457,
+              "sourceCsvRow": 3849
+            },
+            {
+              "year": 1997,
+              "period": "1997",
+              "value": 288.40315,
+              "nSites": 487,
+              "sourceCsvRow": 3850
+            },
+            {
+              "year": 1998,
+              "period": "1998",
+              "value": 74.131024,
+              "nSites": 496,
+              "sourceCsvRow": 3851
+            },
+            {
+              "year": 1999,
+              "period": "1999",
+              "value": 44.668359,
+              "nSites": 524,
+              "sourceCsvRow": 3852
+            },
+            {
+              "year": 2000,
+              "period": "2000",
+              "value": 50.118723,
+              "nSites": 572,
+              "sourceCsvRow": 3853
+            },
+            {
+              "year": 2001,
+              "period": "2001",
+              "value": 67.608298,
+              "nSites": 530,
+              "sourceCsvRow": 3854
+            },
+            {
+              "year": 2002,
+              "period": "2002",
+              "value": 79.432823,
+              "nSites": 641,
+              "sourceCsvRow": 3855
+            },
+            {
+              "year": 2003,
+              "period": "2003",
+              "value": 162.18101,
+              "nSites": 715,
+              "sourceCsvRow": 3856
+            },
+            {
+              "year": 2004,
+              "period": "2004",
+              "value": 89.125094,
+              "nSites": 724,
+              "sourceCsvRow": 3857
+            },
+            {
+              "year": 2005,
+              "period": "2005",
+              "value": 38.904514,
+              "nSites": 756,
+              "sourceCsvRow": 3858
+            },
+            {
+              "year": 2006,
+              "period": "2006",
+              "value": 30.199517,
+              "nSites": 821,
+              "sourceCsvRow": 3859
+            },
+            {
+              "year": 2007,
+              "period": "2007",
+              "value": 30.902954,
+              "nSites": 1044,
+              "sourceCsvRow": 3860
+            },
+            {
+              "year": 2008,
+              "period": "2008",
+              "value": 18.620871,
+              "nSites": 1033,
+              "sourceCsvRow": 3861
+            },
+            {
+              "year": 2009,
+              "period": "2009",
+              "value": 40.738028,
+              "nSites": 1601,
+              "sourceCsvRow": 3862
+            },
+            {
+              "year": 2010,
+              "period": "2010",
+              "value": 43.651583,
+              "nSites": 1590,
+              "sourceCsvRow": 3863
+            },
+            {
+              "year": 2011,
+              "period": "2011",
+              "value": 35.481339,
+              "nSites": 1633,
+              "sourceCsvRow": 3864
+            },
+            {
+              "year": 2012,
+              "period": "2012",
+              "value": 20.892961,
+              "nSites": 1663,
+              "sourceCsvRow": 3865
+            },
+            {
+              "year": 2013,
+              "period": "2013",
+              "value": 74.131024,
+              "nSites": 1856,
+              "sourceCsvRow": 3866
+            },
+            {
+              "year": 2014,
+              "period": "2014",
+              "value": 104.712855,
+              "nSites": 1972,
+              "sourceCsvRow": 3867
+            },
+            {
+              "year": 2015,
+              "period": "2015",
+              "value": 60.255959,
+              "nSites": 2084,
+              "sourceCsvRow": 3868
+            },
+            {
+              "year": 2016,
+              "period": "2016",
+              "value": 30.199517,
+              "nSites": 2146,
+              "sourceCsvRow": 3869
+            },
+            {
+              "year": 2017,
+              "period": "2017",
+              "value": 35.481339,
+              "nSites": 2292,
+              "sourceCsvRow": 3870
+            },
+            {
+              "year": 2018,
+              "period": "2018",
+              "value": 21.877616,
+              "nSites": 2423,
+              "sourceCsvRow": 3871
+            },
+            {
+              "year": 2019,
+              "period": "2019",
+              "value": 28.840315,
+              "nSites": 2544,
+              "sourceCsvRow": 3872
+            },
+            {
+              "year": 2020,
+              "period": "2020",
+              "value": 58.884366,
+              "nSites": 2103,
+              "sourceCsvRow": 3873
+            },
+            {
+              "year": 2021,
+              "period": "2021",
+              "value": 40.738028,
+              "nSites": 2550,
+              "sourceCsvRow": 3874
+            },
+            {
+              "year": 2022,
+              "period": "2022",
+              "value": 26.915348,
+              "nSites": 2731,
+              "sourceCsvRow": 3875
+            },
+            {
+              "year": 2023,
+              "period": "2023",
+              "value": 14.791084,
+              "nSites": 2745,
+              "sourceCsvRow": 3876
+            }
+          ]
+        },
+        {
+          "id": "tfr",
+          "label": "Kokonaishedelmällisyys",
+          "source": {
+            "title": "UN World Population Prospects 2024",
+            "url": "https://population.un.org/wpp/",
+            "type": "UN:n väestöestimaatti",
+            "unit": "lasta / nainen",
+            "scope": "Periodi-TFR; UN WPP 2024, ESTIMATE-vuodet. Ei kohortin lopullinen lapsiluku."
+          },
+          "points": [
+            {
+              "year": 1980,
+              "value": 1.888,
+              "period": "1980"
+            },
+            {
+              "year": 1981,
+              "value": 1.8166,
+              "period": "1981"
+            },
+            {
+              "year": 1982,
+              "value": 1.778,
+              "period": "1982"
+            },
+            {
+              "year": 1983,
+              "value": 1.7662,
+              "period": "1983"
+            },
+            {
+              "year": 1984,
+              "value": 1.7656,
+              "period": "1984"
+            },
+            {
+              "year": 1985,
+              "value": 1.7882,
+              "period": "1985"
+            },
+            {
+              "year": 1986,
+              "value": 1.7817,
+              "period": "1986"
+            },
+            {
+              "year": 1987,
+              "value": 1.8079,
+              "period": "1987"
+            },
+            {
+              "year": 1988,
+              "value": 1.8201,
+              "period": "1988"
+            },
+            {
+              "year": 1989,
+              "value": 1.7944,
+              "period": "1989"
+            },
+            {
+              "year": 1990,
+              "value": 1.8289,
+              "period": "1990"
+            },
+            {
+              "year": 1991,
+              "value": 1.8168,
+              "period": "1991"
+            },
+            {
+              "year": 1992,
+              "value": 1.7934,
+              "period": "1992"
+            },
+            {
+              "year": 1993,
+              "value": 1.7581,
+              "period": "1993"
+            },
+            {
+              "year": 1994,
+              "value": 1.7371,
+              "period": "1994"
+            },
+            {
+              "year": 1995,
+              "value": 1.7094,
+              "period": "1995"
+            },
+            {
+              "year": 1996,
+              "value": 1.7222,
+              "period": "1996"
+            },
+            {
+              "year": 1997,
+              "value": 1.7221,
+              "period": "1997"
+            },
+            {
+              "year": 1998,
+              "value": 1.7113,
+              "period": "1998"
+            },
+            {
+              "year": 1999,
+              "value": 1.682,
+              "period": "1999"
+            },
+            {
+              "year": 2000,
+              "value": 1.641,
+              "period": "2000"
+            },
+            {
+              "year": 2001,
+              "value": 1.6236,
+              "period": "2001"
+            },
+            {
+              "year": 2002,
+              "value": 1.6333,
+              "period": "2002"
+            },
+            {
+              "year": 2003,
+              "value": 1.6976,
+              "period": "2003"
+            },
+            {
+              "year": 2004,
+              "value": 1.747,
+              "period": "2004"
+            },
+            {
+              "year": 2005,
+              "value": 1.7611,
+              "period": "2005"
+            },
+            {
+              "year": 2006,
+              "value": 1.8124,
+              "period": "2006"
+            },
+            {
+              "year": 2007,
+              "value": 1.863,
+              "period": "2007"
+            },
+            {
+              "year": 2008,
+              "value": 1.905,
+              "period": "2008"
+            },
+            {
+              "year": 2009,
+              "value": 1.8928,
+              "period": "2009"
+            },
+            {
+              "year": 2010,
+              "value": 1.9178,
+              "period": "2010"
+            },
+            {
+              "year": 2011,
+              "value": 1.9111,
+              "period": "2011"
+            },
+            {
+              "year": 2012,
+              "value": 1.9091,
+              "period": "2012"
+            },
+            {
+              "year": 2013,
+              "value": 1.8302,
+              "period": "2013"
+            },
+            {
+              "year": 2014,
+              "value": 1.811,
+              "period": "2014"
+            },
+            {
+              "year": 2015,
+              "value": 1.8011,
+              "period": "2015"
+            },
+            {
+              "year": 2016,
+              "value": 1.7845,
+              "period": "2016"
+            },
+            {
+              "year": 2017,
+              "value": 1.7346,
+              "period": "2017"
+            },
+            {
+              "year": 2018,
+              "value": 1.6758,
+              "period": "2018"
+            },
+            {
+              "year": 2019,
+              "value": 1.6319,
+              "period": "2019"
+            },
+            {
+              "year": 2020,
+              "value": 1.5709,
+              "period": "2020"
+            },
+            {
+              "year": 2021,
+              "value": 1.5834,
+              "period": "2021"
+            },
+            {
+              "year": 2022,
+              "value": 1.56,
+              "period": "2022"
+            },
+            {
+              "year": 2023,
+              "value": 1.56,
+              "period": "2023"
+            }
+          ],
+          "kind": "annual",
+          "role": "Väestötason päätepiste"
+        }
+      ],
+      "events": []
+    }
+  },
+  "lineage": [
+    {
+      "path": "website/public/data/global_panel.csv",
+      "sha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8"
+    },
+    {
+      "path": "website/data/technology-history.json",
+      "sha256": "bba6f5a530ab5b15da70e2f2d9225b7dfa3cc727f2aebbbc802f16f81e6deee5"
+    }
+  ]
+}

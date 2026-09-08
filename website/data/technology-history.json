@@ -1,0 +1,4186 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-08",
+  "boundary": {
+    "geometry": {
+      "en": "In BERM’s normalization of the 2025 premise, g = η + κ A⊗A. Adding b gives Δg = κ(A⊗b + b⊗A + b⊗b). This tensor identity retains the existing field context.",
+      "fi": "BERM:n vuoden 2025 premissin normalisoinnissa g = η + κ A⊗A. Lisäys b antaa Δg = κ(A⊗b + b⊗A + b⊗b). Tensori-identiteetti säilyttää aiemman kenttäympäristön."
+    },
+    "conditionalResponse": {
+      "en": "A biological response requires BERM’s conditional tissue operator K and the organism’s state. Technology counts are not biological coefficients. Empirical biology constrains its own observed links, not the geometric premise.",
+      "fi": "Biologinen vaste edellyttää BERM:n ehdollista kudosoperaattoria K ja organismin tilaa. Teknologiamäärät eivät ole biologisia kertoimia. Empiirinen biologia rajaa omia havaittuja yhteyksiään, ei geometrista premissiä."
+    },
+    "empiricalInput": {
+      "en": "The records below are imported technical history, adoption observations and physical measurements. They describe local sources and their changes. FieldState may record or estimate these inputs; BERM supplies the explanatory model.",
+      "fi": "Alla olevat tiedot ovat tuotua teknologiahistoriaa, omaksumishavaintoja ja fysikaalisia mittauksia. Ne kuvaavat paikallisia lähteitä ja niiden muutoksia. FieldState voi tallentaa tai arvioida syötteitä; BERM on selitysmalli."
+    },
+    "calibrationGap": {
+      "en": "Gauge prescription, physical scale, tissue kernels, sign, lag and endpoint calibration remain open. Launch, population coverage, installed stock, use time and measured fields are separate observations.",
+      "fi": "Gauge-määritys, fysikaalinen skaala, kudosytimet, merkki, viive ja päätepistekalibrointi ovat avoimia. Lanseeraus, väestöpeitto, asennuskanta, käyttöaika ja mitattu kenttä ovat eri havaintoja."
+    }
+  },
+  "groups": [
+    {
+      "id": "grid",
+      "name": {
+        "en": "Electricity infrastructure",
+        "fi": "Sähköjärjestelmät"
+      },
+      "summary": {
+        "en": "Generation, grids, metering and storage.",
+        "fi": "Tuotanto, verkot, mittaus ja varastointi."
+      }
+    },
+    {
+      "id": "home",
+      "name": {
+        "en": "Homes and everyday devices",
+        "fi": "Kodit ja arkiset laitteet"
+      },
+      "summary": {
+        "en": "Lighting, appliances, materials and personal use.",
+        "fi": "Valaistus, kodinkoneet, materiaalit ja henkilökohtainen käyttö."
+      }
+    },
+    {
+      "id": "communications",
+      "name": {
+        "en": "Communication and identification",
+        "fi": "Viestintä ja tunnistus"
+      },
+      "summary": {
+        "en": "Transmitters, radio networks, readers and navigation.",
+        "fi": "Lähettimet, radioverkot, lukijat ja navigointi."
+      }
+    },
+    {
+      "id": "transport",
+      "name": {
+        "en": "Transport",
+        "fi": "Liikenne"
+      },
+      "summary": {
+        "en": "Traction, charging and vehicle electronics.",
+        "fi": "Sähkökäyttö, lataus ja ajoneuvoelektroniikka."
+      }
+    },
+    {
+      "id": "industry",
+      "name": {
+        "en": "Work and specialised equipment",
+        "fi": "Työ ja erikoislaitteet"
+      },
+      "summary": {
+        "en": "Industrial processes, medical equipment and workplace sources.",
+        "fi": "Teollisuusprosessit, lääkintälaitteet ja työympäristöjen lähteet."
+      }
+    },
+    {
+      "id": "ecology",
+      "name": {
+        "en": "Soil and aquatic environments",
+        "fi": "Maaperä ja vesiympäristöt"
+      },
+      "summary": {
+        "en": "Conductive pathways, animal encounters and local electrodes.",
+        "fi": "Johtavat virtareitit, eläinten kohtaamiset ja paikalliset elektrodit."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "fepc-electricity",
+      "url": "https://www.fepc.or.jp/enterprise/rekishi/meiji/",
+      "title": "明治時代の電気事業",
+      "publisher": "FEPC",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Japanese DC and AC distribution milestones; not household field measurements.",
+        "fi": "Japanin tasa- ja vaihtovirtajakelun virstanpylväät; ei kotien kenttämittauksia."
+      }
+    },
+    {
+      "id": "usda-farms",
+      "url": "https://www.nass.usda.gov/AgCensus/archive/files/1954-Agriculture_1954_A_Graphic_Summary-1954-03-full.pdf",
+      "title": "1954 Census of Agriculture: A Graphic Summary",
+      "publisher": "USDA",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "US farm electricity access, with a 1956 REA estimate; denominator is farms.",
+        "fi": "USA:n maatilojen sähkösaanti ja REA:n vuoden 1956 arvio; nimittäjä on maatilat."
+      }
+    },
+    {
+      "id": "itu-mobile-history",
+      "url": "https://www.itu.int/en/history/Pages/ITUsHistory-page-7.aspx",
+      "title": "ITU History: mobile communications",
+      "publisher": "ITU",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Commercial cellular milestones; launch dates are not adoption curves.",
+        "fi": "Kaupallisen matkapuhelinliikenteen virstanpylväät; avausvuodet eivät ole omaksumiskäyriä."
+      }
+    },
+    {
+      "id": "itu-radio-history",
+      "url": "https://www.itu.int/dms_pub/itu-s/opb/gen/S-GEN-HLPW-2004-PDF-E.pdf",
+      "title": "History of the International Telecommunication Union",
+      "publisher": "ITU",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Institutional history of radio and television; not local transmitter inventories.",
+        "fi": "Radion ja television järjestöhistoria; ei paikallista lähetinrekisteriä."
+      }
+    },
+    {
+      "id": "telia-lte",
+      "url": "https://press.telia.se/pressreleases/ha-den-aeran-4g-och-vaelkommen-saa-smaaningom-5g-2953570",
+      "title": "Ha den äran 4G – och välkommen så småningom 5G",
+      "publisher": "Telia",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Own LTE launch and traffic shares; not national population adoption.",
+        "fi": "Oman LTE-verkon avaus ja liikenneosuudet; ei kansallinen väestöadoptio."
+      }
+    },
+    {
+      "id": "pib-india-5g",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1884072&lang=2&reg=48",
+      "title": "5G services launch in India",
+      "publisher": "Government of India, PIB",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Indian launch date; does not establish nationwide use on that date.",
+        "fi": "Intian aloituspäivä; ei osoita koko maan käyttöä samana päivänä."
+      }
+    },
+    {
+      "id": "korea-mobile-history",
+      "url": "https://www.korea.kr/briefing/policyBriefingView.do?newsId=148873416",
+      "title": "Korean digital and mobile history",
+      "publisher": "Government of the Republic of Korea",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Korean CDMA and 5G milestones; CDMA must not inherit a GSM waveform.",
+        "fi": "Korean CDMA- ja 5G-vaiheet; CDMA:lle ei saa olettaa GSM-aaltomuotoa."
+      }
+    },
+    {
+      "id": "traficom-3g-closure",
+      "url": "https://www.traficom.fi/fi/uutiset/traficom-puuttuu-3g-verkkojen-alasajon-epakohtiin-yhdessa-teleyritysten-kanssa",
+      "title": "Traficom puuttuu 3G-verkkojen alasajon epäkohtiin yhdessä teleyritysten kanssa",
+      "publisher": "Traficom",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Mainland Finland’s 3G transition; replacement networks and handset use are separate.",
+        "fi": "Manner-Suomen 3G-siirtymä; korvaavat verkot ja päätelaitteen käyttö erikseen."
+      }
+    },
+    {
+      "id": "jrc-lighting",
+      "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC101177/ldna27972enn.pdf",
+      "title": "Energy Consumption and Energy Efficiency Trends in the EU-28, JRC101177",
+      "publisher": "European Commission JRC",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "Figure 99: lamp sales 2007–2013 in seven European markets, not installed EU-wide stock.",
+        "fi": "Kuva 99: lamppumyynti 2007–2013 seitsemällä Euroopan markkinalla, ei koko EU:n asennuskanta."
+      }
+    },
+    {
+      "id": "ec-light-sources",
+      "url": "https://energy-efficient-products.ec.europa.eu/product-list/light-sources_en",
+      "title": "Light Sources",
+      "publisher": "European Commission",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Product classes and ecodesign rules; market rules do not replace existing lamps instantly.",
+        "fi": "Tuoteluokat ja ekosuunnittelusäännöt; markkinasääntely ei vaihda vanhoja lamppuja heti."
+      }
+    },
+    {
+      "id": "chain-home",
+      "url": "https://historicengland.org.uk/listing/the-list/list-entry/1425450",
+      "title": "Northam Chain Home radar station",
+      "publisher": "Historic England",
+      "accessed": "2026-09-08",
+      "kind": "official-history",
+      "scope": {
+        "en": "Historic station and 1938 network milestone; no reconstructed personal dose.",
+        "fi": "Historiallinen asema ja vuoden 1938 verkkovaihe; ei rekonstruoitua henkilöannosta."
+      }
+    },
+    {
+      "id": "gotland-hvdc",
+      "url": "https://www.hitachienergy.com/se/sv/news-and-events/customer-stories/the-gotland-hvdc-link",
+      "title": "The Gotland HVDC link",
+      "publisher": "Hitachi Energy",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "1954 commercial link and later upgrades; MW and kV describe the system, not organism exposure.",
+        "fi": "Vuoden 1954 kaupallinen yhteys ja uudistukset; MW ja kV kuvaavat järjestelmää, eivät eliön altistusta."
+      }
+    },
+    {
+      "id": "jrc-vehicles",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC120312",
+      "title": "Assessment of low frequency magnetic fields in electrified vehicles",
+      "publisher": "European Commission JRC",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Vehicle field measurements and protocols; location and operating state matter.",
+        "fi": "Ajoneuvojen kenttämittaukset ja menetelmät; paikka ja käyttötila ratkaisevat."
+      }
+    },
+    {
+      "id": "boem-cable",
+      "url": "https://www.govinfo.gov/app/details/GOVPUB-I-0a2fa3c2b327c849d9a58ef7b43bc257",
+      "title": "Electromagnetic Field Impacts on Elasmobranch and American Lobster Movement and Migration, 2018-003",
+      "publisher": "BOEM",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Named submarine cable field and animal study; no universal cable or species effect.",
+        "fi": "Nimetyn merikaapelin kenttä- ja eläintutkimus; ei kaikkien kaapelien tai lajien yhteistä vaikutusta."
+      }
+    },
+    {
+      "id": "sensormatic-history",
+      "url": "https://www.sensormatic.com/landing/60-anniversary-landing-page",
+      "title": "60 years of Sensormatic Solutions",
+      "publisher": "Sensormatic",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "Company product milestones; not independent world-first or national stock claims.",
+        "fi": "Yrityksen tuotevaiheet; ei riippumaton maailman ensimmäisyys tai kansallinen laitekanta."
+      }
+    },
+    {
+      "id": "miwa-eas",
+      "url": "https://doi.org/10.3389/fpubh.2022.871134",
+      "title": "Measurement and Exposure Assessment of Intermediate Frequency Magnetic Fields From Electronic Article Surveillance (EAS) Gates in Libraries",
+      "publisher": "Miwa et al., Frontiers in Public Health",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Five gate models and their local fields; not every EAS generation or a clinical outcome.",
+        "fi": "Viisi porttimallia ja niiden paikalliset kentät; ei kaikkia EAS-sukupolvia tai kliinistä vastetta."
+      }
+    },
+    {
+      "id": "gs1-architecture",
+      "url": "https://www.gs1.org/standards/gs1-system-architecture-document/current-standard",
+      "title": "GS1 System Architecture, section 5.2.4",
+      "publisher": "GS1",
+      "accessed": "2026-09-08",
+      "kind": "technical-standard",
+      "scope": {
+        "en": "Passive UHF reader/tag architecture; tag counts do not count continuously transmitting sources.",
+        "fi": "Passiivisen UHF-lukijan ja tunnisteen rakenne; tunnistemäärä ei laske jatkuvasti lähettäviä lähteitä."
+      }
+    },
+    {
+      "id": "suica-history",
+      "url": "https://www.jreast.co.jp/en/e/press/20041003/index.html",
+      "title": "Ten Million Suica Cards Issued!",
+      "publisher": "JR East",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Tokyo launch and issued-card milestone; issued cards are not reader installations.",
+        "fi": "Tokion aloitus ja myönnettyjen korttien virstanpylväs; korttimäärä ei ole lukijakanta."
+      }
+    },
+    {
+      "id": "nfc-history",
+      "url": "https://nfc-forum.org/uploads/nfc-forum-15-year-position-paper-wp-final-jan-2020.pdf",
+      "title": "NFC Forum: 15-Year Position Paper",
+      "publisher": "NFC Forum",
+      "accessed": "2026-09-08",
+      "kind": "technical-standard",
+      "scope": {
+        "en": "Forum formation and specification history; contactless cards existed earlier.",
+        "fi": "Forumin perustaminen ja spesifikaatiohistoria; kontaktittomia kortteja oli jo aiemmin."
+      }
+    },
+    {
+      "id": "enel-telegestore",
+      "url": "https://www.enel.com/content/dam/enel-com/pressrelease/porting_pressrelease/1629732-1_PDF-1.pdf",
+      "title": "Enel smart metering international agreements, 18 February 2010",
+      "publisher": "Enel",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Italian installation programme and own customer count; Spanish future plans excluded from observed stock.",
+        "fi": "Italian asennusohjelma ja oma asiakasmäärä; Espanjan suunnitelmaa ei lueta toteutuneeksi kannaksi."
+      }
+    },
+    {
+      "id": "cre-linky",
+      "url": "https://www.cre.fr/actualites/notre-magazine-parlons-energie/parlons-energie-n8/maitrise-de-sa-consommation-en-periode-de-crise-grace-aux-compteurs-evolues.html",
+      "title": "Maîtrise de sa consommation en période de crise grâce aux compteurs évolués",
+      "publisher": "CRE",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "Enedis-area Linky installations, 2021 and November 2022; not all French meters.",
+        "fi": "Enedisin alueen Linky-asennukset 2021 ja marraskuu 2022; ei kaikkia Ranskan mittareita."
+      }
+    },
+    {
+      "id": "anfr-linky-technical",
+      "url": "https://www.anfr.fr/maitriser/les-installations-radioelectriques/etudes-sur-les-installations-radioelectriques/compteurs-communicants/compteur-linky",
+      "title": "Compteur Linky",
+      "publisher": "ANFR",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "G1/G3 PLC signal description; optional home radio modules are separate.",
+        "fi": "G1/G3-PLC:n kuvaus; valinnaiset kodin radiomoduulit ovat erillisiä."
+      }
+    },
+    {
+      "id": "anfr-linky-measurement",
+      "url": "https://www.anfr.fr/fileadmin/mediatheque/documents/Communiques_Presse/2016_09_22_communique_de_presse_compteur_Vd%C3%A9f2.pdf",
+      "title": "Mesures de l’exposition aux ondes des compteurs Linky, 22 September 2016",
+      "publisher": "ANFR",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Daytime readings in five homes at 20 cm during PLC transmission; not a national distribution.",
+        "fi": "Viiden kodin päiväaikamittaukset 20 cm etäisyydeltä PLC-lähetyksen aikana; ei kansallinen jakauma."
+      }
+    },
+    {
+      "id": "tem-amr",
+      "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/c1a29bed-8cdb-40ba-a4ae-52d693a8ff9e/content",
+      "title": "Matkalla kohti joustavaa ja asiakaskeskeistä sähköjärjestelmää, TEM 38/2017",
+      "publisher": "TEM",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "Finnish hourly metering and installation period; reading cadence is not RF duty cycle.",
+        "fi": "Suomen tuntimittaus ja asennusjakso; lukutiheys ei ole radion lähetysosuus."
+      }
+    },
+    {
+      "id": "eia-metering",
+      "url": "https://www.eia.gov/electricity/annual/html/epa_10_05.html",
+      "title": "Electric Power Annual, Table 10.5",
+      "publisher": "U.S. EIA",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "AMI and AMR meter counts; categories do not identify communication protocols.",
+        "fi": "AMI- ja AMR-mittarimäärät; luokat eivät yksilöi tiedonsiirtoprotokollaa."
+      }
+    },
+    {
+      "id": "eeca-ripple",
+      "url": "https://www.eeca.govt.nz/assets/EECA-Resources/Research-papers-guides/Ripple-Control-of-Hot-Water-in-New-Zealand.pdf",
+      "title": "Ripple Control of Hot Water in New Zealand, September 2020",
+      "publisher": "EECA / PSC",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Network surveys and load-control history; commands and controlled load are different signals.",
+        "fi": "Verkkokysely ja kuormanohjauksen historia; komento ja ohjattu kuorma ovat eri signaaleja."
+      }
+    },
+    {
+      "id": "alcoa-history",
+      "url": "https://aacomnoa.apps.alcoa.com/global/en/who-we-are/history",
+      "title": "Alcoa history",
+      "publisher": "Alcoa",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "Company and process milestones; not community magnetic-field exposure.",
+        "fi": "Yrityksen ja prosessin vaiheet; ei lähiyhteisön magneettikenttäaltistusta."
+      }
+    },
+    {
+      "id": "moen-smelter",
+      "url": "https://doi.org/10.1136/oem.52.8.524",
+      "title": "Symptoms of the musculoskeletal system and exposure to magnetic fields in an aluminium plant",
+      "publisher": "Moen et al., Occupational and Environmental Medicine",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Abstract reports workplace static fields and ripple; no neighbourhood extrapolation.",
+        "fi": "Abstrakti raportoi työpaikan staattisia kenttiä ja rippeliä; ei yleistystä naapurustoon."
+      }
+    },
+    {
+      "id": "hse-emf",
+      "url": "https://www.hse.gov.uk/pubns/priced/hsg281.pdf",
+      "title": "Electromagnetic fields at work: A guide to the Control of Electromagnetic Fields at Work Regulations 2016",
+      "publisher": "HSE",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Workplace source classes and assessment; not historical adoption or biological model calibration.",
+        "fi": "Työpaikkojen lähdeluokat ja arviointi; ei historiallinen adoptio tai biologisen mallin kalibrointi."
+      }
+    },
+    {
+      "id": "toshiba-inverter",
+      "url": "https://www.toshiba-carrier.co.jp/global/news/pdf/Press_Release_en_20210316.pdf",
+      "title": "Toshiba’s Inverter Air Conditioner Honored as an IEEE Milestone, 16 March 2021",
+      "publisher": "Toshiba Carrier",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "Commercial 1980 and residential 1981 models; not global inverter penetration.",
+        "fi": "Vuoden 1980 kaupallinen ja 1981 kotitalousmalli; ei maailman invertteripeitto."
+      }
+    },
+    {
+      "id": "iea-cooling",
+      "url": "https://www.iea.org/reports/the-future-of-cooling-in-china",
+      "title": "The Future of Cooling in China, 2019",
+      "publisher": "IEA",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "2017 air-conditioner stock including conventional units; not inverter-only stock.",
+        "fi": "Vuoden 2017 ilmastointilaitekanta sisältää perinteiset laitteet; ei pelkkä invertterikanta."
+      }
+    },
+    {
+      "id": "sulpu-heat-pumps",
+      "url": "https://www.sulpu.fi/lampopumput/",
+      "title": "Lämpöpumput",
+      "publisher": "SULPU",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Finnish installation milestone; retirements must be distinguished from cumulative sales.",
+        "fi": "Suomen asennusvirstanpylväs; poistuma erotettava kumulatiivisesta myynnistä."
+      }
+    },
+    {
+      "id": "fcc-uwb",
+      "url": "https://docs.fcc.gov/public/attachments/FCC-02-48A1.pdf",
+      "title": "Revision of Part 15 Regarding Ultra-Wideband Transmission Systems, FCC 02-48",
+      "publisher": "FCC",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "2002 authorisation framework and device classes; not installed-device counts.",
+        "fi": "Vuoden 2002 sääntelykehys ja laiteluokat; ei asennettu laitemäärä."
+      }
+    },
+    {
+      "id": "apple-uwb",
+      "url": "https://www.apple.com/newsroom/2019/09/apple-introduces-dual-camera-iphone-11/",
+      "title": "Apple introduces dual camera iPhone 11",
+      "publisher": "Apple",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "September 2019 product with U1/UWB; availability does not measure active transmission.",
+        "fi": "Syyskuun 2019 U1/UWB-tuote; saatavuus ei mittaa aktiivista lähetystä."
+      }
+    },
+    {
+      "id": "apple-airtag",
+      "url": "https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/",
+      "title": "Apple introduces AirTag",
+      "publisher": "Apple",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "April 2021 product and precision-finding function; no usage-time series.",
+        "fi": "Huhtikuun 2021 tuote ja tarkka paikannustoiminto; ei käyttöaikasarjaa."
+      }
+    },
+    {
+      "id": "faa-screening",
+      "url": "https://www.govinfo.gov/content/pkg/FR-1973-06-20/pdf/FR-1973-06-20.pdf",
+      "title": "Air transportation security, Federal Register, 20 June 1973, p. 16032",
+      "publisher": "FAA",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Screening requirement from 5 January 1973 allowed manual alternatives; not universal identical hardware.",
+        "fi": "Tarkastusvaatimus 5.1.1973 salli käsintarkastuksen; ei kaikkialla samanlaista laitteistoa."
+      }
+    },
+    {
+      "id": "boivin-detectors",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12747477/",
+      "title": "Characterization of the magnetic fields around walk-through and hand-held metal detectors",
+      "publisher": "Boivin et al., Health Physics",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Measured detector models differ in waveform and frequency; not every generation.",
+        "fi": "Mitatut ilmaisimet eroavat aaltomuodoltaan ja taajuudeltaan; ei kaikkia sukupolvia."
+      }
+    },
+    {
+      "id": "iea-two-wheelers",
+      "url": "https://www.iea.org/reports/global-ev-outlook-2025/trends-in-other-light-duty-electric-vehicles",
+      "title": "Global EV Outlook 2025: Trends in other light-duty electric vehicles",
+      "publisher": "IEA",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "2024 two/three-wheelers exclude electrically assisted bicycles and low-speed scooters.",
+        "fi": "Vuoden 2024 kaksi-/kolmipyöräiset eivät sisällä sähköavusteisia polkupyöriä tai hitaita potkulautoja."
+      }
+    },
+    {
+      "id": "acs-nylon",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/carotherspolymers.html",
+      "title": "Carothers and Nylon",
+      "publisher": "American Chemical Society",
+      "accessed": "2026-09-08",
+      "kind": "historical-research",
+      "scope": {
+        "en": "Seaford commercial production history; not skin-contact or charge measurements.",
+        "fi": "Seafordin kaupallisen tuotannon historia; ei ihokontaktin tai varauksen mittauksia."
+      }
+    },
+    {
+      "id": "textile-exchange",
+      "url": "https://textileexchange.org/knowledge-center/reports/materials-market-report-2025/",
+      "title": "Materials Market Report 2025",
+      "publisher": "Textile Exchange",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Global fibre production in 2024; not the share of clothing worn or skin-contact hours.",
+        "fi": "Vuoden 2024 maailman kuitutuotanto; ei käytetyn vaatetuksen tai ihokontaktituntien osuus."
+      }
+    },
+    {
+      "id": "dincmen-textiles",
+      "url": "https://doi.org/10.14504/ajr.3.4.4",
+      "title": "Atmospheric Pressure Plasma Treatment of Nylon 6,6 and Polyester Fabrics for Enhancing Antistatic Properties",
+      "publisher": "Dincmen et al.",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Surface treatment changes electrical properties; no shared dose for all polyester products.",
+        "fi": "Pintakäsittely muuttaa sähköominaisuuksia; ei yhteistä annosta kaikille polyesterituotteille."
+      }
+    },
+    {
+      "id": "grimeton-history",
+      "url": "https://grimeton.org/en/history/",
+      "title": "Grimeton Radio Station: History",
+      "publisher": "Grimeton Radio Station",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "1924 launch, later shortwave substitution and backup use; not a constant transmitter profile.",
+        "fi": "Vuoden 1924 aloitus, myöhempi lyhytaaltokorvaus ja varakäyttö; ei vakio lähetinprofiili."
+      }
+    },
+    {
+      "id": "jim-creek",
+      "url": "https://pacific.navfac.navy.mil/Portals/72/Northwest/Documents/NRS%28T%29%20Jim%20Crk%20INRMP%2010_15_2018_FINAL%20VERSION.pdf",
+      "title": "Jim Creek Integrated Natural Resources Management Plan, 2018",
+      "publisher": "U.S. Navy / NAVFAC",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Construction 1948–1953 and operation since 1953; natural-resource report is not an EMF-effects experiment.",
+        "fi": "Rakentaminen 1948–1953 ja käyttö vuodesta 1953; luonnonhoitoraportti ei ole EMF-vaikutuskoe."
+      }
+    },
+    {
+      "id": "frp-1996",
+      "url": "https://rosap.ntl.bts.gov/view/dot/8404/dot_8404_DS1.pdf",
+      "title": "Federal Radionavigation Plan 1996",
+      "publisher": "U.S. DOT / DoD",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "OMEGA geography, frequencies and 1982 full configuration; planned closures need later confirmation.",
+        "fi": "OMEGAn maantiede, taajuudet ja vuoden 1982 täysi kokoonpano; sulkemissuunnitelma vaatii toteumavahvistuksen."
+      }
+    },
+    {
+      "id": "faa-omega-closure",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2008-08-08/pdf/E8-18133.pdf",
+      "title": "Airborne Omega Receiving Equipment, Federal Register, 8 August 2008",
+      "publisher": "FAA",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Retrospective confirmation that OMEGA ceased operation on 30 September 1997.",
+        "fi": "Jälkikäteinen vahvistus OMEGAn päättymisestä 30.9.1997."
+      }
+    },
+    {
+      "id": "nbs-loran",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/MONO/nbsmonograph129.pdf",
+      "title": "The Development of Loran-C Navigation and Timing, Monograph 129, 1972",
+      "publisher": "G. Hefley / NBS",
+      "accessed": "2026-09-08",
+      "kind": "historical-research",
+      "scope": {
+        "en": "Developer history, network milestones, interruptions and propagation measurements.",
+        "fi": "Kehittäjän historia, verkkovaiheet, katkokset ja etenemismittaukset."
+      }
+    },
+    {
+      "id": "frp-2010",
+      "url": "https://navcen.uscg.gov/sites/default/files/pdf/2010_FRP_FINAL_Signed.pdf",
+      "title": "Federal Radionavigation Plan 2010, section 5.3",
+      "publisher": "U.S. DOT / DoD / DHS",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Actual USCG Loran-C shutdown dates; not every transmitter worldwide.",
+        "fi": "Toteutuneet USCG:n Loran-C-sulkemispäivät; eivät maailman kaikki lähettimet."
+      }
+    },
+    {
+      "id": "trinity-eloran",
+      "url": "https://www.trinityhouse.co.uk/notice-to-mariners/27-15-enhanced-loran-discontinued",
+      "title": "Notice to Mariners 27/2015: Enhanced Loran discontinued",
+      "publisher": "Trinity House",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "UK/Ireland service termination as French/Norwegian signals closed; does not assert every Anthorn transmitter stopped.",
+        "fi": "UK/Irlannin palvelun loppu Ranskan/Norjan signaalien poistuttua; ei väitä kaikkien Anthornin lähetysten loppuneen."
+      }
+    },
+    {
+      "id": "bell-microwave",
+      "url": "https://doi.org/10.1002/j.1538-7305.1951.tb03695.x",
+      "title": "The TD-2 Microwave Radio Relay System",
+      "publisher": "Roetken & Smith, Bell System Technical Journal",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "1947 trial route and 1951 system description; design targets are not installed station totals.",
+        "fi": "Vuoden 1947 kokeilureitti ja 1951 järjestelmäkuvaus; tavoitearvot eivät ole toteutuneet asemamäärät."
+      }
+    },
+    {
+      "id": "hughes-vsat",
+      "url": "https://www.hughes.com/resources/insights/technology/innovations-changed-industry-two-way-vsat",
+      "title": "Innovations that Changed the Industry: The Two-Way VSAT",
+      "publisher": "Hughes",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "Own mid-1980s product history and 2021 examples; no national annual stock series.",
+        "fi": "Oma 1980-luvun puolivälin tuotehistoria ja vuoden 2021 esimerkit; ei kansallista vuosittaista kantasarjaa."
+      }
+    },
+    {
+      "id": "gallagher-fences",
+      "url": "https://www.am.gallagher.com/en-NZ/About-Us",
+      "title": "Gallagher: About Us",
+      "publisher": "Gallagher",
+      "accessed": "2026-09-08",
+      "kind": "manufacturer-history",
+      "scope": {
+        "en": "Company start in New Zealand in 1938; does not establish world-first invention or national fence density.",
+        "fi": "Yrityksen alku Uudessa-Seelannissa 1938; ei osoita maailman ensimmäistä keksintöä tai maiden aitatiheyttä."
+      }
+    },
+    {
+      "id": "gallagher-fence-circuit",
+      "url": "https://am.gallagher.com/en-US/Knowledge-Hub/Articles/Tips-Advice/Electric-Fencing-Basics",
+      "title": "Electric Fencing Basics",
+      "publisher": "Gallagher",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Energizer, fence, earth return and animal contact; wire voltage is not ambient field strength.",
+        "fi": "Paimen, aita, maapaluu ja eläimen kontakti; langan jännite ei ole ympäristökentän voimakkuus."
+      }
+    },
+    {
+      "id": "haskell-electrofishing",
+      "url": "https://doi.org/10.1577/1548-8659%281939%2969%5B210%3AAEMOCF%5D2.0.CO%3B2",
+      "title": "An Electrical Method of Collecting Fish",
+      "publisher": "D. C. Haskell, Transactions of the American Fisheries Society",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "1940 publication of early New York stream sampling; the DOI volume year is 1939.",
+        "fi": "Vuoden 1940 julkaisu varhaisesta New Yorkin puronäytteenotosta; DOI:n vuosikerta on 1939."
+      }
+    },
+    {
+      "id": "usace-barrier",
+      "url": "https://www.mvr.usace.army.mil/Portals/48/GLMRIS%20Main%20Report%20w%20Updated%20Supplemental%20-%20MER%2017MAY2019.pdf",
+      "title": "GLMRIS Main Report with Updated Supplemental, 17 May 2019",
+      "publisher": "U.S. Army Corps of Engineers",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Romeoville demonstration barrier from April 2002 and its original parameters, not all later versions.",
+        "fi": "Romeovillen demonstraatioeste huhtikuusta 2002 ja alkuparametrit, ei kaikkia myöhempiä versioita."
+      }
+    },
+    {
+      "id": "clo-pulse-fishing",
+      "url": "https://www.clo.nl/indicatoren/nl058701-inzet-visserijtechnieken-nederlandse-kottersector-2014",
+      "title": "Inzet visserijtechnieken Nederlandse kottersector, 2014",
+      "publisher": "CLO, Netherlands",
+      "accessed": "2026-09-08",
+      "kind": "official-statistics",
+      "scope": {
+        "en": "Dutch pulse-trawl derogations from 2007 and 2014 expansion; not world fishing coverage.",
+        "fi": "Hollannin pulssitroolipoikkeukset vuodesta 2007 ja vuoden 2014 laajennus; ei maailman kalastuspeitto."
+      }
+    },
+    {
+      "id": "eu-pulse-ban",
+      "url": "https://eur-lex.europa.eu/eli/reg/2019/1241/oj",
+      "title": "Regulation (EU) 2019/1241, Annex V Part D",
+      "publisher": "European Union",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Electric pulse-trawl transition ended 30 June 2021; not a ban on all electrofishing.",
+        "fi": "Sähköpulssitroolin siirtymäaika päättyi 30.6.2021; ei kaiken sähkökalastuksen kielto."
+      }
+    },
+    {
+      "id": "davy-cathodic",
+      "url": "https://doi.org/10.1098/rstl.1824.0009",
+      "title": "On the corrosion of copper sheeting by sea water, and on methods of preventing this effect",
+      "publisher": "Humphry Davy, Philosophical Transactions",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "1824 electrochemical ship-protection experiments; not modern impressed-current installations.",
+        "fi": "Vuoden 1824 sähkökemialliset laivasuojauskokeet; ei nykyisiä ulkoisen virtalähteen asennuksia."
+      }
+    },
+    {
+      "id": "ergon-swer",
+      "url": "https://www.ergon.com.au/network/our-network/fringe-of-grid-supply",
+      "title": "Fringe of grid supply",
+      "publisher": "Ergon Energy",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Queensland SWER network extent and construction era; network length is not exposure area.",
+        "fi": "Queenslandin SWER-verkon laajuus ja rakennuskausi; verkkopituus ei ole altistuspinta-ala."
+      }
+    },
+    {
+      "id": "skb-earth-currents",
+      "url": "https://www.skb.se/publikation/2485831/R-14-34.pdf",
+      "title": "Compilation and evaluation of earth current measurements in the Forsmark area, R-14-34, 2017",
+      "publisher": "H. Thunehed / SKB",
+      "accessed": "2026-09-08",
+      "kind": "primary-study",
+      "scope": {
+        "en": "Fenno-Skan electrode and measured/modelled earth currents; model examples are not organism doses.",
+        "fi": "Fenno-Skan-elektrodi ja mitatut/mallinnetut maavirrat; malliesimerkit eivät ole eliöannoksia."
+      }
+    },
+    {
+      "id": "gogla-offgrid",
+      "url": "https://gogla.org/reports/semi-annual-solar-market-report/insights-from-goglas-2024-sales-and-impact-data/",
+      "title": "Insights from GOGLA’s 2024 Sales and Impact Data",
+      "publisher": "GOGLA / ESMAP",
+      "accessed": "2026-09-08",
+      "kind": "operator-report",
+      "scope": {
+        "en": "Sales reported by participating companies; not total global installed off-grid stock.",
+        "fi": "Osallistuvien yritysten raportoima myynti; ei maailman koko asennettu verkoton kanta."
+      }
+    },
+    {
+      "id": "eu-lighting-244-2009",
+      "url": "https://eur-lex.europa.eu/eli/reg/2009/244/oj/eng",
+      "title": "Commission Regulation (EC) No 244/2009",
+      "publisher": "European Commission",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Ecodesign phases for non-directional household lamps; not immediate replacement of installed lamps.",
+        "fi": "Suuntaamattomien kotitalouslamppujen ekosuunnitteluvaiheet; ei asennettujen lamppujen välitön vaihto."
+      }
+    },
+    {
+      "id": "eu-halogens-2018",
+      "url": "https://energy.ec.europa.eu/system/files/2018-08/memo-light_bulbs_applicable_from_september_2018_0.pdf",
+      "title": "Light bulbs: changes applicable from September 2018",
+      "publisher": "European Commission",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Mains-voltage non-directional halogen requirements and exemptions; not a universal LED mandate.",
+        "fi": "Verkkojännitteisten suuntaamattomien halogeenien vaatimukset ja poikkeukset; ei yleinen LED-pakko."
+      }
+    },
+    {
+      "id": "doe-gsl-enforcement",
+      "url": "https://www.energy.gov/sites/default/files/2025-05/Enforcement%20Policy%20Statement%20-%20GSLs%20Marketed%20Exclusively%20for%20the%20Health%20and%20Care%20of%20Reptiles%20Amphibians%20and%20Other%20Small%20Animals.pdf",
+      "title": "Enforcement Policy Statement: GSLs Marketed Exclusively for the Health and Care of Reptiles, Amphibians and Other Small Animals, May 2025",
+      "publisher": "U.S. Department of Energy",
+      "accessed": "2026-09-08",
+      "kind": "regulation",
+      "scope": {
+        "en": "Retrospective account of full general-service lamp sales enforcement from August 2023; scope and exceptions remain product-specific.",
+        "fi": "Jälkikäteinen kuvaus yleislamppujen myyntivaatimuksen täydestä valvonnasta elokuusta 2023; soveltamisala ja poikkeukset ovat tuotekohtaisia."
+      }
+    }
+  ],
+  "technologies": [
+    {
+      "id": "electric-grid",
+      "group": "grid",
+      "name": {
+        "en": "Electric grids and return currents",
+        "fi": "Sähköverkot ja paluuvirrat"
+      },
+      "summary": {
+        "en": "Generation, distribution and building wiring, including early DC and earth return.",
+        "fi": "Tuotanto, jakelu ja rakennusjohdotus, myös varhainen DC ja maapaluu."
+      },
+      "physicalProfile": {
+        "en": "Current, conductor geometry and grounding determine local E and B fields.",
+        "fi": "Virta, johdingeometria ja maadoitus määräävät paikallisia E- ja B-kenttiä."
+      },
+      "historyGap": {
+        "en": "Regional load, wiring and return-path histories are needed beyond electricity access.",
+        "fi": "Sähkösaannin lisäksi tarvitaan aluekuorman, johdotuksen ja paluureittien historia."
+      },
+      "bermRelevance": {
+        "en": "Retain the background field and its orientation before adding devices.",
+        "fi": "Säilytä taustakenttä ja sen suunta ennen laitteiden lisäämistä."
+      },
+      "seasonality": {
+        "en": "Heating, cooling, moisture and peak demand change the local time record.",
+        "fi": "Lämmitys, jäähdytys, kosteus ja huippukuorma muuttavat paikallista aikajälkeä."
+      },
+      "sourceIds": [
+        "fepc-electricity",
+        "usda-farms",
+        "ergon-swer",
+        "skb-earth-currents"
+      ]
+    },
+    {
+      "id": "smart-metering",
+      "group": "grid",
+      "name": {
+        "en": "Smart meters: AMR and AMI",
+        "fi": "Älymittarit: AMR ja AMI"
+      },
+      "summary": {
+        "en": "Metering functions can use PLC, radio mesh, cellular links or combinations.",
+        "fi": "Mittaus voi käyttää PLC:tä, radioverkkoa, mobiilia tai niiden yhdistelmiä."
+      },
+      "physicalProfile": {
+        "en": "Separate meter, concentrator and optional home-radio transmissions.",
+        "fi": "Erota mittari, keskitin ja valinnaisen kotiradion lähetykset."
+      },
+      "historyGap": {
+        "en": "Protocol and hardware shares are missing from many national meter totals.",
+        "fi": "Monista kansallisista mittarimääristä puuttuu protokolla- ja laitejakauma."
+      },
+      "bermRelevance": {
+        "en": "One meter count does not specify waveform, duty cycle or tissue input.",
+        "fi": "Mittarimäärä ei yksilöi aaltomuotoa, lähetysosuutta tai kudossyötettä."
+      },
+      "seasonality": {
+        "en": "Collection schedules, retries and network roles change activity over time.",
+        "fi": "Keruuaikataulu, uusinnat ja verkkorooli muuttavat ajallista aktiivisuutta."
+      },
+      "sourceIds": [
+        "eia-metering",
+        "cre-linky",
+        "tem-amr",
+        "anfr-linky-technical",
+        "anfr-linky-measurement",
+        "enel-telegestore"
+      ],
+      "dataLinks": [
+        {
+          "id": "us_electricity_ami_meters",
+          "label": {
+            "en": "US AMI meter series",
+            "fi": "USA:n AMI-mittarisarja"
+          },
+          "url": "/data/technology-adoption.json",
+          "kind": "adoption",
+          "scope": {
+            "en": "Reported adoption data; this series does not identify local field strength or biological response.",
+            "fi": "Raportoitu omaksumisaineisto; sarja ei yksilöi paikallista kentänvoimakkuutta tai biologista vastetta."
+          }
+        },
+        {
+          "id": "us_electricity_amr_meters",
+          "label": {
+            "en": "US AMR meter series",
+            "fi": "USA:n AMR-mittarisarja"
+          },
+          "url": "/data/technology-adoption.json",
+          "kind": "adoption",
+          "scope": {
+            "en": "Reported adoption data; this series does not identify local field strength or biological response.",
+            "fi": "Raportoitu omaksumisaineisto; sarja ei yksilöi paikallista kentänvoimakkuutta tai biologista vastetta."
+          }
+        },
+        {
+          "id": "fr_linky_meters",
+          "label": {
+            "en": "Enedis Linky meter series",
+            "fi": "Enedisin Linky-mittarisarja"
+          },
+          "url": "/data/technology-adoption.json",
+          "kind": "adoption",
+          "scope": {
+            "en": "Reported adoption data; this series does not identify local field strength or biological response.",
+            "fi": "Raportoitu omaksumisaineisto; sarja ei yksilöi paikallista kentänvoimakkuutta tai biologista vastetta."
+          }
+        },
+        {
+          "id": "fi_hourly_meter_coverage",
+          "label": {
+            "en": "Finnish hourly metering coverage",
+            "fi": "Suomen tuntimittauksen peitto"
+          },
+          "url": "/data/technology-adoption.json",
+          "kind": "adoption",
+          "scope": {
+            "en": "Reported adoption data; this series does not identify local field strength or biological response.",
+            "fi": "Raportoitu omaksumisaineisto; sarja ei yksilöi paikallista kentänvoimakkuutta tai biologista vastetta."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power-line-communication",
+      "group": "grid",
+      "name": {
+        "en": "Power-line communication and ripple control",
+        "fi": "Sähköverkkoviestintä ja kuormanohjaus"
+      },
+      "summary": {
+        "en": "Communication signals are added to existing electricity conductors.",
+        "fi": "Viestisignaali lisätään olemassa oleviin sähköjohtimiin."
+      },
+      "physicalProfile": {
+        "en": "PLC and audio-frequency commands differ from the load they control.",
+        "fi": "PLC ja audiotaajuiset komennot eroavat ohjatusta kuormasta."
+      },
+      "historyGap": {
+        "en": "Map distribution areas, protocol versions, wiring and replacement dates.",
+        "fi": "Kartoita jakelualueet, protokollaversiot, johdotus ja vaihtopäivät."
+      },
+      "bermRelevance": {
+        "en": "Separate the command waveform from the resulting power-frequency change.",
+        "fi": "Erota komennon aaltomuoto sitä seuraavasta verkkotaajuisesta muutoksesta."
+      },
+      "seasonality": {
+        "en": "Hot-water control and overnight readings follow local demand schedules.",
+        "fi": "Vedenlämmityksen ohjaus ja yöluenta seuraavat paikallisia aikatauluja."
+      },
+      "sourceIds": [
+        "eeca-ripple",
+        "enel-telegestore",
+        "anfr-linky-technical"
+      ]
+    },
+    {
+      "id": "solar-inverters",
+      "group": "grid",
+      "name": {
+        "en": "Solar generation and inverters",
+        "fi": "Aurinkosähkö ja invertterit"
+      },
+      "summary": {
+        "en": "Photovoltaic systems combine DC generation with different conversion equipment.",
+        "fi": "Aurinkosähkö yhdistää DC-tuotannon erilaisiin muuntolaitteisiin."
+      },
+      "physicalProfile": {
+        "en": "Panel wiring, inverter switching, AC output and storage are distinct sources.",
+        "fi": "Paneelijohdotus, invertterikytkentä, AC-lähtö ja varasto ovat eri lähteitä."
+      },
+      "historyGap": {
+        "en": "Installed power alone does not provide inverter design or local field history.",
+        "fi": "Asennettu teho ei anna invertterirakennetta tai paikallista kenttähistoriaa."
+      },
+      "bermRelevance": {
+        "en": "Record the operating source components rather than assigning a solar coefficient.",
+        "fi": "Kirjaa toimivat lähdekomponentit aurinkosähkökertoimen sijaan."
+      },
+      "seasonality": {
+        "en": "Daylight, clouds, latitude and storage dispatch change operating hours.",
+        "fi": "Päivänvalo, pilvet, leveysaste ja varaston käyttö muuttavat toiminta-aikaa."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "wind-power",
+      "group": "grid",
+      "name": {
+        "en": "Wind turbines and converters",
+        "fi": "Tuuliturbiinit ja muuntimet"
+      },
+      "summary": {
+        "en": "Generators, power electronics and collection cables form separate components.",
+        "fi": "Generaattorit, tehoelektroniikka ja keräilykaapelit ovat eri komponentteja."
+      },
+      "physicalProfile": {
+        "en": "Mechanical rotation does not alone specify the electromagnetic spectrum.",
+        "fi": "Mekaaninen pyörintä ei yksin määritä sähkömagneettista spektriä."
+      },
+      "historyGap": {
+        "en": "Turbine versions, load and onshore/offshore cable routes need dated records.",
+        "fi": "Turbiiniversiot, kuorma ja maa-/merikaapelireitit tarvitsevat ajoitetut tiedot."
+      },
+      "bermRelevance": {
+        "en": "Keep local converter fields separate from offshore cable encounters.",
+        "fi": "Erota paikalliset muunninkentät merikaapelin kohtaamisista."
+      },
+      "seasonality": {
+        "en": "Wind conditions and curtailment create variable generation and current.",
+        "fi": "Tuuliolot ja tuotannon rajoitus muuttavat tuotantoa ja virtaa."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "storage-ups",
+      "group": "grid",
+      "name": {
+        "en": "Batteries, UPS and backup power",
+        "fi": "Akut, UPS ja varavoima"
+      },
+      "summary": {
+        "en": "Stored energy, conversion and backup operation are different source states.",
+        "fi": "Energiavarasto, muunto ja varakäyttö ovat eri lähdetiloja."
+      },
+      "physicalProfile": {
+        "en": "DC cabling, SMPS charging converters and AC output require separate measurements.",
+        "fi": "DC-kaapelit, SMPS-latausmuuntimet ja AC-lähtö mitataan erikseen."
+      },
+      "historyGap": {
+        "en": "Separate installed capacity, charge cycles, standby and outage operation.",
+        "fi": "Erota asennettu kapasiteetti, lataussyklit, valmius ja katkokäyttö."
+      },
+      "bermRelevance": {
+        "en": "A battery’s capacity is not a local field or a biological dose.",
+        "fi": "Akun kapasiteetti ei ole paikallinen kenttä tai biologinen annos."
+      },
+      "seasonality": {
+        "en": "Tariffs, outages and solar storage change daily operating patterns.",
+        "fi": "Tariffit, katkokset ja aurinkovarastointi muuttavat vuorokausikäyttöä."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "submarine-power-cables",
+      "group": "grid",
+      "name": {
+        "en": "Submarine cables and electrodes",
+        "fi": "Merikaapelit ja elektrodit"
+      },
+      "summary": {
+        "en": "AC/DC links, return conductors and remote electrodes have different geometries.",
+        "fi": "AC/DC-yhteyksillä, paluujohtimilla ja etäelektrodeilla on eri geometria."
+      },
+      "physicalProfile": {
+        "en": "Cable magnetic fields and electrode-driven water currents are distinct.",
+        "fi": "Kaapelin magneettikenttä ja elektrodin vesivirta ovat eri suureita."
+      },
+      "historyGap": {
+        "en": "Load, burial, pole configuration and maintenance history remain route-specific.",
+        "fi": "Kuorma, hautaus, napakytkentä ja huoltohistoria ovat reittikohtaisia."
+      },
+      "bermRelevance": {
+        "en": "Reconstruct the organism’s path through the measured local environment.",
+        "fi": "Rekonstruoi organismin reitti mitatun paikallisen ympäristön läpi."
+      },
+      "seasonality": {
+        "en": "Load and water conditions vary; an individual crossing can be brief.",
+        "fi": "Kuorma ja vesiolot vaihtelevat; yksittäinen ylitys voi olla lyhyt."
+      },
+      "sourceIds": [
+        "gotland-hvdc",
+        "boem-cable",
+        "skb-earth-currents"
+      ]
+    },
+    {
+      "id": "off-grid-solar",
+      "group": "grid",
+      "name": {
+        "en": "Off-grid solar and mini-grids",
+        "fi": "Verkoton aurinkosähkö ja pienverkot"
+      },
+      "summary": {
+        "en": "Solar lanterns, DC home systems and inverter mini-grids are distinct paths.",
+        "fi": "Aurinkolyhdyt, kodin DC-järjestelmät ja invertteripienverkot ovat eri polkuja."
+      },
+      "physicalProfile": {
+        "en": "DC wiring, drivers, batteries and converters depend on system design.",
+        "fi": "DC-johdotus, ajurit, akut ja muuntimet riippuvat järjestelmärakenteesta."
+      },
+      "historyGap": {
+        "en": "Reporting-company sales do not describe every installation or its survival.",
+        "fi": "Raportoivien yritysten myynti ei kuvaa kaikkia asennuksia tai poistumaa."
+      },
+      "bermRelevance": {
+        "en": "Electricity access can precede a conventional AC grid.",
+        "fi": "Sähköön pääsy voi edeltää tavanomaista AC-verkkoa."
+      },
+      "seasonality": {
+        "en": "Sunlight, night lighting and battery availability shape daily use.",
+        "fi": "Auringonvalo, yövalaistus ja akun varaus muokkaavat päivittäistä käyttöä."
+      },
+      "sourceIds": [
+        "gogla-offgrid"
+      ]
+    },
+    {
+      "id": "street-lighting",
+      "group": "grid",
+      "name": {
+        "en": "Street lighting and outdoor LEDs",
+        "fi": "Katuvalaistus ja ulko-LEDit"
+      },
+      "summary": {
+        "en": "Public lighting combines optical exposure with electrical infrastructure.",
+        "fi": "Julkinen valaistus yhdistää optisen altistuksen sähköjärjestelmään."
+      },
+      "physicalProfile": {
+        "en": "Lamp spectrum, flicker and driver E/B emissions are separate records.",
+        "fi": "Valospektri, välkyntä ja ajurin E/B-päästöt ovat eri tietoja."
+      },
+      "historyGap": {
+        "en": "Municipal lamp replacements need actual stock and switching schedules.",
+        "fi": "Kuntien lamppuvaihdot tarvitsevat toteutuneen kannan ja käyttöaikataulut."
+      },
+      "bermRelevance": {
+        "en": "Keep optical and electrical pathways explicit for local organisms.",
+        "fi": "Pidä optinen ja sähköinen reitti erillään paikallisille eliöille."
+      },
+      "seasonality": {
+        "en": "Night length, dimming and seasonal animal activity change encounters.",
+        "fi": "Yön pituus, himmennys ja eläinten kausiaktiivisuus muuttavat kohtaamisia."
+      },
+      "sourceIds": [
+        "ec-light-sources"
+      ]
+    },
+    {
+      "id": "wifi",
+      "group": "home",
+      "name": {
+        "en": "Wi-Fi networks",
+        "fi": "Wi-Fi-verkot"
+      },
+      "summary": {
+        "en": "Access points and client devices transmit according to traffic and protocol.",
+        "fi": "Tukiasemat ja asiakaslaitteet lähettävät liikenteen ja protokollan mukaan."
+      },
+      "physicalProfile": {
+        "en": "Bursts, channel selection and beacon timing differ from continuous radiation.",
+        "fi": "Purskeet, kanavavalinta ja majakkarytmi eroavat jatkuvasta säteilystä."
+      },
+      "historyGap": {
+        "en": "Router ownership does not provide transmit time or client-device proximity.",
+        "fi": "Reititinomistus ei anna lähetysaikaa tai asiakaslaitteen etäisyyttä."
+      },
+      "bermRelevance": {
+        "en": "Track both the nearby client and the ambient access point.",
+        "fi": "Seuraa sekä lähellä olevaa asiakaslaitetta että ympäristön tukiasemaa."
+      },
+      "seasonality": {
+        "en": "Occupancy, work, school and night settings determine activity.",
+        "fi": "Oleskelu, työ, koulu ja yöasetukset määräävät aktiivisuutta."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "indoor-lighting",
+      "group": "home",
+      "name": {
+        "en": "Incandescent, fluorescent and LED lighting",
+        "fi": "Hehku-, loiste- ja LED-valaistus"
+      },
+      "summary": {
+        "en": "Lighting changes include lamps, ballasts, drivers and optical output.",
+        "fi": "Valaistusmuutoksiin kuuluvat lamput, liitäntälaitteet, ajurit ja valo."
+      },
+      "physicalProfile": {
+        "en": "Separate optical spectrum and flicker from mains and switching fields.",
+        "fi": "Erota valospektri ja välkyntä verkko- ja kytkentäkentistä."
+      },
+      "historyGap": {
+        "en": "Sales, installed stock and lit hours require separate regional histories.",
+        "fi": "Myynti, asennuskanta ja palotunnit tarvitsevat erilliset aluehistoriat."
+      },
+      "bermRelevance": {
+        "en": "A lamp label does not identify its driver or biological response.",
+        "fi": "Lamppunimi ei yksilöi ajuria tai biologista vastetta."
+      },
+      "seasonality": {
+        "en": "Day length, room use and dimming affect exposure timing.",
+        "fi": "Päivän pituus, huoneen käyttö ja himmennys vaikuttavat ajoitukseen."
+      },
+      "sourceIds": [
+        "jrc-lighting",
+        "ec-light-sources",
+        "eu-lighting-244-2009",
+        "eu-halogens-2018",
+        "doe-gsl-enforcement"
+      ]
+    },
+    {
+      "id": "displays",
+      "group": "home",
+      "name": {
+        "en": "CRT, LCD and OLED displays",
+        "fi": "CRT-, LCD- ja OLED-näytöt"
+      },
+      "summary": {
+        "en": "Display transitions replace deflection, backlighting and power electronics.",
+        "fi": "Näyttösiirtymät vaihtavat poikkeutusta, taustavaloa ja tehoelektroniikkaa."
+      },
+      "physicalProfile": {
+        "en": "Optical light and electronics have different spatial and temporal profiles.",
+        "fi": "Valolla ja elektroniikalla on eri paikka- ja aikaprofiilit."
+      },
+      "historyGap": {
+        "en": "Device stock, screen type, viewing distance and use histories are incomplete.",
+        "fi": "Laitekanta, näyttötyyppi, katseluetäisyys ja käyttöhistoria ovat puutteellisia."
+      },
+      "bermRelevance": {
+        "en": "Keep light-mediated state changes separate from electrical source changes.",
+        "fi": "Erota valon välittämä tilamuutos sähköisen lähteen muutoksesta."
+      },
+      "seasonality": {
+        "en": "Evening viewing and work schedules matter more than ownership alone.",
+        "fi": "Iltakatselu ja työajat kertovat enemmän kuin omistus yksin."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "induction-cooking",
+      "group": "home",
+      "name": {
+        "en": "Induction cooking",
+        "fi": "Induktioliedet"
+      },
+      "summary": {
+        "en": "A cooking appliance generates a local alternating magnetic field.",
+        "fi": "Keittolaite tuottaa paikallisen vaihtuvan magneettikentän."
+      },
+      "physicalProfile": {
+        "en": "Pan alignment, power setting, body distance and switching matter.",
+        "fi": "Astian kohdistus, tehoasetus, kehon etäisyys ja kytkentä vaikuttavat."
+      },
+      "historyGap": {
+        "en": "National stove shares need appliance-specific field and cooking-time data.",
+        "fi": "Maiden liesiosuudet tarvitsevat laitekohtaiset kenttä- ja käyttöaikatiedot."
+      },
+      "bermRelevance": {
+        "en": "Use the local abdominal or limb position instead of household ownership.",
+        "fi": "Käytä vatsan tai raajan paikallista sijaintia kotitalouden omistuksen sijaan."
+      },
+      "seasonality": {
+        "en": "Meal schedules and power cycling create intermittent use.",
+        "fi": "Ruokailuajat ja tehonsäätö tekevät käytöstä jaksoittaista."
+      },
+      "sourceIds": [
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "wireless-charging",
+      "group": "home",
+      "name": {
+        "en": "Wireless power transfer and Qi",
+        "fi": "Langaton tehonsiirto ja Qi"
+      },
+      "summary": {
+        "en": "Charging links transfer energy between nearby coils.",
+        "fi": "Latausyhteys siirtää energiaa lähekkäisten kelojen välillä."
+      },
+      "physicalProfile": {
+        "en": "Alignment, load and charging state determine the local field.",
+        "fi": "Kohdistus, kuorma ja lataustila määräävät paikallista kenttää."
+      },
+      "historyGap": {
+        "en": "Phone, furniture, industrial and vehicle chargers need separate histories.",
+        "fi": "Puhelin-, kaluste-, teollisuus- ja ajoneuvolaturit tarvitsevat omat historiat."
+      },
+      "bermRelevance": {
+        "en": "Keep energy transfer separate from data communication in the same device.",
+        "fi": "Erota energiansiirto saman laitteen tiedonsiirrosta."
+      },
+      "seasonality": {
+        "en": "Charging routines, battery state and standby change activity.",
+        "fi": "Latausrutiinit, akun tila ja valmius muuttavat aktiivisuutta."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "synthetic-materials",
+      "group": "home",
+      "name": {
+        "en": "Synthetic textiles and charged surfaces",
+        "fi": "Synteettiset tekstiilit ja varautuvat pinnat"
+      },
+      "summary": {
+        "en": "Clothing, footwear and surfaces alter charge generation and relaxation.",
+        "fi": "Vaatetus, jalkineet ja pinnat muuttavat varautumista ja purkautumista."
+      },
+      "physicalProfile": {
+        "en": "Material pairs, friction, humidity, coatings and grounding are essential.",
+        "fi": "Materiaalipari, hankaus, kosteus, pinnoite ja maadoitus ovat olennaisia."
+      },
+      "historyGap": {
+        "en": "Production tonnes do not identify where, how or how long materials are worn.",
+        "fi": "Tuotantotonnit eivät kerro missä, miten tai kuinka kauan materiaalia käytetään."
+      },
+      "bermRelevance": {
+        "en": "Use measured interface charge or field, not a universal polyester coefficient.",
+        "fi": "Käytä mitattua rajapinnan varausta tai kenttää, ei yhteistä polyesterikerrointa."
+      },
+      "seasonality": {
+        "en": "Dry heating seasons, skin moisture and clothing layers change conditions.",
+        "fi": "Kuiva lämmityskausi, ihon kosteus ja vaatekerrokset muuttavat oloja."
+      },
+      "sourceIds": [
+        "acs-nylon",
+        "textile-exchange",
+        "dincmen-textiles"
+      ]
+    },
+    {
+      "id": "inverter-hvac",
+      "group": "home",
+      "name": {
+        "en": "Inverter air conditioning and heat pumps",
+        "fi": "Invertteri-ilmastointi ja lämpöpumput"
+      },
+      "summary": {
+        "en": "Residential and commercial compressors use different control generations.",
+        "fi": "Kotien ja liiketilojen kompressoreissa on eri ohjaussukupolvia."
+      },
+      "physicalProfile": {
+        "en": "Indoor/outdoor units, motor currents and converters are separate locations.",
+        "fi": "Sisä-/ulkoyksikkö, moottorivirrat ja muuntimet sijaitsevat erikseen."
+      },
+      "historyGap": {
+        "en": "Total cooling stock does not identify the inverter fraction or operating hours.",
+        "fi": "Koko jäähdytyskanta ei yksilöi invertteriosuutta tai käyttötunteja."
+      },
+      "bermRelevance": {
+        "en": "Record electrical operation and the changed thermal environment separately.",
+        "fi": "Kirjaa sähköinen toiminta ja muuttunut lämpöympäristö erikseen."
+      },
+      "seasonality": {
+        "en": "Winter heating and summer cooling have different geographic timing.",
+        "fi": "Talvilämmityksellä ja kesäjäähdytyksellä on eri alueellinen ajoitus."
+      },
+      "sourceIds": [
+        "toshiba-inverter",
+        "iea-cooling",
+        "sulpu-heat-pumps"
+      ],
+      "dataLinks": [
+        {
+          "id": "world_air_conditioner_stock",
+          "label": {
+            "en": "Global air-conditioner stock",
+            "fi": "Maailman ilmastointilaitekanta"
+          },
+          "url": "/data/technology-adoption.json",
+          "kind": "adoption",
+          "scope": {
+            "en": "Reported adoption data; this series does not identify local field strength or biological response.",
+            "fi": "Raportoitu omaksumisaineisto; sarja ei yksilöi paikallista kentänvoimakkuutta tai biologista vastetta."
+          }
+        }
+      ]
+    },
+    {
+      "id": "cordless-phones",
+      "group": "home",
+      "name": {
+        "en": "DECT, cordless phones and baby monitors",
+        "fi": "DECT, langattomat puhelimet ja itkuhälyttimet"
+      },
+      "summary": {
+        "en": "Base units and portable devices use product-specific radio modes.",
+        "fi": "Tukiyksiköt ja kannettavat laitteet käyttävät tuotekohtaisia radiotiloja."
+      },
+      "physicalProfile": {
+        "en": "Standby, call and low-emission modes need separate transmit records.",
+        "fi": "Valmius, puhelu ja vähäpäästötila tarvitsevat omat lähetystiedot."
+      },
+      "historyGap": {
+        "en": "Regional installed stock and retirement are missing from the history series.",
+        "fi": "Alueellinen laitekanta ja poistuma puuttuvat historiasarjasta."
+      },
+      "bermRelevance": {
+        "en": "A bedside base and a handheld call create different local inputs.",
+        "fi": "Vuoteen vieressä oleva tukiyksikkö ja käsipuhelu luovat eri paikallissyötteet."
+      },
+      "seasonality": {
+        "en": "Night placement and call schedules differ between households.",
+        "fi": "Yösijoitus ja puheluajat eroavat kotitalouksien välillä."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "microwave-ovens",
+      "group": "home",
+      "name": {
+        "en": "Microwave ovens",
+        "fi": "Mikroaaltouunit"
+      },
+      "summary": {
+        "en": "Cooking equipment can produce measurable external leakage.",
+        "fi": "Ruoanvalmistuslaite voi tuottaa mitattavaa ulkoista vuotoa."
+      },
+      "physicalProfile": {
+        "en": "Operating power, shielding, distance and heating cycle determine readings.",
+        "fi": "Käyttöteho, suojaus, etäisyys ja lämmitysjakso määräävät lukemia."
+      },
+      "historyGap": {
+        "en": "Rated cooking power is not external field strength or use duration.",
+        "fi": "Nimellinen lämmitysteho ei ole ulkoinen kenttä tai käyttöaika."
+      },
+      "bermRelevance": {
+        "en": "Treat leakage as a local measured source during operation.",
+        "fi": "Käsittele vuoto paikallisena mitattuna lähteenä käytön aikana."
+      },
+      "seasonality": {
+        "en": "Short heating periods and meal routines set the time record.",
+        "fi": "Lyhyet lämmitysjaksot ja ruokarutiinit määräävät aikajäljen."
+      },
+      "sourceIds": [
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "mobile-1g-2g",
+      "group": "communications",
+      "name": {
+        "en": "Analog cellular, GSM and CDMA",
+        "fi": "Analoginen mobiili, GSM ja CDMA"
+      },
+      "summary": {
+        "en": "Early cellular systems followed different national standards.",
+        "fi": "Varhaiset matkapuhelinjärjestelmät käyttivät eri maiden standardeja."
+      },
+      "physicalProfile": {
+        "en": "GSM timing cannot be assigned to analog radio or CDMA.",
+        "fi": "GSM:n ajoitusta ei voi antaa analogiselle radiolle tai CDMA:lle."
+      },
+      "historyGap": {
+        "en": "Record network coexistence, handset design, use and shutdowns by country.",
+        "fi": "Kirjaa verkkojen rinnakkaisuus, päätelaite, käyttö ja sulkeminen maittain."
+      },
+      "bermRelevance": {
+        "en": "Separate handset proximity and power control from base-station exposure.",
+        "fi": "Erota päätelaitteen etäisyys ja tehonsäätö tukiasema-altistuksesta."
+      },
+      "seasonality": {
+        "en": "Mobility, building penetration and call schedules change power and timing.",
+        "fi": "Liikkuminen, rakennusvaimennus ja puheluajat muuttavat tehoa ja ajoitusta."
+      },
+      "sourceIds": [
+        "itu-mobile-history",
+        "korea-mobile-history"
+      ]
+    },
+    {
+      "id": "mobile-3g",
+      "group": "communications",
+      "name": {
+        "en": "3G / UMTS networks",
+        "fi": "3G- ja UMTS-verkot"
+      },
+      "summary": {
+        "en": "Third-generation networks added mobile data and later underwent closures.",
+        "fi": "Kolmannen sukupolven verkot lisäsivät mobiilidataa ja niitä suljettiin myöhemmin."
+      },
+      "physicalProfile": {
+        "en": "Uplink, downlink and active services require separate records.",
+        "fi": "Uplink, downlink ja aktiiviset palvelut tarvitsevat omat tiedot."
+      },
+      "historyGap": {
+        "en": "A launch year does not describe adoption, refarming or replacement traffic.",
+        "fi": "Avausvuosi ei kuvaa omaksumista, taajuusmuutosta tai korvaavaa liikennettä."
+      },
+      "bermRelevance": {
+        "en": "Source removal changes the input mixture rather than reversing a fixed health score.",
+        "fi": "Lähteen poisto muuttaa syötekoostumusta, ei käännä kiinteää terveyspistemäärää."
+      },
+      "seasonality": {
+        "en": "Daily use and local coverage affect handset transmissions.",
+        "fi": "Vuorokausikäyttö ja paikallinen peitto vaikuttavat päätelaitteen lähetyksiin."
+      },
+      "sourceIds": [
+        "itu-mobile-history",
+        "traficom-3g-closure"
+      ]
+    },
+    {
+      "id": "mobile-4g",
+      "group": "communications",
+      "name": {
+        "en": "4G / LTE networks",
+        "fi": "4G- ja LTE-verkot"
+      },
+      "summary": {
+        "en": "LTE adoption is distinct from its first commercial launch.",
+        "fi": "LTE:n omaksuminen eroaa ensimmäisestä kaupallisesta avauksesta."
+      },
+      "physicalProfile": {
+        "en": "Band, duplex mode, traffic and power control determine the signal.",
+        "fi": "Kaista, dupleksitila, liikenne ja tehonsäätö määräävät signaalin."
+      },
+      "historyGap": {
+        "en": "Operator traffic shares do not identify population ownership or tissue dose.",
+        "fi": "Operaattorin liikenneosuus ei kerro väestöomistusta tai kudosannosta."
+      },
+      "bermRelevance": {
+        "en": "Retain measured time structure rather than a generation multiplier.",
+        "fi": "Säilytä mitattu aikarakenne sukupolvikertoimen sijaan."
+      },
+      "seasonality": {
+        "en": "Commutes, indoor use and network load change local transmissions.",
+        "fi": "Työmatkat, sisäkäyttö ja verkkokuorma muuttavat paikallisia lähetyksiä."
+      },
+      "sourceIds": [
+        "telia-lte"
+      ]
+    },
+    {
+      "id": "mobile-5g",
+      "group": "communications",
+      "name": {
+        "en": "5G: FR1 and FR2",
+        "fi": "5G: FR1 ja FR2"
+      },
+      "summary": {
+        "en": "Frequency ranges and deployment modes require separate local records.",
+        "fi": "Taajuusalueet ja toteutustavat tarvitsevat omat paikalliset tiedot."
+      },
+      "physicalProfile": {
+        "en": "Band, beam direction, traffic, duplexing and uplink power matter.",
+        "fi": "Kaista, keilan suunta, liikenne, dupleksi ja uplink-teho vaikuttavat."
+      },
+      "historyGap": {
+        "en": "Population coverage does not identify a person’s waveform or use time.",
+        "fi": "Väestöpeitto ei yksilöi henkilön aaltomuotoa tai käyttöaikaa."
+      },
+      "bermRelevance": {
+        "en": "A new generation does not impose a universal increase in every field component.",
+        "fi": "Uusi sukupolvi ei määrää kaikkien kenttäkomponenttien yleistä kasvua."
+      },
+      "seasonality": {
+        "en": "Traffic, movement and deployment density affect daily field structure.",
+        "fi": "Liikenne, liikkuminen ja verkkotiheys vaikuttavat päivittäiseen kenttärakenteeseen."
+      },
+      "sourceIds": [
+        "pib-india-5g",
+        "korea-mobile-history"
+      ]
+    },
+    {
+      "id": "base-stations",
+      "group": "communications",
+      "name": {
+        "en": "Cellular base stations",
+        "fi": "Matkapuhelintukiasemat"
+      },
+      "summary": {
+        "en": "Sites contain antennas and multiple network generations.",
+        "fi": "Asemilla on antenneja ja useita verkkosukupolvia."
+      },
+      "physicalProfile": {
+        "en": "Height, direction, terrain, building attenuation and traffic are essential.",
+        "fi": "Korkeus, suunta, maasto, rakennusvaimennus ja liikenne ovat olennaisia."
+      },
+      "historyGap": {
+        "en": "Site counts need band, antenna, power and operating-state inventories.",
+        "fi": "Asemamäärät tarvitsevat kaista-, antenni-, teho- ja käyttötilarekisterin."
+      },
+      "bermRelevance": {
+        "en": "This is the infrastructure view of cellular sources, not an extra additive generation.",
+        "fi": "Tämä on mobiililähteiden infrastruktuurinäkymä, ei erillinen lisättävä sukupolvi."
+      },
+      "seasonality": {
+        "en": "Demand cycles and temporary crowding change transmitter operation.",
+        "fi": "Kuormitusrytmi ja tilapäinen ruuhka muuttavat lähettimen toimintaa."
+      },
+      "sourceIds": [
+        "itu-mobile-history"
+      ]
+    },
+    {
+      "id": "bluetooth",
+      "group": "communications",
+      "name": {
+        "en": "Bluetooth devices and earbuds",
+        "fi": "Bluetooth-laitteet ja kuulokkeet"
+      },
+      "summary": {
+        "en": "Personal audio and short-range links use different Bluetooth modes.",
+        "fi": "Henkilökohtainen ääni ja lyhytyhteydet käyttävät eri Bluetooth-tiloja."
+      },
+      "physicalProfile": {
+        "en": "Nearby device placement, traffic and transmit duty need measurement.",
+        "fi": "Laitteen lähisijoitus, liikenne ja lähetysosuus tarvitsevat mittauksen."
+      },
+      "historyGap": {
+        "en": "Earbud ownership does not measure listening time or local absorbed energy.",
+        "fi": "Kuulokeomistus ei mittaa kuunteluaikaa tai paikallista absorptiota."
+      },
+      "bermRelevance": {
+        "en": "Record ear, wrist and room devices as distinct source–organism geometries.",
+        "fi": "Kirjaa korva-, ranne- ja huonelaitteet eri lähde–organismi-geometrioina."
+      },
+      "seasonality": {
+        "en": "Listening, exercise, sleep and work habits determine activity.",
+        "fi": "Kuuntelu-, liikunta-, uni- ja työtavat määräävät aktiivisuutta."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "iot",
+      "group": "communications",
+      "name": {
+        "en": "IoT, BLE, Zigbee, LoRa and NB-IoT",
+        "fi": "IoT, BLE, Zigbee, LoRa ja NB-IoT"
+      },
+      "summary": {
+        "en": "Connected sensors include many protocols and sleep modes.",
+        "fi": "Verkottuneisiin antureihin kuuluu monia protokollia ja lepotiloja."
+      },
+      "physicalProfile": {
+        "en": "Carrier bands, packet rhythms, repetitions and gateway roles differ.",
+        "fi": "Kantokaistat, pakettirytmit, uusinnat ja yhdyskäytäväroolit eroavat."
+      },
+      "historyGap": {
+        "en": "Connected-device counts need protocol-specific activity and installation histories.",
+        "fi": "Verkkolaitemäärät tarvitsevat protokollakohtaisen aktiivisuus- ja asennushistorian."
+      },
+      "bermRelevance": {
+        "en": "Do not assign one waveform to all connected objects.",
+        "fi": "Kaikille verkotetuille esineille ei anneta yhtä aaltomuotoa."
+      },
+      "seasonality": {
+        "en": "Sleep schedules, occupancy and sensor events change transmit timing.",
+        "fi": "Leporytmi, oleskelu ja anturitapahtumat muuttavat lähetysajoitusta."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "radio-broadcast",
+      "group": "communications",
+      "name": {
+        "en": "AM, FM and television transmitters",
+        "fi": "AM-, FM- ja televisiolähettimet"
+      },
+      "summary": {
+        "en": "Broadcast history predates mobile subscriptions by decades.",
+        "fi": "Yleisradiohistoria edeltää matkapuhelinliittymiä vuosikymmenillä."
+      },
+      "physicalProfile": {
+        "en": "Station frequency, antenna, power and broadcast hours determine local signals.",
+        "fi": "Asemataajuus, antenni, teho ja lähetysajat määräävät paikalliset signaalit."
+      },
+      "historyGap": {
+        "en": "Receiver ownership does not reconstruct transmitter fields or closures.",
+        "fi": "Vastaanotinomistus ei rekonstruoi lähetinkenttiä tai sulkemisia."
+      },
+      "bermRelevance": {
+        "en": "Keep media use and ambient transmitter exposure separate.",
+        "fi": "Erota median käyttö ympäristön lähetinaltistuksesta."
+      },
+      "seasonality": {
+        "en": "Programme schedules and propagation change day/night reception.",
+        "fi": "Ohjelma-ajat ja eteneminen muuttavat päivä-/yövastaanottoa."
+      },
+      "sourceIds": [
+        "itu-radio-history"
+      ]
+    },
+    {
+      "id": "radar",
+      "group": "communications",
+      "name": {
+        "en": "Military, weather and aviation radar",
+        "fi": "Sotilas-, sää- ja ilmailututkat"
+      },
+      "summary": {
+        "en": "Radar systems have different scanning and pulse schedules.",
+        "fi": "Tutkajärjestelmillä on erilaiset pyyhkäisy- ja pulssirytmit."
+      },
+      "physicalProfile": {
+        "en": "Beam direction, pulse width, repetition and sidelobes shape local exposure.",
+        "fi": "Keilan suunta, pulssileveys, toisto ja sivukeilat muokkaavat paikallista altistusta."
+      },
+      "historyGap": {
+        "en": "Named sites need dated operating logs rather than a common military curve.",
+        "fi": "Nimetyt asemat tarvitsevat käyttölokit yhteisen sotilaskäyrän sijaan."
+      },
+      "bermRelevance": {
+        "en": "Peak fields and time-averaged readings describe different input features.",
+        "fi": "Huippukenttä ja aikakeskiarvo kuvaavat eri syöteominaisuuksia."
+      },
+      "seasonality": {
+        "en": "Weather operations, surveillance schedules and maintenance alter activity.",
+        "fi": "Säätoiminta, valvontarytmi ja huolto muuttavat aktiivisuutta."
+      },
+      "sourceIds": [
+        "chain-home"
+      ]
+    },
+    {
+      "id": "vlf-radio",
+      "group": "communications",
+      "name": {
+        "en": "VLF/LF radio communication",
+        "fi": "VLF/LF-radioviestintä"
+      },
+      "summary": {
+        "en": "Long-wave stations served long-distance and submarine communication.",
+        "fi": "Pitkäaaltoasemat palvelivat kaukoyhteyksiä ja sukellusveneviestintää."
+      },
+      "physicalProfile": {
+        "en": "Large antennas, propagation conditions and station schedules matter.",
+        "fi": "Suuret antennit, etenemisolot ja aseman aikataulu vaikuttavat."
+      },
+      "historyGap": {
+        "en": "Reconstruct frequency changes, shortwave replacement and backup use.",
+        "fi": "Rekonstruoi taajuusmuutokset, lyhytaaltokorvaus ja varakäyttö."
+      },
+      "bermRelevance": {
+        "en": "Treat each operating source separately from radar or broadcast proxies.",
+        "fi": "Käsittele toimiva lähde erillään tutka- ja yleisradioproxyista."
+      },
+      "seasonality": {
+        "en": "Propagation changes by time, season and ionospheric conditions.",
+        "fi": "Eteneminen muuttuu ajan, vuodenajan ja ionosfäärin mukaan."
+      },
+      "sourceIds": [
+        "grimeton-history",
+        "jim-creek"
+      ]
+    },
+    {
+      "id": "radio-navigation",
+      "group": "communications",
+      "name": {
+        "en": "LORAN, OMEGA and satellite navigation",
+        "fi": "LORAN, OMEGA ja satelliittinavigointi"
+      },
+      "summary": {
+        "en": "Navigation networks grew, overlapped and were partly replaced.",
+        "fi": "Navigointiverkot kasvoivat, toimivat rinnakkain ja korvautuivat osittain."
+      },
+      "physicalProfile": {
+        "en": "Ground transmitters differ from passive GNSS receivers and correction radios.",
+        "fi": "Maalähettimet eroavat passiivisista GNSS-vastaanottimista ja korjausradioista."
+      },
+      "historyGap": {
+        "en": "Station shutdown is distinct from loss of a multi-station navigation service.",
+        "fi": "Aseman sulkeminen eroaa moniasemaisen navigointipalvelun katoamisesta."
+      },
+      "bermRelevance": {
+        "en": "Receiver counts do not add independent navigation transmitters.",
+        "fi": "Vastaanotinmäärä ei lisää itsenäisiä navigointilähettimiä."
+      },
+      "seasonality": {
+        "en": "Ground/sky propagation and scheduled outages change received signals.",
+        "fi": "Maa-/taivaseteneminen ja huoltokatkot muuttavat vastaanotettua signaalia."
+      },
+      "sourceIds": [
+        "frp-1996",
+        "faa-omega-closure",
+        "nbs-loran",
+        "frp-2010",
+        "trinity-eloran"
+      ]
+    },
+    {
+      "id": "microwave-backhaul",
+      "group": "communications",
+      "name": {
+        "en": "Microwave links and backhaul",
+        "fi": "Radiolinkit ja runkoyhteydet"
+      },
+      "summary": {
+        "en": "Fixed directional links carry telephone, television and network traffic.",
+        "fi": "Kiinteät suuntalinkit kuljettavat puhelin-, televisio- ja verkkoliikennettä."
+      },
+      "physicalProfile": {
+        "en": "Link endpoints, antenna height and direction differ from access networks.",
+        "fi": "Linkkipäät, antennikorkeus ja suunta eroavat käyttöverkoista."
+      },
+      "historyGap": {
+        "en": "Dated link inventories and fibre replacements are needed by region.",
+        "fi": "Alueille tarvitaan ajoitetut linkkirekisterit ja kuitukorvaukset."
+      },
+      "bermRelevance": {
+        "en": "A radio access service can have either fibre or radio backhaul.",
+        "fi": "Langattoman käyttöpalvelun runkoyhteys voi olla kuitu tai radio."
+      },
+      "seasonality": {
+        "en": "Network load, redundancy and weather affect operation.",
+        "fi": "Verkkokuorma, varmistus ja sää vaikuttavat toimintaan."
+      },
+      "sourceIds": [
+        "bell-microwave"
+      ]
+    },
+    {
+      "id": "satellite-communications",
+      "group": "communications",
+      "name": {
+        "en": "Satellite links, VSAT and LEO terminals",
+        "fi": "Satelliittiyhteydet, VSAT ja LEO-päätteet"
+      },
+      "summary": {
+        "en": "Two-way earth stations predate recent LEO broadband constellations.",
+        "fi": "Kaksisuuntaiset maa-asemat edeltävät nykyisiä LEO-laajakaistaverkkoja."
+      },
+      "physicalProfile": {
+        "en": "Satellite downlink, terminal uplink and local Wi-Fi are distinct sources.",
+        "fi": "Satelliitin downlink, päätteen uplink ja paikallinen Wi-Fi ovat eri lähteitä."
+      },
+      "historyGap": {
+        "en": "Terminal location and active use are missing from satellite-count proxies.",
+        "fi": "Päätteen sijainti ja aktiivinen käyttö puuttuvat satelliittimääräproxyista."
+      },
+      "bermRelevance": {
+        "en": "Separate receive-only television dishes from transmitting user terminals.",
+        "fi": "Erota vain vastaanottavat TV-antennit lähettävistä käyttäjäpäätteistä."
+      },
+      "seasonality": {
+        "en": "Traffic, service schedules and moving terminals change local encounters.",
+        "fi": "Liikenne, palvelurytmi ja liikkuvat päätteet muuttavat paikallisia kohtaamisia."
+      },
+      "sourceIds": [
+        "hughes-vsat"
+      ]
+    },
+    {
+      "id": "rfid-eas",
+      "group": "communications",
+      "name": {
+        "en": "RFID, NFC and EAS readers",
+        "fi": "RFID-, NFC- ja EAS-lukijat"
+      },
+      "summary": {
+        "en": "Retail gates, transport cards and identification use different reader systems.",
+        "fi": "Kauppaportit, matkakortit ja tunnistus käyttävät erilaisia lukijoita."
+      },
+      "physicalProfile": {
+        "en": "LF/HF/UHF systems and passive tags require distinct geometries and waveforms.",
+        "fi": "LF/HF/UHF-järjestelmät ja passiiviset tunnisteet tarvitsevat eri geometriat ja aaltomuodot."
+      },
+      "historyGap": {
+        "en": "Tag/card totals do not provide reader density, polling or staff proximity.",
+        "fi": "Tunniste-/korttimäärät eivät anna lukijatiheyttä, pollausta tai henkilökunnan etäisyyttä."
+      },
+      "bermRelevance": {
+        "en": "Repeated staff exposure and a customer’s brief passage are different histories.",
+        "fi": "Henkilökunnan toistuva altistus ja asiakkaan ohikulku ovat eri historiat."
+      },
+      "seasonality": {
+        "en": "Opening hours, transactions and inventory scans determine use.",
+        "fi": "Aukioloajat, maksutapahtumat ja inventaariot määräävät käyttöä."
+      },
+      "sourceIds": [
+        "sensormatic-history",
+        "miwa-eas",
+        "gs1-architecture",
+        "suica-history",
+        "nfc-history"
+      ]
+    },
+    {
+      "id": "uwb",
+      "group": "communications",
+      "name": {
+        "en": "UWB ranging and imaging",
+        "fi": "UWB-paikannus ja kuvantaminen"
+      },
+      "summary": {
+        "en": "Short-pulse functions occur in specialised and consumer devices.",
+        "fi": "Lyhytpulssisia toimintoja on erikois- ja kuluttajalaitteissa."
+      },
+      "physicalProfile": {
+        "en": "Ranging sessions, pulse sequences and device position require measurement.",
+        "fi": "Paikannusjaksot, pulssijonot ja laitesijainti tarvitsevat mittauksen."
+      },
+      "historyGap": {
+        "en": "A UWB-enabled phone is not a continuously active UWB transmitter.",
+        "fi": "UWB-puhelin ei ole jatkuvasti aktiivinen UWB-lähetin."
+      },
+      "bermRelevance": {
+        "en": "Add the actual ranging waveform to the existing device’s source record.",
+        "fi": "Lisää toteutunut paikannusaaltomuoto laitteen nykyiseen lähdetietoon."
+      },
+      "seasonality": {
+        "en": "Finding, unlocking and tracking events determine activity.",
+        "fi": "Etsintä-, avaus- ja seurantatapahtumat määräävät aktiivisuutta."
+      },
+      "sourceIds": [
+        "fcc-uwb",
+        "apple-uwb",
+        "apple-airtag"
+      ]
+    },
+    {
+      "id": "professional-radio",
+      "group": "communications",
+      "name": {
+        "en": "Paging, PMR and TETRA",
+        "fi": "Hakulaitteet, PMR ja TETRA"
+      },
+      "summary": {
+        "en": "Professional radio networks have distinct users and operating schedules.",
+        "fi": "Ammattiradioverkoilla on omat käyttäjät ja toiminta-ajat."
+      },
+      "physicalProfile": {
+        "en": "Handset transmission and paging reception are different functions.",
+        "fi": "Käsilaitteen lähetys ja hakulaitteen vastaanotto ovat eri toimintoja."
+      },
+      "historyGap": {
+        "en": "Country/operator launches, fleets and retirements need archival records.",
+        "fi": "Maa-/operaattoriavaukset, laitekanta ja poistuma tarvitsevat arkistotiedot."
+      },
+      "bermRelevance": {
+        "en": "Map work roles and body placement rather than consumer subscriptions.",
+        "fi": "Kartoita työroolit ja kehosijoitus kuluttajaliittymien sijaan."
+      },
+      "seasonality": {
+        "en": "Shifts, emergency use and local traffic alter transmission time.",
+        "fi": "Työvuorot, hälytyskäyttö ja paikallinen liikenne muuttavat lähetysaikaa."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "electric-vehicles",
+      "group": "transport",
+      "name": {
+        "en": "Electric vehicles and charging",
+        "fi": "Sähköajoneuvot ja lataus"
+      },
+      "summary": {
+        "en": "Cars, buses and two/three-wheelers have distinct regional adoption paths.",
+        "fi": "Autoilla, busseilla ja kaksi-/kolmipyöräisillä on eri alueelliset omaksumispolut."
+      },
+      "physicalProfile": {
+        "en": "Battery, cables, motor, inverter and charger need separate spatial records.",
+        "fi": "Akku, kaapelit, moottori, invertteri ja laturi tarvitsevat omat paikkatiedot."
+      },
+      "historyGap": {
+        "en": "Sales and stock do not identify driving hours, seating position or charging.",
+        "fi": "Myynti ja kanta eivät yksilöi ajoaikaa, istuinpaikkaa tai latausta."
+      },
+      "bermRelevance": {
+        "en": "Reconstruct driving, regeneration and charging as separate source states.",
+        "fi": "Rekonstruoi ajo, regenerointi ja lataus eri lähdetiloina."
+      },
+      "seasonality": {
+        "en": "Temperature, commuting and delivery shifts affect load and duration.",
+        "fi": "Lämpötila, työmatkat ja lähettivuorot vaikuttavat kuormaan ja kestoon."
+      },
+      "sourceIds": [
+        "jrc-vehicles",
+        "iea-two-wheelers"
+      ]
+    },
+    {
+      "id": "electric-rail",
+      "group": "transport",
+      "name": {
+        "en": "Electric railways, metros and trams",
+        "fi": "Sähkörautatiet, metrot ja raitiotiet"
+      },
+      "summary": {
+        "en": "Traction systems include different AC/DC supplies and vehicle generations.",
+        "fi": "Vetojärjestelmillä on eri AC/DC-syöttöjä ja kalustosukupolvia."
+      },
+      "physicalProfile": {
+        "en": "Contact lines, return rails, motors and converters form separate sources.",
+        "fi": "Ajojohdot, paluukiskot, moottorit ja muuntimet muodostavat eri lähteitä."
+      },
+      "historyGap": {
+        "en": "Route electrification and inverter fleet replacement need separate histories.",
+        "fi": "Reitin sähköistys ja invertterikaluston vaihto tarvitsevat eri historiat."
+      },
+      "bermRelevance": {
+        "en": "Worker and passenger positions differ from wayside ecological encounters.",
+        "fi": "Työntekijän ja matkustajan sijainti eroaa radanvarren ekologisista kohtaamisista."
+      },
+      "seasonality": {
+        "en": "Timetables, acceleration, braking and heating change current over time.",
+        "fi": "Aikataulu, kiihdytys, jarrutus ja lämmitys muuttavat virtaa ajassa."
+      },
+      "sourceIds": [
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "vehicle-radar",
+      "group": "transport",
+      "name": {
+        "en": "Vehicle radar and driver assistance",
+        "fi": "Ajoneuvotutkat ja kuljettaja-avustus"
+      },
+      "summary": {
+        "en": "Radar-equipped vehicles add local directional sensing systems.",
+        "fi": "Tutka-ajoneuvot lisäävät paikallisia suuntaavia anturijärjestelmiä."
+      },
+      "physicalProfile": {
+        "en": "Sensor position, mode, direction and active duration define the signal.",
+        "fi": "Anturin paikka, tila, suunta ja aktiivisuuskesto määrittävät signaalin."
+      },
+      "historyGap": {
+        "en": "Vehicle registrations do not identify radar fitment or active modes.",
+        "fi": "Ajoneuvorekisteri ei yksilöi tutkavarustusta tai aktiivisia tiloja."
+      },
+      "bermRelevance": {
+        "en": "Separate sensing transmitters from traction electronics in the same vehicle.",
+        "fi": "Erota anturilähettimet saman ajoneuvon käyttöelektroniikasta."
+      },
+      "seasonality": {
+        "en": "Road use, congestion and driver-assistance settings change activity.",
+        "fi": "Tienkäyttö, ruuhka ja avustusasetukset muuttavat aktiivisuutta."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "data-centres",
+      "group": "industry",
+      "name": {
+        "en": "Data centres and computing power systems",
+        "fi": "Datakeskukset ja laskennan sähköjärjestelmät"
+      },
+      "summary": {
+        "en": "Computing facilities combine supplies, UPS, cooling and network equipment.",
+        "fi": "Laskentatilat yhdistävät virtalähteet, UPS:n, jäähdytyksen ja verkkolaitteet."
+      },
+      "physicalProfile": {
+        "en": "High electricity consumption alone does not specify nearby field strength.",
+        "fi": "Suuri sähkönkulutus ei yksin määritä lähikentän voimakkuutta."
+      },
+      "historyGap": {
+        "en": "Rack, cable, cooling and shift-level records are needed for local history.",
+        "fi": "Paikallishistoria tarvitsee teline-, kaapeli-, jäähdytys- ja työvuorotiedot."
+      },
+      "bermRelevance": {
+        "en": "Avoid double counting components already recorded under UPS or HVAC.",
+        "fi": "Vältä UPS- tai HVAC-luokassa jo kirjattujen komponenttien kaksoislaskentaa."
+      },
+      "seasonality": {
+        "en": "Computing load, cooling demand and maintenance change operating states.",
+        "fi": "Laskentakuorma, jäähdytystarve ja huolto muuttavat käyttötilaa."
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "industrial-heating",
+      "group": "industry",
+      "name": {
+        "en": "Industrial heating, welding and drives",
+        "fi": "Teollinen kuumennus, hitsaus ja käytöt"
+      },
+      "summary": {
+        "en": "Induction, dielectric heating, welding and motor drives are distinct processes.",
+        "fi": "Induktio, dielektrinen kuumennus, hitsaus ja moottorikäytöt ovat eri prosesseja."
+      },
+      "physicalProfile": {
+        "en": "Frequency, current, applicator geometry and shielding are task-specific.",
+        "fi": "Taajuus, virta, laitteen geometria ja suojaus ovat työkohtaisia."
+      },
+      "historyGap": {
+        "en": "Factory adoption, process duration and operator position need reconstruction.",
+        "fi": "Tehtaan käyttöönotto, prosessin kesto ja työntekijän paikka tarvitsevat rekonstruktion."
+      },
+      "bermRelevance": {
+        "en": "Use process-level physical inputs instead of total industrial electricity.",
+        "fi": "Käytä prosessikohtaisia fysikaalisia syötteitä teollisuuden kokonaissähkön sijaan."
+      },
+      "seasonality": {
+        "en": "Shifts, production cycles and maintenance set the time pattern.",
+        "fi": "Vuorot, tuotantosyklit ja huolto määräävät aikarakenteen."
+      },
+      "sourceIds": [
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "medical-emf",
+      "group": "industry",
+      "name": {
+        "en": "MRI, stimulation and therapeutic fields",
+        "fi": "MRI, stimulaatio ja hoitokentät"
+      },
+      "summary": {
+        "en": "MRI, TMS, PEMF, diathermy, TTFields and electrical stimulation require procedure-specific histories.",
+        "fi": "MRI, TMS, PEMF, diatermia, TTFields ja sähköstimulaatio tarvitsevat toimenpidekohtaiset historiat."
+      },
+      "physicalProfile": {
+        "en": "Static, gradient, RF and applied-current components must be distinguished.",
+        "fi": "Staattinen, gradientti-, RF- ja syötetty virtakomponentti erotetaan."
+      },
+      "historyGap": {
+        "en": "Installed systems, procedure counts and staff/patient roles need separate histories.",
+        "fi": "Asennuskanta, toimenpidemäärä ja henkilökunnan/potilaan rooli tarvitsevat eri historiat."
+      },
+      "bermRelevance": {
+        "en": "Therapeutic settings do not calibrate everyday environmental exposure.",
+        "fi": "Hoitokentät eivät kalibroi arkista ympäristöaltistusta."
+      },
+      "seasonality": {
+        "en": "Appointment schedules and procedure duration determine encounters.",
+        "fi": "Ajanvaraus ja toimenpiteen kesto määräävät kohtaamiset."
+      },
+      "sourceIds": [
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "electrolysis",
+      "group": "industry",
+      "name": {
+        "en": "Electrolysis and large DC processes",
+        "fi": "Elektrolyysi ja suuret tasavirtaprosessit"
+      },
+      "summary": {
+        "en": "Smelters and electrochemical plants create specialised electrical workplaces.",
+        "fi": "Sulattamot ja sähkökemialliset laitokset luovat erityisiä sähkötyöympäristöjä."
+      },
+      "physicalProfile": {
+        "en": "Busbar currents, static fields, rectifier ripple and movement all matter.",
+        "fi": "Virtakiskot, staattiset kentät, tasasuuntausrippeli ja liike vaikuttavat."
+      },
+      "historyGap": {
+        "en": "Production tonnes require facility, current and worker-path information.",
+        "fi": "Tuotantotonnit tarvitsevat laitos-, virta- ja työntekijäreittitiedot."
+      },
+      "bermRelevance": {
+        "en": "A stationary field can vary along a moving organism’s path.",
+        "fi": "Paikallaan oleva kenttä voi vaihdella liikkuvan organismin reitillä."
+      },
+      "seasonality": {
+        "en": "Shift length, production interruptions and maintenance change encounters.",
+        "fi": "Vuoron pituus, tuotantokatkot ja huolto muuttavat kohtaamisia."
+      },
+      "sourceIds": [
+        "alcoa-history",
+        "moen-smelter",
+        "hse-emf"
+      ]
+    },
+    {
+      "id": "metal-detectors",
+      "group": "industry",
+      "name": {
+        "en": "Metal detectors and security screening",
+        "fi": "Metallinilmaisimet ja turvatarkastus"
+      },
+      "summary": {
+        "en": "Walk-through and handheld detectors differ from EAS and body imaging.",
+        "fi": "Läpikulku- ja käsi-ilmaisimet eroavat EAS:stä ja kehokuvantamisesta."
+      },
+      "physicalProfile": {
+        "en": "Measured waveforms include sinusoidal, pulsed and sawtooth signals.",
+        "fi": "Mitattuihin aaltomuotoihin kuuluu sini-, pulssi- ja sahalaitasignaaleja."
+      },
+      "historyGap": {
+        "en": "Equipment generation and staff proximity are missing from passenger totals.",
+        "fi": "Laitesukupolvi ja henkilökunnan etäisyys puuttuvat matkustajamääristä."
+      },
+      "bermRelevance": {
+        "en": "A brief passage and a full shift beside a gate are different histories.",
+        "fi": "Lyhyt läpikulku ja kokonainen vuoro portin vieressä ovat eri historiat."
+      },
+      "seasonality": {
+        "en": "Passenger flow, staffing and operating hours change exposure timing.",
+        "fi": "Matkustajavirta, miehitys ja toiminta-aika muuttavat altistuksen ajoitusta."
+      },
+      "sourceIds": [
+        "faa-screening",
+        "boivin-detectors"
+      ]
+    },
+    {
+      "id": "electric-fences",
+      "group": "ecology",
+      "name": {
+        "en": "Electric fences",
+        "fi": "Sähköaidat"
+      },
+      "summary": {
+        "en": "Energizers, wire and earth return create controlled contact circuits.",
+        "fi": "Paimen, lanka ja maapaluu muodostavat ohjatun kontaktipiirin."
+      },
+      "physicalProfile": {
+        "en": "Pulse shape, electrode geometry, soil moisture and contact determine coupling.",
+        "fi": "Pulssimuoto, elektrodigeometria, maankosteus ja kontakti määräävät kytkennän."
+      },
+      "historyGap": {
+        "en": "Fence length and energizer sales do not measure animal contact duration.",
+        "fi": "Aitapituus ja paimenmyynti eivät mittaa eläimen kontaktikestoa."
+      },
+      "bermRelevance": {
+        "en": "Distinguish the ambient field from current during an actual contact.",
+        "fi": "Erota ympäristökenttä todellisen kontaktin aikaisesta virrasta."
+      },
+      "seasonality": {
+        "en": "Grazing rotation, vegetation and dry ground change source and contact paths.",
+        "fi": "Laidunkierto, kasvillisuus ja kuiva maa muuttavat lähdettä ja kontaktireittiä."
+      },
+      "sourceIds": [
+        "gallagher-fences",
+        "gallagher-fence-circuit"
+      ]
+    },
+    {
+      "id": "electric-fishing",
+      "group": "ecology",
+      "name": {
+        "en": "Electrofishing, fish barriers and pulse trawls",
+        "fi": "Sähkökalastus, kalaesteet ja pulssitroolit"
+      },
+      "summary": {
+        "en": "Sampling, fixed barriers and mobile fishing create different water exposures.",
+        "fi": "Näytteenotto, kiinteä este ja liikkuva kalastus luovat eri vesialtistuksia."
+      },
+      "physicalProfile": {
+        "en": "Water conductivity, electrode spacing and pulse timing define local currents.",
+        "fi": "Veden johtavuus, elektrodiväli ja pulssiajoitus määräävät paikallisia virtoja."
+      },
+      "historyGap": {
+        "en": "Operating routes, revisits and hardware changes need site-specific logs.",
+        "fi": "Käyttöreitit, paluukerrat ja laitemuutokset tarvitsevat paikkakohtaiset lokit."
+      },
+      "bermRelevance": {
+        "en": "A fish crossing is not continuous exposure of an entire water body.",
+        "fi": "Kalan ylitys ei ole koko vesistön jatkuvaa altistusta."
+      },
+      "seasonality": {
+        "en": "Flow, spawning, fishing seasons and regulations alter encounters.",
+        "fi": "Virtaama, kutu, kalastuskausi ja sääntely muuttavat kohtaamisia."
+      },
+      "sourceIds": [
+        "haskell-electrofishing",
+        "usace-barrier",
+        "clo-pulse-fishing",
+        "eu-pulse-ban"
+      ]
+    },
+    {
+      "id": "cathodic-protection",
+      "group": "ecology",
+      "name": {
+        "en": "Cathodic protection",
+        "fi": "Katodinen suojaus"
+      },
+      "summary": {
+        "en": "Galvanic and impressed-current protection use different source arrangements.",
+        "fi": "Galvaaninen ja ulkoisen virtalähteen suojaus käyttävät eri lähdejärjestelyjä."
+      },
+      "physicalProfile": {
+        "en": "Anodes, protected structures and conductive water or soil define the circuit.",
+        "fi": "Anodit, suojattu rakenne ja johtava vesi tai maa määrittävät virtapiirin."
+      },
+      "historyGap": {
+        "en": "Ship, port, pipeline and offshore installation histories remain incomplete.",
+        "fi": "Laiva-, satama-, putki- ja offshore-asennushistoriat ovat puutteellisia."
+      },
+      "bermRelevance": {
+        "en": "Electrical fields and corrosion chemistry are separate physical inputs.",
+        "fi": "Sähkökenttä ja korroosiokemia ovat eri fysikaalisia syötteitä."
+      },
+      "seasonality": {
+        "en": "Water chemistry, coatings, maintenance and current settings change conditions.",
+        "fi": "Vesikemia, pinnoite, huolto ja virta-asetus muuttavat oloja."
+      },
+      "sourceIds": [
+        "davy-cathodic"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "davy-cathodic-1824",
+      "technologyIds": [
+        "cathodic-protection"
+      ],
+      "region": {
+        "id": "united-kingdom",
+        "name": {
+          "en": "United Kingdom",
+          "fi": "Britannia"
+        }
+      },
+      "startYear": 1824,
+      "kind": "measurement",
+      "title": {
+        "en": "Davy publishes ship-protection experiments",
+        "fi": "Davy julkaisee laivasuojauskokeensa"
+      },
+      "description": {
+        "en": "The 1824 publication describes electrochemical protection of copper sheathing in seawater. This is a publication anchor for galvanic protection, not the launch of modern impressed-current systems.",
+        "fi": "Vuoden 1824 julkaisu kuvaa kupariverhouksen sähkökemiallista suojausta merivedessä. Tämä on galvaanisen suojauksen julkaisuankkuri, ei nykyisten ulkoisen virtalähteen järjestelmien käyttöönotto."
+      },
+      "sourceIds": [
+        "davy-cathodic"
+      ]
+    },
+    {
+      "id": "japan-dc-1887",
+      "technologyIds": [
+        "electric-grid"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 1887,
+      "kind": "deployment",
+      "title": {
+        "en": "Early household DC distribution",
+        "fi": "Varhainen kotitalouksien DC-jakelu"
+      },
+      "description": {
+        "en": "FEPC records household DC distribution in 1887. Early electrification cannot universally be labelled a 50/60 Hz exposure.",
+        "fi": "FEPC kirjaa kotitalouksien DC-jakelua vuodelle 1887. Varhaista sähköistymistä ei voi yleisesti nimetä 50/60 Hz altistukseksi."
+      },
+      "sourceIds": [
+        "fepc-electricity"
+      ]
+    },
+    {
+      "id": "aluminium-1888",
+      "technologyIds": [
+        "electrolysis"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1888,
+      "kind": "deployment",
+      "title": {
+        "en": "Early Pittsburgh aluminium production plant",
+        "fi": "Varhainen Pittsburghin alumiinilaitos"
+      },
+      "description": {
+        "en": "Alcoa’s history records its predecessor’s 1888 experimental production plant after the 1886 process development. This is an industrial history anchor, not neighbourhood exposure data.",
+        "fi": "Alcoan historia kirjaa edeltäjän vuoden 1888 kokeellisen tuotantolaitoksen vuoden 1886 prosessikehityksen jälkeen. Tämä on teollisuushistorian ankkuri, ei naapuruston altistustieto."
+      },
+      "sourceIds": [
+        "alcoa-history"
+      ],
+      "location": {
+        "en": "Pittsburgh",
+        "fi": "Pittsburgh"
+      }
+    },
+    {
+      "id": "osaka-ac-1889",
+      "technologyIds": [
+        "electric-grid"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 1889,
+      "kind": "deployment",
+      "title": {
+        "en": "AC distribution in Osaka",
+        "fi": "Vaihtovirtajakelu Osakassa"
+      },
+      "description": {
+        "en": "Osaka began AC distribution in 1889. This identifies a local system transition, not the adoption date for all Japanese households.",
+        "fi": "Osakan AC-jakelu alkoi 1889. Tämä yksilöi paikallisen järjestelmävaiheen, ei kaikkien Japanin kotien omaksumisvuotta."
+      },
+      "sourceIds": [
+        "fepc-electricity"
+      ],
+      "location": {
+        "en": "Osaka",
+        "fi": "Osaka"
+      }
+    },
+    {
+      "id": "grimeton-1924",
+      "technologyIds": [
+        "vlf-radio"
+      ],
+      "region": {
+        "id": "sweden",
+        "name": {
+          "en": "Sweden",
+          "fi": "Ruotsi"
+        }
+      },
+      "startYear": 1924,
+      "kind": "launch",
+      "title": {
+        "en": "Grimeton enters commercial service",
+        "fi": "Grimeton aloittaa kaupallisen liikenteen"
+      },
+      "description": {
+        "en": "SAQ began commercial operation on 1 December 1924, linking Sweden with Long Island. Subsequent shortwave and backup use changed the source history.",
+        "fi": "SAQ aloitti kaupallisen käytön 1.12.1924 yhdistäen Ruotsin Long Islandiin. Myöhempi lyhytaalto- ja varakäyttö muutti lähdehistoriaa."
+      },
+      "sourceIds": [
+        "grimeton-history"
+      ],
+      "location": {
+        "en": "Grimeton",
+        "fi": "Grimeton"
+      }
+    },
+    {
+      "id": "chain-home-1938",
+      "technologyIds": [
+        "radar"
+      ],
+      "region": {
+        "id": "united-kingdom",
+        "name": {
+          "en": "United Kingdom",
+          "fi": "Britannia"
+        }
+      },
+      "startYear": 1938,
+      "kind": "deployment",
+      "title": {
+        "en": "Early Chain Home stations completed",
+        "fi": "Varhaiset Chain Home -asemat valmistuivat"
+      },
+      "description": {
+        "en": "Historic England dates the first Chain Home stations to summer 1938. Station archives locate sources but do not supply personal dose histories.",
+        "fi": "Historic England ajoittaa ensimmäiset Chain Home -asemat kesään 1938. Asema-arkisto paikantaa lähteitä, mutta ei anna henkilöannoshistoriaa."
+      },
+      "sourceIds": [
+        "chain-home"
+      ]
+    },
+    {
+      "id": "gallagher-fences-1938",
+      "technologyIds": [
+        "electric-fences"
+      ],
+      "region": {
+        "id": "new-zealand",
+        "name": {
+          "en": "New Zealand",
+          "fi": "Uusi-Seelanti"
+        }
+      },
+      "startYear": 1938,
+      "kind": "launch",
+      "title": {
+        "en": "Gallagher electric-fence business begins",
+        "fi": "Gallagherin sähköaitatoiminta alkaa"
+      },
+      "description": {
+        "en": "Gallagher dates its company’s start to 1938 after development in the 1930s. This is a manufacturer’s history, not the global adoption date for electric fences.",
+        "fi": "Gallagher ajoittaa yritystoiminnan alkuun 1938 kehitystyön jälkeen 1930-luvulla. Tämä on valmistajahistoria, ei sähköaitojen maailmanlaajuinen omaksumisvuosi."
+      },
+      "sourceIds": [
+        "gallagher-fences"
+      ]
+    },
+    {
+      "id": "nylon-seaford-1939",
+      "technologyIds": [
+        "synthetic-materials"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1939,
+      "kind": "deployment",
+      "title": {
+        "en": "Commercial nylon production at Seaford",
+        "fi": "Kaupallinen nailontuotanto Seafordissa"
+      },
+      "description": {
+        "en": "DuPont’s Seaford plant began commercial nylon production on 15 December 1939. Production location does not identify later clothing use or skin contact.",
+        "fi": "DuPontin Seafordin tehdas aloitti kaupallisen nailontuotannon 15.12.1939. Tuotantopaikka ei yksilöi myöhempää vaatetuskäyttöä tai ihokontaktia."
+      },
+      "sourceIds": [
+        "acs-nylon"
+      ],
+      "location": {
+        "en": "Seaford, Delaware",
+        "fi": "Seaford, Delaware"
+      }
+    },
+    {
+      "id": "new-york-electrofishing-1940",
+      "technologyIds": [
+        "electric-fishing"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1940,
+      "kind": "measurement",
+      "title": {
+        "en": "Early stream electrofishing is documented",
+        "fi": "Varhainen purojen sähkökalastus dokumentoidaan"
+      },
+      "description": {
+        "en": "Haskell’s article was published in 1940, although its DOI contains the 1939 volume year. It documents New York stream sampling, not the first invention or continuous exposure of whole rivers.",
+        "fi": "Haskellin artikkeli julkaistiin 1940, vaikka DOI sisältää vuosikerran 1939. Se dokumentoi New Yorkin puronäytteenottoa, ei ensimmäistä keksintöä tai kokonaisten jokien jatkuvaa altistusta."
+      },
+      "sourceIds": [
+        "haskell-electrofishing"
+      ],
+      "location": {
+        "en": "New York State",
+        "fi": "New Yorkin osavaltio"
+      }
+    },
+    {
+      "id": "grimeton-shortwave-1945",
+      "technologyIds": [
+        "vlf-radio"
+      ],
+      "region": {
+        "id": "sweden",
+        "name": {
+          "en": "Sweden",
+          "fi": "Ruotsi"
+        }
+      },
+      "startYear": 1945,
+      "kind": "deployment",
+      "title": {
+        "en": "Shortwave carries most Grimeton traffic",
+        "fi": "Lyhytaalto kuljettaa valtaosan Grimetonin liikenteestä"
+      },
+      "description": {
+        "en": "By 1945 shortwave transmitters handled almost all station traffic. The older long-wave equipment remained for backup and submarine communication.",
+        "fi": "Vuoteen 1945 mennessä lyhytaaltolähettimet hoitivat lähes kaiken asemaliikenteen. Vanha pitkäaaltolaitteisto jäi vara- ja sukellusvenekäyttöön."
+      },
+      "sourceIds": [
+        "grimeton-history"
+      ]
+    },
+    {
+      "id": "microwave-ny-boston-1947",
+      "technologyIds": [
+        "microwave-backhaul"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1947,
+      "kind": "launch",
+      "title": {
+        "en": "New York–Boston microwave route",
+        "fi": "New York–Boston-radiolinkkireitti"
+      },
+      "description": {
+        "en": "Bell Labs dates the experimental route’s service start to November 1947. Fixed microwave relays carried communications decades before cellular broadband.",
+        "fi": "Bell Labs ajoittaa kokeellisen reitin palveluavauksen marraskuuhun 1947. Kiinteät radioreleet kuljettivat viestintää vuosikymmeniä ennen mobiililaajakaistaa."
+      },
+      "sourceIds": [
+        "bell-microwave"
+      ],
+      "location": {
+        "en": "New York–Boston",
+        "fi": "New York–Boston"
+      }
+    },
+    {
+      "id": "jim-creek-1953",
+      "technologyIds": [
+        "vlf-radio"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1953,
+      "kind": "launch",
+      "title": {
+        "en": "Jim Creek VLF operation begins",
+        "fi": "Jim Creekin VLF-käyttö alkaa"
+      },
+      "description": {
+        "en": "The Navy dates operation to 1953 after construction in 1948–1953. The 2018 report confirms a continuing Pacific communications mission, not a constant individual exposure.",
+        "fi": "Laivasto ajoittaa käytön vuoteen 1953 rakentamisen 1948–1953 jälkeen. Vuoden 2018 raportti vahvistaa jatkuvan Tyynenmeren viestintätehtävän, ei vakioista henkilöaltistusta."
+      },
+      "sourceIds": [
+        "jim-creek"
+      ],
+      "location": {
+        "en": "Washington State",
+        "fi": "Washingtonin osavaltio"
+      }
+    },
+    {
+      "id": "gotland-1954",
+      "technologyIds": [
+        "submarine-power-cables"
+      ],
+      "region": {
+        "id": "sweden",
+        "name": {
+          "en": "Sweden",
+          "fi": "Ruotsi"
+        }
+      },
+      "startYear": 1954,
+      "kind": "launch",
+      "title": {
+        "en": "Commercial Gotland HVDC link",
+        "fi": "Kaupallinen Gotlannin HVDC-yhteys"
+      },
+      "description": {
+        "en": "The original link entered service in 1954. Later upgrades are separate source states; capacity and voltage are system specifications.",
+        "fi": "Alkuperäinen yhteys tuli käyttöön 1954. Myöhemmät uudistukset ovat eri lähdetiloja; kapasiteetti ja jännite ovat järjestelmätietoja."
+      },
+      "sourceIds": [
+        "gotland-hvdc"
+      ],
+      "location": {
+        "en": "Gotland–mainland Sweden",
+        "fi": "Gotlanti–Manner-Ruotsi"
+      },
+      "values": [
+        {
+          "value": 20,
+          "unit": "MW",
+          "label": {
+            "en": "Original transfer capacity",
+            "fi": "Alkuperäinen siirtokapasiteetti"
+          },
+          "denominator": {
+            "en": "Original Gotland link, not a field measurement",
+            "fi": "Alkuperäinen Gotlannin yhteys, ei kenttämittaus"
+          }
+        },
+        {
+          "value": 100,
+          "unit": "kV",
+          "label": {
+            "en": "Original voltage",
+            "fi": "Alkuperäinen jännite"
+          },
+          "denominator": {
+            "en": "Original Gotland link, not organism dose",
+            "fi": "Alkuperäinen Gotlannin yhteys, ei eliöannos"
+          }
+        }
+      ]
+    },
+    {
+      "id": "us-farm-access-1956",
+      "technologyIds": [
+        "electric-grid"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1956,
+      "kind": "measurement",
+      "title": {
+        "en": "Farm electricity access estimate",
+        "fi": "Arvio maatilojen sähkösaannista"
+      },
+      "description": {
+        "en": "REA estimated central-station electricity access as of 30 June 1956. Regional access and the number of farms remained distinct variables.",
+        "fi": "REA arvioi keskusasemaverkon sähkösaannin 30.6.1956. Alueellinen sähkösaanti ja maatilojen määrä olivat eri muuttujia."
+      },
+      "sourceIds": [
+        "usda-farms"
+      ],
+      "values": [
+        {
+          "value": 94.2,
+          "unit": "%",
+          "label": {
+            "en": "Farms served",
+            "fi": "Palvellut maatilat"
+          },
+          "denominator": {
+            "en": "US farms in the REA estimate, not population or field strength",
+            "fi": "REA:n arvion USA:n maatilat, ei väestö tai kentänvoimakkuus"
+          }
+        }
+      ]
+    },
+    {
+      "id": "loran-first-chain-1957",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1957,
+      "kind": "deployment",
+      "title": {
+        "en": "First operational LORAN-C chain",
+        "fi": "Ensimmäinen operatiivinen LORAN-C-ketju"
+      },
+      "description": {
+        "en": "The NBS developer history dates the first operational East Coast chain to 1957. The 100 kHz pulsed system differs from its LORAN-A predecessor.",
+        "fi": "NBS:n kehittäjähistoria ajoittaa ensimmäisen operatiivisen itärannikon ketjun vuoteen 1957. Pulssitettu 100 kHz järjestelmä eroaa LORAN-A-edeltäjästä."
+      },
+      "sourceIds": [
+        "nbs-loran"
+      ],
+      "location": {
+        "en": "East Coast",
+        "fi": "Itärannikko"
+      }
+    },
+    {
+      "id": "eas-1968",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1968,
+      "kind": "launch",
+      "title": {
+        "en": "Sensormatic’s first EAS system",
+        "fi": "Sensormaticin ensimmäinen EAS-järjestelmä"
+      },
+      "description": {
+        "en": "The manufacturer dates its own first EAS product to 1968. This is a company milestone, not an independently established world-first claim.",
+        "fi": "Valmistaja ajoittaa oman ensimmäisen EAS-tuotteensa vuoteen 1968. Kyse on yrityksen vaiheesta, ei riippumattomasti osoitetusta maailman ensimmäisyydestä."
+      },
+      "sourceIds": [
+        "sensormatic-history"
+      ]
+    },
+    {
+      "id": "queensland-swer-1970-1989",
+      "technologyIds": [
+        "electric-grid"
+      ],
+      "region": {
+        "id": "australia",
+        "name": {
+          "en": "Australia",
+          "fi": "Australia"
+        }
+      },
+      "startYear": 1970,
+      "kind": "deployment",
+      "title": {
+        "en": "Main construction era of Queensland SWER lines",
+        "fi": "Queenslandin SWER-linjojen päärakennuskausi"
+      },
+      "description": {
+        "en": "Ergon says most of its SWER network was built in the 1970s and 1980s. The displayed interval represents those decades, not exact opening or closing dates of every line.",
+        "fi": "Ergon kertoo valtaosan SWER-verkostaan rakennetun 1970- ja 1980-luvuilla. Näytetty jakso kuvaa näitä vuosikymmeniä, ei jokaisen linjan tarkkaa avaus- tai sulkemispäivää."
+      },
+      "sourceIds": [
+        "ergon-swer"
+      ],
+      "endYear": 1989,
+      "location": {
+        "en": "Queensland, Ergon network",
+        "fi": "Queensland, Ergonin verkko"
+      }
+    },
+    {
+      "id": "us-airport-screening-1973",
+      "technologyIds": [
+        "metal-detectors"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1973,
+      "kind": "standard",
+      "title": {
+        "en": "Universal passenger screening requirement",
+        "fi": "Kaikkia matkustajia koskeva tarkastusvaatimus"
+      },
+      "description": {
+        "en": "Screening expanded from 5 January 1973. The rule allowed electronic detection or a manual alternative; it does not imply identical hardware at every airport.",
+        "fi": "Tarkastus laajeni 5.1.1973. Sääntö salli elektronisen ilmaisimen tai käsintarkastuksen; se ei tarkoita samaa laitetta kaikilla lentoasemilla."
+      },
+      "sourceIds": [
+        "faa-screening"
+      ]
+    },
+    {
+      "id": "japan-cellular-1979",
+      "technologyIds": [
+        "mobile-1g-2g",
+        "base-stations"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 1979,
+      "kind": "launch",
+      "title": {
+        "en": "Commercial analog cellular service",
+        "fi": "Kaupallinen analoginen matkapuhelinpalvelu"
+      },
+      "description": {
+        "en": "ITU dates Japan’s commercial analog cellular introduction to 1979. Network launch is separate from later handset use and national adoption.",
+        "fi": "ITU ajoittaa Japanin kaupallisen analogisen solukkopalvelun vuoteen 1979. Verkon avaus eroaa myöhemmästä päätelaitekäytöstä ja kansallisesta adoptiosta."
+      },
+      "sourceIds": [
+        "itu-mobile-history"
+      ]
+    },
+    {
+      "id": "inverter-ac-commercial-1980",
+      "technologyIds": [
+        "inverter-hvac"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 1980,
+      "kind": "launch",
+      "title": {
+        "en": "Commercial inverter air conditioner",
+        "fi": "Kaupallinen invertteri-ilmastointilaite"
+      },
+      "description": {
+        "en": "Toshiba’s detailed milestone account dates its commercial model to 1980 and distinguishes the following residential model.",
+        "fi": "Toshiban yksityiskohtainen virstanpylväskuvaus ajoittaa kaupallisen mallin vuoteen 1980 ja erottaa seuraavan kotitalousmallin."
+      },
+      "sourceIds": [
+        "toshiba-inverter"
+      ]
+    },
+    {
+      "id": "inverter-ac-home-1981",
+      "technologyIds": [
+        "inverter-hvac"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 1981,
+      "kind": "launch",
+      "title": {
+        "en": "Residential inverter air conditioner",
+        "fi": "Kotitalouksien invertteri-ilmastointilaite"
+      },
+      "description": {
+        "en": "The residential product milestone is 1981. This establishes availability before the LED transition, not the inverter share of all air conditioners.",
+        "fi": "Kotitaloustuotteen virstanpylväs on 1981. Se osoittaa saatavuuden ennen LED-siirtymää, ei kaikkien ilmastointilaitteiden invertteriosuutta."
+      },
+      "sourceIds": [
+        "toshiba-inverter"
+      ]
+    },
+    {
+      "id": "nordic-cellular-1981",
+      "technologyIds": [
+        "mobile-1g-2g",
+        "base-stations"
+      ],
+      "region": {
+        "id": "nordics",
+        "name": {
+          "en": "Nordic countries",
+          "fi": "Pohjoismaat"
+        }
+      },
+      "startYear": 1981,
+      "kind": "launch",
+      "title": {
+        "en": "Nordic analog cellular networks",
+        "fi": "Pohjoismaiset analogiset solukkoverkot"
+      },
+      "description": {
+        "en": "The Nordic commercial cellular milestone is 1981. Vehicle-mounted radios and later handheld devices require different proximity records.",
+        "fi": "Pohjoismainen kaupallinen solukkoverkkovaihe ajoittuu vuoteen 1981. Autoradiopuhelin ja myöhempi käsilaite tarvitsevat eri etäisyystiedot."
+      },
+      "sourceIds": [
+        "itu-mobile-history"
+      ]
+    },
+    {
+      "id": "omega-full-network-1982",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 1982,
+      "kind": "deployment",
+      "title": {
+        "en": "OMEGA reaches eight-station configuration",
+        "fi": "OMEGA saavuttaa kahdeksan aseman kokoonpanon"
+      },
+      "description": {
+        "en": "From August 1982 the network comprised Norway, Liberia, Réunion, Argentina, Australia, Japan, North Dakota and Hawaii. Common time-shared frequencies were 10.2, 11.33, 13.6 and 11.05 kHz.",
+        "fi": "Elokuusta 1982 verkkoon kuuluivat Norja, Liberia, Réunion, Argentiina, Australia, Japani, Pohjois-Dakota ja Havaiji. Yhteiset aikajaetut taajuudet olivat 10,2, 11,33, 13,6 ja 11,05 kHz."
+      },
+      "sourceIds": [
+        "frp-1996"
+      ]
+    },
+    {
+      "id": "eas-acoustomagnetic-1986",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 1986,
+      "kind": "launch",
+      "title": {
+        "en": "Acoustomagnetic EAS product milestone",
+        "fi": "Akustomagneettisen EAS:n tuotevaihe"
+      },
+      "description": {
+        "en": "Sensormatic’s timeline places its acoustomagnetic EAS introduction in 1986. Reader and gate designs must be separated across generations.",
+        "fi": "Sensormaticin aikajana sijoittaa akustomagneettisen EAS:n esittelyn vuoteen 1986. Lukija- ja porttirakenteet erotetaan sukupolvittain."
+      },
+      "sourceIds": [
+        "sensormatic-history"
+      ]
+    },
+    {
+      "id": "finland-2g-1991",
+      "technologyIds": [
+        "mobile-1g-2g"
+      ],
+      "region": {
+        "id": "finland",
+        "name": {
+          "en": "Finland",
+          "fi": "Suomi"
+        }
+      },
+      "startYear": 1991,
+      "kind": "launch",
+      "title": {
+        "en": "Digital 2G service in Finland",
+        "fi": "Digitaalinen 2G-palvelu Suomessa"
+      },
+      "description": {
+        "en": "ITU identifies Finland’s 1991 digital 2G launch. It is not an instantaneous replacement of every analog handset.",
+        "fi": "ITU nimeää Suomen digitaalisen 2G-avauksen vuonna 1991. Se ei vaihda kaikkia analogisia päätelaitteita heti."
+      },
+      "sourceIds": [
+        "itu-mobile-history"
+      ]
+    },
+    {
+      "id": "moen-smelter-publication-1995",
+      "technologyIds": [
+        "electrolysis"
+      ],
+      "region": {
+        "id": "study-location-unspecified",
+        "name": {
+          "en": "Study location not established here",
+          "fi": "Tutkimuspaikkaa ei yksilöity tässä"
+        }
+      },
+      "startYear": 1995,
+      "kind": "measurement",
+      "title": {
+        "en": "Smelter field study is published",
+        "fi": "Elektrolyysihallin kenttätutkimus julkaistaan"
+      },
+      "description": {
+        "en": "Moen and colleagues reported static fields of 3–20 mT and ripple components. This is the publication year; health examinations occurred in 1986 and 1991. The abstract does not establish a complete field-measurement timeline or neighbourhood exposure.",
+        "fi": "Moen ja kollegat raportoivat 3–20 mT staattisia kenttiä ja rippelikomponentteja. Tämä on julkaisuvuosi; terveystarkastukset olivat 1986 ja 1991. Abstrakti ei anna täydellistä kenttämittausten aikajanaa tai naapuruston altistusta."
+      },
+      "sourceIds": [
+        "moen-smelter"
+      ]
+    },
+    {
+      "id": "korea-cdma-1996",
+      "technologyIds": [
+        "mobile-1g-2g"
+      ],
+      "region": {
+        "id": "south-korea",
+        "name": {
+          "en": "South Korea",
+          "fi": "Etelä-Korea"
+        }
+      },
+      "startYear": 1996,
+      "kind": "launch",
+      "title": {
+        "en": "Commercial CDMA in Korea",
+        "fi": "Kaupallinen CDMA Koreassa"
+      },
+      "description": {
+        "en": "Korea’s government history dates CDMA commercialisation to 1996; the GSM timing profile does not describe that standard.",
+        "fi": "Korean hallinnon historia ajoittaa CDMA:n kaupallistamisen vuoteen 1996; GSM:n ajoitusprofiili ei kuvaa tätä standardia."
+      },
+      "sourceIds": [
+        "korea-mobile-history"
+      ]
+    },
+    {
+      "id": "omega-closure-1997",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 1997,
+      "kind": "shutdown",
+      "title": {
+        "en": "OMEGA ceases operation",
+        "fi": "OMEGA lopettaa toimintansa"
+      },
+      "description": {
+        "en": "FAA retrospectively confirms closure on 30 September 1997. Its replacement by GPS removed this navigation network; GPS user receivers are passive.",
+        "fi": "FAA vahvistaa jälkikäteen sulkemisen 30.9.1997. GPS-korvaus poisti tämän navigointiverkon; GPS-käyttäjävastaanottimet ovat passiivisia."
+      },
+      "sourceIds": [
+        "faa-omega-closure",
+        "frp-1996"
+      ]
+    },
+    {
+      "id": "italy-telegestore-2001-2006",
+      "technologyIds": [
+        "smart-metering",
+        "power-line-communication"
+      ],
+      "region": {
+        "id": "italy",
+        "name": {
+          "en": "Italy",
+          "fi": "Italia"
+        }
+      },
+      "startYear": 2001,
+      "kind": "deployment",
+      "title": {
+        "en": "Enel’s Telegestore installation programme",
+        "fi": "Enelin Telegestore-asennusohjelma"
+      },
+      "description": {
+        "en": "The Italian replacement programme ran from 2001 to 2006. PLC connected meters to concentrators; other communication links served the back end.",
+        "fi": "Italian vaihto-ohjelma kesti vuodesta 2001 vuoteen 2006. PLC yhdisti mittarit keskittimiin; taustajärjestelmä käytti muita tietoliikenneyhteyksiä."
+      },
+      "sourceIds": [
+        "enel-telegestore"
+      ],
+      "endYear": 2006
+    },
+    {
+      "id": "japan-3g-2001",
+      "technologyIds": [
+        "mobile-3g"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 2001,
+      "kind": "launch",
+      "title": {
+        "en": "Commercial 3G in Japan",
+        "fi": "Kaupallinen 3G Japanissa"
+      },
+      "description": {
+        "en": "ITU records Japan’s 3G launch in 2001. Later penetration, traffic and network coexistence need separate data.",
+        "fi": "ITU kirjaa Japanin 3G-avauksen vuoteen 2001. Myöhempi peitto, liikenne ja verkkojen rinnakkaisuus tarvitsevat eri tiedot."
+      },
+      "sourceIds": [
+        "itu-mobile-history"
+      ]
+    },
+    {
+      "id": "suica-2001",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 2001,
+      "kind": "launch",
+      "title": {
+        "en": "Suica starts in the Tokyo area",
+        "fi": "Suica aloittaa Tokion alueella"
+      },
+      "description": {
+        "en": "JR East launched Suica on 18 November 2001. A contactless-card service is distinct from the count and operation of transmitting readers.",
+        "fi": "JR East käynnisti Suican 18.11.2001. Kontaktiton korttipalvelu eroaa lähettävien lukijoiden määrästä ja toiminnasta."
+      },
+      "sourceIds": [
+        "suica-history"
+      ],
+      "location": {
+        "en": "Tokyo region",
+        "fi": "Tokion alue"
+      }
+    },
+    {
+      "id": "chicago-fish-barrier-2002",
+      "technologyIds": [
+        "electric-fishing"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 2002,
+      "kind": "launch",
+      "title": {
+        "en": "Romeoville electric fish barrier starts",
+        "fi": "Romeovillen sähköinen kalaeste käynnistyy"
+      },
+      "description": {
+        "en": "USACE dates the demonstration barrier to April 2002. Original settings were up to 1 V/inch near the surface, 5 Hz and 4 ms; later hardware and settings need separate records.",
+        "fi": "USACE ajoittaa demonstraatioesteen huhtikuuhun 2002. Alkuasetukset olivat pinnan lähellä enintään 1 V/tuuma, 5 Hz ja 4 ms; myöhemmät laitteet ja asetukset tarvitsevat eri tiedot."
+      },
+      "sourceIds": [
+        "usace-barrier"
+      ],
+      "location": {
+        "en": "Chicago Sanitary and Ship Canal, Romeoville",
+        "fi": "Chicago Sanitary and Ship Canal, Romeoville"
+      }
+    },
+    {
+      "id": "fcc-uwb-2002",
+      "technologyIds": [
+        "uwb"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 2002,
+      "kind": "standard",
+      "title": {
+        "en": "FCC authorises UWB device classes",
+        "fi": "FCC sallii UWB-laiteluokkia"
+      },
+      "description": {
+        "en": "The first FCC decision was adopted on 14 February 2002. A regulatory framework is not evidence that all devices were immediately deployed.",
+        "fi": "FCC:n ensimmäinen päätös hyväksyttiin 14.2.2002. Sääntelykehys ei osoita kaikkien laitteiden välitöntä käyttöönottoa."
+      },
+      "sourceIds": [
+        "fcc-uwb"
+      ]
+    },
+    {
+      "id": "boivin-detector-publication-2003",
+      "technologyIds": [
+        "metal-detectors"
+      ],
+      "region": {
+        "id": "study-location-unspecified",
+        "name": {
+          "en": "Study location not established here",
+          "fi": "Tutkimuspaikkaa ei yksilöity tässä"
+        }
+      },
+      "startYear": 2003,
+      "kind": "measurement",
+      "title": {
+        "en": "Metal-detector field measurements published",
+        "fi": "Metallinilmaisimien kenttämittaukset julkaistaan"
+      },
+      "description": {
+        "en": "The study reports 0.1–3.5 kHz for tested walk-through models and 89–133 kHz for handheld models, with different waveforms. This is a publication anchor, not a launch date for all detectors.",
+        "fi": "Tutkimus raportoi testatuille läpikulkuporteille 0,1–3,5 kHz ja käsilaitteille 89–133 kHz sekä erilaiset aaltomuodot. Tämä on julkaisuankkuri, ei kaikkien ilmaisimien aloitusvuosi."
+      },
+      "sourceIds": [
+        "boivin-detectors"
+      ]
+    },
+    {
+      "id": "suica-ten-million-2004",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 2004,
+      "kind": "measurement",
+      "title": {
+        "en": "Suica card issuance milestone",
+        "fi": "Suica-korttien myöntämisvirstanpylväs"
+      },
+      "description": {
+        "en": "Issued cards passed ten million on 26 October 2004. The total counts cards, not active users, reader gates or transmit hours.",
+        "fi": "Myönnettyjen korttien määrä ylitti kymmenen miljoonaa 26.10.2004. Luku laskee kortit, ei aktiivisia käyttäjiä, portteja tai lähetystunteja."
+      },
+      "sourceIds": [
+        "suica-history"
+      ],
+      "values": [
+        {
+          "value": 10000000,
+          "unit": "cards",
+          "label": {
+            "en": "Issued-card threshold",
+            "fi": "Myönnettyjen korttien raja"
+          },
+          "denominator": {
+            "en": "Cumulative JR East Suica cards issued, not reader installations",
+            "fi": "Kumulatiivisesti myönnetyt JR Eastin Suica-kortit, ei lukija-asennukset"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nfc-specifications-2006",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2006,
+      "kind": "standard",
+      "title": {
+        "en": "First NFC Forum architecture and specifications",
+        "fi": "NFC Forumin ensimmäinen arkkitehtuuri ja spesifikaatiot"
+      },
+      "description": {
+        "en": "In June 2006 the Forum published its first architecture and five specifications. The Forum was formed in March 2004; contactless card services already existed.",
+        "fi": "Forum julkaisi kesäkuussa 2006 ensimmäisen arkkitehtuurin ja viisi spesifikaatiota. Forum perustettiin maaliskuussa 2004; kontaktittomia korttipalveluja oli jo käytössä."
+      },
+      "sourceIds": [
+        "nfc-history"
+      ]
+    },
+    {
+      "id": "lighting-sales-2007-2013",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "europe-seven-markets",
+        "name": {
+          "en": "Seven European lamp markets",
+          "fi": "Seitsemän Euroopan lamppumarkkinaa"
+        }
+      },
+      "startYear": 2007,
+      "kind": "measurement",
+      "title": {
+        "en": "Mixed lamp sales during the transition",
+        "fi": "Usean lampputyypin myynti siirtymässä"
+      },
+      "description": {
+        "en": "JRC Figure 99 reports sales in Austria, Belgium, France, Germany, Great Britain, Italy and the Netherlands. Halogen, fluorescent and LED products coexisted; this is not installed stock.",
+        "fi": "JRC:n kuva 99 esittää myyntiä Itävallassa, Belgiassa, Ranskassa, Saksassa, Isossa-Britanniassa, Italiassa ja Alankomaissa. Halogeeni-, loiste- ja LED-tuotteita myytiin rinnakkain; kyse ei ole asennuskannasta."
+      },
+      "sourceIds": [
+        "jrc-lighting"
+      ],
+      "endYear": 2013
+    },
+    {
+      "id": "pulse-trawl-2007",
+      "technologyIds": [
+        "electric-fishing"
+      ],
+      "region": {
+        "id": "north-sea",
+        "name": {
+          "en": "Southern North Sea",
+          "fi": "Eteläinen Pohjanmeri"
+        }
+      },
+      "startYear": 2007,
+      "kind": "deployment",
+      "title": {
+        "en": "Dutch pulse-trawl derogation use begins",
+        "fi": "Hollannin pulssitroolin poikkeuslupakäyttö alkaa"
+      },
+      "description": {
+        "en": "Dutch permitted pulse fishing began in 2007 in the southern North Sea. Its vessel routes and later expansion do not represent all marine environments.",
+        "fi": "Hollannin luvallinen pulssikalastus alkoi 2007 eteläisellä Pohjanmerellä. Alusreitit ja myöhempi laajennus eivät edusta kaikkia meriympäristöjä."
+      },
+      "sourceIds": [
+        "clo-pulse-fishing"
+      ]
+    },
+    {
+      "id": "finland-amr-2009-2013",
+      "technologyIds": [
+        "smart-metering"
+      ],
+      "region": {
+        "id": "finland",
+        "name": {
+          "en": "Finland",
+          "fi": "Suomi"
+        }
+      },
+      "startYear": 2009,
+      "kind": "deployment",
+      "title": {
+        "en": "Finland’s main first-generation AMR wave",
+        "fi": "Suomen ensimmäisen AMR-sukupolven pääaalto"
+      },
+      "description": {
+        "en": "TEM identifies 2009–2013 as the main installation wave. Hourly metering describes data registration, not an hourly RF exposure waveform.",
+        "fi": "TEM nimeää vuodet 2009–2013 pääasennusaalloksi. Tuntimittaus kuvaa tiedon rekisteröintiä, ei tunnittaista RF-aaltomuotoa."
+      },
+      "sourceIds": [
+        "tem-amr"
+      ],
+      "endYear": 2013
+    },
+    {
+      "id": "lighting-policy-eu-2009",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "european-union",
+        "name": {
+          "en": "European Union",
+          "fi": "Euroopan unioni"
+        }
+      },
+      "startYear": 2009,
+      "kind": "standard",
+      "title": {
+        "en": "EU: first ecodesign phase for non-directional household lamps",
+        "fi": "EU: suuntaamattomien kotitalouslamppujen ensimmäinen ekosuunnitteluvaihe"
+      },
+      "description": {
+        "en": "This phase took effect on 1 September for defined non-directional household lamp categories. Existing installations did not all change on that date.",
+        "fi": "Vaihe tuli voimaan 1. syyskuuta määritellyille suuntaamattomille kotitalouslamppuluokille. Kaikki vanhat asennukset eivät vaihtuneet samana päivänä."
+      },
+      "sourceIds": [
+        "eu-lighting-244-2009"
+      ]
+    },
+    {
+      "id": "telia-lte-2009",
+      "technologyIds": [
+        "mobile-4g"
+      ],
+      "region": {
+        "id": "sweden",
+        "name": {
+          "en": "Sweden",
+          "fi": "Ruotsi"
+        }
+      },
+      "startYear": 2009,
+      "kind": "launch",
+      "title": {
+        "en": "Telia launches LTE",
+        "fi": "Telia avaa LTE-palvelun"
+      },
+      "description": {
+        "en": "Telia dates its commercial 4G opening to 14 December 2009. Its reported traffic share grew later; launch is not a population-wide exposure step.",
+        "fi": "Telia ajoittaa kaupallisen 4G-avauksensa 14.12.2009. Raportoitu liikenneosuus kasvoi myöhemmin; avaus ei ole koko väestön altistusaskel."
+      },
+      "sourceIds": [
+        "telia-lte"
+      ]
+    },
+    {
+      "id": "lighting-policy-eu-2010",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "european-union",
+        "name": {
+          "en": "European Union",
+          "fi": "Euroopan unioni"
+        }
+      },
+      "startYear": 2010,
+      "kind": "standard",
+      "title": {
+        "en": "EU: second phase of household-lamp requirements",
+        "fi": "EU: kotitalouslamppujen vaatimusten toinen vaihe"
+      },
+      "description": {
+        "en": "This phase took effect on 1 September for defined non-directional household lamp categories. Existing installations did not all change on that date.",
+        "fi": "Vaihe tuli voimaan 1. syyskuuta määritellyille suuntaamattomille kotitalouslamppuluokille. Kaikki vanhat asennukset eivät vaihtuneet samana päivänä."
+      },
+      "sourceIds": [
+        "eu-lighting-244-2009"
+      ]
+    },
+    {
+      "id": "loran-us-closure-2010",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 2010,
+      "kind": "shutdown",
+      "title": {
+        "en": "US LORAN-C transmissions end in stages",
+        "fi": "USA:n LORAN-C-lähetykset päättyvät vaiheittain"
+      },
+      "description": {
+        "en": "Domestic signals ended on 8 February 2010. USCG transmissions in Russian-American and Canadian chains ended on 1 and 3 August respectively. This is not a worldwide closure.",
+        "fi": "Kotimaiset signaalit päättyivät 8.2.2010. USCG:n Venäjän–USA:n ja Kanadan ketjujen lähetykset päättyivät 1. ja 3.8. Tämä ei ole maailmanlaajuinen sulkeminen."
+      },
+      "sourceIds": [
+        "frp-2010"
+      ]
+    },
+    {
+      "id": "lighting-policy-eu-2011",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "european-union",
+        "name": {
+          "en": "European Union",
+          "fi": "Euroopan unioni"
+        }
+      },
+      "startYear": 2011,
+      "kind": "standard",
+      "title": {
+        "en": "EU: third phase of household-lamp requirements",
+        "fi": "EU: kotitalouslamppujen vaatimusten kolmas vaihe"
+      },
+      "description": {
+        "en": "This phase took effect on 1 September for defined non-directional household lamp categories. Existing installations did not all change on that date.",
+        "fi": "Vaihe tuli voimaan 1. syyskuuta määritellyille suuntaamattomille kotitalouslamppuluokille. Kaikki vanhat asennukset eivät vaihtuneet samana päivänä."
+      },
+      "sourceIds": [
+        "eu-lighting-244-2009"
+      ]
+    },
+    {
+      "id": "lighting-policy-eu-2012",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "european-union",
+        "name": {
+          "en": "European Union",
+          "fi": "Euroopan unioni"
+        }
+      },
+      "startYear": 2012,
+      "kind": "standard",
+      "title": {
+        "en": "EU: fourth phase of household-lamp requirements",
+        "fi": "EU: kotitalouslamppujen vaatimusten neljäs vaihe"
+      },
+      "description": {
+        "en": "This phase took effect on 1 September for defined non-directional household lamp categories. Existing installations did not all change on that date.",
+        "fi": "Vaihe tuli voimaan 1. syyskuuta määritellyille suuntaamattomille kotitalouslamppuluokille. Kaikki vanhat asennukset eivät vaihtuneet samana päivänä."
+      },
+      "sourceIds": [
+        "eu-lighting-244-2009"
+      ]
+    },
+    {
+      "id": "eloran-uk-launch-2014",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "northwest-europe",
+        "name": {
+          "en": "Northwest Europe",
+          "fi": "Luoteis-Eurooppa"
+        }
+      },
+      "startYear": 2014,
+      "kind": "launch",
+      "title": {
+        "en": "UK/Ireland eLORAN trial service",
+        "fi": "UK/Irlannin eLORAN-koepalvelu"
+      },
+      "description": {
+        "en": "The trial service began on 31 October 2014 using Anthorn with eight other northwest European transmitters.",
+        "fi": "Koepalvelu alkoi 31.10.2014 käyttäen Anthornia ja kahdeksaa muuta Luoteis-Euroopan lähetintä."
+      },
+      "sourceIds": [
+        "trinity-eloran"
+      ]
+    },
+    {
+      "id": "eloran-nweurope-2015",
+      "technologyIds": [
+        "radio-navigation"
+      ],
+      "region": {
+        "id": "northwest-europe",
+        "name": {
+          "en": "Northwest Europe",
+          "fi": "Luoteis-Eurooppa"
+        }
+      },
+      "startYear": 2015,
+      "kind": "shutdown",
+      "title": {
+        "en": "Northwest European eLORAN navigation service ends",
+        "fi": "Luoteis-Euroopan eLORAN-navigointipalvelu päättyy"
+      },
+      "description": {
+        "en": "French and Norwegian signals went off air on 31 December 2015; UK/Ireland navigation trials ended at 11:00 UTC. Service loss does not establish that every Anthorn transmission stopped.",
+        "fi": "Ranskan ja Norjan signaalit poistuivat 31.12.2015; UK/Irlannin navigointikokeilu päättyi klo 11 UTC. Palvelun loppu ei osoita kaikkien Anthornin lähetysten loppuneen."
+      },
+      "sourceIds": [
+        "trinity-eloran"
+      ]
+    },
+    {
+      "id": "france-linky-2015-2021",
+      "technologyIds": [
+        "smart-metering",
+        "power-line-communication"
+      ],
+      "region": {
+        "id": "france",
+        "name": {
+          "en": "France",
+          "fi": "Ranska"
+        }
+      },
+      "startYear": 2015,
+      "kind": "deployment",
+      "title": {
+        "en": "Linky mass deployment on Enedis’s network",
+        "fi": "Linkyn massa-asennus Enedisin verkossa"
+      },
+      "description": {
+        "en": "Mass deployment ran from late 2015 to late 2021. CRE reports 34.3 million meters at completion; the later 35 million figure belongs to November 2022.",
+        "fi": "Massa-asennus kesti loppuvuodesta 2015 loppuvuoteen 2021. CRE raportoi loppuun 34,3 miljoonaa mittaria; myöhempi 35 miljoonan luku kuuluu marraskuuhun 2022."
+      },
+      "sourceIds": [
+        "cre-linky"
+      ],
+      "endYear": 2021,
+      "values": [
+        {
+          "value": 34300000,
+          "unit": "meters",
+          "label": {
+            "en": "Meters installed by end of 2021",
+            "fi": "Asennetut mittarit vuoden 2021 lopussa"
+          },
+          "denominator": {
+            "en": "Enedis distribution area, not all French meters",
+            "fi": "Enedisin jakelualue, ei kaikki Ranskan mittarit"
+          }
+        }
+      ]
+    },
+    {
+      "id": "linky-field-measurements-2016",
+      "technologyIds": [
+        "smart-metering",
+        "power-line-communication"
+      ],
+      "region": {
+        "id": "france",
+        "name": {
+          "en": "France",
+          "fi": "Ranska"
+        }
+      },
+      "startYear": 2016,
+      "kind": "measurement",
+      "title": {
+        "en": "ANFR measures Linky in five homes",
+        "fi": "ANFR mittaa Linkyä viidessä kodissa"
+      },
+      "description": {
+        "en": "Daytime measurements during PLC transmission at 20 cm found electric fields of 0.25–0.8 V/m and magnetic fields of 0.01–0.03 μT. This small sample is not a national exposure distribution.",
+        "fi": "Päivämittauksissa PLC-lähetyksen aikana 20 cm etäisyydellä sähkökenttä oli 0,25–0,8 V/m ja magneettikenttä 0,01–0,03 μT. Pieni otos ei ole kansallinen altistusjakauma."
+      },
+      "sourceIds": [
+        "anfr-linky-measurement"
+      ]
+    },
+    {
+      "id": "global-cooling-stock-2017",
+      "technologyIds": [
+        "inverter-hvac"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2017,
+      "kind": "measurement",
+      "title": {
+        "en": "Global air-conditioner stock",
+        "fi": "Maailman ilmastointilaitekanta"
+      },
+      "description": {
+        "en": "IEA estimates about 1.7 billion air conditioners in 2017, approximately 36% in China. Conventional and inverter units are included.",
+        "fi": "IEA arvioi vuodelle 2017 noin 1,7 miljardia ilmastointilaitetta, joista noin 36 % Kiinassa. Mukana ovat perinteiset ja invertterilaitteet."
+      },
+      "sourceIds": [
+        "iea-cooling"
+      ],
+      "values": [
+        {
+          "value": 1700000000,
+          "unit": "units",
+          "label": {
+            "en": "Estimated air-conditioner stock",
+            "fi": "Arvioitu ilmastointilaitekanta"
+          },
+          "denominator": {
+            "en": "All air conditioners worldwide in 2017, not inverter-only stock",
+            "fi": "Kaikki maailman ilmastointilaitteet 2017, ei vain invertterilaitteet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lighting-policy-eu-2018",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "european-union",
+        "name": {
+          "en": "European Union",
+          "fi": "Euroopan unioni"
+        }
+      },
+      "startYear": 2018,
+      "kind": "standard",
+      "title": {
+        "en": "EU: tighter rules for mains-voltage, non-directional halogens; exceptions remained",
+        "fi": "EU: verkkojännitteisten suuntaamattomien halogeenien vaatimukset tiukkenivat; poikkeuksia jäi"
+      },
+      "description": {
+        "en": "The milestone took effect on 1 September. Product-category rules do not establish a 100% LED installed stock or apply identically to street lights.",
+        "fi": "Vaihe tuli voimaan 1. syyskuuta. Tuoteryhmäsäännöt eivät osoita 100 % LED-asennuskantaa eivätkä koske samalla tavalla katuvaloja."
+      },
+      "sourceIds": [
+        "eu-halogens-2018"
+      ]
+    },
+    {
+      "id": "iphone-uwb-2019",
+      "technologyIds": [
+        "uwb"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2019,
+      "kind": "launch",
+      "title": {
+        "en": "iPhone 11 introduces U1/UWB",
+        "fi": "iPhone 11 tuo U1/UWB:n"
+      },
+      "description": {
+        "en": "Apple announced iPhone 11 in September 2019 with U1/UWB and first-stage availability in more than 30 countries and regions. Availability does not measure active ranging time.",
+        "fi": "Apple esitteli iPhone 11:n syyskuussa 2019 U1/UWB-ominaisuudella ja ensivaiheen saatavuudella yli 30 maassa ja alueella. Saatavuus ei mittaa aktiivista paikannusaikaa."
+      },
+      "sourceIds": [
+        "apple-uwb"
+      ]
+    },
+    {
+      "id": "nz-ripple-survey-2020",
+      "technologyIds": [
+        "power-line-communication"
+      ],
+      "region": {
+        "id": "new-zealand",
+        "name": {
+          "en": "New Zealand",
+          "fi": "Uusi-Seelanti"
+        }
+      },
+      "startYear": 2020,
+      "kind": "measurement",
+      "title": {
+        "en": "Ripple control in New Zealand’s networks",
+        "fi": "Kuormanohjaus Uuden-Seelannin verkoissa"
+      },
+      "description": {
+        "en": "EECA reports established ripple control across all 29 distribution businesses. The report traces its role to the 1950s; the survey year is not the invention date.",
+        "fi": "EECA raportoi kuormanohjauksen kaikissa 29 jakeluyhtiössä. Raportti kuvaa sen roolia 1950-luvulta lähtien; kyselyvuosi ei ole keksintövuosi."
+      },
+      "sourceIds": [
+        "eeca-ripple"
+      ]
+    },
+    {
+      "id": "airtag-2021",
+      "technologyIds": [
+        "uwb"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2021,
+      "kind": "launch",
+      "title": {
+        "en": "AirTag precision finding",
+        "fi": "AirTagin tarkka paikannus"
+      },
+      "description": {
+        "en": "Apple announced AirTag in April 2021. Its UWB-assisted finding function is a use mode, not a continuous transmitter duty cycle.",
+        "fi": "Apple esitteli AirTagin huhtikuussa 2021. UWB-avusteinen etsintä on käyttötila, ei jatkuva lähetysosuus."
+      },
+      "sourceIds": [
+        "apple-airtag"
+      ]
+    },
+    {
+      "id": "pulse-trawl-ban-2021",
+      "technologyIds": [
+        "electric-fishing"
+      ],
+      "region": {
+        "id": "north-sea",
+        "name": {
+          "en": "Southern North Sea",
+          "fi": "Eteläinen Pohjanmeri"
+        }
+      },
+      "startYear": 2021,
+      "kind": "shutdown",
+      "title": {
+        "en": "EU pulse-trawl transition ends",
+        "fi": "EU:n pulssitroolisiirtymä päättyy"
+      },
+      "description": {
+        "en": "The transition ended on 30 June 2021 and the prohibition applied fully from 1 July. This concerns electric pulse trawling, not every scientific electrofishing method.",
+        "fi": "Siirtymä päättyi 30.6.2021 ja kieltoa sovellettiin täysimääräisesti 1.7. alkaen. Tämä koskee sähköpulssitroolausta, ei kaikkia tieteellisen sähkökalastuksen menetelmiä."
+      },
+      "sourceIds": [
+        "eu-pulse-ban"
+      ]
+    },
+    {
+      "id": "india-5g-2022",
+      "technologyIds": [
+        "mobile-5g"
+      ],
+      "region": {
+        "id": "india",
+        "name": {
+          "en": "India",
+          "fi": "Intia"
+        }
+      },
+      "startYear": 2022,
+      "kind": "launch",
+      "title": {
+        "en": "India launches 5G services",
+        "fi": "Intia käynnistää 5G-palvelut"
+      },
+      "description": {
+        "en": "The government records the service launch on 1 October 2022. Geography, coverage and actual subscriber use expanded separately.",
+        "fi": "Hallinto kirjaa palvelujen avauksen 1.10.2022. Maantieteellinen verkko, peitto ja liittymäkäyttö laajenivat erikseen."
+      },
+      "sourceIds": [
+        "pib-india-5g"
+      ]
+    },
+    {
+      "id": "miwa-eas-publication-2022",
+      "technologyIds": [
+        "rfid-eas"
+      ],
+      "region": {
+        "id": "japan",
+        "name": {
+          "en": "Japan",
+          "fi": "Japani"
+        }
+      },
+      "startYear": 2022,
+      "kind": "measurement",
+      "title": {
+        "en": "Library EAS gate measurements published",
+        "fi": "Kirjastojen EAS-porttimittaukset julkaistaan"
+      },
+      "description": {
+        "en": "The publication compares five gate models with 220 Hz, 366 Hz or 14 kHz signals. These are model-specific measurements; publication year is not a national installation date or a staff time-weighted dose.",
+        "fi": "Julkaisu vertaa viittä porttimallia, joiden signaalit ovat 220 Hz, 366 Hz tai 14 kHz. Mittaukset ovat mallikohtaisia; julkaisuvuosi ei ole kansallinen asennusvuosi tai työntekijän aikapainotettu annos."
+      },
+      "sourceIds": [
+        "miwa-eas"
+      ]
+    },
+    {
+      "id": "finland-3g-closure",
+      "technologyIds": [
+        "mobile-3g"
+      ],
+      "region": {
+        "id": "finland",
+        "name": {
+          "en": "Finland",
+          "fi": "Suomi"
+        }
+      },
+      "startYear": 2023,
+      "kind": "shutdown",
+      "title": {
+        "en": "Mainland Finland’s 3G shutdowns",
+        "fi": "Manner-Suomen 3G-sulkemiset"
+      },
+      "description": {
+        "en": "Operators closed mainland 3G networks during 2023–2024. Replacement bands, coverage and handset power must be recorded alongside the removed service.",
+        "fi": "Operaattorit sulkivat Manner-Suomen 3G-verkot 2023–2024. Korvaavat kaistat, peitto ja päätelaiteteho kirjataan poistuneen palvelun rinnalle."
+      },
+      "sourceIds": [
+        "traficom-3g-closure"
+      ],
+      "endYear": 2024
+    },
+    {
+      "id": "lighting-policy-us-2023",
+      "technologyIds": [
+        "indoor-lighting"
+      ],
+      "region": {
+        "id": "united-states",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "startYear": 2023,
+      "kind": "standard",
+      "title": {
+        "en": "USA: full sales enforcement of the 45 lm/W requirement for covered general-service lamps, from 1 August",
+        "fi": "USA: soveltamisalaan kuuluvien yleislamppujen 45 lm/W -myyntivaatimuksen täysi valvonta 1. elokuuta alkaen"
+      },
+      "description": {
+        "en": "DOE’s 2025 statement retrospectively dates full sales enforcement to 1 August 2023. The requirement concerns covered products, not a same-day replacement of every installed lamp.",
+        "fi": "DOE:n vuoden 2025 lausunto ajoittaa myyntivaatimuksen täyden valvonnan jälkikäteen 1.8.2023. Vaatimus koskee soveltamisalan tuotteita, ei kaikkien asennettujen lamppujen vaihtoa samana päivänä."
+      },
+      "sourceIds": [
+        "doe-gsl-enforcement"
+      ]
+    },
+    {
+      "id": "electric-two-wheel-sales-2024",
+      "technologyIds": [
+        "electric-vehicles"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2024,
+      "kind": "measurement",
+      "title": {
+        "en": "Electric two/three-wheeler sales",
+        "fi": "Sähköisten kaksi-/kolmipyöräisten myynti"
+      },
+      "description": {
+        "en": "IEA reports about ten million electric two/three-wheelers sold in 2024. Its category excludes electrically assisted bicycles and low-speed electric scooters.",
+        "fi": "IEA raportoi noin kymmenen miljoonaa sähköistä kaksi-/kolmipyöräistä myydyksi 2024. Luokka ei sisällä sähköavusteisia polkupyöriä tai hitaita sähköpotkulautoja."
+      },
+      "sourceIds": [
+        "iea-two-wheelers"
+      ],
+      "values": [
+        {
+          "value": 10000000,
+          "unit": "vehicles/year",
+          "label": {
+            "en": "Approximate electric vehicle sales",
+            "fi": "Sähköajoneuvojen likimääräinen myynti"
+          },
+          "denominator": {
+            "en": "IEA electric two/three-wheeler category, calendar 2024",
+            "fi": "IEA:n sähköisten kaksi-/kolmipyöräisten luokka, kalenterivuosi 2024"
+          }
+        }
+      ]
+    },
+    {
+      "id": "offgrid-sales-2024",
+      "technologyIds": [
+        "off-grid-solar"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2024,
+      "kind": "measurement",
+      "title": {
+        "en": "Reported off-grid solar-kit sales",
+        "fi": "Raportoitu verkottomien aurinkopakettien myynti"
+      },
+      "description": {
+        "en": "GOGLA participating companies reported about 9.3 million solar energy kits sold in 2024. Product classes include lanterns and home systems; this is not global installed stock.",
+        "fi": "GOGLAan osallistuvat yritykset raportoivat noin 9,3 miljoonaa aurinkosähköpakettia myydyksi 2024. Tuoteluokissa on lyhtyjä ja kotijärjestelmiä; tämä ei ole maailman asennuskanta."
+      },
+      "sourceIds": [
+        "gogla-offgrid"
+      ],
+      "values": [
+        {
+          "value": 9300000,
+          "unit": "kits/year",
+          "label": {
+            "en": "Reported kit sales",
+            "fi": "Raportoitu pakettimyynti"
+          },
+          "denominator": {
+            "en": "GOGLA reporting companies’ sales during 2024, not all global sales",
+            "fi": "GOGLAn raportoivien yritysten myynti vuonna 2024, ei kaikki maailman myynti"
+          }
+        }
+      ]
+    },
+    {
+      "id": "polyester-production-2024",
+      "technologyIds": [
+        "synthetic-materials"
+      ],
+      "region": {
+        "id": "global",
+        "name": {
+          "en": "Global",
+          "fi": "Maailma"
+        }
+      },
+      "startYear": 2024,
+      "kind": "measurement",
+      "title": {
+        "en": "Polyester share of fibre production",
+        "fi": "Polyesterin osuus kuitutuotannosta"
+      },
+      "description": {
+        "en": "Textile Exchange reports polyester at 59% of global fibre production in 2024. Uses include clothing, furnishings, footwear and other products.",
+        "fi": "Textile Exchange raportoi polyesterin osuudeksi 59 % maailman kuitutuotannosta vuonna 2024. Käyttö sisältää vaatteet, sisustuksen, jalkineet ja muita tuotteita."
+      },
+      "sourceIds": [
+        "textile-exchange"
+      ],
+      "values": [
+        {
+          "value": 59,
+          "unit": "%",
+          "label": {
+            "en": "Polyester production share",
+            "fi": "Polyesterin tuotanto-osuus"
+          },
+          "denominator": {
+            "en": "Global fibre production by mass in 2024, not clothing worn or contact time",
+            "fi": "Maailman kuitutuotanto massana 2024, ei käytetty vaatetus tai kontaktiaika"
+          }
+        }
+      ]
+    },
+    {
+      "id": "queensland-swer-report-2026",
+      "technologyIds": [
+        "electric-grid"
+      ],
+      "region": {
+        "id": "australia",
+        "name": {
+          "en": "Australia",
+          "fi": "Australia"
+        }
+      },
+      "startYear": 2026,
+      "kind": "measurement",
+      "title": {
+        "en": "Ergon reports a broad rural SWER footprint",
+        "fi": "Ergon raportoi laajan maaseudun SWER-verkon"
+      },
+      "description": {
+        "en": "Operator page accessed in September 2026, with no observation date specified: about 65,000 km, approximately 40% of network length serving about 4% of customers. These are operator-footprint figures, not uniform field exposure.",
+        "fi": "Operaattorisivu luettu syyskuussa 2026, havaintopäivää ei ilmoiteta: noin 65 000 km eli noin 40 % verkkopituudesta palvelee noin 4 % asiakkaista. Luvut kuvaavat operaattorin verkkoa, eivät tasaista kenttäaltistusta."
+      },
+      "sourceIds": [
+        "ergon-swer"
+      ],
+      "location": {
+        "en": "Queensland, Ergon network",
+        "fi": "Queensland, Ergonin verkko"
+      },
+      "values": [
+        {
+          "value": 65000,
+          "unit": "km",
+          "label": {
+            "en": "Approximate SWER line length",
+            "fi": "SWER-linjojen likimääräinen pituus"
+          },
+          "denominator": {
+            "en": "Ergon’s own Queensland SWER network; page accessed in 2026, observation year unspecified",
+            "fi": "Ergonin oma Queenslandin SWER-verkko; sivu luettu 2026, havaintovuosi ilmoittamatta"
+          }
+        },
+        {
+          "value": 4,
+          "unit": "%",
+          "label": {
+            "en": "Approximate customer share served",
+            "fi": "Palveltujen asiakkaiden likimääräinen osuus"
+          },
+          "denominator": {
+            "en": "Ergon distribution customers, not Queensland population or land area",
+            "fi": "Ergonin jakeluasiakkaat, ei Queenslandin väestö tai pinta-ala"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+.atlas { --atlas-lane-label: 13rem; min-width: 0; color: var(--foreground); }
+.atlas button, .atlas select, .atlas input { font: inherit; }
+.atlas button, .atlas a, .atlas select, .atlas input { touch-action: manipulation; }
+.atlas button:focus-visible, .atlas a:focus-visible, .atlas select:focus-visible, .atlas input:focus-visible, .atlas summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.intro { max-width: 50rem; color: var(--foreground-muted); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem; }
+.questions { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .6rem; margin: 1.5rem 0; }
+.question { text-align: left; border: 1px solid var(--border); border-radius: .5rem; background: transparent; padding: 1rem; cursor: pointer; }
+.question[aria-pressed=true] { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.question strong { display: block; font-size: .88rem; font-weight: 600; margin-bottom: .4rem; }
+.question span { display: block; font-size: .76rem; color: var(--foreground-muted); line-height: 1.55; }
+.controls { display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0 1.2rem; }
+.controls label { display: flex; flex-direction: column; gap: .4rem; font-size: .76rem; color: var(--foreground-muted); }
+.controls select, .controls input[type=number], .select { border: 1px solid var(--border); background: var(--background); color: var(--foreground); padding: .55rem .7rem; border-radius: .3rem; min-height: 40px; max-width: 100%; }
+.controls label { min-width: 0; max-width: 100%; }
+.controls input[type=number] { width: 6rem; }
+.tabs { display: flex; flex-wrap: wrap; gap: .25rem .8rem; border-bottom: 1px solid var(--border); margin: 0 0 1.4rem; }
+.tabs button { font-size: .85rem; padding: .65rem .15rem; border-bottom: 2px solid transparent; cursor: pointer; color: var(--foreground-muted); }
+.tabs button[aria-selected=true] { border-color: var(--accent); color: var(--accent); }
+.year { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; padding: .9rem 0; border-bottom: 1px solid var(--border); margin-bottom: 1.6rem; }
+.year label { font-size: .8rem; min-width: 9rem; }
+.year input { flex: 1; min-width: 130px; accent-color: var(--accent); }
+.year output { font-family: var(--font-data); font-size: 1.2rem; min-width: 4rem; }
+.panelTitle { font-size: 1.2rem; line-height: 1.4; font-weight: 600; margin: 1rem 0 .5rem; }
+.note { color: var(--foreground-muted); font-size: .8rem; line-height: 1.65; max-width: 55rem; margin: .65rem 0 1rem; }
+.insight { font-size: .94rem; line-height: 1.65; padding: .8rem 0 1rem; max-width: 56rem; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1rem; }
+.actions button, .textButton { font-size: .8rem; cursor: pointer; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.actions span { font-size: .75rem; color: var(--foreground-muted); }
+.details { margin: 1.5rem 0; border-top: 1px solid var(--border); padding-top: 1rem; }
+.details summary { cursor: pointer; font-size: .9rem; font-weight: 600; }
+.details p { margin-top: .75rem; }
+.source { padding: 1.2rem 0; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.source h3 { font-size: .95rem; font-weight: 600; margin-bottom: .5rem; }
+.source p { font-size: .8rem; color: var(--foreground-muted); line-height: 1.65; margin: .35rem 0; }
+.source a, .note a, .details a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.tableWrap { overflow-x: auto; max-width: 100%; margin: 1.5rem 0; }
+.table { width: 100%; border-collapse: collapse; font-size: .8rem; text-align: left; }
+.table th, .table td { border-bottom: 1px solid var(--border); padding: .7rem; vertical-align: top; }
+.table th { font-weight: 600; }
+.chain { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin: 1.5rem 0; }
+.chain a { padding-top: .8rem; border-top: 2px solid var(--border); }
+.chain strong { display: block; font-size: .84rem; font-weight: 600; margin-bottom: .45rem; }
+.chain span { display: block; font-size: .76rem; color: var(--foreground-muted); line-height: 1.65; }
+.gap { padding: .7rem 0 .7rem 1rem; border-left: 2px solid var(--border); margin: 1.2rem 0; }
+.gap h3 { font-size: .88rem; font-weight: 600; }
+.compare { display: grid; gap: 1.5rem; }
+.compare h3 { font-size: .9rem; font-weight: 600; }
+.fieldLegend { display: flex; gap: .9rem; flex-wrap: wrap; font-size: .73rem; color: var(--foreground-muted); margin: .9rem 0; }
+.fieldLegend span { display: flex; align-items: center; gap: .4rem; }
+.fieldLegend i { width: 1rem; height: .65rem; border-radius: 2px; display: inline-block; }
+.fieldRows { border-top: 1px solid var(--border); }
+.fieldRow { padding: .65rem 0; border-bottom: 1px solid var(--border); }
+.fieldHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font-size: .8rem; margin-bottom: .25rem; }
+.fieldHeading button { cursor: pointer; text-align: left; font-weight: 600; }
+.fieldHeading span { color: var(--foreground-muted); font-size: .72rem; }
+.fieldPlot { width: 100%; height: auto; display: block; overflow: visible; }
+.morphology { border: 1px solid var(--border); border-radius: .5rem; padding: 1rem; margin: 1rem 0; }
+.morphology h3 { font-weight: 600; font-size: .95rem; }
+.morphology dl { display: grid; grid-template-columns: 8rem 1fr; font-size: .8rem; gap: .6rem 1rem; margin-top: 1rem; line-height: 1.6; }
+.morphology dt { color: var(--foreground-muted); }
+.morphology a { color: var(--accent); text-decoration: underline; }
+.scenarioControls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem 1.5rem; margin: 1.5rem 0; }
+.scenarioControls label { font-size: .77rem; color: var(--foreground-muted); }
+.scenarioControls input { display: block; width: 100%; accent-color: var(--accent); margin-top: .5rem; }
+.scenarioControls output { color: var(--foreground); font-family: var(--font-data); margin-left: .5rem; }
+.scenarioSources { display: grid; gap: .6rem; }
+.scenarioSource { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem 1rem; align-items: center; font-size: .78rem; padding: .8rem 0; border-bottom: 1px solid var(--border); }
+.scenarioSource label { display: flex; gap: .4rem; align-items: center; min-width: 0; flex-wrap: wrap; }
+.scenarioSource select { min-width: 0; max-width: 100%; width: 100%; padding: .5rem; background: var(--background); color: var(--foreground); border: 1px solid var(--border); border-radius: .3rem; }
+.scenarioSource input[type=range] { width: 100%; accent-color: var(--accent); }
+.scenarioSource output { min-width: 2rem; }
+.scenarioBadge { color: var(--status-model); font-weight: 600; font-size: .76rem; }
+.biologySelection { display: flex; flex-wrap: wrap; align-items: end; gap: .8rem 1.5rem; margin: 1.2rem 0; padding-top: 1rem; border-top: 1px solid var(--border); }
+.biologySelection label { display: flex; align-items: center; gap: .6rem; font-size: .82rem; min-width: 0; max-width: 100%; }
+.biologySelection label:has(select) { flex: 1; flex-direction: column; align-items: start; }
+.biologySelection select { min-width: 0; max-width: 100%; width: 100%; background: var(--background); color: var(--foreground); padding: .5rem; border: 1px solid var(--border); border-radius: .3rem; }
+.predictionSwitch { padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: .5rem; margin: 1.2rem 0 1rem; }
+.predictionSwitch label { display: flex; align-items: center; gap: .7rem; font-weight: 600; font-size: .9rem; }
+.predictionSwitch p { margin-top: .45rem; color: var(--foreground-muted); font-size: .78rem; line-height: 1.6; }
+.predictionSwitch input, .biologySelection input, .predictionModes input { accent-color: var(--status-model); flex-shrink: 0; width: 1rem; height: 1rem; }
+.predictionModes { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; margin: .8rem 0; }
+.predictionModes button { cursor: pointer; padding: .5rem .85rem; border: 1px solid var(--border); border-radius: .3rem; font-size: .78rem; }
+.predictionModes button[aria-pressed=true] { border-color: var(--status-model); color: var(--status-model); background: color-mix(in srgb, var(--status-model) 6%, transparent); }
+.predictionModes label { display: flex; align-items: center; gap: .45rem; font-size: .77rem; margin-left: .5rem; }
+.calibrationCards { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); gap:.8rem; margin:1rem 0; }
+.calibrationCards article { min-width:0; padding:1rem; border:1px solid var(--border); border-radius:.4rem; overflow-wrap:anywhere; }
+.calibrationCards strong { display:block; font-size:.88rem; }
+.calibrationCards p { font-size:.78rem; line-height:1.6; color:var(--foreground-muted); margin-top:.45rem; }
+@media(min-width:1000px) { .compare { grid-template-columns: 1fr 1fr; } }
+@media(max-width:700px) {
+  .questions { grid-template-columns: 1fr 1fr; }
+  .question { padding: .8rem; }
+  .question span { font-size: .72rem; }
+  .chain { grid-template-columns: 1fr 1fr; }
+  .scenarioControls { grid-template-columns: 1fr 1fr; }
+  .scenarioSource { grid-template-columns: minmax(0,1fr); gap: .6rem; }
+  .morphology dl { grid-template-columns: 1fr; gap: .25rem; }
+  .morphology dd { margin-bottom: .7rem; }
+  .controls { gap: .7rem; }
+  .tabs { gap: .1rem .6rem; }
+  .tabs button { font-size: .79rem; }
+  .fieldHeading { align-items: start; }
+  .fieldHeading span { text-align: right; }
+}

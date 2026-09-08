@@ -1,0 +1,225 @@
+{
+  "search_date": "2026-09-08",
+  "sources": [
+    {
+      "id": "PH01",
+      "title": "Lindgren, Kovacs & Liukkonen 2025",
+      "doi": "10.1088/1742-6596/2987/1/012001",
+      "urls": [
+        "https://doi.org/10.1088/1742-6596/2987/1/012001",
+        "https://www.preprints.org/manuscript/202503.2321"
+      ],
+      "record_type": "theory",
+      "finding": "Vuoden 2025 geometrinen lähtökohta sisältää taustametriikan ja potentiaalin ulkotulon. BERM kirjoittaa skaalan eksplisiittisesti muodossa g = η + κA⊗A.",
+      "berm_role": "Lähdehajotelman ristiosat seuraavat algebrallisesti ansatzista. Kudoksen vasteoperaattori on erillinen BERM:n ehdollinen lisäys.",
+      "verification": "Repositorion aiemmassa katsauksessa tarkistettu teoriaversio; ei biologinen koe.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH02",
+      "title": "Maeda ym. 2012",
+      "doi": "10.1073/pnas.1118959109",
+      "urls": [
+        "https://doi.org/10.1073/pnas.1118959109",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3323948/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Arabidopsiksen kryptokromin fotoreaktiotuoton kenttävaste oli protokollassa noin +1 % kentällä 1 mT ja −25 % kentällä 30 mT. Liuottimen viskositeettia ja lämpötilaa säädettiin vasteen esiin saamiseksi.",
+      "berm_role": "Radikaaliparikemia antaa mitattavan väliportaan ja esimerkin kenttäriippuvuuden suunnan vaihtumisesta. Vaikutus ei ole yleinen, annoksen mukana kasvava haittakerroin.",
+      "verification": "Alkuperäisartikkelin tulos- ja keskusteluteksti verkkoindeksistä; PMC:n suora sivu osin estyi.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH03",
+      "title": "Kattnig ym. 2016",
+      "doi": "10.1038/nchem.2447",
+      "urls": [
+        "https://doi.org/10.1038/nchem.2447",
+        "https://pubmed.ncbi.nlm.nih.gov/27001735/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Jatkuvassa valossa hitaat radikaalien päättymisreaktiot vahvistivat flaviinifotoreaktioiden magneettivastetta. Alle 1 mT:n kentillä raportoitiin jopa 5,6-kertainen kemiallinen vahvistus.",
+      "berm_role": "Nopea spinvaikutus voi muuttaa hitaampaa reaktiotuotteiden kertymää. Pitkä biologinen muisti ei edellytä yhtä pitkää spinikoherenssia.",
+      "verification": "Julkaisijan tietue ja alkuperäisabstrakti; lisämenetelmien yksityiskohtia ei tuoda päätelmiin.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH04",
+      "title": "Xu ym. 2021",
+      "doi": "10.1038/s41586-021-03618-9",
+      "urls": [
+        "https://doi.org/10.1038/s41586-021-03618-9",
+        "https://pubmed.ncbi.nlm.nih.gov/34163056/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Punarinnan puhdistetun CRY4:n fotokemia oli magneettiherkkää ja tässä vertailussa herkempi kuin kanan ja kyyhkyn CRY4. Pistemutaatiot erottelivat elektroninsiirtoreitin tryptofaanien tehtäviä.",
+      "berm_role": "Proteiinin alatyyppi, laji ja elektroninsiirtoreitti ovat vastaanottimen tunnisteita. CRY-nimi yksin ei anna yhteistä herkkyyttä.",
+      "verification": "Alkuperäisabstrakti ja julkaisijan aineistokuvaus; ei määrällistä ympäristöannosväitettä.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH05",
+      "title": "Majewska ym. 2025",
+      "doi": "10.1021/acschembio.4c00576",
+      "urls": [
+        "https://doi.org/10.1021/acschembio.4c00576",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11934094/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Puhdistettu punarinnan Cry4a kiinnittyi mallilipidikalvoihin järjestyneesti. Kalvon lipidien fysikaalinen tila ja pakkaus vaikuttivat sitoutumiseen. Spektroskopia ja molekyylidynamiikka tukivat suuntautunutta kiinnittymistä.",
+      "berm_role": "Kalvon tila voi muuttaa vastaanottimen järjestymistä. Tämä antaa orientaatiotilalle biologisen ankkurin; koe ei itse mittaa kalvoon sitoutuneen reseptorin kompassivastetta.",
+      "verification": "Koko alkuperäisteksti Europe PMC:n XML-palvelusta, erityisesti abstrakti ja tulokset.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH06",
+      "title": "Meng ym. 2026",
+      "doi": "10.1038/s41587-026-03158-5",
+      "urls": [
+        "https://doi.org/10.1038/s41587-026-03158-5",
+        "https://www.nature.com/articles/s41587-026-03158-5"
+      ],
+      "record_type": "primary_study",
+      "finding": "CraCry- ja iLOV-proteiinien spinikemiaa ohjattiin RF:llä ja luettiin optisesti. Ankkurit: 447 nm, 15 °C, noin 1,47 GHz:n resonanssi noin 52,5 mT:n staattisessa kentässä; magneettipyyhkäisy 42,5–62 mT. Hitaiden tilojen kertyminen oli millisekuntien–sekuntien ilmiö.",
+      "berm_role": "Kokeellinen silta RF→spinivalinta→kemiallinen populaatio→optinen signaali. Valo ja RF voidaan myös erottaa ajallisesti pulssikokeessa. Kyse on puhdistetuista proteiineista optimoidussa laboratoriossa; päämenetelmätekstistä ei saada paikallista RF-B1-annosta.",
+      "verification": "Koko alkuperäisartikkeli ja menetelmät. Julkaistu 29.5.2026.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH07",
+      "title": "Kish ym. 2026, v3",
+      "doi": "10.48550/arXiv.2604.19579",
+      "urls": [
+        "https://arxiv.org/abs/2604.19579v3"
+      ],
+      "record_type": "preprint",
+      "finding": "Punarinnan Cry4a:n redox-tilakohtainen HDX-MS paljasti semikinonitilalle oman konformaatioprofiilin. Se poikkesi sekä hapettuneesta että täysin pelkistyneestä tilasta.",
+      "berm_role": "Kemiallinen populaatiomuutos voi periaatteessa välittyä proteiinin rakenteeseen. Tämä on valo/redox→rakenne-komponentti, ei tässä työssä mitattu magneettikenttä→signalointi-ketju.",
+      "verification": "Alkuperäinen esipainos, v3 24.4.2026; **ei varmennettua vertaisarvioitua julkaisua tässä haussa**.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH08",
+      "title": "Yoshimura ym. 2003",
+      "doi": "10.1038/nature02117",
+      "urls": [
+        "https://doi.org/10.1038/nature02117",
+        "https://pubmed.ncbi.nlm.nih.gov/14614506/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Japaninviiriäisen valoindusoitu DIO2 lisää paikallista T4→T3-muuntoa hypotalamuksessa. T3-annostelu jäljitteli fotoperiodista vastetta, DIO2:n esto ehkäisi sukurauhasten kasvua.",
+      "berm_role": "Valohistorialla on nimetty paikallinen hormonaalinen välitysportti lisääntymistilaan. Tämä on optisen fotoperiodin mekanismia.",
+      "verification": "Alkuperäisabstrakti; annosarvoja ei päätellä puuttuvista menetelmistä.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH09",
+      "title": "Nakao ym. 2008",
+      "doi": "10.1038/nature06738",
+      "urls": [
+        "https://doi.org/10.1038/nature06738",
+        "https://www.sys-pharm.m.u-tokyo.ac.jp/pdf/Nakao_2008.pdf"
+      ],
+      "record_type": "primary_study",
+      "finding": "Viiriäisen ensimmäisen pitkän päivän jälkeen TSHβ-ilmentymisen nousu alkoi noin 14 h aamusta, DIO2-aalto noin 4 h myöhemmin. Aivokammioon annettu TSH lisäsi DIO2:ta ja sukurauhasten kasvua lyhyen päivän linnuilla.",
+      "berm_role": "Vastaanotintilan muutos sisältää järjestyneitä viiveitä, geenien ilmentymistä ja paikallista hormonisäätelyä.",
+      "verification": "Alkuperäisabstrakti ja tekijöiden julkaisun keskeinen teksti. Sama Nagoyan tutkimuslinja kuin PH08 ja PH10.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH10",
+      "title": "Nakane ym. 2010",
+      "doi": "10.1073/pnas.1006393107",
+      "urls": [
+        "https://doi.org/10.1073/pnas.1006393107",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2930557/"
+      ],
+      "record_type": "primary_study",
+      "finding": "OPN5 paikantui viiriäisen syväaivojen neuroneihin. Heterologisen järjestelmän vastehuippu oli noin 420 nm. Lyhytaaltoinen valo tuotti fotoperiodisia vasteita myös silmät peitetyillä, käpyrauhasettomilla viiriäisillä.",
+      "berm_role": "Vastaanottava kudos ja valoreitti eroavat lajien välillä. OPN5 on yksi ehdokas, ei tässä kokeessa yksin kausaalisesti eristetty koko lisääntymisreitin reseptori.",
+      "verification": "Alkuperäistekstin abstrakti, tuloskatkelmat ja tekijöiden rajaama tulkinta.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH11",
+      "title": "Hanon ym. 2008",
+      "doi": "10.1016/j.cub.2008.06.076",
+      "urls": [
+        "https://doi.org/10.1016/j.cub.2008.06.076",
+        "https://pubmed.ncbi.nlm.nih.gov/18674911/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Soay-lampaiden pitkä päivä muutti melatoniinille herkkien pars tuberalis -solujen TSH-tuotantoa ja hypotalamuksen DIO2/T3-reittiä.",
+      "berm_role": "Nisäkkään melatoniinivälitteinen tuloreitti ja linnun suora valovastaanotto voivat kohdata vasta myöhemmässä neuroendokriinisessa rakenteessa. Jaettu rakenne ei edellytä samaa reseptoria eikä lisääntymisvasteen samaa vuodenaikaista suuntaa.",
+      "verification": "Alkuperäisabstrakti; erillinen tutkimusryhmä ja nisäkäslaji.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH12",
+      "title": "Kyba ym. 2017",
+      "doi": "10.1126/sciadv.1701528",
+      "urls": [
+        "https://doi.org/10.1126/sciadv.1701528",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5699900/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Satelliittiaineistossa 2012–2016 keinovalaistu ulkoalue kasvoi 2,2 % vuodessa ja yhteenlaskettu radianssi 1,8 % vuodessa. Mittarin spektrikaista rajoittaa esimerkiksi LED-siirtymän sinisen osuuden kuvaamista.",
+      "berm_role": "Historiallinen optinen muutos on mitattavissa omana altistushaaranaan. Satelliittivalo on samalla urbanisaation proxy, lähdehavainto ja epätäydellinen paikallisen biologisen annoksen mittari.",
+      "verification": "Alkuperäisabstrakti ja menetelmien spektrirajaus.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH13",
+      "title": "Kyba ym. 2023",
+      "doi": "10.1126/science.abq7781",
+      "urls": [
+        "https://doi.org/10.1126/science.abq7781"
+      ],
+      "record_type": "primary_study",
+      "finding": "Vuosien 2011–2022 tähtinäkyvyyshavainnot vastasivat osallistujien havaintopaikoissa keskimäärin 9,6 %:n vuotuista taivaankirkkauden kasvua.",
+      "berm_role": "Mittaustapa ja havaintopaikkojen jakauma muuttavat historiallista indeksikuvaa. Luku ei ole koko maapallon jokaisen elinympäristön eikä RF-altistuksen kasvunopeus.",
+      "verification": "Alkuperäisen Science-artikkelin tulosteksti. Eri aineisto kuin PH12, osin sama tutkimuslinja.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH14",
+      "title": "CIE S 026/E:2018",
+      "doi": "10.25039/S026.2018",
+      "urls": [
+        "https://www.cie.co.at/publications/cie-system-metrology-optical-radiation-iprgc-influenced-responses-light-0"
+      ],
+      "record_type": "standard",
+      "finding": "Viiden ihmisen verkkokalvoreseptorin α-ooppiset suureet; melanoppinen EDI kuuluu tähän järjestelmään. Pelkkä fotoppinen lux ei kuvaa kaikkia ei-visuaalisia vasteita.",
+      "berm_role": "Optinen annos kirjataan reseptori- ja kudoskohtaisesti. Standardin ihmissilmän suureita ei käytetä yleisenä hyönteisen, kasvin tai kryptokromin annoksena.",
+      "verification": "Standardin julkinen virallinen kuvaus. Mittausstandardi, ei uusi biologinen koe.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH15",
+      "title": "CIE TN 016:2026",
+      "doi": "10.25039/TN.016.2026",
+      "urls": [
+        "https://cie.co.at/publications/comprehensive-checklist-reporting-light-characteristics-laboratory-based-human-studies"
+      ],
+      "record_type": "standard",
+      "finding": "ENLIGHT-raportointikehys valolla tehtäviin ihmisten laboratoriotutkimuksiin.",
+      "berm_role": "Teknologiasivun tietueisiin voidaan käyttää jo olemassa olevaa valon raportointirakennetta ja lisätä siihen kenttä- sekä järjestystiedot.",
+      "verification": "Virallinen teknisen muistion kuvaus. Menetelmäohje, ei vaikutusnäyttö.",
+      "checked": "2026-09-08"
+    },
+    {
+      "id": "PH16",
+      "title": "Hunting ym. 2022",
+      "doi": "10.1093/pnasnexus/pgac230",
+      "urls": [
+        "https://doi.org/10.1093/pnasnexus/pgac230",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9802097/"
+      ],
+      "record_type": "primary_study",
+      "finding": "Lannoite- ja imidaklopridikäsittely muuttivat kukkien sähköistä tilaa; sähköinen jäljittely muutti kimalaisten laskeutumista.",
+      "berm_role": "Kemiallinen muutos voi välittyä sähköisen rajapinnan ja käyttäytymisen kautta. Tämä on konkreettinen eri alojen yhteinen ketju, ei RF-altistuskoe.",
+      "verification": "Aiemmassa saman päivän sentinellihaussa tarkistettu alkuperäisartikkeli; tämän kierroksen PMC-avaus palautti selaineston.",
+      "checked": "2026-09-08"
+    }
+  ]
+}

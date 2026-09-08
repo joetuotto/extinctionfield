@@ -1,0 +1,758 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "technology_history_2026-09-08",
+  "generatedFromManifest": "berm/data/raw/technology_history_2026-09-08/manifest.json",
+  "scope": "imported_technology_history",
+  "exposureMapping": "not_calibrated",
+  "interpolation": "none",
+  "sources": [
+    {
+      "id": "adoption_eia_metering_2024",
+      "title": "EIA Electric Power Annual, Table 10.05: Advanced Metering Count by Technology Type, 2015–2024",
+      "url": "https://www.eia.gov/electricity/annual/html/epa_10_05.html",
+      "publishedAt": null,
+      "retrievedAt": "2026-09-08",
+      "referenceId": null,
+      "rawPath": "berm/data/raw/technology_history_2026-09-08/eia_metering.html",
+      "sha256": "c02223c90b35b28e5a48f16201a392e67887f1fb2db782232bd1874d2ee8a92a",
+      "bytes": 20765,
+      "readingLevel": "Complete source table, all 40 rows; sector and technology sums checked"
+    },
+    {
+      "id": "adoption_cre_linky_2022",
+      "title": "CRE: Maitrise de sa consommation en période de crise grâce aux compteurs évolués",
+      "url": "https://www.cre.fr/actualites/notre-magazine-parlons-energie/parlons-energie-n8/maitrise-de-sa-consommation-en-periode-de-crise-grace-aux-compteurs-evolues.html",
+      "publishedAt": "2022-11-03",
+      "retrievedAt": "2026-09-08",
+      "referenceId": null,
+      "rawPath": "berm/data/raw/technology_history_2026-09-08/cre_linky.html",
+      "sha256": "908425e33e27588cf697af4f2c4272f81a3b2755f0c38e59f2901354ea1512fe",
+      "bytes": 78312,
+      "readingLevel": "Original regulator article; opening paragraph and publication date"
+    },
+    {
+      "id": "adoption_tem_amr_2017",
+      "title": "TEM 38/2017: Matkalla kohti joustavaa ja asiakaskeskeistä sähköjärjestelmää",
+      "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/c1a29bed-8cdb-40ba-a4ae-52d693a8ff9e/content",
+      "publishedAt": "2017-10-09",
+      "retrievedAt": "2026-09-08",
+      "referenceId": null,
+      "rawPath": "berm/data/raw/technology_history_2026-09-08/tem_amr.pdf",
+      "sha256": "5414d561ce8c93a606471431864cce2fe23eeeba66016f955c707491c7e7baec",
+      "bytes": 822656,
+      "readingLevel": "Original PDF, printed page 57; complete PDF retained with text extraction"
+    },
+    {
+      "id": "adoption_iea_cooling_china_2019",
+      "title": "IEA: The Future of Cooling in China",
+      "url": "https://www.iea.org/reports/the-future-of-cooling-in-china",
+      "publishedAt": "2019-06-16",
+      "retrievedAt": "2026-09-08",
+      "referenceId": null,
+      "rawPath": "berm/data/raw/technology_history_2026-09-08/iea_cooling.pdf",
+      "sha256": "bec5fb3064f618146323e5d56ed3a2d88f18ae353073ca132134f1c2dd753117",
+      "bytes": 2815200,
+      "readingLevel": "Original PDF, printed page 6; reported historical stock, excluding scenarios"
+    }
+  ],
+  "series": [
+    {
+      "id": "us_electricity_ami_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Advanced metering infrastructure (AMI)",
+        "fi": "Kaksisuuntaisen etäluennan mittarit (AMI)"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Electricity meters reported in EIA Table 10.05; all four customer sectors",
+        "fi": "EIA:n taulukon 10.05 sähkömittarit; kaikki neljä asiakassektoria"
+      },
+      "frequency": "annual",
+      "limitations": [
+        {
+          "en": "AMI and AMR describe metering functionality, not a particular radio or PLC protocol.",
+          "fi": "AMI ja AMR kuvaavat mittaustoimintoa, eivät tiettyä radio- tai PLC-protokollaa."
+        },
+        {
+          "en": "Counts do not measure local field strength, transmitting time or biological dose.",
+          "fi": "Lukumäärät eivät mittaa paikallista kentänvoimakkuutta, lähetysaikaa tai biologista annosta."
+        }
+      ],
+      "points": [
+        {
+          "year": 2015,
+          "asOf": null,
+          "value": 64743832,
+          "denominator": {
+            "value": 150813765,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2015; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2016,
+          "asOf": null,
+          "value": 70823466,
+          "denominator": {
+            "value": 151332419,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2016; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2017,
+          "asOf": null,
+          "value": 78901590,
+          "denominator": {
+            "value": 152110274,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2017; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2018,
+          "asOf": null,
+          "value": 86844157,
+          "denominator": {
+            "value": 154068551,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2018; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2019,
+          "asOf": null,
+          "value": 94838855,
+          "denominator": {
+            "value": 156647352,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2019; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2020,
+          "asOf": null,
+          "value": 102933903,
+          "denominator": {
+            "value": 158901467,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2020; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2021,
+          "asOf": null,
+          "value": 111176758,
+          "denominator": {
+            "value": 161916688,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2021; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2022,
+          "asOf": null,
+          "value": 118722741,
+          "denominator": {
+            "value": 164098901,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2022; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2023,
+          "asOf": null,
+          "value": 127764365,
+          "denominator": {
+            "value": 166235175,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2023; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2024,
+          "asOf": null,
+          "value": 140491981,
+          "denominator": {
+            "value": 168085999,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMI; 2024; Total column",
+          "imputed": false
+        }
+      ]
+    },
+    {
+      "id": "us_electricity_amr_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Automated meter reading (AMR)",
+        "fi": "Automaattisesti luettavat mittarit (AMR)"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Electricity meters reported in EIA Table 10.05; all four customer sectors",
+        "fi": "EIA:n taulukon 10.05 sähkömittarit; kaikki neljä asiakassektoria"
+      },
+      "frequency": "annual",
+      "limitations": [
+        {
+          "en": "AMI and AMR describe metering functionality, not a particular radio or PLC protocol.",
+          "fi": "AMI ja AMR kuvaavat mittaustoimintoa, eivät tiettyä radio- tai PLC-protokollaa."
+        },
+        {
+          "en": "Counts do not measure local field strength, transmitting time or biological dose.",
+          "fi": "Lukumäärät eivät mittaa paikallista kentänvoimakkuutta, lähetysaikaa tai biologista annosta."
+        }
+      ],
+      "points": [
+        {
+          "year": 2015,
+          "asOf": null,
+          "value": 47604211,
+          "denominator": {
+            "value": 150813765,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2015; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2016,
+          "asOf": null,
+          "value": 46807693,
+          "denominator": {
+            "value": 151332419,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2016; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2017,
+          "asOf": null,
+          "value": 44368849,
+          "denominator": {
+            "value": 152110274,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2017; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2018,
+          "asOf": null,
+          "value": 41170557,
+          "denominator": {
+            "value": 154068551,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2018; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2019,
+          "asOf": null,
+          "value": 37119281,
+          "denominator": {
+            "value": 156647352,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2019; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2020,
+          "asOf": null,
+          "value": 33313041,
+          "denominator": {
+            "value": 158901467,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2020; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2021,
+          "asOf": null,
+          "value": 29834131,
+          "denominator": {
+            "value": 161916688,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2021; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2022,
+          "asOf": null,
+          "value": 26640208,
+          "denominator": {
+            "value": 164098901,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2022; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2023,
+          "asOf": null,
+          "value": 22730388,
+          "denominator": {
+            "value": 166235175,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2023; Total column",
+          "imputed": false
+        },
+        {
+          "year": 2024,
+          "asOf": null,
+          "value": 19250287,
+          "denominator": {
+            "value": 168085999,
+            "unit": "meters",
+            "population": {
+              "en": "All electricity meters in the same EIA table and year",
+              "fi": "Saman EIA-taulukon kaikki sähkömittarit kyseisenä vuonna"
+            }
+          },
+          "observationType": "reported_count",
+          "precision": "integer",
+          "sourceId": "adoption_eia_metering_2024",
+          "sourceLocator": "Table 10.05; AMR; 2024; Total column",
+          "imputed": false
+        }
+      ]
+    },
+    {
+      "id": "fr_linky_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Linky meters installed",
+        "fi": "Asennetut Linky-mittarit"
+      },
+      "geography": {
+        "code": "FRA",
+        "name": {
+          "en": "France",
+          "fi": "Ranska"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Enedis service territory; not all French electricity distribution companies",
+        "fi": "Enedisin jakelualue; ei kaikkia Ranskan sähköverkkoyhtiöitä"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Two rounded reported stock counts; the 2022 value is reported in November, not a year-end count.",
+          "fi": "Kaksi pyöristettyä ilmoitettua kantatietoa; vuoden 2022 luku on marraskuulta, ei vuodenvaihteesta."
+        },
+        {
+          "en": "G1/G3 shares and an exact same-scope denominator are not supplied by this source.",
+          "fi": "G1/G3-osuuksia ja täsmällistä saman alueen nimittäjää ei anneta tässä lähteessä."
+        }
+      ],
+      "points": [
+        {
+          "year": 2021,
+          "asOf": "2021-12-31",
+          "value": 34300000,
+          "denominator": null,
+          "observationType": "reported_count",
+          "precision": "rounded",
+          "sourceId": "adoption_cre_linky_2022",
+          "sourceLocator": "Opening paragraph: end-2021 installed count, millions",
+          "imputed": false
+        },
+        {
+          "year": 2022,
+          "asOf": "2022-11-03",
+          "value": 35000000,
+          "denominator": null,
+          "observationType": "reported_count",
+          "precision": "rounded",
+          "sourceId": "adoption_cre_linky_2022",
+          "sourceLocator": "Opening paragraph: stock reported as of publication, 3 November 2022",
+          "imputed": false
+        }
+      ]
+    },
+    {
+      "id": "fi_hourly_meter_coverage",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Connection points with hourly metering",
+        "fi": "Tuntimittauksessa olevat käyttöpaikat"
+      },
+      "geography": {
+        "code": "FIN",
+        "name": {
+          "en": "Finland",
+          "fi": "Suomi"
+        }
+      },
+      "metric": "hourly_metering_coverage",
+      "unit": "percent",
+      "coverage": {
+        "en": "All Finnish electricity connection points, as described by TEM in 2017",
+        "fi": "Suomen sähkön käyttöpaikat TEM:n vuoden 2017 raportissa"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Rounded reported coverage; the absolute number of connection points is not stated with this percentage.",
+          "fi": "Pyöristetty ilmoitettu peitto; käyttöpaikkojen absoluuttista määrää ei anneta osuuden yhteydessä."
+        },
+        {
+          "en": "Hourly recording does not identify the data transmission frequency, protocol or duration.",
+          "fi": "Tuntirekisteröinti ei yksilöi tiedonsiirron taajuutta, protokollaa tai kestoa."
+        }
+      ],
+      "points": [
+        {
+          "year": 2017,
+          "asOf": null,
+          "value": 99,
+          "denominator": null,
+          "observationType": "reported_estimate",
+          "precision": "rounded",
+          "sourceId": "adoption_tem_amr_2017",
+          "sourceLocator": "Printed page 57: AMR 2.0, first paragraph",
+          "imputed": false
+        }
+      ]
+    },
+    {
+      "id": "world_air_conditioner_stock",
+      "technologyId": "inverter-hvac",
+      "label": {
+        "en": "Air conditioners installed worldwide",
+        "fi": "Maailman ilmastointilaitekanta"
+      },
+      "geography": {
+        "code": "WLD",
+        "name": {
+          "en": "World",
+          "fi": "Maailma"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "devices",
+      "coverage": {
+        "en": "All air conditioners in the reported global installed stock; all drive types",
+        "fi": "Raportoitu globaali ilmastointilaitekanta; kaikki käyttötekniikat"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Rounded IEA estimate: 1.7 billion devices in 2017.",
+          "fi": "IEA:n pyöristetty arvio: 1,7 miljardia laitetta vuonna 2017."
+        },
+        {
+          "en": "This is total air-conditioner stock, not inverter adoption, operating hours or human exposure.",
+          "fi": "Tämä on ilmastointilaitteiden kokonaiskanta, ei invertterien käyttöosuus, käyttötunnit tai ihmisen altistus."
+        }
+      ],
+      "points": [
+        {
+          "year": 2017,
+          "asOf": null,
+          "value": 1700000000,
+          "denominator": null,
+          "observationType": "reported_estimate",
+          "precision": "rounded",
+          "sourceId": "adoption_iea_cooling_china_2019",
+          "sourceLocator": "Printed page 6: The air conditioner market in China is evolving",
+          "imputed": false
+        }
+      ]
+    }
+  ],
+  "existingDatasets": [
+    {
+      "id": "worldbank_itu_telecom",
+      "label": {
+        "en": "World Bank / ITU telecommunications",
+        "fi": "World Bank / ITU: tietoliikenne"
+      },
+      "kind": "proxy",
+      "paths": [
+        "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+        "berm/berm/data/global_download.py",
+        "website/public/data/global_panel.csv"
+      ],
+      "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+      "scope": {
+        "en": "Existing mobile, broadband and internet indicators; separate source panel, no new download. Subscriptions and internet use are not local RF dose.",
+        "fi": "Olemassa olevat mobiili-, laajakaista- ja internetindikaattorit; erillinen lähdepaneeli, ei uutta latausta. Liittymät ja internetin käyttö eivät ole paikallinen RF-annos."
+      },
+      "imported": false
+    },
+    {
+      "id": "anfr_fixed_rf_probes",
+      "label": {
+        "en": "ANFR fixed RF probes",
+        "fi": "ANFR:n kiinteät RF-anturit"
+      },
+      "kind": "measurement",
+      "paths": [
+        "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+        "berm/berm/data/anfr_rf.py"
+      ],
+      "url": "https://data.anfr.fr/visualisation?id=mesures-sondes-autonomes",
+      "scope": {
+        "en": "Existing local E-field measurements in V/m. Not a French adoption series and not joined to these meter counts.",
+        "fi": "Olemassa olevat paikalliset sähkökenttämittaukset yksikössä V/m. Ei Ranskan käyttöönottosarja eikä yhdistetty näihin mittarikantoihin."
+      },
+      "imported": false
+    },
+    {
+      "id": "legacy_led_group_estimates",
+      "label": {
+        "en": "Legacy LED group estimates",
+        "fi": "Aiemmat LED-ryhmäarviot"
+      },
+      "kind": "scenario",
+      "paths": [
+        "berm/berm/diagnostics/led_natural_experiment.py",
+        "berm/data/processed/led_market_share.json"
+      ],
+      "url": "https://www.iea.org/data-and-statistics/charts/global-residential-lighting-sales-share-by-technology-in-the-net-zero-scenario-2010-2030",
+      "scope": {
+        "en": "Existing approximate group series; per-year source lineage is unresolved. Preserved as a scenario reference, not imported observations.",
+        "fi": "Olemassa olevat likimääräiset ryhmäsarjat; vuosiarvojen lähdeketju on avoin. Säilytetään skenaarioviitteenä, ei tuotuina havaintoina."
+      },
+      "imported": false
+    }
+  ],
+  "dataGaps": [
+    {
+      "id": "meter_protocol_shares",
+      "technologyId": "smart-metering",
+      "status": "missing",
+      "label": {
+        "en": "Meter communication protocols",
+        "fi": "Mittarien tiedonsiirtoprotokollat"
+      },
+      "needed": {
+        "en": "Area-year shares of PLC, RF mesh and cellular; G1/G3 changes, transmitter duty and wiring geometry.",
+        "fi": "Alue-vuosikohtaiset PLC-, radioverkon ja solukkoyhteyden osuudet; G1/G3-muutokset, lähetysajat ja johdotuksen geometria."
+      }
+    },
+    {
+      "id": "reader_installed_base",
+      "technologyId": "rfid-eas",
+      "status": "missing",
+      "label": {
+        "en": "RFID / EAS / NFC reader history",
+        "fi": "RFID-/EAS-/NFC-lukijoiden historia"
+      },
+      "needed": {
+        "en": "Reader and gate stock by place and protocol, active time, worker proximity; keep passive tags separate.",
+        "fi": "Lukija- ja porttikanta paikan ja protokollan mukaan, aktiivisuus ja työntekijän etäisyys; passiiviset tunnisteet erikseen."
+      }
+    },
+    {
+      "id": "inverter_hvac_stock",
+      "technologyId": "inverter-hvac",
+      "status": "missing",
+      "label": {
+        "en": "Inverter HVAC stock by region",
+        "fi": "Invertteri-ilmastoinnin alueellinen kanta"
+      },
+      "needed": {
+        "en": "Separate variable-speed stock, retirements, heating/cooling hours and indoor/outdoor equipment placement.",
+        "fi": "Taajuusmuuttajakanta, poistumat, lämmitys-/jäähdytystunnit sekä sisä- ja ulkolaitteiden sijainti erikseen."
+      }
+    },
+    {
+      "id": "textile_contact_history",
+      "technologyId": "synthetic-materials",
+      "status": "missing",
+      "label": {
+        "en": "Textiles in actual skin contact",
+        "fi": "Tekstiilien todellinen ihokontakti"
+      },
+      "needed": {
+        "en": "Production, garment stock and skin-contact time are different quantities; polymer, humidity and grounding histories are needed.",
+        "fi": "Tuotanto, vaatekanta ja ihokontaktiaika ovat eri suureita; tarvitaan polymeerien, kosteuden ja maadoituksen historia."
+      }
+    },
+    {
+      "id": "legacy_generation_years",
+      "technologyId": "mobile-4g",
+      "status": "missing",
+      "label": {
+        "en": "Network generation commissioning and shutdowns",
+        "fi": "Verkkosukupolvien käyttöönotot ja sulkemiset"
+      },
+      "needed": {
+        "en": "Replace heuristic generation dates only after operator/regulator commissioning and coexistence data are available.",
+        "fi": "Heuristiset sukupolvivuodet korvataan vasta operaattori-/viranomaisaineistolla käyttöönotosta ja rinnakkaiskäytöstä."
+      }
+    }
+  ]
+}

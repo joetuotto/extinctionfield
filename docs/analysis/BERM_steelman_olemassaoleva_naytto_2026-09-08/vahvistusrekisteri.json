@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-08",
+  "purpose": "BERM:n steelman-version väitekohtaiset vahvistukset olemassa olevasta aineistosta.",
+  "scope": "Erillinen analyysirekisteri. Ei korvaa sivuston tai arkkitehtuurin laajojen väitteiden statuksia.",
+  "status_definitions": {
+    "vahvistettu_osahavainto": "Nimetty havainto on alkuperäistutkimuksen tukema kyseisessä koejärjestelmässä. Ei automaattisesti riippumattomasti toistettu tai koko BERM-ketjun vahvistus.",
+    "ehdollisesti_johdettu": "Formaali seuraus nimettyjen BERM-lisäpremissien alla.",
+    "matemaattisesti_johdettu": "Algebrallinen tai tarkistettu laskennallinen seuraus nimettyjen geometria- ja signaalioletusten alla."
+  },
+  "records": [
+    {
+      "id": "S01",
+      "title": "Ehdollinen geometria–havaittava-operaattori",
+      "evidence_status": "ehdollisesti_johdettu",
+      "level": "L2",
+      "claim": "BERM:n materiaehdon ja kausaalisen vastekehitelmän alla operaattorin formaali muoto on johdettu.",
+      "existing_repository_anchor": "berm/docs/berm-conditional-response-and-androgen-capacity.md",
+      "primary_sources": [],
+      "scope_boundary": "Gauge, fysikaalinen skaala ja kudoskalibraatio ovat erillisiä avoimia osia.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S02",
+      "title": "Sama RMS ja RF-spektri, erilainen hidas ajuri",
+      "evidence_status": "matemaattisesti_johdettu",
+      "level": "L1",
+      "claim": "Ulkotulon neliöosa voi tuottaa vaiheista riippuvan hitaan komponentin samalla RMS:llä ja RF-tehospektrillä.",
+      "existing_repository_anchor": "berm/docs/berm-new-findings-and-refinements-2026-09-07.md",
+      "primary_sources": [],
+      "scope_boundary": "Kiinnitetty gauge ja moodi; biologinen vastaanotto ei seuraa signaalilaskusta yksin.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S03",
+      "title": "Kenttien keskinäinen suunta",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "AC–DC-kenttien keskinäisen suunnan muuttaminen muutti kalsiumvastetta Blackmanin kudoskokeessa.",
+      "existing_repository_anchor": "website/app/[locale]/evidence/response-conditions/page.tsx",
+      "primary_sources": [
+        {
+          "doi": "10.1002/bem.2250110207",
+          "url": "https://doi.org/10.1002/bem.2250110207"
+        }
+      ],
+      "scope_boundary": "Rajattu koe; ei suora kaupunkivertailu eikä yleinen lajien suuntasääntö.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S04",
+      "title": "Staattinen tausta ja taajuusikkuna",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Staattisen taustan muuttaminen muutti taajuuksia, joilla kalsiumvaste havaittiin.",
+      "existing_repository_anchor": "berm/docs/berm-lindgren-first-source-map-v2.md",
+      "primary_sources": [
+        {
+          "doi": "10.1002/bem.2250060402",
+          "url": "https://doi.org/10.1002/bem.2250060402"
+        }
+      ],
+      "scope_boundary": "Vuoden 1986 erratum tarkistettava ennen alkuperäisen kaikkien numerotietojen käyttöä; ei monotoninen maantieteellinen herkkyyslaki.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S05",
+      "title": "Lämpötilan historia ja vasteen merkki",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Lämpeneminen, vakaa lämpötila ja jäähtyminen tuottivat eri suuntaisia tai havaitsemattomia kalsiumvasteita.",
+      "existing_repository_anchor": "website/app/[locale]/evidence/response-conditions/page.tsx",
+      "primary_sources": [
+        {
+          "doi": "10.1002/bem.2250120305",
+          "url": "https://doi.org/10.1002/bem.2250120305"
+        }
+      ],
+      "scope_boundary": "Kudoksen lämpötilaliikerata, ei universaali 36–37 °C toimintaraja.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S06",
+      "title": "Koherenssiajan merkitys",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "55/65 Hz:n taajuushyppelyn aikajakso muutti L929-solujen ODC-vastetta.",
+      "existing_repository_anchor": "website/app/[locale]/evidence/response-conditions/page.tsx",
+      "primary_sources": [
+        {
+          "doi": "10.1016/0006-291X(91)90970-I",
+          "url": "https://doi.org/10.1016/0006-291X(91)90970-I"
+        }
+      ],
+      "scope_boundary": "Taajuushyppely operationalisoi koherenssia tässä protokollassa; ei yleinen ihmisen 10 s kynnys.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S07",
+      "title": "Metabolinen vaihe",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Biologiseen värähtelyyn nähden muutettu pulssivaihe muutti neutrofiilien vastetta.",
+      "existing_repository_anchor": "website/app/[locale]/evidence/response-conditions/page.tsx",
+      "primary_sources": [
+        {
+          "doi": "10.1529/biophysj.104.056663",
+          "url": "https://doi.org/10.1529/biophysj.104.056663"
+        }
+      ],
+      "scope_boundary": "Kokeessa indusoitu sähkökenttä; biologinen vaihe ei ole sama kuin RF-kantoaallon vaihe.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S08",
+      "title": "Perustaso ja ACTH-haaste",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Perustason steroidogeneesi säilyi samalla kun sähkökenttä muutti ACTH-haastevastetta.",
+      "existing_repository_anchor": "berm/docs/berm-cap-closure-and-model-extension-synthesis.md",
+      "primary_sources": [
+        {
+          "doi": "10.1016/S0013-9351(87)80067-1",
+          "url": "https://doi.org/10.1016/S0013-9351(87)80067-1"
+        }
+      ],
+      "scope_boundary": "Rotan lisämunuaiskudos ja suuret ulkoiset sähkökentät; ei ympäristöannoksen kerroin.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S09",
+      "title": "Kehityshistoria",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Kananalkion 50/60 Hz:n kehitysaltistus muutti myöhemmän aivokudoskokeen taajuusvastetta.",
+      "existing_repository_anchor": "berm/docs/berm-new-findings-and-refinements-2026-09-07.md",
+      "primary_sources": [
+        {
+          "doi": "10.1002/bem.2250090204",
+          "url": "https://doi.org/10.1002/bem.2250090204"
+        }
+      ],
+      "scope_boundary": "Ei symmetrinen 50↔60 Hz sääntö; ei yleinen eurooppalaisten ja amerikkalaisten solulinjojen ero.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S10",
+      "title": "Vuodenaikakohtainen ELF–melatoniinivaste",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Vasikoiden melatoniinivaste oli kesä- ja talvikohorteissa erisuuntainen samalla nimellisellä 50 Hz:n altistuksella.",
+      "existing_repository_anchor": "website/public/data/references_full.json",
+      "primary_sources": [
+        {
+          "doi": "10.1038/srep14206",
+          "url": "https://doi.org/10.1038/srep14206"
+        }
+      ],
+      "scope_boundary": "Kussakin kohortissa 4+4 eläintä; vuodenaika, lämpötila, fotoperiodi ja kohortti eivät eristy toisistaan.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S11",
+      "title": "Valon valmistama pimeävaiheen vastaanotto",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Arabidopsiksen CRY-vaste muuttui myös annettaessa magneettikenttä valojaksojen väliseen pimeyteen.",
+      "existing_repository_anchor": "docs/analysis/BERM_valo_kentta_kirjallisuussynteesi_2026-09-08/photochemistry.json",
+      "primary_sources": [
+        {
+          "doi": "10.1039/C9PP00469F",
+          "url": "https://doi.org/10.1039/C9PP00469F"
+        },
+        {
+          "doi": "10.1007/s00425-018-3002-y",
+          "url": "https://doi.org/10.1007/s00425-018-3002-y"
+        }
+      ],
+      "scope_boundary": "Sama tutkimusperhe; fotosyklin ja ajoituksen näyttö, ei kaikkien CRY-proteiinien sama mekanismi.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S12",
+      "title": "CRY2–RFK/FAD–TRPC1",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Valohistoria sekä CRY2:n ja RFK:n muutokset muuttivat myoblastien PEMF-vastetta; CRY2–TRPC1-yhteys havaittiin proteiinitasolla.",
+      "existing_repository_anchor": "website/public/data/references_full.json",
+      "primary_sources": [
+        {
+          "doi": "10.3390/cells14030231",
+          "url": "https://doi.org/10.3390/cells14030231"
+        }
+      ],
+      "scope_boundary": "C2C12, 1.5 mT ja 10 min; ei yleinen GHz- tai ihmisen syvän kudoksen kalibraatio.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S13",
+      "title": "RF-esikäsittelyn funktionaalinen muisti",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "UMTS-esikäsittely muutti myöhempää menadionihaasteen DNA-vastetta noin 20 h altistuksen päättymisen jälkeen.",
+      "existing_repository_anchor": "berm/docs/berm-new-findings-and-refinements-2026-09-07.md",
+      "primary_sources": [
+        {
+          "doi": "10.1002/bem.22524",
+          "url": "https://doi.org/10.1002/bem.22524"
+        }
+      ],
+      "scope_boundary": "Suojaava jälkivaikutus; yksi jälkiviive ei identifioi palautumisaikavakiota.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S14",
+      "title": "Autofagia adaptiivisessa vasteessa",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Farmakologinen ja ATG5/ATG7:ään kohdistuva häirintä poisti UMTS-esikäsittelyn suojan menadionihaasteessa.",
+      "existing_repository_anchor": "berm/docs/berm-new-findings-and-refinements-2026-09-07.md",
+      "primary_sources": [
+        {
+          "doi": "10.3390/ijms23158414",
+          "url": "https://doi.org/10.3390/ijms23158414"
+        }
+      ],
+      "scope_boundary": "Välittäjäkoneiston osallisuus, ei ensimmäisen kenttäsensorin tunnistaminen; myös haasteherkkyyden lähtötila muuttuu.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S15",
+      "title": "Kasvatusnesteen välittämä sivullisvaste",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Altistettujen solujen kasvatusnesteen siirto muutti altistamattomien solujen myöhempää haastevastetta.",
+      "existing_repository_anchor": "berm/docs/berm-new-findings-and-refinements-2026-09-07.md",
+      "primary_sources": [
+        {
+          "doi": "10.1016/j.envres.2021.110935",
+          "url": "https://doi.org/10.1016/j.envres.2021.110935"
+        }
+      ],
+      "scope_boundary": "HSP70 ehdokasvälittäjä; ei oletusta muiden kokeiden kontrollien kontaminaatiosta.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    },
+    {
+      "id": "S16",
+      "title": "Perustoiminta, reservi ja ZIP9-kompensaatio",
+      "evidence_status": "vahvistettu_osahavainto",
+      "level": "tuotu_biologia",
+      "claim": "Lyhyen altistuksen normaali spermatogeneesi ja basaalinen apoptoosi esiintyivät muuttuneen H2O2-haastevasteen ja T/ZIP9-suojan rinnalla.",
+      "existing_repository_anchor": "berm/docs/berm-conditional-response-and-androgen-capacity.md",
+      "primary_sources": [
+        {
+          "doi": "10.1016/j.ecoenv.2023.114733",
+          "url": "https://doi.org/10.1016/j.ecoenv.2023.114733"
+        }
+      ],
+      "scope_boundary": "Rotta/Sertoli-solut, 2605 MHz, SAR 1.05 W/kg; ei ihmisen kapasiteettikertoimen kalibraatio.",
+      "independent_replication": "Ei johdeta yksittäisen rivin statuksesta; tutkimusperheet ja toistot eritellään osamuistioissa."
+    }
+  ],
+  "null_result_classes": [
+    {
+      "id": "N1",
+      "label": "Ei havaittua muutosta nimetyssä päätepisteessä",
+      "meaning": "Vaikutusarvio ja epävarmuus tarvitaan erottamaan epätarkka nolla ja rajattu pieni vaikutus."
+    },
+    {
+      "id": "N2",
+      "label": "Perustaso säilyy, haastevaste muuttuu",
+      "meaning": "Positiivinen kapasiteetin/tilan osahavainto; koko tutkimus ei ole nolla."
+    },
+    {
+      "id": "N3",
+      "label": "Mekanismiin puuttumisen negatiivinen haara",
+      "meaning": "Vasteen katoaminen voi tukea reitin osallisuutta positiivisen haaran rinnalla."
+    },
+    {
+      "id": "N4",
+      "label": "Olosuhderiippuvainen havaittu vaste",
+      "meaning": "Saman tutkimuksen muuttama vaihe, suunta tai muu ehto muuttaa vasteen havaittavuutta."
+    },
+    {
+      "id": "N5",
+      "label": "Päätepisteet eriytyvät",
+      "meaning": "Yksi fysiologinen mittari muuttuu, toinen säilyy."
+    },
+    {
+      "id": "N6",
+      "label": "Tilojen yhdistämisen mahdollinen vaimeneminen",
+      "meaning": "Vastakkaiset osavasteet voivat vaimentaa keskiarvoa; osoitettava kyseisen aineiston ehdoilla."
+    },
+    {
+      "id": "N7",
+      "label": "Ehdollinen tulkinta ei ratkea",
+      "meaning": "Oleellinen tilatieto puuttuu. Ei automaattista uudelleenluokittelua positiiviseksi."
+    },
+    {
+      "id": "N8",
+      "label": "Riippumaton ei-toistuminen nimetylle tehtävälle",
+      "meaning": "Säilytetään alkuperäinen ja toistotulos sekä niiden todetut protokollaerot."
+    }
+  ],
+  "companions": [
+    "README.md",
+    "komponentit_ja_nollat.md",
+    "replikaatio_ekologia.md",
+    "maantiede_vuodenaika.md"
+  ]
+}

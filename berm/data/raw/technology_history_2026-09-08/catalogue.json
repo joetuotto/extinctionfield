@@ -1,0 +1,330 @@
+{
+  "series": [
+    {
+      "id": "us_electricity_ami_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Advanced metering infrastructure (AMI)",
+        "fi": "Kaksisuuntaisen etäluennan mittarit (AMI)"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Electricity meters reported in EIA Table 10.05; all four customer sectors",
+        "fi": "EIA:n taulukon 10.05 sähkömittarit; kaikki neljä asiakassektoria"
+      },
+      "frequency": "annual",
+      "limitations": [
+        {
+          "en": "AMI and AMR describe metering functionality, not a particular radio or PLC protocol.",
+          "fi": "AMI ja AMR kuvaavat mittaustoimintoa, eivät tiettyä radio- tai PLC-protokollaa."
+        },
+        {
+          "en": "Counts do not measure local field strength, transmitting time or biological dose.",
+          "fi": "Lukumäärät eivät mittaa paikallista kentänvoimakkuutta, lähetysaikaa tai biologista annosta."
+        }
+      ]
+    },
+    {
+      "id": "us_electricity_amr_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Automated meter reading (AMR)",
+        "fi": "Automaattisesti luettavat mittarit (AMR)"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Electricity meters reported in EIA Table 10.05; all four customer sectors",
+        "fi": "EIA:n taulukon 10.05 sähkömittarit; kaikki neljä asiakassektoria"
+      },
+      "frequency": "annual",
+      "limitations": [
+        {
+          "en": "AMI and AMR describe metering functionality, not a particular radio or PLC protocol.",
+          "fi": "AMI ja AMR kuvaavat mittaustoimintoa, eivät tiettyä radio- tai PLC-protokollaa."
+        },
+        {
+          "en": "Counts do not measure local field strength, transmitting time or biological dose.",
+          "fi": "Lukumäärät eivät mittaa paikallista kentänvoimakkuutta, lähetysaikaa tai biologista annosta."
+        }
+      ]
+    },
+    {
+      "id": "fr_linky_meters",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Linky meters installed",
+        "fi": "Asennetut Linky-mittarit"
+      },
+      "geography": {
+        "code": "FRA",
+        "name": {
+          "en": "France",
+          "fi": "Ranska"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "meters",
+      "coverage": {
+        "en": "Enedis service territory; not all French electricity distribution companies",
+        "fi": "Enedisin jakelualue; ei kaikkia Ranskan sähköverkkoyhtiöitä"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Two rounded reported stock counts; the 2022 value is reported in November, not a year-end count.",
+          "fi": "Kaksi pyöristettyä ilmoitettua kantatietoa; vuoden 2022 luku on marraskuulta, ei vuodenvaihteesta."
+        },
+        {
+          "en": "G1/G3 shares and an exact same-scope denominator are not supplied by this source.",
+          "fi": "G1/G3-osuuksia ja täsmällistä saman alueen nimittäjää ei anneta tässä lähteessä."
+        }
+      ],
+      "extractions": [
+        {
+          "year": 2021,
+          "asOf": "2021-12-31",
+          "sourceId": "adoption_cre_linky_2022",
+          "pattern": "fin 2021, avec la pose de ([0-9,]+) millions de compteurs Linky",
+          "scale": 1000000,
+          "estimate": false,
+          "locator": "Opening paragraph: end-2021 installed count, millions"
+        },
+        {
+          "year": 2022,
+          "asOf": "2022-11-03",
+          "sourceId": "adoption_cre_linky_2022",
+          "pattern": "A ce jour, ([0-9,]+) millions de compteurs ont",
+          "scale": 1000000,
+          "estimate": false,
+          "locator": "Opening paragraph: stock reported as of publication, 3 November 2022"
+        }
+      ]
+    },
+    {
+      "id": "fi_hourly_meter_coverage",
+      "technologyId": "smart-metering",
+      "label": {
+        "en": "Connection points with hourly metering",
+        "fi": "Tuntimittauksessa olevat käyttöpaikat"
+      },
+      "geography": {
+        "code": "FIN",
+        "name": {
+          "en": "Finland",
+          "fi": "Suomi"
+        }
+      },
+      "metric": "hourly_metering_coverage",
+      "unit": "percent",
+      "coverage": {
+        "en": "All Finnish electricity connection points, as described by TEM in 2017",
+        "fi": "Suomen sähkön käyttöpaikat TEM:n vuoden 2017 raportissa"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Rounded reported coverage; the absolute number of connection points is not stated with this percentage.",
+          "fi": "Pyöristetty ilmoitettu peitto; käyttöpaikkojen absoluuttista määrää ei anneta osuuden yhteydessä."
+        },
+        {
+          "en": "Hourly recording does not identify the data transmission frequency, protocol or duration.",
+          "fi": "Tuntirekisteröinti ei yksilöi tiedonsiirron taajuutta, protokollaa tai kestoa."
+        }
+      ],
+      "extractions": [
+        {
+          "year": 2017,
+          "asOf": null,
+          "sourceId": "adoption_tem_amr_2017",
+          "pattern": "Tällä hetkellä lähes kaikki \\(([0-9]+) %\\) käyttöpai",
+          "scale": 1,
+          "estimate": true,
+          "locator": "Printed page 57: AMR 2.0, first paragraph"
+        }
+      ]
+    },
+    {
+      "id": "world_air_conditioner_stock",
+      "technologyId": "inverter-hvac",
+      "label": {
+        "en": "Air conditioners installed worldwide",
+        "fi": "Maailman ilmastointilaitekanta"
+      },
+      "geography": {
+        "code": "WLD",
+        "name": {
+          "en": "World",
+          "fi": "Maailma"
+        }
+      },
+      "metric": "installed_stock",
+      "unit": "devices",
+      "coverage": {
+        "en": "All air conditioners in the reported global installed stock; all drive types",
+        "fi": "Raportoitu globaali ilmastointilaitekanta; kaikki käyttötekniikat"
+      },
+      "frequency": "sparse",
+      "limitations": [
+        {
+          "en": "Rounded IEA estimate: 1.7 billion devices in 2017.",
+          "fi": "IEA:n pyöristetty arvio: 1,7 miljardia laitetta vuonna 2017."
+        },
+        {
+          "en": "This is total air-conditioner stock, not inverter adoption, operating hours or human exposure.",
+          "fi": "Tämä on ilmastointilaitteiden kokonaiskanta, ei invertterien käyttöosuus, käyttötunnit tai ihmisen altistus."
+        }
+      ],
+      "extractions": [
+        {
+          "year": 2017,
+          "asOf": null,
+          "sourceId": "adoption_iea_cooling_china_2019",
+          "pattern": "([0-9.]+) billion ACs installed worldwide in 2017",
+          "scale": 1000000000,
+          "estimate": true,
+          "locator": "Printed page 6: The air conditioner market in China is evolving"
+        }
+      ]
+    }
+  ],
+  "existingDatasets": [
+    {
+      "id": "worldbank_itu_telecom",
+      "label": {
+        "en": "World Bank / ITU telecommunications",
+        "fi": "World Bank / ITU: tietoliikenne"
+      },
+      "kind": "proxy",
+      "paths": [
+        "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+        "berm/berm/data/global_download.py",
+        "website/public/data/global_panel.csv"
+      ],
+      "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+      "scope": {
+        "en": "Existing mobile, broadband and internet indicators; separate source panel, no new download. Subscriptions and internet use are not local RF dose.",
+        "fi": "Olemassa olevat mobiili-, laajakaista- ja internetindikaattorit; erillinen lähdepaneeli, ei uutta latausta. Liittymät ja internetin käyttö eivät ole paikallinen RF-annos."
+      },
+      "imported": false
+    },
+    {
+      "id": "anfr_fixed_rf_probes",
+      "label": {
+        "en": "ANFR fixed RF probes",
+        "fi": "ANFR:n kiinteät RF-anturit"
+      },
+      "kind": "measurement",
+      "paths": [
+        "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+        "berm/berm/data/anfr_rf.py"
+      ],
+      "url": "https://data.anfr.fr/visualisation?id=mesures-sondes-autonomes",
+      "scope": {
+        "en": "Existing local E-field measurements in V/m. Not a French adoption series and not joined to these meter counts.",
+        "fi": "Olemassa olevat paikalliset sähkökenttämittaukset yksikössä V/m. Ei Ranskan käyttöönottosarja eikä yhdistetty näihin mittarikantoihin."
+      },
+      "imported": false
+    },
+    {
+      "id": "legacy_led_group_estimates",
+      "label": {
+        "en": "Legacy LED group estimates",
+        "fi": "Aiemmat LED-ryhmäarviot"
+      },
+      "kind": "scenario",
+      "paths": [
+        "berm/berm/diagnostics/led_natural_experiment.py",
+        "berm/data/processed/led_market_share.json"
+      ],
+      "url": "https://www.iea.org/data-and-statistics/charts/global-residential-lighting-sales-share-by-technology-in-the-net-zero-scenario-2010-2030",
+      "scope": {
+        "en": "Existing approximate group series; per-year source lineage is unresolved. Preserved as a scenario reference, not imported observations.",
+        "fi": "Olemassa olevat likimääräiset ryhmäsarjat; vuosiarvojen lähdeketju on avoin. Säilytetään skenaarioviitteenä, ei tuotuina havaintoina."
+      },
+      "imported": false
+    }
+  ],
+  "dataGaps": [
+    {
+      "id": "meter_protocol_shares",
+      "technologyId": "smart-metering",
+      "status": "missing",
+      "label": {
+        "en": "Meter communication protocols",
+        "fi": "Mittarien tiedonsiirtoprotokollat"
+      },
+      "needed": {
+        "en": "Area-year shares of PLC, RF mesh and cellular; G1/G3 changes, transmitter duty and wiring geometry.",
+        "fi": "Alue-vuosikohtaiset PLC-, radioverkon ja solukkoyhteyden osuudet; G1/G3-muutokset, lähetysajat ja johdotuksen geometria."
+      }
+    },
+    {
+      "id": "reader_installed_base",
+      "technologyId": "rfid-eas",
+      "status": "missing",
+      "label": {
+        "en": "RFID / EAS / NFC reader history",
+        "fi": "RFID-/EAS-/NFC-lukijoiden historia"
+      },
+      "needed": {
+        "en": "Reader and gate stock by place and protocol, active time, worker proximity; keep passive tags separate.",
+        "fi": "Lukija- ja porttikanta paikan ja protokollan mukaan, aktiivisuus ja työntekijän etäisyys; passiiviset tunnisteet erikseen."
+      }
+    },
+    {
+      "id": "inverter_hvac_stock",
+      "technologyId": "inverter-hvac",
+      "status": "missing",
+      "label": {
+        "en": "Inverter HVAC stock by region",
+        "fi": "Invertteri-ilmastoinnin alueellinen kanta"
+      },
+      "needed": {
+        "en": "Separate variable-speed stock, retirements, heating/cooling hours and indoor/outdoor equipment placement.",
+        "fi": "Taajuusmuuttajakanta, poistumat, lämmitys-/jäähdytystunnit sekä sisä- ja ulkolaitteiden sijainti erikseen."
+      }
+    },
+    {
+      "id": "textile_contact_history",
+      "technologyId": "synthetic-materials",
+      "status": "missing",
+      "label": {
+        "en": "Textiles in actual skin contact",
+        "fi": "Tekstiilien todellinen ihokontakti"
+      },
+      "needed": {
+        "en": "Production, garment stock and skin-contact time are different quantities; polymer, humidity and grounding histories are needed.",
+        "fi": "Tuotanto, vaatekanta ja ihokontaktiaika ovat eri suureita; tarvitaan polymeerien, kosteuden ja maadoituksen historia."
+      }
+    },
+    {
+      "id": "legacy_generation_years",
+      "technologyId": "mobile-4g",
+      "status": "missing",
+      "label": {
+        "en": "Network generation commissioning and shutdowns",
+        "fi": "Verkkosukupolvien käyttöönotot ja sulkemiset"
+      },
+      "needed": {
+        "en": "Replace heuristic generation dates only after operator/regulator commissioning and coexistence data are available.",
+        "fi": "Heuristiset sukupolvivuodet korvataan vasta operaattori-/viranomaisaineistolla käyttöönotosta ja rinnakkaiskäytöstä."
+      }
+    }
+  ]
+}

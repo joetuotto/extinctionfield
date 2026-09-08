@@ -1,0 +1,2974 @@
+Työ- ja elinkeinoministeriön julkaisuja • Energia • 38/2017
+
+
+Matkalla kohti joustavaa
+ja asiakaskeskeistä
+sähköjärjestelmää
+Työ- ja elinkeinoministeriön julkaisuja 38/2017
+
+
+
+
+Matkalla kohti joustavaa ja asiakaskeskeistä
+sähköjärjestelmää
+
+
+Työ- ja elinkeinoministeriön älyverkkotyöryhmän väliraportti
+
+
+
+
+Työ- ja elinkeinoministeriö, Helsinki 2017
+Työ- ja elinkeinoministeriö
+
+ISBN: 978-952-327-243-9
+
+
+Taitto: Valtioneuvoston hallintoyksikkö, Julkaisutuotanto
+
+
+Helsinki 2017
+Kuvailulehti
+Julkaisija                     Työ- ja elinkeinoministeriö                                        9.10.2017
+
+Tekijät                        Tatu Pahkala, Heidi Uimonen, Ville Väre
+
+                               Matkalla kohti joustavaa ja asiakaskeskeistä sähköjärjestelmää – Älyverkkotyöryhmän
+Julkaisun nimi
+                               väliraportti
+
+Julkaisusarjan nimi            Työ- ja elinkeinoministeriön julkaisuja
+ja numero                      TEM raportteja 38/2017
+
+Diaari/hankenumero                                                 Teema                          Energia
+
+ISBN PDF                       978-952-327-243-9                   ISSN PDF                       1797-3562
+
+URN-osoite                     http://urn.fi/URN:ISBN:978-952-327-243-9
+
+Sivumäärä                      65                                  Kieli                          Suomi
+
+Asiasanat                      sähkömarkkinat, kysyntäjousto, energiayhteisöt
+
+
+Tiivistelmä
+
+Älyverkkotyöryhmän tavoitteena on luoda yhteinen näkemys tulevaisuuden älykkäästä sähköjärjestelmästä ja esittää
+konkreettisia toimia, joilla älykäs sähköjärjestelmä voi palvella asiakkaiden mahdollisuuksia osallistua aktiivisesti sähkö-
+markkinoille ja edistää toimitusvarmuuden ylläpitoa. Tässä raportissa kuvataan työryhmässä ensimmäisen vuoden aikana
+käytyjä keskusteluja ja työryhmässä tehtyjä linjauksia.
+
+Keskeisenä periaatteena työryhmä katsoo, että asiakkaiden sähkönkulutuksen ohjaaminen on kilpailtua liiketoimintaa.
+Jakeluverkkoyhtiöiden aikaohjauksesta ja pakollisesta aikajaotuksesta luovutaan hallitusti, kun kustannustehokkaita
+kulutuksen ohjauspalveluja on riittävän kattavasti tarjolla. Samoin varastojen omistaminen ja operointi kuuluu lähtö-
+kohtaisesti markkinatoimijoille, ei monopolitoimijoille.
+
+Työryhmä suhtautuu positiivisesti energiayhteisöiden asiakkaille luomiin mahdollisuuksiin. Myös asiakkaiden sähkön-
+tuotantoa, kulutusta ja sähkövarastoja suuremmiksi kokonaisuuksiksi kokoavien aggregaattoreiden tuomiin hyötyihin
+työryhmä suhtautuu positiivisesti. Sekä energiayhteisöt että aggregaattorit ovat uusia toimijoita sähkömarkkinoilla, jolloin
+niiden määrittely ja toimintaa koskevat säännöt ja sääntely vaativat lisätarkennuksia. Työryhmä suhtautuu positiivisesti
+sähkön siirtolaskun kiinteän maksun korvaamiseen sellaisella tehokomponentilla, jonka avulla asiakkaalla on paremmat
+mahdollisuudet vaikuttaa siirtolaskuunsa. Siirtopalvelumaksujen hinnoittelurakenteiden harmonisointi voisi selkeyttää
+tilannetta muutosvaiheessa. Muutosten vaikutuksia eri asiakasryhmiin on tarpeen selvittää ennen niiden toteuttamista.
+Viestintä ja neuvonta muutosvaiheessa nähdään erittäin tärkeiksi.
+
+Tulevina teemoina työryhmässä ovat muun muassa tiedonvaihtoon liittyvät kysymykset, seuraavan sukupolven sähkö-
+mittareiden toiminnallisuudet, vähittäismarkkinoiden kehittäminen ja joustoa tukeva sääntely. Lisäksi avoimeksi jääneitä
+asioita tarkennetaan. Työryhmä jättää lopullisen mietintönsä syksyllä 2018.
+
+Työ- ja elinkeinoministeriön yhteyshenkilö: Energiaosasto, Tatu Pahkala, puh. 029 506 4217
+
+
+Kustantaja                     Työ- ja elinkeinoministeriö
+
+Julkaisun jakaja               Sähköinen versio: julkaisut.valtioneuvosto.fi
+Presentationsblad
+Utgivare                      Arbets- och näringsministeriet                                     9.10.2017
+
+Författare                    Tatu Pahkala, Heidi Uimonen, Ville Väre
+
+                              På väg mot ett flexibelt och kundinriktat elsystem – mellanrapport av arbetsgruppen för
+Publikationens titel
+                              smarta nät
+
+Publikationsseriens           Arbets- och näringsministeriets publikationer
+namn och nummer               ANM rapporter 38/2017
+
+Diarie-/
+                                                                  Tema                           Energi
+projektnummer
+
+ISBN PDF                      978-952-327-243-9                   ISSN PDF                       1797-3562
+
+URN-adress                    http://urn.fi/URN:ISBN:978-952-327-243-9
+
+Sidantal                      65                                  Språk                          Finska
+
+Nyckelord                     elmarknaden, efterfrågeflexibilitet, energisamhällen
+
+
+Referat
+
+Arbetsgruppen för smarta nät har som mål att skapa en gemensam vision av framtidens smarta elnät och föra fram
+konkreta åtgärder, med vilka ett smart elsystem kan främja kundernas möjligheter att aktivt delta i elmarknaden samt främja
+upprätthållandet av leveranssäkerheten. I denna rapport beskrivs de diskussioner som under det första året förts i
+arbetsgruppen och de riktlinjer som arbetsgruppen utarbetat.
+
+Arbetsgruppen anser att en grundläggande princip är att styrningen av kundernas elförbrukning är konkurrensutsatt
+affärsverksamhet. Man kan kontrollerat avstå från distributionsnätbolagens tidsstyrning och obligatoriska tidsfördelning, när
+det finns tillräckligt med kostnadseffektiva tjänster för konsumtionsstyrning. På samma sätt hör ägandet och driften av lager
+i regel till marknadsaktörer, inte monopol.
+
+Arbetsgruppen förhåller sig positiv till de möjligheter som energisamhällen skapar för kunderna. Man förhåller sig även
+positivt till de fördelar som aggregatorer som bildar större helheter av kundernas elproduktion, förbrukning och ellager
+medför. Såväl energisamhällen som aggregatorer är nya aktörer på elmarknaden, vilket föranleder att definitionen av dem
+samt bestämmelserna och regleringen av deras verksamhet måste preciseras. Arbetsgruppen förhåller sig positivt till att
+den fasta avgiften för överföring ersätts med en sådan effektkomponent, med hjälp av vilken kunden kan bättre påverka sin
+överföringsräkning. Harmonisering av överföringsavgifternas prissättningsstruktur kan förtydliga situationen i
+övergångsskedet. Det finns ett behov av att utreda effekterna av ändringarna för olika kundgrupper innan de genomförs.
+Kommunikation och rådgivning i övergångsskedet anses vara mycket viktiga.
+
+Kommande teman i arbetsgruppen är bland annat frågor angående informationsutbyte, funktionerna hos nästa
+generationens elmätare, utvecklingen av detaljhandelsmarknaden och reglering som stöder flexibilitet. Dessutom kommer
+man att precisera öppna frågor. Arbetsgruppen lämnar sitt slutliga betänkande hösten 2018.
+
+Kontaktperson vid arbets- och näringsministeriet: Energiavdelningen, Tatu Pahkala, tfn 029 506 4217
+
+
+Förläggare                    Arbets- och näringsministeriet
+
+Distribution                  Elektronisk version: julkaisut.valtioneuvosto.fi
+Description sheet
+Published by                   Ministry of Economic Affairs and Employment                          9 October 2017
+
+Authors                        Tatu Pahkala, Heidi Uimonen, Ville Väre
+
+                               On the way towards a flexible and customer-driven electricity network – An interim report by
+Title of publication
+                               the Smart grid working group
+
+Series and publication         Publication of Ministry of Economic Affairs and Employment
+number                         MEAE reports 38/2017
+
+Register number                                                     Subject                         Energy
+
+ISBN PDF                       978-952-327-243-9                    ISSN PDF                        1797-3562
+
+Website address
+                               http://urn.fi/URN:ISBN:978-952-327-243-9
+(URN)
+
+Pages                          65                                   Language                        Finnish
+
+Keywords                       electricity market, demand-side management, energy communities
+
+
+Abstract
+
+The goal of the Smart grid working group is to create a common vision for the future of a smart electricity system and to
+explore and propose concrete measures through which the smart electricity system can both facilitate the of customers’
+possibilities to actively participate in the electricity market and promote the maintenance of security of supply. This report
+describes the discussions of the working group during its first year and policies defined by the working group.
+
+As a main principle, the working group considered the control of the customer's electricity consumption to be a competitive
+business activity. The time-based control and compulsory time-of-use pricing by distribution network companies will be
+eliminated in a controlled manner once a sufficient amount of cost-effective automated consumption control services are
+available for the customers. Owning and operating storages should also be primarily a task of market players, not
+monopolies.
+
+The working group has a positive view on the opportunities created by the energy communities for their customers. The
+benefits brought by aggregators which form larger entities out of customers' electricity production, consumption and storage
+are regarded positively. The energy communities and aggregators are both new roles to the electricity market, as a result of
+which their determination and the rules and regulation concerning their operations need to be specified in further detail. The
+working group has a positive view on replacing the flat-rate of the electricity distribution charge with a power component that
+provides customers with better opportunities for affecting their distribution charges. Harmonising the pricing structures of
+distribution charges could bring clarity to the situation at the transition stage. Before implementing changes, there is need to
+investigate their effects on different customer groups. Communication and advice are considered to be vital at the transition
+stage.
+
+Future themes of the working group include questions related to information exchange, the functions of next generation
+power meters, developing the retail market and regulation that supports flexibility. Any incomplete issues will also be
+specified. The working group will submit its final report at the autumn of 2018.
+
+Contact person within Ministry of Economic Affairs and Employment:: Energy Department, Tatu Pahkala,
+tel. +358 29 506 4217
+
+
+Publisher                      Ministry of Economic Affairs and Employment
+
+Distributed by                 Online version: julkaisut.valtioneuvosto.fi
+Sisältö
+
+Yhteenveto .......................................................................................................... 8
+
+Johdanto............................................................................................................ 10
+       Älyverkkotyöryhmän taustaa ..................................................................................................... 10
+       Älyverkkotyöryhmä ja sen tehtävät ............................................................................................ 12
+
+Väliraportin sisältö ja tarkoitus ........................................................................ 15
+       Julkinen kuuleminen työryhmän ehdotuksista ........................................................................... 16
+
+Älyverkkovisio 2025.......................................................................................... 17
+
+Työryhmässä keskustellut teemat................................................................... 19
+       Jakeluverkkoyhtiön ja markkinatoimijoiden roolit kysyntäjoustossa .......................................... 19
+       Aggregaattorit – joustavien tuotanto- ja kulutuskohteiden yhdistäjät ......................................... 23
+       Energiayhteisöt.......................................................................................................................... 32
+       Paikallinen energiayhteisö – kiinteistön sisäinen....................................................................... 34
+       Paikallinen energiayhteisö – kiinteistörajat ylittävä.................................................................... 37
+       Hajautettu energiayhteisö.......................................................................................................... 39
+       Jakeluverkon tehopohjainen siirtohinnoittelu ............................................................................. 43
+       Verkkopalvelun maksurakenteiden harmonisointi ..................................................................... 46
+       Sähkövarastot ........................................................................................................................... 48
+       Verotus ...................................................................................................................................... 50
+
+Tiekartta markkinaehtoiseen kysyntäjoustoon .............................................. 53
+
+Jatkotyö ............................................................................................................. 55
+       Tiedonvaihto .............................................................................................................................. 55
+       Hajautetun sähköjärjestelmän tietoturva ................................................................................... 56
+       Seuraavan sukupolven mittausjärjestelmä - AMR 2.0 ............................................................... 57
+       Vähittäismarkkinoiden kehittäminen .......................................................................................... 58
+       Joustoa tukeva sääntely ............................................................................................................ 58
+
+Julkinen kuuleminen ........................................................................................ 60
+       Yleiset kysymykset .................................................................................................................... 60
+       Teemakohtaiset kysymykset ..................................................................................................... 61
+
+Määritelmiä ........................................................................................................ 63
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+YHTE E NV E TO
+
+
+
+Työ- ja elinkeinoministeriö perusti syksyllä 2016 kaksivuotisen älyverkkotyöryhmän
+selvittämään älyverkkojen mahdollisuuksia sähkömarkkinoille. Älyverkkotyöryhmän
+tavoitteena on luoda yhteinen näkemys tulevaisuuden älykkäästä sähköjärjestelmäs-
+tä. Sen tehtävänä on selvittää ja esittää konkreettisia toimia, joilla älykäs sähköjärjes-
+telmä voi palvella asiakkaiden mahdollisuuksia osallistua aktiivisesti sähkömarkkinoil-
+le ja edistää toimitusvarmuuden ylläpitoa. Tässä raportissa kuvataan työryhmässä
+ensimmäisen vuoden aikana käytyjä keskusteluja ja työryhmässä tehtyjä linjauksia.
+Tavoitteena on älykäs sähköjärjestelmä, joka toimii kustannustehokkaana alustana
+täyttämään asiakkaiden ja yhteiskunnan tarpeet sähkömarkkinatoimijoiden, palvelun-
+tarjoajien, teknologiatoimittajien sekä verkkoyhtiöiden toimesta.
+
+
+Keskeisenä periaatteena työryhmä katsoo, että asiakkaiden sähkönkulutuksen oh-
+jaaminen on kilpailtua liiketoimintaa, sillä sähkön kulutus- ja tuotantopäätökset tapah-
+tuvat tehokkaimmin hinnan ohjaamina sähkömarkkinoilla. Näin ollen jakeluverkkoyhti-
+öiden aikaohjauksesta ja pakollisesta aikajaotuksesta luovutaan hallitusti, kun kustan-
+nustehokkaita kulutuksen ohjauspalveluja on riittävän kattavasti tarjolla. Samoin va-
+rastojen omistaminen ja operointi kuuluu lähtökohtaisesti markkinatoimijoille, ei mo-
+nopolitoimijoille.
+
+
+Erilaiset energiayhteisöt antavat asiakkaille konkreettisia mahdollisuuksia vaikuttaa
+omaan sähkölaskuunsa ja vaikuttaa oman sähkönhankintansa ympäristövaikutuksiin.
+Työryhmä suhtautuu positiivisesti energiayhteisöiden asiakkaille luomiin mahdolli-
+suuksiin. Myös asiakkaiden sähköntuotantoa, kulutusta ja sähkövarastoja suuremmik-
+si kokonaisuuksiksi keräävien aggregaattoreiden tuomiin hyötyihin suhtaudutaan posi-
+tiivisesti. Sekä energiayhteisöt että aggregaattorit ovat uusia toimijoita sähkömarkki-
+noilla, jolloin niiden määrittely ja toimintaa koskevat säännöt ja sääntely vaativat lisä-
+tarkennuksia.
+
+
+Muutamat sähkönjakeluyhtiöt ovat jo muuttaneet myös pienasiakkaidensa siirtohin-
+noittelua siten, että siinä huomioidaan asiakkaan kuluttama teho. Työryhmä suhtautuu
+positiivisesti kiinteän maksun korvaamiseen sellaisella tehokomponentilla, jonka avul-
+
+
+                                             8
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+la asiakkaalla on paremmat mahdollisuudet vaikuttaa siirtolaskuunsa. Siirtopalvelu-
+maksujen hinnoittelurakenteiden harmonisointi voisi selkeyttää tilannetta muutosvai-
+heessa. Mahdolliset muutokset siirtohinnoittelussa ja verotuksessa vaikuttavat asia-
+kasryhmiin eri tavalla, minkä takia muutosten vaikutuksia on tarpeen selvittää ennen
+niiden toteuttamista. Viestintä ja neuvonta muutosvaiheessa nähdään erittäin tärkeik-
+si.
+
+
+Työryhmän työ jatkuu. Tulevia teemoja ovat muun muassa mittausliiketoiminnan vaih-
+toehdot, vähittäismarkkinoiden kehittäminen sekä seuraavan sukupolven sähkömitta-
+rin toiminnallisuudet. Jakeluverkkoyhtiöiden rooli älykkäässä sähköjärjestelmässä
+korostuu, jolloin niiden sääntelyä tulee kehittää joustavuutta tukevampaan suuntaan.
+Myös rakennussääntelyllä on merkittävä rooli asiakkaiden valintojen mahdollistami-
+sessa. Alkuvaiheessa avoimiksi jääneisiin asioihin palataan uudelleen esimerkiksi
+tarkennuksin ja konkreettisemmin ehdotuksin. Useat asiat edellyttävät vielä lisäselvi-
+tyksiä ja laaja-alaisia vaikutusten arviointeja. Lisäselvitysten ja vaikutusten arviointien
+perusteella esitettyjä linjauksia voidaan tarkentaa työryhmän jatkotyössä kokonaisuus
+huomioiden. Työryhmä jättää mietintönsä syksyllä 2018.
+
+
+
+
+                                              9
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Johdanto
+
+Älyverkkotyöryhmän taustaa
+Ihmisen aiheuttamat kasvihuonekaasupäästöt ovat keskeinen tekijä ilmastonmuutok-
+sen aiheuttajana. Tästä syystä monet maat ovat sitoutuneet rajoittamaan kasvihuone-
+kaasupäästöjään merkittävästi. Uusin kansainvälinen sopimus päästöjen rajoittami-
+sesta astui voimaan 4.11.2016. Sopimus tunnetaan paremmin nimellä Pariisin ilmas-
+tosopimus. Sen tavoitteena on pitää maapallon keskilämpötilan nousu selvästi alle
+kahdessa asteessa suhteessa esiteolliseen aikaan ja pyrkiä toimiin, joilla lämpenemi-
+nen saataisiin rajattua alle 1,5 asteen.
+
+
+Euroopan unionissa on jo aiemmin asetettu tavoitteet ilmasto- ja energiapolitiikalle
+ulottuen vuoteen 2030. Päästökauppasektorilla päästövähennystavoite koko Euroo-
+palle on 42 % vuoden 1990 tasosta ja päästökaupan ulkopuolella niin kutsutulla taa-
+kanjakosektorilla 30 %. Taakanjakosektorin osalta komissio on antanut kullekin jä-
+senmaalle omat tavoitteensa, Suomelle tavoitteeksi on asetettu 39 % päästövähen-
+nys.
+
+                                                       1
+Pääministeri Juha Sipilän hallituksen ohjelmassa on asetettu kunnianhimoiset tavoit-
+teet energian osalta. Siinä tavoitellaan uusiutuvan energian osuuden lisäämistä yli 50
+prosenttiin loppukulutuksesta, energiaomavaraisuuden kasvattamista yli 55 prosent-
+tiin, luopumista hiilen käytöstä energiantuotannossa, tuontiöljyn kotimaisen käytön
+puolittamista sekä liikenteen uusiutuvien polttoaineiden osuuden nostamista 40 pro-
+senttiin (23,5 prosenttia polttoaineiden energiasisällöstä). Nämä tavoitteet pyritään
+                                                                                      2
+saavuttamaan vuoteen 2030 mennessä kansallisessa energia- ja ilmastostrategiassa
+esitetyillä toimilla.
+
+
+
+
+1
+  http://valtioneuvosto.fi/sipilan-hallitus/hallitusohjelma
+2
+ Valtioneuvoston selonteko kansallisesta energia- ja ilmastostrategiasta vuoteen 2030, saatavil-
+la: http://julkaisut.valtioneuvosto.fi/handle/10024/79189
+
+
+                                               10
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Ilmastonmuutoksen torjumisessa sähköntuotannon päästöjen vähentäminen on mer-
+kittävässä roolissa. Toimet sähköntuotannon päästöjen vähentämiseksi lisäävät mer-
+kittävästi uusiutuvaa sään mukaan vaihtelevaa tuuli- ja aurinkovoimaa. Lisäksi Suo-
+meen rakennetaan uutta ydinvoimatuotantoa, joka tuottaa tyypillisesti sähköä tasaisel-
+la vakioteholla ja tehoa ei juurikaan säädetä.
+
+
+Sähkön kulutuksen ja tuotannon on oltava joka hetki tasapainossa. Aiemmin pääosin
+tuotantoa on säädetty vastaamaan kulutusta, mutta sään mukaan vaihtelevan ja jous-
+tamattoman tuotannon lisääntyessä myös kulutusta joudutaan säätämään yhä enem-
+män, jotta tehotasapaino säilyisi. Suuri, toistaiseksi pitkälti hyödyntämätön joustopo-
+tentiaali on kuluttajien sähkönkulutuksessa, joka tekniikan nopean kehityksen myötä
+on entistä helpommin hyödynnettävissä. Joustoa mahdollistavat etenkin sellaiset kulu-
+tuskohteet, joissa energiaa voidaan varastoida myöhempää käyttöä varten, kuten
+sähkölämmitys ja varastointilaitteistot. Tästä syystä kuluttajien kysyntäjousto voi tar-
+koittaa kulutuksen vähentämisen lisäksi myös kulutuksen hetkellistä kasvattamista
+markkinatilanteen mukaan. Mikäli kulutusta ei saada tehokkaasti mukaan sähköjärjes-
+telmän hallintaan, lisää se asiakkaan kustannuksia, sähköjärjestelmän päästöjä ja voi
+heikentää toimitusvarmuutta.
+
+
+Politiikkatoimien lisäksi pienkuluttajien energiankäytön muutokset ja teknologian no-
+pea kehittyminen aiheuttavat muutoksia sähkömarkkinoilla ja lisäävät asiakkaan toi-
+mintamahdollisuuksia. Asiakkaat ovat enenevissä määrin aktivoituneet rakentamaan
+omaa sähköntuotantoa, mikä muuttaa sähkön jakelua kaksisuuntaiseksi. Samoin säh-
+köautojen lataaminen muuttaa sähkönkulutusta ja siirtoa sähköverkossa. Erilaiset
+sähkön varastointikeinot, mukaan lukien sähköautojen akut, sekä älyn lisääminen
+erilaisiin kodinkoneisiin lisäävät asiakkaiden mahdollisuuksia sähkön käytön helppoon
+siirtämisen ajallisesti. Teknologian hinta on laskenut viime vuosina nopeasti ja kehitys
+näyttäisi jatkuvan vastaavana.
+
+
+Hajautetuista resursseista koostuvaa monimutkaista kokonaisuutta ei voida hallita
+ilman automatiikkaa ja tehokkaampaa tiedonvaihtoa eri osapuolten kesken. Älykäs
+sähköjärjestelmä eli älyverkko toimii alustana, jossa vaihteleva tuotanto ja kulutus
+tasapainotetaan kustannustehokkaalla tavalla, aiempaa reaaliaikaisempien markki-
+namekanismien ohjaamana.
+
+
+Älykkään sähköjärjestelmän mahdollistamien palvelujen avulla sähkö voidaan tuottaa
+ja kuluttaa aina siellä, missä se kulloinkin on kannattavinta. Näin älykäs sähköjärjes-
+telmä mahdollistaa myös kustannustehokkaan siirtymisen kohti hajautetumpaa ja
+vähähiilistä sähköjärjestelmää. Lisäksi älykäs sähköjärjestelmä toimii alustana uusille,
+innovatiivisille sähköön liittyville palveluille. Se myös tarjoaa pienkuluttajille entistä
+enemmän sähköntuotantoon ja kulutukseen liittyviä valinnanmahdollisuuksia.
+
+
+
+                                             11
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Suomessa on otettu jo merkittäviä askeleita älykkään sähköjärjestelmän edistämisek-
+si. Sähkömarkkinat avattiin kilpailulle jo 90-luvun puolivälissä ja vähittäismarkkinoiden
+                                             3
+kilpailu onkin eurooppalaisella mittapuulla erinomaisella tasolla. Suomessa päätettiin
+asentaa ensimmäisenä Euroopassa lähes kaikille asiakkaille tuntiluettavat älymittarit
+vuoden 2013 loppuun mennessä. Tuntiluettavat mittarit ovat mahdollistaneet aktiivisil-
+le asiakkaille jo nyt hyötymisen sähkön markkinahintojen vaihtelusta. Sähkön vähit-
+täismarkkinoiden tehostamista ja asiakkaiden mahdollisuuksien lisäämistä tukemaan
+Fingrid Oyj on työ- ja elinkeinoministeriön pyynnöstä ryhtynyt toteuttamaan vähittäis-
+markkinoiden keskitettyä tiedonvaihtoratkaisua, datahubia. Datahubin myötä vähit-
+täismarkkinoiden tiedonvaihto yksinkertaistuu ja nopeutuu ja sen tarjoaman tiedon
+pohjalta voidaan rakentaa aiempaa parempia energiapalveluita. Datahubin suunniteltu
+käyttöönotto on vuonna 2019.
+
+
+Euroopan komissio antoi marraskuussa 2016 laajan energia-alaa koskevan toimenpi-
+depaketin, jolla komissio pyrkii säilyttämään EU:n kilpailukyvyn puhtaaseen energiaan
+                                                       4
+siirtymisen muuttaessa maailman energiamarkkinoita . Yleisesti kokonaisuus tunne-
+taan puhtaan energian pakettina. Kokonaisuuteen kuuluu yhteensä kahdeksan lain-
+säädäntöehdotusta, joista neljä käsittelee keskeisesti sähkömarkkinoita. Sähkömark-
+kinoita koskevissa ehdotuksissa nostetaan asiakas sähkömarkkinoiden keskiöön ja
+pyritään parantamaan asiakkaiden mahdollisuuksia osallistua markkinoille. Sähkö-
+markkinaehdotukset hyväksyttäneen EU:n toimielimissä vuoden 2018 alkupuoliskolla.
+
+
+
+
+Älyverkkotyöryhmä ja sen tehtävät
+Sähkömarkkinoiden murros ja sähköjärjestelmän muuttaminen älykkäämmäksi vaati-
+vat usean eri toimijan yhteispeliä, sillä muutokset vaikuttavat laajasti koko yhteiskun-
+taan. Työ- ja elinkeinoministeriö asetti syyskuussa 2016 työryhmän selvittämään älyk-
+kään sähköjärjestelmän mahdollisuuksia sähkömarkkinoille. Älyverkkotyöryhmän ta-
+voitteena on luoda yhteinen näkemys tulevaisuuden älykkäästä sähköjärjestelmästä.
+Sen tehtävänä on selvittää ja esittää konkreettisia toimia, joilla älykäs sähköjärjestel-
+mä voi palvella asiakkaiden mahdollisuuksia osallistua aktiivisesti sähkömarkkinoille
+ja edistää toimitusvarmuuden ylläpitoa. Työryhmän tavoitteena on hakea konkreettisia
+ja realistisia ratkaisuja sähkömarkkinoiden kehittämiseksi. Työryhmän tarkoituksena ei
+ole ottaa kantaa esimerkiksi energiatukiin tai verojen tasoon vaan keskittyä markki-
+
+
+
+3
+  Ks. esim. ACER Market Monitoring Report 2015 - Electricity and gas retail market, 09/11/2016
+http://www.acer.europa.eu/Official_documents/Acts_of_the_Agency/Publication/ACER%20Mark
+et%20Monitoring%20Report%202015%20-
+%20ELECTRICITY%20AND%20GAS%20RETAIL%20MARKETS.pdf
+4
+  Puhdasta energiaa kaikille eurooppalaisille, Euroopan komission lehdistötiedote 30.11.2016
+http://europa.eu/rapid/press-release_IP-16-4009_fi.htm
+
+
+                                              12
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+noiden rakenteiden ja käytäntöjen kehittämiseen. Aikaperspektiivinä muutoksille on
+vuosi 2025.
+
+
+Työryhmään on kutsuttu laaja edustus koko toimialalta, sillä murros vaikuttaa energia-
+alan kaikkiin toimijoihin. Mukana on suuria ja pieniä sähkön kuluttajia, sähköntuottajia
+ja -myyjiä, kantaverkkoyhtiö ja jakeluverkkoyhtiöitä, viranomaistahoja sekä tutkimus-
+laitoksia. Työryhmässä kuullaan myös muita asiantuntijoita ja hyödynnetään tarvitta-
+essa konsultteja eri teemoihin liittyen.
+
+
+Työryhmän puheenjohtaja on ylitarkastaja Tatu Pahkala työ- ja elinkeinoministeriön
+energiaosastolta.
+
+
+Työryhmän jäsenet ovat
+
+•   Jukka Kaakkola (Kilpailu- ja kuluttajavirasto)
+•   Bettina Lemström (työ- ja elinkeinoministeriö)
+•   Suvi Lehtinen (Energiavirasto)
+•   Riina Heinimäki (Energiateollisuus ry)
+•   Toivo Hurme (Paikallisvoima ry)
+•   Pertti Järventausta (Tampereen teknillinen yliopisto)
+•   Kaisa Kettunen (Suomen Kiinteistöliitto ry)
+•   Pasi Kuokkanen (Suomen Sähkönkäyttäjät ry)
+•   Risto Lindroos (Fingrid Oyj)
+•   Juha Marjeta (Lähienergialiitto ry)
+•   Jarmo Partanen (Lappeenrannan teknillinen yliopisto)
+•   Kaija Savolainen (Suomen Omakotiliitto ry)
+
+Työryhmän pysyvät asiantuntijat ovat
+
+
+•   Johanna Haverinen (Keravan Energia Oy)
+•   Malkus Lindroos (Vattenfall Oy)
+•   Markku Hyvärinen (Helen Sähköverkko Oy)
+•   Lasse Konttinen (Caruna Oy)
+•   Jouni Pylvänäinen (Elenia Oy)
+•   Marko Silokoski (Rauman Energia Oy)
+
+Työryhmän sihteerit ovat
+
+
+•   Heidi Uimonen (Fingrid Oyj)
+•   Ville Väre (Energiavirasto)
+
+
+
+
+                                             13
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Työryhmässä on lisäksi vieraillut seuraavia asiantuntijoita
+
+
+•   Veli-Pekka Saajo (Energiaviraston varajäsen)
+•   Petri Pylsy (Kiinteistöliiton varajäsen)
+•   Kenneth Hänninen (Energiateollisuuden varajäsen)
+•   Karoliina Auvinen (Lähienergialiiton varajäsen)
+•   Bengt Söderlund (Caruna Oy:n varajäsen)
+•   Jouni Lehtinen (Helen Sähköverkko Oy:n varajäsen)
+•   Tommy Svens (Vattenfall Oy:n varajäsen)
+•   Mikko Lepistö (Suomen Sähkönkäyttäjät ry:n varajäsen)
+•   Mikko Halonen (Suomen Sähkönkäyttäjät ry:n varajäsen)
+•   Juha Leinonen (Pöyry Consulting Oyj)
+•   Jimmy Forsman (Pöyry Consulting Oyj)
+•   Mikael Marisa (Sympower Oy)
+•   Laura Ihamäki (Fingrid Oyj)
+•   Tatu Kulla (Fortum Oyj)
+•   Leo Parkkonen (valtiovarainministeriö)
+•   Tuula Karjalainen (valtiovarainministeriö)
+•   Henna Jovio (Borenius Attorneys LTD)
+•   Janne Juusela (Borenius Attorneys LTD)
+•   Jan Segerstam (Empower Oy)
+•   Olli Bremer (Demos Effect)
+•   Oona Frilander (Demos Effect)
+•   Heikki Vestman (Energiavirasto)
+
+Työryhmän toimikausi on kaksivuotinen. Työryhmän asettamispäätöksen mukaisesti
+työryhmän on toimitettava loppuraportin lisäksi väliraportti toimikauden puolivälissä.
+
+
+
+
+                                             14
+                            TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Väliraportin sisältö ja tarkoitus
+Kysyntäjouston edistämiseen liittyvät kysymykset riippuvat merkittävästi toisistaan ja
+ennen konkreettisten ehdotusten tekemistä yksittäisistä kysymyksistä tietyistä perus-
+periaatteista pitää sopia. Tässä raportissa esitetään työryhmän ensimmäisen vuoden
+aikana linjaamat keskeiset periaatteet muun muassa sähkömarkkinatoimijoiden roo-
+leista sähkömarkkinoilla sekä aktiivisen osallistumisen kannustimista. Tavoitteena on
+älykäs sähköjärjestelmä, joka toimii kustannustehokkaana alustana täyttämään asiak-
+kaiden ja yhteiskunnan tarpeet sähkömarkkinatoimijoiden, palveluntarjoajien, teknolo-
+giatoimittajien sekä verkkoyhtiöiden toimesta.
+
+
+Tällä hetkellä sähkön vähittäismarkkinoilla toimijoiden roolit ovat osittain limittyneet.
+Epäselvät roolit ja pelisäännöt hidastavat kysyntäjouston yleistymistä ja saattavat
+luoda rajoitteita erityisesti pienkuluttajien kysyntäjouston lisääntymiselle. Sähkömark-
+kinoille on tulossa uusia rooleja, joihin liittyvien selkeiden vastuiden ja velvollisuuksien
+määrittely luovat pohjaa tulevaisuuden älykkäässä sähköjärjestelmässä asiakkaiden
+tarvitsemien uudenlaisten tuotteiden ja palveluiden kehittämiselle. On tärkeää erottaa
+monopoliluonteiset toiminnot markkinaehtoisesta toiminnosta. Selkeästi linjatut vas-
+tuut ja velvoitteet tukevat energiamurrosta kohti hajautettua, uusiutuvaan ja vaihtele-
+vaan sähköntuotantoon perustuvaa sähköjärjestelmää, jossa palveluita tuotetaan
+asiakkaan ja yhteiskunnan tarpeisiin.
+
+
+Älykkään sähköjärjestelmän toimivuus perustuu sähköjärjestelmän tilaa heijastele-
+vaan markkinahintaan, joka välittyy tehokkaasti kaikille markkinaosapuolille. Reaaliai-
+kainen, aidosti kysyntää ja tarjontaa heijastava hinta ohjaa markkinaosapuolia teke-
+                                                                             5
+mään päätöksiä, joilla sähköjärjestelmä pidetään tehokkaasti tasapainossa. Älykkään
+sähköjärjestelmän syntymisen kannalta on kriittistä, että sähkömarkkinoiden rakennet-
+ta ja toimintaperiaatteita uudistetaan vastaamaan toimintaympäristön muutosta.
+
+
+Älyverkkotyöryhmässä on keskusteltu myös jakeluverkkomaksujen ja verotuksen ra-
+kenteen vaikutuksesta kysyntäjouston kannattavuuteen asiakkaille sekä pitkän aika-
+välin tehokkuuteen sähköjärjestelmän mitoituksessa. Asian selvittelyä jatketaan.
+
+
+5
+    Kansallinen energia- ja ilmastostrategia 2030. http://tem.fi/strategia2016
+
+
+                                                  15
+                      TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Julkinen kuuleminen työryhmän ehdotuksista
+Toimeksiannon mukaisesti työryhmän on esitettävä konkreettisia ehdotuksia, joilla
+asiakkaan osallistumismahdollisuuksia parannetaan ja toimitusvarmuuden taso saa-
+daan ylläpidettyä. Ehdotukset tarkoittavat varsin merkittäviä muutoksia asiakkaille
+nykykäytäntöihin verrattuna. Väliraportin yhteydessä järjestetään julkinen kuuleminen,
+jossa haetaan palautetta ja kehitysehdotuksia väliraportissa ehdotetuille muutoksille.
+Näiden avulla voidaan jatkaa konkreettisen siirtymäsuunnitelman tekoa aikataului-
+neen. Siirtymän tulee olla asiakkaille mahdollisimman hyvin viestittävissä, selkeä ja
+helppo.
+
+
+
+
+                                            16
+                           TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Älyverkkovisio 2025
+Työryhmän tärkeänä tehtävänä oli heti toimikauden alussa luoda näkemys tulevai-
+suuden älykkäästä sähköjärjestelmästä. Älyverkkotyöryhmä teki vuoteen 2025 ulottu-
+                               6
+van kansallisen älyverkkovision , joka ohjaa työryhmän työskentelyä koko sen toimi-
+kauden ajan.
+
+
+Visiossa älykäs sähköjärjestelmä nähdään fyysistä sähkön siirto- ja jakeluverkkoa
+laajempana toiminnallisena kokonaisuutena – älykkäänä sähköjärjestelmänä. Se kat-
+taa fyysisen siirron ja jakelun lisäksi tuotannon, hajautetut energiaresurssit, sähköjär-
+jestelmän joustot ja erilaiset älyverkkosovellukset, jotka yhdistävät fyysisen sähkön
+sähkömarkkinoihin. Älykkäässä sähköjärjestelmässä tulee huomioida teknologian,
+laitteiden, tiedonhallinnan lisäksi asiakkaiden, sähkömarkkinoiden, liiketoimintamallien
+ja lainsäädännön näkökulmat.
+
+
+Älyverkkovisiossa älykäs sähköjärjestelmä katsottiin palvelualustaksi siirryttäessä
+kohti hajautetumpaa ja vähähiilistä sähköjärjestelmää. Se lisää asiakkaan mahdolli-
+suuksia osallistua sähkömarkkinoille, parantavat sähkön toimitusvarmuutta ja luovat
+yrityksille uusia liiketoimintamahdollisuuksia kustannustehokkaasti. Visiossa älykkään
+sähköjärjestelmän mahdollisuuksia tarkisteltiin tärkeimpien sidosryhmien näkökulmis-
+ta. Vision keskiöön nostettiin asiakas.
+
+
+Tiivistetysti älykäs sähköjärjestelmä:
+
+
+    •   mahdollistaa asiakkaalle sähkönkäytön kokonaiskustannusten alentamisen ja
+        sähkön käyttöön ja tuotantoon liittyvät arvovalinnat
+    •   tarjoaa sähkömarkkinoilla toimiville ja niille pyrkiville sähkönmyyjille ja palveluntar-
+        joajille innovatiiviset, tasapuoliset ja toimivat puitteet liiketoiminnan kehittämiselle
+        ja asiakastarvelähtöisten tuotteiden ja palvelujen tarjonnalle
+    •   tarjoaa jakeluverkonhaltijalle ratkaisuja sähkön kaksisuuntaiseen jakeluun riittävän
+        hyvälaatuisesti ja toimintavarmasti
+
+
+
+
+6
+    Suomen älyverkkovisio 30.10.2016, saatavilla www.tem.fi/alyverkot
+
+
+                                                 17
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+•    tarjoaa sähköntuottajille välineitä tehokkaampaan tuotannon optimointiin nopeasti
+     muuttuvassa toimintaympäristössä
+•    edesauttaa järjestelmävastaavaa kantaverkonhaltijaa tehotasapainon ylläpitämi-
+     sessä ja sähkönsaannin turvaamisessa vaihtelevan sähköntuotannon lisääntyes-
+     sä
+•    luo teknologiateollisuudelle kansainvälisesti houkuttelevan toimintaympäristön
+     älyverkkoteknologiaan perustuvien tuotteiden ja palvelujen kehittämiselle ja vien-
+     nille vahvistaen työllisyyttä ja elinkeinoelämän kilpailukykyä
+•    tukee yhteiskuntaa energiapoliittisten ja yhteiskunnallisten tavoitteiden saavutta-
+     misessa kustannustehokkaasti.
+
+Alla olevassa kuvassa on esitetty vision yhteenveto.
+
+
+
+
+Kuva 1. Älyverkkovision yhteenveto
+
+
+
+
+                                               18
+                            TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Työryhmässä keskustellut teemat
+
+Jakeluverkkoyhtiön ja markkinatoimijoiden
+roolit kysyntäjoustossa
+
+Nykytila
+Historiallisista syistä jakeluverkkoyhtiöillä on Suomessa pitkät perinteet pienkuluttajien
+sähkönkulutuksen ohjauksesta. Jakeluverkkojen yö- ja päiväsiirron erilaisella hinnalla
+(yö-päivätariffi) on pyritty tasaamaan kuormituksen vaihtelua yön ja päivän välillä,
+mutta se ei enää täysin vastaa tämän päivän ja tulevaisuuden tarpeisiin. Jakeluverk-
+koyhtiöiden aikaohjauksella tarkoitetaan jakeluverkkojen sähkölämmityskuormien
+ohjausta kellonajan tai kalenterin mukaan (muun muassa niin sanottu yö-päiväohjaus,
+joka liittyy yleensä yö-päivätariffiin). Jakeluverkkoyhtiöiden aikaperusteisen ohjauksen
+piirissä oleva joustava kulutus on poissa dynaamisemmilta kysyntäjoustomarkkinoilta.
+Aikaohjauksessa olevan sähkönkulutuksen määrän arvioidaan olevan merkittävä, yli
+            7
+1000 MW . Kaikkien jakeluverkkoon kytkeytyneiden asiakkaiden tekninen ohjauspo-
+tentiaali on moninkertainen tähän verrattuna.
+
+
+Kellonaikaan tai kalenteriin sidottu sähkönkulutuksen aikaohjaus on käymässä van-
+hentuneeksi, kun sähkön tuotantorakenne muuttuu vaihtelevammaksi ja säästä riip-
+puvaksi, jolloin sähkömarkkinoiden tilanne muuttuu aiempaa nopeammin. Joustamat-
+tomaan sähköntuotantoon perustuvassa sähköjärjestelmässä on ensiarvoisen tärke-
+ää, että jatkossa yhä suurempi osuus sähkön kulutuksesta voi reagoida sähkömarkki-
+natilanteeseen nopeasti. Vaihtelevaan markkinahintaan mukautuva dynaamisempi
+kysyntäjousto on yhteiskunnalle kustannustehokas ja ympäristöystävällinen tapa yllä-
+pitää tehotasapainoa ja varmistaa toimitusvarmuus. Myös asiakas voi tällöin hyötyä
+sähkömarkkinoista paremmin. Työryhmän asiantuntijoiden mukaan aikaohjausta ei
+
+
+
+
+7
+    Älyverkkovisio, saatavissa http://www.tem.fi/alyverkot
+
+
+                                                  19
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+tarvita jakeluverkon kapasiteetin ja kuormituksen hallinnan takia. Jakeluverkkoyhtiöi-
+den ohjaustarpeet liittyvät poikkeustilanteisiin kuten häiriöihin.
+
+
+Jakeluverkkoyhtiöt toimivat alueellisessa monopoliasemassa sähkönsiirrossa. Mono-
+politoimijoiden vaikuttaminen sähkömarkkinoihin ilman verkkoyhtiön tarvetta on ky-
+seenalaista, sillä sähkömarkkinat ovat vapaan kilpailun piirissä ja monopolitoimija
+voisi kompensoida kaupallisia toimiaan monopolitoimintojen tulovirroilla. Verkkoyhtiöi-
+den tehtävä on toimia neutraaleina markkinoiden mahdollistajina ja tarjota fyysinen
+yhteys sähköjärjestelmään ja markkinapaikalle, sekä toimittaa markkinoiden ja asiak-
+kaiden tarpeisiin liittyvät keskeiset tiedot. Jakeluverkkoyhtiöt takaavat häiriöttömän
+sähkönjakelun ja verkon sähköturvallisuuden. Jakeluverkkoyhtiöiden ei tulisi vaikuttaa
+sähkömarkkinoiden toimintaan ohjaamalla suoraan sähköntuotantoa tai -kulutusta.
+
+
+Tavoitetila
+Asiakkaiden sähkönkulutuksen ohjaaminen on kilpailtua liiketoimintaa, sillä sähkön
+kulutus- ja tuotantopäätökset tapahtuvat tehokkaimmin sähkömarkkinoilla markkina-
+paikkojen hintasignaalien perusteella, kunhan huomioidaan sähköverkon asettamat
+fyysiset rajoitteet. Koska markkinat tuottavat palvelut tehokkaimmin, asiakkaat saavat
+kysyntäjoustosta parhaan hyödyn sekä pystyvät ottamaan valinnoissaan huomioon
+myös muita arvoja.
+
+
+Asiakkaalla on mahdollisuus osallistua kysyntäjoustoon itse tai markkinatoimijan avul-
+la. Kilpailluilla markkinoilla toimivien palveluyritysten avulla asiakkaat pääsevät osallis-
+tumaan joustavasti useille eri markkinapaikoille, kuten vuorokausi- ja reservimarkki-
+noille, jolloin asiakkaat saavat parhaan kokonaishyödyn. Sähkön kulutuksen ohjaami-
+seen voidaan liittää muita asiakkaille arvoa tuottavia palveluita esimerkiksi asumismu-
+kavuuteen liittyen. Näistä syistä jakeluverkkoyhtiöiden suorasta kulutuksenohjaukses-
+ta luovutaan erityisiä poikkeustilanteita lukuun ottamatta. Tämä muutos on merkittävä
+ja jakeluverkkoyhtiöiden kulutuksenohjauksesta luopumisen tulee tapahtua hallitusti,
+edellyttäen että asiakkailla on saatavilla tosiasiallisia vaihtoehtoja kulutuksenohjauk-
+selle.
+
+
+Jakeluverkkoyhtiöt voivat jatkossa ohjata kuormia suoraan omista tarpeistaan ainoas-
+taan erikseen määritellyissä poikkeustilanteissa. Tällaisia poikkeustilanteita ovat mer-
+kittävä häiriö jakeluverkossa ja valtakunnallinen tehopula tai häiriö. Verkonhaltijalla on
+myös oikeus tilapäisesti keskeyttää toimitus, jos se on välttämätöntä palvelun ylläpi-
+tämistä varten tarpeellisten laitteiden huollon, muutoksen, tarkastuksen, vian selvittä-
+misen tai muun vastaavan syyn vuoksi.
+
+
+Jakeluverkkoyhtiöiden suorista ohjauksista luopuminen luo lisämahdollisuuksia jous-
+topalveluiden tarjoajille lisäten asiakkaan valinnanmahdollisuuksia sekä selkeyttää eri
+
+
+                                              20
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+osapuolten rooleja sähkömarkkinoilla ja asiakasrajapinnassa. Rajaamalla kysyntä-
+jousto pois monopolitoimijoilta kasvatetaan joustopalveluiden markkinoita, mistä seu-
+raa uusia liiketoimintamahdollisuuksia palvelutoimittajille sekä teknologiateollisuudel-
+le. Kysyntäjoustopalvelut kehittyvät nopeammin kilpailluilla markkinoilla asiakkaiden ja
+sähkömarkkinoiden tarpeiden mukaiseksi. Parempien palveluiden ja laskevan tekno-
+logian hinnan myötä kysyntäjoustoon tarvittavat tekniset laitteet yleistyvät asiakkaiden
+kiinteistöissä osana muuta kotiautomaatiota.
+
+
+Vaikka jakeluverkkoyhtiöt eivät saa tarjota kysyntäjoustopalveluita asiakkaille tai myy-
+dä kysyntäjoustoa sähkömarkkinoille, jakeluverkkoyhtiöt voivat hyödyntää kysyntä-
+joustoa verkon tarpeisiin, esimerkiksi sähköverkon hallintaan tai verkkoinvestointien
+lykkäämiseksi tai välttämiseksi. Tällöin jakeluverkkoyhtiön on ostettava jousto markki-
+noilta avoimin ja syrjimättömin periaattein. Markkinatilanteen ja sähköjärjestelmän
+sekä verkkojen tilan perusteella tehtävät nopeat ohjaukset parantavat sähkön toimi-
+tusvarmuutta.
+
+
+Tarvittavat muutokset
+Jakeluverkkoyhtiöiden aikaohjauksesta ja pakollisesta aikajaotuksesta luovutaan halli-
+tusti, kun kustannustehokkaita kulutuksen ohjauspalveluja on riittävän kattavasti tarjol-
+la. Luopuminen jakeluverkkoyhtiön suorista ohjauksista vaikuttaa merkittävästi aika-
+ohjausta käyttäviin asiakkaisiin, tyypillisesti sähkölämmitteisiin omakotitaloihin. Aika-
+ohjausta käyttävillä asiakkailla kuitenkin on merkittävä potentiaali hyötyä aiempaa
+dynaamisemmasta ohjauksesta, johon siirtymistä heitä tulisi ohjata ja kannustaa.
+Muutoksen on oltava asiakkaille mahdollisimman saumaton. Jakeluverkkoyhtiöiden
+toteuttamasta kysyntäjoustosta voidaan luopua, kun asiakkailla on tarjolla riittävästi
+kustannustehokkaita ratkaisuja vaihtoehtoisiin kulutuksenohjauksen toteutuksiin. Ak-
+tiivinen ja oikea-aikainen viestintä sekä neuvonta on erittäin tärkeää.
+
+
+Lainsäädännöllisesti ehdotus jakeluverkkoyhtiöiden aikajaottelusta luopumiseksi vaatii
+muutoksia sähkömarkkinalain (588/2013) nojalla annettuun valtioneuvoston asetuk-
+seen sähköntoimitusten selvityksestä ja mittauksesta (66/2009) ja mahdollisesti myös
+itse sähkömarkkinalain aikajaotusta koskeviin säännöksiin.
+
+
+Jakeluverkkoyhtiöt voivat hyödyntää kysyntäjoustoa verkon tarpeisiin. On selvitettävä,
+miten joustopalvelun ostaminen olisi jakeluverkkoyhtiöille tasavertainen vaihtoehto
+esimerkiksi verkkoinvestoinneille siten että asiakkaat saavat parhaan hyödyn. Jakelu-
+verkkoyhtiöiden sääntelyllä pyritään kokonaistehokkuuteen eli kysyntäjouston hyödyn-
+täminen ja verkkoon tehtävät investoinnit ovat osa tarkasteltavaa kokonaisuutta. Jous-
+toa tulisi käyttää silloin kun se on tehokkaampaa kuin verkon vahvistaminen asiak-
+kaan ja yhteiskunnan kannalta.
+
+
+
+                                             21
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Tiedonvaihtotarpeet
+Markkinaehtoinen kysyntäjousto tulee toteuttaa siten, ettei jakeluverkon fyysisiä rajoi-
+tuksia rikota. Jakeluverkonhaltijat voivat antaa rajoitteita asiakkaalle tehtäviin ohjauk-
+siin, mikäli on ilmeistä, että verkon käyttö vaarantuu. Rajoitteisiin liittyvästä tiedon-
+vaihdosta ei ole sovittu, mutta esimerkiksi tehokomponentin sisältävä verkkopalvelu-
+maksu voi ohjata epäsuorasti asiakkaiden kulutusta ja siten estää verkon liiallista
+kuormitusta ilman erillistä tiedonvaihtoa. Asiakkaan kokonaisuutta optimoivan palve-
+luntarjoajan tulisi huomioida sekä sähkönsiirron että sähköenergian hinnat muiden
+seikkojen kuten asumismukavuuden lisäksi.
+
+
+Sähkön hintaan perustuvan kysyntäjouston yleistyessä verkon kuormitus voi muuttua
+aiempaa nopeammin, mikä haastaa jakeluverkkojen toimintaa. Voidakseen taata säh-
+köturvallisuuden ja jakeluverkkojen tehokkaan käytön, jakeluverkkoyhtiö voi tarvita
+ennustetietoa sähkön kulutuksesta ja tuotannosta tai tietoa reaaliaikamarkkinoilla
+aktivoituvasta joustosta.
+
+
+Keskeiset ehdotukset
+Älyverkkotyöryhmä katsoo, että kysyntäjoustotoiminta on kilpailtua liiketoimintaa eikä
+luonnollisina monopoleina toimivien verkkoyhtiöiden tulisi osallistua kysyntäjoustopal-
+veluiden tarjoamiseen suoraan asiakkaille. Hyvin toimivat markkinat ohjaavat sähkön
+kulutusta, tuotantoa ja varastointia tehokkaimmin, kun huomioidaan sähköverkon
+asettamat fyysiset rajoitteet.
+
+
+•    Asiakkaalla on mahdollisuus osallistua kysyntäjoustoon itse tai markkinatoimijan
+     avulla. Jakeluverkkoyhtiöt voivat ohjata kuormia suoraan ainoastaan määritellyis-
+     sä poikkeustapauksissa. Tästä syystä jakeluverkkoyhtiöiden pakollisesta aikajao-
+     tuksesta ja aikaohjauksesta luovutaan hallitusti edellyttäen, että markkinaehtoisia
+     kulutuksen ohjauspalveluja on riittävän kattavasti tarjolla.
+•    Jakeluverkkoyhtiöt voivat ostaa joustoa markkinoilta tasapuolisin ja syrjimättömin
+     periaattein.
+
+
+Kysymykset
+•    Tapahtuuko jakeluverkkoyhtiöiden toteuttamasta kysyntäjoustosta luopuminen
+     vapaaehtoisesti vai tarvitaanko siihen sääntelyä?
+•    Millä aikavälillä ja millä edellytyksillä jakeluverkkoyhtiöiden aikaohjauksesta voi-
+     daan luopua? Kuinka luopuminen voidaan toteuttaa hallitusti?
+•    Mitä ovat asiakkaiden korvaavat vaihtoehdot jakeluverkkoyhtiöiden kulutuksen
+     ohjaamiselle?
+•    Millaisia euromääräisiä vaikutuksia kotitalouksille tulisi, jos jakeluverkkojen aika-
+     ohjauksesta luovutaan ja muita muutoksia ei tehdä?
+
+
+                                              22
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+•    Onko jakeluverkkoyhtiöillä tarvetta hyödyntää joustoja verkon tarpeisiin nyt tai
+     nähtävissä olevassa tulevaisuudessa? Onko joustojen hyödyntämiselle esteitä?
+
+
+Liitännäisyydet
+•    Jakeluverkkopalvelumaksut
+•    Aggregaattorit
+•    Verkkoyhtiöiden sääntely
+•    Seuraavan sukupolven sähkömittarit
+•    Datahub
+•    Tiekartta markkinaehtoiseen kysyntäjoustoon
+
+
+
+
+Aggregaattorit – joustavien tuotanto- ja
+kulutuskohteiden yhdistäjät
+Älykkäiden ratkaisujen lisääntyessä asiakkaan valinnanmahdollisuudet kasvavat. Digi-
+talisaatio mahdollistaa uusia rooleja sähkömarkkinoilla perinteisten sähkönmyyjien
+lisäksi. Asiakas voi halutessaan osallistua sähkömarkkinoille perinteisen sähkön os-
+tamisen lisäksi esimerkiksi reagoimalla sähkönhintaan muuttamalla kulutustaan sen
+mukaisesti, myymällä omaa pientuotantoaan tai sähkönkulutuksen joustoa. Yksittäisil-
+lä asiakkailla ei kuitenkaan ole mahdollista osallistua joka hetki markkinoille tai yksit-
+täisen asiakkaan resurssit saattavat olla yksistään kooltaan liian pieniä, jotta niitä voisi
+hyödyntää tehokkaasti yksittäisenä resurssina eri markkinapaikoilla. Myös sähkö-
+markkinoiden teknisten vaatimusten täyttämisessä asiakas voi tarvita apua.
+
+
+Asiakkaiden puolesta toiminnan voi hoitaa palveluntarjoaja, niin sanottu aggregaattori.
+Aggregaattori tarkoittaa markkinaosapuolta, joka yhdistää useiden eri asiakkaiden
+(osapuolien) kulutusta, tuotantoa tai varastoja suuremmaksi kokonaisuudeksi käydäk-
+seen kauppaa näillä resursseilla sähkön eri markkinapaikoilla. Aggregaattori lisää
+asiakkaan valinnanmahdollisuuksia ja parantaa osallistumismahdollisuuksia sähkö-
+markkinoille sekä mahdollisuuksia vaikuttaa kustannuksiinsa. Aggregaattorina voi
+toimia asiakkaan sähkönmyyjä, tasevastaava tai muu toimija. Aggregaattorin toimin-
+nan periaate on esitetty kuvassa 2.
+
+
+
+
+                                              23
+                           TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kuva 2. Aggregaattori kokoaa asiakkaiden sähköntuotantoa, kulutusta ja varastoja isommaksi kokonai-
+suudeksi ja vie jouston markkinoille asiakkaiden puolesta.
+
+Aggregaattorista puhuttaessa viitataan usein myös itsenäiseen aggregaattoriin. Itse-
+                                                                                8
+näinen aggregaattori tarkoittaa toimijaa, joka ei ole asiakkaan sähkönmyyjä tai tase-
+vastaava ja joka ei tarvitse sopimusta asiakkaan sähkönmyyjän tai tasevastaavan
+kanssa toimiessaan markkinoilla. Itsenäisellä aggregaattorilla ei ole perinteistä roolia
+sähkömarkkinoilla, vaan se ohjaa asiakkaan sähkönkulutusta, tuotantoa ja sähköva-
+rastoja ja tarjoaa tätä joustoa sähkömarkkinoille. Itsenäisen aggregaattorin toiminnan
+mahdollistaminen ja toteuttaminen järkevästi lisää asiakkaan valinnanmahdollisuuksia
+ja edistää kysyntäjouston osallistumista eri markkinapaikoilla. Itsenäisen aggregaatto-
+rin oikeudet, vastuut ja velvollisuudet tulee määritellä, jotta toiminta on kokonaisuute-
+na arvioiden asiakkaille kannattavaa. Itsenäisen aggregaattorin toiminnalla on mah-
+dollista lisätä kysyntäjoustoa ja sitä kautta saada hyötyä kaikille sähkönkäyttäjille.
+Kysyntäjouston lisääntyminen voi laskea sähkömarkkinahintaa, lisätä sähköjärjestel-
+män tehokkuutta, alentaa sähkönkäyttäjien kustannuksia ja vähentää päästöjä. Toi-
+saalta se voi myös nostaa yksittäisten tuntien hintaa, lisätä päästöjä ja aiheuttaa on-
+gelmia verkon stabiilisuudessa, jos se tehdään väärin.
+
+
+Nykytila
+Hinnan ohjaamana tapahtuva kysyntäjousto (implisiittinen kysyntäjousto)
+
+
+Asiakkaan sähkönmyyjä voi toimia jo nyt aggregaattorina, sillä se huolehtii asiak-
+kaidensa sähkön hankinnasta ja sähkötaseen tasapainottamisesta. Tällä hetkellä
+Suomessa voi myös toimia vapaasti teknisen joustopalvelun tarjoajana. Tämä tarkoit-
+taa, että toimija ohjaa asiakkaan sähkönkulutusta asiakkaan toivomalla tavalla esi-
+merkiksi sähkön markkinahinnan mukaan, mutta kyseinen toimija ei itse anna erillistä
+
+
+8
+    Tässä sähkönmyyjällä tarkoitetaan käyttöpaikan avointa toimittajaa.
+
+
+                                                 24
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+tarjousta joustavasta kapasiteetista tai energiasta sähkömarkkinoille eikä ole siis
+markkinaosapuoli. Tällöin sähkönhankinnasta vastaava sähkönmyyjä oppii huomioi-
+maan hankinnassaan, millä tavoin asiakas reagoi markkinahintaan ja optimoi omaa
+toimintaansa. Teknisen joustopalvelun tarjoaja voi tarjota palveluita paitsi asiakkaille,
+myös markkinaosapuolille kuten sähkönmyyjille tai tasevastaaville.
+
+
+Kulutuksen siirtoa edullisemmille käyttötunneille on havainnollistettu kuvassa 3.
+
+
+
+
+Kuva 3. Kulutuksen ohjaus sähkön hinnan mukaan muuttaa sähkönkulutuksen profiilia.
+
+Ulkoiseen pyyntöön ja erilliseen korvaukseen perustuva kysyntäjousto (ekspli-
+siittinen kysyntäjousto)
+
+
+Eksplisiittisessä kysyntäjoustossa sähkönkäyttöä ohjataan ulkoisen ohjauksen avulla
+ja tämä jousto tarjotaan sähkömarkkinoille esimerkiksi aggregaattorin toimesta.
+
+
+Itsenäisen aggregaattorin toimintaan eri markkinapaikoilla ei ole olemassa tällä het-
+kellä selkeitä sääntöjä. Itsenäisen aggregaattorin toiminnassa on haastavaa se, että
+itsenäisen aggregaattorin tekemillä ohjauksilla voidaan vaikuttaa muiden toimijoiden
+         9
+taseisiin , kun ennustettu ja toteutunut energiamäärä eivät kohtaa itsenäisen aggre-
+gaattorin ohjauksen vuoksi. Ennustamattomuus ja usean toimijan toimiminen yhdellä
+käyttöpaikalla voi lisätä sähkönmyyjän riskejä ja tästä aiheutuneet tasevirheet voivat
+lisätä sähkön myyjien kustannuksia. Tämä puolestaan voi näkyä asiakkaalla kasvavi-
+na sähkönhankinnan kustannuksina. Asiakkaan tasevastaavan toimintaa voisi helpot-
+
+
+
+
+9
+  Sähkötaseet ja niiden hallinta ovat sähkömarkkinoiden keskeinen periaate. Lisätietoa sähkö-
+taseiden periaatteista ja tasevastuusta löytyy raportin lopun sanastosta.
+
+
+                                               25
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+taa, jos sillä olisi tieto asiakkaistaan, joilla on sopimus itsenäisen aggregaattorin kans-
+sa.
+
+
+Itsenäinen aggregaattori voi tällä hetkellä osallistua kantaverkkoyhtiön ylläpitämistä
+reservimarkkinoista taajuusohjattuun häiriöreserviin (FCR-D), jossa maksetaan vain
+aktivointivalmiudessa olevasta kapasiteetista. Tämä reservi aktivoituu vain merkittä-
+vissä häiriötilanteissa, jolloin aktivoidut energiamäärät ovat pieniä. Aktivoinnin vaiku-
+tukset aktivoitavan kohteen sähkötaseeseen ovat siis pieniä. Tällä hetkellä on käyn-
+nissä kokeiluja itsenäisen aggregaattorin osallistumisesta myös muille reservimarkki-
+noille.
+
+
+Ratkaistavat haasteet
+Itsenäisen aggregaattorin toimintaan liittyviä haasteita markkinapaikalla, jossa aggre-
+gaattorin ohjauksella on vaikutusta sähkönmyyjän sähkötaseeseen, on pyritty havain-
+nollistamaan kuvassa 4. Tilanteessa sähkönmyyjän tasevastaavalla on kolme asia-
+kasta A, B ja C. Asiakkaiden kulutukset on kuvattu sinisellä, keltaisella ja vihreällä.
+Sähkönmyyjän sähköenergian hankinta on kuvattu punaisella. Vasemmanpuoleisessa
+kuvassa näytetään tasevastaavan sähkötase sekä tasepoikkeama ilman ohjauksen
+aktivointia. Keskimmäisessä kuvassa on esitetty sähkötase ja tasepoikkeama, kun
+sähkönmyyjä tarjoaa itse kulutuksen joustoa markkinoille. Tasevirhe on siis saman-
+suuruinen kuin ilman ohjauksia. On huomioitava, että tällä on vaikutusta sähkönmyy-
+jän myyntimäärään, mutta myyjä saa joustosta tuloa. Oikeanpuoleisessa kuvassa
+joustavasta kuormasta tarjouksen tekee itsenäinen aggregaattori, jolloin tasevastaa-
+valle aiheutuu tasevirhettä. Mikäli itsenäisen aggregaattorin ohjauksesta aiheutuva
+tasevirhe korjattaisiin tasevastaavan taseeseen (oikeanpuoleisimmassa kuvassa), ei
+tasekorjaus korjaa sähkönhankintaan liittyviä kustannuksia. Vaikka kustannusvaikutus
+aiheutuu myyjälle, niin se voi heijastua myös asiakkaan hintoihin.
+
+
+
+
+                                              26
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kuva 4. Ratkaistava haaste: taseketjun ulkopuolisen ohjauksen myötä tapahtuva sähkönmyyjän tase-
+vastaavan tasevirhe markkinapaikalla, jossa ulkopuolisella ohjauksella on merkitystä taseeseen.
+
+Myös ohjauksen jälkeen tapahtuva seurannaisvaikutus eli niin sanottu rebound saat-
+taa olla haaste aggregaattorin toiminnassa. Esimerkiksi tilanteessa, jossa lämmitystä
+ohjataan myöhäisempään ajankohtaan, asiakkaan sähkönkulutus voi olla joustoa
+seuraavina ajanjaksoina ennakoitua suurempaa, jotta asiakkaan asumismukavuus ei
+kärsisi. Kysyntäjouston aktivointi voi vaikuttaa siis tasevastaavan taseeseen jouston
+aktivointia aiemmilla ja myöhemmillä tasejaksoilla. Seurannaisvaikutuksen suuruus ja
+profiili vaihtelee eri kulutuskohteilla eikä kaikilla kulutuskohteilla vaikutuksia ole. Tase-
+vastaava voi oppia arvioimaan ja ennakoimaan vaikutuksia, mikä pienentää haastetta.
+
+
+Tavoitetila
+Hyvin toteutettuna aggregaattori mahdollistaa asiakkaiden kysyntäjouston lisääntymi-
+sen. Euroopan komission puhtaan energian paketissa on käsitelty runsaasti itsenäistä
+aggregaattoria ja se tulee myös määrittämään tietyt reunaehdot Suomen lainsäädän-
+nölle jatkossa. Euroopassa on käytössä erilaisia itsenäisen aggregaattorin toiminta-
+malleja, mutta niitä ei voida kopioida suoraan Suomeen, sillä eri maiden markkinat
+eroavat toisistaan. Suomessa on kilpailtu ja pitkälle kehittynyt sähkön vähittäismarkki-
+na, jonka taseselvitys perustuu tuntimittaukseen. Monissa Euroopan maissa markki-
+nat eivät ole yhtä pitkälle kehittyneet ja kilpaillut, jolloin itsenäisen aggregaattorin toi-
+mintamallit on toteutettu eri tavalla.
+
+
+
+                                               27
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Aggregaattorilla voi olla erilaisia toimintamalleja: se voi toimia muodostaen sähkön-
+myyjän kanssa yhden, integroidun markkinaosapuolen tai aggregaattori voi sopia
+myyjän kanssa toimintamallista näiden keskinäisellä sopimuksella. Kolmas mahdolli-
+suus on, että myyjän ja aggregaattorin välillä ei ole sopimusta, jolloin täysin itsenäisel-
+le aggregaattorille tulee tehdä selkeät markkinasäännöt.
+
+
+Itsenäisen aggregaattorin toimintamallit voivat olla markkinapaikkakohtaisia. Markki-
+napaikoilla, joissa itsenäisen aggregaattorin toiminnan vaikutus muiden toimijoiden
+taseisiin on pieni, itsenäisen aggregaattorin toiminta on ongelmattomampaa ja se
+tulee mahdollistaa. Markkinapaikoilla, joissa itsenäisen aggregaattorin toiminnalla on
+merkittävä energiavaikutus toisten toimijoiden taseeseen, on riippumattoman osapuo-
+len korjattava tasevirheet muiden toimijoiden tasevastaaville tai toimijoiden tasapuoli-
+nen kohtelu on varmistettava muilla keinoin. Toimijoiden tasapuolisella kohtelulla pyri-
+tään varmistamaan tehokkaat markkinat ja asiakkaan hyötyminen.
+
+
+Älyverkkotyöryhmä on jakanut itsenäisen aggregaattorin toimintamallin tarkastelun
+kahdenlaisille markkinoille: tehoon pohjautuville markkinoille ja energiamarkkinoille.
+Tehoon perustuvilla markkinoilla tarkoitetaan lähtökohtaisesti kantaverkkoyhtiön re-
+servimarkkinoita, mutta on huomioitava, että tehoon perustuvilla markkinoillakin akti-
+voinnista muodostuu erisuuruisia energiamääriä.
+
+
+Aggregaattori eri markkinapaikoilla
+
+Tehoon pohjautuvat reservimarkkinat
+Tehoon pohjautuvilla markkinoilla tarkoitetaan lähtökohtaisesti kantaverkkoyhtiön
+reservimarkkinoita, vaikka on huomioitava, että reservilajit ovat toiminnaltaan erilaisia.
+Itsenäinen aggregaattori voi osallistua ilman sähkönmyyjän tai tasevastaavan lupaa
+sellaisille reservimarkkinaoille, jossa sen aiheuttama vaikutus muiden toimijoiden toi-
+mintaan on pieni tai merkityksetön. Tällöin tasekorjauksia ei tehdä. Kyseeseen tulee
+esimerkiksi taajuuden vakautusreservit (FCR).
+
+
+Mikäli toiminnalla on merkittävää vaikutusta muiden toimijoiden taseisiin, on arvioita-
+va, tuleeko aggregaattorin toiminnasta johtuva tasevirhe korjata sähkönmyyjän tai
+tasevastaavan taseeseen. Mikäli tasevirhe vaatii korjauksia taseeseen, on myös arvi-
+oitava tulisiko itsenäisen aggregaattorin maksaa kompensaatiota muutosten seurauk-
+sena. Itsenäisen aggregaattorin on myös vastattava toimituksestaan tasesääntöjen
+mukaisesti. Yksinkertaistettu toimintakuvaus, jossa salamat kuvaavat toimitettua säh-
+köä tai joustoa ja eurot maksuja, on esitetty oheisessa kuvassa 5. Työryhmä ei ole
+linjannut mahdollisista tasekorjauksista tai kompensaatioista.
+
+
+
+
+                                             28
+                          TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kuva 5. Periaatekuva sähkönhankinnasta energiamarkkinoilta ja jouston myynnistä reservimarkkinoille
+aggregaattorin toimesta. Tasekorjaus ja mahdollinen kompensaatio voivat olla erilaisia eri markkina-
+paikoilla, eikä työryhmä ole vielä linjannut niistä. Salamoiden koot kuvaavat energian määrää.
+
+
+
+Energiaan pohjautuvat markkinat
+Aggregaattorin toiminta on haastavaa sellaisilla markkinapaikoilla, jossa sähkönmyy-
+jät hankkivat myytävän sähköenergiansa tai kaupattavan energian määrä on suuri.
+Näitä markkinapaikkoja ovat lähtökohtaisesti vuorokausi- ja päivänsisäiset markkinat.
+Lähempänä reaaliaikaa tapahtuvilla markkinoilla tulee arvioida erityisesti säätösäh-
+kömarkkinoita.
+
+
+Sähkönmyyjä oppii arvioimaan asiakkaidensa sähkönkulutuksen ja hankkimaan säh-
+köä arvionsa mukaisesti. Mikäli myyjä tietää, että asiakkaalla on sopimus itsenäisen
+aggregaattorin kanssa, se voi ennakoida kulutuksen vähenemisen hankkimalla ennus-
+tetun jouston verran enemmän tai vähemmän sähköä (riippuen jouston suunnasta)
+olettaen että tasekorjausta ei muuten tehdä. Tällöin itsenäisen aggregaattorin toiminta
+on haastavaa, jos kauppaa sähkönhankinnasta ei ole tehty ja aggregaattorilla ei ole
+sähköenergiaa jota myydä.
+
+
+Mikäli itsenäinen aggregaattori ostaisi energiamarkkinoille myymänsä energian asiak-
+kaan sähkönmyyjän avoimesta toimituksesta ja siitä maksettaisiin hankintahinnan
+mukainen korvaus, itsenäiselle aggregaattorille ei syntyisi liiketoimintamahdollisuutta
+ainakaan vuorokausimarkkinoilla. Kannattavuushaaste voi olla myös vuorokauden
+sisäisillä markkinoilla. Vuorokausimarkkinoiden ja päivänsisäisten markkinoiden tapa-
+uksessa suuri haaste on myös se, että nämä markkinat selvitetään asiakaskohtaiseen
+tuntimittaustietoon perustuen, jolloin jouston todentaminen olisi haastavaa.
+
+
+                                                29
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Toimijoiden välinen tasapuolisuus on varmistettava ja arvioitava, onko esimerkiksi
+aggregaattorin aiheuttaman tasevirheen korjaaminen asiakkaan näkökulmasta koko-
+naisuutena arvioiden hyvä vaihtoehto. Itsenäisen aggregaattorin tulee olla tasevas-
+tuussa tarjoamansa energian toimittamisesta. Lisäksi on selvitettävä tulisiko itsenäi-
+sen aggregaattorin maksaa kompensaatiota sähkönmyyjälle tai tasevastaavalle esi-
+merkiksi sähkönhankinnasta aiheutuneista kuluista, jotka jäävät myyjän maksettaviksi
+ja heijastuu sitä kautta asiakkaan kustannuksiin tai se voi rajoittaa palvelutarjontaa
+näille asiakkaille. Keskeinen kysymys on, milloin aiheutettu virhe on riittävän suuri,
+jotta tasevirhe tulisi korjata tai että siitä tulisi maksaa kompensaatioita.
+
+
+Mittaus, todentaminen ja tiedonvaihtotarpeet
+Itsenäisen aggregaattorin tekemät aktivoinnit on voitava mitata ja todentaa luotetta-
+vasti, kuten muidenkin markkinatoimijoiden. Mikäli aktivointi ei ole tapahtunut pyyde-
+tyssä laajuudessa, on itsenäisen aggregaattorin vastattava toimittamattomasta tarjo-
+uksesta kyseisen markkinapaikan sääntöjen mukaisesti.
+
+
+Kysyntäjouston ollessa pienimuotoista erillistä tiedonvaihtoa kysyntäjouston kohteista
+tai määrästä ei tarvita. Eri markkinapaikoilla voi kuitenkin olla erilaisia tiedonvaihto-
+vaatimuksia. Tehoon pohjautuvilla markkinapaikoilla, jossa aggregaattorin toiminnalla
+ei ole merkittävää vaikutusta muihin markkinatoimijoihin, muut markkinatoimijat eivät
+lähtökohtaisesti tarvitse reaaliaikaista tietoa aktivoinneista. On selvitettävä, tulisiko
+sähkönmyyjällä olla tieto asiakkaan sopimuksista itsenäisen aggregaattorin kanssa
+vai rajoittaako se kilpailua.
+
+
+Energiamäärän ollessa merkittävä myös reaaliaikainen tiedonvaihto aggregaattorin
+toiminnasta on tärkeää, sillä muutoin myyjä tai tasevastaava saattaa tehdä ohjausta
+toiseen suuntaan oman taseensa tasapainottamiseksi, jolloin aggregaattorin tuottama
+hyöty sähköjärjestelmän tasapainottamiseksi häviää. Tiedonvaihtoa voidaan tarvita
+aktivoituneista resursseista, niiden määrästä ja kestosta hyvinkin reaaliaikaisesti.
+Älyverkkotyöryhmä selvittää tiedonvaihtotarpeita tiedonvaihtoselvityksessä.
+
+
+Aggregoinnin yleistyessä ja jouston määrän kasvaessa joustoilla voi olla vaikutuksia
+myös jakeluverkon käyttöön. Tällöin tieto kysyntäjouston piiriin kuuluvista asiakkaista
+voi olla tarpeellinen paitsi tasevastaaville ja sähkönmyyjille myös jakeluverkkoyhtiöille.
+On arvioitava, miten pienasiakkaan kokonaisuutta (sähköenergia, kysyntäjousto,
+verkkopalvelumaksut sekä muut asiakkaalle tärkeät seikat) koordinoidaan itsenäisen
+aggregaattorin tapauksessa, jotta asiakas saa parhaan kokonaishyödyn.
+
+
+
+
+                                             30
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Tarvittavat muutokset
+Lainsäädäntö ei tällä hetkellä tunnista itsenäistä aggregaattoria ja toimijoiden roolit,
+oikeudet ja vastuut kysyntäjouston tarjoamisessa markkinoille ovat epäselviä. Nykyi-
+nen lainsäädäntö ei myöskään tunnista asiakkaan kysyntäjoustoa markkinoille tarjoa-
+vaa toimijaa, joka ei ole sähkönkäyttöpaikan sähköntoimittaja tai tasevastaava.
+
+
+Lainsäädäntöä tulisi selkeyttää siten, että se tunnistaisi itsenäiset aggregaattorit ja
+määrittelisi niiden oikeudet, vastuut ja velvollisuudet.
+
+
+Keskeiset ehdotukset
+•    Työryhmä suhtautuu aggregaattoreiden asiakkaille luomiin mahdollisuuksiin posi-
+     tiivisesti. Aggregaattoreiden, myös itsenäisten aggregaattoreiden, tulee vastata
+     tasevirheestään tasesääntöjen mukaisesti. Aggregaattorin toimitus on voitava to-
+     dentaa.
+•    Itsenäiseltä aggregaattorilta ei vaadita sopimusta asiakkaan myyjän tai tasevas-
+     taavan kanssa.
+•    Itsenäinen aggregaattori voi toimia markkinapaikoilla, jossa aggregaattorin teke-
+     män ohjauksen energiavaikutus tasejakson aikana on pieni. Mikäli ohjauksella on
+     vaikutusta muiden toimijoiden taseisiin, on varmistettava tasapuolisuus.
+•    Itsenäisen aggregaattorin osallistuminen suoraan markkinapaikoille, joissa sen
+     toiminnalla on merkittävä vaikutus muihin toimijoihin, vaatii lisäselvityksiä koskien
+     tasapuolista kohtelua ja tiedonvaihtoa.
+
+
+Kysymykset
+•    Millaisia mahdollisuuksia itsenäinen aggregaattori tarjoaa asiakkaille ja yhteiskun-
+     nalle?
+•    Millä markkinapaikoilla itsenäinen aggregaattori voi toimia?
+           − Tuleeko itsenäisen aggregaattorin toiminnasta muille osapuolille aiheu-
+                tuneet tasevirheet korjata? Millä perusteella?
+           − Tuleeko aggregaattorin maksaa muille toimijoille kompensaatiota muu-
+                toksista energian myynnissä? Millä perusteella?
+•    Miten itsenäisen aggregaattorin jousto tulisi mitata ja todentaa?
+•    Mitä tiedonvaihtotarpeita itsenäisen aggregaattorin toiminta aiheuttaa?
+•    Miten asiakkaan, aggregaattorin ja sähkönmyyjän tulisi koordinoida asiakkaan
+     kokonaisuutta sisältäen siirtohinnoittelun?
+
+
+Liitännäisyydet
+•    Toimijoiden roolit
+•    Energiayhteisöt
+•    Sähkönsiirron tehomaksun ja verkkopalvelumaksujen rakenteiden harmonisointi
+
+
+                                             31
+                             TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+ •      Tiedonvaihto
+ •      Pohjoismaiset vähittäismarkkinat
+
+
+
+
+Energiayhteisöt
+
+Nykytila
+Asiakkaat aktivoituvat. Kiinnostus itse tuotettuun sähköenergiaan kasvaa jatkuvasti
+teknologian hinnan laskiessa. Kuluttajien kiinnostuksen takana on monia syitä: toisille
+tämä on keino vaikuttaa oman sähkölaskunsa suuruuteen, toisille keino laskea säh-
+könkulutuksensa hiilijalanjälkeä. Omakotitaloissa oman tuotannon järjestäminen on
+yleensä suoraviivaista, mutta aina oma tontti ei ole pientuotannon kannalta paras
+paikka. Myös kerrostaloissa on hankalampi järjestää omaa tuotantoa. Toisaalta suu-
+remman tuotantolaitteiston hankinta yhdessä muiden kanssa tuo mukanaan pienem-
+mät yksikkökustannukset ja tulee näin edullisemmaksi tuotantoon osallistuville. Asun-
+to-osakeyhtiöissä voi olla myös halua hankkia sähkönsiirtopalvelut yhdessä.
+
+
+Pientuotannon erilaisia yhteishankintamuotoja kutsutaan yleisesti energiayhteisöiksi.
+Energiayhteisöjä voidaan pitää yhtenä jakamistalouden muotona. Termi on vielä osin
+vakiintumaton ja energiayhteisöihin liittyvät käytännöt ja toimintatavat kirjavia, jolloin
+myös lainsäädännön tulkinta on osin hankalaa. Suomeen on kuitenkin syntynyt erilai-
+sia energiayhteisökokeiluja, jotka tyypillisesti pyrkivät hyödyntämään asuinkerrostalon
+kattoja aurinkosähkön tuotantoon ja jakamaan tuotannon asukkaiden kesken. Kokei-
+              10
+luhankkeissa selvitetty erilaisia haasteita, joita energiayhteisöiden luomisessa ja
+käytännön toiminnassa tulee vastaan.
+
+
+Myös EU-lainsäädännössä on otettu ensi askeleita ilmiön tunnistamisessa Euroopan
+komission puhtaan energian paketissa. Ehdotuksessa pyritään tunnistamaan ilmiö ja
+määrittelemään energiayhteisön rooli ja energiayhteisön jäsenen oikeudet. Monet
+maat ovat kannattaneet ehdotuksen lähtökohtia energiayhteisöjen osalta, mutta toi-
+saalta pitäneet ehdotusta monelta osin liian pitkälle menevänä ja epäselvänä. Suomi
+on lähtökohtaisesti kannattanut energiayhteisöjä ja niiden luomia mahdollisuuksia
+asiakkaille. Suurimpana ongelmana komission ehdotuksessa on pidetty ehdotetun
+energiayhteisön määritelmän päällekkäisyyksiä jakeluverkkotoiminnan kanssa.
+
+
+
+
+10
+     Esim. Finsolar-taloyhtiökokeilu http://www.finsolar.net/taloyhtiot/finsolar-taloyhtiokokeilu/
+
+
+                                                    32
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Tavoitetila
+Energiayhteisö on yhdestä tai useammasta vapaaehtoisesta luonnollisesta (pienkulut-
+taja) tai oikeushenkilöstä (yhdistys, yritys tms.) muodostuva juridinen taho, joka jakaa
+yhteisön tai sen jäsenten hallinnoimien kotimaisten energiaresurssien tuottamia hyöty-
+jä omien periaatteidensa mukaan ja joka vastaa yhteisön toimintaan liittyvistä velvoit-
+teista.
+
+
+Energiayhteisöjen mahdollistaminen lisää asiakkaan valinnanmahdollisuuksia osallis-
+tua sähkömarkkinoille ja tuottaa itse käyttämänsä sähköenergian. Energiayhteisöistä
+asiakkaat voivat saada taloudellista hyötyä ja aineetonta arvoihin liittyvää hyötyä.
+Esimerkiksi energiayhteisö antaa konkreettisen mahdollisuuden vaikuttaa oman säh-
+könkulutuksen ja -tuotannon ympäristövaikutuksiin ja tuotantotapaan, mikä edistää
+päästöjen vähentämistä. Energiayhteisöjen mahdollistaminen lisää yhteisöllisyyttä ja
+mahdollisuuksia asiakkaiden arvovalintoihin.
+
+
+Energiayhteisö mahdollistaa sähkön tuottamisen ja tuotetun sähkön kuluttamisen ja
+jakamisen yhteisön jäsenten kesken. Energiayhteisöt mahdollistavat muun muassa
+investoinnit suurempiin aurinkovoimalaitoksiin tai sähkövarastoihin ja niiden hyödyn-
+tämisen kuin mihin yksittäiset asiakkaat pystyvät, mikä edistää uusiutuvan energian
+lisääntymistä. Energiayhteisö voi myös pyrkiä toiminnallaan tarjoamaan yhteisön jä-
+senille paikallisesti parempaa sähkön toimitusvarmuutta kuin yleisesti on saatavissa.
+Energiayhteisöillä voitaisiin tähdätä myös nollaenergiakiinteistön luomiseen investoi-
+malla yhteisön omistamaan energiatuotantoon kiinteistön ulkopuolella nollaenergiata-
+voitteen saavuttamiseksi, mikäli tämä on mahdollistettu rakennussääntelyssä.
+
+
+Energiayhteisöjen tulee toimia muiden markkinaosapuolten kanssa tasapuolisin eh-
+doin. Energiayhteisöön kuuluminen tulee olla vapaaehtoista ja siitä on voitava erota
+lainsäädäntö ja tehdyt sopimukset huomioon ottaen. Asiakas voi olla jäsenenä use-
+ammassa eri energiayhteisössä. Energiayhteisö voi olla maantieteellisesti hajautunut
+energiayhteisö tai paikallinen energiayhteisö.
+
+
+Keskeiset ehdotukset
+•   Työryhmä suhtautuu positiivisesti energiayhteisöihin ja niiden tarjoamiin mahdolli-
+    suuksiin yhteisön jäsenille ja tätä kautta myös palvelutarjoajille ja teknologiatoimit-
+    tajille.
+•   Energiayhteisöjen tulee toimia muiden markkinaosapuolien kanssa tasapuolisin
+    ehdoin. Epäselvyyksien välttämiseksi energiayhteisön määrittely tulee tehdä riittä-
+    vän tarkkarajaisesti.
+
+
+
+
+                                             33
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Paikallinen energiayhteisö – kiinteistön sisäinen
+
+Nykytila
+Monet kuluttajat ovat halukkaita muodostamaan energiayhteisöjä taloyhtiön sisällä
+esimerkiksi siten, että hyödynnetään taloyhtiön rakennuksen kattoa aurinkopaneeleille
+ja jaetaan niiden energiantuotanto yhteisön jäsenten kesken.
+
+
+Kiinteistön sisäinen energiayhteisö tarkoittaa yhteisöä, johon liittyvä tuotanto, kulutus
+ja muut mahdolliset energiaresurssit sijaitsevat yhden kiinteistön alueella. Tyypillisesti
+tällainen kohde on kerros-, rivi- tai erillistaloista koostuva asunto-osakeyhtiö. Monesti
+samassa kiinteistössä asuvat tai toimivat tahot ovat kiinnostuneita erilaisista yhteisistä
+energiavalinnoista. Nykyisellään pientuotannon hyödyntäminen asunto-osakeyhtiössä
+on haastavaa kannattavuuden näkökulmasta. Vaikka sähkö olisi tuotettu ja kulutettu
+kiinteistössä eikä kiertäisi sähköyhtiön verkon kautta, niin kulkiessaan yksittäisen asi-
+akkaan sähkömittarin läpi siitä seuraa verkkopalvelumaksu verkkoyhtiölle sekä säh-
+köveron maksaminen. Tämä heikentää kiinteistön sisällä tuotetun sähkön kannatta-
+vuutta sekä hyödyntämistä kiinteistön sisällä. Energiayhteisöllä halutaan mahdollistaa
+nykyistä paremmin sähköntuotanto esimerkiksi aurinkopaneeleilla asunto-
+osakeyhtiöissä kiinteistön sisäisessä verkossa.
+
+
+Kiinteistön sisäistä energiayhteisöä on havainnollistettu alla olevassa kuvassa 6. Ku-
+van esimerkissä talonyhtiöön on asennettu aurinkopaneeli, joka syöttää tuotantonsa
+talon sähkökeskukseen. Vaikka taloyhtiön kiinteistöllä tapahtuva aurinkosähkön tuo-
+tanto voidaan käyttää täysin kiinteistön sisällä, kulkee se silti jakeluverkonhaltijan
+sähkömittarin kautta matkallaan talon asukkaan laitteisiin. Tällöin siitä maksetaan
+sähkönsiirtomaksu jakeluverkonhaltijalle sekä sähkövero, vaikka sähkö ei kulkisi jake-
+luverkonhaltijan verkossa.
+
+
+
+
+                                             34
+                          TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kuva 6. Kiinteistön sisäisen energiayhteisön periaatekuva. Lähde: mukailtu Finsolar/Karoliina Auvinen,
+taloyhtiökokeilu.
+
+
+
+Tavoitetila
+Mikäli energiayhteisön tuottama ja kuluttama sähkö kulkee ainoastaan kiinteistön
+sisäisessä verkossa ylittämättä jakeluverkon liittymispistettä, ei tästä energiayhteisön
+tuottamasta kiinteistön sisäisessä verkossa kulutukseen siirretystä energiasta tarvitse
+maksaa erikseen jakeluverkkoyhtiölle. Mikäli sähkö kulkee sähköverkkoyhtiön verkon
+kautta, siitä tulee maksaa jakeluverkkoyhtiön hinnoittelukäytäntöjen mukaisesti. Säh-
+kövero maksetaan yleisten käytäntöjen mukaisesti.
+
+
+Jotta energiayhteisö tarjoaa asiakkaille todellisen vaihtoehdon ja se olisi käytännössä
+mahdollista perustaa, tulee energiayhteisöstä voida erota ottaen huomioon asiaan
+liittyvä lainsäädäntö ja tehdyt sopimukset. Esimerkiksi asunto-osakeyhtiössä perus-
+taminen ja eroaminen on tapahduttava asunto-osakeyhtiölain ja yhtiöjärjestyksen se-
+kä muiden tehtyjen sopimusten ehdot huomioiden. Jotta energiayhteisöstä on mahdol-
+lista erota riittävän helposti, pitää mittarointi hoitaa vastaavasti kuin kiinteistöverkoissa
+eli yhteisö vastaa kiinteistön sisällä mittauksesta, jolleivät yhteisö ja jakeluverkonhalti-
+ja ole toisin sopinut. Toisin sanoen yhteisö voi mitata itse omat käyttöpaikkansa tai se
+voi käyttää jakeluverkonhaltijan mittauksia erillistä korvausta vastaan. Yhteisöön kuu-
+lumaton jäsen mitataan voimassa olevien mittaussäännösten mukaisesti. Yhteisöllä ei
+ole vaikutusta yhteisöön kuulumattomien asiakkaiden sähkönhankintaan, mittauksiin
+tai sopimuksiin. Energiayhteisön ja sen jäsenen verkosta ottama sähkönkulutus tulee
+voida mitata ja erottaa niiden omasta tuotannosta, joka kulutetaan yhteisössä.
+
+
+
+
+                                                 35
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Energiayhteisö vastaa itse yhteisön tuotannon jaon periaatteista ja kustannuksista
+sopimuksensa mukaan. Asunto-osakeyhtiössä on otettava huomioon myös asunto-
+osakeyhtiölain, yhtiöjärjestyksen ja muiden tehtyjen sopimusten tuomat reunaehdot.
+Energiayhteisön kiinteistön ulkopuolelta tehtävä sähkönhankinta voi perustua yhteen
+hankintalähteeseen tai jäsenet voivat kukin itse hankkia oman sähkön tehtyjen sopi-
+musten mukaisesti, mikäli tämä on erotettavissa muusta kulutuksesta ja tuotannosta
+hyväksytyllä mittaustavalla. Tämä takaa energiayhteisön jäsenille valinnanvapautta ja
+markkinat ohjaavat tehokkaimpiin ratkaisuihin.
+
+
+Tarvittavat muutokset
+Kiinteistön sisäinen energiayhteisö on mahdollista toteuttaa nykyisen lainsäädännön
+puitteissa, joskaan tilanne ei ole täysin yksiselitteinen. Tilanteen selventämiseksi kiin-
+teistön sisäisten energiayhteisöiden mahdollistaminen vaatisi muutoksia ainakin mit-
+tausasetukseen, jotta yksiselitteisesti mahdollistettaisiin tasejakson sisäinen lasken-
+nallinen netotus mieluiten keskitetysti datahubissa. Ennen lainsäädännön muuttamista
+on varmistettava, että mittauslaitelainsäädäntö mahdollistaa tämän. Energiayhteisöjen
+yksittäisten jäsenten sähkönkulutusta ei olisi enää taseselvitettävä, mikäli yhteisössä
+sähkönhankinta toteutetaan keskitetysti ja yhteisöllä on yksi yhteinen verkkopalvelu-
+sopimus ja mittaus.
+
+
+Tiedonvaihtotarpeet
+Jakeluverkonhaltijan tulee järjestää mittaukset sähkönkäyttöpaikoille siten, että säh-
+köverkosta yhteisölle toimitettava sähkö on mitattavissa. Verkonhaltijalla voi olla myös
+mittaukset yhteisön sisällä, jolloin se erillistä korvausta vastaan toimittaa mittauspal-
+velua energiayhteisölle. Yhteisön palveluntarjoaja tai palveluntarjoajat vastaavat yh-
+teisön tuotannon jaosta ja sähkönkulutuksen jaosta. Tämä tieto on saatava myös yh-
+teisön tai yksittäisten jäsenten sähkönmyyjille. Datahubin hyödyntämistä tiedonvaih-
+dossa on arvioitava.
+
+
+Kysymykset
+•   Mitä asioita kiinteistön sisäisessä energiayhteisössä tulee huomioida, jotta se olisi
+    käytännössä perustettavissa ja siitä olisi käytännössä mahdollista erota?
+•   Miten kiinteistön sisäinen energiayhteisö tulee mitata?
+•   Kenen tai minkä tahon tulisi vastata kulutusten netottamisesta?
+
+
+Keskeiset ehdotukset
+•   Työryhmä katsoo, että sähkön pientuotannon ja kysyntäjouston hyödyntäminen
+    tulee olla mahdollista nykyistä helpommin kiinteistön sisäisessä verkossa. Kiinteis-
+    tön sisäisen energiayhteisön perustamisessa, toiminnassa ja lopettamisessa on
+
+
+                                             36
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+    otettava huomioon asunto-osakeyhtiölain, yhtiöjärjestyksen ja muiden tehtyjen so-
+    pimusten tuomat reunaehdot.
+•   Kiinteistön sisäinen energiayhteisö päättää ja vastaa hyötyjen ja kustannusten
+    jaosta yhteisössä.
+•   Kiinteistön sisäisen energiayhteisön jäsenellä tulee olla mahdollisuus irtautua yh-
+    teisöstä.
+•   Kaikkien samalla kiinteistöllä olevien käyttöpaikkojen ei tarvitse kuulua energiayh-
+    teisöön.
+•   Energiayhteisön jäsenet voivat ostaa sähkön yhdessä tai erikseen omalla sopi-
+    muksella eri toimijoilta, jolloin yhteisön jäsenten kulutukset tulee erottaa hyväksyt-
+    tävällä tavalla.
+•   Energiayhteisö vastaa yhteisön jäsenien mittauksesta kiinteistön sisällä, jollei yh-
+    teisö ja jakeluverkonhaltija ole toisin sopinut.
+•   Jakeluverkkoyhtiön kautta energiayhteisölle siirrettysähkö tulee voida erottaa
+    energiayhteisön itse tuottamasta sähköstä. Kiinteistön sisällä energiayhteisön jä-
+    senille kulutukseen siirretystä energiayhteisön tuotannosta ei makseta verkkopal-
+    velumaksua jakeluverkkoyhtiölle. Sähköverotus toteutetaan voimassa olevan ve-
+    rotuskäytännön mukaisesti.
+
+
+
+
+Paikallinen energiayhteisö – kiinteistörajat
+ylittävä
+
+Nykytila
+Monesti pientuotannolle otollisimmat paikat eivät löydy samalta kiinteistöltä kuin min-
+kä asiakas hallinnoi. Tällöin naapureiden kesken voi syntyä ajatus rakentaa oma kes-
+kinäinen sähköverkko, jossa hyödynnettäisiin yhdessä rakennettua pientuotantoa ja
+jaettaisiin hyödyt naapureiden kesken. Samalla voitaisiin saada hyötyä verkkokustan-
+nuksissa toinen liittymä purkamalla.
+
+
+Ratkaistavat haasteet
+Sähköverkkojen rakentaminen ja sähkön siirtäminen kiinteistöjen tai kiinteistöryhmien
+rajojen yli on kuitenkin voimassa olevan sähkömarkkinadirektiivin mukaisesti sähkö-
+markkinalaissa määritelty luvanvaraiseksi sähköverkkotoiminnaksi. Tästä periaattees-
+ta luopuminen voisi olemassa olevassa sähköverkossa johtaa tilanteeseen, jossa
+yhteisöjä syntyisi enenevissä määrin tiheästi asutuille alueille. Irtautumisesta aiheutu-
+vat kustannukset jäisivät verkon reunoilla asuvien kannettavaksi. Periaatteesta luo-
+puminen sallisi useiden rinnakkaisten johtojen rakentamisen, mitä ei voida pitää ta-
+loudellisesti kestävänä.
+
+
+                                             37
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Uutta verkkoa rakennettaessa uudelle alueelle kiinteistörajat ylittävien sähköverkkojen
+rakentaminen kiinteistöjen haltijoiden toimesta voi olla helpommin hyväksyttävää, jos
+verkkoa ei ole vielä rakennettu verkkoyhtiön toimesta. Samoin haja-asutusalueilla voi
+tulla tilanteita, joissa kahden rakennuksen välille rakennetusta verkosta voisi olla hyö-
+tyä. Verkon rakentamiseen tarvittaisiin kuitenkin ainakin verkkoyhtiön suostumus, jotta
+tilanne on hallittavissa. Tällöinkin energiayhteisöstä irtautuvien tai kokonaan uusien
+asiakkaiden tapauksessa jakeluverkonhaltija on velvollinen liittämään asiakkaita verk-
+koonsa ja kehittämään jakeluverkkoaan tarpeen mukaan. Luopumista jakeluverkon-
+haltijan yksinoikeudesta rakentaa sähköverkkoa alueellaan tulisi siten tarkasti arvioida
+muun muassa kokonaiskustannustehokkuuden ja palvelun laadun osalta. Tämä vaati-
+si lisäksi rajauksen ketkä tällaista verkkoa voivat rakentaa (esimerkiksi vain vähit-
+täisasiakkaat), miten laajaksi tällainen verkko saa muodostua, kuinka laajalla alueella
+se voi fyysisesti sijaita sekä millaisia laadullisia ja toiminnallisia vaatimuksia sen tulee
+toteuttaa. Näissä tilanteissa vastuu sähköverkon käytöstä ja ylläpidosta olisi kiinteis-
+tönhaltijoilla. Tällainen verkko tulisi todennäköisesti kategorisoida esimerkiksi mittaus-
+alueeksi. Tulee myös huomioida, että yhteisöstä tulee olla mahdollista erota.
+
+
+Energiavirasto laati älyverkkotyöryhmälle selvityksen paikallisten energiayhteisöjen
+                                                                              11
+oikeudellisista edellytyksistä voimassa olevan verkkosääntelyn kannalta . Energiavi-
+rasto tarkasteli asiaa erityisesti kiinteistön rajat ylittävän sähkönjakelun ja -toimituksen
+ja jakeluverkon rakentamisen luvanvaraisuuden sekä verkkoon pääsyn vaatimusten
+kannalta.
+
+
+Energiaviraston selvityksen mukaan voimassa olevia liittymisjohtoja koskevia sään-
+nöksiä on mahdollista tulkita siten, että voimalaitoksen liittymisjohto voidaan rakentaa
+sähkönkäyttöpaikan kiinteistön tai sitä vastaavan kiinteistöryhmän sisäiseen sähkö-
+verkkoon ilman, että toiminta muuttuu luvanvaraiseksi sähköverkkotoiminnaksi. Ra-
+kentaminen vaatii kuitenkin verkkoyhtiön suostumuksen. Omaksumalla EU:n kolman-
+nessa energiapaketissa määritelty erillisiä linjoja koskeva erityissääntely sähkömark-
+kinalakiin voitaisiin paikallisiin energiayhteisöihin kohdistuvaa verkkosääntelyä keven-
+tää.
+
+
+Selvityksen mukaan erillisiä linjoja koskevan sääntelyn omaksuminen laajimmillaan
+voi kuitenkin mahdollisesti aiheuttaa niin sanotun vapaa matkustaja -ongelman. Tästä
+syystä erillistä linjaa hyödyntävien paikallisten energiayhteisöjen vaikutusta etäisyys-
+riippumattomaan hinnoitteluun sekä erityisesti harvaan asuttujen alueiden siirtohin-
+noittelun tasoon tulisi siten arvioida. Koska erillisiin linjoihin ei sovellettaisi velvoitteita
+
+
+
+11
+   Energiayhteisöjen oikeudelliset edellytykset EU:n ja kansallisen verkkosääntelyn kannalta,
+Energiavirasto 5.9.2017. Saatavilla
+www.energiavirasto.fi/documents/10191/0/Energiaviraston+selvitys+5.9.2017+TEMlle+energiayh
+teist%C3%B6jen+oikeudellisista+edellytyksist%C3%A4.pdf/
+
+
+                                               38
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+kehittää verkkoa, laajamittaisena tällä olisi haitallisia vaikutuksia toimitusvarmuuteen.
+Jatkotyössä tulee kiinnittää huomiota myös esimerkiksi sähköturvallisuuteen, kustan-
+nuksiin ja siihen, tulisiko jakeluverkkoyhtiöiden käytäntöjä ohjeistaa tarkemmin.
+
+
+On myös selvitettävä salliiko rakennussääntely kiinteistörajat ylittävän paikallisen
+energiayhteisön energiantuotannon hyödyntämistä nollaenergiakiinteistön tavoitteiden
+saavuttamiseksi. Jatkoselvityksissä tulee huomioida myös Euroopan komission puh-
+taan energian paketin uudet ehdotukset.
+
+
+Keskeiset ehdotukset
+•    Kiinteistörajat ylittävä paikallinen energiayhteisö vaatii lisäselvityksiä.
+
+
+Kysymykset
+•    Miten kiinteistörajat ylittävät energiayhteisöt voivat edistää Suomen energiapolitii-
+     kan tavoitteiden saavuttamista, esimerkiksi uusiutuvan energian tavoitteiden osal-
+     ta?
+•    Miten kiinteistön rajat ylittävien energiayhteisöjen edistämisessä voitaisiin välttää
+     tilanne, jossa verkon kustannukset painottuisivat niiden asiakkaiden maksettavik-
+     si, jotka eivät pysty osallistumaan yhteisöön?
+•    Mitä haasteita näette kiinteistörajat ylittävien energiayhteisöjen muodostamises-
+     sa?
+•    Näettekö, että kiinteistön rajat ylittävien erillisten linjojen toteutukseen liittyy tekni-
+     siä haasteita? Jos kyllä, niin millaisia?
+
+
+
+
+Hajautettu energiayhteisö
+
+Nykytila
+Kaikilla asiakkailla oman käyttöpaikan olosuhteet eivät ole optimaalisia energiaresurs-
+sien eli sähköntuotantolaitosten, sähkövarastojen tai kulutuskohteiden sijoittamiselle
+tai käyttöpaikalla on asennuksia estäviä rajoitteita. Asiakkailla voi silti olla halu hyö-
+dyntää itse muualla tuottamaansa sähköä. Hajautetun energiayhteisön avulla energia-
+resurssit voidaan sijoittaa otollisempaan paikkaan ja hyödyntää olemassa olevaa ja-
+kelu- ja siirtoverkkoa tuotannon siirtämiseen. Tämä mahdollistaa myös suuremmat
+yksikkökoot, jotka voivat tulla investointina suhteellisesti edullisemmaksi yhteisön
+jäsenille.
+
+
+Yksi hajautetun energiayhteisön käyttötapaus on tilanne, jossa yksi asiakas haluaa
+hyödyntää yhdellä kiinteistöllä olevan energiaresurssin energiaa toisella kiinteistöllä
+
+
+                                               39
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+olevassa käyttöpaikassa, esimerkiksi kesämökin aurinkopaneelien tuottamaa sähköä
+kaupunkiasunnossaan. Toinen käyttötapaus on tilanne, jossa usea osakas sijoittaa
+kauempana sijaitsevaan suurempaan tuotantoyksikköön (esimerkiksi aurinkopaneeli
+tai tuulivoimala) yhdessä, mikä vähentää yksikkökustannuksia.
+
+
+Vaikka mikään ei tällä hetkellä estä hajautetun energiayhteisön perustamista ja siihen
+tarvittavien järjestelyiden toteuttamista, hajautetun energiayhteisön muodostamiselle
+ja toiminnalle ei ole vakiintuneita sähkömarkkinaprosesseja ja reunaehtoja. On määri-
+teltävä tasapuoliset ja selkeät pelisäännöt sekä tehtävä tarvittavat tietotekniset toteu-
+tukset, jotta hajautettujen energiaresurssien hyödyntäminen olisi helposti hyödynnet-
+tävä mahdollisuus asiakkaille.
+
+
+Tavoitetila
+Hajautettujen energiayhteisöjen periaatteiden ja käytäntöjen lähtökohtana on asiak-
+kaiden valinnanvapaus ja tasapuolisuus.
+
+
+Energiayhteisön yhteiset energiaresurssit mitataan erikseen käyttöpaikka- tai yksikkö-
+kohtaisesti ja mittaustiedot toimitetaan normaalien menettelyjen mukaan tulevaan
+datahubiin, jossa tiedot ovat yhteisön tai yhteisön palveluntarjoajan käytettävissä.
+Yhteisten energiaresurssien energiajaon periaatteet tulee olla selvillä ennen toimitus-
+hetkeä taseselvitystä varten. Energiamäärien jakaminen tulee tehdä datahubin hyväk-
+symän osapuolen toimesta taseselvityksen aikataulun asettamissa rajoissa. Tietoja
+energian jakamisesta datahubissa voi tallentaa vain datahubin hyväksymä kolmas
+osapuoli. Datahub voisi tarjota avoimen toimittajan sähkön ja energiayhteisön toimit-
+taman sähkön netotuspalvelua valtakunnallista taseselvitystä varten korvausta vas-
+taan.
+
+
+Energiayhteisön jäsen voi valita oman avoimena toimittajana toimivan sähkönmyyjän-
+sä, ja myyjällä on oikeus tietää energiayhteisön toimintaperiaatteista, kuten tuotetun
+energian jakoperusteista. Hajautetun energiayhteisön jokainen tuotanto- tai kulutus-
+käyttöpaikka tarvitsee oman verkkopalvelusopimuksensa paikallisen jakeluverkonhal-
+tijan kanssa. Tasapuolisuuden vuoksi siirtomaksut maksetaan yleisten periaatteiden
+mukaisesti ja ne perustuvat käyttöpaikkakohtaiseen mittaustietoon. Sähköverotus
+toteutetaan voimassa olevan verotuskäytännön mukaisesti. Nämä seikat vaikuttavat
+luonnollisesti hajautetun energiayhteisön kannattavuuteen.
+
+
+
+
+                                             40
+                           TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kuva 7: Hajautetussa energiayhteisössä yhteisön yhteisen energiaresurssin, esimerkiksi aurinkopanee-
+lin tuotanto jaetaan datahubin kautta yhteisön jäsenille. Yhteisön jäsenet voivat sijaita eri jakeluverk-
+koyhtiöiden alueilla, ja verkkomaksut maksetaan yleisten käytäntöjen mukaisesti.
+
+Mikäli siirtomaksuissa tai verokohtelussa energiayhteisön jäsenet saisivat erityiskoh-
+telua, ei energiayhteisön jäsenten sekä sähköverkkoyhtiön muiden asiakkaiden kohte-
+lu olisi tasapuolista. Syntyisi tilanne, että energiayhteisöihin kuulumattomat jäsenet
+kantaisivat suuremmat järjestelmäkustannukset ja energiayhteisön jäseniä tuettaisiin
+muiden sähkönkäyttäjien kustannuksella. Siirtomaksujen osalta hajautettujen energia-
+yhteisön jäsenten erityiskohtelun ongelmalliseksi tekee myös se, että energiaresurssit
+voivat sijaita eri jakeluverkkoyhtiöiden alueella eivätkä jakeluverkkoyhtiöt voi sopia
+keskenään hinnoittelusta.
+
+
+Hajautetun energiayhteisön etuna on se, että asiakas voi kuulua useaan hajautettuun
+energiayhteisöön. Etuna on myös tietojärjestelmätoteutuksen helppous, sillä kyse on
+pitkälti datahubiin toimitettuihin tietoihin perustuvasta yksinkertaisesta laskennasta.
+
+
+Tarvittavat muutokset
+Energiayhteisön jäsenten ja yhteisten energiaresurssien mittaustiedot tallennetaan
+datahubiin joka tapauksessa. Energiayhteisöjen energianetotukseen tarvittavat tieto-
+kentät ja prosessit voidaan tehdä datahubiin, josta käyttöpaikkojen energiatiedot voi-
+daan lähettää taseselvitykseen taseselvityksen asettamissa aikatauluissa. Teknisesti
+
+
+
+                                                   41
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+tämä olisi yksinkertainen toteuttaa, kunhan energiayhteisön vastuut ja velvollisuudet
+on selkeästi määritelty.
+
+
+Muutoksia nykyiseen sähkömarkkinalainsäädäntöön hajautetun energiayhteisön to-
+teuttamiseksi saatetaan tarvita ainakin taseselvityksen osalta. On selvitettävä mittalai-
+telainsäädännön näkökohdat sekä tarkasteltava, salliiko rakennussääntely hajautetun
+energiayhteisön energiantuotannon hyödyntämistä nollaenergiakiinteistön tavoitteiden
+saavuttamiseksi.
+
+
+Tiedonvaihtotarpeet
+Hajautetun energiayhteisön energiaresurssit mitataan yleisen käytännön mukaisesti ja
+mittaustiedot toimitetaan datahubiin. Energiayhteisön jäsenten sähkönmyyjillä on oi-
+keus tietää energiayhteisön energianjakoperiaatteista. On selvitettävä, miten energi-
+anjako voidaan käytännössä toteuttaa, jotta energiatiedot ovat luotettavasti ja turvalli-
+sesti saatavilla datahubista taseselvitystä varten.
+
+
+Keskeiset ehdotukset
+Älyverkkotyöryhmän keskeiset ehdotukset perustuvat asiakkaiden valinnanvapauden
+lisäämiseen sekä toimijoiden tasapuoliseen kohteluun.
+
+
+•   Hajautetun energiayhteisön sähköntuotantolaitteet, sähkövarastot ja kulutuskoh-
+    teet tulee mitata erikseen käyttöpaikoittain tai kohteittain. Mittaustiedot toimitetaan
+    datahubiin normaalien käytäntöjen mukaisesti.
+•   Hajautetun energiayhteisön jäsenyys ei muuta siirtomaksujen tai verojen määräy-
+    tymisperustetta.
+•   Hajautetun energiayhteisön jäsenet voivat kilpailuttaa oman sähkönmyyjänsä.
+
+
+Kysymykset
+•   Mitä hyötyjä tai haasteita näette hajautettujen energiayhtiöiden toiminnassa?
+
+
+Liitännäisyydet
+•   Energiayhteisöt
+•   Datahub
+•   Mittaus
+•   Tiedonvaihto
+
+
+
+
+                                             42
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Jakeluverkon tehopohjainen siirtohinnoittelu
+
+Nykytila
+Sähkömarkkinalain nojalla sähköverkkoyhtiöillä on mahdollisuuksia ottaa käyttöön
+hyvin erilaisia siirtohinnoitteluperiaatteita. Historiallisista syistä nykyisin pääosassa
+verkkoyhtiöistä siirtohinnoittelu perustuu kahteen komponenttiin: energiaperusteiseen
+muuttuvaan osaan ja kiinteään kuukausittaiseen perusmaksuun. Perusmaksu voi olla
+porrastettu pääsulakekoon mukaan. Verkkoyhtiöiden kustannukset ovat suurelta osin
+kiinteitä investoinneista ja pääoman sitoutumisesta aiheutuvia kustannuksista, jotka
+eivät ole riippuvaisia siirretyn energian määrästä. Tästä syystä monet yhtiöt ovat kas-
+vattaneet perusmaksun osuutta. Samalla energiaperusteisen maksun osuus on las-
+kenut. Perusmaksun kasvattaminen ja energiakomponentin pienentäminen tekee
+siirtohinnoittelusta verkkoyhtiön kannalta kustannusvastaavampaa, mutta vähentää
+asiakkaan mahdollisuuksia vaikuttaa siirtolaskuunsa.
+
+
+Verkkopalvelujen myyntihintojen tulee olla tasapuolista ja syrjimätöntä kaikille verkon
+käyttäjille. Asiakkaan valinnanvapaudenlisäämiseksi asiakkaan tulee voida vaikuttaa
+nykyistä paremmin siirtomaksuunsa. Nykyinen kehittynyt mittaustekniikka mahdollis-
+taa verkkopalveluhinnoittelun kehittämisen kustannusvastaavammaksi siten, että asi-
+akkaalle jää mahdollisuus vaikuttaa siirtomaksuunsa.
+
+
+Yleisesti on virinnyt keskustelua jakeluverkkomaksujen muuttamisesta kohti tehope-
+rusteisempaa hinnoittelua, sillä jakeluverkot mitoitetaan huipputehon mukaan. Tämä
+kohdistaisi jakeluverkkojen ylläpidon, käyttämisen ja kehittämisen kustannuksia lähtö-
+                                                                          12
+kohtaisesti kustannusvastaavammin kuin energiaperusteinen siirtomaksu.
+
+
+Tavoitetila
+Tehoon liittyvällä siirtohinnoittelulla tavoitteena on pienentää kulutuksen huipputehoa,
+jolloin jakeluverkkojen vahvistamista voidaan lykätä tai välttää, parantaa sähköjärjes-
+telmän toimitusvarmuutta sekä aktivoida asiakasta kysyntäjoustoon. Tehokomponen-
+tilla voidaan mahdollisesti vaikuttaa myös verkon mitoitukseen. Oikein suunniteltuna
+tehokomponentin sisältävällä siirtohinnoittelulla kustannukset kohdistuvat lähtökohtai-
+sesti kustannusvastaavammin kuin suurimmalta osalta energiaperusteisella hinnoitte-
+lulla.
+
+
+
+12
+   Honkapuro, S. ym. Lappeenrannan ja Tampereen teknilliset yliopistot. Jakeluverkon tariffira-
+kenteen kehitysmahdollisuudet ja vaikutukset. 18.8.2017.
+http://www.doria.fi/bitstream/handle/10024/143710/Tariffirakennetutkimus_LUT_TUT_raportti_fin
+al.pdf?sequence=2
+
+
+                                               43
+                         TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+On nähtävissä, että jakeluverkkojen kulutusteho voi nousta esimerkiksi sähkön hinnan
+perusteella tehtävän kysyntäjouston ja sähköautojen ja latauspisteiden yleistyessä.
+Tehon huomioimisen tärkeys korostuu, kun markkinahinnan perusteella tapahtuva
+kysyntäjousto yleistyy, jolloin sähkönkulutukseen ja sähköverkon kuormitukseen voi
+tulla huippuja matalan hinnan aikana. Honkapuron ym. tutkimuksen (2017) mukaan
+sähkön pörssihinnan perusteella tapahtuva kysyntäjousto voi kuormittaa jakelumuun-
+tajia jopa kaksinkertaisesti mitoitukseen nähden, ellei huipputehoa pyritä hillitsemään.
+
+
+
+
+Kuva 8: Jakelumuuntajien suurimmat kuormitusasteet, vaaka-akselilla muuntajien määrä (Honkapuro
+ym. 2017)
+
+Myös sähköautojen latauksen voidaan olettaa kasvattavan hetkellisiä kulutustehoja,
+ellei latauksen aiheuttamalle kulutushuipulle osoiteta siitä aiheutuvia kustannuksia.
+Kun sähkömarkkinoilla muodostuva hinta antaa signaalin sähköenergian kulutukselle,
+tuotannolle ja varastoinnille, ja jakeluverkkoyhtiö antaa oman signaalinsa verkostosta
+siirretylle teholle, voidaan saavuttaa koko sähköjärjestelmän kokonaistehokkuus. Tä-
+mä tuo pitkällä aikavälillä säästöjä koko yhteiskunnalle. Mikäli tehokomponentti kor-
+vaa kiinteää perusmaksua, tehokomponentin sisältävä siirtohinnoittelu lisäisi asiak-
+kaalle mahdollisuuden vaikuttaa siirtolaskuunsa. On kuitenkin huomioitava, että teho-
+komponentin käytön laajentaminen pienasiakkaisiin muuttaa maksujen kohdistumista
+eri asiakkaiden kesken. Asialla olisi merkitystä erityisesti sähkölämmittäjille, joiden
+sähkönkulutus on suuri. Tehon joustomahdollisuudet ovat suurelle osalle asiakkaista
+varsin pientä, jolloin heidän mahdollisuutensa vaikuttaa sähkölaskuunsa tehon kautta
+ovat rajalliset. Tällaiseen joukkoon kuulunevat esimerkiksi asiakkaat, jotka asuvat
+kaukolämmitteisissä kerros- ja rivitaloasunnoissa. Sähkösaunat voivat olla tällaisten
+asiakkaiden huipputehon määräävä tekijä.
+
+
+                                               44
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Tarvittavat muutokset
+Verkonhaltijat voivat nykyisin määritellä lain puitteissa vapaasti siirtohinnoittelunsa
+perusteet, jolloin myös tehopohjaisen hinnoittelun käyttöönotto on jo nyt mahdollista.
+Suurimmalla osalla verkkoyhtiöistä onkin siirtohinnoittelussaan tehokomponentti pal-
+jon sähköä käyttäville asiakkaille. Viime aikoina ainakin kaksi jakeluverkkoyhtiöitä on
+ottanut tehopohjaisen hintakomponentin käyttöön myös pienasiakkailla. Tehokom-
+ponentin käyttöönotolla on merkittäviä asiakasvaikutuksia ja käyttöönotto tuleekin
+tehdä hallitusti. Muutosvaihe tulee toteuttaa siten, ettei yksittäisten asiakkaiden mak-
+suihin tule merkittäviä kertakorotuksia. Aktiivinen, asiakaslähtöinen ja oikea-aikainen
+viestintä sekä neuvonta ovat erittäin tärkeitä. Tällä hetkellä asiakkaat eivät tunne te-
+hon käsitettä, heillä ei ole tietoa kulutustehostaan eikä heillä välttämättä ole riittäviä
+keinoja oman huipputehonsa hallitsemiseksi. On tärkeää luoda asiakkaille ymmärrystä
+tehon käsitteestä ja sen tärkeydestä, ja antaa työkaluja huipputehonsa hallitaan.
+
+
+Jatkossa on syytä tarkastella myös kantaverkkomaksujen rakennetta, sillä kantaverk-
+komaksut muodostavat jakeluverkkoyhtiöiden kustannusrakenteesta noin 10 % ja ne
+vaikuttavat edelleen jakeluverkkoyhtiöiden hinnoitteluun. Tällä hetkellä kantaverkko-
+maksu on pääosin energiaperusteista.
+
+
+Tiedonvaihtotarpeet
+Asiakkaalla tulee olla mahdollisuuksia vaikuttaa sähkönkulutuksen kustannuksiinsa
+kokonaisuutena ja on vältettävä eri toimijoiden osaoptimointi asiakkaan kustannuksel-
+la. On tärkeää, että asiakas saa kokonaispalvelua, jonka avulla asiakas voi minimoida
+sähkönkäyttönsä kustannukset mukaan lukien sähköenergian ja sähkönsiirron hinta,
+ja kuitenkin huolehtia asumismukavuudesta. Asiakkaalla ja palveluntarjoajalla tuleekin
+olla reaaliaikainen tieto tehonkulutuksesta, jotta kustannuksia voi hallita. Jakeluverk-
+komaksun tehokomponentin laskentaperusteet tulee olla helposti saatavilla.
+
+
+Keskeiset ehdotukset
+•   Työryhmä katsoo, että asiakkaalla tulee olla jatkossakin mahdollisuuksia vaikuttaa
+    omaan siirtolaskuunsa ja että siirtomaksun tulee olla tasapuolinen ja syrjimätön.
+•   Työryhmä suhtautuu positiivisesti kiinteän maksun korvaamiseen sellaisella teho-
+    komponentilla, jonka avulla asiakkaalla on paremmat mahdollisuudet vaikuttaa
+    siirtolaskuunsa. Tehokomponentin vaikutukset ja soveltuvuus eri asiakasryhmiin
+    vaativat lisäselvityksiä.
+•   Jakeluverkkopalveluiden maksurakenteiden muutoksissa on huolehdittava aktiivi-
+    sesta, asiakaslähtöisestä ja oikea-aikaisesta viestinnästä ja neuvonnasta.
+
+
+
+
+                                             45
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Kysymykset
+•   Millä tavoin pienasiakkaiden ymmärrystä siirtomaksujen määräytymisestä, mu-
+    kaan lukien tehosta, voitaisiin lisätä?
+•   Millaisia työkaluja on olemassa tai tulisi olla asiakkaiden tehon hallintaan? Kenen
+    tulisi tarjota niitä?
+•   Mihin tehoperusteinen hinnoittelu vaikuttaa? Kuinka suureksi arvioitte tehoperus-
+    teisen siirtohinnoittelun yhteiskunnalliset hyödyt ja kustannukset pitkällä aikavälil-
+    lä?
+•   Millaisia euromääräisiä vaikutuksia tehoperusteinen siirtohinnoittelu toisi eri asia-
+    kasryhmille ja eri alueilla?
+
+
+Liitännäisyydet
+•   Toimijoiden roolit kysyntäjoustossa
+•   Verkkopalvelun maksurakenteiden harmonisointi
+•   Tiedonvaihto
+
+
+
+
+Verkkopalvelun maksurakenteiden
+harmonisointi
+
+Nykytila
+Tällä hetkellä jakeluverkkojen siirtopalvelun hinnoittelurakenteita on hyvin monenlaisia
+erilaisine maksukomponentteineen sekä aika- ja kausijaotuksineen. Jakeluverkko-
+maksujen kirjo voi vaikeuttaa asiakkaiden maksujen ymmärrettävyyttä ja hankaloittaa
+verkkomaksujen vertailtavuutta erityisesti, mikäli jakeluverkkoyhtiöt ottavat tehopoh-
+jaisen siirtohinnoittelun laajemmin käyttöön. Myös näköpiirissä olevien muutosten
+viestintä asiakkaille voi olla hankalampaa, mikäli siirtohinnoittelurakenteet ja niiden
+periaatteet poikkeavat merkittävästi yhtiöittäin.
+
+
+Viranomainen ei Suomessa valvo tai vahvista verkkoyhtiöiden yksittäisiä siirtomaksuja
+tai maksurakenteita, mutta siirtomaksujen kertakorotuksen tasoa valvotaan uuden
+lainsäädännön myötä. Valvonta perustuu verkkoyhtiön hinnoittelun kohtuullisuuden
+valvontaan kokonaisuutena. Hinnoittelun tulee olla tasapuolista ja syrjimätöntä.
+
+
+Tavoitetila
+Joustopalveluiden toteutuksessa palveluntarjoajan on huomioitava asiakkaan koko-
+naishyöty, mukaan lukien sähkönsiirron sekä sähköenergian hinta. Joustopalveluiden
+tarjoaminen, kuten koko sähkön vähittäismarkkinat, ovat valtakunnan laajuiset mark-
+
+
+                                             46
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+kinat. Jakeluverkkojen hinnoittelurakenteiden suuri määrä hankaloittaa asiakkaalle
+tehtävää kokonaisoptimointia, kun palveluntarjoajan on räätälöitävä ohjausalgoritmit
+asiakas- ja jakeluverkkoyhtiökohtaisesti. Tämä voi nostaa kokonaisoptimointipalvelui-
+den tarjoamisen kynnystä ja niiden hintaa.
+
+
+Kysyntäjouston palveluntarjoajien ja asiakkaiden kannalta olisi selkeintä, mikäli siirto-
+hinnoittelurakenteet olisi harmonisoitu tietyiltä osin koko Suomessa. Asia on ajankoh-
+tainen erityisesti, mikäli jakeluverkkoyhtiöissä siirrytään tehopohjaiseen siirtohinnoitte-
+luun. Tällöin esimerkiksi laskutuksen perusteena olevan huipputehon määrittäminen
+samalla periaatteella helpottaisi asiakasta asian ymmärtämisessä ja edistäisi kysyntä-
+joustomarkkinoiden kehittymistä.
+
+
+Mikäli hinnoittelurakenteet olisivat valtakunnan tasolla harmonisoidut, palveluntarjoaji-
+en olisi helppo hakea ne datahubin avoimen rajapinnan kautta. Tämä edistäisi kysyn-
+täjoustopalveluiden tarjontaa ja voisi laskea niiden hintaa asiakkaille. Harmonisointi
+parantaisi myös siirtohinnoittelun ymmärrettävyyttä asiakkaille.
+
+
+Hinnoittelurakenteiden tulee jatkossakin mahdollistaa erilaisissa ympäristöissä toimi-
+vien jakeluverkkoyhtiöiden toimintaedellytykset. Jokainen verkkoyhtiö päättää edel-
+leen itsenäisesti hinnoittelunsa tasosta.
+
+
+Tarvittavat muutokset
+Jotta siirtohinnoittelun rakenteet saadaan harmonisoitua, tulisi lainsäädännössä tai
+muuten viranomaisen määräyksin määritellä käytettävät maksurakenteet riittävällä
+tarkkuudella. Ensiksi tulee kuitenkin arvioida tarvittava harmonisoinnin taso sekä sen
+mahdolliset hyödyt ja haitat jotka kohdistuvat asiakkaisiin.
+
+
+Tiedonvaihtotarpeet
+Siirtohinnat ja maksurakenteet tulee olla palveluntarjoajien ja markkinatoimijoiden
+saatavilla datahubissa.
+
+
+Keskeiset ehdotukset
+•    Jakeluverkkojen siirtohinnoittelun yleiset rakenteet ja muutosten siirtymäajat tulee
+     harmonisoida lainsäädännössä tai viranomaisen määräyksin myöhemmin määri-
+     teltävällä tarkkuudella.
+
+
+Kysymykset
+•    Mitä asioita siirtohinnoittelun osalta olisi hyödyllistä harmonisoida?
+
+
+
+                                              47
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Liitännäisyydet
+•    Datahub
+•    Toimijoiden roolit kysyntäjoustossa
+
+
+
+
+Sähkövarastot
+
+Nykytila
+Sähkövarastot ovat uusi elementti sähkömarkkinoilla ja sähköjärjestelmässä. Sähkö-
+varastoilla tarkoitetaan resurssia, joka yhtenä ajanhetkenä ottaa sähköä verkosta ja
+syöttää sen myöhemmin sähkönä takaisin verkkoon. Sähkövarastoja ei voida pitää
+sähkön kulutuksena tai tuotantona. Tyypillisesti sähkövarastot ovat ominaisuuksiltaan
+joustavia ja niillä voidaan tarjota palveluita monenlaisiin tarpeisiin, esimerkiksi oman
+tuotannon tai kulutuksen hyötyjen maksimointiin, valtakunnallisen tehotasapainon
+hallintaan tai verkonhallintaan. Vesivoimalaitoksia, joissa vesi voidaan pumpata takai-
+sin yläjuoksulle, voidaan myös pitää sähkövarastoina. Tässä raportissa sähkövaras-
+toilla tarkoitetaan kuitenkin pienemmän kokoluokan yksiköitä. Sähkövarastoilla tulee
+olemaan tärkeä rooli uusiutuvaan energiaan perustuvassa sähköjärjestelmässä.
+
+
+Aiemmin nykyisen kaltaisia sähkövarastoja ei ole juuri sähkömarkkinoilla ollut, ja säh-
+kömarkkinoihin liittyvät toimijat ja komponentit on jaoteltu sähköntuotannon ja kulutuk-
+sen mukaan. Sähkövarastojen sähkömarkkinakäsittelyn ei ole vakiintuneita periaattei-
+ta. Energia-alalla on keskustelua muun muassa siitä, voivatko monopolina toimivat
+verkkoyhtiöt omistaa ja käyttää varastoja, vai tulisiko varastojen olla kilpailluilla mark-
+kinoilla toimivien toimijoiden toimintaa. Pelisäännöt on luotava.
+
+
+Tavoitetila
+Sähkövarastojen kannattavuus syntyy siitä, että niitä käytetään mahdollisimman mo-
+nipuolisesti. Sähkövaraston ominaisuuksista riippuen niitä voi hyödyntää esimerkiksi
+hinnan vaihtelun hyödyntämiseen energiamarkkinoilla, taajuudensäätöön, oman kulu-
+tuksen tai tuotannon optimointiin, parempaan toimitusvarmuuteen paikallisesti, sähkö-
+verkon pullonkaulojen hallintaan tai jännitteen tukemiseen. Sähkövarastoilla on mark-
+kinavaikutuksia, sillä niihin varastoidaan sähköä, jota voi käyttää tai myydä myöhem-
+min.
+
+
+Jakeluverkkoyhtiöiden neutraalin markkinoiden mahdollistajan roolin ja yleisten eriyt-
+tämisvelvoitteiden mukaisesti jakeluverkkoyhtiöiden ei tule vaikuttaa markkinoihin tai
+osallistua markkinatoimintaan varastopalveluiden tarjoajan roolissa. Tämän takia jake-
+
+
+
+                                              48
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+luverkkoyhtiöiden ei lähtökohtaisesti tulisi omistaa tai käyttää varastoja, vaan sähkö-
+varastojen käyttö tulisi lukea markkinaehtoisiin toimintoihin. Jakeluverkkoyhtiöiden
+omistajuus varastoissa pienentäisi markkinaehtoisesti syntyvien varastoinvestointien
+kannattavuutta.
+
+
+Jakeluverkkoyhtiöt voivat kuitenkin hyödyntää sähkövarastoja sähkönlaadun varmis-
+tamiseen, esimerkiksi jännitteenhallintaan. Sähkövarastolla voidaan myös mahdolli-
+sesti korvata verkkoinvestointeja. Jakeluverkon tarpeet ovat paikallisia ja sähkövaras-
+ton sijainnilla on merkitystä jakeluverkkoyhtiölle. Lähtökohtaisesti jakeluverkkoyhtiöi-
+den tulee hankkia sähkövarastojen palveluita markkinoilta avoimin ja syrjimättömin
+periaattein. Voi olla mahdollista, että markkinoilta ei ole saatavilla varastokapasiteettia
+jakeluverkkoyhtiön tarpeiden kannalta oikeaan paikkaan jakeluverkossa. Tällaisissa
+poikkeustapauksissa voi olla perusteltua, että jakeluverkko voisi omistaa ja käyttää
+sähkövarastoa verkon tarpeisiin. Jakeluverkkoyhtiö ei voi tarjota omistamiaan sähkö-
+varastoja markkinoille.
+
+
+Tällä hetkellä verkkoinvestointeihin verrattuna sähkövarastojen mahdollistamaa jous-
+toa ja muita verkkoa tukevia palveluita ei ole jakeluverkkoyhtiöille houkuttelevaa ostaa
+palveluna. Tulee selvittää, miten sähköverkkotoiminnan sääntelyä voisi kehittää siten,
+että sähkövarastojen mahdollistamien palveluiden hyödyntäminen ja hankkiminen
+markkinoilta olisi jakeluverkonhaltijalle tasavertainen keino toimitusvarmuuden ja säh-
+könlaadun varmistamisessa asiakasta hyödyttäen.
+
+
+Tarvittavat muutokset
+Verkkoyhtiöiden mahdollisuus sähkövarastojen omistamiseen ja käyttämisen poikke-
+ustilanteet on selkeytettävä lainsäädännössä. Euroopan komission puhtaan energian
+paketti ottaa kantaa myös varastojen omistamiseen ja käyttämiseen liittyviin kysymyk-
+siin.
+
+
+Tiedonvaihtotarpeet
+Sähkövaraston verottomuus voi asettaa mittausvaatimuksia sähkövarastoille. Sähkö-
+markkinoille osallistuvat sähkövarastot tulee mitata ja toteuttaa tarvittava tiedonvaihto
+markkinavaatimusten mukaisesti.
+
+
+Keskeiset ehdotukset
+•    Sähkövarastojen omistaminen ja käyttäminen on lähtökohtaisesti kilpailtua liike-
+     toimintaa.
+•    Lähtökohtaisesti verkkoyhtiöt ostavat sähkövarastojen mahdollistaman palvelun
+     markkinoilta avoimin ja syrjimättömin periaattein. Mikäli markkinoilta ei ole saata-
+
+
+                                             49
+                      TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+    vissa verkonhaltijan verkkotoimintaan tarvitsemia sähkövarastointipalvelua, voivat
+    jakeluverkkoyhtiöt poikkeuksellisesti omistaa ja käyttää sähkövarastoja erikseen
+    määriteltäviin verkkotoiminnan tarpeisiin.
+
+
+Kysymykset
+•   Miten jakeluverkkoyhtiöt voisivat parhaiten hyödyntää sähkövarastojen palvelua
+    markkinoilta? Onko sille esteitä?
+•   Miten määritellään poikkeustilanteet, jossa jakeluverkkoyhtiö voisi omistaa ja käyt-
+    tää itse sähkövarastoja? Millaisen prosessin tulisi edeltää poikkeusluvan myöntä-
+    mistä?
+•   Tulisiko jakeluverkkoyhtiöiden kysyä asiakkaiden halukkuutta investoida sähköva-
+    rastoon ja tarjota sitä markkinoille jakeluverkkoyhtiön hyödynnettäväksi?
+
+
+Liitännäisyydet
+•   Verotus
+•   Markkinatoimijoiden roolit kysyntäjoustossa
+
+
+
+
+Verotus
+
+Nykytila
+Sähkövero on yksi energiaan kohdistuvista valmisteveroista. Energiaverot ovat
+EU:ssa harmonisoituja veroja, joita säädellään neuvoston direktiiveillä 2003/96/EY ja
+2009/28/EY. Direktiiveillä säädetään vähimmäisverotasoista ja biopolttoaineiden kes-
+tävyyskriteereistä. Direktiivissä asetettu energiapohjainen minimitaso sähköverolle on
+0,5 €/MWh yrityskäytössä ja 1,0 €/MWh yksityiskäytössä. Suomessa käytetään huo-
+mattavasti tätä korkeampaa verokantaa: teollisuudelle, konesaleille ja kasvihuoneille
+sähkövero on 7,03 €/MWh ja muille 22,53 €/MWh. Nämä verot sisältävät myös huol-
+tovarmuusmaksun 0,13 €/MWh.
+
+
+Sähkövero maksetaan sähköverkosta kulutukseen luovutetusta sähköstä eli veron
+suuruus määritetään kulutetun sähkön mukaan ja sen kantaa sähköverkkoyhtiö säh-
+köverkkomaksun yhteydessä. Sähköverosta maksetaan myös arvonlisävero 24 %
+yleisen verokannan mukaan. Kuluttaja-asiakkaiden sähkölaskussa sähköveron ja
+arvonlisäveron osuus sähkön hankinnan kokonaiskustannuksista (sähkön siirto +
+sähköenergia + verot) on noin kolmannes.
+
+
+
+
+                                            50
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Sähköveroa kannetaan tällä hetkellä sähkövaraston lataamiseen käytetystä sähköstä.
+Tämä johtaa varastoidun sähkön verottamiseen kahdesti: sekä varastoitaessa että
+uudelleen kulutukseen luovutettaessa.
+
+
+Sähkövero perustuu kulutetun sähkön määrään, jolloin se antaa kannusteen energia-
+tehokkuuteen. Kiinteä energiaan perustuva vero ei kuitenkaan anna asiakkaille kan-
+nustinta toimia sähkömarkkinoiden hintasignaalien mukaisesti sähköjärjestelmän kan-
+nalta tehokkaammin.
+
+
+Tavoitetila
+Sähkön varastointi ei ole sähkön kulutusta sen perinteisessä merkityksessä, vaan
+sähkövaraston avulla voidaan optimoida esimerkiksi sähkönmyyntiä, sähkön hankin-
+taa tai verkon käyttöä siirtämällä sähkönkulutusta ajanhetkestä toiseen. Tästä johtuen
+sähkön varastoinnin ei tulisi olla verollista. Verottomuus voi kuitenkin asettaa vaati-
+muksia sähkövaraston haltijalle ja varaston mittaamiselle, jotta sähkövarastoon varas-
+toidun verottoman sähkön osuus voidaan todentaa riittävällä tasolla.
+
+
+Tarvittavat muutokset
+Sähkön varastoinnin verotus
+
+
+Valtiovarainministeriö on aikeissa tarkastella sähkön valmisteverotuksen lainsäädän-
+töä uudelleen sähkövarastojen kaksinkertaisen verotuksen poistamiseksi lähiaikoina.
+Alustavasti ministeriöstä on tuotu esiin näkökanta, että sähkön varastointi tulisi olla
+verotonta muiden hyödykkeiden varastoinnin tavoin riippumatta varaston koosta.
+
+
+Ratkaistavat haasteet
+Muuttuva sähkövero
+
+
+Ensisijainen signaali joustojen toteuttamiseen tulisi saada markkinoilta. Sähkön hin-
+nasta riippuva sähkövero voimistaisi asiakkaan kokemia hintavaihteluita.
+
+
+Asiakkaille muuttuva sähkövero olisi merkittävä muutos ja sisältää runsaasti avoimia
+kysymyksiä. Esimerkiksi miten veromuutos kohdentuu eri asiakasryhmien välille?
+Miten erilaiset asiakkaat voisivat suojautua sähköveron muutoksilta? Mihin hintaan
+vero sidottaisiin siten, että se olisi tasapuolinen kaikille? Kuka kantaisi veron? Miten
+muuttuva verotus voidaan suunnitella siten, että verokertymä ja näin asiakkaiden ve-
+rorasitus ei kasva? Muuttuvalla sähköverolla voi olla erilaisia heijastevaikutuksia myös
+esimerkiksi finanssimarkkinoille.
+
+
+
+                                             51
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Sähkön hinnan mukaan muuttuva sähkövero olisi verotusjärjestelmän ja veron kannon
+kannalta merkittävä muutos ja poikkeaisi energiaverodirektiivin lähtökohdista ja sen
+yleisestä toimeenpanosta muissa maissa. Vaikka energiaverodirektiivi lähtee energia-
+                                                                               13
+pohjaisesta sähkön verotuksesta, ei tämä työryhmän teettämän selvityksen perus-
+teella lähtökohtaisesti estä hinnasta riippuvan verokannan käyttöä. Asia vaatisi kui-
+tenkin lisäselvityksiä. EU-lainsäädännön lisäksi olisi esimerkiksi arvioitava vaikutukset
+eri asiakasryhmiin (pienasiakkaat, teollisuus jne.) ja perustuslaista johtuvat verotuk-
+sen keskeiset oikeusperiaatteet. Sähköverolla on huomattava vaikutus valtion budjet-
+tiin, sillä sähköveron verokertymä on yli miljardi euroa vuosittain. Sähkön hinnasta
+riippuva sähkövero vaikeuttaisi verotuottojen arviointia valtion talousarvioon. Kanne-
+tun veron määrä päätetään poliittisesti.
+
+
+Kaiken kaikkiaan muuttuva sähkövero olisi merkittävä muutos nykyiseen ja vaatisi
+runsaasti lisäselvityksiä lainsäädännön ja asiakasvaikutusten osalta.
+
+
+Keskeiset ehdotukset
+•    Sähkövarastojen verotus tulee selkeyttää. Työryhmä kannattaa periaatetta, jossa
+     sähkön varastoinnista tai varastoinnista aiheutuneista häviöistä ei tarvitse maksaa
+     sähköveroa.
+•    Sähkön hinnasta riippuva sähkövero vaatii lisäselvityksiä.
+
+
+Kysymykset
+•    Tulisiko sähkön hinnasta riippuvaa sähköveroa edistää kysyntäjouston näkökul-
+     masta? Miksi tai miksi ei?
+•    Mihin hintaan vero sidottaisiin siten, että se olisi tasapuolinen asiakkaille?
+•    Miten muuttuva sähkövero vaikuttaisi eri johdannaismarkkinoihin ja osapuolien
+     riskeihin?
+•    Millä muulla tavalla sähkön verotus voisi edistää kysyntäjoustoa?
+
+
+Liitännäisyydet
+•    Verkkopalvelun maksurakenteiden harmonisointi
+•    Sähkövarastot
+
+
+
+
+13
+  Sähkön valmisteverotuksen uudistaminen EU:n sääntelyn näkökulmasta, Borenius,
+1.3.2017, saatavilla www.tem.fi/alyverkot
+
+
+                                             52
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Tiekartta markkinaehtoiseen
+kysyntäjoustoon
+Yllä esitetyt linjaukset tukevat älyverkkovision tavoitteiden saavuttamista. Onnistues-
+saan linjauksista seuraavat muutokset nykytilanteeseen antavat asiakkaalle parem-
+man mahdollisuuden vaikuttaa sähkönkäyttönsä kokonaiskustannuksiin, selkeyttävät
+sähkömarkkinatoimijoiden rooleja, tehostavat markkinoiden toimintaa sekä alentavat
+sähköjärjestelmän kokonaiskustannuksia ollen koko yhteiskunnan edun mukaista.
+Selkeät roolit parantavat toimijoiden liiketoiminnan kehittämismahdollisuuksia ja kas-
+vattavat kysyntäjouston markkinapotentiaalia.
+
+
+Työryhmän esittämät linjaukset ja niistä seuraavat muutostarpeet ovat monilta osin
+vahvasti sidoksissa toisiinsa ja osa muutoksista tuo asiakkaalle merkittäviä muutoksia
+nykykäytäntöihin. Älyverkkotyöryhmän mielestä on tärkeää, että muutokset toteute-
+taan asiakkaille sujuvasti ja kustannustehokkaasti ilman kohtuutonta haittaa ja kus-
+tannusta. Esimerkiksi kulutuksenohjaamiseen liittyvät muutokset on tehtävä siten, että
+asiakkailla on tarjolla riittävästi markkinaehtoisia vaihtoehtoja kulutuksenohjaukselle.
+Siirtymät tuleekin suunnitella ja koordinoida huolellisesti, sillä niistä aiheutuvilla muu-
+toksilla on merkittäviä vaikutuksia toisiinsa. Myös markkinatoimijoiden tietojärjestel-
+miin tarvittavat muutokset olisi kustannustehokkainta niputtaa yhteen.
+
+
+Älyverkkotyöryhmä on käynnistänyt tiekartan suunnittelemisen, jossa hahmotellaan
+asiakasystävällistä siirtymää työryhmän linjauksiin perustuen. Tiekartassa huomioi-
+daan tarkemmin muun muassa vaadittavat lainsäädäntöprosessit, teknologian kehit-
+tyminen, asiakasvaikutukset sekä viestintä. Koska teknologia kehittyy nopeasti ja
+kysyntäjoustomarkkinoiden kehittymistä on vaikea ennakoida tiekarttaa laadittaessa,
+tiekarttaa ei viedä kovinkaan yksityiskohtaiselle tasolle tässä vaiheessa. Työryhmässä
+tullaan vielä tekemään linjauksia, jotka voivat vaikuttaa tiekarttaan. Koska siirtymä
+vaatii monen toimijan yhteistyötä ja lainsäädäntömuutoksia, ja energiamurroksen ai-
+heuttama joustavuuden tarve sähköjärjestelmässä kasvaa nopeasti, muutoksia on
+kuitenkin alettava hahmottelemaan ainakin ylätasolla mahdollisimman nopeasti. Muu-
+
+
+
+
+                                              53
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+toksessa on tärkeää tehdä yhteistyötä myös energia-alan ulkopuolisten toimijoiden
+kanssa.
+
+
+Myös viestintä asiakkaille olisi aloitettava mahdollisimman pian, sillä osa raportissa
+esille nostetuista muutosehdotuksista, kuten siirtohinnoittelun tehomaksu, on jo vai-
+kuttanut osaan asiakkaista. Asiakkaiden laajempi ymmärrys väliraportissa esitettyjen
+muutosten taustoista ja niiden seurauksista ei ole yleisesti tiedossa, sillä syy-
+seurausketju ilmastonmuutoksen torjunnasta ja energiamurroksesta konkreettisiin
+sähkömarkkinarakenteiden muutoksiin on pitkä ja vaikeasti ymmärrettävissä. Älyverk-
+                                    14
+kotyöryhmälle tehdyn selvityksen mukaan viestinnässä olisi tärkeä huomioida yleis-
+ten syiden ja seurausten lisäksi myös asiakaskohtaiset vaikutukset sekä kuvata avoi-
+mesti asiakkaan kasvavat osallistumismahdollisuudet ja vaikutusmahdollisuudet säh-
+könkäyttöönsä ja siihen liittyviin kustannuksiinsa. Tässä toimijoilla, jotka kohtaavat
+asiakkaita, on tärkeä rooli ja vastuu. Viestinnän tulisi olla ennakoivaa, yhtenäistä ja
+jatkuvaa. On tärkeä linkittää muutosten yhteyttä energiarakenteen muutokseen sekä
+korostaa muutosten mahdollisuuksia nykykäytäntöjen ongelmien sijasta, jotta asiak-
+kaiden luottamus toimijoihin ja toimialaan voidaan säilyttää tai sitä voidaan parantaa.
+Asiakkaiden luottamuksen pettäminen voi vaarantaa muutosten toteuttamisen. Vies-
+tinnän lisäksi korostuu myös konkreettinen neuvonta käytännön ratkaisuista, joita
+asiakas voi tehdä.
+
+
+Linjauksista ja niitä seuraavista muutoksista kuullaan sidosryhmiä väliraportin julkai-
+semisen yhteydessä. Kuuleminen auttaa konkreettisten toimenpiteiden toteuttamises-
+sa ja siirtymäsuunnitelman aikatauluttamisessa. Konkreettisessa siirtymäsuunnitel-
+massa tulisi huomioida tässä ehdotettujen muutosten lisäksi muun muassa datahubin
+käyttöönotto, siirtyminen 15 minuutin taseselvitysjaksoon, uuden sukupolven sähkö-
+mittareiden käyttöönotto sekä muut nähtävillä olevat sähkömarkkinamuutokset. Muu-
+tosten koordinointi ja aikataulun hahmottaminen auttavat myös asiakasviestinnässä ja
+resurssien kohdentamisessa.
+
+
+
+
+14
+ Demos Helsinki, 2017. Kysyntäjousto kuluttajan näkökulmasta. Saatavilla
+www.tem.fi/alyverkot
+
+
+                                             54
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Jatkotyö
+Tässä vaiheessa älyverkkotyöryhmä on saanut hahmoteltua akuuteimmat kysyntä-
+joustoa ja asiakkaan valinnanmahdollisuuksia tukevat suuntaviivat. Monet käsitellyt
+teemat vaativat vielä jatkoselvityksiä, tarkennuksia ja vaikutusarviointeja. Vaikutusar-
+vioinneissa tulisi huomioida sekä kansantaloudelliset että asiakasryhmäkohtaiset vai-
+kutukset. Lisäselvitysten ja vaikutusten arviointien perusteella esitettyjä linjauksia
+voidaan tarkentaa työryhmän jatkotyössä kokonaisuus huomioiden. Valmistelua avoi-
+miksi jääneiden asioiden osalta jatketaan.
+
+
+Älyverkkotyöryhmän työ jatkuu muidenkin teemojen osalta. Älykkään sähköjärjestel-
+män mahdollistaminen vaatii edelleen uudistuksia sähkön vähittäismarkkinoiden ra-
+kenteeseen ja käytännön ehdotuksiin sähkömarkkinoiden toimintatavoista. Toiminta-
+tapojen hahmottaminen on iteratiivinen prosessi, sillä linjauksilla on useita ristikkäis-
+vaikutuksia, jotka tulee sovittaa yhteen eheäksi kokonaisuudeksi. Käytäntöjen tulisi
+parhaan mukaan huomioida naapurimaiden ja lähialueiden kehitys ja rakenteet, jotta
+ratkaisuja voidaan mahdollisimman mutkattomasti soveltaa lähialueilla vähentäen
+markkinatoimijoiden kustannuksia, mikä edelleen hyödyttää asiakkaita.
+
+
+
+
+Tiedonvaihto
+Vähittäismarkkinoiden tiedonvaihto on ollut Suomessa hajautettua eli markkinaosa-
+puolet ovat olleet yhteydessä kaikkiin muihin osapuoliin tarpeen mukaan. Esimerkiksi
+jos myyjällä on asiakkaita useamman verkkoyhtiön alueella, on myyjän oltava yhtey-
+dessä jokaiseen verkonhaltijaan saadakseen asiakkaiden kulutustiedot. Vaikka keski-
+tetty tiedonvaihtoratkaisu datahub on merkittävä askel kohti asiakaskeskeisempiä ja
+tehokkaampia sähkön vähittäismarkkinoita, sähkömarkkinoiden tiedonvaihto vaatii
+kehittämistä edelleen vastaamaan tulevaisuuden tarpeita.
+
+
+Muuttuva toimintaympäristö ja kehittyvät liiketoimintamallit haastavat sähkömarkkinoi-
+den tiedonvaihdon. Sähkömarkkinat muuttuvat yhä reaaliaikaisemmiksi, jolloin jatkos-
+sa tuntimittaus ja mittausarvojen tiedonsaanti seuraavana päivänä ei riitä markkina-
+toimijoille eikä asiakkaille. Sähkömarkkinoiden muutos reaaliaikaisemmiksi, markkina-
+
+
+                                             55
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+toimijoiden kasvava vastuu aktiivisessa tasehallinnassa sekä hajautettujen ja ohjatta-
+vien energiaresurssien nopeasti kasvava määrä ovat eräitä merkittäviä mahdollisuuk-
+sia ja muutoksia, joissa tiedonvaihdolla on keskeinen merkitys. Tiedonvaihdossa kes-
+keistä on myös sen tietoturva ja tietosuoja. Nämä on huomioitava sisäänrakennettuna
+uusissa ratkaisuissa.
+
+
+Tiedonvaihto onkin yksi keskeinen teema tulevissa keskusteluissa. Työryhmä on aloit-
+tanut tiedonvaihtoa koskevan vision luomisen, jolla pyritään luomaan näkemys tule-
+vaisuuden tiedonvaihtotarpeista ja -ratkaisuista. Tiedonvaihtovisiota varten on kartoi-
+tettu toimijoiden tiedonvaihtotarpeita tulevaisuudessa. Tiedonvaihtotarpeet kuitenkin
+riippuvat markkinamalleista ja muista rakenteista, joita ei ole vielä päätetty. Tiedon-
+vaihtovisioon vaikuttaa työryhmän jatkossa tekemät linjaukset ja sähkömarkkinoiden
+ja teknologian kehittyminen, sillä ne voivat vaikuttaa tiedonvaihtotapaan ja tiedonvaih-
+totarpeeseen.
+
+
+
+
+Hajautetun sähköjärjestelmän tietoturva
+Sähköjärjestelmän muuttuminen aiempaa hajautetummaksi muuttaa sähköjärjestel-
+mään liittyviä riskejä, kun aiempaa useampi etäohjattava laite osallistuu sähkömarkki-
+noille ja tehotasapainon ylläpitoon. Laitteiden kytkeytyminen internetiin voi olla merkit-
+tävä uhka, jos tietoturvasta ei ole huolehdittu riittävän hyvin. Haittaa voi aiheutua pait-
+si asiakkaille myös sähkömarkkinatoimijoille ja pahimmillaan koko sähköjärjestelmälle,
+jos tiedonvaihtoa ja laitteiden ohjausta ei rakenneta riittävän tietoturvalliseksi jo alusta
+lähtien.
+
+
+Tällä hetkellä sähkömarkkinatoimijoille ei ole Suomessa asetettu tarkkoja velvoitteita
+tietoturvan osalta (pois lukien EU:n tietosuojavelvoitteet). Vaikka yksittäiset yritykset
+huolehtisivat tietojärjestelmiensä ja laitteidensa tietoturvasta, myös toimijoiden välinen
+tietoliikenne on rakennettava tietoturvalliseksi. Älyverkkotyöryhmä on alkanut kartoit-
+taa hajautettuun järjestelmään liittyviä uhkia, minkä pohjalta voidaan suunnitella toi-
+menpiteitä riskien hallitsemiseksi ja torjumiseksi. On selvitettävä, tulisiko asettaa toi-
+mijakohtaisia velvoitteita, ja miten tiedonvaihto osapuolten välillä voidaan jatkossakin
+järjestää tietoturvallisesti.
+
+
+
+
+                                              56
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Seuraavan sukupolven mittausjärjestelmä - AMR
+2.0
+Suomessa etäluettavat, tuntirekisteröivät energiamittarit asennettiin ensimmäisenä
+Euroopassa Valtioneuvoston mittausasetuksen (VNA 66/2009) mukaisesti vuoden
+2013 loppuun mennessä. Pienemmille asiakkaille (pääsulakekoko enintään 63 A)
+asennukset käynnistyivät osin jo viime vuosikymmenen puolivälissä, mutta asennus-
+määrät olivat suurimmillaan 2009–2013. Tällä hetkellä lähes kaikki (99 %) käyttöpai-
+kat ovat tuntimittauksessa.
+
+
+Tuntirekisteröivät mittarit ja tuntikohtainen taseselvitys mahdollistivat uudenlaisten
+sähkötuotteiden käyttöönoton ja kysyntäjouston hyötyjen jakamisen oikeudenmukai-
+sesti. Valtioneuvoston mittausasetuksessa on asetettu vähimmäisvaatimuksia mitta-
+uslaitteistolle ja -järjestelmälle. Vaatimuksia on täydennetty suosituksilla toimialan
+laatimassa ”Tuntimittauksen periaatteissa”. Teknisiä vaatimuksia mittauslaitteille on
+asetettu mm. EU-tasolla mittauslaitedirektiivissä ja kansallisesti mittauslaitelaissa
+(707/2011).
+
+
+Energiaviraston valvontamenetelmissä etäluettavien energianmittauslaitteiden pitoai-
+kaväliksi on määritelty 10‒20 vuotta. Ensimmäisen sukupolven mittauslaitteiden laa-
+jamittaiset korvausinvestoinnit käynnistyvät ensi vuosikymmenen alussa. Viimeisten-
+kin yhtiöiden mittarit tulevat pitoaikansa päähän vuoden 2030 tienoilla. Käsittelyssä
+olevan Euroopan komission puhtaan energian paketissa esitetään älymittareille uusia
+vaatimuksia. Reaaliaikaisuus ja tiedon visualisointi asiakkaalle ovat keskeisiä asioita
+pohdittaessa tulevia mittariratkaisuja. Työ- ja elinkeinoministeriön arvion mukaan etä-
+luennan käyttöönotto Suomessa oli kokonaisuudessaan onnistunut vaikka kehitettä-
+vääkin löytyy. Ennen seuraavan sukupolven mittausjärjestelmän (AMR 2.0) käyttöön-
+ottoa on tarpeen selvittää, miltä osin mittauslaitteille ja -järjestelmille asetettuja vaati-
+muksia on tarve päivittää ennen massahankintojen käynnistymistä ja mitä uusia käyt-
+tötarpeita ja toiminnallisuuksia järjestelmän tulisi tukea.
+
+
+Keskustelu mittareista on avattu älyverkkotyöryhmässä kesällä 2017. Asia on sidok-
+sissa myös esimerkiksi tiedonvaihtovisioon. Linjauksia mittareiden ominaisuuksista ei
+ole vielä tehty. Seuraavan sukupolven sähkömittarien osalta on ratkaistava muun
+muassa millainen rooli tai onko niillä roolia kysyntäjouston toteuttamisessa. Lisäksi
+mittareiden toiminnallisuudet sekä onko mittauspalvelu monopolitoimintaa myös jat-
+kossa tulevat arvioitaviksi.
+
+
+
+
+                                              57
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Vähittäismarkkinoiden kehittäminen
+Sähkömarkkinoiden muutoksessa asiakkaan voi olla vaikea löytää itselleen sopivaa
+tapaa toimia tai eri markkinapaikkojen toimintatavat voivat olla hankalia sisäistää.
+Esimerkiksi jakeluverkkomaksun muutokset vaativat energian- ja tehonkäytön koko-
+naisvaltaisempaa hallintaa. Asiakkaan kannalta voisi olla yksinkertaista, että yksi asi-
+akkaan valitsema taho koordinoisi hänen sähkön käyttöön ja tuotantoon liittyviä palve-
+luita ja kokoaisi näistä selkeän ja vaivattoman paketin asiakkaalle.
+
+
+Energiatoimialalla on pitkään keskusteltu myyjävetoisesta vähittäismarkkinamallista.
+Nykyinen markkinamalli toteuttaa pitkälti tätä tapaa, sillä sähkön myyjä voi käytännös-
+sä hoitaa monet esimerkiksi myyjän vaihtoon ja muuttamiseen liittyvät prosessit asi-
+akkaan puolesta. Kuitenkin vain myyjillä, joilla on läpilaskutussopimus verkkoyhtiön
+kanssa, on mahdollisuus toimittaa asiakkaalle yksi lasku sisältäen sekä siirron että
+myynnin tuotteet. Mikäli asiakas kilpailuttaa sähkön toimituksensa ja vaihtaa sellaisel-
+le sähkön myyjälle, jolla läpilaskutussopimusta ei ole, saa hän kaksi laskua. Asiakkai-
+ta tilanne saattaa hämmentää ja tilanne asettaa myyjät eriarvoiseen asemaan eri alu-
+eilla. Toisaalta verkkoyhtiöiden laskutuksen siirtäminen kokonaan myyjien vastuulle
+lisää markkinoille tulon kynnystä ja lisää myyjien kustannuksia esimerkiksi mahdollis-
+ten vakuuksien ja tietojärjestelmien laajenemisen muodossa.
+
+                                                                                      15
+Pohjoismaiset energiaviranomaiset ovat suositelleet yhteislaskutukseen siirtymistä
+ja muut Pohjoismaat ovat tehneet päätöksen tai ovat jo siirtyneet yhden laskun mal-
+    16
+liin . Energia- ja ilmastostrategiassa todetaan, että pohjoismaisten vähittäismarkki-
+noiden edellytysten luomista tulee jatkaa. Toimintatapojen yhtenäistämistä muiden
+pohjoismaiden toimintatapojen kanssa yhdenmukaiseksi on selvitettävä erityisesti
+asiakkaiden näkökulmasta.
+
+
+
+
+Joustoa tukeva sääntely
+Verkkoyhtiöille on asetettu sähkömarkkinalaissa vaatimus parantaa sähkön toimitus-
+varmuutta siten, että taajama-alueilla suurin sallittu sähkökatkon pituus on 6 tuntia ja
+haja-asutusalueilla 36 tuntia vuoteen 2029 mennessä. Vaatimusten johdosta jakelu-
+verkkoyhtiöt ovat investoineet runsaasti jakeluverkostoonsa. Pääasiallinen keino vaa-
+
+
+
+15
+   Katso esim. Road map towards a common harmonised Nordic end-user market, NordREG
+report 03/2012 https://www.nordicenergyregulators.org/wp-content/uploads/2012/12/Road-map-
+towards-a-common-harmonised-Nordic-end-user-market.pdf
+16
+   Energimarknadsinspektionen, Ny modell för elmarknaden, 05/2017.
+http://www.ei.se/Documents/Publikationer/rapporter_och_pm/Rapporter%202017/Ei_R2017_05.
+pdf
+
+
+                                             58
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+timusten täyttämiseen on ollut maakaapelointi. Tulevaisuudessa sähköautojen mää-
+rän lisääntyminen voi vaikuttaa jakeluverkkojen kuormittumiseen. Investointeja voitai-
+siin mahdollisesti vähentää hyödyntämällä kulutuksen joustoja tai varastointilaitteisto-
+ja.
+
+
+Sääntely ohjaa verkkomonopolien toimintaa Suomessa sekä lainsäädännön että verk-
+kovalvonnan kautta. Muuttuvassa toimintaympäristössä tulee arvioida, miten verkko-
+yhtiöitä voitaisiin kannustaa ja tarvittaessa ohjata sääntelyllä entistä paremmin asia-
+kasta hyödyttäviin kokonaisratkaisuihin ja voiko verkkoyhtiö hyödyntää tehokkaasti
+kysyntäjoustoa kokonaiskustannusten alentamiseen ylläpitäen samalla vaadittavan
+toimitusvarmuuden tason. Kysyntäjoustoa on arvioitava kokonaisuutena ja mikäli
+myös verkkoyhtiöillä on kannusteet hyödyntää kysyntäjoustoa sen ollessa järkevää,
+edistää se resurssitehokkuutta ja voi antaa mahdollisuuden asiakkaiden kustannusten
+alentamiseen.
+
+
+Rakennusten sähkösuunnitteluun ei ole olemassa sähköjärjestelmän kokonaistehok-
+kuuden huomioivia ohjeita tai kannusteita. Jatkossa tulee selvittää, miten rakennus-
+sääntelyä ja sähkösuunnittelun ohjeistusta voitaisiin kehittää paremmin asiakkaan
+osallistumismahdollisuuksia parantavaksi ja sähköjärjestelmää tukevaksi. Myös ra-
+kennusten energiatehokkuussääntelyä tulee selvittää.
+
+
+
+
+                                             59
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Julkinen kuuleminen
+Sähköjärjestelmän murros ja älykkään sähköjärjestelmän rakentaminen on haastava
+prosessi, joka vaikuttaa laajasti koko yhteiskuntaan. Eri sidosryhmien on tehtävä tiivis-
+tä yhteistyötä, jotta muutos voidaan tehdä tehokkaasti ja sujuvasti.
+
+
+Julkisen kuulemisen avulla haemme konkretiaa tarvittavien asiakkaiden valinnanva-
+pauksia ja toimitusvarmuutta edistäviin muutoksiin. Julkisen kuulemisen tulosten avul-
+la älyverkkotyöryhmä luonnostelee tiekartan sähkön vähittäismarkkinoiden rakenne-
+muutokselle suuntaa-antavine aikatauluineen. Tavoitteena on myös saada taustama-
+teriaalia vaikutusarvioon. Kysymyksiä on paljon, joten vastauksissa voi keskittyä itsel-
+le tärkeimmiksi kokemiin kysymyksiin.
+
+
+Vastaukset pyydetään lähettämään osoitteeseen alyverkot.palaute@tem.fi
+10.11.2017 mennessä.
+
+
+
+
+Yleiset kysymykset
+•   Miten eri ehdotukset sopivat keskenään yhteen? Näettekö ristiriitoja linjausten
+    välillä?
+•   Miten ja millä aikataululla muutokset pitäisi toteuttaa? Huomioithan vastauksessa-
+    si muut sähkömarkkinamuutokset ja niiden vaikutukset esimerkiksi tietojärjestel-
+    mäpäivityksiin (datahub, 15 minuutin taseselvitysjakso, mahdollisuus lähellä reaa-
+    liaikaa käytävään kaupankäyntiin, uuden sukupolven sähkömittarit jne.)
+•   Puuttuiko raportista tai tulevista teemoista jokin tärkeä aihealue?
+
+
+
+
+                                             60
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Teemakohtaiset kysymykset
+
+Jakeluverkkoyhtiön ja markkinatoimijoiden roolit kysyntäjoustossa
+•   Tapahtuuko jakeluverkkoyhtiöiden toteuttamasta kysyntäjoustosta luopuminen
+    vapaaehtoisesti vai tarvitaanko siihen sääntelyä?
+•   Millä aikavälillä ja millä edellytyksillä jakeluverkkoyhtiöiden aikaohjauksesta voi-
+    daan luopua? Kuinka luopuminen voidaan toteuttaa hallitusti?
+•   Mitä ovat asiakkaiden korvaavat vaihtoehdot jakeluverkkoyhtiöiden kulutuksen
+    ohjaamiselle?
+•   Millaisia euromääräisiä vaikutuksia kotitalouksille tulisi, jos jakeluverkkojen aika-
+    ohjauksesta luovutaan ja muita muutoksia ei tehdä?
+•   Onko jakeluverkkoyhtiöillä tarvetta hyödyntää joustoja verkon tarpeisiin nyt tai
+    nähtävissä olevassa tulevaisuudessa? Onko joustojen hyödyntämiselle esteitä?
+
+
+Aggregaattorit – joustavien tuotanto- ja kulutuskohteiden yhdistäjät
+•   Millaisia mahdollisuuksia itsenäinen aggregaattori tarjoaa asiakkaille ja yhteiskun-
+    nalle?
+•   Millä markkinapaikoilla itsenäinen aggregaattori voi toimia?
+          − Tuleeko itsenäisen aggregaattorin toiminnasta muille osapuolille aiheu-
+               tuneet tasevirheet korjata? Millä perusteella?
+          − Tuleeko aggregaattorin maksaa muille toimijoille kompensaatiota muu-
+               toksista energian myynnissä? Millä perusteella?
+•   Miten itsenäisen aggregaattorin jousto tulisi mitata ja todentaa?
+•   Mitä tiedonvaihtotarpeita itsenäisen aggregaattorin toiminta aiheuttaa?
+•   Miten asiakkaan, aggregaattorin ja sähkönmyyjän tulisi koordinoida asiakkaan
+    kokonaisuutta sisältäen siirtohinnoittelun?
+
+
+Paikallinen energiayhteisö – kiinteistön sisäinen
+•   Mitä asioita kiinteistön sisäisessä energiayhteisössä tulee huomioida, jotta se olisi
+    käytännössä perustettavissa ja siitä olisi käytännössä mahdollista erota?
+•   Miten kiinteistön sisäinen energiayhteisö tulee mitata?
+•   Kenen tai minkä tahon tulisi vastata kulutusten netottamisesta?
+
+
+Paikallinen energiayhteisö – kiinteistörajat ylittävä
+•   Miten kiinteistörajat ylittävät energiayhteisöt voivat edistää Suomen energiapolitii-
+    kan tavoitteiden saavuttamista, esimerkiksi uusiutuvan energian tavoitteiden osal-
+    ta?
+•   Miten kiinteistön rajat ylittävien energiayhteisöjen edistämisessä voitaisiin välttää
+    tilanne, jossa verkon kustannukset painottuisivat niiden asiakkaiden maksettavik-
+    si, jotka eivät pysty osallistumaan yhteisöön?
+
+
+                                             61
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+•   Mitä haasteita näette kiinteistörajat ylittävien energiayhteisöjen muodostamises-
+    sa?
+•   Näettekö, että kiinteistön rajat ylittävien erillisten linjojen toteutukseen liittyy tekni-
+    siä haasteita? Jos kyllä, niin millaisia?
+
+
+Hajautettu energiayhteisö
+•   Mitä hyötyjä tai haasteita näette hajautettujen energiayhtiöiden toiminnassa?
+
+
+Jakeluverkon tehopohjainen siirtohinnoittelu
+•   Millä tavoin pienasiakkaiden ymmärrystä siirtomaksujen määräytymisestä, mu-
+    kaan lukien tehosta, voitaisiin lisätä?
+•   Millaisia työkaluja on olemassa tai tulisi olla asiakkaiden tehon hallintaan? Kenen
+    tulisi tarjota niitä?
+•   Mihin tehoperusteinen hinnoittelu vaikuttaa? Kuinka suureksi arvioitte tehoperus-
+    teisen siirtohinnoittelun yhteiskunnalliset hyödyt ja kustannukset pitkällä aikavälil-
+    lä?
+•   Millaisia euromääräisiä vaikutuksia tehoperusteinen siirtohinnoittelu toisi eri asia-
+    kasryhmille ja eri alueilla?
+
+
+Verkkopalvelun maksurakenteiden harmonisointi
+•   Mitä asioita siirtohinnoittelun osalta olisi hyödyllistä harmonisoida?
+
+
+Sähkövarastot
+•   Miten jakeluverkkoyhtiöt voisivat parhaiten hyödyntää sähkövarastojen palvelua
+    markkinoilta? Onko sille esteitä?
+•   Miten määritellään poikkeustilanteet, jossa jakeluverkkoyhtiö voisi omistaa ja käyt-
+    tää itse sähkövarastoja? Millaisen prosessin tulisi edeltää poikkeusluvan myöntä-
+    mistä?
+•   Tulisiko jakeluverkkoyhtiöiden kysyä asiakkaiden halukkuutta investoida sähköva-
+    rastoon ja tarjota sitä markkinoille jakeluverkkoyhtiön hyödynnettäväksi?
+
+
+Verotus
+•   Tulisiko sähkön hinnasta riippuvaa sähköveroa edistää kysyntäjouston näkökul-
+    masta? Miksi tai miksi ei?
+•   Mihin hintaan vero sidottaisiin siten, että se olisi tasapuolinen asiakkaille?
+•   Miten muuttuva sähkövero vaikuttaisi eri johdannaismarkkinoihin ja osapuolien
+    riskeihin?
+•   Millä muulla tavalla sähkön verotus voisi edistää kysyntäjoustoa?
+
+
+
+
+                                              62
+                        TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Määritelmiä
+Aggregaattori
+
+
+Aggregaattori on sähkömarkkinatoimija, joka kerää asiakkaiden sähköntuotantoa,
+kulutusta ja varastointia suuremmiksi kokonaisuuksiksi ja tarjoaa näiden jouston säh-
+kömarkkinoille. Aggregaattorina voi toimia esimerkiksi asiakkaan sähkönmyyjä tai
+tasevastaava tai niin sanottu itsenäinen aggregaattori (ks. määritelmä).
+
+
+Avoin toimittaja
+
+
+Avoin toimittaja toimittaa asiakkaalle kaiken tämän tarvitseman sähkön. Avoin toimit-
+taja tasapainottaa asiakkaan tuotannon ja hankinnan sekä kulutuksen ja myynnin
+erotuksen. Tasevastaavien avoin toimittaja on Fingrid.
+
+
+Energiatehokkuus
+
+
+Energiankäytön pysyvää vähentämistä ja tehostamista
+
+
+Hajautettu tuotanto
+
+
+Sähköntuotantoa, joka tyypillisesti sijaitsee käyttökohteiden lähellä, on liitetty jakelu-
+verkkoon ja on tuotantomäärältään pienimuotoista.
+
+
+Hajautetut energiaresurssit
+
+
+Tarkoitetaan tyypillisesti jakeluverkkoon kytkettyä hajautettua tuotantoa, kulutus- ja
+joustokohteita sekä energiavarastoja.
+
+
+Itsenäinen aggregaattori
+
+
+Itsenäinen aggregaattori on aggregaattori, joka ei ole asiakkaan sähkönmyyjä
+
+
+
+                                              63
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+Joustopalvelujen tarjoaja
+
+
+Toimija, joka myy asiakkaidensa sähkönkulutukseen, tuotantoon tai varastointiin liitty-
+vää sähkötehon joustoa järjestäytyneillä sähkömarkkinoilla tai hyödyntää sitä sähkö-
+taseen hallinnassa. Joustopalvelujen tarjoajana voi toimia esimerkiksi sähkönmyyjä ja
+itsenäinen aggregaattori.
+
+
+Kyberturvallisuus
+
+
+Turvallisuuden osa-alue, jolla pyritään sähköisen ja verkotetun yhteiskunnan turvalli-
+suuteen. Kyberturvallisuudessa tunnistetaan, ehkäistään ja varaudutaan sähköisten ja
+verkotettujen järjestelmien häiriöihin ja niiden vaikutuksiin yhteiskunnan kriittisiin toi-
+mintoihin.
+
+
+Kysyntäjousto
+
+
+Asiakkaan sähköenergian käytön tilapäistä muuttamista käyttöajankohdan normaalin
+tai sen hetkisen profiilin osalta sähkönhinnan tai muun kannustimen perusteella.
+
+
+Sähkötase
+
+
+Tasevastaavilla on sähkötase, joka koostuu tasevastaavan tuotannosta, kulutuksesta
+ja sähkökaupoista eli sähkön myynnistä ja sähkön ostamisesta. Sähkötase on suunni-
+teltava tasapainoon jokaiselle markkinajaksolle. Sähkötase siis tunnin sisällä: tuotanto
++ ostot = kulutus + myynti.
+
+               17
+Taseselvitys
+
+
+Sähkön käyttöjakson jälkeen tehtävä tasevastaavien toteutuneiden tuotantojen, kulu-
+tusten ja sähkökauppojen selvittäminen. Taseselvityksen seurauksena selviää tase-
+vastaavien tasevirheet, joista on tehtävä Fingridin kanssa tasesähkökauppa tasesäh-
+köhinnalla.
+
+
+Tasevastaava
+
+
+Sähkömarkkinaosapuoli, joka huolehtii asiakkaidensa sähkötaseiden tasapainosta
+kokonaisuutena. Tasevastaavan avoin toimittaja on Fingrid. Tasevastaava joutuu
+ostamaan tai myymään tasesähköä Fingridiltä tasevirheidensä osalta, sillä epätasa-
+
+
+17
+   Lue lisää tasevastuusta, tasesähköstä ja taseselvityksestä esimerkiksi
+https://www.esett.com/wp-content/uploads/2016/03/NBS_Kaesikirja_SUOMI_2.13.pdf
+
+
+                                             64
+                       TYÖ- JA ELINKEINOMINISTERIÖN JULKAISUJA 38/2017
+
+
+
+
+painosta aiheutuu tarve säätösähkötarjousten käyttämiselle ja reserveille valtakunnal-
+lisen tehotasapainon ylläpitämiseksi.
+
+
+Tehotasapaino
+
+
+Sähköntuotannon ja -kulutuksen välinen tasapaino sähköjärjestelmässä. Tuotannon ja
+kulutuksen on oltava tasapainossa joka hetki. Suomessa Fingrid vastaa valtakunnalli-
+sen tehotasapainon ylläpitämisestä.
+
+
+Toimitusvarmuus
+
+
+Sähköjärjestelmän kyky tuottaa ja siirtää sähköä luotettavasti asiakkaiden tarpeisiin.
+Toimitusvarmuus koostuu sähkötehon riittävyydestä ja sähköverkon siirtovarmuudes-
+ta.
+
+
+Vaihteleva tuotanto
+
+
+Sähköntuotanto, kuten aurinkoenergia ja tuulivoima, johon liittyy säästä riippuvaa
+ajallista vaihtelevuutta ja ennustettavuuden epävarmuutta.
+
+
+Visio
+
+
+Näkemys tai tavoite, jossa halutaan olla tietyn ajan päästä. Visio kuvaa tavoitteellisen
+tulevaisuuden.
+
+
+Älyverkko eli älykäs sähköjärjestelmä
+
+Laaja toiminnallinen kokonaisuus – palvelualusta – joka kattaa sähkön fyysisen siirron
+ja jakelun lisäksi muun muassa tuotannon, hajautetut energiaresurssit, sähköjärjes-
+telmän joustot ja erilaiset älyverkkosovellukset ja joka yhdistää fyysisen sähkönsiirron
+tukku- ja vähittäismarkkinoihin. Älykäs sähköjärjestelmä toimii kustannustehokkaana
+alustana täyttämään asiakkaiden ja yhteiskunnan tarpeet sähkömarkkinatoimijoiden,
+palveluntarjoajien, teknologiatoimittajien sekä verkkoyhtiöiden toimesta.
+
+
+
+
+                                             65
+    Matkalla kohti joustavaa ja
+asiakaskeskeistä sähköjärjestelmää
+
+
+
+
+      ISSN 1797-3562 (verkkojulkaisu)
+         ISBN 978-952-327-243-9
+
+         julkaisut.valtioneuvosto.fi
+

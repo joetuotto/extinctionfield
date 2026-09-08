@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-08T14:37:05.276Z",
+  "generatedAt": "2026-09-08T14:43:39.138Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/evidence/testosterone/page.tsx",
-      "line": 377
+      "line": 394
     },
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5671
+      "line": 5668
     },
     {
       "claimId": "claim.androgen.binding-availability",
@@ -32,12 +32,12 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/evidence/testosterone/page.tsx",
-      "line": 360
+      "line": 377
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5653
+      "line": 5650
     },
     {
       "claimId": "claim.androgen.receptor-use-capacity",
@@ -185,7 +185,7 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5564
+      "line": 5561
     },
     {
       "claimId": "claim.bridge.conditional-response-operator",
@@ -213,7 +213,7 @@
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5595
+      "line": 5592
     },
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
@@ -327,7 +327,7 @@
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5704
+      "line": 5701
     },
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
@@ -368,7 +368,7 @@
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5692
+      "line": 5689
     },
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
@@ -471,7 +471,7 @@
     {
       "claimId": "claim.couple.fecundability-convergence",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5266
+      "line": 5263
     },
     {
       "claimId": "claim.couple.fecundability-convergence",
@@ -586,7 +586,7 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5638
+      "line": 5635
     },
     {
       "claimId": "claim.geometry.quadratic-mixing",
@@ -604,7 +604,7 @@
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5621
+      "line": 5618
     },
     {
       "claimId": "claim.geometry.rank-one-coordinate",
@@ -1044,12 +1044,12 @@
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 4900
+      "line": 4897
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5533
+      "line": 5530
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
@@ -1203,7 +1203,7 @@
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5450
+      "line": 5447
     },
     {
       "claimId": "claim.rpm.cry-magnetic-sensitivity",
@@ -1508,7 +1508,7 @@
     {
       "claimId": "claim.tfr.multi-input-decomposition",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5253
+      "line": 5250
     },
     {
       "claimId": "claim.tfr.multi-input-decomposition",
@@ -1537,7 +1537,7 @@
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",
       "file": "app/[locale]/model/page.tsx",
-      "line": 5446
+      "line": 5443
     },
     {
       "claimId": "claim.vgcc.ros-ca2-coupling",

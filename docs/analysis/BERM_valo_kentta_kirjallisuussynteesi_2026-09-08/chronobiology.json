@@ -1,0 +1,306 @@
+{
+  "title": "Valo, valohistoria, melatoniini ja ehdolliset biologiset vasteet",
+  "language": "fi",
+  "date": "2026-09-08",
+  "scope": "15 alkuperäistutkimusta. Tuontibiologiaa ja tutkimusten välistä synteesiä; ei BERM:n geometrisen tai ihmiskohtaisen vasteoperaattorin empiirinen identifiointi.",
+  "sources": [
+    {
+      "id": "liu2014",
+      "citation": "Liu DD, Ren Z, Yang G, Zhao QR, Mei YA. Melatonin protects rat cerebellar granule cells against electromagnetic field-induced increases in Na+ currents through intracellular Ca2+ release. J Cell Mol Med. 2014;18(6):1060–1070.",
+      "doi": "10.1111/jcmm.12250",
+      "pmid": "24548607",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4508145/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4508145/fullTextXML"
+      ],
+      "population": "7 vrk ikäisten Sprague–Dawley-rottien pikkuaivojen jyväissolut; 6–8 vrk primaariviljelmässä.",
+      "exposure": "Sinimuotoinen 50 Hz magneettikenttä, 1 mT, 60 min; Helmholtzin kelat. Melatoniini 1 tai 5 µM. Amplitudin RMS/huippukonventiota ei yksilöity tässä lähdepoiminnassa.",
+      "result": "Na-virtatiheyden lisäys 62,5 ± 6,6 %; 1 ja 5 µM melatoniinilla jäljelle jäi 22,0 ± 5,9 % ja 8,9 ± 4,4 %. MT2-agonisti IIK-7 10 µM jäljitteli vaikutusta, antagonisti 4-P-PDOT 10 µM poisti sen.",
+      "mechanism": "Melatoniini ei muuttanut lepo-Ca:ta; se vahvisti 27 mM KCl:n (30 s) herättämää Ca-vastetta sekä kenttä- että verrokkisoluissa. Kenttä yksin ei suurentanut tätä Ca-vastetta. Farmakologia tukee MT2:n, Ca-influxin käynnistämän RyR-vapautumisen ja CaM-reitin osuutta.",
+      "limits": "µM-lääkeannokset, rotan neuronit ja 1 mT; ei ihmisvalaistusta eikä lisääntymistulosta. PKA:n aktivaation tai Na-aktivaatiokäyrän kenttämuutoksen kumoutumista ei todettu. Solujen n ei ole eläinten n.",
+      "research_family": "Fudan / Mei; samaa soluelektrofysiologista tutkimuslinjaa kuin artikkelin aiempi kenttä–Na-virtatyö.",
+      "verification": "Alkuperäisartikkelin koko XML, menetelmät, tulokset ja kuvaselosteet luettu.",
+      "controls": "Raportoitu enimmäislämpeneminen 0,4 ± 0,1 °C; erillinen 37 vs 37,4 °C lämpöverrokki. Ruthenium red vaikutti myös yksin Na-virtaan, joten salpaajakokeita ei pidä lukea täydellisen spesifisinä mekanismieristyksinä."
+    },
+    {
+      "id": "cajochen2005",
+      "citation": "Cajochen C, Münch M, Kobialka S, et al. High sensitivity of human melatonin, alertness, thermoregulation, and heart rate to short wavelength light. J Clin Endocrinol Metab. 2005;90(3):1311–1316.",
+      "doi": "10.1210/jc.2004-0957",
+      "pmid": "15585546",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/15585546/",
+        "https://www.chronobiology.ch/wp-content/uploads/publications/2005_04.pdf"
+      ],
+      "population": "10 tervettä 21–29-vuotiasta miestä; yksi sairauden vuoksi pois, analyysi n=9. Tasapainotettu vaihtovuorokoe.",
+      "exposure": "460 tai 550 nm, kaistan puolileveys ±10 nm, 2 h myöhäisillalla noin 13,5 h heräämisestä. Molemmissa 2,8 × 10^13 fotonia/cm²/s; 12,1 ja 10,05 µW/cm². Ennen testiä 1,5 h 2 lx ja 2 h pimeää. Silmät auki, pupilleja ei lääkelajennettu.",
+      "result": "460 nm vaimensi sylkimelatoniinia enemmän, lisäsi vireyttä, vaimensi ydinlämpötilan iltalaskua ja suurensi sykettä suhteessa 550 nm:iin. 550 nm:n melatoniinivaikutus oli lievä ja ohimenevä.",
+      "limits": "Sama fotonimäärä, eri aallonpituus; ei sama fotopinen luksimäärä. 460 nm oli noin 5 lx. Ei RF-altistuskoetta eikä lisääntymispäätetapahtumaa.",
+      "research_family": "Basel / Cajochen–Wirz-Justice; itsenäinen kohortti suhteessa Harvardin ja Rushin sarjoihin.",
+      "verification": "Alkuperäinen instituution PDF, menetelmät ja tulokset luettu."
+    },
+    {
+      "id": "gooley2011",
+      "citation": "Gooley JJ, Chamberlain K, Smith KA, et al. Exposure to room light before bedtime suppresses melatonin onset and shortens melatonin duration in humans. J Clin Endocrinol Metab. 2011;96(3):E463–E472.",
+      "doi": "10.1210/jc.2010-2098",
+      "pmid": "21193540",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3047226/",
+        "https://pubmed.ncbi.nlm.nih.gov/21193540/"
+      ],
+      "population": "116 tervettä 18–30-vuotiasta kahden kontrolloidun laboratorioprotokollan analyysissä; osatutkimukset n=104 ja n=12.",
+      "exposure": "Huonevalo alle 200 lx tai hämärä alle 3 lx kahdeksan tunnin aikana ennen nukkumaanmenoa; loisteputkivalaistus. Lisäksi huonevalo tavallisen unijakson aikana erillisessä protokollassa.",
+      "result": "103/104:llä melatoniinin havaittu alku myöhästyi huonevalossa. Kesto 8 h 45 min vs 10 h 17 min. Ennen nukkumaanmenoa lasketun AUC:n vaimennuksen mediaani 71,4 %; koko vuorokauden vaikutus huomattavasti pienempi. Yön läpi huonevalo vaimensi yli 50 % melatoniinista 85 %:ssa koejaksoja.",
+      "limits": "Akuutin erityksen vaimentumisen aiheuttama havaittu alun muutos ei sellaisenaan osoita pysyvää kellon vaiheensiirtoa. Eri AUC-ikkunoita ei pidä yhdistää.",
+      "research_family": "Harvard / Brigham / Czeisler–Lockley. Kirjoittajayhteys Zeitzer-, Smith- ja Chang-sarjoihin; mahdollinen osallistujapäällekkäisyys vanhoihin protokolliin ei tässä yksilöity.",
+      "verification": "Alkuperäinen tekijän kokoteksti-PDF ja PubMed tarkistettu."
+    },
+    {
+      "id": "chang2015",
+      "citation": "Chang AM, Aeschbach D, Duffy JF, Czeisler CA. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. Proc Natl Acad Sci USA. 2015;112(4):1232–1237.",
+      "doi": "10.1073/pnas.1418490112",
+      "pmid": "25535358",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4313820/",
+        "https://elib.dlr.de/94985/1/Chang%20et%20al%20-%20Evening%20Use%20of%20eReaders%20-%20PNAS%202014.pdf"
+      ],
+      "population": "12 tervettä nuorta aikuista, satunnaistettu 14 vrk vaihtovuorokoe; melatoniinivertailussa n=11 kummassakin ehdossa.",
+      "exposure": "Viisi iltaa kummassakin ehdossa; lukeminen klo 18–22, 15 min tauko. iPad suurimmalla kirkkaudella 30–45 cm etäisyydellä, silmään 30–50 lx; spektrihuippu 452 nm. Painettu kirja noin 0,91 lx silmään, noin 3 lx huoneessa. Kiinteä uni-ikkuna klo 22–06.",
+      "result": "Viidentenä iltana e-lukijan melatoniinivaimennus 55,12 ± 20,12 %. Seuraavan päivän hämärämittauksen melatoniinialku klo 22.31 vs 21.01. N2-univiive noin 10 min pidempi, REM-unta vähemmän, aamuvireys heikompi.",
+      "limits": "Spektriä ja silmään tulevaa valaistusvoimakkuutta ei vakioitu yhtä suuriksi; tulosta ei voi erotella pelkäksi sinisen aallonpituuden vaikutukseksi. Kokonaisuniaika ei eronnut merkitsevästi kiinteässä uni-ikkunassa. Ei RF:n eristyskoe.",
+      "research_family": "Harvard / Brigham / Czeisler–Aeschbach; kirjoittajapäällekkäisyys muiden Chang-tutkimusten kanssa, eri koejärjestely.",
+      "verification": "Alkuperäinen DLR:n kokoteksti-PDF menetelmineen ja spektritaulukkoineen luettu."
+    },
+    {
+      "id": "zeitzer2000",
+      "citation": "Zeitzer JM, Dijk DJ, Kronauer RE, Brown EN, Czeisler CA. Sensitivity of the human circadian pacemaker to nocturnal light: melatonin phase resetting and suppression. J Physiol. 2000;526(3):695–702.",
+      "doi": "10.1111/j.1469-7793.2000.00695.x",
+      "urls": [
+        "https://physoc.onlinelibrary.wiley.com/doi/10.1111/j.1469-7793.2000.00695.x",
+        "https://modresvetlo.cz/PDF/Sensitivity_of_the_human_circadian_pacemaker_to_nocturnal_light.pdf"
+      ],
+      "population": "23 tervettä 18–44-vuotiasta, yksi testivoimakkuus kullekin; 21 jäi analyysiin kahden ajoituspoikkeaman jälkeen.",
+      "exposure": "6,5 h, 3–9100 lx silmän sarveiskalvon tasossa; UV-suodatettu viileänvalkoinen loisteputkivalo. Altistus suunnattu alkuyöhön; keskipiste keskimäärin 2 h ennen melatoniinimaksimia. Yhdeksän vrk laboratorioprotokolla.",
+      "result": "Epälineaarinen annos–vaste sekä melatoniinivaimennuksessa että myöhemmin mitatussa vaiheensiirrossa. Puolivaste tavanomaisen huonevalon alueella, vaiheensiirrossa noin 80–160 lx; noin 100 lx saattoi tuottaa huomattavan vasteen suhteessa 9000 lx:iin.",
+      "limits": "Annoskäyrä eri henkilöistä, ei jokaisen omaa annossarjaa. Koeolosuhteinen puolivaste ei ole yleinen turvallisuusraja eikä kaikille spektreille sama luku.",
+      "research_family": "Harvard / Brigham / Czeisler; sama tutkimusperhe kuin Smith, Gooley ja Chang.",
+      "verification": "Alkuperäinen kokoteksti-PDF; osallistujamäärä, altistus ja mallit tarkistettu."
+    },
+    {
+      "id": "phillips2019",
+      "citation": "Phillips AJK, Vidafar P, Burns AC, et al. High sensitivity and interindividual variability in the response of the human circadian system to evening light. Proc Natl Acad Sci USA. 2019;116(24):12019–12024.",
+      "doi": "10.1073/pnas.1901824116",
+      "pmid": "31138694",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6575863/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6575863/fullTextXML"
+      ],
+      "population": "56 tervettä 18–30-vuotiasta suoritti protokollan; n=55 analyysissä. Yksilöllinen luotettava kokonais-ED50 n=42.",
+      "exposure": "Saman henkilön toistetut 5 h iltakokeet: 10, 30, 50, 100, 200, 400 tai 2000 lx; alle 1 lx lähtöehto. Aloitus 4 h ennen tavanomaista nukkumaanmenoa. Loisteputken mitattu värilämpötila 3968 K, spektrihuippu 545 nm.",
+      "result": "Melatoniinivaimennuksen ryhmä-ED50 24,60 lx (95 % LV 21,33–28,37). Henkilökohtaiset ED50:t 6,0–349,8 lx, yli 50-kertainen vaihtelu. Melatoniinin havaittu alku siirtyi 10/30/50 lx:ssa keskimäärin 22/77/109 min.",
+      "limits": "Yhden spektrin iltakoe. Melatoniinin havaittu alku altistuksen aikana ei ole sama mittaus kuin seuraavan päivän endogeeninen vaihe. Pienten ja suurten ED50-arvioiden luottamusvälit ovat leveitä.",
+      "research_family": "Monash / Cain–Phillips; Lockley ja Rajaratnam luovat kirjoittajayhteyden Harvard-sarjaan, mutta koe ja kohortti ovat erilliset.",
+      "verification": "Alkuperäinen koko XML, myös menetelmät ja yksilöanalyysin rajaukset, luettu."
+    },
+    {
+      "id": "hebert2002",
+      "citation": "Hébert M, Martin SK, Lee C, Eastman CI. The effects of prior light history on the suppression of melatonin by light in humans. J Pineal Res. 2002;33(4):198–203.",
+      "doi": "10.1034/j.1600-079X.2002.01885.x",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3925650/",
+        "https://www.spectrasol.cz/wp-content/uploads/2024/09/7-The-effects-of-prior-light-history-on-the-suppression-of-melatonin-by-light-in-humans.pdf"
+      ],
+      "population": "12 tervettä, 6 naista ja 6 miestä, keski-ikä 25,5 ± 6,4 v. Molemmat historiaehdot samoille henkilöille.",
+      "exposure": "Kirkkaalla viikolla 4,3 ± 0,4 h/vrk ulkona ja/tai 5000–7000 lx valolaatikoiden äärellä. Himmeällä viikolla sisävalaistus alle 200 lx ja ulkona noin 2 % läpäisevät lasit. Sama yötesti 500 ± 10 lx, 3 h.",
+      "result": "Melatoniinivaimennus kirkkaan historian jälkeen 41,1 % ja himmeän jälkeen 52,7 %; parivertailu p<0,05. Yksilövaihtelu huomattavaa; 9/12:lla ero odotettuun suuntaan.",
+      "limits": "Viikon historia toteutui arjessa ohjeistettuna, ei koko aikaa vakioidussa laboratoriossa. Tuloksena akuutti melatoniinivaimennus, ei erillinen kellon vaiheensiirto.",
+      "research_family": "Rush / Eastman; erillinen ihmisryhmä Harvardin kokeista.",
+      "verification": "Alkuperäinen NIH-käsikirjoituksen PDF, menetelmät ja taulukko 1 tarkistettu."
+    },
+    {
+      "id": "smith2004",
+      "citation": "Smith KA, Schoen MW, Czeisler CA. Adaptation of human pineal melatonin suppression by recent photic history. J Clin Endocrinol Metab. 2004;89(7):3610–3614.",
+      "doi": "10.1210/jc.2003-032100",
+      "pmid": "15240654",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/15240654/",
+        "https://academic.oup.com/jcem/article-abstract/89/7/3610/2844750",
+        "https://doi.org/10.1210/jcem.90.3.9999"
+      ],
+      "population": "8 henkilöä kontrolloidussa saman henkilön toistokokeessa.",
+      "exposure": "Noin 3 vrk:n päivävalohistoria 0,5 lx (0,15 µW/cm²) tai 200 lx (50 µW/cm²). Sen jälkeen sama 6,5 h:n 200 lx yötesti. Loisteputkivalaistus.",
+      "result": "Melatoniinivaimennus 85,7 ± 6,5 % himmeän ja 71,2 ± 7,1 % 200 lx historian jälkeen; ilmoitetut virheet SEM.",
+      "limits": "Pieni laboratoriokoe, ei kliinistä päätetapahtumaa. Vuoden 2005 erratum lisää puuttuneen Hébert 2002 -viitteen; se ei korjaa näitä tuloksia.",
+      "research_family": "Harvard / Brigham / Czeisler; yhteinen tutkimuslinja Gooley-, Zeitzer- ja Chang-artikkelien kanssa.",
+      "verification": "Alkuperäisen artikkelin teksti, PubMed ja alkuperäinen erratum tarkistettu."
+    },
+    {
+      "id": "chang2011",
+      "citation": "Chang AM, Scheer FAJL, Czeisler CA. The human circadian system adapts to prior photic history. J Physiol. 2011;589(5):1095–1102.",
+      "doi": "10.1113/jphysiol.2010.201194",
+      "pmid": "21224217",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3060589/",
+        "https://pubmed.ncbi.nlm.nih.gov/21224217/"
+      ],
+      "population": "Satunnaistettu 32 vrk vaihtovuoroprotokolla; vertailun analyysi n=13.",
+      "exposure": "Ennen yötestiä 3 vrk valveen aikainen 1 tai 90 lx historia. Sama 6,5 h:n 90 lx yöaltistus ja vastaava 1 lx verrokkijakso. Ehtojen välissä 3 vrk 450 lx tahdistusjakso.",
+      "result": "Verrokkikorjattu melatoniinivaimennus 86,1 ± 13,9 % vs 51,3 ± 25,2 %; vaiheviive 1,67 ± 0,44 h vs 1,03 ± 0,47 h himmeän vs huonevalohistorian jälkeen. Vaihe-ero noin 38 min, p=0,011.",
+      "limits": "Valohistoria muutti sekä akuuttia eritystä että erikseen mitattua kellon vaihetta. Laboratorion erityisen himmeä historia ei sellaisenaan kuvaa kaikkien arkea.",
+      "research_family": "Harvard / Brigham / Czeisler–Scheer. Chang 2013 Sleep -valppausjulkaisu käyttää samaa protokollaa/tutkimusohjelmaa eikä ole riippumaton lisätoisto tästä ilmiöstä.",
+      "verification": "Alkuperäisen PMC-kokotekstin indeksoidut menetelmä- ja tulososat sekä PubMed tarkistettu."
+    },
+    {
+      "id": "reppert1995",
+      "citation": "Reppert SM, Godson C, Mahle CD, Weaver DR, Slaugenhaupt SA, Gusella JF. Molecular characterization of a second melatonin receptor expressed in human retina and brain: the Mel1b melatonin receptor. Proc Natl Acad Sci USA. 1995;92(19):8734–8738.",
+      "doi": "10.1073/pnas.92.19.8734",
+      "pmid": "7568007",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/7568007/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC41041/"
+      ],
+      "population": "Ihmisen kloonattu Mel1b-reseptori (nykyinen MT2), COS-1- ja NIH3T3-solumallit; ihmiskudosten RT-PCR.",
+      "exposure": "Reseptorin ligandisitoutuminen 2-[125I]jodomelatoniinilla ja toiminnallinen signalointi transfektoiduissa soluissa.",
+      "result": "Suuren affiniteetin reseptori, jodoligandin Kd 160 ± 30 pM; adenylaattisyklaasin inhibitio. Reseptorin mRNA:ta ihmisen verkkokalvossa ja aivoissa.",
+      "limits": "Kd koskee merkittyä ligandia kyseisessä sitoutumiskokeessa; se ei ole luonnollisen melatoniinin kenttävastekynnys. Reseptorin olemassaolo ei ratkaise Liun neuronikokeen µM→ihmisen pM/nM siirtymää.",
+      "research_family": "Reppert / Massachusetts General Hospital; molekulaarinen reseptoritutkimus, erillinen Liun Fudan-sarjasta.",
+      "verification": "Alkuperäinen artikkelitietue ja alkuperäisabstract; annosvasteen täydellistä uudelleenanalyysia ei tehty."
+    },
+    {
+      "id": "dollins1994",
+      "citation": "Dollins AB, Zhdanova IV, Wurtman RJ, Lynch HJ, Deng MH. Effect of inducing nocturnal serum melatonin concentrations in daytime on sleep, mood, body temperature, and performance. Proc Natl Acad Sci USA. 1994;91(5):1824–1828.",
+      "doi": "10.1073/pnas.91.5.1824",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC43256/",
+        "https://www.researchgate.net/publication/15071141_Effect_of_inducing_nocturnal_serum_melatoninconcentrations_in_daytime_on_sleep_mood_body_temperature_andperformance"
+      ],
+      "population": "20 tervettä miestä; sokkoutettu toistettu 5×5 latinalainen neliö.",
+      "exposure": "Suun kautta 0,1, 0,3, 1 tai 10 mg melatoniinia tai lume klo 11.45; päivämittaukset klo 9.30–17.30.",
+      "result": "0,1 ja 0,3 mg tuottivat tavanomaisen yöllisen seerumipitoisuuden alueella olevia huippuja. Uneliaisuus lisääntyi, nukahtamisviive lyheni ja suun lämpötila aleni. Johdannon yöviite keskimäärin 80 pg/ml (vaihtelu 0–200 pg/ml).",
+      "limits": "Annettu lääke päiväsaikaan, ei optinen interventio. Uni mitattiin tutkimuksen omalla toimintatestillä; tulosta ei pidä esittää pitkäaikaisena kliinisenä tehotutkimuksena. 80 pg/ml on artikkelin taustaviite, ei n=20:n oma yömittaus.",
+      "research_family": "MIT / Wurtman–Zhdanova; erillinen melatoniinifarmakologinen tutkimus.",
+      "verification": "Alkuperäisen artikkelin teksti, annokset ja pitoisuuden yksikkömuunnos tarkistettu."
+    },
+    {
+      "id": "dominoni2013_reproduction",
+      "citation": "Dominoni D, Quetting M, Partecke J. Artificial light at night advances avian reproductive physiology. Proc R Soc B. 2013;280(1756):20123017.",
+      "doi": "10.1098/rspb.2012.3017",
+      "pmid": "23407836",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3574380/",
+        "https://doi.org/10.1098/rspb.2012.3017"
+      ],
+      "population": "40 luonnosta pyydettyä koirasmustarastasta (Turdus merula), 20 kaupunki- ja 20 metsäalkuperää; 20/laitosvalaistusehto, yksi verrokkilintu kuoli seurannassa.",
+      "exposure": "Kausittainen paikallinen päivänpituus; yöllä 0,3 lx tai noin 0,0001 lx. Hehkulamppu 450–950 nm; päivävalo 250–1250 lx. Annos perustui vapaiden lintujen valologgereihin.",
+      "result": "Ensimmäisen kauden kivesten kasvu ja testosteronisyklin aktivoituminen aikaistuivat lähes kuukaudella; myös sulkasato aikaistui.",
+      "limits": "Lisääntymisfysiologian ajoitus, ei munien, poikasten tai hedelmöitysten määrän koe. Valaistusehdot eri huoneissa, joten huonevaikutusta ei täysin eroteta käsittelystä.",
+      "research_family": "Max Planck / Partecke–Dominoni, Radolfzell. Sama kohortti kuin kahdessa muussa valitussa Dominoni 2013 -artikkelissa.",
+      "verification": "Alkuperäisabstract ja saman kokeen alkuperäisten melatoniini- ja pitkäaikaisartikkelien menetelmät ristivarmistettu."
+    },
+    {
+      "id": "dominoni2013_melatonin",
+      "citation": "Dominoni DM, Goymann W, Helm B, Partecke J. Urban-like night illumination reduces melatonin release in European blackbirds (Turdus merula): implications of city life for biological time-keeping of songbirds. Front Zool. 2013;10:60.",
+      "doi": "10.1186/1742-9994-10-60",
+      "pmid": "24090446",
+      "urls": [
+        "https://link.springer.com/article/10.1186/1742-9994-10-60",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3850952/"
+      ],
+      "population": "Sama mustarastaskohortti, 39 linnun analyysi: valo n=20, verrokki n=19.",
+      "exposure": "Yö 0,3 vs noin 0,0001 lx, hehkulamppu 450–950 nm. Plasman neljän ajankohdan profiilit talvella ja kesällä sekä aktiivisuus.",
+      "result": "Talvella melatoniini aleni alkuyön ja aamun näytteissä, ei keskiyöllä. Kesällä aleneminen ulottui koko mitattuun yöprofiiliin. Melatoniinin ja aamuaktiivisuuden yhteys riippui vuodenajasta ja valaistuksesta.",
+      "limits": "Saman kohortin hormonaalinen lisäulottuvuus, ei itsenäinen lisääntymistuloksen replikaatio. Melatoniinin välittävää roolia lisääntymiseen ei eristetty melatoniini-interventiolla.",
+      "research_family": "Max Planck / Partecke–Dominoni; eksplisiittisesti sama eläin- ja koeasetelma kuin lisääntymisjulkaisussa.",
+      "verification": "Alkuperäinen kustantajan kokoteksti ja menetelmät luettu."
+    },
+    {
+      "id": "dominoni2013_longterm",
+      "citation": "Dominoni DM, Quetting M, Partecke J. Long-term effects of chronic light pollution on seasonal functions of European blackbirds (Turdus merula). PLoS ONE. 2013;8(12):e85069.",
+      "doi": "10.1371/journal.pone.0085069",
+      "urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085069"
+      ],
+      "population": "Sama 40 linnun kohortti, 39 jäljellä toiseen vuosikiertoon; valo n=20, verrokki n=19.",
+      "exposure": "Jatkuva 0,3 lx yövalaistus luonnollista kausipäivänpituutta mukailevassa asetelmassa 18.12.2010–31.8.2012. Verrokki noin 0,0001 lx; hehkulamppu 450–950 nm.",
+      "result": "Ensimmäisen vuoden aikaistunutta gonadisykliä seurasi toisena vuonna kaikkien valoryhmän lintujen kivesten ja testosteronin pysyminen perustasolla. Pimeäryhmällä kaksi tavanomaista vuosikiertoa. Sulkasadon järjestys häiriintyi.",
+      "limits": "Valorefraktorinen tila ja/tai krooninen stressi kirjoittajien ehdottamia mekanismeja, joita koe ei erottanut. Ei osoitus ihmisen hedelmättömyydestä. Yksi huone per valaistusehto rajoittaa käsittelyreplikaatiota.",
+      "research_family": "Saman Max Planck -kokeen toinen vuosi; ensimmäisen vuoden tulokset julkaistu edellä.",
+      "verification": "Alkuperäinen PLOS-kokoteksti, menetelmät, kuvaselosteet ja tulokset luettu."
+    },
+    {
+      "id": "danilenko2007",
+      "citation": "Danilenko KV, Samoilova EA. Stimulatory effect of morning bright light on reproductive hormones and ovulation: results of a controlled crossover trial. PLoS Clin Trials. 2007;2(2):e7.",
+      "doi": "10.1371/journal.pctr.0020007",
+      "pmid": "17290302",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1851732/",
+        "https://journals.plos.org/plosclinicaltrials/article/file?id=10.1371%2Fjournal.pctr.0020007&type=printable"
+      ],
+      "population": "22 naista, 19–37 v, tavanomainen kierron pituus 28,1–37,8 vrk, ei endokriinistä sairautta. Novosibirsk 55°N, pimeä vuodenaika. Kontrolloitu vastabalansoitu vaihtovuorokoe.",
+      "exposure": "4300 lx valkoinen 3500 K loisteputkivalo 41 cm:stä, 45 min pian heräämisen jälkeen, 7 vrk noin kiertopäivinä 7–14. Verrokki alle 100 lx; koejaksojen välissä yksi vapaa kierto.",
+      "result": "Prolaktiini, LH, FSH ja follikkelien kasvu lisääntyivät; ultraäänellä todettu ovulaatio 12 kirkasvalokierrossa vs 6 verrokkikierrossa (p=0,034).",
+      "limits": "Pieni valikoitu otos ja tietty aamu-/vuodenaika-/kiertotila. Melatoniinia ei mitattu; raskauden todennäköisyyttä, syntymiä tai väestön TFR:ää ei arvioitu.",
+      "research_family": "Siperian lääketieteellinen tutkimus / Danilenko; erillinen ihmisen lisääntymisendokrinologinen tutkimus.",
+      "verification": "Alkuperäinen PLOS-kokoteksti-PDF, altistus ja päätetapahtumat tarkistettu."
+    }
+  ],
+  "cross_study_chains": [
+    {
+      "id": "optical_direct",
+      "sources": [
+        "cajochen2005",
+        "gooley2011",
+        "chang2015",
+        "zeitzer2000",
+        "phillips2019"
+      ],
+      "claim": "Silmään tuleva valo muuttaa ihmisellä melatoniinia, vuorokausivaihetta ja vireyttä spektrin, annoksen ja ajoituksen mukaan.",
+      "status": "Suoria ihmisinterventioita; eri päätetapahtumat eroteltava."
+    },
+    {
+      "id": "history_modifier",
+      "sources": [
+        "hebert2002",
+        "smith2004",
+        "chang2011",
+        "phillips2019"
+      ],
+      "claim": "Vasteen voimakkuus riippuu aiemmasta valosta ja yksilöstä. Sama ulkoinen valoannos ei määritä yksin biologista vastetta.",
+      "status": "Valohistorian vaikutus suoraan manipuloitu; yksilöherkkyys toistomittauksin osoitettu."
+    },
+    {
+      "id": "melatonin_field_bridge",
+      "sources": [
+        "cajochen2005",
+        "gooley2011",
+        "reppert1995",
+        "dollins1994",
+        "liu2014"
+      ],
+      "claim": "Valo muuttaa ihmisellä melatoniinisignaalia; melatoniini on toiminnallinen reseptoriligandi; rotan neuronikokeessa annettu melatoniini muutti kentän synnyttämää Na-virtavastetta.",
+      "status": "Ketjun osat kokeellisia eri järjestelmissä. Ihmisvalo→endogeeninen melatoniinimuutos→ihmisen kenttävasteen muutos on tutkimusten välinen ehdollinen synteesi, ei suoraan tehty koe."
+    },
+    {
+      "id": "reproductive_history",
+      "sources": [
+        "dominoni2013_reproduction",
+        "dominoni2013_melatonin",
+        "dominoni2013_longterm",
+        "danilenko2007"
+      ],
+      "claim": "Valo muuttaa lisääntymisfysiologiaa tilan ja historian mukaan. Mustarastaalla ensimmäisen ja toisen vuoden vaste poikkesi; ihmisellä tietyn tilan aamukirkasvalo lisäsi ovulaatiohavaintoja.",
+      "status": "Lintukohortin yhtenäinen pitkittäisnäyttö sekä pieni erillinen ihmiskoe. Näistä ei johdu universaalia lisääntymisvaikutuksen suuntaa."
+    }
+  ],
+  "unit_check": {
+    "melatonin_molecular_weight_g_mol": 232.28,
+    "one_pg_per_ml_in_pM": 4.305,
+    "one_uM_in_pg_per_ml": 232280,
+    "five_uM_in_pg_per_ml": 1161400,
+    "illustrative_100_pg_per_ml_in_nM": 0.4305,
+    "one_to_five_uM_relative_to_100_pg_per_ml": [
+      2322.8,
+      11614
+    ],
+    "interpretation": "Havainnollinen massapitoisuuden ja molaarisuuden muunnos. Ei väite veren ja soluviljelyn samanlaisesta vapaasta kudospitoisuudesta eikä MT2:n tai kenttävasteen kynnysarvo."
+  }
+}

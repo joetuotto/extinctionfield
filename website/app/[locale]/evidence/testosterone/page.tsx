@@ -1,5 +1,6 @@
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TrendingDown } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
@@ -304,6 +305,17 @@ const COPY = {
   },
 } as const;
 
+const ATLAS_COPY = {
+  en: {
+    intro: "The data explorer includes two published NHANES periods (1988–1991 and 1999–2004), with fully adjusted testosterone means and confidence intervals. These estimates account for age, race/ethnicity, body size, smoking and alcohol; they describe an adjusted comparison rather than an annual population trajectory.",
+    link: "Explore the US hormone and health data",
+  },
+  fi: {
+    intro: "Dataselain sisältää kaksi julkaistua NHANES-jaksoa (1988–1991 ja 1999–2004), joiden testosteronikeskiarvot ja luottamusvälit on vakioitu iän, etnisyysryhmän, kehon koon, tupakoinnin ja alkoholin suhteen. Luvut kuvaavat vakioitua vertailua; vuosittaista väestökehitystä niistä ei muodosteta.",
+    link: "Tutki USA:n hormoni- ja terveysaineistoa",
+  },
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
@@ -313,6 +325,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function TestosteronePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const atlas = pickCopy(ATLAS_COPY, locale);
   const prefix = `/${locale}`;
 
   return (
@@ -327,6 +340,10 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
 
       <div className="mt-8">
         <CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox>
+      </div>
+      <div className="mt-6 rounded-lg border border-border/50 p-4 text-sm">
+        <p className="text-foreground-muted leading-relaxed">{atlas.intro}</p>
+        <Link href={`${prefix}/explore?tab=atlas&question=health&country=USA`} className="mt-3 inline-block text-accent hover:underline">{atlas.link} →</Link>
       </div>
 
       {/* Section 1: Secular Decline */}

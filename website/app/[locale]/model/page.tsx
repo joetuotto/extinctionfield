@@ -26,6 +26,8 @@ import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { ClaimRef } from "@/components/ClaimRef";
 import { ModelReadingPath } from "@/components/ModelReadingPath";
 import { ModelScopeIntro } from "@/components/ModelScopeIntro";
+import { TechnologyHistoryExplorer } from "@/components/TechnologyHistoryExplorer";
+import { technologyHistory, getLocalizedText } from "@/lib/technology-history";
 
 const t = {
   en: {
@@ -275,15 +277,14 @@ const t = {
       "Critical B2/FAD difference — why effect sizes differ between plants and animals: Plants synthesize their own riboflavin (B2), so FAD supply is endogenous and CRY function depends only on RF disruption — Ahmad 2020’s ‘relatively minor’ effect is a pure RPM test. Animals require dietary B2, so FAD supply depends on nutrition and CRY function depends on both RF and B2 status — a double vulnerability: EMF disruption plus nutritional deficiency. This explains why animal effect sizes exceed plant effect sizes: animals have two disruption sources, plants have only one.",
     ] as const,
 
-    twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
+    twoChSub: "ELF + IF + RF decomposition, source histories and TCBM",
     twoChTitle: "Three-channel exposure model",
     twoChDesc:
       "The candidate effective-exposure index decomposes into ELF, IF and RF channels. Its biological weights are imported factors, while any geometric modulation must use the declared proxy coordinate χ_geo(N(z_proxy)); the open normalization and coupling are not derived by the channel decomposition.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, with diagnostic weights w_ELF = 0.05, w_IF = 0.60 and w_RF = 0.35. They require empirical calibration and are not fitted biological parameters. Statements about low-infrastructure or saturated environments are candidate proxy scenarios using x=N(z_proxy), not direct field measurements or a closed L2 operator.",
-    twoChLayersTitle: "12 technology layers composing the ambient field",
-    twoChLayersDesc:
-      "The ambient inventory separates twelve source classes by deployment history, operating mode and frequency. Their trends may be correlated, so they are not automatically independent causal instruments. Local waveform and tissue-transfer measurements determine which combinations enter a receiving model.",
+    twoChLayersTitle: "Source families and regional histories",
+    twoChLayersDesc: "The common catalogue records sources, regional adoption and operating conditions. Reconstruct the local four-potential from actual sources and geometry; category counts are not physical weights.",
     ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
     multiPathwayCa2Note: "[[ref:bertagna2025|Bertagna 2025]] connects the later membrane-current response to ER release and reuptake under 50 Hz, 1 mT exposure. RyR and SERCA interventions constrain a coupled store–cytosol–membrane system; they do not identify two independent damage contributions or establish direct S4 forcing. Measure the first calcium change, ER-store trajectory and later function separately. This complements the IFO candidate ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) while retaining each protocol’s field class.",
     fiveGReproNote: "[[ref:bektas2026|Bektas 2026]] studied 28 rats in four groups with a GSM-modulated 3.5 GHz signal, 2 h/day for 30 days. CoQ10 attenuated some hormonal, testicular and redox changes. This was not a 5G NR waveform. Early calcium responses and repair time constants were not measured, so the result does not isolate a downstream repair site or demonstrate complete reversal of established damage.",
@@ -369,9 +370,9 @@ const t = {
     camkiiConvCaveat: "Epistemic note: CaMKII convergence is IDENTIFIED from independent literature but not yet experimentally tested as an integrated EMF mechanism. Each pathway is verified separately; the integrated test (EMF → CaMKII → all five targets simultaneously) is a prediction, not established fact. Evidence level: M.",
     camkiiConvLink: "See metabolic evidence →",
 
-    techLayersTitle: "Technology Layers: Five Generations of Stacking Exposure",
-    techLayersSub: "Each technology generation added a new frequency layer. The biological effect is not additive — it is superadditive through CaMKII threshold integration.",
-    techLayersDesc: "Technology histories identify possible changes in local exposure, but source count and generation do not determine biological dose. BERM preserves waveform, phase/coherence, tissue transfer and receiving state, then calculates a declared driver and its response window. Channel, ER, repair and clock processes explain how the resulting signal can propagate across time.",
+    techLayersTitle: "Technology history: sources, adoption and replacement",
+    techLayersSub: "Documented regional events and physical source profiles, linked to BERM through an explicit response bridge.",
+    techLayersDesc: "Technology histories locate changes in the local physical environment. The shared source register includes commissioning, operating changes and shutdowns. BERM preserves waveform, orientation, timing and receiver state when defining the conditional response.",
     techLayersLink: "See all 14 technology profiles →",
 
     elfPrimingTitle: "ELF Priming Hypothesis",
@@ -1282,15 +1283,14 @@ const t = {
       "Kriittinen B2/FAD-ero — miksi efektikoot eroavat kasvien ja eläinten välillä: Kasvit syntetisoivat oman riboflaviininsa (B2), joten FAD-saatavuus on endogeeninen ja CRY-toiminta riippuu vain RF-häiriöstä — Ahmad 2020:n 'relatively minor' efekti on puhdas RPM-testi. Eläimet tarvitsevat ravinnon B2:ta, joten FAD-saatavuus riippuu ruokavaliosta ja CRY-toiminta riippuu sekä RF:stä että B2-statuksesta — kaksinkertainen haavoittuvuus: EMF-häiriö + ravitsemuspuutos. Tämä selittää miksi eläinten efektikoot ylittävät kasvien efektikoot: eläimillä on kaksi häiriölähdettä, kasveilla vain yksi.",
     ] as const,
 
-    twoChSub: "ELF + IF + RF -hajotelma 12 teknologiakerroksella ja TCBM",
+    twoChSub: "ELF + IF + RF -hajotelma, lähdehistoriat ja TCBM",
     twoChTitle: "Kolmikanavainen altistusmalli",
     twoChDesc:
       "Ehdokasaltistusindeksi jaetaan ELF-, IF- ja RF-kanaviin. Biologiset painot ovat tuotuja tekijöitä, ja mahdollisen geometrisen modulaation on käytettävä ilmoitettua proxykoordinaattia χ_geo(N(z_proxy)); avoin normalisointi ja kytkentä eivät seuraa kanavajaosta.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, diagnostisilla painoilla w_ELF = 0,05, w_IF = 0,60 ja w_RF = 0,35. Ne vaativat empiirisen kalibroinnin eivätkä ole sovitettuja biologisia parametreja. Väitteet matalan infrastruktuurin tai saturoituneen ympäristön vaikutuksista ovat ehdokasproxy-skenaarioita koordinaatilla x=N(z_proxy), eivät suoria kenttämittauksia tai suljettu L2-operaattori.",
-    twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
-    twoChLayersDesc:
-      "Ympäristön lähdeluettelo erottaa kaksitoista lähdeluokkaa käyttöönottohistorian, käyttötilan ja taajuuden mukaan. Niiden trendit voivat korreloida, joten ne eivät ole automaattisesti riippumattomia kausaalisia instrumentteja. Paikallisen aaltomuodon ja kudossiirron mittaukset määräävät vastaanottomalliin tulevat yhdistelmät.",
+    twoChLayersTitle: "Lähdeperheet ja alueelliset historiat",
+    twoChLayersDesc: "Yhteinen luettelo kirjaa lähteet, alueellisen omaksumisen ja käyttöolosuhteet. Paikallinen nelipotentiaali rekonstruoidaan todellisista lähteistä ja geometriasta; luokkien määrät eivät ole fysikaalisia painoja.",
     ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen [[ref:yakymenko2016|Yakymenko ym. 2016]] (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
     multiPathwayCa2Note: "[[ref:bertagna2025|Bertagna 2025]] yhdistää myöhemmän kalvovirtavasteen ER:n vapautukseen ja takaisinottoon 50 Hz:n, 1 mT:n altistuksessa. RyR- ja SERCA-interventiot rajaavat kytkettyä varasto–solulima–kalvojärjestelmää; ne eivät tunnista kahta riippumatonta vaurio-osuutta eivätkä osoita suoraa S4-pakottamista. Mittaa ensimmäinen kalsiummuutos, ER-varaston aikakulku ja myöhempi toiminto erikseen. Tämä täydentää IFO-ehdokasta ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) kunkin kokeen kenttäluokan säilyttäen.",
     fiveGReproNote: "[[ref:bektas2026|Bektas 2026]] tutki 28 rottaa neljässä ryhmässä GSM-moduloidulla 3,5 GHz:n signaalilla, 2 h/päivä 30 päivän ajan. CoQ10 lievensi osaa hormonaalisista, kiveksen ja redox-tilan muutoksista. Kyse ei ollut 5G NR -aaltomuodosta. Varhaista kalsiumvastetta ja korjauksen aikavakiota ei mitattu, joten tulos ei yksilöi alavirran korjauskohtaa eikä osoita jo syntyneen vaurion täydellistä palautumista.",
@@ -1376,9 +1376,9 @@ const t = {
     camkiiConvCaveat: "Episteeminen huomio: CaMKII-yhdentyminen on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on todennettu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Näyttötaso: M.",
     camkiiConvLink: "Katso metabolinen näyttö →",
 
-    techLayersTitle: "Teknologiakerrokset: viisi sukupolvea kerrostuvia altistuksia",
-    techLayersSub: "Jokainen teknologiasukupolvi lisäsi uuden taajuuskerroksen. Biologinen vaikutus ei ole summautuva — se on superadditiivinen CaMKII-kynnysintegraation kautta.",
-    techLayersDesc: "Teknologiahistoriat paikantavat mahdollisia paikallisen altistuksen muutoksia, mutta lähteiden määrä ja sukupolvi eivät määrää biologista annosta. BERM säilyttää aaltomuodon, vaiheen/koherenssin, kudossiirron ja vastaanotintilan ja laskee sitten nimetyn ajurin ja sen vasteikkunan. Kanava-, ER-, korjaus- ja kelloprosessit kuvaavat syntyvän signaalin etenemistä ajassa.",
+    techLayersTitle: "Teknologiahistoria: lähteet, omaksuminen ja korvautuminen",
+    techLayersSub: "Dokumentoidut alueelliset tapahtumat ja fysikaaliset lähdeprofiilit liitetään BERM:iin määritellyn vastesillan kautta.",
+    techLayersDesc: "Teknologiahistoriat paikantavat paikallisen fysikaalisen ympäristön muutoksia. Yhteinen lähderekisteri sisältää käyttöönotot, käytön muutokset ja poistumat. BERM säilyttää aaltomuodon, orientaation, ajoituksen ja vastaanotintilan ehdollista vastetta määrittäessään.",
     techLayersLink: "Katso kaikki 14 teknologiaprofiilia →",
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
@@ -2261,15 +2261,14 @@ const t = {
       "重要なB2/FADの違い——植物と動物でエフェクトサイズが異なる理由：植物は自らリボフラビン（B2）を合成するため、FAD供給は内因性でCRY機能はRF妨害にのみ依存——Ahmad 2020の「比較的軽微」な効果は純粋なRPMテスト。動物は食事性B2を必要とし、FAD供給は栄養に依存、CRY機能はRFとB2状態の両方に依存——二重の脆弱性：EMF妨害＋栄養欠乏。動物のエフェクトサイズが植物を上回る理由：動物には2つの妨害源があり、植物には1つしかない。",
     ] as const,
 
-    twoChSub: "ELF + IF + RF分解:12技術層とTCBM",
+    twoChSub: "ELF + IF + RF分解、発生源の歴史とTCBM",
     twoChTitle: "三チャネル暴露モデル",
     twoChDesc:
       "候補実効曝露指数をELF・IF・RFチャネルへ分解する。生物学的重みは導入要素であり、幾何学的変調を使う場合は宣言したプロキシ座標χ_geo(N(z_proxy))を用いる。未解決の正規化と結合はチャネル分解から導出されない。",
     twoChExplain:
       "cumEMF = w_ELF・cumELF + w_IF・cumIF + w_RF・cumRF、診断重みはw_ELF = 0.05、w_IF = 0.60、w_RF = 0.35である。これらは経験的較正が必要で、フィット済み生物学的パラメータではない。低インフラまたは飽和環境についての記述はx=N(z_proxy)を用いる候補プロキシシナリオであり、直接の場測定でも閉じたL2演算子でもない。",
-    twoChLayersTitle: "周囲場を構成する12技術層",
-    twoChLayersDesc:
-      "周囲項は一枚岩ではない。12の独立した技術層に分解され、各層は独自のドライバー、展開タイムライン、周波数プロファイルを持つ。この分解はモデルの識別力を向上させる。各層が直交する計器として機能するためである。",
+    twoChLayersTitle: "発生源群と地域別の歴史",
+    twoChLayersDesc: "共通カタログは発生源、地域別の導入、動作条件を記録します。局所四元ポテンシャルは実際の発生源と配置から再構成し、分類数を物理的重みには使いません。",
     ifoVgicNote: "IFO-VGICメカニズムは131研究の包括的レビューにより支持される([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics):95%がRF/Wi-Fi暴露からの酸化的効果を報告。[[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)と一致するこのコンセンサスは、Ca²⁺流入 → ROS経路を最も堅牢に文書化された非熱メカニズムとして確立する。",
     multiPathwayCa2Note: "レベル4のCa²⁺撹乱は複数の独立した経路を通じて作用する:(1)直接的S4電圧センサーの強制振動([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC);(2)リアノジン受容体(RyR)およびSERCAポンプを介した細胞内カルシウム貯蔵の調節異常([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci)。両方の薬理学的遮断実験(経路1にVGCCブロッカー;経路2にダントロレン(RyR用)、CPA(SERCA用))がEMF効果を消失させ、メカニズムを確認。多経路の性質は組織特異的感受性を説明する:高いVGIC密度と大きな細胞内Ca²⁺貯蔵を持つ細胞(ニューロン、性腺細胞)は低貯蔵細胞(ケラチノサイト -- [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]:皮膚細胞でのヌル結果参照)よりも感受性が高い。注:[[ref:bertagna2025|Bertagna 2025]]はELF(50 Hz)でありRFではない -- RFへの翻訳は直接的ではないが、Ca²⁺経路は共有されている。",
     fiveGReproNote: "[[ref:bektas2026|Bektas 2026]]は28匹のラットを4群に分け、GSM変調3.5 GHz信号を1日2時間、30日間使用した。CoQ10は一部のホルモン、精巣、酸化還元変化を軽減した。5G NR波形ではない。初期Ca応答や修復時定数は測定しておらず、下流の修復部位や既存損傷の完全回復は特定できない。",
@@ -2355,9 +2354,9 @@ const t = {
     camkiiConvCaveat: "認識論的注記:CaMKII収束は独立した文献から特定されているが、統合EMFメカニズムとしてはまだ実験的に検証されていない。各経路は個別に検証済み;統合テスト(EMF → CaMKII → すべての5標的を同時に)は予測であり確立された事実ではない。エビデンスレベル:M。",
     camkiiConvLink: "代謝エビデンスを見る →",
 
-    techLayersTitle: "技術層:5世代の蓄積暴露",
-    techLayersSub: "各技術世代は新しい周波数層を追加した。生物学的効果は加算的ではない -- CaMKII閾値統合により超加算的である。",
-    techLayersDesc: "現代のEMF暴露は一つの信号ではない -- 周波数において10桁にわたる5-12の同時発生源である。送電網(50/60 Hz ELF)はVGCC発現をアップレギュレートすることで細胞をプライミングする。WiFiは100:1のクレストファクターを持つ隠れた10 Hz ELFビーコンを追加する。GSMは歴史上最も生物活性の高い変調変化をもたらした(NMT→GSM = アナログ→パルス)。4G/スマートフォンは常時身体接触をもたらした。LED照明はIFチャネル(20-300 kHz)を開いた。各層は既存のものに重なる;CaMKIIは発生源に関係なくすべてのCa²⁺を統合する。",
+    techLayersTitle: "技術史：発生源、導入と置換",
+    techLayersSub: "記録された地域別の出来事と物理的な発生源を、明示した応答の橋渡しを通してBERMに接続します。",
+    techLayersDesc: "技術史は局所の物理環境の変化を特定します。共通の記録には導入、動作変更、廃止を含めます。BERMの条件付き応答は波形、方向、時刻と受容状態を保持します。",
     techLayersLink: "すべての14技術プロファイルを見る →",
 
     elfPrimingTitle: "ELFプライミング仮説",
@@ -3155,15 +3154,14 @@ const t = {
       "Difference critique B2/FAD — pourquoi les tailles d'effet different entre plantes et animaux : Les plantes synthetisent leur propre riboflavine (B2), l'approvisionnement en FAD est donc endogene et la fonction CRY ne depend que de la perturbation RF — l'effet 'relativement mineur' d'Ahmad 2020 est un test RPM pur. Les animaux necessitent du B2 alimentaire, donc l'approvisionnement en FAD depend de la nutrition et la fonction CRY depend a la fois du RF et du statut B2 — une double vulnerabilite : perturbation EMF + carence nutritionnelle.",
     ] as const,
 
-    twoChSub: "Decomposition ELF + IF + RF avec 12 couches technologiques et TCBM",
+    twoChSub: "Décomposition ELF + IF + RF, histoires des sources et TCBM",
     twoChTitle: "Modele d'exposition a trois canaux",
     twoChDesc:
       "L'indice candidat d'exposition effective se décompose en canaux ELF, IF et RF. Les poids biologiques sont des facteurs importés ; toute modulation géométrique doit employer la coordonnée proxy déclarée χ_geo(N(z_proxy)). La normalisation et le couplage ouverts ne sont pas dérivés de cette décomposition.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, avec les poids diagnostiques w_ELF = 0,05, w_IF = 0,60 et w_RF = 0,35. Ils exigent un calibrage empirique et ne sont pas des paramètres biologiques ajustés. Les descriptions d'environnements peu équipés ou saturés sont des scénarios proxy candidats utilisant x=N(z_proxy), non des mesures directes du champ ni un opérateur L2 fermé.",
-    twoChLayersTitle: "12 couches technologiques composant le champ ambiant",
-    twoChLayersDesc:
-      "Le terme ambiant n'est pas monolithique. Il se decompose en 12 couches technologiques independantes, chacune avec son propre moteur, calendrier de deploiement et profil frequentiel. Cette decomposition ameliore le pouvoir discriminant du modele car chaque couche agit comme un instrument orthogonal.",
+    twoChLayersTitle: "Familles de sources et histoires régionales",
+    twoChLayersDesc: "Le catalogue commun décrit les sources, leur adoption régionale et leur fonctionnement. Le quadripotentiel local se reconstruit à partir des sources et de leur géométrie ; le nombre de catégories ne constitue pas un poids physique.",
     ifoVgicNote: "Le mecanisme IFO-VGIC est soutenu par une revue exhaustive de 131 etudes ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics) : 95 % rapportent des effets oxydatifs de l'exposition RF/Wi-Fi. Ce consensus, coherent avec [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), etablit la voie afflux Ca²⁺ → ROS comme le mecanisme non thermique le plus robustement documente.",
     multiPathwayCa2Note: "La perturbation du Ca²⁺ au Niveau 4 opere par de multiples voies independantes : (1) oscillation forcee directe du senseur de tension S4 ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC) ; (2) dysregulation des reserves calciques intracellulaires via les recepteurs ryanodine (RyR) et les pompes SERCA ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Les deux experiences de blocage pharmacologique (bloqueurs VGCC pour la voie 1 ; dantrolene pour RyR, CPA pour SERCA dans la voie 2) suppriment les effets EMF, confirmant le mecanisme. La nature multi-voies explique la sensibilite tissu-specifique : les cellules avec une haute densite VGIC ET de larges reserves intracellulaires de Ca²⁺ (neurones, cellules gonadiques) sont plus sensibles que les cellules a faibles reserves (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]] : resultats nuls dans les cellules cutanees). Note : [[ref:bertagna2025|Bertagna 2025]] concerne l'ELF (50 Hz), pas le RF — la traduction au RF n'est pas directe, mais la voie Ca²⁺ est partagee.",
     fiveGReproNote: "[[ref:bektas2026|Bektas 2026]] étudie 28 rats en quatre groupes avec un signal de 3,5 GHz à modulation GSM, 2 h/jour pendant 30 jours. Le CoQ10 atténue certaines modifications hormonales, testiculaires et redox. Il ne s’agit pas d’une forme d’onde 5G NR. La réponse calcique précoce et les constantes de réparation n’ont pas été mesurées : le résultat n’isole pas un site de réparation en aval et ne démontre pas la réversion complète de lésions établies.",
@@ -3249,9 +3247,9 @@ const t = {
     camkiiConvCaveat: "Note epistemique : la convergence CaMKII est IDENTIFIEE a partir de la litterature independante mais pas encore testee experimentalement comme mecanisme EMF integre. Chaque voie est verifiee separement ; le test integre (EMF → CaMKII → les cinq cibles simultanement) est une prediction, pas un fait etabli. Niveau de preuve : M.",
     camkiiConvLink: "Voir les preuves metaboliques →",
 
-    techLayersTitle: "Couches technologiques : cinq generations d'exposition cumulee",
-    techLayersSub: "Chaque generation technologique a ajoute une nouvelle couche de frequence. L'effet biologique n'est pas additif — il est super-additif par l'integration du seuil CaMKII.",
-    techLayersDesc: "L'exposition EMF moderne n'est pas un signal unique — c'est 5-12 sources simultanees couvrant 10 ordres de grandeur en frequence. Le reseau electrique (50/60 Hz ELF) amorce les cellules en augmentant l'expression des VGCC. Le WiFi ajoute un beacon ELF cache a 10 Hz avec un facteur de crete de 100:1. Le GSM a introduit le changement de modulation le plus bioactif de l'histoire (NMT→GSM = analogique→pulse). La 4G/smartphones a apporte le contact corporel permanent. L'eclairage LED a ouvert le canal IF (20-300 kHz). Chaque couche s'empile sur les precedentes ; CaMKII integre tout le Ca²⁺ independamment de la source.",
+    techLayersTitle: "Histoire des technologies : sources, adoption et remplacement",
+    techLayersSub: "Les événements régionaux documentés et les profils physiques rejoignent BERM par une passerelle de réponse explicite.",
+    techLayersDesc: "Les histoires technologiques situent les changements de l’environnement physique local. Le registre commun inclut mises en service, changements de fonctionnement et arrêts. BERM conserve forme d’onde, orientation, temporalité et état du récepteur dans sa réponse conditionnelle.",
     techLayersLink: "Voir les 14 profils technologiques →",
 
     elfPrimingTitle: "Hypothese d'amorcage ELF",
@@ -4049,15 +4047,14 @@ const t = {
       "중요한 B2/FAD 차이——식물과 동물의 효과 크기가 다른 이유: 식물은 자체적으로 리보플라빈(B2)을 합성하므로 FAD 공급이 내인성이고 CRY 기능은 RF 교란에만 의존——Ahmad 2020의 '비교적 경미한' 효과는 순수한 RPM 테스트. 동물은 식이 B2가 필요하므로 FAD 공급이 영양에 의존하고 CRY 기능은 RF와 B2 상태 모두에 의존——이중 취약성: EMF 교란 + 영양 결핍. 동물의 효과 크기가 식물을 초과하는 이유: 동물에는 교란원이 2개, 식물에는 1개.",
     ] as const,
 
-    twoChSub: "12개 기술 레이어와 TCBM을 포함한 ELF + IF + RF 분해",
+    twoChSub: "ELF + IF + RF 분해, 발생원 역사와 TCBM",
     twoChTitle: "3채널 노출 모델",
     twoChDesc:
       "후보 유효 노출 지수는 ELF·IF·RF 채널로 분해된다. 생물학적 가중치는 도입 요인이며 기하학적 변조를 쓸 경우 선언한 프록시 좌표 χ_geo(N(z_proxy))를 사용해야 한다. 열린 정규화와 결합은 채널 분해에서 도출되지 않는다.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, 진단 가중치는 w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35이다. 이들은 경험적 보정이 필요하며 적합된 생물학적 매개변수가 아니다. 저인프라 또는 포화 환경에 관한 설명은 x=N(z_proxy)를 쓰는 후보 프록시 시나리오이지 직접 장 측정이나 닫힌 L2 연산자가 아니다.",
-    twoChLayersTitle: "주변 전장을 구성하는 12개 기술 레이어",
-    twoChLayersDesc:
-      "주변 항은 단일체가 아닙니다. 12개의 독립적인 기술 레이어로 분해되며, 각각 고유한 구동 요인, 배포 일정 및 주파수 프로파일을 가집니다. 이 분해는 각 레이어가 직교 도구로 작용하기 때문에 모델의 판별력을 향상시킵니다.",
+    twoChLayersTitle: "발생원 유형과 지역별 역사",
+    twoChLayersDesc: "공통 목록은 발생원, 지역별 도입과 작동 조건을 기록합니다. 국소 사차원 퍼텐셜은 실제 발생원과 배치로 재구성하며, 유형의 개수를 물리적 가중치로 쓰지 않습니다.",
     ifoVgicNote: "IFO-VGIC 메커니즘은 131개 연구의 포괄적 검토([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics)에 의해 지지됩니다: 95%가 RF/Wi-Fi 노출의 산화 효과를 보고합니다. 이 합의는 [[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)과 일관되며, Ca²⁺ 유입 → ROS 경로를 가장 견고하게 문서화된 비열적 메커니즘으로 확립합니다.",
     multiPathwayCa2Note: "수준 4의 Ca²⁺ 교란은 여러 독립 경로를 통해 작동합니다: (1) S4 전압 센서의 직접 강제 진동([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) 라이아노딘 수용체(RyR) 및 SERCA 펌프를 통한 세포내 칼슘 저장소 조절장애([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). 두 약리학적 차단 실험(경로 1의 VGCC 차단제; 경로 2의 RyR에 대한 단트롤렌, SERCA에 대한 CPA)이 EMF 효과를 억제하여 메커니즘을 확인합니다. 다중 경로 특성은 조직 특이적 감도를 설명합니다: 높은 VGIC 밀도와 큰 세포내 Ca²⁺ 저장소를 가진 세포(뉴런, 생식선 세포)가 낮은 저장소를 가진 세포(각질세포 — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: 피부 세포에서 null 결과)보다 더 민감합니다. 참고: [[ref:bertagna2025|Bertagna 2025]]는 RF가 아닌 ELF(50 Hz)에 관한 것입니다 — RF로의 번역은 직접적이지 않지만 Ca²⁺ 경로는 공유됩니다.",
     fiveGReproNote: "[[ref:bektas2026|Bektas 2026]]는 쥐 28마리를 네 군으로 나누어 GSM 변조 3.5 GHz 신호를 하루 2시간씩 30일 사용했다. CoQ10은 일부 호르몬·고환·산화환원 변화를 완화했다. 5G NR 파형은 아니었다. 초기 칼슘 반응과 복구 시상수는 측정하지 않아 하류 복구 지점을 특정하거나 이미 생긴 손상의 완전한 회복을 입증하지 않는다.",
@@ -4143,9 +4140,9 @@ const t = {
     camkiiConvCaveat: "인식론적 참고: CaMKII 수렴은 독립 문헌에서 식별되었지만 통합 EMF 메커니즘으로는 아직 실험적으로 테스트되지 않았습니다. 각 경로는 별도로 검증되었으며, 통합 테스트(EMF → CaMKII → 5개 표적 동시)는 확립된 사실이 아닌 예측입니다. 증거 수준: M.",
     camkiiConvLink: "대사 증거 보기 →",
 
-    techLayersTitle: "기술 레이어: 누적 노출의 5세대",
-    techLayersSub: "각 기술 세대가 새로운 주파수 층을 추가했습니다. 생물학적 효과는 가산적이 아닙니다 — CaMKII 역치 통합을 통해 초가산적입니다.",
-    techLayersDesc: "현대 EMF 노출은 단일 신호가 아닙니다 — 10자릿수의 주파수를 포괄하는 5-12개의 동시 원천입니다. 전력망(50/60 Hz ELF)은 VGCC 발현을 증가시켜 세포를 프라이밍합니다. WiFi는 100:1의 첨두 계수를 가진 숨겨진 10 Hz ELF 비콘을 추가합니다. GSM은 역사상 가장 생물학적으로 활성인 변조 변화(NMT→GSM = 아날로그→펄스)를 도입했습니다. 4G/스마트폰은 영구적인 신체 접촉을 가져왔습니다. LED 조명은 IF 채널(20-300 kHz)을 열었습니다. 각 층이 이전 층 위에 쌓이고; CaMKII는 원천에 관계없이 모든 Ca²⁺를 통합합니다.",
+    techLayersTitle: "기술 역사: 발생원, 도입과 교체",
+    techLayersSub: "기록된 지역별 사건과 물리적 발생원 특성을 명시적인 반응 연결을 통해 BERM에 연결합니다.",
+    techLayersDesc: "기술 역사는 국소 물리 환경의 변화를 나타냅니다. 공통 기록에는 도입, 작동 변화와 중단이 포함됩니다. BERM은 조건부 반응을 정의할 때 파형, 방향, 시점과 수용 상태를 유지합니다.",
     techLayersLink: "14개 기술 프로파일 보기 →",
 
     elfPrimingTitle: "ELF 프라이밍 가설",
@@ -5903,32 +5900,14 @@ export default async function ModelPage({
             </p>
 
             <h3 className="text-base font-semibold mb-2">{d.twoChLayersTitle}</h3>
-            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.twoChLayersDesc}
-            </p>
-            <Eq>
-              ambient = &Sigma;<sub>k=1..12</sub> layer<sub>k</sub>(country, year)
-            </Eq>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mt-4">
-              {([
-                ["#4a6741", d.layerMilitaryRadar, "1950s"],
-                ["#2196F3", d.layerWeatherRadar, "1988+"],
-                ["#FF5722", d.layerMobileNetworks, "1991+"],
-                ["#E91E63", "Wi-Fi", "1999+"],
-                ["#8BC34A", d.layerWindTurbines, "2000+"],
-                ["#9C27B0", d.layerDisplayTransition, "2005+"],
-                ["#00BCD4", d.layerSmartMeters, "2005+"],
-                ["#FFC107", d.layerIndoorLed, "2009+"],
-                ["#FFEB3B", d.layerSolarInverters, "2010+"],
-                ["#FF9800", d.layerStreetLed, "2012+"],
-                ["#795548", "IoT", "2014+"],
-                ["#607D8B", "ADAS", "2015+"],
-              ] as const).map(([color, name, year]) => (
-                <div key={name} className="flex items-center gap-2 rounded-lg border border-card-border px-3 py-2">
-                  <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: color }} />
-                  <span className="text-xs font-medium truncate">{name}</span>
-                  <span className="text-[10px] font-mono-num text-foreground-muted ml-auto">{year}</span>
-                </div>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">{d.twoChLayersDesc}</p>
+            <Eq>A<sub>μ</sub>(x,t) = A<sub>background,μ</sub>(x,t) + Σ<sub>j</sub> a<sub>j,μ</sub>(x,t)</Eq>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
+              {technologyHistory.groups.map((group) => (
+                <Link key={group.id} href={`${prefix}/evidence/technology#explorer`} className="rounded-lg border border-card-border p-3 hover:border-accent/50">
+                  <span className="text-sm font-medium">{getLocalizedText(group.name, locale_key)}</span>
+                  <span className="block text-xs text-foreground-muted mt-1">{getLocalizedText(group.summary, locale_key)}</span>
+                </Link>
               ))}
             </div>
 
@@ -6768,72 +6747,7 @@ export default async function ModelPage({
               {d.techLayersDesc}
             </p>
 
-            {/* Technology Layers Stacked Area Chart */}
-            <div className="my-8 max-w-3xl mx-auto">
-              <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={d.svgTechLayersAria}>
-                <defs>
-                  <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="currentColor" stopOpacity="0.06" />
-                    <stop offset="100%" stopColor="currentColor" stopOpacity="0.02" />
-                  </linearGradient>
-                </defs>
-
-                {/* Chart area background */}
-                <rect x="80" y="20" width="580" height="280" fill="url(#gridFade)" rx="4" />
-
-                {/* Y-axis gridlines */}
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <line key={`grid-${i}`} x1="80" y1={20 + i * 70} x2="660" y2={20 + i * 70} stroke="currentColor" strokeOpacity="0.08" strokeWidth="1" />
-                ))}
-
-                {/* Stacked area paths - each layer starts at its deployment year */}
-                {/* X scale: 1900=80, 2030=660 => px = 80 + (year-1900) * (580/130) */}
-                {/* Y scale: 0=300, max=20 => py = 300 - val * 14 */}
-
-                {/* Layer 1: Power Grid (1900+) - slate/dark blue */}
-                <path d="M 80,300 L 80,286 C 170,272 260,265 350,258 C 440,251 530,244 660,237 L 660,300 Z" fill="#475569" fillOpacity="0.55" />
-                <text x="160" y="290" fontSize="9" fontWeight="600" fill="#cbd5e1" fontFamily="system-ui">{d.layerPowerGrid}</text>
-
-                {/* Layer 2: Radio/TV (1950+) - teal */}
-                <path d="M 303,300 L 303,258 C 370,244 440,230 530,216 C 580,209 620,202 660,195 L 660,237 C 620,244 530,251 440,258 C 370,265 303,272 303,286 Z" fill="#0d9488" fillOpacity="0.5" />
-                <text x="450" y="248" fontSize="9" fontWeight="600" fill="#5eead4" fontFamily="system-ui">{d.layerRadioTv}</text>
-
-                {/* Layer 3: Cellular (1990+) - amber */}
-                <path d="M 482,300 L 482,216 C 520,195 560,174 620,153 L 660,139 L 660,195 C 620,202 560,216 520,230 C 500,237 490,244 482,258 Z" fill="#d97706" fillOpacity="0.5" />
-                <text x="560" y="195" fontSize="9" fontWeight="600" fill="#fbbf24" fontFamily="system-ui">{d.layerCellular}</text>
-
-                {/* Layer 4: WiFi/4G (2005+) - orange */}
-                <path d="M 549,300 L 549,174 C 575,153 610,125 640,104 L 660,90 L 660,139 C 640,146 610,160 575,174 C 560,181 552,195 549,216 Z" fill="#ea580c" fillOpacity="0.5" />
-                <text x="600" y="140" fontSize="9" fontWeight="600" fill="#fb923c" fontFamily="system-ui">WiFi/4G</text>
-
-                {/* Layer 5: 5G/IoT (2020+) - red */}
-                <path d="M 616,300 L 616,104 C 630,83 645,62 655,48 L 660,42 L 660,90 C 650,97 640,104 630,118 C 622,132 618,153 616,174 Z" fill="#dc2626" fillOpacity="0.55" />
-                <text x="635" y="80" fontSize="9" fontWeight="600" fill="#f87171" fontFamily="system-ui">5G/IoT</text>
-
-                {/* X-axis */}
-                <line x1="80" y1="300" x2="660" y2="300" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
-                {[1900, 1920, 1940, 1960, 1980, 2000, 2020].map((year) => {
-                  const xPos = 80 + ((year - 1900) / 130) * 580;
-                  return (
-                    <g key={year}>
-                      <line x1={xPos} y1="300" x2={xPos} y2="305" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
-                      <text x={xPos} y="318" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">{year}</text>
-                    </g>
-                  );
-                })}
-
-                {/* Y-axis */}
-                <line x1="80" y1="20" x2="80" y2="300" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
-                <text x="40" y="165" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui" transform="rotate(-90 40 165)">
-                  {d.svgCumulativeExposure}
-                </text>
-
-                {/* Caption */}
-                <text x="370" y="345" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
-                  {d.svgTechLayersCaption}
-                </text>
-              </svg>
-            </div>
+            <div className="my-6"><TechnologyHistoryExplorer locale={locale_key} compact /></div>
 
             <Link
               href={`${prefix}/evidence/technology`}

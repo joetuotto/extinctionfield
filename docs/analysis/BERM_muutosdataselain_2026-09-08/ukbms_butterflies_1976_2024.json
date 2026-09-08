@@ -1,0 +1,953 @@
+{
+  "id": "ukbms-uk-two-butterflies-1976-2024",
+  "retrievedAt": "2026-09-08",
+  "source": {
+    "title": "United Kingdom Butterfly Monitoring Scheme: collated indices 2024",
+    "doi": "10.5285/a70d8b0b-0ef5-484e-8195-42bcfd818229",
+    "url": "https://catalogue.ceh.ac.uk/id/a70d8b0b-0ef5-484e-8195-42bcfd818229",
+    "downloadUrl": "https://data-package.ceh.ac.uk/data/a70d8b0b-0ef5-484e-8195-42bcfd818229.zip",
+    "archiveMember": "data/ukbmscollatedindices2024.csv",
+    "archiveSha256": "5c27b79ff6c28638d61b41d15639a456bd57399bc93416f6b3dbefa2731ef075",
+    "csvSha256": "a0c2bdfa5e4129a67523b18d607a8d35e6d7770837902144e47aeda5172a0af1",
+    "documentationMember": "supporting-documents/ukbms_collated_indices_2024.docx",
+    "exactLocator": "CSV rows selected by COUNTRY=UK and SPECIES_CODE in {84,2}; row numbers below are 1-based and include the header",
+    "citation": "Botham, M.S.; Middlebrook, I.; Heywood, J.; Harrower, C.A.; Milborrow, J.; Roy, D.B. (2025). United Kingdom Butterfly Monitoring Scheme: collated indices 2024. NERC EDS Environmental Information Data Centre. https://doi.org/10.5285/a70d8b0b-0ef5-484e-8195-42bcfd818229",
+    "license": "Open Government Licence with UKBMS attribution",
+    "attribution": "Contains UK Butterfly Monitoring Scheme (UKBMS) data © copyright and database right Butterfly Conservation, the UK Centre for Ecology & Hydrology, British Trust for Ornithology, and the Joint Nature Conservation Committee."
+  },
+  "geography": {
+    "countryCode": "GBR",
+    "sourceLabel": "UK",
+    "scope": "United Kingdom, national collated index; not a fixed local population"
+  },
+  "metric": {
+    "name": "Species-specific annual collated abundance index",
+    "unit": "log10 collated index",
+    "sourceColumn": "COLLATED_INDEX",
+    "indexBase": {
+      "type": "whole-series log10 centring",
+      "meanLog10Index": 2,
+      "description": "Source series is centred so its mean log10 index is 2; no fixed reference year of 100."
+    },
+    "observationType": "Published model-derived annual estimate from butterfly monitoring counts; not a direct census",
+    "uncertainty": "No standard errors or confidence interval columns are provided in this CSV. Null does not mean zero uncertainty.",
+    "effort": "N_SITES is the annual count of contributing sites, not individuals or visits. The monitoring sample changes over time."
+  },
+  "displayTransform": {
+    "name": "Relative abundance, 1976 = 100",
+    "formula": "100 * 10 ** (value_t - value_1976)",
+    "baselineYear": 1976,
+    "isDerived": true,
+    "interpretation": "Within-species relative abundance. Do not divide the log10 values or call this a species-loss or reproductive-decline percentage. Derived numbers are rounded to 6 decimals and source values are retained.",
+    "yearOnYearPercentFormula": "100 * (10 ** (value_t - value_previous_year) - 1), only for consecutive years"
+  },
+  "selectionNote": "Two named butterfly species provide a compact browser demonstration with contrasting histories. This subset is not an aggregate UK butterfly indicator and was not selected by a technology-association statistic.",
+  "series": [
+    {
+      "id": "ukbms-uk-84",
+      "speciesCode": "84",
+      "speciesScientific": "Aglais io",
+      "speciesEnglish": "Peacock",
+      "speciesFinnish": "neitoperhonen",
+      "taxonomicScope": "single butterfly species",
+      "yearStart": 1976,
+      "yearEnd": 2024,
+      "points": [
+        {
+          "year": 1976,
+          "value": 1.8,
+          "lower": null,
+          "upper": null,
+          "nSites": 37,
+          "relativeIndex1976": 100.0,
+          "sourceCsvRow": 3780
+        },
+        {
+          "year": 1977,
+          "value": 1.7,
+          "lower": null,
+          "upper": null,
+          "nSites": 62,
+          "relativeIndex1976": 79.432823,
+          "sourceCsvRow": 3781
+        },
+        {
+          "year": 1978,
+          "value": 1.97,
+          "lower": null,
+          "upper": null,
+          "nSites": 66,
+          "relativeIndex1976": 147.910839,
+          "sourceCsvRow": 3782
+        },
+        {
+          "year": 1979,
+          "value": 2.02,
+          "lower": null,
+          "upper": null,
+          "nSites": 79,
+          "relativeIndex1976": 165.958691,
+          "sourceCsvRow": 3783
+        },
+        {
+          "year": 1980,
+          "value": 1.87,
+          "lower": null,
+          "upper": null,
+          "nSites": 85,
+          "relativeIndex1976": 117.489755,
+          "sourceCsvRow": 3784
+        },
+        {
+          "year": 1981,
+          "value": 1.78,
+          "lower": null,
+          "upper": null,
+          "nSites": 88,
+          "relativeIndex1976": 95.499259,
+          "sourceCsvRow": 3785
+        },
+        {
+          "year": 1982,
+          "value": 2.21,
+          "lower": null,
+          "upper": null,
+          "nSites": 93,
+          "relativeIndex1976": 257.039578,
+          "sourceCsvRow": 3786
+        },
+        {
+          "year": 1983,
+          "value": 2.0,
+          "lower": null,
+          "upper": null,
+          "nSites": 105,
+          "relativeIndex1976": 158.489319,
+          "sourceCsvRow": 3787
+        },
+        {
+          "year": 1984,
+          "value": 2.13,
+          "lower": null,
+          "upper": null,
+          "nSites": 115,
+          "relativeIndex1976": 213.796209,
+          "sourceCsvRow": 3788
+        },
+        {
+          "year": 1985,
+          "value": 2.14,
+          "lower": null,
+          "upper": null,
+          "nSites": 124,
+          "relativeIndex1976": 218.776162,
+          "sourceCsvRow": 3789
+        },
+        {
+          "year": 1986,
+          "value": 1.85,
+          "lower": null,
+          "upper": null,
+          "nSites": 132,
+          "relativeIndex1976": 112.201845,
+          "sourceCsvRow": 3790
+        },
+        {
+          "year": 1987,
+          "value": 1.92,
+          "lower": null,
+          "upper": null,
+          "nSites": 154,
+          "relativeIndex1976": 131.825674,
+          "sourceCsvRow": 3791
+        },
+        {
+          "year": 1988,
+          "value": 1.94,
+          "lower": null,
+          "upper": null,
+          "nSites": 175,
+          "relativeIndex1976": 138.038426,
+          "sourceCsvRow": 3792
+        },
+        {
+          "year": 1989,
+          "value": 1.95,
+          "lower": null,
+          "upper": null,
+          "nSites": 207,
+          "relativeIndex1976": 141.253754,
+          "sourceCsvRow": 3793
+        },
+        {
+          "year": 1990,
+          "value": 1.96,
+          "lower": null,
+          "upper": null,
+          "nSites": 234,
+          "relativeIndex1976": 144.543977,
+          "sourceCsvRow": 3794
+        },
+        {
+          "year": 1991,
+          "value": 2.09,
+          "lower": null,
+          "upper": null,
+          "nSites": 263,
+          "relativeIndex1976": 194.98446,
+          "sourceCsvRow": 3795
+        },
+        {
+          "year": 1992,
+          "value": 2.36,
+          "lower": null,
+          "upper": null,
+          "nSites": 288,
+          "relativeIndex1976": 363.078055,
+          "sourceCsvRow": 3796
+        },
+        {
+          "year": 1993,
+          "value": 2.09,
+          "lower": null,
+          "upper": null,
+          "nSites": 323,
+          "relativeIndex1976": 194.98446,
+          "sourceCsvRow": 3797
+        },
+        {
+          "year": 1994,
+          "value": 1.93,
+          "lower": null,
+          "upper": null,
+          "nSites": 347,
+          "relativeIndex1976": 134.896288,
+          "sourceCsvRow": 3798
+        },
+        {
+          "year": 1995,
+          "value": 2.01,
+          "lower": null,
+          "upper": null,
+          "nSites": 412,
+          "relativeIndex1976": 162.18101,
+          "sourceCsvRow": 3799
+        },
+        {
+          "year": 1996,
+          "value": 2.28,
+          "lower": null,
+          "upper": null,
+          "nSites": 449,
+          "relativeIndex1976": 301.995172,
+          "sourceCsvRow": 3800
+        },
+        {
+          "year": 1997,
+          "value": 2.22,
+          "lower": null,
+          "upper": null,
+          "nSites": 482,
+          "relativeIndex1976": 263.026799,
+          "sourceCsvRow": 3801
+        },
+        {
+          "year": 1998,
+          "value": 2.09,
+          "lower": null,
+          "upper": null,
+          "nSites": 490,
+          "relativeIndex1976": 194.98446,
+          "sourceCsvRow": 3802
+        },
+        {
+          "year": 1999,
+          "value": 2.04,
+          "lower": null,
+          "upper": null,
+          "nSites": 517,
+          "relativeIndex1976": 173.780083,
+          "sourceCsvRow": 3803
+        },
+        {
+          "year": 2000,
+          "value": 2.14,
+          "lower": null,
+          "upper": null,
+          "nSites": 567,
+          "relativeIndex1976": 218.776162,
+          "sourceCsvRow": 3804
+        },
+        {
+          "year": 2001,
+          "value": 2.17,
+          "lower": null,
+          "upper": null,
+          "nSites": 529,
+          "relativeIndex1976": 234.422882,
+          "sourceCsvRow": 3805
+        },
+        {
+          "year": 2002,
+          "value": 2.03,
+          "lower": null,
+          "upper": null,
+          "nSites": 638,
+          "relativeIndex1976": 169.824365,
+          "sourceCsvRow": 3806
+        },
+        {
+          "year": 2003,
+          "value": 1.96,
+          "lower": null,
+          "upper": null,
+          "nSites": 710,
+          "relativeIndex1976": 144.543977,
+          "sourceCsvRow": 3807
+        },
+        {
+          "year": 2004,
+          "value": 1.92,
+          "lower": null,
+          "upper": null,
+          "nSites": 738,
+          "relativeIndex1976": 131.825674,
+          "sourceCsvRow": 3808
+        },
+        {
+          "year": 2005,
+          "value": 1.95,
+          "lower": null,
+          "upper": null,
+          "nSites": 763,
+          "relativeIndex1976": 141.253754,
+          "sourceCsvRow": 3809
+        },
+        {
+          "year": 2006,
+          "value": 1.93,
+          "lower": null,
+          "upper": null,
+          "nSites": 839,
+          "relativeIndex1976": 134.896288,
+          "sourceCsvRow": 3810
+        },
+        {
+          "year": 2007,
+          "value": 2.06,
+          "lower": null,
+          "upper": null,
+          "nSites": 1079,
+          "relativeIndex1976": 181.970086,
+          "sourceCsvRow": 3811
+        },
+        {
+          "year": 2008,
+          "value": 1.92,
+          "lower": null,
+          "upper": null,
+          "nSites": 1056,
+          "relativeIndex1976": 131.825674,
+          "sourceCsvRow": 3812
+        },
+        {
+          "year": 2009,
+          "value": 2.1,
+          "lower": null,
+          "upper": null,
+          "nSites": 1622,
+          "relativeIndex1976": 199.526231,
+          "sourceCsvRow": 3813
+        },
+        {
+          "year": 2010,
+          "value": 1.98,
+          "lower": null,
+          "upper": null,
+          "nSites": 1598,
+          "relativeIndex1976": 151.356125,
+          "sourceCsvRow": 3814
+        },
+        {
+          "year": 2011,
+          "value": 1.78,
+          "lower": null,
+          "upper": null,
+          "nSites": 1631,
+          "relativeIndex1976": 95.499259,
+          "sourceCsvRow": 3815
+        },
+        {
+          "year": 2012,
+          "value": 1.72,
+          "lower": null,
+          "upper": null,
+          "nSites": 1671,
+          "relativeIndex1976": 83.176377,
+          "sourceCsvRow": 3816
+        },
+        {
+          "year": 2013,
+          "value": 2.2,
+          "lower": null,
+          "upper": null,
+          "nSites": 1866,
+          "relativeIndex1976": 251.188643,
+          "sourceCsvRow": 3817
+        },
+        {
+          "year": 2014,
+          "value": 2.21,
+          "lower": null,
+          "upper": null,
+          "nSites": 1964,
+          "relativeIndex1976": 257.039578,
+          "sourceCsvRow": 3818
+        },
+        {
+          "year": 2015,
+          "value": 2.11,
+          "lower": null,
+          "upper": null,
+          "nSites": 2083,
+          "relativeIndex1976": 204.173794,
+          "sourceCsvRow": 3819
+        },
+        {
+          "year": 2016,
+          "value": 1.82,
+          "lower": null,
+          "upper": null,
+          "nSites": 2163,
+          "relativeIndex1976": 104.712855,
+          "sourceCsvRow": 3820
+        },
+        {
+          "year": 2017,
+          "value": 1.85,
+          "lower": null,
+          "upper": null,
+          "nSites": 2313,
+          "relativeIndex1976": 112.201845,
+          "sourceCsvRow": 3821
+        },
+        {
+          "year": 2018,
+          "value": 1.73,
+          "lower": null,
+          "upper": null,
+          "nSites": 2456,
+          "relativeIndex1976": 85.113804,
+          "sourceCsvRow": 3822
+        },
+        {
+          "year": 2019,
+          "value": 2.07,
+          "lower": null,
+          "upper": null,
+          "nSites": 2593,
+          "relativeIndex1976": 186.208714,
+          "sourceCsvRow": 3823
+        },
+        {
+          "year": 2020,
+          "value": 2.19,
+          "lower": null,
+          "upper": null,
+          "nSites": 2159,
+          "relativeIndex1976": 245.470892,
+          "sourceCsvRow": 3824
+        },
+        {
+          "year": 2021,
+          "value": 2.02,
+          "lower": null,
+          "upper": null,
+          "nSites": 2600,
+          "relativeIndex1976": 165.958691,
+          "sourceCsvRow": 3825
+        },
+        {
+          "year": 2022,
+          "value": 1.87,
+          "lower": null,
+          "upper": null,
+          "nSites": 2804,
+          "relativeIndex1976": 117.489755,
+          "sourceCsvRow": 3826
+        },
+        {
+          "year": 2023,
+          "value": 2.05,
+          "lower": null,
+          "upper": null,
+          "nSites": 2878,
+          "relativeIndex1976": 177.827941,
+          "sourceCsvRow": 3827
+        },
+        {
+          "year": 2024,
+          "value": 1.9,
+          "lower": null,
+          "upper": null,
+          "nSites": 3020,
+          "relativeIndex1976": 125.892541,
+          "sourceCsvRow": 3828
+        }
+      ]
+    },
+    {
+      "id": "ukbms-uk-2",
+      "speciesCode": "2",
+      "speciesScientific": "Aglais urticae",
+      "speciesEnglish": "Small Tortoiseshell",
+      "speciesFinnish": "nokkosperhonen",
+      "taxonomicScope": "single butterfly species",
+      "yearStart": 1976,
+      "yearEnd": 2024,
+      "points": [
+        {
+          "year": 1976,
+          "value": 2.18,
+          "lower": null,
+          "upper": null,
+          "nSites": 37,
+          "relativeIndex1976": 100.0,
+          "sourceCsvRow": 3829
+        },
+        {
+          "year": 1977,
+          "value": 2.05,
+          "lower": null,
+          "upper": null,
+          "nSites": 63,
+          "relativeIndex1976": 74.131024,
+          "sourceCsvRow": 3830
+        },
+        {
+          "year": 1978,
+          "value": 2.36,
+          "lower": null,
+          "upper": null,
+          "nSites": 67,
+          "relativeIndex1976": 151.356125,
+          "sourceCsvRow": 3831
+        },
+        {
+          "year": 1979,
+          "value": 2.19,
+          "lower": null,
+          "upper": null,
+          "nSites": 84,
+          "relativeIndex1976": 102.329299,
+          "sourceCsvRow": 3832
+        },
+        {
+          "year": 1980,
+          "value": 2.21,
+          "lower": null,
+          "upper": null,
+          "nSites": 89,
+          "relativeIndex1976": 107.151931,
+          "sourceCsvRow": 3833
+        },
+        {
+          "year": 1981,
+          "value": 1.97,
+          "lower": null,
+          "upper": null,
+          "nSites": 92,
+          "relativeIndex1976": 61.6595,
+          "sourceCsvRow": 3834
+        },
+        {
+          "year": 1982,
+          "value": 2.73,
+          "lower": null,
+          "upper": null,
+          "nSites": 96,
+          "relativeIndex1976": 354.813389,
+          "sourceCsvRow": 3835
+        },
+        {
+          "year": 1983,
+          "value": 2.13,
+          "lower": null,
+          "upper": null,
+          "nSites": 108,
+          "relativeIndex1976": 89.125094,
+          "sourceCsvRow": 3836
+        },
+        {
+          "year": 1984,
+          "value": 2.66,
+          "lower": null,
+          "upper": null,
+          "nSites": 117,
+          "relativeIndex1976": 301.995172,
+          "sourceCsvRow": 3837
+        },
+        {
+          "year": 1985,
+          "value": 2.23,
+          "lower": null,
+          "upper": null,
+          "nSites": 128,
+          "relativeIndex1976": 112.201845,
+          "sourceCsvRow": 3838
+        },
+        {
+          "year": 1986,
+          "value": 1.91,
+          "lower": null,
+          "upper": null,
+          "nSites": 135,
+          "relativeIndex1976": 53.70318,
+          "sourceCsvRow": 3839
+        },
+        {
+          "year": 1987,
+          "value": 2.43,
+          "lower": null,
+          "upper": null,
+          "nSites": 158,
+          "relativeIndex1976": 177.827941,
+          "sourceCsvRow": 3840
+        },
+        {
+          "year": 1988,
+          "value": 2.14,
+          "lower": null,
+          "upper": null,
+          "nSites": 179,
+          "relativeIndex1976": 91.201084,
+          "sourceCsvRow": 3841
+        },
+        {
+          "year": 1989,
+          "value": 2.25,
+          "lower": null,
+          "upper": null,
+          "nSites": 212,
+          "relativeIndex1976": 117.489755,
+          "sourceCsvRow": 3842
+        },
+        {
+          "year": 1990,
+          "value": 2.22,
+          "lower": null,
+          "upper": null,
+          "nSites": 240,
+          "relativeIndex1976": 109.64782,
+          "sourceCsvRow": 3843
+        },
+        {
+          "year": 1991,
+          "value": 2.46,
+          "lower": null,
+          "upper": null,
+          "nSites": 266,
+          "relativeIndex1976": 190.546072,
+          "sourceCsvRow": 3844
+        },
+        {
+          "year": 1992,
+          "value": 2.53,
+          "lower": null,
+          "upper": null,
+          "nSites": 294,
+          "relativeIndex1976": 223.872114,
+          "sourceCsvRow": 3845
+        },
+        {
+          "year": 1993,
+          "value": 1.94,
+          "lower": null,
+          "upper": null,
+          "nSites": 324,
+          "relativeIndex1976": 57.543994,
+          "sourceCsvRow": 3846
+        },
+        {
+          "year": 1994,
+          "value": 2.02,
+          "lower": null,
+          "upper": null,
+          "nSites": 353,
+          "relativeIndex1976": 69.183097,
+          "sourceCsvRow": 3847
+        },
+        {
+          "year": 1995,
+          "value": 2.3,
+          "lower": null,
+          "upper": null,
+          "nSites": 420,
+          "relativeIndex1976": 131.825674,
+          "sourceCsvRow": 3848
+        },
+        {
+          "year": 1996,
+          "value": 2.34,
+          "lower": null,
+          "upper": null,
+          "nSites": 457,
+          "relativeIndex1976": 144.543977,
+          "sourceCsvRow": 3849
+        },
+        {
+          "year": 1997,
+          "value": 2.64,
+          "lower": null,
+          "upper": null,
+          "nSites": 487,
+          "relativeIndex1976": 288.40315,
+          "sourceCsvRow": 3850
+        },
+        {
+          "year": 1998,
+          "value": 2.05,
+          "lower": null,
+          "upper": null,
+          "nSites": 496,
+          "relativeIndex1976": 74.131024,
+          "sourceCsvRow": 3851
+        },
+        {
+          "year": 1999,
+          "value": 1.83,
+          "lower": null,
+          "upper": null,
+          "nSites": 524,
+          "relativeIndex1976": 44.668359,
+          "sourceCsvRow": 3852
+        },
+        {
+          "year": 2000,
+          "value": 1.88,
+          "lower": null,
+          "upper": null,
+          "nSites": 572,
+          "relativeIndex1976": 50.118723,
+          "sourceCsvRow": 3853
+        },
+        {
+          "year": 2001,
+          "value": 2.01,
+          "lower": null,
+          "upper": null,
+          "nSites": 530,
+          "relativeIndex1976": 67.608298,
+          "sourceCsvRow": 3854
+        },
+        {
+          "year": 2002,
+          "value": 2.08,
+          "lower": null,
+          "upper": null,
+          "nSites": 641,
+          "relativeIndex1976": 79.432823,
+          "sourceCsvRow": 3855
+        },
+        {
+          "year": 2003,
+          "value": 2.39,
+          "lower": null,
+          "upper": null,
+          "nSites": 715,
+          "relativeIndex1976": 162.18101,
+          "sourceCsvRow": 3856
+        },
+        {
+          "year": 2004,
+          "value": 2.13,
+          "lower": null,
+          "upper": null,
+          "nSites": 724,
+          "relativeIndex1976": 89.125094,
+          "sourceCsvRow": 3857
+        },
+        {
+          "year": 2005,
+          "value": 1.77,
+          "lower": null,
+          "upper": null,
+          "nSites": 756,
+          "relativeIndex1976": 38.904514,
+          "sourceCsvRow": 3858
+        },
+        {
+          "year": 2006,
+          "value": 1.66,
+          "lower": null,
+          "upper": null,
+          "nSites": 821,
+          "relativeIndex1976": 30.199517,
+          "sourceCsvRow": 3859
+        },
+        {
+          "year": 2007,
+          "value": 1.67,
+          "lower": null,
+          "upper": null,
+          "nSites": 1044,
+          "relativeIndex1976": 30.902954,
+          "sourceCsvRow": 3860
+        },
+        {
+          "year": 2008,
+          "value": 1.45,
+          "lower": null,
+          "upper": null,
+          "nSites": 1033,
+          "relativeIndex1976": 18.620871,
+          "sourceCsvRow": 3861
+        },
+        {
+          "year": 2009,
+          "value": 1.79,
+          "lower": null,
+          "upper": null,
+          "nSites": 1601,
+          "relativeIndex1976": 40.738028,
+          "sourceCsvRow": 3862
+        },
+        {
+          "year": 2010,
+          "value": 1.82,
+          "lower": null,
+          "upper": null,
+          "nSites": 1590,
+          "relativeIndex1976": 43.651583,
+          "sourceCsvRow": 3863
+        },
+        {
+          "year": 2011,
+          "value": 1.73,
+          "lower": null,
+          "upper": null,
+          "nSites": 1633,
+          "relativeIndex1976": 35.481339,
+          "sourceCsvRow": 3864
+        },
+        {
+          "year": 2012,
+          "value": 1.5,
+          "lower": null,
+          "upper": null,
+          "nSites": 1663,
+          "relativeIndex1976": 20.892961,
+          "sourceCsvRow": 3865
+        },
+        {
+          "year": 2013,
+          "value": 2.05,
+          "lower": null,
+          "upper": null,
+          "nSites": 1856,
+          "relativeIndex1976": 74.131024,
+          "sourceCsvRow": 3866
+        },
+        {
+          "year": 2014,
+          "value": 2.2,
+          "lower": null,
+          "upper": null,
+          "nSites": 1972,
+          "relativeIndex1976": 104.712855,
+          "sourceCsvRow": 3867
+        },
+        {
+          "year": 2015,
+          "value": 1.96,
+          "lower": null,
+          "upper": null,
+          "nSites": 2084,
+          "relativeIndex1976": 60.255959,
+          "sourceCsvRow": 3868
+        },
+        {
+          "year": 2016,
+          "value": 1.66,
+          "lower": null,
+          "upper": null,
+          "nSites": 2146,
+          "relativeIndex1976": 30.199517,
+          "sourceCsvRow": 3869
+        },
+        {
+          "year": 2017,
+          "value": 1.73,
+          "lower": null,
+          "upper": null,
+          "nSites": 2292,
+          "relativeIndex1976": 35.481339,
+          "sourceCsvRow": 3870
+        },
+        {
+          "year": 2018,
+          "value": 1.52,
+          "lower": null,
+          "upper": null,
+          "nSites": 2423,
+          "relativeIndex1976": 21.877616,
+          "sourceCsvRow": 3871
+        },
+        {
+          "year": 2019,
+          "value": 1.64,
+          "lower": null,
+          "upper": null,
+          "nSites": 2544,
+          "relativeIndex1976": 28.840315,
+          "sourceCsvRow": 3872
+        },
+        {
+          "year": 2020,
+          "value": 1.95,
+          "lower": null,
+          "upper": null,
+          "nSites": 2103,
+          "relativeIndex1976": 58.884366,
+          "sourceCsvRow": 3873
+        },
+        {
+          "year": 2021,
+          "value": 1.79,
+          "lower": null,
+          "upper": null,
+          "nSites": 2550,
+          "relativeIndex1976": 40.738028,
+          "sourceCsvRow": 3874
+        },
+        {
+          "year": 2022,
+          "value": 1.61,
+          "lower": null,
+          "upper": null,
+          "nSites": 2731,
+          "relativeIndex1976": 26.915348,
+          "sourceCsvRow": 3875
+        },
+        {
+          "year": 2023,
+          "value": 1.35,
+          "lower": null,
+          "upper": null,
+          "nSites": 2745,
+          "relativeIndex1976": 14.791084,
+          "sourceCsvRow": 3876
+        },
+        {
+          "year": 2024,
+          "value": 0.88,
+          "lower": null,
+          "upper": null,
+          "nSites": 2768,
+          "relativeIndex1976": 5.011872,
+          "sourceCsvRow": 3877
+        }
+      ]
+    }
+  ]
+}

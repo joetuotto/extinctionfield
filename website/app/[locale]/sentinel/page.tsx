@@ -686,6 +686,17 @@ const COPY = {
   },
 } as const;
 
+const ATLAS_COPY = {
+  en: {
+    intro: "Explore the original UKBMS annual abundance indices for Peacock and Small Tortoiseshell butterflies alongside Britain's technology history and fertility. Each species retains its own source records and yearly count of monitoring sites.",
+    link: "Explore Britain's two butterfly series",
+  },
+  fi: {
+    intro: "Tarkastele UKBMS:n alkuperäisiä neitoperhosen ja nokkosperhosen vuosittaisia runsausindeksejä Britannian teknologiahistorian ja syntyvyyden rinnalla. Kummankin lajin lähdepisteet ja vuosittaiset seurantapaikkojen määrät säilyvät näkyvissä.",
+    link: "Tutki Britannian kahta perhossarjaa",
+  },
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
@@ -695,6 +706,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function SentinelPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
+  const atlas = pickCopy(ATLAS_COPY, locale);
   return (
     <div className="max-w-5xl mx-auto px-6 pb-16">
       <header className="relative -mx-6 mt-0 mb-14 overflow-hidden rounded-b-2xl sm:mx-0 sm:mt-8 sm:rounded-2xl">
@@ -719,6 +731,10 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
           </div>
         </div>
       </header>
+      <div className="mb-10 rounded-lg border border-border/50 p-5 text-sm">
+        <p className="text-foreground-muted leading-relaxed">{atlas.intro}</p>
+        <Link href={`/${locale}/explore?tab=atlas&question=ecology&country=GBR`} className="mt-3 inline-block text-accent hover:underline">{atlas.link} →</Link>
+      </div>
       <section className="mb-14"><FalsificationTestsV19 locale={locale} /></section>
       <DkcSentinelAllometry locale={locale} />
 

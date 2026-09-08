@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 856,
-    "usageLocations": 2596
+    "referencesWithUsages": 852,
+    "usageLocations": 2587
   },
   "usage": {
     "delgado1969": [
@@ -941,10 +941,6 @@
       {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
-      },
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
       },
       {
         "path": "/evidence/unbroken-chain",
@@ -3083,10 +3079,6 @@
       {
         "path": "/evidence/devices",
         "source": "app/[locale]/evidence/devices/page.tsx"
-      },
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
       },
       {
         "path": "/explore",
@@ -6785,10 +6777,6 @@
         "source": "app/[locale]/evidence/chronic-pain/page.tsx"
       },
       {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      },
-      {
         "path": "/evidence/unbroken-chain",
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
       },
@@ -8105,10 +8093,6 @@
       {
         "path": "/evidence/epidemiology",
         "source": "app/[locale]/evidence/epidemiology/page.tsx"
-      },
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
       }
     ],
     "early_onset_colorectal_lancet_2024": [
@@ -8571,10 +8555,6 @@
         "source": "app/[locale]/evidence/lighting/page.tsx"
       },
       {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      },
-      {
         "path": "/map",
         "source": "lib/causalMapData.ts"
       },
@@ -8601,10 +8581,6 @@
       {
         "path": "/evidence/lighting",
         "source": "app/[locale]/evidence/lighting/page.tsx"
-      },
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
       }
     ],
     "pmc9920439_led_harmonics": [
@@ -8791,6 +8767,10 @@
         "source": "app/[locale]/evidence/page.tsx"
       },
       {
+        "path": "/explore",
+        "source": "lib/berm-biomarker-calibration-protocols.ts"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
       }
@@ -8819,6 +8799,10 @@
       {
         "path": "/evidence",
         "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/berm-biomarker-calibration-protocols.ts"
       },
       {
         "path": "/model",
@@ -10059,10 +10043,6 @@
         "source": "data/claims.json"
       },
       {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      },
-      {
         "path": "/map",
         "source": "data/claims.json"
       },
@@ -10747,30 +10727,6 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
-      }
-    ],
-    "schmid2012": [
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      }
-    ],
-    "panagopoulos2019_dna": [
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      }
-    ],
-    "jacc_ev2025": [
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
-      }
-    ],
-    "ev_patent": [
-      {
-        "path": "/evidence/technology",
-        "source": "app/[locale]/evidence/technology/page.tsx"
       }
     ],
     "splawski2005_cardiac_ltype": [

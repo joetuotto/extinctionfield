@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-08",
+  "preferredSeriesByCountry": {
+    "FIN": "fi-finrisk-testosterone-60-69",
+    "USA": "us-nhanes-testosterone-15-39"
+  },
+  "sources": [
+    {
+      "id": "perheentupa2013-table1",
+      "title": "Perheentupa et al. (2013), Table 1",
+      "doi": "10.1530/EJE-12-0288",
+      "url": "https://academic.oup.com/ejendo/article/168/2/227/6659648",
+      "readCopyUrl": "https://www.researchgate.net/profile/Antti-Perheentupa/publication/233538976_A_cohort_effect_on_serum_testosterone_levels_in_Finnish_men/links/56c7303d08ae96cdd067737c/A-cohort-effect-on-serum-testosterone-levels-in-Finnish-men.pdf",
+      "retrievedAt": "2026-09-08",
+      "sourceType": "primary_publication",
+      "readingLevel": "Full original article PDF text, including Table 1 and methods; table column placement unavailable in the text extraction. The 60–69 birth-cohort assignments are independently stated in the abstract.",
+      "scope": {
+        "fi": "FINRISK-ikä–syntymäkohorttisolut; mediaanit ja jakauman persentiilit.",
+        "en": "FINRISK age/birth-cohort cells; medians and distribution percentiles."
+      },
+      "surveyYears": [
+        1972,
+        1977,
+        2002
+      ],
+      "license": "Published numerical facts with attribution; no open licence asserted for article text.",
+      "artifacts": [
+        {
+          "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/testosterone_trends/perheentupa2013_table1_facts.json",
+          "bytes": 1773,
+          "sha256": "bd1aa5c50f2879248dadfd2109eeb4bacb8b407bfbd51fb1020801d1a9e60be3"
+        }
+      ]
+    },
+    {
+      "id": "lokeshwar2021-table1",
+      "title": "Lokeshwar et al. (2021; online 2020), Table 1",
+      "doi": "10.1016/j.euf.2020.02.006",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2405456920300626",
+      "readCopyUrl": "https://www.scribd.com/document/994211514/lokeshwar2020",
+      "retrievedAt": "2026-09-08",
+      "sourceType": "primary_publication",
+      "readingLevel": "Full original in-press article text (EUF-879, accepted 2020-02-10), public reading copy; final publication identity and abstract independently checked against PubMed/publisher. Not the hosting site's generated summary.",
+      "scope": {
+        "fi": "NHANES 15–39-vuotiaiden viisi kuvailevaa jaksoarviota; menetelmävaihdot säilyvät.",
+        "en": "Five descriptive NHANES period estimates for ages 15–39; assay changes remain."
+      },
+      "license": "Published numerical facts with attribution; no open licence asserted for article text.",
+      "artifacts": [
+        {
+          "path": "docs/analysis/BERM_muutosdataselain_2026-09-08/testosterone_trends/lokeshwar2021_table1_facts.json",
+          "bytes": 1421,
+          "sha256": "b1607982943ae187612c929ae099da747aeec7bd64b134295e6522dd18243838"
+        }
+      ]
+    }
+  ],
+  "series": [
+    {
+      "countryId": "FIN",
+      "datasetFamily": "hormone",
+      "metric": "testosterone_total",
+      "unit": "nmol_per_l",
+      "unitLabel": {
+        "fi": "nmol/l",
+        "en": "nmol/L"
+      },
+      "status": "estimate",
+      "frequency": "survey_period",
+      "valueScale": "linear",
+      "statistic": "median",
+      "sourceIds": [
+        "perheentupa2013-table1"
+      ],
+      "population": {
+        "fi": "FINRISK-seeruminäytteiden suomalaiset miehet; erilliset poikkileikkausotokset, eivät samojen miesten seuranta.",
+        "en": "Finnish men in FINRISK serum samples; separate cross-sectional samples, not repeated measurements of the same men."
+      },
+      "adjustment": {
+        "fi": "Taulukon ikä- ja syntymäkohorttisolujen mediaanit; ei BMI-vakioituja mediaaneja. Paperin erillinen regressio huomioi iän ja BMI:n.",
+        "en": "Age/birth-cohort cell medians, not BMI-adjusted medians. The paper's separate regression accounts for age and BMI."
+      },
+      "assay": {
+        "fi": "DELFIA-fluoroimmunomääritys; näytteet analysoitiin samalla kaudella eri vuosien näytteet sekoittaen. Virka-ajan näytteet, vähintään 4 h paasto, säilytys −20 °C.",
+        "en": "DELFIA fluoroimmunoassay; samples from different surveys mixed in contemporaneous assay runs. Office-hours sampling, at least 4 h fasting, storage at −20 °C."
+      },
+      "comparability": {
+        "fi": "Sama julkaistu ikäluokka ja analyysimenetelmä; ikäjakauman, otoskoon, keräysajan ja säilytysajan erot säilyvät.",
+        "en": "Same published age bin and assay; differences in age distribution, sample size, collection time and storage duration remain."
+      },
+      "limitations": [
+        {
+          "fi": "Välit ovat yksilöjakauman 5.–95. persentiilit, eivät mediaanin luottamusvälit.",
+          "en": "Intervals are the 5th–95th percentiles of the individual distribution, not confidence intervals for the median."
+        },
+        {
+          "fi": "Kohorttierot eivät yksin tunnista EMF-vaikutusta tai erota ikä-, periodi- ja kohorttimekanismeja.",
+          "en": "Cohort contrasts alone do not identify an EMF effect or separate age, period and cohort mechanisms."
+        },
+        {
+          "fi": "Abstraktissa esitetty kohorttivertailu: n = 130 ja 23. Sama ikäluokka ei tarkoita samaa ikäjakaumaa; tuoreimman kohortin otos on pieni.",
+          "en": "The abstract's cohort contrast: n = 130 and 23. The same age bin does not imply identical age distributions; the later cohort cell is small."
+        },
+        {
+          "fi": "Keräysvuodet 1977 ja 2002 on päätelty julkaistujen keräysvuosien, ikäluokan ja syntymäkohortin yksikäsitteisestä leikkauksesta; taulukko ei itse ole kalenterivuositaulukko.",
+          "en": "Collection years 1977 and 2002 follow uniquely from the published survey years, age bin and birth cohort; the table itself is not arranged by calendar year."
+        }
+      ],
+      "id": "fi-finrisk-testosterone-60-69",
+      "ageGroup": "60-69",
+      "preferredForCountry": true,
+      "title": {
+        "fi": "Kokonaistestosteroni, FINRISK 60–69-vuotiaat",
+        "en": "Total testosterone, FINRISK ages 60–69"
+      },
+      "points": [
+        {
+          "year": 1977,
+          "startYear": 1977,
+          "endYear": 1977,
+          "collectionYears": [
+            1977
+          ],
+          "collectionYearBasis": "unique-survey-age-cohort-intersection",
+          "value": 21.9,
+          "lower": 10.3,
+          "upper": 40.9,
+          "n": 130,
+          "intervalKind": "percentile_5_95",
+          "sourceId": "perheentupa2013-table1",
+          "sourceCellId": "age60-earlier",
+          "sourceLocator": "Table 1, p. 228; age 60-69; cell age60-earlier; median (5th–95th percentiles)",
+          "imputed": false,
+          "birthCohortStart": 1913,
+          "birthCohortEnd": 1922
+        },
+        {
+          "year": 2002,
+          "startYear": 2002,
+          "endYear": 2002,
+          "collectionYears": [
+            2002
+          ],
+          "collectionYearBasis": "unique-survey-age-cohort-intersection",
+          "value": 13.8,
+          "lower": 7.7,
+          "upper": 27.8,
+          "n": 23,
+          "intervalKind": "percentile_5_95",
+          "sourceId": "perheentupa2013-table1",
+          "sourceCellId": "age60-later",
+          "sourceLocator": "Table 1, p. 228; age 60-69; cell age60-later; median (5th–95th percentiles)",
+          "imputed": false,
+          "birthCohortStart": 1942,
+          "birthCohortEnd": 1951
+        }
+      ]
+    },
+    {
+      "countryId": "FIN",
+      "datasetFamily": "hormone",
+      "metric": "testosterone_total",
+      "unit": "nmol_per_l",
+      "unitLabel": {
+        "fi": "nmol/l",
+        "en": "nmol/L"
+      },
+      "status": "estimate",
+      "frequency": "survey_period",
+      "valueScale": "linear",
+      "statistic": "median",
+      "sourceIds": [
+        "perheentupa2013-table1"
+      ],
+      "population": {
+        "fi": "FINRISK-seeruminäytteiden suomalaiset miehet; erilliset poikkileikkausotokset, eivät samojen miesten seuranta.",
+        "en": "Finnish men in FINRISK serum samples; separate cross-sectional samples, not repeated measurements of the same men."
+      },
+      "adjustment": {
+        "fi": "Taulukon ikä- ja syntymäkohorttisolujen mediaanit; ei BMI-vakioituja mediaaneja. Paperin erillinen regressio huomioi iän ja BMI:n.",
+        "en": "Age/birth-cohort cell medians, not BMI-adjusted medians. The paper's separate regression accounts for age and BMI."
+      },
+      "assay": {
+        "fi": "DELFIA-fluoroimmunomääritys; näytteet analysoitiin samalla kaudella eri vuosien näytteet sekoittaen. Virka-ajan näytteet, vähintään 4 h paasto, säilytys −20 °C.",
+        "en": "DELFIA fluoroimmunoassay; samples from different surveys mixed in contemporaneous assay runs. Office-hours sampling, at least 4 h fasting, storage at −20 °C."
+      },
+      "comparability": {
+        "fi": "Sama julkaistu ikäluokka ja analyysimenetelmä; ikäjakauman, otoskoon, keräysajan ja säilytysajan erot säilyvät.",
+        "en": "Same published age bin and assay; differences in age distribution, sample size, collection time and storage duration remain."
+      },
+      "limitations": [
+        {
+          "fi": "Välit ovat yksilöjakauman 5.–95. persentiilit, eivät mediaanin luottamusvälit.",
+          "en": "Intervals are the 5th–95th percentiles of the individual distribution, not confidence intervals for the median."
+        },
+        {
+          "fi": "Kohorttierot eivät yksin tunnista EMF-vaikutusta tai erota ikä-, periodi- ja kohorttimekanismeja.",
+          "en": "Cohort contrasts alone do not identify an EMF effect or separate age, period and cohort mechanisms."
+        },
+        {
+          "fi": "Varhaista solua ei erotella vuosille 1972 ja 1977. Ajanjakso rajaa mahdolliset varhaiset tutkimusvuodet; jakson keskelle sijoitettu merkki on vain piirron sijainti.",
+          "en": "The earlier cell is not disaggregated between 1972 and 1977. The interval bounds possible earlier survey years; the marker at the interval midpoint is only a plotting position."
+        },
+        {
+          "fi": "Yhdistetty mediaani ei ole vuosimediaanien aritmeettinen keskiarvo. Tätä varhaista pistettä ei käytetä yksivuotisen mallivasteen ankkurina.",
+          "en": "A pooled median is not an arithmetic mean of annual medians. This early point cannot anchor a single-year model response."
+        }
+      ],
+      "id": "fi-finrisk-testosterone-25-29",
+      "ageGroup": "25-29",
+      "preferredForCountry": false,
+      "title": {
+        "fi": "Kokonaistestosteroni, FINRISK 25–29-vuotiaat",
+        "en": "Total testosterone, FINRISK ages 25–29"
+      },
+      "points": [
+        {
+          "year": 1975,
+          "startYear": 1972,
+          "endYear": 1977,
+          "collectionYears": [
+            1972,
+            1977
+          ],
+          "collectionYearBasis": "early-surveys-not-disaggregated",
+          "value": 26.4,
+          "lower": 15.1,
+          "upper": 44,
+          "n": 289,
+          "intervalKind": "percentile_5_95",
+          "sourceId": "perheentupa2013-table1",
+          "sourceCellId": "age25-earlier",
+          "sourceLocator": "Table 1, p. 228; age 25-29; cell age25-earlier; median (5th–95th percentiles)",
+          "imputed": false
+        },
+        {
+          "year": 2002,
+          "startYear": 2002,
+          "endYear": 2002,
+          "collectionYears": [
+            2002
+          ],
+          "collectionYearBasis": "later-survey",
+          "value": 19.1,
+          "lower": 8.7,
+          "upper": 27.3,
+          "n": 63,
+          "intervalKind": "percentile_5_95",
+          "sourceId": "perheentupa2013-table1",
+          "sourceCellId": "age25-later",
+          "sourceLocator": "Table 1, p. 228; age 25-29; cell age25-later; median (5th–95th percentiles)",
+          "imputed": false
+        }
+      ]
+    },
+    {
+      "id": "us-nhanes-testosterone-15-39",
+      "countryId": "USA",
+      "datasetFamily": "hormone",
+      "metric": "testosterone_total",
+      "title": {
+        "fi": "Kokonaistestosteroni, NHANES 15–39-vuotiaat",
+        "en": "Total testosterone, NHANES ages 15–39"
+      },
+      "unit": "ng_per_dl",
+      "unitLabel": {
+        "fi": "ng/dl",
+        "en": "ng/dL"
+      },
+      "ageGroup": "15-39",
+      "status": "estimate",
+      "frequency": "survey_period",
+      "valueScale": "linear",
+      "statistic": "arithmetic_mean",
+      "preferredForCountry": true,
+      "population": {
+        "fi": "NHANES: 4 045 yhdysvaltalaista 15–39-vuotiasta miestä viidessä otoksessa; aamun 06–10 verinäytteet.",
+        "en": "NHANES: 4,045 US males aged 15–39 across five samples; blood collection at 06:00–10:00."
+      },
+      "adjustment": {
+        "fi": "Taulukon 1 kuvailevat otospainotetut keskiarvot. Monimuuttujavakioidut regressioerot ovat taulukossa 2 eikä niitä käytetä tämän sarjan tasoina.",
+        "en": "Table 1 descriptive survey-weighted means. Multivariable-adjusted regression differences are in Table 2 and are not used as levels in this series."
+      },
+      "assay": {
+        "fi": "Julkaisun mukaan 1999–2004 biotiini–streptavidiini-immunomääritys, 2011–12 isotooppilaimennus/LC ja 2013→HPLC-MS. Menetelmien vaihtumista ei harmonisoida tässä uudelleen.",
+        "en": "The paper reports biotin–streptavidin assay in 1999–2004, isotope dilution/LC in 2011–12 and HPLC-MS from 2013. Assay changes are not re-harmonized here."
+      },
+      "comparability": {
+        "fi": "Sama laaja ikäraja; otoskoostumus ja määritysmenetelmä vaihtuvat. Havainto on varhaisjaksoja alempi myöhemmissä jaksoissa, mutta ei laske jokaisessa peräkkäisessä jaksossa.",
+        "en": "Same broad age range; sample composition and assays change. Later periods are lower than early periods, but successive cycles do not decline monotonically."
+      },
+      "sourceIds": [
+        "lokeshwar2021-table1"
+      ],
+      "limitations": [
+        {
+          "fi": "Ilmoitettu keskivirhe säilyy SE:nä. 95 %:n luottamusväliä ei johdeta tai nimetä lähteen raportoimaksi.",
+          "en": "Reported standard errors remain SEs. No 95% confidence interval is derived or labelled as source-reported."
+        },
+        {
+          "fi": "Sarja ei ole ikä/BMI-vakioitu, eikä sitä yhdistetä Nyanten laajasti vakioituun yli 20-vuotiaiden sarjaan tai siirretä Suomen miehille.",
+          "en": "This is not an age/BMI-adjusted series; it is not joined to Nyante's fully adjusted age-20+ series or transferred to Finnish men."
+        },
+        {
+          "fi": "Menetelmävaihdot ja muuttuva otos säilyvät tulkintarajoina; sarja ei yksin tunnista laskun syytä.",
+          "en": "Assay changes and changing samples remain interpretation limits; the series alone does not identify the cause of decline."
+        }
+      ],
+      "points": [
+        {
+          "startYear": 1999,
+          "endYear": 2000,
+          "value": 605.39,
+          "standardError": 21.01,
+          "n": 207,
+          "year": 2000,
+          "collectionYears": [
+            1999,
+            2000
+          ],
+          "collectionYearBasis": "reported-survey-period",
+          "intervalKind": "standard_error",
+          "sourceId": "lokeshwar2021-table1",
+          "sourceLocator": "Table 1; 1999–2000; Mean T, ng/dl ± SE; n in column header",
+          "imputed": false
+        },
+        {
+          "startYear": 2003,
+          "endYear": 2004,
+          "value": 567.44,
+          "standardError": 17.23,
+          "n": 237,
+          "year": 2004,
+          "collectionYears": [
+            2003,
+            2004
+          ],
+          "collectionYearBasis": "reported-survey-period",
+          "intervalKind": "standard_error",
+          "sourceId": "lokeshwar2021-table1",
+          "sourceLocator": "Table 1; 2003–2004; Mean T, ng/dl ± SE; n in column header",
+          "imputed": false
+        },
+        {
+          "startYear": 2011,
+          "endYear": 2012,
+          "value": 424.96,
+          "standardError": 7.7,
+          "n": 1192,
+          "year": 2012,
+          "collectionYears": [
+            2011,
+            2012
+          ],
+          "collectionYearBasis": "reported-survey-period",
+          "intervalKind": "standard_error",
+          "sourceId": "lokeshwar2021-table1",
+          "sourceLocator": "Table 1; 2011–2012; Mean T, ng/dl ± SE; n in column header",
+          "imputed": false
+        },
+        {
+          "startYear": 2013,
+          "endYear": 2014,
+          "value": 431.76,
+          "standardError": 7.19,
+          "n": 1241,
+          "year": 2014,
+          "collectionYears": [
+            2013,
+            2014
+          ],
+          "collectionYearBasis": "reported-survey-period",
+          "intervalKind": "standard_error",
+          "sourceId": "lokeshwar2021-table1",
+          "sourceLocator": "Table 1; 2013–2014; Mean T, ng/dl ± SE; n in column header",
+          "imputed": false
+        },
+        {
+          "startYear": 2015,
+          "endYear": 2016,
+          "value": 451.22,
+          "standardError": 10.03,
+          "n": 1168,
+          "year": 2016,
+          "collectionYears": [
+            2015,
+            2016
+          ],
+          "collectionYearBasis": "reported-survey-period",
+          "intervalKind": "standard_error",
+          "sourceId": "lokeshwar2021-table1",
+          "sourceLocator": "Table 1; 2015–2016; Mean T, ng/dl ± SE; n in column header",
+          "imputed": false
+        }
+      ]
+    }
+  ],
+  "coverageGaps": [
+    {
+      "countryId": "GBR",
+      "reason": {
+        "fi": "Tähän rajattuun poimintaan ei varmennettu vertailukelpoista numeerista trendisarjaa. Ei väitettä ilmiön puuttumisesta.",
+        "en": "No comparable numerical trend series was verified for this bounded extraction. This does not imply absence of a trend."
+      }
+    },
+    {
+      "countryId": "DEU",
+      "reason": {
+        "fi": "Tähän rajattuun poimintaan ei varmennettu vertailukelpoista numeerista trendisarjaa. Ei väitettä ilmiön puuttumisesta.",
+        "en": "No comparable numerical trend series was verified for this bounded extraction. This does not imply absence of a trend."
+      }
+    },
+    {
+      "countryId": "JPN",
+      "reason": {
+        "fi": "Tähän rajattuun poimintaan ei varmennettu vertailukelpoista numeerista trendisarjaa. Ei väitettä ilmiön puuttumisesta.",
+        "en": "No comparable numerical trend series was verified for this bounded extraction. This does not imply absence of a trend."
+      }
+    }
+  ]
+}

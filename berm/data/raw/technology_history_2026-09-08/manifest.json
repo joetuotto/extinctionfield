@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "technology_history_2026-09-08",
+  "retrievedAt": "2026-09-08",
+  "pipelineVersion": "technology_history_v1",
+  "scope": "imported_technology_history",
+  "sources": [
+    {
+      "id": "adoption_eia_metering_2024",
+      "title": "EIA Electric Power Annual, Table 10.05: Advanced Metering Count by Technology Type, 2015–2024",
+      "url": "https://www.eia.gov/electricity/annual/html/epa_10_05.html",
+      "downloadUrl": "https://www.eia.gov/electricity/annual/html/epa_10_05.html",
+      "publishedAt": null,
+      "referenceId": null,
+      "textFile": "eia_metering.html",
+      "readingLevel": "Complete source table, all 40 rows; sector and technology sums checked",
+      "files": [
+        {
+          "name": "eia_metering.html",
+          "role": "publisher_snapshot",
+          "bytes": 20765,
+          "sha256": "c02223c90b35b28e5a48f16201a392e67887f1fb2db782232bd1874d2ee8a92a"
+        }
+      ]
+    },
+    {
+      "id": "adoption_cre_linky_2022",
+      "title": "CRE: Maitrise de sa consommation en période de crise grâce aux compteurs évolués",
+      "url": "https://www.cre.fr/actualites/notre-magazine-parlons-energie/parlons-energie-n8/maitrise-de-sa-consommation-en-periode-de-crise-grace-aux-compteurs-evolues.html",
+      "downloadUrl": "https://www.cre.fr/actualites/notre-magazine-parlons-energie/parlons-energie-n8/maitrise-de-sa-consommation-en-periode-de-crise-grace-aux-compteurs-evolues.html",
+      "publishedAt": "2022-11-03",
+      "referenceId": null,
+      "textFile": "cre_linky.html",
+      "readingLevel": "Original regulator article; opening paragraph and publication date",
+      "files": [
+        {
+          "name": "cre_linky.html",
+          "role": "publisher_snapshot",
+          "bytes": 78312,
+          "sha256": "908425e33e27588cf697af4f2c4272f81a3b2755f0c38e59f2901354ea1512fe"
+        }
+      ]
+    },
+    {
+      "id": "adoption_tem_amr_2017",
+      "title": "TEM 38/2017: Matkalla kohti joustavaa ja asiakaskeskeistä sähköjärjestelmää",
+      "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/c1a29bed-8cdb-40ba-a4ae-52d693a8ff9e/content",
+      "downloadUrl": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/c1a29bed-8cdb-40ba-a4ae-52d693a8ff9e/content",
+      "publishedAt": "2017-10-09",
+      "referenceId": null,
+      "textFile": "tem_amr.txt",
+      "readingLevel": "Original PDF, printed page 57; complete PDF retained with text extraction",
+      "files": [
+        {
+          "name": "tem_amr.pdf",
+          "role": "publisher_snapshot",
+          "bytes": 822656,
+          "sha256": "5414d561ce8c93a606471431864cce2fe23eeeba66016f955c707491c7e7baec"
+        },
+        {
+          "name": "tem_amr.txt",
+          "role": "pdftotext_layout",
+          "bytes": 147167,
+          "sha256": "8ab3739d85bb91639b6c29d63a6288541f8203fb1e7fe883a8d710ea07ca2ae9"
+        }
+      ]
+    },
+    {
+      "id": "adoption_iea_cooling_china_2019",
+      "title": "IEA: The Future of Cooling in China",
+      "url": "https://www.iea.org/reports/the-future-of-cooling-in-china",
+      "downloadUrl": "https://iea.blob.core.windows.net/assets/9212903b-e310-48d4-96fa-3eaf7ddf56d9/The_Future_of_Cooling_in_China.pdf",
+      "publishedAt": "2019-06-16",
+      "referenceId": null,
+      "textFile": "iea_cooling.txt",
+      "readingLevel": "Original PDF, printed page 6; reported historical stock, excluding scenarios",
+      "files": [
+        {
+          "name": "iea_cooling.pdf",
+          "role": "publisher_snapshot",
+          "bytes": 2815200,
+          "sha256": "bec5fb3064f618146323e5d56ed3a2d88f18ae353073ca132134f1c2dd753117"
+        },
+        {
+          "name": "iea_cooling.txt",
+          "role": "pdftotext_layout",
+          "bytes": 238093,
+          "sha256": "259841f53ff2c798efcabc0212bb693408fd354816d6e9c5cf40626e982162e1"
+        }
+      ]
+    },
+    {
+      "id": "curated_catalogue",
+      "title": "Curated selection and series definitions",
+      "url": null,
+      "downloadUrl": null,
+      "publishedAt": "2026-09-08",
+      "referenceId": null,
+      "textFile": "catalogue.json",
+      "readingLevel": "Curated configuration, not an original source",
+      "files": [
+        {
+          "name": "catalogue.json",
+          "role": "curated_extraction_configuration",
+          "bytes": 12409,
+          "sha256": "8e8f8b756945f8f0521a015d642d811f609aef50ef2e902fb265cc875c1d81e4"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Publisher HTML/PDF bytes retained; derived PDF text generated with pdftotext -layout.",
+    "Retrieval date is acquisition date, not an observation year.",
+    "Full EIA table is parsed; sparse source statements are selected by explicit expressions.",
+    "Source metadata and catalogue are curated; no biological mapping or interpolation."
+  ]
+}

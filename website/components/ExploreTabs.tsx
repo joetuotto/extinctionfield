@@ -1,92 +1,45 @@
 "use client";
+import { Suspense } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import dynamic from "next/dynamic";
+import { ChangeAtlas } from "./ChangeAtlas";
 
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useCallback, Suspense } from "react";
-import { ExplorerDashboard } from "./ExplorerDashboard";
-import { DataSourcesContent } from "./DataSourcesContent";
-import { WorldMap } from "./WorldMap";
-import { SentinelExplorer } from "./SentinelExplorer";
-import { GlobalDataExplorer } from "./GlobalDataExplorer";
-import { LayersExplorer } from "./LayersExplorer";
-import { ThresholdExplorer } from "./ThresholdExplorer";
-import { CivilizationTimeline } from "./CivilizationTimeline";
-import { NaturalEMVisualization } from "./NaturalEMVisualization";
-import { SolarExplorer } from "./SolarExplorer";
-import { DkcExplorer } from "./DkcExplorer";
-import { getExploreTabs } from "@/lib/navigation";
-
-type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM" | "solar" | "dkc";
-
-function ExploreTabsInner({ locale }: { locale: string }) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-  const activeTab = (searchParams.get("tab") as Tab) || "map";
-  const tabs = getExploreTabs(locale);
-
-  const setTab = useCallback(
-    (tab: Tab) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set("tab", tab);
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-    },
-    [searchParams, router, pathname],
-  );
-
-  return (
-    <div>
-      <nav className="flex gap-1 border-b border-border mb-8 overflow-x-auto" role="tablist">
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.key;
-          return (
-            <button
-              key={tab.key}
-              role="tab"
-              aria-selected={isActive}
-              onClick={() => setTab(tab.key)}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap shrink-0 ${
-                isActive
-                  ? "border-accent text-accent"
-                  : "border-transparent text-foreground-muted hover:text-foreground"
-              }`}
-            >
-              <Icon size={14} strokeWidth={isActive ? 2.2 : 1.8} aria-hidden="true" />
-              {tab.label}
-            </button>
-          );
-        })}
-      </nav>
-
-      {activeTab === "map" && <WorldMap locale={locale} />}
-
-      {activeTab === "country" && <ExplorerDashboard locale={locale} />}
-
-      {activeTab === "global" && <GlobalDataExplorer locale={locale} />}
-
-      {activeTab === "threshold" && <ThresholdExplorer locale={locale} />}
-
-      {activeTab === "sentinel" && <SentinelExplorer locale={locale} />}
-
-      {activeTab === "data" && <DataSourcesContent locale={locale} />}
-
-      {activeTab === "layers" && <LayersExplorer locale={locale} />}
-
-      {activeTab === "civilizations" && <CivilizationTimeline locale={locale} />}
-
-      {activeTab === "naturalEM" && <NaturalEMVisualization locale={locale} />}
-
-      {activeTab === "solar" && <SolarExplorer locale={locale} />}
-
-      {activeTab === "dkc" && <DkcExplorer locale={locale} />}
-    </div>
-  );
+const WorldMap=dynamic(()=>import("./WorldMap").then(m=>m.WorldMap));
+const GlobalDataExplorer=dynamic(()=>import("./GlobalDataExplorer").then(m=>m.GlobalDataExplorer));
+const DataSourcesContent=dynamic(()=>import("./DataSourcesContent").then(m=>m.DataSourcesContent));
+const ThresholdExplorer=dynamic(()=>import("./ThresholdExplorer").then(m=>m.ThresholdExplorer));
+const SentinelExplorer=dynamic(()=>import("./SentinelExplorer").then(m=>m.SentinelExplorer));
+const CivilizationTimeline=dynamic(()=>import("./CivilizationTimeline").then(m=>m.CivilizationTimeline));
+const NaturalEMVisualization=dynamic(()=>import("./NaturalEMVisualization").then(m=>m.NaturalEMVisualization));
+const SolarExplorer=dynamic(()=>import("./SolarExplorer").then(m=>m.SolarExplorer));
+const DkcExplorer=dynamic(()=>import("./DkcExplorer").then(m=>m.DkcExplorer));
+const TOOLS = [
+  ["atlas","Muutosatlas","Change atlas"], ["global","Kaikkien maiden alkuperäispaneeli","All-country source panel"],
+  ["map","Maailmankartta","World map"], ["catalogue","Muut aineistot ja lataukset","Other datasets and downloads"],
+  ["threshold","Aiempi T→TFR-skenaariolaskuri","Earlier T→TFR scenario calculator"], ["sentinel-tests","Sentinellien testiasetelmat","Sentinel study designs"],
+  ["naturalEM","Luonnollinen kenttäympäristö","Natural field environment"], ["solar","Auringon geometrinen tarkastelu","Solar geometry"],
+  ["dkc","DKC-tarkastelu","DKC explorer"], ["civilizations","Historialliset sivilisaatioskenaariot","Historical civilization scenarios"],
+] as const;
+function ExploreTabsInner({locale}:{locale:string}) {
+  const params=useSearchParams(),pathname=usePathname();
+  const selected=params.get("tab");
+  const active=TOOLS.some(t=>t[0]===selected)?selected!:"atlas";
+  const change=(tab:string)=>{const p=new URLSearchParams(params.toString());p.set("tab",tab);window.history.replaceState(null,"",`${pathname}?${p}`);};
+  return <>
+    {active!=="atlas" && <button type="button" className="mb-6 text-sm text-accent hover:underline" onClick={()=>change("atlas")}>{locale==="fi"?"← Palaa muutosatlakseen":"← Return to the change atlas"}</button>}
+    {active==="atlas" && <ChangeAtlas locale={locale}/>}
+    {active==="map" && <WorldMap locale={locale}/>}
+    {active==="global" && <GlobalDataExplorer locale={locale}/>}
+    {active==="catalogue" && <DataSourcesContent locale={locale}/>}
+    {active==="threshold" && <ThresholdExplorer locale={locale}/>}
+    {active==="sentinel-tests" && <SentinelExplorer locale={locale}/>}
+    {active==="civilizations" && <CivilizationTimeline locale={locale}/>}
+    {active==="naturalEM" && <NaturalEMVisualization locale={locale}/>}
+    {active==="solar" && <SolarExplorer locale={locale}/>}
+    {active==="dkc" && <DkcExplorer locale={locale}/>}
+    <details className="border-t border-border mt-10 pt-5" open={active!=="atlas"}><summary className="text-sm font-medium cursor-pointer">{locale==="fi"?"Muut aineistot ja erikoistyökalut":"Other datasets and specialist tools"}</summary><label className="block text-sm text-foreground-muted mt-4">{locale==="fi"?"Avaa työkalu":"Open a tool"}<select aria-label={locale==="fi"?"Erikoistyökalu":"Specialist tool"} value={active} onChange={e=>change(e.target.value)} className="block max-w-full mt-2 border border-border rounded-md bg-background text-foreground p-2">{TOOLS.map(t=><option key={t[0]} value={t[0]}>{locale==="fi"?t[1]:t[2]}</option>)}</select></label></details>
+  </>;
 }
-
-export function ExploreTabs({ locale }: { locale: string }) {
-  return (
-    <Suspense>
-      <ExploreTabsInner locale={locale} />
-    </Suspense>
-  );
+export function ExploreTabs({locale}:{locale:string}) {
+  return <Suspense fallback={<p className="text-sm text-foreground-muted">{locale==="fi"?"Ladataan muutosatlasta…":"Loading the change atlas…"}</p>}><ExploreTabsInner locale={locale}/></Suspense>;
 }

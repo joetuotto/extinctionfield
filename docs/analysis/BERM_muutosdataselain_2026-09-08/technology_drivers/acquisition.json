@@ -1,0 +1,104 @@
+{
+  "edition": "2026-09-08",
+  "downloads": [
+    {
+      "file": "worldbank_electricity.json",
+      "url": "https://api.worldbank.org/v2/country/FIN%3BUSA%3BGBR%3BDEU%3BJPN/indicator/EG.USE.ELEC.KH.PC?format=json&per_page=1000",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "7f4d5685f4dbc9b190580c5ffbe4cac2f82a2763822fd03da3f3fe280e7feeaf",
+      "bytes": 76825
+    },
+    {
+      "file": "worldbank_electricity_metadata.json",
+      "url": "https://api.worldbank.org/v2/indicator/EG.USE.ELEC.KH.PC?format=json",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "4236af9f3948d3190ee93415b9f49aec9ac748a38aa8586d757d1031a3a7c723",
+      "bytes": 795
+    },
+    {
+      "file": "statfin_12sv_metadata.json",
+      "url": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/ehk/12sv.px",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "068116a8f32aa47a52d9b88208ca89448f82b8ccdfcefa305fcbe8d25af8f272",
+      "bytes": 1856
+    },
+    {
+      "file": "statfin_12sv.json",
+      "url": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/ehk/12sv.px",
+      "retrievedAt": "2026-09-08",
+      "method": "POST",
+      "sha256": "d2f98004a382c0754b0e2f94334abdd28e023591ba2492f745c2f6802391f996",
+      "bytes": 4324,
+      "bodyFile": "statfin_12sv_query.json"
+    },
+    {
+      "file": "gb_electricity_1920.xlsx",
+      "url": "https://assets.publishing.service.gov.uk/media/6a69e449229c578debc1a84d/Electricity_since_1920.xlsx",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "c95cc17e446f76cd4333421be3e2e537fbaf81073c5795385d70a9ae7bdde8de",
+      "bytes": 253940
+    },
+    {
+      "file": "gb_smart_2024.xlsx",
+      "url": "https://assets.publishing.service.gov.uk/media/665604267b792ffff71a8471/Q1_2024_Smart_Meter_Statistics_Tables.xlsx",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "d761f6494440a05c24a9f0ca37340797d5fbd20aca5500efa9f84c8030e6970f",
+      "bytes": 165873
+    },
+    {
+      "file": "census_hs42.pdf",
+      "url": "https://www2.census.gov/library/publications/2004/compendia/statab/123ed/hist/hs-42.pdf",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "55804674e8ecb19d565476e2359fccfa62fad9f2e455f57bbe9b432a52b0d7c4",
+      "bytes": 82120
+    },
+    {
+      "file": "jp_durables_2004.xls",
+      "url": "https://www.esri.cao.go.jp/jp/stat/shouhi/0403fukyuritsu.xls",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "400dfe8a9e7cc1dde4d6f37c9e5dd32d26182299da1edc8319ad42ce9c2d08c0",
+      "bytes": 74240
+    },
+    {
+      "file": "de_wista_1974_07.pdf",
+      "url": "https://www.destatis.de/GPStatistik/servlets/MCRFileNodeServlet/DEAusgabe_derivate_00000708/Wirtschaft_und_Statistik-1974-07.pdf",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "f31132c7587413ef56b83da2c62a21ad6deb72e12a52cc0b277593335a2a6b35",
+      "bytes": 17200631
+    },
+    {
+      "file": "eia_end_use.csv",
+      "url": "https://www.eia.gov/totalenergy/data/browser/csv.php?tbl=T07.06",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "16baf02d79c2892ab6929f1979afb729fcb29141332b88946e93a03ba9610aa3",
+      "bytes": 596914
+    },
+    {
+      "file": "eia_electricity_notes.pdf",
+      "url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec7_n.pdf",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "fd066329120d309c2e84b814083658ea83e38e89c0c9407186b98a9d83ffb685",
+      "bytes": 154908
+    },
+    {
+      "file": "eia_net_generation.csv",
+      "url": "https://www.eia.gov/totalenergy/data/browser/csv.php?tbl=T07.02A",
+      "retrievedAt": "2026-09-08",
+      "method": "GET",
+      "sha256": "50674a978037fb03142bb196f602959cacefca9441d5064e7b5b8b529df410a9",
+      "bytes": 1142580,
+      "imported": false,
+      "reason": "Explored but excluded; 1989 all-sector coverage change. Residential electricity sales used instead."
+    }
+  ]
+}

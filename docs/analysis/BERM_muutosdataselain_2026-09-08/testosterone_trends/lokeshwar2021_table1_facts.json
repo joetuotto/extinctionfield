@@ -1,0 +1,51 @@
+{
+  "sourceId": "lokeshwar2021-table1",
+  "doi": "10.1016/j.euf.2020.02.006",
+  "sourceUrl": "https://www.sciencedirect.com/science/article/pii/S2405456920300626",
+  "readCopyUrl": "https://www.scribd.com/document/994211514/lokeshwar2020",
+  "identityCheckUrl": "https://pubmed.ncbi.nlm.nih.gov/32081788/",
+  "retrievedAt": "2026-09-08",
+  "readingLevel": "Full original in-press article text (EUF-879, accepted 2020-02-10), public reading copy; final publication identity and abstract independently checked against PubMed/publisher. Not the hosting site's generated summary.",
+  "table": "Table 1, manuscript p. 2, row Mean T, ng/dl ± SE",
+  "ageGroup": "15-39",
+  "unit": "ng_per_dl",
+  "statistic": "arithmetic_mean",
+  "intervalKind": "standard_error",
+  "cells": [
+    {
+      "startYear": 1999,
+      "endYear": 2000,
+      "value": 605.39,
+      "standardError": 21.01,
+      "n": 207
+    },
+    {
+      "startYear": 2003,
+      "endYear": 2004,
+      "value": 567.44,
+      "standardError": 17.23,
+      "n": 237
+    },
+    {
+      "startYear": 2011,
+      "endYear": 2012,
+      "value": 424.96,
+      "standardError": 7.7,
+      "n": 1192
+    },
+    {
+      "startYear": 2013,
+      "endYear": 2014,
+      "value": 431.76,
+      "standardError": 7.19,
+      "n": 1241
+    },
+    {
+      "startYear": 2015,
+      "endYear": 2016,
+      "value": 451.22,
+      "standardError": 10.03,
+      "n": 1168
+    }
+  ]
+}

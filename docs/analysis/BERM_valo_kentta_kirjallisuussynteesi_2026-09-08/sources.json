@@ -1,0 +1,2007 @@
+{
+  "schema_version": 1,
+  "search_date": "2026-09-08",
+  "scope": "Kohdennettu poikkitieteinen kirjallisuussynteesi; ei systemaattisen katsauksen seulontaloki. Empiiriset komponentit, teoria, esipainos ja mittausohjeet erotettu.",
+  "raw_extractions": 64,
+  "unique_sources": 59,
+  "record_type_counts": {
+    "primary_study": 54,
+    "measurement_report": 1,
+    "theory": 1,
+    "preprint": 1,
+    "standard": 2
+  },
+  "independence_note": "Yksilöity julkaisu ei tarkoita riippumatonta koetta tai laboratoriota. Erityisesti Dominonin kolme artikkelia käsittelevät samaa kohorttia. Perhetiedot säilyvät poiminnoissa ja osaraporteissa.",
+  "sources": [
+    {
+      "id": "S001",
+      "doi": "10.1074/jbc.m111.228940",
+      "title": "Light-activated Cryptochrome Reacts with Molecular Oxygen to Form a Flavin–Superoxide Radical Pair Consistent with Magnetoreception",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3122164/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "muller_ahmad_2011",
+          "data": {
+            "id": "muller_ahmad_2011",
+            "year": 2011,
+            "title": "Light-activated Cryptochrome Reacts with Molecular Oxygen to Form a Flavin–Superoxide Radical Pair Consistent with Magnetoreception",
+            "doi": "10.1074/jbc.M111.228940",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3122164/",
+            "verification": "Alkuperäisartikkelin menetelmä- ja tulosteksti tarkistettu julkisesta indeksoidusta kokotekstistä; PMC:n suora avaaminen ajoittain estyi.",
+            "family": "Ahmad/Sorbonne; yhteinen tutkimusperhe Pooam–Hammad-ketjun kanssa",
+            "system": "Puhdistettu Arabidopsis thaliana CRY1",
+            "light": "Esipelkistys465 nm, noin1500 µmol m−2 s−1,30 min jäällä; happielektrodikoe465 nm noin100 µmol m−2 s−1,2 min valoa/8 min pimeää ×3.",
+            "field": "Ei tässä kokeessa ulkoisen magneettikentän interventiota.",
+            "endpoint": "Flaviinin hapetustila, hapenkulutus ja peroksidikemia.",
+            "result": "Fotopelkistyksen jälkeen hapen kanssa tapahtuva pimeäreoksidaatio; flaviini–superoksidiradikaalipari mekanismiehdokkaana.",
+            "constraint": "Osoittaa redox-reaktioreitin, ei kyseisen radikaaliparin geomagneettista herkkyyttä eikä sen spin-relaksaatioaikaa solussa.",
+            "berm_link": "Valo voi valmistaa myöhempää kenttävastetta määräävän kemiallisen tilan."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S002",
+      "doi": "10.1073/pnas.1118959109",
+      "title": "Magnetically sensitive light-induced reactions in cryptochrome are consistent with its proposed role as a magnetoreceptor",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3323948/",
+        "https://doi.org/10.1073/pnas.1118959109"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "maeda_2012",
+          "data": {
+            "id": "maeda_2012",
+            "year": 2012,
+            "title": "Magnetically sensitive light-induced reactions in cryptochrome are consistent with its proposed role as a magnetoreceptor",
+            "doi": "10.1073/pnas.1118959109",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3323948/",
+            "verification": "Alkuperäinen kokoteksti, tulokset ja menetelmät tarkistettu hakupalvelun palauttamasta PMC-tekstistä.",
+            "family": "Oxford/Hore–Timmel, Weber ja Ahmad yhteistyössä; ei täysin riippumaton Ahmad-verkostosta",
+            "system": "Puhdistettu A. thaliana CRY1 ja Escherichia coli fotolyaasi",
+            "light": "460 nm,37 nm FWHM; noin5 ns laserpulssit5–7 mJ, efektiivinen toisto0,05 Hz fotohajoamisen vähentämiseksi.",
+            "field": "Staattinen0–29 mT; geomagneettista taustaa ei suojattu pois.",
+            "endpoint": "Aikaerotteinen absorptio, radikaaliparien kinetiikka ja saanto.",
+            "result": "AtCRY-radikaalisaanto noin+1 %1 mT:ssa ja noin−25 %30 mT:n tuntumassa; etumerkki muuttui pienillä kentillä. Lyhytikäinen RP1 voi tallentaa saantovaikutuksen pidempi-ikäiseen RP2:een.",
+            "constraint": "Viskoosi glyseroliliuos ja alentunut lämpötila optimoivat vastetta. Geomagneettinen in vivo -vaste ei ole näiden lukujen suora mittaustulos.",
+            "berm_link": "Kenttäherkkä mikrosekuntien reaktiokilpailu ja pidempi biologinen muistijälki ovat eri aikaskaaloja."
+          }
+        },
+        {
+          "section": "physics_and_history",
+          "local_id": "PH02",
+          "data": {
+            "id": "PH02",
+            "title": "Maeda ym. 2012",
+            "doi": "10.1073/pnas.1118959109",
+            "urls": [
+              "https://doi.org/10.1073/pnas.1118959109",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3323948/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Arabidopsiksen kryptokromin fotoreaktiotuoton kenttävaste oli protokollassa noin +1 % kentällä 1 mT ja −25 % kentällä 30 mT. Liuottimen viskositeettia ja lämpötilaa säädettiin vasteen esiin saamiseksi.",
+            "berm_role": "Radikaaliparikemia antaa mitattavan väliportaan ja esimerkin kenttäriippuvuuden suunnan vaihtumisesta. Vaikutus ei ole yleinen, annoksen mukana kasvava haittakerroin.",
+            "verification": "Alkuperäisartikkelin tulos- ja keskusteluteksti verkkoindeksistä; PMC:n suora sivu osin estyi.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S003",
+      "doi": "10.1007/s00425-018-3002-y",
+      "title": "Magnetic sensitivity mediated by the Arabidopsis blue-light receptor cryptochrome occurs during flavin reoxidation in the dark",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30194534/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "pooam_2019",
+          "data": {
+            "id": "pooam_2019",
+            "year": 2019,
+            "title": "Magnetic sensitivity mediated by the Arabidopsis blue-light receptor cryptochrome occurs during flavin reoxidation in the dark",
+            "doi": "10.1007/s00425-018-3002-y",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30194534/",
+            "fulltext_url": "https://par.nsf.gov/servlets/purl/10094683",
+            "verification": "Abstrakti ja tekijäkopion indeksoidut menetelmäotteet; koko PDF:n nouto aikakatkaistiin. Vuosi2019 lehtinumero, verkossa2018.",
+            "family": "Ahmad–Martino–Pooam; Hammad2020:n edeltävä aineisto",
+            "system": "A. thaliana taimet, CRY1",
+            "light": "448 nm Royal Blue LED; jaksotettu valo/pimeä. Annos- ja aikataululukuja ei siirretä Hammad2020:stä tähän varmistamatta.",
+            "field": "Staattinen500 µT; kaksoiskäämityksen sham säilyttää noin40 µT paikallisen kentän.",
+            "endpoint": "Hypokotyylin kasvu ja CRY1:n fosforylaatio.",
+            "result": "Kenttä vahvisti CRY-vastetta myös annettuna vain valopulssien välisissä pimeäjaksoissa.",
+            "constraint": "Sama tutkimusperhe; pimeäreoksidaation radikaaliparin tarkka identiteetti jää ehdokkaaksi.",
+            "berm_link": "Ennakkoviritetty fotokemiallinen tila erotetaan samanaikaisesta valaistuksesta."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S004",
+      "doi": "10.1039/c9pp00469f",
+      "title": "Cryptochrome mediated magnetic sensitivity in Arabidopsis occurs independently of light-induced electron transfer to the flavin",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pubs.rsc.org/en/content/articlelanding/2020/pp/c9pp00469f"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "hammad_2020",
+          "data": {
+            "id": "hammad_2020",
+            "year": 2020,
+            "title": "Cryptochrome mediated magnetic sensitivity in Arabidopsis occurs independently of light-induced electron transfer to the flavin",
+            "doi": "10.1039/C9PP00469F",
+            "url": "https://pubs.rsc.org/en/content/articlelanding/2020/pp/c9pp00469f",
+            "fulltext_url": "https://www.researchgate.net/publication/339322794_Cryptochrome_mediated_magnetic_sensitivity_in_Arabidopsis_occurs_independently_of_light-induced_electron_transfer_to_the_flavin",
+            "verification": "Kustantajan abstrakti ja Martino-tekijän lataama kokonainen julkaistu artikkeli; erityisesti Methods s348 ja Fig2–3 tarkistettu.",
+            "family": "Ahmad–Martino–Pooam, mukana Ritz; ei Pooam2019:n riippumaton toisto",
+            "system": "A. thaliana; fosforylaatio phyAphyB-linjassa, kasvu CRY1-yliekspressiolinjassa",
+            "light": "448 nm,60 µmol m−2 s−1;5 min valoa/10 min pimeää. Fosforylaatio6 kierrosta90 min, kasvu5 päivää.",
+            "field": "500 µT staattinen verrattuna40 µT sham-kenttään. Pimeähaarassa kenttä alkaa vasta10 s valon sammuttamisen jälkeen ja kestää9 min50 s.",
+            "endpoint": "CRY1-fosforylaatio ja hypokotyylin pituus.",
+            "result": "Pimeäjakson kenttä vahvisti CRY-vastetta; vain5 min valojakson aikana annettu kenttä ei tuottanut havaittua vastetta. Kasvun muutos merkitsevä vain pimeähaarassa, p<0,01.",
+            "constraint": "Tukee tässä koejärjestelmässä pimeäprosessia; ei osoita kaikkien kryptokromien samaa reaktioparia. Tekijät sallivat myös tuntemattoman CRY:lle signaloivan sensorin.",
+            "berm_link": "Valo ja kenttä voivat toimia peräkkäin. Pelkkä hetkellinen valo×kenttä-tulo ei kata havaintoa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S005",
+      "doi": "10.1038/s41598-020-67165-5",
+      "title": "Arabidopsis cryptochrome is responsive to Radiofrequency (RF) electromagnetic fields",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/s41598-020-67165-5"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "albaqami_2020",
+          "data": {
+            "id": "albaqami_2020",
+            "year": 2020,
+            "title": "Arabidopsis cryptochrome is responsive to Radiofrequency (RF) electromagnetic fields",
+            "doi": "10.1038/s41598-020-67165-5",
+            "url": "https://www.nature.com/articles/s41598-020-67165-5",
+            "verification": "Koko alkuperäisteksti ja menetelmät tarkistettu; PMC7347919 XML luettu.",
+            "family": "Ahmad–Martino–Hammad–Pooam, mukana Ritz; kasvien pimeäketjun sama tutkimusperhe",
+            "system": "A. thaliana taimet, CRY1",
+            "light": "447 nm,60 µmol m−2 s−1;5 min sinistä/10 min pimeää. Fosforylaatio90 min, geeniekspressio180 min, kasvu5 päivää.",
+            "field": "7 MHz sinimuotoinen RF,2±0,5 µT RMS;40 µT staattinen tausta. RF rinnakkain tai kohtisuoraan taustaan; erillinen<200 nT LLF-haara.50 Hz tausta<2 µT.",
+            "endpoint": "CRY1-fosforylaatio, hypokotyylikasvu, auxiiniin liittyvä geeniekspressio.",
+            "result": "RF vähensi CRY1:n fosforylaatiota ja sinivalon kasvunestovastetta; vaikutussuunta muistutti LLF-haaraa.",
+            "constraint": "7 MHz tulos ei kalibroi GHz-matkapuhelinaltistusta. Tulosteksti ja Methods kuvaavat staattisen kentän suhteen kasvutasoon eri tavalla; kuvasta/alkuperäisdatasta tarkistamatta käytetään vain RF:n suhdetta taustakenttään. Yhden geenikuvan p-raja on0,1.",
+            "berm_link": "RF voi muuttaa biologisesti vastaanotettua valosignaalia fotonivirran pysyessä samana."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S006",
+      "doi": "10.1073/pnas.2018043118",
+      "title": "Cellular autofluorescence is magnetic field sensitive",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7826401/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "ikeya_woodward_2021",
+          "data": {
+            "id": "ikeya_woodward_2021",
+            "year": 2021,
+            "title": "Cellular autofluorescence is magnetic field sensitive",
+            "doi": "10.1073/pnas.2018043118",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7826401/",
+            "fulltext_url": "https://www.zcxu.dicp.ac.cn/PNAS2021e2018043118.pdf",
+            "verification": "Alkuperäisartikkelin indeksoitu kokoteksti ja laitoksen PDF:n menetelmäote tarkistettu; suora PMC avaaminen ei onnistunut luotettavasti.",
+            "family": "Tokyo/Ikeya–Woodward; eri tutkimusryhmä kuin Ahmad ja Iversen",
+            "system": "Yksittäiset HeLa-solut, solunsisäiset luonnolliset flaviinit",
+            "light": "450 nm laser,1,0 mW optinen teho; modulaatio mittausjärjestelmässä.1 mW ei ole pinta-alan annos.",
+            "field": "Staattinen magneettikenttä noin0–25 mT.",
+            "endpoint": "Solujen autofluoresenssin kenttäriippuvuus.",
+            "result": "Fluoresenssi pieneni; sovitettu puolisaturaatiokenttä18,0 mT ja saturaatiovaikutus3,7 %, yhteensopiva tripletistä syntyvän flaviiniradikaaliparin kanssa.",
+            "constraint": "Optisesti ajettu mittaus, ei CRY-geenikoe eikä soluvaurio- tai ihmisterveystulos; kymmenien mT:n kenttä.",
+            "berm_link": "Solumiljöössä esiintyvä flaviinifotokemia voi olla kenttäherkkää ilman osoitettua CRY-anturia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S007",
+      "doi": "10.1371/journal.pbio.1000086",
+      "title": "Cryptochrome Mediates Light-Dependent Magnetosensitivity of Drosophila’s Circadian Clock",
+      "record_type": "primary_study",
+      "urls": [
+        "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000086"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "yoshii_2009",
+          "data": {
+            "id": "yoshii_2009",
+            "year": 2009,
+            "title": "Cryptochrome Mediates Light-Dependent Magnetosensitivity of Drosophila’s Circadian Clock",
+            "doi": "10.1371/journal.pbio.1000086",
+            "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000086",
+            "verification": "Kokoteksti PMC2667543 XML tarkistettu.",
+            "family": "Helfrich-Förster–Yoshii–Ahmad; osittain yhteinen Ahmad-verkosto",
+            "system": "Drosophila melanogaster, villityyppi, cryb/cryOUT ja CRY-yliekspressio",
+            "light": "Jatkuva465–470 nm0,18 µW cm−2; punainen625–630 nm samalla tehotiheydellä. Ennen kenttää10–15 päivän sinivaloperustaso.",
+            "field": "Staattinen0,150,300 tai500 µT, magneettisesti suojattu koe.",
+            "endpoint": "Vapaasti käyvä vuorokausijakso ja rytmisyys.",
+            "result": "300 µT:ssa40 % kärpäsistä pidensi jaksoa≥0,5 h,12 % lyhensi. CRY-yliekspressiossa>60 % muuttui rytmittömiksi; cry-mutanttien vaste heikko/puuttuva, punavalossa ei merkitsevää vastetta.",
+            "constraint": "Keinotekoinen jatkuva hämärä sinivalo; etumerkki ei ole yleispätevä suhteessa Fedele2014:ään.",
+            "berm_link": "Kenttävastetta säätelee valon jo muuttama kellotila."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S008",
+      "doi": "10.1371/journal.pgen.1004804",
+      "title": "Genetic Analysis of Circadian Responses to Low Frequency Electromagnetic Fields in Drosophila melanogaster",
+      "record_type": "primary_study",
+      "urls": [
+        "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004804"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "fedele_2014",
+          "data": {
+            "id": "fedele_2014",
+            "year": 2014,
+            "title": "Genetic Analysis of Circadian Responses to Low Frequency Electromagnetic Fields in Drosophila melanogaster",
+            "doi": "10.1371/journal.pgen.1004804",
+            "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004804",
+            "verification": "Kokoteksti PMC4256086 XML; valo-, kela- ja SCN-menetelmät tarkistettu.",
+            "family": "Kyriacou–Rosato/Leicester–Cambridge; päällekkäinen Bradlaugh2023:n kanssa",
+            "system": "D. melanogaster CRY-geenirakenteet; erillinen hiiren SCN-leikehaara",
+            "light": "450±20 nm tavallisesti0,25 µW cm−2, vertailu500±20 nm;3 d LD,7 d jatkuva sininen,8 d kenttä.50 Hz kokeessa0,09 µW cm−2 LED-välkynnän vuoksi.",
+            "field": "Pääasiallisesti300 µT3 Hz; myös0 ja50 Hz sekä90 µT/1 mT. SCN50–500 µT50 Hz.",
+            "endpoint": "Kellon jakso, aktiivisuus ja hiiren SCN:n PER2-luminesenssi.",
+            "result": "450 nm:ssa jakso lyheni,500 nm:ssa piteni. CRY:n C-terminaali tarpeellinen kellovasteelle; W342F ei estänyt. SCN:ssä ei jakso- tai amplitudivastetta myöskään405 nm/625 nm valaistuksella.",
+            "constraint": "50 Hz kela aiheutti LED-ohjaukseen välkyntää: suora laitekytkentä, ei sellaisenaan biologinen synergia. CRY2:n fly-hyperaktiivisuus ei tarkoita samaa kellovastetta.",
+            "berm_link": "Spektri, molekyylirakenne ja kudos määrittävät sekä vasteen olemassaolon että etumerkin."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S009",
+      "doi": "10.1523/jneurosci.2140-16.2016",
+      "title": "Magnetic Fields Modulate Blue-Light-Dependent Regulation of Neuronal Firing by Cryptochrome",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5083005/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "giachello_2016",
+          "data": {
+            "id": "giachello_2016",
+            "year": 2016,
+            "title": "Magnetic Fields Modulate Blue-Light-Dependent Regulation of Neuronal Firing by Cryptochrome",
+            "doi": "10.1523/JNEUROSCI.2140-16.2016",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5083005/",
+            "verification": "Alkuperäinen abstrakti ja keskeinen tulosteksti tarkistettu; tarkkaa valoannosta ei saatu tässä haussa itsenäisesti varmistettua.",
+            "family": "Manchester/Baines–Jones–Scrutton; yhteinen Bradlaugh2023:n kanssa",
+            "system": "D. melanogaster toukan tunnistetut aCC/RP2-motoneuronit, ektooppinen CRY",
+            "light": "Sinivalostimulaatio; tarkka spektri/tehotiheys jätetty avoimeksi tämän tarkistuksen perusteella.",
+            "field": "Staattinen100 mT kestomagneetti.",
+            "endpoint": "Kalvopotentiaali, sisäänmenoresistanssi ja aktiopotentiaalit.",
+            "result": "Kenttä voimisti CRY:n välittämää sinivalon depolarisaatio- ja impulssivastetta.",
+            "constraint": "Ektooppinen ekspressio ja korkea100 mT kenttä. HYPERKINETIC-välitys on ketjun ehdokas; kaikkia molekyylilinkkejä ei mitattu tässä samassa kokeessa.",
+            "berm_link": "Fotokemiallisen sensorin vaikutus voidaan välittää sähköiseen hermovasteeseen."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S010",
+      "doi": "10.1038/s41586-023-05735-z",
+      "title": "Essential elements of radical pair magnetosensitivity in Drosophila",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/s41586-023-05735-z"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "bradlaugh_2023",
+          "data": {
+            "id": "bradlaugh_2023",
+            "year": 2023,
+            "title": "Essential elements of radical pair magnetosensitivity in Drosophila",
+            "doi": "10.1038/s41586-023-05735-z",
+            "url": "https://www.nature.com/articles/s41586-023-05735-z",
+            "verification": "Koko PMC9977682 XML ja menetelmät tarkistettu.",
+            "family": "Manchester/Baines–Jones ja Leicester/Kyriacou–Rosato; Giachello/Fedele-perheiden yhteistyö",
+            "system": "D. melanogaster aCC-neuronit ja kokonaisen kärpäsen kellokoe; CRY C-terminaalirakenteet, FAD-lisäys",
+            "light": "Neuronit470 nm noin2,2 mW cm−2,30 s; kellokoe450±20 nm0,15–0,25 µW cm−2,7 d esitila+7 d altistus.",
+            "field": "Neuronit100±5 mT staattinen; kellokoe50 tai300 µT3 Hz.",
+            "endpoint": "Aktiopotentiaalien taajuus ja vuorokausijakso.",
+            "result": "CRY52-aa C-terminaali ilman FAD-taskua tuki herkkyyttä. Korkea FAD(200 µM) myös cry-null-neuronissa;50 µM FAD eri rakenteissa. TäysiCRY: sinivalovaste1,69-kertainen, valo+100 mT2,41-kertainen.",
+            "constraint": "Vapaan FAD:n riittävyyttä osoittava neuronikoe käytti100 mT kenttää; sitä ei saa kutsua50 µT FAD-riittävyyskokeeksi. Rakenteet/transgeenit muuttavat solutilaa.",
+            "berm_link": "Magneettinen sensori ja biologinen transduktori voivat olla eri molekyylejä."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S011",
+      "doi": "10.1371/journal.pbio.2006229",
+      "title": "Low-intensity electromagnetic fields induce human cryptochrome to modulate intracellular reactive oxygen species",
+      "record_type": "primary_study",
+      "urls": [
+        "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006229"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "sherrard_2018",
+          "data": {
+            "id": "sherrard_2018",
+            "year": 2018,
+            "title": "Low-intensity electromagnetic fields induce human cryptochrome to modulate intracellular reactive oxygen species",
+            "doi": "10.1371/journal.pbio.2006229",
+            "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2006229",
+            "verification": "Koko PMC6168118 XML, solujen pimeäolosuhteet ja geenimanipulaatiot tarkistettu.",
+            "family": "Ahmad–Martino–Sherrard; ei kasviketjusta riippumaton tutkimusperhe",
+            "system": "Drosophila; Spodoptera frugiperda Sf21; ihmisen HEK293 ja hiiren MEF",
+            "light": "Kärpäset sinivalo60 µmol m−2 s−1/96 h, puna-verrokki; Sf21 sininen80 µmol m−2 s−1/15 min. Nisäkässolujen15 min ROS-,3 h geeni- ja48 h kasvualtistukset pimeässä.",
+            "field": "PEMF10 Hz, noin1,8 mT huippu; Methods mainitsee myös2 mT, käytetään noin-arvoa. Vastakäämitty sham ja µmetallikontrollit.",
+            "endpoint": "ROS, kasvu, transkriptio ja toukkien koteloitumispaikan valinta.",
+            "result": "HEK293/MEF: ROS lisääntyi,48 h HEK-kasvu hidastui; CRY1/2-knockdown tai double-knockout poisti/vaimensi vasteen. Ihmisen CRY1 pelasti kärpäsen vasteen.",
+            "constraint": "Pitkä pimeäaltistus ei osoita lyhyen fotokemiallisen esivirittymisen riittävyyttä. CRY:n tarve ei yksin tunnista kenttäherkkää radikaaliparia.",
+            "berm_link": "CRY-kytkentä voi olla nisäkässolussa pimeässä toimiva; välitön sinivalovaatimus ei ole universaali."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S012",
+      "doi": "10.3390/bioengineering11070637",
+      "title": "Synergistic Cellular Responses Conferred by Concurrent Optical and Magnetic Stimulation Are Attenuated by Simultaneous Exposure to Streptomycin: An Antibiotic Dilemma",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11274164/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "iversen_2024",
+          "data": {
+            "id": "iversen_2024",
+            "year": 2024,
+            "title": "Synergistic Cellular Responses Conferred by Concurrent Optical and Magnetic Stimulation Are Attenuated by Simultaneous Exposure to Streptomycin: An Antibiotic Dilemma",
+            "doi": "10.3390/bioengineering11070637",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11274164/",
+            "verification": "Koko alkuperäisteksti, Methods ja kuvatekstit tarkistettu; PMID39061719.",
+            "family": "NUS/Franco-Obregón–Iversen–Tai, Fröhlich; sama perhe kuin2025",
+            "system": "Hiiren C2C12-myoblastit",
+            "light": "660+830 nm;1 kHz optiset pulssit≤0,3 ms;huippu25 mW cm−2,keskimäärin5 mW cm−2.",
+            "field": "20 Hz epäsymmetrinen trapetsiaalinen PEMF, nouseva huippu1,6 mT;16 min pääaltistus. ROS/ATP-haaroissa5 min.",
+            "endpoint": "24 h soluproliferaatio,ROS,ATP,TRPC1 ja solusyklin proteiinit.",
+            "result": "Yhdistelmä tuotti vahvimman proliferaatio-/ATP-vasteen ja pienensi ROS:ia. Streptomysiini100 µg/ml15 min ennen altistusta heikensi,15 min jälkeen ei; tekijät raportoivat supra-additiivisuutta.",
+            "constraint": "Punainen/NIR: CRY-valosensoria ei identifioitu. Antibiootti ei ole yksiselitteinen CRY- tai TRPC1-spesifinen koe; yhteinen transduktio on mekanistinen tulkinta.",
+            "berm_link": "Erilaiset optiset sisääntuloreitit voivat kohdata kenttävasteen kalsium–mitokondrioakselilla."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S013",
+      "doi": "10.3390/cells14030231",
+      "title": "Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11817702/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "iversen_2025",
+          "data": {
+            "id": "iversen_2025",
+            "year": 2025,
+            "title": "Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis",
+            "doi": "10.3390/cells14030231",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11817702/",
+            "verification": "Koko alkuperäisteksti, Methods ja Fig1 kontrollin normalisointi tarkistettu.",
+            "family": "NUS/Franco-Obregón–Iversen–Tai;2024:n rinnakkainen mekanismihaara",
+            "system": "C2C12-myoblastit; CRY2-yliekspressio/vaimennus ja RFK-vaimennus",
+            "light": "Tavallinen6500 K Philips-fluoresenssivalo vs läpinäkyvä/musta/µmetallilaatikko. Spektriä kuvataan, mutta näytepinnan mitattua irradianssia ei ilmoiteta.",
+            "field": "PEMF1,5 mT10 min,24 h kylvöstä,<40 % konfluenssi,ylös/alas. Pulssirakenne viitataan aiempiin artikkeleihin; tämän tarkistuksen perusteella ei kiinnitetä täsmällistä toistotaajuutta.",
+            "endpoint": "Solumäärä24 h myöhemmin,CRY2/RFK/TRPC1/solusyklin proteiinit,coIP ja solupaikannus.",
+            "result": "CRY2-yliekspressio vahvisti ja CRY2/RFK-vaimennus heikensi vasteita; pimeys vaimensi vastetta ja suuntavalikoivuutta. Fig1:n valoverrokkiin normalisoidut luvut alas/ylös:valo+67/+40 %,pimeä+39/+22 %.",
+            "constraint": "Ei 'kaikki vaste katosi pimeässä': Fig1:ssä jää vaste. RFK-mRNA:n lasku≈95 % ei ole suora FAD-pitoisuusmittaus. CoIP osoittaa assosiaatiota, ei yksin suoraa sitoutumista.",
+            "berm_link": "Valohistoria, flaviiniaineenvaihdunta, CRY2 ja TRPC1 ovat ehdollisen biologisen herkkyyden komponentteja."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S014",
+      "doi": "10.1038/s41467-021-21002-z",
+      "title": "Cryptochrome 1 mediates light-dependent inclination magnetosensing in monarch butterflies",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/s41467-021-21002-z"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "wan_2021",
+          "data": {
+            "id": "wan_2021",
+            "year": 2021,
+            "title": "Cryptochrome 1 mediates light-dependent inclination magnetosensing in monarch butterflies",
+            "doi": "10.1038/s41467-021-21002-z",
+            "url": "https://www.nature.com/articles/s41467-021-21002-z",
+            "verification": "Koko PMC7859408 XML ja kenttä-/valomenetelmät tarkistettu.",
+            "family": "Merlin/Wan/Texas A&M; oma geneettinen aineisto, Reppertin tutkimusverkostoyhteyksiä",
+            "system": "Danaus plexippus, villityyppi ja dpCry1/dpCry2 knockout",
+            "light": "350–800 nm4,35×10^15 fotonia s−1 cm−2;380–430 nm,huippu399,1,61×10^14;480–580 nm,huippu520,1,59×10^14.30 min pimeäadaptaatio.",
+            "field": "44,52 µT; inklinaatio+59,1°→−59,1°10 sekunniksi, deklinaatio≈0,1° säilytetty.",
+            "endpoint": "Kiinnitetyn perhosen siiveniskujen määrä inklinaation käännön jälkeen.",
+            "result": "Vaste täydessä ja UV-A/sinivalossa; puuttui pimeässä/vihreässä ja Cry1-knockoutissa. Cry2 ei ollut tarpeellinen. Silmät ja tuntosarvet osallistuivat.",
+            "constraint": "Tämä on inklinaatiomuutoksen motorinen vaste, ei muuttoreitin tai populaatiohaitan mittaus. CRY1:n tarve ei yksin todista sen olevan primaarinen radikaaliparianturi.",
+            "berm_link": "Native-lajin molekyyli-, elin- ja spektrirajaus; mammalian-like CRY2 ei ole kaikkien eläinten yleisratkaisu."
+          }
+        },
+        {
+          "section": "ecology",
+          "local_id": "E14",
+          "data": {
+            "id": "E14",
+            "authors": "Wan ym.",
+            "year": 2021,
+            "date": "2021-02-03",
+            "title": "Cryptochrome 1 mediates light-dependent inclination magnetosensing in monarch butterflies",
+            "doi": "10.1038/s41467-021-21002-z",
+            "url": "https://www.nature.com/articles/s41467-021-21002-z",
+            "species": [
+              "Danaus plexippus"
+            ],
+            "design": "Magneettisuunta × valospektri × CRY1/CRY2-genotyyppi.",
+            "light": "380–430 nm: 1,61×10^14 fotonia/s/cm²; 480–580 nm: 1,59×10^14; lisäksi valkoinen/pimeä.",
+            "field": "44,52 µT; inklinaatio +59,1°→−59,1° 10 s ajaksi.",
+            "timing": "30 min pimeäadaptaatio; 2 min kontrolli, 5 min tauko, 10 s käännös, 90 s palautuminen.",
+            "result": "Siiveniskujen kasvu valkoisessa ja UV-A/sinisessä, ei pimeässä/vihreässä eikä CRY1-poistogeenisillä. CRY2 ei välttämätön.",
+            "role": "Todellinen kontrolloitu valo × magneettinen vaste; reseptorikomponentin riippuvuus.",
+            "limits": "Pääte siiveniskut, ei mitattu vaellus-/lisääntymismenestys; monarkin CRY1 ei ihmis-CRY:n validointi.",
+            "checked": "Alkuperäiskokoteksti, Figs 1–3 ja Methods."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S015",
+      "doi": "10.1242/jeb.243000",
+      "title": "Cryptochrome-dependent magnetoreception in a heteropteran insect continues even after 24 h in darkness",
+      "record_type": "primary_study",
+      "urls": [
+        "https://journals.biologists.com/jeb/article/224/19/jeb243000/272339/Cryptochrome-dependent-magnetoreception-in-a"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "netusil_2021",
+          "data": {
+            "id": "netusil_2021",
+            "year": 2021,
+            "title": "Cryptochrome-dependent magnetoreception in a heteropteran insect continues even after 24 h in darkness",
+            "doi": "10.1242/jeb.243000",
+            "url": "https://journals.biologists.com/jeb/article/224/19/jeb243000/272339/Cryptochrome-dependent-magnetoreception-in-a",
+            "verification": "Alkuperäinen kokoteksti, tulokset ja menetelmät tarkistettu kustantajalta.",
+            "family": "Netušil–Vácha–Doležel, Czechia; eri perhe kuin Ahmad ja brittiläiset kärpäskokeet",
+            "system": "Pyrrhocoris apterus; CryII04-null ja villityypit",
+            "light": "505 nm5,3 µW cm−2,18 h valo/6 h pimeä; pimeähaaroissa viimeisestä näkyvästä valosta25–28 tai42–45 h.852 nm IR-kameravalo jatkui.",
+            "field": "50 µT vaakavektori,0° inklinaatio; myötäpäiväinen kierros10 s(0,1 Hz). Kelan vastavirta-sham.",
+            "endpoint": "Opittu liikkumisen pysähtyminen magneettivektorin kiertoon, kuumailmaehdollistaminen.",
+            "result": "Koiraiden vaste CryII-riippuvainen;25–28 h pimeässä havaittu(n73,p0,0012),42–45 h ei(n81,p0,3007). Naaraiden vastaava505 nm vaste ei merkitsevä.",
+            "constraint": "Ei osoita radikaaliparin spin-koherenssin kestävän vuorokautta. Muisti voi liittyä kemialliseen/solulliseen tilaan tai käyttäytymisehtoon; IR:n osuutta ei erikseen ratkaistu.",
+            "berm_link": "Pitkä valohistoria, sukupuoli ja opittu käyttäytyminen voivat rajata kenttävasteen ilmenemistä."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S016",
+      "doi": "10.1038/ncomms1364",
+      "title": "Human cryptochrome exhibits light-dependent magnetosensitivity",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/ncomms1364"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "foley_2011",
+          "data": {
+            "id": "foley_2011",
+            "year": 2011,
+            "title": "Human cryptochrome exhibits light-dependent magnetosensitivity",
+            "doi": "10.1038/ncomms1364",
+            "url": "https://www.nature.com/articles/ncomms1364",
+            "verification": "Koko PMC3128388 XML tarkistettu.",
+            "family": "Gegear–Reppert/Foley; eri ryhmä kuin Iversen, osin verkostoyhteys monarkkitutkimuksiin",
+            "system": "D. melanogaster cryb-mutantissa ilmaistu ihmisen CRY2",
+            "light": "Täysi spektri;>500 nm poisti vasteen,>400 nm palautti osittain. Irradianssikäyrät viitattu aiempaan julkaisuun.",
+            "field": "Staattinen T-sokkelogradientti paikallisesta noin8-kertaiseen geomagneettiseen kenttään.",
+            "endpoint": "Naiivi välttäminen ja sakkaroosiehdollistettu T-sokkelovalinta.",
+            "result": "Ihmisen CRY2-transgeeni pelasti sinivalosta riippuvan magneettivasteen kärpästaustassa.",
+            "constraint": "Heterologinen proteiinikoe; ei ihmisen verkkokalvon tai terveyden suora mittaus. Bassetto2023 heikentää tämän assay-perheen toistettavuutta.",
+            "berm_link": "Proteiinin kyky osallistua yhteyteen riippuu sitä ympäröivästä solukoneistosta."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S017",
+      "doi": "10.1098/rsif.2008.0519",
+      "title": "Effect of magnetic fields on cryptochrome-dependent responses in Arabidopsis thaliana",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2817153/"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "harris_2009",
+          "data": {
+            "id": "harris_2009",
+            "year": 2009,
+            "title": "Effect of magnetic fields on cryptochrome-dependent responses in Arabidopsis thaliana",
+            "doi": "10.1098/rsif.2008.0519",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2817153/",
+            "verification": "Koko alkuperäisartikkeli PMC-XML:nä tarkistettu.",
+            "family": "Harris–Henbest–Maeda–Hore/Oxford; riippumaton Ahmad2007:n fenotyyppitoisto, myöhempiä yhteisjulkaisuja",
+            "system": "A. thaliana taimet",
+            "light": "Sinivalo, useita intensiteettejä; vertailu alkuperäisen kasvikokeen olosuhteisiin sekä sakkaroosivariaatio.",
+            "field": "500 vs50 µT; lisäksi50 µT,1 mT ja≈100 mT vs nollakenttä.",
+            "endpoint": "Hypokotyylin pituus, antosyaanit,CHS/HY5/GST-geeniekspressio.",
+            "result": "Ei johdonmukaisia merkitseviä kenttävasteita tutkituissa asetelmissa.",
+            "constraint": "Ei sama Hammad2020:n ajallisesti eroteltu protokolla; silti vahva raja yleistykselle, että mikä tahansa kasvin sinivalovaste olisi magneettiherkkä.",
+            "berm_link": "Vasteoperaattorin ehtoja ei voi jättää pois; nollatulosta ei saa selittää automaattisesti oletetulla peittymisellä."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S018",
+      "doi": "10.1038/s41586-023-06397-7",
+      "title": "No evidence for magnetic field effects on the behaviour of Drosophila",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/s41586-023-06397-7"
+      ],
+      "extractions": [
+        {
+          "section": "photochemistry",
+          "local_id": "bassetto_2023",
+          "data": {
+            "id": "bassetto_2023",
+            "year": 2023,
+            "title": "No evidence for magnetic field effects on the behaviour of Drosophila",
+            "doi": "10.1038/s41586-023-06397-7",
+            "url": "https://www.nature.com/articles/s41586-023-06397-7",
+            "verification": "Koko PMC10432270 XML, toistoasetelmat ja tulokset tarkistettu.",
+            "family": "Hore–Mouritsen–Kattnig–Winklhofer/Oxford–Oldenburg; riippumaton Gegear/Fedele-käyttäytymisassay-perheistä",
+            "system": "D. melanogaster;97 658 T-sokkelossa ja10 960 negatiivisessa geotaksiksessa",
+            "light": "Alkuperäisiä vastaava täyden spektrin/UV:n sisältävä sokkelovalaistus; geotaksiksessa sininen/punainen; lisäksi luonnonvalossa kasvatetut ryhmät.",
+            "field": "Sokkelon staattiset gradientit; geotaksiksen300/500 µT sekä lisäasetelman0/90/220/300 µT; sokkoutetut sham-vertailut.",
+            "endpoint": "T-sokkelovalinta ja putkessa ylöspäin kiipeäminen.",
+            "result": "Ei magneettivaikutusta; sininen/punainen käyttäytymisero toistui. Tekijät kritisoivat alkuperäisten asetelmien pieniä otoksia/pseudoreplikaatiota.",
+            "constraint": "Ei suora Bradlaugh2023:n neuronielektrofysiologian, Hammad2020:n fosforylaation tai Iversenin solukokeen toisto. Assay-kiistaa käsiteltiin Nature-vastineissa2024.",
+            "berm_link": "Biologisen mekanismin osaketju ja kokonaiseläimen käyttäytymisassay erotettava; todistuspaino ei seuraa julkaisujen kappalemäärää."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S019",
+      "doi": "10.1111/jcmm.12250",
+      "title": "Liu DD, Ren Z, Yang G, Zhao QR, Mei YA. Melatonin protects rat cerebellar granule cells against electromagnetic field-induced increases in Na+ currents through intracellular Ca2+ release. J Cell Mol Med. 2014;18(6):1060–1070.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4508145/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4508145/fullTextXML"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "liu2014",
+          "data": {
+            "id": "liu2014",
+            "citation": "Liu DD, Ren Z, Yang G, Zhao QR, Mei YA. Melatonin protects rat cerebellar granule cells against electromagnetic field-induced increases in Na+ currents through intracellular Ca2+ release. J Cell Mol Med. 2014;18(6):1060–1070.",
+            "doi": "10.1111/jcmm.12250",
+            "pmid": "24548607",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC4508145/",
+              "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4508145/fullTextXML"
+            ],
+            "population": "7 vrk ikäisten Sprague–Dawley-rottien pikkuaivojen jyväissolut; 6–8 vrk primaariviljelmässä.",
+            "exposure": "Sinimuotoinen 50 Hz magneettikenttä, 1 mT, 60 min; Helmholtzin kelat. Melatoniini 1 tai 5 µM. Amplitudin RMS/huippukonventiota ei yksilöity tässä lähdepoiminnassa.",
+            "result": "Na-virtatiheyden lisäys 62,5 ± 6,6 %; 1 ja 5 µM melatoniinilla jäljelle jäi 22,0 ± 5,9 % ja 8,9 ± 4,4 %. MT2-agonisti IIK-7 10 µM jäljitteli vaikutusta, antagonisti 4-P-PDOT 10 µM poisti sen.",
+            "mechanism": "Melatoniini ei muuttanut lepo-Ca:ta; se vahvisti 27 mM KCl:n (30 s) herättämää Ca-vastetta sekä kenttä- että verrokkisoluissa. Kenttä yksin ei suurentanut tätä Ca-vastetta. Farmakologia tukee MT2:n, Ca-influxin käynnistämän RyR-vapautumisen ja CaM-reitin osuutta.",
+            "limits": "µM-lääkeannokset, rotan neuronit ja 1 mT; ei ihmisvalaistusta eikä lisääntymistulosta. PKA:n aktivaation tai Na-aktivaatiokäyrän kenttämuutoksen kumoutumista ei todettu. Solujen n ei ole eläinten n.",
+            "research_family": "Fudan / Mei; samaa soluelektrofysiologista tutkimuslinjaa kuin artikkelin aiempi kenttä–Na-virtatyö.",
+            "verification": "Alkuperäisartikkelin koko XML, menetelmät, tulokset ja kuvaselosteet luettu.",
+            "controls": "Raportoitu enimmäislämpeneminen 0,4 ± 0,1 °C; erillinen 37 vs 37,4 °C lämpöverrokki. Ruthenium red vaikutti myös yksin Na-virtaan, joten salpaajakokeita ei pidä lukea täydellisen spesifisinä mekanismieristyksinä."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S020",
+      "doi": "10.1210/jc.2004-0957",
+      "title": "Cajochen C, Münch M, Kobialka S, et al. High sensitivity of human melatonin, alertness, thermoregulation, and heart rate to short wavelength light. J Clin Endocrinol Metab. 2005;90(3):1311–1316.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/15585546/",
+        "https://www.chronobiology.ch/wp-content/uploads/publications/2005_04.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "cajochen2005",
+          "data": {
+            "id": "cajochen2005",
+            "citation": "Cajochen C, Münch M, Kobialka S, et al. High sensitivity of human melatonin, alertness, thermoregulation, and heart rate to short wavelength light. J Clin Endocrinol Metab. 2005;90(3):1311–1316.",
+            "doi": "10.1210/jc.2004-0957",
+            "pmid": "15585546",
+            "urls": [
+              "https://pubmed.ncbi.nlm.nih.gov/15585546/",
+              "https://www.chronobiology.ch/wp-content/uploads/publications/2005_04.pdf"
+            ],
+            "population": "10 tervettä 21–29-vuotiasta miestä; yksi sairauden vuoksi pois, analyysi n=9. Tasapainotettu vaihtovuorokoe.",
+            "exposure": "460 tai 550 nm, kaistan puolileveys ±10 nm, 2 h myöhäisillalla noin 13,5 h heräämisestä. Molemmissa 2,8 × 10^13 fotonia/cm²/s; 12,1 ja 10,05 µW/cm². Ennen testiä 1,5 h 2 lx ja 2 h pimeää. Silmät auki, pupilleja ei lääkelajennettu.",
+            "result": "460 nm vaimensi sylkimelatoniinia enemmän, lisäsi vireyttä, vaimensi ydinlämpötilan iltalaskua ja suurensi sykettä suhteessa 550 nm:iin. 550 nm:n melatoniinivaikutus oli lievä ja ohimenevä.",
+            "limits": "Sama fotonimäärä, eri aallonpituus; ei sama fotopinen luksimäärä. 460 nm oli noin 5 lx. Ei RF-altistuskoetta eikä lisääntymispäätetapahtumaa.",
+            "research_family": "Basel / Cajochen–Wirz-Justice; itsenäinen kohortti suhteessa Harvardin ja Rushin sarjoihin.",
+            "verification": "Alkuperäinen instituution PDF, menetelmät ja tulokset luettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S021",
+      "doi": "10.1210/jc.2010-2098",
+      "title": "Gooley JJ, Chamberlain K, Smith KA, et al. Exposure to room light before bedtime suppresses melatonin onset and shortens melatonin duration in humans. J Clin Endocrinol Metab. 2011;96(3):E463–E472.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3047226/",
+        "https://pubmed.ncbi.nlm.nih.gov/21193540/"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "gooley2011",
+          "data": {
+            "id": "gooley2011",
+            "citation": "Gooley JJ, Chamberlain K, Smith KA, et al. Exposure to room light before bedtime suppresses melatonin onset and shortens melatonin duration in humans. J Clin Endocrinol Metab. 2011;96(3):E463–E472.",
+            "doi": "10.1210/jc.2010-2098",
+            "pmid": "21193540",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3047226/",
+              "https://pubmed.ncbi.nlm.nih.gov/21193540/"
+            ],
+            "population": "116 tervettä 18–30-vuotiasta kahden kontrolloidun laboratorioprotokollan analyysissä; osatutkimukset n=104 ja n=12.",
+            "exposure": "Huonevalo alle 200 lx tai hämärä alle 3 lx kahdeksan tunnin aikana ennen nukkumaanmenoa; loisteputkivalaistus. Lisäksi huonevalo tavallisen unijakson aikana erillisessä protokollassa.",
+            "result": "103/104:llä melatoniinin havaittu alku myöhästyi huonevalossa. Kesto 8 h 45 min vs 10 h 17 min. Ennen nukkumaanmenoa lasketun AUC:n vaimennuksen mediaani 71,4 %; koko vuorokauden vaikutus huomattavasti pienempi. Yön läpi huonevalo vaimensi yli 50 % melatoniinista 85 %:ssa koejaksoja.",
+            "limits": "Akuutin erityksen vaimentumisen aiheuttama havaittu alun muutos ei sellaisenaan osoita pysyvää kellon vaiheensiirtoa. Eri AUC-ikkunoita ei pidä yhdistää.",
+            "research_family": "Harvard / Brigham / Czeisler–Lockley. Kirjoittajayhteys Zeitzer-, Smith- ja Chang-sarjoihin; mahdollinen osallistujapäällekkäisyys vanhoihin protokolliin ei tässä yksilöity.",
+            "verification": "Alkuperäinen tekijän kokoteksti-PDF ja PubMed tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S022",
+      "doi": "10.1073/pnas.1418490112",
+      "title": "Chang AM, Aeschbach D, Duffy JF, Czeisler CA. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. Proc Natl Acad Sci USA. 2015;112(4):1232–1237.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4313820/",
+        "https://elib.dlr.de/94985/1/Chang%20et%20al%20-%20Evening%20Use%20of%20eReaders%20-%20PNAS%202014.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "chang2015",
+          "data": {
+            "id": "chang2015",
+            "citation": "Chang AM, Aeschbach D, Duffy JF, Czeisler CA. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. Proc Natl Acad Sci USA. 2015;112(4):1232–1237.",
+            "doi": "10.1073/pnas.1418490112",
+            "pmid": "25535358",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC4313820/",
+              "https://elib.dlr.de/94985/1/Chang%20et%20al%20-%20Evening%20Use%20of%20eReaders%20-%20PNAS%202014.pdf"
+            ],
+            "population": "12 tervettä nuorta aikuista, satunnaistettu 14 vrk vaihtovuorokoe; melatoniinivertailussa n=11 kummassakin ehdossa.",
+            "exposure": "Viisi iltaa kummassakin ehdossa; lukeminen klo 18–22, 15 min tauko. iPad suurimmalla kirkkaudella 30–45 cm etäisyydellä, silmään 30–50 lx; spektrihuippu 452 nm. Painettu kirja noin 0,91 lx silmään, noin 3 lx huoneessa. Kiinteä uni-ikkuna klo 22–06.",
+            "result": "Viidentenä iltana e-lukijan melatoniinivaimennus 55,12 ± 20,12 %. Seuraavan päivän hämärämittauksen melatoniinialku klo 22.31 vs 21.01. N2-univiive noin 10 min pidempi, REM-unta vähemmän, aamuvireys heikompi.",
+            "limits": "Spektriä ja silmään tulevaa valaistusvoimakkuutta ei vakioitu yhtä suuriksi; tulosta ei voi erotella pelkäksi sinisen aallonpituuden vaikutukseksi. Kokonaisuniaika ei eronnut merkitsevästi kiinteässä uni-ikkunassa. Ei RF:n eristyskoe.",
+            "research_family": "Harvard / Brigham / Czeisler–Aeschbach; kirjoittajapäällekkäisyys muiden Chang-tutkimusten kanssa, eri koejärjestely.",
+            "verification": "Alkuperäinen DLR:n kokoteksti-PDF menetelmineen ja spektritaulukkoineen luettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S023",
+      "doi": "10.1111/j.1469-7793.2000.00695.x",
+      "title": "Zeitzer JM, Dijk DJ, Kronauer RE, Brown EN, Czeisler CA. Sensitivity of the human circadian pacemaker to nocturnal light: melatonin phase resetting and suppression. J Physiol. 2000;526(3):695–702.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://physoc.onlinelibrary.wiley.com/doi/10.1111/j.1469-7793.2000.00695.x",
+        "https://modresvetlo.cz/PDF/Sensitivity_of_the_human_circadian_pacemaker_to_nocturnal_light.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "zeitzer2000",
+          "data": {
+            "id": "zeitzer2000",
+            "citation": "Zeitzer JM, Dijk DJ, Kronauer RE, Brown EN, Czeisler CA. Sensitivity of the human circadian pacemaker to nocturnal light: melatonin phase resetting and suppression. J Physiol. 2000;526(3):695–702.",
+            "doi": "10.1111/j.1469-7793.2000.00695.x",
+            "urls": [
+              "https://physoc.onlinelibrary.wiley.com/doi/10.1111/j.1469-7793.2000.00695.x",
+              "https://modresvetlo.cz/PDF/Sensitivity_of_the_human_circadian_pacemaker_to_nocturnal_light.pdf"
+            ],
+            "population": "23 tervettä 18–44-vuotiasta, yksi testivoimakkuus kullekin; 21 jäi analyysiin kahden ajoituspoikkeaman jälkeen.",
+            "exposure": "6,5 h, 3–9100 lx silmän sarveiskalvon tasossa; UV-suodatettu viileänvalkoinen loisteputkivalo. Altistus suunnattu alkuyöhön; keskipiste keskimäärin 2 h ennen melatoniinimaksimia. Yhdeksän vrk laboratorioprotokolla.",
+            "result": "Epälineaarinen annos–vaste sekä melatoniinivaimennuksessa että myöhemmin mitatussa vaiheensiirrossa. Puolivaste tavanomaisen huonevalon alueella, vaiheensiirrossa noin 80–160 lx; noin 100 lx saattoi tuottaa huomattavan vasteen suhteessa 9000 lx:iin.",
+            "limits": "Annoskäyrä eri henkilöistä, ei jokaisen omaa annossarjaa. Koeolosuhteinen puolivaste ei ole yleinen turvallisuusraja eikä kaikille spektreille sama luku.",
+            "research_family": "Harvard / Brigham / Czeisler; sama tutkimusperhe kuin Smith, Gooley ja Chang.",
+            "verification": "Alkuperäinen kokoteksti-PDF; osallistujamäärä, altistus ja mallit tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S024",
+      "doi": "10.1073/pnas.1901824116",
+      "title": "Phillips AJK, Vidafar P, Burns AC, et al. High sensitivity and interindividual variability in the response of the human circadian system to evening light. Proc Natl Acad Sci USA. 2019;116(24):12019–12024.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6575863/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6575863/fullTextXML"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "phillips2019",
+          "data": {
+            "id": "phillips2019",
+            "citation": "Phillips AJK, Vidafar P, Burns AC, et al. High sensitivity and interindividual variability in the response of the human circadian system to evening light. Proc Natl Acad Sci USA. 2019;116(24):12019–12024.",
+            "doi": "10.1073/pnas.1901824116",
+            "pmid": "31138694",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC6575863/",
+              "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6575863/fullTextXML"
+            ],
+            "population": "56 tervettä 18–30-vuotiasta suoritti protokollan; n=55 analyysissä. Yksilöllinen luotettava kokonais-ED50 n=42.",
+            "exposure": "Saman henkilön toistetut 5 h iltakokeet: 10, 30, 50, 100, 200, 400 tai 2000 lx; alle 1 lx lähtöehto. Aloitus 4 h ennen tavanomaista nukkumaanmenoa. Loisteputken mitattu värilämpötila 3968 K, spektrihuippu 545 nm.",
+            "result": "Melatoniinivaimennuksen ryhmä-ED50 24,60 lx (95 % LV 21,33–28,37). Henkilökohtaiset ED50:t 6,0–349,8 lx, yli 50-kertainen vaihtelu. Melatoniinin havaittu alku siirtyi 10/30/50 lx:ssa keskimäärin 22/77/109 min.",
+            "limits": "Yhden spektrin iltakoe. Melatoniinin havaittu alku altistuksen aikana ei ole sama mittaus kuin seuraavan päivän endogeeninen vaihe. Pienten ja suurten ED50-arvioiden luottamusvälit ovat leveitä.",
+            "research_family": "Monash / Cain–Phillips; Lockley ja Rajaratnam luovat kirjoittajayhteyden Harvard-sarjaan, mutta koe ja kohortti ovat erilliset.",
+            "verification": "Alkuperäinen koko XML, myös menetelmät ja yksilöanalyysin rajaukset, luettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S025",
+      "doi": "10.1034/j.1600-079x.2002.01885.x",
+      "title": "Hébert M, Martin SK, Lee C, Eastman CI. The effects of prior light history on the suppression of melatonin by light in humans. J Pineal Res. 2002;33(4):198–203.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3925650/",
+        "https://www.spectrasol.cz/wp-content/uploads/2024/09/7-The-effects-of-prior-light-history-on-the-suppression-of-melatonin-by-light-in-humans.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "hebert2002",
+          "data": {
+            "id": "hebert2002",
+            "citation": "Hébert M, Martin SK, Lee C, Eastman CI. The effects of prior light history on the suppression of melatonin by light in humans. J Pineal Res. 2002;33(4):198–203.",
+            "doi": "10.1034/j.1600-079X.2002.01885.x",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3925650/",
+              "https://www.spectrasol.cz/wp-content/uploads/2024/09/7-The-effects-of-prior-light-history-on-the-suppression-of-melatonin-by-light-in-humans.pdf"
+            ],
+            "population": "12 tervettä, 6 naista ja 6 miestä, keski-ikä 25,5 ± 6,4 v. Molemmat historiaehdot samoille henkilöille.",
+            "exposure": "Kirkkaalla viikolla 4,3 ± 0,4 h/vrk ulkona ja/tai 5000–7000 lx valolaatikoiden äärellä. Himmeällä viikolla sisävalaistus alle 200 lx ja ulkona noin 2 % läpäisevät lasit. Sama yötesti 500 ± 10 lx, 3 h.",
+            "result": "Melatoniinivaimennus kirkkaan historian jälkeen 41,1 % ja himmeän jälkeen 52,7 %; parivertailu p<0,05. Yksilövaihtelu huomattavaa; 9/12:lla ero odotettuun suuntaan.",
+            "limits": "Viikon historia toteutui arjessa ohjeistettuna, ei koko aikaa vakioidussa laboratoriossa. Tuloksena akuutti melatoniinivaimennus, ei erillinen kellon vaiheensiirto.",
+            "research_family": "Rush / Eastman; erillinen ihmisryhmä Harvardin kokeista.",
+            "verification": "Alkuperäinen NIH-käsikirjoituksen PDF, menetelmät ja taulukko 1 tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S026",
+      "doi": "10.1210/jc.2003-032100",
+      "title": "Smith KA, Schoen MW, Czeisler CA. Adaptation of human pineal melatonin suppression by recent photic history. J Clin Endocrinol Metab. 2004;89(7):3610–3614.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/15240654/",
+        "https://academic.oup.com/jcem/article-abstract/89/7/3610/2844750",
+        "https://doi.org/10.1210/jcem.90.3.9999"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "smith2004",
+          "data": {
+            "id": "smith2004",
+            "citation": "Smith KA, Schoen MW, Czeisler CA. Adaptation of human pineal melatonin suppression by recent photic history. J Clin Endocrinol Metab. 2004;89(7):3610–3614.",
+            "doi": "10.1210/jc.2003-032100",
+            "pmid": "15240654",
+            "urls": [
+              "https://pubmed.ncbi.nlm.nih.gov/15240654/",
+              "https://academic.oup.com/jcem/article-abstract/89/7/3610/2844750",
+              "https://doi.org/10.1210/jcem.90.3.9999"
+            ],
+            "population": "8 henkilöä kontrolloidussa saman henkilön toistokokeessa.",
+            "exposure": "Noin 3 vrk:n päivävalohistoria 0,5 lx (0,15 µW/cm²) tai 200 lx (50 µW/cm²). Sen jälkeen sama 6,5 h:n 200 lx yötesti. Loisteputkivalaistus.",
+            "result": "Melatoniinivaimennus 85,7 ± 6,5 % himmeän ja 71,2 ± 7,1 % 200 lx historian jälkeen; ilmoitetut virheet SEM.",
+            "limits": "Pieni laboratoriokoe, ei kliinistä päätetapahtumaa. Vuoden 2005 erratum lisää puuttuneen Hébert 2002 -viitteen; se ei korjaa näitä tuloksia.",
+            "research_family": "Harvard / Brigham / Czeisler; yhteinen tutkimuslinja Gooley-, Zeitzer- ja Chang-artikkelien kanssa.",
+            "verification": "Alkuperäisen artikkelin teksti, PubMed ja alkuperäinen erratum tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S027",
+      "doi": "10.1113/jphysiol.2010.201194",
+      "title": "Chang AM, Scheer FAJL, Czeisler CA. The human circadian system adapts to prior photic history. J Physiol. 2011;589(5):1095–1102.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3060589/",
+        "https://pubmed.ncbi.nlm.nih.gov/21224217/"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "chang2011",
+          "data": {
+            "id": "chang2011",
+            "citation": "Chang AM, Scheer FAJL, Czeisler CA. The human circadian system adapts to prior photic history. J Physiol. 2011;589(5):1095–1102.",
+            "doi": "10.1113/jphysiol.2010.201194",
+            "pmid": "21224217",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3060589/",
+              "https://pubmed.ncbi.nlm.nih.gov/21224217/"
+            ],
+            "population": "Satunnaistettu 32 vrk vaihtovuoroprotokolla; vertailun analyysi n=13.",
+            "exposure": "Ennen yötestiä 3 vrk valveen aikainen 1 tai 90 lx historia. Sama 6,5 h:n 90 lx yöaltistus ja vastaava 1 lx verrokkijakso. Ehtojen välissä 3 vrk 450 lx tahdistusjakso.",
+            "result": "Verrokkikorjattu melatoniinivaimennus 86,1 ± 13,9 % vs 51,3 ± 25,2 %; vaiheviive 1,67 ± 0,44 h vs 1,03 ± 0,47 h himmeän vs huonevalohistorian jälkeen. Vaihe-ero noin 38 min, p=0,011.",
+            "limits": "Valohistoria muutti sekä akuuttia eritystä että erikseen mitattua kellon vaihetta. Laboratorion erityisen himmeä historia ei sellaisenaan kuvaa kaikkien arkea.",
+            "research_family": "Harvard / Brigham / Czeisler–Scheer. Chang 2013 Sleep -valppausjulkaisu käyttää samaa protokollaa/tutkimusohjelmaa eikä ole riippumaton lisätoisto tästä ilmiöstä.",
+            "verification": "Alkuperäisen PMC-kokotekstin indeksoidut menetelmä- ja tulososat sekä PubMed tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S028",
+      "doi": "10.1073/pnas.92.19.8734",
+      "title": "Reppert SM, Godson C, Mahle CD, Weaver DR, Slaugenhaupt SA, Gusella JF. Molecular characterization of a second melatonin receptor expressed in human retina and brain: the Mel1b melatonin receptor. Proc Natl Acad Sci USA. 1995;92(19):8734–8738.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/7568007/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC41041/"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "reppert1995",
+          "data": {
+            "id": "reppert1995",
+            "citation": "Reppert SM, Godson C, Mahle CD, Weaver DR, Slaugenhaupt SA, Gusella JF. Molecular characterization of a second melatonin receptor expressed in human retina and brain: the Mel1b melatonin receptor. Proc Natl Acad Sci USA. 1995;92(19):8734–8738.",
+            "doi": "10.1073/pnas.92.19.8734",
+            "pmid": "7568007",
+            "urls": [
+              "https://pubmed.ncbi.nlm.nih.gov/7568007/",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC41041/"
+            ],
+            "population": "Ihmisen kloonattu Mel1b-reseptori (nykyinen MT2), COS-1- ja NIH3T3-solumallit; ihmiskudosten RT-PCR.",
+            "exposure": "Reseptorin ligandisitoutuminen 2-[125I]jodomelatoniinilla ja toiminnallinen signalointi transfektoiduissa soluissa.",
+            "result": "Suuren affiniteetin reseptori, jodoligandin Kd 160 ± 30 pM; adenylaattisyklaasin inhibitio. Reseptorin mRNA:ta ihmisen verkkokalvossa ja aivoissa.",
+            "limits": "Kd koskee merkittyä ligandia kyseisessä sitoutumiskokeessa; se ei ole luonnollisen melatoniinin kenttävastekynnys. Reseptorin olemassaolo ei ratkaise Liun neuronikokeen µM→ihmisen pM/nM siirtymää.",
+            "research_family": "Reppert / Massachusetts General Hospital; molekulaarinen reseptoritutkimus, erillinen Liun Fudan-sarjasta.",
+            "verification": "Alkuperäinen artikkelitietue ja alkuperäisabstract; annosvasteen täydellistä uudelleenanalyysia ei tehty."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S029",
+      "doi": "10.1073/pnas.91.5.1824",
+      "title": "Dollins AB, Zhdanova IV, Wurtman RJ, Lynch HJ, Deng MH. Effect of inducing nocturnal serum melatonin concentrations in daytime on sleep, mood, body temperature, and performance. Proc Natl Acad Sci USA. 1994;91(5):1824–1828.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC43256/",
+        "https://www.researchgate.net/publication/15071141_Effect_of_inducing_nocturnal_serum_melatoninconcentrations_in_daytime_on_sleep_mood_body_temperature_andperformance"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "dollins1994",
+          "data": {
+            "id": "dollins1994",
+            "citation": "Dollins AB, Zhdanova IV, Wurtman RJ, Lynch HJ, Deng MH. Effect of inducing nocturnal serum melatonin concentrations in daytime on sleep, mood, body temperature, and performance. Proc Natl Acad Sci USA. 1994;91(5):1824–1828.",
+            "doi": "10.1073/pnas.91.5.1824",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC43256/",
+              "https://www.researchgate.net/publication/15071141_Effect_of_inducing_nocturnal_serum_melatoninconcentrations_in_daytime_on_sleep_mood_body_temperature_andperformance"
+            ],
+            "population": "20 tervettä miestä; sokkoutettu toistettu 5×5 latinalainen neliö.",
+            "exposure": "Suun kautta 0,1, 0,3, 1 tai 10 mg melatoniinia tai lume klo 11.45; päivämittaukset klo 9.30–17.30.",
+            "result": "0,1 ja 0,3 mg tuottivat tavanomaisen yöllisen seerumipitoisuuden alueella olevia huippuja. Uneliaisuus lisääntyi, nukahtamisviive lyheni ja suun lämpötila aleni. Johdannon yöviite keskimäärin 80 pg/ml (vaihtelu 0–200 pg/ml).",
+            "limits": "Annettu lääke päiväsaikaan, ei optinen interventio. Uni mitattiin tutkimuksen omalla toimintatestillä; tulosta ei pidä esittää pitkäaikaisena kliinisenä tehotutkimuksena. 80 pg/ml on artikkelin taustaviite, ei n=20:n oma yömittaus.",
+            "research_family": "MIT / Wurtman–Zhdanova; erillinen melatoniinifarmakologinen tutkimus.",
+            "verification": "Alkuperäisen artikkelin teksti, annokset ja pitoisuuden yksikkömuunnos tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S030",
+      "doi": "10.1098/rspb.2012.3017",
+      "title": "Dominoni D, Quetting M, Partecke J. Artificial light at night advances avian reproductive physiology. Proc R Soc B. 2013;280(1756):20123017.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3574380/",
+        "https://doi.org/10.1098/rspb.2012.3017"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "dominoni2013_reproduction",
+          "data": {
+            "id": "dominoni2013_reproduction",
+            "citation": "Dominoni D, Quetting M, Partecke J. Artificial light at night advances avian reproductive physiology. Proc R Soc B. 2013;280(1756):20123017.",
+            "doi": "10.1098/rspb.2012.3017",
+            "pmid": "23407836",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3574380/",
+              "https://doi.org/10.1098/rspb.2012.3017"
+            ],
+            "population": "40 luonnosta pyydettyä koirasmustarastasta (Turdus merula), 20 kaupunki- ja 20 metsäalkuperää; 20/laitosvalaistusehto, yksi verrokkilintu kuoli seurannassa.",
+            "exposure": "Kausittainen paikallinen päivänpituus; yöllä 0,3 lx tai noin 0,0001 lx. Hehkulamppu 450–950 nm; päivävalo 250–1250 lx. Annos perustui vapaiden lintujen valologgereihin.",
+            "result": "Ensimmäisen kauden kivesten kasvu ja testosteronisyklin aktivoituminen aikaistuivat lähes kuukaudella; myös sulkasato aikaistui.",
+            "limits": "Lisääntymisfysiologian ajoitus, ei munien, poikasten tai hedelmöitysten määrän koe. Valaistusehdot eri huoneissa, joten huonevaikutusta ei täysin eroteta käsittelystä.",
+            "research_family": "Max Planck / Partecke–Dominoni, Radolfzell. Sama kohortti kuin kahdessa muussa valitussa Dominoni 2013 -artikkelissa.",
+            "verification": "Alkuperäisabstract ja saman kokeen alkuperäisten melatoniini- ja pitkäaikaisartikkelien menetelmät ristivarmistettu."
+          }
+        },
+        {
+          "section": "ecology",
+          "local_id": "E06",
+          "data": {
+            "id": "E06",
+            "authors": "Dominoni ym.",
+            "year": 2013,
+            "date": "2013-02-13",
+            "title": "Artificial light at night advances avian reproductive physiology",
+            "doi": "10.1098/rspb.2012.3017",
+            "url": "https://doi.org/10.1098/rspb.2012.3017",
+            "species": [
+              "Turdus merula"
+            ],
+            "design": "Kaupunki- ja metsälähtöiset koiraat kontrolloidussa luonnollisessa päivänpituudessa.",
+            "light": "Yöllä 0,3 lux vs 0,0001 lux; hehkulamppu.",
+            "field": "Ei erillistä ei-optista kenttäkoetta.",
+            "timing": "Ensimmäinen lisääntymiskausi pitkässä altistuksessa.",
+            "result": "Lisääntymisfysiologia aikaistui jopa kuukaudella.",
+            "role": "Optinen kausisignaali → gonadi-/hormonitila.",
+            "limits": "Aikaistuminen ei ole sama kuin vähentynyt jälkeläistuotto.",
+            "independence_group": "Dominoni_blackbird_2010_2012",
+            "checked": "Alkuperäisabstrakti ja saman kokeen pitkäaikaisartikkelin Methods."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S031",
+      "doi": "10.1186/1742-9994-10-60",
+      "title": "Dominoni DM, Goymann W, Helm B, Partecke J. Urban-like night illumination reduces melatonin release in European blackbirds (Turdus merula): implications of city life for biological time-keeping of songbirds. Front Zool. 2013;10:60.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://link.springer.com/article/10.1186/1742-9994-10-60",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3850952/",
+        "https://pubmed.ncbi.nlm.nih.gov/24090446/"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "dominoni2013_melatonin",
+          "data": {
+            "id": "dominoni2013_melatonin",
+            "citation": "Dominoni DM, Goymann W, Helm B, Partecke J. Urban-like night illumination reduces melatonin release in European blackbirds (Turdus merula): implications of city life for biological time-keeping of songbirds. Front Zool. 2013;10:60.",
+            "doi": "10.1186/1742-9994-10-60",
+            "pmid": "24090446",
+            "urls": [
+              "https://link.springer.com/article/10.1186/1742-9994-10-60",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC3850952/"
+            ],
+            "population": "Sama mustarastaskohortti, 39 linnun analyysi: valo n=20, verrokki n=19.",
+            "exposure": "Yö 0,3 vs noin 0,0001 lx, hehkulamppu 450–950 nm. Plasman neljän ajankohdan profiilit talvella ja kesällä sekä aktiivisuus.",
+            "result": "Talvella melatoniini aleni alkuyön ja aamun näytteissä, ei keskiyöllä. Kesällä aleneminen ulottui koko mitattuun yöprofiiliin. Melatoniinin ja aamuaktiivisuuden yhteys riippui vuodenajasta ja valaistuksesta.",
+            "limits": "Saman kohortin hormonaalinen lisäulottuvuus, ei itsenäinen lisääntymistuloksen replikaatio. Melatoniinin välittävää roolia lisääntymiseen ei eristetty melatoniini-interventiolla.",
+            "research_family": "Max Planck / Partecke–Dominoni; eksplisiittisesti sama eläin- ja koeasetelma kuin lisääntymisjulkaisussa.",
+            "verification": "Alkuperäinen kustantajan kokoteksti ja menetelmät luettu."
+          }
+        },
+        {
+          "section": "ecology",
+          "local_id": "E08",
+          "data": {
+            "id": "E08",
+            "authors": "Dominoni ym.",
+            "year": 2013,
+            "date": "2013-10-03",
+            "title": "Urban-like night illumination reduces melatonin release in European blackbirds (Turdus merula): implications of city life for biological time-keeping of songbirds",
+            "doi": "10.1186/1742-9994-10-60",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24090446/",
+            "species": [
+              "Turdus merula"
+            ],
+            "design": "Plasman vuorokausiprofiili ja liikkumisaktiivisuus.",
+            "light": "0,3 vs 0,0001 lux; sama altistusasetelma.",
+            "field": "Ei erillistä kenttäkoetta.",
+            "timing": "Tammikuu ja heinäkuu; neljä näytteenottohetkeä vuorokaudessa.",
+            "result": "Talvella melatoniini pieneni alku-/loppuyöstä, kesällä läpi yön; aktiivisuus lisääntyi.",
+            "role": "Optinen vaikutus → hormonaalinen kellosignaali.",
+            "limits": "Melatoniinin välittäjärooli kausilisääntymisessä ei erikseen tunnistettu interventiolla.",
+            "independence_group": "Dominoni_blackbird_2010_2012",
+            "checked": "Alkuperäisabstrakti ja kuvaselitteet."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S032",
+      "doi": "10.1371/journal.pone.0085069",
+      "title": "Dominoni DM, Quetting M, Partecke J. Long-term effects of chronic light pollution on seasonal functions of European blackbirds (Turdus merula). PLoS ONE. 2013;8(12):e85069.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085069"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "dominoni2013_longterm",
+          "data": {
+            "id": "dominoni2013_longterm",
+            "citation": "Dominoni DM, Quetting M, Partecke J. Long-term effects of chronic light pollution on seasonal functions of European blackbirds (Turdus merula). PLoS ONE. 2013;8(12):e85069.",
+            "doi": "10.1371/journal.pone.0085069",
+            "urls": [
+              "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085069"
+            ],
+            "population": "Sama 40 linnun kohortti, 39 jäljellä toiseen vuosikiertoon; valo n=20, verrokki n=19.",
+            "exposure": "Jatkuva 0,3 lx yövalaistus luonnollista kausipäivänpituutta mukailevassa asetelmassa 18.12.2010–31.8.2012. Verrokki noin 0,0001 lx; hehkulamppu 450–950 nm.",
+            "result": "Ensimmäisen vuoden aikaistunutta gonadisykliä seurasi toisena vuonna kaikkien valoryhmän lintujen kivesten ja testosteronin pysyminen perustasolla. Pimeäryhmällä kaksi tavanomaista vuosikiertoa. Sulkasadon järjestys häiriintyi.",
+            "limits": "Valorefraktorinen tila ja/tai krooninen stressi kirjoittajien ehdottamia mekanismeja, joita koe ei erottanut. Ei osoitus ihmisen hedelmättömyydestä. Yksi huone per valaistusehto rajoittaa käsittelyreplikaatiota.",
+            "research_family": "Saman Max Planck -kokeen toinen vuosi; ensimmäisen vuoden tulokset julkaistu edellä.",
+            "verification": "Alkuperäinen PLOS-kokoteksti, menetelmät, kuvaselosteet ja tulokset luettu."
+          }
+        },
+        {
+          "section": "ecology",
+          "local_id": "E07",
+          "data": {
+            "id": "E07",
+            "authors": "Dominoni ym.",
+            "year": 2013,
+            "date": "2013-12-20",
+            "title": "Long-Term Effects of Chronic Light Pollution on Seasonal Functions of European Blackbirds (Turdus merula)",
+            "doi": "10.1371/journal.pone.0085069",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085069",
+            "species": [
+              "Turdus merula"
+            ],
+            "design": "40 koirasta, 20/20 valo-/pimeäryhmissä, kaksi vuosikiertoa.",
+            "light": "0,3 vs 0,0001 lux; himmennettävä hehkulamppu noin 450–950 nm.",
+            "field": "Ei erillistä kenttäannosta.",
+            "timing": "18.12.2010–kesäkuu 2012.",
+            "result": "Ensivuonna lisääntyminen aikaistui; toisena kaikkien valoryhmän lintujen kivekset/testosteroni jäivät perustasolle. Sulkasato häiriintyi.",
+            "role": "Hidas altistushistoria → vuodenaikaisen vasteen muutos.",
+            "limits": "Sama kohortti kuin E06/E08, ei kolme riippumatonta replikaatiota. Vankeus, jatkuva yövalo; ei osoita pysyvää steriliteettiä.",
+            "independence_group": "Dominoni_blackbird_2010_2012",
+            "checked": "Alkuperäinen kokoteksti."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S033",
+      "doi": "10.1371/journal.pctr.0020007",
+      "title": "Danilenko KV, Samoilova EA. Stimulatory effect of morning bright light on reproductive hormones and ovulation: results of a controlled crossover trial. PLoS Clin Trials. 2007;2(2):e7.",
+      "record_type": "primary_study",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1851732/",
+        "https://journals.plos.org/plosclinicaltrials/article/file?id=10.1371%2Fjournal.pctr.0020007&type=printable"
+      ],
+      "extractions": [
+        {
+          "section": "chronobiology",
+          "local_id": "danilenko2007",
+          "data": {
+            "id": "danilenko2007",
+            "citation": "Danilenko KV, Samoilova EA. Stimulatory effect of morning bright light on reproductive hormones and ovulation: results of a controlled crossover trial. PLoS Clin Trials. 2007;2(2):e7.",
+            "doi": "10.1371/journal.pctr.0020007",
+            "pmid": "17290302",
+            "urls": [
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC1851732/",
+              "https://journals.plos.org/plosclinicaltrials/article/file?id=10.1371%2Fjournal.pctr.0020007&type=printable"
+            ],
+            "population": "22 naista, 19–37 v, tavanomainen kierron pituus 28,1–37,8 vrk, ei endokriinistä sairautta. Novosibirsk 55°N, pimeä vuodenaika. Kontrolloitu vastabalansoitu vaihtovuorokoe.",
+            "exposure": "4300 lx valkoinen 3500 K loisteputkivalo 41 cm:stä, 45 min pian heräämisen jälkeen, 7 vrk noin kiertopäivinä 7–14. Verrokki alle 100 lx; koejaksojen välissä yksi vapaa kierto.",
+            "result": "Prolaktiini, LH, FSH ja follikkelien kasvu lisääntyivät; ultraäänellä todettu ovulaatio 12 kirkasvalokierrossa vs 6 verrokkikierrossa (p=0,034).",
+            "limits": "Pieni valikoitu otos ja tietty aamu-/vuodenaika-/kiertotila. Melatoniinia ei mitattu; raskauden todennäköisyyttä, syntymiä tai väestön TFR:ää ei arvioitu.",
+            "research_family": "Siperian lääketieteellinen tutkimus / Danilenko; erillinen ihmisen lisääntymisendokrinologinen tutkimus.",
+            "verification": "Alkuperäinen PLOS-kokoteksti-PDF, altistus ja päätetapahtumat tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S034",
+      "doi": "10.1126/sciadv.abi8322",
+      "title": "Street lighting has detrimental impacts on local insect populations",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1126/sciadv.abi8322"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E01",
+          "data": {
+            "id": "E01",
+            "authors": "Boyes ym.",
+            "year": 2021,
+            "date": "2021-08-25",
+            "title": "Street lighting has detrimental impacts on local insect populations",
+            "doi": "10.1126/sciadv.abi8322",
+            "url": "https://doi.org/10.1126/sciadv.abi8322",
+            "full_text": "https://nora.nerc.ac.uk/id/eprint/531169/1/N531169JA.pdf",
+            "species": [
+              "Lepidoptera-lajiyhteisö (toukat; mm. Geometridae ja Noctuidae)"
+            ],
+            "design": "Paritetut valaistut/pimeät tienreunat ja lyhyt valaistuskoe.",
+            "light": "Pensasaidat 1,42–15,84 lux (ka 5,7); heinikot 0,18–7,14 lux (ka 2,2); LED 2700–4000 K.",
+            "field": "Ei erillistä ei-optisen kentän mittausta tai manipulointia.",
+            "timing": "Vakiintunut yövalaistus vähintään 5 vuotta; toukkalaskennat.",
+            "result": "Toukkia 47 % vähemmän pensasaidoissa, 33 % vähemmän heinikoissa; LED-valojen yhteys voimakkaampi.",
+            "role": "Optinen ympäristö / paikallinen runsauspääte.",
+            "limits": "Paikallinen yhteisövertailu; ei valtakunnallinen kannanromahduksen syyosuus.",
+            "checked": "Alkuperäis-PDF, Methods ja Results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S035",
+      "doi": "10.1038/nature23288",
+      "title": "Artificial light at night as a new threat to pollination",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/nature23288"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E02",
+          "data": {
+            "id": "E02",
+            "authors": "Knop ym.",
+            "year": 2017,
+            "date": "2017-08-02",
+            "title": "Artificial light at night as a new threat to pollination",
+            "doi": "10.1038/nature23288",
+            "url": "https://www.nature.com/articles/nature23288",
+            "species": [
+              "Cirsium oleraceum",
+              "Yöpölyttäjien yhteisö"
+            ],
+            "design": "Yövalaistuksen kenttäinterventio 14 niityllä, 7 valaistua.",
+            "light": "Valkoinen LED; tarkka alkuperäis-Methods-annos jäi tässä tarkistamatta.",
+            "field": "Ei erikseen manipuloitua magneettikenttää.",
+            "timing": "Kukintakauden yövalaistus ja yö-/päiväkäyntien seuranta.",
+            "result": "Yökukkavierailut vähenivät 62 %; tutkittavan kasvin hedelmänmuodostus 13 %, päivävierailuista huolimatta.",
+            "role": "Optinen vaikutus → ekologinen vuorovaikutus → kasvin lisääntyminen.",
+            "limits": "62 % ei tarkoita pölyttäjäkannan vähenemää. 4000 K / 52±4,2 lux esiintyy myöhemmissä koonneissa, mutta sitä ei vahvistettu tässä alkuperäis-Methodsista.",
+            "checked": "Alkuperäisartikkelin bibliografia ja abstrakti; täysi Methods ei avautunut."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S036",
+      "doi": "10.1002/ece3.1090",
+      "title": "Artificial light at night causes diapause inhibition and sex-specific life history changes in a moth",
+      "record_type": "primary_study",
+      "urls": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/ece3.1090"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E03",
+          "data": {
+            "id": "E03",
+            "authors": "van Geffen ym.",
+            "year": 2014,
+            "date": "2014-04-25",
+            "title": "Artificial light at night causes diapause inhibition and sex-specific life history changes in a moth",
+            "doi": "10.1002/ece3.1090",
+            "url": "https://onlinelibrary.wiley.com/doi/10.1002/ece3.1090",
+            "species": [
+              "Mamestra brassicae"
+            ],
+            "design": "240 toukkaa; vihreä-/valkoinen-/punapainotteinen LED ja pimeä.",
+            "light": "7,0±0,6 lux; vertailu 0,04±0,006 lux; spektrikäyrät kuvassa 1.",
+            "field": "Ei erillistä ei-optista altistuskoetta.",
+            "timing": "Valo klo 17–08; noin 11 h luonnollinen päivä; kehitys toisesta toukka-asteesta aikuiseksi.",
+            "result": "Vihreä/valkoinen esti diapaussia: ensimmäiseen pimeäryhmän aikuiseen (110 vrk) mennessä 85/83 % jo kuoriutunut. Koiraiden massa pieneni; naaraiden vastaava massamuutos puuttui.",
+            "role": "Optinen kausisignaali → kehityksen ajoitus.",
+            "limits": "Diapaussin estyminen ei ole sama kuin lisääntymiskyvyn menetys.",
+            "checked": "Alkuperäinen kokoteksti, Methods/Results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S037",
+      "doi": "10.1111/icad.12116",
+      "title": "Artificial light at night inhibits mating in a geometrid moth",
+      "record_type": "primary_study",
+      "urls": [
+        "https://research.rug.nl/en/publications/artificial-light-at-night-inhibits-mating-in-a-geometrid-moth/"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E04",
+          "data": {
+            "id": "E04",
+            "authors": "van Geffen ym.",
+            "year": 2015,
+            "date": "2015-05",
+            "title": "Artificial light at night inhibits mating in a geometrid moth",
+            "doi": "10.1111/icad.12116",
+            "url": "https://research.rug.nl/en/publications/artificial-light-at-night-inhibits-mating-in-a-geometrid-moth/",
+            "species": [
+              "Operophtera brumata"
+            ],
+            "design": "Valaistut tammenrungot kentällä; spermatoforit ja koiraiden feromonihoukutus.",
+            "light": "Vihreä-/valko-/punapainotteinen valo; tarkka lux/spektri jäi alkuperäiskokotekstistä varmistamatta.",
+            "field": "Ei erillistä kenttämanipulaatiota.",
+            "timing": "Aikuisten yöaktiivinen pariutumiskausi.",
+            "result": "Pariutuneita naaraita pimeässä 53 %, vihreässä 13 %, valkoisessa 16 %, punaisessa 28 %.",
+            "role": "Optinen käyttäytymisvaikutus → toteutunut pariutuminen.",
+            "limits": "Noin 10 lux on toissijaisessa koosteessa; ei tässä varmennettu annos. Ei munien määrä/koko populaation kasvu.",
+            "checked": "Tekijöiden yliopistotietueen alkuperäisabstrakti; kokoteksti ei avautunut."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S038",
+      "doi": "10.1111/een.12202",
+      "title": "Artificial night lighting disrupts sex pheromone in a noctuid moth",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1111/een.12202"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E05",
+          "data": {
+            "id": "E05",
+            "authors": "van Geffen ym.",
+            "year": 2015,
+            "date": "2015-04-16",
+            "title": "Artificial night lighting disrupts sex pheromone in a noctuid moth",
+            "doi": "10.1111/een.12202",
+            "url": "https://doi.org/10.1111/een.12202",
+            "full_text": "https://pure.uva.nl/ws/files/19349313/GEFFEN_et_al_2015_Ecological_Entomology.pdf",
+            "species": [
+              "Mamestra brassicae"
+            ],
+            "design": "100 naaraskoteloa; vihreä/valkoinen/punainen LED ja pimeä; feromonirauhasen kemia.",
+            "light": "17±1 lux; spektritehot 63/53/96 mW/m²; pimeä 0,065±0,001 lux.",
+            "field": "Ei erillistä ei-optista kenttäkoetta.",
+            "timing": "Yövalaistus noin klo 18–08; kolmen yön ikäiset naaraat, rauhasnäyte keskiyöllä.",
+            "result": "Feromonin kokonaismäärä ja päävetovoimakomponentin osuus pienenivät; estävien yhdisteiden suhde houkuttimeen kasvoi.",
+            "role": "Optinen vaikutus → kemiallinen lisääntymisviestintä.",
+            "limits": "Ei itsessään mitattu parittelun tai jälkeläisten vähenemä; PBAN-välitys ehdotettu.",
+            "checked": "Alkuperäinen PDF, otsikko, Methods/Results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S039",
+      "doi": "10.1242/jeb.205.24.3845",
+      "title": "Magnetic compass orientation in European robins is dependent on both wavelength and intensity of light",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1242/jeb.205.24.3845"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E09",
+          "data": {
+            "id": "E09",
+            "authors": "Muheim, Bäckman ja Åkesson",
+            "year": 2002,
+            "date": "2002-12",
+            "title": "Magnetic compass orientation in European robins is dependent on both wavelength and intensity of light",
+            "doi": "10.1242/jeb.205.24.3845",
+            "url": "https://doi.org/10.1242/jeb.205.24.3845",
+            "full_text": "https://lucris.lub.lu.se/ws/files/2623167/624189.pdf",
+            "species": [
+              "Erithacus rubecula"
+            ],
+            "design": "Aallonpituus × valointensiteetti; luonnollinen magneettikenttä.",
+            "light": "560,5/567,5/617 nm, kaistanleveys 9–11 nm; 1/5/10 mW/m².",
+            "field": "Luonnonkenttä noin 50 µT, inklinaatio 70°; ei kentän ja valon täysi faktorikoe.",
+            "timing": "Nuorten ensimmäinen syysmuutto; 60 min suuntautumiskokeet iltaisin.",
+            "result": "560,5 nm/1 mW/m² normaali lounassuunta; 567,5 nm hajautuminen kaikilla tehoilla; punaisen vaste riippui intensiteetistä.",
+            "role": "Valospektri muokkaa magneettikompassin käyttöolosuhteita.",
+            "limits": "Laajakaistaisen valon kontrollin tulos muuttui koesarjan aikana; spektrivaste ei yksinkertainen sininen paha/punainen hyvä.",
+            "checked": "Alkuperäis-PDF, Methods/Table 1/Results."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S040",
+      "doi": "10.1038/nature13290",
+      "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/nature13290"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E10",
+          "data": {
+            "id": "E10",
+            "authors": "Engels ym.",
+            "year": 2014,
+            "date": "2014-05-07",
+            "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
+            "doi": "10.1038/nature13290",
+            "url": "https://www.nature.com/articles/nature13290",
+            "species": [
+              "Erithacus rubecula"
+            ],
+            "design": "Maadoitettu suojaus, maadoituksen poisto ja lisätty laajakaistakohina; sokkoutus.",
+            "light": "Yömuuton suuntautumiskokeet; optinen spektri/teho jäi tässä tarkistamatta.",
+            "field": "Suojaus vaimensi 50 kHz–5 MHz noin 100-kertaisesti; spektrit julkaistu.",
+            "timing": "Useita kevät-/syysmuuttokausia Oldenburgissa.",
+            "result": "Suojaus palautti suunnistuksen; maadoituksen poisto tai lisäkohina hajautti suunnat.",
+            "role": "Kontrolloitu teknisen kentän käyttäytymisvaikutus.",
+            "limits": "Ei valon faktoriaalista manipulaatiota eikä lisääntymistutkimus. Myöhempi E11-liitteen uudelleenanalyysi erottaa RMS- ja maxhold-luvut.",
+            "checked": "Alkuperäisabstrakti ja alkuperäiskuvien kopiot; dosimetriikkaa tarkennettu E11-liitteellä."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S041",
+      "doi": "10.1007/s00359-021-01537-8",
+      "title": "Broadband 75–85 MHz radiofrequency fields disrupt magnetic compass orientation in night-migratory songbirds consistent with a flavin-based radical pair magnetoreceptor",
+      "record_type": "primary_study",
+      "urls": [
+        "https://link.springer.com/article/10.1007/s00359-021-01537-8"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E11",
+          "data": {
+            "id": "E11",
+            "authors": "Leberecht ym.",
+            "year": 2022,
+            "date": "2022-01-12",
+            "title": "Broadband 75–85 MHz radiofrequency fields disrupt magnetic compass orientation in night-migratory songbirds consistent with a flavin-based radical pair magnetoreceptor",
+            "doi": "10.1007/s00359-021-01537-8",
+            "url": "https://link.springer.com/article/10.1007/s00359-021-01537-8",
+            "supplement": "https://media.springernature.com/original/springer-static/esm/art:10.1007%2Fs00359-021-01537-8/MediaObjects/359_2021_1537_MOESM1_ESM.pdf",
+            "species": [
+              "Sylvia atricapilla"
+            ],
+            "design": "Normaali ja 120° käännetty staattinen kenttä, RF päällä/pois.",
+            "light": "Optinen spektri/teho ei varmistunut päätekstistä.",
+            "field": "Staattinen 48,827 µT; 75–85 MHz B_RMS 2,318 nT vs kontrolli 0,013 nT; maxhold-integraali 5,615 nT.",
+            "timing": "Keväät 2019 ja 2021; kahdet 1 h kokeet/yö.",
+            "result": "RF-kohina hajautti kompassisuunnat molemmissa staattisissa kentissä.",
+            "role": "RF-spektrin käyttäytymiskytkentä.",
+            "limits": "2,318 nT on RMS; 37 mV on generaattoriasetus, ei eläimen kenttä. Ei valon faktorikoe.",
+            "checked": "Alkuperäisartikkeli ja Supplementary Table SI1."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S042",
+      "doi": "10.1073/pnas.2301153120",
+      "title": "Upper bound for broadband radiofrequency field disruption of magnetic compass orientation in night-migratory songbirds",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1073/pnas.2301153120"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E12",
+          "data": {
+            "id": "E12",
+            "authors": "Leberecht ym.",
+            "year": 2023,
+            "date": "2023-07-03",
+            "title": "Upper bound for broadband radiofrequency field disruption of magnetic compass orientation in night-migratory songbirds",
+            "doi": "10.1073/pnas.2301153120",
+            "url": "https://doi.org/10.1073/pnas.2301153120",
+            "full_text": "https://pdfs.semanticscholar.org/7aa4/1019b464e578e82fdb9ea58acf37e51f5861.pdf",
+            "species": [
+              "Sylvia atricapilla"
+            ],
+            "design": "140–150 ja 235–245 MHz kohinan kokeet.",
+            "light": "Optisen annoksen tarkistus avoin.",
+            "field": "RF-taajuuskaistat varmistettu; tarkka B_RMS jäi SI-annostaulukosta varmistamatta.",
+            "timing": "Yömuuton suuntautuminen.",
+            "result": "Kompassisuuntautuminen säilyi molemmissa tutkituissa kaistoissa.",
+            "role": "Taajuuskohtainen nollaehto muokkaa vastaanotinkohtaista mallia.",
+            "limits": "Ei yleinen kaikkien EMF-vaikutusten yläraja; noin 116 MHz on mallinnettu mekanistinen arvio, ei suoraan mitattu universaali kynnys.",
+            "checked": "Alkuperäisartikkeli; SI-annosta ei tarkistettu."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S043",
+      "doi": "10.1038/s41586-024-08554-y",
+      "title": "Learned magnetic map cues and two mechanisms of magnetoreception in turtles",
+      "record_type": "primary_study",
+      "urls": [
+        "https://www.nature.com/articles/s41586-024-08554-y"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E13",
+          "data": {
+            "id": "E13",
+            "authors": "Goforth ym.",
+            "year": 2025,
+            "date": "2025-02-12",
+            "title": "Learned magnetic map cues and two mechanisms of magnetoreception in turtles",
+            "doi": "10.1038/s41586-024-08554-y",
+            "url": "https://www.nature.com/articles/s41586-024-08554-y",
+            "full_text": "https://gwern.net/doc/psychology/animal/2025-goforth.pdf",
+            "species": [
+              "Caretta caretta"
+            ],
+            "design": "Opittujen magneettisten karttavihjeiden ruokapalkkio ja kompassista riippuva orientaatio; RF-koe.",
+            "light": "Ei tässä varmennettua optista dosimetriaa eikä valon faktorikoetta.",
+            "field": "0,1–10 MHz kohina; karttatehtävä 172 nT RMS, kompassitehtävä 141 nT RMS.",
+            "timing": "Oppimisjakso ja erilliset käyttäytymiskokeet.",
+            "result": "RF häiritsi kompassitehtävää; opittu karttavaste säilyi.",
+            "role": "Saman lajin kaksi magneettista toimintoa erottuvat.",
+            "limits": "Ei kaapelialtistuksen, muninnan tai kannan vähenemän mittaus; valoherkkyys ei suoraan manipuloitu.",
+            "checked": "Alkuperäisartikkeli ja Methods tarkistettu edellisessä tutkimusvaiheessa."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S044",
+      "doi": null,
+      "title": "Assessment of EM Exposure of Energy-Saving Bulbs & Possible Mitigation Strategies",
+      "record_type": "measurement_report",
+      "urls": [
+        "https://itis.swiss/assets/Downloads/Papers-Reports/Reports/ITIS-ESB-Final-Report-2010.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "ecology",
+          "local_id": "E15",
+          "data": {
+            "id": "E15",
+            "authors": "Nadakuduti ym. / IT’IS",
+            "year": 2010,
+            "date": "2010-03-21",
+            "title": "Assessment of EM Exposure of Energy-Saving Bulbs & Possible Mitigation Strategies",
+            "doi": null,
+            "url": "https://itis.swiss/assets/Downloads/Papers-Reports/Reports/ITIS-ESB-Final-Report-2010.pdf",
+            "species": [],
+            "design": "Alkuperäinen viranomaistilattu laitemittaus: 11 pienloistelamppua, 2 LED-, 2 hehku- ja 2 loisteputkilamppua.",
+            "light": "Lamppujen sähköiset päästöt; ei optisen biologian koe.",
+            "field": "15 cm: LED-lamppujen pääosin 50 Hz B_RMS 61/143 nT alapuolella. Pienloistelampun E4 IF noin 40 kHz + harmoniset; LED L2:n IF-signaali kohinatasolla.",
+            "timing": "Laitemallien käyttötilamittaukset vuonna 2010.",
+            "result": "Päästö riippuu laitteesta, etäisyydestä ja komponentista; induktiivinen liitäntälaite saattoi tuottaa suuremman 50 Hz kentän.",
+            "role": "Fyysisen teknologialähteen mittaus, ei biologinen näyttö.",
+            "limits": "Ei markkinakartoitus eikä nyky-LEDien yleisannos. Ei muuta valon lisääntymisvaikutuksia kenttävaikutuksiksi.",
+            "checked": "Alkuperäisraportin taulukko 8 ja osio 6.1."
+          }
+        }
+      ]
+    },
+    {
+      "id": "S045",
+      "doi": "10.1088/1742-6596/2987/1/012001",
+      "title": "Lindgren, Kovacs & Liukkonen 2025",
+      "record_type": "theory",
+      "urls": [
+        "https://doi.org/10.1088/1742-6596/2987/1/012001",
+        "https://www.preprints.org/manuscript/202503.2321"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH01",
+          "data": {
+            "id": "PH01",
+            "title": "Lindgren, Kovacs & Liukkonen 2025",
+            "doi": "10.1088/1742-6596/2987/1/012001",
+            "urls": [
+              "https://doi.org/10.1088/1742-6596/2987/1/012001",
+              "https://www.preprints.org/manuscript/202503.2321"
+            ],
+            "record_type": "theory",
+            "finding": "Vuoden 2025 geometrinen lähtökohta sisältää taustametriikan ja potentiaalin ulkotulon. BERM kirjoittaa skaalan eksplisiittisesti muodossa g = η + κA⊗A.",
+            "berm_role": "Lähdehajotelman ristiosat seuraavat algebrallisesti ansatzista. Kudoksen vasteoperaattori on erillinen BERM:n ehdollinen lisäys.",
+            "verification": "Repositorion aiemmassa katsauksessa tarkistettu teoriaversio; ei biologinen koe.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S046",
+      "doi": "10.1038/nchem.2447",
+      "title": "Kattnig ym. 2016",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1038/nchem.2447",
+        "https://pubmed.ncbi.nlm.nih.gov/27001735/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH03",
+          "data": {
+            "id": "PH03",
+            "title": "Kattnig ym. 2016",
+            "doi": "10.1038/nchem.2447",
+            "urls": [
+              "https://doi.org/10.1038/nchem.2447",
+              "https://pubmed.ncbi.nlm.nih.gov/27001735/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Jatkuvassa valossa hitaat radikaalien päättymisreaktiot vahvistivat flaviinifotoreaktioiden magneettivastetta. Alle 1 mT:n kentillä raportoitiin jopa 5,6-kertainen kemiallinen vahvistus.",
+            "berm_role": "Nopea spinvaikutus voi muuttaa hitaampaa reaktiotuotteiden kertymää. Pitkä biologinen muisti ei edellytä yhtä pitkää spinikoherenssia.",
+            "verification": "Julkaisijan tietue ja alkuperäisabstrakti; lisämenetelmien yksityiskohtia ei tuoda päätelmiin.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S047",
+      "doi": "10.1038/s41586-021-03618-9",
+      "title": "Xu ym. 2021",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1038/s41586-021-03618-9",
+        "https://pubmed.ncbi.nlm.nih.gov/34163056/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH04",
+          "data": {
+            "id": "PH04",
+            "title": "Xu ym. 2021",
+            "doi": "10.1038/s41586-021-03618-9",
+            "urls": [
+              "https://doi.org/10.1038/s41586-021-03618-9",
+              "https://pubmed.ncbi.nlm.nih.gov/34163056/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Punarinnan puhdistetun CRY4:n fotokemia oli magneettiherkkää ja tässä vertailussa herkempi kuin kanan ja kyyhkyn CRY4. Pistemutaatiot erottelivat elektroninsiirtoreitin tryptofaanien tehtäviä.",
+            "berm_role": "Proteiinin alatyyppi, laji ja elektroninsiirtoreitti ovat vastaanottimen tunnisteita. CRY-nimi yksin ei anna yhteistä herkkyyttä.",
+            "verification": "Alkuperäisabstrakti ja julkaisijan aineistokuvaus; ei määrällistä ympäristöannosväitettä.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S048",
+      "doi": "10.1021/acschembio.4c00576",
+      "title": "Majewska ym. 2025",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1021/acschembio.4c00576",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11934094/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH05",
+          "data": {
+            "id": "PH05",
+            "title": "Majewska ym. 2025",
+            "doi": "10.1021/acschembio.4c00576",
+            "urls": [
+              "https://doi.org/10.1021/acschembio.4c00576",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC11934094/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Puhdistettu punarinnan Cry4a kiinnittyi mallilipidikalvoihin järjestyneesti. Kalvon lipidien fysikaalinen tila ja pakkaus vaikuttivat sitoutumiseen. Spektroskopia ja molekyylidynamiikka tukivat suuntautunutta kiinnittymistä.",
+            "berm_role": "Kalvon tila voi muuttaa vastaanottimen järjestymistä. Tämä antaa orientaatiotilalle biologisen ankkurin; koe ei itse mittaa kalvoon sitoutuneen reseptorin kompassivastetta.",
+            "verification": "Koko alkuperäisteksti Europe PMC:n XML-palvelusta, erityisesti abstrakti ja tulokset.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S049",
+      "doi": "10.1038/s41587-026-03158-5",
+      "title": "Meng ym. 2026",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1038/s41587-026-03158-5",
+        "https://www.nature.com/articles/s41587-026-03158-5"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH06",
+          "data": {
+            "id": "PH06",
+            "title": "Meng ym. 2026",
+            "doi": "10.1038/s41587-026-03158-5",
+            "urls": [
+              "https://doi.org/10.1038/s41587-026-03158-5",
+              "https://www.nature.com/articles/s41587-026-03158-5"
+            ],
+            "record_type": "primary_study",
+            "finding": "CraCry- ja iLOV-proteiinien spinikemiaa ohjattiin RF:llä ja luettiin optisesti. Ankkurit: 447 nm, 15 °C, noin 1,47 GHz:n resonanssi noin 52,5 mT:n staattisessa kentässä; magneettipyyhkäisy 42,5–62 mT. Hitaiden tilojen kertyminen oli millisekuntien–sekuntien ilmiö.",
+            "berm_role": "Kokeellinen silta RF→spinivalinta→kemiallinen populaatio→optinen signaali. Valo ja RF voidaan myös erottaa ajallisesti pulssikokeessa. Kyse on puhdistetuista proteiineista optimoidussa laboratoriossa; päämenetelmätekstistä ei saada paikallista RF-B1-annosta.",
+            "verification": "Koko alkuperäisartikkeli ja menetelmät. Julkaistu 29.5.2026.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S050",
+      "doi": "10.48550/arxiv.2604.19579",
+      "title": "Kish ym. 2026, v3",
+      "record_type": "preprint",
+      "urls": [
+        "https://arxiv.org/abs/2604.19579v3"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH07",
+          "data": {
+            "id": "PH07",
+            "title": "Kish ym. 2026, v3",
+            "doi": "10.48550/arXiv.2604.19579",
+            "urls": [
+              "https://arxiv.org/abs/2604.19579v3"
+            ],
+            "record_type": "preprint",
+            "finding": "Punarinnan Cry4a:n redox-tilakohtainen HDX-MS paljasti semikinonitilalle oman konformaatioprofiilin. Se poikkesi sekä hapettuneesta että täysin pelkistyneestä tilasta.",
+            "berm_role": "Kemiallinen populaatiomuutos voi periaatteessa välittyä proteiinin rakenteeseen. Tämä on valo/redox→rakenne-komponentti, ei tässä työssä mitattu magneettikenttä→signalointi-ketju.",
+            "verification": "Alkuperäinen esipainos, v3 24.4.2026; **ei varmennettua vertaisarvioitua julkaisua tässä haussa**.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S051",
+      "doi": "10.1038/nature02117",
+      "title": "Yoshimura ym. 2003",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1038/nature02117",
+        "https://pubmed.ncbi.nlm.nih.gov/14614506/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH08",
+          "data": {
+            "id": "PH08",
+            "title": "Yoshimura ym. 2003",
+            "doi": "10.1038/nature02117",
+            "urls": [
+              "https://doi.org/10.1038/nature02117",
+              "https://pubmed.ncbi.nlm.nih.gov/14614506/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Japaninviiriäisen valoindusoitu DIO2 lisää paikallista T4→T3-muuntoa hypotalamuksessa. T3-annostelu jäljitteli fotoperiodista vastetta, DIO2:n esto ehkäisi sukurauhasten kasvua.",
+            "berm_role": "Valohistorialla on nimetty paikallinen hormonaalinen välitysportti lisääntymistilaan. Tämä on optisen fotoperiodin mekanismia.",
+            "verification": "Alkuperäisabstrakti; annosarvoja ei päätellä puuttuvista menetelmistä.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S052",
+      "doi": "10.1038/nature06738",
+      "title": "Nakao ym. 2008",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1038/nature06738",
+        "https://www.sys-pharm.m.u-tokyo.ac.jp/pdf/Nakao_2008.pdf"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH09",
+          "data": {
+            "id": "PH09",
+            "title": "Nakao ym. 2008",
+            "doi": "10.1038/nature06738",
+            "urls": [
+              "https://doi.org/10.1038/nature06738",
+              "https://www.sys-pharm.m.u-tokyo.ac.jp/pdf/Nakao_2008.pdf"
+            ],
+            "record_type": "primary_study",
+            "finding": "Viiriäisen ensimmäisen pitkän päivän jälkeen TSHβ-ilmentymisen nousu alkoi noin 14 h aamusta, DIO2-aalto noin 4 h myöhemmin. Aivokammioon annettu TSH lisäsi DIO2:ta ja sukurauhasten kasvua lyhyen päivän linnuilla.",
+            "berm_role": "Vastaanotintilan muutos sisältää järjestyneitä viiveitä, geenien ilmentymistä ja paikallista hormonisäätelyä.",
+            "verification": "Alkuperäisabstrakti ja tekijöiden julkaisun keskeinen teksti. Sama Nagoyan tutkimuslinja kuin PH08 ja PH10.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S053",
+      "doi": "10.1073/pnas.1006393107",
+      "title": "Nakane ym. 2010",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1073/pnas.1006393107",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2930557/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH10",
+          "data": {
+            "id": "PH10",
+            "title": "Nakane ym. 2010",
+            "doi": "10.1073/pnas.1006393107",
+            "urls": [
+              "https://doi.org/10.1073/pnas.1006393107",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC2930557/"
+            ],
+            "record_type": "primary_study",
+            "finding": "OPN5 paikantui viiriäisen syväaivojen neuroneihin. Heterologisen järjestelmän vastehuippu oli noin 420 nm. Lyhytaaltoinen valo tuotti fotoperiodisia vasteita myös silmät peitetyillä, käpyrauhasettomilla viiriäisillä.",
+            "berm_role": "Vastaanottava kudos ja valoreitti eroavat lajien välillä. OPN5 on yksi ehdokas, ei tässä kokeessa yksin kausaalisesti eristetty koko lisääntymisreitin reseptori.",
+            "verification": "Alkuperäistekstin abstrakti, tuloskatkelmat ja tekijöiden rajaama tulkinta.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S054",
+      "doi": "10.1016/j.cub.2008.06.076",
+      "title": "Hanon ym. 2008",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1016/j.cub.2008.06.076",
+        "https://pubmed.ncbi.nlm.nih.gov/18674911/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH11",
+          "data": {
+            "id": "PH11",
+            "title": "Hanon ym. 2008",
+            "doi": "10.1016/j.cub.2008.06.076",
+            "urls": [
+              "https://doi.org/10.1016/j.cub.2008.06.076",
+              "https://pubmed.ncbi.nlm.nih.gov/18674911/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Soay-lampaiden pitkä päivä muutti melatoniinille herkkien pars tuberalis -solujen TSH-tuotantoa ja hypotalamuksen DIO2/T3-reittiä.",
+            "berm_role": "Nisäkkään melatoniinivälitteinen tuloreitti ja linnun suora valovastaanotto voivat kohdata vasta myöhemmässä neuroendokriinisessa rakenteessa. Jaettu rakenne ei edellytä samaa reseptoria eikä lisääntymisvasteen samaa vuodenaikaista suuntaa.",
+            "verification": "Alkuperäisabstrakti; erillinen tutkimusryhmä ja nisäkäslaji.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S055",
+      "doi": "10.1126/sciadv.1701528",
+      "title": "Kyba ym. 2017",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1126/sciadv.1701528",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5699900/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH12",
+          "data": {
+            "id": "PH12",
+            "title": "Kyba ym. 2017",
+            "doi": "10.1126/sciadv.1701528",
+            "urls": [
+              "https://doi.org/10.1126/sciadv.1701528",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC5699900/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Satelliittiaineistossa 2012–2016 keinovalaistu ulkoalue kasvoi 2,2 % vuodessa ja yhteenlaskettu radianssi 1,8 % vuodessa. Mittarin spektrikaista rajoittaa esimerkiksi LED-siirtymän sinisen osuuden kuvaamista.",
+            "berm_role": "Historiallinen optinen muutos on mitattavissa omana altistushaaranaan. Satelliittivalo on samalla urbanisaation proxy, lähdehavainto ja epätäydellinen paikallisen biologisen annoksen mittari.",
+            "verification": "Alkuperäisabstrakti ja menetelmien spektrirajaus.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S056",
+      "doi": "10.1126/science.abq7781",
+      "title": "Kyba ym. 2023",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1126/science.abq7781"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH13",
+          "data": {
+            "id": "PH13",
+            "title": "Kyba ym. 2023",
+            "doi": "10.1126/science.abq7781",
+            "urls": [
+              "https://doi.org/10.1126/science.abq7781"
+            ],
+            "record_type": "primary_study",
+            "finding": "Vuosien 2011–2022 tähtinäkyvyyshavainnot vastasivat osallistujien havaintopaikoissa keskimäärin 9,6 %:n vuotuista taivaankirkkauden kasvua.",
+            "berm_role": "Mittaustapa ja havaintopaikkojen jakauma muuttavat historiallista indeksikuvaa. Luku ei ole koko maapallon jokaisen elinympäristön eikä RF-altistuksen kasvunopeus.",
+            "verification": "Alkuperäisen Science-artikkelin tulosteksti. Eri aineisto kuin PH12, osin sama tutkimuslinja.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S057",
+      "doi": "10.25039/s026.2018",
+      "title": "CIE S 026/E:2018",
+      "record_type": "standard",
+      "urls": [
+        "https://www.cie.co.at/publications/cie-system-metrology-optical-radiation-iprgc-influenced-responses-light-0"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH14",
+          "data": {
+            "id": "PH14",
+            "title": "CIE S 026/E:2018",
+            "doi": "10.25039/S026.2018",
+            "urls": [
+              "https://www.cie.co.at/publications/cie-system-metrology-optical-radiation-iprgc-influenced-responses-light-0"
+            ],
+            "record_type": "standard",
+            "finding": "Viiden ihmisen verkkokalvoreseptorin α-ooppiset suureet; melanoppinen EDI kuuluu tähän järjestelmään. Pelkkä fotoppinen lux ei kuvaa kaikkia ei-visuaalisia vasteita.",
+            "berm_role": "Optinen annos kirjataan reseptori- ja kudoskohtaisesti. Standardin ihmissilmän suureita ei käytetä yleisenä hyönteisen, kasvin tai kryptokromin annoksena.",
+            "verification": "Standardin julkinen virallinen kuvaus. Mittausstandardi, ei uusi biologinen koe.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S058",
+      "doi": "10.25039/tn.016.2026",
+      "title": "CIE TN 016:2026",
+      "record_type": "standard",
+      "urls": [
+        "https://cie.co.at/publications/comprehensive-checklist-reporting-light-characteristics-laboratory-based-human-studies"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH15",
+          "data": {
+            "id": "PH15",
+            "title": "CIE TN 016:2026",
+            "doi": "10.25039/TN.016.2026",
+            "urls": [
+              "https://cie.co.at/publications/comprehensive-checklist-reporting-light-characteristics-laboratory-based-human-studies"
+            ],
+            "record_type": "standard",
+            "finding": "ENLIGHT-raportointikehys valolla tehtäviin ihmisten laboratoriotutkimuksiin.",
+            "berm_role": "Teknologiasivun tietueisiin voidaan käyttää jo olemassa olevaa valon raportointirakennetta ja lisätä siihen kenttä- sekä järjestystiedot.",
+            "verification": "Virallinen teknisen muistion kuvaus. Menetelmäohje, ei vaikutusnäyttö.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S059",
+      "doi": "10.1093/pnasnexus/pgac230",
+      "title": "Hunting ym. 2022",
+      "record_type": "primary_study",
+      "urls": [
+        "https://doi.org/10.1093/pnasnexus/pgac230",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9802097/"
+      ],
+      "extractions": [
+        {
+          "section": "physics_and_history",
+          "local_id": "PH16",
+          "data": {
+            "id": "PH16",
+            "title": "Hunting ym. 2022",
+            "doi": "10.1093/pnasnexus/pgac230",
+            "urls": [
+              "https://doi.org/10.1093/pnasnexus/pgac230",
+              "https://pmc.ncbi.nlm.nih.gov/articles/PMC9802097/"
+            ],
+            "record_type": "primary_study",
+            "finding": "Lannoite- ja imidaklopridikäsittely muuttivat kukkien sähköistä tilaa; sähköinen jäljittely muutti kimalaisten laskeutumista.",
+            "berm_role": "Kemiallinen muutos voi välittyä sähköisen rajapinnan ja käyttäytymisen kautta. Tämä on konkreettinen eri alojen yhteinen ketju, ei RF-altistuskoe.",
+            "verification": "Aiemmassa saman päivän sentinellihaussa tarkistettu alkuperäisartikkeli; tämän kierroksen PMC-avaus palautti selaineston.",
+            "checked": "2026-09-08"
+          }
+        }
+      ]
+    }
+  ]
+}

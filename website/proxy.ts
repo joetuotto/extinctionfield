@@ -26,6 +26,11 @@ export function proxy(request: NextRequest) {
         const target = REDIRECTS[rest];
         if (target) {
           request.nextUrl.pathname = `${prefix}${target}`;
+          if (rest === "/data" && !request.nextUrl.searchParams.has("tab")) {
+            request.nextUrl.searchParams.set("tab", "atlas");
+            request.nextUrl.searchParams.set("view", "sources");
+          }
+          if (rest === "/explorer" && !request.nextUrl.searchParams.has("tab")) request.nextUrl.searchParams.set("tab", "global");
           return NextResponse.redirect(request.nextUrl, 308);
         }
       }
@@ -43,6 +48,11 @@ export function proxy(request: NextRequest) {
 
   const target = REDIRECTS[pathname];
   request.nextUrl.pathname = `/${locale}${target ?? pathname}`;
+  if (pathname === "/data" && !request.nextUrl.searchParams.has("tab")) {
+    request.nextUrl.searchParams.set("tab", "atlas");
+    request.nextUrl.searchParams.set("view", "sources");
+  }
+  if (pathname === "/explorer" && !request.nextUrl.searchParams.has("tab")) request.nextUrl.searchParams.set("tab", "global");
   return NextResponse.redirect(request.nextUrl);
 }
 

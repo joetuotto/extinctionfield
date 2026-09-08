@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-08",
+  "scope": "verified_published_survey_estimates",
+  "interpolation": "none",
+  "sources": [
+    {
+      "id": "cdc_nhanes_db516_table5",
+      "title": "Gwira, Fryar & Gu (2024), NCHS Data Brief 516, Table 5",
+      "url": "https://www.cdc.gov/nchs/products/databriefs/db516.htm",
+      "doi": "https://doi.org/10.15620/cdc/165794",
+      "locator": "Data table for Figure 5 (Table 5)",
+      "publishedAt": "2024-11",
+      "retrievedAt": "2026-09-08",
+      "rawPath": "cdc_db516_source.html",
+      "sha256": "9bb1e9e0ea5316ebfb536dc68face10edd20b562ba6190a81467cedd5aec0087",
+      "bytes": 135213,
+      "license": "Public domain; source citation requested by NCHS",
+      "extraction": "Original HTML table parsed; all 11 survey periods retained"
+    }
+  ],
+  "series": [
+    {
+      "id": "us_diabetes_total_age_standardized",
+      "label": {
+        "fi": "Diabetes yhteensä, ikävakioitu",
+        "en": "Total diabetes, age-standardized"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "unit": "percent",
+      "metric": "prevalence",
+      "frequency": "survey_period",
+      "population": {
+        "fi": "USA:n vähintään 20-vuotias siviiliväestö laitosten ulkopuolella; raskaana olevat suljettu pois",
+        "en": "US civilian noninstitutionalized adults aged 20+; pregnant participants excluded"
+      },
+      "standardization": {
+        "fi": "Suora ikävakiointi USA:n vuoden 2000 väestöön: 20–39, 40–59 ja 60+.",
+        "en": "Direct age standardization to the 2000 US Census population: 20–39, 40–59 and 60+."
+      },
+      "definition": "Diagnosed diabetes plus previously undiagnosed diabetes detected by fasting glucose >=126 mg/dL or HbA1c >=6.5%.",
+      "uncertainty": "Published 95% confidence intervals",
+      "sampleSize": "Unweighted n; published estimates use fasting sample weights",
+      "points": [
+        {
+          "period": "1999–2000",
+          "startYear": 1999,
+          "endYear": 2000,
+          "value": 9.7,
+          "lower": 7.6,
+          "upper": 12.1,
+          "standardError": 1.0,
+          "n": 1739,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2001–2002",
+          "startYear": 2001,
+          "endYear": 2002,
+          "value": 11.5,
+          "lower": 9.3,
+          "upper": 13.9,
+          "standardError": 1.0,
+          "n": 2078,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2003–2004",
+          "startYear": 2003,
+          "endYear": 2004,
+          "value": 11.2,
+          "lower": 9.2,
+          "upper": 13.4,
+          "standardError": 0.9,
+          "n": 1874,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2005–2006",
+          "startYear": 2005,
+          "endYear": 2006,
+          "value": 11.6,
+          "lower": 9.7,
+          "upper": 13.8,
+          "standardError": 0.9,
+          "n": 1824,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2007–2008",
+          "startYear": 2007,
+          "endYear": 2008,
+          "value": 12.7,
+          "lower": 10.8,
+          "upper": 14.8,
+          "standardError": 0.9,
+          "n": 2329,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2009–2010",
+          "startYear": 2009,
+          "endYear": 2010,
+          "value": 12.6,
+          "lower": 10.5,
+          "upper": 14.9,
+          "standardError": 0.9,
+          "n": 2585,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2011–2012",
+          "startYear": 2011,
+          "endYear": 2012,
+          "value": 12.5,
+          "lower": 9.9,
+          "upper": 15.5,
+          "standardError": 1.2,
+          "n": 2287,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2013–2014",
+          "startYear": 2013,
+          "endYear": 2014,
+          "value": 13.0,
+          "lower": 11.3,
+          "upper": 15.0,
+          "standardError": 0.8,
+          "n": 2368,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2015–2016",
+          "startYear": 2015,
+          "endYear": 2016,
+          "value": 14.9,
+          "lower": 12.7,
+          "upper": 17.3,
+          "standardError": 1.0,
+          "n": 2244,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2017–March 2020",
+          "startYear": 2017,
+          "endYear": 2020,
+          "value": 14.8,
+          "lower": 13.1,
+          "upper": 16.7,
+          "standardError": 0.8,
+          "n": 3757,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "August 2021–August 2023",
+          "startYear": 2021,
+          "endYear": 2023,
+          "value": 14.3,
+          "lower": 12.1,
+          "upper": 16.7,
+          "standardError": 1.0,
+          "n": 2938,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        }
+      ],
+      "limitations": [
+        {
+          "fi": "Jaksot kuvaavat vaihtuvia väestöotoksia, eivät samojen henkilöiden seurantaa.",
+          "en": "Periods are repeated population cross-sections, not follow-up of the same people."
+        },
+        {
+          "fi": "Paastoglukoosin menetelmämuutokset on korjattu lähteen regressioyhtälöillä.",
+          "en": "Fasting glucose method changes were adjusted with source regression equations."
+        },
+        {
+          "fi": "Vuosien 2017–2020 piste päättyy maaliskuuhun 2020. Jaksoa ei pureta vuosihavainnoiksi.",
+          "en": "The 2017–2020 period ends in March 2020. Period estimates are not split into annual observations."
+        },
+        {
+          "fi": "Kokonaisdiabetes sisältää diagnosoidun diabeteksen: sarjoja ei lasketa yhteen.",
+          "en": "Total diabetes includes diagnosed diabetes: do not add the series."
+        }
+      ]
+    },
+    {
+      "id": "us_diabetes_diagnosed_age_standardized",
+      "label": {
+        "fi": "Diagnosoitu diabetes, ikävakioitu",
+        "en": "Diagnosed diabetes, age-standardized"
+      },
+      "geography": {
+        "code": "USA",
+        "name": {
+          "en": "United States",
+          "fi": "Yhdysvallat"
+        }
+      },
+      "unit": "percent",
+      "metric": "prevalence",
+      "frequency": "survey_period",
+      "population": {
+        "fi": "USA:n vähintään 20-vuotias siviiliväestö laitosten ulkopuolella; raskaana olevat suljettu pois",
+        "en": "US civilian noninstitutionalized adults aged 20+; pregnant participants excluded"
+      },
+      "standardization": {
+        "fi": "Suora ikävakiointi USA:n vuoden 2000 väestöön: 20–39, 40–59 ja 60+.",
+        "en": "Direct age standardization to the 2000 US Census population: 20–39, 40–59 and 60+."
+      },
+      "definition": "Self-report of a clinician diabetes diagnosis other than during pregnancy.",
+      "uncertainty": "Published 95% confidence intervals",
+      "sampleSize": "Unweighted n; published estimates use fasting sample weights",
+      "points": [
+        {
+          "period": "1999–2000",
+          "startYear": 1999,
+          "endYear": 2000,
+          "value": 5.9,
+          "lower": 4.1,
+          "upper": 8.0,
+          "standardError": 0.9,
+          "n": 1739,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2001–2002",
+          "startYear": 2001,
+          "endYear": 2002,
+          "value": 6.8,
+          "lower": 5.3,
+          "upper": 8.6,
+          "standardError": 0.7,
+          "n": 2078,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2003–2004",
+          "startYear": 2003,
+          "endYear": 2004,
+          "value": 7.2,
+          "lower": 5.6,
+          "upper": 9.0,
+          "standardError": 0.7,
+          "n": 1874,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2005–2006",
+          "startYear": 2005,
+          "endYear": 2006,
+          "value": 7.7,
+          "lower": 6.3,
+          "upper": 9.3,
+          "standardError": 0.7,
+          "n": 1824,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2007–2008",
+          "startYear": 2007,
+          "endYear": 2008,
+          "value": 8.3,
+          "lower": 6.8,
+          "upper": 10.0,
+          "standardError": 0.7,
+          "n": 2329,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2009–2010",
+          "startYear": 2009,
+          "endYear": 2010,
+          "value": 8.1,
+          "lower": 6.4,
+          "upper": 10.0,
+          "standardError": 0.7,
+          "n": 2585,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2011–2012",
+          "startYear": 2011,
+          "endYear": 2012,
+          "value": 8.5,
+          "lower": 6.4,
+          "upper": 11.0,
+          "standardError": 1.0,
+          "n": 2287,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2013–2014",
+          "startYear": 2013,
+          "endYear": 2014,
+          "value": 9.3,
+          "lower": 7.8,
+          "upper": 11.0,
+          "standardError": 0.7,
+          "n": 2368,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2015–2016",
+          "startYear": 2015,
+          "endYear": 2016,
+          "value": 10.0,
+          "lower": 8.4,
+          "upper": 11.9,
+          "standardError": 0.8,
+          "n": 2244,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "2017–March 2020",
+          "startYear": 2017,
+          "endYear": 2020,
+          "value": 10.6,
+          "lower": 9.1,
+          "upper": 12.2,
+          "standardError": 0.7,
+          "n": 3757,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        },
+        {
+          "period": "August 2021–August 2023",
+          "startYear": 2021,
+          "endYear": 2023,
+          "value": 10.1,
+          "lower": 8.3,
+          "upper": 12.1,
+          "standardError": 0.8,
+          "n": 2938,
+          "sourceId": "cdc_nhanes_db516_table5",
+          "observationType": "survey_estimate",
+          "imputed": false
+        }
+      ],
+      "limitations": [
+        {
+          "fi": "Jaksot kuvaavat vaihtuvia väestöotoksia, eivät samojen henkilöiden seurantaa.",
+          "en": "Periods are repeated population cross-sections, not follow-up of the same people."
+        },
+        {
+          "fi": "Paastoglukoosin menetelmämuutokset on korjattu lähteen regressioyhtälöillä.",
+          "en": "Fasting glucose method changes were adjusted with source regression equations."
+        },
+        {
+          "fi": "Vuosien 2017–2020 piste päättyy maaliskuuhun 2020. Jaksoa ei pureta vuosihavainnoiksi.",
+          "en": "The 2017–2020 period ends in March 2020. Period estimates are not split into annual observations."
+        },
+        {
+          "fi": "Kokonaisdiabetes sisältää diagnosoidun diabeteksen: sarjoja ei lasketa yhteen.",
+          "en": "Total diabetes includes diagnosed diabetes: do not add the series."
+        }
+      ]
+    }
+  ]
+}
