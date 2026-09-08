@@ -37340,7 +37340,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37365,7 +37365,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37390,7 +37390,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "cellular_ros_dna",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37415,7 +37415,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "cellular_ros_dna",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37488,7 +37488,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37513,7 +37513,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "cellular_ros_dna",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37538,7 +37538,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "cellular_ros_dna",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37563,7 +37563,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "neurobiology_circadian",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37588,7 +37588,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "neurobiology_circadian",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37613,7 +37613,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "preprint",
-      "category": "reproduction_hormones",
+      "category": "neurobiology_circadian",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37638,7 +37638,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "reproduction_hormones",
+      "category": "cellular_ros_dna",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37688,7 +37688,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "reproduction_hormones",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37712,7 +37712,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "reproduction_hormones",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37738,7 +37738,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "reproduction_hormones",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37764,7 +37764,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37790,7 +37790,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37816,7 +37816,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37841,7 +37841,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "transduction_rpm_calcium",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37866,7 +37866,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "rf_safety_regulation",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37890,7 +37890,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "rf_safety_regulation",
       "pathway": [],
       "tags": [
         "combined-exposures"
@@ -37916,7 +37916,7 @@
       "link_source": "curated_primary_metadata",
       "link_checked_at": "2026-09-08",
       "type": "journal",
-      "category": "physics_theory",
+      "category": "ecology_sentinels",
       "pathway": [],
       "tags": [
         "combined-exposures"

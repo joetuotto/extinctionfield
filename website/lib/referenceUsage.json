@@ -2,7 +2,7 @@
   "metadata": {
     "generated": "2026-09-08",
     "referencesWithUsages": 878,
-    "usageLocations": 2693
+    "usageLocations": 2694
   },
   "usage": {
     "delgado1969": [
@@ -7791,6 +7791,10 @@
       {
         "path": "/evidence/combined-exposures",
         "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
       },
       {
         "path": "/evidence/pharmacology",

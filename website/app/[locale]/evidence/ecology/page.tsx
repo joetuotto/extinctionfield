@@ -1,3 +1,4 @@
+import { StudyCitation } from "@/components/StudyCitation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TreePine } from "lucide-react";
@@ -486,6 +487,13 @@ export default async function EcologyPage({
           ))}
         </div>
       </section>
+
+      <aside id="combined-exposures-ecology" className="my-8 rounded-xl border border-accent/25 bg-accent/5 p-5 sm:p-7">
+        <h3 className="font-serif text-xl">{locale === "fi" ? "Lajienvälinen vertailu avaa myös yhteisaltistukset" : "Cross-species comparison also opens combined exposures"}</h3>
+        <p className="mt-3 text-sm leading-7 text-foreground-muted">{locale === "fi" ? "Hun tutkimus havaitsi polymeerimateriaalia 23 ihmisen ja 47 koiran kivesnäytteissä. Koirilla tutkittiin myös yhteyksiä lisääntymiselimiin ja siittiömäärään. BERM yhdistää kemiallisen kuorman, paikallisen kentän ja vastaanottotilan omiksi vaikutuspaikoikseen. Tämä yhteinen kudosvertailu täsmentää kemiallista haaraa; tutkimus ei mitannut EMF-altistusta tai osoittanut vaatteita materiaalin kulkeutumisreitiksi." : "Hu detected polymer material in 23 human and 47 canine testis samples; reproductive-organ and sperm associations were also examined in dogs. BERM composes chemical burden, local field and receiving state as distinct sites of action. This shared tissue comparison constrains the chemical branch; the study did not measure EMF exposure or establish clothing as the entry route."}</p>
+        <div className="mt-3 text-sm"><StudyCitation referenceId="hu2024_testis_microplastics" locale={locale} /></div>
+        <Link href={`/${locale}/evidence/combined-exposures#material-device`} className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-accent hover:underline">{locale === "fi" ? "Avaa materiaalin, kentän ja biologisen tilan yhteys →" : "Explore material, field and biological state →"}</Link>
+      </aside>
 
       {/* See also */}
       <section className="border-t editorial-rule pt-6">
