@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T13:40:56.937Z",
+  "generatedAt": "2026-09-08T13:59:26.557Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -81,7 +81,7 @@
     {
       "claimId": "claim.behavior.biological-state-to-action",
       "file": "app/[locale]/evidence/convergence/page.tsx",
-      "line": 212
+      "line": 214
     },
     {
       "claimId": "claim.behavior.biological-state-to-action",
@@ -399,7 +399,7 @@
     {
       "claimId": "claim.coordination.hormone-target-timing",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 159
+      "line": 162
     },
     {
       "claimId": "claim.coordination.hormone-target-timing",
@@ -435,7 +435,7 @@
     {
       "claimId": "claim.coordination.multiple-zeitgebers",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 162
+      "line": 165
     },
     {
       "claimId": "claim.coordination.multiple-zeitgebers",
@@ -448,7 +448,7 @@
     {
       "claimId": "claim.coordination.redox-clock",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 158
+      "line": 161
     },
     {
       "claimId": "claim.coordination.redox-clock",
@@ -484,7 +484,7 @@
     {
       "claimId": "claim.couple.waiting-time-distribution",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 170
+      "line": 173
     },
     {
       "claimId": "claim.couple.waiting-time-distribution",
@@ -515,7 +515,7 @@
     {
       "claimId": "claim.cry.endocrine-gating",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 149
+      "line": 152
     },
     {
       "claimId": "claim.cry.endocrine-gating",
@@ -552,7 +552,7 @@
     {
       "claimId": "claim.encounter.network-propagation",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 174
+      "line": 177
     },
     {
       "claimId": "claim.encounter.network-propagation",
@@ -573,7 +573,7 @@
     {
       "claimId": "claim.geometry.multisource-receptor-coupling",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 179
+      "line": 182
     },
     {
       "claimId": "claim.geometry.multisource-receptor-coupling",
@@ -1075,7 +1075,7 @@
     {
       "claimId": "claim.receptor.chemical-memory",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 153
+      "line": 156
     },
     {
       "claimId": "claim.receptor.chemical-memory",
@@ -1146,7 +1146,7 @@
     {
       "claimId": "claim.receptor.state-dependent-response",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 144
+      "line": 147
     },
     {
       "claimId": "claim.receptor.state-dependent-response",
@@ -1167,7 +1167,7 @@
     {
       "claimId": "claim.reproduction.local-clock-gates",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
-      "line": 169
+      "line": 172
     },
     {
       "claimId": "claim.reproduction.local-clock-gates",

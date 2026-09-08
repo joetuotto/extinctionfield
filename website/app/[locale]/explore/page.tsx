@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ExploreTabs } from "@/components/ExploreTabs";
+import { SteroidogenesisDataAccess } from "@/components/SteroidogenesisDataAccess";
 import { PageHeader } from "@/components/PageHeader";
 import { Map } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
@@ -61,6 +62,7 @@ export default async function ExplorePage({
         subtitle={d.subtitle}
       />
       <ExploreTabs locale={locale} />
+      <SteroidogenesisDataAccess locale={locale} />
     </div>
   );
 }
