@@ -1,42 +1,42 @@
 # Väestöteorioiden integrointi proxy masking -sivuun
 
-8.9.2026. Esityssuunnitelma liitteelle `/Users/ottojuote/.codex/attachments/9dc10194-89fd-4ed6-846b-b2b509112cce/pasted-text.txt`. Kaikki 23 kohtaa sekä liitteen luokittelu ja lopputopologia luettu. Nykyinen sivu tarkistettu lähdekoodista; tässä suunnitteluvaiheessa sivutiedostoja ei muutettu. Päätehtävä toteuttaa sisällön erillisessä `/tmp/extinctionfield-proxy-demography-20260908`-työpuussa.
+8.9.2026. Toteutuksen esitysmuistio liitteelle `/Users/ottojuote/.codex/attachments/9dc10194-89fd-4ed6-846b-b2b509112cce/pasted-text.txt`. Kaikki 23 kohtaa sekä liitteen luokittelu ja lopputopologia luettiin. Toteutus tarkistettiin lähdekoodista työpuussa `/tmp/extinctionfield-proxy-demography-20260908`. Tämä dokumenttipäivitys ei muuttanut sivukoodia. Selaintarkistus on käynnissä; päätehtävä tekee lopulliset build- ja julkaisuvalidoinnit.
 
 ## Ratkaisu: yksi soveltava osio, neljä ryhmää, kaksi kuvaa
 
-Uusi osio **”Mihin väestötieteen selitykset sijoittuvat?”** / **“Where demographic explanations enter the process”** ankkurilla `#demographic-explanations` sijoitetaan nykyisen `#syndrome-fragmentation`-osion jälkeen ja ennen `#explanatory-parsimony`-osiota. Nykyiset neljä peittymistasoa säilyvät. `#proxy-explanations` saa yhden eteenpäin vievän linkin tähän sovellukseen.
+Osio **”Väestötieteen selitykset samassa ketjussa”** / **“Demographic explanations in the same chain”** ankkurilla `#demographic-explanations` sijaitsee `#syndrome-fragmentation`-osion jälkeen ja ennen `#explanatory-parsimony`-osiota. Sivun neljä peittymistasoa säilyvät. `#proxy-explanations` sisältää eteenpäin vievän linkin tähän sovellukseen. Uusi kokonaisuus on sivun 11. osio; pääosioita on nyt 13.
 
 Lukija saa ensin nykyiseltä sivulta premissit, korrelaation ja välittymisen eron, vastaanoton, biologian, ihmisen kokemuksen ja fragmentaation. Uusi osio soveltaa opitun väestöteorioihin. Sen jälkeen nykyinen parsimonia kokoaa sovellukset samaan rakenteeseen. Tämä välttää 23 uutta pääosiota ja saman fysikaalis-biologisen ketjun aloittamisen aina alusta.
 
 Osion sisäinen lukupolku:
 
-1. 70–100 sanan johdanto: useat teoriat kuvaavat eri vaiheita samassa prosessissa. BERM:n johtopäätös alkaa jo ilmoitetuista premisseistä.
+1. Johdanto, BERM-premisseistä johdettu tulkinta ja Bongaartsin kehykseen yhdistävä lähdekappale: teoriat kuvaavat eri vaiheita samassa prosessissa.
 2. **Lapsitoiveen toteutumisen prosessikuva.** Näyttää, mihin motivaatio, biologinen kapasiteetti, resurssit, ajoitus, ehkäisy ja hoidot sijoittuvat.
 3. **Morgan–Rackinin empiirinen vertailu.** Näyttää samoilta ihmisiltä mitatun aiemman odotuksen ja myöhemmän lapsiluvun välisen suhteen. Tämä konkretisoi prosessin; se ei diagnosoi eron syytä.
-4. **Neljä teoriaryhmää ja 23 selattavaa nimikettä.** Kerrallaan yksi tiivis tulkinta ja sen lähdeankkurit.
-5. Yksi johtokappale: samat määritellyt prosessit yhdistävät eri havaintotasot; yksittäisen ehdon muuttaminen ei automaattisesti muuta kaikkia ehtoja. Linkki seuraavaan parsimoniaosioon.
+4. **Neljä teoriaryhmää ja 23 selattavaa nimikettä.** Kerrallaan yksi ryhmä ja enintään yksi avattu tulkinta lähdeankkureineen. Kuvien jälkeen niiden yhteistä lukutapaa selittävä teksti johdattaa teoriaryhmiin.
+5. Avattava Aitkenin, Itaon ja peittymistasojen lähdetäsmennys sekä johtokappale: samat määritellyt prosessit yhdistävät eri havaintotasot; yksittäisen ehdon muuttaminen ei automaattisesti muuta kaikkia ehtoja. Lopussa on linkki parsimoniaosioon.
 
-Päätehtävän viimeisin rajaus valitsee toiseksi kuvaksi empiirisen aie–toteutuma-palkin. Erillistä uutta sensorista palautekaaviota ei siksi tehdä. Palaute kuvataan teoriaryhmän D lyhyissä reittiteksteissä ja linkitetään nykyiseen vastaanotto-osioon.
+Toiseksi kuvaksi toteutettiin empiirinen odotus–toteutuma-palkki. Erillistä uutta sensorista palautekaaviota ei lisätty. Palaute kuvataan teoriaryhmän D reittiteksteissä ja yhdistetään vastaanotto-osioon.
 
 ## Neljä ryhmää ja kaikkien 23 kohdan sijoittelu
 
-Ryhmät ovat lukemisen aihejako, eivät uusia peittymistasoja tai näytön vahvuusluokkia. Jokaisella nimikkeellä on yksi pääpaikka; ristiviitteet osoittavat tarvittaessa muihin prosessikohtiin.
+Ryhmät ovat lukemisen aihejako, eivät uusia peittymistasoja tai näytön vahvuusluokkia. Jokaisella nimikkeellä on yksi pääpaikka; ankkurilinkit osoittavat vastaaviin prosessikohtiin. Ryhmittelyn lähde on `website/lib/proxyDemographyData.ts`: ympäristö ja kehityskulku (`infrastructure`, 6), aikeet ja toteuttamisen ehdot (`agency`, 7), biologinen kapasiteetti (`capacity`, 5), yhteisön palaute (`feedback`, 5).
 
 | Liitteen kohta | Pääryhmä | Näkyvä tehtävä ja nykyinen tausta |
 |---|---|---|
-| 1 Demografinen transitio | A · Infrastruktuuri ja kehityskulku | Modernisaatio kokoaa muutoksia; nykyinen korrelaatiokaavio ja Belmin-taulukko. |
+| 1 Demografinen transitio | A · Ympäristö ja kehityskulku | Modernisaatio kokoaa muutoksia; nykyinen korrelaatiokaavio ja Belmin-taulukko. |
 | 2 Koulutus | A | Koulutus, infrastruktuuri ja ajoitus erotellaan; ei liitteen varmentamatonta R²-sarjaa. |
 | 4 Kaupungistuminen | A | Koontiluokka sisältää useita ympäristö- ja resurssireittejä; linkki nykyiseen proksiselittäjään. |
-| 12 Älypuhelimet | A | Sisältö, valo, RF ja ajankäyttö eri sisääntuloina; linkki ruutuaika- ja altistusmittauskohtaan. |
+| 7 Beckerin malli | A | Vaihtoehtoiskustannukset ja resurssit ovat todellisia ehtoja; kapasiteettia ei päätellä rahapanoksen vaikutuksesta. |
 | 19 Kaksi väestöllistä polkua | A | Muodon sovitus ja materiaalisen mekanismin tunnistaminen erotetaan; luvut vain lähdeauditoituna. |
 | 20 Epätäydellinen konvergenssi | A | Vastaanottotila, historia, instituutiot ja jakaumat antavat nimetyt syyt heterogeenisuudelle. |
 | 3 Ehkäisy | B · Aikeet ja toteuttamisen ehdot | Todellinen raskauden toteutumiseen vaikuttava reitti; ei nimitetä pelkäksi näennäiseksi proksiksi. |
 | 5 Naisten valtaistuminen | B | Toimintamahdollisuudet ja omat tavoitteet; autonomia ei itsessään diagnosoi biologista tilaa. |
 | 6 Toinen demografinen transitio | B | Koetut arvot, suhteet ja biologisesti toteutuvat motivaatioprosessit; nykyinen tulkkimekanismi. |
-| 7 Beckerin malli | B | Vaihtoehtoiskustannukset ja resurssit ovat todellisia ehtoja; kapasiteettia ei päätellä rahapanoksen vaikutuksesta. |
 | 13 Lykkääminen | B | Ajoitus ja sen biologiset seuraukset; ikä ei ole suoraan kumulatiivinen EMF-annos. |
 | 14 Aie–toteutuma-kuilu | B | Eri prosessivaiheet ja samojen ihmisten pitkittäismittaus; uuden empiirisen kuvan ankkuri. |
 | 16 Ilmastoahdistus | B | Koettu syy ja sen historia; huolen sisältö tai lisääntymispäätös ei osoita hormonihäiriötä. |
+| 22 Pronatalistinen politiikka | B | Interventio kohdistuu osaan ehdoista; lopputulos ei yksin nimeä jäljelle jäävää estettä. |
 | 10 Siemennestetrendit | C · Biologinen kapasiteetti | Linkki nykyiseen trendi- ja lajivertailuun; ei toista kuvaajia tai täydellistä altistuskorrelaatiota. |
 | 11 Kemikaalit | C | Todellinen altiste, tilariippuvuus ja yhteisvaikutus; nykyinen `#joint-exposures`. |
 | 15 ART | C | Hoito muuttaa tiettyä vaihetta ja voi kompensoida rajoitetta; linkki nykyiseen kompensaatioon. |
@@ -44,8 +44,8 @@ Ryhmät ovat lukemisen aihejako, eivät uusia peittymistasoja tai näytön vahvu
 | 18 Epigeneettinen periytyminen | C | Muisti ja sukupolvien välinen välitys nimettyinä lisäliitoksina; tutkimuksessa mitattu sukupolvi erotellaan. |
 | 8 Low fertility trap | D · Yhteisön palaute | Väestörakenne, kontaktit, opitut odotukset ja sensorinen ympäristö ajan yli. |
 | 9 Sosiaalinen vertailu | D | Sosiaalinen vaikutus ja kuormitus todellisina vahvistavina reitteinä; ei uusi esimerkki samasta RF-käyrästä. |
+| 12 Älypuhelimet | D | Sisältö, valo, RF ja ajankäyttö eri sisääntuloina; linkki ruutuaika- ja altistusmittauskohtaan. |
 | 21 Kiinan politiikan jälkivaikutus | D | Politiikan, ajoituksen, normien ja biologisen tilan eri aikaskaalat; historiatiedot vain auditoituna. |
-| 22 Pronatalistinen politiikka | D | Interventio kohdistuu osaan ehdoista; lopputulos ei yksin nimeä jäljelle jäävää estettä. |
 | 23 Ihanteellinen perhekoko | D | Kontaktit, oppiminen, kokemus ja myöhemmät ihanteet; nykyinen ihmisen aistinäyttö toimii komponenttina. |
 
 ## Peittymisen neljä tasoa pysyvät samoina
@@ -64,7 +64,7 @@ ART:n kompensaatio ei muutu tutkimuksen epäsymmetriaksi vain liitteen PM2-nimit
 
 ## Visualisointi 1: lapsitoiveen toteutumisen prosessi
 
-Tuleva komponentti: `ProxyDemographicProcess({ locale })` tiedostossa `website/components/ProxyDemographicProcess.tsx` erillisessä työpuussa.
+Toteutettu komponentti: `ProxyDemographicProcess({ locale })` tiedostossa `website/components/ProxyDemographicProcess.tsx`, ankkuri `#demographic-process`.
 
 Kuva esittää **lapsitoiveen toteutumisen reitin**, ei yleistä kaikkien syntymien kaavaa. Vaiheet:
 
@@ -78,21 +78,21 @@ Mobiilissa vaiheet pinoutuvat pystysuoraan; leveämmässä artikkelissa käytet�
 
 ## Visualisointi 2: odotus ja myöhempi lapsiluku samoilta ihmisiltä
 
-Tuleva komponentti: `ProxyIntentionOutcomeChart({ locale })` samassa tiedostossa.
+Toteutettu komponentti: `ProxyIntentionOutcomeChart({ locale })` samassa tiedostossa, ankkuri `#demographic-intention-outcomes`.
 
-Kaksi empiiristä 100 % pinottua palkkia, naiset ja miehet. Luokat: **vähemmän / yhtä monta / enemmän lapsia kuin aiemmin odotettu**. Näkyvät prosentit tulevat Morgan–Rackin 2010 -tutkimuksesta; methods-agentti varmistaa otokset, painotuksen sekä molempien mittausajankohtien määritelmät ennen julkaisukopioita.
+Kaksi empiiristä 100 % pinottua palkkia, naiset ja miehet. Luokat: **vähemmän / yhtä monta / enemmän lapsia kuin aiemmin odotettu**. Morgan–Rackin 2010 -tutkimuksen taulukosta 2A tarkistetut osuudet ovat naisilla 34,9 / 43,4 / 21,7 % (n=3 783) ja miehillä 42,8 / 34,2 / 23,0 % (n=3 584). Oman odotuksen mittaus oli noin 24-vuotiaana; saman henkilön toteuma mitattiin 41–50-vuotiaana vuonna 2006. Osuudet on painotettu vuoden 2006 otospainoilla. Lähdeauditti ja koneelliset tietueet: `demography_sources.md` ja `demography_references.json`.
 
 Jokaisen palkin alla samat kolme arvoa ovat tekstissä. Luokat eivät käytä onnistuminen/epäonnistuminen-sanastoa: muuttunut toive ja täyttymätön toive eivät ole sama mittaus. Kuvaa ei nimitetä prosentiksi biologista hedelmättömyyttä. Oma aiempi odotus erotetaan väestön ihanteellisesta lapsiluvusta ja periodi-TFR:stä. Lähdeviite ja painotuksen täsmennys ovat kuvan yhteydessä.
 
-Kapea palkki riittää, eikä prosenttia tarvitse mahduttaa itse segmenttiin. Alle 360 pikselin leveydessä luokkien tekstit ja arvot pinoutuvat selkeästi. Värit ovat sivun hillittyjä sarjavärejä; luokkajärjestys pysyy samana molemmissa palkeissa. Ei interaktiivista sukupuolen vaihtoa tai animaatiota: kaksi rinnakkaista havaintoa ovat suoraan verrattavissa.
+Kapea SVG-palkki esittää jakauman; prosentit ovat erillisessä HTML-luettelossa. Luettelon responsiivinen rakenne vaihtuu kolmisarakkeiseksi 420 pikselin taittopisteestä alkaen. Tämä on lähdekoodin toteutustieto, ei väite valmiista mobiilitarkistuksesta. Värit ovat sivun sarjavärejä ja luokkajärjestys sama molemmissa palkeissa. Sukupuolen vaihtovalitsinta tai animaatiota ei lisätty: molemmat havainnot ovat näkyvissä.
 
 ## 23 nimikkeen esitystapa ja toiston rajaus
 
-Ryhmän valinta näyttää 5–7 lyhyttä nimikettä ja yhden aktiivisen sisältöpaneelin. Jokaisen nimikkeen sisällön tavoite on 70–110 sanaa kieliversiota kohti:
+`ProxyDemographicTheories` näyttää ryhmän valinnan jälkeen 5–7 nimikettä avattavana luettelona. Enintään yksi nimike on auki, ja käyttäjä voi sulkea myös sen. Ryhmän vaihtaminen avaa uuden ryhmän ensimmäisen nimikkeen. Jokainen nimike sisältää kolme erotettua osaa:
 
-- **Mitä selitys tavoittaa?** Havainto ja todellinen kausaalinen tehtävä, 15–25 sanaa.
-- **Mitä BERM johtaa?** Nimetty pidempi reitti ja täsmällinen johtopäätös, 30–45 sanaa.
-- **Mihin havaintoon liitos nojaa?** Auditoitu komponentti, populaatio ja lähde, 20–35 sanaa. Mallin koostama liitos pidetään erillään lähteen mitatusta tuloksesta.
+- **Mitä selitys tavoittaa?** Havainto ja todellinen kausaalinen tehtävä.
+- **Mitä BERM johtaa?** Nimetty pidempi reitti ja täsmällinen johtopäätös.
+- **Yhteys tutkimusnäyttöön.** Auditoitu komponentti, populaatio ja lähde. Mallin koostama liitos on erotettu lähteen mitatusta tuloksesta.
 
 Ei kausaalisuuden ✓/✗-voittotaulukkoa, tähtiarvosanoja, 23 ennustetta tai 23 kertaa toistettua täyttä fysiikkajohdantoa. Premissit ovat näkyvissä ennen sovellusta; niiden sisällä johtopäätökset kirjoitetaan suoraan. Empiirinen lähde rajataan silti omaan mittaamaansa asiaan. Periaate on sama kuin nykyisessä `ProxyExplanationsExplorer`-komponentissa, mutta aiheena ovat teoriat ja toteutumisen vaiheet, eivät uudestaan samat kymmenen proksimuuttujaa.
 
@@ -100,8 +100,8 @@ Nykyiset `ProxyMaskingCurveExplorer`, `ReceiverStateExplorer`, `InteractionExplo
 
 ## Julkaisurajat ja saavutettavuus
 
-Historiaväitteet, kaikkiin maihin ulottuvat yleistykset, R²=0,999/r=1,000, tarkistamattomat prosenttiosuudet ja oireprofiilien diagnostiset väitteet eivät siirry sellaisinaan. Muut agentit auditoivat nämä; esitys ei tarvitse niitä vahvan rakenteellisen argumentin perustaksi. Myöskään kaikki ruutuaikatutkimukset eivät muutu RF-kokeiksi tai ihmisen oma perustelu hormonimittaukseksi.
+Historiaväitteitä, kaikkiin maihin ulottuvia yleistyksiä, R²=0,999/r=1,000-lukuja, tarkistamattomia prosenttiosuuksia ja oireprofiilien diagnostisia väitteitä ei siirretty sellaisinaan. Lähdeaudittien täsmennykset näkyvät teoriakorteissa ja avattavassa lähdeosassa. Esitys ei tarvitse näitä yleistyksiä rakenteellisen argumentin perustaksi. Myöskään kaikki ruutuaikatutkimukset eivät muutu RF-kokeiksi tai ihmisen oma perustelu hormonimittaukseksi.
 
-FI/EN täydellisinä, muille `pickCopy`-varakieli. Uusi pääosio saa yhden vakaan ankkurin ja yhden sisällysluettelorivin. Valitsimet ovat oikeita näppäimistöllä toimivia painikkeita, `aria-pressed` ja `aria-controls`. Päivityksestä ilmoitetaan lyhyesti `aria-live="polite"`; ruudunlukijalle ei lueta koko pitkää artikkelia uudestaan. Ryhmien ja teorioiden valinta ei siirrä fokusta tai vieritä sivua automaattisesti.
+FI/EN on toteutettu täydellisinä, muille käytetään `pickCopy`-varakieltä. Uudella pääosiolla on vakaa ankkuri ja sisällysluettelorivi. Valitsimet ovat oikeita näppäimistöllä toimivia painikkeita, `aria-pressed` ja `aria-controls`. Päivityksestä ilmoitetaan lyhyesti `aria-live="polite"`; ruudunlukijalle ei lueta koko pitkää artikkelia uudestaan. Ryhmien ja teorioiden valinta ei siirrä fokusta tai vieritä sivua automaattisesti.
 
-Kuvat käyttävät `<figure>`- ja `<figcaption>`-rakennetta. Diagrammin tekstivastine on DOMissa. Mahdollisen SVG:n title/desc annetaan Reactille yhtenä tekstilapsena aiemman hydration-regression välttämiseksi. Toiminta tarkistetaan 320/375 pikselissä ja noin 770 pikselin artikkelileveydessä, sekä näppäimistöllä. Merkityksellinen interaktiotesti varmistaa valinnan vaihtumisen, näkyvän reittiselitteen ja muuttumattoman kausaalirakenteen. Palkkikuvan tarkistus kohdistuu lähdelukuihin, nimittäjään ja luokkasummiin.
+Kuvat käyttävät `<figure>`- ja `<figcaption>`-rakennetta. Prosessidiagrammi on HTML-tekstiä; palkkien SVG-title/desc annetaan Reactille yhtenä tekstilapsena. Kuvaajakomponentin kuusi testiä läpäisivät korostusten, säilyvien prosessiehtojen, kolmen kielivaraversion, julkaistujen prosenttien ja otosten, 100 % summien sekä SSR/hydration-toiminnan tarkistukset. Komponentin lint-tarkistus läpäistiin. **Selaintarkistus on käynnissä:** tämä muistio ei vielä väitä 320/375 pikselin mobiilileveyksiä, noin 770 pikselin artikkelileveyttä tai koko sivun näppäimistöpolkua tarkistetuiksi. Päätehtävä tekee lopullisen buildin, selaintarkistuksen ja julkaisuvalidoinnit.
