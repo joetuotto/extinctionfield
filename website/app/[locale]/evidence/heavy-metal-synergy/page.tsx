@@ -20,6 +20,8 @@ const COPY = {
     subtitle:
       "Cd²⁺ permeates Cav3.1, Pb²⁺ mimics Ca²⁺ at calmodulin, MeHg increases T-type currents, Al³⁺ and F⁻ accelerate pineal calcification. EMF opens the gate; heavy metals walk through it. The convergence is not coincidental — it is mechanistically inevitable.",
     backLink: "← Back to Evidence",
+    proxyContext: "A chemical’s measured effect can include uptake, internal dose and the state of the receiving tissue. These distinctions connect co-exposure to proxy masking.",
+    proxyLink: "How effects become hidden →",
 
     cautionText:
       "This page presents the mechanistic basis for heavy metal × EMF synergism. Each metal's interaction with voltage-gated calcium channels has been independently verified. The synergy hypothesis — that EMF exposure increases heavy metal toxicity by opening entry pathways — generates specific testable predictions.",
@@ -158,6 +160,8 @@ const COPY = {
     subtitle:
       "Cd²⁺ läpäisee Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia kalmoduliinissa, MeHg kasvattaa T-tyypin virtoja, Al³⁺ ja F⁻ kiihdyttävät pineaalisen kalsifikaation. EMF avaa portin; raskasmetallit kulkevat sen läpi. Yhdentyminen ei ole sattumaa — se on mekanistisesti väistämätöntä.",
     backLink: "← Takaisin näyttöön",
+    proxyContext: "Kemikaalin mitattu vaikutus voi sisältää soluunoton, sisäisen annoksen ja vastaanottavan kudoksen tilan. Nämä erot yhdistävät yhteisaltistuksen vaikutuksen peittymiseen.",
+    proxyLink: "Miten vaikutus peittyy →",
 
     cautionText:
       "Tämä sivu esittää raskasmetalli × EMF -synergismin mekanistisen perustan. Jokaisen metallin vuorovaikutus jänniteohjattujen kalsiumkanavien kanssa on todennettu itsenäisesti. Synergiahypoteesi — että EMF-altistus kasvattaa raskasmetallien myrkyllisyyttä avaamalla sisääntuloreitit — tuottaa tarkkoja testattavia ennusteita.",
@@ -296,6 +300,8 @@ const COPY = {
     subtitle:
       "Cd²⁺はCav3.1を透過し、Pb²⁺はカルモジュリンでCa²⁺を模倣し、MeHgはT型電流を増加させ、Al³⁺とF⁻は松果体石灰化を促進する。EMFがゲートを開き、重金属がそこを通過する。この収束は偶然ではない――メカニズム的に不可避である。",
     backLink: "← エビデンスに戻る",
+    proxyContext: "",
+    proxyLink: "",
     cautionText:
       "このページは重金属 × EMFシナジーのメカニズム的基盤を提示します。各金属の電位依存性カルシウムチャネルとの相互作用は独立に検証されています。シナジー仮説――EMF曝露が侵入経路を開くことで重金属の毒性を増加させる――は特定の検証可能な予測を生成します。",
     gatewayTitle: "VGCCゲートウェイ",
@@ -426,6 +432,8 @@ const COPY = {
     subtitle:
       "Cd²⁺ perméabilise Cav3.1, Pb²⁺ mime Ca²⁺ à la calmoduline, MeHg augmente les courants de type T, Al³⁺ et F⁻ accélèrent la calcification pinéale. Les EMF ouvrent la porte ; les métaux lourds la franchissent. La convergence n'est pas une coïncidence — elle est mécanistiquement inévitable.",
     backLink: "← Retour aux preuves",
+    proxyContext: "",
+    proxyLink: "",
     cautionText:
       "Cette page présente la base mécanistique de la synergie métaux lourds × EMF. L'interaction de chaque métal avec les canaux calciques voltage-dépendants a été vérifiée indépendamment. L'hypothèse de synergie — selon laquelle l'exposition aux EMF augmente la toxicité des métaux lourds en ouvrant les voies d'entrée — génère des prédictions testables spécifiques.",
     gatewayTitle: "La porte VGCC",
@@ -556,6 +564,8 @@ const COPY = {
     subtitle:
       "Cd²⁺는 Cav3.1을 투과하고, Pb²⁺는 칼모듈린에서 Ca²⁺를 모방하며, MeHg는 T형 전류를 증가시키고, Al³⁺와 F⁻는 송과체 석회화를 가속한다. EMF가 문을 열고 중금속이 통과한다. 이 수렴은 우연이 아니다 — 메커니즘적으로 불가피하다.",
     backLink: "← 증거로 돌아가기",
+    proxyContext: "",
+    proxyLink: "",
     cautionText:
       "이 페이지는 중금속 × EMF 시너지의 메커니즘적 기반을 제시합니다. 각 금속의 전압 의존성 칼슘 채널과의 상호작용은 독립적으로 검증되었습니다. 시너지 가설 — EMF 노출이 진입 경로를 열어 중금속 독성을 증가시킨다는 것 — 은 특정 검증 가능한 예측을 생성합니다.",
     gatewayTitle: "VGCC 게이트웨이",
@@ -713,6 +723,12 @@ export default async function HeavyMetalSynergyPage({
       </p>
 
       <PageHeader icon={FlaskRound} title={d.title} subtitle={d.subtitle} />
+      <aside className="editorial-rail my-6 text-sm leading-relaxed">
+        <p className="max-w-3xl text-foreground-muted">{d.proxyContext}</p>
+        <Link href={`/${locale}/model/proxy-masking`} className="mt-2 inline-block font-medium text-accent hover:underline">
+          {d.proxyLink}
+        </Link>
+      </aside>
 
       <div className="mt-8">
         <CautionBox locale={locale}>

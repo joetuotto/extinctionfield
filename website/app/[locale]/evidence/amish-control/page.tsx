@@ -13,6 +13,8 @@ const COPY = {
     title: "Amish: The Missing Control Group",
     subtitle: "Old Order Amish have minimal electricity, no personal electronics, and dramatically lower rates of every BERM-predicted condition: obesity -89%, T2D -75%, hypertension -66%, cancer -40%. However, massive lifestyle confounders (diet, exercise, smoking, community) make direct attribution impossible. The critical test is the Amish-Mennonite EMF gradient.",
     backLink: "← Back to Evidence",
+    proxyContext: "A community label brings together many exposures and ways of living. Measuring activity and studying house dust help reveal the material pathways within that label.",
+    proxyLink: "How effects become hidden →",
     cautionText: "This page presents Amish health data as a natural experiment. The health differences are real and well-documented, but lifestyle confounders are massive. This analysis explicitly acknowledges that Amish data alone CANNOT prove EMF causation. This applies equally to conventional explanations. The gradient test is needed.",
 
     dataTitle: "The data",
@@ -59,6 +61,8 @@ const COPY = {
     title: "Amish: Puuttuva kontrolliryhmä",
     subtitle: "Vanhan järjestyksen amishilla on minimaalinen sähkönkäyttö, ei henkilökohtaista elektroniikkaa, ja dramaattisesti alhaisemmat esiintyvyydet jokaisessa BERM:n ennustamassa tilassa: lihavuus -89 %, T2D -75 %, verenpainetauti -66 %, syöpä -40 %. Massiiviset elämäntapamuuttujat (ruokavalio, liikunta, tupakointi, yhteisö) tekevät suoran attribuution mahdottomaksi. Kriittinen testi on amish–mennoniittigradientti.",
     backLink: "← Takaisin näyttöön",
+    proxyContext: "Yhteisönimi kokoaa useita altistuksia ja elintapoja. Aktiivisuuden mittaus ja talopölyn tutkimus auttavat avaamaan tämän koontiluokan materiaalisia välityksiä.",
+    proxyLink: "Miten vaikutus peittyy →",
     cautionText: "Tämä sivu esittää amish-terveysdata luonnollisena kokeena. Terveyserot ovat todellisia ja hyvin dokumentoituja, mutta elämäntapamuuttujat ovat massiivisia. Tämä analyysi tunnustaa nimenomaisesti, että amish-data yksinään EI VOI todistaa EMF-kausaatiota. Tämä koskee yhtä lailla konventionaalisia selityksiä. Gradienttitesti tarvitaan.",
 
     dataTitle: "Data",
@@ -105,6 +109,8 @@ const COPY = {
     title: "Amish：欠落した対照群",
     subtitle: "Old Order Amishは電気使用が最小限で、個人用電子機器を持たず、BERMが予測するすべての疾患で劇的に低い罹患率を示す：肥満-89%、T2D-75%、高血圧-66%、癌-40%。しかし、大規模な生活様式交絡因子（食事、運動、喫煙、コミュニティ）が直接的帰属を不可能にする。決定的テストはAmish-Mennonite EMF勾配である。",
     backLink: "← エビデンスに戻る",
+    proxyContext: "",
+    proxyLink: "",
     cautionText: "このページはAmishの健康データを自然実験として提示する。健康差は実在し十分に文書化されているが、生活様式交絡因子は大規模である。この分析はAmishデータだけではEMF因果関係を証明できないことを明示的に認める。これは従来の説明にも同様に当てはまる。勾配テストが必要である。",
 
     dataTitle: "データ",
@@ -151,6 +157,8 @@ const COPY = {
     title: "Amish : le groupe témoin manquant",
     subtitle: "Les Amish Old Order ont une utilisation minimale de l'électricité, aucun appareil électronique personnel et des taux considérablement plus bas pour chaque condition prédite par BERM : obésité -89 %, DT2 -75 %, hypertension -66 %, cancer -40 %. Cependant, d'importants facteurs de confusion liés au mode de vie (alimentation, exercice, tabagisme, communauté) rendent l'attribution directe impossible. Le test critique est le gradient EMF Amish-Mennonite.",
     backLink: "← Retour aux preuves",
+    proxyContext: "",
+    proxyLink: "",
     cautionText: "Cette page présente les données sanitaires Amish comme une expérience naturelle. Les différences de santé sont réelles et bien documentées, mais les facteurs de confusion liés au mode de vie sont considérables. Cette analyse reconnaît explicitement que les données Amish seules NE PEUVENT PAS prouver la causalité EMF. Cela s'applique tout autant aux explications conventionnelles. Le test de gradient est nécessaire.",
 
     dataTitle: "Les données",
@@ -197,6 +205,8 @@ const COPY = {
     title: "Amish: 누락된 대조군",
     subtitle: "Old Order Amish는 전기 사용이 최소이고, 개인 전자기기가 없으며, BERM이 예측하는 모든 질환에서 극적으로 낮은 유병률을 보인다: 비만 -89%, T2D -75%, 고혈압 -66%, 암 -40%. 그러나 대규모 생활양식 교란변수(식이, 운동, 흡연, 공동체)가 직접적 귀속을 불가능하게 만든다. 결정적 시험은 Amish-Mennonite EMF 기울기이다.",
     backLink: "← 증거로 돌아가기",
+    proxyContext: "",
+    proxyLink: "",
     cautionText: "이 페이지는 Amish 건강 데이터를 자연 실험으로 제시한다. 건강 차이는 실재하며 잘 문서화되어 있지만, 생활양식 교란변수는 대규모이다. 이 분석은 Amish 데이터만으로는 EMF 인과관계를 증명할 수 없음을 명시적으로 인정한다. 이는 기존 설명에도 동일하게 적용된다. 기울기 시험이 필요하다.",
 
     dataTitle: "데이터",
@@ -258,6 +268,12 @@ export default async function AmishControlPage({ params }: { params: Promise<{ l
         <Link href={`${prefix}/evidence`} className="text-sm text-accent hover:underline">{d.backLink}</Link>
       </p>
       <PageHeader icon={Users} title={d.title} subtitle={d.subtitle} />
+      <aside className="editorial-rail my-6 text-sm leading-relaxed">
+        <p className="max-w-3xl text-foreground-muted">{d.proxyContext}</p>
+        <Link href={`/${locale}/model/proxy-masking`} className="mt-2 inline-block font-medium text-accent hover:underline">
+          {d.proxyLink}
+        </Link>
+      </aside>
       <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
 
       {/* Section 1: The data — green cards */}

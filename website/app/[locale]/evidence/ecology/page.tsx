@@ -13,6 +13,8 @@ const COPY = {
     title: "Ecological & Sentinel Evidence",
     subtitle: "Electroecology and weather radar effects on sentinel species",
     backLink: "← Back to Evidence",
+    proxyContext: "An organism can combine sensory cues and compensate for a changed signal. Its overall behavior can therefore leave changes in an individual sensory pathway hidden.",
+    proxyLink: "How effects become hidden →",
     narratives: [
       {
         id: "electroecology",
@@ -89,6 +91,8 @@ const COPY = {
     title: "Ekologinen ja indikaattorilajinäyttö",
     subtitle: "Sähköekologia ja säätutkavaikutukset indikaattorilajeihin",
     backLink: "← Takaisin näyttöön",
+    proxyContext: "Eliö voi yhdistää aistivihjeitä ja kompensoida muuttunutta signaalia. Kokonaiskäyttäytyminen voi siksi jättää yksittäisen aistiradan muutoksen piiloon.",
+    proxyLink: "Miten vaikutus peittyy →",
     narratives: [
       {
         id: "electroecology",
@@ -165,6 +169,8 @@ const COPY = {
     title: "生態学的・センチネル種の証拠",
     subtitle: "電気生態学と気象レーダーのセンチネル種への影響",
     backLink: "← 証拠に戻る",
+    proxyContext: "",
+    proxyLink: "",
     narratives: [
       {
         id: "electroecology",
@@ -241,6 +247,8 @@ const COPY = {
     title: "Preuves écologiques et sentinelles",
     subtitle: "Électroécologie et effets des radars météorologiques sur les espèces sentinelles",
     backLink: "← Retour aux preuves",
+    proxyContext: "",
+    proxyLink: "",
     narratives: [
       {
         id: "electroecology",
@@ -317,6 +325,8 @@ const COPY = {
     title: "생태학적 및 보초종 증거",
     subtitle: "전기생태학과 보초종에 대한 기상 레이더 효과",
     backLink: "← 증거로 돌아가기",
+    proxyContext: "",
+    proxyLink: "",
     narratives: [
       {
         id: "electroecology",
@@ -422,6 +432,12 @@ export default async function EcologyPage({
       </Link>
 
       <PageHeader icon={TreePine} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="ecology" size={28} className="text-accent" />} />
+      <aside className="editorial-rail my-6 text-sm leading-relaxed">
+        <p className="max-w-3xl text-foreground-muted">{d.proxyContext}</p>
+        <Link href={`/${locale}/model/proxy-masking`} className="mt-2 inline-block font-medium text-accent hover:underline">
+          {d.proxyLink}
+        </Link>
+      </aside>
       <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <EvidenceSynthesisBanner locale={locale} />

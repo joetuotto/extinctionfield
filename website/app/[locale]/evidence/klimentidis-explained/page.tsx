@@ -19,6 +19,8 @@ const COPY = {
     subtitle:
       "Cross-species weight trends motivate a shared metabolic model: local reception → liver glucose production, pancreatic secretion and tissue-clock timing → energy balance.",
     backLink: "← Back to Evidence",
+    proxyContext: "Eating more can explain weight gain while leaving open why appetite changed. Cross-species comparisons help distinguish a mediator from an earlier cause.",
+    proxyLink: "How effects become hidden →",
 
     cautionText:
       "The component studies below locate metabolic processes in their own experiments. BERM combines them through a liver–pancreas–clock feedback model. The shared route is conditional on a measured field changing the declared receiving state; its cross-species effect sizes are not yet calibrated.",
@@ -86,6 +88,8 @@ const COPY = {
     subtitle:
       "Lajienväliset painotrendit motivoivat yhteistä aineenvaihduntamallia: paikallinen vastaanotto → maksan glukoosintuotanto, haiman eritys ja kudoskellojen ajoitus → energiatasapaino.",
     backLink: "← Takaisin näyttöön",
+    proxyContext: "Lisääntynyt syöminen voi selittää painonnousua ja jättää avoimeksi, miksi ruokahalu muuttui. Lajivertailu auttaa erottamaan välittäjän aiemmasta syystä.",
+    proxyLink: "Miten vaikutus peittyy →",
 
     cautionText:
       "Alla olevat osatutkimukset paikantavat aineenvaihduntaprosesseja omissa kokeissaan. BERM yhdistää ne maksa–haima–kello-palautemallilla. Yhteinen reitti on ehdollinen sille, että mitattu kenttä muuttaa ilmoitettua vastaanotintilaa; lajienvälisiä vaikutuskokoja ei ole vielä kalibroitu.",
@@ -153,6 +157,8 @@ const COPY = {
     subtitle:
       "管理された食餌下の実験動物を含む8種が同時に体重増加。BERMは種間肥満傾向を説明する3つのEMF媒介Ca²⁺メカニズムを特定。",
     backLink: "← エビデンスに戻る",
+    proxyContext: "",
+    proxyLink: "",
 
     cautionText:
       "このページはKlimentidisの種間肥満パラドックスのメカニズム的説明を提示します。各メカニズムは査読済み文献で独立に検証されています。収束仮説――3つのメカニズムすべてがCa²⁺媒介でVGCC依存である――は特定の検証可能な予測を生成します。",
@@ -220,6 +226,8 @@ const COPY = {
     subtitle:
       "Huit espèces prennent du poids simultanément, y compris des animaux de laboratoire sous régime contrôlé. BERM identifie trois mécanismes Ca²⁺ médiés par les EMF qui expliquent la tendance inter-espèces à l'obésité.",
     backLink: "← Retour aux preuves",
+    proxyContext: "",
+    proxyLink: "",
 
     cautionText:
       "Cette page présente l'explication mécanistique du paradoxe d'obésité inter-espèces de Klimentidis. Chaque mécanisme a été vérifié indépendamment dans la littérature évaluée par les pairs. L'hypothèse de convergence — selon laquelle les trois mécanismes sont médiés par Ca²⁺ et dépendants des VGCC — génère des prédictions testables spécifiques.",
@@ -287,6 +295,8 @@ const COPY = {
     subtitle:
       "통제된 식이 하의 실험동물을 포함한 8종이 동시에 체중 증가. BERM은 종간 비만 추세를 설명하는 3가지 EMF 매개 Ca²⁺ 메커니즘을 확인.",
     backLink: "← 증거로 돌아가기",
+    proxyContext: "",
+    proxyLink: "",
 
     cautionText:
       "이 페이지는 Klimentidis 종간 비만 패러독스의 메커니즘적 설명을 제시합니다. 각 메커니즘은 동료 심사를 거친 문헌에서 독립적으로 검증되었습니다. 수렴 가설 — 세 메커니즘 모두 Ca²⁺ 매개이며 VGCC 의존적이라는 것 — 은 특정 검증 가능한 예측을 생성합니다.",
@@ -381,6 +391,12 @@ export default async function KlimentidisExplainedPage({
       </p>
 
       <PageHeader icon={FlaskConical} title={d.title} subtitle={d.subtitle} />
+      <aside className="editorial-rail my-6 text-sm leading-relaxed">
+        <p className="max-w-3xl text-foreground-muted">{d.proxyContext}</p>
+        <Link href={`/${locale}/model/proxy-masking`} className="mt-2 inline-block font-medium text-accent hover:underline">
+          {d.proxyLink}
+        </Link>
+      </aside>
       <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <div className="mt-8">

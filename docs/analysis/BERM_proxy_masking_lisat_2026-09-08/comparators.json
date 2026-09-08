@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-08",
+  "scope": "Klimentidis- ja Amish-vertailujen myönteinen rooli proxy masking -synteesissä, lähdekohtaiset väiterajat; ei ennusteita eikä sivukoodin muutoksia.",
+  "model_boundary": "Parentin Lindgren 2025 -portti käsitelty: geometrinen Δg ei yksin määritä kudosvastetta; BERM Xi[S] avoin. Tässä tarkastellaan tuodun L3/L4-aineiston rakennetta ja sen antamia ehdollisen synteesin rajoja.",
+  "sources": [
+    {
+      "id": "COMP01",
+      "citation": "Klimentidis YC et al. Canaries in the coal mine: a cross-species analysis of the plurality of obesity epidemics. Proc R Soc B. Online 2010; print 2011;278:1626–1632.",
+      "doi": "10.1098/rspb.2010.1890",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081766/",
+      "design": "Retrospektiivinen monilajinen aineistokooste; yli 20 000 eläintä, 12 populaatiota / 24 sukupuoliryhmää, 8 lajia; ajanjaksot aineistokohtaisesti 1948–2006.",
+      "measurements": "Suhteellinen keski-iän paino sekä tutkimuksen oma lähtöjakauman 85. persentiiliin perustuva lihavuusindikaattori.",
+      "result": "Painon suuntakerroin positiivinen 24/24; niistä 11 merkitseviä erikseen. Tekijöiden suuntatesti p=1,2×10⁻⁷. Sukupuolet yhdistäen 12/12 positiivinen. Artikkeli ilmoittaa tähän p=4,9×10⁻⁵; tavallisen kaksisuuntaisen riippumattoman merkkitestin aritmetiikka on 2×(1/2)^12=4,88×10⁻⁴, joten painettu luku ei vastaa tätä laskua.",
+      "adjustments": "Ikä rajattiin lajien elinikään suhteutettuun varhaiseen keski-ikään ja mallitettiin; sukupuoliositus; toistomittausriippuvuus. Painoon jalostetut, kalorirajoitetut ja painon mukaan ruokitut eläimet sekä toksikologiset hoitoryhmät suljettiin pois.",
+      "positive_role": "Rajaa selityksiä, jotka edellyttävät kaikissa populaatioissa ihmisen henkilökohtaisia elämäntapavalintoja. Tukee biologisen säätelyn ja ympäristön yhteisten tai rinnakkaisten ajurien tarkastelua.",
+      "limits": "Ruokavalion lähes vakio koostumus ei merkitse vakioenergiansaantia: laboratoriossa yleensä ad libitum. Aktiivisuutta tai EMF-annosta ei vakioitu kaikkien aineistojen yli. Villirotat saattoivat syödä ihmisten jätteitä. Ei edellytä yhtä universaalia syytä.",
+      "research_family": "Allison/Klimentidis ja useat laitokset; saman populaation kaksi sukupuolta eivät ole täysin erillinen ympäristötoisto.",
+      "verification": "Alkuperäinen kokoteksti, Methods, Results, Table 1, Discussion tarkistettu."
+    },
+    {
+      "id": "COMP02",
+      "citation": "Stein MM et al. Innate Immunity and Asthma Risk in Amish and Hutterite Farm Children. N Engl J Med. 2016;375:411–421.",
+      "doi": "10.1056/NEJMoa1508749",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5137793/",
+      "design": "30 Amish-lasta Indianasta ja 30 iän/sukupuolen mukaan sovitettua hutteriittilasta Etelä-Dakotasta, 7–14 v, marras/joulukuu 2012; talopöly, veri, genetiikka ja hiirikoe.",
+      "measurements": "Astma, allergeenispesifinen IgE, immuunisolut/transkriptit, sisäpölyn endotoksiini; pölysiirto OVA-astmamalliin.",
+      "result": "Tässä otoksessa astma 0/30 vs 6/30. Endotoksiinin mediaani 4399 vs 648 EU/m², suhde 6,8. Amish-pöly vaimensi hiirten hengitysteiden hyperreaktiivisuutta/eosinofiliaa; suoja poistui MyD88/Trif-kaksoispuutoksessa.",
+      "adjustments": "Iän ja sukupuolen sovitus; samankaltaisen geneettisen taustan arviointi. Hiirille sama koeasetelma, eri pöly ja signalointigenotyypit.",
+      "positive_role": "Purkaantuu kulttuurinimestä materiaaliseen altistukseen ja nimettyyn immuunivälitykseen. Aineistotriangulaatio: ihmisen ympäristömittaus, solutila ja siirrettävä biologinen vaste.",
+      "limits": "Amish–hutteriitti, ei Amish–mennoniitti. Ei EMF-mittausta tai satunnaistettua ihmisen elinympäristöä. Pölyseos ei yksin paikanna kaiken ihmisriskieron aiheuttavaa yhdistettä. Yleisesti lainatut 5,2 % ja 21,3 % ovat aiemmista populaatiotutkimuksista, eivät tämän n=60 otoksen osuudet.",
+      "research_family": "Chicago/Ober–Sperling, Arizona/Vercelli–Martinez, Holbreich/von Mutius; samaa farm/immuuniperinnettä kuin aiemmat prevalenssitutkimukset.",
+      "verification": "Alkuperäinen kokoteksti, menetelmät ja tulokset tarkistettu."
+    },
+    {
+      "id": "COMP03",
+      "citation": "Bassett DR Jr, Schneider PL, Huntington GE. Physical activity in an Old Order Amish community. Med Sci Sports Exerc. 2004;36:79–85.",
+      "doi": "10.1249/01.MSS.0000106184.71258.32",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14707772/",
+      "design": "98 aikuista (18–75 v) Etelä-Ontarion Old Order Amish -maatalousyhteisössä; 7 vrk askelmittaus, aktiivisuuskysely ja antropometria.",
+      "measurements": "Askeleet, itse raportoitu aktiivisuus, BMI ja kehon rasva.",
+      "result": "Miehet 18 425, naiset 14 196 askelta/vrk. BMI≥30: miehet 0 %, naiset 9 %.",
+      "adjustments": "Kuvaileva poikkileikkaus, sukupuolivertailu; ei satunnaistettua verrokkiryhmää.",
+      "positive_role": "Teknologian käyttöä ja yhteisöluokkaa voidaan purkaa suoraan mitattuun arkiaktiivisuuteen.",
+      "limits": "Yksi valittu maatalousyhteisö Kanadassa; ei kaikkien Yhdysvaltain Amishien lihavuusprevalenssi. Ei EMF-annosvertailua.",
+      "research_family": "Tennessee/Bassett–Huntington; eri otos ja paikka kuin Katz 2012.",
+      "verification": "Alkuperäinen PubMed-abstrakti; tulosluvut tarkistettu."
+    },
+    {
+      "id": "COMP04",
+      "citation": "Katz ML et al. Physical activity among Amish and non-Amish adults living in Ohio Appalachia. J Community Health. 2012;37:434–440.",
+      "doi": "10.1007/s10900-011-9460-9",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3625537/",
+      "design": "134 Amish- ja 154 muuta aikuista Ohion Holmes/Tuscarawas-alueelta; haastattelu ja askelmittari.",
+      "measurements": "Terveystarkoituksessa harrastettu liikunta, kokonaisaktiivisuus, askelmäärä ja BMI; ikävakioidut vertailut.",
+      "result": "Terveysliikuntaa miehistä 21,0 % vs 46,9 %, mutta askelia 11 447 vs 7 605/vrk (p<0,001). Naisilla 27,8 % vs 58,9 %, askelia 7750 vs 6547 (p=0,06). BMI ei eronnut merkitsevästi. Amish-miesten maatalousammatti yhdistyi suurempaan askelmäärään.",
+      "adjustments": "Ikävakiointi; sukupuolen ja ammatin mukainen erittely. Paikalliset muut kuin Amish-verrokit.",
+      "positive_role": "Suora esimerkki operationaalisen proxyn heikkoudesta: tarkoituksellinen terveysliikunta luokittelee ryhmät vastakkaiseen järjestykseen kuin kokonaisaktiivisuus.",
+      "limits": "Eri asia kuin kenttävahingon peittymisen todistus. Ikävakioitu lihavuusosuus tässä otoksessa Amish-miehillä 33,9 % ja naisilla 45,9 %; ei yhtenäistä kaikkia yhteisöjä koskevaa 4 % prevalenssia.",
+      "research_family": "Ohio State/Katz–Ferketich–Bloomfield; jatkoa Westmanin syöpätutkimusympäristölle, ei täysin riippumaton yhteisötoisto.",
+      "verification": "Alkuperäinen kokoteksti, taulukot 2–4 ja otanta tarkistettu."
+    },
+    {
+      "id": "COMP05",
+      "citation": "Westman JA et al. Low cancer incidence rates in Ohio Amish. Cancer Causes Control. 2010;21:69–75.",
+      "doi": "10.1007/s10552-009-9435-7",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4308689/",
+      "design": "Satunnaisesti valittujen kotitalouksien sukuhistoria ja Ohion syöpärekisteri; 9992 henkilön rekonstruoitu kohortti, 74 727 henkilövuotta, 1996–2003, 191 syöpää.",
+      "measurements": "Ikävakioitu syöpäilmaantuvuus verrattuna Ohioon ilman Holmes Countya.",
+      "result": "389,5 vs 646,9 /100 000 henkilövuotta: suhteellinen ilmaantuvuus 0,60. Tupakkaan liittyvät syövät 0,37; muut syövät 0,72 verrokkitasosta.",
+      "adjustments": "Ikävakiointi; syöpälajien ja tupakkakategorioiden erittely; ei kaikkien elintapojen ja ympäristöjen vakiointia.",
+      "positive_role": "Pitkän aikavälin terveysero on todellinen havainto kyseisestä väestöstä. Päätekohtainen erittely antaa kokonaiskulttuuriluokkaa tarkempaa tietoa.",
+      "limits": "Ilmaantuvuus ei prevalenssi. Vertailu ei erota EMF:ää tupakasta, infektioista, UV-altistuksesta, seulonnasta, aktiivisuudesta tai muista tekijöistä. Ei kaikkiin sairauksiin soveltuva kerroin.",
+      "research_family": "Ohio State/Westman–Ferketich–Bloomfield; yhteys Katz 2012:n rekrytointiin.",
+      "verification": "Alkuperäinen kokoteksti ja PubMed-abstrakti tarkistettu."
+    },
+    {
+      "id": "COMP06",
+      "citation": "Stone L, Anderson C, Thiehoff S. Amish fertility in the United States: Comparative evidence from the American Community Survey and Amish population registries. Demographic Research. 2025;52:869–886.",
+      "doi": "10.4054/DemRes.2025.52.26",
+      "url": "https://www.demographic-research.org/articles/volume/52/26",
+      "design": "ACS 2000–2021 ja CAPED-rekisterihistoriat 2000–2019; ryhmät kieli-, puhelin- ja maatilaindikaattoreilla sekä rekisterijäsenyydellä.",
+      "measurements": "Periodi-TFR, ikäkohtainen ja avioliiton sisäinen syntyvyys, avioliiton ulkopuoliset syntymät.",
+      "result": "Kaksi lähdettä tuottaa noin hieman yli kuuden TFR:n; korkein syntyvyys 20–29-vuotiailla. Aviohedelmällisyys korkea myös suuremman avioliitossaolo-osuuden huomioivan erittelyn jälkeen.",
+      "adjustments": "Ristiinvarmennus eri tunnistusmenetelmillä; iän ja siviilisäädyn erittely. Ei biologisten tai EMF-mekanismien kausaalista estimointia.",
+      "positive_role": "Korkea toteutunut syntyvyys voidaan varmistaa riippumattomalla aineistorakenteella ja jakaa osatekijöihin.",
+      "limits": "TFR ei yksin mittaa hedelmöittymiskykyä: puolison löytyminen, altistuminen raskaudelle ja ajoitus vaikuttavat. Puhelimen puute osana otoksen määritelmää ei ole riippumaton RF-annosmittaus. Joissakin ryhmissä näkyy mahdollista syntyvyyden sääntelyä.",
+      "research_family": "Stone/Anderson/Thiehoff; kansallinen aineistotriangulaatio, erillinen kliinisistä Amish-kokeista.",
+      "verification": "Julkaisijan alkuperäinen PDF, taulukot ja teksti tarkistettu; lisätty rahoitus-/kiitosmuutos 26.6.2025 ei muuttanut tuloksia."
+    }
+  ]
+}

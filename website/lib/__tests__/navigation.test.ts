@@ -96,7 +96,7 @@ describe("explanation-level navigation", () => {
 
 describe("single section ownership", () => {
   const cases = [
-    ["/model", "/model"], ["/map", "/model"],
+    ["/model", "/model"], ["/map", "/model"], ["/model/proxy-masking", "/model"],
     ["/physics", "/physics"], ["/model/math", "/physics"],
     ["/model/tensor-derivation", "/physics"], ["/model/frequency-weights", "/physics"],
     ["/biology", "/biology"], ["/model/biological-coordination", "/biology"],

@@ -97,7 +97,9 @@
     ],
     "receptor_memory": [
       "claim.receptor.chemical-memory",
-      "claim.receptor.state-dependent-response"
+      "claim.receptor.state-dependent-response",
+      "claim.proxy.chemical-field-conditions",
+      "claim.proxy.compensated-endpoint"
     ],
     "circadian_coordination": [
       "claim.coordination.redox-clock",
@@ -194,7 +196,8 @@
       "claim.behavior.sexual-motivation",
       "claim.behavior.state-dependent-learning",
       "claim.behavior.social-valuation",
-      "claim.behavior.biological-state-to-action"
+      "claim.behavior.biological-state-to-action",
+      "claim.proxy.sensory-receiver-state"
     ],
     "biobehavioral_weighting": [
       "claim.cognition.biological-behavioural-weighting"
@@ -204,7 +207,9 @@
       "claim.behavior.reported-reasons"
     ],
     "epistapege_observability_loss": [
-      "claim.civilization.epistapege-observability-loss"
+      "claim.civilization.epistapege-observability-loss",
+      "claim.proxy.comparative-mediator-question",
+      "claim.proxy.environmental-group-interpretation"
     ],
     "institutional_model_reuse": [
       "claim.civilization.asymmetric-evidence-threshold"

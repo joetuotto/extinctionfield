@@ -3243,6 +3243,176 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.sensory-receiver-state",
+      "statement": {
+        "en": {
+          "text": "Chemical cues can regulate reproductive state, and hormonal state can change the processing of social sensory cues in named animal experiments. Combining these findings with separate field-associated receptor results is a conditional BERM mechanism; the studies do not measure one continuous field-to-human-behaviour chain.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kemiallinen vihje voi säädellä lisääntymistilaa, ja hormonaalinen tila voi muuttaa sosiaalisen aistivihjeen käsittelyä nimetyissä eläinkokeissa. Näiden havaintojen yhdistäminen erillisiin kenttään liittyviin reseptorilöydöksiin on BERM:n ehdollinen mekanismi; tutkimukset eivät mittaa yhtä jatkuvaa kentästä ihmisen käyttäytymiseen ulottuvaa ketjua.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "INDIVIDUAL_BEHAVIORAL_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Separate cue production, receptor or circuit state, sensory interpretation and measured behaviour.",
+          "Component evidence includes reproductive suppression in naked mole-rats and oxytocin-dependent pup-cue processing in mice."
+        ],
+        "does_not_support": [
+          "Field-induced oxytocin-receptor impairment, impaired human infant-cue recognition or lower human fertility demonstrated by the cited experiments.",
+          "Treating muscle CRY2, breast-cancer MT1 and olfactory estrogen receptors as the same receiver.",
+          "Validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator.",
+          "A calibrated human reproductive or demographic effect inferred from these component studies."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.chemical-field-conditions",
+      "statement": {
+        "en": {
+          "text": "Chemical exposure can alter physical sensory cues, while cellular transport can make internal chemical dose depend on channel state. Separate field–chemical experiments identify protocol-specific joint responses. This motivates distinguishing co-exposure, mediation and effect modification before attributing an outcome to a correlated chemical or field measure.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kemiallinen altistus voi muuttaa fysikaalista aistivihjettä, ja solukuljetus voi tehdä sisäisestä kemikaaliannoksesta kanavatilasta riippuvan. Erilliset kenttä–kemikaalikokeet osoittavat protokollakohtaisia yhteisvasteita. Tämän vuoksi yhteisaltistus, välittyminen ja vaikutuksen muokkaus erotetaan ennen kuin tulos luetaan korreloivan kemikaali- tai kenttämittarin syyksi.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Distinguish an external concentration from cellular uptake and an applied voltage from local electric-field exposure.",
+          "Preserve chemical toxicity and chemical changes to sensory cues as causal routes in their own right."
+        ],
+        "does_not_support": [
+          "A universal metal–EMF synergy coefficient or a directly measured field-driven cadmium-uptake mechanism from the field-free Hinkle experiment.",
+          "Identification of a specific unmeasured exposure from correlation or a joint-exposure contrast alone.",
+          "Validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator.",
+          "A calibrated human reproductive or demographic effect inferred from these component studies."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.comparative-mediator-question",
+      "statement": {
+        "en": {
+          "text": "Weight increases across the animal populations in Klimentidis et al. motivate examining biological regulation and shared or parallel material environments beyond uniquely human intentional choices. They neither identify one environmental cause nor establish constant calorie intake and activity; eating and activity may themselves be responses or mediators.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Klimentidisin ym. eläinpopulaatioiden painonnousu perustelee biologisen säätelyn sekä yhteisten tai rinnakkaisten aineellisten ympäristöjen tarkastelun ihmisten tietoisten valintojen lisäksi. Aineisto ei tunnista yhtä ympäristösyytä eikä osoita kaloriensaannin ja aktiivisuuden pysyneen vakiona; syöminen ja aktiivisuus voivat itse olla vasteita tai välittäjiä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "EPISTAPEGE_OBSERVABILITY_LOSS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Use comparative animal observations to distinguish a human-specific account from a broader biological question.",
+          "Distinguish diet composition from consumed energy and proximate energy balance from upstream regulation."
+        ],
+        "does_not_support": [
+          "EMF attribution, a common exposure dose across species, or exclusion of food intake and physical activity.",
+          "Twenty-four sex-specific trends as twenty-four independent replications.",
+          "Validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator.",
+          "A calibrated human reproductive or demographic effect inferred from these component studies."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.environmental-group-interpretation",
+      "statement": {
+        "en": {
+          "text": "A population label and a self-reported activity category can each combine distinct exposures and behaviours. Amish comparisons illustrate both a difference between intentional exercise and measured movement, and a transferable house-dust effect on immune responses. Group differences therefore require named material pathways before they can identify a field contribution.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Väestöryhmän nimi ja itse ilmoitettu aktiivisuusluokka voivat kumpikin yhdistää erilaisia altistuksia ja käyttäytymisiä. Amish-vertailut osoittavat sekä tarkoituksellisen liikunnan ja mitatun liikkumisen eron että siirrettävän huonepölyn vaikutuksen immuunivasteisiin. Ryhmäeroista on siksi erotettava nimetyt aineelliset reitit ennen kentän osuuden tunnistamista.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "EPISTAPEGE_OBSERVABILITY_LOSS"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Keep the Ohio activity comparison separate from the Amish–Hutterite childhood-asthma and mouse-dust experiments.",
+          "Treat microbial exposure and measured movement as substantive environmental and behavioural pathways."
+        ],
+        "does_not_support": [
+          "Amish identity as a measured low-EMF dose or the asthma result as proof of an EMF cause.",
+          "Transfer of an asthma endpoint to fertility, or exclusion of independent cultural and social causes.",
+          "Validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator.",
+          "A calibrated human reproductive or demographic effect inferred from these component studies."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.compensated-endpoint",
+      "statement": {
+        "en": {
+          "text": "A preserved whole-organism endpoint does not identify the state of every component when alternative cues or adaptation are available. Garden-warbler orientation under stellar cues and cellular RF-adaptation experiments constrain different parts of this observation problem; a null endpoint alone does not demonstrate hidden receptor damage or compensation.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Koko organismin toiminnan säilyminen ei tunnista jokaisen osatekijän tilaa, kun vaihtoehtoisia vihjeitä tai sopeutumista on käytettävissä. Lehtokertun suuntautuminen tähtivihjeiden alla ja solujen RF-sopeutumiskokeet rajaavat tämän havainto-ongelman eri osia; pelkkä nollatulos ei osoita piilevää reseptorivauriota tai kompensaatiota.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "RECEPTOR_STATE_MEMORY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Separate measured net response from alternative cue use and adaptive processing.",
+          "Use preserved orientation under the tested field and sky conditions as a constraint on context-dependent interpretation."
+        ],
+        "does_not_support": [
+          "Simultaneous magnetic-receptor disruption and stellar rescue measured in the Bojarinova experiment.",
+          "A general protective RF effect, inevitable hidden harm, or transfer of cellular autophagy to avian navigation.",
+          "Validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator.",
+          "A calibrated human reproductive or demographic effect inferred from these component studies."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -7747,6 +7917,439 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.khallaf2026_queen_odour",
+      "referenceId": "khallaf2026_queen_odour",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Chemical identification and controlled odour interventions after social separation or queen removal",
+      "applicability": "Heterocephalus glaber; isopropyl myristate and reproductive suppression",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No electromagnetic-field intervention; the complete proposed olfactory–hypothalamic endocrine sequence is not established by every measured endpoint.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "The queen-associated odour intervention supports a chemical cue–reproductive-state link in this species.",
+      "provenance": {
+        "studyIds": [
+          "study.khallaf2026_queen_odour"
+        ],
+        "datasetFamilyIds": [
+          "dataset.khallaf2026_queen_odour"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.marlin2015_oxytocin_auditory",
+      "referenceId": "marlin2015_oxytocin_auditory",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Mouse behaviour, cortical recordings and local oxytocin interventions",
+      "applicability": "Female mice; pup calls, left auditory cortex and pup retrieval",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No field exposure or fertility endpoint; auditory-cortical plasticity is not equivalent to a population birth-rate change.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Oxytocin changed the processing of an acoustic social cue and enabled retrieval behaviour.",
+      "provenance": {
+        "studyIds": [
+          "study.marlin2015_oxytocin_auditory"
+        ],
+        "datasetFamilyIds": [
+          "dataset.froemke.maternal-sensory-line"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.carcea2021_maternal_learning",
+      "referenceId": "carcea2021_maternal_learning",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Continuous social-behaviour monitoring with hypothalamic recordings and oxytocin-circuit interventions",
+      "applicability": "Virgin female mice co-housed with experienced mothers and pups",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No field intervention; shares a research line and authors with Marlin 2015 and is not an independent replication of that complete protocol.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Observed maternal retrieval recruited oxytocin neurons and facilitated acquisition of caregiving.",
+      "provenance": {
+        "studyIds": [
+          "study.carcea2021_maternal_learning"
+        ],
+        "datasetFamilyIds": [
+          "dataset.froemke.maternal-sensory-line"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.girgert2010_mt1_signaling",
+      "referenceId": "girgert2010_mt1_signaling",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Sham-controlled 50 Hz exposure in parental and MT1-transfected MCF-7 cells",
+      "applicability": "1.2 µT for 48 h; melatonin/estradiol signalling and CREB-related endpoints",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Breast-cancer cells and MT1; no oxytocin receptor, sensory behaviour or human reproductive motivation was measured.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Provides a separate field–hormone-signalling component for the conditional composition.",
+      "provenance": {
+        "studyIds": [
+          "study.girgert2010_mt1_signaling"
+        ],
+        "datasetFamilyIds": [
+          "dataset.girgert2010_mt1_signaling"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.reyesguerrero2010_olfactory_estrogen",
+      "referenceId": "reyesguerrero2010_olfactory_estrogen",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "ELF-exposed and unexposed adult rats with sex- and estrous-phase-specific RT-PCR",
+      "applicability": "Olfactory-bulb estrogen-receptor transcripts",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No odour-detection or reproductive-behaviour endpoint; exact exposure parameters were not verified from the accessible primary abstract.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "ERβ transcript response changed direction with female reproductive-cycle phase.",
+      "provenance": {
+        "studyIds": [
+          "study.reyesguerrero2010_olfactory_estrogen"
+        ],
+        "datasetFamilyIds": [
+          "dataset.reyesguerrero2010_olfactory_estrogen"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.iversen2025",
+      "referenceId": "iversen2025",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Cellular PEMF, light-history and CRY2/RFK/FAD interventions",
+      "applicability": "C2C12 myoblasts; CRY2–TRPC1-dependent magnetic response",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Muscle cells, not an olfactory or auditory preparation; transfer to sensory behaviour is conditional.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Constrains a separate, state-dependent cellular receiver; reuse of an existing BERM component source.",
+      "provenance": {
+        "studyIds": [
+          "study.iversen2025"
+        ],
+        "datasetFamilyIds": [
+          "dataset.iversen2025"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.chemical-field-conditions.hinkle1987_cadmium_uptake",
+      "referenceId": "hinkle1987_cadmium_uptake",
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Calcium-channel pharmacology with cadmium uptake and toxicity measurements",
+      "applicability": "GH4C1 cells; nimodipine, depolarization and calcium-channel agonism",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No electromagnetic-field intervention; does not itself demonstrate field-induced cadmium uptake.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Channel manipulation changed cellular cadmium accumulation and toxicity at the studied external concentrations.",
+      "provenance": {
+        "studyIds": [
+          "study.hinkle1987_cadmium_uptake"
+        ],
+        "datasetFamilyIds": [
+          "dataset.hinkle1987_cadmium_uptake"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.chemical-field-conditions.liu2002_elf_lead",
+      "referenceId": "liu2002_elf_lead",
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Two-week mouse ELF and lead co-exposure experiment",
+      "applicability": "50 Hz at 0.2 or 6 mT and lead at 50 mg/kg; brain/liver oxidative endpoints",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The abstract does not establish a quantified additive or multiplicative interaction term, cellular metal uptake or a fertility effect; some antioxidant measures increased rather than decreased.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "The primary abstract reports joint-exposure changes including greater lipid peroxidation; it supplies a direct named co-exposure example.",
+      "provenance": {
+        "studyIds": [
+          "study.liu2002_elf_lead"
+        ],
+        "datasetFamilyIds": [
+          "dataset.liu2002_elf_lead"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.chemical-field-conditions.hunting2022_floral_electric_cues",
+      "referenceId": "hunting2022_floral_electric_cues",
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Fertilizer application, floral biophysical measurements and bumblebee-foraging experiments",
+      "applicability": "Floral electric cues after synthetic fertilizer; separate reflectance and feeding-platform odour controls",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Not an external RF intervention; controls do not constitute comprehensive chemical analysis of every floral odour.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Chemical treatment altered an electric cue as well as foraging, so chemical cause and physical mediation can coexist.",
+      "provenance": {
+        "studyIds": [
+          "study.hunting2022_floral_electric_cues"
+        ],
+        "datasetFamilyIds": [
+          "dataset.hunting2022_floral_electric_cues"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.chemical-field-conditions.mallinson2025_electric_pollution",
+      "referenceId": "mallinson2025_electric_pollution",
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Outdoor electric-field manipulation with repeated flower-landing observations",
+      "applicability": "Apis mellifera on Nepeta grandiflora; 50 Hz AC and positive/negative DC electrode conditions",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "No chemical co-exposure or internal chemical-dose measurement; applied electrode voltage is not an animal-level electric-field dose.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A separate physical manipulation changed foraging in a waveform- and polarity-dependent way.",
+      "provenance": {
+        "studyIds": [
+          "study.mallinson2025_electric_pollution"
+        ],
+        "datasetFamilyIds": [
+          "dataset.mallinson2025_electric_pollution"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.comparative-mediator-question.klimentidis2010",
+      "referenceId": "klimentidis2010",
+      "claimId": "claim.proxy.comparative-mediator-question",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Historical animal-weight records across eight species and twelve populations",
+      "applicability": "Laboratory, feral and companion-animal populations; sex-specific time trends",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No EMF measurement; relatively stable diet composition does not fix energy intake, and sex strata and populations are not all independent experimental replications.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Observed weight trends motivate the comparative question; this relation does not infer an unmeasured common field exposure.",
+      "provenance": {
+        "studyIds": [
+          "study.klimentidis2010"
+        ],
+        "datasetFamilyIds": [
+          "dataset.klimentidis2010"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.environmental-group-interpretation.katz2012_amish_activity",
+      "referenceId": "katz2012_amish_activity",
+      "claimId": "claim.proxy.environmental-group-interpretation",
+      "relation": "supports",
+      "directness": "observational_component",
+      "studyDesign": "Cross-sectional interviews, activity questionnaires and pedometer diaries",
+      "applicability": "134 Amish and 154 non-Amish Ohio adults",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The female step difference was not conventionally significant; group membership was not a measured field exposure and activity was not experimentally assigned.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Intentional exercise and recorded movement have different operational meanings; the male step-count comparison favoured Amish participants.",
+      "provenance": {
+        "studyIds": [
+          "study.katz2012_amish_activity"
+        ],
+        "datasetFamilyIds": [
+          "dataset.katz2012_amish_activity"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.environmental-group-interpretation.stein2016_amish_immunity",
+      "referenceId": "stein2016_amish_immunity",
+      "claimId": "claim.proxy.environmental-group-interpretation",
+      "relation": "supports",
+      "directness": "mixed_observational_experimental_component",
+      "studyDesign": "Human environmental/immune comparison plus house-dust transfer and innate-signalling-deficient mice",
+      "applicability": "60 Amish/Hutterite children; experimental allergic-airway responses in mice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Childhood asthma and mouse airway endpoints, not fertility; this experiment does not measure or identify an EMF contribution.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Transferred Amish-house-dust protection and MyD88/Trif dependence identify a material immune pathway behind part of the group comparison.",
+      "provenance": {
+        "studyIds": [
+          "study.stein2016_amish_immunity"
+        ],
+        "datasetFamilyIds": [
+          "dataset.stein2016_amish_immunity"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.compensated-endpoint.bojarinova2024_stellar_cues",
+      "referenceId": "bojarinova2024_stellar_cues",
+      "claimId": "claim.proxy.compensated-endpoint",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Garden-warbler orientation tests under visible stellar cues with an oscillating magnetic field",
+      "applicability": "Sylvia borin; 1.41 MHz, 20 nT under the tested sky conditions",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Does not directly measure simultaneous magnetic-receptor disruption under the stars; null orientation differences alone are not proof of hidden damage or compensation.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Preserved orientation is compatible with use of alternative cues and constrains the interpretation of an overall endpoint.",
+      "provenance": {
+        "studyIds": [
+          "study.bojarinova2024_stellar_cues"
+        ],
+        "datasetFamilyIds": [
+          "dataset.bojarinova2024_stellar_cues"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.compensated-endpoint.sannino2022_autophagy_adaptive",
+      "referenceId": "sannino2022_autophagy_adaptive",
+      "claimId": "claim.proxy.compensated-endpoint",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "RF pre-exposure followed by chemical challenge with pharmacological and genetic autophagy interference",
+      "applicability": "SH-SY5Y cells; DNA damage and adaptive processing",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cellular adaptation is separate from avian cue substitution; does not identify the first field sensor or a general protective exposure effect.",
+        "Supports or contextualizes the named component only; no validation of Lindgren geometry or the conditional BERM L2 operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Interference with autophagy removed adaptive protection, separating challenge outcome from a required processing branch.",
+      "provenance": {
+        "studyIds": [
+          "study.sannino2022_autophagy_adaptive"
+        ],
+        "datasetFamilyIds": [
+          "dataset.sannino2022_autophagy_adaptive"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.sensory-receiver-state.hammad2020_dark_cryptochrome",
+      "referenceId": "hammad2020_dark_cryptochrome",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Arabidopsis cryptochrome-response experiments separating magnetic exposure into repeated light or dark intervals",
+      "applicability": "500 µT static magnetic field during 5 min blue-light/10 min dark cycles; CRY1 phosphorylation and hypocotyl growth",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Plant photoreceptor responses, not animal sensory interpretation or human behaviour.",
+        "The protocol supports a temporally separated light-history component; it does not establish identical radical pairs or response rules across cryptochrome subtypes and tissues.",
+        "No validation of Lindgren-derived geometry or of BERM’s conditional L2 response operator."
+      ],
+      "curatorId": "berm-proxy-masking-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Magnetic enhancement occurred with exposure confined to dark intervals after light activation; exposure confined to the light interval did not yield the same detected response. This contextualizes receiver-state history rather than proving one continuous field-to-behaviour chain.",
+      "provenance": {
+        "studyIds": [
+          "study.hammad2020_dark_cryptochrome"
+        ],
+        "datasetFamilyIds": [
+          "dataset.ahmad-martino.pooam-hammad-dark-state"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -9229,6 +9832,87 @@
       "assessorId": "berm-convergence-integration",
       "assessedAt": "2026-09-07",
       "note": "Explicit composed BERM inference: measured component operators plus stated field-to-state, cross-system and aggregation premises. No new fitted coefficients are introduced."
+    },
+    {
+      "id": "ea.proxy.sensory-receiver-state.v1",
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.sensory-receiver-state.khallaf2026_queen_odour",
+        "er.proxy.sensory-receiver-state.marlin2015_oxytocin_auditory",
+        "er.proxy.sensory-receiver-state.carcea2021_maternal_learning",
+        "er.proxy.sensory-receiver-state.girgert2010_mt1_signaling",
+        "er.proxy.sensory-receiver-state.reyesguerrero2010_olfactory_estrogen",
+        "er.proxy.sensory-receiver-state.iversen2025",
+        "er.proxy.sensory-receiver-state.hammad2020_dark_cryptochrome"
+      ],
+      "assessorId": "berm-proxy-masking-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
+    },
+    {
+      "id": "ea.proxy.chemical-field-conditions.v1",
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.chemical-field-conditions.hinkle1987_cadmium_uptake",
+        "er.proxy.chemical-field-conditions.liu2002_elf_lead",
+        "er.proxy.chemical-field-conditions.hunting2022_floral_electric_cues",
+        "er.proxy.chemical-field-conditions.mallinson2025_electric_pollution"
+      ],
+      "assessorId": "berm-proxy-masking-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
+    },
+    {
+      "id": "ea.proxy.comparative-mediator-question.v1",
+      "claimId": "claim.proxy.comparative-mediator-question",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.comparative-mediator-question.klimentidis2010"
+      ],
+      "assessorId": "berm-proxy-masking-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
+    },
+    {
+      "id": "ea.proxy.environmental-group-interpretation.v1",
+      "claimId": "claim.proxy.environmental-group-interpretation",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.environmental-group-interpretation.katz2012_amish_activity",
+        "er.proxy.environmental-group-interpretation.stein2016_amish_immunity"
+      ],
+      "assessorId": "berm-proxy-masking-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
+    },
+    {
+      "id": "ea.proxy.compensated-endpoint.v1",
+      "claimId": "claim.proxy.compensated-endpoint",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.compensated-endpoint.bojarinova2024_stellar_cues",
+        "er.proxy.compensated-endpoint.sannino2022_autophagy_adaptive"
+      ],
+      "assessorId": "berm-proxy-masking-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Draft interpretation with curated component evidence. The level classifies the evidence type, not validation of the composed BERM route. No fitted field-to-human-response coefficient or new causal topology is introduced."
     }
   ],
   "routes": [

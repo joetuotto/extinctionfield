@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 772,
-    "usageLocations": 2339
+    "referencesWithUsages": 783,
+    "usageLocations": 2392
   },
   "usage": {
     "delgado1969": [
@@ -611,6 +611,10 @@
         "source": "data/claims.json"
       },
       {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      },
+      {
         "path": "/objections",
         "source": "app/[locale]/objections/page.tsx"
       },
@@ -777,10 +781,6 @@
     ],
     "klimentidis2010": [
       {
-        "path": "/",
-        "source": "components/ProxyMaskingInfographic.tsx"
-      },
-      {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
       },
@@ -827,6 +827,14 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
       },
       {
         "path": "/objections",
@@ -1093,6 +1101,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
       },
       {
         "path": "/modulome",
@@ -1425,6 +1437,10 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
       },
       {
         "path": "/sentinel",
@@ -7269,6 +7285,10 @@
         "source": "components/MathematicsSections.tsx"
       },
       {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      },
+      {
         "path": "/model/tensor-derivation",
         "source": "app/[locale]/model/tensor-derivation/page.tsx"
       },
@@ -9469,6 +9489,226 @@
         "source": "data/claims.json"
       }
     ],
+    "khallaf2026_queen_odour": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "marlin2015_oxytocin_auditory": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "carcea2021_maternal_learning": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "girgert2010_mt1_signaling": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "reyesguerrero2010_olfactory_estrogen": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "hinkle1987_cadmium_uptake": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "liu2002_elf_lead": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/response-conditions",
+        "source": "app/[locale]/evidence/response-conditions/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "hunting2022_floral_electric_cues": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "katz2012_amish_activity": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "stein2016_amish_immunity": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "bojarinova2024_stellar_cues": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
+    "hammad2020_dark_cryptochrome": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
     "lancet-2017-tsimane-heart": [
       {
         "path": "/evidence/populations",
@@ -9638,12 +9878,6 @@
       }
     ],
     "kavaliers1986_calcium_morphine": [
-      {
-        "path": "/evidence/response-conditions",
-        "source": "app/[locale]/evidence/response-conditions/page.tsx"
-      }
-    ],
-    "liu2002_elf_lead": [
       {
         "path": "/evidence/response-conditions",
         "source": "app/[locale]/evidence/response-conditions/page.tsx"
@@ -10761,6 +10995,12 @@
         "source": "lib/vgccGeneFamily.ts"
       }
     ],
+    "davies2023_coral_light": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "app/[locale]/model/proxy-masking/page.tsx"
+      }
+    ],
     "glomerulosa_cav32_aldosterone": [
       {
         "path": "/modulome/adrenal",
@@ -10815,12 +11055,6 @@
       {
         "path": "/modulome/testes",
         "source": "app/[locale]/modulome/testes/page.tsx"
-      }
-    ],
-    "autism_real2014": [
-      {
-        "path": "/",
-        "source": "components/ProxyMaskingInfographic.tsx"
       }
     ],
     "res-square-2025-radar-methylation": [

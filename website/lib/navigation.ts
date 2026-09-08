@@ -86,6 +86,18 @@ const ROUTE_CATALOG: NavRoute[] = [
         },
       },
       {
+        href: "/model/proxy-masking",
+        labels: { en: "Proxy masking", fi: "Vaikutuksen peittyminen", ja: "代理指標による隠蔽", fr: "Masquage par indicateurs", ko: "대리지표에 의한 은폐" },
+        icon: Layers,
+        descs: {
+          en: "How biological responses and measured proxies can obscure earlier causes",
+          fi: "Miten biologinen vaste ja mitattu välittäjä voivat peittää aiemman syyn",
+          ja: "生物学的応答や測定指標によって、それ以前の原因が見えにくくなる仕組み",
+          fr: "Comment les réponses biologiques et les indicateurs peuvent masquer les causes en amont",
+          ko: "생물학적 반응과 측정 지표가 앞선 원인을 가릴 수 있는 과정",
+        },
+      },
+      {
         href: "/modulome",
         labels: { en: "Modulome", fi: "Modulomi", ja: "モジュローム", fr: "Modulome", ko: "모듈롬" },
         icon: Activity,
@@ -570,7 +582,7 @@ export const NAV_ROUTES: NavRoute[] = [
   {
     href: "/model", icon: GitBranch,
     labels: { en: "Model", fi: "Malli", ja: "モデル", fr: "Modèle", ko: "모델" },
-    children: [existingRoute("/model"), existingRoute("/map")],
+    children: [existingRoute("/model"), existingRoute("/map"), existingRoute("/model/proxy-masking")],
   },
   {
     href: "/physics", icon: Atom,

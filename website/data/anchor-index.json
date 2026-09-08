@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T08:22:24.250Z",
+  "generatedAt": "2026-09-08T11:15:32.824Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -24,7 +24,7 @@
     {
       "claimId": "claim.androgen.binding-availability",
       "file": "data/atlas-claim-bindings.json",
-      "line": 184,
+      "line": 186,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "androgen_binding_availability"
@@ -52,7 +52,7 @@
     {
       "claimId": "claim.androgen.receptor-use-capacity",
       "file": "data/atlas-claim-bindings.json",
-      "line": 187,
+      "line": 189,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "androgen_receptor_signal"
@@ -86,7 +86,7 @@
     {
       "claimId": "claim.behavior.biological-state-to-action",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -94,7 +94,7 @@
     {
       "claimId": "claim.behavior.biological-state-to-action",
       "file": "data/atlas-claim-bindings.json",
-      "line": 248,
+      "line": 253,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "demo_encounters"
@@ -107,7 +107,7 @@
     {
       "claimId": "claim.behavior.dyadic-propagation",
       "file": "data/atlas-claim-bindings.json",
-      "line": 248,
+      "line": 253,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "demo_encounters"
@@ -119,8 +119,13 @@
     },
     {
       "claimId": "claim.behavior.reported-reasons",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 420
+    },
+    {
+      "claimId": "claim.behavior.reported-reasons",
       "file": "data/atlas-claim-bindings.json",
-      "line": 202,
+      "line": 205,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "narrative_attribution"
@@ -133,7 +138,7 @@
     {
       "claimId": "claim.behavior.sexual-motivation",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -146,7 +151,7 @@
     {
       "claimId": "claim.behavior.social-valuation",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -159,7 +164,7 @@
     {
       "claimId": "claim.behavior.state-dependent-learning",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -172,7 +177,7 @@
     {
       "claimId": "claim.behavior.state-dependent-valuation",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -190,7 +195,7 @@
     {
       "claimId": "claim.bridge.conditional-response-operator",
       "file": "data/atlas-claim-bindings.json",
-      "line": 106,
+      "line": 108,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "berm_l2_bridge"
@@ -218,7 +223,7 @@
     {
       "claimId": "claim.bridge.state-conditioned-kernel",
       "file": "data/atlas-claim-bindings.json",
-      "line": 106,
+      "line": 108,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "berm_l2_bridge"
@@ -239,7 +244,7 @@
     {
       "claimId": "claim.civilization.asymmetric-evidence-threshold",
       "file": "data/atlas-claim-bindings.json",
-      "line": 209,
+      "line": 214,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "institutional_model_reuse"
@@ -278,7 +283,7 @@
     {
       "claimId": "claim.civilization.epistapege-observability-loss",
       "file": "data/atlas-claim-bindings.json",
-      "line": 206,
+      "line": 209,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "epistapege_observability_loss"
@@ -332,7 +337,7 @@
     {
       "claimId": "claim.cognition.biological-behavioural-weighting",
       "file": "data/atlas-claim-bindings.json",
-      "line": 199,
+      "line": 202,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "biobehavioral_weighting"
@@ -345,7 +350,7 @@
     {
       "claimId": "claim.cognition.reported-reason-downstream",
       "file": "data/atlas-claim-bindings.json",
-      "line": 202,
+      "line": 205,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "narrative_attribution"
@@ -373,7 +378,7 @@
     {
       "claimId": "claim.cognition.state-dependent-behaviour",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -407,7 +412,7 @@
     {
       "claimId": "claim.coordination.hormone-target-timing",
       "file": "data/atlas-claim-bindings.json",
-      "line": 271,
+      "line": 276,
       "route": "/map",
       "kind": "atlas-edge",
       "from": "circadian_coordination",
@@ -435,7 +440,7 @@
     {
       "claimId": "claim.coordination.multiple-zeitgebers",
       "file": "data/atlas-claim-bindings.json",
-      "line": 102,
+      "line": 104,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "circadian_coordination"
@@ -448,7 +453,7 @@
     {
       "claimId": "claim.coordination.redox-clock",
       "file": "data/atlas-claim-bindings.json",
-      "line": 102,
+      "line": 104,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "circadian_coordination"
@@ -456,7 +461,7 @@
     {
       "claimId": "claim.coordination.redox-clock",
       "file": "data/atlas-claim-bindings.json",
-      "line": 263,
+      "line": 268,
       "route": "/map",
       "kind": "atlas-edge",
       "from": "receptor_memory",
@@ -492,7 +497,7 @@
     {
       "claimId": "claim.couple.waiting-time-distribution",
       "file": "data/atlas-claim-bindings.json",
-      "line": 113,
+      "line": 115,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "demo_waiting_distribution"
@@ -500,7 +505,7 @@
     {
       "claimId": "claim.couple.waiting-time-distribution",
       "file": "data/atlas-claim-bindings.json",
-      "line": 279,
+      "line": 284,
       "route": "/map",
       "kind": "atlas-edge",
       "from": "demo_biocap",
@@ -573,7 +578,7 @@
     {
       "claimId": "claim.geometry.multisource-receptor-coupling",
       "file": "data/atlas-claim-bindings.json",
-      "line": 106,
+      "line": 108,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "berm_l2_bridge"
@@ -591,7 +596,7 @@
     {
       "claimId": "claim.geometry.quadratic-mixing",
       "file": "data/atlas-claim-bindings.json",
-      "line": 180,
+      "line": 182,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "lindgren_metric_drive"
@@ -604,7 +609,7 @@
     {
       "claimId": "claim.geometry.rank-one-coordinate",
       "file": "data/atlas-claim-bindings.json",
-      "line": 180,
+      "line": 182,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "lindgren_metric_drive"
@@ -649,7 +654,7 @@
     {
       "claimId": "claim.modulome.adaptation-memory",
       "file": "data/atlas-claim-bindings.json",
-      "line": 126,
+      "line": 128,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_adaptation_memory"
@@ -657,7 +662,7 @@
     {
       "claimId": "claim.modulome.adaptation-memory",
       "file": "data/atlas-claim-bindings.json",
-      "line": 156,
+      "line": 158,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_repair_capacity"
@@ -665,7 +670,7 @@
     {
       "claimId": "claim.modulome.adaptation-memory",
       "file": "data/atlas-claim-bindings.json",
-      "line": 169,
+      "line": 171,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_cell_history"
@@ -673,7 +678,7 @@
     {
       "claimId": "claim.modulome.calcium-compartment-cycle",
       "file": "data/atlas-claim-bindings.json",
-      "line": 123,
+      "line": 125,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_calcium_compartment_cycle"
@@ -681,7 +686,7 @@
     {
       "claimId": "claim.modulome.calcium-compartment-cycle",
       "file": "data/atlas-claim-bindings.json",
-      "line": 153,
+      "line": 155,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_ca_compartment_cycle"
@@ -689,7 +694,7 @@
     {
       "claimId": "claim.modulome.cry-subtype-specificity",
       "file": "data/atlas-claim-bindings.json",
-      "line": 132,
+      "line": 134,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_cry_subtype_specificity"
@@ -697,7 +702,7 @@
     {
       "claimId": "claim.modulome.directional-information",
       "file": "data/atlas-claim-bindings.json",
-      "line": 135,
+      "line": 137,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_directional_information"
@@ -705,7 +710,7 @@
     {
       "claimId": "claim.modulome.directional-information",
       "file": "data/atlas-claim-bindings.json",
-      "line": 160,
+      "line": 162,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_directional_polarity"
@@ -713,7 +718,7 @@
     {
       "claimId": "claim.modulome.flavin-state-and-light-history",
       "file": "data/atlas-claim-bindings.json",
-      "line": 116,
+      "line": 118,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_cry_photostate"
@@ -721,7 +726,7 @@
     {
       "claimId": "claim.modulome.flavin-state-and-light-history",
       "file": "data/atlas-claim-bindings.json",
-      "line": 129,
+      "line": 131,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_flavin_state_and_light_history"
@@ -729,7 +734,7 @@
     {
       "claimId": "claim.modulome.genotype-exposure-interaction",
       "file": "data/atlas-claim-bindings.json",
-      "line": 144,
+      "line": 146,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_genotype_exposure_interaction"
@@ -737,7 +742,7 @@
     {
       "claimId": "claim.modulome.immune-functional-endpoint",
       "file": "data/atlas-claim-bindings.json",
-      "line": 141,
+      "line": 143,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_immune_functional_endpoint"
@@ -745,7 +750,7 @@
     {
       "claimId": "claim.modulome.immune-functional-endpoint",
       "file": "data/atlas-claim-bindings.json",
-      "line": 166,
+      "line": 168,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_trpc1_sting"
@@ -753,7 +758,7 @@
     {
       "claimId": "claim.modulome.iris-optical-exposure",
       "file": "data/atlas-claim-bindings.json",
-      "line": 147,
+      "line": 149,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_iris_optical_exposure"
@@ -761,7 +766,7 @@
     {
       "claimId": "claim.modulome.medium-borne-message",
       "file": "data/atlas-claim-bindings.json",
-      "line": 138,
+      "line": 140,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_medium_borne_message"
@@ -769,7 +774,7 @@
     {
       "claimId": "claim.modulome.medium-borne-message",
       "file": "data/atlas-claim-bindings.json",
-      "line": 163,
+      "line": 165,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "tissue_bystander_message"
@@ -777,7 +782,7 @@
     {
       "claimId": "claim.modulome.membrane-machinery-transfer",
       "file": "data/atlas-claim-bindings.json",
-      "line": 120,
+      "line": 122,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "card_membrane_machinery_transfer"
@@ -785,7 +790,7 @@
     {
       "claimId": "claim.modulome.parp-dependent-protection",
       "file": "data/atlas-claim-bindings.json",
-      "line": 156,
+      "line": 158,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_repair_capacity"
@@ -817,7 +822,7 @@
     {
       "claimId": "claim.pharmacology.channel-density",
       "file": "data/atlas-claim-bindings.json",
-      "line": 228,
+      "line": 233,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_channel_density"
@@ -825,7 +830,7 @@
     {
       "claimId": "claim.pharmacology.channel-density-store-history-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 228,
+      "line": 233,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_channel_density"
@@ -833,7 +838,7 @@
     {
       "claimId": "claim.pharmacology.channel-density-store-history-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 232,
+      "line": 237,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_serca_pretreatment"
@@ -841,7 +846,7 @@
     {
       "claimId": "claim.pharmacology.channel-selectivity-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 220,
+      "line": 225,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_channel_selectivity"
@@ -849,7 +854,7 @@
     {
       "claimId": "claim.pharmacology.channel-specific-response",
       "file": "data/atlas-claim-bindings.json",
-      "line": 220,
+      "line": 225,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_channel_selectivity"
@@ -857,7 +862,7 @@
     {
       "claimId": "claim.pharmacology.coq10-protocol",
       "file": "data/atlas-claim-bindings.json",
-      "line": 244,
+      "line": 249,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_coq10_response"
@@ -865,7 +870,7 @@
     {
       "claimId": "claim.pharmacology.coq10-response-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 244,
+      "line": 249,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_coq10_response"
@@ -873,7 +878,7 @@
     {
       "claimId": "claim.pharmacology.cry-fad-competition-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 236,
+      "line": 241,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_cry_ligand_occupancy"
@@ -881,7 +886,7 @@
     {
       "claimId": "claim.pharmacology.cry-ligand-occupancy",
       "file": "data/atlas-claim-bindings.json",
-      "line": 236,
+      "line": 241,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_cry_ligand_occupancy"
@@ -889,7 +894,7 @@
     {
       "claimId": "claim.pharmacology.drug-photochemistry-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 240,
+      "line": 245,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_drug_photochemistry"
@@ -897,7 +902,7 @@
     {
       "claimId": "claim.pharmacology.lipid-ttype-inhibition",
       "file": "data/atlas-claim-bindings.json",
-      "line": 224,
+      "line": 229,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_aa_lte4_inhibition"
@@ -905,7 +910,7 @@
     {
       "claimId": "claim.pharmacology.lipid-ttype-inhibition-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 224,
+      "line": 229,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_aa_lte4_inhibition"
@@ -913,7 +918,7 @@
     {
       "claimId": "claim.pharmacology.local-ltype-erk",
       "file": "data/atlas-claim-bindings.json",
-      "line": 216,
+      "line": 221,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_local_ltype_erk"
@@ -921,7 +926,7 @@
     {
       "claimId": "claim.pharmacology.local-ltype-erk-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 216,
+      "line": 221,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_local_ltype_erk"
@@ -929,7 +934,7 @@
     {
       "claimId": "claim.pharmacology.mt2-brake-conditional",
       "file": "data/atlas-claim-bindings.json",
-      "line": 212,
+      "line": 217,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_mt2_store_brake"
@@ -937,7 +942,7 @@
     {
       "claimId": "claim.pharmacology.mt2-evoked-feedback",
       "file": "data/atlas-claim-bindings.json",
-      "line": 212,
+      "line": 217,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_mt2_store_brake"
@@ -945,7 +950,7 @@
     {
       "claimId": "claim.pharmacology.probe-photoreversal",
       "file": "data/atlas-claim-bindings.json",
-      "line": 240,
+      "line": 245,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_drug_photochemistry"
@@ -953,10 +958,62 @@
     {
       "claimId": "claim.pharmacology.serca-pretreatment",
       "file": "data/atlas-claim-bindings.json",
-      "line": 232,
+      "line": 237,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_serca_pretreatment"
+    },
+    {
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 378
+    },
+    {
+      "claimId": "claim.proxy.chemical-field-conditions",
+      "file": "data/atlas-claim-bindings.json",
+      "line": 98,
+      "route": "/map",
+      "kind": "atlas-node",
+      "nodeId": "receptor_memory"
+    },
+    {
+      "claimId": "claim.proxy.comparative-mediator-question",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 396
+    },
+    {
+      "claimId": "claim.proxy.comparative-mediator-question",
+      "file": "data/atlas-claim-bindings.json",
+      "line": 209,
+      "route": "/map",
+      "kind": "atlas-node",
+      "nodeId": "epistapege_observability_loss"
+    },
+    {
+      "claimId": "claim.proxy.compensated-endpoint",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 388
+    },
+    {
+      "claimId": "claim.proxy.compensated-endpoint",
+      "file": "data/atlas-claim-bindings.json",
+      "line": 98,
+      "route": "/map",
+      "kind": "atlas-node",
+      "nodeId": "receptor_memory"
+    },
+    {
+      "claimId": "claim.proxy.environmental-group-interpretation",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 410
+    },
+    {
+      "claimId": "claim.proxy.environmental-group-interpretation",
+      "file": "data/atlas-claim-bindings.json",
+      "line": 209,
+      "route": "/map",
+      "kind": "atlas-node",
+      "nodeId": "epistapege_observability_loss"
     },
     {
       "claimId": "claim.proxy.lindgren-selection",
@@ -977,6 +1034,19 @@
       "nodeId": "legacy_proxy"
     },
     {
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "file": "app/[locale]/model/proxy-masking/page.tsx",
+      "line": 362
+    },
+    {
+      "claimId": "claim.proxy.sensory-receiver-state",
+      "file": "data/atlas-claim-bindings.json",
+      "line": 192,
+      "route": "/map",
+      "kind": "atlas-node",
+      "nodeId": "individual_behavioral_response"
+    },
+    {
       "claimId": "claim.receptor.chemical-memory",
       "file": "app/[locale]/model/biological-coordination/page.tsx",
       "line": 153
@@ -992,7 +1062,7 @@
     {
       "claimId": "claim.receptor.chemical-memory",
       "file": "data/atlas-claim-bindings.json",
-      "line": 116,
+      "line": 118,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_cry_photostate"
@@ -1000,7 +1070,7 @@
     {
       "claimId": "claim.receptor.chemical-memory",
       "file": "data/atlas-claim-bindings.json",
-      "line": 255,
+      "line": 260,
       "route": "/map",
       "kind": "atlas-edge",
       "from": "mech_cry_melatonin",
@@ -1018,7 +1088,7 @@
     {
       "claimId": "claim.receptor.cry4a-gtalpha-binding",
       "file": "data/atlas-claim-bindings.json",
-      "line": 173,
+      "line": 175,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_cry4a_binding_competition"
@@ -1026,7 +1096,7 @@
     {
       "claimId": "claim.receptor.gene-switch-protocol",
       "file": "data/atlas-claim-bindings.json",
-      "line": 177,
+      "line": 179,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_cyb5b"
@@ -1034,7 +1104,7 @@
     {
       "claimId": "claim.receptor.membrane-orientation",
       "file": "data/atlas-claim-bindings.json",
-      "line": 150,
+      "line": 152,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_membrane_omega"
@@ -1042,7 +1112,7 @@
     {
       "claimId": "claim.receptor.opsin-gtalpha-binding",
       "file": "data/atlas-claim-bindings.json",
-      "line": 173,
+      "line": 175,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mech_cry4a_binding_competition"
@@ -1063,7 +1133,7 @@
     {
       "claimId": "claim.receptor.state-dependent-response",
       "file": "data/atlas-claim-bindings.json",
-      "line": 169,
+      "line": 171,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "mod_cell_history"
@@ -1084,7 +1154,7 @@
     {
       "claimId": "claim.reproduction.local-clock-gates",
       "file": "data/atlas-claim-bindings.json",
-      "line": 287,
+      "line": 292,
       "route": "/map",
       "kind": "atlas-edge",
       "from": "hormone_target",
@@ -1167,7 +1237,7 @@
     {
       "claimId": "claim.synthesis.graded-susceptibility",
       "file": "data/atlas-claim-bindings.json",
-      "line": 106,
+      "line": 108,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "berm_l2_bridge"
@@ -1180,7 +1250,7 @@
     {
       "claimId": "claim.synthesis.joint-endocrine-gate",
       "file": "data/atlas-claim-bindings.json",
-      "line": 190,
+      "line": 192,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "individual_behavioral_response"
@@ -1193,7 +1263,7 @@
     {
       "claimId": "claim.synthesis.protocol-state-heterogeneity",
       "file": "data/atlas-claim-bindings.json",
-      "line": 106,
+      "line": 108,
       "route": "/map",
       "kind": "atlas-node",
       "nodeId": "berm_l2_bridge"
