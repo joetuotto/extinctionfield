@@ -7,6 +7,7 @@ import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { MathBlock } from "@/components/MathBlock";
 import { PageHeader } from "@/components/PageHeader";
 import { ExplanatoryLevelsDiagram, ProxyMaskingCurveExplorer } from "@/components/ProxyCausalVisuals";
+import { ProxyDemographicEvidence } from "@/components/ProxyDemographicEvidence";
 import { ProxyInfrastructureEvidence } from "@/components/ProxyInfrastructureEvidence";
 import { ProxyMeasuredExposureEvidence } from "@/components/ProxyMeasuredExposureEvidence";
 import { ProxyMaskingLevels } from "@/components/ProxyMaskingLevels";
@@ -48,6 +49,7 @@ const COPY = {
       "What a group label contains",
       "From biological state to a reported reason",
       "Fragmentation of a behavioural profile",
+      "Demographic explanations in the same chain",
       "Why the shared causal structure explains more",
       "How BERM joins the evidence",
     ],
@@ -204,6 +206,7 @@ const COPY = {
       "Mitä ryhmänimi sisältää?",
       "Biologisesta tilasta koettuun syyhyn",
       "Käyttäytymisprofiilin fragmentaatio",
+      "Väestötieteen selitykset samassa ketjussa",
       "Miksi yhteinen syyrakenne selittää enemmän",
       "Miten BERM yhdistää näytön?",
     ],
@@ -342,7 +345,7 @@ const COPY = {
   ko: {},
 } as const;
 
-const SECTION_IDS = ["hidden-mechanism", "causal-chain", "proxy-explanations", "receiver-state", "joint-exposures", "compensation", "sentinel-species", "community-proxies", "experienced-reasons", "syndrome-fragmentation", "explanatory-parsimony", "berm-synthesis"] as const;
+const SECTION_IDS = ["hidden-mechanism", "causal-chain", "proxy-explanations", "receiver-state", "joint-exposures", "compensation", "sentinel-species", "community-proxies", "experienced-reasons", "syndrome-fragmentation", "demographic-explanations", "explanatory-parsimony", "berm-synthesis"] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -420,6 +423,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               <ProxyInfrastructureEvidence locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.proxies.sourcesTitle}</h3>{paragraph(d.proxies.sources)}</div>
               {context(d.proxies.context)}
+              <a href="#demographic-explanations" className="inline-block text-sm text-accent underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{locale === "fi" ? "Miten tämä koskee väestötieteen 23 selitystä?" : "How does this apply to 23 demographic explanations?"}</a>
             </>)}
 
             {section(3, <>
@@ -496,7 +500,9 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
 
             {section(9, <ProxySyndromeEvidence locale={locale} />)}
 
-            {section(10, <>
+            {section(10, <ProxyDemographicEvidence locale={locale} />)}
+
+            {section(11, <>
               {paragraph(d.parsimony.lead)}
               <ExplanatoryLevelsDiagram locale={locale} />
               <ProxyCoverageMatrix locale={locale} />
@@ -506,7 +512,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {paragraph(d.parsimony.economy)}
             </>)}
 
-            {section(11, <>
+            {section(12, <>
               {paragraph(d.synthesis.lead)}
               <dl className="grid gap-x-7 gap-y-6 sm:grid-cols-2">{d.synthesis.levels.map((level, index) => <div key={level.title} className="border-t-2 border-card-border pt-4"><dt className="mb-2 text-sm font-semibold"><span className="mr-2 font-mono text-xs text-accent" aria-hidden="true">{index + 1}.</span>{level.title}</dt><dd className="text-sm leading-relaxed text-foreground-muted">{level.text}</dd></div>)}</dl>
               <details className="group min-w-0 rounded-lg border border-card-border bg-figure-bg p-5 sm:p-6">

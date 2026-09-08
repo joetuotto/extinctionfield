@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T13:19:22.820Z",
+  "generatedAt": "2026-09-08T14:00:59.613Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -120,7 +120,7 @@
     {
       "claimId": "claim.behavior.reported-reasons",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 489
+      "line": 493
     },
     {
       "claimId": "claim.behavior.reported-reasons",
@@ -971,7 +971,7 @@
     {
       "claimId": "claim.proxy.chemical-field-conditions",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 444
+      "line": 448
     },
     {
       "claimId": "claim.proxy.chemical-field-conditions",
@@ -984,7 +984,7 @@
     {
       "claimId": "claim.proxy.comparative-mediator-question",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 463
+      "line": 467
     },
     {
       "claimId": "claim.proxy.comparative-mediator-question",
@@ -997,7 +997,7 @@
     {
       "claimId": "claim.proxy.compensated-endpoint",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 455
+      "line": 459
     },
     {
       "claimId": "claim.proxy.compensated-endpoint",
@@ -1008,9 +1008,14 @@
       "nodeId": "receptor_memory"
     },
     {
+      "claimId": "claim.proxy.demographic-route-composition",
+      "file": "components/ProxyDemographicEvidence.tsx",
+      "line": 45
+    },
+    {
       "claimId": "claim.proxy.environmental-group-interpretation",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 479
+      "line": 483
     },
     {
       "claimId": "claim.proxy.environmental-group-interpretation",
@@ -1046,7 +1051,7 @@
     {
       "claimId": "claim.proxy.sensory-receiver-state",
       "file": "app/[locale]/model/proxy-masking/page.tsx",
-      "line": 427
+      "line": 431
     },
     {
       "claimId": "claim.proxy.sensory-receiver-state",

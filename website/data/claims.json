@@ -3479,6 +3479,44 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.proxy.demographic-route-composition",
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "TFR"
+      },
+      "depends_on": [
+        "claim.proxy.mechanistic-composition",
+        "claim.behavior.reported-reasons"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Under BERM premises, the state-dependent biological response is composed through motivation, reproductive capacity, opportunities, timing and assisted reproduction. Demographic explanations locate different parts of this chain; a real effect at one stage does not identify all upstream conditions or restore other stages. Longitudinal intention data, proximate determinants and intervention studies constrain distinct components, not an EMF share of the historical fertility trend.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM:n premisseillä tilariippuva biologinen vaste kootaan motivaation, lisääntymiskapasiteetin, mahdollisuuksien, ajoituksen ja hoitojen kautta. Väestötieteen selitykset paikantavat ketjun eri osia; yhden vaiheen todellinen vaikutus ei tunnista kaikkia taustaehtoja tai palauta muita vaiheita. Aikeiden seuranta, välittävät tekijät ja interventiot rajaavat eri komponentteja, eivät EMF:n osuutta historiallisesta syntyvyysmuutoksesta.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "A continuous conditional composition from BERM receiving state through motivation and capacity to realised demographic outcomes.",
+          "Distinguishing proximate mechanisms, upstream conditions, timing, compensation and later feedback.",
+          "Keeping observed within-person expectations and outcomes distinct from ideal family size minus period TFR."
+        ],
+        "does_not_support": [
+          "A calibrated geometry-to-tissue coupling or attribution of an EMF share of national fertility trends.",
+          "Inferring individual hormone states, pathology or insincerity from a stated preference.",
+          "Declaring contraception, economic resources or policy interventions causally ineffective.",
+          "Treating every birth as intended or male reproduction as completed at ages41–50."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -8659,6 +8697,141 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.proxy.demographic-route-composition.bongaarts2015_proximate_update",
+      "referenceId": "bongaarts2015_proximate_update",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "relation": "method",
+      "directness": "component_evidence",
+      "studyDesign": "demographic_framework",
+      "applicability": "Updated proximate-determinants framework; biology and behaviour are already included.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No local electromagnetic exposure estimate or test of the complete BERM causal composition.",
+        "No validation of Lindgren geometry or the open BERM L2 response operator."
+      ],
+      "curatorId": "berm-proxy-demography-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Updated proximate-determinants framework; biology and behaviour are already included.",
+      "provenance": {
+        "studyIds": [
+          "study.bongaarts2015_proximate_update"
+        ],
+        "datasetFamilyIds": [
+          "dataset.bongaarts2015_proximate_update"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.demographic-route-composition.morgan2010_intentions_realization",
+      "referenceId": "morgan2010_intentions_realization",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "longitudinal_observational",
+      "applicability": "NLSY79 within-person expectation and later family-size distributions; 2006 sampling weights.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No local electromagnetic exposure estimate or test of the complete BERM causal composition.",
+        "No validation of Lindgren geometry or the open BERM L2 response operator."
+      ],
+      "curatorId": "berm-proxy-demography-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "NLSY79 within-person expectation and later family-size distributions; 2006 sampling weights.",
+      "provenance": {
+        "studyIds": [
+          "study.morgan2010_intentions_realization"
+        ],
+        "datasetFamilyIds": [
+          "dataset.morgan2010_intentions_realization"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.demographic-route-composition.smith2015_repeat_ivf_livebirth",
+      "referenceId": "smith2015_repeat_ivf_livebirth",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "registry_observational",
+      "applicability": "UK repeat-IVF registry and live births; treatment routes and compensation.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No local electromagnetic exposure estimate or test of the complete BERM causal composition.",
+        "No validation of Lindgren geometry or the open BERM L2 response operator."
+      ],
+      "curatorId": "berm-proxy-demography-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "UK repeat-IVF registry and live births; treatment routes and compensation.",
+      "provenance": {
+        "studyIds": [
+          "study.smith2015_repeat_ivf_livebirth"
+        ],
+        "datasetFamilyIds": [
+          "dataset.smith2015_repeat_ivf_livebirth"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.demographic-route-composition.milligan2005_birth_subsidy",
+      "referenceId": "milligan2005_birth_subsidy",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "quasi_experimental",
+      "applicability": "Quebec birth-subsidy variation; real policy effects at one pathway.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No local electromagnetic exposure estimate or test of the complete BERM causal composition.",
+        "No validation of Lindgren geometry or the open BERM L2 response operator."
+      ],
+      "curatorId": "berm-proxy-demography-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Quebec birth-subsidy variation; real policy effects at one pathway.",
+      "provenance": {
+        "studyIds": [
+          "study.milligan2005_birth_subsidy"
+        ],
+        "datasetFamilyIds": [
+          "dataset.milligan2005_birth_subsidy"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.proxy.demographic-route-composition.lutz2006_low_fertility_trap",
+      "referenceId": "lutz2006_low_fertility_trap",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "relation": "method",
+      "directness": "component_evidence",
+      "studyDesign": "theoretical_synthesis",
+      "applicability": "Hypothesised demographic, ideal-family-size and relative-income feedback; no universal threshold.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No local electromagnetic exposure estimate or test of the complete BERM causal composition.",
+        "No validation of Lindgren geometry or the open BERM L2 response operator."
+      ],
+      "curatorId": "berm-proxy-demography-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Hypothesised demographic, ideal-family-size and relative-income feedback; no universal threshold.",
+      "provenance": {
+        "studyIds": [
+          "study.lutz2006_low_fertility_trap"
+        ],
+        "datasetFamilyIds": [
+          "dataset.lutz2006_low_fertility_trap"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -10257,6 +10430,24 @@
       "assessorId": "berm-proxy-evidence-integration",
       "assessedAt": "2026-09-08",
       "note": "Conditional composition with explicitly curated biological components; no calibrated L2 response or population attribution."
+    },
+    {
+      "id": "ea.proxy.demographic-route-composition.v1",
+      "claimId": "claim.proxy.demographic-route-composition",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.proxy.demographic-route-composition.bongaarts2015_proximate_update",
+        "er.proxy.demographic-route-composition.morgan2010_intentions_realization",
+        "er.proxy.demographic-route-composition.smith2015_repeat_ivf_livebirth",
+        "er.proxy.demographic-route-composition.milligan2005_birth_subsidy",
+        "er.proxy.demographic-route-composition.lutz2006_low_fertility_trap"
+      ],
+      "assessorId": "berm-proxy-demography-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Conditional micro-to-demographic composition; sources constrain separate components. Historical exposure shares and the L2 biological calibration remain open."
     }
   ],
   "routes": [

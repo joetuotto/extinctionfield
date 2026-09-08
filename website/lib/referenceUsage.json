@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 808,
-    "usageLocations": 2444
+    "referencesWithUsages": 822,
+    "usageLocations": 2474
   },
   "usage": {
     "delgado1969": [
@@ -2849,6 +2849,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
       },
       {
         "path": "/predictions",
@@ -9835,6 +9839,96 @@
         "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
+    "bongaarts2015_proximate_update": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyDemographicEvidence.tsx"
+      }
+    ],
+    "morgan2010_intentions_realization": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "smith2015_repeat_ivf_livebirth": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "milligan2005_birth_subsidy": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "lutz2006_low_fertility_trap": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
     "lancet-2017-tsimane-heart": [
       {
         "path": "/evidence/populations",
@@ -11257,6 +11351,60 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ProxyMeasuredExposureEvidence.tsx"
+      }
+    ],
+    "bongaarts1978_proximate_determinants": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyDemographicEvidence.tsx"
+      }
+    ],
+    "aitken2024_fertility_drivers": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyDemographicEvidence.tsx"
+      }
+    ],
+    "itao2026_two_pathways": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyDemographicEvidence.tsx"
+      }
+    ],
+    "japan_ipss2006_contraceptive_methods": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "lesthaeghe2010_second_transition": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "becker1960_fertility": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "mahler2025_social_comparisons": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "bongaarts1998_tempo_quantum": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "li2019_two_child_policy": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyDemographyData.ts"
       }
     ],
     "glomerulosa_cav32_aldosterone": [
