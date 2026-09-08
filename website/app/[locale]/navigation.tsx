@@ -6,6 +6,7 @@ import { useState, useRef, useEffect, useLayoutEffect, useId, type KeyboardEvent
 import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SearchLink } from "@/components/SearchLink";
 import {
   getActiveNavSection,
   getHomeRoute,
@@ -314,6 +315,7 @@ function NavigationContent({ locale, pathname }: { locale: string; pathname: str
           ))}
         </ul>
         <div className="col-start-2 row-start-1 flex shrink-0 items-center justify-self-end gap-1.5 xl:col-start-3 xl:border-l xl:border-border xl:pl-3 2xl:gap-2 2xl:pl-4">
+          <SearchLink locale={locale} />
           <LanguageSwitcher locale={locale} />
           <ThemeToggle />
         </div>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.site-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 /* Navigation can wrap onto multiple rows. Its measured height also overrides
    the older fixed scroll-margin utilities on individual article sections. */
 main[id],

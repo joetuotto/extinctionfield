@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { locales, LOCALE_FLAGS, LOCALE_NAMES, type Locale } from "@/lib/i18n";
 
 export function LanguageSwitcher({ locale }: { locale: string }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -53,7 +54,15 @@ export function LanguageSwitcher({ locale }: { locale: string }) {
                       ? "text-accent bg-accent/5 font-medium"
                       : "text-foreground-muted hover:text-foreground hover:bg-card-bg"
                   }`}
-                  onClick={() => setOpen(false)}
+                  onClick={(event) => {
+                    setOpen(false);
+                    if (pathname === `/${locale}/search` && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                      event.preventDefault();
+                      const query = new URLSearchParams(window.location.search);
+                      query.delete("page");
+                      router.push(`${getLocalePath(l)}${query.size ? `?${query}` : ""}`);
+                    }
+                  }}
                 >
                   <span className="text-xs font-mono w-5">{LOCALE_FLAGS[l]}</span>
                   <span>{LOCALE_NAMES[l]}</span>

@@ -89,6 +89,7 @@ function staticRoutes(): string[] {
   // sitemap entries if a compatibility file is reintroduced later.
   out.delete("/model/fieldstate");
   out.delete("/model/fieldstate/math");
+  out.delete("/search");
   return [...out].sort();
 }
 
