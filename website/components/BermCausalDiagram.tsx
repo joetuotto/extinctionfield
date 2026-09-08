@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
+import { ArrowUpRight, GitBranch, List, Network, RotateCcw, X } from "lucide-react";
 import type { ChainEdge, ChainNode } from "@/lib/types";
 import {
   CANONICAL_CAUSAL_EDGES as EDGES,
@@ -67,7 +68,7 @@ function NodeDetails({ node, locale, onSelect, onClose }: { node: ChainNode; loc
   return <dialog ref={dialog} className={styles.dialog} aria-labelledby={titleId} onClose={onClose}>
     <div className={styles.dialogHeader}>
       <div><span className={styles.hint}>{getChainEpistemicLabel(node.epistemicLevel, locale)}</span><h4 id={titleId}>{getCanonicalNodeLabel(node.id, locale)}</h4></div>
-      <button ref={closeButton} type="button" className={styles.control} onClick={() => dialog.current?.close()} aria-label={c.close}>×</button>
+      <button ref={closeButton} type="button" className={styles.closeButton} onClick={() => dialog.current?.close()} aria-label={c.close}><X size={18} aria-hidden="true" /></button>
     </div>
     <div className={styles.dialogBody}>
       <section><h5>{c.mechanism}</h5><p><InlineReferenceText text={localized(node.mechanism, node.mechanism_en, locale)} locale={locale} /></p></section>
@@ -133,18 +134,26 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
   const openNode = (id: string) => { setFocus(id); setRoute(false); setSelected(id); };
   const selectedNode = selected ? NODE_MAP.get(selected) : undefined;
   return <section className={styles.root} aria-label={c.aria} lang={locale}>
-    <div className={styles.toolbar}>
-      <button type="button" className={styles.control} aria-pressed={view === "graph"} onClick={() => setView("graph")}>{c.graph}</button>
-      <button type="button" className={styles.control} aria-pressed={view === "edges"} onClick={() => setView("edges")}>{c.edges}</button>
-      <button type="button" className={styles.control} aria-pressed={route} onClick={() => { setRoute(!route); setFocus(""); setHover(""); }}>{c.route}</button>
-      {(focus || route) && <button type="button" className={styles.control} onClick={() => { setFocus(""); setRoute(false); setHover(""); }}>{c.reset}</button>}
+    <div className={styles.controls}>
+      <div className={styles.toolbar}>
+        <div className={styles.viewSwitch}>
+          <button type="button" className={styles.control} aria-pressed={view === "graph"} onClick={() => setView("graph")}><Network size={16} aria-hidden="true" />{c.graph}</button>
+          <button type="button" className={styles.control} aria-pressed={view === "edges"} onClick={() => setView("edges")}><List size={16} aria-hidden="true" />{c.edges}</button>
+        </div>
+        <div className={styles.summary}><strong>{NODES.length} <span>{c.nodes}</span></strong><span>{EDGES.length} {c.connections}</span></div>
+      </div>
+      <p className={styles.hint}>{c.help} {c.stages}</p>
+      {!["fi", "en"].includes(locale) && <p role="note" className={styles.hint}>{c.fallback}</p>}
+      <div className={styles.focusControls}>
+        <label className={styles.selectLabel}>{c.select}<select className={styles.select} value={focus} onChange={e => { setFocus(e.target.value); setRoute(false); }}><option value="">{c.all}</option>{NODES.map(n => <option key={n.id} value={n.id}>{getCanonicalNodeLabel(n.id, locale)}</option>)}</select></label>
+        <div className={styles.routeControls}>
+          <button type="button" className={styles.routeButton} aria-pressed={route} onClick={() => { setRoute(!route); setFocus(""); setHover(""); }}><GitBranch size={16} aria-hidden="true" />{c.route}</button>
+          {(focus || route) && <button type="button" className={styles.resetButton} onClick={() => { setFocus(""); setRoute(false); setHover(""); }}><RotateCcw size={14} aria-hidden="true" />{c.reset}</button>}
+        </div>
+      </div>
+      <div className={styles.integration}><span>{c.integration}</span><Link href={`/${locale}/biology/calcium-redox-steroidogenesis`}>{c.studies}<ArrowUpRight size={14} aria-hidden="true" /></Link></div>
     </div>
-    <div className={styles.summary}><strong>{NODES.length} {c.nodes}</strong><span>{EDGES.length} {c.connections}</span></div>
-    <p className={styles.hint}>{c.help} {c.stages}</p>
-    {!["fi", "en"].includes(locale) && <p role="note" className={styles.hint}>{c.fallback}</p>}
-    <label className={styles.selectLabel}>{c.select}<select className={styles.select} value={focus} onChange={e => { setFocus(e.target.value); setRoute(false); }}><option value="">{c.all}</option>{NODES.map(n => <option key={n.id} value={n.id}>{getCanonicalNodeLabel(n.id, locale)}</option>)}</select></label>
-    <div className={styles.integration}><span>{c.integration}</span><Link href={`/${locale}/biology/calcium-redox-steroidogenesis`}>{c.studies} →</Link></div>
-    <div className={styles.legend}>{[...new Set(NODES.map(n => n.epistemicLevel))].map(level => <span key={level}><b style={{ color: CHAIN_EPISTEMIC_COLORS[level] }}>{level}</b>{getChainEpistemicLabel(level, locale)}</span>)}</div>
+    <div className={styles.legend}>{[...new Set(NODES.map(n => n.epistemicLevel))].map(level => <span key={level} style={{ "--node-color": CHAIN_EPISTEMIC_COLORS[level] } as CSSProperties}><b>{level}</b>{getChainEpistemicLabel(level, locale)}</span>)}</div>
     {view === "graph" ? <div ref={graphRef} className={styles.graph} data-testid="causal-graph">
       <svg className={styles.wires} aria-hidden="true" viewBox={`0 0 ${geometry.width || 1} ${geometry.height || 1}`} preserveAspectRatio="none">
         <defs><marker id={`${uid}-arrow`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="context-stroke" /></marker></defs>
@@ -152,15 +161,15 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
           const a = geometry.boxes[edge.from], b = geometry.boxes[edge.to];
           if (!a || !b) return null;
           const highlighted = highlightedEdges[i];
-          return <path key={`${edge.from}-${edge.to}`} data-edge={`${edge.from}->${edge.to}`} d={connectionPath(a, b, i, geometry.width)} fill="none" stroke={highlighted ? "var(--accent)" : "var(--foreground-muted)"} strokeWidth={highlighted ? 2 : 1} opacity={highlighted ? .85 : active || route ? .035 : .18} strokeDasharray={edge.priority === "primary" && edge.epistemicLevel === "L*" ? "5 4" : undefined} markerEnd={`url(#${uid}-arrow)`} />;
+          return <path key={`${edge.from}-${edge.to}`} data-edge={`${edge.from}->${edge.to}`} d={connectionPath(a, b, i, geometry.width)} fill="none" stroke={highlighted ? "var(--accent)" : "var(--foreground-muted)"} strokeWidth={highlighted ? 1.6 : .8} opacity={highlighted ? .78 : active || route ? .04 : .14} strokeDasharray={edge.priority === "primary" && edge.epistemicLevel === "L*" ? "5 4" : undefined} markerEnd={`url(#${uid}-arrow)`} />;
         })}
       </svg>
       {groups.map(group => <section className={styles.band} key={group.level} aria-label={getCanonicalLevelTitle(group.level, locale)}>
         <div className={styles.bandHeader}><span className={styles.number}>{String(group.level).padStart(2, "0")}</span><h4>{getCanonicalLevelTitle(group.level, locale)}</h4><span className={styles.count}>{group.nodes.length} {c.nodes}</span></div>
         <div className={styles.grid}>{group.nodes.map(node => {
           const incoming = EDGES.filter(e => e.to === node.id).length, outgoing = EDGES.filter(e => e.from === node.id).length;
-          return <button type="button" className={styles.node} key={node.id} data-testid="causal-node" data-node-id={node.id} data-highlighted={highlightedNodes.has(node.id)} style={{ "--node-color": CHAIN_EPISTEMIC_COLORS[node.epistemicLevel] } as CSSProperties} ref={el => { if (el) nodeRefs.current.set(node.id, el); else nodeRefs.current.delete(node.id); }} aria-label={getCanonicalNodeLabel(node.id, locale)} aria-haspopup="dialog" onClick={() => openNode(node.id)} onMouseEnter={() => setHover(node.id)} onMouseLeave={() => setHover("")} onFocus={() => setHover(node.id)} onBlur={() => setHover("")}>
-            <span className={styles.nodeTop}><span className={styles.badge} title={getChainEpistemicLabel(node.epistemicLevel, locale)}>{node.epistemicLevel}</span><span aria-label={`${c.incoming}: ${incoming}; ${c.outgoing}: ${outgoing}`}>↙ {incoming} · ↗ {outgoing}</span></span>
+          return <button type="button" className={styles.node} key={node.id} data-testid="causal-node" data-node-id={node.id} data-highlighted={highlightedNodes.has(node.id)} data-focused={active === node.id} style={{ "--node-color": CHAIN_EPISTEMIC_COLORS[node.epistemicLevel] } as CSSProperties} ref={el => { if (el) nodeRefs.current.set(node.id, el); else nodeRefs.current.delete(node.id); }} aria-label={getCanonicalNodeLabel(node.id, locale)} aria-haspopup="dialog" onClick={() => openNode(node.id)} onMouseEnter={() => setHover(node.id)} onMouseLeave={() => setHover("")} onFocus={() => setHover(node.id)} onBlur={() => setHover("")}>
+            <span className={styles.nodeTop}><span className={styles.badge} title={getChainEpistemicLabel(node.epistemicLevel, locale)}>{node.epistemicLevel}</span><span className={styles.degrees} aria-label={`${c.incoming}: ${incoming}; ${c.outgoing}: ${outgoing}`}>↙ {incoming} · ↗ {outgoing}</span></span>
             <span className={styles.nodeTitle}>{getCanonicalNodeLabel(node.id, locale)}</span>
             {node.id === "MALE_STEROIDOGENESIS" && <span className={styles.nodeTag}>{c.tag}</span>}
             <span className={styles.nodeStatus}>{getCanonicalCalibrationLabel(node.id, locale)}</span>
@@ -168,7 +177,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
         })}</div>
       </section>)}
     </div> : <ol className={styles.edgeList}>{EDGES.map((edge, i) => <li className={styles.edgeRow} key={`${edge.from}-${edge.to}`} data-testid="causal-edge-row" data-highlighted={highlightedEdges[i]}>
-      <button type="button" className={styles.edgeButton} onClick={() => openNode(edge.from)}>{getCanonicalNodeLabel(edge.from, locale)}</button><span aria-hidden="true">→</span><button type="button" className={styles.edgeButton} onClick={() => openNode(edge.to)}>{getCanonicalNodeLabel(edge.to, locale)}</button><span className={styles.edgeKind}>{edgeName(edge, locale)}</span>
+      <button type="button" className={styles.edgeButton} onClick={() => openNode(edge.from)}>{getCanonicalNodeLabel(edge.from, locale)}</button><span className={styles.edgeArrow} aria-hidden="true">→</span><button type="button" className={styles.edgeButton} onClick={() => openNode(edge.to)}>{getCanonicalNodeLabel(edge.to, locale)}</button><span className={styles.edgeKind}>{edgeName(edge, locale)}</span>
     </li>)}</ol>}
     {selectedNode && <NodeDetails node={selectedNode} locale={locale} onSelect={openNode} onClose={() => setSelected(null)} />}
   </section>;
