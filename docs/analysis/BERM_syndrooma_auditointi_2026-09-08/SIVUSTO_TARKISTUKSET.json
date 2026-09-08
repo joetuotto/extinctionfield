@@ -1,0 +1,22 @@
+[
+  {
+    "check": "references",
+    "command": [
+      "node",
+      "scripts/validate-references.mjs"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.19,
+    "tail": "Reference validation passed: 1191 canonical IDs, 47 aliases, 764 structured IDs, 522 publishable links\n"
+  },
+  {
+    "check": "registry",
+    "command": [
+      "node",
+      "scripts/validate-registry.mjs"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 0.06,
+    "tail": "RIC_DRIVE, DEMAND_OPPORTUNITY, TEMPO, ART_LIVE_BIRTH_DELIVERY\n   Terminal nodes (4): BARRIER_RETINA, ECOLOGICAL_TRAIT_STATE, INSTITUTIONAL_MODEL_REUSE, TFR\n16. Checking version format...\n17. Checking route definitions...\n18. Checking independence groups...\n   5 independence group(s): direct-ros, circadian, demographic, coordination-synthesis, state-to-action-convergence\n19. Checking BERM/FieldState architecture boundary...\n20. Checking the V1-V25 publication gate...\n\n──────────────────────────────────────────────────\nRegistry validation: 0 error(s), 14 warning(s)\n  Graph: 47 nodes, 96 edges, 15 UI groups\n  Claims: 99 claims, 186 evidence relations, 99 assessments\n  Routes: 5 routes, 5 unique IDs\n──────────────────────────────────────────────────\n\n  WARN:  DKC release is not authorized: the route publishes as a candidate with the gate state shown\n  WARN:  Publication blocked: no V1-V10-authorized DKC release artifact is present\n  WARN:  Publication blocked: the DKC release evaluation does not pass V1-V10\n  WARN:  Publication blocked: the evidence-search protocol audit has not passed\n  WARN:  Publication blocked: critical point V1 is not PASS\n  WARN:  Publication blocked: critical point V2 is not PASS\n  WARN:  Publication blocked: critical point V3 is not PASS\n  WARN:  Publication blocked: critical point V4 is not PASS\n  WARN:  Publication blocked: critical point V5 is not PASS\n  WARN:  Publication blocked: critical point V6 is not PASS\n  WARN:  Publication blocked: critical point V7 is not PASS\n  WARN:  Publication blocked: critical point V8 is not PASS\n  WARN:  Publication blocked: critical point V9 is not PASS\n  WARN:  Publication blocked: critical point V10 is not PASS\n"
+  }
+]

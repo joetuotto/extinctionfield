@@ -17,25 +17,25 @@ const COPY = {
   en: {
     title: "Klimentidis Paradox Explained",
     subtitle:
-      "Eight species gaining weight simultaneously, including lab animals on controlled diets. BERM identifies three EMF-mediated Ca²⁺ mechanisms that explain the cross-species obesity trend.",
+      "Cross-species weight trends motivate a shared metabolic model: local reception → liver glucose production, pancreatic secretion and tissue-clock timing → energy balance.",
     backLink: "← Back to Evidence",
 
     cautionText:
-      "This page presents the mechanistic explanation for the Klimentidis cross-species obesity paradox. Each mechanism has been independently verified in peer-reviewed literature. The convergence hypothesis — that all three mechanisms are Ca²⁺-mediated and VGCC-dependent — generates specific testable predictions.",
+      "The component studies below locate metabolic processes in their own experiments. BERM combines them through a liver–pancreas–clock feedback model. The shared route is conditional on a measured field changing the declared receiving state; its cross-species effect sizes are not yet calibrated.",
 
     paradoxTitle: "The Paradox",
     paradoxLead:
-      "In 2011, Klimentidis et al. documented that 8 species — including laboratory animals on strictly controlled diets — are all gaining weight over time (p=10⁻⁷). This eliminates diet and exercise as sole explanations. Something environmental is driving weight gain across ALL species with shared biology.",
+      "Klimentidis and colleagues documented increasing body weight across multiple populations of eight species, including laboratory animals. This motivates looking beyond a single human behavior. It does not hold all diets, activity, breeding, chemicals and disease histories constant or identify EMF as the common cause.",
     paradoxPoints: [
       "Laboratory primates (controlled diet, controlled exercise)",
       "Feral rats (different environment, no human food)",
       "Domestic cats and dogs (varied diets, varied activity)",
-      "Each species analyzed independently — the trend is universal",
+      "Species-specific trends are inputs for a matched-mechanism comparison",
     ],
 
-    mechanismsTitle: "Three Ca²⁺-mediated mechanisms",
+    mechanismsTitle: "Metabolic branches and their shared feedback",
     mechanismsLead:
-      "BERM identifies three EMF-mediated pathways through the Ca²⁺ cascade that each independently promote weight gain. Together, they explain why the trend is cross-species: ALL species with VGCCs are affected.",
+      "Calcium-dependent secretion, thermogenesis and stress signaling can interact through glucose, insulin and tissue clocks. Each branch needs a local dose, receiving state and functional endpoint; their effects cannot be added as independent contributions.",
     mechanisms: [
       {
         name: "Brown Adipose Tissue (BAT) Suppression",
@@ -43,9 +43,9 @@ const COPY = {
         color: "amber",
         mechanism: "5G (3.5 GHz) → PRDM16 mRNA↓ + C/EBPβ mRNA↓ in brown adipose tissue",
         consequence:
-          "BAT uses Ca²⁺ cycling (SERCA) for thermogenesis. Reduced PRDM16 → less BAT → reduced energy expenditure → weight gain on identical caloric intake",
+          "The reported gene-expression changes motivate measuring BAT amount, SERCA-linked calcium cycling and actual heat production. A transcript change alone does not quantify reduced energy expenditure or weight gain.",
         evidence: "[[ref:bat_5g_prdm16|PMC11942954]] (2025): Direct measurement of PRDM16 reduction from 5G exposure",
-        status: "Experimentally confirmed",
+        status: "Component evidence; composed route under test",
       },
       {
         name: "β-Cell Insulin Dynamics Disruption",
@@ -53,27 +53,27 @@ const COPY = {
         color: "blue",
         mechanism: "Electric field → Ca²⁺ channels open in β-cells → insulin secretion WITHOUT glucose",
         consequence:
-          "CaVγ4→CaMKII→MafA pathway: CaMKII dysregulation → β-cell identity loss → basal hyperinsulinemia → insulin resistance → weight gain",
+          "Calcium timing and CaVγ4–CaMKII–MafA regulation constrain secretion and cell identity. Distinguish impaired secretion from increased hepatic glucose production, insulin resistance and compensatory demand before predicting chronic beta-cell injury.",
         evidence: "[[ref:betacell_efield|PMID:32323041]] + [[ref:cavg4_camkii_mafa|PMC9030882]]: E-field insulin secretion + CaMKII→MafA pathway",
-        status: "Experimentally confirmed",
+        status: "Component evidence; composed route under test",
       },
       {
         name: "HPA Axis Cortisol Elevation",
         id: "MECH-3",
         color: "red",
-        mechanism: "EMF → HPA sensitization (NOT adaptation) → chronic cortisol elevation",
+        mechanism: "Declared field protocol → HPA output and hormone/tissue timing → metabolic response; adaptation and sensitization are competing history outcomes",
         consequence:
           "Cortisol → visceral fat deposition, insulin resistance, leptin resistance → metabolic syndrome → weight gain",
         evidence: "Klimek 2023 + Frontiers 2026: HPA sensitization + corticosterone elevation",
-        status: "Experimentally confirmed",
+        status: "Component evidence; composed route under test",
       },
     ],
 
-    resolutionTitle: "The Resolution",
+    resolutionTitle: "A liver–pancreas–clock receiving loop",
     resolutionContent:
-      "All three mechanisms are mediated through voltage-gated calcium channels (VGCCs). VGCCs are evolutionarily ancient — present in ALL vertebrates and most invertebrates. Any environmental factor that opens VGCCs would affect ALL species with these channels. This is exactly the Klimentidis pattern: cross-species weight gain driven by a ubiquitous environmental change (EMF exposure) acting on a conserved molecular target (VGCC).",
+      "Hepatic CRY suppresses glucagon-linked G-protein/cAMP signaling ([[ref:zhang2010_cry_camp|Zhang 2010]]). BERM connects nutritional cofactors and clock state → hepatic glucose output → blood glucose → beta-cell K_ATP/VGCC state and insulin pulses → tissue uptake, with feedback to liver and pancreas. Meal timing can shift glucose and adipose rhythms differently ([[ref:wehrens2017_meal_timing|Wehrens 2017]]), while daytime eating preserved glucose tolerance in a night-work experiment ([[ref:chellappa2021_daytime_eating|Chellappa 2021]]). These links supply a timed metabolic operator even when calories or mean hormone levels do not change.",
     resolutionKey:
-      "The Klimentidis paradox is not paradoxical under BERM — it is predicted. Cross-species effects are the expected outcome of disrupting an evolutionarily conserved mechanism.",
+      "Test field/sham × meal phase with matched intake and measured local exposure. Measure hepatic glucose production, insulin secretion and sensitivity, heat production and receiving state separately. A conserved pathway motivates cross-species comparison; it does not impose the same field effect on every species.",
 
     consequenceLabel: "Consequence",
     derivedPredictionText: "The mechanistic explanation of the Klimentidis paradox generates testable predictions covering BAT suppression, β-cell insulin dynamics, and HPA axis sensitization.",
@@ -84,25 +84,25 @@ const COPY = {
   fi: {
     title: "Klimentidiksen paradoksi selitettynä",
     subtitle:
-      "Kahdeksan lajia lihoo samanaikaisesti, mukaan lukien laboratorio-eläimet kontrolloiduilla dieeteillä. BERM tunnistaa kolme EMF-välitteistä Ca²⁺-mekanismia jotka selittävät lajienvälisen lihavuustrendin.",
+      "Lajienväliset painotrendit motivoivat yhteistä aineenvaihduntamallia: paikallinen vastaanotto → maksan glukoosintuotanto, haiman eritys ja kudoskellojen ajoitus → energiatasapaino.",
     backLink: "← Takaisin näyttöön",
 
     cautionText:
-      "Tämä sivu esittää mekanistisen selityksen Klimentidiksen lajienväliselle lihavuusparadoksille. Jokainen mekanismi on todennettu itsenäisesti vertaisarvioidussa kirjallisuudessa. Yhdentymishypoteesi — että kaikki kolme mekanismia ovat Ca²⁺-välitteisiä ja VGCC-riippuvaisia — tuottaa tarkkoja testattavia ennusteita.",
+      "Alla olevat osatutkimukset paikantavat aineenvaihduntaprosesseja omissa kokeissaan. BERM yhdistää ne maksa–haima–kello-palautemallilla. Yhteinen reitti on ehdollinen sille, että mitattu kenttä muuttaa ilmoitettua vastaanotintilaa; lajienvälisiä vaikutuskokoja ei ole vielä kalibroitu.",
 
     paradoxTitle: "Paradoksi",
     paradoxLead:
-      "Vuonna 2011 Klimentidis ym. dokumentoivat, että 8 lajia — mukaan lukien laboratorio-eläimet tiukasti kontrolloiduilla dieeteillä — lihovat kaikki ajan myötä (p=10⁻⁷). Tämä poistaa dieetin ja liikunnan ainoina selityksiinä. Jokin ympäristötekijä ajaa painonnousua KAIKISSA lajeissa joilla on yhteistä biologiaa.",
+      "Klimentidis kollegoineen dokumentoi painonnousua kahdeksan lajin useissa populaatioissa, myös laboratorioeläimissä. Tämä motivoi etsimään yhtä ihmiskäyttäytymistä laajempaa selitystä. Havainto ei vakioi kaikkea ravintoa, aktiivisuutta, jalostusta, kemikaaleja ja sairaushistoriaa eikä tunnista EMF:ää yhteiseksi syyksi.",
     paradoxPoints: [
       "Laboratorioapinat (kontrolloitu dieetti, kontrolloitu liikunta)",
       "Villit rotat (eri ympäristö, ei ihmisruokaa)",
       "Kotikissat ja -koirat (vaihtelevat dieetit, vaihteleva aktiivisuus)",
-      "Jokainen laji analysoitu itsenäisesti — trendi on universaali",
+      "Lajikohtaiset trendit ovat lähtöaineisto vertailukelpoisten mekanismien tutkimiselle",
     ],
 
-    mechanismsTitle: "Kolme Ca²⁺-välitteistä mekanismia",
+    mechanismsTitle: "Aineenvaihduntahaarat ja niiden yhteinen palaute",
     mechanismsLead:
-      "BERM tunnistaa kolme EMF-välitteistä reittiä Ca²⁺-kaskadin kautta, jotka kukin itsenäisesti edistävät painonnousua. Yhdessä ne selittävät miksi trendi on lajienvälinen: KAIKKI lajit joilla on VGCC:t ovat alttiita.",
+      "Kalsiumriippuvainen eritys, lämmöntuotanto ja stressisignalointi voivat vaikuttaa toisiinsa glukoosin, insuliinin ja kudoskellojen kautta. Kukin haara tarvitsee paikallisen annoksen, vastaanotintilan ja toiminnallisen päätepisteen; vaikutuksia ei voi summata riippumattomina osuuksina.",
     mechanisms: [
       {
         name: "Ruskean rasvakudoksen (BAT) suppressio",
@@ -110,9 +110,9 @@ const COPY = {
         color: "amber",
         mechanism: "5G (3,5 GHz) → PRDM16 mRNA↓ + C/EBPβ mRNA↓ ruskeassa rasvakudoksessa",
         consequence:
-          "BAT käyttää Ca²⁺-syklausta (SERCA) termogeneesiin. Vähentynyt PRDM16 → vähemmän BAT:ia → alentunut energiankulutus → painonnousu identtisellä kalorimäärällä",
+          "Raportoidut geenimuutokset motivoivat mittaamaan BAT:n määrän, SERCAan liittyvän kalsiumkierron ja todellisen lämmöntuotannon. Transkriptimuutos ei yksin mittaa energiankulutuksen vähenemää tai painonnousua.",
         evidence: "[[ref:bat_5g_prdm16|PMC11942954]] (2025): PRDM16-vähenemisen suora mittaus 5G-altistuksesta",
-        status: "Kokeellisesti vahvistettu",
+        status: "Osanäyttö; yhdistetty reitti testattavana",
       },
       {
         name: "β-solun insuliinidynamiikan häiriö",
@@ -120,27 +120,27 @@ const COPY = {
         color: "blue",
         mechanism: "Sähkökenttä → Ca²⁺-kanavat avautuvat β-soluissa → insuliinin eritys ILMAN glukoosia",
         consequence:
-          "CaVγ4→CaMKII→MafA-reitti: CaMKII:n dysregulaatio → β-solun identiteetin menetys → basaalinen hyperinsulinemia → insuliiniresistenssi → painonnousu",
+          "Kalsiumin ajoitus ja CaVγ4–CaMKII–MafA-säätely rajaavat eritystä ja solun identiteettiä. Erota erityshäiriö maksan lisääntyneestä glukoosintuotannosta, insuliiniresistenssistä ja kompensatorisesta kysynnästä ennen kroonisen β-soluvaurion ennustamista.",
         evidence: "[[ref:betacell_efield|PMID:32323041]] + [[ref:cavg4_camkii_mafa|PMC9030882]]: Sähkökenttä-insuliinieritys + CaMKII→MafA-reitti",
-        status: "Kokeellisesti vahvistettu",
+        status: "Osanäyttö; yhdistetty reitti testattavana",
       },
       {
         name: "HPA-akselin kortisolinkohonnus",
         id: "MECH-3",
         color: "red",
-        mechanism: "EMF → HPA-sensitisaatio (EI adaptaatio) → krooninen kortisolin kohonnus",
+        mechanism: "Ilmoitettu kenttäkoe → HPA-eritys ja hormonin/kudoksen ajoitus → aineenvaihduntavaste; adaptaatio ja herkistyminen ovat kilpailevia historiatuloksia",
         consequence:
           "Kortisoli → viskeraalisen rasvan kertyminen, insuliiniresistenssi, leptiiniresistenssi → metabolinen oireyhtymä → painonnousu",
         evidence: "Klimek 2023 + Frontiers 2026: HPA-sensitisaatio + kortikosteronin kohonnus",
-        status: "Kokeellisesti vahvistettu",
+        status: "Osanäyttö; yhdistetty reitti testattavana",
       },
     ],
 
-    resolutionTitle: "Ratkaisu",
+    resolutionTitle: "Maksa–haima–kello-vastaanottosilmukka",
     resolutionContent:
-      "Kaikki kolme mekanismia välittyvät jänniteohjattujen kalsiumkanavien (VGCC) kautta. VGCC:t ovat evoluutionaalisesti muinaisia — läsnä KAIKISSA selkärankaisissa ja useimmissa selkärangattomissa. Mikä tahansa ympäristötekijä joka avaa VGCC:t vaikuttaisi KAIKKIIN lajeihin joilla on nämä kanavat. Tämä on täsmälleen Klimentidiksen kuvio: lajienvälinen painonnousu jonka ajaa kaikkiallinen ympäristömuutos (EMF-altistus) joka vaikuttaa konservoituneeseen molekyylitason kohteeseen (VGCC).",
+      "Maksan CRY vaimentaa glukagonin G-proteiini/cAMP-signalointia ([[ref:zhang2010_cry_camp|Zhang 2010]]). BERM yhdistää ravinnon kofaktorit ja kellotilan → maksan glukoosintuotannon → veren glukoosin → β-solun K_ATP/VGCC-tilan ja insuliinipulssit → kudosten glukoosinoton sekä palautteen maksaan ja haimaan. Ateria-aika voi siirtää glukoosin ja rasvakudoksen rytmejä eri tavoin ([[ref:wehrens2017_meal_timing|Wehrens 2017]]), ja päiväsyöminen säilytti glukoosinsietoa yötyökokeessa ([[ref:chellappa2021_daytime_eating|Chellappa 2021]]). Yhteydet antavat ajoitetun aineenvaihduntaoperaattorin myös kalorimäärän tai hormonien keskitason säilyessä.",
     resolutionKey:
-      "Klimentidiksen paradoksi ei ole paradoksaalinen BERM:n alla — se on ennustettu. Lajienväliset vaikutukset ovat odotettavissa oleva tulos evoluutionaalisesti konservoituneen mekanismin häiriöstä.",
+      "Testaa kenttä/sham × ateriavaihe samalla ravinnonsaannilla ja mitatulla paikallisella altistuksella. Mittaa maksan glukoosintuotanto, insuliinieritys ja -herkkyys, lämmöntuotanto sekä vastaanotintila erikseen. Säilynyt reitti motivoi lajivertailua; se ei määrää samaa kenttävaikutusta kaikille lajeille.",
 
     consequenceLabel: "Seuraus",
     derivedPredictionText: "Klimentidiksen paradoksin mekanistinen selitys tuottaa testattavia ennusteita BAT-suppressiosta, β-solun insuliinidynamiikasta ja HPA-akselin sensitisaatiosta.",
@@ -381,6 +381,7 @@ export default async function KlimentidisExplainedPage({
       </p>
 
       <PageHeader icon={FlaskConical} title={d.title} subtitle={d.subtitle} />
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       <div className="mt-8">
         <CautionBox locale={locale}>
@@ -436,7 +437,7 @@ export default async function KlimentidisExplainedPage({
       {/* The Resolution */}
       <section className="mt-14 border-t editorial-rule pt-6">
         <h2 className="text-lg font-semibold mb-2">{d.resolutionTitle}</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">{d.resolutionContent}</p>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl"><InlineReferenceText text={d.resolutionContent} locale={locale} /></p>
         <div className="rounded-lg border-2 border-accent/40 bg-accent/5 p-4">
           <p className="text-sm text-foreground leading-relaxed italic">{d.resolutionKey}</p>
         </div>

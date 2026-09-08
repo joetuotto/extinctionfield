@@ -112,12 +112,13 @@ def predict_country_year(country: str, year: int) -> dict:
 
     Pipeline:
     1. Two-component EMF (ambient + personal)
-    2. Circadian adjustment
-    3. Community sigmoid → biological TFR
-    4. Cultural pronatalism component
-    5. IVF correction → biological TFR
+    2. Community sigmoid → biological TFR
+    3. Cultural pronatalism component
+    4. IVF correction → biological TFR
 
-    Returns dict with all intermediate values for transparency.
+    Circadian, cohort and proximity values are separate diagnostics; they do
+    not enter the locked v17 prediction. New biological states belong to the
+    explicitly selected conditional modulome route.
     """
     tc = two_component_emf(country, year)
     ambient_emf = tc["ambient"]

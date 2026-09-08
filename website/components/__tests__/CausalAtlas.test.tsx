@@ -1,0 +1,82 @@
+import "@testing-library/jest-dom/vitest";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { NODES } from "@/lib/causalAtlasData";
+import { CausalAtlas } from "../CausalAtlas";
+const flow = vi.hoisted(() => ({ fitView: vi.fn() }));
+vi.mock("@xyflow/react", () => ({
+  ReactFlowProvider: ({ children }: { children: React.ReactNode }) => children,
+  ReactFlow: () => <div data-testid="mock-graph" />,
+  Background: () => null, Controls: () => null, MiniMap: () => null,
+  useReactFlow: () => flow, MarkerType: { ArrowClosed: "arrow" },
+  Handle: () => null, Position: { Left: "left", Right: "right" },
+}));
+beforeEach(() => {
+  window.history.replaceState({}, "", "/fi/map");
+  Object.defineProperty(window, "innerWidth", { configurable: true, value: 390 });
+});
+afterEach(cleanup);
+
+describe("Complete, responsive atlas exploration", () => {
+  it("exposes every channel in the mobile list and searches named source channels", () => {
+    render(<CausalAtlas locale="fi" />);
+    expect(within(screen.getByTestId("atlas-list")).getAllByRole("button")).toHaveLength(NODES.length);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "VK13" } });
+    expect(screen.getByRole("status")).toHaveTextContent(`1 / ${NODES.length}`);
+    expect(screen.getByRole("button", { name: /Hypotalamuksen vesikkelit/ })).toBeInTheDocument();
+  });
+  it("switches subatlases, handles empty intersections and resets filters", () => {
+    render(<CausalAtlas locale="fi" />);
+    fireEvent.change(screen.getByRole("combobox", { name: "Valitse aliatlas" }), { target: { value: "ecology" } });
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "ei-ole-solmua" } });
+    expect(screen.getByText("Näillä rajauksilla ei löytynyt kanavia.")).toBeInTheDocument();
+    fireEvent.change(screen.getByRole("combobox", { name: "Valitse aliatlas" }), { target: { value: "reproduction" } });
+    expect(screen.getByRole("searchbox")).toHaveValue("");
+    expect(screen.getByRole("status")).not.toHaveTextContent(/^0 /);
+    expect(window.location.search).toContain("atlas=reproduction");
+  });
+  it("opens a mobile deep link, follows an edge and restores focus on Escape", () => {
+    window.history.replaceState({}, "", "/fi/map?atlas=reproduction&node=ovarian_reserve");
+    render(<CausalAtlas locale="fi" />);
+    const initial = screen.getByRole("complementary", { name: /Primordiaalifollikkelien/ });
+    expect(within(initial).getByRole("heading", { name: "Tuloyhteydet" })).toBeInTheDocument();
+    fireEvent.click(within(initial).getByRole("button", { name: /→ Munasolun mitokondriaalinen/ }));
+    expect(window.location.search).toContain("node=oocyte_redox");
+    fireEvent.click(screen.getByRole("button", { name: "Sulje tiedot" }));
+    expect(window.location.search).not.toContain("node=");
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "OVARIAN_RESERVE" } });
+    const origin = within(screen.getByTestId("atlas-list")).getByRole("button");
+    fireEvent.click(origin);
+    expect(origin).toHaveAttribute("aria-expanded", "true");
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(origin).toHaveFocus();
+  });
+  it("does not carry hidden filters into a guide and advances along real nodes", () => {
+    render(<CausalAtlas locale="fi" />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "does-not-exist" } });
+    fireEvent.click(screen.getByRole("button", { name: "Opastettu reitti" }));
+    expect(screen.getByRole("status")).toHaveTextContent(`6 / ${NODES.length}`);
+    fireEvent.click(screen.getByRole("button", { name: "Seuraava vaihe" }));
+    expect(window.location.search).toContain("node=mech_vgcc_ros");
+    fireEvent.click(screen.getByRole("button", { name: "Sulje tiedot" }));
+    fireEvent.click(screen.getByRole("button", { name: "Opastettu reitti" }));
+    expect(screen.getByRole("searchbox")).toHaveValue("");
+  });
+  it("keeps French routes and citations in French with English channel fallback", () => {
+    window.history.replaceState({}, "", "/fr/map?node=card_membrane_machinery_transfer&view=list");
+    render(<CausalAtlas locale="fr" />);
+    const detail = screen.getByRole("complementary", { name: "Transferable membrane machinery" });
+    expect(within(detail).getByRole("button", { name: "Fermer les détails" })).toBeInTheDocument();
+    for (const link of within(detail).getAllByRole("link")) {
+      const href = link.getAttribute("href");
+      if (href?.startsWith("/")) expect(href).toMatch(/^\/fr\//);
+    }
+  });
+  it("recovers from invalid URL state", () => {
+    window.history.replaceState({}, "", "/fi/map?atlas=invalid&node=invalid");
+    render(<CausalAtlas locale="fi" />);
+    expect(screen.getByRole("combobox", { name: "Valitse aliatlas" })).toHaveValue("all");
+    expect(screen.queryByRole("button", { name: "Sulje tiedot" })).not.toBeInTheDocument();
+    expect(within(screen.getByTestId("atlas-list")).getAllByRole("button")).toHaveLength(NODES.length);
+  });
+});

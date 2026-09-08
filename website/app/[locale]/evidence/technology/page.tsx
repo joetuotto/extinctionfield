@@ -36,41 +36,41 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Sinusoidal CW",
     proximity: "0.5–3 m (wiring in walls)",
     dutyCycle: "24/7/365",
-    bermRole: "PRIMER — upregulates VGCC expression, sensitizes cells to all other frequencies",
+    bermRole: "Candidate history modifier: channel expression changed in a named neuronal ELF experiment; transfer to other fields is tested separately.",
     verified: "partial",
     keyRef: "[[ref:sun2016_elf_vgcc|PMC4757866]]: ELF increases Ca²⁺ channel expression",
   },
   {
     name: "WiFi router (2.4/5/6 GHz)",
-    channel: "RF + hidden ELF (10 Hz beacon)",
+    channel: "RF with beacon envelope",
     frequency: "2.4–6 GHz carrier, 10 Hz beacon pulse",
-    modulation: "OFDM bursts + 10 Hz beacon",
+    modulation: "OFDM bursts and beacon timing",
     proximity: "1–10 m whole apartment",
     dutyCycle: "24/7 (beacon even without data traffic)",
-    bermRole: "HIDDEN ELF SOURCE — 10 Hz pulse 24/7. Crest factor 100:1. Biological effect proportional to PEAK not average. SAR systematically underestimates.",
-    verified: "confirmed",
+    bermRole: "Record local peaks, average power, envelope and phase. A beacon envelope is not itself a measured ELF magnetic field; biological ranking depends on the receiver and endpoint.",
+    verified: "partial",
     keyRef: "[[ref:schmid2012|Schmid 2012]]: modulation-specific EEG effects. Crest factor 100:1 (Schmid 2020).",
   },
   {
     name: "GSM/2G (900/1800 MHz)",
-    channel: "RF + embedded ELF (217 Hz TDMA)",
+    channel: "RF with TDMA envelope",
     frequency: "900/1800 MHz carrier, 217 Hz frame rate",
-    modulation: "TDMA pulse 217 Hz (ELF on RF)",
+    modulation: "TDMA frame and multiframe timing",
     proximity: "Ear (call) / pocket (standby)",
     dutyCycle: "Call-only initially, standby continuous",
-    bermRole: "MOST IMPORTANT MODULATION CHANGE IN HISTORY. NMT→GSM = analog→digital = CW→pulse. Lower SAR but HIGHER bioactivity. Neurons respond to pulse but NOT CW.",
-    verified: "confirmed",
+    bermRole: "Defined GSM modes yield calculable slow intensity components. Test component removal and restoration; neither pulsed superiority nor a universal GSM ranking follows from the standard name.",
+    verified: "mixed",
     keyRef: "[[ref:panagopoulos2019_dna|Panagopoulos 2019]]: pulsed > CW. 900 MHz pulsed: neuron response. CW: no response.",
   },
   {
     name: "4G/LTE",
     channel: "RF",
     frequency: "700–2600 MHz",
-    modulation: "OFDM, always-on",
-    proximity: "Body contact 16 h/day (pocket, hand, bed)",
-    dutyCycle: "~100% (background sync continuous)",
-    bermRole: "ALWAYS-ON BODY CONTACT. 2012 inflection = not content change but DEVICE change. Testes in near-field 16 h/day → sperm decline doubles.",
-    verified: "confirmed (temporal correlation)",
+    modulation: "OFDM; operating mode must be recorded",
+    proximity: "Device- and use-dependent body proximity",
+    dutyCycle: "Traffic- and power-control-dependent",
+    bermRole: "Near-body use motivates organ-specific dosimetry. Coincident sperm trends do not determine an LTE effect size or a continuous exposure duration.",
+    verified: "mixed",
     keyRef: "[[ref:levine2023_sperm|Levine 2023]]: decline doubles post-2000. Haidt 2024: 2012 inflection point.",
   },
   {
@@ -79,9 +79,9 @@ const TECH_PROFILES: TechProfile[] = [
     frequency: "600–6000 MHz",
     modulation: "OFDM + beamforming",
     proximity: "Body contact + directed beam",
-    dutyCycle: "Continuous",
-    bermRole: "CACNA1C genotype determines response. ETH Zürich nimodipine trial (NCT06998368) is DIRECT BERM TEST.",
-    verified: "confirmed",
+    dutyCycle: "Protocol- and traffic-dependent",
+    bermRole: "A reported sleep-EEG genotype association motivates a channel-intervention test in the same measured protocol. It does not establish a universal 5G response.",
+    verified: "partial",
     keyRef: "[[ref:sousouri2025|Sousouri et al. 2025 (NeuroImage)]]: CACNA1C-dependent 5G sleep-EEG response.",
   },
   {
@@ -91,8 +91,8 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Switching transients + PWM dimming",
     proximity: "0.3–3 m (desk, ceiling, screen backlight)",
     dutyCycle: "8–16 h/day (all lit hours)",
-    bermRole: "IF CHANNEL OPENER. EU ban 2009–2012 forced 100% adoption. TTFields (200 kHz, FDA-approved) proves IF activates Cav1.2. LEAST REGULATED, FASTEST GROWING.",
-    verified: "confirmed (IF gap recognized by WHO 2007)",
+    bermRole: "Separate optical light from driver emissions. TTFields supplies component evidence at therapeutic local fields; environmental IF transfer must be measured.",
+    verified: "partial",
     keyRef: "WHO 2007: IF research high priority. [[ref:neuhaus2019_cav12_ttfields|TTFields]]: 200 kHz activates Cav1.2.",
   },
   {
@@ -102,8 +102,8 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "PWM",
     proximity: "0.5–1.5 m in cabin",
     dutyCycle: "1–4 h/day driving",
-    bermRole: "IF IN CABIN. Pelvis in near-field during driving. Israeli patent US12379429: active cancellation system = industry KNOWS there is a problem.",
-    verified: "confirmed (JACC:Asia 2025)",
+    bermRole: "Measure cabin fields by seat, posture and driving state. A shielding patent identifies an engineering intervention, not proof of a biological health effect.",
+    verified: "partial",
     keyRef: "[[ref:jacc_ev2025|JACC:Asia 2025]]: cardiovascular concerns. [[ref:ev_patent|Israeli patent]]: active field cancellation.",
   },
   {
@@ -113,7 +113,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Resonant switching",
     proximity: "0.1–0.5 m (abdomen, pelvis)",
     dutyCycle: "0.5–2 h/day",
-    bermRole: "HIGH POWER IF at pelvis level. Pregnant women: fetus in near-field.",
+    bermRole: "Short-range IF measurement target. Local field, posture and tissue transfer are required to estimate abdominal or pelvic exposure.",
     verified: "partial (data limited)",
     keyRef: "[[ref:tokinobu2021_ih_kyushu|Tokinobu et al. 2021 (Kyushu cohort)]].",
   },
@@ -124,7 +124,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "FHSS (frequency hopping)",
     proximity: "CONTACT (ear canal)",
     dutyCycle: "2–8 h/day",
-    bermRole: "Low SAR but CONTACT with temporal lobe. Inner ear hair cells use Cav1.3. Long-term cumulative effects UNSTUDIED.",
+    bermRole: "Ear proximity motivates measurement of local tissue dose and use duration. Channel biology alone does not determine a long-term effect.",
     verified: "insufficient data",
     keyRef: "WHO 2023: longitudinal data scarce.",
   },
@@ -135,7 +135,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Technology-dependent",
     proximity: "Far-field (50–500 m urban)",
     dutyCycle: "24/7",
-    bermRole: "BACKGROUND FIELD. Individual phone is dominant source. MODULATION matters more than distance.",
+    bermRole: "Ambient source contribution depends on local geometry, traffic, power and organ transfer. Compare it with personal sources using the same measurements.",
     verified: "mixed",
     keyRef: "Multiple reviews with inconsistent results.",
   },
@@ -146,7 +146,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Complex multi-source",
     proximity: "Workers: 0–10 m. Neighbors: 50–500 m",
     dutyCycle: "24/7",
-    bermRole: "HIGHEST MULTI-BAND EXPOSURE for workers. AI boom → massive expansion. NO occupational health studies specific to data center EMF.",
+    bermRole: "Mixed-source occupational exposure is a measurement target. Source count does not establish the highest biological dose.",
     verified: "no data",
     keyRef: "None — research gap.",
   },
@@ -157,7 +157,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Switching + PWM",
     proximity: "3–10 m (pedestrians)",
     dutyCycle: "Dusk to dawn (8–14 h)",
-    bermRole: "OUTDOOR IF 24/7. Combined with light→melatonin↓. Boyes 2021: LED street lights reduce insect populations more than sodium lamps.",
+    bermRole: "Outdoor light and electrical driver fields have different receiving routes. Ecological light findings do not by themselves isolate IF emissions.",
     verified: "partial (ecological data)",
     keyRef: "[[ref:boyes2021|Boyes et al. 2021 (Science Advances)]].",
   },
@@ -168,7 +168,7 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Resonant magnetic coupling",
     proximity: "0–0.3 m (phone on pad)",
     dutyCycle: "Charging duration (1–4 h/day)",
-    bermRole: "IF at short range. Often bedside (nighttime exposure during sleep). Growing adoption.",
+    bermRole: "Short-range IF exposure. Measure local field and timing during charging, including nighttime use.",
     verified: "no data",
     keyRef: "None — research gap.",
   },
@@ -179,10 +179,78 @@ const TECH_PROFILES: TechProfile[] = [
     modulation: "Digital",
     proximity: "Far-field (global coverage)",
     dutyCycle: "24/7 (global RF floor rises)",
-    bermRole: "ELIMINATES LAST EMF-FREE ZONES. Control populations (Tsimane, Hadza) will be contaminated by ~2030. IRREVERSIBLE loss of verification capacity.",
+    bermRole: "Compare measured downlink fields and terminal exposure against local background. Coverage alone does not establish loss of low-exposure comparison populations.",
     verified: "no data (too new)",
     keyRef: "None — emerging concern.",
   },
+];
+
+const TECH_PROFILE_FI: Partial<TechProfile>[] = [
+  {
+    "name": "Sähköverkko (50/60 Hz)",
+    "bermRole": "Historiaa muuntava ehdokas: kanavailmentymä muuttui nimetyssä hermosolujen ELF-kokeessa; siirto muihin kenttiin testataan erikseen.",
+    "verified": "partial"
+  },
+  {
+    "name": "Wi-Fi-reititin (2,4/5/6 GHz)",
+    "channel": "RF ja beacon-verhokäyrä",
+    "modulation": "OFDM-purskeet ja beacon-ajoitus",
+    "bermRole": "Tallenna paikalliset huiput, keskiteho, verhokäyrä ja vaihe. Beacon-verhokäyrä ei itsessään ole mitattu ELF-magneettikenttä; biologinen järjestys riippuu vastaanottimesta ja päätepisteestä."
+  },
+  {
+    "name": "GSM/2G (900/1800 MHz)",
+    "channel": "RF ja TDMA-verhokäyrä",
+    "modulation": "TDMA-kehysten ja monikehysten ajoitus",
+    "bermRole": "Määritellyt GSM-tilat tuottavat laskettavia hitaita intensiteettikomponentteja. Testaa komponentin poisto ja palautus; standardinimi ei osoita pulssin paremmuutta tai yleistä GSM-järjestystä."
+  },
+  {
+    "name": "4G/LTE",
+    "proximity": "Laitteesta ja käytöstä riippuva kehon läheisyys",
+    "dutyCycle": "Liikenteestä ja tehonsäädöstä riippuva",
+    "modulation": "OFDM; käyttötila tallennettava",
+    "bermRole": "Kehon lähellä käyttö motivoi elinkohtaista dosimetriaa. Samanaikaiset siittiötrendit eivät määrää LTE-vaikutuskokoa tai jatkuvan altistuksen kestoa."
+  },
+  {
+    "name": "5G FR1 (3,5 GHz)",
+    "dutyCycle": "Protokollasta ja liikenteestä riippuva",
+    "bermRole": "Raportoitu uni-EEG:n genotyyppiyhteys motivoi kanavainterventiota samassa mitatussa protokollassa. Se ei osoita yleistä 5G-vastetta."
+  },
+  {
+    "name": "LED-valaistus (hakkuriajuri)",
+    "bermRole": "Erota optinen valo ajuripäästöistä. TTFields antaa osanäyttöä terapeuttisissa paikallisissa kentissä; ympäristön IF-siirto on mitattava."
+  },
+  {
+    "name": "Sähköauto (invertteri/moottori)",
+    "bermRole": "Mittaa matkustamon kentät istuimen, asennon ja ajotilan mukaan. Suojauspatentti tunnistaa teknisen intervention, ei todista biologista terveysvaikutusta."
+  },
+  {
+    "name": "Induktioliesi",
+    "bermRole": "Lähietäisyyden IF-mittauskohde. Paikallinen kenttä, asento ja kudossiirto tarvitaan vatsan tai lantion altistusarvioon."
+  },
+  {
+    "name": "Bluetooth-nappikuulokkeet",
+    "bermRole": "Korvan läheisyys motivoi paikallista kudosannoksen ja käyttöajan mittausta. Kanavabiologia ei yksin määritä pitkäaikaisvaikutusta."
+  },
+  {
+    "name": "Tukiasemat",
+    "bermRole": "Ympäristölähteen osuus riippuu paikallisesta geometriasta, liikenteestä, tehosta ja elinsiirrosta. Vertaa sitä henkilökohtaisiin lähteisiin samoilla mittauksilla."
+  },
+  {
+    "name": "Datakeskukset",
+    "bermRole": "Monilähteinen työaltistus on mittauskohde. Lähteiden määrä ei osoita suurinta biologista annosta."
+  },
+  {
+    "name": "LED-katuvalot",
+    "bermRole": "Ulkovalolla ja sähköisillä ajurikentillä on eri vastaanottoreitit. Ekologiset valohavainnot eivät yksin eristä IF-päästöjä."
+  },
+  {
+    "name": "Langaton lataus",
+    "bermRole": "Lähietäisyyden IF-altiste. Mittaa paikallinen kenttä ja ajoitus latauksen aikana, myös yöllä."
+  },
+  {
+    "name": "Starlink/LEO-satelliitit",
+    "bermRole": "Vertaa mitattuja alaslinkkikenttiä ja päätelaitealtistusta paikalliseen taustaan. Peittoalue ei yksin osoita pienen altistuksen vertailupopulaatioiden menetystä."
+  }
 ];
 
 const VERIFIED_COLORS: Record<string, string> = {
@@ -203,36 +271,36 @@ const COPY = {
   en: {
     title: "Technology-Specific Exposure",
     subtitle:
-      "Modern EMF exposure is not one signal — it is 5–12 simultaneous sources spanning 10 orders of magnitude in frequency. Each technology generation added a new layer; CaMKII integrates them all.",
+      "Multiple sources can reach the same tissue. BERM compares their local waveforms, timing and receiver state before predicting a biological response.",
     backLink: "← Back to Evidence",
     elfTitle: "The ELF Priming Hypothesis",
     elfBody:
-      "The power grid does not merely add 50/60 Hz exposure. It upregulates voltage-gated calcium channel expression in neurons (P/Q, N, and R subtypes increase after 8–10 days of ELF exposure — [[ref:sun2016_elf_vgcc|PMC4757866]]). This means the power grid makes every cell more sensitive to every other EMF source: WiFi, 4G, 5G, LED, Bluetooth.",
+      "Repeated ELF exposure changed neuronal calcium-channel expression in the named experiment ([[ref:sun2016_elf_vgcc|Sun 2016]]). This supplies a candidate history mechanism: a measured change in channel state may alter the next response. Testing ELF priming × RF requires sham, ELF, RF and ELF+RF groups with matched culture history, local fields and functional endpoints.",
     elfImplication:
-      "This explains why residential electricity consumption is the strongest predictor of fertility decline (full-model RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
-    elfWithout: "Without ELF priming (Amish, Tsimane)",
+      "Electricity use and mobile subscriptions are national diffusion proxies. Their predictive comparison does not measure cellular priming. The biological test asks whether a measured receptor state explains an exposure-response difference beyond waveform, dose and other conditions.",
+    elfWithout: "Reference receiving state",
     elfWithoutDetail:
-      "VGCC expression = baseline. RF stimulus → Ca²⁺ response = X. CaMKII threshold NOT crossed. Recovery complete.",
-    elfWith: "With ELF priming (electrified home)",
+      "Measure channel expression, resting potential, calcium stores, repair and the response to a defined acute field. A community label does not determine these quantities.",
+    elfWith: "Measured history-dependent state",
     elfWithDetail:
-      "50 Hz continuous → VGCC expression = 2–3× baseline. Same RF stimulus → Ca²⁺ response = 2–3X. CaMKII threshold CROSSED. Autophosphorylation → self-sustaining. Recovery incomplete.",
+      "Repeat the same acute protocol after a declared exposure history. Increased sensitivity, protective adaptation and a shifted baseline predict different combinations of proximal response, damage and function.",
 
-    superTitle: "Superadditivity: Three Mechanisms",
+    superTitle: "How sources can interact",
     superLead:
-      "Different frequencies activate different VGCC subtypes, but CaMKII integrates all Ca²⁺ regardless of source. When total Ca²⁺ load crosses the autophosphorylation threshold, the effect becomes self-sustaining and progressive.",
-    superMech1Title: "CaMKII threshold integration",
+      "BERM separates physical frequency mixing from biological integration. Cross terms can survive in a receiver band, while calcium and repair processes can integrate the resulting signal over time. Their sign and strength must be measured or specified.",
+    superMech1Title: "Waveform → driver → receiving window",
     superMech1:
-      "50 Hz → Cav3 (T-type) → Ca²⁺ +60% of threshold. 10 Hz WiFi beacon → CRY → melatonin↓ → +40%. 217 Hz GSM → IFO → +60%. 2.4 GHz WiFi → Cav1.2 → +30%. 20–100 kHz LED → Cav1.2 → +20%. Alone: none crosses 100%. Together: 60+40+60+30+20 = 210% → CaMKII autophosphorylates → PERMANENT.",
+      "Compute the local driver spectrum S_d and compare R²=∫W(f;s,B₀)S_d(f)df using the same window law across technologies. Equal SAR and RF power spectra can conceal different slow intensity spectra because phase matters. A recorded I/Q signal or power trace is therefore more informative than a band count.",
     superMech2Title: "ELF-induced channel upregulation",
     superMech2:
-      "50 Hz continuous → VGCC expression ↑ ([[ref:sun2016_elf_vgcc|PMC4757866]]) → same RF/IF stimulus → larger Ca²⁺ response → ELF priming × RF trigger = multiplicative.",
-    superMech3Title: "Recovery prevention",
+      "A prior field can change channel machinery ([[ref:sun2016_elf_vgcc|Sun 2016]]). BERM tests whether that measured state changes a later field response. Shared calcium machinery also allows cross-talk, so two channel names do not establish independent or additive effects.",
+    superMech3Title: "Exposure and recovery on separate clocks",
     superMech3:
-      "Single exposure: Ca²⁺ ↑ → pause → recovery. Multi-band 24/7: 50 Hz continuous (grid) + 10 Hz continuous (WiFi beacon) + 4G near-continuous (background sync) + LED IF 8–16 h/day → recovery window = 0 → CaMKII stays activated continuously → every day adds cumulation.",
+      "Track receptor state s, repair capacity A and remaining damage D during exposure and pauses. An active device does not imply continuous local tissue exposure or zero repair. Slow recovery near a feedback boundary is a testable prediction; positive feedback alone does not establish irreversibility.",
 
     layersTitle: "Five Technology Layers",
     layersLead:
-      "Each generation stacked on top of existing layers. The biological effect is not additive — it is superadditive.",
+      "Deployment history identifies candidate exposure changes. Each proposed health link still passes through a measured waveform, a state-dependent receiver and a named functional endpoint.",
     layers: [
       {
         id: "layer1",
@@ -245,7 +313,7 @@ const COPY = {
         healthSignal:
           "Sleep disorders emerge as modern phenomenon. Early cancer clusters near power lines (Wertheimer 1979).",
         keyInsight:
-          "This layer does not just add ELF exposure — it PRIMES all cells for enhanced sensitivity to every subsequent technology layer.",
+          "Repeated ELF exposure is a candidate modifier of receptor state. Its magnitude and transfer to subsequent RF/IF responses require matched measurements.",
       },
       {
         id: "layer2",
@@ -258,7 +326,7 @@ const COPY = {
         healthSignal:
           "Sperm decline accelerates post-2000 (1.16→2.64%/yr, [[ref:levine2023_sperm|Levine 2023]]).",
         keyInsight:
-          "The NMT→GSM transition (analog→digital) is the single most important modulation change in history. Lower SAR but HIGHER bioactivity.",
+          "GSM timing supplies a calculable test waveform. Published DNA-effect classifications differ between GSM and UMTS, but this is not a universal biological ranking; a CW-positive/GSM-null contrast also exists.",
       },
       {
         id: "layer3",
@@ -271,7 +339,7 @@ const COPY = {
         healthSignal:
           "Children's sleep disorders increase. Sperm decline doubles. Metabolic syndrome accelerates.",
         keyInsight:
-          "The phone-in-pocket transition is the simplest explanation for doubled sperm decline rate. WiFi beacon is a HIDDEN ELF source in every home 24/7.",
+          "Body contact changes local transfer and duration. Wi-Fi beacons modulate an RF envelope; a slow envelope is not itself a measured ELF magnetic field. Record actual operating modes.",
       },
       {
         id: "layer4",
@@ -284,7 +352,7 @@ const COPY = {
         healthSignal:
           "2012 inflection: teen mental health crisis begins. NOT explained by social media (existed since 2003) — explained by DEVICE change.",
         keyInsight:
-          "2012 is the year when cumulative multi-frequency Ca²⁺ load exceeded CaMKII autophosphorylation threshold at population level. The IF channel (LED) opening made this the first THREE-channel exposure in history.",
+          "Compare local dose, waveform and nighttime timing before attributing a health trend to this technology layer. Nutrition, sleep and prior cell state enter the same receiving model.",
       },
       {
         id: "layer5",
@@ -297,7 +365,7 @@ const COPY = {
         healthSignal:
           "TFR collapse accelerates globally. Korea 0.72 (2024). Institutional trust at historic lows.",
         keyInsight:
-          "The IF channel is the FASTEST GROWING and LEAST REGULATED. EV inverters, wireless charging, and LED drivers all operate in the 20–300 kHz range that [[ref:ttfields_mechanism|TTFields]] (FDA-approved) has shown to be biologically active.",
+          "Intermediate-frequency medical fields establish effects in their own dose and tissue settings. Environmental LED, inverter and charging exposures need their own local-field transfer and endpoint test.",
       },
     ] as TechLayer[],
 
@@ -333,36 +401,36 @@ const COPY = {
   fi: {
     title: "Teknologiakohtainen altistus",
     subtitle:
-      "Moderni EMF-altistus ei ole yksi signaali — se on 5–12 samanaikaista lähdettä, jotka kattavat 10 kertaluokkaa taajuudessa. Jokainen teknologiasukupolvi lisäsi uuden kerroksen; CaMKII integroi ne kaikki.",
+      "Useat lähteet voivat kohdistua samaan kudokseen. BERM vertaa paikallisia aaltomuotoja, ajoitusta ja vastaanottimen tilaa ennen biologisen vasteen ennustamista.",
     backLink: "← Takaisin näyttöön",
     elfTitle: "ELF-priming-hypoteesi",
     elfBody:
-      "Sähköverkko ei ainoastaan lisää 50/60 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota hermosoluissa (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivän ELF-altistuksen jälkeen — [[ref:sun2016_elf_vgcc|PMC4757866]]). Tämä tarkoittaa, että sähköverkko tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille: WiFi, 4G, 5G, LED, Bluetooth.",
+      "Toistuva ELF-altistus muutti hermosolujen kalsiumkanavien ilmentymistä nimetyssä kokeessa ([[ref:sun2016_elf_vgcc|Sun 2016]]). Havainto antaa historiahypoteesille mekanismin: mitattu kanavatilan muutos voi muuttaa seuraavaa vastetta. ELF-esialtistus × RF -testi tarvitsee sham-, ELF-, RF- ja ELF+RF-ryhmät sekä yhtenäisen kasvatushistorian, paikallisten kenttien mittaukset ja toiminnalliset päätepisteet.",
     elfImplication:
-      "Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (kokonaismallin RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
-    elfWithout: "Ilman ELF-esialtistusta (Amish, Tsimane)",
+      "Sähkönkulutus ja matkapuhelinliittymät ovat kansallisia yleistymisen sijaismuuttujia. Niiden ennustevertailu ei mittaa solujen esialtistustilaa. Biologinen testi selvittää, selittääkö mitattu vastaanotintila vaste-eroa aaltomuodon, annoksen ja muiden olojen lisäksi.",
+    elfWithout: "Vastaanottimen vertailutila",
     elfWithoutDetail:
-      "VGCC-ekspressio = perusviiva. RF-stimulus → Ca²⁺-vaste = X. CaMKII-kynnys EI ylity. Palautuminen täydellinen.",
-    elfWith: "ELF-priming (sähköistetty koti)",
+      "Mittaa kanavailmentymä, lepopotentiaali, kalsiumvarastot, korjaus ja vaste määriteltyyn akuuttiin kenttään. Yhteisön nimi ei määrää näitä suureita.",
+    elfWith: "Mitattu historiariippuvainen tila",
     elfWithDetail:
-      "50 Hz jatkuva → VGCC-ekspressio = 2–3× perusviiva. Sama RF-stimulus → Ca²⁺-vaste = 2–3X. CaMKII-kynnys YLITTYY. Autofosforylaatio → itseään ylläpitävä. Palautuminen epätäydellinen.",
+      "Toista sama akuutti koe ilmoitetun altistushistorian jälkeen. Herkistyminen, suojaava adaptaatio ja muuttunut lähtötaso ennustavat erilaisia lähivasteen, vaurion ja toiminnan yhdistelmiä.",
 
-    superTitle: "Superadditiivisuus: kolme mekanismia",
+    superTitle: "Miten lähteet voivat vaikuttaa yhdessä",
     superLead:
-      "Eri taajuudet aktivoivat eri VGCC-alatyyppejä, mutta CaMKII integroi kaiken Ca²⁺:n lähteestä riippumatta. Kun kokonais-Ca²⁺-kuorma ylittää autofosforylaatiokynnyksen, vaikutus muuttuu itseään ylläpitäväksi ja progressiiviseksi.",
-    superMech1Title: "CaMKII-kynnysintegraatio",
+      "BERM erottaa fysikaalisen taajuussekoituksen biologisesta integraatiosta. Ristiosia voi säilyä vastaanottimen kaistalla, ja kalsium- sekä korjausprosessit voivat yhdistää syntyvää signaalia ajassa. Niiden suunta ja voimakkuus on mitattava tai määriteltävä.",
+    superMech1Title: "Aaltomuoto → ajuri → vastaanottoikkuna",
     superMech1:
-      "50 Hz → Cav3 (T-tyyppi) → Ca²⁺ +60 % kynnyksestä. 10 Hz WiFi → CRY → melatoniini↓ → +40 %. 217 Hz GSM → IFO → +60 %. 2,4 GHz WiFi → Cav1.2 → +30 %. 20–100 kHz LED → Cav1.2 → +20 %. Yksin: mikään ei ylitä 100 %. Yhdessä: 60+40+60+30+20 = 210 % → CaMKII autofosforyloituu → PYSYVÄ.",
+      "Laske paikallisen ajurin spektri S_d ja vertaa suuretta R²=∫W(f;s,B₀)S_d(f)df samalla ikkunalailla eri teknologioissa. Sama SAR ja RF-tehospektri voivat sisältää erilaisen hitaan intensiteettispektrin, koska vaihe vaikuttaa. Tallennettu I/Q-signaali tai tehoaikajälki kertoo siksi enemmän kuin kaistojen määrä.",
     superMech2Title: "ELF-aiheutettu kanavien ylössäätely",
     superMech2:
-      "50 Hz jatkuva → VGCC-ekspressio ↑ ([[ref:sun2016_elf_vgcc|PMC4757866]]) → sama RF/IF-stimulus → suurempi Ca²⁺-vaste → ELF-priming × RF-triggeri = multiplikatiivinen.",
-    superMech3Title: "Palautumisen estyminen",
+      "Aiempi kenttä voi muuttaa kanavakoneistoa ([[ref:sun2016_elf_vgcc|Sun 2016]]). BERM testaa, muuttaako mitattu tila myöhempää kenttävastetta. Yhteinen kalsiumkoneisto mahdollistaa myös ristivaikutukset, joten kaksi kanavanimeä eivät osoita vaikutusten riippumattomuutta tai summattavuutta.",
+    superMech3Title: "Altistus ja palautuminen eri aikaskaaloilla",
     superMech3:
-      "Yksittäinen altistus: Ca²⁺ ↑ → tauko → palautuminen. Monikaistainen 24/7: 50 Hz jatkuva (sähköverkko) + 10 Hz jatkuva (WiFi-beacon) + 4G lähes jatkuva (taustasynkronointi) + LED IF 8–16 h/pv → palautumisikkuna = 0 → CaMKII pysyy aktivoituneena jatkuvasti → jokainen päivä lisää kumulaatiota.",
+      "Seuraa vastaanotintilaa s, korjauskapasiteettia A ja jäljelle jäävää vauriota D altistuksen ja taukojen aikana. Käynnissä oleva laite ei tarkoita jatkuvaa paikallista kudosaltistusta tai korjauksen pysähtymistä. Palautumisen hidastuminen palautejärjestelmän rajalla on testattava ennuste; positiivinen palaute ei yksin osoita peruuttamattomuutta.",
 
     layersTitle: "Viisi teknologiakerrosta",
     layersLead:
-      "Jokainen sukupolvi kerrostui olemassa olevien päälle. Biologinen vaikutus ei ole summautuva — se on superadditiivinen.",
+      "Käyttöönottohistoria paikantaa mahdollisia altistusmuutoksia. Jokainen ehdotettu terveysyhteys kulkee edelleen mitatun aaltomuodon, tilariippuvaisen vastaanottimen ja nimetyn toiminnallisen päätepisteen kautta.",
     layers: [
       {
         id: "layer1",
@@ -375,7 +443,7 @@ const COPY = {
         healthSignal:
           "Unihäiriöt syntyvät modernina ilmiönä. Varhaiset syöpäklusterit voimalinjojen lähellä (Wertheimer 1979).",
         keyInsight:
-          "Tämä kerros ei vain lisää ELF-altistusta — se HERKISTÄÄ kaikki solut tehostetulle herkkyydelle jokaiselle myöhemmälle teknologiakerrokselle.",
+          "Toistuva ELF-altistus on vastaanotintilan mahdollinen muuntaja. Muutoksen suuruus ja siirtyminen myöhempiin RF/IF-vasteisiin tarvitsevat vertailukelpoiset mittaukset.",
       },
       {
         id: "layer2",
@@ -388,7 +456,7 @@ const COPY = {
         healthSignal:
           "Siittiölasku kiihtyy 2000 jälkeen (1,16→2,64 %/v, [[ref:levine2023_sperm|Levine 2023]]).",
         keyInsight:
-          "NMT→GSM-siirtymä (analoginen→digitaalinen) on historian tärkein modulaatiomuutos. Matalampi SAR mutta KORKEAMPI bioaktiivisuus.",
+          "GSM:n ajoitus antaa laskettavan testiaaltomuodon. Julkaistujen DNA-vaikutusten luokitus eroaa GSM:n ja UMTS:n välillä, mutta kyse ei ole yleisestä biologisesta järjestyksestä; aineistossa on myös CW-positiivinen/GSM-nolla-vertailu.",
       },
       {
         id: "layer3",
@@ -401,7 +469,7 @@ const COPY = {
         healthSignal:
           "Lasten unihäiriöt kasvavat. Siittiölasku kaksinkertaistuu. Metabolinen oireyhtymä kiihtyy.",
         keyInsight:
-          "Puhelin-taskussa-siirtymä on yksinkertaisin selitys siittiölaskun kaksinkertaistumiselle. WiFi-beacon on PIILOTETTU ELF-lähde jokaisessa kodissa 24/7.",
+          "Kehokosketus muuttaa paikallista siirtoa ja kestoa. Wi-Fi-beacon moduloi RF-verhokäyrää; hidas verhokäyrä ei itsessään ole mitattu ELF-magneettikenttä. Tallenna todelliset käyttötilat.",
       },
       {
         id: "layer4",
@@ -414,7 +482,7 @@ const COPY = {
         healthSignal:
           "2012: nuorten mielenterveyskriisi alkaa. EI selity somella (ollut olemassa 2003 asti) — selittyy LAITEMUUTOKSELLA.",
         keyInsight:
-          "2012 on vuosi jolloin kumulatiivinen monitaajuinen Ca²⁺-kuorma ylitti CaMKII:n autofosforylaatiokynnyksen väestötasolla. IF-kanavan (LED) avautuminen teki tästä historian ensimmäisen KOLMIKANAVA-altistuksen.",
+          "Vertaa paikallista annosta, aaltomuotoa ja yöaikaista ajoitusta ennen terveystrendin kohdistamista tähän teknologiakerrokseen. Ravinto, uni ja aiempi solutila kuuluvat samaan vastaanottomalliin.",
       },
       {
         id: "layer5",
@@ -427,7 +495,7 @@ const COPY = {
         healthSignal:
           "TFR-romahdus kiihtyy maailmanlaajuisesti. Korea 0,72 (2024). Institutionaalinen luottamus historiallisen matalalla.",
         keyInsight:
-          "IF-kanava on NOPEIMMIN KASVAVA ja VÄHITEN SÄÄNNELTY. Sähköautojen invertterit, langaton lataus ja LED-ajurit toimivat kaikki 20–300 kHz -alueella, jonka [[ref:ttfields_mechanism|TTFields]] (FDA-hyväksytty) on osoittanut biologisesti aktiiviseksi.",
+          "Lääkinnälliset välitaajuuskentät osoittavat vaikutuksia omissa annos- ja kudosoloissaan. LEDien, invertterien ja latauksen ympäristöaltisteet tarvitsevat oman paikallisen kenttäsiirron ja päätepistetestin.",
       },
     ] as TechLayer[],
 
@@ -883,6 +951,7 @@ export default async function TechnologyPage({
       </Link>
 
       <PageHeader title={d.title} subtitle={d.subtitle} icon={Radio} />
+      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" href={`/${locale}/model/biological-coordination#conditional-scenarios`}>{locale === "fi" ? "Tutki ajoituksen, korjauksen ja toiminnallisten porttien yhteisiä skenaarioita →" : "Explore shared scenarios for timing, repair and functional gates →"}</Link></p>
 
       {/* ELF Priming */}
       <section className="mb-16">
@@ -1041,7 +1110,9 @@ export default async function TechnologyPage({
         <h2 className="text-2xl font-bold mb-2">{d.profilesTitle}</h2>
         <p className="text-muted-foreground mb-6">{d.profilesLead}</p>
         <div className="space-y-3">
-          {TECH_PROFILES.map((t) => (
+          {TECH_PROFILES.map((profile, index) => {
+            const t = locale === "fi" ? { ...profile, ...TECH_PROFILE_FI[index] } : profile;
+            return (
             <details key={t.name} className="group rounded-xl border">
               <summary className="cursor-pointer p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -1072,7 +1143,8 @@ export default async function TechnologyPage({
                 </p>
               </div>
             </details>
-          ))}
+          );
+          })}
         </div>
       </section>
 

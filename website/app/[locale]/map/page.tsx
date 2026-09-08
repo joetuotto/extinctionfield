@@ -1,23 +1,23 @@
 import type { Metadata } from "next";
 import { CausalAtlas } from "@/components/CausalAtlas";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
-import { NODES, ALL_STAGES, t } from "@/lib/causalAtlasData";
+import { NODES, ALL_STAGES, LEVEL_TO_STAGE, t } from "@/lib/causalAtlasData";
 import { pickCopy } from "@/lib/i18n";
 import type { Locale } from "@/lib/causalMapData";
 
 const COPY = {
   en: {
     title: "BERM hypothesis atlas",
-    subtitle: "Explore BERM's proposed multiscale routes and their evidence labels from environmental EMF channels to demographic and ecological outcomes.",
+    subtitle: "Explore all identified channels through six linked subatlases: physics, cells, organs, reproduction, society and ecology. Search the shared graph and follow each channel’s connections and evidence scope.",
     boundaryTitle: "How to read this atlas",
-    boundary: "This is a detailed map of BERM hypotheses and imported biological evidence, not a second model and not a chain derived from FieldState. FieldState is an optional measurement module outside this atlas. Lindgren's 2025 metric is a theory premise; the geometry-to-observable L2 operator remains open, so arrows across that boundary are testable BERM propositions rather than derived effects.",
+    boundary: "This is a detailed map of BERM hypotheses and imported biological evidence, not a second model and not a chain derived from FieldState. FieldState is shown in a separate measurement lane; its dotted connections are inference inputs, not biological causes. Lindgren's 2025 metric is a theory premise; the geometry-to-observable L2 operator remains open, so arrows across that boundary are testable BERM propositions rather than derived effects.",
     readMore: "Read more",
   },
   fi: {
     title: "BERM-hypoteesiatlas",
-    subtitle: "Tutki BERM:n ehdottamia monitasoreittejä ja niiden näyttömerkintöjä ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
+    subtitle: "Tutki kaikkia tunnistettuja vaikutuskanavia kuuden toisiinsa kytkeytyvän aliatlaksen kautta: fysiikka, solut, elimet, lisääntyminen, yhteiskunta ja ekologia. Hae yhteisestä kartasta ja seuraa kanavien yhteyksiä ja näytön rajauksia.",
     boundaryTitle: "Näin atlasta luetaan",
-    boundary: "Tämä on BERM-hypoteesien ja muualta tuodun biologisen näytön yksityiskohtainen kartta, ei toinen malli eikä FieldStatesta johdettu ketju. FieldState on atlasrakenteen ulkopuolinen valinnainen mittausmoduuli. Lindgrenin vuoden 2025 metriikka on teoriapremissi; geometriasta havaittavaan vasteeseen johtava L2-operaattori on avoin, joten rajan ylittävät nuolet ovat testattavia BERM-propositioita eivätkä johdettuja vaikutuksia.",
+    boundary: "Tämä on BERM-hypoteesien ja muualta tuodun biologisen näytön yksityiskohtainen kartta, ei toinen malli eikä FieldStatesta johdettu ketju. FieldState näkyy erillisenä mittaushaarana; sen pisteviivayhteydet ovat päättelyn syötteitä, eivät biologisia syitä. Lindgrenin vuoden 2025 metriikka on teoriapremissi; geometriasta havaittavaan vasteeseen johtava L2-operaattori on avoin, joten rajan ylittävät nuolet ovat testattavia BERM-propositioita eivätkä johdettuja vaikutuksia.",
     readMore: "Lue lisää",
   },
   ja: {
@@ -61,16 +61,7 @@ function SSRFallback({ lang, pageLocale }: { lang: Locale; pageLocale: string })
     <div className="mt-8 space-y-6" id="atlas-fallback">
       {ALL_STAGES.map((stage) => {
         const stageNodes = NODES.filter((n) => {
-          const lvl = n.level;
-          const s = stage.id;
-          if (s === "sources") return lvl <= 0;
-          if (s === "modulation") return lvl === 1;
-          if (s === "mechanisms") return lvl === 2;
-          if (s === "tissue") return lvl === 3;
-          if (s === "disease") return lvl === 4;
-          if (s === "demographic") return lvl === 5;
-          if (s === "ecology") return lvl === 6;
-          return false;
+          return LEVEL_TO_STAGE[n.level] === stage.id;
         });
         if (stageNodes.length === 0) return null;
         return (
@@ -125,7 +116,7 @@ export default async function MapPage({
         <h2 className="text-sm font-semibold text-status-partial">{d.boundaryTitle}</h2>
         <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{d.boundary}</p>
       </aside>
-      <CausalAtlas locale={lang} />
+      <CausalAtlas locale={locale} />
       <noscript>
         <SSRFallback lang={lang} pageLocale={locale} />
       </noscript>

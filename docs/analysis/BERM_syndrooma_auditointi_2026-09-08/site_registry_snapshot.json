@@ -1,0 +1,22 @@
+{
+  "published": {
+    "graph_nodes": 47,
+    "graph_edges": 96,
+    "atlas_node_bindings": 68,
+    "atlas_edge_bindings": 5,
+    "anchor_count": 183,
+    "anchored_claims": 99,
+    "legacy_entries": 150,
+    "fieldstate_records": 34
+  },
+  "working": {
+    "graph_nodes": 39,
+    "graph_edges": 83,
+    "atlas_node_bindings": 50,
+    "atlas_edge_bindings": 5,
+    "anchor_count": 102,
+    "anchored_claims": 64,
+    "legacy_entries": 150,
+    "fieldstate_records": 34
+  }
+}

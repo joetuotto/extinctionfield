@@ -1,0 +1,2242 @@
+{
+  "file_count": 444,
+  "all_source_files_match": true,
+  "all_public_files_preserved": true,
+  "missing_previous_paths": [],
+  "new_paths": [
+    "website/app/[locale]/behavior/page.tsx",
+    "website/app/[locale]/biology/page.tsx",
+    "website/app/[locale]/evidence/convergence/page.tsx",
+    "website/app/[locale]/physics/page.tsx",
+    "website/components/CivilizationReadingPath.tsx",
+    "website/components/ExplanationHub.tsx",
+    "website/components/ModelReadingPath.tsx",
+    "website/components/ModelScopeIntro.tsx",
+    "website/components/ResearchReadingGuide.tsx",
+    "website/components/__tests__/Navigation.test.tsx",
+    "website/lib/__tests__/fixtures/navigation-before-levels.json",
+    "website/lib/__tests__/navigation.test.ts"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 973,
+      "sha256": "d9896f90555695ab64923ee1b4873e2488c937c4aa56886c0bea8a1f030481be"
+    },
+    {
+      "path": ".vercel/project.json",
+      "bytes": 410,
+      "sha256": "f54ba3313cad8d0250259f7acf28f7550d779e1280d94783a8b207107ade1e26"
+    },
+    {
+      "path": ".vercelignore",
+      "bytes": 311,
+      "sha256": "4471a7e586638e5e76337ea285f08775993b78b3b46cf6ddb228ac664ecdc495"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 93,
+      "sha256": "b7df05d571b2142c43102f2fa08ab743da46d6f36ca6fec96e781b4b5492a702"
+    },
+    {
+      "path": "website/.gitignore",
+      "bytes": 480,
+      "sha256": "207e265ff4901f9ad9f96d8ce08530e04f9fc600815472a66d0a446096d654cd"
+    },
+    {
+      "path": "website/AGENTS.md",
+      "bytes": 5792,
+      "sha256": "90f50dcf0c8e8779cc429d768b5b65d9699e39781cc3ab28b1ae4c8a9c97ad27"
+    },
+    {
+      "path": "website/CLAUDE.md",
+      "bytes": 11,
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+    },
+    {
+      "path": "website/README.md",
+      "bytes": 1450,
+      "sha256": "60b55ff7df79af72590f9524208e46642bc32bdc175cdad41349681c0e2f958f"
+    },
+    {
+      "path": "website/app/[locale]/about/history/page.tsx",
+      "bytes": 21451,
+      "sha256": "914b20f3d6c9a6a7f067cb5135fb33d0270487911883e35dec457f8747bab1e8"
+    },
+    {
+      "path": "website/app/[locale]/about/layout.tsx",
+      "bytes": 324,
+      "sha256": "2c52aeeea0d097a9906deaa62b8801fd514a0f4452ff8c7792283338475abfee"
+    },
+    {
+      "path": "website/app/[locale]/about/measurement/page.tsx",
+      "bytes": 32169,
+      "sha256": "13aa229c1ce7cf30e7f07a87fedb060e1f3eba0872a8499497a4a4504cc65373"
+    },
+    {
+      "path": "website/app/[locale]/about/objections/page.tsx",
+      "bytes": 67,
+      "sha256": "015702a2119827d07b58bca8ecf4882dc4b6ba0fc1afa077d2e0c3a48df9858e"
+    },
+    {
+      "path": "website/app/[locale]/about/page.tsx",
+      "bytes": 34250,
+      "sha256": "e7bc0a51d1d85fa8ab54ae2f2076e3503514edc10c1bb8da164d331ab541974f"
+    },
+    {
+      "path": "website/app/[locale]/about/replication/page.tsx",
+      "bytes": 68,
+      "sha256": "10070a6867e269fba0fc08640a2dcb7cbfbcfb5b6ca6ce7a562a961ae5dcd0a8"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/BeeArticleContent.tsx",
+      "bytes": 26265,
+      "sha256": "280d26b2cfb5ea51c4a69020de6843adf175d45ccb85d559ebc6b477f9f59b1e"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/DualLockArticleContent.tsx",
+      "bytes": 28710,
+      "sha256": "d822540afd8154084bc45e73b1a8e994226bcded3134a208d290c04b25ddb44b"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx",
+      "bytes": 53710,
+      "sha256": "1c966eb7e49c7954561d8c7673845cf0755ece1c6c805ba48e83939b6e63b99b"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/SpectrumArticleContent.tsx",
+      "bytes": 50289,
+      "sha256": "808f678c282aa34d2a23713f8fc719a7911ee076f704c3468a4d048ba0a962b9"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/ThirteenPhenomenaContent.tsx",
+      "bytes": 50875,
+      "sha256": "3f5de50f44eb027bef444be2baf9d77cb235bb0d5d4878202933a5c395fbd5f9"
+    },
+    {
+      "path": "website/app/[locale]/articles/[slug]/page.tsx",
+      "bytes": 9186,
+      "sha256": "309e2b1e905bb25fb001e7b4491b51ec77dc915aedb00c317accbbf32cbb9037"
+    },
+    {
+      "path": "website/app/[locale]/articles/page.tsx",
+      "bytes": 4657,
+      "sha256": "53564d4f5d4db5cbc373dfb1c926f180bbc56ef6dd02646f2e9338d3e24a8a27"
+    },
+    {
+      "path": "website/app/[locale]/behavior/page.tsx",
+      "bytes": 29610,
+      "sha256": "16f9b8a4ee17fac1bc7e8d4a40ee6ef7dc1764cfcf7a6f5941c1a8ffca48f8e6"
+    },
+    {
+      "path": "website/app/[locale]/biology/page.tsx",
+      "bytes": 21684,
+      "sha256": "c657489acbf3aba8676cf7b60aa580040f54084a6c13503b7ea0594620e79a2c"
+    },
+    {
+      "path": "website/app/[locale]/civilization/page.tsx",
+      "bytes": 27953,
+      "sha256": "796e7b6177ae30007b61a0b6126e3e7c1421e114f7d2be696bd82f89ea26694a"
+    },
+    {
+      "path": "website/app/[locale]/civilization/pathopege/page.tsx",
+      "bytes": 93760,
+      "sha256": "053ac9fa088d0c031fe180c272f4b18860446e6e2d41155640581d7c57c5e8ca"
+    },
+    {
+      "path": "website/app/[locale]/civilization/pathopolites/page.tsx",
+      "bytes": 56539,
+      "sha256": "ee4b378077b60e7ef2622d8d3bf9e37da507f78a9a9a178dead04607352c1f3f"
+    },
+    {
+      "path": "website/app/[locale]/civilization/patokinesis/page.tsx",
+      "bytes": 98866,
+      "sha256": "3512d6e908ba640e1d94b90528bd6a8526d5f367af0439ee0859939bf022e61c"
+    },
+    {
+      "path": "website/app/[locale]/civilization/patokratia/page.tsx",
+      "bytes": 118816,
+      "sha256": "0ea9563f6b82c47f3ab8cf9b6748b0dbec2fe577e6b4e7b80f2f5dc2793a8698"
+    },
+    {
+      "path": "website/app/[locale]/civilization/patopolis/page.tsx",
+      "bytes": 266486,
+      "sha256": "f0c56e25a2c2cb3d7eea56e1fb82b61b243d8964bd71553ce816d78fb2232ce9"
+    },
+    {
+      "path": "website/app/[locale]/civilization/patopoliteia/page.tsx",
+      "bytes": 121994,
+      "sha256": "0dfa172daeacdbd195d1ac9abd7906b58bad7357f3767c154ebd8b5db52c8906"
+    },
+    {
+      "path": "website/app/[locale]/data/page.tsx",
+      "bytes": 59449,
+      "sha256": "8660d3e8a0b526884c52ec2027e35bff7f3499d52c76ef34ff716dbcd8de376f"
+    },
+    {
+      "path": "website/app/[locale]/ecology/page.tsx",
+      "bytes": 2899,
+      "sha256": "0589dff621041eb6c9227b37b636d0f36d88abad797bc977144f3933e1fda1f9"
+    },
+    {
+      "path": "website/app/[locale]/epistemology/page.tsx",
+      "bytes": 117957,
+      "sha256": "7a9987c3654be9bf7fce776b8c9b6ae10677fa4c42cdf4f6ffbe8af6d7744d53"
+    },
+    {
+      "path": "website/app/[locale]/error.tsx",
+      "bytes": 2221,
+      "sha256": "d70386bf5b659941d9b1217d03141c7f920913fa9e16608dd5067856be8981ea"
+    },
+    {
+      "path": "website/app/[locale]/evidence/adhd-prototype/page.tsx",
+      "bytes": 36667,
+      "sha256": "d74cdbac00b5d5cbc6861fbbf8d36787a6ed4d86ff615e97f3b14f633b66cc5a"
+    },
+    {
+      "path": "website/app/[locale]/evidence/allergy-epidemic/page.tsx",
+      "bytes": 37567,
+      "sha256": "4ade47309ae0cebc29faf4a4b6dc0be2807b265aad0353d39bd92ca7c7f21584"
+    },
+    {
+      "path": "website/app/[locale]/evidence/amish-control/page.tsx",
+      "bytes": 33846,
+      "sha256": "378ce73ce5c2e07ebb56a91abf4363d031ab6e3289c895ebb53daf4aebe82c06"
+    },
+    {
+      "path": "website/app/[locale]/evidence/autism-prototype/page.tsx",
+      "bytes": 34683,
+      "sha256": "5cab235fc43468254ea0864425fc64b070a079b14d3bac6bd2a4ca0865524445"
+    },
+    {
+      "path": "website/app/[locale]/evidence/bbb/page.tsx",
+      "bytes": 91064,
+      "sha256": "9ff1771e05dffd40df852be60b7c573d1df02ba3cef239d196d80ffffc169aaa"
+    },
+    {
+      "path": "website/app/[locale]/evidence/cascades/page.tsx",
+      "bytes": 110300,
+      "sha256": "37b5ead9fed8d0f8e2eca24dc1f325529943de79b6d8ee52d33673fdae4671fd"
+    },
+    {
+      "path": "website/app/[locale]/evidence/chronic-pain/page.tsx",
+      "bytes": 30442,
+      "sha256": "6ca3f2b15cf72ae674a313e8ff632000c3274a2db04e81ed510e90ca5ce5cbaa"
+    },
+    {
+      "path": "website/app/[locale]/evidence/circadian/page.tsx",
+      "bytes": 144334,
+      "sha256": "2a8bb62d82fbde94bd97e44639590b3819f6906f853badc214e5ce062ecf6fce"
+    },
+    {
+      "path": "website/app/[locale]/evidence/convergence/page.tsx",
+      "bytes": 38104,
+      "sha256": "650ea67ca35ba6ae631f2d560cfbf157da0c867c0c0ae3cf8f9440478c420cdc"
+    },
+    {
+      "path": "website/app/[locale]/evidence/counter-evidence/page.tsx",
+      "bytes": 23381,
+      "sha256": "d35d689434f6dbe44f2502f6ec8cdf9416b941f42eae97ad4d794d5f6a415d1c"
+    },
+    {
+      "path": "website/app/[locale]/evidence/devices/page.tsx",
+      "bytes": 85443,
+      "sha256": "75dc9e5d50b135670727b79e1283b180a63ea66cf75bb7b0574c8414ec937c2e"
+    },
+    {
+      "path": "website/app/[locale]/evidence/ecology/page.tsx",
+      "bytes": 80825,
+      "sha256": "77212509e925ee25535f10fcc461da6bea2849e598a5474faeff7803224cb92e"
+    },
+    {
+      "path": "website/app/[locale]/evidence/epidemiology/page.tsx",
+      "bytes": 69287,
+      "sha256": "d24ddc7075f376b30de72ab7641d2d6369cf8732d8c919432dce7cfc65ebacd3"
+    },
+    {
+      "path": "website/app/[locale]/evidence/epigenetic-legacy/page.tsx",
+      "bytes": 33415,
+      "sha256": "8187c9c659a312fb14a832945aefdecfda3df9af706b96ba9e836464e917f92c"
+    },
+    {
+      "path": "website/app/[locale]/evidence/evolution/page.tsx",
+      "bytes": 34550,
+      "sha256": "61fea5e9fce6b42f9fec5eda9b39fd76190c0e176bdd421476cf8a106b2f4426"
+    },
+    {
+      "path": "website/app/[locale]/evidence/eyes/page.tsx",
+      "bytes": 29508,
+      "sha256": "2b054192f9f8bd772c13d6fe0d93485055fc3e94c357fcb9f7c5d9baabe4bc08"
+    },
+    {
+      "path": "website/app/[locale]/evidence/four-neurodegenerations/page.tsx",
+      "bytes": 29746,
+      "sha256": "2242c44297065cc17ce4820557f4410cddb831805175588c2d7aeebb291c0752"
+    },
+    {
+      "path": "website/app/[locale]/evidence/gut-brain-axis/page.tsx",
+      "bytes": 31675,
+      "sha256": "cd1672422e3b26dbeb7341c6ed8404a60ea6fb34a47c95fafbff830fbb61e6c5"
+    },
+    {
+      "path": "website/app/[locale]/evidence/heavy-metal-synergy/page.tsx",
+      "bytes": 66008,
+      "sha256": "71482869c10fe7ad2f3e08e23df3a62ad0c961755173d99dd59393f1b05ae427"
+    },
+    {
+      "path": "website/app/[locale]/evidence/heliobiology/page.tsx",
+      "bytes": 43692,
+      "sha256": "a0396e2764fba101c29d43d881b6b429e7377c7c21344b9dc53a0b447193132d"
+    },
+    {
+      "path": "website/app/[locale]/evidence/hidden-thyroid/page.tsx",
+      "bytes": 36031,
+      "sha256": "6ae763ece97884f7a43cdc414ad2877aa301e92c3266d9f0db0285557d5d38ee"
+    },
+    {
+      "path": "website/app/[locale]/evidence/historical-convergence/page.tsx",
+      "bytes": 20505,
+      "sha256": "7cd6f4e506003225ddba9bd6ceef28ab7b8758c4bd2188894310cdef755e01f3"
+    },
+    {
+      "path": "website/app/[locale]/evidence/infant-vulnerability/page.tsx",
+      "bytes": 158417,
+      "sha256": "b51fb349606a569f4e94fb83da06339755b515fe8ef1153e0d205a14befabb51"
+    },
+    {
+      "path": "website/app/[locale]/evidence/iss-hypomagnetic/page.tsx",
+      "bytes": 27833,
+      "sha256": "94f8a2105edd44a831218ce456467a93e0955241749fb48fb06a8c653e29ce5e"
+    },
+    {
+      "path": "website/app/[locale]/evidence/klimentidis-explained/page.tsx",
+      "bytes": 29924,
+      "sha256": "f76fd3d56e31dfb6b5665c7f1d86d082b67f60e23317ebd3e8b384635a2cb42c"
+    },
+    {
+      "path": "website/app/[locale]/evidence/laschamp-reversal/page.tsx",
+      "bytes": 22458,
+      "sha256": "3840a81aab66a1b427475418f62d3e893c624bc00ffbc59176c78cd24839624f"
+    },
+    {
+      "path": "website/app/[locale]/evidence/lighting/page.tsx",
+      "bytes": 91594,
+      "sha256": "150a1b4ec4eb0433deed260d0a9a765180d9aa753f2d5b6a8e966b3667d1d922"
+    },
+    {
+      "path": "website/app/[locale]/evidence/magnetoreception/page.tsx",
+      "bytes": 66925,
+      "sha256": "78b86f62ec37bd3bcfcaa03e4ab00817b0cc10ac20cb4f785a49068efe7ee871"
+    },
+    {
+      "path": "website/app/[locale]/evidence/natural-modulators/page.tsx",
+      "bytes": 22716,
+      "sha256": "406714c7eafbbaeb32e8857b0ebb981a0fda60a0751c672483f222e3a4fd0699"
+    },
+    {
+      "path": "website/app/[locale]/evidence/neurological-spectrum/page.tsx",
+      "bytes": 135411,
+      "sha256": "8d8987e8303c1037f8d26663ea78856ef6c834c0d4457ce4590e7a62e37a4455"
+    },
+    {
+      "path": "website/app/[locale]/evidence/nutrition/page.tsx",
+      "bytes": 50880,
+      "sha256": "3310884ff5caab3a41c16616403c1eaa46c1871fcd2274b68f324029985ff17f"
+    },
+    {
+      "path": "website/app/[locale]/evidence/page.tsx",
+      "bytes": 343194,
+      "sha256": "80ea170dbf958bf8d24b8ea1f79a3df27eafd5e4fc6ca93c3a66ff3a7c53c654"
+    },
+    {
+      "path": "website/app/[locale]/evidence/pharmacology/page.tsx",
+      "bytes": 160526,
+      "sha256": "dedd2a64f371cc3107e4c94da6f7b6381f6b258fb782287f27d2834bf86b1d4a"
+    },
+    {
+      "path": "website/app/[locale]/evidence/populations/page.tsx",
+      "bytes": 89617,
+      "sha256": "13f2e5b846502d8cc0627276db456bf00de1aac5bb7b4bdc953eebf75d0bb988"
+    },
+    {
+      "path": "website/app/[locale]/evidence/replication/page.tsx",
+      "bytes": 58581,
+      "sha256": "4bc3ac04879b63c5766817077bfa033dadaaaf54bf4e72126e8c36adaec252d2"
+    },
+    {
+      "path": "website/app/[locale]/evidence/reproductive-arc/page.tsx",
+      "bytes": 24768,
+      "sha256": "f47c272d6d66c5d33219ea2201a39cad219e1ee296f680fd4298fcb5d17de4a5"
+    },
+    {
+      "path": "website/app/[locale]/evidence/reproductive-navigation/page.tsx",
+      "bytes": 49290,
+      "sha256": "742e68ca3a650a63fb6459cbaf34cb0d36b8c3fd8b0b7121e49e800a4cae0c94"
+    },
+    {
+      "path": "website/app/[locale]/evidence/space-weather-biology/page.tsx",
+      "bytes": 44365,
+      "sha256": "972142003530cc6536569a7702d6a3f1f552732b094e603a03fb25829e1ee0fd"
+    },
+    {
+      "path": "website/app/[locale]/evidence/superposition/page.tsx",
+      "bytes": 32253,
+      "sha256": "f040b5e1856791ceeaec7dae0a40e452a472bea7dca7da6a939df3dac7df65a5"
+    },
+    {
+      "path": "website/app/[locale]/evidence/technology/page.tsx",
+      "bytes": 74664,
+      "sha256": "3caf1d27afd191e25278822f9115d3f65c29c68478ef4606787724ea0ef08183"
+    },
+    {
+      "path": "website/app/[locale]/evidence/testosterone/page.tsx",
+      "bytes": 33382,
+      "sha256": "66bdea36789c3c956dc0bb84037e3930e90f1d5c32a0cb21dd50657226fe0420"
+    },
+    {
+      "path": "website/app/[locale]/evidence/timothy-experiment/page.tsx",
+      "bytes": 45260,
+      "sha256": "dee297d47391535cd0ad4d056a333161c4f2353bdba1fc0a5e4b5cf6ad3968d6"
+    },
+    {
+      "path": "website/app/[locale]/evidence/triple-strikes/page.tsx",
+      "bytes": 32095,
+      "sha256": "88b29f915f18b8211fd5db6851671b5cbf7750e5bf80efd752c2f22059fc7017"
+    },
+    {
+      "path": "website/app/[locale]/evidence/unbroken-chain/page.tsx",
+      "bytes": 252014,
+      "sha256": "79c317797feb32a8664a8d333ab3669a1290fe392bbcf84c010de2c1c18041df"
+    },
+    {
+      "path": "website/app/[locale]/evidence/vitamin-d-channel-blocker/page.tsx",
+      "bytes": 29069,
+      "sha256": "ab76c6fd359a791a5253c9062e99fb21b59ed64b8f1d29b3b97e5d47fa1168f3"
+    },
+    {
+      "path": "website/app/[locale]/evidence/walker-chain/page.tsx",
+      "bytes": 31160,
+      "sha256": "d7b9eb3f998f18c151268fbc8e2268df74867f943bdea7691a950149e8c2f564"
+    },
+    {
+      "path": "website/app/[locale]/explore/page.tsx",
+      "bytes": 2088,
+      "sha256": "2596c495864b775826d9533c8a9b77e68b50adcd1074372377d5db2bd19ff905"
+    },
+    {
+      "path": "website/app/[locale]/explorer/page.tsx",
+      "bytes": 6207,
+      "sha256": "dbfc011cf42be33c971f39d1c40b0081201b62d459321c488d9230e4ab2f0435"
+    },
+    {
+      "path": "website/app/[locale]/layout.tsx",
+      "bytes": 1619,
+      "sha256": "47b1221a8fd047ae955b114e8170228c6aa26dce9c581f0b8426b13f7c592ec9"
+    },
+    {
+      "path": "website/app/[locale]/map/page.tsx",
+      "bytes": 7400,
+      "sha256": "5eba3bd9a733c2453442307f6d25857a0a4914da00a3eb51b25fed01c00170b7"
+    },
+    {
+      "path": "website/app/[locale]/mathematics/page.tsx",
+      "bytes": 326262,
+      "sha256": "a00f48e9ed9967c1a100b28c4209810f06283271014c9e3cdd638e87c4cd616c"
+    },
+    {
+      "path": "website/app/[locale]/measurement/fieldstate/math/page.tsx",
+      "bytes": 30104,
+      "sha256": "2874ec31fba4952d7e3d71758e739276e42cb1f62370252c13128d2c61f1a6fa"
+    },
+    {
+      "path": "website/app/[locale]/measurement/fieldstate/page.tsx",
+      "bytes": 32020,
+      "sha256": "4e7d643ac27f302e310902b8e6f72b178d2af9bb2da8a4f6d0e523d4712cb7b5"
+    },
+    {
+      "path": "website/app/[locale]/model/biological-coordination/page.tsx",
+      "bytes": 30887,
+      "sha256": "bf468fe270995974cccf447c49778508c0983de9b12171d0abcd1917eabe6c12"
+    },
+    {
+      "path": "website/app/[locale]/model/comparison/page.tsx",
+      "bytes": 10426,
+      "sha256": "83af7381721310c872e81f3223115ef31e1cf530308b5c4938c7d69f830e2240"
+    },
+    {
+      "path": "website/app/[locale]/model/dual-kernel/page.tsx",
+      "bytes": 17079,
+      "sha256": "712e0a8c14ef57708a42346ef8557c9a74541ad2c18ac2dce9c97e8075c6dc4f"
+    },
+    {
+      "path": "website/app/[locale]/model/frequency-weights/page.tsx",
+      "bytes": 6505,
+      "sha256": "0aa99990eee3f10828f1f2b94fbba291fff809fdcc8ee0b1f03accd6e1c91a6b"
+    },
+    {
+      "path": "website/app/[locale]/model/math/page.tsx",
+      "bytes": 7377,
+      "sha256": "8b392284bc1281960b98fe16c5759014f49af26673103da34b82ed469b9773cd"
+    },
+    {
+      "path": "website/app/[locale]/model/page.tsx",
+      "bytes": 834048,
+      "sha256": "dcd7ad592248a6ee26dc89c0f424b66ce3d5cca99bfaabaa532800da08718ddc"
+    },
+    {
+      "path": "website/app/[locale]/model/q-factor/page.tsx",
+      "bytes": 19226,
+      "sha256": "2c3c8e4b3e369b8ca02499d981ce4afe3f6d6addf9e70c94b9bf68401b272da1"
+    },
+    {
+      "path": "website/app/[locale]/model/tensor-derivation/page.tsx",
+      "bytes": 23869,
+      "sha256": "d1de38145d6a010b6099c48bae22fb4954937d316b8e0ae856fafe6bbf1be258"
+    },
+    {
+      "path": "website/app/[locale]/modulome/adrenal/page.tsx",
+      "bytes": 47733,
+      "sha256": "b0c3454357a9b728abf70eaa75765c69969e87d0fd46756cf8941d1e0305fa33"
+    },
+    {
+      "path": "website/app/[locale]/modulome/bat/page.tsx",
+      "bytes": 56550,
+      "sha256": "4d9ab2893f6f24bfb4dc6164d0da1201e054d51304499065502cd3d8f673ae4b"
+    },
+    {
+      "path": "website/app/[locale]/modulome/brain/page.tsx",
+      "bytes": 72648,
+      "sha256": "dcd2e47eb83016497e45a47bbf11c63ea3001a7d31033bde156034c706c4bdcd"
+    },
+    {
+      "path": "website/app/[locale]/modulome/ear/page.tsx",
+      "bytes": 46656,
+      "sha256": "5e9327f54d3bd1255fe26141dcc5820fd578c65f393c9f54307d4d7d4f999734"
+    },
+    {
+      "path": "website/app/[locale]/modulome/eye/page.tsx",
+      "bytes": 66882,
+      "sha256": "cb35c1f64fe3bf9e6879b22a70e99ade984ec9ab2eb3359ce51b72a3bc63ea48"
+    },
+    {
+      "path": "website/app/[locale]/modulome/heart/page.tsx",
+      "bytes": 64823,
+      "sha256": "403e9daa9c82c72b02c4ebf705f7beb7f2aecb3acd8a572d60075d56f8fb90af"
+    },
+    {
+      "path": "website/app/[locale]/modulome/hippocampus/page.tsx",
+      "bytes": 234,
+      "sha256": "029983337141db3ee38638ddbe0ecc9b2cc00f686c9b93c9386792999bc0f268"
+    },
+    {
+      "path": "website/app/[locale]/modulome/hypothalamus/page.tsx",
+      "bytes": 45426,
+      "sha256": "47aa957df9dc8b1cf7dbd07a59720625090c867dd756dd0288dffc9914d4804d"
+    },
+    {
+      "path": "website/app/[locale]/modulome/layout.tsx",
+      "bytes": 403,
+      "sha256": "bd3278e2a0fa694ce51dedfc1d595e7eeabf517aa623f857760098143747071d"
+    },
+    {
+      "path": "website/app/[locale]/modulome/page.tsx",
+      "bytes": 78336,
+      "sha256": "2a895a49f789431dcc929cb29ba0ba4c2384bb788305a564ea66e3983caea8ee"
+    },
+    {
+      "path": "website/app/[locale]/modulome/pain/page.tsx",
+      "bytes": 33260,
+      "sha256": "182125b56f5748d2b78e3307f9da89b1c5966ed9c8bfe6556f63531bc85423b9"
+    },
+    {
+      "path": "website/app/[locale]/modulome/pancreas/page.tsx",
+      "bytes": 57414,
+      "sha256": "76a33aa78ae804ac28c2d15c54730cde866267012e878bd60d7ee27faceee6b8"
+    },
+    {
+      "path": "website/app/[locale]/modulome/pituitary/page.tsx",
+      "bytes": 47043,
+      "sha256": "41ce39257a4abfbcb4e74587a069f11c6be1b4099bd0bd5551f5c6b4bbdaddbe"
+    },
+    {
+      "path": "website/app/[locale]/modulome/testes/page.tsx",
+      "bytes": 71782,
+      "sha256": "223db7cc30c9254cf47d0e888f677cccc3f59dc5d519cf1649d776373f1311be"
+    },
+    {
+      "path": "website/app/[locale]/modulome/thyroid/page.tsx",
+      "bytes": 44223,
+      "sha256": "bec32c61aa63cab85f96cca675ab6ce3b3c3514b786c79ddd91a343e7c7c9234"
+    },
+    {
+      "path": "website/app/[locale]/navigation.tsx",
+      "bytes": 15655,
+      "sha256": "ad9e1a05f41805603aee7d79c073c4967b2b3cbfcd6c4caa9c57746cfd24bab7"
+    },
+    {
+      "path": "website/app/[locale]/objections/page.tsx",
+      "bytes": 156965,
+      "sha256": "e6b0aac18b0314bb5bb2a0eb9c99ff9e364d14193224435417e297693d934db8"
+    },
+    {
+      "path": "website/app/[locale]/page.tsx",
+      "bytes": 25870,
+      "sha256": "207e43c7985612a2350300d8111c5d478a946444deccb594b9531d1d7fa4bfee"
+    },
+    {
+      "path": "website/app/[locale]/physics/page.tsx",
+      "bytes": 14938,
+      "sha256": "d47d72858a1cc24bb7716fb2633b463da7775f503a3719df9bc6832397d956c5"
+    },
+    {
+      "path": "website/app/[locale]/predictions/page.tsx",
+      "bytes": 1026037,
+      "sha256": "d48710c6200d6c9354926880d1fad1625a805f483e3f040fabd5734fa382183f"
+    },
+    {
+      "path": "website/app/[locale]/references/[referenceId]/page.tsx",
+      "bytes": 10828,
+      "sha256": "385c62f634a081a8615ba0acfd1e0fa070557abaad8be670166e4dff9b35625e"
+    },
+    {
+      "path": "website/app/[locale]/references/page.tsx",
+      "bytes": 4225,
+      "sha256": "0060256bbc40423c139459c84196a99fc20046c2d8a59af13ffdfda192bc8ebd"
+    },
+    {
+      "path": "website/app/[locale]/replication/page.tsx",
+      "bytes": 23716,
+      "sha256": "7f00f9b8e3e3190a66e4cb0ba85cb719beb75e81a69a6f7fb97faca7c8b4e944"
+    },
+    {
+      "path": "website/app/[locale]/sentinel/page.tsx",
+      "bytes": 157791,
+      "sha256": "c93118bef508950e62b3623cdd4764f8974b759f5622bd2420e2e04069196346"
+    },
+    {
+      "path": "website/app/[locale]/set-lang.tsx",
+      "bytes": 206,
+      "sha256": "5a535745b947f63f34390606b0c9ba3c5b8bc00949b3115a17d05890be3b3022"
+    },
+    {
+      "path": "website/app/apple-icon.png",
+      "bytes": 14493,
+      "sha256": "de9045ed65bf13c1edad9ada011c243ef42e5603b8ff811b6b66c317841f12b0"
+    },
+    {
+      "path": "website/app/global-error.tsx",
+      "bytes": 1114,
+      "sha256": "56f3202957a8be5c6a7a194eff86e252a31785653fb3efc597c98560af1daccf"
+    },
+    {
+      "path": "website/app/globals.css",
+      "bytes": 16467,
+      "sha256": "355a9e5ebcf1ad9762f90993b85a14880f7c4dac122b50ee34c624ea168c49af"
+    },
+    {
+      "path": "website/app/icon-512.png",
+      "bytes": 86178,
+      "sha256": "0d26941ad62a5eef592b6aefab41f00a7527da4b8a1d6ad3419d9aae0b278e65"
+    },
+    {
+      "path": "website/app/icon.png",
+      "bytes": 1723,
+      "sha256": "753ab58213c1d3d5e0165ef182eba5aed606d9ff6ac1b86c763362c9334ba4e6"
+    },
+    {
+      "path": "website/app/layout.tsx",
+      "bytes": 2141,
+      "sha256": "91bf8ac82c7d01af2770bd4b6384945fa6fcda01d2de81bdc5bf7a1561b32a99"
+    },
+    {
+      "path": "website/app/not-found.tsx",
+      "bytes": 1804,
+      "sha256": "146563ec6c1e1f73010555d318e4423078c2776ceb47b6733358bf8efe6faab1"
+    },
+    {
+      "path": "website/app/robots.ts",
+      "bytes": 235,
+      "sha256": "0e2428028320f5ca9c1fa571e6b1edfff4404fe6676cbc84bdeef0af356d915a"
+    },
+    {
+      "path": "website/app/sitemap.ts",
+      "bytes": 5304,
+      "sha256": "c51e1bb384bd55cf6ac257e16dbfc572e7258d32a50880ec30a0b92784533e0d"
+    },
+    {
+      "path": "website/components/ASFRCohortPhase.tsx",
+      "bytes": 2596,
+      "sha256": "7a4a22c328c10bd99cac6adc5ac980497ba922f42d727faa312a14649a586c24"
+    },
+    {
+      "path": "website/components/AboutTabs.tsx",
+      "bytes": 1336,
+      "sha256": "455800b3f08cd3b2eedf8f92dfab665ac6a55515573ed30fb89c7cb25fd5a531"
+    },
+    {
+      "path": "website/components/BBBMechanismDiagram.tsx",
+      "bytes": 5519,
+      "sha256": "506dbd84df97bffb3c563248fc1019a320a37d6d48e145615a8f57db966553ad"
+    },
+    {
+      "path": "website/components/BehavioralSuppression.tsx",
+      "bytes": 14128,
+      "sha256": "7f21ed0566af7400bb456ca94938f704e9aff32d01409dd44b4357f9cb5824ba"
+    },
+    {
+      "path": "website/components/BermCausalDiagram.tsx",
+      "bytes": 19899,
+      "sha256": "d6144539975a78cdd9809e01d60f097b0f5e8b1e87d4534752a77aa30c4f865e"
+    },
+    {
+      "path": "website/components/BermIcon.tsx",
+      "bytes": 9161,
+      "sha256": "49f218deacf911c672d20016d13125c936761015e648ee2048ced0ff8fb89b9e"
+    },
+    {
+      "path": "website/components/BermMasterInfographic.tsx",
+      "bytes": 17922,
+      "sha256": "8cff68c146e9dd7624d1aaac88ee371776b6aeb2627d4904fe0fa1dc8be24685"
+    },
+    {
+      "path": "website/components/BiocapCivilizationChart.tsx",
+      "bytes": 8401,
+      "sha256": "7ffb00079335bcdd86314743b39959bb3ebba1a9ace72678dab53210e115bccf"
+    },
+    {
+      "path": "website/components/BiocapSparkline.tsx",
+      "bytes": 2936,
+      "sha256": "4e2856e37f70f6fe83e2331897e19201f743e93993c57a050a87b1c5a0d3946d"
+    },
+    {
+      "path": "website/components/BiocapTrajectory.tsx",
+      "bytes": 8896,
+      "sha256": "de0619f1ce2878382b7bda7ab9c97f02f5bb9e2ca655ccc6ebaa001e1fd21421"
+    },
+    {
+      "path": "website/components/BiologicalConstraints.tsx",
+      "bytes": 16473,
+      "sha256": "0762564a757c469ef76a10cb490427881c81835de373c00ec3b392dd6c98faca"
+    },
+    {
+      "path": "website/components/BiologicalCoordinationContext.tsx",
+      "bytes": 14075,
+      "sha256": "2590b924c08b3d7ab0eae79172be74b6cf3728d47653e36d7af925d70c0786de"
+    },
+    {
+      "path": "website/components/BiologicalCoordinationExplorer.tsx",
+      "bytes": 15579,
+      "sha256": "1c99389b150bee43c86582e37b5406ffe2671028e15b7294d3d6b7481e0a07a3"
+    },
+    {
+      "path": "website/components/BiomarkerRadar.tsx",
+      "bytes": 3787,
+      "sha256": "a1dc9361228cfab00d365d2f0946bb15ad97b8373a3f88a0e5264aa9d4248fed"
+    },
+    {
+      "path": "website/components/BradfordHillCard.tsx",
+      "bytes": 18019,
+      "sha256": "6b8c61ae0ce5b46f2f19a65c344b55f73ac531d1116ab739d88c596e6facfc4d"
+    },
+    {
+      "path": "website/components/CaMKIIConvergenceDiagram.tsx",
+      "bytes": 17037,
+      "sha256": "bbeb6ed0b3b59ff3f40a86687af376373c96caa382ddafae852cda356964dec9"
+    },
+    {
+      "path": "website/components/CausalAtlas.tsx",
+      "bytes": 19914,
+      "sha256": "8c429a13cd87aad7af8132039b86c1f8c220a9c02b5fcefce251a8169ab99ecc"
+    },
+    {
+      "path": "website/components/CausalChain.tsx",
+      "bytes": 9909,
+      "sha256": "f015203a67d15a5e39db74c2a18460ad29debed8fdba4830a2e56a1bfc447f93"
+    },
+    {
+      "path": "website/components/CausalChainDiagram.tsx",
+      "bytes": 22237,
+      "sha256": "48b453444872db476975e7336023905961022666cb8b06f57b0377097434e3f5"
+    },
+    {
+      "path": "website/components/CautionBox.tsx",
+      "bytes": 576,
+      "sha256": "b7eb59c790e49f112f81dbe1b6adca05c52aee59ea346749545ec6d86628daa7"
+    },
+    {
+      "path": "website/components/CellSizeFrequencyMatrix.tsx",
+      "bytes": 26266,
+      "sha256": "92a5ac22992bd4a87009cc3e0486b0fa97897c1c30acf6b27f82fcf4ea3aa4be"
+    },
+    {
+      "path": "website/components/CitationLink.tsx",
+      "bytes": 625,
+      "sha256": "669aaa2d3d5329dc3fe08363da0f3afa5bb9450eee9ad60d9019450c51ac0074"
+    },
+    {
+      "path": "website/components/CivilizationEssay.tsx",
+      "bytes": 46997,
+      "sha256": "ed6125adda6dc358bc26d8b32320542ac98b480bd156c46225fe6926f21d3469"
+    },
+    {
+      "path": "website/components/CivilizationReadingPath.tsx",
+      "bytes": 12683,
+      "sha256": "d314a1c4ff5c5e0d2406bbf23a6ec262a30379b21152c88e8d07fb06243131e4"
+    },
+    {
+      "path": "website/components/CivilizationTimeline.tsx",
+      "bytes": 19638,
+      "sha256": "8cd4a8db5e530dd28c3c5a7f42e97e90a57851044dcfb3a2c7544e0d972461cb"
+    },
+    {
+      "path": "website/components/ClaimRef.tsx",
+      "bytes": 553,
+      "sha256": "e75969df0b2afb65ae73c912a165fcc6a7db1a867fa6a4d3062c09547d34b6d0"
+    },
+    {
+      "path": "website/components/CohortAsfrProfile.tsx",
+      "bytes": 9120,
+      "sha256": "b527eb3d5edfa812995cd8868fb3a3165f16ddb37d06b726462b52f36ec448a9"
+    },
+    {
+      "path": "website/components/CollapsibleSection.tsx",
+      "bytes": 1187,
+      "sha256": "05a77b1b40118423e7451665bd5b4b7e30a892bde92ae8bd3703c52369a632a8"
+    },
+    {
+      "path": "website/components/ConditionalScenarioExplorer.tsx",
+      "bytes": 12830,
+      "sha256": "d817b187b8aa6bb21d5124ef87d85ffd52360006b417a9efa8c3e75f92ad97d0"
+    },
+    {
+      "path": "website/components/CountryDetailPanel.tsx",
+      "bytes": 10302,
+      "sha256": "4ac4c56a6ddccd4d7c7f7d18295c0addb9258398495a5c0dcdcf8639bc59e36e"
+    },
+    {
+      "path": "website/components/CrossSpeciesGradient.tsx",
+      "bytes": 4326,
+      "sha256": "040a5a170141de857a5582efe52793ec231669b6881dcf7985afaa0f2c884039"
+    },
+    {
+      "path": "website/components/DataSourcesContent.tsx",
+      "bytes": 6006,
+      "sha256": "f550ae541174efc86990594a0c489c86c46419c62ce0ca8d0a0e519edfc24298"
+    },
+    {
+      "path": "website/components/Derivation.tsx",
+      "bytes": 867,
+      "sha256": "5367e6bb26fc9795682bec982121a49e243519823aabe73a3cfeeb466e2160d0"
+    },
+    {
+      "path": "website/components/DerivedPrediction.tsx",
+      "bytes": 2113,
+      "sha256": "c0728ea01be235fa1106e9ee19d1d833c2a8a3b90d3c77c0221d85ff7514bc6e"
+    },
+    {
+      "path": "website/components/DetailPanel.tsx",
+      "bytes": 9281,
+      "sha256": "ec326305479d4ed8f546080f8ca24afc4b66d4930ecbb62e4aba4bb8fd2f6e83"
+    },
+    {
+      "path": "website/components/DifferentialSusceptibility.tsx",
+      "bytes": 19039,
+      "sha256": "c2dbb841ff3bf3ecde0d0096718f4953f33029365da65a586414181c91fe88b8"
+    },
+    {
+      "path": "website/components/DiseaseCascadeTimeline.tsx",
+      "bytes": 72594,
+      "sha256": "64404c1c5f717a3ffe671aacd4b18bb59e8514b993e845580da1ef1472460609"
+    },
+    {
+      "path": "website/components/DkcExplorer.tsx",
+      "bytes": 16264,
+      "sha256": "40b0aff607195a55ad71a8784987d09128e2ea6ea2d6e1608bf44596e2d72032"
+    },
+    {
+      "path": "website/components/DkcPublicationGate.tsx",
+      "bytes": 3694,
+      "sha256": "b505b651ecc22a61e2155444ce095fb703a674825534bfc96ae27ca14eb9fc82"
+    },
+    {
+      "path": "website/components/DkcSentinelAllometry.tsx",
+      "bytes": 3703,
+      "sha256": "f88caf5cd00d00d078fac66e900f98b448a4280aa198aa18203ce83d739751a7"
+    },
+    {
+      "path": "website/components/DkcValidationRegistry.tsx",
+      "bytes": 10286,
+      "sha256": "c544cd23427394cce5d03918f45baf486d7ec349c03437027ba2bfeac356499f"
+    },
+    {
+      "path": "website/components/DrugDiseaseCrossMap.tsx",
+      "bytes": 9659,
+      "sha256": "6ffc30a5025f295dfd8a814a7de4e02038cd0a79a1c99c208844f2556e0f3e34"
+    },
+    {
+      "path": "website/components/EDCContext.tsx",
+      "bytes": 3624,
+      "sha256": "d8ada555678a5bf8a215c280d26aba008edd076142df54f0d35cda4da292fc1c"
+    },
+    {
+      "path": "website/components/EcoCausalVisuals.tsx",
+      "bytes": 27151,
+      "sha256": "b7e83cfb37ac8eb6b10c3fa323e7268097de41468fd3f7dc621a869584baef8b"
+    },
+    {
+      "path": "website/components/EcoStaticInterface.tsx",
+      "bytes": 138546,
+      "sha256": "25368396891202a6f044dc2898e7dbfebc0013b4864dc762161c3992a45e86a9"
+    },
+    {
+      "path": "website/components/EcoTickHero.tsx",
+      "bytes": 13749,
+      "sha256": "4cfe6591a32cfab73b12e234c4e54b11a08073d31d6d9735376a128df61b77db"
+    },
+    {
+      "path": "website/components/EmpiricalSolarCharts.tsx",
+      "bytes": 18028,
+      "sha256": "fe6bb44271aae6a76125ada6ec7cfc8ddd51ca1777e7e0aa6cf478c080bf3b7b"
+    },
+    {
+      "path": "website/components/EpistemicBadge.tsx",
+      "bytes": 876,
+      "sha256": "7371a31318537b4e9c8ea8fed4e28c891eed2960a361c7e7440e3a58aee1918e"
+    },
+    {
+      "path": "website/components/EvidenceClassification.tsx",
+      "bytes": 10782,
+      "sha256": "368b1c73fed6e5ddf143ccc01c088ffa6b42e7e7e12783bc6f399ff9ff70a525"
+    },
+    {
+      "path": "website/components/ExplanationHub.tsx",
+      "bytes": 8100,
+      "sha256": "846f655a06082aa447a2df99ae92527342eac23016d6a7a2b048f567f4672fc9"
+    },
+    {
+      "path": "website/components/ExploreTabs.tsx",
+      "bytes": 3358,
+      "sha256": "db8adba4f3df59c9852c32d2b50b1ff2cd017ddcd3616885fad884dde2cbaddb"
+    },
+    {
+      "path": "website/components/ExplorerDashboard.tsx",
+      "bytes": 3998,
+      "sha256": "02f14d2c46737223dfa4b1ade78f9a5048e10ecea5f5350ee51933593c501551"
+    },
+    {
+      "path": "website/components/FalsificationTestsV19.tsx",
+      "bytes": 19628,
+      "sha256": "9e9edfc9db35f49e7716079d17d7b40a4a5d2506b550f5473dd181e56956c002"
+    },
+    {
+      "path": "website/components/FeedbackLoop.tsx",
+      "bytes": 14271,
+      "sha256": "b82b2f64c7a37c790ed080dccfe33c223c4f70fb014e05fe1b9129386f646229"
+    },
+    {
+      "path": "website/components/FieldSignalStructure.tsx",
+      "bytes": 10525,
+      "sha256": "63270248497d4e774c72bbddf0b895cdde12de930e383584cc31de48d9575fe6"
+    },
+    {
+      "path": "website/components/FieldStateStatus.tsx",
+      "bytes": 28151,
+      "sha256": "1482694952375a3d9c4f19090ffab3db64aaff06397cf382dd2530ce68b1294f"
+    },
+    {
+      "path": "website/components/FindingCard.tsx",
+      "bytes": 3117,
+      "sha256": "bc4e782fe2738a59941669af865cc4ce7a30182c563df50b12299af88fb2e20a"
+    },
+    {
+      "path": "website/components/FinlandLagChart.tsx",
+      "bytes": 8656,
+      "sha256": "26c33ab239a45e4eb7c5e6a62816bbdd5a00a34e4db8ec5c9c7b29e9ad4c9f43"
+    },
+    {
+      "path": "website/components/FrequencyWeightsExplorer.tsx",
+      "bytes": 16092,
+      "sha256": "2975c623e54479f8b7fe7af745122f702fb1b1980cea3dd81f974746adfd402f"
+    },
+    {
+      "path": "website/components/GlobalDataDownloads.tsx",
+      "bytes": 6005,
+      "sha256": "a0b79e4c9adc1cb0ea10a12a10e10494f044c852b21f46450955c8774fd381a4"
+    },
+    {
+      "path": "website/components/GlobalDataExplorer.tsx",
+      "bytes": 22414,
+      "sha256": "90ade8ae34609593eebe7943bde56aa9fe62667dd0fc8aeafb3f6271aaba31a2"
+    },
+    {
+      "path": "website/components/GlobalTierMap.tsx",
+      "bytes": 11583,
+      "sha256": "8dcb81f3eb6688cb6b394fc0f24a808151784793040e8b5a4a84b003b6f24e96"
+    },
+    {
+      "path": "website/components/GlobalValidation.tsx",
+      "bytes": 8395,
+      "sha256": "ba67369a3e47c3b593414d86f9e0611eac34fa68357c938b7729cf8d932ccb69"
+    },
+    {
+      "path": "website/components/HindcastValidation.tsx",
+      "bytes": 7069,
+      "sha256": "2d0f84248329f803d719d6a0c9d3b096f3ad929c21bd2fb56f739625379d142b"
+    },
+    {
+      "path": "website/components/InlineReferenceText.tsx",
+      "bytes": 1399,
+      "sha256": "ab44adae035f6f4bf5e2b01ce3319a7e299510b95793665f9b0f37aabbc01aeb"
+    },
+    {
+      "path": "website/components/IonicHierarchyDiagram.tsx",
+      "bytes": 13329,
+      "sha256": "804925e572f512fc629eb8c9f6f26f026a7603ed6e64d3c798ac4d1dbc616b2b"
+    },
+    {
+      "path": "website/components/LanguageSwitcher.tsx",
+      "bytes": 2512,
+      "sha256": "579cb6973f32342b0761f50363a5694ff5136687112579b66365dad07862929e"
+    },
+    {
+      "path": "website/components/LatestArticles.tsx",
+      "bytes": 3238,
+      "sha256": "6b20e929070e05ce3904803949cbaac74641ff893ce9d09ee0cbfbe34314c25c"
+    },
+    {
+      "path": "website/components/LayersExplorer.tsx",
+      "bytes": 32812,
+      "sha256": "aced9456f07cf871356dfc5def9a9bf359907ad48f312c89710a8c97f6c2c486"
+    },
+    {
+      "path": "website/components/LightingTransitionTimeline.tsx",
+      "bytes": 13686,
+      "sha256": "ed31848af01470e6e20dfed12cc1b10dd78f909efd53190203b661f35211281c"
+    },
+    {
+      "path": "website/components/MathBlock.tsx",
+      "bytes": 551,
+      "sha256": "90c1284a462e41302e6ed2372342c923b6348e5acdbb343a5877d7200e4165c7"
+    },
+    {
+      "path": "website/components/MechanismCandidate.tsx",
+      "bytes": 19589,
+      "sha256": "0256fc38c1995b7186b16a3d3165b2095cd60c0815d8f670cfa80e323f333f7d"
+    },
+    {
+      "path": "website/components/MigrationGradientMap.tsx",
+      "bytes": 15014,
+      "sha256": "60ff50a1dae65bdc3fb82713b8f1a9fd2e860ef083eb848a135d2c6e6195d355"
+    },
+    {
+      "path": "website/components/ModelReadingPath.tsx",
+      "bytes": 1752,
+      "sha256": "4feb7117c493a9a4d6b68f4c51e214593f016d3cbd92fcfb2009915098c14dfb"
+    },
+    {
+      "path": "website/components/ModelScopeIntro.tsx",
+      "bytes": 6706,
+      "sha256": "dd50a56174432ae896e60e181fbbec531e200f3a10cca5e56f9b18b7847d66a0"
+    },
+    {
+      "path": "website/components/ModelTableOfContents.tsx",
+      "bytes": 14958,
+      "sha256": "d45e30225fba2909f50d33bb7b15ebfdc95633cdafe8ad652efa0d42813fa868"
+    },
+    {
+      "path": "website/components/ModulomeLayers.tsx",
+      "bytes": 10110,
+      "sha256": "fcffab04b69a913889e05e6ea9c945c1e1d26d1982ceaf87a0a41af0e6da9b82"
+    },
+    {
+      "path": "website/components/ModulomeTabs.tsx",
+      "bytes": 4048,
+      "sha256": "d6c3eb75da27eef55a84ba3693914af6496997ed7069efc8ea01e4e359b6cbbe"
+    },
+    {
+      "path": "website/components/NaturalEMVisualization.tsx",
+      "bytes": 7175,
+      "sha256": "66f4f1537cc735ca6ea56e61fc8847672c9f7d95c3ab555c2f02db28dfd32aef"
+    },
+    {
+      "path": "website/components/NextPageLink.tsx",
+      "bytes": 812,
+      "sha256": "0aef1d7210c2e5c1163d6eea778fedf365f7d02ebe5b2f4b16b4cfd527b7408c"
+    },
+    {
+      "path": "website/components/NikeBBSScatter.tsx",
+      "bytes": 8745,
+      "sha256": "38dbd476ceee9a057f5662d45c6e6e0ec9e18d262992580c72b244652abd5fd4"
+    },
+    {
+      "path": "website/components/PageHeader.tsx",
+      "bytes": 1113,
+      "sha256": "b40b8b53e73829784acbb539daeb791303fe8f7da9052be305fd56987ee69d09"
+    },
+    {
+      "path": "website/components/PredictionStatusBadge.tsx",
+      "bytes": 1509,
+      "sha256": "48ef8ffa902712b1ac8556226a8781ec640c81293024335fca2cde274b208725"
+    },
+    {
+      "path": "website/components/PredictionTrack.tsx",
+      "bytes": 8676,
+      "sha256": "757f9fb624602fdffc036d1ea597fe327dcd9eeec527c18072e105e5d011441b"
+    },
+    {
+      "path": "website/components/ProxyMaskingInfographic.tsx",
+      "bytes": 24545,
+      "sha256": "0b00b2737e51610c8db7be995aa7e9e4f8053b21e2f7a9894c2cd7572f71bd62"
+    },
+    {
+      "path": "website/components/PulseProfile.tsx",
+      "bytes": 9563,
+      "sha256": "00e1edf81df2ed3a56fa4bce27bb9f4aefb3f009aade20856141254a819f49fd"
+    },
+    {
+      "path": "website/components/QFactorSpectrum.tsx",
+      "bytes": 27776,
+      "sha256": "4e738f27016c61905ee0936f0ee177e75f80001388984290284e34f6e9aa317a"
+    },
+    {
+      "path": "website/components/RecommendationBox.tsx",
+      "bytes": 890,
+      "sha256": "8bb33653731a93a2ae6c8ed5466ae0337b6a3451ad69f6415c65eb66246c35b2"
+    },
+    {
+      "path": "website/components/ReferenceDatabase.tsx",
+      "bytes": 20970,
+      "sha256": "2ec3dbba552af684db9ba4d7a1e5251aef08f068fef0781d9a3398d243b0a213"
+    },
+    {
+      "path": "website/components/ReferencesSummary.tsx",
+      "bytes": 3627,
+      "sha256": "bdf2a0ebdbdd753645fe2489b0e2d49ec8b3a0dcaac84bc0fde43c8b5b92f823"
+    },
+    {
+      "path": "website/components/ResearchReadingGuide.tsx",
+      "bytes": 9994,
+      "sha256": "963b041889be5edb301d5c0d60a518eff3c361b5c1032b19c46f61fea2074a7c"
+    },
+    {
+      "path": "website/components/RetrodictionCards.tsx",
+      "bytes": 46931,
+      "sha256": "d510feba7f49831b22cba47e0b6d8da4277d4b049ceea730298b7c1b376256f6"
+    },
+    {
+      "path": "website/components/SentinelCascade.tsx",
+      "bytes": 9979,
+      "sha256": "6826d19dfa4c312b52c1adfbdfc54da3941050ccc32415348359c5345ffaf791"
+    },
+    {
+      "path": "website/components/SentinelCascadeCompact.tsx",
+      "bytes": 4292,
+      "sha256": "08fd6a8f1fadf1b2a81a0be448e524e2c6c3a6db84a9f4b7a473fc62d76691a3"
+    },
+    {
+      "path": "website/components/SentinelCascadeTimeline.tsx",
+      "bytes": 25356,
+      "sha256": "7f7a4562df85105e9405c693006ca3ed4538151853f147f4ae076429cd2eb31b"
+    },
+    {
+      "path": "website/components/SentinelExplorer.tsx",
+      "bytes": 202,
+      "sha256": "07d6efa0684655335c6acd3b6b87fc30f919198bf5158df23ada0a8c14aa936c"
+    },
+    {
+      "path": "website/components/SevenChannelDiagram.tsx",
+      "bytes": 9875,
+      "sha256": "45799b5625ec1fcba92b43a06ddc7f0cda8215ccccd59cf6d0d7dc1db71bcad0"
+    },
+    {
+      "path": "website/components/SimpleCausalChain.tsx",
+      "bytes": 3662,
+      "sha256": "87991e76a606e1432913711e00921d123953ee4794238afb293f2af56a6d32f5"
+    },
+    {
+      "path": "website/components/SiteFooter.tsx",
+      "bytes": 3215,
+      "sha256": "4dfbaa8256495251d43735dea4f6707bd992a4e903ff70f3c7524004fa6646b3"
+    },
+    {
+      "path": "website/components/SixFactorSummary.tsx",
+      "bytes": 8961,
+      "sha256": "f74bc7ff98f1450512f03b8963c2a0df8c7ae022839b73c31db5ad5ef85793c9"
+    },
+    {
+      "path": "website/components/SolarExplorer.tsx",
+      "bytes": 21592,
+      "sha256": "5c4c924c13a6dd7e750faa6e4b92aee937bcce9b491a251fb03912fcdcb2ac42"
+    },
+    {
+      "path": "website/components/SolarMiniTimeline.tsx",
+      "bytes": 2756,
+      "sha256": "155f1b5ad07334b28f446253ac6ad7ed3e4514584527818bc8bd2aed6acee11f"
+    },
+    {
+      "path": "website/components/SolarStatCharts.tsx",
+      "bytes": 28179,
+      "sha256": "91cc760a43c353641f2dc8a339ba1074d117b0663c2fe77bf82dfe281f497c5a"
+    },
+    {
+      "path": "website/components/SparklineCard.tsx",
+      "bytes": 1455,
+      "sha256": "ce6544c352f15bcf65c017d7ec0f1dc2bd39ffc692b55b880cac30f6c74c6d9f"
+    },
+    {
+      "path": "website/components/SpeciesDeclineChart.tsx",
+      "bytes": 5028,
+      "sha256": "dac377e07a191a851cc6db2d26970aaa06f50d12360740c7f25f5bb85e088f87"
+    },
+    {
+      "path": "website/components/SpeciesSilhouetteInset.tsx",
+      "bytes": 1844,
+      "sha256": "3a5dfb9b9cd4f38c1965635ad180d741d6cd5d397785cf60436754139eb36e8c"
+    },
+    {
+      "path": "website/components/SpermJourneyVisualization.tsx",
+      "bytes": 7385,
+      "sha256": "589e98d24989bd4e7ff5913f7901e0e275b2332df50fbb9250362a06cbe4c56b"
+    },
+    {
+      "path": "website/components/StatisticalValidation.tsx",
+      "bytes": 2839,
+      "sha256": "52243d38e43eb57d6c45f002cc85bc587adf80425340e70c7623de63239917ca"
+    },
+    {
+      "path": "website/components/StudyCitation.tsx",
+      "bytes": 4469,
+      "sha256": "695fee23305c2b43be37f54fba7b7c68d0ae5375e57ab9a0e422c1c5baf11897"
+    },
+    {
+      "path": "website/components/TechnologyGradientChart.tsx",
+      "bytes": 6291,
+      "sha256": "a49298749f121a4efcbb2d6d9bec916521adf2ef60dfd241098281bf805ca103"
+    },
+    {
+      "path": "website/components/TemporalTtoTFR.tsx",
+      "bytes": 6827,
+      "sha256": "322554f1ed9bac13d5d58a0b2db683c824cd8bd5614a0205d09db3246213dc97"
+    },
+    {
+      "path": "website/components/ThemeToggle.tsx",
+      "bytes": 2549,
+      "sha256": "c4212903f3b2cb20df8ec355fdd4681d7881be782a12cc490ca01c85f25ca9a8"
+    },
+    {
+      "path": "website/components/TheraBionicProof.tsx",
+      "bytes": 11007,
+      "sha256": "ae3092b91b179dedc4a71f02cd8eb0fc72fe2a5b78fcf20dcee1454727037ce0"
+    },
+    {
+      "path": "website/components/TherapeuticFrequencyMap.tsx",
+      "bytes": 40886,
+      "sha256": "40dcbb7214ced330dde1ce2ee2be031cb042ce95f16f7fd15ad78eb6f66ee960"
+    },
+    {
+      "path": "website/components/ThreeBiologicalBands.tsx",
+      "bytes": 11561,
+      "sha256": "5df40cd21040486a95de05a42e81442eab1fb3e7fb9f49f7863268f98b1f8180"
+    },
+    {
+      "path": "website/components/ThreeChannelDiagram.tsx",
+      "bytes": 12018,
+      "sha256": "51f000fe24e3e1fd92c0e106a203072672230102dfb6771dc9268334f6583390"
+    },
+    {
+      "path": "website/components/ThreeChannelSummary.tsx",
+      "bytes": 11905,
+      "sha256": "116463b66ae9684323c74c04afe9b5837dcba205634f7f2e6c57dda555263a1c"
+    },
+    {
+      "path": "website/components/ThreePhaseIndicator.tsx",
+      "bytes": 2999,
+      "sha256": "9e7cb7d2e4238eca61e09120a2b893946ff1498ceb931f735deabb6201745e18"
+    },
+    {
+      "path": "website/components/ThresholdChart.tsx",
+      "bytes": 11271,
+      "sha256": "58eda1f66b1f2b385d16fc331a4dd1e9dec71f2b003ad4bd9ccee38b015053d4"
+    },
+    {
+      "path": "website/components/ThresholdExplorer.tsx",
+      "bytes": 22213,
+      "sha256": "5ec91b484271817b414eabf0214845553e1fb11495524745c4b92f5553b2db20"
+    },
+    {
+      "path": "website/components/TranslationNotice.tsx",
+      "bytes": 911,
+      "sha256": "5b00f5339dfc90f7c866aad245cea956e682ce29f26252c1a5c1d05406eb1e0a"
+    },
+    {
+      "path": "website/components/TwoSusceptibilities.tsx",
+      "bytes": 16621,
+      "sha256": "125666348d55a0bb7d797b0b0a9491cf2baca1bb87cf15cab73be811e75ad35b"
+    },
+    {
+      "path": "website/components/VGCCGeneFamilyDiagram.tsx",
+      "bytes": 7008,
+      "sha256": "f82e8211f45fef383d43c38e3fd83a0e1494a634fdd36dc7eac58c338c883bb4"
+    },
+    {
+      "path": "website/components/VarianceModel.tsx",
+      "bytes": 10378,
+      "sha256": "a1b19222b57ae266bbe7beae13c7b8babae0fe75950fab572654ceec4636c2a4"
+    },
+    {
+      "path": "website/components/VarroaCascade.tsx",
+      "bytes": 23992,
+      "sha256": "3c22b136df62db3e207737e377b103a1002bc3786287c8c62120f1fb47132d91"
+    },
+    {
+      "path": "website/components/WorldMap.tsx",
+      "bytes": 19267,
+      "sha256": "dc9e7d159211441ac3384d5e4691076076caa9b465ce82ebc2bbfea39930c022"
+    },
+    {
+      "path": "website/components/__tests__/AtlasClaims.test.tsx",
+      "bytes": 2112,
+      "sha256": "f5d2a7f5dd0b0fd7da7819108833903a67d0c17b948e4f07a86af86516456f2f"
+    },
+    {
+      "path": "website/components/__tests__/BiologicalCoordinationExplorer.test.tsx",
+      "bytes": 2655,
+      "sha256": "e3d0b1391703bb4d44bb3bcff1a16446e6a2383ffea3104b74f079e901b06029"
+    },
+    {
+      "path": "website/components/__tests__/CausalAtlas.test.tsx",
+      "bytes": 5120,
+      "sha256": "1dde688a0630e36f43f2e96ab04d124e284b66a4349ad03eb5cd51d999a23d1d"
+    },
+    {
+      "path": "website/components/__tests__/ConditionalScenarioExplorer.test.tsx",
+      "bytes": 2624,
+      "sha256": "4b12a7866e24e54447517170f0a6306d7d66786f2d0ebf46999980b744192806"
+    },
+    {
+      "path": "website/components/__tests__/Navigation.test.tsx",
+      "bytes": 10482,
+      "sha256": "704876573194d3dda773f20f56840f849f9823fdd2d8966980b2200aa7995cf4"
+    },
+    {
+      "path": "website/components/__tests__/StudyCitation.test.tsx",
+      "bytes": 4687,
+      "sha256": "748b92ab4356b8ceb7f954c43e3142ac06fd833b75a1f0d4d8ce9bdc46b1e14d"
+    },
+    {
+      "path": "website/components/atlas/AtlasClaims.tsx",
+      "bytes": 6801,
+      "sha256": "a9e037ad8f36581c7ea9cc3e2d189749e074fbe2ec9992fbd0ffc74a461baec9"
+    },
+    {
+      "path": "website/components/atlas/AtlasDetail.tsx",
+      "bytes": 9737,
+      "sha256": "794a33d2f8f1a188f104a565177ca3b3c7e014d2375974e10a71e8bc2bad0bbc"
+    },
+    {
+      "path": "website/components/atlas/AtlasNode.tsx",
+      "bytes": 3040,
+      "sha256": "9e3ce5e9abada4e168136d90b9487d91c8c95b952955553c852f3a0fe8ed06db"
+    },
+    {
+      "path": "website/components/modulome/CalciumCycle.tsx",
+      "bytes": 11234,
+      "sha256": "ea3a8b717de35fcc9f94537d1928907ff3e06bdffbd0394defe841a8cd6a83c0"
+    },
+    {
+      "path": "website/components/modulome/FeedbackStability.tsx",
+      "bytes": 7539,
+      "sha256": "17e1f80bc9a3a14633d8eb5a0aa3a98d3b7b27c9a23b40065103b26362da3fc0"
+    },
+    {
+      "path": "website/components/modulome/LayerStack.tsx",
+      "bytes": 4724,
+      "sha256": "d0cbb095c61fc62443702b59db4a197239e5714827143c01bb50503f1debc22e"
+    },
+    {
+      "path": "website/components/modulome/MechanismCards.tsx",
+      "bytes": 6840,
+      "sha256": "c233410243d7061f70dfa71f99b81b8e9aced002f11599191640c208f37dd45c"
+    },
+    {
+      "path": "website/components/modulome/PhotonSequence.tsx",
+      "bytes": 5413,
+      "sha256": "b72ed4d46e256ac8d71fd3f80936978c57d06acdcc8baef8ffa30cd272156629"
+    },
+    {
+      "path": "website/components/modulome/PolarityResponse.tsx",
+      "bytes": 4889,
+      "sha256": "5e4f6dfd410b40f16b79132b2e9a006279168ac336c63abde800ac7bd0e0d4c0"
+    },
+    {
+      "path": "website/components/modulome/StateTriad.tsx",
+      "bytes": 8601,
+      "sha256": "c125a0b6d0e920c80b87f0f9c1209145775055ed244a05598053152b1480f6a9"
+    },
+    {
+      "path": "website/components/modulome/StateWindow.tsx",
+      "bytes": 9568,
+      "sha256": "0a6590263e36dfe6fad549a1f086755a280ecd038e5f2a0c3bf5b71a09fb22f6"
+    },
+    {
+      "path": "website/data/anchor-index.json",
+      "bytes": 20782,
+      "sha256": "e0f57dcc85c69be07156665b9e8749f993b86d0ef4011c5b1a4ec3b52c1c954c"
+    },
+    {
+      "path": "website/data/atlas-claim-bindings.json",
+      "bytes": 5921,
+      "sha256": "4b9f91090f797f4195218f8498765a1cf6a952f9e43a35d74434beee9fdc9743"
+    },
+    {
+      "path": "website/data/biological-coordination.json",
+      "bytes": 198402,
+      "sha256": "99ae1567918168ad624309da9e0371995fee147ca435de8e36d2095581183311"
+    },
+    {
+      "path": "website/data/biological_constraints.ts",
+      "bytes": 27376,
+      "sha256": "3b2e629675d167216c3203ed483b2d09092a408abd671bdb2891cd06369325cc"
+    },
+    {
+      "path": "website/data/causal-atlas-extensions.json",
+      "bytes": 289080,
+      "sha256": "307822fee628899cb9b1dff3fe17940f28f49650de0b44fae5717b343801d7fd"
+    },
+    {
+      "path": "website/data/causal-graph.json",
+      "bytes": 36602,
+      "sha256": "38e8a195d3fb8389e9f095a6b3d0fa64454b061c13f2bda576273ed2c4cc79da"
+    },
+    {
+      "path": "website/data/causal-graph.schema.json",
+      "bytes": 3165,
+      "sha256": "36847cc07798b56a92d5e83de0e7fc73d5fd5d22dcbd3bdf11ff610160665134"
+    },
+    {
+      "path": "website/data/claims.json",
+      "bytes": 289940,
+      "sha256": "189f2b6259bd714e4516f911c41df6b174e9a7f5a25bc52ec2fbf20e57272108"
+    },
+    {
+      "path": "website/data/claims.schema.json",
+      "bytes": 9406,
+      "sha256": "54487d8f0982f4dad7b052e57be0a6846e1d27d5bc858a9c13d340070b9e653f"
+    },
+    {
+      "path": "website/data/conditional-scenario-explorer.json",
+      "bytes": 208758,
+      "sha256": "cfe62ae8857680535aa6868a3a68d3fd715aa0b2dba7f4099059526fb93a35ab"
+    },
+    {
+      "path": "website/data/conditional-scenarios.json",
+      "bytes": 1354140,
+      "sha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625"
+    },
+    {
+      "path": "website/data/correction_registry.ts",
+      "bytes": 19376,
+      "sha256": "8ab416e430ab7919352d107972475f00c86d91344cea27b4b635b83fef8f071c"
+    },
+    {
+      "path": "website/data/discriminating_tests.ts",
+      "bytes": 6089,
+      "sha256": "ca91b4310292d5b05fffca2a3fdcf4cc363e641bd3d194ddb0e33a5ed493fd32"
+    },
+    {
+      "path": "website/data/dkc-framework.json",
+      "bytes": 38098,
+      "sha256": "2e05ed41ac76ecaef750cfd7d3a200be7bdff257bb15246b7286a7d9f80aff8f"
+    },
+    {
+      "path": "website/data/gbd_disease_series.json",
+      "bytes": 7253,
+      "sha256": "9e26d5bcbaad0769760c36e53e0ef813a44a54c4bbc44b8b5bbbf137b47a2ad6"
+    },
+    {
+      "path": "website/data/model-architecture.json",
+      "bytes": 6065,
+      "sha256": "afb6ce1facc94779cc98b0b6c3529fb5ad22c739335d9d62b28954b8fcb2984a"
+    },
+    {
+      "path": "website/data/modulome-state.json",
+      "bytes": 75206,
+      "sha256": "0c8d96b60b3278b79ac11ad0c1dc5946b27e299e6d5ab2f4f8acbb264a2d37ce"
+    },
+    {
+      "path": "website/data/research_program.ts",
+      "bytes": 18392,
+      "sha256": "bbe9452a677bf68cc021c76927e7486d1bb1ac93bfc4b89fd36444a6f1b43f6b"
+    },
+    {
+      "path": "website/data/signal_structure.ts",
+      "bytes": 25358,
+      "sha256": "642b7a9c1e2d5d2f16c6b36410eab3cecb3fc20cf0024e91799987fb8f3acdad"
+    },
+    {
+      "path": "website/eslint.config.mjs",
+      "bytes": 542,
+      "sha256": "1a24523128291980b2de27a356100f10c90948f74a0521d92fb7ad49ec37302b"
+    },
+    {
+      "path": "website/lib/__tests__/atlas-anchor-index.test.ts",
+      "bytes": 1416,
+      "sha256": "9d0e42d0a5461ca019afbe3694c00e98ce899b350f85bf385b18f03ac98013e6"
+    },
+    {
+      "path": "website/lib/__tests__/atlas-coverage.test.ts",
+      "bytes": 5785,
+      "sha256": "72f7916c7bace0783c1b302b2a13bf503ddf2835291717053a130d51ae5cdf57"
+    },
+    {
+      "path": "website/lib/__tests__/atlas-data.test.ts",
+      "bytes": 8057,
+      "sha256": "23d6977c581e02e210cf5b81ba872a1f1fe8168a18cb77da108a173de99236be"
+    },
+    {
+      "path": "website/lib/__tests__/atlas-evidence.test.ts",
+      "bytes": 3133,
+      "sha256": "607d34f748d5186afe8ec1140bd162a9d75a5ba5262f9102e61d1ce9b521f941"
+    },
+    {
+      "path": "website/lib/__tests__/biological-constraints.test.ts",
+      "bytes": 6648,
+      "sha256": "b7e9418c6ff489a5fd839a70d2a0bbaeebc901fc50077ef43cee5eb005fa46c3"
+    },
+    {
+      "path": "website/lib/__tests__/causal-chain-separation.test.ts",
+      "bytes": 2897,
+      "sha256": "82bbd5a044e77a089f6a1bcb6e0d2f9dbc3f9abb0562179d69ad52151c332411"
+    },
+    {
+      "path": "website/lib/__tests__/causal-graph-view.test.ts",
+      "bytes": 1214,
+      "sha256": "6e4406da4bfd30dc8831dc91b1c973f26f463eea1aba676a2480dbf5270aee7f"
+    },
+    {
+      "path": "website/lib/__tests__/citation-links.test.ts",
+      "bytes": 10514,
+      "sha256": "f98e77afa7a8d766ab78308238326a33c62ccc836f4010ebf5981fede5501ac4"
+    },
+    {
+      "path": "website/lib/__tests__/claim-independence.test.ts",
+      "bytes": 6303,
+      "sha256": "ca10cd6801fab748ada2c3a2be296b0df2af2c3f620460417bf0cfc5669e6974"
+    },
+    {
+      "path": "website/lib/__tests__/claim-registry.test.ts",
+      "bytes": 10986,
+      "sha256": "d85d084bf4252d6ad1b81602f4e75eb3df2ef5c87e9b74f9223a5e9dc93208c1"
+    },
+    {
+      "path": "website/lib/__tests__/component-claims.test.ts",
+      "bytes": 4902,
+      "sha256": "a1cbcc17786ec40518b8d89e758c79c66bc54e8aae4b3017878377cc001ce75f"
+    },
+    {
+      "path": "website/lib/__tests__/dkc-framework.test.ts",
+      "bytes": 6283,
+      "sha256": "6d00028b08fdfbb7e371ee7199d7a3ba4fe7ce3ba6c944c80b29f785e6b3fa66"
+    },
+    {
+      "path": "website/lib/__tests__/evidence-registry.test.ts",
+      "bytes": 2381,
+      "sha256": "d4197a5c8eec37cf09c938c75e48bbfd2f351b4b3be05d3fc65a16e781812f95"
+    },
+    {
+      "path": "website/lib/__tests__/fixtures/navigation-before-levels.json",
+      "bytes": 1148,
+      "sha256": "7d6a02bec1176c126be8e354718d3b6b3638de6271001ca6dcecc3bad96eb00f"
+    },
+    {
+      "path": "website/lib/__tests__/i18n.test.ts",
+      "bytes": 4341,
+      "sha256": "e543e51b8d57c6057f240be7e8f039abc939930bd51fc9712e7aec1420ff0f8c"
+    },
+    {
+      "path": "website/lib/__tests__/lindgren-page-content.test.ts",
+      "bytes": 1339,
+      "sha256": "b90b7d74628b97da201a03a928ba86adc5c2b3d22f2d2040bf6899193c6f9d4c"
+    },
+    {
+      "path": "website/lib/__tests__/mechanism.test.ts",
+      "bytes": 9764,
+      "sha256": "93e42021fcd80e12cdc9d686dbcce94320ed6157a540285a6d6dcf5fe41acec8"
+    },
+    {
+      "path": "website/lib/__tests__/model-architecture.test.ts",
+      "bytes": 4932,
+      "sha256": "d1d4ade0385e4ef239e8e728adf0becbd72f210a76c65186cef387b5fe803186"
+    },
+    {
+      "path": "website/lib/__tests__/modulome-state.test.ts",
+      "bytes": 5084,
+      "sha256": "52c169005f70cbf5521a3a08fc2ff4cf95433689815ffde2d75be92ed89bcb8d"
+    },
+    {
+      "path": "website/lib/__tests__/navigation.test.ts",
+      "bytes": 6066,
+      "sha256": "6566017c2f54ca30c488f8e6e1a7f0257f7c60a7741a2a9ad5cf8252e0d2fc64"
+    },
+    {
+      "path": "website/lib/__tests__/prediction-provenance.test.ts",
+      "bytes": 1009,
+      "sha256": "8eecfd214dae0a5d84cb72115d0290670ea15b0483404ad390a7764fde4ec776"
+    },
+    {
+      "path": "website/lib/__tests__/signal-structure.test.ts",
+      "bytes": 5519,
+      "sha256": "2bc0fc7711cb271bddf22e4b6e0778876ddcbabce6696355fb6d5ff7ce2e9480"
+    },
+    {
+      "path": "website/lib/articles.ts",
+      "bytes": 4258,
+      "sha256": "008c5c8f81b4a56227a86853b7e4ea647ea9804d88de4314641240f19e12b2fb"
+    },
+    {
+      "path": "website/lib/atlasEvidence.ts",
+      "bytes": 1494,
+      "sha256": "ae8ec9e50f3682bf3855c142cf7bdf0a7d143af984d1c39fa54b7642cf304683"
+    },
+    {
+      "path": "website/lib/causalAtlasData.ts",
+      "bytes": 11620,
+      "sha256": "b1e3f3ded044f97c6bf1f022d5d6740b4083db89bb795448ed65c020e08eae58"
+    },
+    {
+      "path": "website/lib/causalAtlasRegistry.ts",
+      "bytes": 32572,
+      "sha256": "31d46252afcff3a674caa8cb6f7893a201350f9658592d49a58d2f5ca7c26c2a"
+    },
+    {
+      "path": "website/lib/causalChainV2Data.ts",
+      "bytes": 33724,
+      "sha256": "9b05c105cbff7950ad029dfb45b96c13681e41a39c1c92b1917133a873971ae6"
+    },
+    {
+      "path": "website/lib/causalGraphView.ts",
+      "bytes": 4523,
+      "sha256": "2c0d9a3bab8cfb47b0001f9e5a2285a677c811d49c001ac1eb5bcd9850e075a5"
+    },
+    {
+      "path": "website/lib/causalMapData.ts",
+      "bytes": 84759,
+      "sha256": "09c9b92a0ce5f4c1fbe5653597f605125e6d595f258e7138ae9f72d72752d145"
+    },
+    {
+      "path": "website/lib/channelGroups.ts",
+      "bytes": 1394,
+      "sha256": "570791744db3a7083c5e5a6e1d6a7f84640f647a4f5e5365898e53e4e9cf3f5b"
+    },
+    {
+      "path": "website/lib/citationLinks.ts",
+      "bytes": 14109,
+      "sha256": "a768d5b0054139648be86e09a37c1131fad1a374e812fadbcdfe936a9e4cc560"
+    },
+    {
+      "path": "website/lib/civilizationPredictions.ts",
+      "bytes": 29725,
+      "sha256": "f424290a5dbbe69aa2aad5a10b7831674a452eeda5c7758a2d1a4f6689316144"
+    },
+    {
+      "path": "website/lib/claims/independence.ts",
+      "bytes": 3962,
+      "sha256": "cfac51aa94e24a0a70c5a1f6f7c21ead149286f63a129c07eef813095cd83bd2"
+    },
+    {
+      "path": "website/lib/claims/index.ts",
+      "bytes": 7116,
+      "sha256": "16bdb0f95341b5c415e4e14648f2d29add9126482d88e925925d41c458a789c5"
+    },
+    {
+      "path": "website/lib/claims/types.ts",
+      "bytes": 6590,
+      "sha256": "03d48c54e1028ba8c9c6d35fdd1b9b9f7ced95c89be4c817b93c1e43bedca37d"
+    },
+    {
+      "path": "website/lib/classificationTable.json",
+      "bytes": 6852,
+      "sha256": "5fc80ec2601ba1bb492f69d9f93a11a6bc4530f868b075b26daad9c18f70eb51"
+    },
+    {
+      "path": "website/lib/cohortAsfr.json",
+      "bytes": 52371,
+      "sha256": "a5ef37f1fa37336b4475310ded7e7a03d35239b6cbdf6ea8fdf61207a6cb26ed"
+    },
+    {
+      "path": "website/lib/dkcFramework.ts",
+      "bytes": 1441,
+      "sha256": "449189b1da6a4fb4b7df7e344bd8d842810b642a6566bd7839eaf5f26d4bc7a6"
+    },
+    {
+      "path": "website/lib/epistemicConstants.ts",
+      "bytes": 3696,
+      "sha256": "0e28876daf556a15b233af6f0366508612926ae382b71e54a405dacefff4ef3b"
+    },
+    {
+      "path": "website/lib/evidence.ts",
+      "bytes": 44802,
+      "sha256": "bd824b753ada73246741148bd7d59cbf182539b0043f5e7f5a96706bb0a2cb63"
+    },
+    {
+      "path": "website/lib/evolutionData.ts",
+      "bytes": 84214,
+      "sha256": "701faf74bbdb7fc33e815516853a8d0812866dd2bc28fd321ddd0b6772e572de"
+    },
+    {
+      "path": "website/lib/eyeColorData.ts",
+      "bytes": 65683,
+      "sha256": "312f2789e42c08bad51e311b330b59a1f7d7357add5ef2590b7a343de9e4c755"
+    },
+    {
+      "path": "website/lib/findingsClassification.ts",
+      "bytes": 6107,
+      "sha256": "cc8b25eb9af8a5b57025fab972eca86b02843dcf3d6d74270fd54872bb2dfb15"
+    },
+    {
+      "path": "website/lib/globalArtifacts.ts",
+      "bytes": 18234,
+      "sha256": "b4033f722567161f6143c7f64c2da57a5869bce99ff59edf9b0e3b11c481b4f2"
+    },
+    {
+      "path": "website/lib/i18n.ts",
+      "bytes": 4472,
+      "sha256": "24d1b51be40ec12848ecef52dbe659c275f01d8681fbf928e1092ea193dd6a19"
+    },
+    {
+      "path": "website/lib/legacyEvidence.json",
+      "bytes": 113896,
+      "sha256": "77e418b33d11a41b519465c60bc85bebbd38a6956de2d84c60e13ed24f82432d"
+    },
+    {
+      "path": "website/lib/mechanism.ts",
+      "bytes": 14385,
+      "sha256": "3d225ebd9bda2aecf707b47ddd752dbef74c32800065b5ae4d3bd15f9e20a392"
+    },
+    {
+      "path": "website/lib/model/__tests__/dkc.test.ts",
+      "bytes": 6120,
+      "sha256": "eb84609b1ce0c60029fb10811dcd703704c9c4fc1120183108e19b28105224a7"
+    },
+    {
+      "path": "website/lib/model/__tests__/lindgren.test.ts",
+      "bytes": 2204,
+      "sha256": "99c4ee2ee5adff33a89204ea3c132f32fe0bab4729368e7f0e3075b46b189dd1"
+    },
+    {
+      "path": "website/lib/model/__tests__/validate-vs-python.ts",
+      "bytes": 8575,
+      "sha256": "8668b1aad59356ca350cc643b511d819ae789c788412de6ba22424b2727a2e7c"
+    },
+    {
+      "path": "website/lib/model/ambient.ts",
+      "bytes": 3564,
+      "sha256": "4d760f0c97b6252f4156ddd18c8b15efa9b8d6f8928777dcad7c75c1e103ddf5"
+    },
+    {
+      "path": "website/lib/model/config.ts",
+      "bytes": 3044,
+      "sha256": "5903576ca0d4638fd25d5241b1147923606576b2e411e06473a9768042063e06"
+    },
+    {
+      "path": "website/lib/model/countries.ts",
+      "bytes": 48362,
+      "sha256": "f2e00a620f604583f919b2f1ff3ae18aa3423874195b73b88d43eeff729eb968"
+    },
+    {
+      "path": "website/lib/model/cry.ts",
+      "bytes": 317,
+      "sha256": "420fab2cc1db1ab87f260d75d70344001422683d05b1208c644440ae10f914a1"
+    },
+    {
+      "path": "website/lib/model/dkc.ts",
+      "bytes": 10040,
+      "sha256": "86c26dc6de3ec86cd05b6877c3494606e0dc7aa699c0518cae853e32d5a353ad"
+    },
+    {
+      "path": "website/lib/model/index.ts",
+      "bytes": 884,
+      "sha256": "348408d97911fa3209a4127bb191dc14087a66cbeca96cd15c24668a8738262b"
+    },
+    {
+      "path": "website/lib/model/lindgren.ts",
+      "bytes": 3193,
+      "sha256": "416725cae9a42f4dbc2c22778dd16917489ddcd9c76dcd72285dedf6747d5254"
+    },
+    {
+      "path": "website/lib/model/personal.ts",
+      "bytes": 1718,
+      "sha256": "78df08ea1510e2420e9f911035be96edb76275d6dc37a3dc36871e6584b8ab50"
+    },
+    {
+      "path": "website/lib/model/spermCascade.ts",
+      "bytes": 1365,
+      "sha256": "36aa20fd37ef49d1be5e12313a46d1b86f44b2b8dcf51c29085c907203f31b2f"
+    },
+    {
+      "path": "website/lib/model/tfr.ts",
+      "bytes": 13592,
+      "sha256": "5ffa6336c6988b9e655fe6f96c2aa4e6545ef656d49f41de66653ca2df389d82"
+    },
+    {
+      "path": "website/lib/modelArchitecture.ts",
+      "bytes": 638,
+      "sha256": "9077cf92605831aacc1fedbdf2b57fbd7dd8fd8e8b79c9733484a4e762652be6"
+    },
+    {
+      "path": "website/lib/modulome/layers.ts",
+      "bytes": 44476,
+      "sha256": "2d9feaf7193cfbb0503826837edc1f31e9b2474f89876f2d7a8977d2cf3ca666"
+    },
+    {
+      "path": "website/lib/modulome/organDetailData.ts",
+      "bytes": 10866,
+      "sha256": "7b607649a3054b031361f699677881144cdc5152f34bdc2f3c841b82db6834bf"
+    },
+    {
+      "path": "website/lib/modulome/organs.ts",
+      "bytes": 11890,
+      "sha256": "e517deab12104c8ecf3fab79b6a28fbb7d1b8464640a5661b1d4bb97c4a80fe3"
+    },
+    {
+      "path": "website/lib/modulome/routes.ts",
+      "bytes": 5165,
+      "sha256": "f311fa0b585a7a3eedaf5332c6418049389094aadaf0aa2e8c18f24a9f97019e"
+    },
+    {
+      "path": "website/lib/modulome/stateModel.ts",
+      "bytes": 6312,
+      "sha256": "4def13292d2bc62a3438b44d49917a9b8ad3af5afea696f6bd9bd2dea5e4a255"
+    },
+    {
+      "path": "website/lib/navigation.ts",
+      "bytes": 33806,
+      "sha256": "031541dcba406562936e999cebefb9bd80892ed97ff53f492e21220fbff7c5f2"
+    },
+    {
+      "path": "website/lib/orphanedFindings.ts",
+      "bytes": 10836,
+      "sha256": "fe1e4b21221a942cdd1ba227d2945330d0decb37f78479372e3247b0e451010c"
+    },
+    {
+      "path": "website/lib/populationData.ts",
+      "bytes": 32726,
+      "sha256": "a0b52383e5b0289c0755812d711f7241cbfed077efb894b9e780df1474f3cc77"
+    },
+    {
+      "path": "website/lib/predictionSeries.json",
+      "bytes": 12840,
+      "sha256": "38c53c84ce11b32bde6f60781aedbe682c4ef4222ff5a8a336b2a0351e0b6db9"
+    },
+    {
+      "path": "website/lib/predictions.ts",
+      "bytes": 14495,
+      "sha256": "47bcfeb298881ac377dfc8523af880a53a3d4a61e599e87a20798bf0550b0a26"
+    },
+    {
+      "path": "website/lib/referenceIndex.json",
+      "bytes": 480200,
+      "sha256": "24a434797246b758b35f1b4a0030b4efa0bf2705e5b3ce269fea37efe7b149fe"
+    },
+    {
+      "path": "website/lib/referenceIndex.ts",
+      "bytes": 2839,
+      "sha256": "aef0f33d80c559ba9cebafb91ff07dc049cd0327ceb6047f9890fb5df9485a3c"
+    },
+    {
+      "path": "website/lib/referenceRegistry.server.ts",
+      "bytes": 1969,
+      "sha256": "ca834229234a10ad7c09483339c4b61632536d82668e1fa18bb03668849ae80e"
+    },
+    {
+      "path": "website/lib/referenceUsage.json",
+      "bytes": 222247,
+      "sha256": "2bb0fb2c885249078d5df51d9e0950d9c413158ac4c3f8627d4942cc6b512f5f"
+    },
+    {
+      "path": "website/lib/references.ts",
+      "bytes": 4822,
+      "sha256": "93c563befcb64ba8c3d3343d63c61e3114b892a65652adf203dc59ecd8457c01"
+    },
+    {
+      "path": "website/lib/researchDomains.ts",
+      "bytes": 10383,
+      "sha256": "dae7a640640c3352342526e1b3269a11171469f75236e94b51ee0abe68dd28bb"
+    },
+    {
+      "path": "website/lib/sentinelCascadeSeries.json",
+      "bytes": 29912,
+      "sha256": "2ed02fe07e0dfa8d80739968a01c063c93f119d7bfbd85af97351af76be18534"
+    },
+    {
+      "path": "website/lib/thresholdModel.ts",
+      "bytes": 7395,
+      "sha256": "32adc623b45fe8d07183241b3daa27889e49ca6aaca3f6e5ab60793fe5088758"
+    },
+    {
+      "path": "website/lib/types.ts",
+      "bytes": 2865,
+      "sha256": "0177af28d69603414ac012a46e138413cfa0113ea5cb0a436c2907c97360ce4e"
+    },
+    {
+      "path": "website/lib/vgccGeneFamily.ts",
+      "bytes": 12129,
+      "sha256": "ee88afdaf0170aaa99bb45bb5b701510338ed25f631a28cd7be6d276a7945d41"
+    },
+    {
+      "path": "website/next-env.d.ts",
+      "bytes": 288,
+      "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+    },
+    {
+      "path": "website/next.config.ts",
+      "bytes": 862,
+      "sha256": "b8bb4c5807ec9a7cf8eb8e4479eac5a2db137e5c11cc71390f6d9bb6a39b5608"
+    },
+    {
+      "path": "website/package-lock.json",
+      "bytes": 331802,
+      "sha256": "7b7a1935a2b080939de8f73ea8113bee1e69dd8856e20c8e5905ad91e3824d56"
+    },
+    {
+      "path": "website/package.json",
+      "bytes": 1585,
+      "sha256": "f8490834e453c5c6a667e36c1907fccd9ad81131b04c1fb2dbb1e6b4a4534831"
+    },
+    {
+      "path": "website/postcss.config.mjs",
+      "bytes": 94,
+      "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde"
+    },
+    {
+      "path": "website/proxy.ts",
+      "bytes": 1472,
+      "sha256": "9d5d0260ee63f03fb962e2261e969b9972d9f58ac8c8fb0741f2b43fe2589e5a"
+    },
+    {
+      "path": "website/public/data/berm_cultural_energy_model.json",
+      "bytes": 24539,
+      "sha256": "23ee6d14c9efbc07033cebaba0d577b46608bfc5de99ff6011f8164987dbb467"
+    },
+    {
+      "path": "website/public/data/biological-coordination.json",
+      "bytes": 198402,
+      "sha256": "99ae1567918168ad624309da9e0371995fee147ca435de8e36d2095581183311"
+    },
+    {
+      "path": "website/public/data/civilization_indices.json",
+      "bytes": 25853,
+      "sha256": "29409f3d1ebdb7c83cd01ba16496a4f85224ba007a5bff458030dc729aedc04a"
+    },
+    {
+      "path": "website/public/data/conditional-scenarios.json",
+      "bytes": 1354140,
+      "sha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625"
+    },
+    {
+      "path": "website/public/data/cross_section_manifest.csv",
+      "bytes": 2894,
+      "sha256": "fa76b5bf0abd7656baed879ecd1cb8c2a0b5c6cc2ad1365933140fd108c417b8"
+    },
+    {
+      "path": "website/public/data/dkc-framework.json",
+      "bytes": 38098,
+      "sha256": "2e05ed41ac76ecaef750cfd7d3a200be7bdff257bb15246b7286a7d9f80aff8f"
+    },
+    {
+      "path": "website/public/data/falsification_v19_1.json",
+      "bytes": 9279,
+      "sha256": "3e4aee3ada427fbdb78af30e996fd7edbbff9ebad94d7555b446807e5203b236"
+    },
+    {
+      "path": "website/public/data/geojson/ne_110m_countries.json",
+      "bytes": 838726,
+      "sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f"
+    },
+    {
+      "path": "website/public/data/global_panel.csv",
+      "bytes": 3457189,
+      "sha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8"
+    },
+    {
+      "path": "website/public/data/global_panel_summary.json",
+      "bytes": 3579,
+      "sha256": "f0528f5d3c9173752f23fdc0207c8716792ea4561656553fd66c7896271fe35f"
+    },
+    {
+      "path": "website/public/data/map_data.json",
+      "bytes": 376547,
+      "sha256": "cc1eeb24df2a0a3a57589d9811e2426848ff37dc2f17e6a9967dead6694fa1b4"
+    },
+    {
+      "path": "website/public/data/modulome-state.json",
+      "bytes": 75206,
+      "sha256": "0c8d96b60b3278b79ac11ad0c1dc5946b27e299e6d5ab2f4f8acbb264a2d37ce"
+    },
+    {
+      "path": "website/public/data/references_full.json",
+      "bytes": 1044098,
+      "sha256": "b4001de998105af9aa52206e5c53b71c97555ebf8ab34a84406dfc2a8199ae75"
+    },
+    {
+      "path": "website/public/data/sentinel_registry.json",
+      "bytes": 13899,
+      "sha256": "6bff0ee11d9f1bc5e46e19d081b547dbe1dc4d0bf771e2a6982bb33b4285a8f5"
+    },
+    {
+      "path": "website/public/data/solar_bandpass.json",
+      "bytes": 9944,
+      "sha256": "789b5d68a27466e12d17a6eefda82d04e8e1a6d88dd88b1f9d5291652be05da5"
+    },
+    {
+      "path": "website/public/favicon.ico",
+      "bytes": 5291,
+      "sha256": "d7924df9d5991411126073de5b0ba8423a41f27d89937636810d8f0c77293f0f"
+    },
+    {
+      "path": "website/public/icons/bermicons-silhouette.svg",
+      "bytes": 10558,
+      "sha256": "8765d3ff8242f08adb0afc1b64141e0cc09ede8fcd9f179813b0ada477c2be76"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-aphid-silhouette.png",
+      "bytes": 197536,
+      "sha256": "7098672e4398fe7e01712c01826c1670d5b8938ba9b7db4d0963b726d5d50458"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-bat-silhouette.png",
+      "bytes": 144489,
+      "sha256": "d0065c838ae28e9cdb047080258195a2d63c24d6a96283e5cc7478ce71e65daa"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-cellular-biology-silhouette.png",
+      "bytes": 628797,
+      "sha256": "5b3019a42b5bd435cdce06aeb936a2ae95ddc91707bc9ecac2ddc390e70ede2c"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-common-toad-silhouette.png",
+      "bytes": 175462,
+      "sha256": "34825d5a612fe668f114fb58948256f5861de92a5de17e09af9069a61eda4c6e"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-ecology-silhouette.png",
+      "bytes": 791657,
+      "sha256": "35593297a3dc503f66fcb2f9ca15437c3416c9aa4d1d5589fd9d3b780a631913"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-honeybee-silhouette.png",
+      "bytes": 261786,
+      "sha256": "a52720f5d12bd4484a4e3bd1e5f35f91cb22f6e2ba387bf2d51388e9931ecd5d"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-human-silhouette.png",
+      "bytes": 160994,
+      "sha256": "906d8cc5a49ce8f8b3c9b1c7b909999f4ef3a37c3c3b44dbbc1106a2b33686ff"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-institutional-history-silhouette.png",
+      "bytes": 430501,
+      "sha256": "5ba9ff5d9427a14109d609e402fe40e06fb81ef52389ac202c0b986435edae71"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-ixodes-tick-silhouette-transparent.png",
+      "bytes": 849284,
+      "sha256": "074f88e417dbf5900f1843f911cce63f9309efa8286f78ad8067fa3138fa728d"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-ixodes-tick-silhouette.png",
+      "bytes": 981364,
+      "sha256": "d504fbb42dba260e54e9d42481050d30ac4b63b96503728fbe4ba94fede390f6"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-migratory-bird-silhouette.png",
+      "bytes": 162973,
+      "sha256": "b16a473eb3a79a1017f0cc7bac3c58a6cd2058d1658ee0a15c8c11f4f6efd03a"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-neurobiology-silhouette.png",
+      "bytes": 274302,
+      "sha256": "d76e75325423bdb03a131ea868551f56281f011d74677e76f449ba05e0bf0b24"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-night-moth-silhouette.png",
+      "bytes": 294002,
+      "sha256": "27fcf30c0117a46a34faa1a122daa4f4c16ebfd84c2bd0822061e03aeb760538"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-physics-silhouette.png",
+      "bytes": 350931,
+      "sha256": "cad49f7879023e2eadbb6ae093ebdb4955e54d6631537999cab9ca6e5f139aea"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-reproduction-silhouette.png",
+      "bytes": 431488,
+      "sha256": "f643ca011a75889657840bc29bcd5d9b0e8413def6137105c3ca0b2268e77a07"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-rf-safety-silhouette.png",
+      "bytes": 280428,
+      "sha256": "df2f5a6d2bee9c7bd7345c0a897356559a23957c4009375b8f59328016db6770"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-signal-transduction-silhouette.png",
+      "bytes": 314406,
+      "sha256": "0bd0ef913707b5293af2b3ffd26f6c7771933f02f4099fcb55bdfbb7b4ee67a8"
+    },
+    {
+      "path": "website/public/icons/silhouettes/berm-varroa-mite-silhouette.png",
+      "bytes": 334258,
+      "sha256": "525677de3455c65be788da70dcae6c26c5bd3b14b5fc651b4d544682afb237a2"
+    },
+    {
+      "path": "website/public/images/articles/bee-hero.webp",
+      "bytes": 106534,
+      "sha256": "5f4ef164ba8e533034e2077b0a16dc7f31575491527aa03c67e2d5fc2846f0fb"
+    },
+    {
+      "path": "website/public/images/articles/bee-og.webp",
+      "bytes": 73150,
+      "sha256": "e6e94f87a3f3eced7dfcfc4f60663ffa2a87e592476b9d7f034686f6bd05861f"
+    },
+    {
+      "path": "website/public/images/articles/bee-thumb.webp",
+      "bytes": 26280,
+      "sha256": "196e10144efbaf05a3d9478ee10a7a8ea7d7e98a1430840230dfcf1ab63fbe65"
+    },
+    {
+      "path": "website/public/images/articles/dual-lock-editorial-hero.webp",
+      "bytes": 183638,
+      "sha256": "dc63ed5c0c6f003dac46841503ed6c9df8c1871f49c06f6fdcc50b33aa2bf4f8"
+    },
+    {
+      "path": "website/public/images/articles/dual-lock-editorial-og.webp",
+      "bytes": 108138,
+      "sha256": "d13ac1475b9291e43a5fa55aed46a63b682b5b7ca6d17211731133b4e803f23c"
+    },
+    {
+      "path": "website/public/images/articles/dual-lock-editorial-thumb.webp",
+      "bytes": 21700,
+      "sha256": "a6a8b2d751e6201db52b69ee56f5fd68bbf82e6ab37bab758d5a63ce38298191"
+    },
+    {
+      "path": "website/public/images/articles/implausibility-editorial-hero.webp",
+      "bytes": 51686,
+      "sha256": "8043a5a9d9d0fa16d580b24ca3faf316ee4d88f1ae73462f5ac7319c586cb0b3"
+    },
+    {
+      "path": "website/public/images/articles/implausibility-editorial-og.webp",
+      "bytes": 26564,
+      "sha256": "30131152ab8c08ce7746870cc8bf5d0347da61840a4bc4dac07f1c92f83e150e"
+    },
+    {
+      "path": "website/public/images/articles/implausibility-editorial-thumb.webp",
+      "bytes": 6320,
+      "sha256": "c73ffad103caa2010bb9a903a675f9efef21c2e96da891ad2d573bfac471acd7"
+    },
+    {
+      "path": "website/public/images/articles/spectrum-editorial-hero.webp",
+      "bytes": 191116,
+      "sha256": "4b353184ea8c1be0cc8f5a7e79b8ae5eca97675304826f154ff2ab9ee22dd8ca"
+    },
+    {
+      "path": "website/public/images/articles/spectrum-editorial-og.webp",
+      "bytes": 126114,
+      "sha256": "a5b610d57d72088780b848e610fffebe81d6eb72f691fec5823e52a3a39c518f"
+    },
+    {
+      "path": "website/public/images/articles/spectrum-editorial-thumb.webp",
+      "bytes": 39364,
+      "sha256": "b49283b8e7bf8f8ffda66f76ead0127fd46c3c4faf7c80fb62ba5bb1d8e7f17b"
+    },
+    {
+      "path": "website/public/images/eco-tick-fieldstate-hero.png",
+      "bytes": 1788862,
+      "sha256": "b548c7b7f2a37c0c32015beb6f44710f41c9b9458a2f3d2c3aafadb77275e4a5"
+    },
+    {
+      "path": "website/public/images/hero-fertilization.jpg",
+      "bytes": 320718,
+      "sha256": "dffdb3895ea2c71f5bf57db707e309c778fe72d73cee34bd7a7e0a26ae646c4d"
+    },
+    {
+      "path": "website/public/images/hero-fertilization.png",
+      "bytes": 1919613,
+      "sha256": "af860577e415a067cfb860e4cef25fce32613d9e0d37898d4beda8d60afb4c71"
+    },
+    {
+      "path": "website/public/images/otto-juote.png",
+      "bytes": 1967491,
+      "sha256": "7c510f49fb96f9fd151c7bdba0c8acbbe80b86c9974e4fda860178b9548113fc"
+    },
+    {
+      "path": "website/public/images/sentinel-species-hero.jpg",
+      "bytes": 635591,
+      "sha256": "d2414b6d48a93cbe52abd17ff80a055624c12a54abc614e0204286ce9fdcccbe"
+    },
+    {
+      "path": "website/public/images/spengler-seasons.jpg",
+      "bytes": 774485,
+      "sha256": "23347edc2f493428737d9a42c22121186670b62d9e9751b80ce9cad2ac6c585a"
+    },
+    {
+      "path": "website/public/images/spengler-seasons.png",
+      "bytes": 3022398,
+      "sha256": "65b42eb9045790698a72635fcbc1b3c84ca05e7d3592e3f14352bcfb4753a2ec"
+    },
+    {
+      "path": "website/public/images/testosterone-molecule.png",
+      "bytes": 2017213,
+      "sha256": "a96128b0d20cc2ba2b860701bda1ada304435ceea84f91c9d05edda2faaa9766"
+    },
+    {
+      "path": "website/public/robots.txt",
+      "bytes": 73,
+      "sha256": "29fa1e064014628d11d03d62e1023b401b743d8f4c895e2c426c8d8f084bd52b"
+    },
+    {
+      "path": "website/scripts/atlas-anchors.mjs",
+      "bytes": 1605,
+      "sha256": "806656a8a595c002a7c4077aff664e30369eeed4220622dd260f8deb406fae01"
+    },
+    {
+      "path": "website/scripts/build-anchor-index.mjs",
+      "bytes": 4996,
+      "sha256": "c731dc1827b1b8bef5c14b8d90adbeaad4eedf01f13611751adf835138c05128"
+    },
+    {
+      "path": "website/scripts/build-reference-index.mjs",
+      "bytes": 8141,
+      "sha256": "9d7e0ba95f355de189a49288ea620d04643c89592361432c0e86e5642520550a"
+    },
+    {
+      "path": "website/scripts/check-copy-coverage.mjs",
+      "bytes": 4874,
+      "sha256": "9aa06d979b7023f80e8c607c12e24b319081c0a52b9c3011b6048ec0b5896f8f"
+    },
+    {
+      "path": "website/scripts/check-rendered-html.mjs",
+      "bytes": 7991,
+      "sha256": "91704c738be4ba0d376a9a57688ac1e9732311c4afeeef08cf7622b64d10208a"
+    },
+    {
+      "path": "website/scripts/validate-references.mjs",
+      "bytes": 12432,
+      "sha256": "4a0c79972a45119d860c8714824375687e5a4b8ff4aa02dfe97cddb7f649be88"
+    },
+    {
+      "path": "website/scripts/validate-registry.mjs",
+      "bytes": 26026,
+      "sha256": "9dea97d2da779edf6b2cffa772b13951fac6c00e4ec11c7cbbbc9ec3638e5560"
+    },
+    {
+      "path": "website/tsconfig.json",
+      "bytes": 666,
+      "sha256": "be18523b23b78b6e1a876ddd107d330f0168bddf09d751b57e0b5edce69c66f3"
+    },
+    {
+      "path": "website/vitest.config.ts",
+      "bytes": 276,
+      "sha256": "452be884389a3cad6b926102ae2444bc809f184ee490346822cbaac44c6ad0b4"
+    }
+  ]
+}

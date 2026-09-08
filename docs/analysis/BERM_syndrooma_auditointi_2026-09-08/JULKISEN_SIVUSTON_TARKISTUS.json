@@ -1,0 +1,154 @@
+{
+  "checked_utc": "2026-09-08T08:01:31.501458+00:00",
+  "scope": "HTTP availability and rendered semantic markers; not browser UI QA or proof of deployment commit",
+  "transport": "System curl with normal certificate verification; Python initial attempt failed due to its local CA configuration",
+  "pages": [
+    {
+      "url": "https://www.extinctionfield.com/fi",
+      "status": 200,
+      "bytes": 195375,
+      "sha256": "711c3f104802eb23cf475f9ad3f7b5c7ac849c4c5e41e04d74dbeaaa9247bfbc",
+      "title": "Extinction Field – BERM-tutkimusmalli",
+      "claim_ids": [],
+      "has_catsper": false,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/model",
+      "status": 200,
+      "bytes": 1798745,
+      "sha256": "0a697ed31d8a971aab20bff64ba6bd795bf1d1479d362e8ec4df58cbe6e14f29",
+      "title": "Mallin dokumentaatio - Extinction Field",
+      "claim_ids": [
+        "claim.androgen.binding-availability",
+        "claim.androgen.receptor-use-capacity",
+        "claim.bridge.conditional-response-operator",
+        "claim.bridge.state-conditioned-kernel",
+        "claim.cognition.biological-behavioural-weighting",
+        "claim.cognition.state-dependent-behaviour",
+        "claim.couple.fecundability-convergence",
+        "claim.geometry.quadratic-mixing",
+        "claim.geometry.rank-one-coordinate",
+        "claim.proxy.lindgren-selection",
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.synthesis.cross-species-transfer-prior",
+        "claim.synthesis.cry-clock-hpg-chain",
+        "claim.synthesis.graded-susceptibility",
+        "claim.synthesis.joint-endocrine-gate",
+        "claim.synthesis.protocol-state-heterogeneity",
+        "claim.synthesis.target-intervention-triangulation",
+        "claim.synthesis.vmem-calcium-interface",
+        "claim.tfr.multi-input-decomposition",
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "has_catsper": true,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/biology",
+      "status": 200,
+      "bytes": 211524,
+      "sha256": "d8cafae244f018adac16c7a2f615e0d0f8ace5bc0235f8420891fda31c1ca06f",
+      "title": "Biologia: muuttuva vastaanottava järjestelmä – Extinction Field",
+      "claim_ids": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "has_catsper": true,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/behavior",
+      "status": 200,
+      "bytes": 223969,
+      "sha256": "d8d2affe8477b37e9fc26334d2dc43a78b65be71c44eb35190496a464a6750fd",
+      "title": "Biologiasta haluun ja toimintaan – Extinction Field",
+      "claim_ids": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "has_catsper": false,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/modulome/pancreas",
+      "status": 200,
+      "bytes": 131714,
+      "sha256": "ee78ddea69110deb943f8637532ee25cda9be060b754fc0ba1492b7d06a2e033",
+      "title": "Haima – Modulome – Extinction Field",
+      "claim_ids": [],
+      "has_catsper": false,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/evidence/timothy-experiment",
+      "status": 200,
+      "bytes": 145434,
+      "sha256": "5f6200e122f91f038ea12686ebe419efc1baa66015ea8844f85e4d1dffb51f2d",
+      "title": "Timothyn oireyhtymä: Luonnon CACNA1C-kokeilu – Extinction Field",
+      "claim_ids": [],
+      "has_catsper": false,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/model/biological-coordination",
+      "status": 200,
+      "bytes": 332598,
+      "sha256": "68263d8040b2450dfc69bab4ff9a775ed6ed2b291cb057f2af209dbddc2d46fa",
+      "title": "Biologinen koordinaatio – Extinction Field",
+      "claim_ids": [
+        "claim.coordination.hormone-target-timing",
+        "claim.coordination.multiple-zeitgebers",
+        "claim.coordination.redox-clock",
+        "claim.couple.waiting-time-distribution",
+        "claim.cry.endocrine-gating",
+        "claim.encounter.network-propagation",
+        "claim.geometry.multisource-receptor-coupling",
+        "claim.receptor.chemical-memory",
+        "claim.receptor.state-dependent-response",
+        "claim.reproduction.local-clock-gates"
+      ],
+      "has_catsper": true,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/evidence/convergence",
+      "status": 200,
+      "bytes": 298834,
+      "sha256": "f535cb7789e27a8a2c6421598c042f24d345dc59cdf79ecceee0176eadba8620",
+      "title": "Miten tutkimusnäyttö yhdistyy – Extinction Field",
+      "claim_ids": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "has_catsper": true,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/evidence/reproductive-navigation",
+      "status": 200,
+      "bytes": 328433,
+      "sha256": "f4ec9a953a584d551897e741ebaa13e86162036b173c1582b6e13cd1669d2977",
+      "title": "Lisääntymiskykyyn liittyvä navigointi – Extinction Field",
+      "claim_ids": [
+        "claim.sperm.multi-parameter-decline"
+      ],
+      "has_catsper": true,
+      "has_timothy": true
+    },
+    {
+      "url": "https://www.extinctionfield.com/fi/map",
+      "status": 200,
+      "bytes": 511490,
+      "sha256": "f1331811b8faa3343eb558726ebb3af67bab95b41273f6af2831ed2bfa6d9761",
+      "title": "BERM-hypoteesiatlas – Extinction Field",
+      "claim_ids": [],
+      "has_catsper": true,
+      "has_timothy": true
+    }
+  ]
+}

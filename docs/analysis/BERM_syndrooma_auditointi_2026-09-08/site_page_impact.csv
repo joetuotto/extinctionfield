@@ -1,0 +1,45 @@
+file,route,role,published_exists,published_line,working_exists,working_line,state
+website/app/[locale]/evidence/timothy-experiment/page.tsx,/fi/evidence/timothy-experiment,Timothy-vertailun lähdekoe ja alaosakokonaisuus,True,82,True,82,identical
+website/app/[locale]/model/page.tsx,/fi/model#genetic-susceptibility,geenikartta ja sisäänvirtaus/poistuma/signaalintoisto,True,1538,True,1538,different
+website/lib/vgccGeneFamily.ts,/fi/model#vgcc-gene-family,CACNA1D ja varianttikohtaiset sairaudet,True,61,True,61,different
+website/app/[locale]/evidence/neurological-spectrum/page.tsx,/fi/evidence/neurological-spectrum,CACNA1A/FHM sekä kellopiiri,True,641,True,641,identical
+website/app/[locale]/modulome/page.tsx,/fi/modulome,"kompartmentti, vastaanotintila, vaurio, korjaus",True,147,True,147,identical
+website/app/[locale]/modulome/pancreas/page.tsx,/fi/modulome/pancreas,"KATP/DEND/CACNA1D/WFS1, erityksen ajoitus",True,24,True,24,identical
+website/app/[locale]/modulome/brain/page.tsx,/fi/modulome/brain,kehityksellinen vs akuutti biologinen tila,True,56,True,56,different
+website/app/[locale]/modulome/ear/page.tsx,/fi/modulome/ear,"CACNA1D/SANDD, sensorinen toiminto",True,26,True,26,identical
+website/app/[locale]/modulome/heart/page.tsx,/fi/modulome/heart,CACNA1C/CACNA1D/RYR2 ja kuormituskynnys,True,24,True,24,identical
+website/app/[locale]/modulome/bat/page.tsx,/fi/modulome/bat,ER-kalsiumkierto ja energia,True,30,True,30,identical
+website/app/[locale]/modulome/hypothalamus/page.tsx,/fi/modulome/hypothalamus,LEP/TAC3/kello: portitus ja motivaatio,True,10,True,10,identical
+website/app/[locale]/modulome/pituitary/page.tsx,/fi/modulome/pituitary,GnRH-pulssien välitys,True,10,True,10,different
+website/app/[locale]/modulome/adrenal/page.tsx,/fi/modulome/adrenal,PASNA/aldosteronismi,True,10,True,10,identical
+website/app/[locale]/modulome/testes/page.tsx,/fi/modulome/testes,"erotus steroidogeneesi, gamettien valmistus, kypsän siittiön toiminta",True,15,True,12,different
+website/app/[locale]/biology/page.tsx,/fi/biology,biologiset luonnolliset kokeet keskeiseksi tutkimusyhteydeksi,True,29,True,29,different
+website/app/[locale]/behavior/page.tsx,/fi/behavior#desire,"energiatila, halu ja toiminnalliset portit",True,22,True,22,identical
+website/app/[locale]/model/biological-coordination/page.tsx,/fi/model/biological-coordination#functional-gates,ehdollinen sarjaportti ja vastaanoton tila,True,44,True,43,different
+website/app/[locale]/evidence/page.tsx,/fi/evidence,lähdehakemisto ja tapauslinkit,True,112,True,112,different
+website/app/[locale]/evidence/convergence/page.tsx,/fi/evidence/convergence,geeni–interventio–päätepiste-tutkimusketju,True,16,True,16,different
+website/app/[locale]/evidence/response-conditions/page.tsx,/fi/evidence/response-conditions,evidenssikattojen täsmällinen uusjako,True,75,False,,published_only
+website/app/[locale]/evidence/pharmacology/page.tsx,/fi/evidence/pharmacology,farmakologinen rescue ja geenikorjaus,True,229,True,225,different
+website/app/[locale]/evidence/reproductive-navigation/page.tsx,/fi/evidence/reproductive-navigation,CatSper sisäänvirtaus/poistuma; PLCZ1 aktivaatio,True,140,True,140,identical
+website/app/[locale]/evidence/reproductive-arc/page.tsx,/fi/evidence/reproductive-arc,koko lisääntymisjatkumon portit,True,13,True,13,different
+website/app/[locale]/evidence/circadian/page.tsx,/fi/evidence/circadian,CRY/PER2/RAI1 vaihe ja signaalin ajoitus,True,16,True,15,different
+website/app/[locale]/evidence/gut-brain-axis/page.tsx,/fi/evidence/gut-brain-axis,PER2-rytmi kudosesteen alavirrassa,True,14,True,14,identical
+website/app/[locale]/evidence/cascades/page.tsx,/fi/evidence/cascades,KATP-kytkin ja multi-organ-kartta,True,70,True,70,different
+website/app/[locale]/evidence/klimentidis-explained/page.tsx,/fi/evidence/klimentidis-explained,energiatila ja leptiinivajeen rescue,True,66,True,66,identical
+website/app/[locale]/evidence/unbroken-chain/page.tsx,/fi/evidence/unbroken-chain,lähdekoe vs koko ketjun tulkinta,True,1,True,1,different
+website/app/[locale]/evidence/infant-vulnerability/page.tsx,/fi/evidence/infant-vulnerability,varhaiset geneettiset sairaudet ja laukaisijoiden ero,True,40,True,40,different
+website/app/[locale]/evidence/triple-strikes/page.tsx,/fi/evidence/triple-strikes,yhteisten välittäjien laskenta kerran,True,28,True,28,different
+website/app/[locale]/evidence/testosterone/page.tsx,/fi/evidence/testosterone,"pitoisuus, saatavuus, reseptoritoiminta",True,15,True,12,different
+website/app/[locale]/civilization/page.tsx,/fi/civilization,yksilöjakaumasta populaatioon erillisin säännöin,True,65,True,60,different
+website/app/[locale]/civilization/epistapege/page.tsx,/fi/civilization/epistapege,biologinen tila ja kerrottu syy,True,1,False,,published_only
+website/app/[locale]/civilization/patopoliteia/page.tsx,/fi/civilization/patopoliteia,RyR2-solututkimuksen nykyinen makrotulkinta,True,1,True,1,identical
+website/components/CivilizationReadingPath.tsx,/fi/civilization#individual-to-civilization,mittakaavojen yhteys,True,79,True,79,different
+website/components/BiologicalCoordinationContext.tsx,useita sivuja,jaettu selityslinkki,True,106,True,106,identical
+website/components/BiologicalCoordinationExplorer.tsx,/fi/model/biological-coordination,visualisointi ja oletusten ilmoittaminen,True,127,True,127,identical
+website/components/ConditionalScenarioExplorer.tsx,skenaariot,olemassa olevan datan parametrien käyttö,True,35,True,35,identical
+website/lib/navigation.ts,kaikki sivut,navigaation sisältö ja reittien säilytys,True,413,True,386,different
+website/components/ModelTableOfContents.tsx,/fi/model,sisällysluettelo,True,1,True,1,different
+website/lib/causalAtlasRegistry.ts,/fi/map,malli–atlas–mekanismikortti,True,40,True,39,different
+website/lib/causalAtlasData.ts,/fi/map,alaskaalojen näkymät ja opastetut reitit,True,49,True,48,different
+website/data/atlas-claim-bindings.json,/fi/map,väitteet oikeisiin solmuihin/kaariin,True,79,True,76,different
+website/data/causal-atlas-extensions.json,/fi/map,taudinimet haun aliaksiksi,True,6553,True,6553,different

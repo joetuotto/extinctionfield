@@ -1,0 +1,166 @@
+{
+  "checkedAt": "2026-09-07T17:51:24.303361+00:00",
+  "deploymentId": "dpl_4Y5nZQs2uoTojtiUXxVFj7r6ko5j",
+  "url": "extinctionfield-rn7p2u7lp-otto-juotes-projects.vercel.app",
+  "productionAliases": [
+    "www.extinctionfield.com",
+    "extinctionfield-mocha.vercel.app",
+    "extinctionfield.com",
+    "extinctionfield-otto-juotes-projects.vercel.app"
+  ],
+  "readyState": "READY",
+  "webTestsPassed": 323,
+  "modelFullSuitePassed": 2004,
+  "modelSlowTestsDeselected": 2,
+  "renderedRoutesPassed": 502,
+  "checks": [
+    {
+      "path": "/fi/map",
+      "status": 200,
+      "bytes": 424255,
+      "html": true
+    },
+    {
+      "path": "/fi/model/biological-coordination",
+      "status": 200,
+      "bytes": 273533,
+      "html": true
+    },
+    {
+      "path": "/fi/evidence/technology",
+      "status": 200,
+      "bytes": 189525,
+      "html": true
+    },
+    {
+      "path": "/fi/evidence/reproductive-navigation",
+      "status": 200,
+      "bytes": 271956,
+      "html": true
+    },
+    {
+      "path": "/fi/evidence/pharmacology",
+      "status": 200,
+      "bytes": 279231,
+      "html": true
+    },
+    {
+      "path": "/fi/sentinel",
+      "status": 200,
+      "bytes": 385938,
+      "html": true
+    },
+    {
+      "path": "/fi/model",
+      "status": 200,
+      "bytes": 1614332,
+      "html": true
+    },
+    {
+      "path": "/fi/evidence",
+      "status": 200,
+      "bytes": 2033533,
+      "html": true
+    },
+    {
+      "path": "/fi/references/kim2026_cell_gene_switch_correction",
+      "status": 200,
+      "bytes": 39724,
+      "html": true
+    },
+    {
+      "path": "/fi/references/catsper_2021",
+      "status": 200,
+      "bytes": 44086,
+      "html": true
+    },
+    {
+      "path": "/en/map",
+      "status": 200,
+      "bytes": 416454,
+      "html": true
+    },
+    {
+      "path": "/en/model/biological-coordination",
+      "status": 200,
+      "bytes": 271492,
+      "html": true
+    },
+    {
+      "path": "/en/evidence/technology",
+      "status": 200,
+      "bytes": 188179,
+      "html": true
+    },
+    {
+      "path": "/en/evidence/reproductive-navigation",
+      "status": 200,
+      "bytes": 272640,
+      "html": true
+    },
+    {
+      "path": "/en/evidence/pharmacology",
+      "status": 200,
+      "bytes": 290875,
+      "html": true
+    },
+    {
+      "path": "/en/sentinel",
+      "status": 200,
+      "bytes": 381666,
+      "html": true
+    },
+    {
+      "path": "/en/model",
+      "status": 200,
+      "bytes": 1602547,
+      "html": true
+    },
+    {
+      "path": "/en/evidence",
+      "status": 200,
+      "bytes": 2022270,
+      "html": true
+    },
+    {
+      "path": "/en/references/kim2026_cell_gene_switch_correction",
+      "status": 200,
+      "bytes": 39650,
+      "html": true
+    },
+    {
+      "path": "/en/references/catsper_2021",
+      "status": 200,
+      "bytes": 44012,
+      "html": true
+    },
+    {
+      "path": "/data/conditional-scenarios.json",
+      "status": 200,
+      "bytes": 1354140,
+      "sha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+      "matches_tested_release": true
+    },
+    {
+      "path": "/data/modulome-state.json",
+      "status": 200,
+      "bytes": 75206,
+      "sha256": "0c8d96b60b3278b79ac11ad0c1dc5946b27e299e6d5ab2f4f8acbb264a2d37ce",
+      "matches_tested_release": true
+    },
+    {
+      "path": "/data/references_full.json",
+      "status": 200,
+      "bytes": 1027461,
+      "sha256": "2046be1405e85023c7b70dca1870482abeea47118b5f2bb456684ec8283aa339",
+      "matches_tested_release": true
+    },
+    {
+      "path": "/data/global_panel.csv",
+      "status": 200,
+      "bytes": 3457189,
+      "sha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8",
+      "matches_tested_release": true
+    }
+  ]
+}

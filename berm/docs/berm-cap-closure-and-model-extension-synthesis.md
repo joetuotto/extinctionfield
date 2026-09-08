@@ -728,6 +728,12 @@ useita suoria kokeellisia siltoja.
 - **Nykyinen näyttö:** CatSper on siittiöspesifinen Ca²⁺-kanava ja välttämätön
   hyperaktivaatiolle ja hedelmöitykselle. Sivuston suora EMF–CatSper-väite
   nojaa pääosin ESHRE 2021 -konferenssiabstraktiin.
+  DOI `10.1093/humrep/deab130.035` koskee 50 Wistar-Albino-urosrottaa:
+  2100 MHz in vivo, 1 h/päivä 28 päivän ajan ja amlodipiini 1 mg/kg.
+  Motiliteetin ja siittiöiden Ca²⁺-päätepisteissä raportoitiin p < 0,05,
+  mutta parittelun ja elävänä syntymän vertailuissa p > 0,05.
+  CatSper-geenianalyysi oli abstraktin julkaisuhetkellä kesken.
+  Koe ei ole ihmisen yhden tunnin in vitro -koe eikä spesifinen CatSper-estokoe.
 - **Mallitäydennys:** `MALE_SPERM`-solmuun lisätään ehdollinen
   `CATSPER_STATE`, mutta suora EMF → CatSper -nuoli pidetään `[AVOIN]`, kunnes
   vertaisarvioitu täysi tutkimus määrittää signaalin, dosimetrian ja intervention.

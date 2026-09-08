@@ -41,6 +41,21 @@ function hasDeclaredTokenRenderer(source, relative) {
   return valid;
 }
 
+function hasExplanationTokenRenderer(source) {
+  // Hub pages pass their translated copy to these shared citation renderers.
+  // Verify both an actual import/use and the underlying renderer, rather than
+  // accepting an unused import or a comment containing the component name.
+  const imported = source.match(/import\s*\{([^}]+)\}\s*from\s*["']@\/components\/ExplanationHub["']/);
+  if (!imported) return false;
+  const names = imported[1].split(",").map((name) => name.trim());
+  const used = ["ExplanationText", "ResearchConnection", "ExplanationHub"].some(
+    (name) => names.includes(name) && new RegExp(`<${name}\\b`).test(source),
+  );
+  if (!used) return false;
+  const renderer = path.join(ROOT, "components", "ExplanationHub.tsx");
+  return fs.existsSync(renderer) && fs.readFileSync(renderer, "utf8").includes("<InlineReferenceText");
+}
+
 function walk(directory) {
   const files = [];
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -93,13 +108,13 @@ for (const reference of registry.references) {
   const fingerprint = bibliographicFingerprint(reference);
   if (fingerprint) {
     const previous = bibliographicFingerprints.get(fingerprint);
-    if (previous) {
+    if (previous && reference.correctionOf !== previous && registry.references.find((r) => r.id === previous)?.correctionOf !== reference.id) {
       fail(
         `Duplicate title/year bibliography: ${previous}, ${reference.id} ` +
           `(${reference.year}: ${reference.title})`,
       );
     }
-    bibliographicFingerprints.set(fingerprint, reference.id);
+    if (!previous || !reference.correctionOf) bibliographicFingerprints.set(fingerprint, reference.id);
   }
 
   for (const alias of reference.aliases ?? []) {
@@ -150,6 +165,8 @@ for (const reference of registry.references) {
   const expectedUrl = expectedExternalUrl(reference);
   if (generated.externalUrl !== expectedUrl) fail(`${reference.id}: generated external URL does not match canonical precedence/status`);
   if (generated.linkStatus !== reference.link_status) fail(`${reference.id}: generated link status is stale`);
+  if (generated.correctionOf !== reference.correctionOf) fail(`${reference.id}: generated correction identity is stale`);
+  if (JSON.stringify(generated.corrections ?? []) !== JSON.stringify(reference.corrections ?? [])) fail(`${reference.id}: generated correction links are stale`);
   if (reference.link_status === "verified" && !expectedUrl) {
     fail(`${reference.id}: ${reference.link_status} record has no publishable DOI, PMCID, PMID or HTTPS URL`);
   }
@@ -189,7 +206,7 @@ for (const directory of ["app", "components", "lib"]) {
     for (const match of referenceTokens) used.set(match[1], relative);
     const tokenStarts = source.match(/\[\[ref:/g)?.length ?? 0;
     if (tokenStarts !== referenceTokens.length) fail(`${relative}: malformed explicit reference token`);
-    if (tokenStarts > 0 && !source.includes("<InlineReferenceText") && !hasDeclaredTokenRenderer(source, relative)) {
+    if (tokenStarts > 0 && !source.includes("<InlineReferenceText") && !hasExplanationTokenRenderer(source) && !hasDeclaredTokenRenderer(source, relative)) {
       fail(`${relative}: explicit reference token is not rendered through InlineReferenceText`);
     }
 

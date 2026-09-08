@@ -5,6 +5,8 @@ import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { ResearchReadingGuide } from "@/components/ResearchReadingGuide";
+import { AboutTabs } from "@/components/AboutTabs";
 
 const COPY = {
   en: {
@@ -998,7 +1000,10 @@ export default async function EpistemologyPage({
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 sm:py-20">
+      <AboutTabs locale={locale} />
       <PageHeader icon={Scale} title={d.title} subtitle={d.subtitle} />
+
+      <ResearchReadingGuide locale={locale} context="epistemology" />
 
       <div className="mt-8">
         <CautionBox locale={locale}>

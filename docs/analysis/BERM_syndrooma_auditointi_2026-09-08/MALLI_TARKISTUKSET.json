@@ -1,0 +1,29 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_lindgren_response.py",
+    "tests/test_intervention_protocol.py",
+    "tests/test_intervention_registry.py",
+    "tests/test_modulome.py",
+    "tests/test_modulome_reproductive_route.py",
+    "tests/test_biological_coordination.py",
+    "tests/test_cross_pathway_synthesis.py",
+    "tests/test_androgen_capacity.py",
+    "tests/test_reproductive_waiting.py",
+    "tests/test_reproductive_calendar.py",
+    "tests/test_catsper_evidence_scope.py",
+    "tests/test_epistapege.py",
+    "tests/test_interaction_operators.py",
+    "tests/test_evidence_constraints.py"
+  ],
+  "cwd": "/Users/ottojuote/.berm-navigation-repair-20260908/berm",
+  "exit_code": 0,
+  "duration_seconds": 8.54,
+  "scope": "Existing model contracts, composition and biological dynamics; not empirical validation",
+  "tail": "........................................................................ [ 30%]\n........................................................................ [ 61%]\n........................................................................ [ 91%]\n...................                                                      [100%]\n235 passed in 7.96s\n"
+}

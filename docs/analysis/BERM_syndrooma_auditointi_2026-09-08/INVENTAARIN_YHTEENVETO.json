@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-09-08T07:51:21.839065+00:00",
+  "scope": [
+    "berm/berm",
+    "berm/docs",
+    "berm/tests",
+    "berm/data/evidence",
+    "website/app",
+    "website/components",
+    "website/lib",
+    "website/data",
+    "website/public/data",
+    "website/scripts"
+  ],
+  "keyword_hits_are_not_evidence_relations": true,
+  "versions": {
+    "working": {
+      "root": "/Volumes/kovalevy 3/extinctionfield",
+      "head": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+      "branch": "feat/mechanism-candidate",
+      "scoped_file_count": 696
+    },
+    "published_source": {
+      "root": "/Users/ottojuote/.berm-navigation-repair-20260908",
+      "head": "0840703960d8c044d4224c0fd6e1d963f5ac5a3a",
+      "branch": "codex/restore-navigation-20260908",
+      "scoped_file_count": 743
+    }
+  },
+  "comparison_counts": {
+    "same": 566,
+    "different": 130,
+    "working_only": 0,
+    "published_only": 47
+  },
+  "model_hit_files": {
+    "working": 211,
+    "published_source": 229
+  },
+  "model_family_files": {
+    "working": {
+      "timothy_cacna1": 8,
+      "katp": 0,
+      "soce": 0,
+      "er_reserve": 21,
+      "ryr": 4,
+      "clock": 39,
+      "gnrh": 5,
+      "leptin_motivation": 42,
+      "fertilization": 15,
+      "downstream": 183
+    },
+    "published_source": {
+      "timothy_cacna1": 12,
+      "katp": 0,
+      "soce": 0,
+      "er_reserve": 28,
+      "ryr": 8,
+      "clock": 46,
+      "gnrh": 5,
+      "leptin_motivation": 44,
+      "fertilization": 16,
+      "downstream": 197
+    }
+  }
+}

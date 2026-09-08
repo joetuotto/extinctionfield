@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1134,
-    "linkedReferences": 466
+    "totalReferences": 1156,
+    "linkedReferences": 489
   },
   "references": {
     "5g_hpa_axis": {
@@ -318,13 +318,13 @@
     },
     "catsper_2021": {
       "id": "catsper_2021",
-      "authors": "",
-      "year": 0,
-      "title": "",
-      "journal": null,
-      "type": null,
-      "linkStatus": "pending",
-      "externalUrl": null
+      "authors": "Ayas B, Kocaman A",
+      "year": 2021,
+      "title": "P–036 Investigation of the 2100 MHz electromagnetic field effects on sperm CatSper calcium channel",
+      "journal": "Human Reproduction 36(Supplement_1):deab130.035",
+      "type": "conference-abstract",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/humrep/deab130.035"
     },
     "catsper_review": {
       "id": "catsper_review",
@@ -2374,7 +2374,8 @@
       "journal": "Environment International",
       "type": "corrigendum",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.envint.2025.109449"
+      "externalUrl": "https://doi.org/10.1016/j.envint.2025.109449",
+      "correctionOf": "cordelli2024"
     },
     "covid_6mo_recovery_2025": {
       "id": "covid_6mo_recovery_2025",
@@ -7284,7 +7285,10 @@
       "journal": "Environment International",
       "type": "report",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.envint.2024.108509"
+      "externalUrl": "https://doi.org/10.1016/j.envint.2024.108509",
+      "corrections": [
+        "cordelli2025_corrigendum"
+      ]
     },
     "cordelli2024_who": {
       "id": "cordelli2024_who",
@@ -8914,7 +8918,10 @@
       "journal": "Cell",
       "type": "journal",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1016/j.cell.2026.03.029"
+      "externalUrl": "https://doi.org/10.1016/j.cell.2026.03.029",
+      "corrections": [
+        "kim2026_cell_gene_switch_correction"
+      ]
     },
     "nature_comms_2026_ttype": {
       "id": "nature_comms_2026_ttype",
@@ -11314,7 +11321,10 @@
       "journal": "PLoS biology",
       "type": "journal",
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.1371/journal.pbio.3001733"
+      "externalUrl": "https://doi.org/10.1371/journal.pbio.3001733",
+      "corrections": [
+        "bensimon2023_sleep_helping_correction"
+      ]
     },
     "knop2017_night_pollination": {
       "id": "knop2017_night_pollination",
@@ -11345,6 +11355,228 @@
       "type": "preprint",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.48550/arXiv.2604.19579"
+    },
+    "goertemaker2022_cry4a_gtalpha": {
+      "id": "goertemaker2022_cry4a_gtalpha",
+      "authors": "Görtemaker K, Yee C, Bartölke R, Behrmann H, Voß JO, Schmidt J, Xu J, Solovyeva V, Leberecht B, Behrmann E, Mouritsen H, Koch KW",
+      "year": 2022,
+      "title": "Direct Interaction of Avian Cryptochrome 4 with a Cone Specific G-Protein",
+      "journal": "Cells 11(13):2043",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/cells11132043"
+    },
+    "yee2023_opsin_gtalpha": {
+      "id": "yee2023_opsin_gtalpha",
+      "authors": "Yee C, Görtemaker K, Wellpott R, Koch KW",
+      "year": 2023,
+      "title": "Kinetics of cone specific G-protein signaling in avian photoreceptor cells",
+      "journal": "Frontiers in Molecular Neuroscience 16:1107025",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3389/fnmol.2023.1107025"
+    },
+    "kim2026_cell_gene_switch_correction": {
+      "id": "kim2026_cell_gene_switch_correction",
+      "authors": "Kim J, Hwang Y, Kim S, Kwon D, Park J, Cho B, An S, Kang S, Kim Y, Kim S, Lengner CJ, Kim S, Kwon Y, Sung JS, Kim J.",
+      "year": 2026,
+      "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression.",
+      "journal": "Cell",
+      "type": "correction",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.cell.2026.06.020",
+      "correctionOf": "kim2026_cell_gene_switch"
+    },
+    "manella2026_cry2_steroid_clock": {
+      "id": "manella2026_cry2_steroid_clock",
+      "authors": "Manella G, Ezagouri S, Bolshette N, Kramer A, Golik M, Adamovich Y, Asher G.",
+      "year": 2025,
+      "title": "Steroid hormone receptors through Cry2 are key players in the circadian clock response to serum",
+      "journal": "Nature communications",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41467-025-67349-5"
+    },
+    "rizzini2019_cry_cop1": {
+      "id": "rizzini2019_cry_cop1",
+      "authors": "Rizzini L, Levine DC, Perelis M, Bass J, Peek CB, Pagano M.",
+      "year": 2019,
+      "title": "Cryptochromes-Mediated Inhibition of the CRL4Cop1-Complex Assembly Defines an Evolutionary Conserved Signaling Mechanism",
+      "journal": "Current biology : CB",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.cub.2019.04.073"
+    },
+    "dufor2019_cry_magnetic_repair": {
+      "id": "dufor2019_cry_magnetic_repair",
+      "authors": "Dufor T, Grehl S, Tang AD, Doulazmi M, Traoré M, Debray N, Dubacq C, Deng ZD, Mariani J, Lohof AM, Sherrard RM.",
+      "year": 2019,
+      "title": "Neural circuit repair by low-intensity magnetic stimulation requires cellular magnetoreceptors and specific stimulation patterns",
+      "journal": "Science advances",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/sciadv.aav9847"
+    },
+    "bradlaugh2023_cry_fad": {
+      "id": "bradlaugh2023_cry_fad",
+      "authors": "Bradlaugh AA, Fedele G, Munro AL, Hansen CN, Hares JM, Patel S, Kyriacou CP, Jones AR, Rosato E, Baines RA.",
+      "year": 2023,
+      "title": "Essential elements of radical pair magnetosensitivity in Drosophila",
+      "journal": "Nature",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41586-023-05735-z"
+    },
+    "fogle2015_cry_redox": {
+      "id": "fogle2015_cry_redox",
+      "authors": "Fogle KJ, Baik LS, Houl JH, Tran TT, Roberts L, Dahm NA, Cao Y, Zhou M, Holmes TC.",
+      "year": 2015,
+      "title": "CRYPTOCHROME-mediated phototransduction by modulation of the potassium ion channel β-subunit redox sensor",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.1416586112"
+    },
+    "finkelstein2013_gonadal_steroids": {
+      "id": "finkelstein2013_gonadal_steroids",
+      "authors": "Finkelstein JS, Lee H, Burnett-Bowie SA, Pallais JC, Yu EW, Borges LF, Jones BF, Barry CV, Wulczyn KE, Thomas BJ, Leder BZ.",
+      "year": 2013,
+      "title": "Gonadal steroids and body composition, strength, and sexual function in men",
+      "journal": "The New England journal of medicine",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1056/nejmoa1206168"
+    },
+    "mills2023_kisspeptin": {
+      "id": "mills2023_kisspeptin",
+      "authors": "Mills EG, Ertl N, Wall MB, Thurston L, Yang L, Suladze S, Hunjan T, Phylactou M, Patel B, Muzi B, Ettehad D, Bassett PA, Howard J, Rabiner EA, Bech P, Abbara A, Goldmeier D, Comninos AN, Dhillo WS.",
+      "year": 2023,
+      "title": "Effects of Kisspeptin on Sexual Brain Processing and Penile Tumescence in Men With Hypoactive Sexual Desire Disorder: A Randomized Clinical Trial",
+      "journal": "JAMA network open",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1001/jamanetworkopen.2022.54313"
+    },
+    "westbrook2020_dopamine_effort": {
+      "id": "westbrook2020_dopamine_effort",
+      "authors": "Westbrook A, van den Bosch R, Määttä JI, Hofmans L, Papadopetraki D, Cools R, Frank MJ.",
+      "year": 2020,
+      "title": "Dopamine promotes cognitive effort by biasing the benefits versus costs of cognitive work",
+      "journal": "Science (New York, N.Y.)",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.aaz5891"
+    },
+    "westbrook2025_dopamine_learning": {
+      "id": "westbrook2025_dopamine_learning",
+      "authors": "Westbrook A, van den Bosch R, Hofmans L, Papadopetraki D, Määttä JI, Collins AGE, Frank MJ, Cools R.",
+      "year": 2025,
+      "title": "Striatal dopamine can enhance both fast working memory, and slow reinforcement learning, while reducing implicit effort cost sensitivity",
+      "journal": "Nature communications",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41467-025-61099-0"
+    },
+    "jurgelis2022_sleep_effort": {
+      "id": "jurgelis2022_sleep_effort",
+      "authors": "Jurgelis M, Boardman JM, Coxon JP, Drummond SPA, Chong TTJ.",
+      "year": 2022,
+      "title": "Sleep Restriction Reduces Cognitive but Not Physical Motivation",
+      "journal": "Nature and science of sleep",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.2147/nss.s368335"
+    },
+    "draper2018_inflammation_effort": {
+      "id": "draper2018_inflammation_effort",
+      "authors": "Draper A, Koch RM, van der Meer JW, Aj Apps M, Pickkers P, Husain M, van der Schaaf ME.",
+      "year": 2018,
+      "title": "Effort but not Reward Sensitivity is Altered by Acute Sickness Induced by Experimental Endotoxemia in Humans",
+      "journal": "Neuropsychopharmacology : official publication of the American College of Neuropsychopharmacology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/npp.2017.231"
+    },
+    "crockett2015_harm_aversion": {
+      "id": "crockett2015_harm_aversion",
+      "authors": "Crockett MJ, Siegel JZ, Kurth-Nelson Z, Ousdal OT, Story G, Frieband C, Grosse-Rueskamp JM, Dayan P, Dolan RJ.",
+      "year": 2015,
+      "title": "Dissociable Effects of Serotonin and Dopamine on the Valuation of Harm in Moral Decision Making",
+      "journal": "Current biology : CB",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.cub.2015.05.021"
+    },
+    "strang2017_nutrition_decisions": {
+      "id": "strang2017_nutrition_decisions",
+      "authors": "Strang S, Hoeber C, Uhl O, Koletzko B, Münte TF, Lehnert H, Dolan RJ, Schmid SM, Park SQ.",
+      "year": 2017,
+      "title": "Impact of nutrition on social decision making",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.1620245114"
+    },
+    "johansson2005_choice_blindness": {
+      "id": "johansson2005_choice_blindness",
+      "authors": "Johansson P, Hall L, Sikström S, Olsson A.",
+      "year": 2005,
+      "title": "Failure to detect mismatches between intention and outcome in a simple decision task",
+      "journal": "Science (New York, N.Y.)",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1111709"
+    },
+    "eisenegger2010_testosterone_fairness": {
+      "id": "eisenegger2010_testosterone_fairness",
+      "authors": "Eisenegger C, Naef M, Snozzi R, Heinrichs M, Fehr E.",
+      "year": 2010,
+      "title": "Prejudice and truth about the effect of testosterone on human bargaining behaviour",
+      "journal": "Nature",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/nature08711"
+    },
+    "weisman2012_oxytocin_dyad": {
+      "id": "weisman2012_oxytocin_dyad",
+      "authors": "Weisman O, Zagoory-Sharon O, Feldman R.",
+      "year": 2012,
+      "title": "Oxytocin administration to parent enhances infant physiological and behavioral readiness for social engagement",
+      "journal": "Biological psychiatry",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.biopsych.2012.06.011"
+    },
+    "lim2026_sleep_learning": {
+      "id": "lim2026_sleep_learning",
+      "authors": "Lim JYL, Bennett D, Drummond SPA.",
+      "year": 2026,
+      "title": "Sleep restriction increases reward sensitivity during sequential updating",
+      "journal": "Sleep",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/sleep/zsaf354"
+    },
+    "paluck2016_network_conflict": {
+      "id": "paluck2016_network_conflict",
+      "authors": "Paluck EL, Shepherd H, Aronow PM.",
+      "year": 2016,
+      "title": "Changing climates of conflict: A social network experiment in 56 schools",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.1514483113"
+    },
+    "bensimon2023_sleep_helping_correction": {
+      "id": "bensimon2023_sleep_helping_correction",
+      "authors": "Simon EB, Vallat R, Rossi A, Walker MP.",
+      "year": 2023,
+      "title": "Correction: Sleep loss leads to the withdrawal of human helping across individuals, groups, and large-scale societies",
+      "journal": "PLoS biology",
+      "type": "correction",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1371/journal.pbio.3002394",
+      "correctionOf": "bensimon2022_sleep_helping"
     }
   },
   "aliases": {
@@ -12384,6 +12616,68 @@
     "doi:10.1073/pnas.1714239115": "kalafatakis2018_cortisol_pulsatility",
     "pmcid:PMC5924881": "kalafatakis2018_cortisol_pulsatility",
     "pmid:29632168": "kalafatakis2018_cortisol_pulsatility",
-    "doi:10.48550/arxiv.2604.19579": "kish2026_cry4a_allostery"
+    "doi:10.48550/arxiv.2604.19579": "kish2026_cry4a_allostery",
+    "doi:10.3390/cells11132043": "goertemaker2022_cry4a_gtalpha",
+    "pmcid:PMC9265643": "goertemaker2022_cry4a_gtalpha",
+    "pmid:35805127": "goertemaker2022_cry4a_gtalpha",
+    "doi:10.3389/fnmol.2023.1107025": "yee2023_opsin_gtalpha",
+    "pmcid:PMC9887155": "yee2023_opsin_gtalpha",
+    "pmid:36733826": "yee2023_opsin_gtalpha",
+    "doi:10.1016/j.cell.2026.06.020": "kim2026_cell_gene_switch_correction",
+    "pmid:42372722": "kim2026_cell_gene_switch_correction",
+    "doi:10.1038/s41467-025-67349-5": "manella2026_cry2_steroid_clock",
+    "pmcid:PMC12819556": "manella2026_cry2_steroid_clock",
+    "pmid:41354650": "manella2026_cry2_steroid_clock",
+    "doi:10.1016/j.cub.2019.04.073": "rizzini2019_cry_cop1",
+    "pmcid:PMC6581574": "rizzini2019_cry_cop1",
+    "pmid:31155351": "rizzini2019_cry_cop1",
+    "doi:10.1126/sciadv.aav9847": "dufor2019_cry_magnetic_repair",
+    "pmcid:PMC6821463": "dufor2019_cry_magnetic_repair",
+    "pmid:31692960": "dufor2019_cry_magnetic_repair",
+    "doi:10.1038/s41586-023-05735-z": "bradlaugh2023_cry_fad",
+    "pmcid:PMC9977682": "bradlaugh2023_cry_fad",
+    "pmid:36813962": "bradlaugh2023_cry_fad",
+    "doi:10.1073/pnas.1416586112": "fogle2015_cry_redox",
+    "pmcid:PMC4343116": "fogle2015_cry_redox",
+    "pmid:25646452": "fogle2015_cry_redox",
+    "doi:10.1056/nejmoa1206168": "finkelstein2013_gonadal_steroids",
+    "pmcid:PMC4142768": "finkelstein2013_gonadal_steroids",
+    "pmid:24024838": "finkelstein2013_gonadal_steroids",
+    "doi:10.1001/jamanetworkopen.2022.54313": "mills2023_kisspeptin",
+    "pmcid:PMC9898824": "mills2023_kisspeptin",
+    "pmid:36735255": "mills2023_kisspeptin",
+    "doi:10.1126/science.aaz5891": "westbrook2020_dopamine_effort",
+    "pmcid:PMC7430502": "westbrook2020_dopamine_effort",
+    "pmid:32193325": "westbrook2020_dopamine_effort",
+    "doi:10.1038/s41467-025-61099-0": "westbrook2025_dopamine_learning",
+    "pmcid:PMC12241355": "westbrook2025_dopamine_learning",
+    "pmid:40634287": "westbrook2025_dopamine_learning",
+    "doi:10.2147/nss.s368335": "jurgelis2022_sleep_effort",
+    "pmcid:PMC9642807": "jurgelis2022_sleep_effort",
+    "pmid:36394069": "jurgelis2022_sleep_effort",
+    "doi:10.1038/npp.2017.231": "draper2018_inflammation_effort",
+    "pmcid:PMC5854801": "draper2018_inflammation_effort",
+    "pmid:28948979": "draper2018_inflammation_effort",
+    "doi:10.1016/j.cub.2015.05.021": "crockett2015_harm_aversion",
+    "pmcid:PMC4518463": "crockett2015_harm_aversion",
+    "pmid:26144968": "crockett2015_harm_aversion",
+    "doi:10.1073/pnas.1620245114": "strang2017_nutrition_decisions",
+    "pmcid:PMC5488927": "strang2017_nutrition_decisions",
+    "pmid:28607064": "strang2017_nutrition_decisions",
+    "doi:10.1126/science.1111709": "johansson2005_choice_blindness",
+    "pmid:16210542": "johansson2005_choice_blindness",
+    "doi:10.1038/nature08711": "eisenegger2010_testosterone_fairness",
+    "pmid:19997098": "eisenegger2010_testosterone_fairness",
+    "doi:10.1016/j.biopsych.2012.06.011": "weisman2012_oxytocin_dyad",
+    "pmid:22795645": "weisman2012_oxytocin_dyad",
+    "doi:10.1093/sleep/zsaf354": "lim2026_sleep_learning",
+    "pmcid:PMC13017762": "lim2026_sleep_learning",
+    "pmid:41206488": "lim2026_sleep_learning",
+    "doi:10.1073/pnas.1514483113": "paluck2016_network_conflict",
+    "pmcid:PMC4725542": "paluck2016_network_conflict",
+    "pmid:26729884": "paluck2016_network_conflict",
+    "doi:10.1371/journal.pbio.3002394": "bensimon2023_sleep_helping_correction",
+    "pmcid:PMC10651221": "bensimon2023_sleep_helping_correction",
+    "pmid:37967305": "bensimon2023_sleep_helping_correction"
   }
 }

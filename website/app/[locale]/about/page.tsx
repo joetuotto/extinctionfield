@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Info } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { ModelReadingPath } from "@/components/ModelReadingPath";
+import { ModelScopeIntro } from "@/components/ModelScopeIntro";
+import { ResearchReadingGuide } from "@/components/ResearchReadingGuide";
 
 type Principle = { num: string; bold: string; text: string };
 type Copy = {
@@ -37,10 +40,10 @@ const t: Record<string, Copy> = {
   en: {
     title: "About BERM",
     subtitle:
-      "A research programme for testing a measurement-aware field-to-reproduction hypothesis without collapsing exposure, biology and demography into one score.",
-    whatTitle: "What is the active BERM specification?",
+      "An open research programme connecting physical conditions, biological regulation, motivation and interaction to population and civilizational change.",
+    whatTitle: "The reproductive calculation routes",
     whatText: [
-      "BERM (Bio-Electromagnetic Reproductive Model) is an open research model. Its active BERM v17 specification asks whether a documented physical field state can be linked, through measured organ and couple endpoints, to age-specific fertility patterns.",
+      "One BERM application connects documented physical field conditions, organ function and couple outcomes to age-specific fertility patterns. The published v17 calculations are a versioned reproductive application within the wider explanatory model.",
       "It does not treat mobile subscriptions as an EMF dose, and it does not infer an individual biological effect from a country TFR series. The upstream Lindgren formulation is a theory-level premise that motivates testable field-state features; it is not a population-effect estimate.",
     ],
     principlesTitle: "Working principles",
@@ -58,7 +61,7 @@ const t: Record<string, Copy> = {
       {
         num: "03",
         bold: "ASFR before TFR.",
-        text: "TFR is a period sum of age-specific fertility rates. Demand/opportunity, tempo and ART/live-birth delivery remain explicit demographic inputs rather than residual biology.",
+        text: "TFR is a period sum of age-specific fertility rates. Demand and opportunity, timing, and ART/live-birth outcomes remain named calculation terms. BERM continues their explanation through biological motivation, interaction and action.",
       },
       {
         num: "04",
@@ -103,10 +106,10 @@ const t: Record<string, Copy> = {
   fi: {
     title: "Tietoa BERM:stä",
     subtitle:
-      "Tutkimusohjelma, joka testaa mittaustietoista kenttä–lisääntyminen-hypoteesia tiivistämättä altistusta, biologiaa ja demografiaa yhdeksi luvuksi.",
-    whatTitle: "Mikä on BERM:n aktiivinen määrittely?",
+      "Avoin tutkimusohjelma, joka yhdistää fysikaaliset olosuhteet, biologisen säätelyn, motivaation ja vuorovaikutuksen väestö- ja sivilisaatiokehitykseen.",
+    whatTitle: "Lisääntymisen laskentareitit",
     whatText: [
-      "BERM (Bio-Electromagnetic Reproductive Model) on avoin tutkimusmalli. Sen aktiivinen BERM v17-määrittely kysyy, voidaanko dokumentoitu fysikaalinen kenttätila yhdistää mitattujen elin- ja paripäätepisteiden kautta ikäkohtaisten hedelmällisyyslukujen kehitykseen.",
+      "Yksi BERM:n sovellus yhdistää dokumentoidut fysikaaliset kenttäolosuhteet, elinten toiminnan ja paripäätepisteet ikäkohtaisten hedelmällisyyslukujen kehitykseen. Julkaistut v17-laskelmat ovat laajan selitysmallin versioitu lisääntymissovellus.",
       "Se ei käsittele mobiililiittymiä EMF-annoksena eikä päättele yksilön biologista vaikutusta maan TFR-sarjasta. Edeltävä Lindgren-muotoilu on teoriatason premissi, joka motivoi testattavia FieldState-piirteitä; se ei ole väestövaikutusarvio.",
     ],
     principlesTitle: "Toimintaperiaatteet",
@@ -124,7 +127,7 @@ const t: Record<string, Copy> = {
       {
         num: "03",
         bold: "ASFR ennen TFR:ää.",
-        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät nimenomaisina demografisina syötteinä, eivät biologian residuaaleina.",
+        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä ja mahdollisuudet, ajoitus sekä ART- ja elävänä syntymisen tulokset säilyvät nimettyinä laskentatekijöinä. BERM jatkaa niiden selittämistä biologisen motivaation, vuorovaikutuksen ja toiminnan kautta.",
       },
       {
         num: "04",
@@ -169,10 +172,10 @@ const t: Record<string, Copy> = {
   ja: {
     title: "BERMについて",
     subtitle:
-      "曝露・生物学・人口統計学を単一のスコアに統合せず、測定に基づくフィールド対生殖仮説を検証する研究プログラム。",
-    whatTitle: "BERMの現行仕様とは？",
+      "物理的条件、生物学的調節、動機、相互作用を、人口動態と文明の変化に結び付ける公開研究プログラム。",
+    whatTitle: "生殖を扱う計算経路",
     whatText: [
-      "BERM（Bio-Electromagnetic Reproductive Model）はオープンな研究モデルです。現行のBERM v17仕様は、文書化された物理的フィールド状態が、測定された臓器およびカップルのエンドポイントを通じて、年齢別出生率パターンに関連付けられるかどうかを問います。",
+      "BERMの一つの応用は、記録された物理的な場の条件、臓器機能、カップルの結果を年齢別出生率の推移に結び付けます。公開されたv17の計算は、より広い説明モデルの中で版管理された生殖の応用です。",
       "携帯電話の契約数をEMF線量として扱わず、国のTFR時系列から個人の生物学的影響を推測しません。上流のLindgren定式化は、検証可能なFieldState特徴を動機づける理論レベルの前提であり、集団影響の推定値ではありません。",
     ],
     principlesTitle: "活動原則",
@@ -190,7 +193,7 @@ const t: Record<string, Copy> = {
       {
         num: "03",
         bold: "TFRの前にASFR。",
-        text: "TFRは年齢別出生率の期間合計です。需要/機会、テンポ、ART/出生分娩は、残余の生物学ではなく、明示的な人口統計学的入力として残ります。",
+        text: "TFRは年齢別出生率の期間合計です。希望と機会、時期、ARTおよび生児獲得の結果は、計算上の明示的な項として扱います。BERMはそれらを生物学的な動機、相互作用、行動を通じて説明します。",
       },
       {
         num: "04",
@@ -235,10 +238,10 @@ const t: Record<string, Copy> = {
   fr: {
     title: "À propos de BERM",
     subtitle:
-      "Un programme de recherche visant à tester une hypothèse champ-reproduction tenant compte des mesures, sans réduire l'exposition, la biologie et la démographie en un score unique.",
-    whatTitle: "Quelle est la spécification BERM active ?",
+      "Un programme de recherche ouvert reliant les conditions physiques, la régulation biologique, la motivation et l’interaction aux évolutions démographiques et civilisationnelles.",
+    whatTitle: "Les voies de calcul reproductif",
     whatText: [
-      "BERM (Bio-Electromagnetic Reproductive Model) est un modèle de recherche ouvert. Sa spécification active BERM v17 examine si un état de champ physique documenté peut être relié, via des endpoints d'organes et de couples mesurés, aux schémas de fécondité par âge.",
+      "Une application de BERM relie les conditions physiques documentées, la fonction des organes et les résultats du couple aux taux de fécondité par âge. Les calculs v17 publiés constituent une application reproductive versionnée au sein du modèle explicatif plus large.",
       "Il ne traite pas les abonnements mobiles comme une dose d'EMF et n'infère pas un effet biologique individuel à partir d'une série TFR nationale. La formulation Lindgren en amont est une prémisse de niveau théorique qui motive des caractéristiques FieldState testables ; ce n'est pas une estimation d'effet populationnel.",
     ],
     principlesTitle: "Principes de travail",
@@ -256,7 +259,7 @@ const t: Record<string, Copy> = {
       {
         num: "03",
         bold: "ASFR avant TFR.",
-        text: "Le TFR est une somme périodique des taux de fécondité par âge. La demande/opportunité, le tempo et la livraison ART/naissance vivante restent des entrées démographiques explicites plutôt qu'une biologie résiduelle.",
+        text: "L’ISF est une somme des taux de fécondité par âge sur une période. Demande et possibilités, calendrier, PMA et naissances vivantes restent des termes de calcul explicites. BERM poursuit leur explication par la motivation biologique, l’interaction et l’action.",
       },
       {
         num: "04",
@@ -301,10 +304,10 @@ const t: Record<string, Copy> = {
   ko: {
     title: "BERM에 대하여",
     subtitle:
-      "노출, 생물학, 인구통계학을 단일 점수로 축소하지 않고 측정 기반 전자기장-생식 가설을 검증하는 연구 프로그램.",
-    whatTitle: "현행 BERM 사양이란?",
+      "물리적 조건, 생물학적 조절, 동기와 상호작용을 인구 및 문명 변화에 연결하는 공개 연구 프로그램.",
+    whatTitle: "생식 계산 경로",
     whatText: [
-      "BERM(Bio-Electromagnetic Reproductive Model)은 개방형 연구 모델입니다. 현행 BERM v17 사양은 문서화된 물리적 전자기장 상태가 측정된 장기 및 커플 종점을 통해 연령별 출산율 패턴과 연결될 수 있는지를 검토합니다.",
+      "BERM의 한 응용은 기록된 물리적 장 조건, 장기 기능과 커플의 결과를 연령별 출산율 변화에 연결합니다. 공개된 v17 계산은 더 넓은 설명 모델 안에서 버전 관리되는 생식 응용입니다.",
       "이동통신 가입 건수를 EMF 선량으로 취급하지 않으며, 국가 TFR 시계열로부터 개인의 생물학적 효과를 추론하지 않습니다. 상위 Lindgren 공식화는 검증 가능한 FieldState 특성을 제시하는 이론 수준의 전제이며, 인구 효과 추정치가 아닙니다.",
     ],
     principlesTitle: "활동 원칙",
@@ -322,7 +325,7 @@ const t: Record<string, Copy> = {
       {
         num: "03",
         bold: "TFR 전에 ASFR.",
-        text: "TFR은 연령별 출산율의 기간 합계입니다. 수요/기회, 템포, ART/생아 분만은 잔여 생물학이 아닌 명시적 인구통계학적 입력으로 유지됩니다.",
+        text: "TFR은 연령별 출산율의 기간 합입니다. 희망과 기회, 시점, 보조생식 및 생존 출생 결과는 명시된 계산 항으로 유지합니다. BERM은 생물학적 동기, 상호작용과 행동을 통해 이 항들의 설명을 이어갑니다.",
       },
       {
         num: "04",
@@ -387,6 +390,10 @@ export default async function AboutPage({
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Info} title={d.title} subtitle={d.subtitle} />
+
+      <ModelScopeIntro locale={locale} />
+      <ModelReadingPath locale={locale} />
+      <ResearchReadingGuide locale={locale} context="about" />
 
       <div className="max-w-3xl space-y-10">
         <section>

@@ -34,6 +34,8 @@ for (const reference of registry.references) {
     type: reference.type ?? null,
     linkStatus: reference.link_status,
     externalUrl: externalUrl(reference),
+    ...(reference.correctionOf ? { correctionOf: reference.correctionOf } : {}),
+    ...(reference.corrections?.length ? { corrections: reference.corrections } : {}),
   };
   for (const alias of reference.aliases ?? []) aliases[alias] = reference.id;
   if (reference.doi) identifiers[`doi:${String(reference.doi).trim().toLowerCase()}`] = reference.id;
@@ -126,7 +128,7 @@ function idsInSource(source) {
   const jsonSingle = /"referenceId"\s*:\s*"([^"]+)"/g;
   for (const match of source.matchAll(jsonSingle)) ids.add(match[1]);
 
-  const arrays = /\b(?:keyRefs|referenceIds)\s*:\s*\[([^\]]*)\]/gs;
+  const arrays = /["']?\b(?:keyRefs|referenceIds)["']?\s*:\s*\[([^\]]*)\]/gs;
   for (const match of source.matchAll(arrays)) {
     for (const quoted of match[1].matchAll(/["']([^"']+)["']/g)) ids.add(quoted[1]);
   }
@@ -150,6 +152,7 @@ const sourceFiles = [
     .flatMap((directory) => walk(path.join(ROOT, directory)))
     .filter((file) => ![INDEX_PATH, USAGE_PATH].includes(file)),
   LEGACY_EVIDENCE_PATH,
+  ...["claims.json", "modulome-state.json", "causal-atlas-extensions.json"].map((file) => path.join(ROOT, "data", file)),
 ];
 const sourceFileSet = new Set(sourceFiles);
 const sources = new Map(sourceFiles.map((file) => [file, fs.readFileSync(file, "utf8")]));

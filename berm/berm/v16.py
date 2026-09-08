@@ -655,13 +655,18 @@ def v17_ovulation_vgic(country: str, year: int) -> float:
 
 
 def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
-    """Sperm Ca2+ channel (CatSper) disruption: motility * capacitation * navigation.
+    """Locked v17 sperm-Ca-labelled scenario: motility * capacitation * navigation.
+
+    These coefficients are not calibrated by the ESHRE 2021 catsper_2021
+    abstract (50 male rats, 2100 MHz, 1 h/day for 28 days in vivo). Its
+    amlodipine intervention is not CatSper-specific; gene analysis was
+    ongoing, and mating/live-birth comparisons had p > 0.05. It does not
+    establish a human in-vitro effect or the assumed three-factor mechanism.
 
     5G-frequency-specific evidence (Bektas et al. 2026, Bioelectromagnetics
-    bem.70043): 3.5 GHz -> testicular and oxidative damage in rats. CoQ10
-    ameliorates -> mechanism reversibility. First data at 5G core frequency
-    for the Level 5A->6 edge. Extends Yakymenko 2016 (93/100 oxidative)
-    and Panagopoulos 2025 (95%) evidence base to current exposure context.
+    bem.70043): rat testicular/oxidative endpoints with CoQ10 amelioration.
+    This is separate component evidence, not a calibration of the CatSper
+    coefficients below or of a human reproductive decrement.
     """
     pers = v16_personal_annual(country, year)
     adj_cum = v16_adjusted_cumulative_exposure(country, year)

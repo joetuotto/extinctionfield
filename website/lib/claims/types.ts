@@ -24,6 +24,8 @@ export interface Reference {
   pmid: string | number | null;
   url: string | null;
   verified: boolean;
+  correctionOf?: string;
+  corrections?: string[];
 }
 
 // ── 2. Claim ────────────────────────────────────────────
@@ -83,6 +85,15 @@ export interface EvidenceRelation {
   curatorId: string;
   curatedAt: string;
   curatorNote: string | null;
+  /** Curated identities; an empty/partial inventory never establishes independence. */
+  provenance?: EvidenceProvenance;
+}
+
+export interface EvidenceProvenance {
+  studyIds: string[];
+  datasetFamilyIds: string[];
+  premiseIds: string[];
+  status: "partial" | "complete";
 }
 
 // ── 4. EpistemicAssessment ──────────────────────────────
@@ -128,6 +139,10 @@ export interface RouteDefinition {
   independenceGroup: string;
   independenceVerified: boolean;
   independenceNote: string | null;
+  independenceAudit?: EvidenceProvenance & {
+    reviewedBy: string;
+    reviewedAt: string;
+  };
   direction: "supports" | "challenges" | "mixed";
   alternativeCompatibility: string;
   discriminatingPower: string;

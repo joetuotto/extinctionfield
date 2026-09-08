@@ -124,6 +124,10 @@ def test_model_metadata_counts_come_from_the_audit_table() -> None:
     ]
     assert meta["discriminating_tests_completed"] == 0
     assert meta["primary_pathway"] == "B_RPM"
+    assert meta["primary_pathway_basis"] == "historical_research_priority_not_geometric_derivation"
+    assert meta["pathway_hierarchy_derived_from_geometry"] is False
+    assert meta["l2_bridge_status"] == "OPEN"
+    assert meta["biological_evidence_validates_l0_l2"] is False
 
 
 def test_evidence_records_carry_an_explicit_protocol_assessment_state() -> None:

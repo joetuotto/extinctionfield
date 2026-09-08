@@ -64,8 +64,8 @@ describe("Bilingual data completeness", () => {
 });
 
 describe("Node structure", () => {
-  it("has 76 nodes", () => {
-    expect(NODES.length).toBe(76);
+  it("retains the original channels while expanding the atlas", () => {
+    expect(NODES.length).toBeGreaterThan(76);
   });
 
   it("every node has a unique id", () => {
@@ -114,7 +114,7 @@ describe("Edge structure", () => {
   });
 
   it("getEdgeRelation returns valid types", () => {
-    const validTypes = ["causal", "modulates", "differential"];
+    const validTypes = ["causal", "modulates", "differential", "inference", "bridge", "derived", "feedback", "association"];
     for (const edge of EDGES) {
       const rel = getEdgeRelation(edge.from, edge.to);
       expect(validTypes).toContain(rel);

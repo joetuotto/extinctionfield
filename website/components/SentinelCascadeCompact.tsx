@@ -15,13 +15,13 @@ const COPY = {
     heading: "Sentinel cascade: species declines precede humans",
     human: "Human",
     yearSuffix: "y",
-    footnote: "12 species tracked across land, water, and transitional axes. EMF gradient: r = 0.84 across 7 species with quantifiable reproductive decline rates vs EMF exposure score.",
+    footnote: "Twelve species are tracked across complementary axes. The r=0.84 diagnostic uses seven groups and assumed burden scores, not measured local doses; ecological and endpoint differences prevent treating it as a causal EMF coefficient.",
   },
   fi: {
     heading: "Sentinellikaskadi: lajien laskut edeltävät ihmistä",
     human: "Ihminen",
     yearSuffix: "v",
-    footnote: "12 lajia seurannassa maa-, vesi- ja siirtymäakseleilla. EMF-gradientti: r = 0,84 seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste vs. EMF-altistusarvo.",
+    footnote: "Kahtatoista lajia seurataan täydentävillä akseleilla. r=0,84-diagnostiikka käyttää seitsemää ryhmää ja oletettuja kuormapisteitä, ei mitattuja paikallisia annoksia; ekologiset ja päätepiste-erot estävät sen tulkitsemisen kausaaliseksi EMF-kertoimeksi.",
   },
   ja: {
     heading: "センチネルカスケード：種の減少はヒトに先行する",

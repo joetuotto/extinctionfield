@@ -1,915 +1,157 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  ReactFlow,
-  Background,
-  Controls,
-  Panel,
-  MiniMap,
-  useNodesState,
-  useEdgesState,
-  useReactFlow,
-  ReactFlowProvider,
-  Position,
-  MarkerType,
-  getSmoothStepPath,
-  BaseEdge,
-  type Node,
-  type Edge,
-  type NodeTypes,
-  type EdgeTypes,
-  type EdgeProps,
-} from "@xyflow/react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { ReactFlow, ReactFlowProvider, Background, Controls, MiniMap, useReactFlow, MarkerType, type Node, type Edge, type NodeTypes } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { ChevronLeft, ChevronRight, Map, Route, Search, RotateCcw } from "lucide-react";
-import { InlineReferenceText } from "@/components/InlineReferenceText";
-import {
-  NODES,
-  EDGES,
-  EVIDENCE_COLORS,
-  EVIDENCE_LABELS,
-  LEVEL_TO_STAGE,
-  STAGE_BANDS,
-  ECOLOGY_BAND,
-  ALL_STAGES,
-  GUIDED_SCENES,
-  STEPPER_PATHS,
-  computeLayout,
-  computeBands,
-  getEdgeRelation,
-  t,
-  localizedDetail,
-  type CausalMapNode,
-  type EpistemicLevel,
-  type Locale,
-  type GuidedScene,
-  type StepperPathKey,
-  type Stage,
-} from "@/lib/causalAtlasData";
-import { pickCopy } from "@/lib/i18n";
+import { List, Map, Search, Route, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
+import { NODES, EDGES, ALL_STAGES, SUBATLASES, STEPPER_PATHS, LEVEL_TO_STAGE, EVIDENCE_COLORS, EVIDENCE_LABELS, RELATION_LABELS, computeLayout, computeBands, nodesForAtlas, filterAtlasNodes, t, type AtlasId, type CausalMapNode, type Locale, type Stage, type EpistemicLevel } from "@/lib/causalAtlasData";
 import AtlasNode from "./atlas/AtlasNode";
 import { AtlasDetail } from "./atlas/AtlasDetail";
-
-// ── Custom edge ──
-
-function AtlasEdge(props: EdgeProps) {
-  const { sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data, style, markerEnd, id } = props;
-  const [path] = getSmoothStepPath({
-    sourceX, sourceY, targetX, targetY,
-    sourcePosition: sourcePosition ?? Position.Right,
-    targetPosition: targetPosition ?? Position.Left,
-    borderRadius: 10,
-  });
-
-  const highlighted = (data as Record<string, unknown>)?.highlighted as boolean;
-  const relation = (data as Record<string, unknown>)?.relation as string;
-  const dimmed = (data as Record<string, unknown>)?.dimmed as boolean;
-
-  const dasharray = relation === "modulates" ? "6 3" : relation === "differential" ? "4 4" : undefined;
-
-  return (
-    <BaseEdge
-      id={id}
-      path={path}
-      markerEnd={markerEnd}
-      style={{
-        ...style,
-        stroke: highlighted ? "var(--atlas-edge-hl)" : dimmed ? "var(--atlas-edge-dim)" : "var(--atlas-edge)",
-        strokeWidth: highlighted ? 2 : 1,
-        strokeDasharray: dasharray,
-        transition: "stroke 0.3s, stroke-width 0.3s, opacity 0.3s",
-      }}
-    />
-  );
-}
-
-// ── Stage band node ──
-
-function StageBandNode({ data }: { data: Record<string, unknown> }) {
-  return (
-    <div
-      className="rounded-lg pointer-events-none select-none"
-      style={{
-        width: data.width as number,
-        height: data.height as number,
-        backgroundColor: data.color as string,
-        borderLeft: `1px solid ${data.borderColor as string}`,
-        borderRight: `1px solid ${data.borderColor as string}`,
-      }}
-    >
-      <div className="px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] whitespace-nowrap"
-        style={{ color: `${data.accent as string}80` }}
-      >
-        {data.label as string}
-      </div>
-    </div>
-  );
-}
-
-const nodeTypes: NodeTypes = {
-  atlasNode: AtlasNode,
-  stageBand: StageBandNode as unknown as NodeTypes[string],
-};
-
-const edgeTypes: EdgeTypes = {
-  atlas: AtlasEdge,
-};
-
-// ── Localised UI copy ──
+import { atlasClaimCoverage } from "@/lib/atlasEvidence";
 
 const COPY = {
-  en: {
-    explore: "Explore",
-    guided: "Guided",
-    instruction: "Scroll to zoom · Drag to pan · Click a node for details",
-    exitGuided: "Exit tour",
-    searchPlaceholder: "Search nodes...",
-    searchAriaLabel: "Search nodes",
-    stageFiltersAriaLabel: "Stage filters",
-    evidenceFiltersAriaLabel: "Evidence filters",
-    clear: "Clear",
-    atlasAriaLabel: "BERM Causal Atlas",
-    evidenceLevel: "Evidence Level",
-    guidedTourAriaLabel: "Guided tour",
-    sceneOf: (idx: number, total: number) => `Scene ${idx} of ${total}`,
-    prevSceneAriaLabel: "Previous scene",
-    scenesAriaLabel: "Scenes",
-    nextSceneAriaLabel: "Next scene",
-    causalPathwaysAriaLabel: "Causal pathways",
-    stepOf: (step: number, total: number, label: string) => `Step ${step}/${total}: ${label}`,
-    fdaDevice: "FDA Device:",
-    readMore: "Read more →",
-    previous: "Previous",
-    next: "Next",
-  },
-  fi: {
-    explore: "Tutki",
-    guided: "Opastettu",
-    instruction: "Vieritä zoomataksesi · Raahaa panoroidaksesi · Klikkaa solmua yksityiskohtiin",
-    exitGuided: "Poistu kierrokselta",
-    searchPlaceholder: "Etsi solmu...",
-    searchAriaLabel: "Etsi solmuja",
-    stageFiltersAriaLabel: "Vaihesuodattimet",
-    evidenceFiltersAriaLabel: "Näyttösuodattimet",
-    clear: "Tyhjennä",
-    atlasAriaLabel: "BERM-kausaaliatlas",
-    evidenceLevel: "Näyttötaso",
-    guidedTourAriaLabel: "Opastettu kierros",
-    sceneOf: (idx: number, total: number) => `Kohtaus ${idx} / ${total}`,
-    prevSceneAriaLabel: "Edellinen kohtaus",
-    scenesAriaLabel: "Kohtaukset",
-    nextSceneAriaLabel: "Seuraava kohtaus",
-    causalPathwaysAriaLabel: "Kausaalipolut",
-    stepOf: (step: number, total: number, label: string) => `Vaihe ${step}/${total}: ${label}`,
-    fdaDevice: "FDA-laite:",
-    readMore: "Lue lisää →",
-    previous: "Edellinen",
-    next: "Seuraava",
-  },
-  ja: {
-    explore: "探索",
-    guided: "ガイド",
-    instruction: "スクロールでズーム · ドラッグで移動 · ノードをクリックして詳細を表示",
-    exitGuided: "ツアーを終了",
-    searchPlaceholder: "ノードを検索...",
-    searchAriaLabel: "ノードを検索",
-    stageFiltersAriaLabel: "ステージフィルター",
-    evidenceFiltersAriaLabel: "エビデンスフィルター",
-    clear: "クリア",
-    atlasAriaLabel: "BERM因果アトラス",
-    evidenceLevel: "エビデンスレベル",
-    guidedTourAriaLabel: "ガイドツアー",
-    sceneOf: (idx: number, total: number) => `シーン ${idx} / ${total}`,
-    prevSceneAriaLabel: "前のシーン",
-    scenesAriaLabel: "シーン一覧",
-    nextSceneAriaLabel: "次のシーン",
-    causalPathwaysAriaLabel: "因果経路",
-    stepOf: (step: number, total: number, label: string) => `ステップ ${step}/${total}: ${label}`,
-    fdaDevice: "FDA機器:",
-    readMore: "続きを読む →",
-    previous: "前へ",
-    next: "次へ",
-  },
-  fr: {
-    explore: "Explorer",
-    guided: "Visite guidée",
-    instruction: "Défilez pour zoomer · Glissez pour déplacer · Cliquez sur un nœud pour les détails",
-    exitGuided: "Quitter la visite",
-    searchPlaceholder: "Rechercher des nœuds...",
-    searchAriaLabel: "Rechercher des nœuds",
-    stageFiltersAriaLabel: "Filtres par étape",
-    evidenceFiltersAriaLabel: "Filtres par niveau de preuve",
-    clear: "Effacer",
-    atlasAriaLabel: "Atlas causal BERM",
-    evidenceLevel: "Niveau de preuve",
-    guidedTourAriaLabel: "Visite guidée",
-    sceneOf: (idx: number, total: number) => `Scène ${idx} sur ${total}`,
-    prevSceneAriaLabel: "Scène précédente",
-    scenesAriaLabel: "Scènes",
-    nextSceneAriaLabel: "Scène suivante",
-    causalPathwaysAriaLabel: "Voies causales",
-    stepOf: (step: number, total: number, label: string) => `Étape ${step}/${total} : ${label}`,
-    fdaDevice: "Appareil FDA :",
-    readMore: "En savoir plus →",
-    previous: "Précédent",
-    next: "Suivant",
-  },
-  ko: {
-    explore: "탐색",
-    guided: "가이드",
-    instruction: "스크롤하여 확대/축소 · 드래그하여 이동 · 노드를 클릭하여 상세 정보 확인",
-    exitGuided: "투어 종료",
-    searchPlaceholder: "노드 검색...",
-    searchAriaLabel: "노드 검색",
-    stageFiltersAriaLabel: "단계 필터",
-    evidenceFiltersAriaLabel: "증거 수준 필터",
-    clear: "초기화",
-    atlasAriaLabel: "BERM 인과 아틀라스",
-    evidenceLevel: "증거 수준",
-    guidedTourAriaLabel: "가이드 투어",
-    sceneOf: (idx: number, total: number) => `장면 ${idx} / ${total}`,
-    prevSceneAriaLabel: "이전 장면",
-    scenesAriaLabel: "장면 목록",
-    nextSceneAriaLabel: "다음 장면",
-    causalPathwaysAriaLabel: "인과 경로",
-    stepOf: (step: number, total: number, label: string) => `단계 ${step}/${total}: ${label}`,
-    fdaDevice: "FDA 기기:",
-    readMore: "자세히 보기 →",
-    previous: "이전",
-    next: "다음",
-  },
+  en: { subatlas: "Choose a subatlas", search: "Search channels", placeholder: "Name, mechanism or model ID…", stage: "Stage", evidence: "Evidence type", all: "All", graph: "Map", list: "List", guided: "Guided route", clear: "Clear filters", empty: "No channels match these filters.", searchAll: "Search the complete atlas", visible: "channels shown", edges: "connections", instruction: "Select a channel for its mechanism, sources and connections. Scroll to zoom; drag to pan.", route: "Choose a route", previous: "Previous step", next: "Next step", scope: "Shared nodes connect the subatlases. Each node has one description across all views.", language: "Channel descriptions are available in English and Finnish.", relations: "Connection types", navigate: "Open channel", overview: "Explore", step: "Step" },
+  fi: { subatlas: "Valitse aliatlas", search: "Etsi vaikutuskanavia", placeholder: "Nimi, mekanismi tai mallitunnus…", stage: "Vaihe", evidence: "Näytön tyyppi", all: "Kaikki", graph: "Kartta", list: "Luettelo", guided: "Opastettu reitti", clear: "Tyhjennä suodattimet", empty: "Näillä rajauksilla ei löytynyt kanavia.", searchAll: "Hae koko atlaksesta", visible: "kanavaa näkyvissä", edges: "yhteyttä", instruction: "Valitse kanava nähdäksesi mekanismin, lähteet ja yhteydet. Vieritä zoomataksesi ja raahaa siirtääksesi karttaa.", route: "Valitse reitti", previous: "Edellinen vaihe", next: "Seuraava vaihe", scope: "Yhteiset solmut yhdistävät aliatlakset. Jokaisella solmulla on sama kuvaus kaikissa näkymissä.", language: "Kanavakuvaukset ovat saatavilla suomeksi ja englanniksi.", relations: "Yhteyksien tyypit", navigate: "Avaa kanava", overview: "Tutki", step: "Vaihe" },
+  ja: { subatlas: "サブアトラスを選択", search: "経路を検索", graph: "地図", list: "一覧", guided: "ガイド経路", clear: "フィルターを解除", empty: "一致する経路がありません。", all: "すべて", stage: "段階", evidence: "証拠の種類", language: "経路の説明は英語とフィンランド語で表示されます。", overview: "探索" },
+  fr: { subatlas: "Choisir un sous-atlas", search: "Rechercher des voies", graph: "Carte", list: "Liste", guided: "Parcours guidé", clear: "Effacer les filtres", empty: "Aucune voie ne correspond aux filtres.", all: "Tous", stage: "Étape", evidence: "Type de preuve", language: "Les descriptions des voies sont disponibles en anglais et en finnois.", overview: "Explorer" },
+  ko: { subatlas: "하위 아틀라스 선택", search: "경로 검색", graph: "지도", list: "목록", guided: "가이드 경로", clear: "필터 초기화", empty: "일치하는 경로가 없습니다.", all: "모두", stage: "단계", evidence: "증거 유형", language: "경로 설명은 영어와 핀란드어로 제공됩니다.", overview: "탐색" },
 };
+function copyFor(locale: string) { return { ...COPY.en, ...(COPY[locale as keyof typeof COPY] ?? {}) }; }
+const controlClass = "min-h-11 rounded-lg border border-[var(--border)] bg-[var(--atlas-surface)] px-3 py-2 text-sm text-[var(--atlas-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400";
 
-// ── Build React Flow elements ──
-
-function buildElements(
-  lang: Locale,
-  scene: GuidedScene | null,
-  stageFilter: Set<Stage> | null,
-  evidenceFilter: Set<EpistemicLevel> | null,
-  searchQuery: string,
-  onActivate: (nodeId: string, element: HTMLElement) => void,
-) {
-  const positions = computeLayout();
-  const bands = computeBands();
-  const sceneNodes = new Set(scene?.nodes ?? []);
-  const sceneEdges = new Set(scene?.edges ?? []);
-  const hasScene = scene !== null && scene.nodes.length > 0;
-  const searchLower = searchQuery.toLowerCase().trim();
-  const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
-
-  const visibleNodeIds = new Set<string>();
-
-  NODES.forEach((n) => {
-    const pos = positions[n.id];
-    if (!pos) return;
-    const stage = LEVEL_TO_STAGE[n.level];
-    if (stageFilter && !stageFilter.has(stage)) return;
-    if (evidenceFilter && !evidenceFilter.has(n.epistemicLevel)) return;
-    if (searchLower) {
-      const label = t(n.label, lang).toLowerCase();
-      const sublabel = n.sublabel ? t(n.sublabel, lang).toLowerCase() : "";
-      if (!label.includes(searchLower) && !sublabel.includes(searchLower)) return;
-    }
-    visibleNodeIds.add(n.id);
-  });
-
-  const bandNodes: Node[] = bands.map((b) => ({
-    id: `band-${b.stage}`,
-    type: "stageBand",
-    position: { x: b.x, y: b.y },
-    data: {
-      label: t(b.band.label, lang),
-      width: b.width,
-      height: b.height,
-      color: b.band.color,
-      borderColor: `${b.band.accent}20`,
-      accent: b.band.accent,
-    },
-    draggable: false,
-    selectable: false,
-    focusable: false,
-    style: { zIndex: -10 },
-  }));
-
-  const datNodes: Node[] = NODES.map((n) => {
-    const pos = positions[n.id];
-    if (!pos) return null;
-    if (!visibleNodeIds.has(n.id)) return null;
-
-    const stage = LEVEL_TO_STAGE[n.level];
-    const band = stage === "ecology" ? ECOLOGY_BAND : STAGE_BANDS.find((b) => b.id === stage);
-    const label = t(n.label, lang);
-    const sublabel = n.sublabel ? t(n.sublabel, lang) : undefined;
-
-    return {
-      id: n.id,
-      type: "atlasNode",
-      position: pos,
-      data: {
-        label,
-        sublabel,
-        epistemicLevel: n.epistemicLevel,
-        epistemicLabel: epistemicLabels[n.epistemicLevel],
-        stageAccent: band?.accent ?? "#6B7280",
-        highlighted: hasScene && sceneNodes.has(n.id),
-        dimmed: hasScene && !sceneNodes.has(n.id),
-        nodeId: n.id,
-        onActivate,
-      },
-    } as Node;
-  }).filter(Boolean) as Node[];
-
-  const flowEdges: Edge[] = EDGES.map((e, i) => {
-    if (!visibleNodeIds.has(e.from) || !visibleNodeIds.has(e.to)) return null;
-    const edgeKey = `${e.from}->${e.to}`;
-    const relation = getEdgeRelation(e.from, e.to);
-    const highlighted = hasScene && sceneEdges.has(edgeKey);
-    const dimmed = hasScene && !sceneEdges.has(edgeKey);
-    return {
-      id: `e-${i}`,
-      source: e.from,
-      target: e.to,
-      type: "atlas",
-      data: { relation, highlighted, dimmed },
-      markerEnd: { type: MarkerType.ArrowClosed, width: 12, height: 12, color: highlighted ? "var(--atlas-edge-hl)" : dimmed ? "var(--atlas-marker-dim)" : "var(--atlas-marker)" },
-    };
-  }).filter(Boolean) as Edge[];
-
-  return { nodes: [...bandNodes, ...datNodes], edges: flowEdges, visibleCount: visibleNodeIds.size };
+function StageBandNode({ data }: { data: Record<string, unknown> }) {
+  return <div className="pointer-events-none rounded-xl border border-[var(--border)]" style={{ width: data.width as number, height: data.height as number, background: data.color as string }}><div className="px-3 py-3 text-xs font-semibold" style={{ color: data.accent as string }}>{data.label as string}</div></div>;
 }
-
-// ── Toolbar ──
-
-interface ToolbarProps {
-  lang: Locale;
-  copy: typeof COPY["en"];
-  searchQuery: string;
-  onSearchChange: (q: string) => void;
-  stageFilter: Set<Stage> | null;
-  onStageToggle: (stage: Stage) => void;
-  evidenceFilter: Set<EpistemicLevel> | null;
-  onEvidenceToggle: (level: EpistemicLevel) => void;
-  onClearFilters: () => void;
-  visibleCount: number;
-  hasFilters: boolean;
-}
-
-function AtlasToolbar({
-  lang, copy, searchQuery, onSearchChange, stageFilter, onStageToggle,
-  evidenceFilter, onEvidenceToggle, onClearFilters, visibleCount, hasFilters,
-}: ToolbarProps) {
-  const searchRef = useRef<HTMLInputElement>(null);
-  const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
-
-  return (
-    <div className="flex flex-wrap items-center gap-2 bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg px-3 py-2">
-      {/* Search */}
-      <div className="relative">
-        <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-[var(--atlas-text-muted)]" />
-        <input
-          ref={searchRef}
-          type="search"
-          value={searchQuery}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={copy.searchPlaceholder}
-          className="w-36 pl-7 pr-2 py-1.5 bg-[var(--atlas-edge-dim)] border border-[var(--border)] rounded-md text-xs text-[var(--atlas-text)] placeholder:text-[var(--atlas-text-muted)] focus:outline-none focus:ring-1 focus:ring-blue-400/50"
-          aria-label={copy.searchAriaLabel}
-        />
-      </div>
-
-      {/* Stage filters */}
-      <div className="flex flex-wrap gap-1" role="group" aria-label={copy.stageFiltersAriaLabel}>
-        {ALL_STAGES.map((s) => {
-          const active = !stageFilter || stageFilter.has(s.id);
-          return (
-            <button
-              key={s.id}
-              onClick={() => onStageToggle(s.id)}
-              aria-pressed={active}
-              className={`px-2 py-1 rounded text-[10px] font-medium transition-colors min-h-[28px] ${
-                active
-                  ? "text-[var(--atlas-text)]"
-                  : "text-[var(--atlas-text-muted)] hover:text-[var(--atlas-text-dim)]"
-              }`}
-              style={active ? { backgroundColor: `${s.accent}25`, color: s.accent } : undefined}
-            >
-              {t(s.label, lang)}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Evidence filters */}
-      <div className="flex gap-1" role="group" aria-label={copy.evidenceFiltersAriaLabel}>
-        {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((level) => {
-          const active = !evidenceFilter || evidenceFilter.has(level);
-          return (
-            <button
-              key={level}
-              onClick={() => onEvidenceToggle(level)}
-              aria-pressed={active}
-              className={`inline-flex items-center gap-1 px-1.5 py-1 rounded text-[10px] transition-colors min-h-[28px] ${
-                active ? "text-[var(--atlas-text)]" : "text-[var(--atlas-text-muted)] opacity-50"
-              }`}
-              title={epistemicLabels[level]}
-            >
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: EVIDENCE_COLORS[level] }} />
-              {level === "M|C" ? "M" : level}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Count + clear */}
-      <span className="text-[10px] text-[var(--atlas-text-muted)] tabular-nums">{visibleCount}/{NODES.length}</span>
-      {hasFilters && (
-        <button
-          onClick={onClearFilters}
-          className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge)] transition-colors min-h-[28px]"
-        >
-          <RotateCcw size={10} />
-          {copy.clear}
-        </button>
-      )}
-    </div>
-  );
-}
-
-// ── Atlas inner (needs ReactFlowProvider) ──
-
-function AtlasInner({ locale }: { locale: string }) {
-  const lang: Locale = locale === "fi" ? "fi" : "en";
-  const [mode, setMode] = useState<"explore" | "guided">("explore");
-  const [sceneIdx, setSceneIdx] = useState(0);
-  const [selectedNode, setSelectedNode] = useState<CausalMapNode | null>(() => {
-    if (typeof window === "undefined") return null;
-    const nodeId = new URLSearchParams(window.location.search).get("node");
-    return nodeId ? NODES.find((n) => n.id === nodeId) ?? null : null;
-  });
-  const [originElement, setOriginElement] = useState<HTMLElement | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [stageFilter, setStageFilter] = useState<Set<Stage> | null>(null);
-  const [evidenceFilter, setEvidenceFilter] = useState<Set<EpistemicLevel> | null>(null);
+const nodeTypes: NodeTypes = { atlasNode: AtlasNode, stageBand: StageBandNode };
+const edgeStyles = {
+  causal: { stroke: "#64748B" }, modulates: { stroke: "#A78BFA", strokeDasharray: "7 4" }, differential: { stroke: "#4ADE80", strokeDasharray: "5 3" },
+  inference: { stroke: "#94A3B8", strokeDasharray: "2 5" }, bridge: { stroke: "#FBBF24", strokeDasharray: "10 5" }, derived: { stroke: "#38BDF8" }, feedback: { stroke: "#FB923C", strokeDasharray: "4 3" }, association: { stroke: "#94A3B8", strokeDasharray: "2 5" },
+};
+function GraphView({ visible, selectedId, lang, onOpen }: { visible: CausalMapNode[]; selectedId: string | null; lang: Locale; onOpen: (id: string, element?: HTMLElement) => void }) {
   const { fitView } = useReactFlow();
-
-  const scene = mode === "guided" ? GUIDED_SCENES[sceneIdx] : null;
-  const hasFilters = !!stageFilter || !!evidenceFilter || !!searchQuery;
-
-  const openNode = useCallback((nodeId: string, element: HTMLElement) => {
-    const source = NODES.find((n) => n.id === nodeId);
-    if (source) {
-      setSelectedNode(source);
-      setOriginElement(element);
-      const url = new URL(window.location.href);
-      url.searchParams.set("node", nodeId);
-      window.history.replaceState(null, "", url.toString());
-    }
-  }, []);
-
-  const closeDetails = useCallback(() => {
-    setSelectedNode(null);
-    const url = new URL(window.location.href);
-    url.searchParams.delete("node");
-    window.history.replaceState(null, "", url.toString());
-  }, []);
-
-  const { nodes: initNodes, edges: initEdges, visibleCount } = useMemo(
-    () => buildElements(lang, scene, stageFilter, evidenceFilter, searchQuery, openNode),
-    [lang, scene, stageFilter, evidenceFilter, searchQuery, openNode],
-  );
-  const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initEdges);
-
+  const { nodes, edges } = useMemo(() => {
+    const positions = computeLayout(visible);
+    const ids = new Set(visible.map(n => n.id));
+    const bands: Node[] = computeBands(visible).map(b => ({ id: `band-${b.stage}`, type: "stageBand", position: { x: b.x, y: b.y }, width: b.width, height: b.height, data: { ...b.band, label: t(b.band.label, lang), width: b.width, height: b.height }, selectable: false, focusable: false, draggable: false, style: { zIndex: -10 } }));
+    const nodes: Node[] = visible.map(n => ({ id: n.id, type: "atlasNode", position: positions[n.id], width: 210, height: 92, data: { label: t(n.label, lang), sublabel: n.sublabel ? t(n.sublabel, lang) : undefined, epistemicLevel: n.epistemicLevel, epistemicLabel: EVIDENCE_LABELS[lang][n.epistemicLevel], stageAccent: ALL_STAGES.find(s => s.id === LEVEL_TO_STAGE[n.level])?.accent, selected: n.id === selectedId, highlighted: n.id === selectedId, dimmed: false, nodeId: n.id, onActivate: onOpen } }));
+    const edges: Edge[] = EDGES.filter(e => ids.has(e.from) && ids.has(e.to)).map(e => ({ id: `${e.from}->${e.to}`, source: e.from, target: e.to, type: "smoothstep", style: { ...edgeStyles[e.relation], strokeWidth: selectedId && (e.from === selectedId || e.to === selectedId) ? 2.5 : 1.1 }, markerEnd: { type: MarkerType.ArrowClosed, color: edgeStyles[e.relation].stroke }, ariaLabel: `${e.from} → ${e.to}: ${t(RELATION_LABELS[e.relation], lang)}` }));
+    return { nodes: [...bands, ...nodes], edges };
+  }, [visible, selectedId, lang, onOpen]);
   useEffect(() => {
-    const { nodes: n, edges: e } = buildElements(lang, scene, stageFilter, evidenceFilter, searchQuery, openNode);
-    setNodes(n);
-    setEdges(e);
-  }, [lang, scene, stageFilter, evidenceFilter, searchQuery, openNode, setNodes, setEdges]);
-
-  const humanNodeIds = useMemo(() => new Set(NODES.filter((n) => n.level >= 0 && n.level <= 5).map((n) => n.id)), []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (mode === "guided" && scene && scene.nodes.length > 0) {
-        fitView({ nodes: scene.nodes.map((id) => ({ id })), padding: 0.35, duration: 600 });
-      } else if (mode === "guided") {
-        fitView({ padding: 0.15, duration: 600 });
-      } else {
-        fitView({ nodes: Array.from(humanNodeIds).map((id) => ({ id })), padding: 0.12, duration: 600, maxZoom: 1.0 });
-      }
-    }, 80);
+    if (!visible.length) return;
+    const timer = setTimeout(() => { void fitView({ nodes: selectedId && visible.some(n => n.id === selectedId) ? [{ id: selectedId }] : visible.map(n => ({ id: n.id })), padding: 0.18, minZoom: 0.04, maxZoom: 1, duration: 250 }); }, 80);
     return () => clearTimeout(timer);
-  }, [mode, scene, sceneIdx, fitView, humanNodeIds, stageFilter, evidenceFilter, searchQuery]);
-
-  // Deep linking: fit view on mount + popstate listener
-  useEffect(() => {
-    const nodeId = new URLSearchParams(window.location.search).get("node");
-    if (nodeId && NODES.some((n) => n.id === nodeId)) {
-      setTimeout(() => {
-        fitView({ nodes: [{ id: nodeId }], padding: 0.5, duration: 600 });
-      }, 200);
-    }
-
-    const onPopState = () => {
-      const p = new URLSearchParams(window.location.search);
-      const nid = p.get("node");
-      if (nid) {
-        const s = NODES.find((n) => n.id === nid);
-        if (s) setSelectedNode(s);
-      } else {
-        setSelectedNode(null);
-      }
-    };
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, [fitView]);
-
-  const prevScene = () => setSceneIdx((i) => Math.max(0, i - 1));
-  const nextScene = () => setSceneIdx((i) => Math.min(GUIDED_SCENES.length - 1, i + 1));
-
-  useEffect(() => {
-    if (mode !== "guided") return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") nextScene();
-      else if (e.key === "ArrowLeft") prevScene();
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [mode]);
-
-  const handleStageToggle = useCallback((stage: Stage) => {
-    setStageFilter((prev) => {
-      if (!prev) {
-        const newSet = new Set(ALL_STAGES.map((s) => s.id));
-        newSet.delete(stage);
-        return newSet;
-      }
-      const next = new Set(prev);
-      if (next.has(stage)) next.delete(stage); else next.add(stage);
-      if (next.size === ALL_STAGES.length) return null;
-      if (next.size === 0) return null;
-      return next;
-    });
-  }, []);
-
-  const handleEvidenceToggle = useCallback((level: EpistemicLevel) => {
-    setEvidenceFilter((prev) => {
-      const allLevels = Object.keys(EVIDENCE_COLORS) as EpistemicLevel[];
-      if (!prev) {
-        const newSet = new Set(allLevels);
-        newSet.delete(level);
-        return newSet;
-      }
-      const next = new Set(prev);
-      if (next.has(level)) next.delete(level); else next.add(level);
-      if (next.size === allLevels.length) return null;
-      if (next.size === 0) return null;
-      return next;
-    });
-  }, []);
-
-  const handleClearFilters = useCallback(() => {
-    setStageFilter(null);
-    setEvidenceFilter(null);
-    setSearchQuery("");
-  }, []);
-
-  const copy = pickCopy(COPY, locale);
-
-  return (
-    <div className="relative w-full h-[82vh] min-h-[600px] rounded-xl overflow-hidden bg-[var(--atlas-bg)] border border-[var(--border)]">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onNodeClick={(event, node) => {
-          if (node.type === "atlasNode") {
-            const el = (event.target as HTMLElement).closest("[role=button]") as HTMLElement;
-            openNode(node.id, el ?? (event.target as HTMLElement));
-          }
-        }}
-        onPaneClick={() => { if (selectedNode) closeDetails(); }}
-        nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
-        minZoom={0.2}
-        maxZoom={2.5}
-        nodesDraggable={false}
-        nodesConnectable={false}
-        nodesFocusable={false}
-        edgesFocusable={false}
-        elementsSelectable={false}
-        edgesReconnectable={false}
-        deleteKeyCode={null}
-        selectionKeyCode={null}
-        zoomOnScroll
-        panOnDrag
-        zoomOnPinch
-        proOptions={{ hideAttribution: true }}
-        aria-label={copy.atlasAriaLabel}
-      >
-        <Background gap={30} size={1} color="var(--atlas-dot)" />
-        <Controls
-          showInteractive={false}
-          className="!bg-[var(--atlas-surface)] !border-[var(--border)] !shadow-lg [&>button]:!bg-[var(--atlas-surface)] [&>button]:!border-[var(--border)] [&>button]:!fill-[var(--atlas-text-dim)] [&>button:hover]:!bg-[var(--atlas-edge)] [&>button]:!w-[44px] [&>button]:!h-[44px]"
-        />
-        <MiniMap
-          nodeColor={(n) => {
-            if (n.type === "stageBand") return "transparent";
-            const d = n.data as Record<string, unknown>;
-            return EVIDENCE_COLORS[d.epistemicLevel as EpistemicLevel] ?? "#6B7280";
-          }}
-          maskColor="var(--atlas-minimap-mask)"
-          className="!bg-[var(--atlas-surface)] !border-[var(--border)]"
-        />
-
-        {/* Mode toggle + instruction */}
-        <Panel position="top-right" className="!m-3">
-          <div className="flex flex-col gap-2 items-end">
-            <div className="flex gap-1 bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg p-1">
-              <button
-                onClick={() => { setMode("explore"); setSelectedNode(null); closeDetails(); }}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "explore" ? "bg-[var(--atlas-edge)] text-[var(--atlas-text)]" : "text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)]"}`}
-              >
-                <Map size={14} />
-                {copy.explore}
-              </button>
-              <button
-                onClick={() => { setMode("guided"); setSceneIdx(0); closeDetails(); }}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "guided" ? "bg-blue-500/20 text-blue-300" : "text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)]"}`}
-              >
-                <Route size={14} />
-                {copy.guided}
-              </button>
-            </div>
-            <p className="text-[11px] text-[var(--atlas-text-dim)] bg-[var(--atlas-surface)] backdrop-blur-sm rounded px-2 py-1">
-              {copy.instruction}
-            </p>
-          </div>
-        </Panel>
-
-        {/* Toolbar with search + filters */}
-        {mode === "explore" && (
-          <Panel position="top-left" className="!m-3">
-            <AtlasToolbar
-              lang={lang}
-              copy={copy}
-              searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
-              stageFilter={stageFilter}
-              onStageToggle={handleStageToggle}
-              evidenceFilter={evidenceFilter}
-              onEvidenceToggle={handleEvidenceToggle}
-              onClearFilters={handleClearFilters}
-              visibleCount={visibleCount}
-              hasFilters={hasFilters}
-            />
-          </Panel>
-        )}
-
-        {/* Legend (in guided mode) */}
-        {mode === "guided" && (
-          <Panel position="top-left" className="!m-3">
-            <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg px-3 py-2.5">
-              <p className="text-[10px] uppercase tracking-wider text-[var(--atlas-text-dim)] mb-1.5">
-                {copy.evidenceLevel}
-              </p>
-              <div className="flex flex-wrap gap-x-3 gap-y-1">
-                {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((key) => (
-                  <span key={key} className="inline-flex items-center gap-1.5 text-[11px] text-[var(--atlas-text-dim)]">
-                    <span
-                      className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
-                      style={{ backgroundColor: EVIDENCE_COLORS[key] }}
-                    >
-                      {key === "M|C" ? "M" : key}
-                    </span>
-                    {(EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>)[key]}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Panel>
-        )}
-
-      </ReactFlow>
-
-      {/* Guided mode scene navigator */}
-      {mode === "guided" && scene && (
-        <div
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
-          role="region"
-          aria-label={copy.guidedTourAriaLabel}
-        >
-          <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-xl px-5 py-4 max-w-lg text-center">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] text-[var(--atlas-text-muted)] tabular-nums">
-                {copy.sceneOf(sceneIdx + 1, GUIDED_SCENES.length)}
-              </span>
-              <button
-                onClick={() => { setMode("explore"); closeDetails(); }}
-                className="text-[10px] text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] transition-colors px-2 py-1 rounded hover:bg-[var(--atlas-edge)] min-h-[28px]"
-              >
-                {copy.exitGuided}
-              </button>
-            </div>
-            <h3 className="text-sm font-bold text-[var(--atlas-text)] mb-1.5">{t(scene.title, lang)}</h3>
-            <p className="text-xs text-[var(--atlas-text-dim)] leading-relaxed mb-3">{t(scene.description, lang)}</p>
-            <div className="flex items-center justify-center gap-4">
-              <button
-                onClick={prevScene}
-                disabled={sceneIdx === 0}
-                className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label={copy.prevSceneAriaLabel}
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <div className="flex gap-2" role="tablist" aria-label={copy.scenesAriaLabel}>
-                {GUIDED_SCENES.map((s, i) => (
-                  <button
-                    key={i}
-                    role="tab"
-                    onClick={() => setSceneIdx(i)}
-                    aria-selected={i === sceneIdx}
-                    aria-current={i === sceneIdx ? "step" : undefined}
-                    aria-label={`${t(s.title, lang)} (${i + 1}/${GUIDED_SCENES.length})`}
-                    className={`w-3 h-3 rounded-full transition-colors ${i === sceneIdx ? "bg-blue-400 ring-2 ring-blue-400/30" : "bg-gray-600 hover:bg-gray-500"}`}
-                  />
-                ))}
-              </div>
-              <button
-                onClick={nextScene}
-                disabled={sceneIdx === GUIDED_SCENES.length - 1}
-                className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label={copy.nextSceneAriaLabel}
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {selectedNode && (
-        <AtlasDetail
-          node={selectedNode}
-          locale={locale}
-          onClose={closeDetails}
-          originRef={originElement}
-        />
-      )}
-    </div>
-  );
+  }, [visible, selectedId, fitView]);
+  return <div className="h-[65vh] min-h-[420px]" data-testid="atlas-graph"><ReactFlow fitView fitViewOptions={{ minZoom: 0.04, maxZoom: 1, padding: 0.18 }} nodes={nodes} edges={edges} onNodeClick={(event, node) => { if (node.type === "atlasNode") onOpen(node.id, (event.target as HTMLElement).closest<HTMLElement>("[role=button]") ?? event.target as HTMLElement); }} nodeTypes={nodeTypes} minZoom={0.04} maxZoom={2.5} nodesDraggable={false} nodesConnectable={false} nodesFocusable={false} edgesFocusable={false} elementsSelectable={false} deleteKeyCode={null} proOptions={{ hideAttribution: true }}>
+    <Background color="var(--atlas-dot)" gap={25} />
+    <Controls showInteractive={false} fitViewOptions={{ nodes: visible.map(n => ({ id: n.id })), minZoom: 0.04, maxZoom: 1 }} className="[&>button]:!w-11 [&>button]:!h-11" />
+    <MiniMap nodeColor={n => n.type === "stageBand" ? "transparent" : EVIDENCE_COLORS[n.data.epistemicLevel as EpistemicLevel]} pannable zoomable />
+  </ReactFlow></div>;
 }
-
-// ── Mobile causal stepper ──
-
-function MobileStepper({ locale }: { locale: string }) {
-  const lang: Locale = locale === "fi" ? "fi" : "en";
-  const copy = pickCopy(COPY, locale);
-  const [pathKey, setPathKey] = useState<StepperPathKey>("main");
-  const [step, setStep] = useState(0);
-  const path = STEPPER_PATHS[pathKey];
-  const ids = path.ids;
-  const currentId = ids[step];
-  const node = NODES.find((n) => n.id === currentId);
-  const liveRef = useRef<HTMLDivElement>(null);
-
-  if (!node) return null;
-
-  const label = t(node.label, lang);
-  const sublabel = node.sublabel ? t(node.sublabel, lang) : undefined;
-  const d = localizedDetail(node.detail, lang);
-  const stage = LEVEL_TO_STAGE[node.level];
-  const band = stage === "ecology" ? ECOLOGY_BAND : STAGE_BANDS.find((b) => b.id === stage);
-  const epColor = EVIDENCE_COLORS[node.epistemicLevel];
-  const epLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
-
-  return (
-    <div className="bg-[var(--atlas-bg)] rounded-xl border border-[var(--border)] overflow-hidden">
-      {/* Path selector */}
-      <div
-        role="tablist"
-        aria-label={copy.causalPathwaysAriaLabel}
-        className="flex border-b border-[var(--border)]"
-      >
-        {(Object.keys(STEPPER_PATHS) as StepperPathKey[]).map((k) => (
-          <button
-            key={k}
-            role="tab"
-            aria-selected={k === pathKey}
-            onClick={() => { setPathKey(k); setStep(0); }}
-            className={`flex-1 px-3 py-3 text-xs font-medium transition-colors min-h-[44px] ${
-              k === pathKey ? "text-blue-300 border-b-2 border-blue-400 bg-blue-500/10" : "text-[var(--atlas-text-muted)] hover:text-[var(--atlas-text-dim)]"
-            }`}
-          >
-            {t(STEPPER_PATHS[k].label, lang)}
-          </button>
-        ))}
-      </div>
-
-      {/* Progress bar */}
-      <div className="flex items-center gap-1 px-4 py-3" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={ids.length}>
-        {ids.map((_, i) => (
-          <div key={i} className="flex-1 flex items-center">
-            <div className={`h-1 w-full rounded-full transition-colors ${i <= step ? "bg-blue-400" : "bg-[var(--atlas-edge)]"}`} />
-          </div>
-        ))}
-      </div>
-
-      {/* Live region for step changes */}
-      <div ref={liveRef} aria-live="polite" className="sr-only">
-        {copy.stepOf(step + 1, ids.length, label)}
-      </div>
-
-      {/* Card */}
-      <div className="px-4 pb-4" role="tabpanel">
-        <div className="bg-[var(--atlas-surface)] border border-[var(--border)] rounded-xl p-5">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-[var(--border)]"
-              style={{ color: band?.accent, borderColor: `${band?.accent}40` }}
-            >
-              {band ? t(band.label, lang) : ""}
-            </span>
-            <span className="flex items-center gap-1 text-[10px] text-[var(--atlas-text-muted)]">
-              <span
-                className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
-                style={{ backgroundColor: epColor }}
-              >
-                {node.epistemicLevel === "M|C" ? "M" : node.epistemicLevel}
-              </span>
-              {epLabels[node.epistemicLevel]}
-            </span>
-          </div>
-
-          <h3 className="text-base font-bold text-[var(--atlas-text)] mb-1">{label}</h3>
-          {sublabel && <p className="text-xs text-[var(--atlas-text-dim)] mb-3">{sublabel}</p>}
-
-          {d?.mechanism && (
-            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed mb-3">
-              <InlineReferenceText text={d.mechanism} locale={lang} />
-            </p>
-          )}
-
-          {d?.fdaDevice && (
-            <p className="text-xs text-[var(--atlas-text-dim)]">
-              <span className="font-semibold text-[var(--atlas-text-dim)]">{copy.fdaDevice}</span>{" "}
-              <InlineReferenceText text={d.fdaDevice} locale={lang} />
-            </p>
-          )}
-
-          {node.detail?.link && (
-            <a href={`/${locale}${node.detail.link}`} className="inline-block text-xs text-blue-400 hover:text-blue-300 mt-2 min-h-[44px] flex items-center">
-              {copy.readMore}
-            </a>
-          )}
-        </div>
-
-        {/* Navigation arrows */}
-        <div className="flex items-center justify-between mt-3">
-          <button
-            onClick={() => setStep((s) => Math.max(0, s - 1))}
-            disabled={step === 0}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
-          >
-            <ChevronLeft size={14} />
-            {copy.previous}
-          </button>
-          <span className="text-xs text-[var(--atlas-text-muted)] font-mono tabular-nums">{step + 1} / {ids.length}</span>
-          <button
-            onClick={() => setStep((s) => Math.min(ids.length - 1, s + 1))}
-            disabled={step === ids.length - 1}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
-          >
-            {copy.next}
-            <ChevronRight size={14} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── Main export ──
 
 export function CausalAtlas({ locale }: { locale: string }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const lang: Locale = locale === "fi" ? "fi" : "en";
+  const copy = copyFor(locale);
+  const [atlasId, setAtlasId] = useState<AtlasId>("all");
+  const [view, setView] = useState<"graph" | "list">("graph");
+  const [mode, setMode] = useState<"explore" | "guided">("explore");
+  const [pathKey, setPathKey] = useState("main");
+  const [step, setStep] = useState(0);
+  const [query, setQuery] = useState("");
+  const [stage, setStage] = useState<Stage | "all">("all");
+  const [evidence, setEvidence] = useState<EpistemicLevel | "all">("all");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [originElement, setOriginElement] = useState<HTMLElement | null>(null);
+  const path = STEPPER_PATHS[pathKey];
+  const atlas = SUBATLASES.find(a => a.id === atlasId)!;
+  const selected = NODES.find(n => n.id === selectedId);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    const readUrl = () => {
+      const p = new URLSearchParams(window.location.search);
+      const id = p.get("atlas") as AtlasId;
+      const chosen = SUBATLASES.some(a => a.id === id) ? id : "all";
+      const node = NODES.find(n => n.id === p.get("node"));
+      setAtlasId(node && !nodesForAtlas(chosen).some(n => n.id === node.id) ? "all" : chosen);
+      setSelectedId(node?.id ?? null);
+      setMode("explore"); setQuery(""); setStage("all"); setEvidence("all");
+      const requestedView = p.get("view");
+      setView(requestedView === "list" || (requestedView !== "graph" && window.innerWidth < 768) ? "list" : "graph");
+    };
+    readUrl();
+    window.addEventListener("popstate", readUrl);
+    return () => window.removeEventListener("popstate", readUrl);
   }, []);
+  const updateUrl = useCallback((values: Record<string, string | null>) => {
+    const url = new URL(window.location.href);
+    for (const [key, value] of Object.entries(values)) { if (value) url.searchParams.set(key, value); else url.searchParams.delete(key); }
+    window.history.replaceState(window.history.state, "", url);
+  }, []);
+  const clearFilters = () => { setQuery(""); setStage("all"); setEvidence("all"); };
+  const changeAtlas = (id: AtlasId) => {
+    setAtlasId(id); setMode("explore"); clearFilters(); setSelectedId(null);
+    updateUrl({ atlas: id === "all" ? null : id, node: null });
+  };
+  const openNode = useCallback((id: string, element?: HTMLElement) => {
+    if (!NODES.some(n => n.id === id)) return;
+    if (element) setOriginElement(element);
+    setSelectedId(id);
+    updateUrl({ node: id });
+  }, [updateUrl]);
+  const closeDetails = useCallback(() => { setSelectedId(null); updateUrl({ node: null }); }, [updateUrl]);
+  const followConnection = (id: string) => {
+    if (!nodesForAtlas(atlasId).some(n => n.id === id)) { setAtlasId("all"); updateUrl({ atlas: null }); }
+    setMode("explore"); clearFilters(); openNode(id);
+  };
+  const visible = useMemo(() => mode === "guided" ? path.ids.map(id => NODES.find(n => n.id === id)!) : filterAtlasNodes(nodesForAtlas(atlasId), query, stage, evidence), [atlasId, query, stage, evidence, mode, path]);
+  const edgeCount = useMemo(() => { const ids = new Set(visible.map(n => n.id)); return EDGES.filter(e => ids.has(e.from) && ids.has(e.to)).length; }, [visible]);
+  const hasFilters = query !== "" || stage !== "all" || evidence !== "all";
+  const claimCoverage = useMemo(() => atlasClaimCoverage(visible), [visible]);
+  const usedLevels = [...new Set(NODES.map(n => n.epistemicLevel))];
+  const guideStep = (index: number) => { setStep(index); openNode(path.ids[index]); };
 
-  if (isMobile) {
-    return <MobileStepper locale={locale} />;
-  }
-
-  return (
-    <ReactFlowProvider>
-      <AtlasInner locale={locale} />
-    </ReactFlowProvider>
-  );
+  return <div className="relative rounded-xl border border-[var(--border)] bg-[var(--atlas-bg)] text-[var(--atlas-text)]" data-testid="causal-atlas">
+    <div className="space-y-4 border-b border-[var(--border)] p-4 sm:p-5">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(220px,320px)_1fr]">
+        <label className="text-xs font-semibold">{copy.subatlas}
+          <select value={atlasId} onChange={e => changeAtlas(e.target.value as AtlasId)} className={`${controlClass} mt-1 block w-full`}>
+            {SUBATLASES.map(a => <option key={a.id} value={a.id}>{t(a.title, lang)} ({nodesForAtlas(a.id).length})</option>)}
+          </select>
+        </label>
+        <div><h2 className="text-base font-semibold">{t(atlas.title, lang)}</h2><p className="mt-1 text-sm leading-relaxed text-[var(--atlas-text-dim)]">{t(atlas.description, lang)}</p></div>
+      </div>
+      <p className="text-xs text-[var(--atlas-text-dim)]">{copy.scope}{locale !== "en" && locale !== "fi" ? ` ${copy.language}` : ""}</p>
+      <details className="rounded-lg border border-[var(--border)] px-3 text-xs text-[var(--atlas-text-dim)]" data-testid="atlas-claim-coverage">
+        <summary className="min-h-11 cursor-pointer content-center">{lang === "fi" ? "Miten tämän näkymän näyttö on jäsennetty?" : "How is the evidence in this view organized?"}</summary>
+        <p className="mb-2 leading-relaxed">{lang === "fi"
+          ? `${claimCoverage.linkedNodes} / ${claimCoverage.totalNodes} kanavalla on väiteliitos; ${claimCoverage.evidenceLinkedNodes} kanavan väitteisiin on liitetty tutkimuksia. Näkymässä on ${claimCoverage.claims} eri väitettä ja ${claimCoverage.evidenceRelations} tutkimus–väite-suhdetta.`
+          : `${claimCoverage.linkedNodes} / ${claimCoverage.totalNodes} channels have claim bindings; claims in ${claimCoverage.evidenceLinkedNodes} channels have study relations. This view contains ${claimCoverage.claims} distinct claims and ${claimCoverage.evidenceRelations} study–claim relations.`}</p>
+        <p className="mb-3 leading-relaxed">{lang === "fi" ? "Luvut kuvaavat tiedon jäsentämistä. Sama tutkimus voi liittyä useaan väitteeseen, eivätkä luvut mittaa riippumattomia kokeita tai kalibroituja vaikutuksia. Avaa kanava nähdäksesi täsmällisen väitteen ja rajaukset." : "These counts describe curation. A study may relate to several claims; the counts do not measure independent experiments or calibrated effects. Open a channel to inspect the precise claim and its scope."}</p>
+      </details>
+      <div className="flex flex-wrap gap-2" role="group" aria-label={copy.overview}>
+        <button type="button" className={controlClass} aria-pressed={view === "graph"} onClick={() => { setView("graph"); updateUrl({ view: "graph" }); }}><Map className="mr-1 inline" size={15} />{copy.graph}</button>
+        <button type="button" className={controlClass} aria-pressed={view === "list"} onClick={() => { setView("list"); updateUrl({ view: "list" }); }}><List className="mr-1 inline" size={15} />{copy.list}</button>
+        <button type="button" className={controlClass} aria-pressed={mode === "guided"} onClick={() => { if (mode === "guided") { setMode("explore"); } else {
+          const key = Object.keys(STEPPER_PATHS).find(k => STEPPER_PATHS[k].atlasId === atlasId) ?? "main";
+          setPathKey(key); setAtlasId(STEPPER_PATHS[key].atlasId); updateUrl({ atlas: STEPPER_PATHS[key].atlasId }); setMode("guided");
+        } clearFilters(); setStep(0); closeDetails(); }}><Route className="mr-1 inline" size={15} />{copy.guided}</button>
+      </div>
+      {mode === "explore" ? <div className="flex flex-wrap items-end gap-3">
+        <label className="min-w-0 flex-1 text-xs font-semibold">{copy.search}<div className="relative mt-1"><Search size={15} className="absolute left-3 top-3.5" /><input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder={copy.placeholder} className={`${controlClass} w-full min-w-[190px] pl-9`} /></div></label>
+        <label className="text-xs font-semibold">{copy.stage}<select className={`${controlClass} mt-1 block max-w-full`} value={stage} onChange={e => setStage(e.target.value as Stage | "all")}><option value="all">{copy.all}</option>{ALL_STAGES.map(s => <option key={s.id} value={s.id}>{t(s.label, lang)}</option>)}</select></label>
+        <label className="text-xs font-semibold">{copy.evidence}<select className={`${controlClass} mt-1 block max-w-[270px]`} value={evidence} onChange={e => setEvidence(e.target.value as EpistemicLevel | "all")}><option value="all">{copy.all}</option>{usedLevels.map(l => <option key={l} value={l}>{l}: {EVIDENCE_LABELS[lang][l]}</option>)}</select></label>
+        {hasFilters && <button className={controlClass} onClick={clearFilters}><RotateCcw size={14} className="mr-1 inline" />{copy.clear}</button>}
+      </div> : <div className="flex flex-wrap items-end gap-3">
+        <label className="text-xs font-semibold">{copy.route}<select value={pathKey} className={`${controlClass} mt-1 block`} onChange={e => { setPathKey(e.target.value); setAtlasId(STEPPER_PATHS[e.target.value].atlasId); updateUrl({ atlas: STEPPER_PATHS[e.target.value].atlasId }); setStep(0); closeDetails(); }}>{Object.entries(STEPPER_PATHS).map(([key, p]) => <option key={key} value={key}>{t(p.label, lang)}</option>)}</select></label>
+        <button className={controlClass} disabled={step === 0} onClick={() => guideStep(step - 1)} aria-label={copy.previous}><ChevronLeft size={18} /></button>
+        <button className={controlClass} onClick={() => openNode(path.ids[step])}>{copy.step} {step + 1}/{path.ids.length}: {t(NODES.find(n => n.id === path.ids[step])!.label, lang)}</button>
+        <button className={controlClass} disabled={step === path.ids.length - 1} onClick={() => guideStep(step + 1)} aria-label={copy.next}><ChevronRight size={18} /></button>
+      </div>}
+      <div role="status" aria-live="polite" className="text-xs text-[var(--atlas-text-dim)]">{visible.length} / {NODES.length} {copy.visible} · {edgeCount} {copy.edges}</div>
+    </div>
+    {visible.length === 0 ? <div className="space-y-3 p-8 text-center"><p>{copy.empty}</p><button className={controlClass} onClick={clearFilters}>{copy.clear}</button>{atlasId !== "all" && <button className={`${controlClass} ml-2`} onClick={() => { setAtlasId("all"); setStage("all"); setEvidence("all"); updateUrl({ atlas: null }); }}>{copy.searchAll}</button>}</div> : view === "graph" ? <ReactFlowProvider><GraphView visible={visible} selectedId={selectedId} lang={lang} onOpen={openNode} /></ReactFlowProvider> :
+      <div className="max-h-[70vh] overflow-y-auto p-4" data-testid="atlas-list"><ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">{visible.map(n => <li key={n.id}><button className="min-h-[98px] w-full rounded-lg border border-[var(--border)] bg-[var(--atlas-surface)] p-3 text-left hover:border-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400" onClick={e => openNode(n.id, e.currentTarget)} aria-expanded={selectedId === n.id}><span className="block text-[11px] text-[var(--atlas-text-dim)]">{t(ALL_STAGES.find(s => s.id === LEVEL_TO_STAGE[n.level])!.label, lang)} · {n.epistemicLevel}</span><span className="mt-1 block text-sm font-semibold">{t(n.label, lang)}</span><span className="mt-1 block text-xs text-[var(--atlas-text-dim)]">{EVIDENCE_LABELS[lang][n.epistemicLevel]}</span></button></li>)}</ul></div>}
+    <div className="border-t border-[var(--border)] p-4"><p className="text-xs text-[var(--atlas-text-dim)]">{copy.instruction}</p><details className="mt-3 text-xs"><summary className="min-h-11 cursor-pointer py-3 font-semibold">{copy.relations}</summary><ul className="grid gap-2 sm:grid-cols-2">{Object.entries(RELATION_LABELS).map(([key, label]) => <li key={key} className="flex items-center gap-2"><svg width="32" height="12" aria-hidden="true"><line x1="0" x2="32" y1="6" y2="6" {...edgeStyles[key as keyof typeof edgeStyles]} strokeWidth="2" /></svg>{t(label, lang)}</li>)}</ul></details></div>
+    {selected && <AtlasDetail node={selected} locale={locale} onClose={closeDetails} originRef={originElement} onNavigate={followConnection} onAtlasChange={id => { changeAtlas(id); openNode(selected.id); }} />}
+  </div>;
 }

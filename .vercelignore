@@ -19,3 +19,6 @@ node_modules/
 .agents/
 website/.claude/
 website/.agents/
+
+# Preserve public downloads and the global-data browser dataset in source releases.
+!website/public/data/*.csv

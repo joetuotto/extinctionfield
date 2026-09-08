@@ -1,0 +1,36 @@
+{
+  "json_files_valid": 9,
+  "local_markdown_links_checked": 20,
+  "page_impact_rows_checked": 44,
+  "scoped_source_files_changed_since_inventory": [],
+  "issues": [],
+  "documents": {
+    "KELLO_HORMONIT_LISAANTYMINEN.md": {
+      "bytes": 37501,
+      "words": 3431
+    },
+    "MALLI_JA_SYNTEESIMENETELMA.md": {
+      "bytes": 20670,
+      "words": 1998
+    },
+    "README.md": {
+      "bytes": 26682,
+      "words": 2580
+    },
+    "KALSIUM_JA_KENTTATUTKIMUKSET.md": {
+      "bytes": 32111,
+      "words": 3274
+    },
+    "SIVUSTO_JA_REKISTERIT.md": {
+      "bytes": 33308,
+      "words": 3357
+    }
+  },
+  "independent_review": {
+    "reviewer": "syndrome_site_inventory",
+    "checked": "Summary counts, 44 locations, 33-reference two-version matrix, CatSper placement and code/data architecture",
+    "corrections_applied": [
+      "Separated Lindgren Eq5 from BERM kappa scale convention in both overview and site report"
+    ]
+  }
+}

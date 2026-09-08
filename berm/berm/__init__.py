@@ -11,6 +11,7 @@ predictions.
 """
 from berm.architecture import (
     CONDITIONAL_ASFR_ROUTE_ID,
+    MODULOME_ASFR_ROUTE_ID,
     FIELDSTATE_SPEC_VERSION,
     PACKAGE_VERSION,
     PREDICTION_ROUTE_ID,
@@ -35,6 +36,7 @@ from berm.model_fieldstate_asfr import (
     project_wpp_conditional_asfr,
     project_wpp_fieldstate_asfr,
 )
+from berm.model_modulome_asfr import project_modulome_scenario
 
 # Backward-compatible export.  The value is the conditional ASFR route ID,
 # never a BERM or FieldState specification version.
@@ -103,6 +105,8 @@ from berm.biology.mtor_aging import (
 )
 
 __all__ = [
+    "MODULOME_ASFR_ROUTE_ID",
+    "project_modulome_scenario",
     "predict_country_year",
     "predict_tfr",
     "hindcast_v17",
