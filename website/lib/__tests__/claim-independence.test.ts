@@ -81,14 +81,42 @@ describe("curated three-state independence", () => {
   });
 
   it("does not label any current end-to-end route pair independently verified", () => {
+    expect(routes).toHaveLength(5);
     const counts = { dependent: 0, unknown: 0, independent: 0 };
+    const pairs = new Set<string>();
     for (let i = 0; i < routes.length; i++) for (const other of routes.slice(i + 1)) {
       const result = analyzeIndependence(routes[i].id, other.id)!;
       expect(result.independent).not.toBe(true);
+      pairs.add([routes[i].id, other.id].sort().join("|"));
       counts[result.status]++;
     }
-    expect(counts).toEqual({ dependent: 4, unknown: 2, independent: 0 });
+    expect(pairs.size).toBe(10);
+    expect(counts).toEqual({ dependent: 7, unknown: 3, independent: 0 });
     expect(getIndependenceGroups().every((group) => !group.verified)).toBe(true);
+  });
+
+  it("identifies the state-to-action route's three shared-premise comparisons and unresolved demographic comparison", () => {
+    const synthesis = "route.biological-state-to-action";
+    for (const other of ["route.vgcc-sperm-fecundability", "route.rpm-melatonin-clock", "route.biological-coordination"]) {
+      const result = analyzeIndependence(synthesis, other)!;
+      expect(result, other).toMatchObject({ status: "dependent", independent: false });
+      expect(result.sharedPremises).toEqual(expect.arrayContaining([
+        "premise.berm.lindgren-2025",
+        "premise.berm.l2-operator",
+        "premise.biological.cross-system-transfer",
+      ]));
+    }
+
+    const coordination = analyzeIndependence(synthesis, "route.biological-coordination")!;
+    expect(coordination.sharedSources).toEqual(expect.arrayContaining([
+      "lamia2011_cry_glucocorticoid",
+      "kalafatakis2018_cortisol_pulsatility",
+    ]));
+
+    const demographic = analyzeIndependence(synthesis, "route.tfr-decomposition")!;
+    expect(demographic).toMatchObject({ status: "unknown", independent: null, sharedSources: [], sharedPremises: [] });
+    expect(demographic.unresolved).toContain("No selected evidence: route.tfr-decomposition");
+    expect(demographic.unresolved).toContain(`Incomplete independence audit: ${synthesis}`);
   });
 
   it("names the coverage denominator and separates source identity from relations", () => {

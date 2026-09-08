@@ -91,7 +91,9 @@
     ],
     "hormone_target": [
       "claim.cry.endocrine-gating",
-      "claim.coordination.hormone-target-timing"
+      "claim.coordination.hormone-target-timing",
+      "claim.coordination.cry-steroid-feedback",
+      "claim.coordination.hormone-waveform"
     ],
     "receptor_memory": [
       "claim.receptor.chemical-memory",
@@ -187,13 +189,19 @@
     ],
     "individual_behavioral_response": [
       "claim.cognition.state-dependent-behaviour",
-      "claim.synthesis.joint-endocrine-gate"
+      "claim.synthesis.joint-endocrine-gate",
+      "claim.behavior.state-dependent-valuation",
+      "claim.behavior.sexual-motivation",
+      "claim.behavior.state-dependent-learning",
+      "claim.behavior.social-valuation",
+      "claim.behavior.biological-state-to-action"
     ],
     "biobehavioral_weighting": [
       "claim.cognition.biological-behavioural-weighting"
     ],
     "narrative_attribution": [
-      "claim.cognition.reported-reason-downstream"
+      "claim.cognition.reported-reason-downstream",
+      "claim.behavior.reported-reasons"
     ],
     "epistapege_observability_loss": [
       "claim.civilization.epistapege-observability-loss"
@@ -236,6 +244,10 @@
     "mech_coq10_response": [
       "claim.pharmacology.coq10-protocol",
       "claim.pharmacology.coq10-response-conditional"
+    ],
+    "demo_encounters": [
+      "claim.behavior.dyadic-propagation",
+      "claim.behavior.biological-state-to-action"
     ]
   },
   "edges": [

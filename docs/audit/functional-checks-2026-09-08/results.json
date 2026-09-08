@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-08",
+  "timezone": "Europe/Helsinki",
+  "head": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+  "worktree": "Existing approved dirty worktree retained",
+  "sourceChanges": "No deliberate source-code edits; normal build-generated indices only",
+  "published": false,
+  "checks": [
+    {
+      "name": "Vitest",
+      "command": "npm test",
+      "exitCode": 0,
+      "startedAt": "2026-09-08T07:55:30.917877+03:00",
+      "logCompletedAt": "2026-09-08T07:55:40.784164+03:00",
+      "logPath": "docs/audit/functional-checks-2026-09-08/vitest.log",
+      "sha256": "bfd2422fc6d0d9f23f61e233e5682bfa54e18e34056d25c9f042728280b92d25"
+    },
+    {
+      "name": "Tuotantokäännös",
+      "command": "npm run build",
+      "exitCode": 0,
+      "startedAt": "2026-09-08T07:55:30.926039+03:00",
+      "logCompletedAt": "2026-09-08T07:56:15.994468+03:00",
+      "logPath": "docs/audit/functional-checks-2026-09-08/build.log",
+      "sha256": "c1a89346d25799b36b847eb7b8c530f0d597d63b3766f7d9be9625c7f0353d1c"
+    },
+    {
+      "name": "Käännösavaimet",
+      "command": "npm run i18n:coverage -- --strict",
+      "exitCode": 0,
+      "startedAt": "2026-09-08T07:55:30.919415+03:00",
+      "logCompletedAt": "2026-09-08T07:55:31.812114+03:00",
+      "logPath": "docs/audit/functional-checks-2026-09-08/i18n.log",
+      "sha256": "559839b9e309c26c9ab8aa5a8c160f4b6e7134eba5293b25ed1d3661ffdbd146"
+    }
+  ]
+}

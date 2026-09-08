@@ -2954,6 +2954,295 @@
         ]
       },
       "falsification_condition": "After fixing the kernel, named port and biological parameters using a declared training subset, the predicted intervention/time/endpoint contrast fails on held-out matched arms; no arm-specific gain may be added to rescue the prediction."
+    },
+    {
+      "id": "claim.coordination.cry-steroid-feedback",
+      "statement": {
+        "en": {
+          "text": "Cryptochromes and steroid receptors form a reciprocal regulatory interface: CRY modulates hormone-receptor output, and steroid-receptor-mediated clock resetting depends on CRY2 in the studied cell system.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kryptokromit ja steroidireseptorit muodostavat vastavuoroisen säätelyrajapinnan: CRY muuttaa hormonireseptorin vastetta, ja steroidireseptorien välittämä kellon tahdistuminen riippuu CRY2:sta tutkitussa solujärjestelmässä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HORMONE_TARGET_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Cell-type, CRY-isoform and receptor-partner dependence; Manella CRY2 knockdown decreases the NIH3T3 GR reporter, so a universal CRY-to-GR sign is not inferred.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.coordination.hormone-waveform",
+      "statement": {
+        "en": {
+          "text": "The temporal pattern of a hormone signal changes functional responses even when the administered daily dose remains the same.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Hormonisignaalin aikarakenne muuttaa toiminnallisia vasteita myös annetun vuorokausiannoksen pysyessä samana.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "HORMONE_TARGET_RESPONSE"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Same administered daily dose is not a claim of identical pharmacokinetics or concentration at every time point.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.state-dependent-valuation",
+      "statement": {
+        "en": {
+          "text": "Intervening on biological state can change reward and effort weighting and willingness to act without a corresponding loss of task capability.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Biologiseen tilaan puuttuminen voi muuttaa palkkion ja vaivan painottamista sekä halukkuutta toimia ilman vastaavaa kyvykkyyden heikkenemistä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Baseline dependence and task domain matter; the cognitive and short physical-effort endpoints are distinct. Draper measured behavior after endotoxin, not a dopamine mediator.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.sexual-motivation",
+      "statement": {
+        "en": {
+          "text": "Biological regulation of the reproductive axis participates in sexual motivation and neural processing of sexual stimuli.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Lisääntymisakselin biologinen säätely osallistuu seksuaaliseen motivaatioon ja seksuaalisten ärsykkeiden neuraaliseen käsittelyyn.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Sexual function, neural responses and penile tumescence are distinct outcomes. These studies do not equate sexual desire with child desire or intentional conception attempts.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.state-dependent-learning",
+      "statement": {
+        "en": {
+          "text": "Biological state changes feedback-learning weights and choice consistency, providing a learning-mediated route from a transient state to later action.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Biologinen tila muuttaa palauteoppimisen painoja ja valintojen johdonmukaisuutta, jolloin hetkellinen tila voi vaikuttaa myöhempään toimintaan oppimisen kautta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Measured task-learning effects constrain the learning operator; persistence over years is a further model-level continuation.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.reported-reasons",
+      "statement": {
+        "en": {
+          "text": "An expressed reason is an observation of the decision process and can also arise for an unnoticed substituted choice outcome; it does not alone identify the causal origin of motivation.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Ilmaistu perustelu on havainto päätösprosessista ja voi syntyä myös huomaamatta muutetulle valinnan lopputulokselle; se ei yksin tunnista motivaation kausaalista alkuperää.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "methodological",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Choice blindness is a bounded task result. In Eisenegger, treatment was randomized but post-game belief about treatment was measured, not randomized. Not all reasons are post-hoc.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.social-valuation",
+      "statement": {
+        "en": {
+          "text": "Neuromodulation and a nutrition intervention change measured social-choice weights, including harm aversion and rejection of unfair offers.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Neuromodulaatio ja ravitsemusinterventio muuttavat mitattujen sosiaalisten valintojen painoja, kuten haitan välttämistä ja epäreilun tarjouksen hylkäämistä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Crockett contains two separate randomized pharmacology experiments. Strang has 24 crossover participants, 22 behavioral analyses and 16 amino-acid AUC analyses; tyrosine mediation was not randomized.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.dyadic-propagation",
+      "statement": {
+        "en": {
+          "text": "A biological intervention applied to one interaction partner can also change the other partner's behavior and physiological responses during their interaction.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Yhteen vuorovaikutuskumppaniin kohdistuva biologinen interventio voi muuttaa myös toisen osapuolen käyttäytymistä ja fysiologisia vasteita vuorovaikutuksen aikana.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "The named component relation and its use in the BERM state-to-action synthesis."
+        ],
+        "does_not_support": [
+          "Acute father-infant crossover; only the father received oxytocin. Not a multigenerational follow-up or a direct EMF intervention.",
+          "A calibrated environmental EMF effect size or direct validation of the upstream geometry-to-receiver operator."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.behavior.biological-state-to-action",
+      "statement": {
+        "en": {
+          "text": "BERM derives physiological and behavioral outputs from a shared time-dependent biological state. The field-to-state coupling supplies the separately specified upstream input; valuation, learning and interaction carry the state into individual and collective action.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM johtaa yhteisestä ajallisesta biologisesta tilasta fysiologisia ja käyttäytymisen ulostuloja. Kentästä tilaan johtava kytkentä tuottaa ketjun erikseen määriteltävän alkusyötteen; arvottaminen, oppiminen ja vuorovaikutus vievät tilan vaikutuksen yksilön ja yhteiseen toimintaan.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "route",
+        "routeId": "route.biological-state-to-action"
+      },
+      "depends_on": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform",
+        "claim.behavior.state-dependent-valuation",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.social-valuation",
+        "claim.behavior.dyadic-propagation"
+      ],
+      "supersedes": [],
+      "scope": {
+        "supports": [
+          "Conditional composition of experimentally constrained state, response, valuation and interaction operators.",
+          "Shared state variables as a parsimonious explanation of multiple outputs."
+        ],
+        "does_not_support": [
+          "A single direct experiment on the complete EMF-to-civilization chain.",
+          "Independent replication merely from multiple publications or shared premises."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -7042,6 +7331,422 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+      "referenceId": "lamia2011_cry_glucocorticoid",
+      "claimId": "claim.coordination.cry-steroid-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Cell, biochemical and mouse experiments",
+      "applicability": "CRY interaction with GR and receptor-dependent transcription",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell-type, CRY-isoform and receptor-partner dependence; Manella CRY2 knockdown decreases the NIH3T3 GR reporter, so a universal CRY-to-GR sign is not inferred."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.lamia2011_cry_glucocorticoid"
+        ],
+        "datasetFamilyIds": [
+          "dataset.lamia2011_cry_glucocorticoid"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+      "referenceId": "rizzini2019_cry_cop1",
+      "claimId": "claim.coordination.cry-steroid-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Cell perturbation, rescue and epistasis",
+      "applicability": "CRY–DET1–COP1 regulation of hormone-receptor output",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell-type, CRY-isoform and receptor-partner dependence; Manella CRY2 knockdown decreases the NIH3T3 GR reporter, so a universal CRY-to-GR sign is not inferred."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.rizzini2019_cry_cop1"
+        ],
+        "datasetFamilyIds": [
+          "dataset.rizzini2019_cry_cop1"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock",
+      "referenceId": "manella2026_cry2_steroid_clock",
+      "claimId": "claim.coordination.cry-steroid-feedback",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Single-cell clock tracking, knockdown and receptor inhibition",
+      "applicability": "Steroid-receptor-dependent serum resetting and Cry2 dependence",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cell-type, CRY-isoform and receptor-partner dependence; Manella CRY2 knockdown decreases the NIH3T3 GR reporter, so a universal CRY-to-GR sign is not inferred."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.manella2026_cry2_steroid_clock"
+        ],
+        "datasetFamilyIds": [
+          "dataset.manella2026_cry2_steroid_clock"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility",
+      "referenceId": "kalafatakis2018_cortisol_pulsatility",
+      "claimId": "claim.coordination.hormone-waveform",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Randomized human crossover hormone-pattern intervention",
+      "applicability": "15 healthy men; different replacement patterns at the same 20 mg/day dose",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Same administered daily dose is not a claim of identical pharmacokinetics or concentration at every time point."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.kalafatakis2018_cortisol_pulsatility"
+        ],
+        "datasetFamilyIds": [
+          "dataset.kalafatakis2018_cortisol_pulsatility"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+      "referenceId": "westbrook2020_dopamine_effort",
+      "claimId": "claim.behavior.state-dependent-valuation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human PET and double-blind pharmacological crossover",
+      "applicability": "50 participants; baseline dopamine synthesis and cognitive-effort choices",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Baseline dependence and task domain matter; the cognitive and short physical-effort endpoints are distinct. Draper measured behavior after endotoxin, not a dopamine mediator."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.westbrook2020_dopamine_effort"
+        ],
+        "datasetFamilyIds": [
+          "dataset.radboud-da"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+      "referenceId": "jurgelis2022_sleep_effort",
+      "claimId": "claim.behavior.state-dependent-valuation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human within-participant sleep restriction crossover",
+      "applicability": "24 participants; cognitive versus short physical-effort choice",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Baseline dependence and task domain matter; the cognitive and short physical-effort endpoints are distinct. Draper measured behavior after endotoxin, not a dopamine mediator."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.jurgelis2022_sleep_effort"
+        ],
+        "datasetFamilyIds": [
+          "dataset.jurgelis2022_sleep_effort"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.state-dependent-valuation.draper2018_inflammation_effort",
+      "referenceId": "draper2018_inflammation_effort",
+      "claimId": "claim.behavior.state-dependent-valuation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Randomized endotoxin versus placebo experiment",
+      "applicability": "29 men; willingness to exert effort and reward sensitivity",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Baseline dependence and task domain matter; the cognitive and short physical-effort endpoints are distinct. Draper measured behavior after endotoxin, not a dopamine mediator."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.draper2018_inflammation_effort"
+        ],
+        "datasetFamilyIds": [
+          "dataset.draper2018_inflammation_effort"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+      "referenceId": "finkelstein2013_gonadal_steroids",
+      "claimId": "claim.behavior.sexual-motivation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human gonadal suppression and hormone-dose intervention",
+      "applicability": "Testosterone dose with or without aromatase inhibition",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Sexual function, neural responses and penile tumescence are distinct outcomes. These studies do not equate sexual desire with child desire or intentional conception attempts."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.finkelstein2013_gonadal_steroids"
+        ],
+        "datasetFamilyIds": [
+          "dataset.finkelstein2013_gonadal_steroids"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.sexual-motivation.mills2023_kisspeptin",
+      "referenceId": "mills2023_kisspeptin",
+      "claimId": "claim.behavior.sexual-motivation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Randomized placebo-controlled crossover",
+      "applicability": "Men with hypoactive sexual desire disorder; 37 randomized, 32 completed",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Sexual function, neural responses and penile tumescence are distinct outcomes. These studies do not equate sexual desire with child desire or intentional conception attempts."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.mills2023_kisspeptin"
+        ],
+        "datasetFamilyIds": [
+          "dataset.mills2023_kisspeptin"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+      "referenceId": "westbrook2025_dopamine_learning",
+      "claimId": "claim.behavior.state-dependent-learning",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human PET and pharmacological crossover",
+      "applicability": "Working memory, reinforcement learning and implicit effort cost",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Measured task-learning effects constrain the learning operator; persistence over years is a further model-level continuation."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.westbrook2025_dopamine_learning"
+        ],
+        "datasetFamilyIds": [
+          "dataset.radboud-da"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.state-dependent-learning.lim2026_sleep_learning",
+      "referenceId": "lim2026_sleep_learning",
+      "claimId": "claim.behavior.state-dependent-learning",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Human sleep-restriction crossover",
+      "applicability": "36 provided data, 33 completed both conditions; seven nights 5 versus 9 hours",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Measured task-learning effects constrain the learning operator; persistence over years is a further model-level continuation."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.lim2026_sleep_learning"
+        ],
+        "datasetFamilyIds": [
+          "dataset.lim2026_sleep_learning"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.reported-reasons.johansson2005_choice_blindness",
+      "referenceId": "johansson2005_choice_blindness",
+      "claimId": "claim.behavior.reported-reasons",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Experimental covert choice-outcome substitution",
+      "applicability": "120 participants; face-attractiveness choice and reported reasons",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Choice blindness is a bounded task result. In Eisenegger, treatment was randomized but post-game belief about treatment was measured, not randomized. Not all reasons are post-hoc."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.johansson2005_choice_blindness"
+        ],
+        "datasetFamilyIds": [
+          "dataset.johansson2005_choice_blindness"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness",
+      "referenceId": "eisenegger2010_testosterone_fairness",
+      "claimId": "claim.behavior.reported-reasons",
+      "relation": "contextualizes",
+      "directness": "experimental_component",
+      "studyDesign": "Randomized testosterone/placebo with measured post-game treatment belief",
+      "applicability": "121 women overall; 60 proposers in the offer analysis",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Choice blindness is a bounded task result. In Eisenegger, treatment was randomized but post-game belief about treatment was measured, not randomized. Not all reasons are post-hoc."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.eisenegger2010_testosterone_fairness"
+        ],
+        "datasetFamilyIds": [
+          "dataset.eisenegger2010_testosterone_fairness"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.social-valuation.crockett2015_harm_aversion",
+      "referenceId": "crockett2015_harm_aversion",
+      "claimId": "claim.behavior.social-valuation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Two randomized double-blind pharmacology experiments",
+      "applicability": "Citalopram n=89 and levodopa n=86 analyzed",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Crockett contains two separate randomized pharmacology experiments. Strang has 24 crossover participants, 22 behavioral analyses and 16 amino-acid AUC analyses; tyrosine mediation was not randomized."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.crockett2015_harm_aversion"
+        ],
+        "datasetFamilyIds": [
+          "dataset.crockett2015_harm_aversion"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.social-valuation.strang2017_nutrition_decisions",
+      "referenceId": "strang2017_nutrition_decisions",
+      "claimId": "claim.behavior.social-valuation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Observational breakfast study and independent randomized crossover",
+      "applicability": "Equal-calorie meals differing in macronutrients; social bargaining",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Crockett contains two separate randomized pharmacology experiments. Strang has 24 crossover participants, 22 behavioral analyses and 16 amino-acid AUC analyses; tyrosine mediation was not randomized."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.strang2017_nutrition_decisions"
+        ],
+        "datasetFamilyIds": [
+          "dataset.strang2017_nutrition_decisions"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad",
+      "referenceId": "weisman2012_oxytocin_dyad",
+      "claimId": "claim.behavior.dyadic-propagation",
+      "relation": "supports",
+      "directness": "experimental_component",
+      "studyDesign": "Randomized double-blind placebo crossover",
+      "applicability": "35 father–five-month-old-infant dyads",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Acute father-infant crossover; only the father received oxytocin. Not a multigenerational follow-up or a direct EMF intervention."
+      ],
+      "curatorId": "berm-convergence-integration",
+      "curatedAt": "2026-09-07",
+      "curatorNote": "Primary study read in the 2026-09-07 convergence literature review; source supports this named link.",
+      "provenance": {
+        "studyIds": [
+          "study.weisman2012_oxytocin_dyad"
+        ],
+        "datasetFamilyIds": [
+          "dataset.weisman2012_oxytocin_dyad"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -8375,6 +9080,155 @@
       "assessorId": "berm-pharmacology-integration",
       "assessedAt": "2026-09-07",
       "note": "Conditional composition of the BERM response operator and imported component dynamics; not an empirically calibrated field or population prediction."
+    },
+    {
+      "id": "ea.coordination.cry-steroid-feedback.v1",
+      "claimId": "claim.coordination.cry-steroid-feedback",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+        "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+        "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.coordination.hormone-waveform.v1",
+      "claimId": "claim.coordination.hormone-waveform",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.state-dependent-valuation.v1",
+      "claimId": "claim.behavior.state-dependent-valuation",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+        "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+        "er.behavior.state-dependent-valuation.draper2018_inflammation_effort"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.sexual-motivation.v1",
+      "claimId": "claim.behavior.sexual-motivation",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+        "er.behavior.sexual-motivation.mills2023_kisspeptin"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.state-dependent-learning.v1",
+      "claimId": "claim.behavior.state-dependent-learning",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+        "er.behavior.state-dependent-learning.lim2026_sleep_learning"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.reported-reasons.v1",
+      "claimId": "claim.behavior.reported-reasons",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.reported-reasons.johansson2005_choice_blindness",
+        "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.social-valuation.v1",
+      "claimId": "claim.behavior.social-valuation",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.social-valuation.crockett2015_harm_aversion",
+        "er.behavior.social-valuation.strang2017_nutrition_decisions"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.dyadic-propagation.v1",
+      "claimId": "claim.behavior.dyadic-propagation",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "imported",
+      "basis": [
+        "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Experimental component evidence; cross-study composition is declared separately by route.biological-state-to-action."
+    },
+    {
+      "id": "ea.behavior.biological-state-to-action.v1",
+      "claimId": "claim.behavior.biological-state-to-action",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+        "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+        "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock",
+        "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility",
+        "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+        "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+        "er.behavior.state-dependent-valuation.draper2018_inflammation_effort",
+        "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+        "er.behavior.sexual-motivation.mills2023_kisspeptin",
+        "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+        "er.behavior.state-dependent-learning.lim2026_sleep_learning",
+        "er.behavior.reported-reasons.johansson2005_choice_blindness",
+        "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness",
+        "er.behavior.social-valuation.crockett2015_harm_aversion",
+        "er.behavior.social-valuation.strang2017_nutrition_decisions",
+        "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad"
+      ],
+      "assessorId": "berm-convergence-integration",
+      "assessedAt": "2026-09-07",
+      "note": "Explicit composed BERM inference: measured component operators plus stated field-to-state, cross-system and aggregation premises. No new fitted coefficients are introduced."
     }
   ],
   "routes": [
@@ -8584,6 +9438,105 @@
         ],
         "status": "partial",
         "reviewedBy": "berm-research-integration",
+        "reviewedAt": "2026-09-07"
+      }
+    },
+    {
+      "id": "route.biological-state-to-action",
+      "name": {
+        "en": "Biological state → valuation → individual and shared action",
+        "fi": "Biologinen tila → arvottaminen → yksilön ja yhteinen toiminta"
+      },
+      "description": {
+        "en": "A composed route connecting receptor responsiveness and hormone timing to valuation, sexual motivation, learning, reported reasons and interaction. Component studies constrain each relation in its own system; BERM joins them through shared state variables.",
+        "fi": "Koostettu reitti vastaanottavuudesta ja hormonien ajoituksesta arvottamiseen, seksuaaliseen motivaatioon, oppimiseen, ilmaistuihin syihin ja vuorovaikutukseen. Komponenttitutkimukset rajaavat yhteyksiä omissa järjestelmissään; BERM yhdistää ne yhteisten tilamuuttujien kautta."
+      },
+      "targetClaim": "claim.behavior.biological-state-to-action",
+      "routeClaims": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform",
+        "claim.behavior.state-dependent-valuation",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.social-valuation",
+        "claim.behavior.dyadic-propagation"
+      ],
+      "routeEvidence": [
+        "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+        "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+        "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock",
+        "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility",
+        "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+        "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+        "er.behavior.state-dependent-valuation.draper2018_inflammation_effort",
+        "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+        "er.behavior.sexual-motivation.mills2023_kisspeptin",
+        "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+        "er.behavior.state-dependent-learning.lim2026_sleep_learning",
+        "er.behavior.reported-reasons.johansson2005_choice_blindness",
+        "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness",
+        "er.behavior.social-valuation.crockett2015_harm_aversion",
+        "er.behavior.social-valuation.strang2017_nutrition_decisions",
+        "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad"
+      ],
+      "sharedAssumptions": [
+        "A specified geometry-to-receiver operator supplies the biological input.",
+        "Cross-system transfers retain cell type, intervention, timing and measured endpoint.",
+        "Individual state-dependent actions enter explicit encounter and network aggregation."
+      ],
+      "sharedDatasets": [
+        "RADBOUD-DA: Westbrook 2020 and 2025 belong to the same broader study program."
+      ],
+      "independenceGroup": "state-to-action-convergence",
+      "independenceVerified": false,
+      "independenceNote": "Compared with existing routes: Lindgren, L2 and cross-system premises are shared. Within this route, Westbrook publications share a dataset family. Independent end-to-end replication is not asserted.",
+      "direction": "supports",
+      "alternativeCompatibility": "The component studies establish or constrain biological relationships that can also enter other causal models; BERM specifies their joint upstream and downstream composition.",
+      "discriminatingPower": "Joint state and multiple-output measurements constrain a common-state explanation, with protocol-specific field-to-state observations needed for the BERM upstream attribution.",
+      "independenceAudit": {
+        "studyIds": [
+          "study.lamia2011_cry_glucocorticoid",
+          "study.rizzini2019_cry_cop1",
+          "study.manella2026_cry2_steroid_clock",
+          "study.kalafatakis2018_cortisol_pulsatility",
+          "study.westbrook2020_dopamine_effort",
+          "study.jurgelis2022_sleep_effort",
+          "study.draper2018_inflammation_effort",
+          "study.finkelstein2013_gonadal_steroids",
+          "study.mills2023_kisspeptin",
+          "study.westbrook2025_dopamine_learning",
+          "study.lim2026_sleep_learning",
+          "study.johansson2005_choice_blindness",
+          "study.eisenegger2010_testosterone_fairness",
+          "study.crockett2015_harm_aversion",
+          "study.strang2017_nutrition_decisions",
+          "study.weisman2012_oxytocin_dyad"
+        ],
+        "datasetFamilyIds": [
+          "dataset.crockett2015_harm_aversion",
+          "dataset.draper2018_inflammation_effort",
+          "dataset.eisenegger2010_testosterone_fairness",
+          "dataset.finkelstein2013_gonadal_steroids",
+          "dataset.johansson2005_choice_blindness",
+          "dataset.jurgelis2022_sleep_effort",
+          "dataset.kalafatakis2018_cortisol_pulsatility",
+          "dataset.lamia2011_cry_glucocorticoid",
+          "dataset.lim2026_sleep_learning",
+          "dataset.manella2026_cry2_steroid_clock",
+          "dataset.mills2023_kisspeptin",
+          "dataset.radboud-da",
+          "dataset.rizzini2019_cry_cop1",
+          "dataset.strang2017_nutrition_decisions",
+          "dataset.weisman2012_oxytocin_dyad"
+        ],
+        "premiseIds": [
+          "premise.berm.lindgren-2025",
+          "premise.berm.l2-operator",
+          "premise.biological.cross-system-transfer"
+        ],
+        "status": "partial",
+        "reviewedBy": "berm-convergence-integration",
         "reviewedAt": "2026-09-07"
       }
     }

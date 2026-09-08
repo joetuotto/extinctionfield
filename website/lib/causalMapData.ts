@@ -397,7 +397,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Cav3 T-type channels operate near resting potential, with a window current. Schwan-equation membrane estimates and the reported Ca²⁺ pathways make Cav3 a candidate BERM tissue kernel. The formal L2 operator shape is conditional; Cav3 transfer, sign, lag and calibration are not derived by geometry. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
       fi: { mechanism: "Cav3 T-tyypin kanavat toimivat lepopotentiaalin lähellä ja tuottavat ikkunavirran. Schwanin yhtälöön perustuvat kalvoarviot ja raportoidut Ca²⁺-reitit tekevät Cav3:sta BERM:n mahdollisen kudosytimen. Formaali L2-operaattorimuoto on ehdollinen; geometria ei johda Cav3-siirtoa, etumerkkiä, viivettä eikä kalibrointia. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus ([[ref:ma2026_spermatogenesis_cav|Ma 2026]])." },
-      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/measurement/fieldstate/math#s16",
+      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/model#vgcc-sensitivity",
     },
   },
   {
@@ -520,7 +520,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Biological effect is non-linear: Ca²⁺ efflux from brain tissue occurs at specific intensity windows (0.1–1.0 mW/cm²) but NOT at higher or lower levels. Explains why ICNIRP's linear SAR model does not detect effects and why replication studies may fail." },
       fi: { mechanism: "Biologinen vaikutus ei-lineaarinen: Ca²⁺-effluksi aivokudoksesta tapahtuu tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm²) mutta EI korkeammilla tai matalammilla tasoilla. Selittää miksi ICNIRP:n lineaarinen SAR-malli ei havaitse vaikutuksia ja miksi replikaatiotutkimukset voivat epäonnistua." },
-      bermPathway: "Non-linear dose-response", keyRefs: ["adey1976_calcium_window"], link: "/objections#dose-response",
+      bermPathway: "Non-linear dose-response", keyRefs: ["adey1976_calcium_window"], link: "/about/objections#dose-response",
     },
   },
   {
@@ -753,7 +753,7 @@ export const NODES: CausalMapNode[] = [
   { id: "disease_cancer", level: 4, label: { en: "7. Young-onset cancer", fi: "7. Nuorten syöpä" }, sublabel: { en: "Latency: 10–25 years", fi: "Viive: 10-25 vuotta" }, color: "#A85A5A", cascadeOrder: 7, epistemicLevel: "E", detail: { en: { mechanism: "NK cell decline + ROS damage + mitotic disruption + immunosuppression → cancer risk." }, fi: { mechanism: "NK-solujen lasku + ROS-vaurio + mitoottinen häiriö + immunosuppressio → syöpäriski." }, link: "/evidence/cascades#cancer" } },
 
   // ── LEVEL 5: Demographic cascade (4) ──
-  { id: "demo_biocap", level: 5, label: { en: "Biological capacity ↓", fi: "Biologinen kapasiteetti ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Combined effect of spermatogenesis, ovulation, and hormonal disruptions lowers biological reproductive capacity." }, fi: { mechanism: "Spermatogeneesin, ovulaation ja hormonaalisten häiriöiden yhteisvaikutus alentaa biologista lisääntymiskapasiteettia." }, link: "/model#biocap" } },
+  { id: "demo_biocap", level: 5, label: { en: "Biological capacity ↓", fi: "Biologinen kapasiteetti ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Combined effect of spermatogenesis, ovulation, and hormonal disruptions lowers biological reproductive capacity." }, fi: { mechanism: "Spermatogeneesin, ovulaation ja hormonaalisten häiriöiden yhteisvaikutus alentaa biologista lisääntymiskapasiteettia." }, link: "/model/math#biocap" } },
   { id: "demo_behavior", level: 5, label: { en: "Reproductive motivation ↓", fi: "Lisääntymismotivaatio ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Testosterone and oxytocin decline + depression + sleep disorders → approach behavior and libido decrease." }, fi: { mechanism: "Testosteronin ja oksitosiinin lasku + masennus + unihäiriöt → lähestymiskäyttäytyminen ja libido laskevat." }, link: "/evidence/circadian#qbs" } },
   { id: "demo_asfr", level: 5, label: { en: "ASFR ↓ (age-specific)", fi: "ASFR ↓ (ikäkohtainen)" }, epistemicLevel: "E", detail: { en: { mechanism: "Decline in biological capacity and motivation produces age-specific fertility rate (ASFR) decline." }, fi: { mechanism: "Biologisen kapasiteetin ja motivaation lasku tuottaa ikäkohtaisen hedelmällisyysluvun (ASFR) laskun." }, link: "/model#asfr" } },
   { id: "demo_tfr", level: 5, label: { en: "TFR ↓ (total)", fi: "TFR ↓ (kokonais)" }, sublabel: { en: "5.0 → 2.2 globally", fi: "5.0 → 2.2 globaalisti" }, epistemicLevel: "E", detail: { en: { mechanism: "Sum of ASFRs across age groups = total fertility rate (TFR). Global trend: 5.0 → 2.2." }, fi: { mechanism: "ASFR-lukujen summa yli ikäryhmien = kokonaishedelmällisyysluku (TFR). Globaali trendi: 5.0 → 2.2." }, link: "/explore" } },

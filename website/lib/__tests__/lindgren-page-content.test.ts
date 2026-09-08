@@ -4,7 +4,7 @@ import ts from "typescript";
 import { describe, expect, it } from "vitest";
 
 const modelPageSource = readFileSync(resolve(process.cwd(), "app/[locale]/model/page.tsx"), "utf8");
-const mathematicsPageSource = readFileSync(resolve(process.cwd(), "app/[locale]/mathematics/page.tsx"), "utf8");
+const mathematicsSectionsSource = readFileSync(resolve(process.cwd(), "components/MathematicsSections.tsx"), "utf8");
 
 function objectExpression(expression: ts.Expression): ts.ObjectLiteralExpression {
   while (ts.isAsExpression(expression) || ts.isSatisfiesExpression(expression)) expression = expression.expression;
@@ -39,7 +39,7 @@ function localeText(object: ts.ObjectLiteralExpression, locale: string, key: str
 }
 
 const modelCopy = copyObject(modelPageSource, "t");
-const mathematicalGates = copyObject(mathematicsPageSource, "CANONICAL_COPY");
+const mathematicalGates = copyObject(mathematicsSectionsSource, "CANONICAL_COPY");
 
 // Require each authored locale to express the distinction: an English sentence
 // elsewhere in the file must not satisfy a missing or incorrect translation.
@@ -101,9 +101,9 @@ describe("Lindgren page content contract", () => {
 
   it("renders the separate gates without restoring a gravitational-Bianchi shortcut", () => {
     for (const key of ["variationBody", "weylBody", "bianchiBody"]) {
-      expect(mathematicsPageSource).toContain(`{canonical.${key}}`);
+      expect(mathematicsSectionsSource).toContain(`{canonical.${key}}`);
     }
-    expect(mathematicsPageSource).not.toMatch(
+    expect(mathematicsSectionsSource).not.toMatch(
       /\\nabla[^"\n]*F[^"\n]*\\text\{follows from\}[^"\n]*\\nabla[^"\n]*G/,
     );
   });

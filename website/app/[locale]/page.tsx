@@ -337,7 +337,7 @@ export default async function Home({
               <h2 className="editorial-kicker text-accent">{d.falsTitle}</h2>
             </div>
             <Link
-              href={`${prefix}/mathematics#falsification`}
+              href={`${prefix}/model/math#falsification`}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
             >
               {d.falsCta} <ArrowRight size={14} />

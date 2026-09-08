@@ -4,7 +4,7 @@ import { Sigma, Layers } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
-import { MathematicsSections } from "@/app/[locale]/mathematics/page";
+import { MathematicsSections } from "@/components/MathematicsSections";
 
 type Copy = {
   title: string;

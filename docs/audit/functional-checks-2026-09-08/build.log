@@ -1,0 +1,615 @@
+
+> website@0.1.0 prebuild
+> npm run references:index && npm run references:validate && npm run registry:validate && node scripts/build-anchor-index.mjs && npm run typecheck && npm run lint:strict
+
+
+> website@0.1.0 references:index
+> node scripts/build-reference-index.mjs
+
+Reference index: 1156 canonical records, 46 aliases, 737 used records
+
+> website@0.1.0 references:validate
+> node scripts/validate-references.mjs
+
+Reference validation passed: 1156 canonical IDs, 46 aliases, 734 structured IDs, 489 publishable links
+
+> website@0.1.0 registry:validate
+> node scripts/validate-registry.mjs
+
+1. Checking node ID format...
+2. Checking edge referential integrity...
+3. Checking parent/child consistency...
+4. Checking edge/parent-child agreement...
+5. Checking graph is acyclic...
+   No cycles found.
+6. Checking UI group coverage...
+7. Checking layer values...
+8. Checking legacy alias uniqueness...
+9. Checking claim ID format...
+10. Checking claim targets...
+11. Checking claim dependencies...
+12. Checking evidence relations...
+13. Checking epistemic assessments...
+14. Checking required translations...
+15. Checking root/terminal nodes...
+   Root nodes (8): TECHNOLOGY_TIMING_PROXY, FIELDSTATE_VECTOR, FIELDSTATE_ENVELOPE, STATIC_TRIBO_INTERFACE, FIELDSTATE_LOW_FREQUENCY_ELECTRIC, DEMAND_OPPORTUNITY, TEMPO, ART_LIVE_BIRTH_DELIVERY
+   Terminal nodes (3): BARRIER_RETINA, ECOLOGICAL_TRAIT_STATE, TFR
+16. Checking version format...
+17. Checking route definitions...
+18. Checking independence groups...
+   5 independence group(s): direct-ros, circadian, demographic, coordination-synthesis, state-to-action-convergence
+19. Checking BERM/FieldState architecture boundary...
+20. Checking the V1-V25 publication gate...
+  WARN:  DKC release is not authorized: the route publishes as a candidate with the gate state shown
+  WARN:  Publication blocked: no V1-V10-authorized DKC release artifact is present
+  WARN:  Publication blocked: the DKC release evaluation does not pass V1-V10
+  WARN:  Publication blocked: the evidence-search protocol audit has not passed
+  WARN:  Publication blocked: critical point V1 is not PASS
+  WARN:  Publication blocked: critical point V2 is not PASS
+  WARN:  Publication blocked: critical point V3 is not PASS
+  WARN:  Publication blocked: critical point V4 is not PASS
+  WARN:  Publication blocked: critical point V5 is not PASS
+  WARN:  Publication blocked: critical point V6 is not PASS
+  WARN:  Publication blocked: critical point V7 is not PASS
+  WARN:  Publication blocked: critical point V8 is not PASS
+  WARN:  Publication blocked: critical point V9 is not PASS
+  WARN:  Publication blocked: critical point V10 is not PASS
+
+──────────────────────────────────────────────────
+Registry validation: 0 error(s), 14 warning(s)
+  Graph: 39 nodes, 83 edges, 13 UI groups
+  Claims: 64 claims, 131 evidence relations, 64 assessments
+  Routes: 5 routes, 5 unique IDs
+──────────────────────────────────────────────────
+
+Anchor index: 102 anchor(s) in 10 file(s)
+
+> website@0.1.0 typecheck
+> tsc --noEmit
+
+
+> website@0.1.0 lint:strict
+> eslint --max-warnings=0
+
+[BABEL] Note: The code generator has deoptimised the styling of /Volumes/kovalevy 3/extinctionfield/website/app/[locale]/model/page.tsx as it exceeds the max of 500KB.
+[BABEL] Note: The code generator has deoptimised the styling of /Volumes/kovalevy 3/extinctionfield/website/app/[locale]/predictions/page.tsx as it exceeds the max of 500KB.
+
+> website@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.1 (webpack)
+✓ Running next.config.ts took 87ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.7s
+  Running TypeScript ...
+  Finished TypeScript in 1772ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/526) ...
+  Generating static pages using 7 workers (131/526) 
+  Generating static pages using 7 workers (262/526) 
+  Generating static pages using 7 workers (394/526) 
+✓ Generating static pages using 7 workers (526/526) in 5.1s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├   /[locale]
+│ ├ ● /en
+│ ├ ● /fi
+│ ├ ● /ja
+│ └ ● [+2 more paths]
+├   /[locale]/about
+│ ├ ● /en/about
+│ ├ ● /fi/about
+│ ├ ● /ja/about
+│ └ ● [+2 more paths]
+├   /[locale]/about/history
+│ ├ ● /en/about/history
+│ ├ ● /fi/about/history
+│ ├ ● /ja/about/history
+│ └ ● [+2 more paths]
+├   /[locale]/about/measurement
+│ ├ ● /en/about/measurement
+│ ├ ● /fi/about/measurement
+│ ├ ● /ja/about/measurement
+│ └ ● [+2 more paths]
+├   /[locale]/about/objections
+│ ├ ● /en/about/objections
+│ ├ ● /fi/about/objections
+│ ├ ● /ja/about/objections
+│ └ ● [+2 more paths]
+├   /[locale]/about/replication
+│ ├ ● /en/about/replication
+│ ├ ● /fi/about/replication
+│ ├ ● /ja/about/replication
+│ └ ● [+2 more paths]
+├   /[locale]/articles
+│ ├ ● /en/articles
+│ ├ ● /fi/articles
+│ ├ ● /ja/articles
+│ └ ● [+2 more paths]
+├   /[locale]/articles/[slug]
+│ ├ ● /en/articles/bees
+│ ├ ● /fi/articles/bees
+│ ├ ● /ja/articles/bees
+│ └ ● [+22 more paths]
+├   /[locale]/behavior
+│ ├ ● /en/behavior
+│ ├ ● /fi/behavior
+│ ├ ● /ja/behavior
+│ └ ● [+2 more paths]
+├   /[locale]/biology
+│ ├ ● /en/biology
+│ ├ ● /fi/biology
+│ ├ ● /ja/biology
+│ └ ● [+2 more paths]
+├   /[locale]/civilization
+│ ├ ● /en/civilization
+│ ├ ● /fi/civilization
+│ ├ ● /ja/civilization
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/pathopege
+│ ├ ● /en/civilization/pathopege
+│ ├ ● /fi/civilization/pathopege
+│ ├ ● /ja/civilization/pathopege
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/pathopolites
+│ ├ ● /en/civilization/pathopolites
+│ ├ ● /fi/civilization/pathopolites
+│ ├ ● /ja/civilization/pathopolites
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/patokinesis
+│ ├ ● /en/civilization/patokinesis
+│ ├ ● /fi/civilization/patokinesis
+│ ├ ● /ja/civilization/patokinesis
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/patokratia
+│ ├ ● /en/civilization/patokratia
+│ ├ ● /fi/civilization/patokratia
+│ ├ ● /ja/civilization/patokratia
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/patopolis
+│ ├ ● /en/civilization/patopolis
+│ ├ ● /fi/civilization/patopolis
+│ ├ ● /ja/civilization/patopolis
+│ └ ● [+2 more paths]
+├   /[locale]/civilization/patopoliteia
+│ ├ ● /en/civilization/patopoliteia
+│ ├ ● /fi/civilization/patopoliteia
+│ ├ ● /ja/civilization/patopoliteia
+│ └ ● [+2 more paths]
+├   /[locale]/data
+│ ├ ● /en/data
+│ ├ ● /fi/data
+│ ├ ● /ja/data
+│ └ ● [+2 more paths]
+├   /[locale]/ecology
+│ ├ ● /en/ecology
+│ ├ ● /fi/ecology
+│ ├ ● /ja/ecology
+│ └ ● [+2 more paths]
+├   /[locale]/epistemology
+│ ├ ● /en/epistemology
+│ ├ ● /fi/epistemology
+│ ├ ● /ja/epistemology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence
+│ ├ ● /en/evidence
+│ ├ ● /fi/evidence
+│ ├ ● /ja/evidence
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/adhd-prototype
+│ ├ ● /en/evidence/adhd-prototype
+│ ├ ● /fi/evidence/adhd-prototype
+│ ├ ● /ja/evidence/adhd-prototype
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/allergy-epidemic
+│ ├ ● /en/evidence/allergy-epidemic
+│ ├ ● /fi/evidence/allergy-epidemic
+│ ├ ● /ja/evidence/allergy-epidemic
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/amish-control
+│ ├ ● /en/evidence/amish-control
+│ ├ ● /fi/evidence/amish-control
+│ ├ ● /ja/evidence/amish-control
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/autism-prototype
+│ ├ ● /en/evidence/autism-prototype
+│ ├ ● /fi/evidence/autism-prototype
+│ ├ ● /ja/evidence/autism-prototype
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/bbb
+│ ├ ● /en/evidence/bbb
+│ ├ ● /fi/evidence/bbb
+│ ├ ● /ja/evidence/bbb
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/cascades
+│ ├ ● /en/evidence/cascades
+│ ├ ● /fi/evidence/cascades
+│ ├ ● /ja/evidence/cascades
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/chronic-pain
+│ ├ ● /en/evidence/chronic-pain
+│ ├ ● /fi/evidence/chronic-pain
+│ ├ ● /ja/evidence/chronic-pain
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/circadian
+│ ├ ● /en/evidence/circadian
+│ ├ ● /fi/evidence/circadian
+│ ├ ● /ja/evidence/circadian
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/convergence
+│ ├ ● /en/evidence/convergence
+│ ├ ● /fi/evidence/convergence
+│ ├ ● /ja/evidence/convergence
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/counter-evidence
+│ ├ ● /en/evidence/counter-evidence
+│ ├ ● /fi/evidence/counter-evidence
+│ ├ ● /ja/evidence/counter-evidence
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/devices
+│ ├ ● /en/evidence/devices
+│ ├ ● /fi/evidence/devices
+│ ├ ● /ja/evidence/devices
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/ecology
+│ ├ ● /en/evidence/ecology
+│ ├ ● /fi/evidence/ecology
+│ ├ ● /ja/evidence/ecology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/epidemiology
+│ ├ ● /en/evidence/epidemiology
+│ ├ ● /fi/evidence/epidemiology
+│ ├ ● /ja/evidence/epidemiology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/epigenetic-legacy
+│ ├ ● /en/evidence/epigenetic-legacy
+│ ├ ● /fi/evidence/epigenetic-legacy
+│ ├ ● /ja/evidence/epigenetic-legacy
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/evolution
+│ ├ ● /en/evidence/evolution
+│ ├ ● /fi/evidence/evolution
+│ ├ ● /ja/evidence/evolution
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/eyes
+│ ├ ● /en/evidence/eyes
+│ ├ ● /fi/evidence/eyes
+│ ├ ● /ja/evidence/eyes
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/four-neurodegenerations
+│ ├ ● /en/evidence/four-neurodegenerations
+│ ├ ● /fi/evidence/four-neurodegenerations
+│ ├ ● /ja/evidence/four-neurodegenerations
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/gut-brain-axis
+│ ├ ● /en/evidence/gut-brain-axis
+│ ├ ● /fi/evidence/gut-brain-axis
+│ ├ ● /ja/evidence/gut-brain-axis
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/heavy-metal-synergy
+│ ├ ● /en/evidence/heavy-metal-synergy
+│ ├ ● /fi/evidence/heavy-metal-synergy
+│ ├ ● /ja/evidence/heavy-metal-synergy
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/heliobiology
+│ ├ ● /en/evidence/heliobiology
+│ ├ ● /fi/evidence/heliobiology
+│ ├ ● /ja/evidence/heliobiology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/hidden-thyroid
+│ ├ ● /en/evidence/hidden-thyroid
+│ ├ ● /fi/evidence/hidden-thyroid
+│ ├ ● /ja/evidence/hidden-thyroid
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/historical-convergence
+│ ├ ● /en/evidence/historical-convergence
+│ ├ ● /fi/evidence/historical-convergence
+│ ├ ● /ja/evidence/historical-convergence
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/infant-vulnerability
+│ ├ ● /en/evidence/infant-vulnerability
+│ ├ ● /fi/evidence/infant-vulnerability
+│ ├ ● /ja/evidence/infant-vulnerability
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/iss-hypomagnetic
+│ ├ ● /en/evidence/iss-hypomagnetic
+│ ├ ● /fi/evidence/iss-hypomagnetic
+│ ├ ● /ja/evidence/iss-hypomagnetic
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/klimentidis-explained
+│ ├ ● /en/evidence/klimentidis-explained
+│ ├ ● /fi/evidence/klimentidis-explained
+│ ├ ● /ja/evidence/klimentidis-explained
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/laschamp-reversal
+│ ├ ● /en/evidence/laschamp-reversal
+│ ├ ● /fi/evidence/laschamp-reversal
+│ ├ ● /ja/evidence/laschamp-reversal
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/lighting
+│ ├ ● /en/evidence/lighting
+│ ├ ● /fi/evidence/lighting
+│ ├ ● /ja/evidence/lighting
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/magnetoreception
+│ ├ ● /en/evidence/magnetoreception
+│ ├ ● /fi/evidence/magnetoreception
+│ ├ ● /ja/evidence/magnetoreception
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/natural-modulators
+│ ├ ● /en/evidence/natural-modulators
+│ ├ ● /fi/evidence/natural-modulators
+│ ├ ● /ja/evidence/natural-modulators
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/neurological-spectrum
+│ ├ ● /en/evidence/neurological-spectrum
+│ ├ ● /fi/evidence/neurological-spectrum
+│ ├ ● /ja/evidence/neurological-spectrum
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/nutrition
+│ ├ ● /en/evidence/nutrition
+│ ├ ● /fi/evidence/nutrition
+│ ├ ● /ja/evidence/nutrition
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/pharmacology
+│ ├ ● /en/evidence/pharmacology
+│ ├ ● /fi/evidence/pharmacology
+│ ├ ● /ja/evidence/pharmacology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/populations
+│ ├ ● /en/evidence/populations
+│ ├ ● /fi/evidence/populations
+│ ├ ● /ja/evidence/populations
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/replication
+│ ├ ● /en/evidence/replication
+│ ├ ● /fi/evidence/replication
+│ ├ ● /ja/evidence/replication
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/reproductive-arc
+│ ├ ● /en/evidence/reproductive-arc
+│ ├ ● /fi/evidence/reproductive-arc
+│ ├ ● /ja/evidence/reproductive-arc
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/reproductive-navigation
+│ ├ ● /en/evidence/reproductive-navigation
+│ ├ ● /fi/evidence/reproductive-navigation
+│ ├ ● /ja/evidence/reproductive-navigation
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/space-weather-biology
+│ ├ ● /en/evidence/space-weather-biology
+│ ├ ● /fi/evidence/space-weather-biology
+│ ├ ● /ja/evidence/space-weather-biology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/superposition
+│ ├ ● /en/evidence/superposition
+│ ├ ● /fi/evidence/superposition
+│ ├ ● /ja/evidence/superposition
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/technology
+│ ├ ● /en/evidence/technology
+│ ├ ● /fi/evidence/technology
+│ ├ ● /ja/evidence/technology
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/testosterone
+│ ├ ● /en/evidence/testosterone
+│ ├ ● /fi/evidence/testosterone
+│ ├ ● /ja/evidence/testosterone
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/timothy-experiment
+│ ├ ● /en/evidence/timothy-experiment
+│ ├ ● /fi/evidence/timothy-experiment
+│ ├ ● /ja/evidence/timothy-experiment
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/triple-strikes
+│ ├ ● /en/evidence/triple-strikes
+│ ├ ● /fi/evidence/triple-strikes
+│ ├ ● /ja/evidence/triple-strikes
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/unbroken-chain
+│ ├ ● /en/evidence/unbroken-chain
+│ ├ ● /fi/evidence/unbroken-chain
+│ ├ ● /ja/evidence/unbroken-chain
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/vitamin-d-channel-blocker
+│ ├ ● /en/evidence/vitamin-d-channel-blocker
+│ ├ ● /fi/evidence/vitamin-d-channel-blocker
+│ ├ ● /ja/evidence/vitamin-d-channel-blocker
+│ └ ● [+2 more paths]
+├   /[locale]/evidence/walker-chain
+│ ├ ● /en/evidence/walker-chain
+│ ├ ● /fi/evidence/walker-chain
+│ ├ ● /ja/evidence/walker-chain
+│ └ ● [+2 more paths]
+├   /[locale]/explore
+│ ├ ● /en/explore
+│ ├ ● /fi/explore
+│ ├ ● /ja/explore
+│ └ ● [+2 more paths]
+├   /[locale]/explorer
+│ ├ ● /en/explorer
+│ ├ ● /fi/explorer
+│ ├ ● /ja/explorer
+│ └ ● [+2 more paths]
+├   /[locale]/map
+│ ├ ● /en/map
+│ ├ ● /fi/map
+│ ├ ● /ja/map
+│ └ ● [+2 more paths]
+├   /[locale]/mathematics
+│ ├ ● /en/mathematics
+│ ├ ● /fi/mathematics
+│ ├ ● /ja/mathematics
+│ └ ● [+2 more paths]
+├   /[locale]/measurement/fieldstate
+│ ├ ● /en/measurement/fieldstate
+│ ├ ● /fi/measurement/fieldstate
+│ ├ ● /ja/measurement/fieldstate
+│ └ ● [+2 more paths]
+├   /[locale]/measurement/fieldstate/math
+│ ├ ● /en/measurement/fieldstate/math
+│ ├ ● /fi/measurement/fieldstate/math
+│ ├ ● /ja/measurement/fieldstate/math
+│ └ ● [+2 more paths]
+├   /[locale]/model
+│ ├ ● /en/model
+│ ├ ● /fi/model
+│ ├ ● /ja/model
+│ └ ● [+2 more paths]
+├   /[locale]/model/biological-coordination
+│ ├ ● /en/model/biological-coordination
+│ ├ ● /fi/model/biological-coordination
+│ ├ ● /ja/model/biological-coordination
+│ └ ● [+2 more paths]
+├   /[locale]/model/comparison
+│ ├ ● /en/model/comparison
+│ ├ ● /fi/model/comparison
+│ ├ ● /ja/model/comparison
+│ └ ● [+2 more paths]
+├   /[locale]/model/dual-kernel
+│ ├ ● /en/model/dual-kernel
+│ ├ ● /fi/model/dual-kernel
+│ ├ ● /ja/model/dual-kernel
+│ └ ● [+2 more paths]
+├   /[locale]/model/frequency-weights
+│ ├ ● /en/model/frequency-weights
+│ ├ ● /fi/model/frequency-weights
+│ ├ ● /ja/model/frequency-weights
+│ └ ● [+2 more paths]
+├   /[locale]/model/math
+│ ├ ● /en/model/math
+│ ├ ● /fi/model/math
+│ ├ ● /ja/model/math
+│ └ ● [+2 more paths]
+├   /[locale]/model/q-factor
+│ ├ ● /en/model/q-factor
+│ ├ ● /fi/model/q-factor
+│ ├ ● /ja/model/q-factor
+│ └ ● [+2 more paths]
+├   /[locale]/model/tensor-derivation
+│ ├ ● /en/model/tensor-derivation
+│ ├ ● /fi/model/tensor-derivation
+│ ├ ● /ja/model/tensor-derivation
+│ └ ● [+2 more paths]
+├   /[locale]/modulome
+│ ├ ● /en/modulome
+│ ├ ● /fi/modulome
+│ ├ ● /ja/modulome
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/adrenal
+│ ├ ● /en/modulome/adrenal
+│ ├ ● /fi/modulome/adrenal
+│ ├ ● /ja/modulome/adrenal
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/bat
+│ ├ ● /en/modulome/bat
+│ ├ ● /fi/modulome/bat
+│ ├ ● /ja/modulome/bat
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/brain
+│ ├ ● /en/modulome/brain
+│ ├ ● /fi/modulome/brain
+│ ├ ● /ja/modulome/brain
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/ear
+│ ├ ● /en/modulome/ear
+│ ├ ● /fi/modulome/ear
+│ ├ ● /ja/modulome/ear
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/eye
+│ ├ ● /en/modulome/eye
+│ ├ ● /fi/modulome/eye
+│ ├ ● /ja/modulome/eye
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/heart
+│ ├ ● /en/modulome/heart
+│ ├ ● /fi/modulome/heart
+│ ├ ● /ja/modulome/heart
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/hippocampus
+│ ├ ● /en/modulome/hippocampus
+│ ├ ● /fi/modulome/hippocampus
+│ ├ ● /ja/modulome/hippocampus
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/hypothalamus
+│ ├ ● /en/modulome/hypothalamus
+│ ├ ● /fi/modulome/hypothalamus
+│ ├ ● /ja/modulome/hypothalamus
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/pain
+│ ├ ● /en/modulome/pain
+│ ├ ● /fi/modulome/pain
+│ ├ ● /ja/modulome/pain
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/pancreas
+│ ├ ● /en/modulome/pancreas
+│ ├ ● /fi/modulome/pancreas
+│ ├ ● /ja/modulome/pancreas
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/pituitary
+│ ├ ● /en/modulome/pituitary
+│ ├ ● /fi/modulome/pituitary
+│ ├ ● /ja/modulome/pituitary
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/testes
+│ ├ ● /en/modulome/testes
+│ ├ ● /fi/modulome/testes
+│ ├ ● /ja/modulome/testes
+│ └ ● [+2 more paths]
+├   /[locale]/modulome/thyroid
+│ ├ ● /en/modulome/thyroid
+│ ├ ● /fi/modulome/thyroid
+│ ├ ● /ja/modulome/thyroid
+│ └ ● [+2 more paths]
+├   /[locale]/objections
+│ ├ ● /en/objections
+│ ├ ● /fi/objections
+│ ├ ● /ja/objections
+│ └ ● [+2 more paths]
+├   /[locale]/physics
+│ ├ ● /en/physics
+│ ├ ● /fi/physics
+│ ├ ● /ja/physics
+│ └ ● [+2 more paths]
+├   /[locale]/predictions
+│ ├ ● /en/predictions
+│ ├ ● /fi/predictions
+│ ├ ● /ja/predictions
+│ └ ● [+2 more paths]
+├   /[locale]/references
+│ ├ ● /en/references
+│ ├ ● /fi/references
+│ ├ ● /ja/references
+│ └ ● [+2 more paths]
+├ ƒ /[locale]/references/[referenceId]
+├   /[locale]/replication
+│ ├ ● /en/replication
+│ ├ ● /fi/replication
+│ ├ ● /ja/replication
+│ └ ● [+2 more paths]
+├   /[locale]/sentinel
+│ ├ ● /en/sentinel
+│ ├ ● /fi/sentinel
+│ ├ ● /ja/sentinel
+│ └ ● [+2 more paths]
+├ ○ /apple-icon.png
+├ ○ /icon.png
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> website@0.1.0 postbuild
+> node scripts/check-rendered-html.mjs
+
+Rendered HTML check passed. Scanned 522 prerendered routes: 0 raw-token, 0 empty-element, 0 empty-anchor

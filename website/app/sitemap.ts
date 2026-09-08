@@ -28,6 +28,10 @@ interface RouteMeta {
 const ROUTE_META: Record<string, RouteMeta> = {
   "/": { changeFrequency: "weekly", priority: 1.0 },
   "/model": { changeFrequency: "monthly", priority: 0.9 },
+  "/physics": { changeFrequency: "monthly", priority: 0.9 },
+  "/biology": { changeFrequency: "monthly", priority: 0.9 },
+  "/behavior": { changeFrequency: "monthly", priority: 0.9 },
+  "/evidence/convergence": { changeFrequency: "weekly", priority: 0.9 },
   "/measurement/fieldstate": { changeFrequency: "monthly", priority: 0.8 },
   "/evidence": { changeFrequency: "weekly", priority: 0.9 },
   "/evidence/pharmacology": { changeFrequency: "monthly", priority: 0.8 },

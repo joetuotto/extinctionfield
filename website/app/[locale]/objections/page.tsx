@@ -11,7 +11,7 @@ import {
   findingsInGroup,
 } from "@/lib/findingsClassification";
 
-type Objection = { question: string; response: readonly string[]; boundary: string };
+type Objection = { id?: string; question: string; response: readonly string[]; boundary: string };
 type DiscriminatingTest = {
   id: string;
   name: string;
@@ -227,6 +227,7 @@ const t: Record<string, Copy> = {
         boundary: "This is a regulatory-gap argument, not a health claim. If LED driver emissions at environmental distances produce no measurable IFO-VGIC response in controlled experiments, the IF-channel concern is empirically resolved.",
       },
       {
+        id: "dose-response",
         question: "There is no dose-response relationship",
         response: [
           "The [[ref:adey1976_calcium_window|Adey-Blackman calcium window, documented since 1976]], shows that EMF biological effects do not follow a linear dose-response. Calcium efflux from cat brain tissue occurred at specific intensity windows (0.1–1.0 mW/cm² at 450 MHz amplitude-modulated at 16 Hz) but NOT at higher or lower levels. This 'window effect' means the ICNIRP approach — setting a threshold above which effects occur — is structurally wrong. Effects occur in windows, not above thresholds.",
@@ -492,6 +493,7 @@ const t: Record<string, Copy> = {
         boundary: "Tämä on sääntelyn aukko -argumentti, ei terveysväite. Jos LED-ajuriemissiot ympäristöetäisyyksillä eivät tuota mitattavaa IFO-VGIC-vastetta kontrolloiduissa kokeissa, IF-kanavahuoli on empiirisesti ratkaistu.",
       },
       {
+        id: "dose-response",
         question: "Annos-vastetta ei ole",
         response: [
           "[[ref:adey1976_calcium_window|Adeyn-Blackmanin kalsiumikkuna, dokumentoitu vuodesta 1976]], osoittaa, ettei EMF:n biologiset vaikutukset noudata lineaarista annos-vastetta. Kalsiumin ulosvirtausta kissan aivokudoksesta tapahtui tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm² taajuudella 450 MHz amplitudimoduloituna 16 Hz:llä) mutta EI korkeammilla tai matalammilla tasoilla. Tämä 'ikkunailmiö' tarkoittaa, että ICNIRP:n lähestymistapa — kynnysarvon asettaminen jonka yläpuolella vaikutuksia esiintyy — on rakenteellisesti väärä. Vaikutuksia esiintyy ikkunoissa, ei kynnysarvojen yläpuolella.",
@@ -757,6 +759,7 @@ const t: Record<string, Copy> = {
         boundary: "これは規制ギャップの論拠であり、健康主張ではない。",
       },
       {
+        id: "dose-response",
         question: "用量反応関係がない",
         response: [
           "[[ref:adey1976_calcium_window|1976年以来文書化されているAdey-Blackmanカルシウムウィンドウ]]は、EMFの生物学的効果が線形用量反応に従わないことを示している。この「ウィンドウ効果」はICNIRPのアプローチが構造的に間違っていることを意味する。",
@@ -1025,6 +1028,7 @@ const t: Record<string, Copy> = {
         boundary: "C’est un argument de lacune réglementaire, pas une affirmation sanitaire.",
       },
       {
+        id: "dose-response",
         question: "Il n’y a pas de relation dose-réponse",
         response: [
           "[[ref:adey1976_calcium_window|La fenêtre calcique d’Adey-Blackman, documentée depuis 1976]], montre que les effets biologiques EMF ne suivent pas une dose-réponse linéaire. L’approche ICNIRP est structurellement erronée.",
@@ -1293,6 +1297,7 @@ const t: Record<string, Copy> = {
         boundary: "이것은 규제 격차 논거이지, 건강 주장이 아니다.",
       },
       {
+        id: "dose-response",
         question: "용량-반응 관계가 없다",
         response: [
           "[[ref:adey1976_calcium_window|1976년부터 문서화된 Adey-Blackman 칼슘 윈도우]]는 EMF 생물학적 효과가 선형 용량-반응을 따르지 않음을 보여준다. ICNIRP 접근법이 구조적으로 잘못되었음을 의미한다.",
@@ -1663,7 +1668,7 @@ export default async function ObjectionsPage({
         <h2 className="editorial-section-heading border-t editorial-rule pt-6">{d.questionsTitle}</h2>
 
         {d.objections.map((objection, index) => (
-          <section key={objection.question} id={objection.question === "There is no dose-response relationship" || objection.question === "Annos-vastetta ei ole" ? "dose-response" : undefined} className="rounded-xl border border-card-border bg-card-bg p-5">
+          <section key={objection.question} id={objection.id} className="rounded-xl border border-card-border bg-card-bg p-5">
             <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
             <h2 className="mt-2 text-lg font-semibold">{objection.question}</h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">

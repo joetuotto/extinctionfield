@@ -1,0 +1,2904 @@
+{
+  "title": "Published navigation and explanation-level production verification",
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T19:15:22.192400+00:00",
+  "origin": "https://www.extinctionfield.com",
+  "releaseDirectory": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig",
+  "result": "pass",
+  "failures": [],
+  "method": {
+    "client": "curl with normal certificate validation and Python HTMLParser; no browser automation",
+    "parallelRequests": 4,
+    "scope": "20 new hub pages in five languages, FI/EN home and model/civilization/epistemology/about/evidence pages, 19 newly added FI reference detail pages, and four public downloadable data files.",
+    "claimCheck": "Explicit source ClaimRef IDs and hub anchor IDs must be rendered; all nine new claim IDs must appear across checked pages; all rendered IDs must be registered.",
+    "navigationCheck": "All seven ordered sections on every HTML page; exactly the owning active section; six About tabs with the correct current page.",
+    "downloadCheck": "SHA-256 of public bytes compared with the exact local release copy.",
+    "limits": "This bounded release check complements the 400-route/345-anchor local production-build audit and separate browser QA; no external article URLs fetched."
+  },
+  "summary": {
+    "hubPages": 20,
+    "fiEnExistingPages": 12,
+    "newFiReferencePages": 19,
+    "publicDownloads": 4,
+    "httpTargets": 55,
+    "newClaimIds": [
+      "claim.behavior.biological-state-to-action",
+      "claim.behavior.dyadic-propagation",
+      "claim.behavior.reported-reasons",
+      "claim.behavior.sexual-motivation",
+      "claim.behavior.social-valuation",
+      "claim.behavior.state-dependent-learning",
+      "claim.behavior.state-dependent-valuation",
+      "claim.coordination.cry-steroid-feedback",
+      "claim.coordination.hormone-waveform"
+    ],
+    "missingNewClaimIds": [],
+    "elapsedSeconds": 54.01,
+    "downloadRetrySeconds": 1.221
+  },
+  "checks": [
+    {
+      "path": "/data/conditional-scenarios.json",
+      "url": "https://www.extinctionfield.com/data/conditional-scenarios.json",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/data/conditional-scenarios.json",
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 1354140,
+      "seconds": 4.44,
+      "localFile": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig/website/public/data/conditional-scenarios.json",
+      "expectedSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+      "actualSha256": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+      "sha256Matches": true
+    },
+    {
+      "path": "/data/global_panel.csv",
+      "url": "https://www.extinctionfield.com/data/global_panel.csv",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/data/global_panel.csv",
+      "contentType": "text/csv; charset=utf-8",
+      "bytes": 3457189,
+      "seconds": 1.221,
+      "localFile": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig/website/public/data/global_panel.csv",
+      "expectedSha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8",
+      "actualSha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8",
+      "sha256Matches": true,
+      "retry": {
+        "reason": "Initial uncompressed transfer reached the 45-second timeout before receiving the full file.",
+        "attempt": 2,
+        "timeoutSeconds": 150,
+        "acceptEncoding": "curl --compressed; downloaded content is transparently decoded before hashing",
+        "curlExit": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "path": "/data/modulome-state.json",
+      "url": "https://www.extinctionfield.com/data/modulome-state.json",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/data/modulome-state.json",
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 75206,
+      "seconds": 0.935,
+      "localFile": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig/website/public/data/modulome-state.json",
+      "expectedSha256": "0c8d96b60b3278b79ac11ad0c1dc5946b27e299e6d5ab2f4f8acbb264a2d37ce",
+      "actualSha256": "0c8d96b60b3278b79ac11ad0c1dc5946b27e299e6d5ab2f4f8acbb264a2d37ce",
+      "sha256Matches": true
+    },
+    {
+      "path": "/data/references_full.json",
+      "url": "https://www.extinctionfield.com/data/references_full.json",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/data/references_full.json",
+      "contentType": "application/json; charset=utf-8",
+      "bytes": 1044098,
+      "seconds": 8.321,
+      "localFile": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig/website/public/data/references_full.json",
+      "expectedSha256": "b4001de998105af9aa52206e5c53b71c97555ebf8ab34a84406dfc2a8199ae75",
+      "actualSha256": "b4001de998105af9aa52206e5c53b71c97555ebf8ab34a84406dfc2a8199ae75",
+      "sha256Matches": true
+    },
+    {
+      "path": "/en",
+      "url": "https://www.extinctionfield.com/en",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 188859,
+      "seconds": 4.636,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [],
+      "h1": "Global biological capacity is declining. Five technology layers. Five health epidemics. One mechanism.",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::vhncw-1788808469930-f81268fa84be"
+      }
+    },
+    {
+      "path": "/en/about",
+      "url": "https://www.extinctionfield.com/en/about",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/about",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 110692,
+      "seconds": 1.566,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/about"
+      ],
+      "h1": "About BERM",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "aboutTabDestinations": [
+        "/en/about",
+        "/en/epistemology",
+        "/en/about/history",
+        "/en/about/replication",
+        "/en/about/measurement",
+        "/en/about/objections"
+      ],
+      "currentAboutTabs": [
+        "/en/about"
+      ],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::2wlfj-1788808473456-0f2192185edd"
+      }
+    },
+    {
+      "path": "/en/behavior",
+      "url": "https://www.extinctionfield.com/en/behavior",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/behavior",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 219515,
+      "seconds": 1.527,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/behavior"
+      ],
+      "h1": "From biology to desire and action",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "referenceIds": [
+        "bensimon2022_sleep_helping",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "expectedAnchorIds": [
+        "desire",
+        "joint-action",
+        "learning",
+        "reasons",
+        "social",
+        "valuation"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::kpkcz-1788808474466-293effa7de6a"
+      }
+    },
+    {
+      "path": "/en/biology",
+      "url": "https://www.extinctionfield.com/en/biology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/biology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 207020,
+      "seconds": 1.202,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/biology"
+      ],
+      "h1": "Biology: a changing receiving system",
+      "claimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "brosi2013_pollination_network",
+        "catsper2024",
+        "dufor2019_cry_magnetic_repair",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "liu2014",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "expectedAnchorIds": [
+        "capacity",
+        "cry-hormones",
+        "ecology",
+        "reception",
+        "timing"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::fbwmf-1788808474927-d7b6dd8e546d"
+      }
+    },
+    {
+      "path": "/en/civilization",
+      "url": "https://www.extinctionfield.com/en/civilization",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/civilization",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 133565,
+      "seconds": 1.003,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/civilization"
+      ],
+      "h1": "Civilization",
+      "claimIds": [],
+      "referenceIds": [
+        "bensimon2018_sleep_social",
+        "fowler2010_cooperation_cascades"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::c2m4j-1788808475993-7cf6337e232c"
+      }
+    },
+    {
+      "path": "/en/epistemology",
+      "url": "https://www.extinctionfield.com/en/epistemology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/epistemology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 275180,
+      "seconds": 1.035,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/about"
+      ],
+      "h1": "Epistemology",
+      "claimIds": [],
+      "referenceIds": [
+        "eroglu_2009_cell",
+        "iarc_2a_shift",
+        "klimentidis2010",
+        "kury2017_camk2",
+        "lopez_martin_2006",
+        "lopez_martin_2009",
+        "pemf_bone_fda_review_2020",
+        "sousouri2025",
+        "sun2016_elf_vgcc",
+        "tang2024"
+      ],
+      "rawReferenceTokens": [],
+      "aboutTabDestinations": [
+        "/en/about",
+        "/en/epistemology",
+        "/en/about/history",
+        "/en/about/replication",
+        "/en/about/measurement",
+        "/en/about/objections"
+      ],
+      "currentAboutTabs": [
+        "/en/epistemology"
+      ],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::ft6gl-1788808476070-d2f263332443"
+      }
+    },
+    {
+      "path": "/en/evidence",
+      "url": "https://www.extinctionfield.com/en/evidence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/evidence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 2097658,
+      "seconds": 28.302,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Evidence register",
+      "claimIds": [],
+      "referenceIds": [
+        "5g_bat2025",
+        "adams2014",
+        "adey1981_v2",
+        "agarwal2009",
+        "ahmadi2016",
+        "alshammari2022",
+        "andersson-2007-denmark",
+        "avendao2012",
+        "baldini2025",
+        "balmori2006",
+        "balmori2009",
+        "balmori2015",
+        "battelle1980",
+        "becker1985_v2",
+        "belpomme2015",
+        "belpomme2022",
+        "belyaev2016",
+        "bhatt2012_glp1",
+        "blackman1985_calcium_windows",
+        "blank_goodman2009",
+        "brown2016",
+        "burchard2002",
+        "cacna1c_emf2024",
+        "cacna1g-asd-snps",
+        "calis2021",
+        "cao2015",
+        "carlsen1992",
+        "carter2021",
+        "catsper2024",
+        "catsper_2021",
+        "ccb_fertility",
+        "chae2019",
+        "chakraborty2020",
+        "chen2016_glia",
+        "chodick-2020-israel",
+        "colin1992_varroa_electrostatic",
+        "cordelli2024",
+        "cordelli2025_corrigendum",
+        "covid_6mo_recovery_2025",
+        "covid_recovery_2024",
+        "covid_sperm_2025",
+        "csli_31_panel_2026",
+        "csli_coloss_23",
+        "csli_pecbms_27",
+        "cucurachi2013",
+        "czerski1979",
+        "deloitte_devices_2021",
+        "diem2005",
+        "dincmen2016",
+        "display_multiplication",
+        "dreher2016",
+        "dualhormone_meta2018",
+        "engels2014",
+        "england_2023_ticks",
+        "erdman2016",
+        "esmailzadeh2019",
+        "eurobarometer2018",
+        "falcioni2018",
+        "favre2011",
+        "feldman2012",
+        "frey1961",
+        "frick2010",
+        "friedman2007",
+        "gandhi1996",
+        "garcia_robledo2025",
+        "goetz2024",
+        "goldstein_kreyenfeld2011",
+        "guy1984",
+        "hallmann2017_v2",
+        "hardell_carlberg2015",
+        "harris2023",
+        "he2016",
+        "hensel2025",
+        "hore2016_v2",
+        "houston2016",
+        "hrv_wifi2023",
+        "huss2007",
+        "hydro_quebec_1976",
+        "iarc2011",
+        "india_electricity_2022",
+        "india_screen_sleep_2025",
+        "interphone2010",
+        "iolchiev2019",
+        "irreversible_digital_2023",
+        "italy_sleep_device_2020",
+        "iuliis2009",
+        "iversen2025",
+        "jin2022",
+        "kacem2024",
+        "kalmijn1971",
+        "kesari2018",
+        "klimentidis2010",
+        "lai_singh2004",
+        "lavignera2012",
+        "lea2016",
+        "led_emf_component",
+        "levine2017_v2",
+        "levine2023_sperm",
+        "lindecke2026",
+        "lindgren2021",
+        "liu2014",
+        "lochhead2010",
+        "lokeshwar2021",
+        "ma2026_spermatogenesis_cav",
+        "maalouf2023",
+        "majewska2025",
+        "mallinson2025_electric_pollution",
+        "manta2014",
+        "mazur2013",
+        "mccarty2011",
+        "meena2014",
+        "mehta2015",
+        "melnick2019",
+        "miller2019",
+        "mollerlokken2008",
+        "moncrieff2022",
+        "morley2018_spider_ballooning",
+        "naderi2026",
+        "natcomms2024rpm",
+        "nations2024",
+        "nature_comms_2026_ttype",
+        "nifedipine_weight2011",
+        "nike_bbs_gradient",
+        "nl_child_mh_2024",
+        "ntp2018",
+        "nyante2012_nhanes",
+        "pall2013_v2",
+        "pall2016",
+        "pall2018_v2",
+        "panagopoulos2004",
+        "panagopoulos2013",
+        "panagopoulos2025",
+        "pawlak2025",
+        "perheentupa2013",
+        "pgc-cacna1c-five-disorders",
+        "pmc6104424_nnc",
+        "pmc6894750_timothy",
+        "pnasnexus2026",
+        "porges2001",
+        "post_lockdown_mh_2025",
+        "poutahidis2013",
+        "poutahidis2014",
+        "puts2008",
+        "rapamycin_fertility",
+        "reiter2007",
+        "ritz2004",
+        "rodriguez2003",
+        "rosenberg2019",
+        "rothamsted_aphid",
+        "salford2003",
+        "sanchez_bayo2019",
+        "santi2025",
+        "santini2018",
+        "satellite_predictive_test",
+        "schwan1957",
+        "screen_child_behav_2024",
+        "screentime_meta2022",
+        "selye1950",
+        "sempou2022",
+        "shafik1992",
+        "shafik1992_sling",
+        "sharma_kumar2010",
+        "shepherd2018",
+        "sherrard2018",
+        "skakkebaek-2015-physrev",
+        "sofrankova2023",
+        "splawski2004",
+        "street_led_insects",
+        "stuart2004",
+        "swan2000",
+        "swiss_screen_mh_2022",
+        "tang2024",
+        "therabionic-ebioMedicine-2019",
+        "thielens2018",
+        "thornhill1994",
+        "travison2007_v2",
+        "uk_screen_time_2023",
+        "ulusoy2025_bbb_enos",
+        "us_child_screen_2024",
+        "usselman2016",
+        "vanbergen2013",
+        "vassallo2025",
+        "volkow2011",
+        "walker2017_why_we_sleep",
+        "wang2007",
+        "weather_radar_insect_temporal",
+        "wfh_permanent_2021",
+        "who_t_meta",
+        "wind_turbines_bats",
+        "xiang2025_clc2_ttype",
+        "yakymenko2016",
+        "yang2024_metformin",
+        "yoshii2009",
+        "yousefi2025",
+        "yu2019_btb",
+        "zandieh2025",
+        "zhang_china_covid_2025",
+        "zhanglevin2025"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::gcd58-1788808477006-109980612b19"
+      }
+    },
+    {
+      "path": "/en/evidence/convergence",
+      "url": "https://www.extinctionfield.com/en/evidence/convergence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/evidence/convergence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 288912,
+      "seconds": 1.948,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "How the evidence connects",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "bensimon2022_sleep_helping",
+        "catsper2024",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "lim2026_sleep_learning",
+        "lindgren2025",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "expectedAnchorIds": [
+        "cry-circuit",
+        "data",
+        "effort",
+        "hormone-time",
+        "network",
+        "reading-evidence",
+        "reasons",
+        "reproductive-motivation",
+        "shared-state",
+        "social-learning"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::t8bm7-1788808477173-0958d4411d70"
+      }
+    },
+    {
+      "path": "/en/model",
+      "url": "https://www.extinctionfield.com/en/model",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/model",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 1662690,
+      "seconds": 3.862,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/model"
+      ],
+      "h1": "Model Documentation",
+      "claimIds": [
+        "claim.couple.fecundability-convergence",
+        "claim.proxy.lindgren-selection",
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.tfr.multi-input-decomposition",
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "referenceIds": [
+        "andersson-2007-denmark",
+        "assefa2024_testes_review",
+        "bartolke2025",
+        "bektas2026",
+        "bertagna2025",
+        "camkii-cav32-threshold-2023",
+        "chae2019",
+        "chodick-2020-israel",
+        "eliyahu2006",
+        "feigin2014_latitude_cvd",
+        "fert-steril-2023-phone-sperm-trend",
+        "higuchi2007",
+        "ijrb2022_if_review",
+        "ivancsits_dna_recovery",
+        "iversen2025",
+        "juutilainen2006_superposition",
+        "kim2026_cell_gene_switch",
+        "klimentidis2010",
+        "levine2023_sperm",
+        "luria2009",
+        "majewska2025",
+        "mazur2013",
+        "mccrary2021_hrv_geomag",
+        "nyante2012_nhanes",
+        "panagopoulos2025_ifo",
+        "perheentupa2013",
+        "ritz2004",
+        "saad2016",
+        "santi2025",
+        "sun2016_elf_vgcc",
+        "talbi2025_quantum_magnetoreception",
+        "tbahriti2026",
+        "travison2007_v2",
+        "vencloviene2022_geomag_mortality",
+        "weller2025_dna",
+        "wu2008_emas_hpt_axis",
+        "xiang2025_clc2_ttype",
+        "yakymenko2016"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::m8nnt-1788808477187-a84e8b6e8100"
+      }
+    },
+    {
+      "path": "/en/physics",
+      "url": "https://www.extinctionfield.com/en/physics",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/en/physics",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 146235,
+      "seconds": 1.03,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/physics"
+      ],
+      "h1": "Physics: the structure of the input",
+      "claimIds": [],
+      "referenceIds": [
+        "lindgren2025"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [],
+      "expectedAnchorIds": [
+        "cross-terms",
+        "measurement",
+        "premise",
+        "receiver",
+        "structure"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::6lm8w-1788808479153-4733932ea1ff"
+      }
+    },
+    {
+      "path": "/fi",
+      "url": "https://www.extinctionfield.com/fi",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 191390,
+      "seconds": 1.03,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [],
+      "h1": "Biologisen kapasiteetin maailmanlaajuinen heikkeneminen Viisi teknologiakerrosta. Viisi terveysepidemaa. Yksi mekanismi.",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::mdxsx-1788808480173-e17fafe8ce5b"
+      }
+    },
+    {
+      "path": "/fi/about",
+      "url": "https://www.extinctionfield.com/fi/about",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/about",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 111465,
+      "seconds": 18.051,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/about"
+      ],
+      "h1": "Tietoa BERM:stä",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "aboutTabDestinations": [
+        "/fi/about",
+        "/fi/epistemology",
+        "/fi/about/history",
+        "/fi/about/replication",
+        "/fi/about/measurement",
+        "/fi/about/objections"
+      ],
+      "currentAboutTabs": [
+        "/fi/about"
+      ],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::pv9bf-1788808481139-067c97098ff1"
+      }
+    },
+    {
+      "path": "/fi/behavior",
+      "url": "https://www.extinctionfield.com/fi/behavior",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/behavior",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 220817,
+      "seconds": 41.642,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/behavior"
+      ],
+      "h1": "Biologiasta haluun ja toimintaan",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "referenceIds": [
+        "bensimon2022_sleep_helping",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "expectedAnchorIds": [
+        "desire",
+        "joint-action",
+        "learning",
+        "reasons",
+        "social",
+        "valuation"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::zp4gv-1788808481305-e0555a9cc4cc"
+      }
+    },
+    {
+      "path": "/fi/biology",
+      "url": "https://www.extinctionfield.com/fi/biology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/biology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 208256,
+      "seconds": 1.775,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/biology"
+      ],
+      "h1": "Biologia: muuttuva vastaanottava järjestelmä",
+      "claimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "brosi2013_pollination_network",
+        "catsper2024",
+        "dufor2019_cry_magnetic_repair",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "liu2014",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "expectedAnchorIds": [
+        "capacity",
+        "cry-hormones",
+        "ecology",
+        "reception",
+        "timing"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::84wqh-1788808499125-a6a8b72f1737"
+      }
+    },
+    {
+      "path": "/fi/civilization",
+      "url": "https://www.extinctionfield.com/fi/civilization",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/civilization",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 133378,
+      "seconds": 1.945,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/civilization"
+      ],
+      "h1": "Sivilisaatio",
+      "claimIds": [],
+      "referenceIds": [
+        "bensimon2018_sleep_social",
+        "fowler2010_cooperation_cascades"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::d7ldg-1788808501911-cf8a78ddb540"
+      }
+    },
+    {
+      "path": "/fi/epistemology",
+      "url": "https://www.extinctionfield.com/fi/epistemology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/epistemology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 273159,
+      "seconds": 1.247,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/about"
+      ],
+      "h1": "Epistemologia",
+      "claimIds": [],
+      "referenceIds": [
+        "eroglu_2009_cell",
+        "iarc_2a_shift",
+        "klimentidis2010",
+        "kury2017_camk2",
+        "lopez_martin_2006",
+        "lopez_martin_2009",
+        "pemf_bone_fda_review_2020",
+        "sousouri2025",
+        "sun2016_elf_vgcc",
+        "tang2024"
+      ],
+      "rawReferenceTokens": [],
+      "aboutTabDestinations": [
+        "/fi/about",
+        "/fi/epistemology",
+        "/fi/about/history",
+        "/fi/about/replication",
+        "/fi/about/measurement",
+        "/fi/about/objections"
+      ],
+      "currentAboutTabs": [
+        "/fi/epistemology"
+      ],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::nbczt-1788808502955-cb19680088e3"
+      }
+    },
+    {
+      "path": "/fi/evidence",
+      "url": "https://www.extinctionfield.com/fi/evidence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/evidence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 2109920,
+      "seconds": 3.494,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Näyttörekisteri",
+      "claimIds": [],
+      "referenceIds": [
+        "5g_bat2025",
+        "adams2014",
+        "adey1981_v2",
+        "agarwal2009",
+        "ahmadi2016",
+        "alshammari2022",
+        "andersson-2007-denmark",
+        "avendao2012",
+        "baldini2025",
+        "balmori2006",
+        "balmori2009",
+        "balmori2015",
+        "battelle1980",
+        "becker1985_v2",
+        "belpomme2015",
+        "belpomme2022",
+        "belyaev2016",
+        "bhatt2012_glp1",
+        "blackman1985_calcium_windows",
+        "blank_goodman2009",
+        "brown2016",
+        "burchard2002",
+        "cacna1c_emf2024",
+        "cacna1g-asd-snps",
+        "calis2021",
+        "cao2015",
+        "carlsen1992",
+        "carter2021",
+        "catsper2024",
+        "catsper_2021",
+        "ccb_fertility",
+        "chae2019",
+        "chakraborty2020",
+        "chen2016_glia",
+        "chodick-2020-israel",
+        "colin1992_varroa_electrostatic",
+        "cordelli2024",
+        "cordelli2025_corrigendum",
+        "covid_6mo_recovery_2025",
+        "covid_recovery_2024",
+        "covid_sperm_2025",
+        "csli_31_panel_2026",
+        "csli_coloss_23",
+        "csli_pecbms_27",
+        "cucurachi2013",
+        "czerski1979",
+        "deloitte_devices_2021",
+        "diem2005",
+        "dincmen2016",
+        "display_multiplication",
+        "dreher2016",
+        "dualhormone_meta2018",
+        "engels2014",
+        "england_2023_ticks",
+        "erdman2016",
+        "esmailzadeh2019",
+        "eurobarometer2018",
+        "falcioni2018",
+        "favre2011",
+        "feldman2012",
+        "frey1961",
+        "frick2010",
+        "friedman2007",
+        "gandhi1996",
+        "garcia_robledo2025",
+        "goetz2024",
+        "goldstein_kreyenfeld2011",
+        "guy1984",
+        "hallmann2017_v2",
+        "hardell_carlberg2015",
+        "harris2023",
+        "he2016",
+        "hensel2025",
+        "hore2016_v2",
+        "houston2016",
+        "hrv_wifi2023",
+        "huss2007",
+        "hydro_quebec_1976",
+        "iarc2011",
+        "india_electricity_2022",
+        "india_screen_sleep_2025",
+        "interphone2010",
+        "iolchiev2019",
+        "irreversible_digital_2023",
+        "italy_sleep_device_2020",
+        "iuliis2009",
+        "iversen2025",
+        "jin2022",
+        "kacem2024",
+        "kalmijn1971",
+        "kesari2018",
+        "klimentidis2010",
+        "lai_singh2004",
+        "lavignera2012",
+        "lea2016",
+        "led_emf_component",
+        "levine2017_v2",
+        "levine2023_sperm",
+        "lindecke2026",
+        "lindgren2021",
+        "liu2014",
+        "lochhead2010",
+        "lokeshwar2021",
+        "ma2026_spermatogenesis_cav",
+        "maalouf2023",
+        "majewska2025",
+        "mallinson2025_electric_pollution",
+        "manta2014",
+        "mazur2013",
+        "mccarty2011",
+        "meena2014",
+        "mehta2015",
+        "melnick2019",
+        "miller2019",
+        "mollerlokken2008",
+        "moncrieff2022",
+        "morley2018_spider_ballooning",
+        "naderi2026",
+        "natcomms2024rpm",
+        "nations2024",
+        "nature_comms_2026_ttype",
+        "nifedipine_weight2011",
+        "nike_bbs_gradient",
+        "nl_child_mh_2024",
+        "ntp2018",
+        "nyante2012_nhanes",
+        "pall2013_v2",
+        "pall2016",
+        "pall2018_v2",
+        "panagopoulos2004",
+        "panagopoulos2013",
+        "panagopoulos2025",
+        "pawlak2025",
+        "perheentupa2013",
+        "pgc-cacna1c-five-disorders",
+        "pmc6104424_nnc",
+        "pmc6894750_timothy",
+        "pnasnexus2026",
+        "porges2001",
+        "post_lockdown_mh_2025",
+        "poutahidis2013",
+        "poutahidis2014",
+        "puts2008",
+        "rapamycin_fertility",
+        "reiter2007",
+        "ritz2004",
+        "rodriguez2003",
+        "rosenberg2019",
+        "rothamsted_aphid",
+        "salford2003",
+        "sanchez_bayo2019",
+        "santi2025",
+        "santini2018",
+        "satellite_predictive_test",
+        "schwan1957",
+        "screen_child_behav_2024",
+        "screentime_meta2022",
+        "selye1950",
+        "sempou2022",
+        "shafik1992",
+        "shafik1992_sling",
+        "sharma_kumar2010",
+        "shepherd2018",
+        "sherrard2018",
+        "skakkebaek-2015-physrev",
+        "sofrankova2023",
+        "splawski2004",
+        "street_led_insects",
+        "stuart2004",
+        "swan2000",
+        "swiss_screen_mh_2022",
+        "tang2024",
+        "therabionic-ebioMedicine-2019",
+        "thielens2018",
+        "thornhill1994",
+        "travison2007_v2",
+        "uk_screen_time_2023",
+        "ulusoy2025_bbb_enos",
+        "us_child_screen_2024",
+        "usselman2016",
+        "vanbergen2013",
+        "vassallo2025",
+        "volkow2011",
+        "walker2017_why_we_sleep",
+        "wang2007",
+        "weather_radar_insect_temporal",
+        "wfh_permanent_2021",
+        "who_t_meta",
+        "wind_turbines_bats",
+        "xiang2025_clc2_ttype",
+        "yakymenko2016",
+        "yang2024_metformin",
+        "yoshii2009",
+        "yousefi2025",
+        "yu2019_btb",
+        "zandieh2025",
+        "zhang_china_covid_2025",
+        "zhanglevin2025"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::9t6gn-1788808504192-c5cc8b6b1a2e"
+      }
+    },
+    {
+      "path": "/fi/evidence/convergence",
+      "url": "https://www.extinctionfield.com/fi/evidence/convergence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/evidence/convergence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 290276,
+      "seconds": 1.047,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Miten tutkimusnäyttö yhdistyy",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "bensimon2022_sleep_helping",
+        "catsper2024",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "lim2026_sleep_learning",
+        "lindgren2025",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "expectedAnchorIds": [
+        "cry-circuit",
+        "data",
+        "effort",
+        "hormone-time",
+        "network",
+        "reading-evidence",
+        "reasons",
+        "reproductive-motivation",
+        "shared-state",
+        "social-learning"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "iad1::t28pq-1788808505389-94a172110c4e"
+      }
+    },
+    {
+      "path": "/fi/model",
+      "url": "https://www.extinctionfield.com/fi/model",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/model",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 1674749,
+      "seconds": 2.782,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/model"
+      ],
+      "h1": "Mallin dokumentaatio",
+      "claimIds": [
+        "claim.couple.fecundability-convergence",
+        "claim.proxy.lindgren-selection",
+        "claim.rpm.cry-magnetic-sensitivity",
+        "claim.tfr.multi-input-decomposition",
+        "claim.vgcc.ros-ca2-coupling"
+      ],
+      "referenceIds": [
+        "andersson-2007-denmark",
+        "assefa2024_testes_review",
+        "bartolke2025",
+        "bektas2026",
+        "bertagna2025",
+        "camkii-cav32-threshold-2023",
+        "chae2019",
+        "chodick-2020-israel",
+        "eliyahu2006",
+        "feigin2014_latitude_cvd",
+        "fert-steril-2023-phone-sperm-trend",
+        "higuchi2007",
+        "ijrb2022_if_review",
+        "ivancsits_dna_recovery",
+        "iversen2025",
+        "juutilainen2006_superposition",
+        "kim2026_cell_gene_switch",
+        "klimentidis2010",
+        "levine2023_sperm",
+        "luria2009",
+        "majewska2025",
+        "mazur2013",
+        "mccrary2021_hrv_geomag",
+        "nyante2012_nhanes",
+        "panagopoulos2025_ifo",
+        "perheentupa2013",
+        "ritz2004",
+        "saad2016",
+        "santi2025",
+        "sun2016_elf_vgcc",
+        "talbi2025_quantum_magnetoreception",
+        "tbahriti2026",
+        "travison2007_v2",
+        "vencloviene2022_geomag_mortality",
+        "weller2025_dna",
+        "wu2008_emas_hpt_axis",
+        "xiang2025_clc2_ttype",
+        "yakymenko2016"
+      ],
+      "rawReferenceTokens": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::lgrl5-1788808506448-9846a65067d5"
+      }
+    },
+    {
+      "path": "/fi/physics",
+      "url": "https://www.extinctionfield.com/fi/physics",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/physics",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 146188,
+      "seconds": 1.012,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/physics"
+      ],
+      "h1": "Fysiikka: syötteen rakenne",
+      "claimIds": [],
+      "referenceIds": [
+        "lindgren2025"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [],
+      "expectedAnchorIds": [
+        "cross-terms",
+        "measurement",
+        "premise",
+        "receiver",
+        "structure"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::ndg6r-1788808507795-82543e4e04c0"
+      }
+    },
+    {
+      "path": "/fi/references/bensimon2023_sleep_helping_correction",
+      "url": "https://www.extinctionfield.com/fi/references/bensimon2023_sleep_helping_correction",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/bensimon2023_sleep_helping_correction",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 92723,
+      "seconds": 0.855,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Correction: Sleep loss leads to the withdrawal of human helping across individuals, groups, and large-scale societies",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "bensimon2023_sleep_helping_correction",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Correction: Sleep loss leads to the withdrawal of human helping across individuals, groups, and large-scale societies",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::xd26z-1788808508844-3a0b483e8652"
+      }
+    },
+    {
+      "path": "/fi/references/bradlaugh2023_cry_fad",
+      "url": "https://www.extinctionfield.com/fi/references/bradlaugh2023_cry_fad",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/bradlaugh2023_cry_fad",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 92123,
+      "seconds": 0.718,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Essential elements of radical pair magnetosensitivity in Drosophila",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "bradlaugh2023_cry_fad",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Essential elements of radical pair magnetosensitivity in Drosophila",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::rwvw7-1788808509241-24d69dd90f9c"
+      }
+    },
+    {
+      "path": "/fi/references/crockett2015_harm_aversion",
+      "url": "https://www.extinctionfield.com/fi/references/crockett2015_harm_aversion",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/crockett2015_harm_aversion",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 95871,
+      "seconds": 0.775,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Dissociable Effects of Serotonin and Dopamine on the Valuation of Harm in Moral Decision Making",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "crockett2015_harm_aversion",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Dissociable Effects of Serotonin and Dopamine on the Valuation of Harm in Moral Decision Making",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::x2xgl-1788808509598-84c02fecdbe1"
+      }
+    },
+    {
+      "path": "/fi/references/draper2018_inflammation_effort",
+      "url": "https://www.extinctionfield.com/fi/references/draper2018_inflammation_effort",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/draper2018_inflammation_effort",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 96667,
+      "seconds": 0.868,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Effort but not Reward Sensitivity is Altered by Acute Sickness Induced by Experimental Endotoxemia in Humans",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "draper2018_inflammation_effort",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Effort but not Reward Sensitivity is Altered by Acute Sickness Induced by Experimental Endotoxemia in Humans",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::rkldl-1788808510073-ed0735a29f3d"
+      }
+    },
+    {
+      "path": "/fi/references/dufor2019_cry_magnetic_repair",
+      "url": "https://www.extinctionfield.com/fi/references/dufor2019_cry_magnetic_repair",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/dufor2019_cry_magnetic_repair",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94468,
+      "seconds": 0.9,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Neural circuit repair by low-intensity magnetic stimulation requires cellular magnetoreceptors and specific stimulation patterns",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "dufor2019_cry_magnetic_repair",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Neural circuit repair by low-intensity magnetic stimulation requires cellular magnetoreceptors and specific stimulation patterns",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::5w9gj-1788808510426-5e09ae06b4d1"
+      }
+    },
+    {
+      "path": "/fi/references/eisenegger2010_testosterone_fairness",
+      "url": "https://www.extinctionfield.com/fi/references/eisenegger2010_testosterone_fairness",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/eisenegger2010_testosterone_fairness",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94275,
+      "seconds": 2.216,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Prejudice and truth about the effect of testosterone on human bargaining behaviour",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "eisenegger2010_testosterone_fairness",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Prejudice and truth about the effect of testosterone on human bargaining behaviour",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::f4blj-1788808510960-0cc323ec8201"
+      }
+    },
+    {
+      "path": "/fi/references/finkelstein2013_gonadal_steroids",
+      "url": "https://www.extinctionfield.com/fi/references/finkelstein2013_gonadal_steroids",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/finkelstein2013_gonadal_steroids",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 96838,
+      "seconds": 2.535,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Gonadal steroids and body composition, strength, and sexual function in men",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "finkelstein2013_gonadal_steroids",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Gonadal steroids and body composition, strength, and sexual function in men",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::fbwmf-1788808511971-2cb0b2abb42b"
+      }
+    },
+    {
+      "path": "/fi/references/fogle2015_cry_redox",
+      "url": "https://www.extinctionfield.com/fi/references/fogle2015_cry_redox",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/fogle2015_cry_redox",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94219,
+      "seconds": 0.771,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "CRYPTOCHROME-mediated phototransduction by modulation of the potassium ion channel β-subunit redox sensor",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "fogle2015_cry_redox",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "CRYPTOCHROME-mediated phototransduction by modulation of the potassium ion channel β-subunit redox sensor",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::rbxj8-1788808513099-d17ac0db0a2e"
+      }
+    },
+    {
+      "path": "/fi/references/johansson2005_choice_blindness",
+      "url": "https://www.extinctionfield.com/fi/references/johansson2005_choice_blindness",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/johansson2005_choice_blindness",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94320,
+      "seconds": 1.103,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Failure to detect mismatches between intention and outcome in a simple decision task",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "johansson2005_choice_blindness",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Failure to detect mismatches between intention and outcome in a simple decision task",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::vhrbv-1788808513855-c9fb93a7d81a"
+      }
+    },
+    {
+      "path": "/fi/references/jurgelis2022_sleep_effort",
+      "url": "https://www.extinctionfield.com/fi/references/jurgelis2022_sleep_effort",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/jurgelis2022_sleep_effort",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94777,
+      "seconds": 0.778,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Sleep Restriction Reduces Cognitive but Not Physical Motivation",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "jurgelis2022_sleep_effort",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Sleep Restriction Reduces Cognitive but Not Physical Motivation",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::hqkbx-1788808513881-d1d009734384"
+      }
+    },
+    {
+      "path": "/fi/references/lim2026_sleep_learning",
+      "url": "https://www.extinctionfield.com/fi/references/lim2026_sleep_learning",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/lim2026_sleep_learning",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94436,
+      "seconds": 0.988,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Sleep restriction increases reward sensitivity during sequential updating",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "lim2026_sleep_learning",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Sleep restriction increases reward sensitivity during sequential updating",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::qxnvz-1788808513910-3d19ef2fecb8"
+      }
+    },
+    {
+      "path": "/fi/references/manella2026_cry2_steroid_clock",
+      "url": "https://www.extinctionfield.com/fi/references/manella2026_cry2_steroid_clock",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/manella2026_cry2_steroid_clock",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 95611,
+      "seconds": 0.818,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Steroid hormone receptors through Cry2 are key players in the circadian clock response to serum",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "manella2026_cry2_steroid_clock",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Steroid hormone receptors through Cry2 are key players in the circadian clock response to serum",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::bztgd-1788808514687-80231c05f935"
+      }
+    },
+    {
+      "path": "/fi/references/mills2023_kisspeptin",
+      "url": "https://www.extinctionfield.com/fi/references/mills2023_kisspeptin",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/mills2023_kisspeptin",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 98533,
+      "seconds": 0.767,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Effects of Kisspeptin on Sexual Brain Processing and Penile Tumescence in Men With Hypoactive Sexual Desire Disorder: A Randomized Clinical Trial",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "mills2023_kisspeptin",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Effects of Kisspeptin on Sexual Brain Processing and Penile Tumescence in Men With Hypoactive Sexual Desire Disorder: A Randomized Clinical Trial",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::glfrm-1788808514927-4efe55abf274"
+      }
+    },
+    {
+      "path": "/fi/references/paluck2016_network_conflict",
+      "url": "https://www.extinctionfield.com/fi/references/paluck2016_network_conflict",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/paluck2016_network_conflict",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94303,
+      "seconds": 0.717,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Changing climates of conflict: A social network experiment in 56 schools",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "paluck2016_network_conflict",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Changing climates of conflict: A social network experiment in 56 schools",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::4rj4k-1788808514947-3110e78bd7ec"
+      }
+    },
+    {
+      "path": "/fi/references/rizzini2019_cry_cop1",
+      "url": "https://www.extinctionfield.com/fi/references/rizzini2019_cry_cop1",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/rizzini2019_cry_cop1",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 95698,
+      "seconds": 0.788,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Cryptochromes-Mediated Inhibition of the CRL4Cop1-Complex Assembly Defines an Evolutionary Conserved Signaling Mechanism",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "rizzini2019_cry_cop1",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Cryptochromes-Mediated Inhibition of the CRL4Cop1-Complex Assembly Defines an Evolutionary Conserved Signaling Mechanism",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::b55sd-1788808515493-554f0a12b3be"
+      }
+    },
+    {
+      "path": "/fi/references/strang2017_nutrition_decisions",
+      "url": "https://www.extinctionfield.com/fi/references/strang2017_nutrition_decisions",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/strang2017_nutrition_decisions",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 95400,
+      "seconds": 1.032,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Impact of nutrition on social decision making",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "strang2017_nutrition_decisions",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Impact of nutrition on social decision making",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::7smpg-1788808515691-324f6f6e3557"
+      }
+    },
+    {
+      "path": "/fi/references/weisman2012_oxytocin_dyad",
+      "url": "https://www.extinctionfield.com/fi/references/weisman2012_oxytocin_dyad",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/weisman2012_oxytocin_dyad",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 94698,
+      "seconds": 1.108,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Oxytocin administration to parent enhances infant physiological and behavioral readiness for social engagement",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "weisman2012_oxytocin_dyad",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Oxytocin administration to parent enhances infant physiological and behavioral readiness for social engagement",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::pv9bf-1788808515689-7833c94e3844"
+      }
+    },
+    {
+      "path": "/fi/references/westbrook2020_dopamine_effort",
+      "url": "https://www.extinctionfield.com/fi/references/westbrook2020_dopamine_effort",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/westbrook2020_dopamine_effort",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 95624,
+      "seconds": 0.859,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Dopamine promotes cognitive effort by biasing the benefits versus costs of cognitive work",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "westbrook2020_dopamine_effort",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Dopamine promotes cognitive effort by biasing the benefits versus costs of cognitive work",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::7wj4b-1788808516392-ce35780adbac"
+      }
+    },
+    {
+      "path": "/fi/references/westbrook2025_dopamine_learning",
+      "url": "https://www.extinctionfield.com/fi/references/westbrook2025_dopamine_learning",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fi/references/westbrook2025_dopamine_learning",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 96655,
+      "seconds": 0.729,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "Striatal dopamine can enhance both fast working memory, and slow reinforcement learning, while reducing implicit effort cost sensitivity",
+      "claimIds": [],
+      "referenceIds": [],
+      "rawReferenceTokens": [],
+      "expectedReferenceId": "westbrook2025_dopamine_learning",
+      "referenceIdInVisibleText": true,
+      "expectedReferenceTitle": "Striatal dopamine can enhance both fast working memory, and slow reinforcement learning, while reducing implicit effort cost sensitivity",
+      "referenceTitleMatches": true,
+      "vercelHeaders": {
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "iad1::iad1::l86nl-1788808516712-4299f82aeecc"
+      }
+    },
+    {
+      "path": "/fr/behavior",
+      "url": "https://www.extinctionfield.com/fr/behavior",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fr/behavior",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 221638,
+      "seconds": 0.945,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/behavior"
+      ],
+      "h1": "From biology to desire and action",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "referenceIds": [
+        "bensimon2022_sleep_helping",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "expectedAnchorIds": [
+        "desire",
+        "joint-action",
+        "learning",
+        "reasons",
+        "social",
+        "valuation"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::ggjzp-1788808516817-c5d0ff7c323a"
+      }
+    },
+    {
+      "path": "/fr/biology",
+      "url": "https://www.extinctionfield.com/fr/biology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fr/biology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 209246,
+      "seconds": 1.162,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/biology"
+      ],
+      "h1": "Biology: a changing receiving system",
+      "claimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "brosi2013_pollination_network",
+        "catsper2024",
+        "dufor2019_cry_magnetic_repair",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "liu2014",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "expectedAnchorIds": [
+        "capacity",
+        "cry-hormones",
+        "ecology",
+        "reception",
+        "timing"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::7wj4b-1788808517239-c72c9781efca"
+      }
+    },
+    {
+      "path": "/fr/evidence/convergence",
+      "url": "https://www.extinctionfield.com/fr/evidence/convergence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fr/evidence/convergence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 291854,
+      "seconds": 1.757,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "How the evidence connects",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "bensimon2022_sleep_helping",
+        "catsper2024",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "lim2026_sleep_learning",
+        "lindgren2025",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "expectedAnchorIds": [
+        "cry-circuit",
+        "data",
+        "effort",
+        "hormone-time",
+        "network",
+        "reading-evidence",
+        "reasons",
+        "reproductive-motivation",
+        "shared-state",
+        "social-learning"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::jxrqs-1788808517527-89e481cd03b0"
+      }
+    },
+    {
+      "path": "/fr/physics",
+      "url": "https://www.extinctionfield.com/fr/physics",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/fr/physics",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 147340,
+      "seconds": 1.49,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/physics"
+      ],
+      "h1": "Physics: the structure of the input",
+      "claimIds": [],
+      "referenceIds": [
+        "lindgren2025"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [],
+      "expectedAnchorIds": [
+        "cross-terms",
+        "measurement",
+        "premise",
+        "receiver",
+        "structure"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::jgtxd-1788808517954-5055227903f6"
+      }
+    },
+    {
+      "path": "/ja/behavior",
+      "url": "https://www.extinctionfield.com/ja/behavior",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ja/behavior",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 221084,
+      "seconds": 1.014,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/behavior"
+      ],
+      "h1": "From biology to desire and action",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "referenceIds": [
+        "bensimon2022_sleep_helping",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "expectedAnchorIds": [
+        "desire",
+        "joint-action",
+        "learning",
+        "reasons",
+        "social",
+        "valuation"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::npbzh-1788808518464-6dce7e0fb996"
+      }
+    },
+    {
+      "path": "/ja/biology",
+      "url": "https://www.extinctionfield.com/ja/biology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ja/biology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 208631,
+      "seconds": 1.456,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/biology"
+      ],
+      "h1": "Biology: a changing receiving system",
+      "claimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "brosi2013_pollination_network",
+        "catsper2024",
+        "dufor2019_cry_magnetic_repair",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "liu2014",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "expectedAnchorIds": [
+        "capacity",
+        "cry-hormones",
+        "ecology",
+        "reception",
+        "timing"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::7t9jn-1788808519348-188e87166698"
+      }
+    },
+    {
+      "path": "/ja/evidence/convergence",
+      "url": "https://www.extinctionfield.com/ja/evidence/convergence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ja/evidence/convergence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 291088,
+      "seconds": 1.122,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "How the evidence connects",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "bensimon2022_sleep_helping",
+        "catsper2024",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "lim2026_sleep_learning",
+        "lindgren2025",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "expectedAnchorIds": [
+        "cry-circuit",
+        "data",
+        "effort",
+        "hormone-time",
+        "network",
+        "reading-evidence",
+        "reasons",
+        "reproductive-motivation",
+        "shared-state",
+        "social-learning"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::67xcs-1788808519334-17dc04fae5a7"
+      }
+    },
+    {
+      "path": "/ja/physics",
+      "url": "https://www.extinctionfield.com/ja/physics",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ja/physics",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 147123,
+      "seconds": 1.005,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/physics"
+      ],
+      "h1": "Physics: the structure of the input",
+      "claimIds": [],
+      "referenceIds": [
+        "lindgren2025"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [],
+      "expectedAnchorIds": [
+        "cross-terms",
+        "measurement",
+        "premise",
+        "receiver",
+        "structure"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::s9xdl-1788808519347-475c3843f8ae"
+      }
+    },
+    {
+      "path": "/ko/behavior",
+      "url": "https://www.extinctionfield.com/ko/behavior",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ko/behavior",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 220504,
+      "seconds": 1.264,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/behavior"
+      ],
+      "h1": "From biology to desire and action",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "referenceIds": [
+        "bensimon2022_sleep_helping",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation"
+      ],
+      "expectedAnchorIds": [
+        "desire",
+        "joint-action",
+        "learning",
+        "reasons",
+        "social",
+        "valuation"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::f2vfh-1788808520387-d3ce047d3498"
+      }
+    },
+    {
+      "path": "/ko/biology",
+      "url": "https://www.extinctionfield.com/ko/biology",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ko/biology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 208063,
+      "seconds": 1.824,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/biology"
+      ],
+      "h1": "Biology: a changing receiving system",
+      "claimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "brosi2013_pollination_network",
+        "catsper2024",
+        "dufor2019_cry_magnetic_repair",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "liu2014",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "expectedAnchorIds": [
+        "capacity",
+        "cry-hormones",
+        "ecology",
+        "reception",
+        "timing"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::fm58x-1788808520395-e01d654822f5"
+      }
+    },
+    {
+      "path": "/ko/evidence/convergence",
+      "url": "https://www.extinctionfield.com/ko/evidence/convergence",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ko/evidence/convergence",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 290408,
+      "seconds": 1.666,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/evidence/convergence"
+      ],
+      "h1": "How the evidence connects",
+      "claimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "referenceIds": [
+        "archer2014_transcriptome",
+        "bensimon2022_sleep_helping",
+        "catsper2024",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "kalafatakis2018_cortisol_pulsatility",
+        "lamia2011_cry_glucocorticoid",
+        "lim2026_sleep_learning",
+        "lindgren2025",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "sherrard2018",
+        "stavreva2009_hormone_pulses",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning",
+        "zhang2010_cry_camp"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [
+        "claim.behavior.biological-state-to-action"
+      ],
+      "expectedAnchorIds": [
+        "cry-circuit",
+        "data",
+        "effort",
+        "hormone-time",
+        "network",
+        "reading-evidence",
+        "reasons",
+        "reproductive-motivation",
+        "shared-state",
+        "social-learning"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::zscdr-1788808520721-d0a3e63fcc8a"
+      }
+    },
+    {
+      "path": "/ko/physics",
+      "url": "https://www.extinctionfield.com/ko/physics",
+      "status": 200,
+      "resolvedUrl": "https://www.extinctionfield.com/ko/physics",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 146767,
+      "seconds": 0.994,
+      "navSections": [
+        "/model",
+        "/physics",
+        "/biology",
+        "/behavior",
+        "/civilization",
+        "/evidence/convergence",
+        "/about"
+      ],
+      "activeNavSections": [
+        "/physics"
+      ],
+      "h1": "Physics: the structure of the input",
+      "claimIds": [],
+      "referenceIds": [
+        "lindgren2025"
+      ],
+      "rawReferenceTokens": [],
+      "expectedClaimIds": [],
+      "expectedAnchorIds": [
+        "cross-terms",
+        "measurement",
+        "premise",
+        "receiver",
+        "structure"
+      ],
+      "missingClaimIds": [],
+      "missingAnchorIds": [],
+      "vercelHeaders": {
+        "x-vercel-cache": "PRERENDER",
+        "x-vercel-id": "iad1::j55pl-1788808521802-668d0a45d4d5"
+      }
+    }
+  ],
+  "resolvedInitialIssues": [
+    {
+      "initialCheck": {
+        "path": "/data/global_panel.csv",
+        "url": "https://www.extinctionfield.com/data/global_panel.csv",
+        "status": 200,
+        "resolvedUrl": "https://www.extinctionfield.com/data/global_panel.csv",
+        "contentType": "text/csv; charset=utf-8",
+        "bytes": 2237002,
+        "seconds": 45.041,
+        "localFile": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/extinctionfield-navigation-release-20260907-sbrxysig/website/public/data/global_panel.csv",
+        "expectedSha256": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8",
+        "actualSha256": "787eb351d9b96c2738ce062824d93c14470cf4062fc6fac05c42d9b97c7e8be8",
+        "sha256Matches": false
+      },
+      "initialFailures": [
+        {
+          "kind": "http",
+          "path": "/data/global_panel.csv",
+          "status": 200,
+          "curlExit": 28,
+          "error": "curl: (28) Operation timed out after 45005 milliseconds with 2237002 out of 3457189 bytes received"
+        },
+        {
+          "kind": "download_sha256",
+          "path": "/data/global_panel.csv",
+          "expected": "7ac2fd691dedaa195a3a172966f58db0c2bb52d877ed8b0616014b3490193cd8",
+          "actual": "787eb351d9b96c2738ce062824d93c14470cf4062fc6fac05c42d9b97c7e8be8"
+        }
+      ],
+      "resolution": {
+        "reason": "Initial uncompressed transfer reached the 45-second timeout before receiving the full file.",
+        "attempt": 2,
+        "timeoutSeconds": 150,
+        "acceptEncoding": "curl --compressed; downloaded content is transparently decoded before hashing",
+        "curlExit": 0,
+        "stderr": ""
+      }
+    }
+  ],
+  "completedAt": "2026-09-07T19:16:06.915845+00:00",
+  "deploymentId": "dpl_59eQAmCE111ZrZC5QQXXQdV2czrH"
+}

@@ -4,7 +4,7 @@ import { pickCopy } from "@/lib/i18n";
 import Link from "next/link";
 import BermCausalDiagram from "@/components/BermCausalDiagram";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
-import { MathematicsSections } from "@/app/[locale]/mathematics/page";
+import { MathematicsSections } from "@/components/MathematicsSections";
 import { ModulomeLayers } from "@/components/ModulomeLayers";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import { RESPONSE_MODIFIER_SCALES } from "@/lib/evolutionData";
@@ -23,15 +23,17 @@ import { CitationLink } from "@/components/CitationLink";
 import { StudyCitation } from "@/components/StudyCitation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { ClaimRef } from "@/components/ClaimRef";
+import { ModelReadingPath } from "@/components/ModelReadingPath";
+import { ModelScopeIntro } from "@/components/ModelScopeIntro";
 
 const t = {
   en: {
     title: "Model Documentation",
     subtitle:
-      "Full documentation of the Bio-Electromagnetic Reproductive Model (BERM), including the three-level architecture, causal pathways, coupling equations, and recovery dynamics.",
+      "BERM follows one explanatory chain from physical premises through biological state, motivation and interaction to population and civilizational dynamics.",
     metaTitle: "Model Documentation - Extinction Field",
     metaDesc:
-      "BERM model documentation: three-level architecture, causal pathways, equations, and recovery dynamics.",
+      "BERM follows one explanatory chain from physical premises through biological state, motivation and interaction to population and civilizational dynamics.",
     specNote: "BERM is the explanatory, derivational and prediction model. FieldState v2 is a separate optional measurement, observation and estimation module — not a model alias or causal root. The locked v17 outputs use a national technology-timing proxy and are not FieldState-calibrated. BERM now derives a conditional formal geometry-to-observable operator; its gauge, scale, tissue kernels and endpoint calibration remain open.",
 
     physBioTitle: "From Physics to Biology",
@@ -1035,10 +1037,10 @@ const t = {
   fi: {
     title: "Mallin dokumentaatio",
     subtitle:
-      "Bio-sähkömagneettisen lisääntymismallin (BERM) täydellinen dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, kytkentäyhtälöt ja palautumisdynamiikka.",
+      "BERM seuraa yhtä selitysketjua fysikaalisista premisseistä biologisen tilan, motivaation ja vuorovaikutuksen kautta väestö- ja sivilisaatiokehitykseen.",
     metaTitle: "Mallin dokumentaatio - Extinction Field",
     metaDesc:
-      "BERM-mallin dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, yhtälöt ja palautumisdynamiikka.",
+      "BERM seuraa yhtä selitysketjua fysikaalisista premisseistä biologisen tilan, motivaation ja vuorovaikutuksen kautta väestö- ja sivilisaatiokehitykseen.",
     specNote: "BERM on selitys-, johtamis- ja ennustemalli. FieldState v2 on erillinen valinnainen mittaus-, havainto- ja estimointimoduuli — ei mallin alias eikä kausaalinen juuri. Lukitut v17-tulokset käyttävät kansallista teknologian ajoitusproxya eivätkä ole FieldState-kalibroituja. BERM johtaa nyt ehdollisen formaalin geometria–havaittava-operaattorin; sen gauge, mittakaava, kudosytimet ja päätepistekalibraatio ovat avoimia.",
 
     physBioTitle: "Fysiikasta biologiaan",
@@ -2042,10 +2044,10 @@ const t = {
   ja: {
     title: "モデル文書",
     subtitle:
-      "生体電磁生殖モデル(BERM)の完全な文書:三層アーキテクチャ、因果経路、結合方程式、回復動態。",
+      "BERMは、物理的前提から生物学的状態、動機、相互作用を経て、人口動態と文明の変化へ至る一つの説明連鎖をたどります。",
     metaTitle: "モデル文書 - Extinction Field",
     metaDesc:
-      "BERMモデル文書:三層アーキテクチャ、因果経路、方程式、回復動態。",
+      "BERMは、物理的前提から生物学的状態、動機、相互作用を経て、人口動態と文明の変化へ至る一つの説明連鎖をたどります。",
     specNote: "BERMは説明・導出・予測モデルです。FieldState v2は独立した任意の測定・観察・推定モジュールであり、モデルの別名でも因果的起点でもありません。公開v17出力は国家技術タイミングプロキシを使用し、FieldState校正済みではありません。BERMは条件付きの形式的L2応答演算子を導出しますが、ゲージ、尺度、組織カーネル、エンドポイント校正は未解決です。",
 
     physBioTitle: "物理学から生物学へ",
@@ -2936,10 +2938,10 @@ const t = {
   fr: {
     title: "Documentation du modele",
     subtitle:
-      "Documentation complete du modele bio-electromagnetique de reproduction (BERM) : architecture a trois niveaux, voies causales, equations de couplage et dynamiques de recuperation.",
+      "BERM suit une chaîne explicative, des prémisses physiques à la dynamique des populations et des civilisations, à travers l’état biologique, la motivation et l’interaction.",
     metaTitle: "Documentation du modele - Extinction Field",
     metaDesc:
-      "Documentation du modele BERM : architecture a trois niveaux, voies causales, equations et dynamiques de recuperation.",
+      "BERM suit une chaîne explicative, des prémisses physiques à la dynamique des populations et des civilisations, à travers l’état biologique, la motivation et l’interaction.",
     specNote: "BERM est le modèle explicatif, dérivationnel et prédictif. FieldState v2 est un module facultatif et distinct de mesure, d'observation et d'estimation — ni alias du modèle ni racine causale. Les sorties v17 utilisent un proxy national de chronologie technologique et ne sont pas calibrées sur FieldState. BERM dérive un opérateur formel L2 conditionnel ; sa jauge, son échelle, ses noyaux tissulaires et sa calibration restent ouverts.",
 
     physBioTitle: "De la physique a la biologie",
@@ -3830,10 +3832,10 @@ const t = {
   ko: {
     title: "모델 문서",
     subtitle:
-      "생체전자기 생식 모델(BERM) 종합 문서: 3단계 아키텍처, 인과 경로, 결합 방정식 및 회복 역학.",
+      "BERM은 물리적 전제에서 생물학적 상태, 동기와 상호작용을 거쳐 인구 및 문명 역학에 이르는 하나의 설명 사슬을 따릅니다.",
     metaTitle: "모델 문서 - Extinction Field",
     metaDesc:
-      "BERM 모델 문서: 3단계 아키텍처, 인과 경로, 방정식 및 회복 역학.",
+      "BERM은 물리적 전제에서 생물학적 상태, 동기와 상호작용을 거쳐 인구 및 문명 역학에 이르는 하나의 설명 사슬을 따릅니다.",
     specNote: "BERM은 설명·도출·예측 모델입니다. FieldState v2는 별도의 선택적 측정·관찰·추정 모듈이며 모델의 별칭이나 인과적 뿌리가 아닙니다. 공개 v17 출력은 국가 기술 시점 프록시를 사용하며 FieldState로 교정되지 않았습니다. BERM은 조건부 형식 L2 반응 연산자를 도출하지만 게이지, 척도, 조직 커널과 종점 보정은 미해결입니다.",
 
     physBioTitle: "물리학에서 생물학으로",
@@ -4849,6 +4851,9 @@ export default async function ModelPage({
         </p>
       </header>
 
+      <ModelScopeIntro locale={locale} />
+      <ModelReadingPath locale={locale} current="model" />
+
       <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-8 max-w-3xl">
         <p className="text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
           {d.specNote}
@@ -5301,7 +5306,7 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
               {cite(d.rpmFrequencyNote)}
             </p>
-            <div className="mt-4 mb-4 border-l-4 border-blue-500/40 rounded-r-lg bg-card p-5">
+            <div id="vgcc-sensitivity" className="mt-4 mb-4 scroll-mt-24 border-l-4 border-blue-500/40 rounded-r-lg bg-card p-5">
               <h4 className="text-sm font-semibold mb-2">{d.vgccHierarchyTitle}</h4>
               <p className="text-sm text-foreground-muted leading-relaxed">
                 {d.vgccHierarchyNote}

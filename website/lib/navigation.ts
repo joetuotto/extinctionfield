@@ -30,6 +30,8 @@ import {
   Sun,
   BrainCircuit,
   Braces,
+  Atom,
+  Brain,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
@@ -46,7 +48,9 @@ export interface NavRoute {
   children?: NavRoute[];
 }
 
-export const NAV_ROUTES: NavRoute[] = [
+// Keep the established destinations and their multilingual descriptions together.
+// NAV_ROUTES below assigns them to the explanation-level reading order.
+const ROUTE_CATALOG: NavRoute[] = [
   {
     href: "",
     labels: { en: "Home", fi: "Etusivu", ja: "ホーム", fr: "Accueil", ko: "홈" },
@@ -71,14 +75,14 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/model/biological-coordination",
-        labels: { en: "Biological Coordination", fi: "Biologinen koordinaatio", ja: "Biological Coordination", fr: "Biological Coordination", ko: "Biological Coordination" },
+        labels: { en: "Biological Coordination", fi: "Biologinen koordinaatio", ja: "生物学的協調", fr: "Coordination biologique", ko: "생물학적 조정" },
         icon: Activity,
         descs: {
           en: "Receptor state, tissue timing, memory and successful encounters",
           fi: "Vastaanottajatila, kudosten ajoitus, muisti ja onnistuvat kohtaamiset",
-          ja: "Receptor state, tissue timing, memory and successful encounters",
-          fr: "Receptor state, tissue timing, memory and successful encounters",
-          ko: "Receptor state, tissue timing, memory and successful encounters",
+          ja: "受容体の状態、組織のタイミング、記憶、出会いの成立",
+          fr: "État des récepteurs, synchronisation des tissus, mémoire et rencontres réussies",
+          ko: "수용체 상태, 조직의 타이밍, 기억 및 성공적인 만남",
         },
       },
       {
@@ -526,6 +530,223 @@ export const NAV_ROUTES: NavRoute[] = [
   },
 ];
 
+const ROUTE_BY_HREF = new globalThis.Map(
+  ROUTE_CATALOG.flatMap((route) => [route, ...(route.children ?? [])])
+    .map((route) => [route.href, route] as const),
+);
+
+function existingRoute(href: string): NavRoute {
+  const route = ROUTE_BY_HREF.get(href);
+  if (!route) throw new Error(`Unknown navigation destination: ${href}`);
+  return { ...route, children: undefined };
+}
+
+const OVERVIEW_LABELS: Labels = {
+  en: "Overview", fi: "Yleiskatsaus", ja: "概要", fr: "Vue d'ensemble", ko: "개요",
+};
+
+export const ABOUT_ROUTES: NavRoute[] = [
+  { ...existingRoute("/about"), labels: OVERVIEW_LABELS },
+  existingRoute("/epistemology"),
+  {
+    href: "/about/history", icon: BookOpen,
+    labels: { en: "History", fi: "Historia", ja: "歴史", fr: "Histoire", ko: "역사" },
+  },
+  {
+    href: "/about/replication", icon: FlaskConical,
+    labels: { en: "Replication", fi: "Replikaatio", ja: "再現性", fr: "Réplication", ko: "재현" },
+  },
+  {
+    href: "/about/measurement", icon: Radio,
+    labels: { en: "Measurement guide", fi: "Mittausohje", ja: "測定ガイド", fr: "Guide de mesure", ko: "측정 안내" },
+  },
+  {
+    href: "/about/objections", icon: ShieldQuestion,
+    labels: { en: "Objections", fi: "Vastaväitteet", ja: "反論", fr: "Objections", ko: "반론" },
+  },
+];
+
+export const NAV_ROUTES: NavRoute[] = [
+  {
+    href: "/model", icon: GitBranch,
+    labels: { en: "Model", fi: "Malli", ja: "モデル", fr: "Modèle", ko: "모델" },
+    children: [existingRoute("/model"), existingRoute("/map")],
+  },
+  {
+    href: "/physics", icon: Atom,
+    labels: { en: "Physics", fi: "Fysiikka", ja: "物理学", fr: "Physique", ko: "물리학" },
+    children: [
+      {
+        href: "/physics", icon: Atom, labels: OVERVIEW_LABELS,
+        descs: {
+          en: "Physical premise, field geometry and biological coupling",
+          fi: "Fysikaalinen premissi, kentän geometria ja biologinen kytkentä",
+          ja: "物理的前提、場の幾何学、生物学的結合",
+          fr: "Prémisse physique, géométrie du champ et couplage biologique",
+          ko: "물리적 전제, 장의 기하학 및 생물학적 결합",
+        },
+      },
+      existingRoute("/model/math"),
+      existingRoute("/model/tensor-derivation"),
+      existingRoute("/model/frequency-weights"),
+    ],
+  },
+  {
+    href: "/biology", icon: Dna,
+    labels: { en: "Biology", fi: "Biologia", ja: "生物学", fr: "Biologie", ko: "생물학" },
+    children: [
+      {
+        href: "/biology", icon: Dna, labels: OVERVIEW_LABELS,
+        descs: {
+          en: "From receptors and cells to hormones and the organism",
+          fi: "Vastaanottimista ja soluista hormoneihin ja elimistöön",
+          ja: "受容体と細胞からホルモンと生体へ",
+          fr: "Des récepteurs et des cellules aux hormones et à l’organisme",
+          ko: "수용체와 세포에서 호르몬과 유기체까지",
+        },
+      },
+      existingRoute("/modulome"),
+      existingRoute("/model/biological-coordination"),
+      existingRoute("/model#vgcc-gene-family"),
+      existingRoute("/model#camkii-convergence"),
+      existingRoute("/model#testosterone-threshold"),
+      existingRoute("/model/q-factor"),
+      existingRoute("/model/dual-kernel"),
+      existingRoute("/sentinel"),
+    ],
+  },
+  {
+    href: "/behavior", icon: Brain,
+    labels: { en: "Behavior", fi: "Käyttäytyminen", ja: "行動", fr: "Comportement", ko: "행동" },
+    children: [{
+      href: "/behavior", icon: Brain,
+      labels: { en: "From biology to action", fi: "Biologiasta haluun ja toimintaan", ja: "生物学から行動へ", fr: "De la biologie à l’action", ko: "생물학에서 행동으로" },
+      descs: {
+        en: "Motivation, valuation, decisions, explanations and interaction",
+        fi: "Motivaatio, arvottaminen, päätökset, perustelut ja vuorovaikutus",
+        ja: "動機、価値評価、意思決定、理由づけ、相互作用",
+        fr: "Motivation, évaluation, décisions, justifications et interaction",
+        ko: "동기, 가치 평가, 결정, 이유 설명 및 상호작용",
+      },
+    },
+    {
+      href: "/behavior#valuation", icon: Brain,
+      labels: { en: "State and experienced value", fi: "Tila ja koettu arvo", ja: "状態と感じられる価値", fr: "État et valeur ressentie", ko: "상태와 경험하는 가치" },
+    },
+    {
+      href: "/behavior#desire", icon: Activity,
+      labels: { en: "Desire, attachment and care", fi: "Halu, kiintymys ja hoiva", ja: "欲求、愛着、養育", fr: "Désir, attachement et soin", ko: "욕구, 애착 및 돌봄" },
+    },
+    {
+      href: "/behavior#learning", icon: ChartLine,
+      labels: { en: "Time and learning", fi: "Aika ja oppiminen", ja: "時間と学習", fr: "Temps et apprentissage", ko: "시간과 학습" },
+    },
+    {
+      href: "/behavior#reasons", icon: BookOpen,
+      labels: { en: "Decision and explanation", fi: "Päätös ja perustelu", ja: "意思決定と理由づけ", fr: "Décision et justification", ko: "결정과 이유 설명" },
+    },
+    {
+      href: "/behavior#social", icon: Network,
+      labels: { en: "Social action", fi: "Sosiaalinen toiminta", ja: "社会的行動", fr: "Action sociale", ko: "사회적 행동" },
+    },
+    {
+      href: "/behavior#joint-action", icon: Globe2,
+      labels: { en: "From individuals to joint action", fi: "Yksilöstä yhteiseen toimintaan", ja: "個人から共同行動へ", fr: "De l’individu à l’action commune", ko: "개인에서 공동 행동으로" },
+    }],
+  },
+  {
+    href: "/civilization", icon: Landmark,
+    labels: { en: "Civilization", fi: "Sivilisaatio", ja: "文明", fr: "Civilisation", ko: "문명" },
+    children: [
+      existingRoute("/civilization"),
+      existingRoute("/civilization/pathopege"),
+      existingRoute("/civilization/pathopolites"),
+      existingRoute("/civilization/epistapege"),
+      existingRoute("/civilization/patokinesis"),
+      existingRoute("/civilization/patopolis"),
+      existingRoute("/civilization/patokratia"),
+      existingRoute("/civilization/patopoliteia"),
+    ],
+  },
+  {
+    href: "/evidence/convergence", icon: Layers,
+    labels: { en: "Evidence", fi: "Näyttö", ja: "エビデンス", fr: "Preuves", ko: "증거" },
+    children: [
+      {
+        href: "/evidence/convergence", icon: Network,
+        labels: { en: "Evidence overview", fi: "Näytön kokonaiskuva", ja: "エビデンスの全体像", fr: "Vue d’ensemble des preuves", ko: "증거 개관" },
+        descs: {
+          en: "Research convergence from physics to civilization",
+          fi: "Tutkimusten konvergenssi fysiikasta sivilisaatioon",
+          ja: "物理学から文明までの研究の収束",
+          fr: "Convergence des recherches de la physique à la civilisation",
+          ko: "물리학에서 문명까지 연구 결과의 수렴",
+        },
+      },
+      {
+        ...existingRoute("/evidence"),
+        labels: { en: "Evidence register", fi: "Näyttörekisteri", ja: "エビデンスレジスター", fr: "Registre des preuves", ko: "증거 레지스터" },
+      },
+      existingRoute("/evidence/response-conditions"),
+      existingRoute("/evidence/pharmacology"),
+      existingRoute("/evidence/timothy-experiment"),
+      existingRoute("/evidence/populations"),
+      existingRoute("/evidence/evolution"),
+      existingRoute("/evidence/technology"),
+      existingRoute("/explore"),
+      {
+        href: "/data", icon: Database,
+        labels: { en: "Data sources", fi: "Tietolähteet", ja: "データソース", fr: "Sources de données", ko: "데이터 출처" },
+      },
+      existingRoute("/measurement/fieldstate"),
+      existingRoute("/measurement/fieldstate/math"),
+      existingRoute("/predictions"),
+      existingRoute("/model/comparison"),
+      existingRoute("/evidence/replication"),
+      existingRoute("/articles"),
+      existingRoute("/references"),
+      existingRoute("/objections"),
+    ],
+  },
+  {
+    ...existingRoute("/about"),
+    children: ABOUT_ROUTES,
+  },
+];
+
+/** Normalize both locale-prefixed URLs and model-relative paths. */
+function navPath(pathname: string): string {
+  const path = pathname.split(/[?#]/, 1)[0].replace(/\/+$/, "");
+  return path.replace(/^\/(en|fi|ja|fr|ko)(?=\/|$)/, "") || "/";
+}
+
+/**
+ * A page has one owning section, even when its original URL is under /model.
+ * Anchor links are reading shortcuts; they never claim the containing page.
+ * Longest segment-boundary match assigns detail pages to their nearest owner.
+ */
+export function getActiveNavSection(pathname: string): string | null {
+  const path = navPath(pathname);
+  let owner: string | null = null;
+  let longest = -1;
+  for (const section of NAV_ROUTES) {
+    for (const route of [section, ...(section.children ?? [])]) {
+      if (route.href.includes("#") || route.href.includes("?")) continue;
+      const candidate = navPath(route.href);
+      if ((path === candidate || path.startsWith(`${candidate}/`)) && candidate.length > longest) {
+        owner = section.href;
+        longest = candidate.length;
+      }
+    }
+  }
+  return owner;
+}
+
+/** aria-current="page" belongs only to the page link, never its anchor shortcuts. */
+export function isNavPageCurrent(pathname: string, href: string): boolean {
+  return !/[?#]/.test(href) && navPath(pathname) === navPath(href);
+}
+
 export interface ResolvedNavRoute {
   href: string;
   label: string;
@@ -549,6 +770,14 @@ function resolve(locale: string): (route: NavRoute) => ResolvedNavRoute {
 
 export function getNavRoutes(locale: string): ResolvedNavRoute[] {
   return NAV_ROUTES.map(resolve(locale));
+}
+
+export function getAboutRoutes(locale: string): ResolvedNavRoute[] {
+  return ABOUT_ROUTES.map(resolve(locale));
+}
+
+export function getHomeRoute(locale: string): ResolvedNavRoute {
+  return resolve(locale)(existingRoute(""));
 }
 
 export interface ExploreTab {

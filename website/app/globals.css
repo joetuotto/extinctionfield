@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@layer base {
+  /* Keep section links visible below the sticky 4rem navigation bar. */
+  main [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
 /* Decorative silhouettes inherit the exact surface behind them. */
 .species-silhouette {
   background-color: transparent;

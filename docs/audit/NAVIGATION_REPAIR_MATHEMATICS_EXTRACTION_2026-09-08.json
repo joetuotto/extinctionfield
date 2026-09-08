@@ -1,0 +1,76 @@
+{
+  "source": "website/app/[locale]/mathematics/page.tsx",
+  "sourceBeforeSha256": "3f1fa84581547742a9d637320653c2763087b28e9c699f8bf613e34c87f619e5",
+  "sourceBeforeBackup": "/tmp/berm-mathematics-before-extraction-20260908.tsx",
+  "sharedModule": "website/components/MathematicsSections.tsx",
+  "checks": [
+    {
+      "section": "copy_objects",
+      "bytes": 215194,
+      "sha256Before": "8e82e2656563fbe18f73b4bc5fff0ca53541ffe9a114e9b02e21169c771aef0d",
+      "sha256After": "8e82e2656563fbe18f73b4bc5fff0ca53541ffe9a114e9b02e21169c771aef0d",
+      "byteIdentical": true
+    },
+    {
+      "section": "generateMetadata",
+      "bytes": 268,
+      "sha256Before": "9ff66124d09f25f5dcc4358a5ed4094a9a014cb3e966bff12561154fcc8b4826",
+      "sha256After": "9ff66124d09f25f5dcc4358a5ed4094a9a014cb3e966bff12561154fcc8b4826",
+      "byteIdentical": true
+    },
+    {
+      "section": "SectionNav",
+      "bytes": 704,
+      "sha256Before": "79ece7aad3e85554b781c5f5bd35fbf34bd27d3ffc7ce6c8d2f5d8ae30bd8f80",
+      "sha256After": "79ece7aad3e85554b781c5f5bd35fbf34bd27d3ffc7ce6c8d2f5d8ae30bd8f80",
+      "byteIdentical": true
+    },
+    {
+      "section": "section_helpers",
+      "bytes": 1829,
+      "sha256Before": "cd054026a3d58184da903ff75f69e0bac5ea1f2bffa83a73454bf350ce7bac55",
+      "sha256After": "cd054026a3d58184da903ff75f69e0bac5ea1f2bffa83a73454bf350ce7bac55",
+      "byteIdentical": true
+    },
+    {
+      "section": "MathematicsSections",
+      "bytes": 129237,
+      "sha256Before": "b879b8bc889f13412af4ec1f19967a00b911fbde12a48ab53d7e6e7b181b1ef8",
+      "sha256After": "b879b8bc889f13412af4ec1f19967a00b911fbde12a48ab53d7e6e7b181b1ef8",
+      "byteIdentical": true
+    },
+    {
+      "section": "mathSectionIds",
+      "bytes": 141,
+      "sha256Before": "59461ec680e3a3f1c0e4e43d73893ddaaa7571eac27bb49de2f7c04df61b4e66",
+      "sha256After": "59461ec680e3a3f1c0e4e43d73893ddaaa7571eac27bb49de2f7c04df61b4e66",
+      "byteIdentical": true
+    },
+    {
+      "section": "MathematicsPage",
+      "bytes": 735,
+      "sha256Before": "6868132c16e7963a55a701da112151caf4feded7fa8989ecbfde115424cc8f4a",
+      "sha256After": "6868132c16e7963a55a701da112151caf4feded7fa8989ecbfde115424cc8f4a",
+      "byteIdentical": true
+    }
+  ],
+  "allContentBlocksByteIdentical": true,
+  "onlyChanges": "Import relocation, source-file test and validation paths; all authored content and render bodies preserved.",
+  "referenceClaimAndAnchorPreservation": {
+    "referenceTokens": {
+      "before": 197,
+      "after": 197,
+      "exactMultisetRetained": true
+    },
+    "claimIds": {
+      "before": 7,
+      "after": 7,
+      "exactMultisetRetained": true
+    },
+    "htmlIds": {
+      "before": 23,
+      "after": 23,
+      "exactMultisetRetained": true
+    }
+  }
+}

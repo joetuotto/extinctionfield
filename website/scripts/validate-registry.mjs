@@ -546,6 +546,7 @@ if (
 const publicBoundarySources = [
   "app/[locale]/model/page.tsx",
   "app/[locale]/mathematics/page.tsx",
+  "components/MathematicsSections.tsx",
   "app/[locale]/evidence/evolution/page.tsx",
   "components/SolarExplorer.tsx",
 ].map((relativePath) => ({

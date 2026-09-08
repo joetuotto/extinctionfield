@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { pickCopy } from "@/lib/i18n";
 
 interface TocSection {
@@ -13,6 +14,37 @@ interface TocGroup {
   title: string;
   sections: TocSection[];
 }
+
+// These topics now have canonical sections outside the old model-page outline.
+// Reuse the real destinations instead of adding empty anchors at the old location.
+const SECTION_DESTINATIONS: Record<string, string> = {
+  "fieldstate-input": "/measurement/fieldstate#fieldstate-input",
+  "static-interface": "/measurement/fieldstate#static-interface",
+  "organ-states": "/measurement/fieldstate#organ-states",
+  "asfr-tfr": "/measurement/fieldstate#asfr-tfr",
+  premise: "/model/math#lindgren",
+  "evo-calibration": "/model/math#evo-calibration",
+  "three-channel-derivation": "/model/math#three-channel-derivation",
+  fieldstate: "/measurement/fieldstate/math#field-record",
+  "static-interface-math": "/measurement/fieldstate/math#static-interface",
+  "organ-state": "/model#modulome",
+  // The cohort schedule and accumulated exposure histories are in the DKC section;
+  // the separate two-level prediction section describes cross-sectional/temporal fits.
+  cohort: "/model#dual-kernel",
+  gme: "/model/math#lindgren",
+  validation: "/measurement/fieldstate/math#boundary",
+};
+
+export function getModelTocDestination(id: string, locale: string) {
+  const destination = SECTION_DESTINATIONS[id];
+  if (!destination) return { href: `#${id}`, targetId: id, isLocal: true, relocated: false };
+  const [path, targetId] = destination.split("#");
+  return { href: `/${locale}${destination}`, targetId, isLocal: path === "/model", relocated: true };
+}
+
+const NAV_LABEL = {
+  en: "Model contents", fi: "Mallin sisällysluettelo", ja: "モデルの目次", fr: "Sommaire du modèle", ko: "모델 목차",
+};
 
 const GROUPS: Record<string, TocGroup[]> = {
   en: [
@@ -322,7 +354,10 @@ export function ModelTableOfContents({ locale }: { locale: string }) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const allIds = [...new Set(groups.flatMap((group) => group.sections.map((section) => section.id)))];
+    const allIds = [...new Set(groups.flatMap((group) => group.sections
+      .map((section) => getModelTocDestination(section.id, locale))
+      .filter((destination) => destination.isLocal)
+      .map((destination) => destination.targetId)))];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -338,25 +373,30 @@ export function ModelTableOfContents({ locale }: { locale: string }) {
       if (element) observer.observe(element);
     });
     return () => observer.disconnect();
-  }, [groups]);
+  }, [groups, locale]);
 
   return (
-    <nav className="hidden lg:block sticky top-20 w-56 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
+    <nav aria-label={pickCopy(NAV_LABEL, locale)} className="hidden lg:block sticky top-20 w-56 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
       {groups.map((group) => (
         <div key={group.title} className="mb-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted/60 mb-2">{group.title}</p>
           <ul className="space-y-1 text-sm border-l border-card-border pl-3">
-            {group.sections.map((section) => (
+            {group.sections.map((section) => {
+              const destination = getModelTocDestination(section.id, locale);
+              const isActive = destination.isLocal && activeId === destination.targetId;
+              return (
               <li key={`${group.title}-${section.id}`}>
-                <a
-                  href={`#${section.id}`}
-                  className={`block leading-snug transition-colors ${activeId === section.id ? "text-accent font-medium" : "text-foreground-muted hover:text-accent"}`}
+                <Link
+                  href={destination.href}
+                  aria-current={isActive ? "location" : undefined}
+                  className={`block rounded-sm leading-snug transition-colors focus-visible:outline-2 focus-visible:outline-accent ${isActive ? "text-accent font-medium" : "text-foreground-muted hover:text-accent"}`}
                 >
-                  {section.num && <span className="text-xs text-foreground-muted/60 mr-1">{section.num}</span>}
+                  {section.num && !destination.relocated && <span className="text-xs text-foreground-muted/60 mr-1">{section.num}</span>}
                   {section.label}
-                </a>
+                </Link>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
       ))}

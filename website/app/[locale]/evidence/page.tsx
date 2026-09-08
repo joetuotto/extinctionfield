@@ -36,6 +36,7 @@ import {
   GitMerge,
 } from "lucide-react";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
+import { ResearchReadingGuide, getResearchReadingCopy } from "@/components/ResearchReadingGuide";
 import type { EpistemicLevel } from "@/lib/types";
 import { PageHeader } from "@/components/PageHeader";
 import { CitationLink } from "@/components/CitationLink";
@@ -2137,9 +2138,12 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   const d = pickCopy(COPY, locale);
   const narrativeAttribution = pickCopy(NARRATIVE_ATTRIBUTION_COPY, locale);
   const bioem = { ...COPY.en, ...d };
+  const reading = getResearchReadingCopy(locale);
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
+
+      <ResearchReadingGuide locale={locale} context="evidence" />
 
       <p className="mb-12 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.registryNote}</p>
 
@@ -2981,12 +2985,13 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                             className="font-semibold text-foreground decoration-dotted underline-offset-2 hover:text-accent hover:underline"
                           />
                         </h4>
-                        <p className="mt-1 text-sm text-foreground-muted">{record.studyType} · {record.system}</p>
                       </div>
                       <span className="font-mono-num text-xs text-foreground-muted">{record.year}</span>
                     </div>
                     <p className="mb-4 max-w-4xl text-sm leading-relaxed text-foreground-muted">{record.finding}</p>
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-2 border-t border-card-border pt-3 text-sm leading-relaxed md:grid-cols-2">
+                      <div><dt className="font-semibold text-foreground mb-0.5">{reading.design}</dt><dd className="text-foreground-muted">{record.studyType}</dd></div>
+                      <div><dt className="font-semibold text-foreground mb-0.5">{reading.system}</dt><dd className="text-foreground-muted">{record.system}</dd></div>
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.nodes}</dt><dd className="text-foreground-muted">{causalNodeLabels(record.causalNodes, locale).join(" · ")}</dd></div>
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.field}</dt><dd className="text-foreground-muted">{record.fieldClass}</dd></div>
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.scope}</dt><dd className="text-foreground-muted">{record.scope}</dd></div>

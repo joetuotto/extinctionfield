@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-09-08T08:13:32.036159+03:00",
+  "worktree": "/Users/ottojuote/.berm-navigation-repair-20260908",
+  "tested_base": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+  "scope": "Only the two slow tests omitted from the preceding 2120-test non-slow run. Existing test assertions executed without scientific reinterpretation.",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest tests/test_dual_kernel.py::test_dual_kernel_is_not_separable_on_the_fertility_panel tests/test_dual_kernel.py::test_age_resolved_fast_kernel_and_declining_slope -q -p no:cacheprovider --durations=2",
+  "suite": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "2",
+    "time": "6.853",
+    "timestamp": "2026-09-08T08:12:34.668366+03:00",
+    "hostname": "Mac-mini.local"
+  },
+  "tests": [
+    {
+      "classname": "tests.test_dual_kernel",
+      "name": "test_dual_kernel_is_not_separable_on_the_fertility_panel",
+      "time": "5.088"
+    },
+    {
+      "classname": "tests.test_dual_kernel",
+      "name": "test_age_resolved_fast_kernel_and_declining_slope",
+      "time": "0.806"
+    }
+  ],
+  "elapsed_seconds_reported_by_pytest": 6.85,
+  "preflight": {
+    "estimated_duration": "Seconds to a few minutes; bounded local matrix fits and cached finite convolutions.",
+    "external_downloads": false,
+    "test_file_writes": false,
+    "method": "Inspected both test functions, dual_kernel_identifiability, fit_age_resolved_kernels, their local data path and computational dependencies before execution."
+  },
+  "additional_input": {
+    "copied_at": "2026-09-08T08:12:34.259357+03:00",
+    "path": "berm/data/global/all_countries_panel.json",
+    "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/global/all_countries_panel.json",
+    "bytes": 76249708,
+    "sha256": "4a68f9eaac06f0ec2d9d70814cb41c67f37e1f69d86100bdc985f1618caffa4c",
+    "copy_status": "byte_exact_new_ignored_untracked_file_no_overwrite",
+    "matching_main_manifest_paths": [
+      "website/public/data/global_panel_summary.json#/source_panel/sha256",
+      "berm/docs/merge-2026-09-07-data-manifest.json#/files/0/sha256"
+    ],
+    "input_source_sha256": {
+      "berm/data/global/all_countries_panel.json": "4a68f9eaac06f0ec2d9d70814cb41c67f37e1f69d86100bdc985f1618caffa4c",
+      "berm/berm/data/asfr.py": "52f9af61edb785c1054013abdcbdeb0d8086a3a68f559c6a13dfaf2a46bea914",
+      "berm/berm/data/countries.py": "5b0472ebd9009fe7c3aade22a928ad952009e7f9f64b576c68d398b41fe966ed",
+      "berm/berm/v16.py": "cdf7dbfce69902fdb3e4085b7611f3c80d7beb2fa1501dd2977746d92182cacd",
+      "berm/berm/diagnostics/dual_kernel.py": "9919f9cd6923eb1769f8b72b81264d0843ef17cfe3021dd99465954515642ce3"
+    }
+  },
+  "preservation": {
+    "input_and_source_hashes_unchanged": true,
+    "tracked_berm_unchanged_from_tested_base": true,
+    "tracked_file_replacements": 0,
+    "existing_destination_overwrites": 0,
+    "data_transformations": 0
+  },
+  "combined_coverage": {
+    "standard_passed": 2120,
+    "slow_passed": 2,
+    "total_unique_passed": 2122,
+    "tests_left_unexecuted": 0,
+    "note": "Two separate successful runs; no claim that all 2122 were run in one pytest invocation."
+  }
+}

@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio, BrainCircuit } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
+import { ModelReadingPath } from "@/components/ModelReadingPath";
+import { CivilizationReadingPath, getCivilizationReadingCopy } from "@/components/CivilizationReadingPath";
 
 const COPY = {
   en: {
@@ -340,12 +342,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const PAGES = [
   { key: "pathopege", href: "pathopege", icon: Zap, color: "amber" },
+  { key: "pathopolites", href: "pathopolites", icon: UserX, color: "rose" },
   { key: "epistapege", href: "epistapege", icon: BrainCircuit, color: "indigo" },
+  { key: "patokinesis", href: "patokinesis", icon: Radio, color: "teal" },
   { key: "patopolis", href: "patopolis", icon: Building2, color: "blue" },
   { key: "patokratia", href: "patokratia", icon: Shield, color: "red" },
   { key: "patopoliteia", href: "patopoliteia", icon: Globe, color: "purple" },
-  { key: "pathopolites", href: "pathopolites", icon: UserX, color: "rose" },
-  { key: "patokinesis", href: "patokinesis", icon: Radio, color: "teal" },
 ] as const;
 
 const COLORS: Record<string, { border: string; bg: string; text: string; icon: string }> = {
@@ -366,6 +368,7 @@ export default async function CivilizationPage({
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
   const epistapege = pickCopy(EPISTAPEGE_SUMMARY_COPY, locale);
+  const reading = getCivilizationReadingCopy(locale);
 
   return (
     <main id="main-content">
@@ -396,7 +399,7 @@ export default async function CivilizationPage({
           </div>
         </header>
 
-        <BiologicalCoordinationContext locale={locale} context="civilization" />
+        <ModelReadingPath locale={locale} current="civilization" />
 
         {/* Lead */}
         <section className="mb-16 max-w-3xl">
@@ -408,14 +411,8 @@ export default async function CivilizationPage({
           </p>
         </section>
 
-        {/* Epistemic note */}
-        {d.epistemicTitle && (
-        <section className="mb-16 max-w-3xl border border-foreground/10 rounded-xl p-6 bg-foreground/[0.02]">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-3">{d.epistemicTitle}</h2>
-          <p className="text-sm leading-relaxed text-foreground/70 mb-3">{d.epistemicBody}</p>
-          <p className="text-sm leading-relaxed text-foreground/70">{d.epistemicBody2}</p>
-        </section>
-        )}
+        <CivilizationReadingPath locale={locale} />
+        <BiologicalCoordinationContext locale={locale} context="civilization" />
 
         <section className="mb-16 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-6">
           <h2 className="text-lg font-semibold">{epistapege.title}</h2>
@@ -430,8 +427,8 @@ export default async function CivilizationPage({
 
         {/* Reading path */}
         <section className="mb-20">
-          <h2 className="text-2xl font-bold mb-2">{d.readingGuide}</h2>
-          <p className="text-muted-foreground mb-10 max-w-2xl">{d.readingGuideDesc}</p>
+          <h2 className="text-2xl font-bold mb-2">{reading.applications}</h2>
+          <p className="text-muted-foreground mb-10 max-w-2xl">{reading.applicationsLead}</p>
 
           <div className="grid gap-6 sm:grid-cols-2">
             {PAGES.map(({ key, href, icon: Icon, color }, i) => {
@@ -450,6 +447,7 @@ export default async function CivilizationPage({
                     <Icon className={`w-5 h-5 ${c.icon} mt-0.5 shrink-0`} />
                     <div>
                       <h3 className="text-lg font-semibold">{title}</h3>
+                      <p className="my-1 text-sm font-medium text-foreground/80">{reading.essays[key]}</p>
                       <p className="text-xs text-muted-foreground italic">{greek}</p>
                     </div>
                   </div>
@@ -462,6 +460,15 @@ export default async function CivilizationPage({
             })}
           </div>
         </section>
+
+        {/* Epistemic note */}
+        {d.epistemicTitle && (
+        <section className="mb-16 max-w-3xl border border-foreground/10 rounded-xl p-6 bg-foreground/[0.02]">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-3">{d.epistemicTitle}</h2>
+          <p className="text-sm leading-relaxed text-foreground/70 mb-3">{d.epistemicBody}</p>
+          <p className="text-sm leading-relaxed text-foreground/70">{d.epistemicBody2}</p>
+        </section>
+        )}
 
         {/* Bottom nav */}
         <footer className="border-t border-foreground/10 pt-8 pb-16 flex flex-wrap gap-6 text-sm">

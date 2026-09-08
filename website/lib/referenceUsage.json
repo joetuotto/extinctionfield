@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-07",
-    "referencesWithUsages": 755,
-    "usageLocations": 2241
+    "generated": "2026-09-08",
+    "referencesWithUsages": 772,
+    "usageLocations": 2339
   },
   "usage": {
     "delgado1969": [
@@ -144,7 +144,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -156,7 +156,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -216,7 +216,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -228,7 +228,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "oxley2008_physiological_traits": [
@@ -280,7 +280,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -292,7 +292,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "zapffe1933": [
@@ -406,15 +406,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/objections",
@@ -494,7 +494,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -502,7 +502,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/objections",
@@ -536,7 +536,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -548,7 +548,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/objections",
@@ -852,15 +852,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/objections",
@@ -882,7 +882,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -890,7 +890,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/objections",
@@ -944,7 +944,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -956,7 +956,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/modulome",
@@ -1579,6 +1579,10 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
         "path": "/civilization",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
@@ -1589,6 +1593,10 @@
       {
         "path": "/evidence/circadian",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
       },
       {
         "path": "/evidence/nutrition",
@@ -1621,12 +1629,20 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
         "path": "/civilization",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
         "path": "/evidence/circadian",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
       },
       {
         "path": "/evidence/nutrition",
@@ -1701,6 +1717,14 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
       },
@@ -1719,12 +1743,20 @@
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
         "path": "/civilization",
         "source": "components/BiologicalCoordinationContext.tsx"
       },
       {
         "path": "/evidence/circadian",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
       },
       {
         "path": "/evidence/klimentidis-explained",
@@ -1877,6 +1909,10 @@
       {
         "path": "/articles/dual-lock",
         "source": "components/BiologicalCoordinationContext.tsx"
+      },
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
       },
       {
         "path": "/civilization",
@@ -2128,15 +2164,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "zakon2012_ion_channel_evolution": [
@@ -2180,15 +2216,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "pemf_bone_fda_review_2020": [
@@ -2216,15 +2252,507 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
+      }
+    ],
+    "westbrook2020_dopamine_effort": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "jurgelis2022_sleep_effort": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "draper2018_inflammation_effort": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "finkelstein2013_gonadal_steroids": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "mills2023_kisspeptin": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "lim2026_sleep_learning": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "westbrook2025_dopamine_learning": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "johansson2005_choice_blindness": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "eisenegger2010_testosterone_fairness": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "crockett2015_harm_aversion": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "strang2017_nutrition_decisions": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bensimon2022_sleep_helping": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "weisman2012_oxytocin_dyad": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "paluck2016_network_conflict": [
+      {
+        "path": "/behavior",
+        "source": "app/[locale]/behavior/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      }
+    ],
+    "sherrard2018": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/converging-patterns",
+        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "dufor2019_cry_magnetic_repair": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      }
+    ],
+    "fogle2015_cry_redox": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      }
+    ],
+    "rizzini2019_cry_cop1": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "manella2026_cry2_steroid_clock": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kalafatakis2018_cortisol_pulsatility": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "catsper2024": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      }
+    ],
+    "brosi2013_pollination_network": [
+      {
+        "path": "/biology",
+        "source": "app/[locale]/biology/page.tsx"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
       }
     ],
     "carre2017_exogenous_t_aggression": [
@@ -2432,15 +2960,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "dedreu2010_parochial_altruism": [
@@ -2486,15 +3014,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "mcclure2004_delayed_reward": [
@@ -2731,44 +3259,6 @@
       {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
-      }
-    ],
-    "sherrard2018": [
-      {
-        "path": "/data",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence/converging-patterns",
-        "source": "app/[locale]/evidence/converging-patterns/page.tsx"
-      },
-      {
-        "path": "/evidence/magnetoreception",
-        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
       }
     ],
     "cao2015": [
@@ -3764,15 +4254,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "kacem2024": [
@@ -3818,7 +4308,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -3826,7 +4316,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "who_t_meta": [
@@ -3844,15 +4334,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "puts2008": [
@@ -3874,15 +4364,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "mehta2015": [
@@ -3904,15 +4394,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "dualhormone_meta2018": [
@@ -3952,15 +4442,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "porges2001": [
@@ -3978,15 +4468,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "carter2021": [
@@ -4008,15 +4498,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "poutahidis2014": [
@@ -4038,15 +4528,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "erdman2016": [
@@ -4064,15 +4554,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "poutahidis2013": [
@@ -4104,15 +4594,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "sempou2022": [
@@ -4233,40 +4723,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      }
-    ],
-    "catsper2024": [
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/evidence/reproductive-navigation",
-        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
-      },
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
       }
     ],
     "ccb_fertility": [
@@ -5060,15 +5516,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "goldstein_kreyenfeld2011": [
@@ -5154,15 +5610,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "ntp2018": [
@@ -6775,6 +7231,86 @@
         "source": "app/[locale]/evidence/circadian/page.tsx"
       }
     ],
+    "lindgren2025": [
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "app/[locale]/model/biological-coordination/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model/tensor-derivation",
+        "source": "app/[locale]/model/tensor-derivation/page.tsx"
+      },
+      {
+        "path": "/physics",
+        "source": "app/[locale]/physics/page.tsx"
+      }
+    ],
+    "kubo1957_linear_response": [
+      {
+        "path": "/evidence/convergence",
+        "source": "app/[locale]/evidence/convergence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/physics",
+        "source": "app/[locale]/physics/page.tsx"
+      }
+    ],
     "litovitz1991_coherence_time": [
       {
         "path": "/evidence/converging-patterns",
@@ -6794,7 +7330,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -6806,7 +7342,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "blackman1990": [
@@ -6832,7 +7368,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -6844,7 +7380,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "blackman1991": [
@@ -6870,7 +7406,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -6882,7 +7418,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "berman1990_multilab_embryo": [
@@ -7159,24 +7695,6 @@
       {
         "path": "/evidence/ecology",
         "source": "app/[locale]/evidence/ecology/page.tsx"
-      }
-    ],
-    "brosi2013_pollination_network": [
-      {
-        "path": "/evidence/ecology",
-        "source": "app/[locale]/evidence/ecology/page.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
       }
     ],
     "wifi_lettuce_2023": [
@@ -7856,15 +8374,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "milham_stetzer2013_dirty_electricity": [
@@ -7920,15 +8438,15 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "hrv_wifi_2023": [
@@ -8229,70 +8747,6 @@
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       }
     ],
-    "lindgren2025": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/tensor-derivation",
-        "source": "app/[locale]/model/tensor-derivation/page.tsx"
-      }
-    ],
-    "kubo1957_linear_response": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
     "rosenspire2005_metabolic_phase": [
       {
         "path": "/evidence/pharmacology",
@@ -8308,7 +8762,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8320,7 +8774,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "ubeda1983_pulse_shape": [
@@ -8338,7 +8792,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8350,7 +8804,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "lymangrover1983_acth_steroidogenesis": [
@@ -8368,7 +8822,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8380,7 +8834,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "laurent2016_shbg_bioactivity": [
@@ -8394,11 +8848,11 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/biological-coordination",
@@ -8406,7 +8860,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "degendt2004_sertoli_ar": [
@@ -8424,7 +8878,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8436,7 +8890,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -8458,7 +8912,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8470,7 +8924,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -8496,7 +8950,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -8508,7 +8962,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -8655,20 +9109,6 @@
         "source": "data/claims.json"
       }
     ],
-    "kalafatakis2018_cortisol_pulsatility": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      }
-    ],
     "najjar2016_light_flashes": [
       {
         "path": "/evidence/pharmacology",
@@ -8712,20 +9152,6 @@
       }
     ],
     "gnoth2003_time_to_pregnancy": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "app/[locale]/model/biological-coordination/page.tsx"
-      }
-    ],
-    "bensimon2022_sleep_helping": [
       {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
@@ -9114,7 +9540,7 @@
       },
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -9122,7 +9548,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "frontiers2024_testes": [
@@ -9996,35 +10422,35 @@
     "ttfields_cell_size_frequency": [
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "selye1936": [
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "halgamuge2015": [
       {
         "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
@@ -10032,7 +10458,7 @@
       },
       {
         "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
+        "source": "components/MathematicsSections.tsx"
       }
     ],
     "ashhab2007_driven_two_level": [

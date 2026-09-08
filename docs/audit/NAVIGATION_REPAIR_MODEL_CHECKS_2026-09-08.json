@@ -1,0 +1,2040 @@
+{
+  "checked_at": "2026-09-08T08:09:41.366614+03:00",
+  "worktree": "/Users/ottojuote/.berm-navigation-repair-20260908",
+  "tested_base": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+  "current_head": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+  "berm_git_tree": "ae11ff027a3b6577ffdeafb892ca6b5f6c20d00a",
+  "scope": "Functional model execution and model-to-website data synchronization; no empirical model validation. Distinct from old-worktree 2011-pass run.",
+  "environment": {
+    "python": "3.13.1 (v3.13.1:06714517797, Dec  3 2024, 14:00:22) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "executable": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "numpy": "2.2.1",
+    "scipy": "1.17.1",
+    "pytest": "8.4.1"
+  },
+  "pytest_configuration": {
+    "root": "berm",
+    "testpaths": [
+      "tests"
+    ],
+    "selection": "not slow",
+    "deselected": 2,
+    "excluded_node_ids": [
+      "tests/test_dual_kernel.py::test_dual_kernel_is_not_separable_on_the_fertility_panel",
+      "tests/test_dual_kernel.py::test_age_resolved_fast_kernel_and_declining_slope"
+    ],
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -m \"not slow\" -q -p no:cacheprovider --junitxml=/tmp/berm-main-functional-complete-2026-09-08.xml"
+  },
+  "initial_missing_input_run": {
+    "suite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "26",
+      "skipped": "74",
+      "tests": "2120",
+      "time": "64.768",
+      "timestamp": "2026-09-08T08:00:21.022481+03:00",
+      "hostname": "Mac-mini.local"
+    },
+    "module_count": 100,
+    "module_results": {
+      "tests.test_adhd_calibration": {
+        "passed": 7
+      },
+      "tests.test_alzheimer_cascade": {
+        "passed": 7
+      },
+      "tests.test_androgen_capacity": {
+        "passed": 9
+      },
+      "tests.test_anfr_fieldstate_bridge": {
+        "passed": 5
+      },
+      "tests.test_anfr_rf": {
+        "passed": 4
+      },
+      "tests.test_asfr": {
+        "passed": 41
+      },
+      "tests.test_bbb_aging_synergy": {
+        "passed": 12
+      },
+      "tests.test_behavioral_factor": {
+        "passed": 6
+      },
+      "tests.test_biological_coordination": {
+        "passed": 26
+      },
+      "tests.test_biology": {
+        "passed": 6
+      },
+      "tests.test_catsper_evidence_scope": {
+        "passed": 3
+      },
+      "tests.test_civilization": {
+        "passed": 36
+      },
+      "tests.test_civilization_site_sync": {
+        "passed": 52
+      },
+      "tests.test_classification_table": {
+        "passed": 6
+      },
+      "tests.test_cohorts": {
+        "passed": 3
+      },
+      "tests.test_conditional_input_adapters": {
+        "passed": 13
+      },
+      "tests.test_coordination_site_sync": {
+        "passed": 5
+      },
+      "tests.test_cross_pathway_synthesis": {
+        "passed": 5
+      },
+      "tests.test_cross_sectional": {
+        "passed": 17
+      },
+      "tests.test_cross_species_gradient": {
+        "passed": 10
+      },
+      "tests.test_csli": {
+        "passed": 10,
+        "failure": 4
+      },
+      "tests.test_csli_falsification": {
+        "passed": 5
+      },
+      "tests.test_cultural_energy": {
+        "passed": 33
+      },
+      "tests.test_data_contracts": {
+        "passed": 59
+      },
+      "tests.test_data_driven_route": {
+        "skipped": 43
+      },
+      "tests.test_disease_cascade": {
+        "passed": 7
+      },
+      "tests.test_dkc": {
+        "passed": 49
+      },
+      "tests.test_dkc_calibration": {
+        "passed": 23
+      },
+      "tests.test_dkc_registry": {
+        "passed": 11
+      },
+      "tests.test_dual_kernel": {
+        "passed": 14
+      },
+      "tests.test_envelope_psd": {
+        "passed": 24
+      },
+      "tests.test_epistapege": {
+        "passed": 4
+      },
+      "tests.test_event_study": {
+        "passed": 13
+      },
+      "tests.test_evidence_constrained_hindcast": {
+        "passed": 4,
+        "failure": 1
+      },
+      "tests.test_evidence_constraints": {
+        "passed": 6
+      },
+      "tests.test_evidence_protocol": {
+        "passed": 10
+      },
+      "tests.test_exposure": {
+        "passed": 7
+      },
+      "tests.test_external_exposure": {
+        "passed": 4,
+        "failure": 2
+      },
+      "tests.test_falsification_v19_1": {
+        "failure": 7,
+        "passed": 9
+      },
+      "tests.test_fangr_benchmark": {
+        "passed": 3,
+        "skipped": 1
+      },
+      "tests.test_field_state": {
+        "passed": 18
+      },
+      "tests.test_fieldstate_asfr_v2": {
+        "passed": 9,
+        "failure": 1
+      },
+      "tests.test_fieldstate_cohort_signature": {
+        "passed": 2,
+        "failure": 1
+      },
+      "tests.test_fieldstate_evidence": {
+        "passed": 8
+      },
+      "tests.test_gbd_data": {
+        "passed": 8
+      },
+      "tests.test_global_download": {
+        "passed": 2
+      },
+      "tests.test_global_panel": {
+        "passed": 2
+      },
+      "tests.test_global_public_export": {
+        "passed": 2
+      },
+      "tests.test_hierarchical_global": {
+        "passed": 11
+      },
+      "tests.test_ifce_sire_equine_benchmark": {
+        "failure": 4,
+        "passed": 1
+      },
+      "tests.test_interaction_operators": {
+        "passed": 20
+      },
+      "tests.test_intervention_protocol": {
+        "passed": 43
+      },
+      "tests.test_intervention_registry": {
+        "passed": 11
+      },
+      "tests.test_ionic_hierarchy": {
+        "passed": 7
+      },
+      "tests.test_ipr_mechanism": {
+        "passed": 14
+      },
+      "tests.test_lab_baseline": {
+        "passed": 37
+      },
+      "tests.test_led_natural_experiment": {
+        "passed": 11
+      },
+      "tests.test_legacy_compat": {
+        "passed": 6
+      },
+      "tests.test_legacy_reference_migration": {
+        "passed": 4
+      },
+      "tests.test_lh_t_diagnostic": {
+        "passed": 14
+      },
+      "tests.test_lindgren_content_contract": {
+        "passed": 4
+      },
+      "tests.test_lindgren_response": {
+        "passed": 18
+      },
+      "tests.test_lindgren_tensor": {
+        "passed": 56
+      },
+      "tests.test_locked_predictions": {
+        "passed": 5
+      },
+      "tests.test_measured_fieldstate_biology": {
+        "passed": 9
+      },
+      "tests.test_melatonin_fertility_bridge": {
+        "passed": 8
+      },
+      "tests.test_military_ambient": {
+        "passed": 29
+      },
+      "tests.test_model": {
+        "passed": 33
+      },
+      "tests.test_model_architecture_contract": {
+        "passed": 12
+      },
+      "tests.test_model_comparison": {
+        "passed": 30
+      },
+      "tests.test_modulome": {
+        "passed": 32
+      },
+      "tests.test_modulome_reproductive_route": {
+        "passed": 20
+      },
+      "tests.test_modulome_site_sync": {
+        "passed": 8
+      },
+      "tests.test_mtor_aging": {
+        "passed": 38
+      },
+      "tests.test_mustb_download": {
+        "passed": 3
+      },
+      "tests.test_mustb_normalize": {
+        "passed": 2,
+        "skipped": 1
+      },
+      "tests.test_physics": {
+        "passed": 34
+      },
+      "tests.test_political_biology": {
+        "passed": 393
+      },
+      "tests.test_provenance": {
+        "passed": 25,
+        "failure": 2
+      },
+      "tests.test_pulsed_radar_peak": {
+        "passed": 16
+      },
+      "tests.test_reproductive_calendar": {
+        "passed": 13
+      },
+      "tests.test_reproductive_waiting": {
+        "passed": 25
+      },
+      "tests.test_rolling_backtest": {
+        "passed": 7
+      },
+      "tests.test_rp_and_synthetic": {
+        "passed": 29
+      },
+      "tests.test_schwan": {
+        "passed": 6
+      },
+      "tests.test_seminology_benchmark": {
+        "failure": 4,
+        "passed": 1
+      },
+      "tests.test_sentinel_hindcast_protocol": {
+        "passed": 8
+      },
+      "tests.test_sentinel_normalize": {
+        "passed": 6
+      },
+      "tests.test_skin_bioelectric": {
+        "passed": 8
+      },
+      "tests.test_static_tribo_interface": {
+        "passed": 8
+      },
+      "tests.test_temporal_core": {
+        "passed": 12
+      },
+      "tests.test_testosterone_tfr_horse_race": {
+        "passed": 3
+      },
+      "tests.test_tfr": {
+        "passed": 17
+      },
+      "tests.test_two_level_model": {
+        "passed": 15
+      },
+      "tests.test_v16": {
+        "passed": 194
+      },
+      "tests.test_v19_three_channel": {
+        "passed": 54
+      },
+      "tests.test_verification": {
+        "passed": 29
+      },
+      "tests.test_veterinary_sentinel": {
+        "passed": 4,
+        "skipped": 1
+      },
+      "tests.test_wce": {
+        "passed": 8
+      },
+      "tests.test_wpp_asfr": {
+        "skipped": 28
+      }
+    },
+    "nonpassing_cases": [
+      {
+        "node_id": "tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_raw_loaders_remain_readable",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_csli.py::TestCurrentSourcesAreBlocked::test_bare_current_sources_cannot_produce_lag_weights",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_cross_species_and_invariance_are_blocked",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_csli.py::TestCurrentSourcesAreBlocked::test_current_common_shock_and_prospective_paths_are_retired",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestLegacyRouteIsUndisturbed::test_active_prediction_default_output_unchanged",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestLegacyRouteIsUndisturbed::test_active_prediction_unchanged_after_data_driven_call",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestLegacyRouteIsUndisturbed::test_v16_module_constants_are_restored_after_sensitivity",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestLegacyRouteIsUndisturbed::test_legacy_asfr_table_still_present_and_unmodified",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestLegacyRouteIsUndisturbed::test_legacy_asfr_route_still_works",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestGeographyResolution::test_accepts_iso3",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestGeographyResolution::test_accepts_berm_name",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestGeographyResolution::test_rejects_unknown",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_reference_year_is_an_estimate_not_a_projection",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_base_rates_come_from_wpp_not_the_legacy_table",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_tfr_is_the_sum_of_predicted_asfr",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_seven_age_groups_with_birth_cohorts",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_missing_geography_raises_rather_than_guessing",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_missing_reference_year_raises",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestAsfrBase::test_works_for_every_berm_country",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestReturnedContract::test_returns_every_required_field",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestReturnedContract::test_prediction_states_its_derivation",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestReturnedContract::test_rejects_unknown_model_version",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestReturnedContract::test_rejects_unknown_exposure_scenario",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestReturnedContract::test_exposure_scenarios_are_declared",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestProvenanceIsHonest::test_asfr_base_is_labelled_observed_and_not_a_proxy",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestProvenanceIsHonest::test_exposure_is_labelled_a_scenario_parameter_and_a_proxy",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestProvenanceIsHonest::test_cultural_rate_is_disclosed_as_fitted_per_country",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestProvenanceIsHonest::test_assumption_share_is_reported",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestMechanismSeparation::test_diagnostic_mechanisms_are_read_from_the_source",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestMechanismSeparation::test_active_mechanism_is_not_listed_as_diagnostic",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestMechanismSeparation::test_no_mechanism_is_both_active_and_excluded",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_interval_brackets_the_central_prediction",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_interval_is_not_claimed_to_be_a_confidence_interval",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_unvariable_parameters_are_disclosed",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_every_varied_parameter_is_registered_with_a_range",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_warnings_state_that_the_interval_understates_uncertainty",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestUncertainty::test_sensitivity_ranks_parameters_by_swing",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDataCoverageAndBenchmark::test_reports_wpp_benchmark_without_claiming_it_validates_berm",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDataCoverageAndBenchmark::test_benchmark_interval_brackets_the_wpp_medium",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDataCoverageAndBenchmark::test_coverage_reports_the_geography_count",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestRouteComparisonIsReported::test_routes_are_compared_not_merged",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestRouteComparisonIsReported::test_comparison_warns_that_engine_and_data_both_differ",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestRouteComparisonIsReported::test_asfr_level_comparison_isolates_the_data_source",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestRouteComparisonIsReported::test_asfr_comparison_covers_every_legacy_country",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDefectsSurfacedByParallelValidation::test_legacy_zero_clamp_has_not_spread",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDefectsSurfacedByParallelValidation::test_legacy_prediction_is_time_invariant_where_exposure_saturates",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_data_driven_route.py::TestDefectsSurfacedByParallelValidation::test_data_driven_route_does_not_clamp_to_zero",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_evidence_constrained_hindcast.py::test_historical_asfr_pattern_is_evaluated_only_after_the_upstream_specification",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_external_exposure.py::test_known_country_includes_existing_military_and_broadcast_layers",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_external_exposure.py::test_unknown_country_is_graceful_and_reports_unavailable_inputs",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestT1LedDID::test_runs_without_error",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestT1LedDID::test_uses_all_eu_countries",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestT1LedDID::test_uses_control_countries",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestT1LedDID::test_did_is_numeric",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestT1LedDID::test_falsified_is_boolean",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestRunAll::test_run_all_returns_summary",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_falsification_v19_1.py::TestRunAll::test_pending_tests_listed",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_fangr_benchmark.py::test_held_release_dimensions_when_raw_file_is_available",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_fieldstate_asfr_v2.py::test_wpp_facade_uses_observed_reference_asfr_without_v16_exposure_curve",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_fieldstate_cohort_signature.py::test_processed_panel_reproduces_descriptive_all_country_signature",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_ifce_sire_equine_benchmark.py::test_raw_release_is_manifest_locked_and_has_expected_dimensions",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_ifce_sire_equine_benchmark.py::test_panel_preserves_source_fields_and_keeps_metrics_unjoined",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_ifce_sire_equine_benchmark.py::test_build_and_write_are_deterministic_and_fail_closed",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_ifce_sire_equine_benchmark.py::test_corrupt_manifest_checksum_is_rejected_before_normalization",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_mustb_normalize.py::test_held_archive_has_only_two_data_tables_when_available",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_provenance.py::TestManifests::test_every_manifest_file_exists",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_provenance.py::TestHeldVersusClaimed::test_sources_marked_open_with_a_filename_are_actually_on_disk",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_seminology_benchmark.py::test_raw_release_is_manifest_locked_with_expected_dimensions",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_seminology_benchmark.py::test_events_preserve_direct_observations_and_refuse_sentinel_status",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_seminology_benchmark.py::test_ejaculate_summary_retains_nonmotile_cells_and_unmatched_ejaculates",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_seminology_benchmark.py::test_build_and_write_are_deterministic_preserve_raw_and_fail_closed",
+        "status": "failure"
+      },
+      {
+        "node_id": "tests/test_veterinary_sentinel.py::test_held_fielding_release_has_expected_direct_observation_coverage",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestCoverage::test_revision_is_recorded",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestCoverage::test_covers_the_full_wpp_horizon",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestCoverage::test_covers_every_country_berm_models",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestCoverage::test_seven_reproductive_age_groups",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_typical_residual_is_below_one_percent",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_almost_every_country_year_is_within_two_percent",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_no_country_year_is_wildly_off",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_residual_skews_negative_because_10_14_and_50_54_are_excluded",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_a_large_country_reconciles_closely",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestAccountingIdentity::test_accounting_reports_rather_than_absorbs",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestEstimateVersusProjection::test_estimates_and_projections_split_at_2023",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestEstimateVersusProjection::test_estimates_are_observed_and_projections_are_derived",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestEstimateVersusProjection::test_projection_years_carry_the_published_interval",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestEstimateVersusProjection::test_estimate_years_have_no_invented_interval",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestEstimateVersusProjection::test_published_interval_brackets_the_central_value",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_load_asfr_single_age_group",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_load_asfr_all_groups_in_canonical_order",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_load_asfr_series_is_contiguous_and_ordered",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_missing_geography_returns_none_rather_than_guessing",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_missing_year_is_not_interpolated",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_every_record_carries_provenance",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_asfr_to_tfr_accepts_tuple_or_record",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestReadInterface::test_asfr_to_tfr_rejects_wrong_arity",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestProductsSatisfyTheirContracts::test_asfr_product_rows_are_contract_clean",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestProductsSatisfyTheirContracts::test_tfr_product_rows_are_contract_clean",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestLegacyComparisonIsReportedNotHidden::test_legacy_table_is_left_untouched",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestLegacyComparisonIsReportedNotHidden::test_legacy_and_wpp_diverge_substantially",
+        "status": "skipped"
+      },
+      {
+        "node_id": "tests/test_wpp_asfr.py::TestActivePredictionUnaffected::test_importing_wpp_does_not_change_the_active_prediction",
+        "status": "skipped"
+      }
+    ]
+  },
+  "missing_input_retry": {
+    "suite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "100",
+      "time": "68.532",
+      "timestamp": "2026-09-08T08:04:53.694175+03:00",
+      "hostname": "Mac-mini.local"
+    },
+    "module_count": 14,
+    "module_results": {
+      "tests.test_csli": {
+        "passed": 4
+      },
+      "tests.test_data_driven_route": {
+        "passed": 43
+      },
+      "tests.test_evidence_constrained_hindcast": {
+        "passed": 1
+      },
+      "tests.test_external_exposure": {
+        "passed": 2
+      },
+      "tests.test_falsification_v19_1": {
+        "passed": 7
+      },
+      "tests.test_fangr_benchmark": {
+        "passed": 1
+      },
+      "tests.test_fieldstate_asfr_v2": {
+        "passed": 1
+      },
+      "tests.test_fieldstate_cohort_signature": {
+        "passed": 1
+      },
+      "tests.test_ifce_sire_equine_benchmark": {
+        "passed": 4
+      },
+      "tests.test_mustb_normalize": {
+        "passed": 1
+      },
+      "tests.test_provenance": {
+        "passed": 2
+      },
+      "tests.test_seminology_benchmark": {
+        "passed": 4
+      },
+      "tests.test_veterinary_sentinel": {
+        "passed": 1
+      },
+      "tests.test_wpp_asfr": {
+        "passed": 28
+      }
+    },
+    "nonpassing_cases": []
+  },
+  "final_complete_run": {
+    "suite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "2120",
+      "time": "136.815",
+      "timestamp": "2026-09-08T08:06:07.011623+03:00",
+      "hostname": "Mac-mini.local"
+    },
+    "module_count": 100,
+    "module_results": {
+      "tests.test_adhd_calibration": {
+        "passed": 7
+      },
+      "tests.test_alzheimer_cascade": {
+        "passed": 7
+      },
+      "tests.test_androgen_capacity": {
+        "passed": 9
+      },
+      "tests.test_anfr_fieldstate_bridge": {
+        "passed": 5
+      },
+      "tests.test_anfr_rf": {
+        "passed": 4
+      },
+      "tests.test_asfr": {
+        "passed": 41
+      },
+      "tests.test_bbb_aging_synergy": {
+        "passed": 12
+      },
+      "tests.test_behavioral_factor": {
+        "passed": 6
+      },
+      "tests.test_biological_coordination": {
+        "passed": 26
+      },
+      "tests.test_biology": {
+        "passed": 6
+      },
+      "tests.test_catsper_evidence_scope": {
+        "passed": 3
+      },
+      "tests.test_civilization": {
+        "passed": 36
+      },
+      "tests.test_civilization_site_sync": {
+        "passed": 52
+      },
+      "tests.test_classification_table": {
+        "passed": 6
+      },
+      "tests.test_cohorts": {
+        "passed": 3
+      },
+      "tests.test_conditional_input_adapters": {
+        "passed": 13
+      },
+      "tests.test_coordination_site_sync": {
+        "passed": 5
+      },
+      "tests.test_cross_pathway_synthesis": {
+        "passed": 5
+      },
+      "tests.test_cross_sectional": {
+        "passed": 17
+      },
+      "tests.test_cross_species_gradient": {
+        "passed": 10
+      },
+      "tests.test_csli": {
+        "passed": 14
+      },
+      "tests.test_csli_falsification": {
+        "passed": 5
+      },
+      "tests.test_cultural_energy": {
+        "passed": 33
+      },
+      "tests.test_data_contracts": {
+        "passed": 59
+      },
+      "tests.test_data_driven_route": {
+        "passed": 43
+      },
+      "tests.test_disease_cascade": {
+        "passed": 7
+      },
+      "tests.test_dkc": {
+        "passed": 49
+      },
+      "tests.test_dkc_calibration": {
+        "passed": 23
+      },
+      "tests.test_dkc_registry": {
+        "passed": 11
+      },
+      "tests.test_dual_kernel": {
+        "passed": 14
+      },
+      "tests.test_envelope_psd": {
+        "passed": 24
+      },
+      "tests.test_epistapege": {
+        "passed": 4
+      },
+      "tests.test_event_study": {
+        "passed": 13
+      },
+      "tests.test_evidence_constrained_hindcast": {
+        "passed": 5
+      },
+      "tests.test_evidence_constraints": {
+        "passed": 6
+      },
+      "tests.test_evidence_protocol": {
+        "passed": 10
+      },
+      "tests.test_exposure": {
+        "passed": 7
+      },
+      "tests.test_external_exposure": {
+        "passed": 6
+      },
+      "tests.test_falsification_v19_1": {
+        "passed": 16
+      },
+      "tests.test_fangr_benchmark": {
+        "passed": 4
+      },
+      "tests.test_field_state": {
+        "passed": 18
+      },
+      "tests.test_fieldstate_asfr_v2": {
+        "passed": 10
+      },
+      "tests.test_fieldstate_cohort_signature": {
+        "passed": 3
+      },
+      "tests.test_fieldstate_evidence": {
+        "passed": 8
+      },
+      "tests.test_gbd_data": {
+        "passed": 8
+      },
+      "tests.test_global_download": {
+        "passed": 2
+      },
+      "tests.test_global_panel": {
+        "passed": 2
+      },
+      "tests.test_global_public_export": {
+        "passed": 2
+      },
+      "tests.test_hierarchical_global": {
+        "passed": 11
+      },
+      "tests.test_ifce_sire_equine_benchmark": {
+        "passed": 5
+      },
+      "tests.test_interaction_operators": {
+        "passed": 20
+      },
+      "tests.test_intervention_protocol": {
+        "passed": 43
+      },
+      "tests.test_intervention_registry": {
+        "passed": 11
+      },
+      "tests.test_ionic_hierarchy": {
+        "passed": 7
+      },
+      "tests.test_ipr_mechanism": {
+        "passed": 14
+      },
+      "tests.test_lab_baseline": {
+        "passed": 37
+      },
+      "tests.test_led_natural_experiment": {
+        "passed": 11
+      },
+      "tests.test_legacy_compat": {
+        "passed": 6
+      },
+      "tests.test_legacy_reference_migration": {
+        "passed": 4
+      },
+      "tests.test_lh_t_diagnostic": {
+        "passed": 14
+      },
+      "tests.test_lindgren_content_contract": {
+        "passed": 4
+      },
+      "tests.test_lindgren_response": {
+        "passed": 18
+      },
+      "tests.test_lindgren_tensor": {
+        "passed": 56
+      },
+      "tests.test_locked_predictions": {
+        "passed": 5
+      },
+      "tests.test_measured_fieldstate_biology": {
+        "passed": 9
+      },
+      "tests.test_melatonin_fertility_bridge": {
+        "passed": 8
+      },
+      "tests.test_military_ambient": {
+        "passed": 29
+      },
+      "tests.test_model": {
+        "passed": 33
+      },
+      "tests.test_model_architecture_contract": {
+        "passed": 12
+      },
+      "tests.test_model_comparison": {
+        "passed": 30
+      },
+      "tests.test_modulome": {
+        "passed": 32
+      },
+      "tests.test_modulome_reproductive_route": {
+        "passed": 20
+      },
+      "tests.test_modulome_site_sync": {
+        "passed": 8
+      },
+      "tests.test_mtor_aging": {
+        "passed": 38
+      },
+      "tests.test_mustb_download": {
+        "passed": 3
+      },
+      "tests.test_mustb_normalize": {
+        "passed": 3
+      },
+      "tests.test_physics": {
+        "passed": 34
+      },
+      "tests.test_political_biology": {
+        "passed": 393
+      },
+      "tests.test_provenance": {
+        "passed": 27
+      },
+      "tests.test_pulsed_radar_peak": {
+        "passed": 16
+      },
+      "tests.test_reproductive_calendar": {
+        "passed": 13
+      },
+      "tests.test_reproductive_waiting": {
+        "passed": 25
+      },
+      "tests.test_rolling_backtest": {
+        "passed": 7
+      },
+      "tests.test_rp_and_synthetic": {
+        "passed": 29
+      },
+      "tests.test_schwan": {
+        "passed": 6
+      },
+      "tests.test_seminology_benchmark": {
+        "passed": 5
+      },
+      "tests.test_sentinel_hindcast_protocol": {
+        "passed": 8
+      },
+      "tests.test_sentinel_normalize": {
+        "passed": 6
+      },
+      "tests.test_skin_bioelectric": {
+        "passed": 8
+      },
+      "tests.test_static_tribo_interface": {
+        "passed": 8
+      },
+      "tests.test_temporal_core": {
+        "passed": 12
+      },
+      "tests.test_testosterone_tfr_horse_race": {
+        "passed": 3
+      },
+      "tests.test_tfr": {
+        "passed": 17
+      },
+      "tests.test_two_level_model": {
+        "passed": 15
+      },
+      "tests.test_v16": {
+        "passed": 194
+      },
+      "tests.test_v19_three_channel": {
+        "passed": 54
+      },
+      "tests.test_verification": {
+        "passed": 29
+      },
+      "tests.test_veterinary_sentinel": {
+        "passed": 5
+      },
+      "tests.test_wce": {
+        "passed": 8
+      },
+      "tests.test_wpp_asfr": {
+        "passed": 28
+      }
+    },
+    "nonpassing_cases": []
+  },
+  "export_checks": [
+    {
+      "command": "python3 export_intervention_profiles.py --check",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 export_interventions.py --check",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 export_conditional_scenarios.py --check",
+      "exit_code": 0
+    }
+  ],
+  "cli_replay": {
+    "date": "2026-09-08",
+    "head": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+    "replay_count": 8,
+    "results": [
+      {
+        "scenario": "equal-energy-timing",
+        "command": "scenario",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 2.1280083881538707,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "equal-energy-timing",
+        "command": "predict",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 2.1280083881538707,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "hormone-phase",
+        "command": "scenario",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 1.8030303030303025,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "hormone-phase",
+        "command": "predict",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 1.8030303030303025,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "repair-capacity",
+        "command": "scenario",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 3.874094919359011,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "repair-capacity",
+        "command": "predict",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 3.874094919359011,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "waiting-heterogeneity",
+        "command": "scenario",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 3.1886032960363773,
+        "route": "berm-modulome-conditional-asfr-v1"
+      },
+      {
+        "scenario": "waiting-heterogeneity",
+        "command": "predict",
+        "status": "passed",
+        "age_groups": 7,
+        "predicted_tfr": 3.1886032960363773,
+        "route": "berm-modulome-conditional-asfr-v1"
+      }
+    ],
+    "data_sha256": {
+      "website/public/data/conditional-scenarios.json": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+      "website/data/conditional-scenarios.json": "c95d29ce5597e4ba47d11011cea6ae59118f847f832c646f087a645d9f41d625",
+      "website/data/conditional-scenario-explorer.json": "cfe62ae8857680535aa6868a3a68d3fd715aa0b2dba7f4099059526fb93a35ab",
+      "website/public/data/modulome-state.json": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+      "website/data/modulome-state.json": "3a6fca28ab0e7a4337b4bee1d18ced0f00797205f4f4e0c0aa21eaa18640dd7f",
+      "website/public/data/civilization_indices.json": "43d66311809108438ee8ed07f0b54e8c90feb09481f63af79019d8f4a6a6c129",
+      "berm/data/evidence/intervention_profiles_v1.json": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+      "website/data/intervention-profiles.json": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+      "website/public/data/intervention-profiles.json": "15e4484a4132c1cdf63cb3b42e1656e467eb7c55d266beb9d8fc52646c24d537",
+      "website/data/intervention-scenarios.json": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28",
+      "website/public/data/intervention-scenarios.json": "2437c9e80c5f418c33648c5cce3f198ab76f11a44e44f287cf5b2793483f6e28"
+    },
+    "data_unchanged_during_replay": true,
+    "pharmacology": {
+      "profile_ids": [
+        "mt2_brake",
+        "local_ltype_erk",
+        "channel_selectivity",
+        "lipid_ttype_inhibition",
+        "channel_density_store_history",
+        "cry_fad_competition",
+        "drug_photochemistry",
+        "coq10_response"
+      ],
+      "scenarios": [
+        {
+          "id": "mt2",
+          "profile_id": "mt2_brake",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "local_fast",
+          "profile_id": "local_ltype_erk",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "local_slow",
+          "profile_id": "local_ltype_erk",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "selectivity",
+          "profile_id": "channel_selectivity",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "lipid",
+          "profile_id": "lipid_ttype_inhibition",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "serca",
+          "profile_id": "channel_density_store_history",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "density",
+          "profile_id": "channel_density_store_history",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "cry_fad",
+          "profile_id": "cry_fad_competition",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "probe_light",
+          "profile_id": "drug_photochemistry",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "coq_transduction",
+          "profile_id": "coq10_response",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "coq_redox",
+          "profile_id": "coq10_response",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        },
+        {
+          "id": "coq_repair",
+          "profile_id": "coq10_response",
+          "arm_ids": [
+            "sham",
+            "field",
+            "drug",
+            "field_drug"
+          ]
+        }
+      ]
+    }
+  },
+  "provisioned_inputs": {
+    "copied_at": "2026-09-08T08:04:36.029322+03:00",
+    "source_workspace": "/Volumes/kovalevy 3/extinctionfield",
+    "source_head": "7a938dd3b528a76008557632fdaf0dca72e13dea",
+    "target_workspace": "/Users/ottojuote/.berm-navigation-repair-20260908",
+    "target_head": "eb1b0621ee65ca611eb6abb94f472c49af7f9092",
+    "scope": "Only missing gitignored inputs; no tracked file and no existing destination replaced. No transformation performed.",
+    "files": [
+      {
+        "path": "berm/data/processed/broadband_by_country_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/broadband_by_country_year.csv",
+        "bytes": 135432,
+        "sha256": "4e994aa6ff60edee9edbea749bbcc279f7df96df264f9c8244e99b4d4b604733",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/fertility_asfr_region_age_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/fertility_asfr_region_age_year.csv",
+        "bytes": 53613036,
+        "sha256": "698a0b8905be3a116bc922abc3e2e9c6175fe68d477a2e0bac98863bfed9d55b",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/fertility_tfr_region_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/fertility_tfr_region_year.csv",
+        "bytes": 7227518,
+        "sha256": "52d50eb55fddd23ce57e8cf004414ef2b3a4667e3df12d7a7d84aa5e29d6e291",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/internet_by_country_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/internet_by_country_year.csv",
+        "bytes": 129150,
+        "sha256": "aabb306c6298cd8d76213c82473680049075a92f20ddf0c5ae62c250daae5289",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/led_market_share.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/led_market_share.json",
+        "bytes": 2871,
+        "sha256": "96a7bff9e63773c9a98e47f89146f97932c022e4999a9769e55a03e1b9d0cdae",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/mobile_by_country_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/mobile_by_country_year.csv",
+        "bytes": 263093,
+        "sha256": "c2f0bdb8d0983a6a2674f092bd72db52eef45624728141d400f1321bc7152a9c",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/tfr_by_country_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/tfr_by_country_year.csv",
+        "bytes": 279382,
+        "sha256": "fee93f7e02bf92f0d1ec388a01bb9c9ff37585154bab89b13ada5ee82ad6c5ed",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/processed/urban_by_country_year.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/processed/urban_by_country_year.csv",
+        "bytes": 437241,
+        "sha256": "2d18c57343c8843622a59bc7b9e11890e3284c8fc386d58db7c1b2ecd5acf1a0",
+        "raw_manifest_checks": [],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+        "bytes": 16557272,
+        "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wpp2024_2026-08-19.manifest.json",
+            "expected_sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/WPP2024_Fertility_by_Age5.csv.gz",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/WPP2024_Fertility_by_Age5.csv.gz",
+        "bytes": 82864610,
+        "sha256": "c0d3b5b7e992902df3be1980cfa86c440c1cd673ecec9d4826142a03aece04ec",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wpp2024_2026-08-19.manifest.json",
+            "expected_sha256": "c0d3b5b7e992902df3be1980cfa86c440c1cd673ecec9d4826142a03aece04ec"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv",
+        "bytes": 1894718,
+        "sha256": "08a3e6aac3e7a86d9abc25fd7cd810d3be64f53c0820c78f7173b9e3968fda1e",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/defra_fangr_2026-08-19.manifest.json",
+            "expected_sha256": "08a3e6aac3e7a86d9abc25fd7cd810d3be64f53c0820c78f7173b9e3968fda1e"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv",
+        "bytes": 1244722,
+        "sha256": "a651734efd4aba317e761c852faa065383da2566b7219bb4f19b6a0fea658f2b",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/ifce_sire_equine_breeding_2026-08-19.manifest.json",
+            "expected_sha256": "a651734efd4aba317e761c852faa065383da2566b7219bb4f19b6a0fea658f2b"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/equine/ifce_sire_2026-08-19/juments_saillies.csv",
+        "bytes": 1786419,
+        "sha256": "1aadfd6f416df96c156d35df33d5e727ed8722c200155beec36d89a828fbcb4e",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/ifce_sire_equine_breeding_2026-08-19.manifest.json",
+            "expected_sha256": "1aadfd6f416df96c156d35df33d5e727ed8722c200155beec36d89a828fbcb4e"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/equine/ifce_sire_2026-08-19/naissances.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/equine/ifce_sire_2026-08-19/naissances.csv",
+        "bytes": 1878614,
+        "sha256": "7973df461f7c41ef96cec60c87a456b2ec2eff70095824d5e918c4a34aa7c1a3",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/ifce_sire_equine_breeding_2026-08-19.manifest.json",
+            "expected_sha256": "7973df461f7c41ef96cec60c87a456b2ec2eff70095824d5e918c4a34aa7c1a3"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/pollinator_hub/mustb_2026-08-19/must-b.zip",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/pollinator_hub/mustb_2026-08-19/must-b.zip",
+        "bytes": 2676001,
+        "sha256": "e1af5754bea1e5dcbc0d93f7b5a5ce73a62c6cf3276e70d0444419aecbda364f",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/mustb_2026-08-19.manifest.json",
+            "expected_sha256": "e1af5754bea1e5dcbc0d93f7b5a5ce73a62c6cf3276e70d0444419aecbda364f"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/ckan_package_show.json",
+        "bytes": 5326,
+        "sha256": "26dbf20ffbe0ca1443e4eff819876b7f0350ff9d3e2b2fb418c55e03aa77af2d",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "26dbf20ffbe0ca1443e4eff819876b7f0350ff9d3e2b2fb418c55e03aa77af2d"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0000000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0000000.json",
+        "bytes": 10910263,
+        "sha256": "2aa70112e634bc5df8fcaa2392e94f09b11a1c32f6602a8d0f9213594f0bbb8f",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "2aa70112e634bc5df8fcaa2392e94f09b11a1c32f6602a8d0f9213594f0bbb8f"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0100000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0100000.json",
+        "bytes": 11257954,
+        "sha256": "c20f567e430d34d07a9cc38fb1748a4e733175e129ef523f92a5098d4cd361ba",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "c20f567e430d34d07a9cc38fb1748a4e733175e129ef523f92a5098d4cd361ba"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0200000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0200000.json",
+        "bytes": 11486767,
+        "sha256": "30b83561275ecb737ed210b121a3a3551bb67565fc2cbd126831a4567bb765d0",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "30b83561275ecb737ed210b121a3a3551bb67565fc2cbd126831a4567bb765d0"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0300000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0300000.json",
+        "bytes": 11248043,
+        "sha256": "55306050ed1fe36acc24f475ba07038e5d1c8f0a3e246460c56182e2c02b82b0",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "55306050ed1fe36acc24f475ba07038e5d1c8f0a3e246460c56182e2c02b82b0"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0400000.json",
+        "bytes": 11164135,
+        "sha256": "4b1899c4dd2665c25e92d4a82683e1b368a262d2bc806c3be8a25f3c18041425",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "4b1899c4dd2665c25e92d4a82683e1b368a262d2bc806c3be8a25f3c18041425"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0500000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0500000.json",
+        "bytes": 11149420,
+        "sha256": "30337ec6a055b56b5d980714045b8e4594eb3bafe0265d991a3c0f1d936c4371",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "30337ec6a055b56b5d980714045b8e4594eb3bafe0265d991a3c0f1d936c4371"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0600000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0600000.json",
+        "bytes": 11162257,
+        "sha256": "6931e17fe123a05df51ad0c03facfbca7fb630ddfeeec1a5522f1da5430be631",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "6931e17fe123a05df51ad0c03facfbca7fb630ddfeeec1a5522f1da5430be631"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0700000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0700000.json",
+        "bytes": 11163237,
+        "sha256": "218604ae2ea400fac31cb5416467c6ebb605c2f6f568708420487daa70667a40",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "218604ae2ea400fac31cb5416467c6ebb605c2f6f568708420487daa70667a40"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0800000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0800000.json",
+        "bytes": 11187642,
+        "sha256": "ef2131813c85081dd7616845e8cf666d4bae0c6fe6d3124270428f428a97e099",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "ef2131813c85081dd7616845e8cf666d4bae0c6fe6d3124270428f428a97e099"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0900000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_0900000.json",
+        "bytes": 11173665,
+        "sha256": "e76fe0e3a99eb387d1fcdb122f5253401acbf56a569c9fe33d8a888b6df9a75a",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "e76fe0e3a99eb387d1fcdb122f5253401acbf56a569c9fe33d8a888b6df9a75a"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1000000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1000000.json",
+        "bytes": 11364413,
+        "sha256": "70c23d4570963bcbe11f1dd6a049a266550c15b11d27be115bc6b659ca7d6cd6",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "70c23d4570963bcbe11f1dd6a049a266550c15b11d27be115bc6b659ca7d6cd6"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1100000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1100000.json",
+        "bytes": 11400455,
+        "sha256": "b3893f1583c82f9513c81ad3ccc209280afec763e7cfdef66c4dd72416a401b9",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "b3893f1583c82f9513c81ad3ccc209280afec763e7cfdef66c4dd72416a401b9"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1200000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1200000.json",
+        "bytes": 11395834,
+        "sha256": "d5919d9b2ceb2e2b98a14de1eed84506e46a828243343137e753a7fa240751d0",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "d5919d9b2ceb2e2b98a14de1eed84506e46a828243343137e753a7fa240751d0"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1300000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1300000.json",
+        "bytes": 11448810,
+        "sha256": "d776ecd92a48e30c08723d8d61a6df180653d3617f63edf0793fbaf088665a4a",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "d776ecd92a48e30c08723d8d61a6df180653d3617f63edf0793fbaf088665a4a"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1400000.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/rf/anfr_autonomous_probes_2026-08-19/records_offset_1400000.json",
+        "bytes": 8466133,
+        "sha256": "ee67d12a1fbceff846bcca6f448f06245d0f78b968e7638b69ab3ba95197c822",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/anfr_autonomous_probes_2026-08-19.manifest.json",
+            "expected_sha256": "ee67d12a1fbceff846bcca6f448f06245d0f78b968e7638b69ab3ba95197c822"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+        "bytes": 175313,
+        "sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/testosterone_tfr_2026-08-31.manifest.json",
+            "expected_sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json",
+        "bytes": 1836,
+        "sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/testosterone_tfr_2026-08-31.manifest.json",
+            "expected_sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+        "bytes": 6954,
+        "sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/testosterone_tfr_2026-08-31.manifest.json",
+            "expected_sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+        "bytes": 411740,
+        "sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/testosterone_tfr_2026-08-31.manifest.json",
+            "expected_sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv",
+        "bytes": 16023,
+        "sha256": "2fab5d6a49e15aba781598f80a4b39817683fa1b6f369336d935777d7a70b348",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/fernandez_lopez_2022_sperm_move_v5_2026-08-19.manifest.json",
+            "expected_sha256": "2fab5d6a49e15aba781598f80a4b39817683fa1b6f369336d935777d7a70b348"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv",
+        "bytes": 5045129,
+        "sha256": "68c3bd13659f521b9e02c1f26639826d21a5e3c93d564aaf910095261660fd38",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/fernandez_lopez_2022_sperm_move_v5_2026-08-19.manifest.json",
+            "expected_sha256": "68c3bd13659f521b9e02c1f26639826d21a5e3c93d564aaf910095261660fd38"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt",
+        "bytes": 6434,
+        "sha256": "40fe649f23590f982388d9e53f52a436329fce3f12358384e84ba13fbd2d9f50",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/fielding_goa_2026-08-19.manifest.json",
+            "expected_sha256": "40fe649f23590f982388d9e53f52a436329fce3f12358384e84ba13fbd2d9f50"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv",
+        "bytes": 124604,
+        "sha256": "610e2c1ab8c33c4c00354208fb83ac1034d1f493aec7ece9366d81c4c63a6c7d",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/fielding_goa_2026-08-19.manifest.json",
+            "expected_sha256": "610e2c1ab8c33c4c00354208fb83ac1034d1f493aec7ece9366d81c4c63a6c7d"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv",
+        "bytes": 142932,
+        "sha256": "399bb1435723c214a6053f1ff498525f419f091727111517ba01fdc67a0f221a",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/fielding_goa_2026-08-19.manifest.json",
+            "expected_sha256": "399bb1435723c214a6053f1ff498525f419f091727111517ba01fdc67a0f221a"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/wb_broadband.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/wb_broadband.json",
+        "bytes": 4075720,
+        "sha256": "dabc23dbbc04657536cfc250629dfb06ac638189e13020409febb15d50e7504d",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+            "expected_sha256": "dabc23dbbc04657536cfc250629dfb06ac638189e13020409febb15d50e7504d"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/wb_internet.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/wb_internet.json",
+        "bytes": 4081411,
+        "sha256": "f7b4a426f3d0454a36f65104fdebb703bdaa3a60ce552a4107e7148d3a1cdb87",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+            "expected_sha256": "f7b4a426f3d0454a36f65104fdebb703bdaa3a60ce552a4107e7148d3a1cdb87"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/wb_mobile.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/wb_mobile.json",
+        "bytes": 4088470,
+        "sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+            "expected_sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/wb_tfr.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/wb_tfr.json",
+        "bytes": 3955489,
+        "sha256": "157c57ed365004282819b2022a4bc04bd4442558459b322335cfef4b73f62384",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+            "expected_sha256": "157c57ed365004282819b2022a4bc04bd4442558459b322335cfef4b73f62384"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/wb_urban.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/wb_urban.json",
+        "bytes": 4160580,
+        "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_2025-08-18.manifest.json",
+            "expected_sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/broadband_per_100.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/broadband_per_100.json",
+        "bytes": 4075988,
+        "sha256": "5917b10d80a8cc09eaca2e9ce11a72adcecbe27996687e0a859f86571f85c161",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "5917b10d80a8cc09eaca2e9ce11a72adcecbe27996687e0a859f86571f85c161"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/contraception_pct.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/contraception_pct.json",
+        "bytes": 4402834,
+        "sha256": "e53baed865fcc552de4b5ca3eae8bde07efc685762f656eb432a9de208b2ec08",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "e53baed865fcc552de4b5ca3eae8bde07efc685762f656eb432a9de208b2ec08"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/gdp_ppp_per_capita.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/gdp_ppp_per_capita.json",
+        "bytes": 4152820,
+        "sha256": "5ecbcbb7c3936574f7e0af3d2462af9384a1a0297f49ef64c25497c9c2d3d7ec",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "5ecbcbb7c3936574f7e0af3d2462af9384a1a0297f49ef64c25497c9c2d3d7ec"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/internet_pct.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/internet_pct.json",
+        "bytes": 4081677,
+        "sha256": "cb3bf2eb941f78a3fa619e45740c05301f1ee0b14ce229876aa459f55d8068d5",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "cb3bf2eb941f78a3fa619e45740c05301f1ee0b14ce229876aa459f55d8068d5"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/mobile_per_100.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/mobile_per_100.json",
+        "bytes": 4088728,
+        "sha256": "429a6497eefbc5ec016d7a86740fa8e57fc49f4ede9db65bacb97962e61d6c1b",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "429a6497eefbc5ec016d7a86740fa8e57fc49f4ede9db65bacb97962e61d6c1b"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/population.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/population.json",
+        "bytes": 3512611,
+        "sha256": "736d07297ee93e097232613fa2a5165efaef554c0a0af9ba13ad8de5495d827f",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "736d07297ee93e097232613fa2a5165efaef554c0a0af9ba13ad8de5495d827f"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/tfr.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/tfr.json",
+        "bytes": 3955749,
+        "sha256": "8e31f75e4da67a59fbe61aee4191bb3650eb6cc9ee82484e97b5b40153032b38",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "8e31f75e4da67a59fbe61aee4191bb3650eb6cc9ee82484e97b5b40153032b38"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      },
+      {
+        "path": "berm/data/raw/world_bank/wb_global_2026-08-19/urban_pct.json",
+        "source_path": "/Volumes/kovalevy 3/extinctionfield/berm/data/raw/world_bank/wb_global_2026-08-19/urban_pct.json",
+        "bytes": 4160855,
+        "sha256": "de76819c3eadecfc2a1abd18d4f38d5d27d2f92d33863a594907981f2a7defe7",
+        "raw_manifest_checks": [
+          {
+            "manifest": "berm/data/raw/manifests/wb_global_2026-08-19.manifest.json",
+            "expected_sha256": "de76819c3eadecfc2a1abd18d4f38d5d27d2f92d33863a594907981f2a7defe7"
+          }
+        ],
+        "copy_status": "copied_byte_exact_without_overwrite"
+      }
+    ]
+  },
+  "preservation": {
+    "tracked_berm_unchanged_from_tested_base": true,
+    "eleven_model_and_website_data_files_unchanged": true,
+    "all_fifty_three_provisioned_inputs_unchanged": true,
+    "tracked_file_replacements": 0,
+    "existing_destination_overwrites": 0,
+    "input_transformations": 0
+  },
+  "slow_supplement": {
+    "report": "NAVIGATION_REPAIR_MODEL_SLOW_CHECKS_2026-09-08.json",
+    "passed": 2,
+    "elapsed_seconds": 6.85,
+    "combined_unique_test_count": 2122,
+    "tests_left_unexecuted": 0,
+    "separate_invocation": true
+  }
+}

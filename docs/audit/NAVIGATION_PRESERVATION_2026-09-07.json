@@ -1,0 +1,5169 @@
+{
+  "title": "Navigation and explanation-level preservation audit",
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T19:03:25.452Z",
+  "baseline": {
+    "directory": "/var/folders/0q/gh95znfj5dz3stg5pc_2vgkm0000gn/T/berm-navigation-before-mlqjqafy",
+    "manifestSha256": "b59c7da2d79df5307d444ecc7f565d3be6615e54f1b13fef2dcb39e4019e793e",
+    "manifestFileCount": 356,
+    "integrityFailures": []
+  },
+  "method": {
+    "scope": "All 356 manifest files checked for existence; each prior app page checked independently with subset comparisons; reference and claim registries checked by stable ID; actual current navigation executed and compared with prior destinations.",
+    "parser": "Installed TypeScript AST; JSX id/referenceId/claimId attributes, literal object id/referenceId/claimId fields, explicit [[ref:...]] tokens and literal reference-detail paths.",
+    "dynamicValues": "Dynamic JSX expressions are compared structurally after whitespace normalization. Object IDs are candidates for data-driven anchors, not assumed to be rendered DOM IDs.",
+    "counts": "Page totals count distinct values per file and sum across files. They are not site-wide unique identifier counts.",
+    "limits": "This is a source-preservation audit, not a semantic equivalence or rendered-anchor guarantee. Browser, build, reference-validation and registry-validation checks are separate. Content may be expanded or reorganized while the prior anchors and references remain."
+  },
+  "result": "pass",
+  "issueCount": 0,
+  "files": {
+    "missing": [],
+    "changed": [
+      "app/sitemap.ts",
+      "app/[locale]/navigation.tsx",
+      "app/[locale]/evidence/page.tsx",
+      "app/[locale]/about/page.tsx",
+      "app/[locale]/civilization/page.tsx",
+      "app/[locale]/model/page.tsx",
+      "app/[locale]/epistemology/page.tsx",
+      "components/AboutTabs.tsx",
+      "lib/navigation.ts",
+      "lib/referenceUsage.json",
+      "lib/referenceIndex.json",
+      "data/anchor-index.json",
+      "data/claims.json",
+      "scripts/validate-references.mjs",
+      "public/data/references_full.json"
+    ],
+    "unchanged": 341,
+    "newExplanationPages": [
+      "app/[locale]/physics/page.tsx",
+      "app/[locale]/biology/page.tsx",
+      "app/[locale]/behavior/page.tsx",
+      "app/[locale]/evidence/convergence/page.tsx"
+    ]
+  },
+  "pages": {
+    "count": 97,
+    "changedCount": 5,
+    "totals": {
+      "literalAnchorIds": {
+        "before": 215,
+        "after": 215,
+        "missing": 0,
+        "added": 0
+      },
+      "objectIdCandidates": {
+        "before": 486,
+        "after": 486,
+        "missing": 0,
+        "added": 0
+      },
+      "dynamicAnchorExpressions": {
+        "before": 9,
+        "after": 9,
+        "missing": 0,
+        "added": 0
+      },
+      "referenceIds": {
+        "before": 775,
+        "after": 775,
+        "missing": 0,
+        "added": 0
+      },
+      "claimIds": {
+        "before": 21,
+        "after": 21,
+        "missing": 0,
+        "added": 0
+      },
+      "dynamicReferenceExpressions": {
+        "before": 40,
+        "after": 40,
+        "missing": 0,
+        "added": 0
+      },
+      "dynamicClaimExpressions": {
+        "before": 0,
+        "after": 0,
+        "missing": 0,
+        "added": 0
+      }
+    },
+    "issues": [],
+    "details": [
+      {
+        "file": "app/[locale]/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/page.tsx",
+        "changed": true,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 18,
+            "after": 18,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 22,
+            "after": 22,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/references/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/articles/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/mathematics/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 21,
+            "after": 21,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 19,
+            "after": 19,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 31,
+            "after": 31,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/explorer/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/about/page.tsx",
+        "changed": true,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/objections/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 27,
+            "after": 27,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/explore/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/sentinel/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 10,
+            "after": 10,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 20,
+            "after": 20,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/page.tsx",
+        "changed": true,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/map/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/page.tsx",
+        "changed": true,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 68,
+            "after": 68,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 30,
+            "after": 30,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 75,
+            "after": 75,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/epistemology/page.tsx",
+        "changed": true,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 10,
+            "after": 10,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/replication/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/ecology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/data/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/predictions/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 244,
+            "after": 244,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 36,
+            "after": 36,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/biological-coordination/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 9,
+            "after": 9,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 28,
+            "after": 28,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 10,
+            "after": 10,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/frequency-weights/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/math/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/dual-kernel/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/q-factor/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/comparison/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/model/tensor-derivation/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/patopoliteia/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/pathopolites/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/patopolis/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 14,
+            "after": 14,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 13,
+            "after": 13,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/pathopege/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 18,
+            "after": 18,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/patokratia/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 16,
+            "after": 16,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/civilization/patokinesis/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 12,
+            "after": 12,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/about/measurement/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/about/objections/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/about/history/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/about/replication/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/articles/[slug]/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/pituitary/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/eye/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/heart/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/hypothalamus/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/hippocampus/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/ear/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/testes/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/adrenal/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/brain/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/bat/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/thyroid/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/pancreas/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/modulome/pain/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/references/[referenceId]/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/vitamin-d-channel-blocker/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/four-neurodegenerations/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/natural-modulators/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/neurological-spectrum/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 8,
+            "after": 8,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/populations/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/reproductive-navigation/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 9,
+            "after": 9,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 19,
+            "after": 19,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/space-weather-biology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/iss-hypomagnetic/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/timothy-experiment/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/historical-convergence/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/technology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 11,
+            "after": 11,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/counter-evidence/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/cascades/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 10,
+            "after": 10,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 31,
+            "after": 31,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/bbb/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 22,
+            "after": 22,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/epigenetic-legacy/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/autism-prototype/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/chronic-pain/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/walker-chain/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/klimentidis-explained/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/epidemiology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 23,
+            "after": 23,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/testosterone/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/laschamp-reversal/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/pharmacology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 18,
+            "after": 18,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 12,
+            "after": 12,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/heliobiology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/infant-vulnerability/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 8,
+            "after": 8,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 11,
+            "after": 11,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/triple-strikes/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/magnetoreception/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 18,
+            "after": 18,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/evolution/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/hidden-thyroid/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/heavy-metal-synergy/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/lighting/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 19,
+            "after": 19,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/replication/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 7,
+            "after": 7,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/ecology/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 27,
+            "after": 27,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/amish-control/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/reproductive-arc/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/adhd-prototype/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/superposition/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/nutrition/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/allergy-epidemic/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/eyes/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/unbroken-chain/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 17,
+            "after": 17,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 103,
+            "after": 103,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/devices/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 3,
+            "after": 3,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 21,
+            "after": 21,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/circadian/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 12,
+            "after": 12,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 5,
+            "after": 5,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 33,
+            "after": 33,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 2,
+            "after": 2,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/evidence/gut-brain-axis/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/measurement/fieldstate/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 6,
+            "after": 6,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      },
+      {
+        "file": "app/[locale]/measurement/fieldstate/math/page.tsx",
+        "changed": false,
+        "checks": {
+          "literalAnchorIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "objectIdCandidates": {
+            "before": 4,
+            "after": 4,
+            "missing": [],
+            "added": []
+          },
+          "dynamicAnchorExpressions": {
+            "before": 1,
+            "after": 1,
+            "missing": [],
+            "added": []
+          },
+          "referenceIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "claimIds": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicReferenceExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          },
+          "dynamicClaimExpressions": {
+            "before": 0,
+            "after": 0,
+            "missing": [],
+            "added": []
+          }
+        }
+      }
+    ]
+  },
+  "registries": {
+    "bibliographyIds": {
+      "before": 1137,
+      "after": 1156,
+      "missing": [],
+      "added": [
+        "bensimon2023_sleep_helping_correction",
+        "bradlaugh2023_cry_fad",
+        "crockett2015_harm_aversion",
+        "draper2018_inflammation_effort",
+        "dufor2019_cry_magnetic_repair",
+        "eisenegger2010_testosterone_fairness",
+        "finkelstein2013_gonadal_steroids",
+        "fogle2015_cry_redox",
+        "johansson2005_choice_blindness",
+        "jurgelis2022_sleep_effort",
+        "lim2026_sleep_learning",
+        "manella2026_cry2_steroid_clock",
+        "mills2023_kisspeptin",
+        "paluck2016_network_conflict",
+        "rizzini2019_cry_cop1",
+        "strang2017_nutrition_decisions",
+        "weisman2012_oxytocin_dyad",
+        "westbrook2020_dopamine_effort",
+        "westbrook2025_dopamine_learning"
+      ],
+      "existingRecordChanges": [
+        {
+          "id": "bensimon2022_sleep_helping",
+          "changedOrRemovedOriginalFields": {},
+          "addedFields": {
+            "corrections": [
+              "bensimon2023_sleep_helping_correction"
+            ]
+          }
+        }
+      ]
+    },
+    "claimIds": {
+      "before": 55,
+      "after": 64,
+      "missing": [],
+      "added": [
+        "claim.behavior.biological-state-to-action",
+        "claim.behavior.dyadic-propagation",
+        "claim.behavior.reported-reasons",
+        "claim.behavior.sexual-motivation",
+        "claim.behavior.social-valuation",
+        "claim.behavior.state-dependent-learning",
+        "claim.behavior.state-dependent-valuation",
+        "claim.coordination.cry-steroid-feedback",
+        "claim.coordination.hormone-waveform"
+      ],
+      "existingRecordChanges": []
+    },
+    "evidenceRelationIds": {
+      "before": 115,
+      "after": 131,
+      "missing": [],
+      "added": [
+        "er.behavior.dyadic-propagation.weisman2012_oxytocin_dyad",
+        "er.behavior.reported-reasons.eisenegger2010_testosterone_fairness",
+        "er.behavior.reported-reasons.johansson2005_choice_blindness",
+        "er.behavior.sexual-motivation.finkelstein2013_gonadal_steroids",
+        "er.behavior.sexual-motivation.mills2023_kisspeptin",
+        "er.behavior.social-valuation.crockett2015_harm_aversion",
+        "er.behavior.social-valuation.strang2017_nutrition_decisions",
+        "er.behavior.state-dependent-learning.lim2026_sleep_learning",
+        "er.behavior.state-dependent-learning.westbrook2025_dopamine_learning",
+        "er.behavior.state-dependent-valuation.draper2018_inflammation_effort",
+        "er.behavior.state-dependent-valuation.jurgelis2022_sleep_effort",
+        "er.behavior.state-dependent-valuation.westbrook2020_dopamine_effort",
+        "er.coordination.cry-steroid-feedback.lamia2011_cry_glucocorticoid",
+        "er.coordination.cry-steroid-feedback.manella2026_cry2_steroid_clock",
+        "er.coordination.cry-steroid-feedback.rizzini2019_cry_cop1",
+        "er.coordination.hormone-waveform.kalafatakis2018_cortisol_pulsatility"
+      ],
+      "existingRecordChanges": []
+    },
+    "routeIds": {
+      "before": 4,
+      "after": 5,
+      "missing": [],
+      "added": [
+        "route.biological-state-to-action"
+      ],
+      "existingRecordChanges": []
+    }
+  },
+  "navigation": {
+    "before": 38,
+    "after": 53,
+    "missing": [],
+    "added": [
+      "/about/history",
+      "/about/measurement",
+      "/about/objections",
+      "/about/replication",
+      "/behavior",
+      "/behavior#desire",
+      "/behavior#joint-action",
+      "/behavior#learning",
+      "/behavior#reasons",
+      "/behavior#social",
+      "/behavior#valuation",
+      "/biology",
+      "/data",
+      "/evidence/convergence",
+      "/physics"
+    ],
+    "beforeDestinations": [
+      "",
+      "/about",
+      "/articles",
+      "/civilization",
+      "/civilization/pathopege",
+      "/civilization/pathopolites",
+      "/civilization/patokinesis",
+      "/civilization/patokratia",
+      "/civilization/patopolis",
+      "/civilization/patopoliteia",
+      "/epistemology",
+      "/evidence",
+      "/evidence/evolution",
+      "/evidence/pharmacology",
+      "/evidence/populations",
+      "/evidence/replication",
+      "/evidence/technology",
+      "/evidence/timothy-experiment",
+      "/explore",
+      "/map",
+      "/measurement/fieldstate",
+      "/measurement/fieldstate/math",
+      "/model",
+      "/model#camkii-convergence",
+      "/model#testosterone-threshold",
+      "/model#vgcc-gene-family",
+      "/model/biological-coordination",
+      "/model/comparison",
+      "/model/dual-kernel",
+      "/model/frequency-weights",
+      "/model/math",
+      "/model/q-factor",
+      "/model/tensor-derivation",
+      "/modulome",
+      "/objections",
+      "/predictions",
+      "/references",
+      "/sentinel"
+    ],
+    "afterDestinations": [
+      "",
+      "/about",
+      "/about/history",
+      "/about/measurement",
+      "/about/objections",
+      "/about/replication",
+      "/articles",
+      "/behavior",
+      "/behavior#desire",
+      "/behavior#joint-action",
+      "/behavior#learning",
+      "/behavior#reasons",
+      "/behavior#social",
+      "/behavior#valuation",
+      "/biology",
+      "/civilization",
+      "/civilization/pathopege",
+      "/civilization/pathopolites",
+      "/civilization/patokinesis",
+      "/civilization/patokratia",
+      "/civilization/patopolis",
+      "/civilization/patopoliteia",
+      "/data",
+      "/epistemology",
+      "/evidence",
+      "/evidence/convergence",
+      "/evidence/evolution",
+      "/evidence/pharmacology",
+      "/evidence/populations",
+      "/evidence/replication",
+      "/evidence/technology",
+      "/evidence/timothy-experiment",
+      "/explore",
+      "/map",
+      "/measurement/fieldstate",
+      "/measurement/fieldstate/math",
+      "/model",
+      "/model#camkii-convergence",
+      "/model#testosterone-threshold",
+      "/model#vgcc-gene-family",
+      "/model/biological-coordination",
+      "/model/comparison",
+      "/model/dual-kernel",
+      "/model/frequency-weights",
+      "/model/math",
+      "/model/q-factor",
+      "/model/tensor-derivation",
+      "/modulome",
+      "/objections",
+      "/physics",
+      "/predictions",
+      "/references",
+      "/sentinel"
+    ],
+    "home": "Preserved through the localized logo link",
+    "groupOrder": [
+      {
+        "href": "/model",
+        "label": "Malli"
+      },
+      {
+        "href": "/physics",
+        "label": "Fysiikka"
+      },
+      {
+        "href": "/biology",
+        "label": "Biologia"
+      },
+      {
+        "href": "/behavior",
+        "label": "Käyttäytyminen"
+      },
+      {
+        "href": "/civilization",
+        "label": "Sivilisaatio"
+      },
+      {
+        "href": "/evidence/convergence",
+        "label": "Näyttö"
+      },
+      {
+        "href": "/about",
+        "label": "Tietoa"
+      }
+    ],
+    "oldTargetOwners": [
+      {
+        "href": "",
+        "owner": "home"
+      },
+      {
+        "href": "/about",
+        "owner": "/about"
+      },
+      {
+        "href": "/articles",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/civilization",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/pathopege",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/pathopolites",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/patokinesis",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/patokratia",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/patopolis",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/civilization/patopoliteia",
+        "owner": "/civilization"
+      },
+      {
+        "href": "/epistemology",
+        "owner": "/about"
+      },
+      {
+        "href": "/evidence",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/evolution",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/pharmacology",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/populations",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/replication",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/technology",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/evidence/timothy-experiment",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/explore",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/map",
+        "owner": "/model"
+      },
+      {
+        "href": "/measurement/fieldstate",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/measurement/fieldstate/math",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/model",
+        "owner": "/model"
+      },
+      {
+        "href": "/model#camkii-convergence",
+        "owner": "/model"
+      },
+      {
+        "href": "/model#testosterone-threshold",
+        "owner": "/model"
+      },
+      {
+        "href": "/model#vgcc-gene-family",
+        "owner": "/model"
+      },
+      {
+        "href": "/model/biological-coordination",
+        "owner": "/biology"
+      },
+      {
+        "href": "/model/comparison",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/model/dual-kernel",
+        "owner": "/biology"
+      },
+      {
+        "href": "/model/frequency-weights",
+        "owner": "/physics"
+      },
+      {
+        "href": "/model/math",
+        "owner": "/physics"
+      },
+      {
+        "href": "/model/q-factor",
+        "owner": "/biology"
+      },
+      {
+        "href": "/model/tensor-derivation",
+        "owner": "/physics"
+      },
+      {
+        "href": "/modulome",
+        "owner": "/biology"
+      },
+      {
+        "href": "/objections",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/predictions",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/references",
+        "owner": "/evidence/convergence"
+      },
+      {
+        "href": "/sentinel",
+        "owner": "/biology"
+      }
+    ]
+  },
+  "aboutTabs": {
+    "before": 5,
+    "after": 6,
+    "missing": [],
+    "added": [
+      "/epistemology"
+    ],
+    "beforeDestinations": [
+      "/about",
+      "/about/history",
+      "/about/measurement",
+      "/about/objections",
+      "/about/replication"
+    ],
+    "afterDestinations": [
+      "/about",
+      "/about/history",
+      "/about/measurement",
+      "/about/objections",
+      "/about/replication",
+      "/epistemology"
+    ],
+    "validation": "Same current destinations checked against getAboutRoutes by the 52-test navigation suite; all five locale variants covered."
+  }
+}
