@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { RedoxReserveMasking } from "@/components/RedoxReserveMasking";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -420,7 +421,8 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {paragraph(d.proxies.lead)}
               {paragraph(d.proxies.definition)}
               <ProxyExplanationsExplorer locale={locale} />
-              <RedoxReserveMasking locale={locale} />
+              <CombinedExposurePanel locale={locale} focus="proxy" />
+      <RedoxReserveMasking locale={locale} />
               <ProxyMeasuredExposureEvidence locale={locale} />
               <ProxyInfrastructureEvidence locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.proxies.sourcesTitle}</h3>{paragraph(d.proxies.sources)}</div>

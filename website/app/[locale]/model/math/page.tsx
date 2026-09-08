@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -130,6 +131,7 @@ export default async function MathPage({
         <p className="text-sm leading-relaxed text-foreground-muted">{d.baseDocText}</p>
       </aside>
 
+      <CombinedExposurePanel locale={locale} focus="model" />
       <NextPageLink
         href={`/${locale}/evidence`}
         label={d.nextLabel}

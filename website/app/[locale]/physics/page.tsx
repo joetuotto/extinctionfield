@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Atom } from "lucide-react";
@@ -87,5 +88,6 @@ export default async function PhysicsPage({ params }: { params: Promise<{ locale
     <ExplanationSection {...d.contents[2]}>{p(d.receiver)}<MathBlock tex={String.raw`z_r(t)=\int_0^\infty K_r^{\mu\nu}(\tau;S_r(t))\,\delta g_{\mu\nu}(t-\tau)\,d\tau`} />{p(d.receiverMeaning)}<div className="rounded-lg border border-accent/30 bg-accent/5 p-5"><h3 className="mb-3 text-base font-semibold">{d.bridgeTitle}</h3>{p(d.bridge)}<Link href={`/${locale}/mathematics#l2-response`} className="mt-4 inline-block text-sm text-accent hover:underline">{d.formalLink}</Link></div></ExplanationSection>
     <ExplanationSection {...d.contents[3]}>{p(d.structure)}<MathBlock tex={String.raw`\delta g(+a)-\delta g(-a)=2(A_b\otimes a+a\otimes A_b)`} /><MathBlock tex={String.raw`\delta g(+a)+\delta g(-a)=2a\otimes a`} />{p(d.structureMeaning)}</ExplanationSection>
     <ExplanationSection {...d.contents[4]}>{p(d.measurement)}{p(d.protocols)}{p(d.consequence)}</ExplanationSection>
-  </ExplanationHub>;
+  <CombinedExposurePanel locale={locale} focus="measurement" />
+      </ExplanationHub>;
 }

@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Radio, ArrowRight, MapPin, Clock, Activity } from "lucide-react";
@@ -133,7 +134,8 @@ export default async function TechnologyPage({ params }: { params: Promise<{ loc
         </div>
       </details>
     </section>
-    <nav aria-label={d.connections} className="border-t border-card-border pt-6"><h2 className="text-sm font-semibold mb-4">{d.connections}</h2><div className="flex flex-wrap gap-x-6 gap-y-3">{paths.map((path, i) => <Link key={path} href={`/${locale}${path}`} className="inline-flex items-center gap-1 text-sm text-accent hover:underline">{d.connectionLinks[i]}<ArrowRight size={13} /></Link>)}</div></nav>
+    <CombinedExposurePanel locale={locale} focus="materials" />
+      <nav aria-label={d.connections} className="border-t border-card-border pt-6"><h2 className="text-sm font-semibold mb-4">{d.connections}</h2><div className="flex flex-wrap gap-x-6 gap-y-3">{paths.map((path, i) => <Link key={path} href={`/${locale}${path}`} className="inline-flex items-center gap-1 text-sm text-accent hover:underline">{d.connectionLinks[i]}<ArrowRight size={13} /></Link>)}</div></nav>
     <p className="mt-8 text-xs text-foreground-muted">{d.footer}</p>
   </div>;
 }

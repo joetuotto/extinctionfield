@@ -28,10 +28,10 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 describe("Intervention exploration", () => {
-  it("makes all eight selectable and separates findings, predictions and missing contrasts", () => {
+  it("makes all nine selectable and separates findings, predictions and missing contrasts", () => {
     render(<InterventionExplorer locale="fi" />);
     const select = screen.getByRole("combobox", { name: "Valitse koeprofiili" });
-    expect(within(select).getAllByRole("option")).toHaveLength(8);
+    expect(within(select).getAllByRole("option")).toHaveLength(9);
     for (const profile of INTERVENTIONS.profiles) {
       fireEvent.change(select, { target: { value: profile.id } });
       expect(screen.getByTestId("intervention-observed")).toHaveTextContent(profile.observed.fi);
@@ -55,8 +55,8 @@ describe("Intervention exploration", () => {
   it("searches and clears without making other profiles inaccessible", () => {
     render(<InterventionExplorer locale="fi" />);
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "thapsigargin" } });
-    expect(screen.getByRole("status")).toHaveTextContent("1 / 8");
-    expect(within(screen.getByRole("combobox")).getAllByRole("option")).toHaveLength(8);
+    expect(screen.getByRole("status")).toHaveTextContent("1 / 9");
+    expect(within(screen.getByRole("combobox")).getAllByRole("option")).toHaveLength(9);
     fireEvent.click(screen.getByRole("button", { name: INTERVENTIONS.profiles.find(p => p.id === "channel_density_store_history")!.title.fi }));
     expect(screen.getByRole("combobox")).toHaveValue("channel_density_store_history");
     expect(screen.getByTestId("intervention-observed")).toHaveTextContent("thapsigargiini");
@@ -64,6 +64,19 @@ describe("Intervention exploration", () => {
     expect(screen.getByRole("status")).toHaveTextContent("Profiileja ei löytynyt");
     fireEvent.click(screen.getByRole("button", { name: "Tyhjennä haku" }));
     expect(screen.getByRole("searchbox")).toHaveValue("");
+  });
+  it("finds the MCU experiment and preserves its adverse direction, protocol and source scope", () => {
+    render(<InterventionExplorer locale="en" />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "Ru360" } });
+    expect(screen.getByRole("status")).toHaveTextContent("1 / 9");
+    fireEvent.click(screen.getByRole("button", { name: "Mitochondrial calcium uptake and RF response" }));
+    expect(screen.getByRole("combobox")).toHaveValue("mcu_receiver_state");
+    expect(screen.getByTestId("intervention-observed")).toHaveTextContent("enhanced DNA damage and apoptosis");
+    expect(screen.getByTestId("intervention-observed")).toHaveTextContent("1800 MHz RF for 15 minutes");
+    expect(screen.getByTestId("intervention-observed")).toHaveTextContent("not a rescue experiment");
+    expect(screen.getByTestId("intervention-study-contrast")).toHaveTextContent("No numerical interaction or synthetic scenario");
+    expect(screen.getAllByRole("link", { name: /Explore this mechanism/ }).map(link => link.getAttribute("href"))).toContain("/en/map?profile=mcu_receiver_state&node=mech_ca_compartment_cycle");
+    expect(window.location.search).toContain("profile=mcu_receiver_state");
   });
   it("retains locale and selected mechanism in atlas links with explicit English fallback", () => {
     window.history.replaceState({}, "", "/fr/evidence/pharmacology?profile=drug_photochemistry");

@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical } from "lucide-react";
@@ -316,6 +317,7 @@ export default async function GutBrainAxisPage({ params }: { params: Promise<{ l
       </section>
 
       {/* Predictions */}
+      <CombinedExposurePanel locale={locale} focus="microbiome" />
       <section className="mt-14 border-t editorial-rule pt-6">
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">{d.predictionText}</p>

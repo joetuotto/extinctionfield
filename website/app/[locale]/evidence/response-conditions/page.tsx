@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GitMerge } from "lucide-react";
@@ -186,6 +187,8 @@ export default async function ResponseConditionsPage({ params }: { params: Promi
             {d.boundary.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </section>
+
+      <CombinedExposurePanel locale={locale} focus="pharmacology" />
 
         <Link href={`/${locale}/model#physics-to-biology`} className="text-sm font-medium text-accent hover:underline">
           {d.modelLink} →

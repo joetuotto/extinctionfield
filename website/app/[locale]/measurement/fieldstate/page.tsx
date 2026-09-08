@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Radio, Sigma } from "lucide-react";
@@ -353,6 +354,7 @@ export default async function FieldStateMeasurementPage({
         </section>
       </article>
 
+      <CombinedExposurePanel locale={locale} focus="measurement" />
       <NextPageLink
         href={`/${locale}/measurement/fieldstate/math`}
         label={d.nextLabel}

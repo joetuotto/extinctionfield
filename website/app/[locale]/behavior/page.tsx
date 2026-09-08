@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import { Brain } from "lucide-react";
@@ -125,5 +126,6 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
         <MathBlock tex={String.raw`P(a=j)=\operatorname{softmax}_j\!\left(\beta(S)V_j\right)`} />{p(d.equationMeaning)}{p(d.reproduction)}
       </div>
     </ExplanationSection>
-  </ExplanationHub>;
+  <CombinedExposurePanel locale={locale} focus="pharmacology" />
+      </ExplanationHub>;
 }

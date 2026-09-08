@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -534,6 +535,8 @@ export default async function ModulomePage({
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
+
+      <CombinedExposurePanel locale={locale} focus="model" />
 
       <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
 

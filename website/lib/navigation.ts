@@ -591,6 +591,18 @@ const STEROIDOGENESIS_ROUTE: NavRoute = {
   },
 };
 
+const COMBINED_EXPOSURE_ROUTE: NavRoute = {
+  href: "/evidence/combined-exposures", icon: Network,
+  labels: { en: "Combined exposures", fi: "Yhteisaltistukset", ja: "複合曝露", fr: "Expositions combinées", ko: "복합 노출" },
+  descs: {
+    en: "Drug state, materials and device fields in the same receiving system",
+    fi: "Lääketila, materiaalit ja laitekentät samassa vastaanottojärjestelmässä",
+    ja: "薬剤状態・素材・機器の電磁場を同じ受容系で扱う",
+    fr: "État pharmacologique, matériaux et champs dans un même système récepteur",
+    ko: "동일 수용계의 약물 상태, 소재와 기기 전자기장",
+  },
+};
+
 export const NAV_ROUTES: NavRoute[] = [
   {
     href: "/model", icon: GitBranch,
@@ -716,6 +728,7 @@ export const NAV_ROUTES: NavRoute[] = [
       existingRoute("/evidence/response-conditions"),
       { ...STEROIDOGENESIS_ROUTE, href: `${STEROIDOGENESIS_ROUTE.href}#study-explorer`, icon: FlaskConical },
       existingRoute("/evidence/pharmacology"),
+      COMBINED_EXPOSURE_ROUTE,
       existingRoute("/evidence/timothy-experiment"),
       existingRoute("/evidence/populations"),
       existingRoute("/evidence/evolution"),

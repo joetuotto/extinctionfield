@@ -4,12 +4,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import exportData from "@/data/intervention-scenarios.json";
 import { InterventionModels } from "../InterventionModels";
 import { INTERVENTION_IDS, parseInterventionScenarios, traceValue } from "@/lib/interventions";
+const modeledProfileIds = INTERVENTION_IDS.filter(id => id !== "mcu_receiver_state");
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 describe("Public model export", () => {
-  it("covers all profiles with valid synthetic four-arm contrasts", () => {
+  it("retains the eight existing modeled profiles without inventing a scenario for MCU evidence", () => {
     const data = parseInterventionScenarios(exportData);
-    expect([...new Set(data.scenarios.map(s => s.profile_id))].sort()).toEqual([...INTERVENTION_IDS].sort());
+    expect([...new Set(data.scenarios.map(s => s.profile_id))].sort()).toEqual([...modeledProfileIds].sort());
     for (const scenario of data.scenarios) for (const endpoint of scenario.highlight_endpoints) {
       const key = data.metadata.observable_trace_keys[endpoint];
       if (key) for (const arm of scenario.result.arms) expect(arm.trace.every(point => traceValue(point, key) !== undefined), `${scenario.id}: ${endpoint}`).toBe(true);
@@ -29,7 +30,7 @@ describe("Public model export", () => {
   });
 });
 describe("Lazy numerical exploration", () => {
-  it("loads only on request, explores all profiles and retains one download across selection", async () => {
+  it("loads only on request, explores all modeled profiles and retains one download across selection", async () => {
     const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => exportData });
     vi.stubGlobal("fetch", fetcher);
     const { rerender } = render(<InterventionModels locale="fi" profileId="mt2_brake" />);
@@ -38,7 +39,7 @@ describe("Lazy numerical exploration", () => {
     await screen.findByTestId("intervention-model");
     expect(screen.getByRole("img")).toHaveAccessibleName(/Ca-nousu/);
     expect(screen.getByTestId("intervention-model-contrast")).toHaveTextContent("Synteettinen interaktiokontrasti");
-    for (const id of INTERVENTION_IDS) {
+    for (const id of modeledProfileIds) {
       rerender(<InterventionModels locale="fi" profileId={id} />);
       const select = screen.getByRole("combobox", { name: "Valitse laskentaesimerkki" });
       for (const option of within(select).getAllByRole("option")) {
@@ -48,6 +49,18 @@ describe("Lazy numerical exploration", () => {
         expect(screen.getByTestId("intervention-model-contrast")).toBeInTheDocument();
       }
     }
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it("does not reuse another profile’s numerical model for the MCU study", async () => {
+    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => exportData });
+    vi.stubGlobal("fetch", fetcher);
+    const { rerender } = render(<InterventionModels locale="en" profileId="coq10_response" />);
+    fireEvent.click(screen.getByRole("button", { name: "Open model examples" }));
+    await screen.findByTestId("intervention-model");
+    rerender(<InterventionModels locale="en" profileId="mcu_receiver_state" />);
+    expect(screen.getByText("The loaded data contains no model example for this profile.")).toBeInTheDocument();
+    expect(screen.queryByTestId("intervention-model")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("intervention-model-contrast")).not.toBeInTheDocument();
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
   it("offers a retry when download or schema validation fails", async () => {

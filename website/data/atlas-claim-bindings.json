@@ -39,7 +39,8 @@
       "claim.envelope.frequency-dependent-response"
     ],
     "fieldstate_static": [
-      "claim.tribo.material-dependent-interface"
+      "claim.tribo.material-dependent-interface",
+      "claim.synergy.material-device-transfer"
     ],
     "fieldstate_electric": [
       "claim.efield.polarity-dependent-response"
@@ -158,7 +159,8 @@
     ],
     "mech_ca_compartment_cycle": [
       "claim.modulome.calcium-compartment-cycle",
-      "claim.steroidogenesis.component-convergence"
+      "claim.steroidogenesis.component-convergence",
+      "claim.synergy.state-conditioned-coexposure"
     ],
     "mod_repair_capacity": [
       "claim.modulome.adaptation-memory",

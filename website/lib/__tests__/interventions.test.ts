@@ -33,7 +33,7 @@ describe("Matched factorial endpoints", () => {
   });
 });
 describe("Curated intervention registry", () => {
-  it("contains exactly the eight reviewable profiles with explicit missing study means", () => {
+  it("contains exactly the nine reviewable profiles with explicit missing study means", () => {
     expect(INTERVENTIONS.schemaVersion).toBe("berm-intervention-profiles-v1");
     expect(INTERVENTIONS.profiles.map(p => p.id).sort()).toEqual([...INTERVENTION_IDS].sort());
     for (const p of INTERVENTIONS.profiles) {
@@ -53,6 +53,7 @@ describe("Curated intervention registry", () => {
     expect(INTERVENTIONS.derivation.openBridges.length).toBeGreaterThan(0);
   });
   it("searches across languages, named targets and endpoints, and resolves safe deep links", () => {
+    expect(searchInterventions("Ru360").map(p => p.id)).toEqual(["mcu_receiver_state"]);
     expect(searchInterventions("thapsigargin").map(p => p.id)).toContain("channel_density_store_history");
     expect(searchInterventions("sitoutuminen").map(p => p.id)).toContain("cry_fad_competition");
     expect(searchInterventions("not-a-profile")).toEqual([]);

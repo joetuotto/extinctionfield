@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1274,
-    "linkedReferences": 608
+    "totalReferences": 1300,
+    "linkedReferences": 636
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -5313,11 +5313,11 @@
       "id": "shafik1992",
       "authors": "Shafik A, Ibrahim IH, El-Sayed EM",
       "year": 1992,
-      "title": "Human textile-interface electrostatic measurements",
+      "title": "Effect of different types of textile fabric on spermatogenesis: electrostatic potentials generated on the surface of the human scrotum by wearing different types of fabric",
       "journal": "Andrologia",
       "type": "journal",
-      "linkStatus": "pending",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/j.1439-0272.1992.tb02628.x"
     },
     "display_market_penetration_2005_2024": {
       "id": "display_market_penetration_2005_2024",
@@ -5814,7 +5814,7 @@
       "authors": "Luukkonen J, Hakulinen P, Mäki-Paakkanen J, Juutilainen J, Naarala J",
       "year": 2009,
       "title": "Enhancement of chemically induced reactive oxygen species production and DNA damage in human SH-SY5Y neuroblastoma cells by 872 MHz radiofrequency radiation",
-      "journal": "Mutation Research 662(1-2):54-58",
+      "journal": "Mutation Research 662:54–58",
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1016/j.mrfmmm.2008.12.005"
@@ -9933,11 +9933,11 @@
       "id": "shafik1992_sling",
       "authors": "Shafik A",
       "year": 1992,
-      "title": "Polyester scrotal sling experiment",
+      "title": "Contraceptive efficacy of polyester-induced azoospermia in normal men",
       "journal": "Contraception",
       "type": "journal",
-      "linkStatus": "pending",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/0010-7824(92)90157-o"
     },
     "liu1989_radiation_hormesis": {
       "id": "liu1989_radiation_hormesis",
@@ -12761,6 +12761,266 @@
       "type": "journal",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1017/ehs.2026.10054"
+    },
+    "sarkar2008_estrogen_channels": {
+      "id": "sarkar2008_estrogen_channels",
+      "authors": "Sarkar SN, Huang RQ, Logan SM, Yi KD, Dillon GH, Simpkins JW",
+      "year": 2008,
+      "title": "Estrogens directly potentiate neuronal L-type Ca2+ channels",
+      "journal": "Proceedings of the National Academy of Sciences 105(39):15148–15153",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.0802379105"
+    },
+    "sun2010_gnrh_calcium": {
+      "id": "sun2010_gnrh_calcium",
+      "authors": "Sun J, Chu Z, Moenter SM",
+      "year": 2010,
+      "title": "Diurnal in vivo and rapid in vitro effects of estradiol on voltage-gated calcium channels in gonadotropin-releasing hormone neurons",
+      "journal": "Journal of Neuroscience 30(11):3912–3923",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1523/JNEUROSCI.6256-09.2010"
+    },
+    "sun2023_ru360_rf_damage": {
+      "id": "sun2023_ru360_rf_damage",
+      "authors": "Sun C, Zhu L, Qin H, Su H, Zhang J, Wang S, Xu X, Zhao Z, Mao G, Chen J",
+      "year": 2023,
+      "title": "Inhibition of mitochondrial calcium uptake by Ru360 enhances the effect of 1800 MHz radio-frequency electromagnetic fields on DNA damage",
+      "journal": "Ecotoxicology and Environmental Safety 264:115472",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.ecoenv.2023.115472"
+    },
+    "degroote2009_contraceptive_redox": {
+      "id": "degroote2009_contraceptive_redox",
+      "authors": "De Groote D, Perrier d’Hauterive S, Pintiaux A, Balteau B, Gerday C, Claesen J, Foidart JM",
+      "year": 2009,
+      "title": "Effects of oral contraception with ethinylestradiol and drospirenone on oxidative stress in women 18–35 years old",
+      "journal": "Contraception 80(2):187–193",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.contraception.2009.02.015"
+    },
+    "panzer2006_shbg": {
+      "id": "panzer2006_shbg",
+      "authors": "Panzer C, Wise S, Fantini G, Kang D, Munarriz R, Guay A, Goldstein I",
+      "year": 2006,
+      "title": "Impact of oral contraceptives on sex hormone-binding globulin and androgen levels: a retrospective study in women with sexual dysfunction",
+      "journal": "Journal of Sexual Medicine 3(1):104–113",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/j.1743-6109.2005.00198.x"
+    },
+    "yland2020_return_fertility": {
+      "id": "yland2020_return_fertility",
+      "authors": "Yland JJ, Bresnick KA, Hatch EE, Wesselink AK, Mikkelsen EM, Rothman KJ, Sørensen HT, Huybrechts KF, Wise LA",
+      "year": 2020,
+      "title": "Pregravid contraceptive use and fecundability: prospective cohort study",
+      "journal": "BMJ 371:m3966",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1136/bmj.m3966"
+    },
+    "bowling1997_ethinyl_calcium": {
+      "id": "bowling1997_ethinyl_calcium",
+      "authors": "Bowling N, Bloomquist WE, Cohen ML, Bryant HU, Cole HW, Magee DE, Rowley ER, Vlahos CJ",
+      "year": 1997,
+      "title": "Effects of prolonged ethinyl estradiol treatment on calcium channel binding and in vivo calcium-mediated hemodynamic responses in ovariectomized rats",
+      "journal": "Journal of Pharmacology and Experimental Therapeutics 281(1):218–225",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://pubmed.ncbi.nlm.nih.gov/9103500/"
+    },
+    "chen2018_contraceptive_redox": {
+      "id": "chen2018_contraceptive_redox",
+      "authors": "Chen JT, Kotani K",
+      "year": 2018,
+      "title": "Different Effects of Oral Contraceptive and Dydrogesterone Treatment on Oxidative Stress Levels in Premenopausal Women",
+      "journal": "Journal of Clinical Medicine Research 10(2):146–153",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.14740/jocmr3307w"
+    },
+    "fuller2022_coc_mitochondrial_redox": {
+      "id": "fuller2022_coc_mitochondrial_redox",
+      "authors": "Fuller KNZ, McCoin CS, Stierwalt H, Allen J, Gandhi S, Perry CGR, Jambal P, Shankar K, Thyfault JP",
+      "year": 2022,
+      "title": "Oral combined contraceptives induce liver mitochondrial reactive oxygen species and whole-body metabolic adaptations in female mice",
+      "journal": "Journal of Physiology 600(24):5215–5245",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1113/JP283733"
+    },
+    "clapporganski2025_coc_gut": {
+      "id": "clapporganski2025_coc_gut",
+      "authors": "Clapp Organski A, Reddivari A, Reddivari L, Brubaker DK, Fuller KNZ, Thyfault JP, Cross TWL",
+      "year": 2025,
+      "title": "Oral Contraceptives Induce Time- and Intestinal Segment-Dependent Shifts in the Gut Microbiota",
+      "journal": "Nutrients 17(16):2591",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/nu17162591"
+    },
+    "terrazas2025_coc_gut": {
+      "id": "terrazas2025_coc_gut",
+      "authors": "Terrazas F, Kelley ST, DeMasi T, Giltvedt K, Tsang M, Nannini K, Kern M, Hooshmand S",
+      "year": 2025,
+      "title": "Influence of menstrual cycle and oral contraception on taxonomic composition and gas production in the gut microbiome",
+      "journal": "Journal of Medical Microbiology 74(3):001987",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1099/jmm.0.001987"
+    },
+    "paul2025_coc_duration_preprint": {
+      "id": "paul2025_coc_duration_preprint",
+      "authors": "Paul G, York S, Alcazar R",
+      "year": 2025,
+      "title": "Gut Microbiota Shifts with Lifetime Duration of Oral Contraception Use",
+      "journal": "bioRxiv 2025.09.09.675238",
+      "type": "preprint",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1101/2025.09.09.675238"
+    },
+    "kang2014_rf_ros_coexposure": {
+      "id": "kang2014_rf_ros_coexposure",
+      "authors": "Kang KA, Lee HC, Lee JJ, Hong MN, Park MJ, Lee YS, Choi HD, Kim N, Ko YG, Lee JS",
+      "year": 2014,
+      "title": "Effects of combined radiofrequency radiation exposure on levels of reactive oxygen species in neuronal cells",
+      "journal": "Journal of Radiation Research 55(2):265–276",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/jrr/rrt116"
+    },
+    "landersoe2020_coc_recovery": {
+      "id": "landersoe2020_coc_recovery",
+      "authors": "Landersoe SK, Birch Petersen K, Sørensen AL, Larsen EC, Martinussen T, Lunding SA, Kroman MS, Nielsen HS, Nyboe Andersen A",
+      "year": 2020,
+      "title": "Ovarian reserve markers after discontinuing long-term use of combined oral contraceptives",
+      "journal": "Reproductive BioMedicine Online 40(1):176–186",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.rbmo.2019.10.004"
+    },
+    "feldmann1967_skin_penetration": {
+      "id": "feldmann1967_skin_penetration",
+      "authors": "Feldmann RJ, Maibach HI",
+      "year": 1967,
+      "title": "Regional variation in percutaneous penetration of 14C cortisol in man",
+      "journal": "Journal of Investigative Dermatology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/jid.1967.29"
+    },
+    "moeloek1995_sling": {
+      "id": "moeloek1995_sling",
+      "authors": "Moeloek N",
+      "year": 1995,
+      "title": "Polyester sling scrotal cover induces oligozoospermia in normal Indonesian men",
+      "journal": "Medical Journal of Indonesia",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.13181/mji.v4i4.920"
+    },
+    "minguez2018_underwear": {
+      "id": "minguez2018_underwear",
+      "authors": "Mínguez-Alarcón L, Gaskins AJ, Chiu YH, Messerlian C, Williams PL, Ford JB, Souter I, Hauser R, Chavarro JE",
+      "year": 2018,
+      "title": "Type of underwear worn and markers of testicular function among men attending a fertility center",
+      "journal": "Human Reproduction",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/humrep/dey259"
+    },
+    "kursawe2021_combined_fields": {
+      "id": "kursawe2021_combined_fields",
+      "authors": "Kursawe M, Stunder D, Krampert T, Kaifie A, Drießen S, Kraus T, Jankowiak K",
+      "year": 2021,
+      "title": "Human detection thresholds of DC, AC, and hybrid electric fields: a double-blind study",
+      "journal": "Environmental Health",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1186/s12940-021-00781-4"
+    },
+    "jankowiak2026_hair_perception": {
+      "id": "jankowiak2026_hair_perception",
+      "authors": "Jankowiak K, Kaifie A, Krabbe J, Dohrn MF, Kimpeler S, Mingers F, Kühn R, Kraus T, Kursawe M",
+      "year": 2026,
+      "title": "The importance of hair in human perception of electric fields – A double-blind repeated measures study",
+      "journal": "Scientific Reports",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/s41598-026-52898-6"
+    },
+    "galvanovskis1997_stochastic": {
+      "id": "galvanovskis1997_stochastic",
+      "authors": "Galvanovskis J, Sandblom J",
+      "year": 1997,
+      "title": "Amplification of electromagnetic signals by ion channels",
+      "journal": "Biophysical Journal",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/S0006-3495(97)78333-4"
+    },
+    "bezrukov1995_ion_channel_noise": {
+      "id": "bezrukov1995_ion_channel_noise",
+      "authors": "Bezrukov SM, Vodyanoy I",
+      "year": 1995,
+      "title": "Noise-induced enhancement of signal transduction across voltage-dependent ion channels",
+      "journal": "Nature",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/378362a0"
+    },
+    "kang2002_pocket_sar": {
+      "id": "kang2002_pocket_sar",
+      "authors": "Kang G, Gandhi OP",
+      "year": 2002,
+      "title": "SARs for pocket-mounted mobile telephones at 835 and 1900 MHz",
+      "journal": "Physics in Medicine and Biology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1088/0031-9155/47/23/314"
+    },
+    "miclaus2017_fabric_phone_sar": {
+      "id": "miclaus2017_fabric_phone_sar",
+      "authors": "Miclăuş S, Mihai G, Aron AM, Mitrescu C, Bechet P, Baltag O",
+      "year": 2017,
+      "title": "Shielding Efficiency of a Fabric Based on Amorphous Glass-Covered Magnetic Microwires to Radiation Emitted by a Mobile Phone in 2G and 3G Communication Technologies",
+      "journal": "Land Forces Academy Review",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1515/raft-2017-0039"
+    },
+    "hu2024_testis_microplastics": {
+      "id": "hu2024_testis_microplastics",
+      "authors": "Hu CJ, Garcia MA, Nihart A, Liu R, Yin L, Adolphi N, Gallego DF, Kang H, Campen MJ, Yu X",
+      "year": 2024,
+      "title": "Microplastic presence in dog and human testis and its potential association with sperm count and weights of testis and epididymis",
+      "journal": "Toxicological Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1093/toxsci/kfae060"
+    },
+    "petri2017_static_review": {
+      "id": "petri2017_static_review",
+      "authors": "Petri AK et al.",
+      "year": 2017,
+      "title": "Biological effects of exposure to static electric fields in humans and vertebrates: a systematic review",
+      "journal": "Environmental Health",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1186/s12940-017-0248-y"
+    },
+    "greco2025_resonant_convergence": {
+      "id": "greco2025_resonant_convergence",
+      "authors": "Greco A, Jia R",
+      "year": 2025,
+      "title": "Resonant Convergence: An Integrative Model for Electromagnetic Interactions in Biological Systems",
+      "journal": "International Journal of Molecular Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.3390/ijms27010423"
     }
   },
   "aliases": {
@@ -13725,6 +13985,7 @@
     "doi:10.1186/s12875-022-01761-4": "screentime_meta2022",
     "doi:10.1210/jc.2006-1375": "travison2007_v2",
     "doi:10.1016/0010-7824(92)90157-o": "shafik1992_sling",
+    "pmid:1623716": "shafik1992_sling",
     "pmid:2517054": "liu1989_radiation_hormesis",
     "doi:10.1186/2052-336x-12-75": "mortazavi2013",
     "doi:10.1093/humrep/deg366": "gnoth2003_time_to_pregnancy",
@@ -14135,6 +14396,60 @@
     "doi:10.3389/frph.2024.1364352": "aitken2024_fertility_drivers",
     "doi:10.1017/ehs.2026.10054": "itao2026_two_pathways",
     "pmcid:PMC13359015": "itao2026_two_pathways",
-    "pmid:42445126": "itao2026_two_pathways"
+    "pmid:42445126": "itao2026_two_pathways",
+    "doi:10.1073/pnas.0802379105": "sarkar2008_estrogen_channels",
+    "pmcid:PMC2575342": "sarkar2008_estrogen_channels",
+    "doi:10.1523/jneurosci.6256-09.2010": "sun2010_gnrh_calcium",
+    "pmcid:PMC2855130": "sun2010_gnrh_calcium",
+    "doi:10.1016/j.ecoenv.2023.115472": "sun2023_ru360_rf_damage",
+    "pmid:37716072": "sun2023_ru360_rf_damage",
+    "doi:10.1016/j.contraception.2009.02.015": "degroote2009_contraceptive_redox",
+    "pmid:19631796": "degroote2009_contraceptive_redox",
+    "doi:10.1111/j.1743-6109.2005.00198.x": "panzer2006_shbg",
+    "doi:10.1136/bmj.m3966": "yland2020_return_fertility",
+    "pmid:9103500": "bowling1997_ethinyl_calcium",
+    "doi:10.14740/jocmr3307w": "chen2018_contraceptive_redox",
+    "pmcid:PMC5755654": "chen2018_contraceptive_redox",
+    "doi:10.1113/jp283733": "fuller2022_coc_mitochondrial_redox",
+    "pmid:36326014": "fuller2022_coc_mitochondrial_redox",
+    "doi:10.3390/nu17162591": "clapporganski2025_coc_gut",
+    "pmcid:PMC12388937": "clapporganski2025_coc_gut",
+    "doi:10.1099/jmm.0.001987": "terrazas2025_coc_gut",
+    "pmcid:PMC11952661": "terrazas2025_coc_gut",
+    "doi:10.1101/2025.09.09.675238": "paul2025_coc_duration_preprint",
+    "pmcid:PMC12439962": "paul2025_coc_duration_preprint",
+    "doi:10.1093/jrr/rrt116": "kang2014_rf_ros_coexposure",
+    "pmcid:PMC3951078": "kang2014_rf_ros_coexposure",
+    "doi:10.1016/j.rbmo.2019.10.004": "landersoe2020_coc_recovery",
+    "pmid:31831368": "landersoe2020_coc_recovery",
+    "doi:10.1038/jid.1967.29": "feldmann1967_skin_penetration",
+    "pmid:6020682": "feldmann1967_skin_penetration",
+    "doi:10.13181/mji.v4i4.920": "moeloek1995_sling",
+    "doi:10.1093/humrep/dey259": "minguez2018_underwear",
+    "pmcid:PMC6530653": "minguez2018_underwear",
+    "pmid:30102388": "minguez2018_underwear",
+    "doi:10.1186/s12940-021-00781-4": "kursawe2021_combined_fields",
+    "pmcid:PMC8380375": "kursawe2021_combined_fields",
+    "pmid:34419058": "kursawe2021_combined_fields",
+    "doi:10.1038/s41598-026-52898-6": "jankowiak2026_hair_perception",
+    "pmcid:PMC13171872": "jankowiak2026_hair_perception",
+    "pmid:42129324": "jankowiak2026_hair_perception",
+    "doi:10.1016/s0006-3495(97)78333-4": "galvanovskis1997_stochastic",
+    "pmcid:PMC1181210": "galvanovskis1997_stochastic",
+    "pmid:9414219": "galvanovskis1997_stochastic",
+    "doi:10.1038/378362a0": "bezrukov1995_ion_channel_noise",
+    "pmid:7477370": "bezrukov1995_ion_channel_noise",
+    "doi:10.1088/0031-9155/47/23/314": "kang2002_pocket_sar",
+    "pmid:12502051": "kang2002_pocket_sar",
+    "doi:10.1515/raft-2017-0039": "miclaus2017_fabric_phone_sar",
+    "doi:10.1093/toxsci/kfae060": "hu2024_testis_microplastics",
+    "pmcid:PMC11285152": "hu2024_testis_microplastics",
+    "pmid:38745431": "hu2024_testis_microplastics",
+    "doi:10.1186/s12940-017-0248-y": "petri2017_static_review",
+    "pmcid:PMC5393013": "petri2017_static_review",
+    "pmid:28416002": "petri2017_static_review",
+    "doi:10.3390/ijms27010423": "greco2025_resonant_convergence",
+    "pmcid:PMC12785707": "greco2025_resonant_convergence",
+    "pmid:41516294": "greco2025_resonant_convergence"
   }
 }

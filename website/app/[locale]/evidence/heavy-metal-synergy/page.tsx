@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskRound } from "lucide-react";
@@ -874,6 +875,7 @@ export default async function HeavyMetalSynergyPage({
       </section>
 
       {/* Predictions link */}
+      <CombinedExposurePanel locale={locale} focus="materials" />
       <section className="mt-14 border-t editorial-rule pt-6">
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">

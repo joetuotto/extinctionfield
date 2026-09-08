@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 852,
-    "usageLocations": 2587
+    "referencesWithUsages": 878,
+    "usageLocations": 2693
   },
   "usage": {
     "delgado1969": [
@@ -1185,6 +1185,18 @@
         "source": "app/[locale]/objections/page.tsx"
       },
       {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/objections",
         "source": "app/[locale]/objections/page.tsx"
       }
@@ -2275,12 +2287,28 @@
         "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
       },
       {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
         "path": "/mathematics",
         "source": "components/MathematicsSections.tsx"
       },
       {
         "path": "/model",
         "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       },
       {
         "path": "/model/math",
@@ -2667,6 +2695,10 @@
         "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
       },
       {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
         "path": "/evidence/convergence",
         "source": "app/[locale]/evidence/convergence/page.tsx"
       },
@@ -2721,6 +2753,10 @@
         "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
       },
       {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
       },
@@ -2741,6 +2777,10 @@
       {
         "path": "/biology/calcium-redox-steroidogenesis",
         "source": "app/[locale]/biology/calcium-redox-steroidogenesis/page.tsx"
+      },
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
       },
       {
         "path": "/evidence/pharmacology",
@@ -7541,6 +7581,302 @@
         "source": "app/[locale]/evidence/circadian/page.tsx"
       }
     ],
+    "sarkar2008_estrogen_channels": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
+      }
+    ],
+    "sun2010_gnrh_calcium": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bowling1997_ethinyl_calcium": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "degroote2009_contraceptive_redox": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "chen2018_contraceptive_redox": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "fuller2022_coc_mitochondrial_redox": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "panzer2006_shbg": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
+      }
+    ],
+    "landersoe2020_coc_recovery": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "yland2020_return_fertility": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "clapporganski2025_coc_gut": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "terrazas2025_coc_gut": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "hu2024_testis_microplastics": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "galvanovskis1997_stochastic": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "bezrukov1995_ion_channel_noise": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "greco2025_resonant_convergence": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "lib/combinedExposureData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kursawe2021_combined_fields": [
+      {
+        "path": "/evidence/combined-exposures",
+        "source": "components/CombinedFieldThresholdFigure.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
     "kubo1957_linear_response": [
       {
         "path": "/evidence/convergence",
@@ -10475,6 +10811,146 @@
       {
         "path": "/model/proxy-masking",
         "source": "lib/proxyDemographyData.ts"
+      }
+    ],
+    "sun2023_ru360_rf_damage": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "paul2025_coc_duration_preprint": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kang2014_rf_ros_coexposure": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "feldmann1967_skin_penetration": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "moeloek1995_sling": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "minguez2018_underwear": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "jankowiak2026_hair_perception": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "kang2002_pocket_sar": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "miclaus2017_fabric_phone_sar": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      }
+    ],
+    "petri2017_static_review": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
       }
     ],
     "lancet-2017-tsimane-heart": [

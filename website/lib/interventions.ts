@@ -1,7 +1,7 @@
 import registry from "@/data/intervention-profiles.json";
 
 export type InterventionText = { en: string; fi: string };
-export const INTERVENTION_IDS = ["mt2_brake", "local_ltype_erk", "channel_selectivity", "lipid_ttype_inhibition", "channel_density_store_history", "cry_fad_competition", "drug_photochemistry", "coq10_response"] as const;
+export const INTERVENTION_IDS = ["mt2_brake", "local_ltype_erk", "channel_selectivity", "lipid_ttype_inhibition", "channel_density_store_history", "cry_fad_competition", "drug_photochemistry", "coq10_response", "mcu_receiver_state"] as const;
 export type InterventionId = typeof INTERVENTION_IDS[number];
 export type ArmId = "sham" | "field" | "drug" | "fieldDrug";
 export interface EndpointMeasurement {

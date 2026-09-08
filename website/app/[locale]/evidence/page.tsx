@@ -1700,6 +1700,14 @@ const COPY = {
 
 const SUB_PAGES = [
   {
+    slug: "combined-exposures", icon: GitMerge,
+    en: { title: "Combined exposures", desc: "Contraception, clothing and phone fields: receiving state, material transfer and shared biological pathways." },
+    fi: { title: "Yhteisaltistukset", desc: "Ehkäisy, vaatteet ja puhelimen kenttä: vastaanottotila, materiaalin siirtovaikutus ja yhteiset biologiset reitit." },
+    ja: { title: "複合曝露", desc: "避妊薬、衣服、携帯電話の電磁場：受容状態、素材による伝達、共通の生物学的経路。" },
+    fr: { title: "Expositions combinées", desc: "Contraception, vêtements et téléphone : état récepteur, transfert physique et voies biologiques communes." },
+    ko: { title: "복합 노출", desc: "피임약·의복·휴대전화 전자기장: 수용 상태, 소재를 통한 전달과 공통 생물학적 경로." },
+  },
+  {
     slug: "devices",
     icon: Zap,
     en: { title: "Therapeutic Device Paradox", desc: "26 FDA-approved non-thermal EMF devices vs. ICNIRP's 'no effect' assumption. The logical contradiction at the heart of EMF regulation." },

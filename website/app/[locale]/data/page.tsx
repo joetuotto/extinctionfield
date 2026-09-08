@@ -1,3 +1,4 @@
+import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import { pickCopy } from "@/lib/i18n";
@@ -1140,6 +1141,8 @@ export default async function DataPage({
           </div>
         </SectionCard>
       </section>
+
+      <CombinedExposurePanel locale={locale} focus="measurement" />
 
       <section className="mt-8">
         <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">

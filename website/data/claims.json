@@ -3689,6 +3689,114 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.synergy.state-conditioned-coexposure",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "BERM_L2_BRIDGE"
+      },
+      "depends_on": [
+        "claim.bridge.conditional-response-operator",
+        "claim.synthesis.protocol-state-heterogeneity"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "In BERM, a material changes input transfer and a drug changes receiving state; the conditional response operator composes these effects through shared biological intermediates. Direct field–drug and field–chemical experiments constrain protocol-specific state dependence. This composition does not assign every combination a positive or multiplicative gain.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM:ssa materiaali muuttaa syötteen siirtymistä ja lääke vastaanottotilaa; ehdollinen vasteoperaattori kokoaa vaikutukset yhteisten biologisten välivaiheiden kautta. Suorat kenttä–lääke- ja kenttä–kemikaalikokeet rajaavat protokollakohtaista tilariippuvuutta. Koostaminen ei anna jokaiselle yhdistelmälle positiivista tai kertautuvaa vahvistusta.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Named component findings composed through a state-conditioned BERM response.",
+          "Separate physical transfer, biological receiving state and endpoint scales."
+        ],
+        "does_not_support": [
+          "A calibrated geometry-to-tissue coupling or historical fertility attribution.",
+          "An automatic positive gain for oral contraception, polyester, a body region or their combination.",
+          "Counting the material-by-device interaction as a fourth independent input."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.synergy.contraceptive-receiver-state",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "ANDROGEN_BINDING_AVAILABILITY"
+      },
+      "depends_on": [
+        "claim.bridge.state-conditioned-kernel",
+        "claim.androgen.binding-availability"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Combined oral contraceptive formulation, dose and history enter BERM receiving state through hormonal feedback, channel context, compartment-specific redox, hormone binding and intestinal state. The separate component studies support this mechanistic composition; a calibrated contraceptive-by-field effect on human fertility remains unassigned.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Yhdistelmäehkäisyn valmiste, annos ja historia kuuluvat BERM:n vastaanottotilaan hormonipalautteen, kanavatilan, kudoskohtaisen redoxin, hormonin sitoutumisen ja suolistotilan kautta. Erilliset komponenttitutkimukset tukevat mekanistista koostamista; ehkäisyn ja kentän yhteisvaikutusta ihmisen hedelmällisyyteen ei ole kalibroitu.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Named component findings composed through a state-conditioned BERM response.",
+          "Separate physical transfer, biological receiving state and endpoint scales."
+        ],
+        "does_not_support": [
+          "A calibrated geometry-to-tissue coupling or historical fertility attribution.",
+          "An automatic positive gain for oral contraception, polyester, a body region or their combination.",
+          "Counting the material-by-device interaction as a fourth independent input."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.synergy.material-device-transfer",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "STATIC_TRIBO_INTERFACE"
+      },
+      "depends_on": [
+        "claim.tribo.material-dependent-interface",
+        "claim.bridge.conditional-response-operator"
+      ],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "BERM records clothing and seating as physical interfaces with distinct RF transfer, triboelectric, thermal and chemical paths. Device–material–body dosimetry constrains physical transfer; skin absorption and textile reproductive studies constrain other parts. Their measurements cannot be substituted for one universal tissue amplification factor.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM kuvaa vaatteet ja istuimet fysikaalisina rajapintoina, joilla on erilliset RF-siirron, triboelektrisyyden, lämmön ja kemiallisen kontaktin reitit. Laite–materiaali–keho-dosimetria rajaa fysikaalista siirtoa, ihoimeytyminen ja tekstiilien lisääntymistutkimukset muita osia. Mittauksia ei korvata yhdellä yleisellä kudosvahvistuskertoimella.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Named component findings composed through a state-conditioned BERM response.",
+          "Separate physical transfer, biological receiving state and endpoint scales."
+        ],
+        "does_not_support": [
+          "A calibrated geometry-to-tissue coupling or historical fertility attribution.",
+          "An automatic positive gain for oral contraception, polyester, a body region or their combination.",
+          "Counting the material-by-device interaction as a fourth independent input."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -10437,6 +10545,816 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.sarkar2008_estrogen_channels",
+      "referenceId": "sarkar2008_estrogen_channels",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original experimental cell/electrophysiology study",
+      "applicability": "Embryonic rat hippocampal neurons, slices, and channel-transfected HEK293 cells; acute 17β-estradiol, including 10–1000 pM; nifedipine, estrogen-receptor antagonist and channel-mutant comparisons.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No RF exposure, contraceptive formulation or clinical fertility endpoint. Estradiol is not interchangeable with ethinylestradiol; increased physiological calcium signalling is not itself injury.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Estradiol directly potentiated neuronal L-type calcium currents; pharmacology and a dihydropyridine-insensitive channel mutant localised the response to the channel.",
+      "provenance": {
+        "studyIds": [
+          "study.sarkar2008_estrogen_channels"
+        ],
+        "datasetFamilyIds": [
+          "dataset.sarkar2008-estrogen-channels"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.sun2010_gnrh_calcium",
+      "referenceId": "sun2010_gnrh_calcium",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original animal/slice electrophysiology intervention",
+      "applicability": "Adult ovariectomised female GnRH-GFP mice, with/without 0.625 µg estradiol implant; recordings 2–5 days later, morning versus afternoon. Acute bath estradiol 100 pM–100 nM.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "A hormone-state and timing intervention, not an EMF×COC experiment. Rapid and prior in-vivo effects must be distinguished; no universal suppressive sign follows.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Prior estradiol lowered high-voltage-activated calcium currents in the morning and increased them in the afternoon; acute estradiol rapidly and reversibly potentiated currents through ERβ/L-type and GPR30/R-type contributions.",
+      "provenance": {
+        "studyIds": [
+          "study.sun2010_gnrh_calcium"
+        ],
+        "datasetFamilyIds": [
+          "dataset.sun2010-gnrh-calcium"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.sun2023_ru360_rf_damage",
+      "referenceId": "sun2023_ru360_rf_damage",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "supports",
+      "directness": "direct_component_coexposure",
+      "studyDesign": "original experimental field×drug cell study",
+      "applicability": "Mouse embryonic fibroblasts; 1800 MHz RF for 15 minutes with the mitochondrial calcium uniporter inhibitor Ru360. Exact SAR and inhibitor concentration await full-method verification.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "The attachment reverses the inhibitor effect: Ru360 enhanced rather than prevented the response. Direct field×drug evidence for receiver-state dependence; no oral contraceptive or human reproductive endpoint.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "RF exposure in Ru360-treated cells increased DNA damage and apoptosis; cell cycle, proliferation and viability did not show significant effects.",
+      "provenance": {
+        "studyIds": [
+          "study.sun2023_ru360_rf_damage"
+        ],
+        "datasetFamilyIds": [
+          "dataset.sun2023-ru360-rf-damage"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.degroote2009_contraceptive_redox",
+      "referenceId": "degroote2009_contraceptive_redox",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original matched cross-sectional human study",
+      "applicability": "32 women using 0.03 mg ethinylestradiol + 3 mg drospirenone, compared with 30 matched non-users; blood markers and 200-gene microarray.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Cross-sectional comparison, not randomised treatment or field coexposure. Blood redox markers do not identify depleted reserve in every tissue, clinical injury or COC×EMF interaction.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Users had higher lipid peroxides (+176%), oxidised LDL (+145%) and copper (+103%), and lower β-carotene (−41%); several other antioxidant measures did not differ.",
+      "provenance": {
+        "studyIds": [
+          "study.degroote2009_contraceptive_redox"
+        ],
+        "datasetFamilyIds": [
+          "dataset.degroote2009-contraceptive-redox"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.panzer2006_shbg",
+      "referenceId": "panzer2006_shbg",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original retrospective clinical study",
+      "applicability": "124 premenopausal women with sexual-health complaints >6 months: 62 continuing, 39 discontinuing and 23 never-users. Later follow-up >120 days averaged 196 days (26 discontinued users).",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Selected clinical retrospective sample, not general-population persistence, permanent injury or epigenetic proof. No pre-use baseline in every woman, field measurement or pregnancy endpoint.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Continued users had SHBG 157±13 versus 41±4 nmol/L in never-users. SHBG fell after discontinuation but remained higher than never-users in the later comparison.",
+      "provenance": {
+        "studyIds": [
+          "study.panzer2006_shbg"
+        ],
+        "datasetFamilyIds": [
+          "dataset.panzer2006-shbg"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.yland2020_return_fertility",
+      "referenceId": "yland2020_return_fertility",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original prospective pregnancy-planning cohort",
+      "applicability": "17,954 pregnancy planners in Denmark and North America, 2007–2019; bimonthly follow-up for up to 12 months; 6,735 recent oral-contraceptive users.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Prospective observational method comparisons; delay is a group estimate, not a deadline for an individual. No EMF dosimetry or EMF-stratified recovery estimate.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Oral/ring contraceptive users showed an approximately three-cycle initial delay relative to barrier users; longer lifetime hormonal contraceptive use was not associated with lasting lower fecundability.",
+      "provenance": {
+        "studyIds": [
+          "study.yland2020_return_fertility"
+        ],
+        "datasetFamilyIds": [
+          "dataset.yland2020-return-fertility"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.luukkonen2009_menadione_rf",
+      "referenceId": "luukkonen2009_menadione_rf",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "supports",
+      "directness": "direct_component_coexposure",
+      "studyDesign": "original experimental field×chemical cell study",
+      "applicability": "Human SH-SY5Y cells, 872 MHz continuous-wave or GSM-modulated exposure; 5 W/kg for 1 hour with menadione.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Existing canonical reference. Chemical challenge is not a contraceptive formulation, and the exposure cannot be replaced by the attachment’s 900 MHz/0.174–0.638 W/kg description.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Continuous-wave RF enhanced chemically induced ROS and DNA damage; the GSM signal did not show the same interaction.",
+      "provenance": {
+        "studyIds": [
+          "study.luukkonen2009_menadione_rf"
+        ],
+        "datasetFamilyIds": [
+          "dataset.luukkonen2009-menadione-rf"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.bowling1997_ethinyl_calcium",
+      "referenceId": "bowling1997_ethinyl_calcium",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original experimental animal study",
+      "applicability": "Ovariectomised rats; oral ethinylestradiol 0.1 mg/kg/day for 35 days versus vehicle and sham-operated controls. Cardiac/aortic ligand binding and BAY K8644/norepinephrine challenge.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Correct original for the attachment’s prolonged EE calcium-channel claim; not Sun. Receptor number, channel response and whole-organ response are distinct. No RF exposure.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "EE increased cardiac and aortic dihydropyridine receptor density and altered cardiac ryanodine binding, without increased inotropic, chronotropic or pressor responses.",
+      "provenance": {
+        "studyIds": [
+          "study.bowling1997_ethinyl_calcium"
+        ],
+        "datasetFamilyIds": [
+          "dataset.bowling1997"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.chen2018_contraceptive_redox",
+      "referenceId": "chen2018_contraceptive_redox",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original retrospective longitudinal study",
+      "applicability": "Retrospective dysmenorrhoea cohort: 17 OC and 10 dydrogesterone users; 7 later switched. EE 35 µg with norethisterone 0.5/1 mg on 21/28 days; comparator dydrogesterone 10 mg/day.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Online December 2017, issue February 2018. Dydrogesterone is a dysmenorrhoea-treatment comparator, not an interchangeable contraceptive. Non-random selection and switching; no RF or clinical vascular endpoint.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "At three months d-ROMs rose 321→512 Carr U in the OC group; seven switchers decreased 508→372 at month 15. Biological antioxidant potential did not significantly change.",
+      "provenance": {
+        "studyIds": [
+          "study.chen2018_contraceptive_redox"
+        ],
+        "datasetFamilyIds": [
+          "dataset.chenkotani"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.fuller2022_coc_mitochondrial_redox",
+      "referenceId": "fuller2022_coc_mitochondrial_redox",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original experimental animal study",
+      "applicability": "Female C57BL/6J mice on a high-fat diet, OC versus vehicle for 3, 12 or 20 weeks; n=6–12/group. EE+levonorgestrel model selected for cycle cessation.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Tissue-specific mixed physiological outcomes, not universal oxidative harm. No RF. Clapp Organski2025 reuses 12-/20-week cohorts and earlier metabolic data, not an independent replication.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "OCs increased hepatic mitochondrial H2O2 across durations, without an increase in skeletal muscle H2O2; adiposity and liver triglyceride content were lower despite reduced activity and energy expenditure.",
+      "provenance": {
+        "studyIds": [
+          "study.fuller2022_coc_mitochondrial_redox"
+        ],
+        "datasetFamilyIds": [
+          "dataset.fuller2022-clapporganski2025"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.clapporganski2025_coc_gut",
+      "referenceId": "clapporganski2025_coc_gut",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original analysis of experimental animal cohorts",
+      "applicability": "Female C57BL/6J mice, 45%-fat diet with/without 2 mg EE + 200 mg levonorgestrel per kg diet; treatment from age 7–8 weeks for 12 or 20 weeks; original groups n=12 and 8 respectively.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Diet concentration is not mg/kg body mass. No low-fat group in this analysis, RF, oxytocin, attachment or conception endpoint. Lactococcus does not establish Lactobacillus or L. reuteri loss. Same experimental family as Fuller2022.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Colonic estradiol rose at both durations; cecal and colonic composition shifted most clearly after 20 weeks. At 12 weeks cecal Lactococcus and Enterococcus decreased; taxon and metabolite directions varied by site and time.",
+      "provenance": {
+        "studyIds": [
+          "study.clapporganski2025_coc_gut"
+        ],
+        "datasetFamilyIds": [
+          "dataset.fuller2022-clapporganski2025"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.terrazas2025_coc_gut",
+      "referenceId": "terrazas2025_coc_gut",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original observational human study",
+      "applicability": "65 women recruited, age 18–25; OC users of monophasic 20/30/35 µg estrogen formulations for 1–5 years versus controls without use for ≥3 months; sampling days 2 and 21.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Non-randomised OC use; not a universal dysbiosis or Lactobacillus-loss result. Original methods report 64/31 samples on days 2/21; the later reanalysis reports 64/56, so do not combine sample counts uncritically.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "No general community-composition difference; richness showed a group×cycle-day interaction. Specific taxa, including Clostridium sp., were relatively higher in OC users; breath-gas associations also varied.",
+      "provenance": {
+        "studyIds": [
+          "study.terrazas2025_coc_gut"
+        ],
+        "datasetFamilyIds": [
+          "dataset.terrazas2025-paul2025"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.paul2025_coc_duration_preprint",
+      "referenceId": "paul2025_coc_duration_preprint",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "contextualizes",
+      "directness": "component_evidence",
+      "studyDesign": "original secondary-data analysis; preprint",
+      "applicability": "Reanalysis of Terrazas2025 public 16S data; duration model used 89 samples (73 current-user/16 non-user samples); some non-users had previous OC use.",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "The audited PMC version is a preprint, not peer-reviewed confirmation. Same cohort as Terrazas; paired samples are not independent participants. Duration association does not identify EMF, oxytocin or clinical reproductive harm.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "32 ASVs were associated with lifetime OC duration; 28 decreased, including 16 Clostridia ASVs.",
+      "provenance": {
+        "studyIds": [
+          "study.paul2025_coc_duration_preprint"
+        ],
+        "datasetFamilyIds": [
+          "dataset.terrazas2025-paul2025"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.kang2014_rf_ros_coexposure",
+      "referenceId": "kang2014_rf_ros_coexposure",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "contextualizes",
+      "directness": "direct_component_coexposure",
+      "studyDesign": "original experimental cell coexposure study",
+      "applicability": "U87, PC12, SH-SY5Y and NIH3T3 cells; 837 MHz CDMA plus 1950 MHz WCDMA, 2+2 W/kg for 2 h; H2O2 100 µM, or menadione 100 µM in PC12/200 µM in SH-SY5Y; six independent experiments.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Issue 2014, online 2013. The review cited in the attachment overcompresses this result. These protocols delimit transfer from Luukkonen’s CW result; they do not remove receiver-state dependence.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A few transient differences occurred, but no consistent or sustained additive/synergistic ROS enhancement with the chemical challenges.",
+      "provenance": {
+        "studyIds": [
+          "study.kang2014_rf_ros_coexposure"
+        ],
+        "datasetFamilyIds": [
+          "dataset.kang2014"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.contraceptive-receiver-state.landersoe2020_coc_recovery",
+      "referenceId": "landersoe2020_coc_recovery",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "original prospective human study",
+      "applicability": "Prospective 68-woman discontinuation cohort; mean age 29.4 years and COC use 8 years; serial AMH, antral follicle count and ovarian volume over four months.",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Markers reflect reversible functional suppression as well as underlying biology; their rise is not new primordial follicle production or a measured increase in pregnancy probability. No EMF contrast.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "AMH increased an estimated 53% and AFC 41%; increases reached a plateau after approximately two months.",
+      "provenance": {
+        "studyIds": [
+          "study.landersoe2020_coc_recovery"
+        ],
+        "datasetFamilyIds": [
+          "dataset.landersoe2020"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.feldmann1967_skin_penetration",
+      "referenceId": "feldmann1967_skin_penetration",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Healthy male volunteers; percutaneous chemical absorption",
+      "applicability": "Healthy male volunteers; percutaneous chemical absorption",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Tracer/vehicle/site-specific absorption ratio; not electrical conductivity, dielectric loss, electric-field transmission, skin thickness or SAR.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Within-person scrotal versus ventral-forearm hydrocortisone absorption differed 42-fold, measured through five-day urinary radiotracer recovery. The scrotal comparison included three men.",
+      "provenance": {
+        "studyIds": [
+          "study.feldmann1967_skin_penetration"
+        ],
+        "datasetFamilyIds": [
+          "dataset.feldmann1967-skin-penetration"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.shafik1992",
+      "referenceId": "shafik1992",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Human textile–skin interface; n=21",
+      "applicability": "Human textile–skin interface; n=21",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No reproductive endpoint in this separate surface-measurement study; material rank is protocol-specific.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Twenty-one healthy volunteers in three equal groups wore polyester, cotton or 50:50 polyester/cotton underpants. Reported textile–skin electrostatic readings differed by fabric; this was not the azoospermia experiment.",
+      "provenance": {
+        "studyIds": [
+          "study.shafik1992"
+        ],
+        "datasetFamilyIds": [
+          "dataset.shafik1992"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.shafik1992_sling",
+      "referenceId": "shafik1992_sling",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Fourteen adult men; longitudinal sling intervention",
+      "applicability": "Fourteen adult men; longitudinal sling intervention",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "No randomized material/temperature separation; no measured local RF dose. The original proposed both electrostatic and thermoregulatory explanations.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Fourteen men wore a polyester scrotal sling for 12 months. All became azoospermic after 139.6±20.8 days; baseline sperm concentration returned 156.6±14.8 days after removal. Testicular volume and rectal–testicular temperature difference decreased during use.",
+      "provenance": {
+        "studyIds": [
+          "study.shafik1992_sling"
+        ],
+        "datasetFamilyIds": [
+          "dataset.shafik1992-sling"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.moeloek1995_sling",
+      "referenceId": "moeloek1995_sling",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Human replication attempt from an independent Indonesian group",
+      "applicability": "Human replication attempt from an independent Indonesian group",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Partial replication of suppression, not replication of universal azoospermia. Baseline selection and protocol differences preclude assigning the difference to ethnicity alone.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Ten healthy Indonesian men wore a polyester sling day and night for 24 weeks. All reached oligozoospermia below 20 million sperm/mL, but none became azoospermic. Morphology and sperm velocity worsened; motile percentage and semen volume did not change significantly.",
+      "provenance": {
+        "studyIds": [
+          "study.moeloek1995_sling"
+        ],
+        "datasetFamilyIds": [
+          "dataset.moeloek1995-sling"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.minguez2018_underwear",
+      "referenceId": "minguez2018_underwear",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Human cross-sectional EARTH fertility-centre study",
+      "applicability": "Human cross-sectional EARTH fertility-centre study",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Not randomized; fabric composition and trouser type were unmeasured. This opens a material/fit/temperature decomposition, not identification of an electrostatic cause.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "In 656 fertility-centre men, predominantly wearing boxers was associated with 25% higher sperm concentration, 17% higher total sperm count and 14% lower FSH. The exposure was reported underwear style; fabric composition was unavailable.",
+      "provenance": {
+        "studyIds": [
+          "study.minguez2018_underwear"
+        ],
+        "datasetFamilyIds": [
+          "dataset.minguez2018-underwear"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.kursawe2021_combined_fields",
+      "referenceId": "kursawe2021_combined_fields",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "direct_component_coexposure",
+      "studyDesign": "Double-blind human whole-body field detection",
+      "applicability": "Double-blind human whole-body field detection",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Sensory detection and probable hair-force transduction, not VGCC measurement or gonadal injury; threshold methods and eligible subsets matter.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "In 203 participants, DC plus 50-Hz AC fields had lower conscious detection thresholds than single-field exposures. Table 3 signal-detection means were DC 18.69 kV/m, AC 14.16 kV/m, and hybrid DC 6.76 kV/m with an additional fixed AC 4 kV/m.",
+      "provenance": {
+        "studyIds": [
+          "study.kursawe2021_combined_fields"
+        ],
+        "datasetFamilyIds": [
+          "dataset.rwth-aachen-ef-perception-programme"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.jankowiak2026_hair_perception",
+      "referenceId": "jankowiak2026_hair_perception",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Human intervention at sensory surface",
+      "applicability": "Human intervention at sensory surface",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Exposure was blinded; shaving order was fixed across visits and remaining facial hair persisted. Same research family as Kursawe, not independent laboratory replication.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Thirty healthy adults underwent EF detection before and after shaving scalp, arms and beard. Removal reduced detection performance; paired threshold increases were significant for DC and hybrid fields but not for the AC threshold comparison.",
+      "provenance": {
+        "studyIds": [
+          "study.jankowiak2026_hair_perception"
+        ],
+        "datasetFamilyIds": [
+          "dataset.rwth-aachen-ef-perception-programme"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.galvanovskis1997_stochastic",
+      "referenceId": "galvanovskis1997_stochastic",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "method",
+      "directness": "component_evidence",
+      "studyDesign": "Mathematical two-state ion-channel population",
+      "applicability": "Mathematical two-state ion-channel population",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Model assumptions do not provide a measured clothing-noise spectrum, an RF demodulation path or an in-vivo gain coefficient.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A theoretical multi-channel system and numerical simulations connect weak periodic modulation of two-state channel rates with aggregate signal detection. Predicted signal-to-noise depends on channel number, kinetic rates and downstream filtering.",
+      "provenance": {
+        "studyIds": [
+          "study.galvanovskis1997_stochastic"
+        ],
+        "datasetFamilyIds": [
+          "dataset.galvanovskis1997-stochastic"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.bezrukov1995_ion_channel_noise",
+      "referenceId": "bezrukov1995_ion_channel_noise",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Alamethicin ion channels in an experimental membrane system",
+      "applicability": "Alamethicin ion channels in an experimental membrane system",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Not neuronal L-type calcium channels or environmental RF exposure. The reported gain is signal transduction in this setup, not a hundredfold tissue-injury or fertility multiplier.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Observed stochastic resonance in voltage-dependent channels formed by the peptide alamethicin. Added external noise increased signal transduction by approximately a hundredfold while also increasing output signal-to-noise.",
+      "provenance": {
+        "studyIds": [
+          "study.bezrukov1995_ion_channel_noise"
+        ],
+        "datasetFamilyIds": [
+          "dataset.bezrukov1995-ion-channel-noise"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.kang2002_pocket_sar",
+      "referenceId": "kang2002_pocket_sar",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Physical phantom experiment plus anatomical numerical model",
+      "applicability": "Physical phantom experiment plus anatomical numerical model",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Historical handset/configuration comparison. Does not establish a polyester/cotton dielectric ranking or modern testicular SAR.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Four phone models at 835/1900 MHz were evaluated near chest/planar phantoms. Measurements and simulations of 1-g and 10-g SAR agreed within ±10% at 2–8 mm separations representing clothing thickness. Pocket configurations produced 2–7 times the comparator head-model SAR in the studied devices.",
+      "provenance": {
+        "studyIds": [
+          "study.kang2002_pocket_sar"
+        ],
+        "datasetFamilyIds": [
+          "dataset.kang2002-pocket-sar"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.miclaus2017_fabric_phone_sar",
+      "referenceId": "miclaus2017_fabric_phone_sar",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "direct_component_coexposure",
+      "studyDesign": "Real phone and head phantom; engineered textile intervention",
+      "applicability": "Real phone and head phantom; engineered textile intervention",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Supports a material-dependent transfer operator, not automatic amplification by ordinary polyester. Phone distance, covering and engineering composition co-vary; no biological endpoint.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "A real Samsung handset and standardized head-phantom SAR measurement showed that an intervening engineered magnetic-wire textile changed RF energy deposition. Layer number and yarn orientation mattered; additional layers did not invariably lower SAR.",
+      "provenance": {
+        "studyIds": [
+          "study.miclaus2017_fabric_phone_sar"
+        ],
+        "datasetFamilyIds": [
+          "dataset.miclaus2017-fabric-phone-sar"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.hu2024_testis_microplastics",
+      "referenceId": "hu2024_testis_microplastics",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "supports",
+      "directness": "component_evidence",
+      "studyDesign": "Human/canine tissue biomonitoring; observational",
+      "applicability": "Human/canine tissue biomonitoring; observational",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Polymer mass is not particle number or identified entry route. No demonstration that underwear caused the burden or that human fertility was reduced by it.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Pyrolysis-GC/MS detected polymer material in all 47 canine and 23 human testis samples. Mean total concentrations were 122.63 µg/g in dogs and 328.44 µg/g in humans. Reproductive-organ and sperm associations were analysed in dogs, including inverse PVC/PET–normalized testis-weight associations.",
+      "provenance": {
+        "studyIds": [
+          "study.hu2024_testis_microplastics"
+        ],
+        "datasetFamilyIds": [
+          "dataset.hu2024-testis-microplastics"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.icnirp2020",
+      "referenceId": "icnirp2020",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "contextualizes",
+      "directness": "component_evidence",
+      "studyDesign": "Official RF exposure guideline",
+      "applicability": "Official RF exposure guideline",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Physical compliance summation is not a calibrated model for every drug × tissue-state × material biological interaction.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Contains explicit simultaneous-multiple-frequency exposure rules. Thermal and electrical-stimulation contributions are evaluated separately; normalized SAR, absorbed-power and external-field contributions are summed under the applicable spatial/temporal restrictions.",
+      "provenance": {
+        "studyIds": [
+          "study.icnirp2020"
+        ],
+        "datasetFamilyIds": [
+          "dataset.icnirp2020"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.material-device-transfer.petri2017_static_review",
+      "referenceId": "petri2017_static_review",
+      "claimId": "claim.synergy.material-device-transfer",
+      "relation": "contextualizes",
+      "directness": "component_evidence",
+      "studyDesign": "Systematic synthesis, not new experiment",
+      "applicability": "Systematic synthesis, not new experiment",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Review did not establish adverse internal physiological effects of static fields. Its evidence points to a sensory surface route, not 42-fold internal penetration.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Systematic review of eight human and forty vertebrate studies. Supports superficial hair/skin stimulation as the main basis of conscious static-field detection; discusses earlier combined AC/DC perception observations.",
+      "provenance": {
+        "studyIds": [
+          "study.petri2017_static_review"
+        ],
+        "datasetFamilyIds": [
+          "dataset.petri2017-static-review"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.synergy.state-conditioned-coexposure.greco2025_resonant_convergence",
+      "referenceId": "greco2025_resonant_convergence",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "relation": "contextualizes",
+      "directness": "component_evidence",
+      "studyDesign": "Integrative theoretical review",
+      "applicability": "Integrative theoretical review",
+      "calibrationRole": "context_only",
+      "limitations": [
+        "Do not count mechanisms converging on one downstream pathway as independent measured gains. Does not map clothing E-field spectra to an ion-cyclotron magnetic-field protocol.",
+        "No validation of Lindgren geometry or calibration of the complete BERM L2-to-human-endpoint route."
+      ],
+      "curatorId": "berm-combined-exposures-integration",
+      "curatedAt": "2026-09-08",
+      "curatorNote": "Narrative review proposing convergence among ICR-like, QED-coherence, thermomagnetic and related EM mechanisms. It synthesizes hypotheses around shared calcium/calmodulin signalling; it is not an experimental comparison of all mechanisms.",
+      "provenance": {
+        "studyIds": [
+          "study.greco2025_resonant_convergence"
+        ],
+        "datasetFamilyIds": [
+          "dataset.greco2025-resonant-convergence"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -12162,6 +13080,75 @@
       "assessorId": "berm-proxy-demography-integration",
       "assessedAt": "2026-09-08",
       "note": "Conditional micro-to-demographic composition; sources constrain separate components. Historical exposure shares and the L2 biological calibration remain open."
+    },
+    {
+      "id": "ea.synergy.state-conditioned-coexposure.v1",
+      "claimId": "claim.synergy.state-conditioned-coexposure",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.synergy.state-conditioned-coexposure.sun2023_ru360_rf_damage",
+        "er.synergy.state-conditioned-coexposure.luukkonen2009_menadione_rf",
+        "er.synergy.state-conditioned-coexposure.kang2014_rf_ros_coexposure",
+        "er.synergy.state-conditioned-coexposure.galvanovskis1997_stochastic",
+        "er.synergy.state-conditioned-coexposure.bezrukov1995_ion_channel_noise",
+        "er.synergy.state-conditioned-coexposure.greco2025_resonant_convergence"
+      ],
+      "assessorId": "berm-combined-exposures-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Positive compositional inference from protocol-specific experiments and component studies. Shared cohorts and review/model sources retain their roles; input transfer, L2 coupling and human endpoint magnitude remain open."
+    },
+    {
+      "id": "ea.synergy.contraceptive-receiver-state.v1",
+      "claimId": "claim.synergy.contraceptive-receiver-state",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.synergy.contraceptive-receiver-state.sarkar2008_estrogen_channels",
+        "er.synergy.contraceptive-receiver-state.sun2010_gnrh_calcium",
+        "er.synergy.contraceptive-receiver-state.degroote2009_contraceptive_redox",
+        "er.synergy.contraceptive-receiver-state.panzer2006_shbg",
+        "er.synergy.contraceptive-receiver-state.yland2020_return_fertility",
+        "er.synergy.contraceptive-receiver-state.bowling1997_ethinyl_calcium",
+        "er.synergy.contraceptive-receiver-state.chen2018_contraceptive_redox",
+        "er.synergy.contraceptive-receiver-state.fuller2022_coc_mitochondrial_redox",
+        "er.synergy.contraceptive-receiver-state.clapporganski2025_coc_gut",
+        "er.synergy.contraceptive-receiver-state.terrazas2025_coc_gut",
+        "er.synergy.contraceptive-receiver-state.paul2025_coc_duration_preprint",
+        "er.synergy.contraceptive-receiver-state.landersoe2020_coc_recovery"
+      ],
+      "assessorId": "berm-combined-exposures-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Positive compositional inference from protocol-specific experiments and component studies. Shared cohorts and review/model sources retain their roles; input transfer, L2 coupling and human endpoint magnitude remain open."
+    },
+    {
+      "id": "ea.synergy.material-device-transfer.v1",
+      "claimId": "claim.synergy.material-device-transfer",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.synergy.material-device-transfer.feldmann1967_skin_penetration",
+        "er.synergy.material-device-transfer.shafik1992",
+        "er.synergy.material-device-transfer.shafik1992_sling",
+        "er.synergy.material-device-transfer.moeloek1995_sling",
+        "er.synergy.material-device-transfer.minguez2018_underwear",
+        "er.synergy.material-device-transfer.kursawe2021_combined_fields",
+        "er.synergy.material-device-transfer.jankowiak2026_hair_perception",
+        "er.synergy.material-device-transfer.kang2002_pocket_sar",
+        "er.synergy.material-device-transfer.miclaus2017_fabric_phone_sar",
+        "er.synergy.material-device-transfer.hu2024_testis_microplastics",
+        "er.synergy.material-device-transfer.icnirp2020",
+        "er.synergy.material-device-transfer.petri2017_static_review"
+      ],
+      "assessorId": "berm-combined-exposures-integration",
+      "assessedAt": "2026-09-08",
+      "note": "Positive compositional inference from protocol-specific experiments and component studies. Shared cohorts and review/model sources retain their roles; input transfer, L2 coupling and human endpoint magnitude remain open."
     }
   ],
   "routes": [
