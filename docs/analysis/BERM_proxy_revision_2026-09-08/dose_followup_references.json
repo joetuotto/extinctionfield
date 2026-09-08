@@ -1,0 +1,41 @@
+{
+  "references": [
+    {
+      "id": "iorio2011_sperm_mitochondria",
+      "authors": "Iorio R, Delle Monache S, Bennato F, Di Bartolomeo C, Scrimaglio R, Cinque B, Colonna RC",
+      "year": 2011,
+      "title": "Involvement of mitochondrial activity in mediating ELF-EMF stimulatory effect on human sperm motility",
+      "journal": "Bioelectromagnetics 32(1):15–27",
+      "doi": "10.1002/bem.20602",
+      "pmid": "20690107",
+      "pmcid": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20690107/",
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": null,
+      "type": "journal",
+      "finding": null,
+      "tags": ["human sperm", "ELF", "mitochondria", "motility", "pharmacological intervention"],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "curated_primary_metadata",
+      "aliases": [],
+      "link_checked_at": "2026-09-08"
+    }
+  ],
+  "existing_reference_audit": [
+    {
+      "referenceId": "iuliis2009",
+      "source": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006446",
+      "finding": "Figure5B: mitochondrial ROS versus DNA fragmentation R²=0.861. Figure4B: mitochondrial ROS versus oxidative DNA damage (8-OHdG) R²=0.727. These are intracellular associations across the same RF dose series; neither is a SAR-to-population-fertility regression. Public component adds both values with their measured endpoints."
+    },
+    {
+      "referenceId": "iuliis2013_correction",
+      "source": "https://journals.plos.org/plosone/article?id=10.1371/annotation/9a8a0172-3850-4059-b852-72c330769c1b",
+      "finding": "Rechecked2026-09-08: correction replaces Figure1D data and changes biological replicate count for Figures1–5 from4 to3. It does not replace the Figure4B/5B R² values."
+    }
+  ],
+  "verification": "Iorio title/authors/DOI/PMID verified from Europe PMC core primary record; protocol and pharmacological endpoint from the original abstract, also hosted at https://ricerca.univaq.it/handle/11697/4772. Exact drug concentrations were not recovered and are not stated in the component. DOI and title checked against canonical bibliography before proposing this record. No canonical edits by this agent."
+}

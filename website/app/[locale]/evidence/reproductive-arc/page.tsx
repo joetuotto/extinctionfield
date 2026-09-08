@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import { BiologicalCoordinationContext } from "@/components/BiologicalCoordinationContext";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -220,6 +221,8 @@ export default async function ReproductiveArcPage({ params }: { params: Promise<
         <Link href={`${prefix}/evidence`} className="text-sm text-accent hover:underline">{d.backLink}</Link>
       </p>
       <PageHeader icon={Heart} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
       <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
 
       <BiologicalCoordinationContext locale={locale} context="reproduction" />

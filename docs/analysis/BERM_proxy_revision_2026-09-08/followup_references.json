@@ -1,0 +1,41 @@
+{
+  "scope": "Two additional primary experiments introduced by the user-requested cross-species follow-up. These are additions after quantitative_references.json was delivered.",
+  "references": [
+    {
+      "id": "dong2022_dog_phone_semen",
+      "authors": "Dong VNK, Tantisuwat L, Setthawong P, Tharasanit T, Sutayatram S, Kijtawornrat A",
+      "year": 2022,
+      "title": "The Preliminary Chronic Effects of Electromagnetic Radiation from Mobile Phones on Heart Rate Variability, Cardiac Function, Blood Profiles, and Semen Quality in Healthy Dogs",
+      "journal": "Veterinary Sciences",
+      "doi": "10.3390/vetsci9050201",
+      "pmid": "35622729",
+      "pmcid": "PMC9147188",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9147188/",
+      "type": "journal",
+      "finding": "Seven analysed male beagles showed no significant change in measured semen endpoints after a 10-week mobile-phone protocol at 1962–1966 MHz, 120 one-minute ringing periods/day, five days/week, with two phones on the chest. The quoted 0.96 W/kg was manufacturer phone SAR, not canine testis dosimetry; comparison was to baseline without a concurrent sham group.",
+      "verified": true,
+      "verification": "Full primary XML checked via Europe PMC. Eight recruited, one excluded at baseline for ventricular ectopy, seven analysed. Semen at baseline/weeks 5/10. Mean motility 83.0/80.0/85.0%; no significant differences in semen volume, sperm concentration, morphology, motility, viability or DNA integrity.",
+      "link_status": "verified",
+      "link_source": "primary_full_text",
+      "link_checked_at": "2026-09-08"
+    },
+    {
+      "id": "berlinguer2017_stallion_reac",
+      "authors": "Berlinguer F, Pasciu V, Succu S, Cossu I, Caggiu S, Addis D, Castagna A, Fontani V, Rinaldi S, Sanna Passino E",
+      "year": 2017,
+      "title": "REAC technology as optimizer of stallion spermatozoa liquid storage",
+      "journal": "Reproductive Biology and Endocrinology",
+      "doi": "10.1186/s12958-017-0229-6",
+      "pmid": "28179013",
+      "pmcid": "PMC5299698",
+      "url": "https://link.springer.com/article/10.1186/s12958-017-0229-6",
+      "type": "journal",
+      "finding": "In paired aliquots from sixteen ejaculates of eight stallions, a 2.4 GHz REAC device with contact electrodes immersed in semen medium preserved DNA and acrosome integrity and antioxidant measures during 72-hour storage at 4 °C. Progressive motility and viability did not improve. The result concerns the combined device intervention, not an isolated environmental RF exposure.",
+      "verified": true,
+      "verification": "Publisher full text and Europe PMC XML checked. Treated/control samples were held in separate refrigerators. Numerical tissue/sample SAR and a dose gradient were not supplied. Two authors declared that they invented the REAC technology. Several p-value inequality typos occur in abstract/figure captions; finding uses the result direction and body text, not those typos.",
+      "link_status": "verified",
+      "link_source": "primary_full_text",
+      "link_checked_at": "2026-09-08"
+    }
+  ]
+}

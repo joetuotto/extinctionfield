@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-08",
-    "referencesWithUsages": 827,
-    "usageLocations": 2532
+    "referencesWithUsages": 842,
+    "usageLocations": 2566
   },
   "usage": {
     "delgado1969": [
@@ -67,6 +67,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       },
       {
         "path": "/objections",
@@ -2057,6 +2061,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "app/[locale]/model/biological-coordination/page.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "fowler2010_cooperation_cascades": [
@@ -2155,6 +2163,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       },
       {
         "path": "/predictions",
@@ -2299,6 +2311,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "jurgelis2022_sleep_effort": [
@@ -2395,6 +2411,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "lim2026_sleep_learning": [
@@ -2461,6 +2481,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "eisenegger2010_testosterone_fairness": [
@@ -2571,6 +2595,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "paluck2016_network_conflict": [
@@ -2823,6 +2851,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       }
     ],
     "sherrard2018": [
@@ -3669,6 +3701,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
       }
     ],
     "yu2019_btb": [
@@ -4383,6 +4419,10 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       }
     ],
     "hore2016_v2": [
@@ -4953,6 +4993,10 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
       }
     ],
     "houston2016": [
@@ -5519,6 +5563,10 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      },
+      {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       },
@@ -5973,6 +6021,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       }
     ],
     "avendao2012": [
@@ -6567,6 +6619,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       },
       {
         "path": "/modulome/pain",
@@ -8029,6 +8085,10 @@
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMeasuredExposureEvidence.tsx"
       }
     ],
     "sato2023_ih_preterm": [
@@ -8865,6 +8925,10 @@
       {
         "path": "/evidence",
         "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
       }
     ],
     "kalmijn1971": [
@@ -9111,6 +9175,10 @@
       {
         "path": "/model/math",
         "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       },
       {
         "path": "/modulome/testes",
@@ -9921,6 +9989,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
       }
     ],
     "gettler2011_fatherhood_testosterone": [
@@ -9935,6 +10007,10 @@
       {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "sci-rep-2019-sperm-ros": [
@@ -11619,6 +11695,12 @@
         "source": "app/[locale]/model/proxy-masking/page.tsx"
       }
     ],
+    "stone2025_amish_demography": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "lib/proxyExplanationsData.ts"
+      }
+    ],
     "neubauer1990_rf_endothelial_uptake": [
       {
         "path": "/model/proxy-masking",
@@ -11647,6 +11729,90 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ProxyBarrierEvidence.tsx"
+      }
+    ],
+    "sumner2019_human_dog_sperm": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "olson2000_toxicity_concordance": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "ineichen2024_translation": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "dong2022_dog_phone_semen": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "berlinguer2017_stallion_reac": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "hayes2010_atrazine_frogs": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyComparativeEvidence.tsx"
+      }
+    ],
+    "lundstrom2013_newborn_odor": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "coan2006_handholding": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "dhillo2007_kisspeptin_cycle": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "desmurget2009_movement_intention": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "pew2024_childless_reasons": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      }
+    ],
+    "iorio2011_sperm_mitochondria": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
+      }
+    ],
+    "iuliis2013_correction": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMechanismEvidence.tsx"
+      }
+    ],
+    "rahban2023_phone_semen": [
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyMeasuredExposureEvidence.tsx"
       }
     ],
     "glomerulosa_cav32_aldosterone": [

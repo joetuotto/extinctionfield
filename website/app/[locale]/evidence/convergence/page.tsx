@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GitMerge, ArrowRight } from "lucide-react";
@@ -203,6 +204,7 @@ export default async function ConvergencePage({ params }: { params: Promise<{ lo
       <div className="grid gap-4">{d.axes.map((axis) => <div key={axis.title} className="border-l-2 border-accent/40 pl-4"><h3 className="mb-2 text-base font-semibold">{axis.title}</h3>{p(axis.text)}</div>)}</div>
       {p(d.gate)}<Link href={`/${locale}/physics`} className="inline-block text-sm text-accent hover:underline">{d.physicsLink}</Link>
     </ExplanationSection>
+    <SteroidogenesisIntegrationPanel locale={locale} focus="overview" />
     {d.chains.map((chain) => <ExplanationSection key={chain.id} id={chain.id} title={chain.title}>
       <ol className="grid gap-3 rounded-lg bg-accent/5 p-4 sm:grid-cols-3 sm:p-5">
         {[{ label: d.inputLabel, value: chain.input }, { label: d.interfaceLabel, value: chain.interface }, { label: d.outputLabel, value: chain.output }].map((item, i) => <li key={item.label} className="relative min-w-0"><p className="mb-2 flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-wider text-accent">{i > 0 && <ArrowRight size={11} aria-hidden="true" />}{item.label}</p><p className="text-sm font-medium leading-6">{item.value}</p></li>)}

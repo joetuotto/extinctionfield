@@ -1,3 +1,4 @@
+import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import { pickCopy } from "@/lib/i18n";
 import { FieldStateStatus } from "@/components/FieldStateStatus";
@@ -902,6 +903,9 @@ export default async function DataPage({
           {d.subtitle}
         </p>
       </header>
+      <SteroidogenesisCalibrationNote locale={locale} />
+      <p className="mb-10 text-sm"><a href="/data/steroidogenesis.json" className="text-accent hover:underline">{pickCopy({ en: "Calcium–redox–steroidogenesis: research catalogue and model structure (JSON)", fi: "Kalsium–redox–steroidogeneesi: tutkimusluettelo ja mallirakenne (JSON)", ja: "カルシウム・酸化還元・ステロイド産生：研究一覧とモデル構造（JSON）", fr: "Calcium–redox–stéroïdogenèse : catalogue et structure du modèle (JSON)", ko: "칼슘–산화환원–스테로이드 생성: 연구 목록과 모델 구조 (JSON)" }, locale)} →</a></p>
+
 
       <section className="mb-14">
         <FieldStateStatus locale={locale} />

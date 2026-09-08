@@ -1,3 +1,4 @@
+import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
 import { InterventionExplorer } from "@/components/InterventionExplorer";
 import Link from "next/link";
@@ -130,6 +131,8 @@ export default async function BiologicalCoordinationPage({ params }: { params: P
       <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
         <Link href={`/${locale}/model`} className="mb-6 inline-block text-sm text-accent hover:underline">{d.back}</Link>
         <PageHeader icon={Activity} title={d.title} subtitle={d.subtitle} />
+
+      <SteroidogenesisIntegrationPanel locale={locale} focus="clock" />
         <p className="mb-10 max-w-3xl text-lg leading-relaxed">{d.lead}</p>
         <div className="space-y-12">
           <section className={sectionClass} id="geometric-bridge">

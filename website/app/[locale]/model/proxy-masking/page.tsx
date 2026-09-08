@@ -8,6 +8,12 @@ import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { MathBlock } from "@/components/MathBlock";
 import { PageHeader } from "@/components/PageHeader";
 import { ExplanatoryLevelsDiagram, ProxyMaskingCurveExplorer } from "@/components/ProxyCausalVisuals";
+import { ProxyInfrastructureEvidence } from "@/components/ProxyInfrastructureEvidence";
+import { ProxyMeasuredExposureEvidence } from "@/components/ProxyMeasuredExposureEvidence";
+import { ProxyMaskingLevels } from "@/components/ProxyMaskingLevels";
+import { ProxyMechanismEvidence } from "@/components/ProxyMechanismEvidence";
+import { ProxyHumanSensoryEvidence, ProxyInterpreterEvidence, ProxySyndromeEvidence } from "@/components/ProxyBehaviourEvidence";
+import { ProxyTranslationEvidence, ProxyQuantitativeEvidence, ProxyCoverageMatrix } from "@/components/ProxyComparativeEvidence";
 import { ProxyBarrierEvidence } from "@/components/ProxyBarrierEvidence";
 import { ProxyPremises, ProxyDeductions } from "@/components/ProxyPremises";
 import { ProxyExplanationsExplorer } from "@/components/ProxyExplanationsExplorer";
@@ -33,6 +39,7 @@ const COPY = {
     reading: "On this page",
     readingHint: "Follow the explanation from a familiar example to biological mechanisms, comparisons and the model’s synthesis.",
     sections: [
+      "The mechanism behind the proxy",
       "An explanation within a longer chain",
       "A correlation does not identify the causal path",
       "The same cue, a different receiver",
@@ -41,6 +48,7 @@ const COPY = {
       "What other species reveal",
       "What a group label contains",
       "From biological state to a reported reason",
+      "Fragmentation of a behavioural profile",
       "Why the shared causal structure explains more",
       "How BERM joins the evidence",
     ],
@@ -167,10 +175,10 @@ const COPY = {
       visualKey: "The causal diagram and response curves explain specified mechanisms using illustrative values. They are not measured exposure histories or fitted human dose–response curves. The Amish activity figure uses published group measurements, with different units shown in separate panels. Original studies are linked beside the relevant claim.",
       branchesTitle: "Four connected evidence branches",
       branches: [
-        { title: "Heavy metals", text: "Internal dose and chemical conditions of a response.", href: "/evidence/heavy-metal-synergy" },
-        { title: "Klimentidis", text: "Animal weight trends and the cause of an intermediate behaviour.", href: "/evidence/klimentidis-explained" },
-        { title: "Ecology", text: "Environmental cues, sensory function and consequences between species.", href: "/evidence/ecology" },
-        { title: "Amish comparisons", text: "From a community label to measured material pathways.", href: "/evidence/amish-control" },
+        { title: "Mechanistic chain", text: "Transport, internal dose and the interaction between fields and chemicals.", href: "/evidence/heavy-metal-synergy" },
+        { title: "Cross-species comparisons", text: "Shared biology and the functions that reveal environmental changes.", href: "/evidence/ecology" },
+        { title: "Community comparisons", text: "From a community label to measured material pathways.", href: "/evidence/amish-control" },
+        { title: "Pharmacological interventions", text: "What blocking, enhancing or restoring a process reveals about the causal chain.", href: "/evidence/pharmacology" },
       ],
     },
   },
@@ -187,6 +195,7 @@ const COPY = {
     reading: "Tällä sivulla",
     readingHint: "Lukupolku etenee tutusta esimerkistä biologisiin mekanismeihin, vertailuaineistoihin ja mallin synteesiin.",
     sections: [
+      "Mekanismi, jonka proksi peittää",
       "Selitys pidemmän ketjun sisällä",
       "Korrelaatio ei nimeä vaikutusreittiä",
       "Sama vihje, erilainen vastaanottaja",
@@ -195,6 +204,7 @@ const COPY = {
       "Mitä muut lajit paljastavat?",
       "Mitä ryhmänimi sisältää?",
       "Biologisesta tilasta koettuun syyhyn",
+      "Käyttäytymisprofiilin fragmentaatio",
       "Miksi yhteinen syyrakenne selittää enemmän",
       "Miten BERM yhdistää näytön?",
     ],
@@ -321,10 +331,10 @@ const COPY = {
       visualKey: "Kausaalikaavio ja vastekäyrät selittävät nimettyjä mekanismeja havainnollistavilla arvoilla. Ne eivät ole mitattuja altistushistorioita tai sovitettuja ihmisen annos–vastekäyriä. Amish-aktiivisuuskuva käyttää julkaistuja ryhmämittauksia, joiden eri yksiköt esitetään erillisissä paneeleissa. Alkuperäistutkimukset on linkitetty niitä koskevan väitteen yhteyteen.",
       branchesTitle: "Neljä toisiinsa liittyvää evidenssihaaraa",
       branches: [
-        { title: "Raskasmetallit", text: "Sisäinen annos ja vasteen kemialliset ehdot.", href: "/evidence/heavy-metal-synergy" },
-        { title: "Klimentidis", text: "Eläinten painokehitys ja käyttäytymisen aikaisempi syy.", href: "/evidence/klimentidis-explained" },
-        { title: "Ekologia", text: "Ympäristön vihjeet, aistitoiminnot ja lajien väliset seuraukset.", href: "/evidence/ecology" },
-        { title: "Amish-vertailut", text: "Yhteisönimestä mitattuihin materiaalisiin reitteihin.", href: "/evidence/amish-control" },
+        { title: "Mekanistinen ketju", text: "Kuljetus, sisäinen annos sekä kentän ja kemikaalin yhteisvaikutus.", href: "/evidence/heavy-metal-synergy" },
+        { title: "Lajienväliset vertailut", text: "Yhteinen biologia ja ympäristömuutoksia paljastavat toiminnot.", href: "/evidence/ecology" },
+        { title: "Yhteisövertailut", text: "Yhteisönimestä mitattuihin materiaalisiin reitteihin.", href: "/evidence/amish-control" },
+        { title: "Farmakologiset interventiot", text: "Mitä prosessin estäminen, voimistaminen tai palauttaminen kertoo vaikutusketjusta.", href: "/evidence/pharmacology" },
       ],
     },
   },
@@ -333,7 +343,7 @@ const COPY = {
   ko: {},
 } as const;
 
-const SECTION_IDS = ["causal-chain", "proxy-explanations", "receiver-state", "joint-exposures", "compensation", "sentinel-species", "community-proxies", "experienced-reasons", "explanatory-parsimony", "berm-synthesis"] as const;
+const SECTION_IDS = ["hidden-mechanism", "causal-chain", "proxy-explanations", "receiver-state", "joint-exposures", "compensation", "sentinel-species", "community-proxies", "experienced-reasons", "syndrome-fragmentation", "explanatory-parsimony", "berm-synthesis"] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -370,6 +380,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
           <p className="text-lg leading-[1.85] sm:text-xl">{d.intro}</p>
           {paragraph(d.definition)}
           {paragraph(d.proposal)}
+          <ProxyMaskingLevels locale={locale} />
           <div className="border-l-2 border-accent py-2 pl-5">
             <p className="editorial-kicker mb-2">{d.proposalLabel}</p>
             <p className="font-serif text-xl leading-relaxed sm:text-2xl">{d.centralQuestion}</p>
@@ -390,27 +401,34 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
 
           <div className="min-w-0 space-y-12 sm:space-y-16">
             {section(0, <>
-              {paragraph(d.first.lead)}
               <ProxyPremises locale={locale} />
+              <ProxyMechanismEvidence locale={locale} />
+            </>)}
+
+            {section(1, <>
+              {paragraph(d.first.lead)}
               {paragraph(d.first.graphLead)}
               <ProxyMaskingCurveExplorer locale={locale} />
               <ProxyDeductions locale={locale} />
               {context(d.first.context)}
             </>)}
 
-            {section(1, <>
+            {section(2, <>
               {paragraph(d.proxies.lead)}
               {paragraph(d.proxies.definition)}
               <ProxyExplanationsExplorer locale={locale} />
               <RedoxReserveMasking locale={locale} />
+              <ProxyMeasuredExposureEvidence locale={locale} />
+              <ProxyInfrastructureEvidence locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.proxies.sourcesTitle}</h3>{paragraph(d.proxies.sources)}</div>
               {context(d.proxies.context)}
             </>)}
 
-            {section(2, <>
+            {section(3, <>
               {paragraph(d.receiver.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.proxy.sensory-receiver-state">{d.receiver.claim}</ClaimRef></p>
               <ReceiverStateExplorer locale={locale} />
+              <ProxyHumanSensoryEvidence locale={locale} />
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.receiver.ipmTitle}</h3>{paragraph(d.receiver.ipm)}</div>
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.receiver.oxytocinTitle}</h3>{paragraph(d.receiver.oxytocin)}</div>
               {context(d.receiver.context)}
@@ -423,7 +441,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               </div>
             </>)}
 
-            {section(3, <>
+            {section(4, <>
               {paragraph(d.mixtures.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.proxy.chemical-field-conditions">{d.mixtures.claim}</ClaimRef></p>
               {paragraph(d.mixtures.internalDose)}
@@ -434,7 +452,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {link("/evidence/heavy-metal-synergy", d.mixtures.link)}
             </>)}
 
-            {section(4, <>
+            {section(5, <>
               {paragraph(d.compensation.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.proxy.compensated-endpoint">{d.compensation.claim}</ClaimRef></p>
               {paragraph(d.compensation.study)}
@@ -442,7 +460,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {context(d.compensation.context)}
             </>)}
 
-            {section(5, <>
+            {section(6, <>
               {paragraph(d.species.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.proxy.comparative-mediator-question">{d.species.claim}</ClaimRef></p>
               {paragraph(d.species.klimentidis)}
@@ -452,11 +470,13 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
                 <div className="hidden grid-cols-[1fr_1.4fr_1.6fr] gap-4 border-b border-card-border pb-3 text-xs font-semibold text-foreground-muted sm:grid" aria-hidden="true">{d.species.tableHeaders.map((heading) => <span key={heading}>{heading}</span>)}</div>
                 <ul className="divide-y divide-card-border">{d.species.rows.map((row) => <li key={row.name} className="grid gap-3 py-5 sm:grid-cols-[1fr_1.4fr_1.6fr] sm:gap-4"><div><h4 className="text-sm font-semibold">{row.name}</h4><div className="mt-2 text-xs"><InlineReferenceText text={row.source} locale={locale} /></div></div><p className="text-sm leading-relaxed text-foreground-muted"><span className="mr-1 font-medium text-foreground sm:sr-only">{d.species.tableHeaders[1]} </span>{row.measured}</p><p className="text-sm leading-relaxed text-foreground-muted"><span className="mr-1 font-medium text-foreground sm:sr-only">{d.species.tableHeaders[2]} </span>{row.role}</p></li>)}</ul>
               </div>
+              <ProxyTranslationEvidence locale={locale} />
+              <ProxyQuantitativeEvidence locale={locale} />
               {context(d.species.context)}
               {link("/evidence/ecology", d.species.link)}
             </>)}
 
-            {section(6, <>
+            {section(7, <>
               {paragraph(d.community.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.proxy.environmental-group-interpretation">{d.community.claim}</ClaimRef></p>
               {paragraph(d.community.chartLead)}
@@ -466,25 +486,29 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
               {link("/evidence/amish-control", d.community.link)}
             </>)}
 
-            {section(7, <>
+            {section(8, <>
               {paragraph(d.reasons.lead)}
               <p className="text-base font-medium leading-relaxed"><ClaimRef claimId="claim.behavior.reported-reasons">{d.reasons.claim}</ClaimRef></p>
               {paragraph(d.reasons.text)}
+              <ProxyInterpreterEvidence locale={locale} />
               {paragraph(d.reasons.distinction)}
               {context(d.reasons.context)}
               <div className="flex flex-wrap gap-x-6 gap-y-4">{link("/behavior", d.reasons.link)}{link("/civilization/epistapege", d.reasons.epistapegeLink)}</div>
             </>)}
 
-            {section(8, <>
+            {section(9, <ProxySyndromeEvidence locale={locale} />)}
+
+            {section(10, <>
               {paragraph(d.parsimony.lead)}
               <ExplanatoryLevelsDiagram locale={locale} />
+              <ProxyCoverageMatrix locale={locale} />
               <div className="divide-y divide-card-border">{d.parsimony.points.map((point) => <div key={point.title} className="space-y-3 py-5"><h3 className="text-lg font-semibold">{point.title}</h3>{paragraph(point.text)}</div>)}</div>
               <div className="space-y-3"><h3 className="text-lg font-semibold">{d.parsimony.aggregationTitle}</h3>{paragraph(d.parsimony.aggregation)}</div>
               <div className="space-y-3 border-l-2 border-accent pl-5"><h3 className="text-lg font-semibold">{d.parsimony.comparisonTitle}</h3>{paragraph(d.parsimony.comparison)}</div>
               {paragraph(d.parsimony.economy)}
             </>)}
 
-            {section(9, <>
+            {section(11, <>
               {paragraph(d.synthesis.lead)}
               <dl className="grid gap-x-7 gap-y-6 sm:grid-cols-2">{d.synthesis.levels.map((level, index) => <div key={level.title} className="border-t-2 border-card-border pt-4"><dt className="mb-2 text-sm font-semibold"><span className="mr-2 font-mono text-xs text-accent" aria-hidden="true">{index + 1}.</span>{level.title}</dt><dd className="text-sm leading-relaxed text-foreground-muted">{level.text}</dd></div>)}</dl>
               <details className="group min-w-0 rounded-lg border border-card-border bg-figure-bg p-5 sm:p-6">
@@ -507,7 +531,7 @@ export default async function ProxyMaskingPage({ params }: { params: Promise<{ l
                 <h3 className="mb-5 text-lg font-semibold">{d.synthesis.branchesTitle}</h3>
                 <div className="grid gap-4 sm:grid-cols-2">{d.synthesis.branches.map((branch) => <Link key={branch.href} href={`/${locale}${branch.href}`} className="group rounded-lg border border-card-border p-5 transition-colors hover:border-accent/60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"><div className="mb-2 flex items-center justify-between gap-3"><h4 className="text-base font-semibold group-hover:text-accent">{branch.title}</h4><ArrowUpRight className="size-4 shrink-0 text-accent" aria-hidden="true" /></div><p className="text-sm leading-relaxed text-foreground-muted">{branch.text}</p></Link>)}</div>
               </nav>
-              <a href="#causal-chain" className="inline-flex items-center gap-2 text-sm text-accent hover:underline"><ArrowDown className="size-4 rotate-180" aria-hidden="true" />{d.sections[0]}</a>
+              <a href="#hidden-mechanism" className="inline-flex items-center gap-2 text-sm text-accent hover:underline"><ArrowDown className="size-4 rotate-180" aria-hidden="true" />{d.sections[0]}</a>
             </>)}
           </div>
         </div>
