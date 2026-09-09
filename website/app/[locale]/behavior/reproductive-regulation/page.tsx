@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Brain, HeartHandshake, Route, Sprout } from "lucide-react";
+import { ArrowDown, ArrowRight, HeartHandshake, Route, Sprout } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { ModelReadingPath } from "@/components/ModelReadingPath";
-import { PageHeader } from "@/components/PageHeader";
 import { StudyCitation } from "@/components/StudyCitation";
 import { TranslationNotice } from "@/components/TranslationNotice";
 import { ReproductiveRegulationAxes } from "@/components/ReproductiveRegulationAxes";
 import { ReproductiveRegulationEvidence } from "@/components/ReproductiveRegulationEvidence";
 import { REPRODUCTIVE_REGULATION, regulationFamily, regulationText as tx } from "@/lib/reproductiveRegulation";
 import { pickCopy } from "@/lib/i18n";
+import styles from "./hero.module.css";
 
 const COPY = {
   en: {
@@ -159,10 +160,25 @@ export default async function ReproductiveRegulationPage({ params }: { params: P
   };
   return <article>
     <TranslationNotice copy={COPY} locale={locale} />
-    <div className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
-      <div className="mb-8 border-b editorial-rule pb-5"><ModelReadingPath locale={locale} current="behavior" /><Link href={`/${locale}/behavior`} className="mt-4 inline-block text-xs text-accent hover:underline">← {c.back}</Link></div>
-      <PageHeader icon={Brain} title={c.title} subtitle={c.subtitle} />
-      <p className="mb-8 max-w-4xl text-lg leading-8 sm:text-xl">{c.lead}</p>
+    <header className={styles.hero} aria-labelledby="reproductive-regulation-title">
+      <Image
+        src="/images/reproductive-regulation-hero-v1.png"
+        alt=""
+        fill
+        sizes="(min-width: 1536px) 1488px, 100vw"
+        preload
+        className={styles.artwork}
+      />
+      <div className={styles.veil} aria-hidden="true" />
+      <div className={styles.copy}>
+        <Link href={`/${locale}/behavior`} className={styles.back}>← {c.back}</Link>
+        <h1 id="reproductive-regulation-title" className={styles.title}>{c.title}</h1>
+        <p className={styles.deck}>{c.subtitle}</p>
+        <p className={styles.lead}>{c.lead}</p>
+      </div>
+    </header>
+    <div className="mx-auto max-w-6xl px-5 pb-10 sm:px-6 sm:pb-14">
+      <div className="my-8"><ModelReadingPath locale={locale} current="behavior" /></div>
       <nav aria-label={c.contents} className="mb-12 flex flex-wrap gap-x-5 gap-y-3 border-y editorial-rule py-5">{ANCHORS.map((id, index) => <a key={id} href={`#${id}`} className="text-sm text-accent hover:underline">{c.nav[index]}</a>)}</nav>
       <div className="space-y-14 sm:space-y-20">
         <section id="three-branches" className="scroll-mt-28 space-y-5"><h2 className="editorial-section-heading">{c.structureTitle}</h2>{p(c.structureIntro)}

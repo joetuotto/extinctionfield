@@ -1,0 +1,126 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 1488px;
+  margin: 24px auto 0;
+  background: #f5eddf;
+  color: #26302e;
+  border: 1px solid rgb(126 105 75 / 16%);
+  border-radius: 4px;
+}
+
+.artwork {
+  z-index: -2;
+  top: 50% !important;
+  bottom: auto !important;
+  height: auto !important;
+  transform: translateY(-50%);
+  object-fit: contain;
+  object-position: center;
+  mask-image: linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #f6eee2 0%, rgb(246 238 226 / 97%) 25%, rgb(246 238 226 / 82%) 35%, transparent 51%);
+}
+
+.copy {
+  width: 39%;
+  padding: 52px 0 56px 48px;
+  min-height: 640px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-bottom: 18px;
+  color: #526459;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .035em;
+  text-underline-offset: 4px;
+}
+
+.back:hover { text-decoration: underline; }
+.back:focus-visible { outline: 2px solid #526459; outline-offset: 4px; }
+
+.title {
+  margin: 0;
+  color: #26302e;
+  font-size: clamp(2.5rem, 3.6vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.deck {
+  margin-top: 24px;
+  color: #394a43;
+  font-size: 18px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.lead {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(83 103 91 / 25%);
+  color: #45524b;
+  font-size: 15px;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+@media (min-width: 1024px) and (max-width: 1535px) {
+  .hero { margin-inline: 24px; }
+}
+
+@media (max-width: 1023px) {
+  .hero { margin: 16px 16px 0; }
+  .artwork {
+    top: 0 !important;
+    height: 400px !important;
+    transform: none;
+    object-fit: cover;
+    object-position: right top;
+    mask-image: none;
+  }
+  .veil {
+    background: linear-gradient(180deg, transparent 0%, rgb(246 238 226 / 10%) 24%, rgb(246 238 226 / 94%) 48%, #f6eee2 68%);
+  }
+  .copy {
+    width: 100%;
+    min-height: 0;
+    padding: 300px 40px 40px;
+  }
+  .back { margin-bottom: 12px; }
+  .title { max-width: 720px; font-size: clamp(2.4rem, 5.8vw, 3.25rem); }
+  .deck, .lead { max-width: 680px; }
+}
+
+@media (max-width: 599px) {
+  .hero { margin: 12px 12px 0; }
+  .artwork {
+    /* Trim the empty desktop text area while retaining all three illustrated branches. */
+    left: auto !important;
+    right: 0 !important;
+    width: 150% !important;
+    max-width: none;
+    height: auto !important;
+    object-fit: contain;
+  }
+  .veil {
+    background: linear-gradient(180deg, transparent 0, rgb(246 238 226 / 5%) 150px, rgb(246 238 226 / 92%) 235px, #f6eee2 300px);
+  }
+  .copy { padding: 205px 24px 32px; }
+  .title { font-size: clamp(2rem, 8vw, 2.65rem); line-height: 1.09; }
+  .deck { margin-top: 20px; font-size: 16px; line-height: 1.7; }
+  .lead { margin-top: 20px; padding-top: 18px; font-size: 14px; line-height: 1.8; }
+}

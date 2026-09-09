@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T10:58:56.311Z",
+  "generatedAt": "2026-09-09T11:56:19.471Z",
   "anchors": [
     {
       "claimId": "claim.androgen.binding-availability",
@@ -76,7 +76,7 @@
     {
       "claimId": "claim.behavior.behaviour-to-opportunity",
       "file": "app/[locale]/behavior/reproductive-regulation/page.tsx",
-      "line": 183
+      "line": 199
     },
     {
       "claimId": "claim.behavior.behaviour-to-opportunity",
@@ -1193,7 +1193,7 @@
     {
       "claimId": "claim.reproduction.caregiving-allocation",
       "file": "app/[locale]/behavior/reproductive-regulation/page.tsx",
-      "line": 178
+      "line": 194
     },
     {
       "claimId": "claim.reproduction.caregiving-allocation",
@@ -1229,7 +1229,7 @@
     {
       "claimId": "claim.reproduction.selective-regulation",
       "file": "app/[locale]/behavior/reproductive-regulation/page.tsx",
-      "line": 177
+      "line": 193
     },
     {
       "claimId": "claim.reproduction.selective-regulation",
@@ -1250,7 +1250,7 @@
     {
       "claimId": "claim.reproduction.social-feedback",
       "file": "app/[locale]/behavior/reproductive-regulation/page.tsx",
-      "line": 185
+      "line": 201
     },
     {
       "claimId": "claim.reproduction.social-feedback",
