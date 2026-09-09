@@ -1,215 +1,66 @@
-"use client";
+import observations from "@/public/data/testosterone-calibration/chronology.json";
+import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "@/components/StudyCitation";
 
-const USA_DATA = [
-  { year: 2007, tfr: 2.12, tYear: 1999, tLevel: 519 },
-  { year: 2008, tfr: 2.07, tYear: 2000, tLevel: 513 },
-  { year: 2009, tfr: 2.01, tYear: 2001, tLevel: 507 },
-  { year: 2010, tfr: 1.93, tYear: 2002, tLevel: 501 },
-  { year: 2011, tfr: 1.89, tYear: 2003, tLevel: 495 },
-  { year: 2012, tfr: 1.88, tYear: 2004, tLevel: 489 },
-  { year: 2013, tfr: 1.86, tYear: 2005, tLevel: 483 },
-  { year: 2014, tfr: 1.86, tYear: 2006, tLevel: 478 },
-  { year: 2015, tfr: 1.84, tYear: 2007, tLevel: 472 },
-  { year: 2016, tfr: 1.82, tYear: 2008, tLevel: 466 },
-  { year: 2017, tfr: 1.77, tYear: 2009, tLevel: 461 },
-  { year: 2018, tfr: 1.73, tYear: 2010, tLevel: 455 },
-  { year: 2019, tfr: 1.71, tYear: 2011, tLevel: 450 },
-  { year: 2020, tfr: 1.64, tYear: 2012, tLevel: 444 },
-  { year: 2021, tfr: 1.66, tYear: 2013, tLevel: 439 },
-  { year: 2022, tfr: 1.67, tYear: 2014, tLevel: 434 },
-  { year: 2023, tfr: 1.62, tYear: 2015, tLevel: 429 },
-  { year: 2024, tfr: 1.62, tYear: 2016, tLevel: 423 },
-];
+const COPY = {
+  en: {
+    hormone: "Lower T: observation-window end", peak: "Later TFR peak", decline: "TFR decline begins",
+    countries: { FIN: "Finland", USA: "United States · MMAS", ISR: "Israel" },
+    notes: {
+      FIN: "Age-group and birth-cohort comparisons in samples collected in 1972, 1977 and 2002. The preliminary report appeared in 2006 and was archived in 2008; the journal article followed in 2013.",
+      USA: "Table 3: 500 → 444 ng/dL in 1987–89 versus 1995–97, at comparable median ages of 65 and 64. Regional, older men compared with a later national fertility trend.",
+      ISR: "All 30 age-specific means for ages 20–49 are lower in 2013–15 than in 2006–09. Values digitized from Figure 1A; clinical samples, four observation windows.",
+    },
+    method: "A later decline episode is a post-2000 local TFR peak followed by at least three annual decreases and a lower value five years later. The three dates also agree across alternative fertility sources. This descriptive comparison used previously seen data; it is not a prospective forecast.",
+    caveat: "The spaces between these dates are calendar gaps between observation windows, not estimates of a common biological lag. Age groups within one window are not independent time points.",
+    download: "Download the timing assessment, including qualified and non-supporting cases",
+  },
+  fi: {
+    hormone: "Alempi T: näytejakson loppu", peak: "Myöhempi TFR-huippu", decline: "TFR-lasku alkaa",
+    countries: { FIN: "Suomi", USA: "Yhdysvallat · MMAS", ISR: "Israel" },
+    notes: {
+      FIN: "Ikä- ja syntymäkohorttien vertailut vuosina 1972, 1977 ja 2002 kerätyissä näytteissä. Alustava raportti ilmestyi 2006 ja arkistoitiin 2008; lehtiartikkeli julkaistiin 2013.",
+      USA: "Taulukko 3: 500 → 444 ng/dL vuosina 1987–89 ja 1995–97, mediaani-iät 65 ja 64 vuotta. Alueellista, vanhempien miesten aineistoa verrataan myöhempään kansalliseen syntyvyyteen.",
+      ISR: "Kaikki 30 ikäkohtaista keskiarvoa ikävälillä 20–49 ovat alempia 2013–15 kuin 2006–09. Arvot on poimittu alkuperäiskuvasta 1A; kliininen aineisto, neljä mittausjaksoa.",
+    },
+    method: "Myöhempi laskuvaihe tarkoittaa vuoden 2000 jälkeistä paikallista TFR-huippua, jota seuraa vähintään kolme vuosittaista laskua ja alempi taso viiden vuoden kuluttua. Kolmen tapauksen ajoitus säilyy myös vaihtoehtoisissa syntyvyyslähteissä. Kuvailevassa vertailussa oli jo nähty aiempaa dataa; kyse ei ole ennakkoon annetusta ennusteesta.",
+    caveat: "Päivämäärien välit ovat havaintoikkunoiden kalenterieroja, eivät yhteisen biologisen viiveen estimaatteja. Saman mittausjakson ikäryhmät eivät ole riippumattomia ajankohtia.",
+    download: "Lataa ajoitusarvio, myös ehdolliset ja ei-tukevat tapaukset",
+  },
+};
 
-export function TemporalTtoTFR({ locale }: { locale?: string }) {
-  const W = 640;
-  const H = 360;
-  const PAD = { top: 30, right: 60, bottom: 50, left: 55 };
-  const plotW = W - PAD.left - PAD.right;
-  const plotH = H - PAD.top - PAD.bottom;
-
-  const yearMin = 2007;
-  const yearMax = 2024;
-  const tfrMin = 1.5;
-  const tfrMax = 2.2;
-  const tMin = 400;
-  const tMax = 540;
-
-  const xScale = (y: number) => PAD.left + ((y - yearMin) / (yearMax - yearMin)) * plotW;
-  const yLeftScale = (v: number) => PAD.top + plotH - ((v - tfrMin) / (tfrMax - tfrMin)) * plotH;
-  const yRightScale = (v: number) => PAD.top + plotH - ((v - tMin) / (tMax - tMin)) * plotH;
-
-  const tfrPath = USA_DATA.map(
-    (d, i) => `${i === 0 ? "M" : "L"} ${xScale(d.year)} ${yLeftScale(d.tfr)}`
-  ).join(" ");
-
-  const tPath = USA_DATA.map(
-    (d, i) => `${i === 0 ? "M" : "L"} ${xScale(d.year)} ${yRightScale(d.tLevel)}`
-  ).join(" ");
-
-  const isFi = locale === "fi";
-
+/** Published observation windows, never synthetic annual hormone measurements. */
+export function TemporalTtoTFR({ locale = "en" }: { locale?: string }) {
+  const d = pickCopy(COPY, locale);
   return (
-    <div className="chart-scroll">
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        className="chart-svg w-full min-w-[600px] max-w-[640px] mx-auto"
-        role="img"
-        aria-label="USA TFR and lagged testosterone temporal comparison"
-      >
-        {/* Grid */}
-        {[2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024].map((y) => (
-          <line
-            key={y}
-            x1={xScale(y)}
-            y1={PAD.top}
-            x2={xScale(y)}
-            y2={PAD.top + plotH}
-            stroke="currentColor"
-            strokeOpacity={0.06}
-          />
-        ))}
-        {[1.6, 1.7, 1.8, 1.9, 2.0, 2.1].map((v) => (
-          <line
-            key={v}
-            x1={PAD.left}
-            y1={yLeftScale(v)}
-            x2={W - PAD.right}
-            y2={yLeftScale(v)}
-            stroke="currentColor"
-            strokeOpacity={0.06}
-          />
-        ))}
-
-        {/* TFR line (blue) */}
-        <path d={tfrPath} fill="none" stroke="var(--chart-series-1)" strokeWidth={2.5} />
-        {USA_DATA.map((d) => (
-          <circle
-            key={`tfr-${d.year}`}
-            cx={xScale(d.year)}
-            cy={yLeftScale(d.tfr)}
-            r={3}
-            fill="var(--chart-series-1)"
-          />
-        ))}
-
-        {/* T line (red/orange, dashed) */}
-        <path d={tPath} fill="none" stroke="var(--status-refuted)" strokeWidth={2} strokeDasharray="6 3" />
-        {USA_DATA.map((d) => (
-          <circle
-            key={`t-${d.year}`}
-            cx={xScale(d.year)}
-            cy={yRightScale(d.tLevel)}
-            r={3}
-            fill="var(--status-refuted)"
-          />
-        ))}
-
-        {/* Axes */}
-        <line
-          x1={PAD.left}
-          y1={PAD.top + plotH}
-          x2={W - PAD.right}
-          y2={PAD.top + plotH}
-          stroke="currentColor"
-          strokeOpacity={0.3}
-        />
-
-        {/* X labels */}
-        {[2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024].map((y) => (
-          <text
-            key={y}
-            x={xScale(y)}
-            y={PAD.top + plotH + 18}
-            textAnchor="middle"
-            className="text-[11px] fill-foreground-muted"
-          >
-            {y}
-          </text>
-        ))}
-        <text
-          x={PAD.left + plotW / 2}
-          y={H - 5}
-          textAnchor="middle"
-          className="text-[12px] fill-foreground-muted"
-        >
-          {isFi ? "Vuosi" : "Year"}
-        </text>
-
-        {/* Left Y axis (TFR) */}
-        <line
-          x1={PAD.left}
-          y1={PAD.top}
-          x2={PAD.left}
-          y2={PAD.top + plotH}
-          stroke="var(--chart-series-1)"
-          strokeOpacity={0.4}
-        />
-        {[1.6, 1.7, 1.8, 1.9, 2.0, 2.1].map((v) => (
-          <text
-            key={v}
-            x={PAD.left - 8}
-            y={yLeftScale(v) + 4}
-            textAnchor="end"
-            className="text-[11px]"
-            fill="var(--chart-series-1)"
-          >
-            {v.toFixed(1)}
-          </text>
-        ))}
-        <text
-          x={12}
-          y={PAD.top + plotH / 2}
-          textAnchor="middle"
-          fill="var(--chart-series-1)"
-          className="text-[12px]"
-          transform={`rotate(-90, 12, ${PAD.top + plotH / 2})`}
-        >
-          TFR
-        </text>
-
-        {/* Right Y axis (T ng/dL) */}
-        <line
-          x1={W - PAD.right}
-          y1={PAD.top}
-          x2={W - PAD.right}
-          y2={PAD.top + plotH}
-          stroke="var(--status-refuted)"
-          strokeOpacity={0.4}
-        />
-        {[420, 440, 460, 480, 500, 520].map((v) => (
-          <text
-            key={v}
-            x={W - PAD.right + 8}
-            y={yRightScale(v) + 4}
-            textAnchor="start"
-            className="text-[11px]"
-            fill="var(--status-refuted)"
-          >
-            {v}
-          </text>
-        ))}
-        <text
-          x={W - 10}
-          y={PAD.top + plotH / 2}
-          textAnchor="middle"
-          fill="var(--status-refuted)"
-          className="text-[12px]"
-          transform={`rotate(90, ${W - 10}, ${PAD.top + plotH / 2})`}
-        >
-          T (ng/dL, {isFi ? "viive 8v" : "lag 8yr"})
-        </text>
-
-        {/* Legend */}
-        <line x1={PAD.left + 10} y1={PAD.top + 8} x2={PAD.left + 30} y2={PAD.top + 8} stroke="var(--chart-series-1)" strokeWidth={2.5} />
-        <text x={PAD.left + 35} y={PAD.top + 12} className="text-[11px] fill-foreground-muted">
-          TFR ({isFi ? "havaittu" : "observed"})
-        </text>
-        <line x1={PAD.left + 10} y1={PAD.top + 24} x2={PAD.left + 30} y2={PAD.top + 24} stroke="var(--status-refuted)" strokeWidth={2} strokeDasharray="6 3" />
-        <text x={PAD.left + 35} y={PAD.top + 28} className="text-[11px] fill-foreground-muted">
-          T (ng/dL, {isFi ? "viive −8v" : "lagged −8yr"})
-        </text>
-      </svg>
+    <div className="space-y-4" data-calibration="temporal-precedence-v13">
+      {observations.cases.map(row => {
+        const country = row.country as keyof typeof d.countries;
+        return (
+          <article key={row.country} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <h3 className="mb-4 text-lg font-semibold">{d.countries[country]}</h3>
+            <ol className="grid gap-4 border-l-2 border-accent/30 pl-4 sm:grid-cols-3 sm:border-l-0 sm:border-t-2 sm:pl-0 sm:pt-4">
+              {[
+                [d.hormone, row.hormoneDocumentedBy],
+                [d.peak, row.tfrPeak],
+                [d.decline, row.firstTfrDecrease],
+              ].map(([label, year]) => (
+                <li key={label}>
+                  <p className="text-xs text-foreground-muted">{label}</p>
+                  <p className="mt-1 text-2xl font-semibold tabular-nums">{year}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-4 text-sm leading-relaxed text-foreground-muted">{d.notes[country]}</p>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+              {row.referenceIds.map(id => <StudyCitation key={id} referenceId={id} locale={locale} />)}
+            </div>
+          </article>
+        );
+      })}
+      <p className="text-sm leading-relaxed text-foreground-muted">{d.caveat}</p>
+      <p className="text-xs leading-relaxed text-foreground-muted">{d.method}{" "}<StudyCitation referenceId="nations2024" locale={locale} label="UN WPP 2024" /></p>
+      <a className="inline-block text-sm text-accent underline underline-offset-4" href="/data/testosterone-calibration/temporal_precedence_assessment.csv" download>{d.download}</a>
     </div>
   );
 }

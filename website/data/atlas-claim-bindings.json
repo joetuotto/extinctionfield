@@ -21,7 +21,8 @@
     "demo_biocap": [
       "claim.couple.fecundability-convergence",
       "claim.civilization.pairing-multiplicative-decline",
-      "claim.couple.waiting-time-distribution"
+      "claim.couple.waiting-time-distribution",
+      "claim.testosterone.conditional-cascade"
     ],
     "legacy_proxy": [
       "claim.proxy.lindgren-selection"
@@ -30,7 +31,8 @@
       "claim.proxy.demographic-route-composition",
       "claim.tfr.multi-input-decomposition",
       "claim.civilization.tfr-multiplicative-decomposition",
-      "claim.civilization.biocap-tfr-input"
+      "claim.civilization.biocap-tfr-input",
+      "claim.testosterone.temporal-precedence"
     ],
     "fieldstate_vector": [
       "claim.vector.background-dependent-coupling"

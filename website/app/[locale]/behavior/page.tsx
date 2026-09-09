@@ -1,3 +1,4 @@
+import { TestosteroneCalibrationSummary } from "@/components/TestosteroneCalibrationUpdate";
 import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
@@ -133,6 +134,7 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
         </div>
       </header>
       <ResearchConnection locale={locale} studies={d.desireStudies} implication={d.desireImplication} />
+      <TestosteroneCalibrationSummary locale={locale} />
     </section>
     <ReproductiveRegulationIntegration locale={locale} context="behavior" />
     <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />

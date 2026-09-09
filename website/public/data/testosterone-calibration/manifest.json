@@ -1,0 +1,22 @@
+{
+  "exploratory_hormone_behavior_associations.csv": {
+    "bytes": 1447,
+    "sha256": "db8965246259067c5e100f2bca8b84229ca7ff883e89f8fe57d109fa5b983d18"
+  },
+  "temporal_precedence_assessment.csv": {
+    "bytes": 1876,
+    "sha256": "c11b3eb0f528e85660c59167460a0f721b4754c5acc8b4ff2126b694e3198a20"
+  },
+  "source_catalog.json": {
+    "bytes": 5281,
+    "sha256": "3ce3a64f4814559b6b02089e46334efbaa7ac80a9a23431bf855d0464d54ca70"
+  },
+  "cascade_component_constraints.csv": {
+    "bytes": 21409,
+    "sha256": "e33bbd46e4751ec4c0bda9627691cff4bc578287e3ebb5fd54dc2e530d61f262"
+  },
+  "chronology.json": {
+    "bytes": 745,
+    "sha256": "b6e0d4de335063480bc7ea4d1af3dde0589c27e37d21be4a1b5fd26124ed77e3"
+  }
+}

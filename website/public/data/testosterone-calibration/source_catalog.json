@@ -1,0 +1,127 @@
+{
+  "NHANES": {
+    "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2013/DataFiles/TST_H.htm",
+    "country": "USA",
+    "design": "Repeated cross-sectional probability surveys 2011-2016",
+    "access": "individual data downloaded:18 XPORT modules and18 codebooks",
+    "family": "NHANES"
+  },
+  "Finkelstein2013": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4142768/",
+    "country": "USA",
+    "design": "Goserelin and randomized graded testosterone, with/without aromatase blockade;16 weeks; men20-50",
+    "access": "full article BioC and tables downloaded; numeric sexual-desire figure not digitized",
+    "family": "Finkelstein_NCT00114114",
+    "n": 400
+  },
+  "Cunningham2016": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4971331/",
+    "country": "USA",
+    "design": "Placebo-controlled TRT trial in men65+ with low T and libido;12 months",
+    "access": "primary abstract downloaded; full-text retrieval unavailable this run",
+    "family": "TTrials",
+    "n": 470
+  },
+  "TRAVERSE2024": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37589949/",
+    "country": "USA",
+    "design": "Randomized TRT vs placebo; men45-80 with low T/libido and CVD or risk;24 months",
+    "access": "primary abstract downloaded; individual data by reviewed request",
+    "family": "TRAVERSE",
+    "n": 1161
+  },
+  "T4DM2025": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12187511/",
+    "country": "Australia",
+    "design": "Secondary sexual-function analysis of randomized TRT plus lifestyle trial;2 years",
+    "access": "full article and5 tables downloaded",
+    "family": "T4DM",
+    "n": 932
+  },
+  "Natsal2021": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7613951/",
+    "country": "Britain",
+    "design": "Cross-sectional population salivary T and sexual behavior;2010-2012",
+    "access": "full article and male/female tables downloaded; hormone microdata require application",
+    "family": "Natsal3",
+    "n": 3722
+  },
+  "Natsal2017": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677216/",
+    "country": "Britain",
+    "design": "Age-specific salivary T distributions; same Natsal3 study family",
+    "access": "full article and age distributions downloaded",
+    "family": "Natsal3"
+  },
+  "Coviello2005": {
+    "url": "https://doi.org/10.1210/jc.2004-0802",
+    "country": "USA",
+    "design": "Randomized testosterone suppression+hCG dose study;3 weeks; intratesticular aspiration",
+    "access": "original published PDF downloaded",
+    "family": "Coviello_hCG",
+    "n": 29
+  },
+  "Ly2005": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15860500/",
+    "country": "Multicountry",
+    "design": "Reanalysis of nearly14000 semen samples from WHO contraception trials plus combination trial",
+    "access": "primary abstract downloaded; original individual semen records not obtained",
+    "family": "WHO_male_contraception"
+  },
+  "Liu2006": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16650651/",
+    "country": "Multicountry",
+    "design": "Individual-participant pooled recovery analysis of30 contraception studies; monthly sampling",
+    "access": "primary abstract downloaded; individual-level pooled file not obtained",
+    "family": "Male_contraception_overlaps_Ly2005",
+    "n": 1549
+  },
+  "Mabeck2005": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16024538/",
+    "country": "Denmark",
+    "design": "430 first-pregnancy-planner couples;343 men with hormone samples;followed up to6 cycles",
+    "access": "primary abstract downloaded; microdata not obtained",
+    "family": "Danish_first_pregnancy_planners",
+    "n": 343
+  },
+  "LIFE2014": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946620/",
+    "country": "USA",
+    "design": "501 couples planning pregnancy;473 semen donors;468 non-azoospermic men in component analyses;up to1year",
+    "access": "full article and4 tables downloaded; diaries and individual semen file not obtained",
+    "family": "NICHD_LIFE",
+    "n": 468
+  },
+  "AMIGOS2019": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6557574/",
+    "country": "USA",
+    "design": "Observational male-T secondary analysis of ovarian-stimulation/IUI trial;up to4cycles;mean male age34.2",
+    "access": "full article BioC and2 tables downloaded; individual file not obtained",
+    "family": "AMIGOS",
+    "n": 781
+  },
+  "Huijben2026": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13280620/",
+    "country": "Netherlands",
+    "design": "Retrospective gonadotropin-treatment cohort; hypogonadotropic hypogonadism and azoospermia",
+    "access": "full article and8 tables downloaded; individual file not obtained",
+    "family": "Utrecht_HH",
+    "n": 35
+  },
+  "Gettler2011": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21911391/",
+    "country": "Philippines",
+    "design": "Longitudinal2005-2009 fatherhood transition;mean baseline age21.5",
+    "access": "primary abstract downloaded; known cohort fromv12, not a new independent study",
+    "family": "Cebu",
+    "n": 624
+  },
+  "Wilcox1995": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7477165/",
+    "country": "USA",
+    "design": "Daily urine and intercourse records in pregnancy planners",
+    "access": "primary abstract downloaded",
+    "family": "Early_pregnancy_study",
+    "n": 221
+  }
+}

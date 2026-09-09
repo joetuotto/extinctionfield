@@ -1,3 +1,4 @@
+import { TestosteroneCalibrationSummary } from "@/components/TestosteroneCalibrationUpdate";
 import { SteroidogenesisCalibrationNote } from "@/components/SteroidogenesisCalibrationNote";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -1473,7 +1474,7 @@ const COPY = {
     popLocked: "Locked: 2026-08-24",
     popStatus: "LOCKED — awaiting test",
     tPredTitle: "Testosterone predictions",
-    tPredLead: "Predictions derived from the two-level model: testosterone secular decline as a temporal predictor of TFR. These test whether the T→TFR lag relationship generalises beyond the USA calibration window.",
+    tPredLead: "The 9 September 2026 update separates documented precedence, component response and future predictive validation. Earlier T-1–T-3 specifications are retained below as an archive; their fixed-lag and exposure-attribution assumptions are not established by the new results.",
     tPredPredictions: [
       {
         id: "T-1",
@@ -3306,7 +3307,7 @@ const COPY = {
     popLocked: "Lukittu: 2026-08-24",
     popStatus: "LUKITTU — odottaa testiä",
     tPredTitle: "Testosteroniennusteet",
-    tPredLead: "Kaksitasoisesta mallista johdetut ennusteet: testosteronin pitkäaikaislasku TFR:n ajallisena ennustajana.",
+    tPredLead: "Päivitys 9.9.2026 erottaa dokumentoidun edeltämisen, osavaikutukset ja tulevan ennustevalidoinnin. Aiemmat T-1–T-3-määrittelyt säilyvät alla arkistona; uudet tulokset eivät osoita niiden kiinteää viivettä tai altistussyytä koskevia oletuksia.",
     tPredPredictions: [
       {
         id: "T-1",
@@ -3865,7 +3866,7 @@ const COPY = {
     popLocked: "ロック日：2026-08-24",
     popStatus: "ロック済み ― テスト待ち",
     tPredTitle: "テストステロン予測",
-    tPredLead: "二段階モデルからの予測：テストステロンの長期的低下がTFRの時間的予測因子として。",
+    tPredLead: "2026年9月9日の更新は先行、部分反応、将来の予測検証を区別します。旧T-1〜T-3は履歴として保存し、固定遅延や曝露原因を確立した結果とは扱いません。",
     tPredPredictions: [
       { id: "T-1", title: "早期/急激な電化の国はT低下の開始が早い", description: "各国のテストステロン長期的低下開始時期の比較。調和された縦断的Tデータが5か国以上必要。", falsification: "5か国以上でT低下開始と電化時期に相関なし" },
       { id: "T-2", title: "LH+TパターンがすべてのEMF高暴露集団で視床下部性", description: "Santi 2025診断はEMF高暴露集団でT↓+LH↓を予測。3つ以上の独立した縦断コホートで検証。", falsification: "T低下中にLHが安定または上昇している集団が3つ中2つ以上" },
@@ -5648,7 +5649,7 @@ const COPY = {
     popLocked: "Verrouillé : 2026-08-24",
     popStatus: "VERROUILLÉ — en attente de test",
     tPredTitle: "Prédictions testostérone",
-    tPredLead: "Prédictions du modèle à deux niveaux : le déclin séculaire de la testostérone comme prédicteur temporel du TFR.",
+    tPredLead: "La mise à jour du 9 septembre 2026 distingue précédence, réponses partielles et validation future. T-1 à T-3 sont archivées; les hypothèses de délai fixe et d’attribution ne sont pas établies.",
     tPredPredictions: [
       { id: "T-1", title: "Les pays à électrification précoce/rapide montrent un début plus précoce du déclin de T", description: "Comparaison inter-pays de la date de début du déclin séculaire de T. Nécessite des données T longitudinales harmonisées de 5+ pays.", falsification: "Aucune corrélation entre le début du déclin de T et le calendrier d'électrification dans 5+ pays" },
       { id: "T-2", title: "Le profil LH+T est hypothalamique dans toutes les populations à forte exposition EMF", description: "Le diagnostic Santi 2025 prédit T↓+LH↓ dans les populations à forte exposition EMF. Vérification dans 3+ cohortes longitudinales indépendantes.", falsification: "LH stable ou en hausse pendant le déclin de T dans 2+ cohortes sur 3" },
@@ -7431,7 +7432,7 @@ const COPY = {
     popLocked: "잠금일: 2026-08-24",
     popStatus: "잠금 — 테스트 대기 중",
     tPredTitle: "테스토스테론 예측",
-    tPredLead: "2단계 모델의 예측: 테스토스테론의 장기 감소가 TFR의 시간적 예측자로서.",
+    tPredLead: "2026년 9월 9일 업데이트는 선행, 부분 반응, 향후 예측 검증을 구분합니다. 기존 T-1–T-3는 기록으로 보존하며 고정 지연이나 노출 원인이 입증된 것은 아닙니다.",
     tPredPredictions: [
       { id: "T-1", title: "조기/급속 전기화 국가는 T 감소 시작이 더 빠름", description: "각국 테스토스테론 장기 감소 시작 시기 비교. 5개국 이상의 조화된 종단적 T 데이터 필요.", falsification: "5개국 이상에서 T 감소 시작과 전기화 시기 사이에 상관관계 없음" },
       { id: "T-2", title: "LH+T 패턴이 모든 EMF 고노출 집단에서 시상하부성", description: "Santi 2025 진단은 EMF 고노출 집단에서 T↓+LH↓을 예측. 3개 이상의 독립 종단 코호트에서 검증.", falsification: "T 감소 중 LH가 안정적이거나 상승하는 집단이 3개 중 2개 이상" },
@@ -10314,6 +10315,9 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <section className="mb-14 border-t editorial-rule pt-6">
           <h2 className="editorial-section-heading mb-3">{d.tPredTitle}</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.tPredLead}</p>
+          <TestosteroneCalibrationSummary locale={locale} />
+          <details className="max-w-4xl">
+            <summary className="mb-4 cursor-pointer text-sm text-foreground-muted">{locale === "fi" ? "Aiemmin lukitut testosteronihypoteesit — historiallinen määrittely, ei uusi validointitulos" : "Previously locked testosterone hypotheses — historical specification, not a new validation result"}</summary>
           <div className="grid gap-4 max-w-4xl">
             {d.tPredPredictions.map((tp: { id: string; title: string; description: string; falsification: string }) => (
               <article key={tp.id} className="min-w-0 rounded-xl border border-card-border bg-card-bg p-5">
@@ -10332,6 +10336,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               </article>
             ))}
           </div>
+          </details>
         </section>
       )}
 

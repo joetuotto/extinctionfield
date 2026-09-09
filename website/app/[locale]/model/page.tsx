@@ -1,3 +1,4 @@
+import { TestosteroneCalibrationSummary } from "@/components/TestosteroneCalibrationUpdate";
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegulationIntegration";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
@@ -14,13 +15,11 @@ import { RESPONSE_MODIFIER_SCALES } from "@/lib/evolutionData";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
-import { ThresholdChart } from "@/components/ThresholdChart";
 import { ThreeBiologicalBands } from "@/components/ThreeBiologicalBands";
 import { TwoSusceptibilities } from "@/components/TwoSusceptibilities";
 import { MechanismCandidate } from "@/components/MechanismCandidate";
 import { FieldSignalStructure } from "@/components/FieldSignalStructure";
 import { BiologicalConstraints } from "@/components/BiologicalConstraints";
-import { SixFactorSummary } from "@/components/SixFactorSummary";
 import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram";
 import { CitationLink } from "@/components/CitationLink";
 import { StudyCitation } from "@/components/StudyCitation";
@@ -744,35 +743,6 @@ const t = {
     mathSubtitle:
       'The mathematics separates the 2025 Lindgren ansatz and its geometric consequences from BERM\'s biological and demographic closures. A geometry-to-response operator form is derived conditionally under explicit matter–metric and linear-response assumptions; its tissue kernel, sign, lag and calibration remain open.',
 
-    thresholdTitle: "Testosterone → TFR Threshold Model",
-    thresholdSub: "Quantitative link from biological capacity decline to demographic collapse",
-    thresholdLead: "The strongest predictive component of the BERM model. Testosterone decline (~1%/year, age-independent, documented across five countries) creates a three-phase trajectory: silent erosion → threshold crossing → biological limit. The model is calibrated against Finnish and Korean data and generates specific, testable country-level predictions.",
-    thresholdPhase1Title: "Phase 1: Silent Erosion",
-    thresholdPhase1Desc: "Testosterone declining but biologically sufficient. TFR stable or declining slowly from cultural factors. Biological capacity exceeds cultural demand.",
-    thresholdPhase2Title: "Phase 2: Threshold Crossed",
-    thresholdPhase2Desc: "Cumulative T loss exceeds ~40%. Rising male subfertility (T < 300 ng/dL). TFR accelerates downward as biological capacity becomes the binding constraint. Pronatalist programs begin failing.",
-    thresholdPhase3Title: "Phase 3: Biological Limit",
-    thresholdPhase3Desc: "TFR drops below 1.0. Biological incapacity dominates. Even motivated couples require assisted reproduction. IVF demand grows exponentially.",
-    thresholdMathTitle: "Mathematical formulation",
-    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
-    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
-    thresholdMathExplain: "When TFR_bio < TFR_cultural, biological capacity is the binding constraint. The sigmoid transition at ~40% cumulative T loss produces the observed pattern: decades of stability followed by rapid collapse.",
-    thresholdTableTitle: "Country parameters",
-    thresholdTableCountry: "Country",
-    thresholdTableRate: "r (%/yr)",
-    thresholdTableSource: "Source",
-    thresholdTableCumul: "Cumul. 2024",
-    thresholdTableThreshold: "Threshold yr",
-    thresholdTablePhase: "Phase",
-    thresholdFinlandTitle: "Retrospective validation: Finland",
-    thresholdFinlandText: "Finland is the model's Rosetta Stone. [[ref:perheentupa2013|Perheentupa (2013)]] documents a 37% cohort-dependent T decline (n=3,271, 1972–2002). TFR remained stable at 1.63–1.87 for 40 years (1970–2010), then collapsed to 1.26 by 2024. The ~35-year delay from T decline onset to TFR collapse is consistent with cumulative biological erosion reaching the threshold. If the model had existed in 2005, it could have predicted Finland's collapse 10–15 years early.",
-    thresholdProjectionsTitle: "Country TFR projections",
-    thresholdProjections2030: "2030",
-    thresholdProjections2035: "2035",
-    thresholdChartTitle: "Interactive threshold model",
-    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] reported a null result after BMI adjustment. The model interprets BMI as a mediator (EMF → metabolic disruption → BMI ↑ → T ↓), not a confounder — adjusting for BMI removes part of the signal. See causal structure section below.",
-    thresholdFootnoteEstimated: "No peer-reviewed secular T trend study available. Korean rate estimated from highest global EMF density; Japanese rate estimated by analogy with Finland's documented decline. These are provisional and will be updated when direct data become available.",
-    thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
 
     causalStructureTitle: "Why BMI does not explain the decline",
     causalStructureLead: "A persistent objection holds that rising obesity, not an environmental exposure, explains the secular testosterone decline. Formal causal analysis using Pearl's framework reveals that BMI is a mediator (on the causal pathway), not a confounder (independent cause). Adjusting for a mediator removes real signal.",
@@ -1027,16 +997,6 @@ const t = {
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] showed that EMF-induced DNA strand breaks returned to normal within 9 hours after exposure ceased. This quantifies BERM’s recovery window: the body CAN repair EMF-induced damage, but only if given sufficient EMF-free time.",
     dnaModernEnv: "Modern environments with 24/7 WiFi, LED lighting, and smartphones in bed eliminate this recovery window entirely. The typical modern bedroom provides zero EMF-free recovery time.",
 
-    twoLevelTitle: "Two-Level Prediction Model",
-    twoLevelSub: "Level 1 (cross-sectional) + Level 2 (temporal testosterone dynamics)",
-    twoLevelLead: "The cross-sectional model positions countries on the global TFR curve via electrification threshold. The temporal model adds a second level: testosterone secular decline provides within-country dynamics via the T→TFR lag relationship.",
-    twoLevelL1: "Level 1: Electrification threshold",
-    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55. Positions countries from Niger (low EMF, high TFR) to Korea (high EMF, low TFR). R² = 0.851 on 54 countries. This captures infrastructure saturation, not EMF dose.",
-    twoLevelL2: "Level 2: Testosterone trajectory",
-    twoLevelL2Desc: "T(year) = 638 × (1 − 0.012)^(year − 1982). The ~1.2%/year age-independent decline (Travison 2007, Lokeshwar 2021) is lagged 8 years against TFR. Transfer function: TFR = 0.00544 × T − 0.745. On USA 2007–2024, R² = 0.97.",
-    twoLevelCombined: "Combined prediction: Level 1 sets the cross-sectional baseline; Level 2 modulates it over time. Countries with high EMF index AND long T-decline exposure get the lowest predicted TFR.",
-    twoLevelCaveat: "The two levels are independent — neither proves the other. Level 2 is calibrated on USA only. The 0.97 R² is in-sample and likely inflated. Out-of-sample validation requires other countries with harmonised longitudinal T data.",
-    twoLevelDiagnostic: "LH–T diagnostic: Santi et al. 2025 showed simultaneous LH↓ and T↓ in populations — consistent with hypothalamic suppression (EMF pathway) rather than testicular damage (EDC pathway).",
   },
   fi: {
     title: "Mallin dokumentaatio",
@@ -1750,35 +1710,6 @@ const t = {
     mathSubtitle:
       "Matematiikka erottaa vuoden 2025 Lindgren-ansatzin ja sen geometriset seuraukset BERM:n biologisista ja demografisista sulkeumista. Geometriasta vasteeseen johtavan operaattorin muoto johdetaan ehdollisesti eksplisiittisillä aine–metriikka- ja lineaarivasteoletuksilla; kudosydin, etumerkki, viive ja kalibrointi ovat avoimia.",
 
-    thresholdTitle: "Testosteroni → TFR -kynnysmalli",
-    thresholdSub: "Kvantitatiivinen yhteys biologisen kapasiteetin laskusta demografiseen romahdukseen",
-    thresholdLead: "BERM-mallin vahvin ennustekomponentti. Testosteronin lasku (~1 %/vuosi, ikäriippumaton, dokumentoitu viidessä maassa) luo kolmivaiheisen trajektorin: hiljainen eroosio → kynnyksen ylitys → biologinen rajoite. Malli on kalibroitu Suomen ja Korean datalla ja tuottaa maakohtaisia, testattavia ennusteita.",
-    thresholdPhase1Title: "Vaihe 1: Hiljainen eroosio",
-    thresholdPhase1Desc: "Testosteroni laskee mutta on biologisesti riittävä. TFR vakaa tai laskee hitaasti kulttuuristen tekijöiden vaikutuksesta. Biologinen kapasiteetti ylittää kulttuurisen kysynnän.",
-    thresholdPhase2Title: "Vaihe 2: Kynnys ylitetty",
-    thresholdPhase2Desc: "Kumulatiivinen T-menetys ylittää ~40 %. Kasvava miesten subfertiliteetti (T < 300 ng/dL). TFR kiihtyy alaspäin biologisen kapasiteetin tullessa rajoittavaksi tekijäksi. Pronatalistiset ohjelmat alkavat epäonnistua.",
-    thresholdPhase3Title: "Vaihe 3: Biologinen rajoite",
-    thresholdPhase3Desc: "TFR laskee alle 1,0. Biologinen kyvyttömyys dominoi. Jopa motivoituneet pariskunnat tarvitsevat avustettua lisääntymistä. IVF-kysyntä kasvaa eksponentiaalisesti.",
-    thresholdMathTitle: "Matemaattinen muotoilu",
-    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
-    thresholdMathTFR: "TFR(t) = min( TFR_kult(t), TFR_bio(t) )",
-    thresholdMathExplain: "Kun TFR_bio < TFR_kult, biologinen kapasiteetti on rajoittava tekijä. Sigmoidisiirtymä ~40 %:n kumulatiivisen T-menetyksen kohdalla tuottaa havaitun kuvion: vuosikymmeniä vakautta ja sitten nopea romahdus.",
-    thresholdTableTitle: "Maakohtaiset parametrit",
-    thresholdTableCountry: "Maa",
-    thresholdTableRate: "r (%/v)",
-    thresholdTableSource: "Lähde",
-    thresholdTableCumul: "Kumul. 2024",
-    thresholdTableThreshold: "Kynnysvuosi",
-    thresholdTablePhase: "Vaihe",
-    thresholdFinlandTitle: "Retrospektiivinen validointi: Suomi",
-    thresholdFinlandText: "Suomi on mallin Rosetta-kivi. [[ref:perheentupa2013|Perheentupa (2013)]] dokumentoi 37 %:n kohorttikohtaisen T-laskun (n=3 271, 1972–2002). TFR pysyi vakaana 1,63–1,87 neljäkymmentä vuotta (1970–2010) ja romahti sitten 1,26:een vuoteen 2024 mennessä. ~35 vuoden viive T-laskun alusta TFR-romahdukseen on yhdenmukainen kumulatiivisen biologisen eroosion saavuttaessa kynnyksen. Jos malli olisi ollut olemassa vuonna 2005, se olisi voinut ennustaa Suomen romahduksen 10–15 vuotta etukäteen.",
-    thresholdProjectionsTitle: "Maakohtaiset TFR-ennusteet",
-    thresholdProjections2030: "2030",
-    thresholdProjections2035: "2035",
-    thresholdChartTitle: "Interaktiivinen kynnysmalli",
-    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] raportoi nollatuloksen BMI-vakioinnin jälkeen. Malli tulkitsee BMI:n välittäjäksi (EMF → metabolinen häiriö → BMI ↑ → T ↓), ei sekoittavaksi tekijäksi — BMI-vakiointi poistaa osan signaalista. Ks. kausaalirakenne-osio alla.",
-    thresholdFootnoteEstimated: "Vertaisarvioitua pitkäaikaista T-trenditutkimusta ei ole saatavilla. Korean vauhti arvioitu korkeimmasta globaalista EMF-tiheydestä; Japanin vauhti arvioitu analogialla Suomen dokumentoituun laskuun. Nämä ovat alustavia ja päivitetään, kun suoria tutkimustuloksia on saatavilla.",
-    thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnys on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
 
     causalStructureTitle: "Miksi BMI ei selitä laskua",
     causalStructureLead: "Sitkeä vastaväite esittää, että kasvava lihavuus, ei ympäristöaltistus, selittää testosteronin pitkäaikaislaskun. Pearlin kausaalikehyksellä tehty formaali analyysi paljastaa, että BMI on mediaattori (kausaalireitillä), ei sekoittaja (itsenäinen syy). Mediaattorin korjaaminen poistaa todellista signaalia.",
@@ -2033,16 +1964,6 @@ const t = {
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits ym.]] osoitti, että EMF:n aiheuttamat DNA-katkokset palautuivat normaaliksi 9 tunnissa altistuksen päättymisen jälkeen. Tämä kvantifioi BERM:n palautumisikkunan: keho VOI korjata EMF:n aiheuttamia vaurioita, mutta vain jos sille annetaan riittävästi EMF-vapaata aikaa.",
     dnaModernEnv: "Modernit ympäristöt 24/7 WiFillä, LED-valaistuksella ja älypuhelimella sängyssä poistavat tämän palautumisikkunan kokonaan. Tyypillinen moderni makuuhuone tarjoaa nolla EMF-vapaata palautumisaikaa.",
 
-    twoLevelTitle: "Kaksitasoinen ennustemalli",
-    twoLevelSub: "Taso 1 (poikkileikkaus) + Taso 2 (ajallinen testosteronidynamiikka)",
-    twoLevelLead: "Poikkileikkausmalli sijoittaa maat globaalille TFR-käyrälle sähköistyskynnyksen kautta. Ajallinen malli lisää toisen tason: testosteronin pitkäaikaislasku tarjoaa maan sisäistä dynamiikkaa T→TFR-viivesuhteen kautta.",
-    twoLevelL1: "Taso 1: Sähköistyskynnys",
-    twoLevelL1Desc: "TFR = 4,11 × exp(−54 × EMF_index) + 1,55. Sijoittaa maat Nigeristä (matala EMF, korkea TFR) Koreaan (korkea EMF, matala TFR). R² = 0,851 54 maalla.",
-    twoLevelL2: "Taso 2: Testosteronitrajectoria",
-    twoLevelL2Desc: "T(vuosi) = 638 × (1 − 0,012)^(vuosi − 1982). ~1,2 %/vuoden iästä riippumaton lasku (Travison 2007, Lokeshwar 2021) viivästetään 8 vuotta TFR:n suhteen. Siirtofunktio: TFR = 0,00544 × T − 0,745. USA 2007–2024, R² = 0,97.",
-    twoLevelCombined: "Yhdistetty ennuste: Taso 1 asettaa poikkileikkauslähtötason; Taso 2 säätelee sitä ajan myötä.",
-    twoLevelCaveat: "Tasot ovat riippumattomia. Taso 2 on kalibroitu vain USA:lla. R² 0,97 on otoksen sisäinen ja todennäköisesti paisunut.",
-    twoLevelDiagnostic: "LH–T-diagnostiikka: Santi ym. 2025 osoittivat samanaikaisen LH↓ ja T↓ väestöissä — yhdenmukaista hypotalamuksen vaimentumisen (EMF-polku) kanssa eikä kivevaurion (EDC-polku) kanssa.",
   },
   ja: {
     title: "モデル文書",
@@ -2643,35 +2564,6 @@ const t = {
     mathSubtitle:
       "数学は2025年Lindgren仮定とその幾何学的帰結を、BERMの生物学的・人口学的閉包から分離します。応答演算子形は明示的な結合仮定の下で条件付きに導出され、組織カーネル、符号、遅延、校正は未解決です。",
 
-    thresholdTitle: "テストステロン → TFR閾値モデル",
-    thresholdSub: "生物学的容量低下から人口学的崩壊への定量的リンク",
-    thresholdLead: "BERMモデルの最も強力な予測成分。テストステロン低下(年約1%、年齢非依存、5カ国で記録)は三相軌道を生む:静かな侵食 → 閾値超過 → 生物学的限界。モデルはフィンランドと韓国のデータに対して較正され、具体的で検証可能な国レベルの予測を生成する。",
-    thresholdPhase1Title: "フェーズ1:静かな侵食",
-    thresholdPhase1Desc: "テストステロンは低下しているが生物学的に十分。TFRは安定または文化的要因により緩やかに低下。生物学的容量が文化的需要を超えている。",
-    thresholdPhase2Title: "フェーズ2:閾値超過",
-    thresholdPhase2Desc: "累積T損失が約40%を超える。男性不妊の増加(T < 300 ng/dL)。生物学的容量が拘束条件となりTFRが加速的に低下。出生促進プログラムが失敗し始める。",
-    thresholdPhase3Title: "フェーズ3:生物学的限界",
-    thresholdPhase3Desc: "TFRが1.0を下回る。生物学的不能が支配的。意欲のあるカップルでも生殖補助技術が必要。IVF需要が指数関数的に増加。",
-    thresholdMathTitle: "数学的定式化",
-    thresholdMathT: "T(t) = T₀ × (1 - r)^(t - t₀)",
-    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
-    thresholdMathExplain: "TFR_bio < TFR_culturalの場合、生物学的容量が拘束条件。累積T損失約40%でのシグモイド遷移が観測パターンを生む:数十年の安定の後の急速な崩壊。",
-    thresholdTableTitle: "国別パラメータ",
-    thresholdTableCountry: "国",
-    thresholdTableRate: "r(%/年)",
-    thresholdTableSource: "出典",
-    thresholdTableCumul: "2024年累積",
-    thresholdTableThreshold: "閾値年",
-    thresholdTablePhase: "フェーズ",
-    thresholdFinlandTitle: "回顧的検証:フィンランド",
-    thresholdFinlandText: "フィンランドはモデルのロゼッタストーン。[[ref:perheentupa2013|Perheentupa(2013)]]は37%のコホート依存性T低下を記録(n=3,271、1972-2002)。TFRは40年間(1970-2010)1.63-1.87で安定し、2024年までに1.26に崩壊した。T低下の開始からTFR崩壊までの約35年の遅延は、累積的生物学的侵食が閾値に到達することと一致する。2005年にモデルが存在していれば、フィンランドの崩壊を10-15年早く予測できたはず。",
-    thresholdProjectionsTitle: "国別TFR予測",
-    thresholdProjections2030: "2030",
-    thresholdProjections2035: "2035",
-    thresholdChartTitle: "インタラクティブ閾値モデル",
-    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]]はBMI調整後にヌル結果を報告。モデルはBMIを交絡因子ではなく媒介因子(EMF → 代謝撹乱 → BMI↑ → T↓)と解釈する -- BMI調整はシグナルの一部を除去する。下の因果構造セクションを参照。",
-    thresholdFootnoteEstimated: "査読済みの世俗的Tトレンド研究は利用不可。韓国の率は最高のグローバルEMF密度から推定;日本の率はフィンランドの記録された低下との類推により推定。これらは暫定的であり、直接データが利用可能になり次第更新される。",
-    thresholdCaveat: "T低下率は査読済み縦断研究からの年齢非依存の世俗的トレンド。韓国と日本の率は推定。40%閾値は較正値であり導出値ではない。予測は現在の率の継続を仮定。",
 
     causalStructureTitle: "なぜBMIは低下を説明しないのか",
     causalStructureLead: "持続的な反論は、環境暴露ではなく肥満の増加が世俗的テストステロン低下を説明するというもの。Pearlのフレームワークを用いた正式な因果分析は、BMIが交絡因子(独立の原因)ではなく媒介因子(因果経路上)であることを明らかにする。媒介因子の調整は実際のシグナルを除去する。",
@@ -2926,16 +2818,6 @@ const t = {
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]は、EMF誘発DNA鎖切断が暴露停止後9時間以内に正常へ戻ることを示した。これはBERMの回復ウィンドウを定量化する：十分なEMFフリー時間が与えられれば、身体はEMF誘発損傷を修復できる。",
     dnaModernEnv: "24時間稼働のWiFi、LED照明、ベッド内のスマートフォンがある現代環境は、この回復ウィンドウを完全に取り除く。典型的な現代の寝室にはEMFフリーの回復時間がまったくない。",
 
-    twoLevelTitle: "二段階予測モデル",
-    twoLevelSub: "レベル1（横断面）+ レベル2（テストステロン時間的動態）",
-    twoLevelLead: "横断面モデルは電化閾値を通じて各国をグローバルTFR曲線に配置します。時間的モデルは第2レベルを追加：テストステロンの長期的低下がT→TFRラグ関係を通じて国内の動態を提供します。",
-    twoLevelL1: "レベル1：電化閾値",
-    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55。54か国でR² = 0.851。",
-    twoLevelL2: "レベル2：テストステロン軌跡",
-    twoLevelL2Desc: "T(年) = 638 × (1 − 0.012)^(年 − 1982)。年齢非依存の−1.2%/年の低下を8年ラグ。USA 2007–2024でR² = 0.97。",
-    twoLevelCombined: "統合予測：レベル1が横断面ベースラインを設定、レベル2が時間的に調整。",
-    twoLevelCaveat: "2レベルは独立。レベル2はUSAのみで校正。R² 0.97はサンプル内であり過大評価の可能性。",
-    twoLevelDiagnostic: "LH–T診断：Santiら2025が集団でLH↓とT↓の同時発生を示した—視床下部抑制（EMF経路）と整合、精巣損傷（EDC経路）ではない。",
   },
   fr: {
     title: "Documentation du modele",
@@ -3536,35 +3418,6 @@ const t = {
     mathSubtitle:
       "Les mathématiques séparent l'ansatz de Lindgren 2025 et ses conséquences géométriques des fermetures biologiques et démographiques de BERM. La forme de l'opérateur est dérivée conditionnellement sous des hypothèses explicites ; noyau tissulaire, signe, délai et calibration restent ouverts.",
 
-    thresholdTitle: "Modele de seuil testosterone → TFR",
-    thresholdSub: "Lien quantitatif du declin de la capacite biologique a l'effondrement demographique",
-    thresholdLead: "La composante predictive la plus forte du modele BERM. Le declin de la testosterone (~1 %/an, independant de l'age, documente dans cinq pays) cree une trajectoire a trois phases : erosion silencieuse → franchissement du seuil → limite biologique. Le modele est calibre contre les donnees finlandaises et coreennes et genere des predictions specifiques et testables au niveau national.",
-    thresholdPhase1Title: "Phase 1 : Erosion silencieuse",
-    thresholdPhase1Desc: "La testosterone decline mais est biologiquement suffisante. Le TFR est stable ou decline lentement en raison de facteurs culturels. La capacite biologique depasse la demande culturelle.",
-    thresholdPhase2Title: "Phase 2 : Seuil franchi",
-    thresholdPhase2Desc: "La perte cumulative de T depasse ~40 %. Subfertilite masculine croissante (T < 300 ng/dL). Le TFR accelere a la baisse car la capacite biologique devient la contrainte limitante. Les programmes pro-natalistes commencent a echouer.",
-    thresholdPhase3Title: "Phase 3 : Limite biologique",
-    thresholdPhase3Desc: "Le TFR passe sous 1,0. L'incapacite biologique domine. Meme les couples motives necessitent la reproduction assistee. La demande d'FIV croit exponentiellement.",
-    thresholdMathTitle: "Formulation mathematique",
-    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
-    thresholdMathTFR: "TFR(t) = min( TFR_culturel(t), TFR_bio(t) )",
-    thresholdMathExplain: "Quand TFR_bio < TFR_culturel, la capacite biologique est la contrainte limitante. La transition sigmoide a ~40 % de perte cumulative de T produit le pattern observe : des decennies de stabilite suivies d'un effondrement rapide.",
-    thresholdTableTitle: "Parametres par pays",
-    thresholdTableCountry: "Pays",
-    thresholdTableRate: "r (%/an)",
-    thresholdTableSource: "Source",
-    thresholdTableCumul: "Cumul. 2024",
-    thresholdTableThreshold: "Annee seuil",
-    thresholdTablePhase: "Phase",
-    thresholdFinlandTitle: "Validation retrospective : Finlande",
-    thresholdFinlandText: "La Finlande est la Pierre de Rosette du modele. [[ref:perheentupa2013|Perheentupa (2013)]] documente un declin de T de 37 % dependant de la cohorte (n=3 271, 1972-2002). Le TFR est reste stable a 1,63-1,87 pendant 40 ans (1970-2010), puis s'est effondre a 1,26 en 2024. Le delai de ~35 ans entre le debut du declin de T et l'effondrement du TFR est coherent avec l'erosion biologique cumulative atteignant le seuil. Si le modele avait existe en 2005, il aurait pu predire l'effondrement de la Finlande 10-15 ans a l'avance.",
-    thresholdProjectionsTitle: "Projections TFR par pays",
-    thresholdProjections2030: "2030",
-    thresholdProjections2035: "2035",
-    thresholdChartTitle: "Modele de seuil interactif",
-    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] a rapporte un resultat nul apres ajustement pour le BMI. Le modele interprete le BMI comme un mediateur (EMF → perturbation metabolique → BMI ↑ → T ↓), pas un facteur de confusion — ajuster pour le BMI supprime une partie du signal. Voir la section structure causale ci-dessous.",
-    thresholdFootnoteEstimated: "Aucune etude publiee de tendance seculaire de T n'est disponible. Le taux coreen est estime a partir de la densite EMF mondiale la plus elevee ; le taux japonais est estime par analogie avec le declin documente de la Finlande. Ceux-ci sont provisoires et seront mis a jour lorsque des donnees directes seront disponibles.",
-    thresholdCaveat: "Les taux de declin de T sont des tendances seculaires independantes de l'age provenant d'etudes longitudinales evaluees par les pairs. Les taux coreen et japonais sont des estimations. Le seuil de 40 % est calibre, pas derive. Les projections supposent la continuation des taux actuels.",
 
     causalStructureTitle: "Pourquoi le BMI n'explique pas le declin",
     causalStructureLead: "Une objection persistante soutient que l'obesite croissante, pas une exposition environnementale, explique le declin seculaire de la testosterone. L'analyse causale formelle utilisant le cadre de Pearl revele que le BMI est un mediateur (sur la voie causale), pas un facteur de confusion (cause independante). Ajuster pour un mediateur supprime le signal reel.",
@@ -3819,16 +3672,6 @@ const t = {
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] ont montré que les cassures de l'ADN induites par les EMF revenaient à la normale dans les 9 heures suivant l'arrêt de l'exposition. Cela quantifie la fenêtre de récupération de BERM : le corps PEUT réparer les dommages induits par les EMF, mais seulement s'il dispose d'une durée suffisante sans EMF.",
     dnaModernEnv: "Les environnements modernes avec WiFi 24 h/24, éclairage LED et smartphones au lit éliminent entièrement cette fenêtre de récupération. Une chambre moderne typique ne fournit aucun temps de récupération sans EMF.",
 
-    twoLevelTitle: "Modèle de prédiction à deux niveaux",
-    twoLevelSub: "Niveau 1 (transversal) + Niveau 2 (dynamique temporelle de la testostérone)",
-    twoLevelLead: "Le modèle transversal positionne les pays sur la courbe TFR mondiale via le seuil d'électrification. Le modèle temporel ajoute un second niveau : le déclin séculaire de la testostérone fournit la dynamique intra-pays via la relation de décalage T→TFR.",
-    twoLevelL1: "Niveau 1 : Seuil d'électrification",
-    twoLevelL1Desc: "TFR = 4,11 × exp(−54 × EMF_index) + 1,55. R² = 0,851 sur 54 pays.",
-    twoLevelL2: "Niveau 2 : Trajectoire de la testostérone",
-    twoLevelL2Desc: "T(année) = 638 × (1 − 0,012)^(année − 1982). Déclin indépendant de l'âge de −1,2 %/an, décalé de 8 ans. USA 2007–2024, R² = 0,97.",
-    twoLevelCombined: "Prédiction combinée : le Niveau 1 fixe la ligne de base transversale ; le Niveau 2 la module dans le temps.",
-    twoLevelCaveat: "Les deux niveaux sont indépendants. Le Niveau 2 est calibré sur les USA uniquement. Le R² de 0,97 est intra-échantillon.",
-    twoLevelDiagnostic: "Diagnostic LH–T : Santi et al. 2025 ont montré LH↓ et T↓ simultanés — cohérent avec la suppression hypothalamique (voie EMF), pas les dommages testiculaires (voie EDC).",
   },
   ko: {
     title: "모델 문서",
@@ -4429,35 +4272,6 @@ const t = {
     mathSubtitle:
       "수학은 2025 Lindgren 가정과 그 기하학적 결과를 BERM의 생물학적·인구학적 폐쇄와 분리합니다. 반응 연산자 형태는 명시적 결합 가정 아래 조건부로 도출되며 조직 커널, 부호, 지연과 보정은 미해결입니다.",
 
-    thresholdTitle: "테스토스테론 → TFR 역치 모델",
-    thresholdSub: "생물학적 역량 감소에서 인구학적 붕괴까지의 정량적 연결",
-    thresholdLead: "BERM 모델의 가장 강력한 예측 구성요소. 테스토스테론 감소(연간 ~1%, 연령 독립, 5개국에서 문서화)는 3단계 궤적을 만듭니다: 침묵의 침식 → 역치 돌파 → 생물학적 한계. 모델은 핀란드 및 한국 데이터에 대해 보정되며 국가 수준의 구체적이고 테스트 가능한 예측을 생성합니다.",
-    thresholdPhase1Title: "1단계: 침묵의 침식",
-    thresholdPhase1Desc: "테스토스테론이 감소하지만 생물학적으로 충분합니다. TFR은 문화적 요인으로 인해 안정적이거나 천천히 감소합니다. 생물학적 역량이 문화적 수요를 초과합니다.",
-    thresholdPhase2Title: "2단계: 역치 돌파",
-    thresholdPhase2Desc: "누적 T 손실이 ~40%를 초과합니다. 남성 저출산력 증가(T < 300 ng/dL). TFR이 가속 하락하며 생물학적 역량이 제약 조건이 됩니다. 출산장려 정책이 실패하기 시작합니다.",
-    thresholdPhase3Title: "3단계: 생물학적 한계",
-    thresholdPhase3Desc: "TFR이 1.0 미만으로 하락합니다. 생물학적 무능력이 지배합니다. 동기가 있는 커플도 보조생식이 필요합니다. IVF 수요가 기하급수적으로 증가합니다.",
-    thresholdMathTitle: "수학적 공식화",
-    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
-    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
-    thresholdMathExplain: "TFR_bio < TFR_cultural일 때 생물학적 역량이 제약 조건입니다. 누적 T 손실 ~40%에서의 시그모이드 전환이 관찰된 패턴을 생성합니다: 수십 년의 안정 후 급격한 붕괴.",
-    thresholdTableTitle: "국가별 매개변수",
-    thresholdTableCountry: "국가",
-    thresholdTableRate: "r (%/년)",
-    thresholdTableSource: "출처",
-    thresholdTableCumul: "누적 2024",
-    thresholdTableThreshold: "역치 연도",
-    thresholdTablePhase: "단계",
-    thresholdFinlandTitle: "후향적 검증: 핀란드",
-    thresholdFinlandText: "핀란드는 모델의 로제타석입니다. [[ref:perheentupa2013|Perheentupa(2013)]]는 코호트 의존 37% T 감소를 문서화합니다(n=3,271, 1972-2002). TFR은 40년간 1.63-1.87로 안정 유지(1970-2010), 이후 2024년 1.26으로 붕괴. T 감소 시작과 TFR 붕괴 사이의 ~35년 지연은 누적 생물학적 침식이 역치에 도달하는 것과 일관됩니다. 모델이 2005년에 존재했다면 핀란드의 붕괴를 10-15년 전에 예측할 수 있었을 것입니다.",
-    thresholdProjectionsTitle: "국가별 TFR 전망",
-    thresholdProjections2030: "2030",
-    thresholdProjections2035: "2035",
-    thresholdChartTitle: "대화형 역치 모델",
-    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]]은 BMI 조정 후 null 결과를 보고했습니다. 모델은 BMI를 교란 요인이 아닌 매개자로 해석합니다(EMF → 대사 교란 → BMI↑ → T↓) — BMI 조정은 신호의 일부를 제거합니다. 아래 인과 구조 섹션 참조.",
-    thresholdFootnoteEstimated: "발표된 T 세속 추세 연구가 없습니다. 한국 비율은 세계 최고 EMF 밀도에서 추정; 일본 비율은 문서화된 핀란드 감소와의 유사성으로 추정. 이것은 잠정적이며 직접 데이터가 이용 가능해지면 업데이트됩니다.",
-    thresholdCaveat: "T 감소율은 동료심사 종단 연구의 연령 독립 세속 추세입니다. 한국과 일본 비율은 추정치입니다. 40% 역치는 유도가 아닌 보정입니다. 전망은 현재 비율의 지속을 가정합니다.",
 
     causalStructureTitle: "왜 BMI가 감소를 설명하지 못하는가",
     causalStructureLead: "지속적인 반론은 환경 노출이 아닌 증가하는 비만이 테스토스테론의 세속 감소를 설명한다고 주장합니다. Pearl 프레임워크를 사용한 정식 인과 분석은 BMI가 교란 요인(독립 원인)이 아닌 매개자(인과 경로상)임을 밝힙니다. 매개자 조정은 실제 신호를 제거합니다.",
@@ -4712,16 +4526,6 @@ const t = {
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]은 EMF로 유도된 DNA 가닥 절단이 노출 중단 후 9시간 이내에 정상으로 돌아왔음을 보여주었다. 이는 BERM의 회복 창을 정량화한다: 충분한 EMF 비노출 시간이 주어지면 신체는 EMF 유발 손상을 복구할 수 있다.",
     dnaModernEnv: "24시간 WiFi, LED 조명, 침대의 스마트폰이 있는 현대 환경은 이 회복 창을 완전히 제거한다. 전형적인 현대식 침실은 EMF 없는 회복 시간을 전혀 제공하지 않는다.",
 
-    twoLevelTitle: "2단계 예측 모델",
-    twoLevelSub: "레벨 1(횡단면) + 레벨 2(시간적 테스토스테론 동태)",
-    twoLevelLead: "횡단면 모델은 전기화 임계값을 통해 국가를 글로벌 TFR 곡선에 배치합니다. 시간적 모델은 제2레벨을 추가: 테스토스테론의 장기적 감소가 T→TFR 시차 관계를 통해 국내 동태를 제공합니다.",
-    twoLevelL1: "레벨 1: 전기화 임계값",
-    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55. 54개국에서 R² = 0.851.",
-    twoLevelL2: "레벨 2: 테스토스테론 궤적",
-    twoLevelL2Desc: "T(연도) = 638 × (1 − 0.012)^(연도 − 1982). 나이 독립적 −1.2%/년 감소, 8년 시차. USA 2007–2024에서 R² = 0.97.",
-    twoLevelCombined: "통합 예측: 레벨 1이 횡단면 기준선 설정; 레벨 2가 시간적으로 조정.",
-    twoLevelCaveat: "두 레벨은 독립적. 레벨 2는 USA에서만 보정. R² 0.97은 표본 내이며 과대평가 가능성.",
-    twoLevelDiagnostic: "LH–T 진단: Santi 등 2025가 집단에서 LH↓과 T↓의 동시 발생을 보여줌—시상하부 억제(EMF 경로)와 일치, 고환 손상(EDC 경로) 아님.",
   },
 };
 
@@ -5965,325 +5769,12 @@ export default async function ModelPage({
             </p>
           </CollapsibleSection>
 
-          {/* Two-Level Prediction Model */}
           <section id="two-level-prediction" className="mb-14">
-            <h2 className="text-xl font-semibold mb-1">{d.twoLevelTitle}</h2>
-            <p className="text-xs text-foreground-muted italic mb-4">{d.twoLevelSub}</p>
-            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.twoLevelLead}
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mb-6">
-              <article className="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-5">
-                <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400 mb-2">{d.twoLevelL1}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.twoLevelL1Desc}</p>
-              </article>
-              <article className="rounded-xl border-2 border-red-500/30 bg-red-500/5 p-5">
-                <h3 className="font-semibold text-sm text-red-600 dark:text-red-400 mb-2">{d.twoLevelL2}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.twoLevelL2Desc}</p>
-              </article>
-            </div>
-
-            <p className="text-sm text-foreground-muted mb-4 max-w-3xl">{d.twoLevelCombined}</p>
-
-            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 max-w-3xl mb-4">
-              <p className="text-xs text-foreground-muted">{d.twoLevelCaveat}</p>
-            </div>
-
-            <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-4 max-w-3xl">
-              <p className="text-xs text-foreground-muted">{d.twoLevelDiagnostic}</p>
-            </div>
+            <TestosteroneCalibrationSummary locale={locale} />
           </section>
 
-          {/* Testosterone → TFR Threshold Model */}
           <section id="testosterone-threshold" className="mb-14">
-            <h2 className="text-xl font-semibold mb-1">{d.thresholdTitle}</h2>
-            <p className="text-xs text-foreground-muted italic mb-4">{d.thresholdSub}</p>
-            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.thresholdLead}
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-3 max-w-4xl mb-8">
-              <article className="rounded-xl border-2 border-green-500/30 bg-green-500/5 p-5">
-                <h3 className="font-semibold text-sm text-green-600 dark:text-green-400 mb-2">{d.thresholdPhase1Title}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase1Desc}</p>
-              </article>
-              <article className="rounded-xl border-2 border-amber-500/30 bg-amber-500/5 p-5">
-                <h3 className="font-semibold text-sm text-amber-600 dark:text-amber-400 mb-2">{d.thresholdPhase2Title}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase2Desc}</p>
-              </article>
-              <article className="rounded-xl border-2 border-red-500/30 bg-red-500/5 p-5">
-                <h3 className="font-semibold text-sm text-red-600 dark:text-red-400 mb-2">{d.thresholdPhase3Title}</h3>
-                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase3Desc}</p>
-              </article>
-            </div>
-
-            <div className="rounded-xl border border-card-border bg-card-bg p-5 max-w-4xl mb-8">
-              <h3 className="font-semibold text-sm mb-3">{d.thresholdMathTitle}</h3>
-              <div className="space-y-2 font-mono-num text-sm text-accent mb-3">
-                <p>{d.thresholdMathT}</p>
-                <p>{d.thresholdMathTFR}</p>
-              </div>
-              <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdMathExplain}</p>
-            </div>
-
-            <div className="overflow-x-auto mb-8 max-w-4xl">
-              <h3 className="font-semibold text-sm mb-3">{d.thresholdTableTitle}</h3>
-              <table className="w-full text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-card-border text-foreground-muted">
-                    <th className="text-left py-2 pr-3 font-medium">{d.thresholdTableCountry}</th>
-                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableRate}</th>
-                    <th className="text-left py-2 px-3 font-medium">{d.thresholdTableSource}</th>
-                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableCumul}</th>
-                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableThreshold}</th>
-                    <th className="text-center py-2 pl-3 font-medium">{d.thresholdTablePhase}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { referenceId: "travison2007_v2", country: "USA", rate: "1.0", source: "Travison 2007", cumul: "−35.7 %", thresh: "~2030", phase: 1 },
-                    { referenceId: "andersson-2007-denmark", country: d.countryDenmark, rate: "0.85", source: "Andersson 2007 †", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
-                    { referenceId: "perheentupa2013", country: d.countryFinland, rate: "1.2", source: "Perheentupa 2013", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
-                    { referenceId: "chodick-2020-israel", country: "Israel", rate: "1.0", source: "Chodick 2020", cumul: "−35.7 %", thresh: "~2035", phase: 1 },
-                    { country: d.countrySouthKorea, rate: "1.5*", source: locale_key === "fi" ? "Arvio (korkein EMF)" : "Estimated (highest EMF)", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
-                    { country: locale_key === "fi" ? "Japani" : "Japan", rate: "1.2*", source: locale_key === "fi" ? "Arvio (Suomi-analogia)" : "Estimated (Finland analogy)", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
-                  ].map((r) => {
-                    const phaseColor = r.phase === 1 ? "#22c55e" : r.phase === 2 ? "#f59e0b" : "#ef4444";
-                    return (
-                      <tr key={r.country} className="border-b border-card-border/50">
-                        <td className="py-2 pr-3 font-medium text-foreground">{r.country}</td>
-                        <td className="py-2 px-3 text-right font-mono-num">{r.rate}</td>
-                        <td className="py-2 px-3 text-foreground-muted">
-                          {"referenceId" in r && r.referenceId ? (
-                            <CitationLink citation={r.source} referenceId={r.referenceId} locale={locale_key} />
-                          ) : (
-                            r.source
-                          )}
-                        </td>
-                        <td className="py-2 px-3 text-right font-mono-num text-accent">{r.cumul}</td>
-                        <td className="py-2 px-3 text-right font-mono-num">{r.thresh}</td>
-                        <td className="py-2 pl-3 text-center">
-                          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold" style={{ backgroundColor: `${phaseColor}20`, color: phaseColor }}>{r.phase}</span>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              <div className="mt-3 space-y-1.5">
-                <p className="text-[10px] text-foreground-muted leading-relaxed">
-                  <span className="font-semibold">†</span> {cite(d.thresholdFootnoteDenmark)}
-                </p>
-                <p className="text-[10px] text-foreground-muted leading-relaxed">
-                  <span className="font-semibold">*</span> {d.thresholdFootnoteEstimated}
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-5 max-w-4xl mb-8">
-              <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400 mb-2">{d.thresholdFinlandTitle}</h3>
-              <p className="text-xs text-foreground-muted leading-relaxed">{cite(d.thresholdFinlandText)}</p>
-            </div>
-
-            <div className="max-w-4xl mb-6">
-              <h3 className="font-semibold text-sm mb-3">{d.thresholdChartTitle}</h3>
-              <ThresholdChart locale={locale_key} />
-            </div>
-
-            <p className="text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
-              {d.thresholdCaveat}
-            </p>
-
-            {/* Causal structure: Why BMI does not explain the decline */}
-            <div id="causal-structure" className="mt-10 max-w-4xl">
-              <h3 className="text-base font-semibold mb-2">{d.causalStructureTitle}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.causalStructureLead}</p>
-
-              {/* Two parallel DAGs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <div className="rounded-xl border border-card-border bg-card-bg p-4">
-                  <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">{d.causalDagConventionalTitle}</p>
-                  <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label="Conventional DAG: BMI as confounder">
-                    <rect x="55" y="10" width="170" height="32" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
-                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[10px] font-medium">{d.dagDietLifestyle}</text>
-                    <rect x="10" y="90" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
-                    <text x="50" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
-                    <rect x="190" y="90" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
-                    <text x="230" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
-                    <line x1="105" y1="42" x2="60" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
-                    <line x1="175" y1="42" x2="220" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
-                    <line x1="90" y1="105" x2="188" y2="105" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
-                    <text x="140" y="145" textAnchor="middle" className="fill-green-500 text-[10px] font-semibold">{d.dagBmiAdjCorrect}</text>
-                    <text x="140" y="160" textAnchor="middle" className="fill-foreground-muted text-[9px]">{d.dagNullNoDecline}</text>
-                    <defs><marker id="arrowConv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-foreground-muted/50" /></marker></defs>
-                  </svg>
-                  <p className="text-[10px] text-foreground-muted mt-2 text-center">{d.causalDagConventionalCaption}</p>
-                </div>
-
-                <div className="rounded-xl border-2 border-accent/30 bg-accent/5 p-4">
-                  <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{d.causalDagBermTitle}</p>
-                  <svg viewBox="0 0 280 200" className="w-full" role="img" aria-label="BERM DAG: BMI as mediator">
-                    <rect x="90" y="5" width="100" height="30" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
-                    <text x="140" y="24" textAnchor="middle" className="fill-foreground text-[11px] font-medium">EMF</text>
-                    <rect x="10" y="80" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
-                    <text x="50" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
-                    <rect x="190" y="80" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
-                    <text x="230" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
-                    <text x="96" y="52" textAnchor="start" className="fill-amber-500 text-[8px]">{d.dagMetabolicPaths}</text>
-                    <text x="96" y="63" textAnchor="start" className="fill-amber-500 text-[8px]">{d.dagPathways}</text>
-                    <path d="M112 36 L90 50 L78 78" className="fill-none stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#arrowBerm)" />
-                    <line x1="90" y1="95" x2="188" y2="95" className="stroke-amber-500/60" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#arrowBerm)" />
-                    <text x="140" y="89" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagMediated}</text>
-                    <line x1="170" y1="35" x2="225" y2="78" className="stroke-red-500/80" strokeWidth="2" markerEnd="url(#arrowBermR)" />
-                    <text x="215" y="55" textAnchor="middle" className="fill-red-500 text-[8px]">{d.dagDirect}</text>
-                    <text x="210" y="65" textAnchor="middle" className="fill-red-500 text-[8px]">Cav3.2 / mel / cort</text>
-                    <line x1="140" y1="130" x2="140" y2="145" className="stroke-red-500/60" strokeWidth="1.5" strokeDasharray="3 2" />
-                    <text x="140" y="160" textAnchor="middle" className="fill-red-500 text-[10px] font-semibold">{d.dagOvercorrection}</text>
-                    <text x="140" y="175" textAnchor="middle" className="fill-foreground-muted text-[9px]">{d.dagRemoves}</text>
-                    <defs>
-                      <marker id="arrowBerm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-amber-500/60" /></marker>
-                      <marker id="arrowBermR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-red-500/80" /></marker>
-                    </defs>
-                  </svg>
-                  <p className="text-[10px] text-foreground-muted mt-2 text-center">{d.causalDagBermCaption}</p>
-                </div>
-              </div>
-
-              {/* Mazur 2013 highlight */}
-              <div className="rounded-xl border-2 border-amber-500/40 bg-amber-500/5 p-5 mb-8">
-                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">{cite(d.causalMazurTitle)}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalMazurText}</p>
-                <blockquote className="border-l-4 border-amber-500/50 pl-4 py-2 mb-2">
-                  <p className="text-sm text-foreground italic leading-relaxed">&ldquo;{d.causalMazurQuote}&rdquo;</p>
-                </blockquote>
-                <p className="text-xs text-foreground-muted">{cite(d.causalMazurSource)}</p>
-              </div>
-
-              {/* Pathway proportions */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4">
-                  <p className="text-xs font-semibold text-red-500 mb-1">{d.causalPathwayDirect}</p>
-                  <p className="text-lg font-bold font-mono-num text-foreground mb-1">{d.causalPathwayDirectEst}</p>
-                  <p className="text-xs text-foreground-muted">{d.causalPathwayDirectDesc}</p>
-                </div>
-                <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
-                  <p className="text-xs font-semibold text-amber-500 mb-1">{d.causalPathwayMediated}</p>
-                  <p className="text-lg font-bold font-mono-num text-foreground mb-1">{d.causalPathwayMediatedEst}</p>
-                  <p className="text-xs text-foreground-muted">{d.causalPathwayMediatedDesc}</p>
-                </div>
-              </div>
-              <p className="text-xs text-foreground-muted italic border-l-2 border-amber-500/30 pl-3 mb-8">{cite(d.causalPathwayCaveat)}</p>
-
-              {/* Reconciliation table */}
-              <div className="mb-8">
-                <h4 className="text-sm font-semibold mb-2">{d.causalReconciliationTitle}</h4>
-                <p className="text-xs text-foreground-muted mb-3">{d.causalReconciliationLead}</p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-xs border-collapse">
-                    <thead>
-                      <tr className="border-b border-card-border text-left">
-                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Tutkimus" : "Study"}</th>
-                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "BMI-korj." : "BMI adj."}</th>
-                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Tulos" : "Result"}</th>
-                        <th className="py-2 font-medium text-foreground-muted">{locale_key === "fi" ? "BERM-tulkinta" : "BERM interpretation"}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {d.causalReconciliationStudies.map((row: { referenceId: string; study: string; bmiAdj: boolean; result: string; interpretation: string }) => (
-                        <tr key={row.study} className={`border-b border-card-border/50${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? " opacity-70" : ""}`}>
-                          <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">
-                            <CitationLink citation={row.study} referenceId={row.referenceId} locale={locale_key} />
-                          </td>
-                          <td className="py-2 pr-3">{row.bmiAdj ? "✓" : "—"}</td>
-                          <td className={`py-2 pr-3 font-mono-num whitespace-nowrap ${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? "text-foreground-muted" : "text-red-500 font-semibold"}`}>{row.result}</td>
-                          <td className="py-2 text-foreground-muted">{row.interpretation}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* Santi 2025 highlight */}
-              <div className="rounded-xl border-2 border-purple-500/40 bg-purple-500/5 p-5 mb-8">
-                <p className="text-xs font-semibold text-purple-500 uppercase tracking-wider mb-2">{cite(d.causalSantiTitle)}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalSantiText}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.causalSantiMechanism}</p>
-                <p className="text-xs text-foreground-muted">{cite(d.causalSantiSource)}</p>
-              </div>
-
-            <h3 className="text-base font-semibold mt-10 mb-2">{d.pocketTitle}</h3>
-            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{cite(d.pocketText)}</p>
-
-              {/* Inverse pharmacological test */}
-              <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-5 mb-4">
-                <p className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">{d.causalInverseTitle}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed mb-4">{d.causalInverseText}</p>
-                <div className="grid grid-cols-3 gap-2 mb-3">
-                  {d.causalInverseData.map((row: { label: string; loss: string; bmi: string }) => (
-                    <div key={row.label} className="rounded-lg border border-green-500/20 bg-green-500/5 p-3 text-center">
-                      <p className="text-[10px] text-foreground-muted mb-1">{row.label}</p>
-                      <p className="text-base font-bold font-mono-num text-green-600">{row.loss}</p>
-                      <p className="text-[10px] text-foreground-muted mt-0.5">BMI {row.bmi}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-xs text-foreground-muted">{cite(d.causalInverseSource)}</p>
-              </div>
-            </div>
-
-            {/* Why pronatalism fails */}
-            <div className="mt-10 max-w-3xl">
-              <h3 className="text-base font-semibold mb-3">{d.whyPronatTitle}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-                {d.whyPronatText}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
-                  <p className="text-xs font-semibold text-blue-400 mb-1">{d.labelPrediction}</p>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatPrediction}</p>
-                </div>
-                <div className="flex-1 rounded-lg border border-red-500/20 bg-red-500/5 p-3">
-                  <p className="text-xs font-semibold text-red-400 mb-1">{d.labelFalsification}</p>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatFalsification}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Biological floor */}
-            <div className="mt-10 max-w-3xl">
-              <h3 className="text-base font-semibold mb-3">{d.bioFloorTitle}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-4">
-                {d.bioFloorText}
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
-                {d.bioFloorTimeline.map((row: { year: string; value: string; note: string }) => (
-                  <div
-                    key={row.year}
-                    className="rounded-lg border border-card-border bg-card-bg p-3 text-center"
-                  >
-                    <p className="text-xs text-foreground-muted">{row.year}</p>
-                    <p className="text-lg font-bold font-mono-num">{row.value}</p>
-                    {row.note && (
-                      <p className="text-[10px] text-foreground-muted/70 mt-1">{row.note}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-foreground-muted leading-relaxed italic border-l-2 border-red-500/30 pl-3">
-                {d.bioFloorConsequence}
-              </p>
-            </div>
-
-            {/* Six-factor summary */}
-            <div className="mt-10 max-w-4xl">
-              <h3 className="text-base font-semibold mb-2">{d.sixFactorTitle}</h3>
-              <p className="text-sm text-foreground-muted leading-relaxed mb-2 max-w-3xl">
-                {d.sixFactorLead}
-              </p>
-              <SixFactorSummary locale={locale_key} />
-            </div>
+            <TestosteroneCalibrationSummary locale={locale} threshold />
           </section>
 
           {/* Extended Disease Cascades 9-18 */}

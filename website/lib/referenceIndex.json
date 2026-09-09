@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1335,
-    "linkedReferences": 671
+    "totalReferences": 1341,
+    "linkedReferences": 677
   },
   "references": {
     "bdnf_elf_up_2017": {
@@ -5197,7 +5197,7 @@
       "journal": "Reprod Biol Endocrinol 18:22",
       "type": null,
       "linkStatus": "verified",
-      "externalUrl": "https://doi.org/10.21203/rs.2.20358/v2"
+      "externalUrl": "https://doi.org/10.1186/s12958-020-00575-2"
     },
     "scn_ca_oscillation": {
       "id": "scn_ca_oscillation",
@@ -13371,6 +13371,66 @@
       "type": "dataset",
       "linkStatus": "verified",
       "externalUrl": "https://www.pewresearch.org/dataset/american-trends-panel-wave-147/"
+    },
+    "eden2006_endocrine_disrupters": {
+      "id": "eden2006_endocrine_disrupters",
+      "authors": "Kortenkamp A et al. (EDEN consortium)",
+      "year": 2006,
+      "title": "EDEN. Endocrine Disruptors. Exploring novel endpoints, exposure, low-dose and mixture effects in humans, aquatic wildlife and laboratory animals. Third annual progress report",
+      "journal": "Centre for Ecology and Hydrology; project report C02169",
+      "type": "report",
+      "linkStatus": "verified",
+      "externalUrl": "https://nora.nerc.ac.uk/id/eprint/3354/"
+    },
+    "nhanes2013_2014_sexual_behavior": {
+      "id": "nhanes2013_2014_sexual_behavior",
+      "authors": "CDC/NCHS",
+      "year": 2015,
+      "title": "NHANES 2013–2014: Sexual Behavior (SXQ_H)",
+      "journal": null,
+      "type": "dataset",
+      "linkStatus": "verified",
+      "externalUrl": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2013/DataFiles/SXQ_H.htm"
+    },
+    "pencina2024_traverse_sexual_function": {
+      "id": "pencina2024_traverse_sexual_function",
+      "authors": "Pencina KM, Travison TG, Cunningham GR, Lincoff AM, Nissen SE, Khera M, Miller MG, Flevaris P, Li X, Wannemuehler K, Bhasin S.",
+      "year": 2024,
+      "title": "Effect of Testosterone Replacement Therapy on Sexual Function and Hypogonadal Symptoms in Men with Hypogonadism",
+      "journal": "The Journal of Clinical Endocrinology & Metabolism",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1210/clinem/dgad484"
+    },
+    "liu2006_spermatogenesis_recovery": {
+      "id": "liu2006_spermatogenesis_recovery",
+      "authors": "Liu PY et al.",
+      "year": 2006,
+      "title": "Rate, extent, and modifiers of spermatogenic recovery after hormonal male contraception: an integrated analysis",
+      "journal": "The Lancet",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/S0140-6736(06)68614-5"
+    },
+    "huijben2026_hh_fertility": {
+      "id": "huijben2026_hh_fertility",
+      "authors": "Huijben M et al.",
+      "year": 2026,
+      "title": "Therapeutic benefits of gonadotropins in male hypogonadotropic hypogonadism: a focus on spermatogenesis and fertility",
+      "journal": "Reproduction & Fertility",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1530/RAF-25-0100"
+    },
+    "amigos2019_testosterone_live_birth": {
+      "id": "amigos2019_testosterone_live_birth",
+      "authors": "Trussell JC et al.",
+      "year": 2019,
+      "title": "Association Between Testosterone, Semen Parameters and Live Birth in Men with Unexplained Infertility in an Intrauterine Insemination Population",
+      "journal": "Fertility and Sterility",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.fertnstert.2019.01.034"
     }
   },
   "aliases": {
@@ -13896,7 +13956,8 @@
     "doi:10.1093/humupd/dmaa033": "eshre2021",
     "doi:10.1038/s41562-020-0823-z": "bakker2020_physiology_politics_replication",
     "pmcid:PMC7306406": "bakker2020_physiology_politics_replication",
-    "doi:10.21203/rs.2.20358/v2": "chodick-2020-israel",
+    "doi:10.1186/s12958-020-00575-2": "chodick-2020-israel",
+    "pmcid:PMC7063751": "chodick-2020-israel",
     "pmcid:PMC6170461": "scn_ca_oscillation",
     "doi:10.3109/15368378.2012.743909": "milham_stetzer2013_dirty_electricity",
     "doi:10.1016/j.ecoenv.2023.114733": "yu2023_zip9_rf_sertoli",
@@ -14868,6 +14929,15 @@
     "doi:10.1001/jamanetworkopen.2020.3833": "ueda2020_sexual_activity",
     "pmcid:PMC7293001": "ueda2020_sexual_activity",
     "pmid:32530470": "ueda2020_sexual_activity",
-    "doi:10.1111/jomf.13097": "neal2025_nonparents"
+    "doi:10.1111/jomf.13097": "neal2025_nonparents",
+    "doi:10.1210/clinem/dgad484": "pencina2024_traverse_sexual_function",
+    "pmid:37589949": "pencina2024_traverse_sexual_function",
+    "doi:10.1016/s0140-6736(06)68614-5": "liu2006_spermatogenesis_recovery",
+    "pmid:16650651": "liu2006_spermatogenesis_recovery",
+    "doi:10.1530/raf-25-0100": "huijben2026_hh_fertility",
+    "pmcid:PMC13280620": "huijben2026_hh_fertility",
+    "doi:10.1016/j.fertnstert.2019.01.034": "amigos2019_testosterone_live_birth",
+    "pmcid:PMC6557574": "amigos2019_testosterone_live_birth",
+    "pmid:30982604": "amigos2019_testosterone_live_birth"
   }
 }

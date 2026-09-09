@@ -1,0 +1,35 @@
+{
+  "version": "v13",
+  "updated": "2026-09-09",
+  "interpretation": "Observation-window chronology, not a fitted causal lag",
+  "cases": [
+    {
+      "country": "FIN",
+      "hormoneDocumentedBy": 2002,
+      "tfrPeak": 2010,
+      "firstTfrDecrease": 2011,
+      "referenceIds": [
+        "eden2006_endocrine_disrupters",
+        "perheentupa2013"
+      ]
+    },
+    {
+      "country": "USA",
+      "hormoneDocumentedBy": 1997,
+      "tfrPeak": 2007,
+      "firstTfrDecrease": 2008,
+      "referenceIds": [
+        "travison2007_v2"
+      ]
+    },
+    {
+      "country": "ISR",
+      "hormoneDocumentedBy": 2015,
+      "tfrPeak": 2017,
+      "firstTfrDecrease": 2018,
+      "referenceIds": [
+        "chodick-2020-israel"
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-08",
-    "referencesWithUsages": 903,
-    "usageLocations": 2808
+    "generated": "2026-09-09",
+    "referencesWithUsages": 908,
+    "usageLocations": 2882
   },
   "usage": {
     "delgado1969": [
@@ -2419,12 +2419,24 @@
         "source": "data/claims.json"
       },
       {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
         "path": "/map",
         "source": "data/claims.json"
       },
       {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
         "path": "/model/biological-coordination",
         "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
       }
     ],
     "mills2023_kisspeptin": [
@@ -2659,6 +2671,436 @@
         "source": "app/[locale]/evidence/convergence/page.tsx"
       }
     ],
+    "nhanes2013_2014_hormones_data": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "nhanes2013_2014_sexual_behavior": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "pencina2024_traverse_sexual_function": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "coviello2005_intratesticular_testosterone": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "liu2006_spermatogenesis_recovery": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "huijben2026_hh_fertility": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "amigos2019_testosterone_live_birth": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "gettler2011_fatherhood_testosterone": [
+      {
+        "path": "/behavior",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/behavior/reproductive-regulation",
+        "source": "components/ReproductiveRegulationAxes.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/proxy-masking",
+        "source": "components/ProxyBehaviourEvidence.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TestosteroneCalibrationUpdate.tsx"
+      }
+    ],
+    "nations2024": [
+      {
+        "path": "/behavior",
+        "source": "components/TemporalTtoTFR.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "components/TemporalTtoTFR.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/measurement/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/model",
+        "source": "components/TemporalTtoTFR.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "components/TemporalTtoTFR.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "eden2006_endocrine_disrupters": [
+      {
+        "path": "/behavior",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      }
+    ],
+    "perheentupa2013": [
+      {
+        "path": "/behavior",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/berm-biomarker-calibration-protocols.ts"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      }
+    ],
+    "travison2007_v2": [
+      {
+        "path": "/behavior",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model/math",
+        "source": "components/MathematicsSections.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      }
+    ],
+    "chodick-2020-israel": [
+      {
+        "path": "/behavior",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/evidence/testosterone",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      },
+      {
+        "path": "/map",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/biological-coordination",
+        "source": "data/claims.json"
+      },
+      {
+        "path": "/predictions",
+        "source": "public/data/testosterone-calibration/chronology.json"
+      }
+    ],
     "peragine2017_rfrp_suppression": [
       {
         "path": "/behavior/reproductive-regulation",
@@ -2857,28 +3299,6 @@
       {
         "path": "/model/proxy-masking",
         "source": "components/ReproductiveRegulationAxes.tsx"
-      }
-    ],
-    "gettler2011_fatherhood_testosterone": [
-      {
-        "path": "/behavior/reproductive-regulation",
-        "source": "components/ReproductiveRegulationAxes.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/proxy-masking",
-        "source": "components/ProxyBehaviourEvidence.tsx"
       }
     ],
     "gettler2013_fatherhood_sex": [
@@ -4515,44 +4935,6 @@
         "source": "data/claims.json"
       }
     ],
-    "nations2024": [
-      {
-        "path": "/data",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence/epidemiology",
-        "source": "app/[locale]/evidence/epidemiology/page.tsx"
-      },
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/measurement/fieldstate",
-        "source": "lib/causalChainV2Data.ts"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/sentinel",
-        "source": "app/[locale]/sentinel/page.tsx"
-      }
-    ],
     "shafik1992": [
       {
         "path": "/data",
@@ -5015,32 +5397,6 @@
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
-      }
-    ],
-    "travison2007_v2": [
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "components/MathematicsSections.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "components/MathematicsSections.tsx"
       }
     ],
     "who_t_meta": [
@@ -9491,30 +9847,6 @@
         "source": "lib/eyeColorData.ts"
       }
     ],
-    "perheentupa2013": [
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/berm-biomarker-calibration-protocols.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      }
-    ],
-    "chodick-2020-israel": [
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
-      }
-    ],
     "andersson-2007-denmark": [
       {
         "path": "/evidence",
@@ -10050,20 +10382,6 @@
       }
     ],
     "belchetz1978_gnrh_pulses": [
-      {
-        "path": "/evidence/pharmacology",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/map",
-        "source": "data/claims.json"
-      },
-      {
-        "path": "/model/biological-coordination",
-        "source": "data/claims.json"
-      }
-    ],
-    "coviello2005_intratesticular_testosterone": [
       {
         "path": "/evidence/pharmacology",
         "source": "data/claims.json"
@@ -12621,18 +12939,6 @@
       {
         "path": "/model",
         "source": "components/CaMKIIConvergenceDiagram.tsx"
-      }
-    ],
-    "assefa2024_testes_review": [
-      {
-        "path": "/model",
-        "source": "components/SixFactorSummary.tsx"
-      }
-    ],
-    "wu2008_emas_hpt_axis": [
-      {
-        "path": "/model",
-        "source": "components/SixFactorSummary.tsx"
       }
     ],
     "baureuskoch2003_vesicle_ipr": [

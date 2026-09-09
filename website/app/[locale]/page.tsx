@@ -38,7 +38,7 @@ function getFalsificationStats() {
 const METRICS_EN = [
   { value: "56 / 56", sub: "mechanistic steps verified, zero falsified", icon: "check" },
   { value: "r = 0.84", sub: "7 species, one EMF gradient (p = 0.017)", icon: "scatter" },
-  { value: "R² = 0.95", sub: "of US fertility variance 2007–2024 explained by testosterone (n = 18)", icon: "chart" },
+  { value: "3", sub: "documented cases: lower T before a later national TFR decline episode", icon: "chart" },
   { value: "$200B", sub: "spent, zero reversal — biology resists incentives", icon: "down" },
   { value: "8", sub: "locked predictions with confidence intervals, frozen 2026-08-18", icon: "atom" },
   { value: "0.614", sub: "BioCap index — down from 0.976 in 1950", icon: "activity" },
@@ -47,7 +47,7 @@ const METRICS_EN = [
 const METRICS_FI = [
   { value: "56 / 56", sub: "mekanistista vaihetta todennettu, nolla kumottu", icon: "check" },
   { value: "r = 0,84", sub: "7 lajia, yksi EMF-gradientti (p = 0,017)", icon: "scatter" },
-  { value: "R² = 0,95", sub: "USA:n hedelmällisyysvaihtelusta 2007–2024 selittyy testosteronilla (n = 18)", icon: "chart" },
+  { value: "3", sub: "dokumentoitua tapausta: alempi T ennen myöhempää kansallista TFR-laskuvaihetta", icon: "chart" },
   { value: "200 mrd $", sub: "käytetty, nolla käännettä — biologia vastustaa kannustimia", icon: "down" },
   { value: "8", sub: "lukittua ennustetta luottamusväleineen, jäädytetty 18.8.2026", icon: "atom" },
   { value: "0,614", sub: "BioCap-indeksi — laskenut 0,976:sta (1950)", icon: "activity" },
@@ -65,7 +65,7 @@ const COPY_EN = {
 
   s1Title: "Something Is Happening",
   s1P1: "Something is happening to biology. Not just human biology — all biology.",
-  s1P2: "Male sperm concentration has fallen by more than half since 1973, and the decline is accelerating (Levine 2022). Male testosterone has dropped 1.2% per year since the 1980s, independent of age, weight, or lifestyle (Travison 2007; Santi 2025, N > 1 million). These are not choices. They are measurements.",
+  s1P2: "Male sperm concentration has fallen substantially in published trend analyses (Levine 2022). Several cohorts also show secular testosterone decline. In Finnish population samples, the regional US MMAS cohort and Israeli clinical data, lower T is documented before a later national TFR decline episode. The new analysis separates this chronology from causal attribution and from the still-open hormone-to-TFR transfer.",
   s1P3: "The same pattern appears in other species. Dog sperm quality has declined for 26 years (Lea 2016). Horse fertility is falling across Western countries (Harris 2023). Flying insect biomass dropped 75% in protected German nature reserves over 27 years (Hallmann 2017). North America lost three billion birds since 1970 (Rosenberg 2019). Bee colony losses reached record levels in 2024–25.",
   s1P4a: "These declines cross every boundary that should separate them: national borders, cultures, economic systems, climates, species. The only boundaries they respect are technological ones. Communities that restrict modern technology — Old Order Amish (TFR ≈ 6.1 in 2014, down from 6.9 in 1924), ultra-Orthodox Jews (TFR ~6.4), traditional Mennonites (TFR ~5.5) — are unaffected. They share the same healthcare, legal systems, and economies as their neighbours. What they do not share is the electromagnetic environment.",
   s1P4b: "Every government that has tried to reverse fertility decline through financial incentives has failed. South Korea invested over $200 billion. Its fertility rate fell from 1.08 to 0.72 during the intervention period. No floor has been found anywhere — 1.3 was not a floor, 1.0 was not a floor, 0.8 was not a floor. The decline continues as though driven by a force that policy cannot reach.",
@@ -114,7 +114,7 @@ const COPY_FI = {
 
   s1Title: "Havaittu kehitys",
   s1P1: "Biologisissa mittareissa tapahtuu samansuuntaisia muutoksia useissa eliölajeissa.",
-  s1P2: "Miesten siittiöpitoisuus on vähentynyt yli puolella vuodesta 1973 lähtien, ja lasku kiihtyy (Levine 2022). Miesten testosteronitasot ovat laskeneet 1980-luvulta lähtien 1,2 prosenttia vuodessa iästä, painosta ja elämäntavoista riippumatta (Travison 2007; Santi 2025, N > 1\u00a0000\u00a0000). Kyse ei ole käyttäytymisvalinnoista vaan biologisista mittaustuloksista.",
+  s1P2: "Julkaistut trendianalyysit osoittavat miesten siittiöpitoisuuden huomattavaa laskua (Levine 2022). Useissa kohorteissa havaitaan myös testosteronin pitkäaikaislaskua. Suomen väestönäytteissä, alueellisessa USA:n MMAS-kohortissa ja Israelin kliinisessä aineistossa alempi T on dokumentoitavissa ennen myöhempää kansallista TFR-laskuvaihetta. Uusi analyysi erottaa tämän ajoituksen syyn osoittamisesta ja vielä avoimesta hormoni–TFR-siirrosta.",
   s1P3: "Sama kehitys havaitaan muissa lajeissa. Koirien siittiöiden laatu on heikentynyt 26 vuoden ajan (Lea 2016). Hevosten hedelmällisyys alenee länsimaissa (Harris 2023). Lentävien hyönteisten biomassa väheni 75 prosenttia suojelluilla saksalaisilla luonnonsuojelualueilla 27 vuoden aikana (Hallmann 2017). Pohjois-Amerikan lintupopulaatio on pienentynyt kolmella miljardilla yksilöllä vuodesta 1970 lähtien (Rosenberg 2019). Mehiläisyhdyskuntien kuolleisuus nousi ennätystasolle vuosina 2024–2025.",
   s1P4a: "Lasku ylittää valtioiden, kulttuurien, talousjärjestelmien, ilmastovyöhykkeiden ja lajien väliset rajat. Se pysähtyy ainoastaan teknologisesti rajatuissa ympäristöissä. Nykyaikaisen teknologian käyttöä rajoittavissa yhteisöissä vastaavaa hedelmällisyyden laskua ei esiinny. Vanhan järjestyksen amishien kokonaishedelmällisyysluku on noin 6,1 (2014; 6,9 vuonna 1924), ultraortodoksisten juutalaisten noin 6,4 ja perinteisten mennoniittojen noin 5,5. Näiden yhteisöjen terveydenhuolto, oikeusjärjestelmä ja taloudellinen ympäristö ovat samat kuin niitä ympäröivällä väestöllä. Niiden sähkömagneettinen ympäristö on kuitenkin erilainen.",
   s1P4b: "Kaikki hallitukset, jotka ovat yrittäneet kääntää hedelmällisyyden laskun taloudellisilla kannustimilla, ovat epäonnistuneet. Etelä-Korea käytti tarkoitukseen yli 200 miljardia dollaria. Tukitoimien aikana maan kokonaishedelmällisyysluku laski 1,08:sta 0,72:een. Hedelmällisyydelle ei ole havaittu alarajaa. Kokonaishedelmällisyysluku 1,3 ei muodostanut alarajaa, kuten eivät myöskään tasot 1,0 ja 0,8. Lasku jatkuu tavalla, johon poliittiset toimet eivät ole kyenneet vaikuttamaan.",
@@ -239,6 +239,9 @@ export default async function Home({
         <div className="max-w-3xl space-y-5">
           <p className="text-lg font-medium leading-relaxed text-foreground">{d.s1P1}</p>
           <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P2}</p>
+          <Link href={`${prefix}/evidence/testosterone#temporal-precedence`} className="text-sm text-accent underline underline-offset-4">
+            {activeLocale === "fi" ? "Testosteroni: mittaukset, ajoitus ja kaskadi →" : "Testosterone: measurements, timing and cascade →"}
+          </Link>
           <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P3}</p>
           <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P4a}</p>
           <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P4b}</p>

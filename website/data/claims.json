@@ -3931,6 +3931,66 @@
         ]
       },
       "falsification_condition": null
+    },
+    {
+      "id": "claim.testosterone.temporal-precedence",
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "TFR"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "Lower testosterone is documented before later national TFR decline episodes in Finnish population samples, the regional US MMAS cohort and Israeli clinical data.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Alempi testosteronitaso on dokumentoitavissa ennen myöhempää kansallista TFR-laskuvaihetta Suomen väestönäytteissä, alueellisessa MMAS-kohortissa ja Israelin kliinisessä aineistossa.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Retrospective observation-window chronology for specified later decline episodes."
+        ],
+        "does_not_support": [
+          "A universal causal lag, the start of every historical fertility transition, best-predictor status, or EMF attribution."
+        ]
+      },
+      "falsification_condition": null
+    },
+    {
+      "id": "claim.testosterone.conditional-cascade",
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": {
+        "type": "node",
+        "nodeId": "COUPLE_FECUNDABILITY"
+      },
+      "depends_on": [],
+      "supersedes": [],
+      "statement": {
+        "en": {
+          "text": "BERM composes hormone availability, conditional sexual exposure, gamete quality and conception through state-dependent responses and delays, with feedback from parenthood.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "BERM yhdistää hormonin saatavuuden, ehdollisen seksuaalisen altistumisen, sukusolujen laadun ja hedelmöittymisen lähtötilasta riippuvilla vasteilla ja viiveillä sekä vanhemmuuden takaisinkytkennällä.",
+          "sourceRevision": 1
+        }
+      },
+      "scope": {
+        "supports": [
+          "Imported component studies constrain distinct steps; the composition is a BERM proposal."
+        ],
+        "does_not_support": [
+          "A calibrated population T-to-TFR coefficient, serum T equal to intratesticular T, independent marginal probability multiplication, or validation of the open L2 operator."
+        ]
+      },
+      "falsification_condition": null
     }
   ],
   "evidence_relations": [
@@ -12772,6 +12832,342 @@
         "premiseIds": [],
         "status": "partial"
       }
+    },
+    {
+      "id": "er.testosterone.temporal-precedence.eden2006_endocrine_disrupters",
+      "referenceId": "eden2006_endocrine_disrupters",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.finrisk-perheentupa"
+        ],
+        "datasetFamilyIds": [
+          "family.finrisk-perheentupa"
+        ],
+        "studyFamilyIds": [
+          "family.finrisk-perheentupa"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.temporal-precedence.perheentupa2013",
+      "referenceId": "perheentupa2013",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.finrisk-perheentupa"
+        ],
+        "datasetFamilyIds": [
+          "family.finrisk-perheentupa"
+        ],
+        "studyFamilyIds": [
+          "family.finrisk-perheentupa"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.temporal-precedence.travison2007_v2",
+      "referenceId": "travison2007_v2",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.mmas"
+        ],
+        "datasetFamilyIds": [
+          "family.mmas"
+        ],
+        "studyFamilyIds": [
+          "family.mmas"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.temporal-precedence.chodick-2020-israel",
+      "referenceId": "chodick-2020-israel",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.maccabi-testosterone"
+        ],
+        "datasetFamilyIds": [
+          "family.maccabi-testosterone"
+        ],
+        "studyFamilyIds": [
+          "family.maccabi-testosterone"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.temporal-precedence.nations2024",
+      "referenceId": "nations2024",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.wpp2024"
+        ],
+        "datasetFamilyIds": [
+          "family.wpp2024"
+        ],
+        "studyFamilyIds": [
+          "family.wpp2024"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.finkelstein2013_gonadal_steroids",
+      "referenceId": "finkelstein2013_gonadal_steroids",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.finkelstein-nct00114114"
+        ],
+        "datasetFamilyIds": [
+          "family.finkelstein-nct00114114"
+        ],
+        "studyFamilyIds": [
+          "family.finkelstein-nct00114114"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.pencina2024_traverse_sexual_function",
+      "referenceId": "pencina2024_traverse_sexual_function",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.traverse"
+        ],
+        "datasetFamilyIds": [
+          "family.traverse"
+        ],
+        "studyFamilyIds": [
+          "family.traverse"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.coviello2005_intratesticular_testosterone",
+      "referenceId": "coviello2005_intratesticular_testosterone",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.coviello-hcg"
+        ],
+        "datasetFamilyIds": [
+          "family.coviello-hcg"
+        ],
+        "studyFamilyIds": [
+          "family.coviello-hcg"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.liu2006_spermatogenesis_recovery",
+      "referenceId": "liu2006_spermatogenesis_recovery",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.male-contraception-overlaps-who"
+        ],
+        "datasetFamilyIds": [
+          "family.male-contraception-overlaps-who"
+        ],
+        "studyFamilyIds": [
+          "family.male-contraception-overlaps-who"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.huijben2026_hh_fertility",
+      "referenceId": "huijben2026_hh_fertility",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.utrecht-hh"
+        ],
+        "datasetFamilyIds": [
+          "family.utrecht-hh"
+        ],
+        "studyFamilyIds": [
+          "family.utrecht-hh"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.amigos2019_testosterone_live_birth",
+      "referenceId": "amigos2019_testosterone_live_birth",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "contextualizes",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Observational live-birth association; adjusted OR 0.65, 95% CI 0.38–1.12. Male testosterone not randomized.",
+      "provenance": {
+        "studyIds": [
+          "study.amigos"
+        ],
+        "datasetFamilyIds": [
+          "family.amigos"
+        ],
+        "studyFamilyIds": [
+          "family.amigos"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
+    },
+    {
+      "id": "er.testosterone.conditional-cascade.gettler2011_fatherhood_testosterone",
+      "referenceId": "gettler2011_fatherhood_testosterone",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "relation": "supports",
+      "directness": "component_only",
+      "calibrationRole": "structural_only",
+      "limitations": [
+        "Evidence supports the stated component or chronology, not the full causal chain or EMF attribution.",
+        "Study populations, measurement windows and uncertainty are retained in the v13/v14 source tables."
+      ],
+      "curatorId": "berm-testosterone-v13-v14",
+      "curatedAt": "2026-09-09",
+      "curatorNote": "Manually linked to the bounded claim; no automatic parameter promotion.",
+      "provenance": {
+        "studyIds": [
+          "study.cebu"
+        ],
+        "datasetFamilyIds": [
+          "family.cebu"
+        ],
+        "studyFamilyIds": [
+          "family.cebu"
+        ],
+        "premiseIds": [],
+        "status": "partial"
+      }
     }
   ],
   "epistemic_assessments": [
@@ -14692,6 +15088,44 @@
       "assessorId": "berm-reproductive-regulation-integration",
       "assessedAt": "2026-09-08",
       "note": "Conditional synthesis of separately identified component experiments and observations. Structure and protocol-specific directions are integrated; field and population calibration remain open."
+    },
+    {
+      "id": "ea.testosterone.temporal-precedence.v1",
+      "claimId": "claim.testosterone.temporal-precedence",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [
+        "er.testosterone.temporal-precedence.eden2006_endocrine_disrupters",
+        "er.testosterone.temporal-precedence.perheentupa2013",
+        "er.testosterone.temporal-precedence.travison2007_v2",
+        "er.testosterone.temporal-precedence.chodick-2020-israel",
+        "er.testosterone.temporal-precedence.nations2024"
+      ],
+      "assessorId": "berm-testosterone-v13-v14",
+      "assessedAt": "2026-09-09",
+      "note": "Retrospective comparison of published hormone observation windows with specified later national TFR decline episodes. Source populations and uncertainties are retained; this assessment does not establish a universal lag, causal effect, best-predictor status or EMF attribution."
+    },
+    {
+      "id": "ea.testosterone.conditional-cascade.v1",
+      "claimId": "claim.testosterone.conditional-cascade",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "incomplete",
+      "origin": "emergent",
+      "basis": [
+        "er.testosterone.conditional-cascade.finkelstein2013_gonadal_steroids",
+        "er.testosterone.conditional-cascade.pencina2024_traverse_sexual_function",
+        "er.testosterone.conditional-cascade.coviello2005_intratesticular_testosterone",
+        "er.testosterone.conditional-cascade.liu2006_spermatogenesis_recovery",
+        "er.testosterone.conditional-cascade.huijben2026_hh_fertility",
+        "er.testosterone.conditional-cascade.amigos2019_testosterone_live_birth",
+        "er.testosterone.conditional-cascade.gettler2011_fatherhood_testosterone"
+      ],
+      "assessorId": "berm-testosterone-v13-v14",
+      "assessedAt": "2026-09-09",
+      "note": "Conditional BERM composition of separately studied biological and behavioural components, including parenthood feedback. Component evidence constrains structure and study-specific responses; population transfer, full-chain calibration and the L2 response operator remain open."
     }
   ],
   "routes": [

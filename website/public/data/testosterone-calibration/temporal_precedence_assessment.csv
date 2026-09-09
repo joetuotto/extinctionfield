@@ -1,0 +1,10 @@
+iso3,hormone_comparison,lower_hormone_documented_by_year,tfr_peak_year,first_tfr_decrease_year,calendar_gap_to_peak_not_causal_lag,status,note
+FIN,Perheentupa_EDEN,2002.0,2010,2011,8.0,DOCUMENTED_AGE_GROUP_PRECEDENCE,"Age-group cohort differences in1972/1977/2002 samples; report2006, public archive2008."
+USA,MMAS_age_matched_Table3,1997.0,2007,2008,10.0,DOCUMENTED_AGE_MATCHED_REGIONAL_PRECEDENCE,500 to444ng/dL at comparable median ages65/64. Regional older male samples; national TFR target.
+USA,MMAS_full_age_adjusted_analysis,2004.0,2007,2008,3.0,DOCUMENTED_AGE_ADJUSTED_REGIONAL_PRECEDENCE,"Three waves1987-2004, age-matched calendar slope-1.0%/yr after health/lifestyle adjustment."
+ISR,Chodick_Figure1A_pre2016,2015.0,2017,2018,2.0,DOCUMENTED_GRAPH_BASED_AGE_SPECIFIC_PRECEDENCE,"All30 age means20-49 lower by2013-15 vs2006-09; exact values graph-digitized, sampling CI not reconstructed."
+DNK,Andersson2007,2001.0,2010,2011,9.0,REPORTED_TOTAL_T_PRECEDENCE_WITH_QUALIFICATION,Age-matched total T decrease reported; BMI-adjusted effect not significant and cFT not declining. Complete numeric article tables not newly acquired.
+SWE,Trimpou2012,2008.0,2010,2011,2.0,REPORTED_FREE_T_PRECEDENCE_WITH_QUALIFICATION,Source concerns free T; numeric table pending. Do not substitute as demonstrated total-T decline.
+CHN,Fucheng_age20_39,2014.0,2017,2018,3.0,ASSAY_CONFOUNDED_DESCRIPTIVE_PRECEDENCE,"Young group decline before2017 peak, but methods changed; older comparison group increased."
+BRA,Laranja2020,2017.0,2018,2019,1.0,CLINICAL_TREND_PRECEDENCE_FOR_LATE_EPISODE_ONLY,2010-17 T slope precedes2018 renewed TFR decline; national TFR was already falling well before hormone observation.
+ZAF,Soweto_followup,,2017,2018,,NO_DOCUMENTED_PRIOR_TOTAL_T_DECLINE,Total T stable/increased in same-person followup; fertility had already declined. Retained as non-supporting case.

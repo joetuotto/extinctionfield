@@ -152,6 +152,7 @@ const sourceFiles = [
     .flatMap((directory) => walk(path.join(ROOT, directory)))
     .filter((file) => ![INDEX_PATH, USAGE_PATH].includes(file)),
   LEGACY_EVIDENCE_PATH,
+  path.join(ROOT, "public/data/testosterone-calibration/chronology.json"),
   ...["claims.json", "modulome-state.json", "causal-atlas-extensions.json"].map((file) => path.join(ROOT, "data", file)),
 ];
 const sourceFileSet = new Set(sourceFiles);

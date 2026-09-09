@@ -12,7 +12,7 @@ export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
           ["V2-maa-arvio", "Se edellyttää dokumentoitua FieldStatea, elin- ja paritason päätepisteitä sekä ASFR-kalibrointia samalla aika–paikka-akselilla."],
           ["Poikkileikkausennuste v17.1", "TFR ≈ 4,11 × exp(−54,0 × EMF_eff) + 1,55. EMF_eff yhdistää asumisen sähkönkulutuksen (ELF) ja laajakaistan (RF) sähkön saatavuudella korjattuna. LOOCV RMSE 0,522 (n = 54, sd = 1,35). Taitoarvo 0,61 (= 1 − RMSE/sd; 61 % parannus keskiarvoennustajaan). R² = 0,851 kuvastaa sähköistyskynnystä, ei EMF-tarkkaa vaikutusta."],
           ["Nimetyt L3-vasteprofiilit", "χ_env, χ_optical ja χ_molecular ovat erillisiä tuotuja L3-ehdokkaita, eivät L1-χ_geo-kertoimen käyttötapoja. Niiden populaatiopainot ja yhteys mitattuun altistukseen vaativat avoimen L2-sillan ja empiirisen kalibroinnin."],
-          ["T-pitkäaikaistrendi", "Testosteronin −1,2 %/vuoden lasku 1982 lähtien on kalibroitu TFR-viiveellä (8v). Maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1)."],
+          ["Testosteronin ajoitus", "Mitattu lasku edeltää myöhempää TFR-laskuvaihetta Suomessa, USA:n MMAS-vertailussa ja Israelissa. v13/v14-aineisto rajaa ajoitusta ja kaskadin osia; yhteistä kausaalista viivettä ei ole estimoitu."],
         ],
       }
     : {
@@ -24,7 +24,7 @@ export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
           ["A v2 country estimate", "It requires documented FieldState, organ and couple endpoints, and ASFR calibration on the same time–place axis."],
           ["Cross-sectional prediction v17.1", "TFR ≈ 4.11 × exp(−54.0 × EMF_eff) + 1.55. EMF_eff combines residential electricity (ELF) and broadband (RF), adjusted by electricity access. LOOCV RMSE 0.522 (n = 54, sd = 1.35). Skill score 0.61 (= 1 − RMSE/sd; 61% improvement over mean predictor). R² = 0.851 reflects the electrification threshold, not EMF-specific effect."],
           ["Named L3 response profiles", "χ_env, χ_optical and χ_molecular are separate imported L3 candidates, not applications of the L1 χ_geo coefficient. Their population weights and connection to measured exposure require the open L2 bridge and empirical calibration."],
-          ["T secular trend", "The −1.2%/year testosterone decline since 1982 is calibrated against TFR with an 8-year lag. Countries with earlier electrification may show earlier T decline onset (prediction T-1)."],
+          ["Testosterone timing", "Measured declines precede later TFR decline episodes in Finland, the US MMAS comparison and Israel. The v13/v14 evidence constrains chronology and cascade components; a common causal lag is not yet estimated."],
         ],
       };
 

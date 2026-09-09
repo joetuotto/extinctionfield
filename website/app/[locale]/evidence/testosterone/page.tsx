@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { DerivedPrediction } from "@/components/DerivedPrediction";
 import { CrossSpeciesGradient } from "@/components/CrossSpeciesGradient";
-import { TemporalTtoTFR } from "@/components/TemporalTtoTFR";
+import { TestosteroneCalibrationUpdate } from "@/components/TestosteroneCalibrationUpdate";
 import { pickCopy } from "@/lib/i18n";
 import { ClaimRef } from "@/components/ClaimRef";
 import { StudyCitation } from "@/components/StudyCitation";
@@ -16,33 +16,20 @@ import { MathBlock } from "@/components/MathBlock";
 
 const COPY = {
   en: {
-    title: "Testosterone: The Biological Clock",
-    subtitle: "Population studies document secular testosterone declines in several cohorts. BERM links central hormonal regulation with local Leydig-cell calcium, redox, clock and cholesterol-supply mechanisms, then follows hormone availability and tissue response into reproductive function.",
+    title: "Testosterone: timing and the reproductive cascade",
+    subtitle: "Measured testosterone changes precede later fertility declines in three documented cases. New hormone, behavior and conception data constrain the intermediate steps of BERM.",
     backLink: "← Back to Evidence",
-    cautionText: "Testosterone secular decline is reported in several cohorts, but its magnitude and cause remain debated. Total-T assays also do not measure binding, free or intratesticular hormone, AR/ZIP9 function or post-receptor signalling. The T→TFR and LH patterns are hypothesis-generating; neither proves EMF causation.",
+    cautionText: "The timing result concerns specified later TFR decline episodes. Total T does not measure free or intratesticular hormone or receptor action. Hormone interventions constrain individual components; the full population transfer and environmental attribution remain open.",
 
-    s1Title: "The secular decline",
-    s1Lead: "Three independent datasets document the same pattern in US males:",
-    s1Points: [
-      { label: "AFHS cohort (Travison 2007)", detail: "638 ng/dL baseline in 1982. Age-independent decline of ~1.2%/year across three exam waves. Not explained by BMI, smoking, or comorbidity changes." },
-      { label: "NHANES cross-sections (Lokeshwar 2021)", detail: "Continued decline through 2016 across all age groups 15–39. Young men (15–19) showed the steepest proportional drop." },
-      { label: "European confirmation", detail: "Finnish, Danish, and French military conscript studies show parallel declines from the 1990s onward." },
-    ],
-    s1Stat: "USA trajectory: 638 → ~380 ng/dL (1982–2024), −1.2%/year age-independent",
 
-    s2Title: "T → TFR temporal lag",
-    s2Lead: "When USA testosterone is lagged 8 years against TFR, the fit is striking:",
-    s2Stat: "R² = 0.97 (USA 2007–2024, lag = 8 years)",
-    s2Detail: "The transfer function TFR = 0.00544 × T − 0.745 predicts the post-2007 TFR decline trajectory. The 8-year lag is biologically plausible: it represents the time from testosterone decline in young men to peak fertility impact in their late 20s–30s.",
-    s2Caveat: "This is a within-country temporal correlation calibrated on the same data window. Out-of-sample validation requires other countries with harmonised longitudinal T data.",
 
     s3Title: "The LH–T diagnostic",
     s3Lead: "Santi et al. 2025 introduced a differential diagnostic based on simultaneous hormone trends:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypothalamic", detail: "Reduced central stimulation is compatible with this pattern; simultaneous local steroidogenic limitations can still be present.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testicular", detail: "Compensatory LH is compatible with limited testicular output. Calcium, redox, clock and substrate supply locate potential mechanisms; the hormone pattern alone does not identify their trigger.", color: "amber" },
+      { pattern: "T↓ + LH↓ · Hypothalamic", detail: "Reduced central stimulation is compatible with this pattern; simultaneous local steroidogenic limitations can still be present.", color: "blue" },
+      { pattern: "T↓ + LH↑ · Testicular", detail: "Compensatory LH is compatible with limited testicular output. Calcium, redox, clock and substrate supply locate potential mechanisms; the hormone pattern alone does not identify their trigger.", color: "amber" },
     ],
-    s3Observed: "Observed population pattern: T↓ + LH↓ (hypothalamic)",
+    s3Observed: "T↓ with low LH is compatible with reduced central stimulation",
     s3Implication: "BERM includes both central regulation and local Leydig-cell capacity. T↓ with low or inappropriately normal LH is compatible with reduced central drive; it does not exclude concurrent calcium, redox, clock or cholesterol-supply limitations in the testis. A serum pair does not identify the environmental trigger or hormone use at the target.",
 
     s3bTitle: "Chemical vs EMF: the differential",
@@ -61,46 +48,27 @@ const COPY = {
     s4Caveat: "Ecological correlation across species with heterogeneous decline measurements and EMF burden estimates. The species differ in body size, lifespan, generation time, and confounders. Consistent with but not proof of dose-response. This applies equally to conventional explanations.",
 
     s5Title: "Epistemological honesty",
-    s5Points: [
-      "The T→TFR model is calibrated AND validated on the same USA window — this inflates the R²",
-      "Cross-sectional country-level T data is heterogeneous (different assays, ages, years)",
-      "The 1.2%/year decline rate comes primarily from one US cohort study",
-      "Other causes (obesity epidemic, metabolic syndrome, sleep disruption) are not excluded",
-      "The cross-species gradient uses rough EMF burden estimates, not measured doses",
-    ],
+    s5Points: ["Temporal precedence is documented in three specified cases; it does not estimate a common causal lag.", "The NHANES population association and low-T intervention effects describe different response ranges.", "Assay, age, sampling time, relationship state and study-family overlap must be preserved in calibration.", "The human hormone-to-TFR transfer and chronic EMF contribution remain open."],
 
-    predictionText: "Prediction T-1: Countries with earlier/steeper electrification will show earlier T decline onset, and the T→TFR lag will be consistent across populations with harmonised T data.",
+    predictionText: "Next test: compare state-dependent hormone response curves and lag distributions on countries or periods withheld from fitting. Keep temporal precedence, predictive improvement and exposure attribution as separate tests.",
     predictionLink: "See predictions →",
     predictionHref: "/predictions",
   },
   fi: {
-    title: "Testosteroni: Biologinen kello",
-    subtitle: "Väestötutkimukset dokumentoivat testosteronin pitkäaikaista laskua useissa kohorteissa. BERM yhdistää keskisen hormonisäätelyn Leydig-solujen paikalliseen kalsium-, redox-, kello- ja kolesterolihuoltoon ja seuraa hormonin saatavuutta sekä kudosvastetta lisääntymistoimintaan.",
+    title: "Testosteroni: ajoitus ja lisääntymiskaskadi",
+    subtitle: "Mitattu testosteronin aleneminen edeltää myöhempää syntyvyyden laskua kolmessa dokumentoidussa tapauksessa. Uudet hormoni-, käyttäytymis- ja hedelmöittymisaineistot tarkentavat BERM:n välivaiheita.",
     backLink: "← Takaisin näyttöön",
-    cautionText: "Testosteronin pitkäaikaislaskua raportoidaan useissa kohorteissa, mutta sen suuruudesta ja syystä kiistellään. Kokonais-T-mittaus ei myöskään mittaa sitoutumista, vapaata tai intratestikulaarista hormonia, AR-/ZIP9-toimintaa eikä reseptorin jälkeistä signalointia. T→TFR- ja LH-kuviot tuottavat hypoteeseja; kumpikaan ei todista EMF-kausaalisuutta.",
+    cautionText: "Ajoitustulos koskee nimettyjä myöhempiä TFR-laskuvaiheita. Kokonais-T ei mittaa vapaata tai kiveksen sisäistä hormonia eikä reseptorivaikutusta. Hormonikokeet rajaavat osavaikutuksia; koko väestötason siirto ja ympäristösyyn osoittaminen ovat avoimia.",
 
-    s1Title: "Pitkäaikaislasku",
-    s1Lead: "Kolme riippumatonta aineistoa dokumentoivat saman kaavan yhdysvaltalaismiehillä:",
-    s1Points: [
-      { label: "AFHS-kohortti (Travison 2007)", detail: "638 ng/dL lähtötaso vuonna 1982. Iästä riippumaton lasku ~1,2 %/vuosi kolmessa tutkimusaallossa. Ei selity BMI:n, tupakoinnin tai oheissairauksien muutoksilla." },
-      { label: "NHANES-poikkileikkaukset (Lokeshwar 2021)", detail: "Jatkunut lasku vuoteen 2016 kaikissa ikäryhmissä 15–39. Nuorilla miehillä (15–19) jyrkin suhteellinen pudotus." },
-      { label: "Eurooppalainen vahvistus", detail: "Suomalaiset, tanskalaiset ja ranskalaiset varusmiestutkimukset osoittavat rinnakkaisia laskuja 1990-luvulta eteenpäin." },
-    ],
-    s1Stat: "USA:n kehityskulku: 638 → ~380 ng/dL (1982–2024), −1,2 %/vuosi iästä riippumaton",
 
-    s2Title: "T → TFR -ajallinen viive",
-    s2Lead: "Kun USA:n testosteronia viivästetään 8 vuotta TFR:n suhteen, yhteensopivuus on huomattava:",
-    s2Stat: "R² = 0,97 (USA 2007–2024, viive = 8 vuotta)",
-    s2Detail: "Siirtofunktio TFR = 0,00544 × T − 0,745 ennustaa vuoden 2007 jälkeisen TFR-laskun kehityskulun. 8 vuoden viive on biologisesti uskottava: se edustaa aikaa nuorten miesten testosteronilaskusta heidän huippuhedelmallisyysvaikutukseensa 20–30-vuotiaina.",
-    s2Caveat: "Tämä on maan sisäinen ajallinen korrelaatio, joka on kalibroitu samalla data-ikkunalla. Otoksen ulkopuolinen validointi vaatii muita maita harmonisoidulla pitkättäisellä T-datalla.",
 
     s3Title: "LH–T-diagnostiikka",
     s3Lead: "Santi ym. 2025 esittivät erotusdiagnostiikan samanaikaisten hormonitrendien perusteella:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypotalaaminen", detail: "Vähäinen keskinen stimulaatio sopii tähän kuvioon; paikallisia steroidogeneesin rajoitteita voi esiintyä samanaikaisesti.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testikulaarinen", detail: "Kompensatorinen LH sopii rajalliseen kivestuotantoon. Kalsium, redox, kello ja substraattihuolto paikantavat mekanismiehdokkaita; hormonikuvio yksin ei yksilöi niiden laukaisijaa.", color: "amber" },
+      { pattern: "T↓ + LH↓ · Hypotalaaminen", detail: "Vähäinen keskinen stimulaatio sopii tähän kuvioon; paikallisia steroidogeneesin rajoitteita voi esiintyä samanaikaisesti.", color: "blue" },
+      { pattern: "T↓ + LH↑ · Testikulaarinen", detail: "Kompensatorinen LH sopii rajalliseen kivestuotantoon. Kalsium, redox, kello ja substraattihuolto paikantavat mekanismiehdokkaita; hormonikuvio yksin ei yksilöi niiden laukaisijaa.", color: "amber" },
     ],
-    s3Observed: "Havaittu väestökaava: T↓ + LH↓ (hypotalaaminen)",
+    s3Observed: "T↓ ja matala LH sopivat vähentyneeseen keskiseen stimulaatioon",
     s3Implication: "BERM sisältää sekä keskisen säätelyn että Leydig-solun paikallisen kapasiteetin. Matala T yhdessä matalan tai tilanteeseen nähden normaalin LH:n kanssa sopii vähäiseen keskiseen ohjaukseen; se ei sulje pois samanaikaisia kiveksen kalsium-, redox-, kello- tai kolesterolihuollon rajoitteita. Seerumipari ei yksilöi ympäristötekijää eikä hormonin käyttöä kohdekudoksessa.",
 
     s3bTitle: "Kemikaali vs EMF: erotusdiagnostiikka",
@@ -119,46 +87,27 @@ const COPY = {
     s4Caveat: "Ekologinen korrelaatio lajien välillä heterogeenisilla laskumittauksilla ja EMF-kuorma-arvioilla. Lajit eroavat ruumiinkoon, eliniän, sukupolven ajan ja sekoittavien tekijöiden suhteen. Yhdenmukainen mutta ei todiste annosvasteesta. Tämä koskee yhtä lailla konventionaalisia selityksiä.",
 
     s5Title: "Epistemologinen rehellisyys",
-    s5Points: [
-      "T→TFR-malli on kalibroitu JA validoitu samalla USA-ikkunalla — tämä paisuttaa R²:ta",
-      "Poikkileikkauksen maatason T-data on heterogeenistä (eri määritysmenetelmät, iät, vuodet)",
-      "1,2 %/vuoden laskunopeus tulee ensisijaisesti yhdestä yhdysvaltalaisesta kohorttitutkimuksesta",
-      "Muita syitä (lihavuusepidemia, metabolinen oireyhtymä, uniongelmat) ei ole suljettu pois",
-      "Lajien välinen gradientti käyttää karkeita EMF-kuorma-arvioita, ei mitattuja annoksia",
-    ],
+    s5Points: ["Ajallinen edeltäminen on dokumentoitu kolmessa nimetyssä tapauksessa; se ei estimoi yhteistä kausaalista viivettä.", "NHANESin väestöyhteys ja matalan T:n hoitovasteet kuvaavat eri vastealueita.", "Mittausmenetelmä, ikä, näytteenottoaika, parisuhdetila ja tutkimusperheiden päällekkäisyys säilytetään kalibroinnissa.", "Ihmisen hormoni–TFR-siirto ja kroonisen EMF:n osuus ovat avoimia."],
 
-    predictionText: "Ennuste T-1: Maissa, joissa sähköistys tapahtui aikaisemmin/jyrkemmin, T-lasku alkoi aikaisemmin, ja T→TFR-viive on yhdenmukainen populaatioissa harmonisoidulla T-datalla.",
+    predictionText: "Seuraava testi: vertaa lähtötilasta riippuvia hormonivastekäyriä ja viivejakaumia sovituksesta pois jätetyissä maissa tai ajanjaksoissa. Ajallinen edeltäminen, ennusteen paraneminen ja altistussyyn tunnistaminen testataan erikseen.",
     predictionLink: "Katso ennusteet →",
     predictionHref: "/predictions",
   },
   ja: {
-    title: "テストステロン：生物学的時計",
-    subtitle: "複数の集団研究はテストステロンの長期的低下を記録しています。BERMは中枢のホルモン調節とライディッヒ細胞のカルシウム、酸化還元、時計、コレステロール供給を結び、ホルモン利用可能性と組織応答から生殖機能まで追跡します。",
+    title: "テストステロン：時間的順序と生殖カスケード",
+    subtitle: "3事例でテストステロン低下が後の出生率低下に先行します。新しいホルモン・行動・受胎データがBERMの中間段階を制約します。",
     backLink: "← エビデンスに戻る",
-    cautionText: "テストステロンの長期的低下は確立されていますが、その原因は議論中です（肥満、EDC、生活習慣、EMF、または組み合わせ）。このページはT→TFRの時間的相関とLH診断をBERMと整合する証拠として提示します。どちらもEMFの因果関係を証明するものではありません。",
+    cautionText: "時間的順序は特定の後期TFR低下局面に関する結果です。総Tは遊離T・精巣内T・受容体作用とは異なります。集団全体への移行と環境要因の特定は未解決です。",
 
-    s1Title: "長期的低下",
-    s1Lead: "3つの独立したデータセットが米国男性で同じパターンを文書化しています：",
-    s1Points: [
-      { label: "AFHSコホート (Travison 2007)", detail: "1982年のベースライン638 ng/dL。3回の検査波で年齢非依存の低下約−1.2%/年。BMI、喚煙、併存疾患の変化では説明できません。" },
-      { label: "NHANES横断面 (Lokeshwar 2021)", detail: "2016年まで全年齢層15〜39歳で継続的に低下。若い男性（15〜19歳）で最も急な比例的低下。" },
-      { label: "欧州の確認", detail: "フィンランド、デンマーク、フランスの徴兵研究が1990年代以降の並行的低下を示しています。" },
-    ],
-    s1Stat: "USAの軌跡: 638 → ~380 ng/dL (1982–2024), −1.2%/年 年齢非依存",
 
-    s2Title: "T → TFR 時間的ラグ",
-    s2Lead: "USAのテストステロンをTFRに対して8年ラグさせると、適合が注目に値します：",
-    s2Stat: "R² = 0.97 (USA 2007–2024, ラグ = 8年)",
-    s2Detail: "転送関数 TFR = 0.00544 × T − 0.745 は2007年以降のTFR低下軌跡を予測します。8年のラグは生物学的にもっともらしい：若い男性のテストステロン低下から20代後半〜30代の生殖力ピークへの影響までの時間を表します。",
-    s2Caveat: "これは同じデータウィンドウでキャリブレーションされた国内の時間的相関です。サンプル外検証には、調和された縦断的Tデータを持つ他の国が必要です。",
 
     s3Title: "LH–T診断",
     s3Lead: "Santiら 2025年は同時ホルモントレンドに基づく鑑別診断を導入しました：",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = 視床下部性", detail: "中枢刺激低下に整合しますが、局所ステロイド産生の制約は併存し得ます。", color: "blue" },
-      { pattern: "T↓ + LH↑ = 精巣性", detail: "代償性LHは精巣産生の制約に整合します。カルシウム、酸化還元、時計、基質供給が機構候補を特定しますが、ホルモンパターンだけでは原因を決められません。", color: "amber" },
+      { pattern: "T↓ + LH↓ · 視床下部性", detail: "中枢刺激低下に整合しますが、局所ステロイド産生の制約は併存し得ます。", color: "blue" },
+      { pattern: "T↓ + LH↑ · 精巣性", detail: "代償性LHは精巣産生の制約に整合します。カルシウム、酸化還元、時計、基質供給が機構候補を特定しますが、ホルモンパターンだけでは原因を決められません。", color: "amber" },
     ],
-    s3Observed: "観察された人口パターン: T↓ + LH↓ (視床下部性)",
+    s3Observed: "T低下と低LHは中枢刺激の減少と整合的",
     s3Implication: "BERMは中枢調節とライディッヒ細胞の局所能力の両方を含みます。低いTと低値または不適切な正常値のLHは中枢刺激低下に整合しますが、精巣のカルシウム、酸化還元、時計、コレステロール供給の制約との併存を除外しません。血中の二つの値だけでは環境要因や標的でのホルモン利用を特定できません。",
 
     s3bTitle: "化学物質 vs EMF：鑑別診断",
@@ -177,46 +126,27 @@ const COPY = {
     s4Caveat: "異質な低下測定とEMF負荷推定を持つ種間の生態学的相関。種は体サイズ、寿命、世代時間、交絡因子が異なります。用量反応と整合しますが証明ではありません。これは従来の説明にも同様に当てはまります。",
 
     s5Title: "認識論的誠実さ",
-    s5Points: [
-      "T→TFRモデルは同じUSAウィンドウでキャリブレーションと検証が行われている—これはR²を過大評価する",
-      "横断的な国レベルTデータは異質（異なるアッセイ、年齢、年）",
-      "1.2%/年の低下率は主に1つの米国コホート研究から",
-      "他の原因（肥満流行、メタボリックシンドローム、睡眠障害）は除外されていない",
-      "種間グラディエントは大まかなEMF負荷推定を使用、測定線量ではない",
-    ],
+    s5Points: ["3事例で先行が記録されていますが、共通の因果的遅延は推定していません。", "NHANESの集団関連と低T治療の効果は異なる反応範囲です。", "測定法・年齢・採取時刻・家族状態・研究の重複を考慮します。", "ヒトのホルモン–TFR伝達と慢性EMFの寄与は未解決です。"],
 
-    predictionText: "予測 T-1: 電化が早い/急な国ではT低下の開始が早く、T→TFRラグは調和されたTデータを持つ集団間で一貫する。",
+    predictionText: "次の検証：学習から除外した国や期間で状態依存の反応曲線と遅延分布を比較します。時間的先行、予測改善、曝露の原因特定を分けて検証します。",
     predictionLink: "予測を見る →",
     predictionHref: "/predictions",
   },
   fr: {
-    title: "Testostérone : L'horloge biologique",
-    subtitle: "Des études de population documentent un déclin séculaire de la testostérone dans plusieurs cohortes. BERM relie la régulation hormonale centrale au calcium, au redox, à l’horloge et à l’approvisionnement en cholestérol des cellules de Leydig, puis suit la disponibilité hormonale et la réponse tissulaire jusqu’à la fonction reproductive.",
+    title: "Testostérone : chronologie et cascade reproductive",
+    subtitle: "Dans trois cas documentés, la baisse de testostérone précède une baisse ultérieure de fécondité. Les nouvelles données précisent les étapes intermédiaires de BERM.",
     backLink: "← Retour aux Évidences",
-    cautionText: "Le déclin séculaire de la testostérone est établi, mais sa cause est débattue. Cette page présente la corrélation temporelle T→TFR et le diagnostic LH comme lignes d'évidence cohérentes avec BERM. Ni l'une ni l'autre ne prouve la causalité EMF.",
+    cautionText: "La chronologie concerne des épisodes ultérieurs précis. La T totale ne mesure ni la T libre ou intratesticulaire, ni l’action des récepteurs. Le transfert à la population et l’attribution environnementale restent ouverts.",
 
-    s1Title: "Le déclin séculaire",
-    s1Lead: "Trois jeux de données indépendants documentent le même schéma chez les hommes américains :",
-    s1Points: [
-      { label: "Cohorte AFHS (Travison 2007)", detail: "Base de 638 ng/dL en 1982. Déclin indépendant de l'âge d'environ −1,2 %/an sur trois vagues d'examen." },
-      { label: "Coupes transversales NHANES (Lokeshwar 2021)", detail: "Déclin continu jusqu'en 2016 dans tous les groupes d'âge 15–39 ans." },
-      { label: "Confirmation européenne", detail: "Les études de conscrits finlandais, danois et français montrent des déclins parallèles depuis les années 1990." },
-    ],
-    s1Stat: "Trajectoire USA : 638 → ~380 ng/dL (1982–2024), −1,2 %/an indépendant de l'âge",
 
-    s2Title: "Décalage temporel T → TFR",
-    s2Lead: "Quand la testostérone USA est décalée de 8 ans par rapport au TFR, l'ajustement est remarquable :",
-    s2Stat: "R² = 0,97 (USA 2007–2024, décalage = 8 ans)",
-    s2Detail: "La fonction de transfert TFR = 0,00544 × T − 0,745 prédit la trajectoire de déclin du TFR après 2007.",
-    s2Caveat: "Corrélation temporelle intra-pays calibrée sur la même fenêtre de données. La validation hors échantillon nécessite d'autres pays.",
 
     s3Title: "Diagnostic LH–T",
     s3Lead: "Santi et al. 2025 ont introduit un diagnostic différentiel basé sur les tendances hormonales simultanées :",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = Hypothalamique", detail: "Ce profil est compatible avec une stimulation centrale réduite ; des limites stéroïdogènes locales peuvent coexister.", color: "blue" },
-      { pattern: "T↓ + LH↑ = Testiculaire", detail: "Une LH compensatoire est compatible avec une production testiculaire limitée. Calcium, redox, horloge et substrat localisent des mécanismes possibles sans identifier le déclencheur par ce profil seul.", color: "amber" },
+      { pattern: "T↓ + LH↓ · Hypothalamique", detail: "Ce profil est compatible avec une stimulation centrale réduite ; des limites stéroïdogènes locales peuvent coexister.", color: "blue" },
+      { pattern: "T↓ + LH↑ · Testiculaire", detail: "Une LH compensatoire est compatible avec une production testiculaire limitée. Calcium, redox, horloge et substrat localisent des mécanismes possibles sans identifier le déclencheur par ce profil seul.", color: "amber" },
     ],
-    s3Observed: "Schéma observé : T↓ + LH↓ (hypothalamique)",
+    s3Observed: "T basse et LH basse sont compatibles avec une stimulation centrale réduite",
     s3Implication: "BERM inclut la régulation centrale et la capacité locale des cellules de Leydig. Une T basse avec une LH basse ou inappropriément normale est compatible avec une stimulation centrale réduite, sans exclure des limites locales du calcium, du redox, de l’horloge ou du cholestérol. Deux valeurs sériques ne déterminent ni le déclencheur environnemental ni l’utilisation hormonale dans la cible.",
 
     s3bTitle: "Chimique vs EMF : le diagnostic différentiel",
@@ -235,46 +165,27 @@ const COPY = {
     s4Caveat: "Corrélation écologique inter-espèces avec des mesures hétérogènes. Cohérent mais non probant. Cela s'applique tout autant aux explications conventionnelles.",
 
     s5Title: "Honnêteté épistémologique",
-    s5Points: [
-      "Le modèle T→TFR est calibré ET validé sur la même fenêtre USA",
-      "Les données T par pays sont hétérogènes (différents dosages, âges, années)",
-      "Le taux de déclin de 1,2 %/an provient principalement d'une seule étude de cohorte américaine",
-      "D'autres causes (obésité, syndrome métabolique, perturbation du sommeil) ne sont pas exclues",
-      "Le gradient inter-espèces utilise des estimations approximatives de la charge EMF",
-    ],
+    s5Points: ["La précédence est documentée dans trois cas; elle ne mesure pas un délai causal commun.", "Les associations NHANES et les effets du traitement d’un déficit décrivent des plages de réponse différentes.", "La calibration conserve les différences de dosage, âge, horaire, situation familiale et famille d’étude.", "Le transfert hormonal vers le TFR et la contribution chronique des EMF restent ouverts."],
 
-    predictionText: "Prédiction T-1 : Les pays à électrification plus précoce montreront un début plus précoce du déclin de T.",
+    predictionText: "Prochain test : comparer les réponses et délais dépendant de l’état sur des pays ou périodes exclus de l’ajustement. Tester séparément précédence, gain prédictif et attribution.",
     predictionLink: "Voir les prédictions →",
     predictionHref: "/predictions",
   },
   ko: {
-    title: "테스토스테론: 생물학적 시계",
-    subtitle: "여러 인구 코호트는 테스토스테론의 장기적 감소를 기록합니다. BERM은 중추 호르몬 조절을 라이디히 세포의 칼슘, 산화환원, 시계 및 콜레스테롤 공급과 연결하고 호르몬 가용성과 조직 반응에서 생식 기능까지 추적합니다.",
+    title: "테스토스테론: 시간적 순서와 생식 연쇄",
+    subtitle: "세 사례에서 측정된 테스토스테론 감소가 이후 출산율 감소에 앞섭니다. 새 호르몬·행동·수태 자료가 BERM의 중간 단계를 제약합니다.",
     backLink: "← 증거로 돌아가기",
-    cautionText: "테스토스테론의 장기적 감소는 확립되었지만 그 원인은 논의 중입니다. 이 페이지는 T→TFR 시간적 상관관계와 LH 진단을 BERM과 일치하는 증거로 제시합니다.",
+    cautionText: "시간적 순서는 특정한 후속 TFR 감소 구간에 관한 결과입니다. 총 T는 유리 T, 고환내 T, 수용체 작용과 다릅니다. 인구 전체 전달계수와 환경 원인 규명은 아직 미정입니다.",
 
-    s1Title: "장기적 감소",
-    s1Lead: "세 가지 독립 데이터셋이 미국 남성에서 같은 패턴을 문서화합니다:",
-    s1Points: [
-      { label: "AFHS 코호트 (Travison 2007)", detail: "1982년 기준 638 ng/dL. 3차 검사에서 나이 독립적 감소 약 -1.2%/년." },
-      { label: "NHANES 횟단면 (Lokeshwar 2021)", detail: "2016년까지 모든 연령대 15-39세에서 지속적 감소." },
-      { label: "유럽 확인", detail: "핀란드, 덴마크, 프랑스 징병 연구가 1990년대 이후 병행 감소를 보여줍니다." },
-    ],
-    s1Stat: "USA 궤적: 638 → ~380 ng/dL (1982–2024), -1.2%/년 나이 독립적",
 
-    s2Title: "T → TFR 시간적 시차",
-    s2Lead: "USA 테스토스테론을 TFR에 대해 8년 시차를 주면:",
-    s2Stat: "R² = 0.97 (USA 2007–2024, 시차 = 8년)",
-    s2Detail: "전달 함수 TFR = 0.00544 × T − 0.745는 2007년 이후 TFR 감소 궤적을 예측합니다.",
-    s2Caveat: "같은 데이터 창에서 보정된 국내 시간적 상관관계입니다.",
 
     s3Title: "LH–T 진단",
     s3Lead: "Santi 등 2025년은 동시 호르몬 추세에 기반한 감별 진단을 도입했습니다:",
     s3Patterns: [
-      { pattern: "T↓ + LH↓ = 시상하부성", detail: "중추 자극 감소와 일치하며 국소 스테로이드 생성 제한이 함께 있을 수 있습니다.", color: "blue" },
-      { pattern: "T↓ + LH↑ = 고환성", detail: "보상성 LH는 제한된 고환 생산과 일치합니다. 칼슘, 산화환원, 시계 및 기질 공급은 후보 기전을 특정하지만 호르몬 양상만으로 유발 요인을 결정하지 않습니다.", color: "amber" },
+      { pattern: "T↓ + LH↓ · 시상하부성", detail: "중추 자극 감소와 일치하며 국소 스테로이드 생성 제한이 함께 있을 수 있습니다.", color: "blue" },
+      { pattern: "T↓ + LH↑ · 고환성", detail: "보상성 LH는 제한된 고환 생산과 일치합니다. 칼슘, 산화환원, 시계 및 기질 공급은 후보 기전을 특정하지만 호르몬 양상만으로 유발 요인을 결정하지 않습니다.", color: "amber" },
     ],
-    s3Observed: "관찰된 인구 패턴: T↓ + LH↓ (시상하부성)",
+    s3Observed: "낮은 T와 LH는 중추 자극 감소와 양립합니다",
     s3Implication: "BERM은 중추 조절과 라이디히 세포의 국소 능력을 모두 포함합니다. 낮은 T와 낮거나 부적절하게 정상인 LH는 중추 자극 감소와 일치하지만 칼슘, 산화환원, 시계 또는 콜레스테롤 공급 제한의 동시 존재를 배제하지 않습니다. 혈중 두 수치만으로 환경 요인이나 표적 호르몬 사용을 식별할 수 없습니다.",
 
     s3bTitle: "화학물질 vs EMF: 감별 진단",
@@ -293,15 +204,9 @@ const COPY = {
     s4Caveat: "이질적인 감소 측정과 EMF 부하 추정을 가진 종간 생태학적 상관관계. 이는 기존 설명에도 동일하게 적용됩니다.",
 
     s5Title: "인식론적 정직",
-    s5Points: [
-      "T→TFR 모델은 같은 USA 창에서 보정 및 검증됨 — R²를 과대평가",
-      "횟단면 국가별 T 데이터는 이질적 (다른 분석법, 나이, 연도)",
-      "1.2%/년 감소율은 주로 하나의 미국 코호트 연구에서 유래",
-      "다른 원인 (비만 유행, 대사증후군, 수면 장애)은 배제되지 않음",
-      "종간 그래디언트는 대략적인 EMF 부하 추정 사용",
-    ],
+    s5Points: ["세 사례의 선행은 공통 인과적 지연을 추정하지 않습니다.", "NHANES 인구 연관성과 낮은 T 치료 효과는 다른 반응 범위를 나타냅니다.", "검사법, 나이, 채혈 시각, 가족 상태와 연구 중복을 보존합니다.", "인간 호르몬–TFR 전달 및 만성 EMF 기여는 아직 미정입니다."],
 
-    predictionText: "예측 T-1: 전기화가 더 이른/급격한 국가는 T 감소 시작이 더 빠르고 T→TFR 시차가 일관될 것입니다.",
+    predictionText: "다음 검증: 적합에서 제외한 국가·기간에서 상태별 반응과 지연 분포를 비교합니다. 선행, 예측 개선, 노출 원인은 별도로 검증합니다.",
     predictionLink: "예측 보기 →",
     predictionHref: "/predictions",
   },
@@ -338,6 +243,8 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
 
       <PageHeader icon={TrendingDown} title={d.title} subtitle={d.subtitle} />
 
+      <TestosteroneCalibrationUpdate locale={locale} />
+
       <CombinedExposurePanel locale={locale} focus="hormones" />
       <SteroidogenesisIntegrationPanel locale={locale} focus="hormones" />
 
@@ -348,23 +255,6 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
         <p className="text-foreground-muted leading-relaxed">{atlas.intro}</p>
         <Link href={`${prefix}/explore?tab=atlas&question=health&country=USA`} className="mt-3 inline-block text-accent hover:underline">{atlas.link} →</Link>
       </div>
-
-      {/* Section 1: Secular Decline */}
-      <section className="mt-10">
-        <h2 className="text-2xl font-semibold mb-4">{d.s1Title}</h2>
-        <p className="text-foreground-muted mb-6">{d.s1Lead}</p>
-        <div className="space-y-4">
-          {d.s1Points.map((p) => (
-            <div key={p.label} className="rounded-lg border border-border/50 p-4">
-              <h3 className="font-medium mb-1">{p.label}</h3>
-              <p className="text-sm text-foreground-muted">{p.detail}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6 rounded-lg bg-accent/5 border border-accent/20 p-4 text-center">
-          <p className="text-lg font-mono font-semibold">{d.s1Stat}</p>
-        </div>
-      </section>
 
       <section className="mt-14 border-t editorial-rule pt-6">
         <h2 className="text-2xl font-semibold mb-4">
@@ -436,20 +326,6 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
             <StudyCitation referenceId="yu2023_zip9_rf_sertoli" locale={locale} />{" · "}
             <StudyCitation referenceId="mollerlokken2012_mri_hormones" locale={locale} />
           </p>
-        </div>
-      </section>
-
-      {/* Section 2: T → TFR Temporal Lag */}
-      <section className="mt-14 border-t editorial-rule pt-6">
-        <h2 className="text-2xl font-semibold mb-4">{d.s2Title}</h2>
-        <p className="text-foreground-muted mb-4">{d.s2Lead}</p>
-        <div className="rounded-lg bg-accent/5 border border-accent/20 p-4 text-center mb-6">
-          <p className="text-2xl font-mono font-bold">{d.s2Stat}</p>
-        </div>
-        <TemporalTtoTFR locale={locale} />
-        <p className="mt-6 text-sm text-foreground-muted">{d.s2Detail}</p>
-        <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3">
-          <p className="text-sm text-foreground-muted">{d.s2Caveat}</p>
         </div>
       </section>
 
