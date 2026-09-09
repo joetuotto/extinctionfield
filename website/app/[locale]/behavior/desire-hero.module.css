@@ -1,0 +1,73 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #f5eddf;
+  color: #26302e;
+  border: 1px solid rgb(126 105 75 / 16%);
+  border-radius: 4px;
+}
+
+.artwork {
+  z-index: -2;
+  top: 50% !important;
+  bottom: auto !important;
+  height: auto !important;
+  transform: translateY(-50%);
+  object-fit: contain;
+  mask-image: linear-gradient(180deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #f6eee2 0%, rgb(246 238 226 / 98%) 27%, rgb(246 238 226 / 82%) 37%, transparent 56%);
+}
+
+.copy { width: 45%; min-height: 510px; padding: 36px 0 36px 28px; }
+.title {
+  margin: 0;
+  font-family: var(--font-editorial);
+  color: #26302e;
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.deck { margin-top: 24px; color: #394a43; font-size: 16px; line-height: 1.7; }
+.lead { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgb(83 103 91 / 25%); }
+.lead p { color: #45524b; font-size: 14px; line-height: 1.8; }
+
+@media (max-width: 1023px) {
+  .artwork {
+    top: 0 !important;
+    height: 360px !important;
+    transform: none;
+    object-fit: cover;
+    object-position: right top;
+    mask-image: none;
+  }
+  .veil { background: linear-gradient(180deg, transparent 0, rgb(246 238 226 / 5%) 150px, rgb(246 238 226 / 94%) 300px, #f6eee2 390px); }
+  .copy { width: 100%; min-height: 0; padding: 260px 32px 32px; }
+  .title { font-size: clamp(2rem, 5.5vw, 2.8rem); }
+  .deck { font-size: 16px; }
+}
+
+@media (max-width: 599px) {
+  .artwork {
+    left: auto !important;
+    right: 0 !important;
+    width: 150% !important;
+    max-width: none;
+    height: auto !important;
+    object-fit: contain;
+  }
+  .veil { background: linear-gradient(180deg, transparent 0, rgb(246 238 226 / 5%) 140px, rgb(246 238 226 / 93%) 225px, #f6eee2 290px); }
+  .copy { padding: 205px 22px 28px; }
+  .title { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .deck { margin-top: 20px; font-size: 15px; }
+  .lead { margin-top: 20px; padding-top: 18px; }
+}

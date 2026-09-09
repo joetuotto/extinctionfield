@@ -2,12 +2,14 @@ import { ReproductiveRegulationIntegration } from "@/components/ReproductiveRegu
 import { CombinedExposurePanel } from "@/components/CombinedExposurePanel";
 import { SteroidogenesisIntegrationPanel } from "@/components/SteroidogenesisIntegrationPanel";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Brain } from "lucide-react";
 import { ClaimRef } from "@/components/ClaimRef";
 import { ExplanationHub, ExplanationSection, ExplanationText, ResearchConnection } from "@/components/ExplanationHub";
 import { MathBlock } from "@/components/MathBlock";
 import { pickCopy } from "@/lib/i18n";
 import { EncounterWindowsIllustration } from "@/components/EncounterWindowsIllustration";
+import styles from "./desire-hero.module.css";
 
 const COPY = {
   en: {
@@ -119,7 +121,18 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
   const p = (text: string) => <ExplanationText locale={locale}>{text}</ExplanationText>;
   return <ExplanationHub locale={locale} copy={COPY} {...d} icon={Brain} stage="behavior">
     <ExplanationSection {...d.contents[0]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-valuation">{d.valuationClaim}</ClaimRef></p>{p(d.valuation)}<ResearchConnection locale={locale} studies={d.valuationStudies} implication={d.valuationImplication} /></ExplanationSection>
-    <ExplanationSection {...d.contents[1]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.sexual-motivation">{d.desireClaim}</ClaimRef></p>{p(d.desire)}<ResearchConnection locale={locale} studies={d.desireStudies} implication={d.desireImplication} /></ExplanationSection>
+    <section id={d.contents[1].id} className="scroll-mt-28 space-y-5 border-t editorial-rule pt-7">
+      <header className={styles.hero} aria-labelledby="desire-title">
+        <Image src="/images/desire-attachment-care-hero-v2.png" alt="" fill sizes="(min-width: 1280px) 856px, (min-width: 1024px) calc(100vw - 296px), 100vw" loading="eager" className={styles.artwork} />
+        <div className={styles.veil} aria-hidden="true" />
+        <div className={styles.copy}>
+          <h2 id="desire-title" className={styles.title}>{d.contents[1].title}</h2>
+          <p className={styles.deck}><ClaimRef claimId="claim.behavior.sexual-motivation">{d.desireClaim}</ClaimRef></p>
+          <div className={styles.lead}>{p(d.desire)}</div>
+        </div>
+      </header>
+      <ResearchConnection locale={locale} studies={d.desireStudies} implication={d.desireImplication} />
+    </section>
     <ReproductiveRegulationIntegration locale={locale} context="behavior" />
     <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
     <ExplanationSection {...d.contents[2]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-learning">{d.learningClaim}</ClaimRef></p>{p(d.learning)}<ResearchConnection locale={locale} studies={d.learningStudies} implication={d.learningImplication} /><MathBlock tex={String.raw`L_{t+1}=\mathcal U(L_t,\mathrm{feedback};S_t)`} />{p(d.learningEquation)}</ExplanationSection>
