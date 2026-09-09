@@ -163,74 +163,80 @@ function SetupDrawing({ id, factor, alternative, d, title }: {
       <title id={`${id}-title`}>{title}</title>
       <desc id={`${id}-desc`}>{`${d.diagram} ${d.factors[factor].description}`}</desc>
       <defs>
-        <linearGradient id={`${id}-bench`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fcfaf3" /><stop offset="1" stopColor="#deddd5" />
-        </linearGradient>
-        <linearGradient id={`${id}-light`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#dfb551" stopOpacity=".22" /><stop offset="1" stopColor="#dfb551" stopOpacity="0" />
-        </linearGradient>
         <marker id={`${id}-arrow`} viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 7 4 1 7" fill="none" stroke="currentColor" strokeWidth="1.4" /></marker>
       </defs>
 
-      <ellipse cx="223" cy="264" rx="171" ry="12" className={styles.shadow} />
-      <path d="M49 217 93 196H359L397 217 365 238H77Z" fill={`url(#${id}-bench)`} stroke="#a6aba9" />
+      <path d="M61 259H386" className={styles.ground} />
+      <path d="M49 217 93 196H359L397 217 365 238H77Z" fill="#f0f1eb" stroke="#829399" strokeWidth="1.2" />
       <path d="M77 238V258M365 238V258M96 238V254M345 238V254" className={styles.frame} />
-      <path d="M49 217H397L365 238H77Z" fill="#e7e6de" stroke="#a6aba9" />
+      <path d="M49 217H397L365 238H77Z" fill="#e0e5e0" stroke="#829399" strokeWidth="1.2" />
+      <path d="M64 221H381M87 232H357" stroke="#bac7c5" strokeWidth=".8" />
+      <path d="M80 258h-8M369 258h-8" stroke="#546970" strokeWidth="2.5" />
       <path d="M96 216V178M322 216V178" className={styles.frame} />
 
       {/* Coil geometry stays fixed when the sample or measurement position changes. */}
       <g className={styles.coils}>
         <ellipse cx="121" cy="160" rx="29" ry="62" /><ellipse cx="125" cy="160" rx="29" ry="62" />
         <ellipse cx="311" cy="160" rx="29" ry="62" /><ellipse cx="315" cy="160" rx="29" ry="62" />
+        <ellipse cx="123" cy="160" rx="29" ry="62" /><ellipse cx="313" cy="160" rx="29" ry="62" />
         <path d="M123 221V232H153M313 221V229H342" />
       </g>
+      <path d="M90 211h12v8H90ZM316 211h12v8H316Z" fill="#d1dbd8" stroke="#546970" strokeWidth="1" />
       <g className={styles.backgroundField}>
         <path d="M69 111H365M68 151H363M69 191H363" markerEnd={`url(#${id}-arrow)`} />
       </g>
 
       {/* A directional specimen sits in a shallow dish. No response is drawn. */}
-      <ellipse cx="219" cy="215" rx="65" ry="17" fill="#c1cfca" opacity=".23" />
-      <path d="M158 198V211C158 232 279 232 279 211V198" fill="#eaf1e9" fillOpacity=".72" stroke="#879d98" />
-      <ellipse cx="218.5" cy="198" rx="60.5" ry="17" fill="#f0f6ee" stroke="#879d98" />
-      <ellipse cx="218.5" cy="198" rx="52" ry="12" fill="none" stroke="#baccc1" />
+      <path d="M158 198V211C158 232 279 232 279 211V198" fill="#e2ede7" fillOpacity=".8" stroke="#648d86" strokeWidth="1.3" />
+      <ellipse cx="218.5" cy="198" rx="60.5" ry="17" fill="#f1f5ed" stroke="#648d86" strokeWidth="1.3" />
+      <ellipse cx="218.5" cy="198" rx="52" ry="12" fill="none" stroke="#a3bfb3" strokeWidth=".9" />
       <g className={selected("orientation")} data-sample-rotation={rotated ? "rotated" : "reference"} transform={`rotate(${rotated ? -65 : 0} 219 197)`}>
-        <path d="M186 196Q196 187 214 191Q233 185 250 196Q242 205 223 202Q203 209 186 196Z" fill="#96af8e" stroke="#607d63" strokeWidth="1.2" />
+        <path d="M184 196C191 186 203 188 214 191C227 185 244 188 253 196C245 205 234 206 223 202C209 208 193 204 184 196Z" fill="#a3c3b3" stroke="#377e78" strokeWidth="1.2" />
+        <path d="M194 194Q207 190 217 194M226 192Q236 191 245 195M194 200Q206 203 217 200M226 200Q237 203 244 200" fill="none" stroke="#6a9d90" strokeWidth=".7" />
         <path d="M188 197H249" className={styles.sampleAxis} markerEnd={`url(#${id}-arrow)`} />
       </g>
 
       <g className={selected("position")} data-probe-position={movedProbe ? "stage-edge" : "sample"}>
         <path d={`M388 220V121H${probeX}V167`} className={styles.probeArm} />
         <path d={`M${probeX} 160V184`} className={styles.probeStem} />
-        <circle cx={probeX} cy="186" r="5" fill="#426c80" stroke="#fcfaf3" strokeWidth="2" />
+        <rect x={probeX - 5} y="155" width="10" height="14" rx="2" fill="#e1e9eb" stroke="#396783" strokeWidth="1.2" />
+        <circle cx={probeX} cy="186" r="5" fill="#396783" stroke="#faf9f4" strokeWidth="2" />
         <path d={`M${probeX} 191V207`} className={styles.probeGuide} />
-        <ellipse cx={probeX} cy="211" rx="11" ry="3" fill="none" stroke="#426c80" strokeDasharray="3 3" />
+        <ellipse cx={probeX} cy="211" rx="11" ry="3" fill="none" stroke="#396783" strokeDasharray="3 3" />
         <path d="M382 220H397" className={styles.probeArm} />
       </g>
 
       <g className={selected("light")}>
-        <path d="M212 30V44M189 61Q212 26 235 61Z" fill="#e2ddd0" stroke="#8d8c7e" />
-        <ellipse cx="212" cy="62" rx="23" ry="6" fill="#f3d486" stroke="#a5925e" />
-        <path d="M189 66 153 200H278L235 66Z" fill={`url(#${id}-light)`} />
-        <path d="M177 82H248" stroke="#c6c9c3" strokeWidth="5" strokeLinecap="round" />
-        <path d={`M177 82H${factor === "light" && alternative ? 237 : 199}`} stroke="#bd9650" strokeWidth="5" strokeLinecap="round" />
+        <path d="M212 30V44M189 61Q212 26 235 61Z" fill="#e3e7e1" stroke="#546970" strokeWidth="1.4" />
+        <ellipse cx="212" cy="62" rx="23" ry="6" fill="#ead7ac" stroke="#9b6a32" strokeWidth="1.2" />
+        <path d="M189 67 165 171M235 67 266 171" fill="none" stroke="#cdb17c" strokeWidth=".9" strokeDasharray="3 4" />
+        <path d="M177 82H248" stroke="#d3ddd7" strokeWidth="6" />
+        <path d={`M177 82H${factor === "light" && alternative ? 237 : 199}`} stroke="#b5894c" strokeWidth="6" />
+        <path d="M176 77v10M248 77v10" stroke="#546970" strokeWidth="1" />
       </g>
 
       <g className={styles.clock}>
-        <circle cx="68" cy="51" r="17" /><path d="M68 39V51L76 55M67 30H71M67 72H71" />
+        <circle cx="68" cy="51" r="17" /><path d="M68 39V51L76 55M68 36V39M68 63V66M53 51H56M80 51H83" /><circle cx="68" cy="51" r="1.5" fill="#546970" />
       </g>
       <g className={selected("temperature")} data-temperature={warming ? "changing" : "stable"}>
-        <path d="M365 43A5 5 0 0 1 375 43V67A10 10 0 1 1 365 67Z" fill="#faf9f2" stroke="#939689" strokeWidth="1.5" />
-        <path d={`M370 ${warming ? 46 : 59}V75`} stroke="#bd784a" strokeWidth="3.5" strokeLinecap="round" />
-        <circle cx="370" cy="76" r="5" fill="#bd784a" />
-        <path d="M379 47H384M379 56H382M379 65H384" stroke="#939689" />
+        <path d="M365 43A5 5 0 0 1 375 43V67A10 10 0 1 1 365 67Z" fill="#faf9f4" stroke="#546970" strokeWidth="1.5" />
+        <path d={`M370 ${warming ? 46 : 59}V75`} stroke="#9b6a32" strokeWidth="3.5" strokeLinecap="round" />
+        <circle cx="370" cy="76" r="5" fill="#9b6a32" />
+        <path d="M379 47H384M379 56H382M379 65H384" stroke="#546970" />
       </g>
 
       <g className={selected("history")} data-preparation={changedHistory ? "different" : "reference"}>
-        <path d="M145 283H300" stroke="#a4aaa3" markerEnd={`url(#${id}-arrow)`} />
-        <path d="M257 273V289" stroke="#73837c" />
-        <rect x="157" y="276" width="57" height="13" rx="3" fill={changedHistory ? "#d5ad77" : "#d6ddd0"} stroke={changedHistory ? "#a37c47" : "#99aa93"} />
-        {changedHistory && <path d="M164 279 169 286M178 279 183 286M192 279 197 286M206 279 211 286" stroke="#9f753d" />}
-        <circle cx="277" cy="283" r="5" fill="#456b77" />
+        <path d="M145 283H300" stroke="#546970" markerEnd={`url(#${id}-arrow)`} />
+        <path d="M257 273V289" stroke="#546970" />
+        <rect x="157" y="276" width="57" height="13" rx="1" fill={changedHistory ? "#ead9bd" : "#d6e3da"} stroke={changedHistory ? "#9b6a32" : "#648d86"} />
+        {changedHistory && <path d="M164 279 169 286M178 279 183 286M192 279 197 286M206 279 211 286" stroke="#9b6a32" />}
+        <circle cx="277" cy="283" r="4" fill="#396783" />
+      </g>
+      <g className={styles.leaders} aria-hidden="true">
+        <path d="M58 94 69 111 M95 242H142L187 203" />
+        <path d={`M357 103H342L${probeX} 174`} />
+        <path d="M332 266H289L277 277" />
+        <circle cx="69" cy="111" r="2" /><circle cx="187" cy="203" r="2" /><circle cx={probeX} cy="174" r="2" /><circle cx="277" cy="277" r="2" />
       </g>
     </svg>
     <span className={`${styles.annotation} ${styles.fieldLabel}`}>{d.field}</span>

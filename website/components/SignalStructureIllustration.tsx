@@ -26,7 +26,8 @@ const COPY = {
     synthetic: "Laskettu signaaliesimerkki",
     duty: "Aktiivinen osuus toistojaksosta",
     continuous: "Jatkuva siniaalto", pulsed: "Pulssitettu siniaalto", peak: "Huippu",
-    time: "Aika / toistojakso", scale: "Yhteinen amplitudiasteikko −4,5…+4,5; normalisoidut yksiköt.",
+    time: "Aika / toistojakso", amplitude: "Normalisoitu amplitudi", active: "Pulssin aktiivinen aika",
+    scale: "Molemmissa paneeleissa sama kiinteä asteikko −5…+5.",
     note: "Lyhyempi aktiivinen aika tarvitsee tässä suuremman huipun, jotta RMS pysyy samana. Kantoaallon taajuus ja toistojakso säilyvät.",
     boundary: "Synteettinen fysikaalisen syötteen vertailu. Kuva ei laske reseptorivastetta eikä kerro, kumpi signaali vaikuttaa biologisesti enemmän.",
     formula: "RMS = huippu × √(d/2) = 1, kun d on aktiivinen osuus. Jokainen pulssi sisältää kokonaisia sinijaksoja.",
@@ -36,7 +37,8 @@ const COPY = {
     synthetic: "Computed signal example",
     duty: "Active share of each repetition period",
     continuous: "Continuous sine wave", pulsed: "Pulsed sine wave", peak: "Peak",
-    time: "Time / repetition period", scale: "Shared amplitude scale −4.5…+4.5; normalized units.",
+    time: "Time / repetition period", amplitude: "Normalized amplitude", active: "Active pulse window",
+    scale: "Both panels use the same fixed scale, −5…+5.",
     note: "A shorter active time requires a higher peak here to keep RMS unchanged. Carrier frequency and repetition period stay fixed.",
     boundary: "A synthetic comparison of physical inputs. It does not calculate a receptor response or establish which signal has a larger biological effect.",
     formula: "RMS = peak × √(d/2) = 1, where d is the active fraction. Every pulse contains complete sine cycles.",
@@ -49,8 +51,12 @@ export function SignalStructureIllustration({ locale }: { locale: string }) {
   const id = useId();
   const example = buildSignalStructureExample(dutyPercent);
   const format = (value: number) => new Intl.NumberFormat(locale === "fi" ? "fi-FI" : "en-GB", { maximumFractionDigits: 2 }).format(value);
+  const height = 148, top = 8, bottom = 140;
+  const y = (value: number) => top + (5 - value) / 10 * (bottom - top);
+  const amplitudeTicks = [-4, -2, 0, 2, 4];
+  const timeTicks = [0, .5, 1, 1.5, 2];
   const waveform = (key: "continuous" | "pulsed") => example.points.map((point, i) =>
-    `${i ? "L" : "M"}${(point.time * 300).toFixed(2)},${(50 - point[key] / 4.5 * 47).toFixed(2)}`).join(" ");
+    `${i ? "L" : "M"}${(point.time * 300).toFixed(2)},${y(point[key]).toFixed(2)}`).join(" ");
 
   return <figure className={styles.figure} aria-labelledby={`${id}-title`} data-signal-illustration="synthetic">
     <figcaption>
@@ -63,20 +69,29 @@ export function SignalStructureIllustration({ locale }: { locale: string }) {
         onChange={event => setDutyPercent(Number(event.target.value))} />
     </label>
     <div className={styles.waves}>
-      {(["continuous", "pulsed"] as const).map(key => <div className={styles.wave} key={key} data-signal={key}>
+      {(["continuous", "pulsed"] as const).map((key, index) => <div className={styles.wave} key={key} data-signal={key} data-y-domain="-5:5">
         <div className={styles.waveHeading}>
-          <strong>{c[key]}</strong>
+          <strong><span className={styles.panelLetter} aria-hidden="true">{index === 0 ? "a" : "b"}</span>{c[key]}</strong>
           <span>RMS <b data-signal-rms>1</b> · {c.peak} <b data-signal-peak>{format(key === "continuous" ? Math.SQRT2 : example.peak)}</b></span>
         </div>
-        <svg viewBox="0 0 600 100" preserveAspectRatio="none" className={styles.plot} aria-hidden="true">
-          <line x1={0} y1={50} x2={600} y2={50} className={styles.axis} />
-          <line x1={300} y1={0} x2={300} y2={100} className={styles.period} />
-          <path d={waveform(key)} className={key === "continuous" ? styles.continuous : styles.pulsed} />
-        </svg>
-        <div className={styles.timeAxis} aria-hidden="true"><span>0</span><span>1</span><span>2</span></div>
+        <p className={styles.amplitudeLabel}>{c.amplitude}</p>
+        <div className={styles.chart}>
+          <div className={styles.yAxis} aria-hidden="true">{amplitudeTicks.map(tick => <span key={tick} style={{ top: `${y(tick) / height * 100}%` }}>{tick < 0 ? `−${-tick}` : tick}</span>)}</div>
+          <svg viewBox={`0 0 600 ${height}`} preserveAspectRatio="none" className={styles.plot} aria-hidden="true">
+            {key === "pulsed" && [0, 1].map(period => <rect key={period} x={period * 300} y={top} width={example.duty * 300} height={bottom - top} className={styles.activeWindow} />)}
+            {amplitudeTicks.map(tick => <line key={tick} x1={0} y1={y(tick)} x2={600} y2={y(tick)} className={tick === 0 ? styles.zero : styles.grid} />)}
+            {timeTicks.map(tick => <line key={tick} x1={tick * 300} y1={bottom} x2={tick * 300} y2={bottom + 4} className={styles.axis} />)}
+            <line x1={0} y1={top} x2={0} y2={bottom} className={styles.axis} />
+            <line x1={0} y1={bottom} x2={600} y2={bottom} className={styles.axis} />
+            <line x1={300} y1={top} x2={300} y2={bottom} className={styles.period} />
+            <path d={waveform(key)} className={key === "continuous" ? styles.continuous : styles.pulsed} />
+          </svg>
+        </div>
+        <div className={styles.timeAxis} aria-hidden="true">{timeTicks.map(tick => <span key={tick} style={{ left: `${tick / 2 * 100}%` }}>{format(tick)}</span>)}</div>
       </div>)}
     </div>
-    <p className={styles.axisLabel}>{c.time} · {c.scale}</p>
+    <p className={styles.axisLabel}>{c.time}</p>
+    <div className={styles.figureKey}><span><i aria-hidden="true" />{c.active}</span><span>{c.scale}</span></div>
     <p className={styles.note}>{c.note}</p>
     <p className={styles.formula}>{c.formula}</p>
     <p className={styles.boundary}>{c.boundary}</p>

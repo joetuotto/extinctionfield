@@ -33,7 +33,7 @@ const COPY = {
     intro: "A:n vakiosyöte alkaa 1950 ja B:n 2000. Molempien G on 1 vuodesta 2000 ja U vuodesta 2008. Aiempi aloitus säilyy C:ssä.",
     early: "A · alku 1950", late: "B · alku 2000", year: "Yhteinen vuosi", noValue: "Ei laskettua arvoa",
     geometry: "G · vuoden lähdeprojektio", annual: "U · viiveellinen vuotuinen komponentti", accumulated: "C · säilynyt historia",
-    projection: "normalisoitu projektio", years: "normalisoitu projektio × vuosi", scale: "A ja B samalla asteikolla",
+    projection: "normalisoitu projektio", years: "normalisoitu projektio × vuosi", scale: "A ja B samalla asteikolla", calendar: "Kalenterivuosi", method: "Esimerkin laskentaperuste",
     interaction: "Valitse vuosi. Sama kalenterivuosi kohdistaa G:n, U:n, C:n ja atlaksen havainnot.",
     assumptions: "Esimerkkioletukset: yksi normalisoitu potentiaalikomponentti, nollatausta, kiinteä suunta, hetkellinen aloitus. G = a². U on G:n tasapainoinen keskiarvo 3–8 vuotta aiemmasta. C(t) = 2^(−1/20) C(t−1) + U(t) × 1 vuosi. Kertymä aloitetaan arvosta C(1879) = 0; ennen lähteen alkua syöte on tässä esimerkissä 0. Aikarajaus ei nollaa historiaa.",
     boundary: "G käyttää valittua geometrian projektiota; U ja C käyttävät BERM:n ehdollisia viive- ja muistisulkuja. Niiden esimerkkiasteikko ja 20 vuoden puoliintumisaika eivät ole kudoskalibraatio. Havainne ei laske ihmisen biomarkkeria eikä muuta atlaksen ennustetta.",
@@ -47,7 +47,7 @@ const COPY = {
     intro: "A's constant input begins in 1950 and B's in 2000. Both have G = 1 from 2000 and U = 1 from 2008. The earlier start remains in C.",
     early: "A · starts 1950", late: "B · starts 2000", year: "Shared year", noValue: "No computed value",
     geometry: "G · this year's source projection", annual: "U · delayed annual component", accumulated: "C · retained history",
-    projection: "normalized projection", years: "normalized projection × year", scale: "A and B share a scale",
+    projection: "normalized projection", years: "normalized projection × year", scale: "A and B share a scale", calendar: "Calendar year", method: "Example calculation basis",
     interaction: "Choose a year. The same calendar year aligns G, U, C and the atlas observations.",
     assumptions: "Example assumptions: one normalized potential component, zero background, fixed direction and instant onset. G = a². U is the equally weighted mean of G from 3–8 years earlier. C(t) = 2^(−1/20) C(t−1) + U(t) × 1 year. Retention starts at C(1879) = 0; input before each source's onset is 0 in this example. Cropping does not reset the history.",
     boundary: "G uses a selected geometric projection; U and C use BERM's conditional delay and memory closures. Their illustrative scale and 20-year half-life are not tissue calibration. This example computes no human biomarker and does not change the atlas prediction.",
@@ -57,6 +57,14 @@ const COPY = {
 type Input = "geometry" | "annual" | "accumulated";
 const INPUTS: Input[] = ["geometry", "annual", "accumulated"];
 const { LEFT, RIGHT } = ATLAS_PLOT_LAYOUT;
+
+/** Presentation-only nice ticks. The two histories retain their computed values. */
+function memoryAxis(maximum: number) {
+  const magnitude = 10 ** Math.floor(Math.log10(maximum / 3));
+  const step = [1, 2, 5, 10].find(value => value * magnitude >= maximum / 3)! * magnitude;
+  const count = Math.ceil(maximum / step);
+  return { upper: count * step, ticks: Array.from({ length: count + 1 }, (_, i) => i * step) };
+}
 
 export function AtlasReadingGuide({ locale, from, to, year, onYearChange }: {
   locale: string; from: number; to: number; year: number; onYearChange?: (year: number) => void;
@@ -94,35 +102,44 @@ export function AtlasReadingGuide({ locale, from, to, year, onYearChange }: {
           <input type="range" min={start} max={end} step={1} value={year} aria-label={c.year}
             onChange={event => onYearChange(Number(event.target.value))} />
         </label>}
-        {INPUTS.map(input => {
+        {INPUTS.map((input, index) => {
           // G and U have the same native unit; C has a separate projection-year scale.
-          const upper = input === "accumulated" ? Math.max(1, ...example.early.history.map(p => p.accumulated ?? 0), ...example.late.history.map(p => p.accumulated ?? 0)) : 1;
-          const y = (value: number) => 75 - value / upper * 66;
+          const maximum = input === "accumulated" ? Math.max(1, ...example.early.history.map(p => p.accumulated ?? 0), ...example.late.history.map(p => p.accumulated ?? 0)) : 1;
+          const { upper, ticks } = memoryAxis(maximum);
+          const top = 12, bottom = 108, height = 124;
+          const y = (value: number) => bottom - value / upper * (bottom - top);
           const path = (points: BermEndpointHistoryPoint[]) => points.map((point, i) => `${i ? "L" : "M"}${x(point.year).toFixed(2)},${y(point[input]!).toFixed(2)}`).join(" ");
           const unit = input === "accumulated" ? c.years : c.projection;
           return <div className={styles.lane} key={input} data-memory-input={input} data-y-domain={`0:${upper}`}>
             <div className={styles.laneHeading}><strong>{c[input]}</strong><span>{unit}</span></div>
             <div className={styles.values} data-memory-values={input} data-selected-year={year}>
-              <span>{year}: A <b>{format(current.early?.[input])}</b></span><span>B <b>{format(current.late?.[input])}</b></span>
+              <span className={styles.valueYear}>{year}:</span><span className={styles.earlyValue}>A <b>{format(current.early?.[input])}</b></span><span className={styles.lateValue}>B <b>{format(current.late?.[input])}</b></span>
             </div>
-            <AtlasPlotControl width={width} yearDomain={[start, end]} selectedYear={year} onSelectYear={onYearChange}
-              label={`${c[input]} · ${c.year} ${year}`} descriptionId={`${id}-interaction`}>
-              <svg viewBox={`0 0 ${width} 82`} className={styles.plot} aria-hidden="true">
-                <line x1={LEFT} y1={75} x2={width - RIGHT} y2={75} className={styles.axis} />
-                <line x1={LEFT} y1={9} x2={width - RIGHT} y2={9} className={styles.grid} />
-                <path d={path(example.early.points)} className={styles.earlyCurve} />
-                <path d={path(example.late.points)} className={styles.lateCurve} />
-                {year >= start && year <= end && <line x1={x(year)} x2={x(year)} y1={3} y2={79} className={styles.cursor} data-year-cursor={year} />}
-              </svg>
-            </AtlasPlotControl>
-            <div className={styles.ticks} aria-hidden="true">
+            <div className={styles.plotFrame}>
+              <div className={styles.yTicks} aria-hidden="true">{ticks.map(tick => <span key={tick} style={{ top: `${y(tick)}px`, width: LEFT - 10 }}>{format(tick)}</span>)}</div>
+              <AtlasPlotControl width={width} yearDomain={[start, end]} selectedYear={year} onSelectYear={onYearChange}
+                label={`${c[input]} · ${c.year} ${year}`} descriptionId={`${id}-interaction`}>
+                <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" className={styles.plot} aria-hidden="true">
+                  {ticks.map(tick => <line key={tick} x1={LEFT} y1={y(tick)} x2={width - RIGHT} y2={y(tick)} className={tick === 0 ? styles.axis : styles.grid} />)}
+                  {atlasYearTicks([start, end], width).map(tick => <line key={tick} x1={x(tick)} x2={x(tick)} y1={top} y2={bottom} className={styles.yearGrid} />)}
+                  <line x1={LEFT} y1={top} x2={LEFT} y2={bottom} className={styles.axis} />
+                  <path d={path(example.early.points)} className={styles.earlyCurve} />
+                  <path d={path(example.late.points)} className={styles.lateCurve} />
+                  {year >= start && year <= end && <>
+                    <line x1={x(year)} x2={x(year)} y1={3} y2={bottom + 6} className={styles.cursor} data-year-cursor={year} />
+                    {current.early?.[input] != null && <circle cx={x(year)} cy={y(current.early[input])} r={3.5} className={styles.earlyPoint} />}
+                    {current.late?.[input] != null && <rect x={x(year) - 3} y={y(current.late[input]) - 3} width={6} height={6} className={styles.latePoint} />}
+                  </>}
+                </svg>
+              </AtlasPlotControl>
+            </div>
+            {index === INPUTS.length - 1 && <><div className={styles.ticks} aria-hidden="true">
               {atlasYearTicks([start, end], width).map(tick => <span key={tick} style={{ left: `${x(tick) / width * 100}%` }}>{tick}</span>)}
-            </div>
+            </div><p className={styles.calendar}>{c.calendar}</p></>}
             <p className={styles.scale}>{c.scale}: 0–{format(upper)}</p>
           </div>;
         })}
-        <p className={styles.assumptions}>{c.assumptions}</p>
-        <p className={styles.boundary}>{c.boundary}</p>
+        <div className={styles.caption}><h4>{c.method}</h4><p className={styles.assumptions}>{c.assumptions}</p><p className={styles.boundary}>{c.boundary}</p></div>
       </div>
     </details>
   </aside>;

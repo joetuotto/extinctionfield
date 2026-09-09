@@ -1,38 +1,59 @@
-.guide { border-block: 1px solid var(--card-border); padding: .8rem 0; margin: 1rem 0; color: var(--foreground); min-width: 0; }
-.legend, .historyLegend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .74rem; line-height: 1.5; }
-.legend > span, .historyLegend > span { display: inline-flex; align-items: center; gap: .45rem; }
-.legend i, .historyLegend i { display: inline-block; width: 1.2rem; flex: 0 0 auto; }
-.legend .observation { width: .4rem; height: .4rem; border-radius: 50%; background: var(--foreground); }
-.fitted { border-top: 2px solid var(--foreground-muted); }
-.legend .cutoff { width: .5rem; height: 1rem; border-left: 1px dashed var(--foreground-muted); }
-.predicted { border-top: 2px dashed var(--foreground-muted); }
-.key { margin: .5rem 0 0; color: var(--foreground-muted); font-size: .75rem; line-height: 1.6; }
-.details { margin-top: .65rem; }
-.details > summary { cursor: pointer; padding: .3rem 0; font-size: .8rem; line-height: 1.5; font-weight: 550; }
-.details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.example { padding-top: .8rem; min-width: 0; }
-.kicker { margin: 0; font-size: .7rem; font-weight: 650; color: var(--foreground-muted); text-transform: uppercase; letter-spacing: .04em; }
-.intro { margin: .5rem 0 .75rem; font-size: .8rem; line-height: 1.6; }
-.earlySwatch { border-top: 2px solid var(--chart-series-1); }
-.lateSwatch { border-top: 2px dashed var(--chart-series-2); }
-.instruction { margin: .6rem 0 0; font-size: .72rem; color: var(--foreground-muted); line-height: 1.6; }
-.yearControl { display: grid; margin: .65rem 0; gap: .1rem; font-size: .78rem; max-width: 30rem; }
-.yearControl > span { display: flex; gap: 1rem; justify-content: space-between; }
-.yearControl input { width: 100%; height: 2.75rem; accent-color: var(--accent); cursor: pointer; }
-.yearControl input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.lane { margin-top: .8rem; min-width: 0; }
-.laneHeading { display: flex; flex-wrap: wrap; gap: .25rem .75rem; justify-content: space-between; font-size: .78rem; }
-.laneHeading > span { color: var(--foreground-muted); font-size: .71rem; }
-.values { display: flex; flex-wrap: wrap; gap: .75rem; margin: .3rem 0; font-size: .74rem; font-variant-numeric: tabular-nums; }
-.plot { width: 100%; height: auto; display: block; }
-.axis { stroke: var(--chart-axis); }
-.grid { stroke: var(--chart-grid); }
-.earlyCurve, .lateCurve { fill: none; stroke-width: 2; }
-.earlyCurve { stroke: var(--chart-series-1); }
-.lateCurve { stroke: var(--chart-series-2); stroke-dasharray: 5 4; }
-.cursor { stroke: var(--foreground); stroke-width: 1; stroke-dasharray: 2 3; }
-.ticks { position: relative; height: 1.15rem; color: var(--foreground-muted); font-size: .7rem; }
+.guide {
+  --guide-ink: #263f45; --guide-muted: #586c70; --guide-blue: #396783; --guide-amber: #9b6a32;
+  --guide-teal: #377e78; --guide-paper: #faf9f4; --guide-rule: #cbd3cf; --guide-grid: #e1e5de;
+  border-block: 1px solid var(--guide-rule); padding: .9rem 0; margin: 1rem 0; min-width: 0;
+  color: var(--guide-ink); background: var(--guide-paper); font-family: var(--font-interface), Arial, sans-serif;
+}
+.legend, .historyLegend { display: flex; flex-wrap: wrap; gap: .45rem 1.1rem; padding-inline: 1rem; font-size: .76rem; line-height: 1.55; }
+.legend > span, .historyLegend > span { display: inline-flex; align-items: center; gap: .5rem; }
+.legend i, .historyLegend i { display: inline-block; width: 1.35rem; flex: 0 0 auto; }
+.legend .observation { width: .42rem; height: .42rem; border-radius: 50%; background: var(--guide-ink); margin-inline: .45rem; }
+.fitted { border-top: 2px solid var(--guide-ink); }
+.legend .cutoff { width: .45rem; height: 1rem; border-left: 1px dashed var(--guide-muted); margin-inline: .45rem; }
+.predicted { border-top: 2px dashed var(--guide-ink); }
+.key { margin: .6rem 0 0; padding-inline: 1rem; color: var(--guide-muted); font-size: .75rem; line-height: 1.65; }
+.details { margin-top: .8rem; }
+.details > summary { cursor: pointer; margin-inline: 1rem; padding: .35rem 0; font-size: .83rem; line-height: 1.5; font-weight: 600; text-wrap: pretty; }
+.details > summary:focus-visible { outline: 2px solid var(--guide-blue); outline-offset: 4px; }
+.example { padding-top: 1rem; min-width: 0; }
+.kicker { margin: 0; padding-inline: 1rem; font-size: .7rem; font-weight: 650; color: var(--guide-muted); text-transform: uppercase; letter-spacing: .07em; line-height: 1.6; }
+.intro { margin: .5rem 0 .8rem; padding-inline: 1rem; font-size: .8rem; line-height: 1.65; }
+.historyLegend { font-weight: 550; }
+.earlySwatch { border-top: 2px solid var(--guide-blue); }
+.lateSwatch { border-top: 2px dashed var(--guide-amber); }
+.instruction { margin: .7rem 0 0; padding-inline: 1rem; font-size: .73rem; color: var(--guide-muted); line-height: 1.65; }
+.yearControl { display: grid; margin: .7rem 1rem 0; gap: .1rem; font-size: .8rem; max-width: 30rem; }
+.yearControl > span { display: flex; gap: 1rem; justify-content: space-between; align-items: baseline; }
+.yearControl strong { color: var(--guide-teal); font-size: .92rem; font-variant-numeric: tabular-nums; }
+.yearControl input { width: 100%; height: 2.75rem; margin: 0; accent-color: var(--guide-teal); cursor: pointer; }
+.yearControl input:focus-visible { outline: 2px solid var(--guide-blue); outline-offset: 3px; }
+.lane { margin-top: 1rem; min-width: 0; }
+.lane + .lane { padding-top: .95rem; border-top: 1px solid var(--guide-grid); }
+.laneHeading { display: flex; flex-wrap: wrap; gap: .2rem .75rem; padding-inline: 1rem; justify-content: space-between; align-items: baseline; font-size: .84rem; line-height: 1.5; }
+.laneHeading strong { font-weight: 600; }
+.laneHeading > span { color: var(--guide-muted); font-size: .72rem; }
+.values { display: flex; flex-wrap: wrap; gap: .9rem; margin: .4rem 0 .3rem; padding-inline: 1rem; font-size: .76rem; font-variant-numeric: tabular-nums; }
+.valueYear { color: var(--guide-muted); }
+.earlyValue, .lateValue { color: var(--guide-ink); }
+.values b { margin-left: .25rem; font-weight: 650; }
+.plotFrame { position: relative; }
+.yTicks { position: absolute; inset: 0; pointer-events: none; color: var(--guide-muted); font-size: .72rem; font-variant-numeric: tabular-nums; }
+.yTicks > span { position: absolute; left: 0; text-align: right; transform: translateY(-50%); }
+.plot { width: 100%; height: 124px; display: block; }
+.axis { stroke: #8a9a98; stroke-width: .85; }
+.grid { stroke: var(--guide-grid); stroke-width: .8; }
+.yearGrid { stroke: var(--guide-grid); stroke-width: .65; stroke-dasharray: 2 4; }
+.earlyCurve, .lateCurve { fill: none; stroke-width: 2; stroke-linejoin: round; }
+.earlyCurve { stroke: var(--guide-blue); }
+.lateCurve { stroke: var(--guide-amber); stroke-dasharray: 5 4; }
+.earlyPoint { fill: var(--guide-blue); stroke: var(--guide-paper); stroke-width: 1; }
+.latePoint { fill: var(--guide-paper); stroke: var(--guide-amber); stroke-width: 1.5; }
+.cursor { stroke: var(--guide-ink); stroke-width: .9; stroke-dasharray: 2 3; }
+.ticks { position: relative; height: 1.2rem; color: var(--guide-muted); font-size: .72rem; font-variant-numeric: tabular-nums; }
 .ticks > span { position: absolute; transform: translateX(-50%); }
-.scale { margin: .15rem 0 0; color: var(--foreground-muted); font-size: .7rem; }
-.assumptions, .boundary { margin: .8rem 0 0; font-size: .74rem; line-height: 1.65; color: var(--foreground-muted); }
-@media (max-width: 420px) { .laneHeading { display: grid; gap: .15rem; } .legend { gap: .35rem .75rem; } }
+.calendar { margin: .15rem 1rem .55rem 60px; text-align: center; font-size: .74rem; color: var(--guide-muted); }
+.scale { margin: .15rem 0 0; padding-inline: 1rem; color: var(--guide-muted); font-size: .71rem; line-height: 1.5; }
+.caption { margin-top: 1.1rem; padding: .9rem 1rem 0; border-top: 1px solid var(--guide-rule); }
+.caption h4 { margin: 0; font-size: .75rem; font-weight: 650; }
+.assumptions, .boundary { margin: .5rem 0 0; font-size: .74rem; line-height: 1.7; color: var(--guide-muted); }
+@media (max-width: 480px) { .laneHeading { display: grid; gap: .15rem; } .legend { gap: .4rem .75rem; } .details > summary { font-size: .81rem; } }
