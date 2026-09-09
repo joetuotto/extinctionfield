@@ -1,0 +1,9 @@
+/* Keep the complete social exchange beside the introduction. */
+@media (min-width: 1024px) {
+  .copy { min-height: 440px; }
+  .artwork {
+    left: auto !important;
+    right: 0 !important;
+    width: 85% !important;
+  }
+}

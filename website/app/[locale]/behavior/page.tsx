@@ -10,6 +10,7 @@ import { MathBlock } from "@/components/MathBlock";
 import { pickCopy } from "@/lib/i18n";
 import { EncounterWindowsIllustration } from "@/components/EncounterWindowsIllustration";
 import styles from "./desire-hero.module.css";
+import socialStyles from "./social-hero.module.css";
 
 const COPY = {
   en: {
@@ -137,7 +138,18 @@ export default async function BehaviorPage({ params }: { params: Promise<{ local
     <SteroidogenesisIntegrationPanel locale={locale} focus="behavior" />
     <ExplanationSection {...d.contents[2]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.state-dependent-learning">{d.learningClaim}</ClaimRef></p>{p(d.learning)}<ResearchConnection locale={locale} studies={d.learningStudies} implication={d.learningImplication} /><MathBlock tex={String.raw`L_{t+1}=\mathcal U(L_t,\mathrm{feedback};S_t)`} />{p(d.learningEquation)}</ExplanationSection>
     <ExplanationSection {...d.contents[3]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.reported-reasons">{d.reasonsClaim}</ClaimRef></p>{p(d.reasons)}<ResearchConnection locale={locale} studies={d.reasonsStudies} implication={d.reasonsImplication} /></ExplanationSection>
-    <ExplanationSection {...d.contents[4]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.social-valuation">{d.socialClaim}</ClaimRef></p>{p(d.social)}<ResearchConnection locale={locale} studies={d.socialStudies} implication={d.socialImplication} /></ExplanationSection>
+    <section id={d.contents[4].id} className="scroll-mt-28 space-y-5 border-t editorial-rule pt-7">
+      <header className={styles.hero} aria-labelledby="social-title">
+        <Image src="/images/social-behavior-hero-fi-v2.png" alt="" fill sizes="(min-width: 1280px) 856px, (min-width: 1024px) calc(100vw - 296px), 100vw" className={`${styles.artwork} ${socialStyles.artwork}`} />
+        <div className={styles.veil} aria-hidden="true" />
+        <div className={`${styles.copy} ${socialStyles.copy}`}>
+          <h2 id="social-title" className={styles.title}>{d.contents[4].title}</h2>
+          <p className={styles.deck}><ClaimRef claimId="claim.behavior.social-valuation">{d.socialClaim}</ClaimRef></p>
+          <div className={styles.lead}>{p(d.social)}</div>
+        </div>
+      </header>
+      <ResearchConnection locale={locale} studies={d.socialStudies} implication={d.socialImplication} />
+    </section>
     <ExplanationSection {...d.contents[5]}><p className="text-lg font-medium leading-8"><ClaimRef claimId="claim.behavior.dyadic-propagation">{d.jointClaim}</ClaimRef></p>{p(d.joint)}<ResearchConnection locale={locale} studies={d.jointStudies} implication={d.jointImplication} />
       <EncounterWindowsIllustration locale={locale} variant="joint-action" />
       <div className="space-y-5 border-t editorial-rule pt-7"><h3 className="text-xl font-semibold">{d.synthesisTitle}</h3><p className="text-lg leading-8"><ClaimRef claimId="claim.behavior.biological-state-to-action">{d.synthesisClaim}</ClaimRef></p>
